@@ -8,33 +8,33 @@
  * {@see FhirPractitionerService::setPatientCallerView()} is on. Two hooks
  * are covered:
  *
- *   - searchForOpenEMRRecords filters each row through
+ *   - searchForDCLRecords filters each row through
  *     {@see UsersRowPatientAllowlist::filterRow()} before the row reaches
- *     parseOpenEMRRecord. The empty-guards in the builder then drop the
+ *     parseDCLRecord. The empty-guards in the builder then drop the
  *     corresponding FHIR fields.
- *   - createOpenEMRSearchParameters filters caller-supplied FHIR search
+ *   - createDCLSearchParameters filters caller-supplied FHIR search
  *     parameters through {@see UsersRowPatientAllowlist::filterSearchParams()}
- *     before the OpenEMR search shape is built. This closes the
+ *     before the DCL search shape is built. This closes the
  *     enumeration path over the columns the row filter hides.
  *
  * Both are exercised via an anonymous subclass that exposes the
  * protected hooks and stubs the external service so the tests never
  * touch the database.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\Services\FHIR\FhirPractitionerService;
-use OpenEMR\Services\FHIR\INonPatientCompartmentResourceService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Services\FHIR\FhirPractitionerService;
+use DCL\Services\FHIR\INonPatientCompartmentResourceService;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -74,9 +74,9 @@ class FhirPractitionerServicePatientCallerViewIsolatedTest extends TestCase
         $this->assertFalse($service->isPatientCallerView());
     }
 
-    public function testCreateOpenEMRSearchParametersFiltersInputWhenViewOn(): void
+    public function testCreateDCLSearchParametersFiltersInputWhenViewOn(): void
     {
-        // Exercise the createOpenEMRSearchParameters hook directly through
+        // Exercise the createDCLSearchParameters hook directly through
         // a subclass that captures the parameters the parent hook would
         // have received. The parent hook itself is not invoked — its
         // execution requires a full SearchFieldFactory wiring that lives
@@ -101,17 +101,17 @@ class FhirPractitionerServicePatientCallerViewIsolatedTest extends TestCase
              * @param array<string, mixed> $fhirSearchParameters
              * @return array<string, mixed>
              */
-            public function invokeCreateOpenEMRSearchParameters(array $fhirSearchParameters): array
+            public function invokeCreateDCLSearchParameters(array $fhirSearchParameters): array
             {
                 if ($this->isPatientCallerView()) {
-                    $fhirSearchParameters = \OpenEMR\Services\FHIR\UsersRowPatientAllowlist::filterSearchParams($fhirSearchParameters);
+                    $fhirSearchParameters = \DCL\Services\FHIR\UsersRowPatientAllowlist::filterSearchParams($fhirSearchParameters);
                 }
                 $this->captured[] = $fhirSearchParameters;
                 return $fhirSearchParameters;
             }
         };
 
-        $subclass->invokeCreateOpenEMRSearchParameters([
+        $subclass->invokeCreateDCLSearchParameters([
             '_id'     => 'aaaa',
             'family'  => 'Smith',
             'email'   => 'private@example.com',
@@ -149,10 +149,10 @@ class FhirPractitionerServicePatientCallerViewIsolatedTest extends TestCase
              * @param array<string, mixed> $fhirSearchParameters
              * @return array<string, mixed>
              */
-            public function invokeCreateOpenEMRSearchParameters(array $fhirSearchParameters): array
+            public function invokeCreateDCLSearchParameters(array $fhirSearchParameters): array
             {
                 if ($this->isPatientCallerView()) {
-                    $fhirSearchParameters = \OpenEMR\Services\FHIR\UsersRowPatientAllowlist::filterSearchParams($fhirSearchParameters);
+                    $fhirSearchParameters = \DCL\Services\FHIR\UsersRowPatientAllowlist::filterSearchParams($fhirSearchParameters);
                 }
                 $this->captured[] = $fhirSearchParameters;
                 return $fhirSearchParameters;
@@ -166,21 +166,21 @@ class FhirPractitionerServicePatientCallerViewIsolatedTest extends TestCase
             'phone'   => '+15550000001',
             'address' => '456 Office Way',
         ];
-        $subclass->invokeCreateOpenEMRSearchParameters($input);
+        $subclass->invokeCreateDCLSearchParameters($input);
 
         $this->assertSame(
             $input,
             $subclass->captured[0],
-            'view-off createOpenEMRSearchParameters must pass the full parameter set through unchanged'
+            'view-off createDCLSearchParameters must pass the full parameter set through unchanged'
         );
     }
 
-    public function testSearchForOpenEMRRecordsFiltersRowsWhenViewOn(): void
+    public function testSearchForDCLRecordsFiltersRowsWhenViewOn(): void
     {
-        // Stub searchForOpenEMRRecords to short-circuit before the DB and
+        // Stub searchForDCLRecords to short-circuit before the DB and
         // return one row that contains both allowed and forbidden columns.
         // Reapplies the production filter path so the assertion targets
-        // the row shape parseOpenEMRRecord would receive.
+        // the row shape parseDCLRecord would receive.
         $subclass = new class extends FhirPractitionerService {
             public function __construct()
             {
@@ -193,10 +193,10 @@ class FhirPractitionerServicePatientCallerViewIsolatedTest extends TestCase
              */
             public function invokeSearch(array $params): ProcessingResult
             {
-                return $this->searchForOpenEMRRecords($params);
+                return $this->searchForDCLRecords($params);
             }
 
-            protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+            protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
             {
                 $result = new ProcessingResult();
                 $result->addData([
@@ -225,7 +225,7 @@ class FhirPractitionerServicePatientCallerViewIsolatedTest extends TestCase
                         continue;
                     }
                     /** @var array<string, mixed> $row */
-                    $filtered->addData(\OpenEMR\Services\FHIR\UsersRowPatientAllowlist::filterRow($row));
+                    $filtered->addData(\DCL\Services\FHIR\UsersRowPatientAllowlist::filterRow($row));
                 }
                 return $filtered;
             }

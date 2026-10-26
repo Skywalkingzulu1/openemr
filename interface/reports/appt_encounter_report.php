@@ -15,17 +15,17 @@
  * * Encounters not billed
  *
  * For decent performance the following indexes are highly recommended:
- *   openemr_postcalendar_events.pc_eventDate
+ *   DCL_postcalendar_events.pc_eventDate
  *   forms.encounter
  *   billing.pid_encounter
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2005-2016 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -33,15 +33,15 @@ require_once("../../custom/code_types.inc.php");
 
 /** @var array<string, array<string, mixed>> $code_types */
 
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\FormatMoney;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\Billing\BillingUtilities;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\FormatMoney;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 if (!AclMain::aclCheckCore('acct', 'rep_a')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for acct/rep_a: Appointments and Encounters", xl("Appointments and Encounters"));
@@ -123,7 +123,7 @@ if (!empty($_POST['form_refresh'])) {
     "f.authorized, " .
     "p.fname, p.lname, p.pid, p.pubpid, " .
     "CONCAT( u.lname, ', ', u.fname ) AS docname " .
-    "FROM openemr_postcalendar_events AS e " .
+    "FROM DCL_postcalendar_events AS e " .
     "LEFT OUTER JOIN form_encounter AS fe " .
     "ON fe.date = e.pc_eventDate AND fe.pid = e.pc_pid " .
     "LEFT OUTER JOIN forms AS f ON f.pid = fe.pid AND f.encounter = fe.encounter AND f.formdir = 'newpatient' " .
@@ -153,7 +153,7 @@ if (!empty($_POST['form_refresh'])) {
     "p.fname, p.lname, p.pid, p.pubpid, " .
     "CONCAT( u.lname, ', ', u.fname ) AS docname " .
     "FROM form_encounter AS fe " .
-    "LEFT OUTER JOIN openemr_postcalendar_events AS e " .
+    "LEFT OUTER JOIN DCL_postcalendar_events AS e " .
     "ON fe.date = e.pc_eventDate AND fe.pid = e.pc_pid AND " .
     // "( e.pc_catid = 5 OR e.pc_catid = 9 OR e.pc_catid = 10 ) " .
     "e.pc_pid != '' AND e.pc_apptstatus != ? " .

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTiming;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTiming;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTiming;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Specifies an event that may occur multiple times. Timing schedules are used to record when things are planned, expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds, and may be used for reporting the schedule to which past regular activities were carried out.
@@ -71,101 +71,101 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $boundsDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $boundsRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $boundsPeriod = null;
 
     /**
      * A total count of the desired number of repetitions across the duration of the entire timing specification. If countMax is present, this element indicates the lower bound of the allowed range of count values.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $count = null;
 
     /**
      * If present, indicates that the count is a range - so to perform the action between [count] and [countMax] times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $countMax = null;
 
     /**
      * How long this thing happens for when it happens. If durationMax is present, this element indicates the lower bound of the allowed range of the duration.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $duration = null;
 
     /**
      * If present, indicates that the duration is a range - so to perform the action between [duration] and [durationMax] time length.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $durationMax = null;
 
     /**
      * The units of time for the duration, in UCUM units.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnitsOfTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnitsOfTime
      */
     public $durationUnit = null;
 
     /**
      * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $frequency = null;
 
     /**
      * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $frequencyMax = null;
 
     /**
      * Indicates the duration of time over which repetitions are to occur; e.g. to express "3 times per day", 3 would be the frequency and "1 day" would be the period. If periodMax is present, this element indicates the lower bound of the allowed range of the period length.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $period = null;
 
     /**
      * If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as "do this once every 3-5 days.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $periodMax = null;
 
     /**
      * The units of time for the period in UCUM units.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnitsOfTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnitsOfTime
      */
     public $periodUnit = null;
 
     /**
      * If one or more days of week is provided, then the action happens only on the specified day(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $dayOfWeek = [];
 
     /**
      * Specified time of day for action to take place.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime[]
      */
     public $timeOfDay = [];
 
     /**
      * An approximate time period during the day, potentially linked to an event of daily living that indicates when the action should occur.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREventTiming[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREventTiming[]
      */
     public $when = [];
 
     /**
      * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $offset = null;
 
@@ -175,7 +175,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
     private $_fhirElementName = 'Timing.Repeat';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getBoundsDuration()
     {
@@ -183,7 +183,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
      * @return $this
      */
     public function setBoundsDuration($boundsDuration)
@@ -193,7 +193,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getBoundsRange()
     {
@@ -201,7 +201,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $boundsRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $boundsRange
      * @return $this
      */
     public function setBoundsRange($boundsRange)
@@ -211,7 +211,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getBoundsPeriod()
     {
@@ -219,7 +219,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $boundsPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $boundsPeriod
      * @return $this
      */
     public function setBoundsPeriod($boundsPeriod)
@@ -230,7 +230,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A total count of the desired number of repetitions across the duration of the entire timing specification. If countMax is present, this element indicates the lower bound of the allowed range of count values.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getCount()
     {
@@ -239,7 +239,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A total count of the desired number of repetitions across the duration of the entire timing specification. If countMax is present, this element indicates the lower bound of the allowed range of count values.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $count
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $count
      * @return $this
      */
     public function setCount($count)
@@ -250,7 +250,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the count is a range - so to perform the action between [count] and [countMax] times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getCountMax()
     {
@@ -259,7 +259,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the count is a range - so to perform the action between [count] and [countMax] times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $countMax
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $countMax
      * @return $this
      */
     public function setCountMax($countMax)
@@ -270,7 +270,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How long this thing happens for when it happens. If durationMax is present, this element indicates the lower bound of the allowed range of the duration.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getDuration()
     {
@@ -279,7 +279,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How long this thing happens for when it happens. If durationMax is present, this element indicates the lower bound of the allowed range of the duration.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $duration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $duration
      * @return $this
      */
     public function setDuration($duration)
@@ -290,7 +290,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the duration is a range - so to perform the action between [duration] and [durationMax] time length.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getDurationMax()
     {
@@ -299,7 +299,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the duration is a range - so to perform the action between [duration] and [durationMax] time length.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $durationMax
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $durationMax
      * @return $this
      */
     public function setDurationMax($durationMax)
@@ -310,7 +310,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The units of time for the duration, in UCUM units.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnitsOfTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnitsOfTime
      */
     public function getDurationUnit()
     {
@@ -319,7 +319,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The units of time for the duration, in UCUM units.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnitsOfTime $durationUnit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnitsOfTime $durationUnit
      * @return $this
      */
     public function setDurationUnit($durationUnit)
@@ -330,7 +330,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getFrequency()
     {
@@ -339,7 +339,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $frequency
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $frequency
      * @return $this
      */
     public function setFrequency($frequency)
@@ -350,7 +350,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getFrequencyMax()
     {
@@ -359,7 +359,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $frequencyMax
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $frequencyMax
      * @return $this
      */
     public function setFrequencyMax($frequencyMax)
@@ -370,7 +370,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates the duration of time over which repetitions are to occur; e.g. to express "3 times per day", 3 would be the frequency and "1 day" would be the period. If periodMax is present, this element indicates the lower bound of the allowed range of the period length.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getPeriod()
     {
@@ -379,7 +379,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates the duration of time over which repetitions are to occur; e.g. to express "3 times per day", 3 would be the frequency and "1 day" would be the period. If periodMax is present, this element indicates the lower bound of the allowed range of the period length.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $period
      * @return $this
      */
     public function setPeriod($period)
@@ -390,7 +390,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as "do this once every 3-5 days.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getPeriodMax()
     {
@@ -399,7 +399,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as "do this once every 3-5 days.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $periodMax
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $periodMax
      * @return $this
      */
     public function setPeriodMax($periodMax)
@@ -410,7 +410,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The units of time for the period in UCUM units.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnitsOfTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnitsOfTime
      */
     public function getPeriodUnit()
     {
@@ -419,7 +419,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The units of time for the period in UCUM units.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnitsOfTime $periodUnit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnitsOfTime $periodUnit
      * @return $this
      */
     public function setPeriodUnit($periodUnit)
@@ -430,7 +430,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If one or more days of week is provided, then the action happens only on the specified day(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getDayOfWeek()
     {
@@ -439,7 +439,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If one or more days of week is provided, then the action happens only on the specified day(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $dayOfWeek
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $dayOfWeek
      * @return $this
      */
     public function addDayOfWeek($dayOfWeek)
@@ -450,7 +450,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Specified time of day for action to take place.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime[]
      */
     public function getTimeOfDay()
     {
@@ -459,7 +459,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Specified time of day for action to take place.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $timeOfDay
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $timeOfDay
      * @return $this
      */
     public function addTimeOfDay($timeOfDay)
@@ -470,7 +470,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * An approximate time period during the day, potentially linked to an event of daily living that indicates when the action should occur.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREventTiming[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREventTiming[]
      */
     public function getWhen()
     {
@@ -479,7 +479,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * An approximate time period during the day, potentially linked to an event of daily living that indicates when the action should occur.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREventTiming $when
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREventTiming $when
      * @return $this
      */
     public function addWhen($when)
@@ -490,7 +490,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getOffset()
     {
@@ -499,7 +499,7 @@ class FHIRTimingRepeat extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $offset
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $offset
      * @return $this
      */
     public function setOffset($offset)

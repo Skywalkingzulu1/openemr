@@ -2,20 +2,20 @@
 
 /**
  * EncounterServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\VitalsService;
-use OpenEMR\Tests\Fixtures\EncounterFixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\EncounterService;
+use DCL\Services\VitalsService;
+use DCL\Tests\Fixtures\EncounterFixtureManager;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

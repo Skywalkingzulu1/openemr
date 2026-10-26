@@ -8,17 +8,17 @@
  * form input. The two merge actions are resolved in the browser -- they are links to the Merge
  * Patients page -- while the other two are handled by the controller.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Patient;
+namespace DCL\Services\Patient;
 
 enum DuplicatePatientAction: string
 {

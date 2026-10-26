@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A signature along with supporting context. The signature may be a digital signature that is cryptographic in nature, or some other signature acceptable to the domain. This other signature may be as simple as a graphical image representing a hand-written signature, or a signature ceremony Different signature approaches have different utilities.
@@ -72,43 +72,43 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 {
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $type = [];
 
     /**
      * When the digital signature was signed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $when = null;
 
     /**
      * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $who = null;
 
     /**
      * A reference to an application-usable description of the identity that is represented by the signature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $onBehalfOf = null;
 
     /**
      * A mime type that indicates the technical format of the target resources signed by the signature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $targetFormat = null;
 
     /**
      * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $sigFormat = null;
 
     /**
      * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $data = null;
 
@@ -119,7 +119,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getType()
     {
@@ -128,7 +128,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function addType($type)
@@ -139,7 +139,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * When the digital signature was signed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getWhen()
     {
@@ -148,7 +148,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * When the digital signature was signed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $when
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $when
      * @return $this
      */
     public function setWhen($when)
@@ -159,7 +159,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getWho()
     {
@@ -168,7 +168,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $who
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $who
      * @return $this
      */
     public function setWho($who)
@@ -179,7 +179,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A reference to an application-usable description of the identity that is represented by the signature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf()
     {
@@ -188,7 +188,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A reference to an application-usable description of the identity that is represented by the signature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
      * @return $this
      */
     public function setOnBehalfOf($onBehalfOf)
@@ -199,7 +199,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A mime type that indicates the technical format of the target resources signed by the signature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getTargetFormat()
     {
@@ -208,7 +208,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A mime type that indicates the technical format of the target resources signed by the signature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $targetFormat
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $targetFormat
      * @return $this
      */
     public function setTargetFormat($targetFormat)
@@ -219,7 +219,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getSigFormat()
     {
@@ -228,7 +228,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $sigFormat
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $sigFormat
      * @return $this
      */
     public function setSigFormat($sigFormat)
@@ -239,7 +239,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getData()
     {
@@ -248,7 +248,7 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
 
     /**
      * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $data
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $data
      * @return $this
      */
     public function setData($data)

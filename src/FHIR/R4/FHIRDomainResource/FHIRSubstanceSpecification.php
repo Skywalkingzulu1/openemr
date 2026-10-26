@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -72,115 +72,115 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 {
     /**
      * Identifier by which this substance is known.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * High level categorization, e.g. polymer or nucleic acid.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Status of substance within the catalogue e.g. approved.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * If the substance applies to only human or veterinary use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $domain = null;
 
     /**
      * Textual description of the substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Supporting literature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
     /**
      * Textual comment about this record of a substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * Moiety, for structural modifications.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety[]
      */
     public $moiety = [];
 
     /**
      * General specifications for this substance, including how it is related to other substances.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty[]
      */
     public $property = [];
 
     /**
      * General information detailing this substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $referenceInformation = null;
 
     /**
      * Structural information.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure
      */
     public $structure = null;
 
     /**
      * Codes associated with the substance.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode[]
      */
     public $code = [];
 
     /**
      * Names applicable to this substance.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
     public $name = [];
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight[]
      */
     public $molecularWeight = [];
 
     /**
      * A link between this substance and another, with details of the relationship.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[]
      */
     public $relationship = [];
 
     /**
      * Data items specific to nucleic acids.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $nucleicAcid = null;
 
     /**
      * Data items specific to polymers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $polymer = null;
 
     /**
      * Data items specific to proteins.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $protein = null;
 
     /**
      * Material or taxonomic/anatomical source for the substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $sourceMaterial = null;
 
@@ -191,7 +191,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Identifier by which this substance is known.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -200,7 +200,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Identifier by which this substance is known.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -211,7 +211,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * High level categorization, e.g. polymer or nucleic acid.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -220,7 +220,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * High level categorization, e.g. polymer or nucleic acid.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -231,7 +231,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Status of substance within the catalogue e.g. approved.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -240,7 +240,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Status of substance within the catalogue e.g. approved.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -251,7 +251,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * If the substance applies to only human or veterinary use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDomain()
     {
@@ -260,7 +260,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * If the substance applies to only human or veterinary use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $domain
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $domain
      * @return $this
      */
     public function setDomain($domain)
@@ -271,7 +271,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Textual description of the substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -280,7 +280,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Textual description of the substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -291,7 +291,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Supporting literature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -300,7 +300,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Supporting literature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)
@@ -311,7 +311,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Textual comment about this record of a substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -320,7 +320,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Textual comment about this record of a substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -331,7 +331,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Moiety, for structural modifications.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety[]
      */
     public function getMoiety()
     {
@@ -340,7 +340,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Moiety, for structural modifications.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety $moiety
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety $moiety
      * @return $this
      */
     public function addMoiety($moiety)
@@ -351,7 +351,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * General specifications for this substance, including how it is related to other substances.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty[]
      */
     public function getProperty()
     {
@@ -360,7 +360,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * General specifications for this substance, including how it is related to other substances.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty $property
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty $property
      * @return $this
      */
     public function addProperty($property)
@@ -371,7 +371,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * General information detailing this substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReferenceInformation()
     {
@@ -380,7 +380,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * General information detailing this substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $referenceInformation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $referenceInformation
      * @return $this
      */
     public function setReferenceInformation($referenceInformation)
@@ -391,7 +391,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Structural information.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure
      */
     public function getStructure()
     {
@@ -400,7 +400,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Structural information.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure $structure
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure $structure
      * @return $this
      */
     public function setStructure($structure)
@@ -411,7 +411,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Codes associated with the substance.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode[]
      */
     public function getCode()
     {
@@ -420,7 +420,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Codes associated with the substance.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode $code
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode $code
      * @return $this
      */
     public function addCode($code)
@@ -431,7 +431,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Names applicable to this substance.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
     public function getName()
     {
@@ -440,7 +440,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Names applicable to this substance.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $name
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $name
      * @return $this
      */
     public function addName($name)
@@ -451,7 +451,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight[]
      */
     public function getMolecularWeight()
     {
@@ -460,7 +460,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
      * @return $this
      */
     public function addMolecularWeight($molecularWeight)
@@ -471,7 +471,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * A link between this substance and another, with details of the relationship.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[]
      */
     public function getRelationship()
     {
@@ -480,7 +480,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * A link between this substance and another, with details of the relationship.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship $relationship
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship $relationship
      * @return $this
      */
     public function addRelationship($relationship)
@@ -491,7 +491,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Data items specific to nucleic acids.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getNucleicAcid()
     {
@@ -500,7 +500,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Data items specific to nucleic acids.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $nucleicAcid
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $nucleicAcid
      * @return $this
      */
     public function setNucleicAcid($nucleicAcid)
@@ -511,7 +511,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Data items specific to polymers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPolymer()
     {
@@ -520,7 +520,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Data items specific to polymers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $polymer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $polymer
      * @return $this
      */
     public function setPolymer($polymer)
@@ -531,7 +531,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Data items specific to proteins.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProtein()
     {
@@ -540,7 +540,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Data items specific to proteins.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $protein
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $protein
      * @return $this
      */
     public function setProtein($protein)
@@ -551,7 +551,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Material or taxonomic/anatomical source for the substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSourceMaterial()
     {
@@ -560,7 +560,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Material or taxonomic/anatomical source for the substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $sourceMaterial
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $sourceMaterial
      * @return $this
      */
     public function setSourceMaterial($sourceMaterial)

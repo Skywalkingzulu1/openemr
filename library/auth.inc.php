@@ -3,8 +3,8 @@
 /**
  * Authorization functions.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Kevin Yeh <kevin.y@integralemr.com>
@@ -13,14 +13,14 @@
  * @author    cfapress
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionTracker;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionTracker;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
@@ -141,7 +141,7 @@ function authLoginScreen($timed_out = false): void
     global $incoming_site_id;
     ?>
 <script>
- // Find the top level window for this instance of OpenEMR, set a flag indicating
+ // Find the top level window for this instance of DCL, set a flag indicating
  // session timeout has occurred, and reload the login page into it.  This is so
  // that beforeunload event handlers will not obstruct the process in this case.
  var w = window;

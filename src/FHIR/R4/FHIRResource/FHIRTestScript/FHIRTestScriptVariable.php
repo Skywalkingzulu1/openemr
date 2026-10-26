@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,49 +71,49 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Descriptive name for this variable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A default, hard-coded, or user-defined value for this variable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $defaultValue = null;
 
     /**
      * A free text natural language description of the variable and its purpose.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
     /**
      * Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $headerField = null;
 
     /**
      * Displayable text string with hint help information to the user when entering a default value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $hint = null;
 
     /**
      * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against within this variable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $sourceId = null;
 
@@ -124,7 +124,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Descriptive name for this variable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -133,7 +133,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Descriptive name for this variable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -144,7 +144,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A default, hard-coded, or user-defined value for this variable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDefaultValue()
     {
@@ -153,7 +153,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A default, hard-coded, or user-defined value for this variable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $defaultValue
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $defaultValue
      * @return $this
      */
     public function setDefaultValue($defaultValue)
@@ -164,7 +164,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A free text natural language description of the variable and its purpose.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -173,7 +173,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A free text natural language description of the variable and its purpose.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -184,7 +184,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -193,7 +193,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)
@@ -204,7 +204,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getHeaderField()
     {
@@ -213,7 +213,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $headerField
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $headerField
      * @return $this
      */
     public function setHeaderField($headerField)
@@ -224,7 +224,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Displayable text string with hint help information to the user when entering a default value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getHint()
     {
@@ -233,7 +233,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Displayable text string with hint help information to the user when entering a default value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $hint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $hint
      * @return $this
      */
     public function setHint($hint)
@@ -244,7 +244,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -253,7 +253,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -264,7 +264,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against within this variable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getSourceId()
     {
@@ -273,7 +273,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against within this variable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $sourceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $sourceId
      * @return $this
      */
     public function setSourceId($sourceId)

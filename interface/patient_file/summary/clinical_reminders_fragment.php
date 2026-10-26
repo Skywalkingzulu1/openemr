@@ -3,18 +3,18 @@
 /**
  * This simply shows the Clinical Reminder Widget
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2010-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/clinical_rules.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/clinical_rules.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);

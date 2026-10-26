@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.
@@ -72,61 +72,61 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Whether the organization's record is still in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * The kind(s) of organization that this is.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * A name associated with the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A list of alternate names that the organization is known as, or was known as in the past.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $alias = [];
 
     /**
      * A contact detail for the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * An address for the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public $address = [];
 
     /**
      * The organization of which this organization forms a part.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $partOf = null;
 
     /**
      * Contact for the organization for a certain purpose.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIROrganization\FHIROrganizationContact[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIROrganization\FHIROrganizationContact[]
      */
     public $contact = [];
 
     /**
      * Technical endpoints providing access to services operated for the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
@@ -137,7 +137,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -146,7 +146,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -157,7 +157,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the organization's record is still in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -166,7 +166,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the organization's record is still in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -177,7 +177,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind(s) of organization that this is.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -186,7 +186,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind(s) of organization that this is.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -197,7 +197,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name associated with the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -206,7 +206,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name associated with the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -217,7 +217,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of alternate names that the organization is known as, or was known as in the past.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getAlias()
     {
@@ -226,7 +226,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of alternate names that the organization is known as, or was known as in the past.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $alias
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $alias
      * @return $this
      */
     public function addAlias($alias)
@@ -237,7 +237,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A contact detail for the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -246,7 +246,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A contact detail for the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -257,7 +257,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An address for the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
     {
@@ -266,7 +266,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An address for the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function addAddress($address)
@@ -277,7 +277,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization of which this organization forms a part.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPartOf()
     {
@@ -286,7 +286,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization of which this organization forms a part.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function setPartOf($partOf)
@@ -297,7 +297,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact for the organization for a certain purpose.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIROrganization\FHIROrganizationContact[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIROrganization\FHIROrganizationContact[]
      */
     public function getContact()
     {
@@ -306,7 +306,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact for the organization for a certain purpose.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIROrganization\FHIROrganizationContact $contact
+     * @param \DCL\FHIR\R4\FHIRResource\FHIROrganization\FHIROrganizationContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -317,7 +317,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Technical endpoints providing access to services operated for the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -326,7 +326,7 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Technical endpoints providing access to services operated for the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)

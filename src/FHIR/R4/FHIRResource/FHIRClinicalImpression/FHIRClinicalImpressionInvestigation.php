@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
@@ -71,13 +71,13 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
 {
     /**
      * A name/code for the group ("set") of investigations. Typically, this will be something like "signs", "symptoms", "clinical", "diagnostic", but the list is not constrained, and others such groups such as (exposure|family|travel|nutritional) history may be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A record of a specific investigation that was undertaken.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $item = [];
 
@@ -88,7 +88,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
 
     /**
      * A name/code for the group ("set") of investigations. Typically, this will be something like "signs", "symptoms", "clinical", "diagnostic", but the list is not constrained, and others such groups such as (exposure|family|travel|nutritional) history may be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
 
     /**
      * A name/code for the group ("set") of investigations. Typically, this will be something like "signs", "symptoms", "clinical", "diagnostic", but the list is not constrained, and others such groups such as (exposure|family|travel|nutritional) history may be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
 
     /**
      * A record of a specific investigation that was undertaken.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getItem()
     {
@@ -117,7 +117,7 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement implements
 
     /**
      * A record of a specific investigation that was undertaken.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $item
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $item
      * @return $this
      */
     public function addItem($item)

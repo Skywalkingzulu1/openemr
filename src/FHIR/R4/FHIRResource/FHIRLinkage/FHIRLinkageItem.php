@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRLinkage;
+namespace DCL\FHIR\R4\FHIRResource\FHIRLinkage;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRLinkage;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Identifies two or more records (resource instances) that refer to the same real-world "occurrence".
@@ -71,13 +71,13 @@ class FHIRLinkageItem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Distinguishes which item is "source of truth" (if any) and which items are no longer considered to be current representations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRLinkageType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRLinkageType
      */
     public $type = null;
 
     /**
      * The resource instance being linked as part of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $resource = null;
 
@@ -88,7 +88,7 @@ class FHIRLinkageItem extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Distinguishes which item is "source of truth" (if any) and which items are no longer considered to be current representations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRLinkageType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRLinkageType
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRLinkageItem extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Distinguishes which item is "source of truth" (if any) and which items are no longer considered to be current representations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRLinkageType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRLinkageType $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRLinkageItem extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The resource instance being linked as part of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResource()
     {
@@ -117,7 +117,7 @@ class FHIRLinkageItem extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The resource instance being linked as part of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $resource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $resource
      * @return $this
      */
     public function setResource($resource)

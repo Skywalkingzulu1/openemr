@@ -2,25 +2,25 @@
 
 /*
  * ResourceConstraintFiltererTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\FHIR\SMART;
+namespace DCL\Tests\Isolated\FHIR\SMART;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus;
-use OpenEMR\FHIR\SMART\ResourceConstraintFilterer;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRObservationStatus;
+use DCL\FHIR\SMART\ResourceConstraintFilterer;
+use DCL\Services\FHIR\UtilsService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

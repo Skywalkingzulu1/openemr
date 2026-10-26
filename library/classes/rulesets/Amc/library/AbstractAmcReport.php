@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Ken Chapple <ken@mi-squared.com>
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @author Discover and Change, Inc. <snielson@discoverandchange.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 require_once(__DIR__ . "/../../library/RsFilterIF.php");
@@ -29,10 +29,10 @@ require_once('AmcFilterIF.php');
 require_once('IAmcItemizedReport.php');
 require_once(__DIR__ . "/../../../../clinical_rules.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Reports\AMC\Trackers\AMCItemSkipTracker;
-use OpenEMR\Reports\AMC\Trackers\AMCItemTracker;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Reports\AMC\Trackers\AMCItemSkipTracker;
+use DCL\Reports\AMC\Trackers\AMCItemTracker;
 use Psr\Log\LoggerInterface;
 
 abstract class AbstractAmcReport implements RsReportIF
@@ -310,7 +310,7 @@ abstract class AbstractAmcReport implements RsReportIF
             case "transitions-in":
                  $sql = "SELECT amc_misc_data.map_id as `encounter`, amc_misc_data.date_completed as `completed`, form_encounter.date as `date` " .
                         "FROM `amc_misc_data`, `form_encounter` " .
-                        "INNER JOIN openemr_postcalendar_categories opc on opc.pc_catid = form_encounter.pc_catid " .
+                        "INNER JOIN DCL_postcalendar_categories opc on opc.pc_catid = form_encounter.pc_catid " .
                         "WHERE amc_misc_data.map_id = form_encounter.encounter " .
                         "AND amc_misc_data.map_category = 'form_encounter' " .
                         "AND amc_misc_data.pid = ? AND form_encounter.pid = ? " .
@@ -398,7 +398,7 @@ abstract class AbstractAmcReport implements RsReportIF
             case "med_orders":
                         // Still TODO
                         // AMC MU2 TODO :
-                        //  Note the cpoe_flag and functionality does not exist in OpenEMR official codebase.
+                        //  Note the cpoe_flag and functionality does not exist in DCL official codebase.
                         //
                 $sql = "SELECT drug,erx_source as cpoe_stat " .
                        "FROM `prescriptions` " .

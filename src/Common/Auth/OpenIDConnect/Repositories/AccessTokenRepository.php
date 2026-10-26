@@ -3,24 +3,24 @@
 /**
  * Authorization Server Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Repositories;
+namespace DCL\Common\Auth\OpenIDConnect\Repositories;
 
 use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Exception\UniqueTokenIdentifierConstraintViolationException;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\SMARTSessionTokenContextBuilder;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\FHIR\Config\ServerConfig;
+use DCL\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
+use DCL\Common\Auth\OpenIDConnect\SMARTSessionTokenContextBuilder;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\FHIR\Config\ServerConfig;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class AccessTokenRepository implements AccessTokenRepositoryInterface
@@ -48,7 +48,7 @@ class AccessTokenRepository implements AccessTokenRepositoryInterface
      * Returns the token expiration date for the given token id.
      * @param $tokenId string The access token id
      * @param $clientId string The client id
-     * @param number $userId  The id of the openemr user the token corresponds to
+     * @param number $userId  The id of the DCL user the token corresponds to
      * @return string|null The expiration date or null if there was no token found
      */
     public function getTokenExpiration($tokenId, $clientId, $userId = null)

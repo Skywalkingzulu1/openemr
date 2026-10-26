@@ -3,22 +3,22 @@
 /**
  * HttpRestRouteHandler
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Http;
+namespace DCL\Common\Http;
 
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\RestApiExtend\RestApiSecurityCheckEvent;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\RestApiExtend\RestApiSecurityCheckEvent;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;

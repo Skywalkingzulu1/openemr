@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Example of workflow instance.
@@ -72,103 +72,103 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 {
     /**
      * An absolute URI that is used to identify this example scenario when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this example scenario is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the example scenario is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this example scenario when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the example scenario when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the example scenario author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the example scenario. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The status of this example scenario. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this example scenario is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the example scenario was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the example scenario changes. (e.g. the 'content logical definition').
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the example scenario.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate example scenario instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the example scenario is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * A copyright statement relating to the example scenario and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the example scenario.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * What the example scenario resource is created for. This should not be used to show the business purpose of the scenario itself, but the purpose of documenting a scenario.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * Actor participating in the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioActor[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioActor[]
      */
     public $actor = [];
 
     /**
      * Each resource and each version that is present in the workflow.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioInstance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioInstance[]
      */
     public $instance = [];
 
     /**
      * Each major process - a group of operations.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
     public $process = [];
 
     /**
      * Another nested workflow.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $workflow = [];
 
@@ -179,7 +179,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An absolute URI that is used to identify this example scenario when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this example scenario is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the example scenario is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -188,7 +188,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An absolute URI that is used to identify this example scenario when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this example scenario is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the example scenario is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -199,7 +199,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A formal identifier that is used to identify this example scenario when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -208,7 +208,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A formal identifier that is used to identify this example scenario when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -219,7 +219,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The identifier that is used to identify this version of the example scenario when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the example scenario author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -228,7 +228,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The identifier that is used to identify this version of the example scenario when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the example scenario author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -239,7 +239,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A natural language name identifying the example scenario. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -248,7 +248,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A natural language name identifying the example scenario. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -259,7 +259,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The status of this example scenario. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -268,7 +268,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The status of this example scenario. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -279,7 +279,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A Boolean value to indicate that this example scenario is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -288,7 +288,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A Boolean value to indicate that this example scenario is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -299,7 +299,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The date  (and optionally time) when the example scenario was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the example scenario changes. (e.g. the 'content logical definition').
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -308,7 +308,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The date  (and optionally time) when the example scenario was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the example scenario changes. (e.g. the 'content logical definition').
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -319,7 +319,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the organization or individual that published the example scenario.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -328,7 +328,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the organization or individual that published the example scenario.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -339,7 +339,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -348,7 +348,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -359,7 +359,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate example scenario instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -368,7 +368,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate example scenario instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -379,7 +379,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A legal or geographic region in which the example scenario is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -388,7 +388,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A legal or geographic region in which the example scenario is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -399,7 +399,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A copyright statement relating to the example scenario and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the example scenario.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -408,7 +408,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A copyright statement relating to the example scenario and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the example scenario.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -419,7 +419,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * What the example scenario resource is created for. This should not be used to show the business purpose of the scenario itself, but the purpose of documenting a scenario.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -428,7 +428,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * What the example scenario resource is created for. This should not be used to show the business purpose of the scenario itself, but the purpose of documenting a scenario.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -439,7 +439,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Actor participating in the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioActor[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioActor[]
      */
     public function getActor()
     {
@@ -448,7 +448,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Actor participating in the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioActor $actor
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioActor $actor
      * @return $this
      */
     public function addActor($actor)
@@ -459,7 +459,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Each resource and each version that is present in the workflow.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioInstance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioInstance[]
      */
     public function getInstance()
     {
@@ -468,7 +468,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Each resource and each version that is present in the workflow.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioInstance $instance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioInstance $instance
      * @return $this
      */
     public function addInstance($instance)
@@ -479,7 +479,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Each major process - a group of operations.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
     public function getProcess()
     {
@@ -488,7 +488,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Each major process - a group of operations.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess $process
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess $process
      * @return $this
      */
     public function addProcess($process)
@@ -499,7 +499,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Another nested workflow.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getWorkflow()
     {
@@ -508,7 +508,7 @@ class FHIRExampleScenario extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Another nested workflow.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $workflow
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $workflow
      * @return $this
      */
     public function addWorkflow($workflow)

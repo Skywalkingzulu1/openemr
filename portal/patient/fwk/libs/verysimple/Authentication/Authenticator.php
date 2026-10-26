@@ -2,8 +2,8 @@
 
 /** @package    verysimple::Authentication */
 
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
 
 /**
  * Authenticator is a collection of static methods for storing a current user

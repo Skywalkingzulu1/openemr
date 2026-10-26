@@ -3,24 +3,24 @@
 /**
  * Imports patient demographics from our custom XML format.
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @author  Roberto Vasquez <robertogagliotta@gmail.com>
- * @author  Michael A. Smith <michael@opencoreemr.com>
+ * @author  Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2005 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017 Roberto Vasquez <robertogagliotta@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
 require_once("../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
 
 function setInsurance($pid, $ainsurance, $asubscriber, $seq): void
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationRequest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationRequest" rather than "MedicationPrescription" or "MedicationOrder" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.
@@ -70,18 +70,18 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRMedicationRequestSubstitution extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $allowedBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $allowedCodeableConcept = null;
 
     /**
      * Indicates the reason for the substitution, or why substitution must or must not be performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $reason = null;
 
@@ -91,7 +91,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement implements \
     private $_fhirElementName = 'MedicationRequest.Substitution';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAllowedBoolean()
     {
@@ -99,7 +99,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement implements \
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $allowedBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $allowedBoolean
      * @return $this
      */
     public function setAllowedBoolean($allowedBoolean)
@@ -109,7 +109,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement implements \
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAllowedCodeableConcept()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement implements \
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $allowedCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $allowedCodeableConcept
      * @return $this
      */
     public function setAllowedCodeableConcept($allowedCodeableConcept)
@@ -128,7 +128,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement implements \
 
     /**
      * Indicates the reason for the substitution, or why substitution must or must not be performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReason()
     {
@@ -137,7 +137,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement implements \
 
     /**
      * Indicates the reason for the substitution, or why substitution must or must not be performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function setReason($reason)

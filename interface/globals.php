@@ -3,50 +3,50 @@
 /**
  * Default values for optional variables that are allowed to be set by callers.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 use Dotenv\Dotenv;
-use OpenEMR\BC\Deprecation;
-use OpenEMR\BC\DeprecationMode;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\EncounterSessionUtil;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\ModulesApplication;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\VersionFile;
-use OpenEMR\Services\CodeTypes\Subscriber\CodeTypeEventsSubscriber;
-use OpenEMR\Services\FHIR\Subscriber\CalculatedObservationEventsSubscriber;
-use OpenEMR\Services\FHIR\Subscriber\UuidMappingEventsSubscriber;
-use OpenEMR\Services\PatientFlowBoard\Subscriber\PatientFlowBoardEventsSubscriber;
+use DCL\BC\Deprecation;
+use DCL\BC\DeprecationMode;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\EncounterSessionUtil;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Kernel;
+use DCL\Core\ModulesApplication;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\VersionFile;
+use DCL\Services\CodeTypes\Subscriber\CodeTypeEventsSubscriber;
+use DCL\Services\FHIR\Subscriber\CalculatedObservationEventsSubscriber;
+use DCL\Services\FHIR\Subscriber\UuidMappingEventsSubscriber;
+use DCL\Services\PatientFlowBoard\Subscriber\PatientFlowBoardEventsSubscriber;
 
 // Set up autoloader as early as possible
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-// Refuse to run as root from the CLI. No OpenEMR CLI script needs root,
+// Refuse to run as root from the CLI. No DCL CLI script needs root,
 // and a root-owned write here would brick the web server later. See
 // RootCliGuard for details. Skipped under PHPUnit so CI bootstraps that
 // load globals.php as root aren't tripped — RootCliGuard's own tests
 // invoke the guard directly and bypass this carveout.
 if (!defined('PHPUNIT_COMPOSER_INSTALL')) {
-    OpenEMR\Common\Command\RootCliGuard::assertNotRoot();
+    DCL\Common\Command\RootCliGuard::assertNotRoot();
 }
 
-// Checks if the server's PHP version is compatible with OpenEMR:
-$response = OpenEMR\Common\Compatibility\Checker::checkPhpVersion();
+// Checks if the server's PHP version is compatible with DCL:
+$response = DCL\Common\Compatibility\Checker::checkPhpVersion();
 if ($response !== true) {
     http_response_code(500);
     die(htmlspecialchars($response));
@@ -58,7 +58,7 @@ if (!defined('IS_WINDOWS')) {
 
 // The webserver_root and web_root are now automatically collected.
 // If not working, can set manually below.
-// Auto collect the full absolute directory path for openemr.
+// Auto collect the full absolute directory path for DCL.
 $webserver_root = dirname(__FILE__, 2);
 if (IS_WINDOWS) {
     $webserver_root = str_replace("\\", "/", $webserver_root);
@@ -71,13 +71,13 @@ if (IS_WINDOWS) {
  * different variables and reporting/debugging functionality. Should be used in
  * development only, not for production
  *
- * @link https://www.open-emr.org/wiki/index.php/Dotenv_Usage
+ * @link https://www.dcl.org/wiki/index.php/Dotenv_Usage
  */
 if (file_exists("{$webserver_root}/.env")) {
     Dotenv::createImmutable($webserver_root)->load();
 }
 
-if (($_ENV['OPENEMR_DEPRECATION_MODE'] ?? null) === 'error') {
+if (($_ENV['DCL_DEPRECATION_MODE'] ?? null) === 'error') {
     Deprecation::$mode = DeprecationMode::Error;
 }
 
@@ -85,11 +85,11 @@ $logger = ServiceContainer::getLogger();
 
 // Set up exception handling: ensure that any uncaught exceptions have some
 // guaranteed way of reaching the logs, regardless of other settings.
-$handler = new \OpenEMR\Core\ErrorHandler(
+$handler = new \DCL\Core\ErrorHandler(
     logger: $logger,
     rf: ServiceContainer::getResponseFactory(),
     sf: ServiceContainer::getStreamFactory(),
-    shouldDisplayErrors: ($_ENV['OPENEMR__ENVIRONMENT'] ?? null) === 'dev',
+    shouldDisplayErrors: ($_ENV['DCL__ENVIRONMENT'] ?? null) === 'dev',
 );
 $handler->installExceptionHandler();
 // Note: installErrorHandler() is intentionally NOT called, too much would
@@ -100,15 +100,15 @@ $handler->installExceptionHandler();
 // Throw error if the php openssl module is not installed.
 if (!(extension_loaded('openssl'))) {
     http_response_code(500);
-    $logger->critical('OpenEMR is not working since the php openssl module is not installed');
-    echo "OpenEMR Error : OpenEMR is not working since the php openssl module is not installed.";
+    $logger->critical('DCL is not working since the php openssl module is not installed');
+    echo "DCL Error : DCL is not working since the php openssl module is not installed.";
     exit(1);
 }
 // Throw error if the openssl aes-256-cbc cipher is not available.
 if (!(in_array('aes-256-cbc', openssl_get_cipher_methods()))) {
     http_response_code(500);
-    $logger->critical('OpenEMR is not working since the openssl aes-256-cbc cipher is not available');
-    echo "OpenEMR Error : OpenEMR is not working since the openssl aes-256-cbc cipher is not available.";
+    $logger->critical('DCL is not working since the openssl aes-256-cbc cipher is not available');
+    echo "DCL Error : DCL is not working since the openssl aes-256-cbc cipher is not available.";
     exit(1);
 }
 
@@ -125,8 +125,8 @@ $GLOBALS['debug_ssl_mysql_connection'] = false;
  * You can get a valid SSL certificate for free at letsencrypt.org.
  *
  * Configuration via environment variables:
- * - OPENEMR_SETTING_http_verify_ssl (true/false/1/0/yes/no)
- * - OPENEMR_SETTING_http_ca_cert (path to CA certificate file, e.g., /var/www/certs/ca-cert.pem)
+ * - DCL_SETTING_http_verify_ssl (true/false/1/0/yes/no)
+ * - DCL_SETTING_http_ca_cert (path to CA certificate file, e.g., /var/www/certs/ca-cert.pem)
  *
  * $GLOBALS['http_verify_ssl'] (bool) - Verify SSL certificates for third-party web servers (external APIs) and non-loopback internal addresses
  * $GLOBALS['http_ca_cert'] (string|false) - Path to custom CA certificate file (PEM format) for verifying self-signed certificates
@@ -153,23 +153,23 @@ $GLOBALS['debug_ssl_mysql_connection'] = false;
  * 3. If using self-signed certificates for internal container-to-container communication:
  *    a. Generate a CA certificate and sign your web server's certificate with it
  *    b. Mount the CA certificate into the container at a known path (e.g., /var/www/certs/ca-cert.pem)
- *    c. Set OPENEMR_SETTING_http_ca_cert=/var/www/certs/ca-cert.pem
+ *    c. Set DCL_SETTING_http_ca_cert=/var/www/certs/ca-cert.pem
  *    This allows proper certificate verification even with self-signed certificates.
  */
 $GLOBALS['http_verify_ssl'] = filter_var(
-    $_ENV['OPENEMR_SETTING_http_verify_ssl'] ?? 'true',
+    $_ENV['DCL_SETTING_http_verify_ssl'] ?? 'true',
     FILTER_VALIDATE_BOOLEAN,
     FILTER_NULL_ON_FAILURE
 ) ?? true;  // Verify by default
 
 // Custom CA certificate path for verifying self-signed certificates
 // If set, this will be used instead of the system's default CA bundle
-$GLOBALS['http_ca_cert'] = $_ENV['OPENEMR_SETTING_http_ca_cert'] ?? false;
+$GLOBALS['http_ca_cert'] = $_ENV['DCL_SETTING_http_ca_cert'] ?? false;
 
 // Debug logging for potentially problematic SSL configuration
 if (!empty($GLOBALS['http_ca_cert']) && !$GLOBALS['http_verify_ssl']) {
     $logger->warning(
-        'OpenEMR SSL Configuration Warning: Custom CA certificate is configured ' .
+        'DCL SSL Configuration Warning: Custom CA certificate is configured ' .
         '(http_ca_cert={http_ca_cert}) but SSL verification is disabled ' .
         '(http_verify_ssl=false). The CA certificate will be ignored. ' .
         'This may indicate a configuration error.',
@@ -189,11 +189,11 @@ if (IS_WINDOWS) {
 }
 
 // Auto collect the relative html path, i.e. what you would type into the web
-// browser after the server address to get to OpenEMR.
+// browser after the server address to get to DCL.
 // This removes the leading portion of $webserver_root that it has in common with the web server's document
 // root and assigns the result to $web_root. In addition to the common case where $webserver_root is
-// /var/www/openemr and document root is /var/www, this also handles the case where document root is
-// /var/www/html and there is an Apache "Alias" command that directs /openemr to /var/www/openemr.
+// /var/www/DCL and document root is /var/www, this also handles the case where document root is
+// /var/www/html and there is an Apache "Alias" command that directs /DCL to /var/www/DCL.
 $web_root = substr($webserver_root, strspn($webserver_root ^ $server_document_root, "\0"));
 // Ensure web_root starts with a path separator
 if (preg_match("/^[^\/]/", $web_root)) {
@@ -203,8 +203,8 @@ if (preg_match("/^[^\/]/", $web_root)) {
 // The webserver_root and web_root are now automatically collected in
 //  real time per above code. If above is not working, can uncomment and
 //  set manually here:
-//   $webserver_root = "/var/www/openemr";
-//   $web_root =  "/openemr";
+//   $webserver_root = "/var/www/DCL";
+//   $web_root =  "/DCL";
 
 $ResolveServerHost = static function () {
     $scheme = ($_SERVER['REQUEST_SCHEME'] ?? 'https') . "://";
@@ -265,10 +265,10 @@ $globalsBag->set('eventDispatcher', $eventDispatcher ?? null);
 $globalsBag->set('ignoreAuth_onsite_portal', $ignoreAuth_onsite_portal);
 
 /*
- * If a session does not yet exist, then will start the core OpenEMR session.
+ * If a session does not yet exist, then will start the core DCL session.
  * If a session already exists, then this means portal or oauth2 or api is being used, which
  *   has already created a portal session/cookie, so will bypass setting of
- *   the core OpenEMR session/cookie.
+ *   the core DCL session/cookie.
  * $sessionAllowWrite = 1 | true | string then normal operation
  * $sessionAllowWrite = undefined | null | 0  session start for read only then auto
  *   immediate session_write_close.
@@ -297,7 +297,7 @@ if (empty($siteId) || !empty($_GET['site'])) {
                 $globalsBag->set('srcdir', $srcdir);
                 require_once("$srcdir/auth.inc.php");
             }
-            throw new \OpenEMR\Common\System\MissingSiteIdException();
+            throw new \DCL\Common\System\MissingSiteIdException();
         }
 
         $tmp = $_SERVER['HTTP_HOST'];
@@ -317,13 +317,13 @@ if (empty($siteId) || !empty($_GET['site'])) {
     }
 
     if ($siteId !== null && $siteId != $tmp) {
-        // This is to prevent using session to penetrate other OpenEMR instances within same multisite module
+        // This is to prevent using session to penetrate other DCL instances within same multisite module
         SessionUtil::clearSession();
         if (isset($landingpage) && !empty($landingpage)) {
-            // OpenEMR Patient Portal use
+            // DCL Patient Portal use
             header('Location: index.php?site=' . urlencode((string)$tmp));
         } else {
-            // Main OpenEMR use
+            // Main DCL use
             header('Location: ../login/login.php?site=' . urlencode((string)$tmp)); // Assuming in the interface/main directory
         }
 
@@ -394,7 +394,7 @@ try {
     exit(1);
 }
 
-// This will open the openemr mysql connection.
+// This will open the DCL mysql connection.
 require_once(__DIR__ . "/../library/sql.inc.php");
 $globalsBag->set("adodb", $GLOBALS['adodb'] ?? null);
 $globalsBag->set("dbh", $GLOBALS['dbh'] ?? null);
@@ -640,9 +640,9 @@ if (!empty($glrow)) {
     $globalsBag->set('translate_document_categories', true);
     $globalsBag->set('translate_appt_categories', true);
     $globalsBag->set('timeout', 7200);
-    $openemr_name = 'OpenEMR';
+    $DCL_name = 'DCL';
     $css_header = "$web_root/public/themes/style_default.css";
-    $globalsBag->set('openemr_name', $openemr_name);
+    $globalsBag->set('DCL_name', $DCL_name);
     $globalsBag->set('css_header', $css_header);
     $compact_header = "$web_root/public/themes/style_default.css";
     $globalsBag->set('compact_header', $compact_header);
@@ -834,7 +834,7 @@ if ($globalsBag->getBoolean('translation_preload_cache')) {
  * Marker constant indicating globals.php has fully loaded.
  * Used by include files to guard against direct HTTP access.
  */
-const OPENEMR_GLOBALS_LOADED = true;
+const DCL_GLOBALS_LOADED = true;
 
 // Core event subscribers.
 // These are always-on behaviour, not optional modules, so they register directly
@@ -846,7 +846,7 @@ $coreDispatcher->addSubscriber(new CodeTypeEventsSubscriber());
 $coreDispatcher->addSubscriber(new PatientFlowBoardEventsSubscriber());
 
 // Module configurations.
-// Runs after OPENEMR_GLOBALS_LOADED is defined so that module class files
+// Runs after DCL_GLOBALS_LOADED is defined so that module class files
 // with direct-access guards can be autoloaded without tripping the guard.
 // Upgrade fails for versions prior to 4.2.0 since no modules table.
 $checkModulesTableExists = QueryUtils::existsTable('modules');
@@ -867,7 +867,7 @@ if (!empty($checkModulesTableExists)) {
             $globalsBag->getString('baseModDir'),
             $globalsBag->getString('zendModDir')
         ));
-    } catch (\OpenEMR\Common\Acl\AccessDeniedException $accessDeniedException) {
+    } catch (\DCL\Common\Acl\AccessDeniedException $accessDeniedException) {
         // this occurs when the current SCRIPT_PATH is to a module that is not currently allowed to be accessed
         http_response_code(401);
         $logger->warning($accessDeniedException->getMessage(), ['exception' => $accessDeniedException]);

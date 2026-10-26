@@ -3,34 +3,34 @@
 /**
  * create_portallogin.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Eldho Chacko <eldho@zhservices.com>
  * @author    Jacob T Paul <jacob@zhservices.com>
  * @author    Paul Simon <paul@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Tyler Wrenn <tyler@tylerwrenn.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Stephen Waite <stephen.waite@open-emr.org
+ * @author    Stephen Waite <stephen.waite@dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc <snielson@discoverandchange.com>
- * @copyright Copyright (c) 2022 Stephen Waite <stephen.waite@open-emr.org
+ * @copyright Copyright (c) 2022 Stephen Waite <stephen.waite@dcl.org
  * @copyright Copyright (c) 2017-2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
 
-use OpenEMR\Common\{Csrf\CsrfUtils, Session\SessionWrapperFactory};
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Services\PatientAccessOnsiteService;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\{Csrf\CsrfUtils, Session\SessionWrapperFactory};
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Services\PatientAccessOnsiteService;
+use DCL\Core\OEGlobalsBag;
 
 // Portal credential management; align the permission check with the
 // `patientportal/portal` administration surface.

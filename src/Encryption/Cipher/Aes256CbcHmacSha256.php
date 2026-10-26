@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Encryption\Cipher;
+namespace DCL\Encryption\Cipher;
 
 use BadMethodCallException;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Encryption\Keys\KeyMaterial;
-use OpenEMR\Encryption\{
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Encryption\Keys\KeyMaterial;
+use DCL\Encryption\{
     Ciphertext,
     Plaintext,
 };

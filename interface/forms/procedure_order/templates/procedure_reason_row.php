@@ -2,11 +2,11 @@
 
 /**
  * procedure_reason_row.php is a template file for the procedure order reason data elements.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /** @var int $i (loop index from including file procedure_order/common.php) */

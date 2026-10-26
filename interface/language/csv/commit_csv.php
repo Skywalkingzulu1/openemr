@@ -1,13 +1,13 @@
 <?php
 
 /*
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Kevin Yeh <kevin.y@integralemr.com>
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2014 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // This script is ajax-loaded into a div by validate_csv.php, so much of
@@ -17,10 +17,10 @@ header('Content-Type: application/json');
 require_once("../../globals.php");
 require_once("translation_utilities.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AccessDeniedResponseFormat;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AccessDeniedResponseFormat;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
 
 if (!AclMain::aclCheckCore('admin', 'language')) {
     AccessDeniedHelper::deny(

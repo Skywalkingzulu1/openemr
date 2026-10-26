@@ -3,19 +3,19 @@
 /**
  * interface/super/rules/controllers/edit/view/intervals.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Aron Racho <aron@mi-squared.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2010-2011 Aron Racho <aron@mi-squared.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleTemplateExtension;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
+use DCL\ClinicalDecisionRules\Interface\RuleTemplateExtension;
 
 ?>
 <?php $rule = $viewBean->rule ?>

@@ -5,23 +5,23 @@
  * If-Match named that the task no longer has, and a conditional UPDATE that loses a race after
  * that check passed. The second can't be timed through the API, so a stand-in TaskService loses it.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTask;
-use OpenEMR\Services\FHIR\FhirTaskService;
-use OpenEMR\Services\TaskService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRTask;
+use DCL\Services\FHIR\FhirTaskService;
+use DCL\Services\TaskService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 
 class FhirTaskServiceVersionConflictTest extends TestCase

@@ -18,14 +18,14 @@
  * along with this program. If not, see
  * http://www.gnu.org/licenses/licenses.html#GPL .
  *
- * @package OpenEMR
+ * @package DCL
  * @license http://www.gnu.org/licenses/licenses.html#GPL GNU GPL V3+
  * @author  Sharon Cohen <sharonco@matrix.co.il>
  * @author  Amiel Elboim <amielel@matrix.co.il>
  * @author Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2025 Mountain Valley Health <mvhinspire@mountainvalleyhealthinc.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 window.OeFormValidation = (function(window) {
     // window.top can be momentarily null while a reused tab iframe re-navigates and
@@ -60,7 +60,7 @@ window.OeFormValidation = (function(window) {
             }
             var valid = true ;
 
-            //We use a common error for all the errors because of the multilanguage capability of openemr
+            //We use a common error for all the errors because of the multilanguage capability of DCL
             var form = document.querySelector("form#"+form_id);
             //gets all the "elements" in the form and sends them to the validate library
             //for more information @see https://validatejs.org/

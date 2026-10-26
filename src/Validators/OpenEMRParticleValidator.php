@@ -1,26 +1,26 @@
 <?php
 
 /**
- * OpenEMRParticleValidator - OpenEMR specific validator.
- * This class extends the Particle\Validator\Validator class to provide OpenEMR specific validation rules.
+ * DCLParticleValidator - DCL specific validator.
+ * This class extends the Particle\Validator\Validator class to provide DCL specific validation rules.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
 use Particle\Validator\Validator;
 
-class OpenEMRParticleValidator extends Validator
+class DCLParticleValidator extends Validator
 {
     protected function buildChain($key, $name, $required, $allowEmpty)
     {
-        return new OpenEMRChain($key, $name, $required, $allowEmpty);
+        return new DCLChain($key, $name, $required, $allowEmpty);
     }
 }

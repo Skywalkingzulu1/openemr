@@ -3,25 +3,25 @@
 /**
  * easipro_util.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Shiqiang Tao <StrongTSQ@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Shiqiang Tao <StrongTSQ@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Easipro\Easipro;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Easipro\Easipro;
 
-// Will start the (patient) portal OpenEMR session/cookie
+// Will start the (patient) portal DCL session/cookie
 //  (in case the request is from the patient portal; note it will get destroyed if request is not from patient portal).
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../../vendor/autoload.php");
@@ -37,7 +37,7 @@ if (
     $pid = $portalPid;
     $ignoreAuth = true;
 } else {
-    // request is from openemr core
+    // request is from DCL core
     SessionWrapperFactory::getInstance()->destroyPortalSession();
     $ignoreAuth = false;
     $session = SessionWrapperFactory::getInstance()->getCoreSession();

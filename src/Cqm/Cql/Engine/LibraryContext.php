@@ -6,21 +6,21 @@
  * statement localId, and the contexts of the libraries it includes, by
  * alias.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Cqm\Cql\Engine;
+namespace DCL\Cqm\Cql\Engine;
 
-use OpenEMR\Cqm\Cql\Elm\ElmLibrary;
-use OpenEMR\Cqm\Cql\Elm\ElmRepository;
-use OpenEMR\Cqm\Cql\Qdm\QdmPatient;
-use OpenEMR\Cqm\Cql\Types\CqlDateTime;
+use DCL\Cqm\Cql\Elm\ElmLibrary;
+use DCL\Cqm\Cql\Elm\ElmRepository;
+use DCL\Cqm\Cql\Qdm\QdmPatient;
+use DCL\Cqm\Cql\Types\CqlDateTime;
 
 final class LibraryContext
 {

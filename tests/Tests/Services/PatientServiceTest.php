@@ -1,22 +1,22 @@
 <?php
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\PatientService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Patient Service Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 

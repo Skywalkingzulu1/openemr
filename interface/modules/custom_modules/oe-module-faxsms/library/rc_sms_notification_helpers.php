@@ -10,24 +10,24 @@
  * scan-and-send loop. Both entry points require_once this file.
  *
  * The scan-and-send pipeline itself lives in
- * `OpenEMR\Modules\FaxSMS\Notification\AppointmentNotificationRunner`;
+ * `DCL\Modules\FaxSMS\Notification\AppointmentNotificationRunner`;
  * the functions here are the thin SQL/formatting primitives that the
  * runner and existing callers invoke.
  *
- * @package            OpenEMR
+ * @package            DCL
  *
- * @link               https://www.open-emr.org
+ * @link               https://www.dcl.org
  * @author             Unknown
  * @author             Larry Lart
  * @author             Jerry Padgett
  * @author             Robert Down
- * @author             Michael A. Smith <michael@opencoreemr.com>
+ * @author             Michael A. Smith <michael@DCL.com>
  * @copyright          Unknown
  * @copyright          Copyright (c) 2008 Larry Lart
  * @copyright          Copyright (c) 2018-2024 Jerry Padgett
  * @copyright          Copyright (c) 2021 Robert Down <robertdown@live.com>
- * @copyright          Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright          Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * @codeCoverageIgnore Procedural global-namespace SQL helpers loaded via
  *     require_once from two entry points. Every function here either
@@ -38,9 +38,9 @@
  *     in `tests/Tests/Isolated/Modules/FaxSMS/Notification/`.
  */
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Enums\NotificationChannel;
 
 // faxsms_getAlertPatientData() calls fetchEvents(), which lives in
 // library/appointments.inc.php. The popup entry rc_sms_notification.php
@@ -81,7 +81,7 @@ if (!function_exists('rc_sms_notification_cron_update_entry')) {
             NotificationChannel::EMAIL => 'pc_sendalertemail',
         };
 
-        $query = "UPDATE openemr_postcalendar_events SET {$column} = 'YES' WHERE pc_pid = ? AND pc_eid = ?";
+        $query = "UPDATE DCL_postcalendar_events SET {$column} = 'YES' WHERE pc_pid = ? AND pc_eid = ?";
 
         QueryUtils::sqlStatementThrowException($query, [$pid, $pc_eid]);
     }

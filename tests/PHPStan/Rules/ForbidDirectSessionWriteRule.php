@@ -26,14 +26,14 @@
  * controllers that manage their own sessions, and tests. Direct writes in
  * those contexts are correct and efficient — no reopen is needed.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Milan Zivkovic <zivkovic.milan@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;
@@ -134,7 +134,7 @@ class ForbidDirectSessionWriteRule implements Rule
                     $replacement,
                 )
             )
-                ->identifier('openemr.forbidDirectSessionWrite')
+                ->identifier('DCL.forbidDirectSessionWrite')
                 ->tip('SessionUtil methods use withWritableSession() to auto-reopen the session lock before writing.')
                 ->build(),
         ];

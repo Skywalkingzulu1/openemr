@@ -3,21 +3,21 @@
 /**
  * shot_record.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
 require_once($srcdir . "/options.inc.php");
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 
 $facilityService = new FacilityService();

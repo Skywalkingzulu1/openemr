@@ -1,4 +1,4 @@
-# OpenEMR Vendor Hooks Documentation
+# DCL Vendor Hooks Documentation
 
 ## Introduction
 
@@ -27,7 +27,7 @@ container launch to fail.
 ### Notes
 
 - `postconfig` and `postupgrade` will cause the container launch to fail if they don't return success, but since they can't roll back successful configuration events, when the container next launches it won't retry them because their lifecycle point has passed.
-- Hook scripts inherit `openemr.sh`'s root permissions, which is relevant for security but also ownership of anything they unpack and install.
+- Hook scripts inherit `DCL.sh`'s root permissions, which is relevant for security but also ownership of anything they unpack and install.
 - `tooearly` probably shouldn't be used for normal deployments.
 
 ## Docker Compose Invocation
@@ -37,7 +37,7 @@ Mount the hook directory in to where the container expects to spot it:
 ```
     volumes:
     - logvolume01:/var/log
-    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    - sitevolume:/var/www/localhost/htdocs/DCL/sites
     - vendor_prelaunch:/root/hooks/prelaunch:ro
 ```
 
@@ -56,18 +56,18 @@ Script output will be captured to the compose log, as expected. Don't forget tha
 ### Worked Example
 
 ```
-root@openemr:~/prelaunch-example# ls -al
+root@DCL:~/prelaunch-example# ls -al
 total 16
 drwxr-xr-x 2 root root 4096 Sep 12 02:47 .
 drwx------ 6 root root 4096 Sep 12 02:46 ..
 -rwxr-xr-x 1 root root   25 Sep 12 02:46 01hello
 -rw-r--r-- 1 root root   30 Sep 12 02:47 02nope
 -rw-r--r-- 1 root root    0 Sep 12 02:46 something.zip
-root@openemr:~/prelaunch-example# cat 01hello
+root@DCL:~/prelaunch-example# cat 01hello
 #!/bin/bash
 
 echo hiiii
-root@openemr:~/prelaunch-example# cat 02nope
+root@DCL:~/prelaunch-example# cat 02nope
 #!/bin/bash
 
 echo nope
@@ -75,18 +75,18 @@ exit 1
 ```
 
 ```
-openemr-1  | Love OpenEMR? You can now support the project via the open collective:
-openemr-1  |  > https://opencollective.com/openemr/donate
-openemr-1  |
-openemr-1  | WARNING: /root/hooks/prelaunch/02nope has a shebang but is not executable; run-parts will skip it
-openemr-1  | hiiii
-openemr-1  | prelaunch hook OK
-openemr-1  | [TIMING] Step 15-PreApache: 2.0s elapsed
-openemr-1  | [TIMING] Total script execution time: 2.0s before Apache start
-openemr-1  | Starting Apache!
+DCL-1  | Love DCL? You can now support the project via the open collective:
+DCL-1  |  > https://opencollective.com/DCL/donate
+DCL-1  |
+DCL-1  | WARNING: /root/hooks/prelaunch/02nope has a shebang but is not executable; run-parts will skip it
+DCL-1  | hiiii
+DCL-1  | prelaunch hook OK
+DCL-1  | [TIMING] Step 15-PreApache: 2.0s elapsed
+DCL-1  | [TIMING] Total script execution time: 2.0s before Apache start
+DCL-1  | Starting Apache!
 ```
 
 ## Feedback
 
 This is a work-in-progress, minimally tooled to offer a starting point, and we welcome feedback about
-how we could build it out further. Let us know what you'd like to see in our [forums](https://community.open-emr.org/)!
+how we could build it out further. Let us know what you'd like to see in our [forums](https://community.dcl.org/)!

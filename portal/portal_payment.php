@@ -4,32 +4,32 @@
  *
  * namespace OnsitePortal
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2006-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2016-2019 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\FormatMoney;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\PaymentProcessing\Recorder;
-use OpenEMR\PaymentProcessing\Sphere\SpherePayment;
+use DCL\BC\ServiceContainer;
+use DCL\Billing\BillingUtilities;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\FormatMoney;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\PaymentProcessing\Recorder;
+use DCL\PaymentProcessing\Sphere\SpherePayment;
 
-// Will start the (patient) portal OpenEMR session/cookie.
+// Will start the (patient) portal DCL session/cookie.
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../vendor/autoload.php");
 $globalsBag = OEGlobalsBag::getInstance();

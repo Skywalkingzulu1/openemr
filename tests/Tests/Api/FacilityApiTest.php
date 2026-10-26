@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,11 +10,11 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Facility API Endpoint Test Cases.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 
@@ -28,9 +28,9 @@ class FacilityApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new FacilityFixtureManager();
         /** @var array<string, mixed> $fixture */

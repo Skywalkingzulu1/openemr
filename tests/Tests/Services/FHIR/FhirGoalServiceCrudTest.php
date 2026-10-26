@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCarePlan;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIREncounter;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGoal;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\Services\FHIR\FhirCarePlanService;
-use OpenEMR\Services\FHIR\FhirEncounterService;
-use OpenEMR\Services\FHIR\FhirGoalService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCarePlan;
+use DCL\FHIR\R4\FHIRDomainResource\FHIREncounter;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRGoal;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\Services\FHIR\FhirCarePlanService;
+use DCL\Services\FHIR\FhirEncounterService;
+use DCL\Services\FHIR\FhirGoalService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -26,13 +26,13 @@ use Psr\Log\LoggerInterface;
  * encounter field, so writes require an `encounter-associatedEncounter` FHIR extension
  * pointing at an existing encounter.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirGoalServiceCrudTest extends TestCase
 {
@@ -167,7 +167,7 @@ class FhirGoalServiceCrudTest extends TestCase
     #[Test]
     public function testInsertWithUnknownDescriptionCodeSystemIsRejected(): void
     {
-        // As in Medication and CarePlan: a description coding whose system OpenEMR cannot map
+        // As in Medication and CarePlan: a description coding whose system DCL cannot map
         // would read back under a system the caller never sent, so the write is refused.
         // description.text stays, which alone satisfies Goal.description (1..1) -- the refusal
         // has to come from the coding, not from a missing description.
@@ -178,7 +178,7 @@ class FhirGoalServiceCrudTest extends TestCase
         $this->assertIsArray($coding);
         $this->assertArrayHasKey(0, $coding);
         $this->assertIsArray($coding[0]);
-        $coding[0]['system'] = 'http://example.org/not-a-code-system-openemr-knows';
+        $coding[0]['system'] = 'http://example.org/not-a-code-system-DCL-knows';
         $description['coding'] = $coding;
         $payload['description'] = $description;
         $fixture = new FHIRGoal($payload);

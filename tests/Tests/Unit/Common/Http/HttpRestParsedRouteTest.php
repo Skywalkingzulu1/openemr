@@ -3,16 +3,16 @@
 /**
  * HttpRestParsedRouteTest verifies all of our route parsing logic works correctly for regular routes as well as FHIR
  * operations.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Http;
+namespace DCL\Tests\Unit\Common\Http;
 
-use OpenEMR\Common\Http\HttpRestParsedRoute;
+use DCL\Common\Http\HttpRestParsedRoute;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 

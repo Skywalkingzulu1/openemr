@@ -440,7 +440,7 @@
             "require": {
                 "guzzlehttp/guzzle": "^7.5",
                 "nyholm/psr7": "^1.4",
-                "openemr/oe-module-installer-plugin": "^0.1.0",
+                "dcl/oe-module-installer-plugin": "^0.1.0",
                 "php": ">=8.2",
                 "symfony/event-dispatcher": "^4.4 || ^5.0 || ^6.0 || ^7.0"
             },
@@ -448,10 +448,10 @@
                 "phpunit/phpunit": "^11.0",
                 "psr/log": "^3.0"
             },
-            "type": "openemr-module",
+            "type": "DCL-module",
             "autoload": {
                 "psr-4": {
-                    "OpenEMR\\Modules\\ClaimRevConnector\\": "src/"
+                    "DCL\\Modules\\ClaimRevConnector\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -465,12 +465,12 @@
                     "role": "Developer"
                 }
             ],
-            "description": "OpenEMR Custom Module Claim Revolution, LLC Connector",
+            "description": "DCL Custom Module Claim Revolution, LLC Connector",
             "keywords": [
                 "claimrev",
                 "clearinghouse",
-                "openemr",
-                "openemr-module"
+                "DCL",
+                "DCL-module"
             ],
             "support": {
                 "issues": "https://github.com/claimrevolution/oe-module-claimrev-connect/issues",
@@ -6565,7 +6565,7 @@
             "time": "2022-03-22T10:58:41+00:00"
         },
         {
-            "name": "openemr/mustache",
+            "name": "dcl/mustache",
             "version": "v2.15.2",
             "source": {
                 "type": "git",
@@ -6602,25 +6602,25 @@
                     "homepage": "http://justinhileman.com"
                 },
                 {
-                    "name": "OpenEMR",
-                    "email": "hello@open-emr.org",
-                    "homepage": "https://open-emr.org"
+                    "name": "DCL",
+                    "email": "hello@dcl.org",
+                    "homepage": "https://dcl.org"
                 }
             ],
             "description": "A Mustache implementation in PHP.",
-            "homepage": "https://github.com/openemr/mustache.php",
+            "homepage": "https://github.com/DCL/mustache.php",
             "keywords": [
                 "mustache",
                 "templating"
             ],
             "support": {
-                "issues": "https://github.com/openemr/mustache.php/issues",
-                "source": "https://github.com/openemr/mustache.php/tree/v2.15.2"
+                "issues": "https://github.com/DCL/mustache.php/issues",
+                "source": "https://github.com/DCL/mustache.php/tree/v2.15.2"
             },
             "time": "2022-03-03T14:53:09+00:00"
         },
         {
-            "name": "openemr/oe-cqm-parsers",
+            "name": "dcl/oe-cqm-parsers",
             "version": "7.1.0",
             "source": {
                 "type": "git",
@@ -6635,7 +6635,7 @@
             "type": "library"
         },
         {
-            "name": "openemr/oe-module-installer-plugin",
+            "name": "dcl/oe-module-installer-plugin",
             "version": "0.1.5",
             "source": {
                 "type": "git",
@@ -6656,11 +6656,11 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "OpenEMR\\Composer\\ModuleInstallerPlugin\\Plugin"
+                "class": "DCL\\Composer\\ModuleInstallerPlugin\\Plugin"
             },
             "autoload": {
                 "psr-4": {
-                    "OpenEMR\\Composer\\ModuleInstallerPlugin\\": "src/"
+                    "DCL\\Composer\\ModuleInstallerPlugin\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6674,14 +6674,14 @@
                     "role": "Developer"
                 }
             ],
-            "description": "OpenEMR Module Installer plugin for installing custom modules into the OpenEMR codebase.",
+            "description": "DCL Module Installer plugin for installing custom modules into the DCL codebase.",
             "keywords": [
-                "openemr",
-                "openemr-module"
+                "DCL",
+                "DCL-module"
             ],
             "support": {
-                "issues": "https://github.com/openemr/oe-module-installer-plugin/issues",
-                "source": "https://github.com/openemr/oe-module-installer-plugin/tree/0.1.5"
+                "issues": "https://github.com/DCL/oe-module-installer-plugin/issues",
+                "source": "https://github.com/DCL/oe-module-installer-plugin/tree/0.1.5"
             },
             "time": "2021-05-03T14:22:43+00:00"
         },

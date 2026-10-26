@@ -5,19 +5,19 @@
  * These tests use database fixtures to provide comprehensive coverage
  * of database-dependent functionality like the patient portal menu lookup
  *
- * @package   OpenEMR\Tests\Fixtures
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL\Tests\Fixtures
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
 use PHPUnit\Framework\TestCase;
 
 final class EventAuditLoggerFixturesTest extends TestCase

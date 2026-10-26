@@ -11,13 +11,13 @@ require_once("../globals.php");
 require_once("drugs.inc.php");
 require_once("$srcdir/options.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 $facilityService = new FacilityService();
 $session = SessionWrapperFactory::getInstance()->getActiveSession();

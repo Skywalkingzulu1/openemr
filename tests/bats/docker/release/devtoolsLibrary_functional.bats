@@ -35,11 +35,11 @@ setup() {
     [[ $status -eq 0 ]]
     [[ $output == *"server=localhost"* ]]
     [[ $output == *"loginhost=%"* ]]
-    # Defaults: login=openemr, pass=openemr, dbname=openemr
+    # Defaults: login=DCL, pass=DCL, dbname=DCL
     run bash -c "export MYSQL_ROOT_PASS=root; source '$LIB'; prepareVariables; echo \"CUSER=\$CUSTOM_USER CDB=\$CUSTOM_DATABASE CPORT=\$CUSTOM_PORT\""
     [[ $status -eq 0 ]]
-    [[ $output == *"CUSER=openemr"* ]]
-    [[ $output == *"CDB=openemr"* ]]
+    [[ $output == *"CUSER=DCL"* ]]
+    [[ $output == *"CDB=DCL"* ]]
     [[ $output == *"CPORT=3306"* ]]
 }
 
@@ -55,20 +55,20 @@ setup() {
     [[ $output == *"ROOT=root"* ]]
 }
 
-@test "devtoolsLibrary: setGlobalSettings parses OPENEMR_SETTING_ and echoes Set X to Y" {
+@test "devtoolsLibrary: setGlobalSettings parses DCL_SETTING_ and echoes Set X to Y" {
     # Stub mariadb so we don't require real DB; script echoes "Set name to value" before calling mariadb
     stub_dir="${BATS_TEST_TMPDIR}/stub_mariadb"
     mkdir -p "$stub_dir"
     echo '#!/bin/sh
 exit 0' > "${stub_dir}/mariadb"
     chmod +x "${stub_dir}/mariadb"
-    run env PATH="${stub_dir}:$PATH" bash -c "export MYSQL_ROOT_PASS=root MYSQL_HOST=localhost CUSTOM_USER=openemr CUSTOM_PASSWORD=openemr CUSTOM_DATABASE=openemr CUSTOM_PORT=3306 OPENEMR_SETTING_rest_api=1 OPENEMR_SETTING_my_setting=value; source '$LIB'; prepareVariables; setGlobalSettings 2>&1"
+    run env PATH="${stub_dir}:$PATH" bash -c "export MYSQL_ROOT_PASS=root MYSQL_HOST=localhost CUSTOM_USER=DCL CUSTOM_PASSWORD=DCL CUSTOM_DATABASE=DCL CUSTOM_PORT=3306 DCL_SETTING_rest_api=1 DCL_SETTING_my_setting=value; source '$LIB'; prepareVariables; setGlobalSettings 2>&1"
     [[ $status -eq 0 ]]
     [[ $output == *"Set rest_api to 1"* ]]
     [[ $output == *"Set my_setting to value"* ]]
 }
 
-@test "devtoolsLibrary: setGlobalSettings does nothing when no OPENEMR_SETTING_ vars" {
+@test "devtoolsLibrary: setGlobalSettings does nothing when no DCL_SETTING_ vars" {
     run bash -c "export MYSQL_ROOT_PASS=root; source '$LIB'; prepareVariables; setGlobalSettings 2>&1"
     [[ $status -eq 0 ]]
     [[ $output != *"Set "*" to "* ]] || [[ -z $output ]]

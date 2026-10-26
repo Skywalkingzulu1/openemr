@@ -7,26 +7,26 @@
  * supported key versions (v1-v7). This enables regression testing when
  * refactoring encryption code.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
 
 class CryptoFixtureManager
 {
     /**
      * Known plaintext used for all test vectors.
      */
-    public const PLAINTEXT = 'Hello, OpenEMR! This is test data for encryption verification.';
+    public const PLAINTEXT = 'Hello, DCL! This is test data for encryption verification.';
 
     /**
      * Pre-computed ciphertext for each version using drive keys.

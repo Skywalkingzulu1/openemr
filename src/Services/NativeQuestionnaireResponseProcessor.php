@@ -10,18 +10,18 @@
  * concerns — CSRF, ACL, patient-session pid, repository lookups, persistence — and delegates
  * the rest here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Services\InvalidQuestionnaireResponseException;
+use DCL\Services\InvalidQuestionnaireResponseException;
 
 class NativeQuestionnaireResponseProcessor
 {

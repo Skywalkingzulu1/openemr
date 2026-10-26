@@ -9,17 +9,17 @@
  *  Note that all time collection/derivation is from the mysql/mariadb server (in order to ensure things do not
  *   break in case the time set on the php server and mysql/mariadb server are different).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Session;
+namespace DCL\Common\Session;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
 
 class SessionTracker
 {
@@ -41,18 +41,18 @@ class SessionTracker
     {
         $session = SessionWrapperFactory::getInstance()->getActiveSession();
         if (empty($session->get('session_database_uuid'))) {
-            error_log("OpenEMR Error: session_database_uuid session variable is missing");
+            error_log("DCL Error: session_database_uuid session variable is missing");
             return true;
         }
         $sessionTracker = sqlQueryNoLog("SELECT `last_updated`, NOW() as `current_time` FROM `session_tracker` WHERE `uuid` = ?", [$session->get('session_database_uuid')]);
         if (empty($sessionTracker) || empty($sessionTracker['last_updated']) || empty($sessionTracker['current_time'])) {
-            error_log("OpenEMR Error: session entry in session_tracker table is missing or invalid");
+            error_log("DCL Error: session entry in session_tracker table is missing or invalid");
             return true;
         }
         $last_updated = strtotime((string) $sessionTracker['last_updated']);
         $current_time = strtotime((string) $sessionTracker['current_time']);
         if ($last_updated > $current_time) {
-            error_log("OpenEMR Error: isSessionExpired error (last_updated time is ahead of current time which should be impossible)");
+            error_log("DCL Error: isSessionExpired error (last_updated time is ahead of current time which should be impossible)");
             return true;
         }
         if (($current_time - $last_updated) > OEGlobalsBag::getInstance()->getInt('timeout')) {

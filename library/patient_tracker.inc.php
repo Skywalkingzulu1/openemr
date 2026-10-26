@@ -19,18 +19,18 @@
 * You should have received a copy of the GNU General Public License
 * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
 *
-* @package OpenEMR
+* @package DCL
 * @author Terry Hill <terry@lillysystems.com>
-* @link https://www.open-emr.org
+* @link https://www.dcl.org
 *
-* Please help the overall project by sending changes you make to the author and to the OpenEMR community.
+* Please help the overall project by sending changes you make to the author and to the DCL community.
 *
 */
 
 require_once(__DIR__ . '/appointments.inc.php');
 
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\PatientTrackerService;
+use DCL\Services\AppointmentService;
+use DCL\Services\PatientTrackerService;
 
 function get_Tracker_Time_Interval($tracker_from_time, $tracker_to_time, $allow_sec = false): string
 {

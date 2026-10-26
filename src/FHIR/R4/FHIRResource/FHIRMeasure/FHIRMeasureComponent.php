@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasure;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The Measure resource provides the definition of a quality measure.
@@ -71,19 +71,19 @@ class FHIRMeasureComponent extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Indicates a meaning for the stratifier component. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The human readable description of this stratifier criteria component.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * An expression that specifies the criteria for this component of the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $criteria = null;
 
@@ -94,7 +94,7 @@ class FHIRMeasureComponent extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Indicates a meaning for the stratifier component. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -103,7 +103,7 @@ class FHIRMeasureComponent extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Indicates a meaning for the stratifier component. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -114,7 +114,7 @@ class FHIRMeasureComponent extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The human readable description of this stratifier criteria component.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -123,7 +123,7 @@ class FHIRMeasureComponent extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The human readable description of this stratifier criteria component.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -134,7 +134,7 @@ class FHIRMeasureComponent extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * An expression that specifies the criteria for this component of the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getCriteria()
     {
@@ -143,7 +143,7 @@ class FHIRMeasureComponent extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * An expression that specifies the criteria for this component of the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $criteria
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $criteria
      * @return $this
      */
     public function setCriteria($criteria)

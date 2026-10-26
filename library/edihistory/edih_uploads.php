@@ -3,12 +3,12 @@
 /**
  * edih_uploads.php
  *
- * @package    OpenEMR
+ * @package    DCL
  * @subpackage ediHistory
- * @link       https://www.open-emr.org
+ * @link       https://www.dcl.org
  * @author     Kevin McCormick
  * @copyright  Copyright (c) 2017 Kevin McCormick
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 
@@ -197,7 +197,7 @@ function edih_ziptoarray($zipfilename, $param_ar, $single = false): array
         return $f_zr;
     }
 
-    if (!\OpenEMR\Common\Zip\ZipExtractionGuard::isSafe($zip_obj)) {
+    if (!\DCL\Common\Zip\ZipExtractionGuard::isSafe($zip_obj)) {
         $err = 'Archive exceeds extraction limits';
         csv_edihist_log('edih_ziptoarray: ' . $zipfilename . ' ' . $err);
         $f_zr['reject'][] = ['name' => $zipfilename, 'comment' => $err];

@@ -3,20 +3,20 @@
 /**
  * This implementation of processing task re-opens all claims
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing\BillingProcessor\Tasks;
+namespace DCL\Billing\BillingProcessor\Tasks;
 
-use OpenEMR\Billing\BillingProcessor\BillingClaim;
-use OpenEMR\Billing\BillingProcessor\LoggerInterface;
-use OpenEMR\Billing\BillingProcessor\ProcessingTaskInterface;
-use OpenEMR\Billing\BillingProcessor\Traits\WritesToBillingLog;
-use OpenEMR\Billing\BillingUtilities;
+use DCL\Billing\BillingProcessor\BillingClaim;
+use DCL\Billing\BillingProcessor\LoggerInterface;
+use DCL\Billing\BillingProcessor\ProcessingTaskInterface;
+use DCL\Billing\BillingProcessor\Traits\WritesToBillingLog;
+use DCL\Billing\BillingUtilities;
 
 class TaskReopen extends AbstractProcessingTask implements ProcessingTaskInterface, LoggerInterface
 {

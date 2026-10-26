@@ -2,33 +2,33 @@
 
 /*
  * FhirGenericRestController.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\SMART\ResourceConstraintFilterer;
-use OpenEMR\RestControllers\Config\RestConfig;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirResourcesService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\FhirValidationService;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\IGlobalsAware;
-use OpenEMR\Services\Trait\GlobalInterfaceTrait;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\SMART\ResourceConstraintFilterer;
+use DCL\RestControllers\Config\RestConfig;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirResourcesService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\FhirValidationService;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\IGlobalsAware;
+use DCL\Services\Trait\GlobalInterfaceTrait;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -397,7 +397,7 @@ class FhirGenericRestController implements IGlobalsAware {
      * IDOR-style write that targets another patient than the token authorized.
      *
      * For practitioner/admin tokens (no bound patient) this is a no-op — the
-     * upstream ACL check already gates the resource type, and OpenEMR's
+     * upstream ACL check already gates the resource type, and DCL's
      * broader provider/facility access model governs which patients a
      * practitioner can act on.
      *
@@ -413,7 +413,7 @@ class FhirGenericRestController implements IGlobalsAware {
         if ($boundPatientUuid === null || $boundPatientUuid === '') {
             return null;
         }
-        if (!($this->getFhirService() instanceof \OpenEMR\Services\FHIR\IPatientCompartmentResourceService)) {
+        if (!($this->getFhirService() instanceof \DCL\Services\FHIR\IPatientCompartmentResourceService)) {
             return null;
         }
         $bodyPatientUuid = self::extractPatientUuidFromFhirJson($fhirJson);
@@ -553,7 +553,7 @@ class FhirGenericRestController implements IGlobalsAware {
             );
         }
 
-        $className = 'OpenEMR\\FHIR\\R4\\FHIRDomainResource\\FHIR' . $this->expectedResourceType;
+        $className = 'DCL\\FHIR\\R4\\FHIRDomainResource\\FHIR' . $this->expectedResourceType;
         if (!class_exists($className)) {
             // The expected type is set by trusted route code, so a missing
             // class is a server misconfiguration rather than client error.

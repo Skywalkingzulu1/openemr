@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).
@@ -71,19 +71,19 @@ class FHIRMedicinalProductCountryLanguage extends FHIRBackboneElement implements
 {
     /**
      * Country code for where this name applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $country = null;
 
     /**
      * Jurisdiction code for where this name applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $jurisdiction = null;
 
     /**
      * Language code for this name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $language = null;
 
@@ -94,7 +94,7 @@ class FHIRMedicinalProductCountryLanguage extends FHIRBackboneElement implements
 
     /**
      * Country code for where this name applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCountry()
     {
@@ -103,7 +103,7 @@ class FHIRMedicinalProductCountryLanguage extends FHIRBackboneElement implements
 
     /**
      * Country code for where this name applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
      * @return $this
      */
     public function setCountry($country)
@@ -114,7 +114,7 @@ class FHIRMedicinalProductCountryLanguage extends FHIRBackboneElement implements
 
     /**
      * Jurisdiction code for where this name applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getJurisdiction()
     {
@@ -123,7 +123,7 @@ class FHIRMedicinalProductCountryLanguage extends FHIRBackboneElement implements
 
     /**
      * Jurisdiction code for where this name applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function setJurisdiction($jurisdiction)
@@ -134,7 +134,7 @@ class FHIRMedicinalProductCountryLanguage extends FHIRBackboneElement implements
 
     /**
      * Language code for this name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguage()
     {
@@ -143,7 +143,7 @@ class FHIRMedicinalProductCountryLanguage extends FHIRBackboneElement implements
 
     /**
      * Language code for this name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
      * @return $this
      */
     public function setLanguage($language)

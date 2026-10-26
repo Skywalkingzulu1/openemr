@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package OpenEMR
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Tests\ECQM;
+namespace DCL\Tests\ECQM;
 
-use OpenEMR\Services\Qdm\CqmCalculator;
-use OpenEMR\Services\Qdm\Measure;
-use OpenEMR\Services\Qdm\MeasureService;
-use OpenEMR\Services\Qdm\QdmBuilder;
-use OpenEMR\Services\Qdm\QdmRequestOne;
+use DCL\Services\Qdm\CqmCalculator;
+use DCL\Services\Qdm\Measure;
+use DCL\Services\Qdm\MeasureService;
+use DCL\Services\Qdm\QdmBuilder;
+use DCL\Services\Qdm\QdmRequestOne;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 

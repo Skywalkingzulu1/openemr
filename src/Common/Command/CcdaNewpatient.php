@@ -3,18 +3,18 @@
 /**
  * CcdaNewpatient class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use Carecoordination\Model\CarecoordinationTable;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionUtil;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -27,7 +27,7 @@ class CcdaNewpatient extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:ccda-newpatient')
+            ->setName('DCL:ccda-newpatient')
             ->setDescription('Import new patient from audit table id and ccda document id')
             ->addUsage('--site=default --am_id=5 --document_id=7')
             ->setDefinition(

@@ -1,6 +1,6 @@
-# Standard API (OpenEMR REST)
+# Standard API (DCL REST)
 
-Complete guide to OpenEMR's Standard REST API for native OpenEMR resources.
+Complete guide to DCL's Standard REST API for native DCL resources.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -17,10 +17,10 @@ Complete guide to OpenEMR's Standard REST API for native OpenEMR resources.
 
 ## Overview
 
-The **OpenEMR Standard REST API** provides access to OpenEMR's native data structures through RESTful endpoints. This API is designed for:
+The **DCL Standard REST API** provides access to DCL's native data structures through RESTful endpoints. This API is designed for:
 
-- ✅ **OpenEMR-specific operations** - Native data structures
-- ✅ **Custom integrations** - Direct access to OpenEMR tables
+- ✅ **DCL-specific operations** - Native data structures
+- ✅ **Custom integrations** - Direct access to DCL tables
 - ✅ **Administrative functions** - User management, facilities, etc.
 - ✅ **Legacy system integration** - Non-FHIR compatible systems
 
@@ -28,8 +28,8 @@ The **OpenEMR Standard REST API** provides access to OpenEMR's native data struc
 
 | Use Standard API When | Use FHIR API When |
 |----------------------|-------------------|
-| Need OpenEMR-specific data structures | Need healthcare interoperability |
-| Integrating with existing OpenEMR workflows | Building standards-compliant apps |
+| Need DCL-specific data structures | Need healthcare interoperability |
+| Integrating with existing DCL workflows | Building standards-compliant apps |
 | Require direct table access | Need vendor-neutral data model |
 | Administrative/operational tasks | Clinical data exchange |
 | Legacy system integration | SMART on FHIR apps required |
@@ -42,7 +42,7 @@ The **OpenEMR Standard REST API** provides access to OpenEMR's native data struc
 
 Navigate to: **Administration → Config → Connectors**
 
-Enable: **☑ Enable OpenEMR Standard REST API**
+Enable: **☑ Enable DCL Standard REST API**
 
 ### 2. Configure SSL/TLS
 
@@ -67,7 +67,7 @@ See [Authorization Guide](AUTHORIZATION.md#standard-api-scopes-apioemr) for comp
 
 Standard API endpoints use the following base URL pattern:
 ```
-https://{your-openemr-host}/apis/{site}/api
+https://{your-DCL-host}/apis/{site}/api
 ```
 
 ### Default Site
@@ -122,7 +122,7 @@ Accept: application/json
 
 ## API Endpoints
 
-### Standard API ([swagger](https://demo.openemr.io/openemr/swagger/#/standard))
+### Standard API ([swagger](https://demo.DCL.io/DCL/swagger/#/standard))
 | Resource                         | permissions | Description                                                                                            |
 |----------------------------------|-------------|--------------------------------------------------------------------------------------------------------|
 | Facility                         | crus        | Manage facility/service location information (`facility` table).                                       |
@@ -158,14 +158,14 @@ Accept: application/json
 | d           | Delete resource                      |
 | s           | Search/List resources                |
 
-## Patient Portal API ([swagger](https://demo.openemr.io/openemr/swagger/#/standard-patient))
+## Patient Portal API ([swagger](https://demo.DCL.io/DCL/swagger/#/standard-patient))
 
 **EXPERIMENTAL** - Patient-facing API endpoints.
 
 ### Enable Portal API
 
 **Administration → Config → Connectors**
-- ☑ Enable OpenEMR Patient Portal REST API (EXPERIMENTAL)
+- ☑ Enable DCL Patient Portal REST API (EXPERIMENTAL)
 
 ### Base URL
 ```
@@ -457,7 +457,7 @@ curl -X POST 'https://localhost:9300/apis/default/api/patient/90cde167-7b9b-4ed1
 
 Test Standard API endpoints interactively with Swagger UI:
 ```
-https://your-openemr-install/swagger/
+https://your-DCL-install/swagger/
 ```
 
 Navigate to the **standard** section in Swagger UI.
@@ -465,14 +465,14 @@ Navigate to the **standard** section in Swagger UI.
 ### Online Demos
 
 Test against live demo instances:
-- **Demo Portal:** https://www.open-emr.org/wiki/index.php/Development_Demo
+- **Demo Portal:** https://www.dcl.org/wiki/index.php/Development_Demo
 - **Click:** "API (Swagger) User Interface" link
 
 ### Configure Swagger OAuth
 
 Set your client's redirect URI to:
 ```
-<OpenEMR base URI>/swagger/oauth2-redirect.html
+<DCL base URI>/swagger/oauth2-redirect.html
 ```
 
 Example:
@@ -489,9 +489,9 @@ https://localhost:9300/swagger/oauth2-redirect.html
 - Check [Developer Guide](DEVELOPER_GUIDE.md) for advanced topics
 
 **Support:**
-- Community Forum: https://community.open-emr.org/
-- GitHub Issues: https://github.com/openemr/openemr/issues
-- API Development Thread: https://community.open-emr.org/t/v6-authorization-and-api-changes-afoot/15450
+- Community Forum: https://community.dcl.org/
+- GitHub Issues: https://github.com/DCL/DCL/issues
+- API Development Thread: https://community.dcl.org/t/v6-authorization-and-api-changes-afoot/15450
 
 **Recommendation:**
 For new integrations, consider using the [FHIR API](FHIR_API.md) for better interoperability and standards compliance.
@@ -500,9 +500,9 @@ For new integrations, consider using the [FHIR API](FHIR_API.md) for better inte
 ## Documentation Attribution
 
 ### Authorship
-This documentation represents the collective knowledge and contributions of the OpenEMR open-source community. The content is based on:
-- Original documentation by OpenEMR developers and contributors
-- Technical specifications from the OpenEMR codebase
+This documentation represents the collective knowledge and contributions of the DCL open-source community. The content is based on:
+- Original documentation by DCL developers and contributors
+- Technical specifications from the DCL codebase
 - Community feedback and real-world implementation experience
 
 ### AI Assistance
@@ -515,10 +515,10 @@ The organization, structure, and presentation of this documentation was enhanced
 All technical accuracy is maintained from the original community-authored documentation.
 
 ### Contributing
-OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
-- **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+DCL is an open-source project. To contribute to this documentation:
+- **Report Issues:** [GitHub Issues](https://github.com/DCL/DCL/issues)
+- **Discuss:** [Community Forum](https://community.dcl.org/)
+- **Submit Changes:** [Pull Requests](https://github.com/DCL/DCL/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

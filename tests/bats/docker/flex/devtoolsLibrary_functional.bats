@@ -24,9 +24,9 @@ setup() {
     [[ $output == *"CDB=customdb"* ]]
 }
 
-@test "flex devtoolsLibrary: prepareVariables defaults (openemr, 3306)" {
+@test "flex devtoolsLibrary: prepareVariables defaults (DCL, 3306)" {
     run bash -c "export MYSQL_ROOT_PASS=root; source '$LIB'; prepareVariables; echo \"CUSER=\$CUSTOM_USER CPORT=\$CUSTOM_PORT\""
     [[ $status -eq 0 ]]
-    [[ $output == *"CUSER=openemr"* ]]
+    [[ $output == *"CUSER=DCL"* ]]
     [[ $output == *"CPORT=3306"* ]]
 }

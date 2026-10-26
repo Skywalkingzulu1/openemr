@@ -3,19 +3,19 @@
 /**
  * interface/modules/zend_modules/module/Documents/src/Documents/Plugin/Documents.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Basil PT <basil@zhservices.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Documents\Plugin;
 
 use Documents\Model\DocumentsTable;
 use Laminas\Mvc\Controller\Plugin\AbstractPlugin;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
 
 require_once(OEGlobalsBag::getInstance()->getProjectDir() . "/controllers/C_Document.class.php");
 

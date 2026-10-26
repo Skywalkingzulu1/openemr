@@ -1,43 +1,43 @@
 <?php
 
 /**
- * FhirAppointmentService handles the mapping of data from the OpenEMR appointment service into FHIR resources.
- * @package openemr
- * @link      https://www.open-emr.org
+ * FhirAppointmentService handles the mapping of data from the DCL appointment service into FHIR resources.
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointment;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAppointmentStatus;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRInstant;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRParticipationStatus;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\Utilities;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRAppointment;
+use DCL\FHIR\R4\FHIRElement\FHIRAppointmentStatus;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRInstant;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRParticipationStatus;
+use DCL\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\AppointmentService;
+use DCL\Services\BaseService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 use Particle\Validator\ValidationResult;
 
 class FhirAppointmentService extends FhirServiceBase implements IPatientCompartmentResourceService, IFhirExportableResourceService
@@ -71,7 +71,7 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
 
     /**
      * pc_catid fallback for when even the constant lookup finds nothing -- a site can
-     * deactivate or delete the stock category. 5 is what openemr_postcalendar_events.pc_catid
+     * deactivate or delete the stock category. 5 is what DCL_postcalendar_events.pc_catid
      * defaults to in the schema, and is 'office_visit' in the stock seed.
      */
     private const DEFAULT_CATEGORY_ID = 5;
@@ -95,7 +95,7 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -113,12 +113,12 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
     }
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR Resource
+     * Parses an DCL data record, returning the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRAppointment
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRAppointment
     {
         $appt = new FHIRAppointment();
 
@@ -295,10 +295,10 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
 
 
     /**
-     * Parses a FHIR Appointment resource, returning the equivalent OpenEMR record.
+     * Parses a FHIR Appointment resource, returning the equivalent DCL record.
      *
      * @param FHIRDomainResource $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record
+     * @return array a mapped DCL data record
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -315,7 +315,7 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
         $json = $fhirResource->jsonSerialize();
         $data = [];
 
-        // status -> pc_apptstatus (reverse the status mapping from parseOpenEMRRecord)
+        // status -> pc_apptstatus (reverse the status mapping from parseDCLRecord)
         $status = $json['status'] ?? null;
         $data['pc_apptstatus'] = is_string($status) && $status !== ''
             ? $this->mapFhirStatusToOpenEmr($status)
@@ -452,10 +452,10 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
     }
 
     /**
-     * Maps a FHIR Appointment status code to an OpenEMR appointment status code.
+     * Maps a FHIR Appointment status code to an DCL appointment status code.
      *
      * @param string $fhirStatus The FHIR status code
-     * @return string The OpenEMR appointment status code
+     * @return string The DCL appointment status code
      */
     private function mapFhirStatusToOpenEmr(string $fhirStatus): string
     {
@@ -482,7 +482,7 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
     private function lookupCategoryByConstantId(string $constantId)
     {
         $result = QueryUtils::querySingleRow(
-            "SELECT pc_catid FROM openemr_postcalendar_categories WHERE pc_constant_id = ? AND pc_active = 1",
+            "SELECT pc_catid FROM DCL_postcalendar_categories WHERE pc_constant_id = ? AND pc_active = 1",
             [$constantId]
         );
         $catId = is_array($result) ? ($result['pc_catid'] ?? null) : null;
@@ -493,14 +493,14 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      *
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Appointment record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Appointment record array');
         }
 
         $processingResult = new ProcessingResult();
@@ -577,19 +577,19 @@ class FhirAppointmentService extends FhirServiceBase implements IPatientCompartm
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-    * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+    * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->appointmentService->search($openEMRSearchParameters, true);
+        return $this->appointmentService->search($DCLSearchParameters, true);
     }
 
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return the FHIR Resource. Returned format is defined using $encode parameter.
      */

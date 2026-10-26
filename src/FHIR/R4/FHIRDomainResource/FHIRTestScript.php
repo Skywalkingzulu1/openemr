@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -72,145 +72,145 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this test script is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the test script is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this test script when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * The identifier that is used to identify this version of the test script when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the test script author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the test script. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the test script.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this test script. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the test script.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the test script from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate test script instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the test script is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this test script is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * An abstract server used in operations within this test script in the origin element.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin[]
      */
     public $origin = [];
 
     /**
      * An abstract server used in operations within this test script in the destination element.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptDestination[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptDestination[]
      */
     public $destination = [];
 
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata
      */
     public $metadata = null;
 
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptFixture[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptFixture[]
      */
     public $fixture = [];
 
     /**
      * Reference to the profile to be used for validation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $profile = [];
 
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptVariable[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptVariable[]
      */
     public $variable = [];
 
     /**
      * A series of required setup operations before tests are executed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptSetup
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptSetup
      */
     public $setup = null;
 
     /**
      * A test in this script.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTest[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTest[]
      */
     public $test = [];
 
     /**
      * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown
      */
     public $teardown = null;
 
@@ -221,7 +221,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this test script is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the test script is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -230,7 +230,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this test script is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the test script is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -241,7 +241,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this test script when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -250,7 +250,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this test script when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -261,7 +261,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier that is used to identify this version of the test script when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the test script author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -270,7 +270,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier that is used to identify this version of the test script when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the test script author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -281,7 +281,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the test script. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -290,7 +290,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the test script. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -301,7 +301,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for the test script.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -310,7 +310,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for the test script.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -321,7 +321,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of this test script. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -330,7 +330,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of this test script. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -341,7 +341,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -350,7 +350,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -361,7 +361,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -370,7 +370,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -381,7 +381,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the test script.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -390,7 +390,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the test script.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -401,7 +401,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -410,7 +410,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -421,7 +421,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the test script from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -430,7 +430,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the test script from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -441,7 +441,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate test script instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -450,7 +450,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate test script instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -461,7 +461,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the test script is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -470,7 +470,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the test script is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -481,7 +481,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Explanation of why this test script is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -490,7 +490,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Explanation of why this test script is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -501,7 +501,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -510,7 +510,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -521,7 +521,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An abstract server used in operations within this test script in the origin element.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin[]
      */
     public function getOrigin()
     {
@@ -530,7 +530,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An abstract server used in operations within this test script in the origin element.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin $origin
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin $origin
      * @return $this
      */
     public function addOrigin($origin)
@@ -541,7 +541,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An abstract server used in operations within this test script in the destination element.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptDestination[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptDestination[]
      */
     public function getDestination()
     {
@@ -550,7 +550,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An abstract server used in operations within this test script in the destination element.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptDestination $destination
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptDestination $destination
      * @return $this
      */
     public function addDestination($destination)
@@ -561,7 +561,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata
      */
     public function getMetadata()
     {
@@ -570,7 +570,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata $metadata
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata $metadata
      * @return $this
      */
     public function setMetadata($metadata)
@@ -581,7 +581,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptFixture[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptFixture[]
      */
     public function getFixture()
     {
@@ -590,7 +590,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptFixture $fixture
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptFixture $fixture
      * @return $this
      */
     public function addFixture($fixture)
@@ -601,7 +601,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to the profile to be used for validation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getProfile()
     {
@@ -610,7 +610,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to the profile to be used for validation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -621,7 +621,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptVariable[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptVariable[]
      */
     public function getVariable()
     {
@@ -630,7 +630,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptVariable $variable
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptVariable $variable
      * @return $this
      */
     public function addVariable($variable)
@@ -641,7 +641,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A series of required setup operations before tests are executed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptSetup
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptSetup
      */
     public function getSetup()
     {
@@ -650,7 +650,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A series of required setup operations before tests are executed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptSetup $setup
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptSetup $setup
      * @return $this
      */
     public function setSetup($setup)
@@ -661,7 +661,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A test in this script.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTest[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTest[]
      */
     public function getTest()
     {
@@ -670,7 +670,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A test in this script.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTest $test
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTest $test
      * @return $this
      */
     public function addTest($test)
@@ -681,7 +681,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown
      */
     public function getTeardown()
     {
@@ -690,7 +690,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown $teardown
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown $teardown
      * @return $this
      */
     public function setTeardown($teardown)

@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Services\FHIR\Utils;
+namespace DCL\Services\FHIR\Utils;
 
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRequest;
 use Psr\Log\LoggerInterface;
 
 class SearchRequestNormalizer

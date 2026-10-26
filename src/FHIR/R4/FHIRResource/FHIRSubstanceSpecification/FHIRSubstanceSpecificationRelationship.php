@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -70,62 +70,62 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $substanceReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $substanceCodeableConcept = null;
 
     /**
      * For example "salt to parent", "active moiety", "starting material".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $relationship = null;
 
     /**
      * For example where an enzyme strongly bonds with a particular substance, this is a defining relationship for that enzyme, out of several possible substance relationships.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $isDefining = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amountQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $amountRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $amountRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $amountString = null;
 
     /**
      * For use when the numeric.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $amountRatioLowLimit = null;
 
     /**
      * An operator for the amount, for example "average", "approximately", "less than".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $amountType = null;
 
     /**
      * Supporting literature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
@@ -135,7 +135,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     private $_fhirElementName = 'SubstanceSpecification.Relationship';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubstanceReference()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $substanceReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $substanceReference
      * @return $this
      */
     public function setSubstanceReference($substanceReference)
@@ -153,7 +153,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstanceCodeableConcept()
     {
@@ -161,7 +161,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
      * @return $this
      */
     public function setSubstanceCodeableConcept($substanceCodeableConcept)
@@ -172,7 +172,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * For example "salt to parent", "active moiety", "starting material".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship()
     {
@@ -181,7 +181,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * For example "salt to parent", "active moiety", "starting material".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
     public function setRelationship($relationship)
@@ -192,7 +192,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * For example where an enzyme strongly bonds with a particular substance, this is a defining relationship for that enzyme, out of several possible substance relationships.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getIsDefining()
     {
@@ -201,7 +201,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * For example where an enzyme strongly bonds with a particular substance, this is a defining relationship for that enzyme, out of several possible substance relationships.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $isDefining
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $isDefining
      * @return $this
      */
     public function setIsDefining($isDefining)
@@ -211,7 +211,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity()
     {
@@ -219,7 +219,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return $this
      */
     public function setAmountQuantity($amountQuantity)
@@ -229,7 +229,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAmountRange()
     {
@@ -237,7 +237,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $amountRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $amountRange
      * @return $this
      */
     public function setAmountRange($amountRange)
@@ -247,7 +247,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getAmountRatio()
     {
@@ -255,7 +255,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $amountRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $amountRatio
      * @return $this
      */
     public function setAmountRatio($amountRatio)
@@ -265,7 +265,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAmountString()
     {
@@ -273,7 +273,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $amountString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $amountString
      * @return $this
      */
     public function setAmountString($amountString)
@@ -284,7 +284,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * For use when the numeric.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getAmountRatioLowLimit()
     {
@@ -293,7 +293,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * For use when the numeric.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $amountRatioLowLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $amountRatioLowLimit
      * @return $this
      */
     public function setAmountRatioLowLimit($amountRatioLowLimit)
@@ -304,7 +304,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * An operator for the amount, for example "average", "approximately", "less than".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAmountType()
     {
@@ -313,7 +313,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * An operator for the amount, for example "average", "approximately", "less than".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $amountType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $amountType
      * @return $this
      */
     public function setAmountType($amountType)
@@ -324,7 +324,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * Supporting literature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -333,7 +333,7 @@ class FHIRSubstanceSpecificationRelationship extends FHIRBackboneElement impleme
 
     /**
      * Supporting literature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)

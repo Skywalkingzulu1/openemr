@@ -7,16 +7,16 @@
  * the OAuth2 password grant. Supports both user_role=users (admin)
  * and user_role=patient (portal) flows.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Support\OAuth2;
+namespace DCL\Tests\Support\OAuth2;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;

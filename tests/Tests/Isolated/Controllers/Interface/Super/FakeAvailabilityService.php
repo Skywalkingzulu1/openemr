@@ -7,21 +7,21 @@
  * touching the database, so the controller can be exercised and its view rendered in
  * isolated tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Controllers\Interface\Super;
+namespace DCL\Tests\Isolated\Controllers\Interface\Super;
 
 use InvalidArgumentException;
-use OpenEMR\Services\Questionnaire\AssignmentRecord;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
+use DCL\Services\Questionnaire\AssignmentRecord;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
 
 class FakeAvailabilityService extends QuestionnaireAvailabilityService
 {

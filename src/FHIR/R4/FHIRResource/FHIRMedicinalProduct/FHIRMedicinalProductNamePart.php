@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).
@@ -71,13 +71,13 @@ class FHIRMedicinalProductNamePart extends FHIRBackboneElement implements \JsonS
 {
     /**
      * A fragment of a product name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $part = null;
 
     /**
      * Identifying type for this part of the name (e.g. strength part).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $type = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicinalProductNamePart extends FHIRBackboneElement implements \JsonS
 
     /**
      * A fragment of a product name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPart()
     {
@@ -97,7 +97,7 @@ class FHIRMedicinalProductNamePart extends FHIRBackboneElement implements \JsonS
 
     /**
      * A fragment of a product name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $part
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $part
      * @return $this
      */
     public function setPart($part)
@@ -108,7 +108,7 @@ class FHIRMedicinalProductNamePart extends FHIRBackboneElement implements \JsonS
 
     /**
      * Identifying type for this part of the name (e.g. strength part).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getType()
     {
@@ -117,7 +117,7 @@ class FHIRMedicinalProductNamePart extends FHIRBackboneElement implements \JsonS
 
     /**
      * Identifying type for this part of the name (e.g. strength part).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function setType($type)

@@ -3,24 +3,24 @@
 /*
  * Work/School Note Form new.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Nikolai Vitsyn
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2004-2005 Nikolai Vitsyn
  * @copyright Copyright (c) Open Source Medical Software
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * sherwingaddis@gmail.com added bootstrap 2023
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 
 require_once dirname(__FILE__, 3) . "/globals.php";
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
 $srcdir = OEGlobalsBag::getInstance()->getSrcDir();

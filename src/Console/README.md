@@ -1,6 +1,6 @@
 # Console commands
 
-These commands intentionally differ from those in `OpenEMR\Common\Command`:
+These commands intentionally differ from those in `DCL\Common\Command`:
 
 1) They support (and may require) dependency injection with autowiring
 2) They leverage the `__invoke` Symfony Console tooling for improved/simplified type safety

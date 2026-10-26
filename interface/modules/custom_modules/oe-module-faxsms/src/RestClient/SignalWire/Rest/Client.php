@@ -11,17 +11,17 @@
  *     $client->fax->v1->faxes->getContext($sid)->fetch()
  *     $client->fax->v1->faxes->getContext($sid)->delete()
  *
- * All HTTP goes through Guzzle (bundled with OpenEMR), so the transport is
+ * All HTTP goes through Guzzle (bundled with DCL), so the transport is
  * injectable/mockable in tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\RestClient\SignalWire\Rest;
+namespace DCL\Modules\FaxSMS\RestClient\SignalWire\Rest;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;

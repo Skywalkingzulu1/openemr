@@ -3,32 +3,32 @@
 /**
  * MainMenuRole class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Application\Listener;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Menu\MenuEvent;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Menu\MenuEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Class ModuleMenuSubscriber
  * @package Application\Listener
  *
- * Listens to OpenEMR menu events and adds menu items to the menu structure based upon which modules
+ * Listens to DCL menu events and adds menu items to the menu structure based upon which modules
  * have been installed through the Laminas Module system.
  *
- * This can be used as an example of how to use the OpenEMR event dispatcher and the module system to extend the
- * codebase without modifying the core OpenEMR files.  This facilitates easier upgrading and clean separations of concerns.
+ * This can be used as an example of how to use the DCL event dispatcher and the module system to extend the
+ * codebase without modifying the core DCL files.  This facilitates easier upgrading and clean separations of concerns.
  */
 class ModuleMenuSubscriber implements EventSubscriberInterface
 {
@@ -45,7 +45,7 @@ class ModuleMenuSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * We inject our module system menu updates when the OpenEMR menu system has been updated.
+     * We inject our module system menu updates when the DCL menu system has been updated.
      * In this case we add any modules that have registered as 'hook's to the Modules sub menu
      * and the reports sub menu.
      *

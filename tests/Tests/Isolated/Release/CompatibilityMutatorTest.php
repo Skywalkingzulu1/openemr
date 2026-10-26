@@ -8,19 +8,19 @@
  * the real CompatibilityDeriver + Renderer (both are `final readonly`
  * so no mocking; the test fixture provides the inputs deriver reads).
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Release\Mutator\CompatibilityMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Release\Mutator\CompatibilityMutator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
@@ -30,7 +30,7 @@ final class CompatibilityMutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-compat-mut-test-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-compat-mut-test-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -96,7 +96,7 @@ final class CompatibilityMutatorTest extends TestCase
         $updated = (string) file_get_contents($this->tmpDir . '/CHANGELOG.md');
 
         self::assertStringContainsString(
-            '[tested CI matrix](https://github.com/openemr/openemr/tree/rel-820/ci)',
+            '[tested CI matrix](https://github.com/DCL/DCL/tree/rel-820/ci)',
             $updated,
         );
     }
@@ -142,8 +142,8 @@ final class CompatibilityMutatorTest extends TestCase
         $this->git(['branch', 'rel-820']);
 
         // Set up a bare "origin" and clone --single-branch master
-        $originDir = sys_get_temp_dir() . '/openemr-origin-' . bin2hex(random_bytes(6));
-        $checkoutDir = sys_get_temp_dir() . '/openemr-master-co-' . bin2hex(random_bytes(6));
+        $originDir = sys_get_temp_dir() . '/DCL-origin-' . bin2hex(random_bytes(6));
+        $checkoutDir = sys_get_temp_dir() . '/DCL-master-co-' . bin2hex(random_bytes(6));
         try {
             $this->git(['clone', '--quiet', '--bare', $this->tmpDir, $originDir]);
             $this->git([
@@ -169,11 +169,11 @@ final class CompatibilityMutatorTest extends TestCase
             file_put_contents($checkoutDir . '/CHANGELOG.md', <<<'MD'
 # CHANGELOG.md
 
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Fixed
 
-  - new bugfix ([#1](https://github.com/openemr/openemr/pull/1))
+  - new bugfix ([#1](https://github.com/DCL/DCL/pull/1))
 
 MD);
             $context = MutatorContext::fromVersionString($checkoutDir, '8.2.1', 'rel-820');
@@ -211,23 +211,23 @@ MD);
         file_put_contents($this->tmpDir . '/CHANGELOG.md', <<<'MD'
 # CHANGELOG.md
 
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Fixed
 
-  - new bugfix ([#200](https://github.com/openemr/openemr/pull/200))
+  - new bugfix ([#200](https://github.com/DCL/DCL/pull/200))
 
-## [8.2.0](https://github.com/openemr/openemr/compare/v8_1_0...v8_2_0) - 2026-07-08
+## [8.2.0](https://github.com/DCL/DCL/compare/v8_1_0...v8_2_0) - 2026-07-08
 
 ### Minimum supported versions
 
 - **PHP** 8.2+
 
-See the [tested CI matrix](https://github.com/openemr/openemr/tree/rel-820/ci) for all tested version combinations.
+See the [tested CI matrix](https://github.com/DCL/DCL/tree/rel-820/ci) for all tested version combinations.
 
 ### Fixed
 
-  - old bugfix ([#100](https://github.com/openemr/openemr/pull/100))
+  - old bugfix ([#100](https://github.com/DCL/DCL/pull/100))
 
 MD);
         $this->commit();
@@ -298,11 +298,11 @@ MD);
         file_put_contents($this->tmpDir . '/CHANGELOG.md', <<<'MD'
 # CHANGELOG.md
 
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Fixed
 
-  - stuff ([#1](https://github.com/openemr/openemr/pull/1))
+  - stuff ([#1](https://github.com/DCL/DCL/pull/1))
 
 MD);
     }
@@ -313,7 +313,7 @@ MD);
         $this->git(['commit', '-q', '-m', 'seed']);
     }
 
-    private function apply(): \OpenEMR\Common\Command\ReleasePrep\MutatorResult
+    private function apply(): \DCL\Common\Command\ReleasePrep\MutatorResult
     {
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.2.1', 'rel-820');
         $mutator = new CompatibilityMutator();
@@ -340,7 +340,7 @@ MD);
      * with exit 128). CI is unaffected but local runs bite developers who
      * sign by default. Also blocks any other future ~/.gitconfig drift
      * (init.defaultBranch, fetch.parallel, core.pager, etc.) from making
-     * this suite non-reproducible. See openemr/openemr#13018.
+     * this suite non-reproducible. See DCL/DCL#13018.
      *
      * @return array<string, string>
      */

@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\Services\Billing;
+namespace DCL\Tests\Services\Billing;
 
-use OpenEMR\Billing\MiscBillingOptions;
+use DCL\Billing\MiscBillingOptions;
 use PHPUnit\Framework\TestCase;
 
 /**

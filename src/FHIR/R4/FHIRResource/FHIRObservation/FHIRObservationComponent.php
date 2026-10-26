@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRObservation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
@@ -71,80 +71,80 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Describes what was observed. Sometimes this is called the observation "code".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity|null
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public $valueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString|null
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean|null
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger|null
      */
     public $valueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange|null
      */
     public $valueRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio|null
      */
     public $valueRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSampledData|null
      */
     public $valueSampledData = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime|null
      */
     public $valueTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime|null
      */
     public $valueDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod|null
      */
     public $valuePeriod = null;
 
     /**
      * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public $dataAbsentReason = null;
 
     /**
      * A categorical assessment of an observation value.  For example, high, low, normal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $interpretation = [];
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
      */
     public $referenceRange = [];
 
@@ -155,7 +155,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Describes what was observed. Sometimes this is called the observation "code".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -164,7 +164,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Describes what was observed. Sometimes this is called the observation "code".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -174,7 +174,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity|null
      */
     public function getValueQuantity()
     {
@@ -182,7 +182,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity|null $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity|null $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -192,7 +192,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public function getValueCodeableConcept()
     {
@@ -200,7 +200,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $valueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $valueCodeableConcept
      * @return $this
      */
     public function setValueCodeableConcept($valueCodeableConcept)
@@ -210,7 +210,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString|null
      */
     public function getValueString()
     {
@@ -218,7 +218,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString|null $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString|null $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -228,7 +228,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean|null
      */
     public function getValueBoolean()
     {
@@ -236,7 +236,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean|null $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean|null $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -246,7 +246,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger|null
      */
     public function getValueInteger()
     {
@@ -254,7 +254,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger|null $valueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger|null $valueInteger
      * @return $this
      */
     public function setValueInteger($valueInteger)
@@ -264,7 +264,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange|null
      */
     public function getValueRange()
     {
@@ -272,7 +272,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange|null $valueRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange|null $valueRange
      * @return $this
      */
     public function setValueRange($valueRange)
@@ -282,7 +282,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio|null
      */
     public function getValueRatio()
     {
@@ -290,7 +290,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio|null $valueRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio|null $valueRatio
      * @return $this
      */
     public function setValueRatio($valueRatio)
@@ -300,7 +300,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSampledData|null
      */
     public function getValueSampledData()
     {
@@ -308,7 +308,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData|null $valueSampledData
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSampledData|null $valueSampledData
      * @return $this
      */
     public function setValueSampledData($valueSampledData)
@@ -318,7 +318,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime|null
      */
     public function getValueTime()
     {
@@ -326,7 +326,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime|null $valueTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime|null $valueTime
      * @return $this
      */
     public function setValueTime($valueTime)
@@ -336,7 +336,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime|null
      */
     public function getValueDateTime()
     {
@@ -344,7 +344,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime|null $valueDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime|null $valueDateTime
      * @return $this
      */
     public function setValueDateTime($valueDateTime)
@@ -354,7 +354,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod|null
      */
     public function getValuePeriod()
     {
@@ -362,7 +362,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod|null $valuePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod|null $valuePeriod
      * @return $this
      */
     public function setValuePeriod($valuePeriod)
@@ -373,7 +373,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public function getDataAbsentReason()
     {
@@ -382,7 +382,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $dataAbsentReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $dataAbsentReason
      * @return $this
      */
     public function setDataAbsentReason($dataAbsentReason)
@@ -393,7 +393,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A categorical assessment of an observation value.  For example, high, low, normal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getInterpretation()
     {
@@ -402,7 +402,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A categorical assessment of an observation value.  For example, high, low, normal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $interpretation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $interpretation
      * @return $this
      */
     public function addInterpretation($interpretation)
@@ -413,7 +413,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
      */
     public function getReferenceRange()
     {
@@ -422,7 +422,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange $referenceRange
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange $referenceRange
      * @return $this
      */
     public function addReferenceRange($referenceRange)

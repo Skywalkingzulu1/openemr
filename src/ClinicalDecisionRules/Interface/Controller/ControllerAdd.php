@@ -7,9 +7,9 @@
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\Controller;
+namespace DCL\ClinicalDecisionRules\Interface\Controller;
 
-use OpenEMR\ClinicalDecisionRules\Interface\BaseController;
+use DCL\ClinicalDecisionRules\Interface\BaseController;
 
 class ControllerAdd extends BaseController
 {

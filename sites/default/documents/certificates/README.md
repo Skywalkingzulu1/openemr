@@ -18,7 +18,7 @@ For couchdb ssl support:
 - `Common Name` of CA certificate: This can be anything, but needs to be different than what is used for Server and Client
 - `Common Name` of Server certificate: This has to be the host name(or ip address) that the client uses to log into the mysql server.
 - `Common Name` of Client certificate: Set this to the host name of the client.
-5. Ensure support for couchdb SLL is set to on in OpenEMR at Administration->Globals->Documents->'CouchDB Connection SSL'
+5. Ensure support for couchdb SLL is set to on in DCL at Administration->Globals->Documents->'CouchDB Connection SSL'
 6. Note can also set couchdb to use selfsigned certificates (thus don't need to place anything in this directory), which can be
    allowed by setting Administration->Globals->Documents->'CouchDB SSL Allow Selfsigned Certificate' to on. Recommend not
    doing this in production environments unless you know what you are doing.
@@ -33,4 +33,4 @@ For ldap tls support:
 - `Common Name` of Client certificate: Set this to the host name of the client.
 
 For oauth key pair support:
-1. This is done automatically by OpenEMR. When oauth is used, the a oaprivate.key and oaprublic.key will be created in this directory.
+1. This is done automatically by DCL. When oauth is used, the a oaprivate.key and oaprublic.key will be created in this directory.

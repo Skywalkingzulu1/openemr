@@ -3,17 +3,17 @@
 /**
  * interface/eRxStore.php Functions for interacting with Ensora eRx database.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sam Likins <sam.likins@wsi-services.com>
  * @author    Ken Chapple <ken@mi-squared.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2013-2015 Sam Likins <sam.likins@wsi-services.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class eRxStore
 {
@@ -568,7 +568,7 @@ class eRxStore
      * Return eRx source of specified active allergy for selected patient
      * @param int $patientId Id of patient to select
      * @param  string  $name      Name of active allergy to return
-     * @return int eRx source flag of specified allergy for selected patient: [0 = OpenEMR, 1 = External]
+     * @return int eRx source flag of specified allergy for selected patient: [0 = DCL, 1 = External]
      */
     public function selectAllergyErxSourceByPatientIdName($patientId, $name)
     {

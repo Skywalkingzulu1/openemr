@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaimResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -71,25 +71,25 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * The sequence number of the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $itemSequence = null;
 
     /**
      * The sequence number of the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $detailSequence = null;
 
     /**
      * The sequence number of the sub-detail within the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $subDetailSequence = null;
 
     /**
      * An error code, from a specified code system, which details why the claim could not be adjudicated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
@@ -100,7 +100,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The sequence number of the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getItemSequence()
     {
@@ -109,7 +109,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The sequence number of the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $itemSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $itemSequence
      * @return $this
      */
     public function setItemSequence($itemSequence)
@@ -120,7 +120,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The sequence number of the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getDetailSequence()
     {
@@ -129,7 +129,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The sequence number of the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $detailSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $detailSequence
      * @return $this
      */
     public function setDetailSequence($detailSequence)
@@ -140,7 +140,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The sequence number of the sub-detail within the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSubDetailSequence()
     {
@@ -149,7 +149,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The sequence number of the sub-detail within the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $subDetailSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $subDetailSequence
      * @return $this
      */
     public function setSubDetailSequence($subDetailSequence)
@@ -160,7 +160,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * An error code, from a specified code system, which details why the claim could not be adjudicated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -169,7 +169,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * An error code, from a specified code system, which details why the claim could not be adjudicated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)

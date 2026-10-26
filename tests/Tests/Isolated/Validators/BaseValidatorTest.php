@@ -4,19 +4,19 @@
  * Isolated BaseValidator Test
  *
  * Tests BaseValidator functionality without database dependencies.
- * BaseValidator is the abstract base class for all OpenEMR validators.
+ * BaseValidator is the abstract base class for all DCL validators.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators;
+namespace DCL\Tests\Isolated\Validators;
 
-use OpenEMR\Validators\BaseValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Validators\BaseValidator;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\TestCase;
 
 class BaseValidatorTest extends TestCase
@@ -191,7 +191,7 @@ class BaseValidatorTestStub extends BaseValidator
     protected function getInnerValidator(): \Particle\Validator\Validator
     {
         if (empty($this->validator)) {
-            $this->validator = new \OpenEMR\Validators\OpenEMRParticleValidator();
+            $this->validator = new \DCL\Validators\DCLParticleValidator();
         }
         return $this->validator;
     }
@@ -305,7 +305,7 @@ class BaseValidatorCustomStub extends BaseValidator
 {
     protected function getInnerValidator(): \Particle\Validator\Validator
     {
-        return new \OpenEMR\Validators\OpenEMRParticleValidator();
+        return new \DCL\Validators\DCLParticleValidator();
     }
 
     protected function configureValidator(): void

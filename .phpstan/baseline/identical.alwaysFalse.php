@@ -142,12 +142,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Cqm/QrdaControllers/QrdaReportController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between string and OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between string and DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/FHIR/SMART/ResourceConstraintFilterer.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between string and OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRUri will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between string and DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRUri will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/FHIR/SMART/ResourceConstraintFilterer.php',
 ];
@@ -167,7 +167,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/CDADocumentService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRPeriod and null will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRPeriod and null will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirPatientService.php',
 ];
@@ -197,32 +197,32 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/Search/SearchFieldStatementResolver.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'11341\\-5\' will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'11341\\-5\' will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationEmployerServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'82810\\-3\' will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'82810\\-3\' will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationHistorySdohServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'86645\\-9\' will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'86645\\-9\' will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationHistorySdohServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'survey\' will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'survey\' will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationHistorySdohServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'76690\\-7\' will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'76690\\-7\' will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationPatientServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Strict comparison using \\=\\=\\= between OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'social\\-history\' will always evaluate to false\\.$#',
+    'message' => '#^Strict comparison using \\=\\=\\= between DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRCode and \'social\\-history\' will always evaluate to false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationPatientServiceTest.php',
 ];

@@ -4,19 +4,19 @@
  * Wraps around the symfony console command runner and allows module writers to add commands that are
  * in the system.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Command\CommandRunnerFilterEvent;
-use OpenEMR\Services\IGlobalsAware;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Command\CommandRunnerFilterEvent;
+use DCL\Services\IGlobalsAware;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

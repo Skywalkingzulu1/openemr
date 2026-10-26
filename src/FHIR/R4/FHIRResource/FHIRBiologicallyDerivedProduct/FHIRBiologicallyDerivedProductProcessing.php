@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A material substance originating from a biological entity intended to be transplanted or infused
@@ -72,29 +72,29 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
 {
     /**
      * Description of of processing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Processing code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $procedure = null;
 
     /**
      * Substance added during processing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $additive = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timeDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $timePeriod = null;
 
@@ -105,7 +105,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
 
     /**
      * Description of of processing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -114,7 +114,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
 
     /**
      * Description of of processing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -125,7 +125,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
 
     /**
      * Processing code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProcedure()
     {
@@ -134,7 +134,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
 
     /**
      * Processing code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedure
      * @return $this
      */
     public function setProcedure($procedure)
@@ -145,7 +145,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
 
     /**
      * Substance added during processing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAdditive()
     {
@@ -154,7 +154,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
 
     /**
      * Substance added during processing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $additive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $additive
      * @return $this
      */
     public function setAdditive($additive)
@@ -164,7 +164,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimeDateTime()
     {
@@ -172,7 +172,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timeDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timeDateTime
      * @return $this
      */
     public function setTimeDateTime($timeDateTime)
@@ -182,7 +182,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getTimePeriod()
     {
@@ -190,7 +190,7 @@ class FHIRBiologicallyDerivedProductProcessing extends FHIRBackboneElement imple
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $timePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $timePeriod
      * @return $this
      */
     public function setTimePeriod($timePeriod)

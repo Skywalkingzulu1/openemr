@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaim;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
@@ -71,31 +71,31 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A number to uniquely identify care team entries.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
      * Member of the team who provided the product or service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $provider = null;
 
     /**
      * The party who is billing and/or responsible for the claimed products or services.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $responsible = null;
 
     /**
      * The lead, assisting or supervising practitioner and their discipline if a multidisciplinary team.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
     /**
      * The qualification of the practitioner which is applicable for this service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $qualification = null;
 
@@ -106,7 +106,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A number to uniquely identify care team entries.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -115,7 +115,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A number to uniquely identify care team entries.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -126,7 +126,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Member of the team who provided the product or service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvider()
     {
@@ -135,7 +135,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Member of the team who provided the product or service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function setProvider($provider)
@@ -146,7 +146,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The party who is billing and/or responsible for the claimed products or services.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getResponsible()
     {
@@ -155,7 +155,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The party who is billing and/or responsible for the claimed products or services.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $responsible
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $responsible
      * @return $this
      */
     public function setResponsible($responsible)
@@ -166,7 +166,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The lead, assisting or supervising practitioner and their discipline if a multidisciplinary team.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -175,7 +175,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The lead, assisting or supervising practitioner and their discipline if a multidisciplinary team.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)
@@ -186,7 +186,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The qualification of the practitioner which is applicable for this service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getQualification()
     {
@@ -195,7 +195,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The qualification of the practitioner which is applicable for this service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $qualification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $qualification
      * @return $this
      */
     public function setQualification($qualification)

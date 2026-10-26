@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 #
-# openemr-docker-backup.sh
+# DCL-docker-backup.sh
 #
-# Nightly backup for a Docker Compose OpenEMR deployment.
+# Nightly backup for a Docker Compose DCL deployment.
 # Replaces the legacy Administration -> System -> Backup routine,
-# which was removed in OpenEMR 8.3.0.
+# which was removed in DCL 8.3.0.
 #
-# IMPORTANT: Run this on the Docker HOST, not inside the OpenEMR container.
-# This file ships with the OpenEMR codebase (contrib/util/), so a copy exists
+# IMPORTANT: Run this on the Docker HOST, not inside the DCL container.
+# This file ships with the DCL codebase (contrib/util/), so a copy exists
 # inside the container's webroot -- that copy is for reference only. Download
-# or copy it to the host (e.g. /opt/openemr/) and run it there:
-#   curl -o /opt/openemr/openemr-docker-backup.sh \
-#     https://raw.githubusercontent.com/openemr/openemr/master/contrib/util/openemr-docker-backup.sh
-#   chmod 700 /opt/openemr/openemr-docker-backup.sh
+# or copy it to the host (e.g. /opt/DCL/) and run it there:
+#   curl -o /opt/DCL/DCL-docker-backup.sh \
+#     https://raw.githubusercontent.com/DCL/DCL/master/contrib/util/DCL-docker-backup.sh
+#   chmod 700 /opt/DCL/DCL-docker-backup.sh
 #
 # What it captures:
 #   1. Full MySQL/MariaDB dump (--single-transaction, includes routines/triggers)
-#   2. The full OpenEMR webroot -- sites/ (documents, config, SSL material)
+#   2. The full DCL webroot -- sites/ (documents, config, SSL material)
 #      plus custom modules, UI-installed modules, and any local code changes
 #      (matching the scope of the removed backup.php routine)
 #   3. The Compose configuration (original files, .env, and the fully
@@ -36,26 +36,26 @@
 # outage) and restarted afterward -- even if the backup fails mid-way.
 #
 # Usage:
-#   ./openemr-docker-backup.sh [/path/to/compose/directory]
+#   ./DCL-docker-backup.sh [/path/to/compose/directory]
 #
 #   If no argument is given, COMPOSE_DIR below is used.
 #
 # Recommended cron entry on Linux hosts (2:15 AM daily, log to file):
-#   15 2 * * * /opt/openemr/openemr-docker-backup.sh >> /var/log/openemr-backup.log 2>&1
+#   15 2 * * * /opt/DCL/DCL-docker-backup.sh >> /var/log/DCL-backup.log 2>&1
 #
 # WINDOWS / DOCKER DESKTOP HOSTS (no cron):
 #   Docker Desktop runs via WSL2, so this script runs inside your WSL distro
 #   (e.g. Ubuntu). Schedule it with Windows Task Scheduler instead of cron:
 #
-#     1. Place this script inside the WSL filesystem, e.g. /opt/openemr/,
+#     1. Place this script inside the WSL filesystem, e.g. /opt/DCL/,
 #        and confirm it runs there manually first:
-#          wsl.exe -d Ubuntu -u root bash /opt/openemr/openemr-docker-backup.sh
+#          wsl.exe -d Ubuntu -u root bash /opt/DCL/DCL-docker-backup.sh
 #     2. Task Scheduler -> Create Task (not "Basic Task"):
 #          - Run whether user is logged on or not; run with highest privileges
 #          - Trigger: Daily, 2:15 AM
 #          - Action: Start a program
 #              Program:   C:\Windows\System32\wsl.exe
-#              Arguments: -d Ubuntu -u root bash -lc "/opt/openemr/openemr-docker-backup.sh >> /var/log/openemr-backup.log 2>&1"
+#              Arguments: -d Ubuntu -u root bash -lc "/opt/DCL/DCL-docker-backup.sh >> /var/log/DCL-backup.log 2>&1"
 #     3. Keep BACKUP_ROOT on the WSL/Linux filesystem (as configured below),
 #        NOT under /mnt/c/... -- the Windows-mount filesystem is slow and
 #        loses ownership/permission fidelity. Sync offsite (or to a Windows
@@ -65,7 +65,7 @@
 #   Desktop's engine must also be running for the compose commands to work.
 #   Docker Desktop is per-user by default; enable "Start Docker Desktop when
 #   you sign in" and keep the machine signed in / auto-logon to a service
-#   account, or -- more robustly -- run OpenEMR on a Linux VM where none of
+#   account, or -- more robustly -- run DCL on a Linux VM where none of
 #   this applies. Verify the first few scheduled runs by checking the
 #   LAST_BACKUP_OK timestamp under BACKUP_ROOT.
 #
@@ -82,25 +82,25 @@ umask 077
 # ---------------------------------------------------------------------------
 
 # Directory containing your Compose configuration
-COMPOSE_DIR="${1:-/opt/openemr}"
+COMPOSE_DIR="${1:-/opt/DCL}"
 
 # Where backups are written. Should be on a different disk/volume than the
 # Docker data if at all possible, and MUST be included in your offsite sync.
-BACKUP_ROOT="/var/backups/openemr"
+BACKUP_ROOT="/var/backups/DCL"
 
 # Compose service names as defined in your Compose file.
-# The official openemr-devops examples use "mysql" and "openemr".
+# The official DCL-devops examples use "mysql" and "DCL".
 DB_SERVICE="mysql"
-APP_SERVICE="openemr"
+APP_SERVICE="DCL"
 
 # Database credentials. The official compose files set MYSQL_ROOT_PASSWORD;
 # prefer a dedicated backup user with SELECT, LOCK TABLES, SHOW VIEW, TRIGGER,
 # EVENT, and PROCESS privileges if you want least-privilege.
 DB_USER="root"
 DB_PASS_ENV="MYSQL_ROOT_PASSWORD"   # env var name INSIDE the db container
-DB_NAME="openemr"
+DB_NAME="DCL"
 
-# Path INSIDE the app container to archive. Default is the full OpenEMR
+# Path INSIDE the app container to archive. Default is the full DCL
 # webroot, which captures sites/ AND custom/UI-installed modules
 # (interface/modules/custom_modules), composer changes, and local patches --
 # the same scope as the removed backup.php. Note: in the official images
@@ -110,12 +110,12 @@ DB_NAME="openemr"
 # installed outside sites/ still need reinstalling after an image upgrade
 # (or bake them into a custom image layer / bind mount). If your deployment
 # is strictly stock (no modules, no local changes), you can narrow this to
-# .../openemr/sites for much smaller backups.
-FILES_PATH="/var/www/localhost/htdocs/openemr"
+# .../DCL/sites for much smaller backups.
+FILES_PATH="/var/www/localhost/htdocs/DCL"
 
 # Stop the app container during the backup for a strictly coordinated
 # point-in-time snapshot (see CONSISTENCY NOTE above). Users cannot access
-# OpenEMR while the backup runs.
+# DCL while the backup runs.
 QUIESCE_APP="false"
 
 # How many days of local backups to keep.
@@ -130,7 +130,7 @@ COMPOSE="docker compose"
 
 TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
 BACKUP_DIR="${BACKUP_ROOT}/${TIMESTAMP}"
-LOCKFILE="/var/run/openemr-backup.lock"
+LOCKFILE="/var/run/DCL-backup.lock"
 APP_STOPPED="false"
 STAGING_DIR=""   # tracked globally so on_exit can clean it up on failure
 
@@ -218,24 +218,24 @@ fi
 # ---------------------------------------------------------------------------
 # --single-transaction gives a consistent InnoDB snapshot without locking
 # the practice out of the system mid-dump. --routines/--triggers/--events
-# matter: OpenEMR uses triggers, and sites add stored procedures over time.
+# matter: DCL uses triggers, and sites add stored procedures over time.
 # -T on compose exec is required for non-interactive (cron) use.
 
 log "dumping database '${DB_NAME}' from service '${DB_SERVICE}'"
 ${COMPOSE} exec -T "${DB_SERVICE}" sh -c \
     "exec mysqldump --single-transaction --quick --routines --triggers --events \
         -u'${DB_USER}' -p\"\$${DB_PASS_ENV}\" '${DB_NAME}'" \
-    | gzip > "${BACKUP_DIR}/openemr-db.sql.gz"
+    | gzip > "${BACKUP_DIR}/DCL-db.sql.gz"
 
-# gzip of an empty/failed stream is ~20 bytes; a real OpenEMR dump is never
+# gzip of an empty/failed stream is ~20 bytes; a real DCL dump is never
 # this small. Guard against silently archiving nothing.
-DB_SIZE="$(stat -c%s "${BACKUP_DIR}/openemr-db.sql.gz")"
+DB_SIZE="$(stat -c%s "${BACKUP_DIR}/DCL-db.sql.gz")"
 [[ "${DB_SIZE}" -gt 10240 ]] || fail "database dump suspiciously small (${DB_SIZE} bytes) -- check credentials"
 DB_SIZE_HUMAN="$(human_size "${DB_SIZE}")"
 log "database dump complete (${DB_SIZE_HUMAN})"
 
 # ---------------------------------------------------------------------------
-# 2. OpenEMR files (webroot)
+# 2. DCL files (webroot)
 # ---------------------------------------------------------------------------
 # sites/ holds sqlconf.php, uploaded documents, letter templates, and per-site
 # SSL material -- the other half of your PHI. The rest of the webroot holds
@@ -247,7 +247,7 @@ log "database dump complete (${DB_SIZE_HUMAN})"
 # read the files through the container filesystem with 'docker compose cp'
 # fallback if exec fails while quiesced.
 
-log "archiving OpenEMR files (${FILES_PATH}) from service '${APP_SERVICE}'"
+log "archiving DCL files (${FILES_PATH}) from service '${APP_SERVICE}'"
 FILES_BASE="$(basename "${FILES_PATH}")"
 if [[ "${APP_STOPPED}" == "true" ]]; then
     # Container is stopped: exec is unavailable. Copy out via the engine,
@@ -256,16 +256,16 @@ if [[ "${APP_STOPPED}" == "true" ]]; then
     # procedure's extract-into-parent step works for either.
     STAGING_DIR="$(mktemp -d)"
     ${COMPOSE} cp "${APP_SERVICE}:${FILES_PATH}" "${STAGING_DIR}/${FILES_BASE}"
-    tar -czf "${BACKUP_DIR}/openemr-files.tar.gz" -C "${STAGING_DIR}" "${FILES_BASE}"
+    tar -czf "${BACKUP_DIR}/DCL-files.tar.gz" -C "${STAGING_DIR}" "${FILES_BASE}"
     rm -rf "${STAGING_DIR}"
     STAGING_DIR=""
 else
     ${COMPOSE} exec -T "${APP_SERVICE}" sh -c \
         "tar -czf - -C '$(dirname "${FILES_PATH}")' '${FILES_BASE}'" \
-        > "${BACKUP_DIR}/openemr-files.tar.gz"
+        > "${BACKUP_DIR}/DCL-files.tar.gz"
 fi
 
-FILES_SIZE="$(stat -c%s "${BACKUP_DIR}/openemr-files.tar.gz")"
+FILES_SIZE="$(stat -c%s "${BACKUP_DIR}/DCL-files.tar.gz")"
 [[ "${FILES_SIZE}" -gt 10240 ]] || fail "files archive suspiciously small (${FILES_SIZE} bytes)"
 FILES_SIZE_HUMAN="$(human_size "${FILES_SIZE}")"
 log "files archive complete (${FILES_SIZE_HUMAN})"
@@ -318,8 +318,8 @@ fi
 # 5. Verify integrity of what we just wrote
 # ---------------------------------------------------------------------------
 
-gzip -t "${BACKUP_DIR}/openemr-db.sql.gz"    || fail "db dump failed gzip integrity check"
-gzip -t "${BACKUP_DIR}/openemr-files.tar.gz" || fail "files archive failed gzip integrity check"
+gzip -t "${BACKUP_DIR}/DCL-db.sql.gz"    || fail "db dump failed gzip integrity check"
+gzip -t "${BACKUP_DIR}/DCL-files.tar.gz" || fail "files archive failed gzip integrity check"
 
 ( cd "${BACKUP_DIR}" && sha256sum ./* > SHA256SUMS )
 log "integrity checks passed"
@@ -349,33 +349,33 @@ log "backup finished successfully"
 #      same file list the backup step uses:
 #        for f in docker-compose.yml docker-compose.yaml compose.yml compose.yaml \
 #                 docker-compose.override.yml docker-compose.override.yaml .env; do
-#            [ -f "$f" ] && cp "$f" /opt/openemr/
+#            [ -f "$f" ] && cp "$f" /opt/DCL/
 #        done
 #      If NONE of the originals were archived and only compose-resolved.yml
 #      exists, copy it as compose.yaml -- and keep its permissions tight,
 #      it contains interpolated secrets:
-#        install -m 600 compose-resolved.yml /opt/openemr/compose.yaml
+#        install -m 600 compose-resolved.yml /opt/DCL/compose.yaml
 #      Then:
-#        cd /opt/openemr
+#        cd /opt/DCL
 #        docker compose up -d mysql
 #        # wait for it to be healthy: docker compose logs -f mysql
 #
 #   2. Restore the database:
-#        gunzip -c openemr-db.sql.gz | \
+#        gunzip -c DCL-db.sql.gz | \
 #          docker compose exec -T mysql sh -c \
-#            'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" openemr'
+#            'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" DCL'
 #
 #   3. Bring up the app container (pin the image tag to the version in
 #      manifest.txt), then restore the archived files over the top. The
 #      archive's top-level directory matches the webroot's name, so extract
 #      into the webroot's PARENT:
-#        docker compose up -d openemr
-#        docker compose exec -T openemr sh -c \
+#        docker compose up -d DCL
+#        docker compose exec -T DCL sh -c \
 #          'tar -xzf - -C /var/www/localhost/htdocs' \
-#          < openemr-files.tar.gz
-#        docker compose restart openemr
+#          < DCL-files.tar.gz
+#        docker compose restart DCL
 #      (If you narrowed FILES_PATH to sites/, extract into the webroot
-#      itself instead: -C /var/www/localhost/htdocs/openemr)
+#      itself instead: -C /var/www/localhost/htdocs/DCL)
 #
 #   4. Verify: log in, open a recent patient, open a recent document,
 #      and check Administration -> Other -> Logs for errors.

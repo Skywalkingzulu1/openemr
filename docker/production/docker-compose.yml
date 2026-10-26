@@ -1,7 +1,7 @@
-# Use admin/pass as user/password credentials to login to openemr (from OE_USER and OE_PASS below)
-# MYSQL_HOST and MYSQL_ROOT_PASS are required for openemr
-# MYSQL_USER, MYSQL_PASS, OE_USER, OE_PASS are optional for openemr and
-#   if not provided, then default to openemr, openemr, admin, and pass respectively.
+# Use admin/pass as user/password credentials to login to DCL (from OE_USER and OE_PASS below)
+# MYSQL_HOST and MYSQL_ROOT_PASS are required for DCL
+# MYSQL_USER, MYSQL_PASS, OE_USER, OE_PASS are optional for DCL and
+#   if not provided, then default to DCL, DCL, admin, and pass respectively.
 services:
   mysql:
     restart: always
@@ -27,20 +27,20 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  DCL:
     restart: always
-    image: openemr/openemr:latest@sha256:85349455340a8c9e5827c86894eb8f17bb928251df2853fafcf6ac98d57fe815
+    image: DCL/DCL:latest@sha256:85349455340a8c9e5827c86894eb8f17bb928251df2853fafcf6ac98d57fe815
     ports:
     - 80:80
     - 443:443
     volumes:
     - logvolume01:/var/log
-    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    - sitevolume:/var/www/localhost/htdocs/DCL/sites
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
       OE_USER: admin
       OE_PASS: pass
     depends_on:

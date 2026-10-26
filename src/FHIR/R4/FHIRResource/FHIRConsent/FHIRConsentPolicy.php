@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConsent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
@@ -71,13 +71,13 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $authority = null;
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $uri = null;
 
@@ -88,7 +88,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getAuthority()
     {
@@ -97,7 +97,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $authority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $authority
      * @return $this
      */
     public function setAuthority($authority)
@@ -108,7 +108,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUri()
     {
@@ -117,7 +117,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $uri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $uri
      * @return $this
      */
     public function setUri($uri)

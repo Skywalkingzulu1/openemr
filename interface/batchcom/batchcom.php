@@ -3,25 +3,25 @@
 /**
  * Batch Communication Tool for selecting/communicating with subsets of patients
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @author  Jason 'Toolbox' Oettinger <jason@oettinger.email>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017 Jason 'Toolbox' Oettinger <jason@oettinger.email>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 //INCLUDES, DO ANY ACTIONS, THEN GET OUR DATA
 require_once("../globals.php");
 require_once("batchcom.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $form_err = '';
 
@@ -88,9 +88,9 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == 'process')) {
     if (!$form_err) {
         $sql = "select patient_data.*, cal_events.pc_eventDate as next_appt, cal_events.pc_startTime
                     as appt_start_time,cal_date.last_appt,forms.last_visit from patient_data
-                    left outer join openemr_postcalendar_events as cal_events on patient_data.pid=cal_events.pc_pid
+                    left outer join DCL_postcalendar_events as cal_events on patient_data.pid=cal_events.pc_pid
                     and curdate() < cal_events.pc_eventDate left outer join (select pc_pid,max(pc_eventDate)
-                    as last_appt from openemr_postcalendar_events where curdate() >= pc_eventDate group by pc_pid )
+                    as last_appt from DCL_postcalendar_events where curdate() >= pc_eventDate group by pc_pid )
                     as cal_date on cal_date.pc_pid=patient_data.pid left outer join (select pid,max(date)
                     as last_visit from forms where curdate() >= date group by pid)
                     as forms on forms.pid=patient_data.pid where 1=1";

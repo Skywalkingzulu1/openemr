@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents

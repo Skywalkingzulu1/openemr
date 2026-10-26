@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource;
+use DCL\FHIR\R4\FHIRResource;
 
 /**
  * A container for a collection of resources.
@@ -72,43 +72,43 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 {
     /**
      * A persistent identifier for the bundle that won't change as a bundle is copied from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Indicates the purpose of this bundle - how it is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBundleType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBundleType
      */
     public $type = null;
 
     /**
      * The date/time that the bundle was assembled - i.e. when the resources were placed in the bundle.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $timestamp = null;
 
     /**
      * If a set of search matches, this is the total number of entries of type 'match' across all pages in the search.  It does not include search.mode = 'include' or 'outcome' entries and it does not provide a count of the number of entries in the Bundle.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $total = null;
 
     /**
      * A series of links that provide context to this bundle.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
      */
     public $link = [];
 
     /**
      * An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry[]
      */
     public $entry = [];
 
     /**
      * Digital Signature - base64 encoded. XML-DSig or a JWT.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public $signature = null;
 
@@ -119,7 +119,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * A persistent identifier for the bundle that won't change as a bundle is copied from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -128,7 +128,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * A persistent identifier for the bundle that won't change as a bundle is copied from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -139,7 +139,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * Indicates the purpose of this bundle - how it is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBundleType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBundleType
      */
     public function getType()
     {
@@ -148,7 +148,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * Indicates the purpose of this bundle - how it is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBundleType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBundleType $type
      * @return $this
      */
     public function setType($type)
@@ -159,7 +159,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * The date/time that the bundle was assembled - i.e. when the resources were placed in the bundle.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getTimestamp()
     {
@@ -168,7 +168,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * The date/time that the bundle was assembled - i.e. when the resources were placed in the bundle.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $timestamp
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $timestamp
      * @return $this
      */
     public function setTimestamp($timestamp)
@@ -179,7 +179,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * If a set of search matches, this is the total number of entries of type 'match' across all pages in the search.  It does not include search.mode = 'include' or 'outcome' entries and it does not provide a count of the number of entries in the Bundle.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getTotal()
     {
@@ -188,7 +188,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * If a set of search matches, this is the total number of entries of type 'match' across all pages in the search.  It does not include search.mode = 'include' or 'outcome' entries and it does not provide a count of the number of entries in the Bundle.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $total
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $total
      * @return $this
      */
     public function setTotal($total)
@@ -199,7 +199,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * A series of links that provide context to this bundle.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
      */
     public function getLink()
     {
@@ -208,7 +208,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * A series of links that provide context to this bundle.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink $link
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink $link
      * @return $this
      */
     public function addLink($link)
@@ -219,7 +219,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry[]
      */
     public function getEntry()
     {
@@ -228,7 +228,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry $entry
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry $entry
      * @return $this
      */
     public function addEntry($entry)
@@ -239,7 +239,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * Digital Signature - base64 encoded. XML-DSig or a JWT.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public function getSignature()
     {
@@ -248,7 +248,7 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
 
     /**
      * Digital Signature - base64 encoded. XML-DSig or a JWT.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $signature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $signature
      * @return $this
      */
     public function setSignature($signature)

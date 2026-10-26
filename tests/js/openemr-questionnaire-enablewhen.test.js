@@ -3,7 +3,7 @@
  */
 
 /**
- * enableWhen behavior tests for the OpenEMR FHIR Questionnaire Runtime.
+ * enableWhen behavior tests for the DCL FHIR Questionnaire Runtime.
  *
  * Covers the operator matrix (exists, =, !=, >, <, >=, <=), value types
  * (boolean, string, integer, decimal, coding), enableBehavior any/all and the
@@ -11,11 +11,11 @@
  * parent cascade through nested groups, DOM visibility (d-none), and the
  * exclusion of disabled items from the built QuestionnaireResponse.
  *
- * Run with: npm run test:js -- tests/js/openemr-questionnaire-enablewhen.test.js
+ * Run with: npm run test:js -- tests/js/DCL-questionnaire-enablewhen.test.js
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 const fs = require('fs');
@@ -25,7 +25,7 @@ function loadRuntime() {
     const source = fs.readFileSync(
         path.resolve(
             __dirname,
-            '../../interface/forms/questionnaire_assessments/native/openemr_questionnaire.js'
+            '../../interface/forms/questionnaire_assessments/native/DCL_questionnaire.js'
         ),
         'utf8'
     );
@@ -48,7 +48,7 @@ function loadRuntime() {
 
 loadRuntime();
 
-const runtimeApi = global.window.OpenEMRQuestionnaire;
+const runtimeApi = global.window.DCLQuestionnaire;
 
 function createContainer() {
     const container = document.createElement('div');

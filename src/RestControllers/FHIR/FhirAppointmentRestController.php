@@ -2,24 +2,24 @@
 
 /**
  * FhirAppointmentRestController handles the REST conversion for retrieving FHIR appointment resources.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirAppointmentService;
-use OpenEMR\Services\FHIR\FhirResourcesService;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirAppointmentService;
+use DCL\Services\FHIR\FhirResourcesService;
 
 class FhirAppointmentRestController
 {
@@ -73,7 +73,7 @@ class FhirAppointmentRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($fhirId, $puuidBind = null)
     {
@@ -149,7 +149,7 @@ class FhirAppointmentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {
@@ -193,7 +193,7 @@ class FhirAppointmentRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '403', ref: '#/components/responses/forbidden'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post(array $fhirJson): void
     {

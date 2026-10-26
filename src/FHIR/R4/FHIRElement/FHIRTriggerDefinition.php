@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A description of a triggering event. Triggering events can be named events, data events, or periodic, as determined by the type element.
@@ -72,45 +72,45 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 {
     /**
      * The type of triggering event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTriggerType
      */
     public $type = null;
 
     /**
      * A formal name for the event. This may be an absolute URI that identifies the event formally (e.g. from a trigger registry), or a simple relative URI that identifies the event in a local context.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $timingReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $timingDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
 
     /**
      * The triggering data of the event (if this is a data trigger). If more than one data is requirement is specified, then all the data requirements must be true.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public $data = [];
 
     /**
      * A boolean-valued expression that is evaluated in the context of the container of the trigger definition and returns whether or not the trigger fires.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $condition = null;
 
@@ -121,7 +121,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of triggering event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTriggerType
      */
     public function getType()
     {
@@ -130,7 +130,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of triggering event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTriggerType $type
      * @return $this
      */
     public function setType($type)
@@ -141,7 +141,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * A formal name for the event. This may be an absolute URI that identifies the event formally (e.g. from a trigger registry), or a simple relative URI that identifies the event in a local context.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -150,7 +150,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * A formal name for the event. This may be an absolute URI that identifies the event formally (e.g. from a trigger registry), or a simple relative URI that identifies the event in a local context.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -160,7 +160,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getTimingTiming()
     {
@@ -168,7 +168,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
      * @return $this
      */
     public function setTimingTiming($timingTiming)
@@ -178,7 +178,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTimingReference()
     {
@@ -186,7 +186,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $timingReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $timingReference
      * @return $this
      */
     public function setTimingReference($timingReference)
@@ -196,7 +196,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getTimingDate()
     {
@@ -204,7 +204,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $timingDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $timingDate
      * @return $this
      */
     public function setTimingDate($timingDate)
@@ -214,7 +214,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
     {
@@ -222,7 +222,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
     public function setTimingDateTime($timingDateTime)
@@ -233,7 +233,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The triggering data of the event (if this is a data trigger). If more than one data is requirement is specified, then all the data requirements must be true.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public function getData()
     {
@@ -242,7 +242,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The triggering data of the event (if this is a data trigger). If more than one data is requirement is specified, then all the data requirements must be true.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $data
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $data
      * @return $this
      */
     public function addData($data)
@@ -253,7 +253,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * A boolean-valued expression that is evaluated in the context of the container of the trigger definition and returns whether or not the trigger fires.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getCondition()
     {
@@ -262,7 +262,7 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * A boolean-valued expression that is evaluated in the context of the container of the trigger definition and returns whether or not the trigger fires.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $condition
      * @return $this
      */
     public function setCondition($condition)

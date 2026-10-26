@@ -5,14 +5,14 @@
  * Since this was our original example module,
  * I've left it basically intact from original.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2019 Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /*
@@ -23,16 +23,16 @@
  */
 
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Messaging\SendSmsEvent;
-use OpenEMR\Events\PatientDocuments\PatientDocumentEvent;
-use OpenEMR\Events\PatientReport\PatientReportEvent;
-use OpenEMR\Menu\MenuEvent;
-use OpenEMR\Modules\FaxSMS\BootstrapService;
-use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
-use OpenEMR\Modules\FaxSMS\Events\NotificationEventListener;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Messaging\SendSmsEvent;
+use DCL\Events\PatientDocuments\PatientDocumentEvent;
+use DCL\Events\PatientReport\PatientReportEvent;
+use DCL\Menu\MenuEvent;
+use DCL\Modules\FaxSMS\BootstrapService;
+use DCL\Modules\FaxSMS\Enums\ServiceType;
+use DCL\Modules\FaxSMS\Events\NotificationEventListener;
 use Symfony\Contracts\EventDispatcher\Event;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
@@ -44,9 +44,9 @@ $allowEmail = (OEGlobalsBag::getInstance()->get('oe_enable_email') ?? null);
 $allowVoice = (OEGlobalsBag::getInstance()->get('oe_enable_voice') ?? null);
 
 /**
- * @var \OpenEMR\Core\ModulesClassLoader $classLoader
+ * @var \DCL\Core\ModulesClassLoader $classLoader
  */
-$classLoader->registerNamespaceIfNotExists('OpenEMR\\Modules\\FaxSMS\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
+$classLoader->registerNamespaceIfNotExists('DCL\\Modules\\FaxSMS\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
 
 /**
  * @var EventDispatcherInterface $eventDispatcher
@@ -56,7 +56,7 @@ $classLoader->registerNamespaceIfNotExists('OpenEMR\\Modules\\FaxSMS\\', __DIR__
  */
 
 /**
- * @global EventDispatcherInterface $dispatcher Injected by the OpenEMR module loader;
+ * @global EventDispatcherInterface $dispatcher Injected by the DCL module loader;
  */
 $dispatcher = OEGlobalsBag::getInstance()->getKernel()->getEventDispatcher();
 

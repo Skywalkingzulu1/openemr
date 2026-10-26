@@ -3,27 +3,27 @@
 /**
  * Encounter controller implementation
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @link      https://www.open-emr.org/wiki/index.php/OEMR_wiki_page OEMR
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @link      https://www.dcl.org/wiki/index.php/OEMR_wiki_page OEMR
  * @author    Ken Chapple <ken@mi-squared.com>
  * @author    Medical Information Integration, LLC
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2013 OEMR
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  **/
 
 namespace ESign;
 
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Abstract/Controller.php';
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Encounter/Configuration.php';
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Encounter/Signable.php';
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Encounter/Log.php';
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Abstract/Controller.php';
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Encounter/Configuration.php';
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Encounter/Signable.php';
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Encounter/Log.php';
 
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 class Encounter_Controller extends Abstract_Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\FHIR\R4;
+namespace DCL\FHIR\R4;
 
-use OpenEMR\Common\Utils\XmlUtils;
+use DCL\Common\Utils\XmlUtils;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using

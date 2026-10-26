@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Chemical substances are a single substance type whose primary defining element is the molecular structure. Chemical substances shall be defined on the basis of their complete covalent molecular structure; the presence of a salt (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade, physical form or particle size are not taken into account in the definition of a chemical substance or in the assignment of a Substance ID.
@@ -72,13 +72,13 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement implements \
 {
     /**
      * Lower limit possible or expected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $lowLimit = null;
 
     /**
      * Upper limit possible or expected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $highLimit = null;
 
@@ -89,7 +89,7 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement implements \
 
     /**
      * Lower limit possible or expected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getLowLimit()
     {
@@ -98,7 +98,7 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement implements \
 
     /**
      * Lower limit possible or expected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $lowLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $lowLimit
      * @return $this
      */
     public function setLowLimit($lowLimit)
@@ -109,7 +109,7 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement implements \
 
     /**
      * Upper limit possible or expected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getHighLimit()
     {
@@ -118,7 +118,7 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement implements \
 
     /**
      * Upper limit possible or expected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $highLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $highLimit
      * @return $this
      */
     public function setHighLimit($highLimit)

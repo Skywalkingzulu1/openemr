@@ -3,8 +3,8 @@
 /*
  * Fee Sheet Program used to create charges, copays and add diagnosis codes to the encounter
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Terry Hill <terry@lillysystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2005-2022 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
@@ -20,19 +20,19 @@ require_once("$srcdir/FeeSheetHtml.class.php");
 require_once("codes.php");
 require_once("$srcdir/options.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Billing\FeeSheetAppointmentStatusPrompt;
-use OpenEMR\Billing\HcpcsDrugDefaults;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\OeUI\OemrUI;
+use DCL\BC\ServiceContainer;
+use DCL\Billing\BillingUtilities;
+use DCL\Billing\FeeSheetAppointmentStatusPrompt;
+use DCL\Billing\HcpcsDrugDefaults;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\OeUI\OemrUI;
 
 //acl check
 if (!AclMain::aclCheckForm('fee_sheet')) { ?>

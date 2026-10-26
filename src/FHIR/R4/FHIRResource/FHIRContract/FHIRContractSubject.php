@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,13 +71,13 @@ class FHIRContractSubject extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * The entity the action is performed or not performed on or for.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reference = [];
 
     /**
      * Role type of agent assigned roles in this Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
@@ -88,7 +88,7 @@ class FHIRContractSubject extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The entity the action is performed or not performed on or for.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReference()
     {
@@ -97,7 +97,7 @@ class FHIRContractSubject extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The entity the action is performed or not performed on or for.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reference
      * @return $this
      */
     public function addReference($reference)
@@ -108,7 +108,7 @@ class FHIRContractSubject extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Role type of agent assigned roles in this Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -117,7 +117,7 @@ class FHIRContractSubject extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Role type of agent assigned roles in this Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)

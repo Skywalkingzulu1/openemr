@@ -2,17 +2,17 @@
 
 /**
  * FhirVitalsServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\FHIR\Observation\FhirObservationVitalsService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\FHIR\Observation\FhirObservationVitalsService;
 use PHPUnit\Framework\TestCase;
 
 class FhirVitalsServiceTest extends TestCase

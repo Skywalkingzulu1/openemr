@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\Authorization\OAuth2PublicJsonWebKeyController;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\Authorization\OAuth2PublicJsonWebKeyController;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory;
@@ -17,7 +17,7 @@ class OAuth2PublicJsonWebKeyControllerTest extends TestCase
      */
     public function testGetJsonWebKeyResponse(): void
     {
-        $publicKeyPath = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem';
+        $publicKeyPath = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/DCL-rsa384-public.pem';
         $controller = new OAuth2PublicJsonWebKeyController($publicKeyPath);
 
         $request = HttpRestRequest::create('/oauth2/jwk');

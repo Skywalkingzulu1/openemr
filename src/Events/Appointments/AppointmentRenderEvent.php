@@ -2,22 +2,22 @@
 
 /*
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2021 Sherwin Gaddis <sherwingaddis@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 
-namespace OpenEMR\Events\Appointments;
+namespace DCL\Events\Appointments;
 
 use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Event object for know what type of appointment has been set on the calendar
  *
- * @package OpenEMR\Events
+ * @package DCL\Events
  * @subpackage Appointments
  *
  */

@@ -2,30 +2,30 @@
 
 /*
  * FhirObservationHistorySdohServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    AI Assistant (GitHub Claude.Ai)
  * @copyright Elements marked with AI GENERATED CODE - are in the public domain
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * AI GENERATED CODE - START
  * This entire file was generated with assistance from AI (GitHub Copilot/ChatGPT)
  * to create comprehensive integration tests for the FhirObservationHistorySdohService.
- * The code has been reviewed and tested for compliance with OpenEMR standards.
+ * The code has been reviewed and tested for compliance with DCL standards.
  * AI GENERATED CODE - END
  */
 
-namespace OpenEMR\Tests\Services\FHIR\Observation;
+namespace DCL\Tests\Services\FHIR\Observation;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\Services\FHIR\Observation\FhirObservationHistorySdohService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\SDOH\HistorySdohService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\Services\FHIR\Observation\FhirObservationHistorySdohService;
+use DCL\Services\PatientService;
+use DCL\Services\SDOH\HistorySdohService;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 
 /**

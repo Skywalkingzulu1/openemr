@@ -3,31 +3,31 @@
 /**
  * FhirRelatedPersonService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\ContactRelationService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\ContactRelationService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 class FhirRelatedPersonService extends FhirServiceBase implements IResourceUSCIGProfileService, IPatientCompartmentResourceService, IFhirExportableResourceService
 {
@@ -56,7 +56,7 @@ class FhirRelatedPersonService extends FhirServiceBase implements IResourceUSCIG
     /**
      * @inheritDoc
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRRelatedPerson
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRRelatedPerson
     {
         $fhirRelatedPerson = new FHIRRelatedPerson();
         $this->populateId($fhirRelatedPerson, $dataRecord);
@@ -152,23 +152,23 @@ class FhirRelatedPersonService extends FhirServiceBase implements IResourceUSCIG
     }
 
     /**
-     * @param  ISearchField[] $openEMRSearchParameters
+     * @param  ISearchField[] $DCLSearchParameters
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $contactRelationService = new ContactRelationService();
-        return $contactRelationService->searchPatientRelationships($openEMRSearchParameters);
+        return $contactRelationService->searchPatientRelationships($DCLSearchParameters);
     }
 
     /**
-     * Parses a FHIR RelatedPerson into the OpenEMR shape consumed by
+     * Parses a FHIR RelatedPerson into the DCL shape consumed by
      * ContactRelationService::insertRelatedPerson / updateRelatedPerson.
      *
      * The FHIR.patient reference is REQUIRED for inserts (the relationship cannot exist
      * without a patient owner). Relationship code uses the HL7 v3 RoleCode values
      * (system http://terminology.hl7.org/CodeSystem/v3-RoleCode or the read-side
-     * FhirCodeSystemConstants::HL7_ROLE_CODE alias), which map 1:1 to OpenEMR's
+     * FhirCodeSystemConstants::HL7_ROLE_CODE alias), which map 1:1 to DCL's
      * `related_person_relationship` list_options.option_id values (MTH, FTH, SPS, etc.).
      *
      * @param FHIRDomainResource $fhirResource
@@ -190,7 +190,7 @@ class FhirRelatedPersonService extends FhirServiceBase implements IResourceUSCIG
             $data['uuid'] = $resourceId;
         }
 
-        // patient.reference -> puuid (resolved to pid in insertOpenEMRRecord)
+        // patient.reference -> puuid (resolved to pid in insertDCLRecord)
         $patientRef = FhirPayloadReader::reference($json['patient'] ?? null);
         if ($patientRef !== null) {
             $patientUuid = UtilsService::parseReferenceString($patientRef, 'Patient')['uuid'] ?? null;
@@ -299,10 +299,10 @@ class FhirRelatedPersonService extends FhirServiceBase implements IResourceUSCIG
     /**
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR RelatedPerson record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL RelatedPerson record array');
         }
 
         $puuid = $openEmrRecord['puuid'] ?? null;
@@ -335,14 +335,14 @@ class FhirRelatedPersonService extends FhirServiceBase implements IResourceUSCIG
 
     /**
      * @param string $fhirResourceId
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         // The owning patient must be supplied — without it, the underlying UPDATE
         // would target every contact_relation row pointing at this person, leaking
         // mutations across patients. We resolve puuid -> pid here and pass through.
-        $puuid = $updatedOpenEMRRecord['puuid'] ?? null;
+        $puuid = $updatedDCLRecord['puuid'] ?? null;
         if (!is_string($puuid) || $puuid === '' || !UuidRegistry::isValidStringUUID($puuid)) {
             $result = new ProcessingResult();
             $result->setValidationMessages([
@@ -363,10 +363,10 @@ class FhirRelatedPersonService extends FhirServiceBase implements IResourceUSCIG
             ]);
             return $result;
         }
-        unset($updatedOpenEMRRecord['puuid']);
+        unset($updatedDCLRecord['puuid']);
         return (new ContactRelationService())->updateRelatedPerson(
             $fhirResourceId,
-            FhirPayloadReader::stringKeyed($updatedOpenEMRRecord),
+            FhirPayloadReader::stringKeyed($updatedDCLRecord),
             (int) $pid
         );
     }

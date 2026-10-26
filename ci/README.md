@@ -1,8 +1,8 @@
-# OpenEMR
+# DCL
 
 ## Continuous Integration
 
-This directory houses the configuration for automated tests across multiple version and setup configurations of OpenEMR. It is used by the GitHub Actions workflow in `.github/workflows/test.yml` to run various tests.
+This directory houses the configuration for automated tests across multiple version and setup configurations of DCL. It is used by the GitHub Actions workflow in `.github/workflows/test.yml` to run various tests.
 
 ### Layout and Configurations
 
@@ -29,7 +29,7 @@ The GitHub Actions workflow dynamically builds a test matrix based on the direct
 2. It reads the `docker-compose.yml` to determine the exact database image.
 3. It creates a configuration for GitHub Actions to run tests against that specific setup.
 
-This allows testing OpenEMR across multiple environments automatically without having to manually update the GitHub workflow file.
+This allows testing DCL across multiple environments automatically without having to manually update the GitHub workflow file.
 
 ### Test Types
 
@@ -57,7 +57,7 @@ Code coverage reporting is enabled only for the `apache_84_114` configuration. W
 To add a new test configuration:
 
 1. Create a new directory following the naming convention `webserver_phpversion_dbversion`.
-2. Add a `docker-compose.yml` file with the appropriate MySQL/MariaDB and OpenEMR services (see below `Adding a New Configuration` section).
+2. Add a `docker-compose.yml` file with the appropriate MySQL/MariaDB and DCL services (see below `Adding a New Configuration` section).
 3. Ensure the database service is named `mysql` for compatibility with the test scripts.
 4. If you want to skip E2E tests for this configuration, add `_no-e2e` suffix to the directory name.
 
@@ -67,7 +67,7 @@ The CI process uses several important environment variables:
 
 - `DOCKER_DIR`: The directory containing the Docker Compose configuration
 - `ENABLE_COVERAGE`: Whether to enable code coverage reporting (true/false)
-- `OPENEMR_DIR`: The directory containing OpenEMR inside the Docker container
+- `DCL_DIR`: The directory containing DCL inside the Docker container
 - `COMPOSE_FILE`: The Docker Compose COMPOSE_FILE environment variable is set to store the templates for the multi-file composition. The first file is the template for the database configuration (MariaDB or MySQL) — it must be directly in `ci/` (not a subdirectory) because Docker Compose resolves all relative paths from the first file's directory. The remaining files are the webserver template, Selenium Grid template, Mailpit template, and the per-configuration `docker-compose.yml`.
 
 ### Docker Compose Extension System
@@ -101,8 +101,8 @@ The CI system uses Docker Compose's multi-file composition (otherwise known as c
    services:
      mysql:
        image: mariadb:11.4                            # Specify MariaDB/MySQL version
-     openemr:
-       image: openemr/openemr:flex-3.21               # Specify PHP version
+     DCL:
+       image: DCL/DCL:flex-3.21               # Specify PHP version
    ```
 
 #### Adding a New Configuration
@@ -136,8 +136,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mariadb:<version>                       # Specify MariaDB version
-     openemr:
-       image: openemr/openemr:<tag>                   # Specify PHP version
+     DCL:
+       image: DCL/DCL:<tag>                   # Specify PHP version
    ```
 
    **For Apache environments with MySQL**:
@@ -152,8 +152,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mysql:<version>                         # Specify MySQL version
-     openemr:
-       image: openemr/openemr:<tag>                   # Specify PHP version
+     DCL:
+       image: DCL/DCL:<tag>                   # Specify PHP version
    ```
 
    **For Nginx environments with MariaDB**:
@@ -168,8 +168,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mariadb:<version>                         # Specify MariaDB version
-     openemr:
-       image: openemr/dev-php-fpm:<php-version>       # Specify PHP version
+     DCL:
+       image: DCL/dev-php-fpm:<php-version>       # Specify PHP version
    ```
 
    **For Nginx environments with MySQL**:
@@ -184,8 +184,8 @@ To add a new test configuration:
    services:
      mysql:
        image: mysql:<version>                         # Specify MySQL version
-     openemr:
-       image: openemr/dev-php-fpm:<php-version>       # Specify PHP version
+     DCL:
+       image: DCL/dev-php-fpm:<php-version>       # Specify PHP version
    ```
 
 4. Customize any additional settings specific to your configuration as needed.
@@ -211,7 +211,7 @@ If tests are failing in CI but passing locally, check:
 - For below commands:
   - Replace `apache_84_114` with the configuration directory you want to test.
   - Replace `compose-shared-mariadb.yml` and `compose-shared-apache.yml` with the database and webserver `x-includes` values from the configuration's docker-compose.yml file.
-  - Run the below commands from the base openemr directory.
+  - Run the below commands from the base DCL directory.
   - Note that for future: the first entry (-f) in the command needs to be in ci/ (if it has a subdirectory then it breaks things)
 
 You can view the fully merged configuration file with the following `config` command:
@@ -224,9 +224,9 @@ You can also run the same Docker Compose setup locally:
 docker compose -f "ci/compose-shared-mariadb.yml" -f "ci/compose-shared-apache.yml" -f "ci/compose-shared-selenium/docker-compose.yml" -f "ci/compose-shared-mailpit/compose.yml" -f "ci/apache_84_114/docker-compose.yml" up -d
 ```
 
-You can go directly into the OpenEMR testing container:
+You can go directly into the DCL testing container:
 ```bash
-docker compose -f "ci/compose-shared-mariadb.yml" -f "ci/compose-shared-apache.yml" -f "ci/compose-shared-selenium/docker-compose.yml" -f "ci/compose-shared-mailpit/compose.yml" -f "ci/apache_84_114/docker-compose.yml" exec -it openemr sh
+docker compose -f "ci/compose-shared-mariadb.yml" -f "ci/compose-shared-apache.yml" -f "ci/compose-shared-selenium/docker-compose.yml" -f "ci/compose-shared-mailpit/compose.yml" -f "ci/apache_84_114/docker-compose.yml" exec -it DCL sh
 ```
 
 You can shut down the Docker Compose setup:

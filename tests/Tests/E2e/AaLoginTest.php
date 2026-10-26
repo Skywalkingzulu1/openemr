@@ -3,24 +3,24 @@
 /**
  * AaLoginTest class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    zerai
  * @author    Dixon Whitmire
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 zerai
  * @copyright Copyright (c) 2020 Dixon Whitmire
  * @copyright Copyright (c) 2024 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e;
+namespace DCL\Tests\E2e;
 
-use OpenEMR\Tests\E2e\Base\BaseTrait;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
-use OpenEMR\Tests\E2e\Login\LoginTrait;
+use DCL\Tests\E2e\Base\BaseTrait;
+use DCL\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Login\LoginTrait;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Panther\PantherTestCase;
 use Symfony\Component\Process\Process;
@@ -31,7 +31,7 @@ class AaLoginTest extends PantherTestCase
     use LoginTrait;
 
     #[Test]
-    public function testGoToOpenemrLoginPage(): void
+    public function testGoToDCLLoginPage(): void
     {
         $this->base();
         try {
@@ -69,7 +69,7 @@ class AaLoginTest extends PantherTestCase
         try {
             $this->crawler = $this->client->request('GET', '/interface/main/tabs/main.php?site=default&testing_mode=1');
             $title = $this->client->getTitle();
-            $this->assertSame('OpenEMR Login', $title, 'FAILED to redirect to login page');
+            $this->assertSame('DCL Login', $title, 'FAILED to redirect to login page');
         } catch (\Throwable $e) {
             // Close client
             $this->client->quit();
@@ -94,7 +94,7 @@ class AaLoginTest extends PantherTestCase
             );
             $title = $this->client->getTitle();
             $this->assertNotSame(
-                'OpenEMR Site Administration',
+                'DCL Site Administration',
                 $title,
                 'admin.php dashboard should NOT render without the enable env var'
             );
@@ -108,11 +108,11 @@ class AaLoginTest extends PantherTestCase
     #[Test]
     public function testAdminPageEnabledWithEnvVar(): void
     {
-        $openemrRoot = dirname(__DIR__, 3);
+        $DCLRoot = dirname(__DIR__, 3);
         $process = new Process(
-            ['php', $openemrRoot . '/admin.php'],
+            ['php', $DCLRoot . '/admin.php'],
             null,
-            ['OPENEMR_ADMIN_PHP_ENABLED' => '1']
+            ['DCL_ADMIN_PHP_ENABLED' => '1']
         );
         $process->run();
         $this->assertTrue(
@@ -121,9 +121,9 @@ class AaLoginTest extends PantherTestCase
         );
         $output = $process->getOutput();
         $this->assertStringContainsString(
-            'OpenEMR Site Administration',
+            'DCL Site Administration',
             $output,
-            'admin.php dashboard should render when OPENEMR_ADMIN_PHP_ENABLED=1 is set'
+            'admin.php dashboard should render when DCL_ADMIN_PHP_ENABLED=1 is set'
         );
         $this->assertStringNotContainsString(
             'disabled by default',
@@ -136,6 +136,6 @@ class AaLoginTest extends PantherTestCase
     {
         $this->crawler = $this->client->request('GET', '/interface/login/login.php?site=default&testing_mode=1');
         $title = $this->client->getTitle();
-        $this->assertSame('OpenEMR Login', $title, 'FAILED to show login page');
+        $this->assertSame('DCL Login', $title, 'FAILED to show login page');
     }
 }

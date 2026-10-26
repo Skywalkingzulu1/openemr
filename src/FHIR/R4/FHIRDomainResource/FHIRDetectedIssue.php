@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, Ineffective treatment frequency, Procedure-condition conflict, etc.
@@ -72,77 +72,77 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifier associated with the detected issue record.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates the status of the detected issue.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus
      */
     public $status = null;
 
     /**
      * Identifies the general type of issue identified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDetectedIssueSeverity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDetectedIssueSeverity
      */
     public $severity = null;
 
     /**
      * Indicates the patient whose record the detected issue is associated with.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $identifiedDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $identifiedPeriod = null;
 
     /**
      * Individual or device responsible for the issue being raised.  For example, a decision support application or a pharmacist conducting a medication review.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * Indicates the resource representing the current activity or proposed activity that is potentially problematic.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $implicated = [];
 
     /**
      * Supporting evidence or manifestations that provide the basis for identifying the detected issue such as a GuidanceResponse or MeasureReport.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueEvidence[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueEvidence[]
      */
     public $evidence = [];
 
     /**
      * A textual explanation of the detected issue.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $detail = null;
 
     /**
      * The literature, knowledge-base or similar reference that describes the propensity for the detected issue identified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $reference = null;
 
     /**
      * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation[]
      */
     public $mitigation = [];
 
@@ -153,7 +153,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifier associated with the detected issue record.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -162,7 +162,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifier associated with the detected issue record.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -173,7 +173,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the status of the detected issue.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus
      */
     public function getStatus()
     {
@@ -182,7 +182,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the status of the detected issue.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -193,7 +193,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the general type of issue identified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -202,7 +202,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the general type of issue identified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -213,7 +213,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDetectedIssueSeverity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDetectedIssueSeverity
      */
     public function getSeverity()
     {
@@ -222,7 +222,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDetectedIssueSeverity $severity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDetectedIssueSeverity $severity
      * @return $this
      */
     public function setSeverity($severity)
@@ -233,7 +233,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the patient whose record the detected issue is associated with.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -242,7 +242,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the patient whose record the detected issue is associated with.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -252,7 +252,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getIdentifiedDateTime()
     {
@@ -260,7 +260,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $identifiedDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $identifiedDateTime
      * @return $this
      */
     public function setIdentifiedDateTime($identifiedDateTime)
@@ -270,7 +270,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getIdentifiedPeriod()
     {
@@ -278,7 +278,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $identifiedPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $identifiedPeriod
      * @return $this
      */
     public function setIdentifiedPeriod($identifiedPeriod)
@@ -289,7 +289,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual or device responsible for the issue being raised.  For example, a decision support application or a pharmacist conducting a medication review.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -298,7 +298,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual or device responsible for the issue being raised.  For example, a decision support application or a pharmacist conducting a medication review.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -309,7 +309,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the resource representing the current activity or proposed activity that is potentially problematic.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getImplicated()
     {
@@ -318,7 +318,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the resource representing the current activity or proposed activity that is potentially problematic.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $implicated
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $implicated
      * @return $this
      */
     public function addImplicated($implicated)
@@ -329,7 +329,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Supporting evidence or manifestations that provide the basis for identifying the detected issue such as a GuidanceResponse or MeasureReport.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueEvidence[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueEvidence[]
      */
     public function getEvidence()
     {
@@ -338,7 +338,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Supporting evidence or manifestations that provide the basis for identifying the detected issue such as a GuidanceResponse or MeasureReport.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueEvidence $evidence
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueEvidence $evidence
      * @return $this
      */
     public function addEvidence($evidence)
@@ -349,7 +349,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A textual explanation of the detected issue.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDetail()
     {
@@ -358,7 +358,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A textual explanation of the detected issue.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $detail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $detail
      * @return $this
      */
     public function setDetail($detail)
@@ -369,7 +369,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The literature, knowledge-base or similar reference that describes the propensity for the detected issue identified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getReference()
     {
@@ -378,7 +378,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The literature, knowledge-base or similar reference that describes the propensity for the detected issue identified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $reference
      * @return $this
      */
     public function setReference($reference)
@@ -389,7 +389,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation[]
      */
     public function getMitigation()
     {
@@ -398,7 +398,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation $mitigation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation $mitigation
      * @return $this
      */
     public function addMitigation($mitigation)

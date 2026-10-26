@@ -2,41 +2,41 @@
 
 /*
  * history_sdoh_health_concerns.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
  * SDOH Health Concerns Selection Page
  * Allows provider to select relevant health concerns after SDOH assessment
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    System Architect
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $srcdir = dirname(__FILE__, 4) . "/library";
 require_once("../../globals.php");
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\PatientIssuesService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\SDOH\HistorySdohService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\PatientIssuesService;
+use DCL\Services\PatientService;
+use DCL\Services\SDOH\HistorySdohService;
 
 
 $query = CurrentRequest::get()->query;

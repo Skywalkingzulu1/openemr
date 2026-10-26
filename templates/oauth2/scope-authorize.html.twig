@@ -2,11 +2,11 @@
 # Improved Scope Authorization Template with Granular Permissions
 # Posts checkbox state; ScopeConsentResolver derives the granted scopes server-side
 #
-# @package   OpenEMR
-# @link      https://www.open-emr.org
+# @package   DCL
+# @link      https://www.dcl.org
 # @author    AI Generated - Claude (Anthropic)
 # @copyright Copyright (c) 2025
-# @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+# @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 #}
 
 {# ============================================================================
@@ -16,7 +16,7 @@
    ============================================================================ #}
 
 {% extends "oauth2/oauth2-base.html.twig" %}
-{% block title %}{{ "OpenEMR Authorization"|xlt }}{% endblock %}
+{% block title %}{{ "DCL Authorization"|xlt }}{% endblock %}
 {% block content %}
     <form method="post" name="userLogin" id="userLogin" action="{{ redirect|attr }}">
         {% block form_header %}{% endblock %}

@@ -7,18 +7,18 @@
  * or external dependencies. Validates address verification, OAuth token handling,
  * error handling, and response parsing.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    stephen waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2025 stephen waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\USPS;
+namespace DCL\Tests\Isolated\USPS;
 
-use OpenEMR\USPS\USPSAddressVerifyV3;
+use DCL\USPS\USPSAddressVerifyV3;
 use PHPUnit\Framework\TestCase;
 
 class USPSAddressVerifyV3Test extends TestCase

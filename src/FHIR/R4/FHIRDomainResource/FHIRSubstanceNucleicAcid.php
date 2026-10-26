@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Nucleic acids are defined by three distinct elements: the base, sugar and linkage. Individual substance/moiety IDs will be created for each of these elements. The nucleotide sequence will be always entered in the 5’-3’ direction.
@@ -72,31 +72,31 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 {
     /**
      * The type of the sequence shall be specified based on a controlled vocabulary.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $sequenceType = null;
 
     /**
      * The number of linear sequences of nucleotides linked through phosphodiester bonds shall be described. Subunits would be strands of nucleic acids that are tightly associated typically through Watson-Crick base pairing. NOTE: If not specified in the reference source, the assumption is that there is 1 subunit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $numberOfSubunits = null;
 
     /**
      * The area of hybridisation shall be described if applicable for double stranded RNA or DNA. The number associated with the subunit followed by the number associated to the residue shall be specified in increasing order. The underscore “” shall be used as separator as follows: “Subunitnumber Residue”.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $areaOfHybridisation = null;
 
     /**
      * (TBC).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $oligoNucleotideType = null;
 
     /**
      * Subunits are listed in order of decreasing length; sequences of the same length will be ordered by molecular weight; subunits that have identical sequences will be repeated multiple times.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit[]
      */
     public $subunit = [];
 
@@ -107,7 +107,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The type of the sequence shall be specified based on a controlled vocabulary.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSequenceType()
     {
@@ -116,7 +116,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The type of the sequence shall be specified based on a controlled vocabulary.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $sequenceType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $sequenceType
      * @return $this
      */
     public function setSequenceType($sequenceType)
@@ -127,7 +127,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The number of linear sequences of nucleotides linked through phosphodiester bonds shall be described. Subunits would be strands of nucleic acids that are tightly associated typically through Watson-Crick base pairing. NOTE: If not specified in the reference source, the assumption is that there is 1 subunit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getNumberOfSubunits()
     {
@@ -136,7 +136,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The number of linear sequences of nucleotides linked through phosphodiester bonds shall be described. Subunits would be strands of nucleic acids that are tightly associated typically through Watson-Crick base pairing. NOTE: If not specified in the reference source, the assumption is that there is 1 subunit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numberOfSubunits
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numberOfSubunits
      * @return $this
      */
     public function setNumberOfSubunits($numberOfSubunits)
@@ -147,7 +147,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The area of hybridisation shall be described if applicable for double stranded RNA or DNA. The number associated with the subunit followed by the number associated to the residue shall be specified in increasing order. The underscore “” shall be used as separator as follows: “Subunitnumber Residue”.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAreaOfHybridisation()
     {
@@ -156,7 +156,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The area of hybridisation shall be described if applicable for double stranded RNA or DNA. The number associated with the subunit followed by the number associated to the residue shall be specified in increasing order. The underscore “” shall be used as separator as follows: “Subunitnumber Residue”.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $areaOfHybridisation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $areaOfHybridisation
      * @return $this
      */
     public function setAreaOfHybridisation($areaOfHybridisation)
@@ -167,7 +167,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * (TBC).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOligoNucleotideType()
     {
@@ -176,7 +176,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * (TBC).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $oligoNucleotideType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $oligoNucleotideType
      * @return $this
      */
     public function setOligoNucleotideType($oligoNucleotideType)
@@ -187,7 +187,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Subunits are listed in order of decreasing length; sequences of the same length will be ordered by molecular weight; subunits that have identical sequences will be repeated multiple times.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit[]
      */
     public function getSubunit()
     {
@@ -196,7 +196,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Subunits are listed in order of decreasing length; sequences of the same length will be ordered by molecular weight; subunits that have identical sequences will be repeated multiple times.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit $subunit
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit $subunit
      * @return $this
      */
     public function addSubunit($subunit)

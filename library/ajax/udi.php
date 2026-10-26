@@ -2,21 +2,21 @@
 
 /**
  * This script services requests for UDI (Unique Device Identifier)
- * within OpenEMR. All returns are done via json.
+ * within DCL. All returns are done via json.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\MedicalDevice\MedicalDevice;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\MedicalDevice\MedicalDevice;
 
 header('Content-type: application/json');
 
@@ -27,7 +27,7 @@ if (!CsrfUtils::verifyCsrfToken($_GET["csrf_token_form"], $session, 'udi')) {
 
 $udi = $_GET["udi"] ?? null;
 if (empty($udi)) {
-    ServiceContainer::getLogger()->error("OpenEMR ERROR: Called udi.php script without sending a udi");
+    ServiceContainer::getLogger()->error("DCL ERROR: Called udi.php script without sending a udi");
     die;
 }
 

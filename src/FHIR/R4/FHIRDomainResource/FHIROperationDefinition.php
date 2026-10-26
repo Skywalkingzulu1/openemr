@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
@@ -72,157 +72,157 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the operation definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this operation definition. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * Whether this is an operation or a named query.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIROperationKind
+     * @var \DCL\FHIR\R4\FHIRElement\FHIROperationKind
      */
     public $kind = null;
 
     /**
      * A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the operation definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the operation definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate operation definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the operation definition is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this operation definition is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * Whether the operation affects state. Side effects such as producing audit trail entries do not count as 'affecting  state'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $affectsState = null;
 
     /**
      * The name used to invoke the operation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * Additional information about how to use this operation or named query.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $comment = null;
 
     /**
      * Indicates that this operation definition is a constraining profile on the base.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $base = null;
 
     /**
      * The types on which this operation can be executed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $resource = [];
 
     /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $system = null;
 
     /**
      * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $type = null;
 
     /**
      * Indicates whether this operation can be invoked on a particular instance of one of the given types.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $instance = null;
 
     /**
      * Additional validation information for the in parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource as a whole.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $inputProfile = null;
 
     /**
      * Additional validation information for the out parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $outputProfile = null;
 
     /**
      * The parameters for the operation/query.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public $parameter = [];
 
     /**
      * Defines an appropriate combination of parameters to use when invoking this operation, to help code generators when generating overloaded parameter sets for this operation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload[]
      */
     public $overload = [];
 
@@ -233,7 +233,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -242,7 +242,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this operation definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the operation definition is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -253,7 +253,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -262,7 +262,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -273,7 +273,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -282,7 +282,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -293,7 +293,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the operation definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -302,7 +302,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the operation definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -313,7 +313,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this operation definition. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -322,7 +322,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this operation definition. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -333,7 +333,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Whether this is an operation or a named query.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIROperationKind
+     * @return \DCL\FHIR\R4\FHIRElement\FHIROperationKind
      */
     public function getKind()
     {
@@ -342,7 +342,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Whether this is an operation or a named query.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIROperationKind $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIROperationKind $kind
      * @return $this
      */
     public function setKind($kind)
@@ -353,7 +353,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -362,7 +362,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -373,7 +373,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -382,7 +382,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -393,7 +393,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the operation definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -402,7 +402,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the operation definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -413,7 +413,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -422,7 +422,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -433,7 +433,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the operation definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -442,7 +442,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the operation definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -453,7 +453,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate operation definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -462,7 +462,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate operation definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -473,7 +473,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the operation definition is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -482,7 +482,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the operation definition is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -493,7 +493,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Explanation of why this operation definition is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -502,7 +502,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Explanation of why this operation definition is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -513,7 +513,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Whether the operation affects state. Side effects such as producing audit trail entries do not count as 'affecting  state'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAffectsState()
     {
@@ -522,7 +522,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Whether the operation affects state. Side effects such as producing audit trail entries do not count as 'affecting  state'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $affectsState
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $affectsState
      * @return $this
      */
     public function setAffectsState($affectsState)
@@ -533,7 +533,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name used to invoke the operation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -542,7 +542,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name used to invoke the operation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -553,7 +553,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional information about how to use this operation or named query.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getComment()
     {
@@ -562,7 +562,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional information about how to use this operation or named query.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $comment
      * @return $this
      */
     public function setComment($comment)
@@ -573,7 +573,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates that this operation definition is a constraining profile on the base.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getBase()
     {
@@ -582,7 +582,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates that this operation definition is a constraining profile on the base.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $base
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $base
      * @return $this
      */
     public function setBase($base)
@@ -593,7 +593,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The types on which this operation can be executed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getResource()
     {
@@ -602,7 +602,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The types on which this operation can be executed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $resource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $resource
      * @return $this
      */
     public function addResource($resource)
@@ -613,7 +613,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getSystem()
     {
@@ -622,7 +622,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $system
      * @return $this
      */
     public function setSystem($system)
@@ -633,7 +633,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getType()
     {
@@ -642,7 +642,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $type
      * @return $this
      */
     public function setType($type)
@@ -653,7 +653,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates whether this operation can be invoked on a particular instance of one of the given types.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getInstance()
     {
@@ -662,7 +662,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates whether this operation can be invoked on a particular instance of one of the given types.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $instance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $instance
      * @return $this
      */
     public function setInstance($instance)
@@ -673,7 +673,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional validation information for the in parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource as a whole.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getInputProfile()
     {
@@ -682,7 +682,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional validation information for the in parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource as a whole.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $inputProfile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $inputProfile
      * @return $this
      */
     public function setInputProfile($inputProfile)
@@ -693,7 +693,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional validation information for the out parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getOutputProfile()
     {
@@ -702,7 +702,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional validation information for the out parameters - a single profile that covers all the parameters. The profile is a constraint on the parameters resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $outputProfile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $outputProfile
      * @return $this
      */
     public function setOutputProfile($outputProfile)
@@ -713,7 +713,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The parameters for the operation/query.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public function getParameter()
     {
@@ -722,7 +722,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The parameters for the operation/query.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -733,7 +733,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Defines an appropriate combination of parameters to use when invoking this operation, to help code generators when generating overloaded parameter sets for this operation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload[]
      */
     public function getOverload()
     {
@@ -742,7 +742,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Defines an appropriate combination of parameters to use when invoking this operation, to help code generators when generating overloaded parameter sets for this operation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload $overload
+     * @param \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload $overload
      * @return $this
      */
     public function addOverload($overload)

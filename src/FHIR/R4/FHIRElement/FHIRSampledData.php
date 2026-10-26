@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data.
@@ -72,43 +72,43 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 {
     /**
      * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $origin = null;
 
     /**
      * The length of time between sampling times, measured in milliseconds.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $period = null;
 
     /**
      * A correction factor that is applied to the sampled data points before they are added to the origin.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $factor = null;
 
     /**
      * The lower limit of detection of the measured points. This is needed if any of the data points have the value "L" (lower than detection limit).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $lowerLimit = null;
 
     /**
      * The upper limit of detection of the measured points. This is needed if any of the data points have the value "U" (higher than detection limit).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $upperLimit = null;
 
     /**
      * The number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $dimensions = null;
 
     /**
      * A series of data points which are decimal values separated by a single space (character u20). The special values "E" (error), "L" (below detection limit) and "U" (above detection limit) can also be used in place of a decimal value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledDataDataType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSampledDataDataType
      */
     public $data = null;
 
@@ -119,7 +119,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getOrigin()
     {
@@ -128,7 +128,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $origin
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $origin
      * @return $this
      */
     public function setOrigin($origin)
@@ -139,7 +139,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The length of time between sampling times, measured in milliseconds.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getPeriod()
     {
@@ -148,7 +148,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The length of time between sampling times, measured in milliseconds.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $period
      * @return $this
      */
     public function setPeriod($period)
@@ -159,7 +159,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * A correction factor that is applied to the sampled data points before they are added to the origin.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFactor()
     {
@@ -168,7 +168,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * A correction factor that is applied to the sampled data points before they are added to the origin.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $factor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $factor
      * @return $this
      */
     public function setFactor($factor)
@@ -179,7 +179,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The lower limit of detection of the measured points. This is needed if any of the data points have the value "L" (lower than detection limit).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getLowerLimit()
     {
@@ -188,7 +188,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The lower limit of detection of the measured points. This is needed if any of the data points have the value "L" (lower than detection limit).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $lowerLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $lowerLimit
      * @return $this
      */
     public function setLowerLimit($lowerLimit)
@@ -199,7 +199,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The upper limit of detection of the measured points. This is needed if any of the data points have the value "U" (higher than detection limit).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getUpperLimit()
     {
@@ -208,7 +208,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The upper limit of detection of the measured points. This is needed if any of the data points have the value "U" (higher than detection limit).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $upperLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $upperLimit
      * @return $this
      */
     public function setUpperLimit($upperLimit)
@@ -219,7 +219,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getDimensions()
     {
@@ -228,7 +228,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * The number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $dimensions
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $dimensions
      * @return $this
      */
     public function setDimensions($dimensions)
@@ -239,7 +239,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * A series of data points which are decimal values separated by a single space (character u20). The special values "E" (error), "L" (below detection limit) and "U" (above detection limit) can also be used in place of a decimal value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledDataDataType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSampledDataDataType
      */
     public function getData()
     {
@@ -248,7 +248,7 @@ class FHIRSampledData extends FHIRElement implements \JsonSerializable
 
     /**
      * A series of data points which are decimal values separated by a single space (character u20). The special values "E" (error), "L" (below detection limit) and "U" (above detection limit) can also be used in place of a decimal value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledDataDataType $data
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSampledDataDataType $data
      * @return $this
      */
     public function setData($data)

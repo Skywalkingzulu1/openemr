@@ -5,16 +5,16 @@
  *
  * JS Functions for eye_mag form(s), built with php features for run-time options and translations
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <rmagauran@gmail.com>
  * @copyright Copyright (c) 2016- Raymond Magauran <rmagauran@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
     require_once("../../../globals.php");
 
-    $srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+    $srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 
     $providerID = $_REQUEST['providerID'];
 
@@ -3974,7 +3974,7 @@ $("body").on("click","[name^='old_canvas']", function() {
 
                   $("#NEURO_COINS").on("click", function() {
                                           $("#ODCOINS").val("1.00");
-                                          //leave currency symbol out unless it is an openEMR defined option
+                                          //leave currency symbol out unless it is an DCL defined option
                                           $("#OSCOINS").val("1.00");
                                           submit_form("eye_mag");
                                           });
@@ -4187,7 +4187,7 @@ $("body").on("click","[name^='old_canvas']", function() {
                   /*  Sorting of diagnoses in IMP/PLAN right panel builds IMP_order[] array.
                    Foreach index => value in IMP_order[order,PMSFH[type][i]]:
                    retrieve PMSFH[type][value] and build the IMPRESSION/PLAN area
-                   openEMR ICD-10 seems to have newlines in codetext?  strip them with replace.
+                   DCL ICD-10 seems to have newlines in codetext?  strip them with replace.
                    All the ISSUE_TYPES and their fields are available in obj.PMSFH:
                    'title' => $disptitle,
                    'status' => $statusCompute,

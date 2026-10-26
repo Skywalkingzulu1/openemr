@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\BinaryForgePin;
+use DCL\Release\BinaryForgePin;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -34,8 +34,8 @@ final class BinaryForgePinTest extends TestCase
     {
         $pin = new BinaryForgePin('8_3_0', '08232026', '8.5');
 
-        self::assertSame('linux_amd64-php85-openemr-v8_3_0-amd64-08232026', $pin->forgeTag('amd64'));
-        self::assertSame('linux_arm64-php85-openemr-v8_3_0-arm64-08232026', $pin->forgeTag('arm64'));
+        self::assertSame('linux_amd64-php85-DCL-v8_3_0-amd64-08232026', $pin->forgeTag('amd64'));
+        self::assertSame('linux_arm64-php85-DCL-v8_3_0-arm64-08232026', $pin->forgeTag('arm64'));
     }
 
     public function testRequiredAssetsMatchTheDockerfileDownloads(): void
@@ -43,14 +43,14 @@ final class BinaryForgePinTest extends TestCase
         $pin = new BinaryForgePin('8_3_0', '08232026', '8.5');
 
         self::assertSame(
-            ['php-fpm-v8_3_0-linux-arm64', 'php-cli-v8_3_0-linux-arm64', 'openemr.phar'],
+            ['php-fpm-v8_3_0-linux-arm64', 'php-cli-v8_3_0-linux-arm64', 'DCL.phar'],
             $pin->requiredAssets('arm64'),
         );
     }
 
-    public function testOpenemrTagPrefixesTheVersion(): void
+    public function testDCLTagPrefixesTheVersion(): void
     {
-        self::assertSame('v7_0_3_4', (new BinaryForgePin('7_0_3_4', '12072025', '8.5'))->openemrTag());
+        self::assertSame('v7_0_3_4', (new BinaryForgePin('7_0_3_4', '12072025', '8.5'))->DCLTag());
     }
 
     /**

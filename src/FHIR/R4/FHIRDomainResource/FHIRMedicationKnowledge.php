@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -72,133 +72,133 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * A code that specifies this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A code to indicate if the medication is in active use.  The status refers to the validity about the information of the medication and not to its medicinal properties.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $status = null;
 
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $manufacturer = null;
 
     /**
      * Describes the form of the item.  Powder; tablets; capsule.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $doseForm = null;
 
     /**
      * Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amount = null;
 
     /**
      * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $synonym = [];
 
     /**
      * Associated or related knowledge about a medication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge[]
      */
     public $relatedMedicationKnowledge = [];
 
     /**
      * Associated or related medications.  For example, if the medication is a branded product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if this is a generic medication (e.g. Rosuvastatin), this would link to a branded product (e.g. Crestor).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $associatedMedication = [];
 
     /**
      * Category of the medication or product (e.g. branded product, therapeutic moeity, generic product, innovator product, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $productType = [];
 
     /**
      * Associated documentation about the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph[]
      */
     public $monograph = [];
 
     /**
      * Identifies a particular constituent of interest in the product.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[]
      */
     public $ingredient = [];
 
     /**
      * The instructions for preparing the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $preparationInstruction = null;
 
     /**
      * The intended or approved route of administration.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $intendedRoute = [];
 
     /**
      * The price of the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[]
      */
     public $cost = [];
 
     /**
      * The program under which the medication is reviewed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram[]
      */
     public $monitoringProgram = [];
 
     /**
      * Guidelines for the administration of the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines[]
      */
     public $administrationGuidelines = [];
 
     /**
      * Categorization of the medication within a formulary or classification system.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[]
      */
     public $medicineClassification = [];
 
     /**
      * Information that only applies to packages (not products).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
      */
     public $packaging = null;
 
     /**
      * Specifies descriptive properties of the medicine, such as color, shape, imprints, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic[]
      */
     public $drugCharacteristic = [];
 
     /**
      * Potential clinical issue with or between medication(s) (for example, drug-drug interaction, drug-disease contraindication, drug-allergy interaction, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $contraindication = [];
 
     /**
      * Regulatory information about a medication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory[]
      */
     public $regulatory = [];
 
     /**
      * The time course of drug absorption, distribution, metabolism and excretion of a medication from the body.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics[]
      */
     public $kinetics = [];
 
@@ -209,7 +209,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code that specifies this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -218,7 +218,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code that specifies this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -229,7 +229,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code to indicate if the medication is in active use.  The status refers to the validity about the information of the medication and not to its medicinal properties.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getStatus()
     {
@@ -238,7 +238,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code to indicate if the medication is in active use.  The status refers to the validity about the information of the medication and not to its medicinal properties.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $status
      * @return $this
      */
     public function setStatus($status)
@@ -249,7 +249,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManufacturer()
     {
@@ -258,7 +258,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function setManufacturer($manufacturer)
@@ -269,7 +269,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes the form of the item.  Powder; tablets; capsule.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDoseForm()
     {
@@ -278,7 +278,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes the form of the item.  Powder; tablets; capsule.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $doseForm
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $doseForm
      * @return $this
      */
     public function setDoseForm($doseForm)
@@ -289,7 +289,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmount()
     {
@@ -298,7 +298,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -309,7 +309,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getSynonym()
     {
@@ -318,7 +318,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $synonym
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $synonym
      * @return $this
      */
     public function addSynonym($synonym)
@@ -329,7 +329,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Associated or related knowledge about a medication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge[]
      */
     public function getRelatedMedicationKnowledge()
     {
@@ -338,7 +338,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Associated or related knowledge about a medication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge $relatedMedicationKnowledge
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge $relatedMedicationKnowledge
      * @return $this
      */
     public function addRelatedMedicationKnowledge($relatedMedicationKnowledge)
@@ -349,7 +349,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Associated or related medications.  For example, if the medication is a branded product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if this is a generic medication (e.g. Rosuvastatin), this would link to a branded product (e.g. Crestor).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAssociatedMedication()
     {
@@ -358,7 +358,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Associated or related medications.  For example, if the medication is a branded product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if this is a generic medication (e.g. Rosuvastatin), this would link to a branded product (e.g. Crestor).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $associatedMedication
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $associatedMedication
      * @return $this
      */
     public function addAssociatedMedication($associatedMedication)
@@ -369,7 +369,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Category of the medication or product (e.g. branded product, therapeutic moeity, generic product, innovator product, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getProductType()
     {
@@ -378,7 +378,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Category of the medication or product (e.g. branded product, therapeutic moeity, generic product, innovator product, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productType
      * @return $this
      */
     public function addProductType($productType)
@@ -389,7 +389,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Associated documentation about the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph[]
      */
     public function getMonograph()
     {
@@ -398,7 +398,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Associated documentation about the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph $monograph
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph $monograph
      * @return $this
      */
     public function addMonograph($monograph)
@@ -409,7 +409,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifies a particular constituent of interest in the product.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[]
      */
     public function getIngredient()
     {
@@ -418,7 +418,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifies a particular constituent of interest in the product.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient $ingredient
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)
@@ -429,7 +429,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The instructions for preparing the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPreparationInstruction()
     {
@@ -438,7 +438,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The instructions for preparing the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $preparationInstruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $preparationInstruction
      * @return $this
      */
     public function setPreparationInstruction($preparationInstruction)
@@ -449,7 +449,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The intended or approved route of administration.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getIntendedRoute()
     {
@@ -458,7 +458,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The intended or approved route of administration.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $intendedRoute
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $intendedRoute
      * @return $this
      */
     public function addIntendedRoute($intendedRoute)
@@ -469,7 +469,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The price of the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[]
      */
     public function getCost()
     {
@@ -478,7 +478,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The price of the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost $cost
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost $cost
      * @return $this
      */
     public function addCost($cost)
@@ -489,7 +489,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The program under which the medication is reviewed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram[]
      */
     public function getMonitoringProgram()
     {
@@ -498,7 +498,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The program under which the medication is reviewed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram $monitoringProgram
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram $monitoringProgram
      * @return $this
      */
     public function addMonitoringProgram($monitoringProgram)
@@ -509,7 +509,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Guidelines for the administration of the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines[]
      */
     public function getAdministrationGuidelines()
     {
@@ -518,7 +518,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Guidelines for the administration of the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines $administrationGuidelines
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines $administrationGuidelines
      * @return $this
      */
     public function addAdministrationGuidelines($administrationGuidelines)
@@ -529,7 +529,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Categorization of the medication within a formulary or classification system.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[]
      */
     public function getMedicineClassification()
     {
@@ -538,7 +538,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Categorization of the medication within a formulary or classification system.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification $medicineClassification
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification $medicineClassification
      * @return $this
      */
     public function addMedicineClassification($medicineClassification)
@@ -549,7 +549,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Information that only applies to packages (not products).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging
      */
     public function getPackaging()
     {
@@ -558,7 +558,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Information that only applies to packages (not products).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging $packaging
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging $packaging
      * @return $this
      */
     public function setPackaging($packaging)
@@ -569,7 +569,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Specifies descriptive properties of the medicine, such as color, shape, imprints, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic[]
      */
     public function getDrugCharacteristic()
     {
@@ -578,7 +578,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Specifies descriptive properties of the medicine, such as color, shape, imprints, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic $drugCharacteristic
      * @return $this
      */
     public function addDrugCharacteristic($drugCharacteristic)
@@ -589,7 +589,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Potential clinical issue with or between medication(s) (for example, drug-drug interaction, drug-disease contraindication, drug-allergy interaction, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getContraindication()
     {
@@ -598,7 +598,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Potential clinical issue with or between medication(s) (for example, drug-drug interaction, drug-disease contraindication, drug-allergy interaction, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $contraindication
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $contraindication
      * @return $this
      */
     public function addContraindication($contraindication)
@@ -609,7 +609,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Regulatory information about a medication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory[]
      */
     public function getRegulatory()
     {
@@ -618,7 +618,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Regulatory information about a medication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $regulatory
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $regulatory
      * @return $this
      */
     public function addRegulatory($regulatory)
@@ -629,7 +629,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The time course of drug absorption, distribution, metabolism and excretion of a medication from the body.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics[]
      */
     public function getKinetics()
     {
@@ -638,7 +638,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The time course of drug absorption, distribution, metabolism and excretion of a medication from the body.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics $kinetics
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics $kinetics
      * @return $this
      */
     public function addKinetics($kinetics)

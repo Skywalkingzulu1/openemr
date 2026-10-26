@@ -1,25 +1,25 @@
 <?php
 
 /**
- * Tests the orchestration of openemr:branch-cut: option parsing,
+ * Tests the orchestration of DCL:branch-cut: option parsing,
  * side dispatching, and the order in which mutators are invoked.
  * Mutators themselves are exercised by their per-class tests.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command;
+namespace DCL\Tests\Isolated\Common\Command;
 
-use OpenEMR\Common\Command\BranchCutCommand;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\BranchCutCommand;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
@@ -220,7 +220,7 @@ final class BranchCutCommandTest extends TestCase
         $command = new BranchCutCommand($relMutators, $masterMutators);
         $app = new Application();
         $app->addCommand($command);
-        return new CommandTester($app->find('openemr:branch-cut'));
+        return new CommandTester($app->find('DCL:branch-cut'));
     }
 }
 

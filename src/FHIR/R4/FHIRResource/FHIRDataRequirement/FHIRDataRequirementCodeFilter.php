@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDataRequirement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.
@@ -72,25 +72,25 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 {
     /**
      * The code-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type code, Coding, or CodeableConcept.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * A token parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type code, Coding, or CodeableConcept.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $searchParam = null;
 
     /**
      * The valueset for the code filter. The valueSet and code elements are additive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $valueSet = null;
 
     /**
      * The codes for the code filter. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes. If codes are specified in addition to a value set, the filter returns items matching a code in the value set or one of the specified codes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $code = [];
 
@@ -101,7 +101,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The code-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type code, Coding, or CodeableConcept.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -110,7 +110,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The code-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type code, Coding, or CodeableConcept.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -121,7 +121,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * A token parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type code, Coding, or CodeableConcept.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSearchParam()
     {
@@ -130,7 +130,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * A token parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type code, Coding, or CodeableConcept.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $searchParam
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $searchParam
      * @return $this
      */
     public function setSearchParam($searchParam)
@@ -141,7 +141,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The valueset for the code filter. The valueSet and code elements are additive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getValueSet()
     {
@@ -150,7 +150,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The valueset for the code filter. The valueSet and code elements are additive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
      * @return $this
      */
     public function setValueSet($valueSet)
@@ -161,7 +161,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The codes for the code filter. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes. If codes are specified in addition to a value set, the filter returns items matching a code in the value set or one of the specified codes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getCode()
     {
@@ -170,7 +170,7 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The codes for the code filter. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes. If codes are specified in addition to a value set, the filter returns items matching a code in the value set or one of the specified codes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $code
      * @return $this
      */
     public function addCode($code)

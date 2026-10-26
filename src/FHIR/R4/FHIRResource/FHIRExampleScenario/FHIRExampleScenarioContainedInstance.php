@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,13 +71,13 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement implement
 {
     /**
      * Each resource contained in the instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $resourceId = null;
 
     /**
      * A specific version of a resource contained in the instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $versionId = null;
 
@@ -88,7 +88,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement implement
 
     /**
      * Each resource contained in the instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getResourceId()
     {
@@ -97,7 +97,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement implement
 
     /**
      * Each resource contained in the instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $resourceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $resourceId
      * @return $this
      */
     public function setResourceId($resourceId)
@@ -108,7 +108,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement implement
 
     /**
      * A specific version of a resource contained in the instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersionId()
     {
@@ -117,7 +117,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement implement
 
     /**
      * A specific version of a resource contained in the instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $versionId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $versionId
      * @return $this
      */
     public function setVersionId($versionId)

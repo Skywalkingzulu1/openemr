@@ -1,18 +1,18 @@
 <?php
 
 /**
- *  @package OpenEMR
- *  @link    https://www.open-emr.org
+ *  @package DCL
+ *  @link    https://www.dcl.org
  *  @author  Sherwin Gaddis <sherwingaddis@gmail.com>
  *  @copyright Copyright (c) 2020 Sherwin Gaddis <sherwingaddis@gmail.com>
- *  @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ *  @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\WenoModule\Services;
+namespace DCL\Modules\WenoModule\Services;
 
 use DateTime;
 use DateTimeZone;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class LogImportBuild
 {

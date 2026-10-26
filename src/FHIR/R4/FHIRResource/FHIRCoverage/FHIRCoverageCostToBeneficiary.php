@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverage;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Financial instrument which may be used to reimburse or pay for health care products and services. Includes both insurance and self-payment.
@@ -71,23 +71,23 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
 {
     /**
      * The category of patient centric costs associated with treatment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $valueMoney = null;
 
     /**
      * A suite of codes indicating exceptions or reductions to patient costs and their effective periods.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageException[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageException[]
      */
     public $exception = [];
 
@@ -98,7 +98,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
 
     /**
      * The category of patient centric costs associated with treatment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -107,7 +107,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
 
     /**
      * The category of patient centric costs associated with treatment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -117,7 +117,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -125,7 +125,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -135,7 +135,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getValueMoney()
     {
@@ -143,7 +143,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $valueMoney
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $valueMoney
      * @return $this
      */
     public function setValueMoney($valueMoney)
@@ -154,7 +154,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
 
     /**
      * A suite of codes indicating exceptions or reductions to patient costs and their effective periods.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageException[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageException[]
      */
     public function getException()
     {
@@ -163,7 +163,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement implements \Json
 
     /**
      * A suite of codes indicating exceptions or reductions to patient costs and their effective periods.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageException $exception
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageException $exception
      * @return $this
      */
     public function addException($exception)

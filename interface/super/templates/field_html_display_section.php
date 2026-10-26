@@ -1,7 +1,7 @@
 <?php
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Services\Globals\GlobalSetting;
+use DCL\BC\ServiceContainer;
+use DCL\Services\Globals\GlobalSetting;
 
 $fldid ??= '';
 $fldarr ??= [];

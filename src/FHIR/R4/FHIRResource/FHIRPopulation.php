@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A populatioof people with some set of grouping criteria.
@@ -71,30 +71,30 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $ageRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $ageCodeableConcept = null;
 
     /**
      * The gender of the specific population.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $gender = null;
 
     /**
      * Race of the specific population.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $race = null;
 
     /**
      * The existing physiological conditions of the specific population to which this applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $physiologicalCondition = null;
 
@@ -104,7 +104,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
     private $_fhirElementName = 'Population';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAgeRange()
     {
@@ -112,7 +112,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $ageRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $ageRange
      * @return $this
      */
     public function setAgeRange($ageRange)
@@ -122,7 +122,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAgeCodeableConcept()
     {
@@ -130,7 +130,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $ageCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $ageCodeableConcept
      * @return $this
      */
     public function setAgeCodeableConcept($ageCodeableConcept)
@@ -141,7 +141,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The gender of the specific population.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getGender()
     {
@@ -150,7 +150,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The gender of the specific population.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $gender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $gender
      * @return $this
      */
     public function setGender($gender)
@@ -161,7 +161,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Race of the specific population.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRace()
     {
@@ -170,7 +170,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Race of the specific population.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $race
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $race
      * @return $this
      */
     public function setRace($race)
@@ -181,7 +181,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The existing physiological conditions of the specific population to which this applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPhysiologicalCondition()
     {
@@ -190,7 +190,7 @@ class FHIRPopulation extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The existing physiological conditions of the specific population to which this applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $physiologicalCondition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $physiologicalCondition
      * @return $this
      */
     public function setPhysiologicalCondition($physiologicalCondition)

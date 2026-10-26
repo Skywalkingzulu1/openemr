@@ -3,14 +3,14 @@
 /**
  * Generate PHPStan type aliases from database.sql CREATE TABLE statements
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use iamcal\SQLParser; // dev dependency, guarded in execute()
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -22,7 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 #[AsCommand(
-    name: 'openemr:generate-phpstan-types',
+    name: 'DCL:generate-phpstan-types',
     description: 'Generate PHPStan type aliases from database.sql CREATE TABLE statements'
 )]
 class GeneratePhpstanTypesCommand extends Command
@@ -224,18 +224,18 @@ class GeneratePhpstanTypesCommand extends Command
             <?php
 
             /**
-             * PHPStan Type Aliases for OpenEMR Database Tables
+             * PHPStan Type Aliases for DCL Database Tables
              *
              * THIS FILE IS GENERATED - DO NOT EDIT MANUALLY
              *
              * Regenerate with: composer generate-phpstan-types
              *
-             * @package   OpenEMR
-             * @link      https://www.open-emr.org
-             * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+             * @package   DCL
+             * @link      https://www.dcl.org
+             * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
              */
 
-            namespace OpenEMR\Common\Database;
+            namespace DCL\Common\Database;
 
             /**
              * Type definitions for database row arrays

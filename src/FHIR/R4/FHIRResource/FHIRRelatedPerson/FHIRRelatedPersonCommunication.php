@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRelatedPerson;
+namespace DCL\FHIR\R4\FHIRResource\FHIRRelatedPerson;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRelatedPerson;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.
@@ -71,13 +71,13 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement implements \Jso
 {
     /**
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $language = null;
 
     /**
      * Indicates whether or not the patient prefers this language (over other languages he masters up a certain level).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $preferred = null;
 
@@ -88,7 +88,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement implements \Jso
 
     /**
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguage()
     {
@@ -97,7 +97,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement implements \Jso
 
     /**
      * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
      * @return $this
      */
     public function setLanguage($language)
@@ -108,7 +108,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement implements \Jso
 
     /**
      * Indicates whether or not the patient prefers this language (over other languages he masters up a certain level).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getPreferred()
     {
@@ -117,7 +117,7 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement implements \Jso
 
     /**
      * Indicates whether or not the patient prefers this language (over other languages he masters up a certain level).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $preferred
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $preferred
      * @return $this
      */
     public function setPreferred($preferred)

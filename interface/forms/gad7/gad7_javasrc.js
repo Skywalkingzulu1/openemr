@@ -1,6 +1,6 @@
 // GAD-7 form
-// @package   OpenEMR
-// @link      https://www.open-emr.org
+// @package   DCL
+// @link      https://www.dcl.org
 // @author    ruth moulton
 // @author    Ruth Moulton <moulton ruth@muswell.me.uk>
 // @copyright Copyright (c) 2021 ruth moulton <ruth@muswell.me.uk>

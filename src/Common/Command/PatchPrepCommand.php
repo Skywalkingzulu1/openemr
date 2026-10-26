@@ -5,7 +5,7 @@
  * when a maintainer pushes a $v_patch increment to version.php on a
  * rel-* branch (e.g., rel-810 going 8.1.0 → 8.1.1-dev).
  *
- * SIBLING to `openemr:branch-cut` and `openemr:release-prep`. Workstream
+ * SIBLING to `DCL:branch-cut` and `DCL:release-prep`. Workstream
  * 3 Phase B in the release-mechanism migration.
  *
  * Side selection:
@@ -30,23 +30,23 @@
  * relationship to the rel-branch patch. The conductor supplies the
  * correct prior patch via --prev-version on both sides for uniformity.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\DockerUpgradeScaffoldMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\MasterSqlPatchBridgeMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\PatchPrepReleaseTargetsMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\SqlUpgradeSkeletonMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\Mutator\DockerUpgradeScaffoldMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\MasterSqlPatchBridgeMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\PatchPrepReleaseTargetsMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\SqlUpgradeSkeletonMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -75,8 +75,8 @@ final class PatchPrepCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:patch-prep')
-            ->setDescription('Apply mechanical patch-prep mutations when a rel branch enters dev for a new patch (sibling to openemr:branch-cut)')
+            ->setName('DCL:patch-prep')
+            ->setDescription('Apply mechanical patch-prep mutations when a rel branch enters dev for a new patch (sibling to DCL:branch-cut)')
             ->addOption(
                 'target-version',
                 null,

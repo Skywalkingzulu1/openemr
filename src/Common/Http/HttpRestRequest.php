@@ -1,24 +1,24 @@
 <?php
 
 /**
- * HttpRestRequest represents the current OpenEMR api request
- * @package openemr
- * @link      https://www.open-emr.org
+ * HttpRestRequest represents the current DCL api request
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Http;
+namespace DCL\Common\Http;
 
 use Http\Message\Encoding\GzipDecodeStream;
 use InvalidArgumentException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
+use DCL\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
+use DCL\Common\Uuid\UuidRegistry;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
 use Stringable;

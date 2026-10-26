@@ -4,18 +4,18 @@
  * gad-7.inc - common includes and constants for the gad-7 form
  * version 1.0.0  July 2020
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ruth Moulton <moulton ruth@muswell.me.uk>
  * @copyright Copyright (c) 2021 ruth moulton <ruth@muswell.me.uk>
  *
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
  require_once(__DIR__ . "/../../globals.php");
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 
 
 

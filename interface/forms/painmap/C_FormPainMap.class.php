@@ -3,16 +3,16 @@
 /**
  * C_FormPainMap.class.php, used to control a clickmap based form.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @copyright Copyright Medical Information Integration,LLC <info@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /* Include the class we're extending. */
 
-use OpenEMR\Common\Forms\EncounterFormAccess;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Forms\EncounterFormAccess;
+use DCL\Core\OEGlobalsBag;
 
 require_once(OEGlobalsBag::getInstance()->getProjectDir() . "/interface/clickmap/C_AbstractClickmap.php");
 

@@ -2,23 +2,23 @@
 
 /**
  * Tests for PostReleaseTargetsMutator: the master-side release-time
- * mutator that pins the just-shipped rel branch's openemr_version_ref to
+ * mutator that pins the just-shipped rel branch's DCL_version_ref to
  * the new tag, shuffles `latest`/`next` slots across rows, and drops the
  * unreleased placeholder row.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\PostReleaseTargetsMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\Mutator\PostReleaseTargetsMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
@@ -34,7 +34,7 @@ final class PostReleaseTargetsMutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-prt-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-prt-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir . '/.github', 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -105,11 +105,11 @@ final class PostReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-810
   docker_tags: 8.1.1,next
-  openemr_version_ref: rel-810
+  DCL_version_ref: rel-810
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.1.1', 'rel-810');
@@ -118,11 +118,11 @@ YAML;
         $expected = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev,next
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-810
   docker_tags: 8.1.1,latest
-  openemr_version_ref: v8_1_1
+  DCL_version_ref: v8_1_1
   gate_with_acceptance: true
 YAML;
         self::assertSame($expected, $this->readTarget());
@@ -140,15 +140,15 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.5.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-840
   docker_tags: 8.4.1,next
-  openemr_version_ref: rel-840
+  DCL_version_ref: rel-840
 
 - branch: rel-840
   docker_tags: 8.4.0,latest
-  openemr_version_ref: v8_4_0
+  DCL_version_ref: v8_4_0
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.4.1', 'rel-840');
@@ -165,7 +165,7 @@ YAML;
             if (str_contains($tags, 'latest')) {
                 $tagsList = $row['docker_tags'];
                 self::assertIsString($tagsList);
-                $ref = $row['openemr_version_ref'] ?? '';
+                $ref = $row['DCL_version_ref'] ?? '';
                 self::assertIsString($ref);
                 $latestClaimers[] = $ref . ' (' . $tagsList . ')';
             }
@@ -182,15 +182,15 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.5.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-840
   docker_tags: 8.4.1,next
-  openemr_version_ref: rel-840
+  DCL_version_ref: rel-840
 
 - branch: rel-840
   docker_tags: 8.4.0,latest
-  openemr_version_ref: v8_4_0
+  DCL_version_ref: v8_4_0
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.4.1', 'rel-840');
@@ -216,15 +216,15 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.5.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-840
   docker_tags: 8.4.1,latest
-  openemr_version_ref: v8_4_1
+  DCL_version_ref: v8_4_1
 
 - branch: rel-840
   docker_tags: 8.4.0,latest
-  openemr_version_ref: v8_4_0
+  DCL_version_ref: v8_4_0
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.4.1', 'rel-840');
@@ -239,7 +239,7 @@ YAML;
             $tags = $row['docker_tags'] ?? '';
             self::assertIsString($tags);
             if (str_contains($tags, 'latest')) {
-                $ref = $row['openemr_version_ref'] ?? '';
+                $ref = $row['DCL_version_ref'] ?? '';
                 self::assertIsString($ref);
                 $latestClaimers[] = $ref;
             }
@@ -284,19 +284,19 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.3.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-820
   docker_tags: 8.2.0
-  openemr_version_ref: rel-820
+  DCL_version_ref: rel-820
 
 - branch: rel-810
   docker_tags: 8.1.1,next
-  openemr_version_ref: rel-810
+  DCL_version_ref: rel-810
 
 - branch: rel-800
   docker_tags: 8.0.0,latest
-  openemr_version_ref: v8_0_0
+  DCL_version_ref: v8_0_0
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.1.1', 'rel-810');
@@ -315,7 +315,7 @@ YAML;
         self::assertSame('8.3.0,dev', $byBranch['master']['docker_tags'], 'master should not acquire next when a newer rel branch exists');
         self::assertSame('8.2.0,next', $byBranch['rel-820']['docker_tags'], 'rel-820 should acquire next');
         self::assertSame('8.1.1,latest', $byBranch['rel-810']['docker_tags']);
-        self::assertSame('v8_1_1', $byBranch['rel-810']['openemr_version_ref']);
+        self::assertSame('v8_1_1', $byBranch['rel-810']['DCL_version_ref']);
         self::assertSame('8.0.0', $byBranch['rel-800']['docker_tags']);
     }
 
@@ -325,16 +325,16 @@ YAML;
         // values, and the rewriter must preserve any trailing inline
         // comment on the line it edits. Verifies both halves at once:
         // docker_tags carries an inline comment that should survive the
-        // promote-to-latest edit; openemr_version_ref carries one that
+        // promote-to-latest edit; DCL_version_ref carries one that
         // should survive the pin edit.
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-810
   docker_tags: 8.1.1,next  # comment here
-  openemr_version_ref: rel-810  # tracks tip until release
+  DCL_version_ref: rel-810  # tracks tip until release
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.1.1', 'rel-810');
@@ -347,9 +347,9 @@ YAML;
             'inline comment on docker_tags should survive the slot-shuffle edit',
         );
         self::assertStringContainsString(
-            '  openemr_version_ref: v8_1_1  # tracks tip until release',
+            '  DCL_version_ref: v8_1_1  # tracks tip until release',
             $output,
-            'inline comment on openemr_version_ref should survive the pin edit',
+            'inline comment on DCL_version_ref should survive the pin edit',
         );
         // YAML must still parse cleanly with the inline comments intact.
         $parsed = Yaml::parse($output);
@@ -367,11 +367,11 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev,next
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-704
   docker_tags: 7.0.4,latest
-  openemr_version_ref: v7_0_4
+  DCL_version_ref: v7_0_4
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '7.0.4', 'rel-704');
@@ -398,16 +398,16 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.5.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
   gate_with_acceptance: true
 
 - branch: rel-840
   docker_tags: 8.4.1,next
-  openemr_version_ref: rel-840
+  DCL_version_ref: rel-840
 
 - branch: rel-840
   docker_tags: 8.4.0,latest
-  openemr_version_ref: v8_4_0
+  DCL_version_ref: v8_4_0
   gate_with_acceptance: true
 YAML;
         $this->writeTarget($input);
@@ -417,7 +417,7 @@ YAML;
         $output = $this->readTarget();
         // The promoted row (8.4.1,latest / v8_4_1) must now carry gate_with_acceptance.
         self::assertMatchesRegularExpression(
-            '/- branch: rel-840\s+docker_tags: 8\.4\.1,latest\s+openemr_version_ref: v8_4_1\s+gate_with_acceptance: true/',
+            '/- branch: rel-840\s+docker_tags: 8\.4\.1,latest\s+DCL_version_ref: v8_4_1\s+gate_with_acceptance: true/',
             $output,
         );
     }
@@ -430,12 +430,12 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
   gate_with_acceptance: true
 
 - branch: rel-810
   docker_tags: 8.1.1,next
-  openemr_version_ref: rel-810
+  DCL_version_ref: rel-810
   gate_with_acceptance: true
 YAML;
         $this->writeTarget($input);
@@ -461,11 +461,11 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev,next
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-810
   docker_tags: 8.1.0,latest
-  openemr_version_ref: v8_1_0
+  DCL_version_ref: v8_1_0
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.2.0', 'rel-820');
@@ -487,16 +487,16 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev,next
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-820
   docker_tags: 8.1.0,latest
-  openemr_version_ref: v8_1_0
+  DCL_version_ref: v8_1_0
   unreleased: true
 
 - branch: rel-810
   docker_tags: 8.1.0,latest
-  openemr_version_ref: v8_1_0
+  DCL_version_ref: v8_1_0
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.2.0', 'rel-820');
@@ -525,19 +525,19 @@ YAML;
         $input = <<<'YAML'
 - branch: master
   docker_tags: 8.2.0,dev
-  openemr_version_ref: master
+  DCL_version_ref: master
 
 - branch: rel-810
   docker_tags: 8.1.2,next
-  openemr_version_ref: rel-810
+  DCL_version_ref: rel-810
 
 - branch: rel-810
   docker_tags: 8.1.1
-  openemr_version_ref: v8_1_1
+  DCL_version_ref: v8_1_1
 
 - branch: rel-800
   docker_tags: 8.0.0,latest
-  openemr_version_ref: v8_0_0
+  DCL_version_ref: v8_0_0
 YAML;
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.1.2', 'rel-810');
@@ -552,7 +552,7 @@ YAML;
             static fn (mixed $r): bool => is_array($r) && ($r['branch'] ?? null) === 'rel-810',
         ));
         self::assertCount(2, $rel810Rows);
-        $refs = array_map(static fn (array $r): mixed => $r['openemr_version_ref'], $rel810Rows);
+        $refs = array_map(static fn (array $r): mixed => $r['DCL_version_ref'], $rel810Rows);
         self::assertContains('v8_1_2', $refs, 'newly-shipped row pinned to v8_1_2');
         self::assertContains('v8_1_1', $refs, 'historical row pinned to v8_1_1 (unchanged)');
     }

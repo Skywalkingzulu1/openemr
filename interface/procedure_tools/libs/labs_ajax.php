@@ -3,24 +3,24 @@
 /**
  * labs_ajax.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../../interface/globals.php");
 
 use Mpdf\Mpdf;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Services\Storage\CacheDirectory;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\RequestTerminator;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Services\Storage\CacheDirectory;
 use Symfony\Component\HttpFoundation\Response;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
@@ -103,7 +103,7 @@ if ($action === 'print_labels') {
     }
 
     $pdf = new mPDF([
-        'tempDir' => (new CacheDirectory())->for('openemr-mpdf'),
+        'tempDir' => (new CacheDirectory())->for('DCL-mpdf'),
         'mode' => 'utf-8',
         'format' => [45, 19],
         'default_font_size' => '9',

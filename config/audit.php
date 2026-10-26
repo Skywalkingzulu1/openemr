@@ -3,21 +3,21 @@
 /**
  * Auditing-related services and configuration
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 use Firehed\Container\TypedContainerInterface as TC;
-use OpenEMR\Common\Database\{
+use DCL\Common\Database\{
     ConnectionManager,
     ConnectionType,
 };
-use OpenEMR\Common\Logging\{
+use DCL\Common\Logging\{
     Audit,
     AuditConfig,
     AuditLoggerInterface,

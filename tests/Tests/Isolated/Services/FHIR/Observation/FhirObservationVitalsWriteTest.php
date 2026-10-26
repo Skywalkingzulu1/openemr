@@ -9,19 +9,19 @@
  * that matrix fast and runnable without a data layer; the DB-backed round trip is
  * covered by FhirObservationVitalsServiceCrudTest.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR\Observation;
+namespace DCL\Tests\Isolated\Services\FHIR\Observation;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\Services\FHIR\Observation\FhirObservationVitalsService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\Services\FHIR\Observation\FhirObservationVitalsService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -379,7 +379,7 @@ class FhirObservationVitalsWriteTest extends TestCase
                     'valueQuantity' => ['value' => 1, 'code' => 'kg'],
                 ]),
                 'code',
-                'is not a vital sign OpenEMR can store',
+                'is not a vital sign DCL can store',
             ],
             'a unit that cannot be converted is refused rather than stored bare' => [
                 self::observation([
@@ -578,7 +578,7 @@ class FhirObservationVitalsWriteTest extends TestCase
             'an Observation carrying no value is refused' => [
                 self::observation(['code' => self::loincCode('8867-4')]),
                 'value',
-                'carries no value OpenEMR can store',
+                'carries no value DCL can store',
             ],
         ];
     }

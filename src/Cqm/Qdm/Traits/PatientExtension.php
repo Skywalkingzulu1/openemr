@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @package OpenEMR
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Cqm\Qdm\Traits;
+namespace DCL\Cqm\Qdm\Traits;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\Address;
-use OpenEMR\Cqm\Qdm\BaseTypes\Telcom;
-use OpenEMR\Cqm\Qdm\Identifier;
+use DCL\Cqm\Qdm\BaseTypes\Address;
+use DCL\Cqm\Qdm\BaseTypes\Telcom;
+use DCL\Cqm\Qdm\Identifier;
 
 trait PatientExtension
 {
     public $patientName;
 
     /**
-     * @var Identifier Used to store our OpenEMR PID
+     * @var Identifier Used to store our DCL PID
      */
     public $id;
 

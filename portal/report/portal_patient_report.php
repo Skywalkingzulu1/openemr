@@ -3,26 +3,26 @@
 /**
  * portal_patient_report.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady@sparmy.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2016-2026 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (C) 2024 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Controllers\Portal\PortalPatientReportController;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientReport\PatientReportFilterEvent;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Controllers\Portal\PortalPatientReportController;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientReport\PatientReportFilterEvent;
 use Twig\Error\SyntaxError;
 
-// Will start the (patient) portal OpenEMR session/cookie.
+// Will start the (patient) portal DCL session/cookie.
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../../vendor/autoload.php");
 $globalsBag = OEGlobalsBag::getInstance();

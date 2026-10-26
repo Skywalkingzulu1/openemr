@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Encryption;
+namespace DCL\Tests\Isolated\Encryption;
 
-use OpenEMR\Encryption\Cipher\CipherInterface;
-use OpenEMR\Encryption\CipherSuite;
-use OpenEMR\Encryption\Ciphertext;
-use OpenEMR\Encryption\KeyId;
-use OpenEMR\Encryption\Keys\KeychainInterface;
-use OpenEMR\Encryption\Plaintext;
+use DCL\Encryption\Cipher\CipherInterface;
+use DCL\Encryption\CipherSuite;
+use DCL\Encryption\Ciphertext;
+use DCL\Encryption\KeyId;
+use DCL\Encryption\Keys\KeychainInterface;
+use DCL\Encryption\Plaintext;
 use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A patient's point-in-time set of recommendations (i.e. forecasting) according to a published schedule with optional supporting justification.
@@ -71,13 +71,13 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
 {
     /**
      * Date classification of recommendation.  For example, earliest date to give, latest date to give, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The date whose meaning is specified by dateCriterion.code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $value = null;
 
@@ -88,7 +88,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
 
     /**
      * Date classification of recommendation.  For example, earliest date to give, latest date to give, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
 
     /**
      * Date classification of recommendation.  For example, earliest date to give, latest date to give, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
 
     /**
      * The date whose meaning is specified by dateCriterion.code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getValue()
     {
@@ -117,7 +117,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement im
 
     /**
      * The date whose meaning is specified by dateCriterion.code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $value
      * @return $this
      */
     public function setValue($value)

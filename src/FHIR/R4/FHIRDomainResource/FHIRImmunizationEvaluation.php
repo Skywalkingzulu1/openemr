@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describes a comparison of an immunization event against published recommendations to determine if the administration is "valid" in relation to those  recommendations.
@@ -72,87 +72,87 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 {
     /**
      * A unique identifier assigned to this immunization evaluation record.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates the current status of the evaluation of the vaccination administration event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes
      */
     public $status = null;
 
     /**
      * The individual for whom the evaluation is being done.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The date the evaluation of the vaccine administration event was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $authority = null;
 
     /**
      * The vaccine preventable disease the dose is being evaluated against.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $targetDisease = null;
 
     /**
      * The vaccine administration event being evaluated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $immunizationEvent = null;
 
     /**
      * Indicates if the dose is valid or not valid with respect to the published recommendations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $doseStatus = null;
 
     /**
      * Provides an explanation as to why the vaccine administration event is valid or not relative to the published recommendations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $doseStatusReason = [];
 
     /**
      * Additional information about the evaluation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $series = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $doseNumberPositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $doseNumberString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $seriesDosesPositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $seriesDosesString = null;
 
@@ -163,7 +163,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * A unique identifier assigned to this immunization evaluation record.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -172,7 +172,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * A unique identifier assigned to this immunization evaluation record.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -183,7 +183,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Indicates the current status of the evaluation of the vaccination administration event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes
      */
     public function getStatus()
     {
@@ -192,7 +192,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Indicates the current status of the evaluation of the vaccination administration event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -203,7 +203,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The individual for whom the evaluation is being done.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -212,7 +212,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The individual for whom the evaluation is being done.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -223,7 +223,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The date the evaluation of the vaccine administration event was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -232,7 +232,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The date the evaluation of the vaccine administration event was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -243,7 +243,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthority()
     {
@@ -252,7 +252,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $authority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $authority
      * @return $this
      */
     public function setAuthority($authority)
@@ -263,7 +263,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The vaccine preventable disease the dose is being evaluated against.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTargetDisease()
     {
@@ -272,7 +272,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The vaccine preventable disease the dose is being evaluated against.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $targetDisease
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $targetDisease
      * @return $this
      */
     public function setTargetDisease($targetDisease)
@@ -283,7 +283,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The vaccine administration event being evaluated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getImmunizationEvent()
     {
@@ -292,7 +292,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * The vaccine administration event being evaluated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $immunizationEvent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $immunizationEvent
      * @return $this
      */
     public function setImmunizationEvent($immunizationEvent)
@@ -303,7 +303,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Indicates if the dose is valid or not valid with respect to the published recommendations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDoseStatus()
     {
@@ -312,7 +312,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Indicates if the dose is valid or not valid with respect to the published recommendations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $doseStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $doseStatus
      * @return $this
      */
     public function setDoseStatus($doseStatus)
@@ -323,7 +323,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Provides an explanation as to why the vaccine administration event is valid or not relative to the published recommendations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getDoseStatusReason()
     {
@@ -332,7 +332,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Provides an explanation as to why the vaccine administration event is valid or not relative to the published recommendations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $doseStatusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $doseStatusReason
      * @return $this
      */
     public function addDoseStatusReason($doseStatusReason)
@@ -343,7 +343,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Additional information about the evaluation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -352,7 +352,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * Additional information about the evaluation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -363,7 +363,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSeries()
     {
@@ -372,7 +372,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $series
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $series
      * @return $this
      */
     public function setSeries($series)
@@ -382,7 +382,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getDoseNumberPositiveInt()
     {
@@ -390,7 +390,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
      * @return $this
      */
     public function setDoseNumberPositiveInt($doseNumberPositiveInt)
@@ -400,7 +400,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDoseNumberString()
     {
@@ -408,7 +408,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $doseNumberString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $doseNumberString
      * @return $this
      */
     public function setDoseNumberString($doseNumberString)
@@ -418,7 +418,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSeriesDosesPositiveInt()
     {
@@ -426,7 +426,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
      * @return $this
      */
     public function setSeriesDosesPositiveInt($seriesDosesPositiveInt)
@@ -436,7 +436,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSeriesDosesString()
     {
@@ -444,7 +444,7 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $seriesDosesString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $seriesDosesString
      * @return $this
      */
     public function setSeriesDosesString($seriesDosesString)

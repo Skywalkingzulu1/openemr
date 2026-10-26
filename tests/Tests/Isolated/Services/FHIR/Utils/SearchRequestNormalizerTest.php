@@ -2,17 +2,17 @@
 
 /*
  * SearchRequestNormalizerTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR\Utils;
+namespace DCL\Tests\Isolated\Services\FHIR\Utils;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Services\FHIR\Utils\SearchRequestNormalizer;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Services\FHIR\Utils\SearchRequestNormalizer;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -31,7 +31,7 @@ class SearchRequestNormalizerTest extends TestCase
             'HTTPS' => 'on',
             'REQUEST_SCHEME' => 'https',
             'REQUEST_URI' => '/apis/default/fhir/Patient/_search',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php',
+            'SCRIPT_FILENAME' => '/var/www/html/DCL/apis/dispatch.php',
             'SCRIPT_NAME' => '/apis/dispatch.php',
             'PATH_INFO' => '/fhir/Patient/_search',
         ]);

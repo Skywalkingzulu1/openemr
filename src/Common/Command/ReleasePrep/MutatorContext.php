@@ -14,16 +14,16 @@
  * patch-prep on both sides, where version.php on the rel branch has
  * already been bumped past the value the skeleton needs to anchor at).
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep;
+namespace DCL\Common\Command\ReleasePrep;
 
 final readonly class MutatorContext
 {
@@ -104,9 +104,9 @@ final readonly class MutatorContext
 
     /**
      * Render the git tag name corresponding to this context's version,
-     * matching the canonical openemr scheme: `v` + version with `_`
+     * matching the canonical DCL scheme: `v` + version with `_`
      * replacing `.` (e.g. 8.1.1 -> v8_1_1). Used by post-release mutators
-     * that need to pin a rel branch row's openemr_version_ref to the
+     * that need to pin a rel branch row's DCL_version_ref to the
      * just-created tag.
      */
     public function tagName(): string

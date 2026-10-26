@@ -7,19 +7,19 @@
  * so with an older or inactive row for the same code it billed that row's
  * old fee, while the fee sheet billed the current one.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Billing;
+namespace DCL\Tests\Services\Billing;
 
-use OpenEMR\Billing\FeeSheetChargeLookup;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Billing\FeeSheetChargeLookup;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\TestCase;
 
 class FeeSheetChargeLookupTest extends TestCase

@@ -16,7 +16,7 @@ A few words to indicate the reason for the visit
 A followup appointment can also be scheduled right from the fee sheet.
 A GCAC visit form should be added to this visit.
 A HL7 v2.x message simply consists of several lines of text, each line is called a segment and is further divided into fields by using the pipe (|) character
-A large application like openEMR is used by a multitude of users with varying roles and degrees of responsibility. It is imperative that access to various parts of the program be granted to users on a need to know basis. To achieve this - Access Control Lists (ACL) are used.
+A large application like DCL is used by a multitude of users with varying roles and degrees of responsibility. It is imperative that access to various parts of the program be granted to users on a need to know basis. To achieve this - Access Control Lists (ACL) are used.
 A lot number is required
 A lot number is required!
 A lowercase letter
@@ -332,7 +332,7 @@ Additional information may be available
 Additional information to process paper claims
 Additional Labs
 Additional Notes
-Additional Notes field is for local use in openEMR
+Additional Notes field is for local use in DCL
 Additional notes for this result or recommendation
 Additional Notes:
 Additional Notes:
@@ -498,7 +498,7 @@ All Official Clinical Quality Measures (CQM) Measure Groups
 All or part of the first name
 All or part of the last name
 All or part of the organization
-All patient interactions in OpenEMR are linked to encounters
+All patient interactions in DCL are linked to encounters
 All Patients
 All pending messages are displayed on the MY MESSAGES pane
 All Product Types
@@ -675,12 +675,12 @@ An e-mail with your new account credentials will be sent to the e-mail address s
 An electronic order and the returned result is in the form of a message called the HL7 message. HL7 stands for Health Level (Application Layer) 7. HL7’s prime objective is to simplify the implementation of interfaces between healthcare software applications and various vendors so as to reduce the pain and cost involved in custom interface programming
 An end date later than the start date is required for repeated events!
 An error occured signing the form
-An error occurred while dumping OpenEMR web directory tree
+An error occurred while dumping DCL web directory tree
 An error occurred while dumping phpGACL web directory tree
 An error occurred while dumping SQL-Ledger web directory tree
 An error occurred: Missing file to upload. Returning to form.
 An error occurred: Missing file to upload: Use back button!
-An important concept to grasp is that once the secret key delivered via the QR code is captured by the authenticator app there is no further communication between the app and OpenEMR, each will use the current UNIX time and its copy of the user-specific shared secret key to generate the same unique 6 digit number
+An important concept to grasp is that once the secret key delivered via the QR code is captured by the authenticator app there is no further communication between the app and DCL, each will use the current UNIX time and its copy of the user-specific shared secret key to generate the same unique 6 digit number
 An important point to remember is that the various individuals tests in each panel are listed as Results, the fruit, you cannot directly order these individual tests
 An incomplete GCAC issue has been created and linked. Someone will need to complete it later.
 An internal server error occurred
@@ -929,7 +929,7 @@ Asthma
 at
 At least one diagnosis is required! Please add a diagnosis for this order.
 At least one search parameter is required if you select All.
-At present e-prescribing from openEMR is possible only in the United States
+At present e-prescribing from DCL is possible only in the United States
 At present only Continuity of Care Record (CCR) Continuity of Care Document (CCD) can be sent using phiMail
 At the Navicular
 At the Navicular:
@@ -2210,10 +2210,10 @@ Config
 Configuration
 Configuration Export/Import
 Configuration saved successfully
-Configure Apache and OpenEMR to use Client side SSL certificates.
+Configure Apache and DCL to use Client side SSL certificates.
 Configure Apache to use Client side SSL certificates
 Configure Apache to use HTTPS.
-Configure Openemr to use Client side SSL certificates
+Configure DCL to use Client side SSL certificates
 Configure Orders and Results
 Configure Orders Help
 Configure the lab test structure
@@ -2269,7 +2269,7 @@ Contact Lenses
 Contact Medical Information Integration, LLC at http://mi-squared.com for Lab Exchange Service.
 Contact Medical Information Integration, LLC at http://mi-squared.com or ZH Healthcare at http://zhservices.com for subscribing the eRx service
 Contact Medical Information Integration, LLC at http://mi-squared.com or ZH Healthcare at http://zhservices.com for subscribing to the NewCrop eRx service.
-Contact mi-squared at http://www.mi-squared.com/products-services/openemr/ or ZH Healthcare at https://blueehr.com/contact-us/ for subscribing to the NewCrop eRx service.
+Contact mi-squared at http://www.mi-squared.com/products-services/DCL/ or ZH Healthcare at https://blueehr.com/contact-us/ for subscribing to the NewCrop eRx service.
 Contact name
 Contact Open Med Practice, www.openmedpractice.com for subscribing to the Weno Free eRx service.
 Contact or Notify Phone
@@ -2546,7 +2546,7 @@ Currently Busy
 Currently Busy{{Service}}
 Currently off-line
 Currently Running
-Currently there are 5 types of transactions in OpenEMR
+Currently there are 5 types of transactions in DCL
 Currently there are no facilities.
 Currently working on making this document
 Cushing Syndrom
@@ -3322,8 +3322,8 @@ Due Pt
 Due Soon
 Due Status
 Due Status Update
-Dumping OpenEMR database
-Dumping OpenEMR web directory tree
+Dumping DCL database
+Dumping DCL web directory tree
 Dumping phpGACL database
 Dumping phpGACL web directory tree
 Dumping SQL-Ledger database
@@ -3489,7 +3489,7 @@ Email Text, Usable Tag: ***NAME*** , i.e. Dear ***NAME***{{Do Not translate the 
 Email Transport Method
 Email was sent to following address
 emails not sent
-Embed {login} where the OpenEMR login name of the user is to be; for example: uid={login},dc=example,dc=com
+Embed {login} where the DCL login name of the user is to be; for example: uid={login},dc=example,dc=com
 Emergency Care
 Emergency contact
 Emergency Contact
@@ -3612,18 +3612,18 @@ Enable Onsite Patient Portal
 Enable Onsite Patient Portal Document Download
 Enable Onsite Patient Portal new patient to self register.
 Enable Onsite Patient Portal.
-Enable OpenEMR FHIR System Scopes (Recommended Off, Turn on only if you know what you are doing)
-Enable OpenEMR FHIR System Scopes.
-Enable OpenEMR Patient Portal FHIR REST API (EXPERIMENTAL)
-Enable OpenEMR Patient Portal FHIR RESTful API.
-Enable OpenEMR Patient Portal REST API (EXPERIMENTAL)
-Enable OpenEMR Patient Portal RESTful API.
-Enable OpenEMR REST API
-Enable OpenEMR RESTful API. SSL Required
-Enable OpenEMR Standard FHIR REST API
-Enable OpenEMR Standard FHIR RESTful API.
-Enable OpenEMR Standard REST API
-Enable OpenEMR Standard RESTful API.
+Enable DCL FHIR System Scopes (Recommended Off, Turn on only if you know what you are doing)
+Enable DCL FHIR System Scopes.
+Enable DCL Patient Portal FHIR REST API (EXPERIMENTAL)
+Enable DCL Patient Portal FHIR RESTful API.
+Enable DCL Patient Portal REST API (EXPERIMENTAL)
+Enable DCL Patient Portal RESTful API.
+Enable DCL REST API
+Enable DCL RESTful API. SSL Required
+Enable DCL Standard FHIR REST API
+Enable DCL Standard FHIR RESTful API.
+Enable DCL Standard REST API
+Enable DCL Standard RESTful API.
 Enable Patient Portal
 Enable Patient Portal Document Download
 Enable Patient Portal new patient to self register.
@@ -3640,7 +3640,7 @@ Enable Standard Report Itemization
 Enable support for the open source WordPress Portal by Sunset Systems
 Enable Text Templates in Encounter Forms
 Enable the Medical Information Integration, LLC Lab Exchange Service.
-Enable the OpenEMR Support LLC Lab Exchange Service.
+Enable the DCL Support LLC Lab Exchange Service.
 Enable User Certificate Authentication
 Enable Version 1 Onsite Patient Portal
 Enable Version 2 Onsite Patient Portal
@@ -3756,7 +3756,7 @@ English (Australian)
 English (Indian)
 English (Standard)
 Enscript command used by Hylafax.
-Ensure OpenEMR has write privileges to directory
+Ensure DCL has write privileges to directory
 Ensure that Identifying Codes are unique
 ENT Discharge
 ENT Pain
@@ -3823,14 +3823,14 @@ Enter the laterality of this procedure, if applicable.
 Enter the Logical Observation Identifiers Names and Codes (LOINC) code for this procedure
 Enter the Logical Observation Identifiers Names and Codes (LOINC) code for this procedure. LOINC is a database and universal standard for identifying medical laboratory observations.
 Enter the LOINC code for this procedure
-Enter the OpenEMR login password for the user and click Submit
+Enter the DCL login password for the user and click Submit
 Enter the Re Identification code
 Enter the relevant site if applicable.
 Enter the Server Address, Username, and Password provided to you
 Enter the Severity of the allergy
 Enter the specimen type if applicable.
 Enter the values 3.4 - 7.2 - Men, 2.4–6.1 - Women
-Enter their OpenEMR username in the notification user field
+Enter their DCL username in the notification user field
 Enter User Login ID
 Enter values in this section to create a new group also known as Access Request Object (ARO)
 Enter your credentials
@@ -3898,7 +3898,7 @@ Error Removing Message
 Error retrieving results from Lab Exchange Network
 Error retrieving values.
 Error saving document
-Error when granting file privilege to the OpenEMR user.
+Error when granting file privilege to the DCL user.
 Error while adding new plan
 Error while deleting the plan
 error while registering form!
@@ -3922,7 +3922,7 @@ Error, unable to create the Certificate Authority certificate.
 Error, unable to create the Server certificate.
 Error, unable to create zip file with all the certificates
 Error, unable to open file
-Error, User Certificate Authentication is not enabled in OpenEMR
+Error, User Certificate Authentication is not enabled in DCL
 ERROR. Could not open
 Error. Not authorized
 Error. Not Authorized.
@@ -4286,7 +4286,7 @@ File not found
 File Not Found
 File on server (modification date)
 File path not found.
-File privilege granted to OpenEMR user.
+File privilege granted to DCL user.
 File retrieval from CouchDB failed
 File Room
 File to upload
@@ -4303,7 +4303,7 @@ Filipino
 fill
 Fill any of the Below Row.
 Fill here only if sending email notification to patients
-Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in openEMR
+Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in DCL
 Fill in the CPT codes using the displayed format. The common E/M codes are already filled in, add more as needed
 Fill in the details as required and click Save
 Fill in the details for the Organ/Disease Panel as before and click Save to close the pop-up
@@ -4485,7 +4485,7 @@ For those interested in details of what constitutes a Continuity of Care Record 
 For those interested in what happens under the hood
 For those lines the Description will indicate the details of the code
 For those with administrative privileges an icon is displayed next to the My Messages caption
-For TOTP to work a unique secret key must be shared between OpenEMR and the user
+For TOTP to work a unique secret key must be shared between DCL and the user
 For U2F support on Linux click
 for variable
 for:
@@ -5040,7 +5040,7 @@ HTML
 HTML Output?
 HTN{{hypertension}}
 Http Error
-Https link for the OpenEMR Support LLC Lab Exchange Service.
+Https link for the DCL Support LLC Lab Exchange Service.
 HT{{hyperphoria}}
 Hungarian
 Hylafax Directory
@@ -5112,7 +5112,7 @@ If name, any part of lastname or lastname,firstname
 If NewCrop eRx - the electronic prescription module, is enabled the NewCrop MedEntry and NewCrop Account Status buttons will be appear here
 If not listed you can add the drug to the Title text-box
 If nothing is selected here then all are permitted.
-If only capture the QR code but do not register the TOTP key with OpenEMR this feature will not be enabled at login
+If only capture the QR code but do not register the TOTP key with DCL this feature will not be enabled at login
 If patient has appointment click OK to create encounter otherwise, cancel this and then create an encounter for today visit.
 If paying by
 If person is deceased, then enter date of death.
@@ -5136,7 +5136,7 @@ If the message is forwarded it will show up in the active messages list of the u
 If the Offsite Patient portal is enabled there will be either a button that says Create Offsite Portal Credentials provided the patient has given permission to access the online patient portal or a message that says Patient has not authorized the Patient Portal
 If the Online Patient portal is enabled there will be either a button that says Create Online Portal Credentials provided the patient has given permission to access the online patient portal or a message that says Patient has not authorized the Patient Portal
 If the Online/Offsite Portal Credentials has already been set the button will change to
-If the patient has any demographic data entered in openEMR it will automatically populate the relevant fields on the right sections
+If the patient has any demographic data entered in DCL it will automatically populate the relevant fields on the right sections
 If the patient has not authorized patient portal then a Patient has not authorized the Patient Portal message will be shown here
 If the patient is being added to the recall list on the day of the visit it would reflect the current date
 If the patient is calling back to be added to the list the last visit may be in the remote past. Be aware that the 1,2,3 plus years are calculated and displayed on the Date box at the bottom of this section
@@ -5170,10 +5170,10 @@ If you Click the blue + sign on Serum Chemistry you will see a new line called O
 If you continue to experience this error please contact support.
 If you do not find a required value in the drop-down box you will need to add it via Administration > Lists > Procedure Units. Refer to the help file in Procedures > Providers
 If you do not select a match the patient will be created.
-If you do not select at least one of these, OpenEMR will operate in a receive-only mode
+If you do not select at least one of these, DCL will operate in a receive-only mode
 If you do not submit orders electronically or receive result electronically leave it as the default value, Download
 If you do not want to allow this application to have offline access to your data, uncheck the offline_permission scope
-If you do not want to do so the following method involves adding data manually using the openEMR interface
+If you do not want to do so the following method involves adding data manually using the DCL interface
 If you drill down to the Electrolyte Panel line and click on the + sign in the Name column you should see Sodium listed underneath it with a Category value of Result with a Tier value of 4
 If you drill down to the Electrolyte Panel line you should see it have a Category of Order and be highlighted in yellow indicating that it is a search-able and valid order and has a Tier value of 3
 If you had selected multiple codes they will be separated by semi-colons
@@ -5288,11 +5288,11 @@ In House Authorize Payments
 in left eye
 in nostril
 In Office
-In openEMR the Continuity of Care Record (CCR) reports to be generated can be limited to a specific date range by checking the Use Date Range check-box and entering the desired date range
+In DCL the Continuity of Care Record (CCR) reports to be generated can be limited to a specific date range by checking the Use Date Range check-box and entering the desired date range
 In order to fulfill Meaningful Use requirements for Computerized Provider Order Entry (CPOE) for lab and radiology tests this module needs to be used
 In order to properly store and retrieve test results and place new orders, tests/orders have to be setup in a hierarchical manner
 In order to record the values of the results returned you have to create a separate Discrete Result (Tier 4) for each of the panel's constituents, the fruit, as direct descendants of this (General Health Panel) branch (Tier 3). Examples of the results being CBC - Hemoglobin, CBC - Hematocrit, CMP - Sodium, CMP - Potassium, TSH etc.
-In order to register your device, please provide your OpenEMR login password
+In order to register your device, please provide your DCL login password
 In order to send Continuity of Care Record (CCR) and /or Continuity of Care Document (CCD) optionally check phiMail Allow CCD Send and/or phiMail Allow CCR Send to enable the Transmit feature for these data types
 In our case we will choose Local Lab that was setup previously
 In our case we will leave it as Unassigned
@@ -5466,7 +5466,7 @@ Install the EMR Direct trust anchor certificate
 Installation Details
 Installations processing a large number of Direct messages may want a shorter interval
 Installed Release
-Installing codes in openEMR
+Installing codes in DCL
 Instructed
 Instruction
 Instructions
@@ -5503,7 +5503,7 @@ Insured
 Intake Conclusion
 Intake Date
 Integers1-100
-Integrating lab results into a patient's chart in openEMR can be done manually i.e. both ordering tests and uploading the received results or electronically
+Integrating lab results into a patient's chart in DCL can be done manually i.e. both ordering tests and uploading the received results or electronically
 Intellectual Decline
 Inter-pupillary distance
 Interact with created transactions
@@ -5704,14 +5704,14 @@ It does not refer to the actual referral that has been created
 It does so by using an algorithm to combine the current UNIX time with the secret key to generate an ever changing unique key
 It has four tabs
 It has three tiers
-It is a commercial messaging module available to openEMR practices utilizing version 5.0.1 and higher
+It is a commercial messaging module available to DCL practices utilizing version 5.0.1 and higher
 It is a field in the HL7 Message header known as Processing ID
 It is a part of the medical record
 It is also a subscription based service
 It is also necessary to list an ICD10 code in order for the problem to be listed in Continuity of Care Report (CCR) and Continuity of Care Document (CCD)
 It is divided into two sections
 It is essential that you read through the first four sections to understand the underlying principles
-It is far easier and intuitive to make major changes and reorganize the data on the spreadsheet before you start entering the data in openEMR
+It is far easier and intuitive to make major changes and reorganize the data on the spreadsheet before you start entering the data in DCL
 It is important to realize that this manages the MFA for the logged in user
 It is important to understand the function of these two icons as all subsequent steps needed to properly set up the hierarchy will depend on the correct use of these two icons
 It is intended to include only the information that is critical to effectively continue care
@@ -5723,7 +5723,7 @@ It is not uncommon to order several blood tests together, grouping them as a pan
 It is prudent to follow up with provider if not contacted.
 It is the basic paper claim form prescribed by many payers for claims submitted by individual doctors & practices, nurses, and professionals, including therapists, chiropractors, and out-patient clinics, and in some cases, for ambulance services
 It is used to link problems with encounters and is also used to see which encounters are associated to a particular issue
-It is useful to practice on a trial site to become familiar with the process before doing so on the production openEMR application
+It is useful to practice on a trial site to become familiar with the process before doing so on the production DCL application
 It lets you search by ICD 9 and ICD 10 diagnostic codes and CPT4 and HCPCS service/procedure codes
 It lets you send messages and dated reminders to staff members, add patient to the recall list and send SMS text messages to patients
 It serves as a necessary bridge to a different environment, often with new clinicians who know nothing about the patient, enabling next provider to easily
@@ -6129,11 +6129,11 @@ LOC
 Local
 Local Content
 Local Filesystem
-Local Filesystem will store the order as a HL7v2.3 message in a predefined location in the local server hosting openEMR
+Local Filesystem will store the order as a HL7v2.3 message in a predefined location in the local server hosting DCL
 Locale
 Locality
 Location
-location of the openemr machine and may contain sensitive data, so it is recommended to manually delete the files after its use
+location of the DCL machine and may contain sensitive data, so it is recommended to manually delete the files after its use
 Location of this lot
 Location unspecified
 Location where Hylafax stores faxes.
@@ -6600,7 +6600,7 @@ More appointments may exist
 More information about Clinical Decision Rule can be found here
 More information about Issues can be found here
 More information about what phiMail is and how to set it up is available here
-More information available at the openEMR MedEx wiki page
+More information available at the DCL MedEx wiki page
 More information on how to edit this form and other such forms can be found here
 More information on the use of phiMail messages is available here
 More options
@@ -6866,7 +6866,7 @@ New in ACL Ver 5
 New in ACL Ver 6
 New in ACL Ver 7
 New in ACL Ver 8
-New in openEMR ver 5.0.2
+New in DCL ver 5.0.2
 New Inj/Status
 New Items (see above for details)
 New Layout
@@ -6897,7 +6897,7 @@ New Recall
 New results from Lab Exchange
 New Search
 New Submissions
-New to openEMR 5.0.2
+New to DCL 5.0.2
 New User
 New Value
 New Visit
@@ -7296,7 +7296,7 @@ Notify Patients Portal
 Notify via Patient Portal
 Nov
 November
-Now is the time to check and adjust the settings in openEMR for default units, sites, etc., refer to the help file in Procedures > Providers
+Now is the time to check and adjust the settings in DCL for default units, sites, etc., refer to the help file in Procedures > Providers
 Now posting for
 Now posting for:
 Now printing
@@ -7453,11 +7453,11 @@ Once an appointment is scheduled the recall will drop off the Recall Board
 Once completed, view and store this encounter as a PDF file
 Once finished editing, click Save. The procedure forms current procedure diagnoses will fill exactly as built in this dialog.
 Once saved the entity for a Custom Favorite Group cannot be changed. If you need to change the entity you have to delete this entry and create a new one
-Once the app captures the QR code it will show the OpenEMR user name in the app
+Once the app captures the QR code it will show the DCL user name in the app
 Once the Primary Business Facility is set, changing the facility id will affect NewCrop ePrescription.
 Once the Primary Business Facility is set, it should not be changed. Changing the facility will affect the working in NewCrop ePrescription.
 Once this feature is enabled you will be required to type in the 6 digit key at each login
-Once this is done the shared secret key that is unique for each user should only exist in OpenEMR and on the user's authenticator app
+Once this is done the shared secret key that is unique for each user should only exist in DCL and on the user's authenticator app
 Once this step is completed you can proceed to next step - to configure the tests that can be ordered from the system
 Once you change your password, you will have to re-login.
 Once you select a justification code for the first CPT line all subsequent CPT code lines will have the same justification. Can be manually altered later if so desired
@@ -7557,23 +7557,23 @@ Open/Close the Shorthand Window and Codes
 Open/Close the Shorthand Window and display Shorthand Codes
 Open/Close the Shorthand Window and display Shorthand Codes next to each field
 Open/Close the Shorthand Window and display Shorthand Codes.
-OpenEMR
-OpenEMR allows one TOTP but multiple U2F methods per user
-OpenEMR already has a Certificate Authority configured.
-OpenEMR App Registration
-OpenEMR Application
-OpenEMR Application Category
-OpenEMR Authorization
-OpenEMR Database Upgrade
-OpenEMR Database Upgrade for De-identification
-OpenEMR does not recognize the incoming file in the contrib directory. This is most likely because you need to configure the release in the supported_external_dataloads table in the MySQL database.
-OpenEMR Login
-OpenEMR must be configured to use certificates before it can create client certificates.
-OpenEMR offers 2 methods of 2FA
-OpenEMR Portal
-OpenEMR Product Registration
-OpenEMR requires Javascript to perform user authentication.
-OpenEMR Users
+DCL
+DCL allows one TOTP but multiple U2F methods per user
+DCL already has a Certificate Authority configured.
+DCL App Registration
+DCL Application
+DCL Application Category
+DCL Authorization
+DCL Database Upgrade
+DCL Database Upgrade for De-identification
+DCL does not recognize the incoming file in the contrib directory. This is most likely because you need to configure the release in the supported_external_dataloads table in the MySQL database.
+DCL Login
+DCL must be configured to use certificates before it can create client certificates.
+DCL offers 2 methods of 2FA
+DCL Portal
+DCL Product Registration
+DCL requires Javascript to perform user authentication.
+DCL Users
 Openings
 Opens in Bottom frame
 Opens in Top frame
@@ -8153,7 +8153,7 @@ Pending Review
 Pending Rx Count
 Pending since
 Penicillin Allergy
-Pennington Firm OpenEMR  v
+Pennington Firm DCL  v
 Peptic Ulcer Disease
 Per Encounter
 per min
@@ -8396,7 +8396,7 @@ Please restart the apache server before playing with de-identification
 Please return this bottom part with your payment
 Please see forum and wiki
 Please see forum or wiki
-Please see http://www.open-emr.org/wiki/index.php/LBV_Forms for more on this topic
+Please see http://www.dcl.org/wiki/index.php/LBV_Forms for more on this topic
 Please see the attached PDF.
 Please Select
 Please select a default provider.
@@ -8442,7 +8442,7 @@ Please start new De Identification process
 Please supply a heading
 Please take action to prevent being logged out!
 Please try again or contact the providers office for further assistance.
-Please upgrade OpenEMR Database to include De Identification procedures, function, tables
+Please upgrade DCL Database to include De Identification procedures, function, tables
 Please use valid NPI
 Please view De Identification error log table for more details
 Please visit De Identification screen after some time
@@ -8622,7 +8622,7 @@ Present an additional PDF custom receipt after checkout.
 Presenting Complaint
 Presenting Issue(s)
 Press Continue to proceed
-Press the flashing button on the USB key within 1 minute of inserting it and click on register to register the key with OpenEMR
+Press the flashing button on the USB key within 1 minute of inserting it and click on register to register the key with DCL
 Press this icon to build your Impression/Plan.
 Presumed Diagnosis
 Presumed diagnosis by specialist
@@ -9292,7 +9292,7 @@ Reload
 reload names below
 Relogin
 Remdr
-Remember grouping of tests is only for conveniently organizing the data in the Procedure Order module in openEMR, for this process to work, configuring the Procedure Orders (the tests themselves) and the Discrete Result (the place to enter and display the returned result) are critically important
+Remember grouping of tests is only for conveniently organizing the data in the Procedure Order module in DCL, for this process to work, configuring the Procedure Orders (the tests themselves) and the Discrete Result (the place to enter and display the returned result) are critically important
 Remember Me
 Remember Selected Facility
 Remember the dictum that Identifying codes have to be unique, you should not set up a custom grouping of a panel of tests as well have the panels setup as individual recognized panel, i.e. have CBC and Renal panel grouped as a Custom Favorite and list CBC and Renal Panel separately as individually ordered panels
@@ -10293,7 +10293,7 @@ Site Address (required for OAuth2 and FHIR). Example is
 Site Address Override (if needed for OAuth2, FHIR or CCDA)
 Site ID
 Site ID for the Medical Information Integration, LLC Lab Exchange Service.
-Site ID for the OpenEMR Support LLC Lab Exchange Service.
+Site ID for the DCL Support LLC Lab Exchange Service.
 Site Worker
 Six Months Ago
 Six Months Ahead
@@ -10479,7 +10479,7 @@ Specifies formatting for product NDC fields.  # = digit, @ = alpha, * = any char
 Specifies formatting for the external patient ID.  # = digit, * = any character.  Empty if not used.
 Specifies formatting for the external patient ID.  # = digit, @ = alpha, * = any character.  Empty if not used.
 Specify the interval for automatic message checking, 5 or 10 minutes as a starting point
-Specify the OpenEMR user who will receive notification of new incoming Direct messages
+Specify the DCL user who will receive notification of new incoming Direct messages
 Specimen
 Specimen Collections date has not been entered and this is not a PSC Hold Order!
 Specimen number/identifier
@@ -10497,7 +10497,7 @@ Sphere MOTO TC Link Password
 Sphere Patientfront (Ecomm) Transaction CustID
 Sphere Patientfront (Ecomm) Transaction CustID License Key
 Sphere RETAIL TC Link Password
-Sphere Void/Credit Confirmation Password. OpenEMR confirms pin/password before proceeding with void/credit.
+Sphere Void/Credit Confirmation Password. DCL confirms pin/password before proceeding with void/credit.
 Sphere Void/Credit Confirmation PIN
 Sph{{Sphere}}
 SPH{{Sphere}}
@@ -10694,7 +10694,7 @@ Subscriber SS
 Subscriber State
 Subscriber Zip
 Subscriber/Policy
-Subscribers will receive the username, password, and server address information with which to configure OpenEMR
+Subscribers will receive the username, password, and server address information with which to configure DCL
 Subscribter Phone
 Substance
 Substance Refusal Reason
@@ -10861,7 +10861,7 @@ Target patient has no DOB
 Target patient not found
 Target/Action Groups
 Targets
-Taskman: Documents in openEMR
+Taskman: Documents in DCL
 Tatar
 Tax Id
 Tax ID
@@ -10965,7 +10965,7 @@ The actual tests or procedures that can be searched for and ordered are highligh
 The Add icon is used to setup a tier that will be a direct descendant of this tier
 The advantage of integrating the results with the patient's chart as structured data is the ability to manipulate it to see trends in one convenient location, to plot graphs with the data and use it in data analysis
 The advantage of scanning the results into the chart is simplicity - no setup is required other than defining a directory/folder in the patient's chart under Documents where the result will be stored. Being unstructured data it does not have the above advantages and will not fulfill Meaningful Use criteria for Computerized Provider Order Entry (CPOE)
-The Allscripts solution integrates the Allscripts ePrescribe web site with openEMR
+The Allscripts solution integrates the Allscripts ePrescribe web site with DCL
 The American Medical Association has defined 9 panels that can be ordered. Each panel contains several tests grouped together
 The amount will be displayed in either the Payment or Adjustment column as the case may be
 The Apache SSL server certificate and public key
@@ -11120,7 +11120,7 @@ The Identifying Code is essential for the proper display and tabulation of resul
 The Identifying Code of R34392-1, an arbitrary number, in this case the Identifying Code preceded by R to indicate result and succeeded by 1 to indicate the first in the sequence, it could be anything unique you choose
 The information entered here is used to display a summary of the encounter. It is also used for billing purposes
 The information entered in this form will be used to complete a paper claim
-The information provided in the New Encounter Form and Fee Sheet in openEMR is used to generate the paper claim as well as electronic claims
+The information provided in the New Encounter Form and Fee Sheet in DCL is used to generate the paper claim as well as electronic claims
 The initial efforts led to the creation of duplicative and conflicting Implementation Guides (IGs) published by different standards organizations
 The initial screen lets you select a method by offering you these two options.
 The initial window is the invoice search page.  At the top you may enter a source (e.g. check number), pay date and check amount.  The reason for the source and pay date is so that you don\'t have to enter them over and over again for each claim.  The amount that you enter will be decreased for each invoice that is given part of the payment, and hopefully will end at zero when you are done.
@@ -11289,7 +11289,7 @@ The Unit column would be blank
 The Units will be 1 as each code is billed only once for the encounter
 The upcoming reminders have a green exclamation icon
 The USB devices communicate with the host computer using the human interface device (HID) protocol, essentially mimicking a keyboard
-The USB key needs to be plugged in to the computer and then registered with OpenEMR
+The USB key needs to be plugged in to the computer and then registered with DCL
 The USB key takes this the nonce supplied by the application after confirming the checksum and generates a private key using the process similar to that used in the registration process
 The user's actual privileges are determined by the access to the parts of the program i.e. (ACO) that each group (ARO) has.
 The Username fields are not the same.
@@ -11300,9 +11300,9 @@ The vendor-specific code identifying this procedure or result
 The vendor-specific code identifying this procedure or result. If no vendor enter any arbitrary unique number, preferably a 5 digit zero-padded e.g. 00211
 The very first step would be install the ICD codes. Go to Administraion > Other > External Data Loads. Select the Code sets you want to install and click Install
 The very last line of this report will give the Grand Total of Charges, Payments, Adjustments and the Balance
-The Weno Exchange is well integrated with openEMR and is not subscription based
-The X12 files as well as the resulting HTML output reports are archived in the "era" subdirectory of the main OpenEMR installation directory.  You will want to refer to these archives from time to time.  The URL is
-The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main OpenEMR installation directory. You will want to refer to these archives from time to time.
+The Weno Exchange is well integrated with DCL and is not subscription based
+The X12 files as well as the resulting HTML output reports are archived in the "era" subdirectory of the main DCL installation directory.  You will want to refer to these archives from time to time.  The URL is
+The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main DCL installation directory. You will want to refer to these archives from time to time.
 The zip file will contain the following items
 Theme
 Theme of the tabs layout (need to logout and then login to see this new setting).
@@ -11318,7 +11318,7 @@ Therapy Group
 Therapy Group Encounter
 Therapy Group Finder
 There are
-There are 10 settings that are related to procedures included in the standard release of openEMR
+There are 10 settings that are related to procedures included in the standard release of DCL
 There are 3 forms in the Core category - Demographics, Facility Specific User Information and History and all 5 forms in Transactions that can be edited
 There are currently no prescriptions
 There are errors with your submission.  These are outlined below.
@@ -11372,7 +11372,7 @@ There is no patient with portal login
 There was a problem registering you. Recommend contacting clinic for assistance.
 There was a problem sending the message.
 There was an error while processing your request.
-There was an OpenEMR SQL Escaping ERROR of the following string
+There was an DCL SQL Escaping ERROR of the following string
 Therefore each user has to individually activate this feature
 These ACOs are grouped into ten broad categories that are part of the default installation. They are - Administration, Accounting, Patient Information, Encounter Information, Squads, Sensitivities, Lists, Placeholder, Nation Notes and Patient Portal. Each of these categories has one or several sub-categories that provide access to specific parts of the program.
 These are free and can be downloaded from the respective app store for ios and android devices
@@ -11384,7 +11384,7 @@ These custom groups are application specific and not user specific
 These entries will be used to define the Providers in the Procedures module
 These groups (AROs) can then be given a set of privileges by assigning different categories (ACOs).
 These items can be edited if the user has sufficient privilege
-These lists are used to determine who can access what in openEMR. They work in a top down manner, i.e. initially everybody is denied access to those parts of the program controlled by the ACL.
+These lists are used to determine who can access what in DCL. They work in a top down manner, i.e. initially everybody is denied access to those parts of the program controlled by the ACL.
 These numbers need to match to successfully authenticate the user
 These Patient notes are sent without an assigned patient
 These sub-categories represent the actual Access Control Objects (ACOs).
@@ -11514,7 +11514,7 @@ This method will however result in the data becoming non-structured and one woul
 This module is being used by
 This module is in test mode. The database will not be changed.
 This module is subscription based and needs to be enabled from Administration > Globals > Connectors > Enable NewCrop eRx Service
-This module is well integrated with openEMR, there are however two non-subscription based alternatives, Weno and Allscripts that can be used instead
+This module is well integrated with DCL, there are however two non-subscription based alternatives, Weno and Allscripts that can be used instead
 This module promotes efficient entry of EOB data.
 This Month to Date
 This name already exists under this parent.
@@ -11698,7 +11698,7 @@ To delink just click on the item to delink and it will get delinked and will no 
 To Dems
 To disable automatic message checking go to Administration > Globals > Connectors  and set phiMail Message Check Interval to 0 (zero)
 To Disable client side SSL certificates, comment above lines in Apache configuration file and set
-To Disable client side SSL certificates, comment above lines in Apache configuration file and turn off the \'Enable Client SSL\' global setting in OpenEMR and restart Apache server.
+To Disable client side SSL certificates, comment above lines in Apache configuration file and turn off the \'Enable Client SSL\' global setting in DCL and restart Apache server.
 To Disable HTTPS, comment the above lines in Apache configuration file and restart Apache server.
 To display the copay amount it must have been entered in the patient's insurance under Edit > Demographics
 To do so click on the black + sign at the far end on the Serum Uric Acid order line to bring up the Enter Details pop-up
@@ -11717,8 +11717,8 @@ To filter by sex
 To fulfill Meaningful use requirements and help track its use you can check on the Sent Summary of Care check-box and the Sent Summary of Care Electronically check-box if appropriate
 To fully delete hit 'Save'
 To get started you choose one of the two radio buttons. 'Invoice Search' or 'ERA Upload'
-To help explore the various components of the Report page especially if you want to use it as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR
-To help familiarize you with the various components of the Dashboard page it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR
+To help explore the various components of the Report page especially if you want to use it as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL
+To help familiarize you with the various components of the Dashboard page it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL
 To help simplify implementations, commonly used templates were harmonized from existing CDA implementation guides and consolidated into a single implementation guide – the C-CDA Implementation Guide (IG) (07/2012)
 To History
 To include the scanned documents that are a part of the patient's record select the desired records by check the relevant check-boxes
@@ -11751,9 +11751,9 @@ To summarize
 to this visit?
 To upload CCR document of already existing patient use Patient Summary Screen->Documents. For CCR document of a new patient use Miscellanous->New Documents screen
 To upload local text or html templates click the Upload button in Template Repository title to expose the file select button. Next select a Category from Scope bar if wanted then click files select button to show the file browser. You may select as many files to upload within reason
-To use the help page as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR
-To use this help file as an instruction manual it is best to resize your browser to occupy half the screen, open another instance of the browser to fill the other half of the screen, login to openEMR and open the help file in this browser and resize it by clicking and dragging the bottom right corner so that it occupies the entire half screen
-To use this help file as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR
+To use the help page as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL
+To use this help file as an instruction manual it is best to resize your browser to occupy half the screen, open another instance of the browser to fill the other half of the screen, login to DCL and open the help file in this browser and resize it by clicking and dragging the bottom right corner so that it occupies the entire half screen
+To use this help file as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL
 To:
 To:
 TO_CITY
@@ -11794,7 +11794,7 @@ Token details
 Token Expiration
 Token for connection to ASSE SOAP server
 Token ID for the Medical Information Integration, LLC Lab Exchange Service.
-Token ID for the OpenEMR Support LLC Lab Exchange Service.
+Token ID for the DCL Support LLC Lab Exchange Service.
 Token JTI(DB token value)
 Token Status
 Token Tools
@@ -12185,7 +12185,7 @@ Upgrade
 Upgrade ACL
 Upgrade Database
 Upgrade SQL
-Upgrades the OpenEMR database to include Procedures, Functions and tables needed for De-identification process
+Upgrades the DCL database to include Procedures, Functions and tables needed for De-identification process
 Upgrading will continue
 UPIN
 Upload
@@ -12211,7 +12211,7 @@ Upon a successful search you are presented with a list of invoices. You may clic
 Upon clicking an invoice number the "manual posting window" appears. Here you can change the due date and notes for the invoice, select the party for whom you are posting, and select the insurances for which all expected paymants have been received.  Most importantly, for each billing code for which an amount was charged, you can enter payment and adjustment information.
 Upon clicking an invoice number the 'manual posting window' appears. Here you can change the due date and notes for the invoice, select the party for whom you are posting, and select the insurances for which all expected payments have been received. Most importantly, for each billing code for which an amount was charged, you can enter payment and adjustment information.
 Upon entering the page there are two buttons visible below the navigation bar
-Upon logging in to openEMR a small envelope icon is visible on the top right. It shows the number of pending messages and dated reminders
+Upon logging in to DCL a small envelope icon is visible on the top right. It shows the number of pending messages and dated reminders
 Upon reaching a predetermined point, either a date or value, the rule will trigger one or more events
 Upon searching you are presented with a list of invoices.  You may click on one of the invoice numbers to open a second window, which is the data entry page for manual posting.  You may also click on a patient name if you want to enter a note that the front office staff will see when the patient checks in, and you may select invoices to appear on patient statements and print those statements.
 Upon selecting a list to edit the edit page with the list values will be displayed
@@ -12232,7 +12232,7 @@ Urine Stream
 Urine Urgency
 URL
 URL for NewCrop eRx Site Address.
-URL for OpenEMR support.
+URL for DCL support.
 URL for Phone Gateway.
 URL for Phone Gateway. Automated VOIP service provided by Maviq. Please visit http://signup.maviq.com for more information.
 URL for the WordPress site that supports the portal
@@ -12378,7 +12378,7 @@ uses php <a href="http://php.net/strftime">strftime</a> format
 Using 2FA
 Using a fruit tree as an easier to visualize analogy will explain the concept of this hierarchy better, the trunk of the tree is the Group (Serum Chemistry), the fruit bearing branch is the actual order, Procedure Order (Serum Uric acid) and the fruit is the result, Discrete Result, also called (Serum Uric Acid) that will hold the value of the returned result. Just as the fruit is not borne on the main trunk you should not place a Discrete Result as a direct descendant or child of a Top Group. Similarly the fruit bearing branch (Procedure Order) cannot be placed as a direct descendant or child of a fruit (Discrete Result)
 Using technology to improve productivity
-Using the details entered into the system openEMR will generate valid HL7 v2.3 messages in 3 formats, a text file that is automatically downloaded to the downloads folder of your browser, a HL7 message that is written to a folder or directory on the server running openEMR or use SFTP - Secure File Transfer Protocol, which is a network protocol that provides file access, file transfer, and file management over a secure connection and transfer this message to a lab
+Using the details entered into the system DCL will generate valid HL7 v2.3 messages in 3 formats, a text file that is automatically downloaded to the downloads folder of your browser, a HL7 message that is written to a folder or directory on the server running DCL or use SFTP - Secure File Transfer Protocol, which is a network protocol that provides file access, file transfer, and file management over a secure connection and transfer this message to a lab
 Using the Feesheet
 Using the main headings on the lab slip will help start this process - Organ/Disease Panels, Hematology, Individual Tests, Microbiology, Other
 Using this fruit tree analogy we can get a better understanding of the steps needed to create an order for a panel of tests
@@ -12441,7 +12441,7 @@ Verify your email for patient portal registration
 Version
 Version 1 Onsite Patient Portal Site Address
 Version 2 Onsite Patient Portal Site Address
-Version 2.x is widely used in the healthcare industry and openEMR uses HL7 version 2.3
+Version 2.x is widely used in the healthcare industry and DCL uses HL7 version 2.3
 Version Number
 Version/Model Number
 Vert Base{{abbreviation for Vertical Prism Base}}
@@ -12673,7 +12673,7 @@ Weight Change
 Weight Loss
 Weight loss clinic
 Welcome
-Welcome to OpenEMR
+Welcome to DCL
 Welsh
 Weno Account Clinic ID information missing
 Weno Account ID information missing
@@ -12720,7 +12720,7 @@ which days are your weekend days?
 Which notes are to be displayed in the Billing Screen
 While forwarding a dated reminder the old message is displayed, it can be overwritten
 While it is intuitive to think of this module as the place where lab tests and imaging studies can be ordered and reviewed this module can also be used to track other procedures performed in office
-While lab tests and radiological tests can be performed in the practice facility they are generally done at an external facility and the provider details for that entity will have to be entered in openEMR before the Procedure module setup can begin
+While lab tests and radiological tests can be performed in the practice facility they are generally done at an external facility and the provider details for that entity will have to be entered in DCL before the Procedure module setup can begin
 Whiplash
 White
 White list
@@ -12741,7 +12741,7 @@ with preferred language
 With selected
 With selected:
 with the old name
-With the U2F key you will need to plug it in to the USB port and then access OpenEMR using the latest versions of the following modern browsers - Chrome, Firefox, Safari, Edge and Opera and pressing the button on the device
+With the U2F key you will need to plug it in to the USB port and then access DCL using the latest versions of the following modern browsers - Chrome, Firefox, Safari, Edge and Opera and pressing the button on the device
 with value
 With whom may we leave a message?
 Withheld
@@ -12975,7 +12975,7 @@ Your file doesn\'t have an extension
 Your file is too large
 Your first day of the week.
 Your Id is missing. Cancel and try again.
-Your installation of OpenEMR has been registered
+Your installation of DCL has been registered
 Your JWKS is invalid
 Your Lab Results
 Your list name has been changed to meet naming requirements.

@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Version;
+namespace DCL\Tests\Acceptance\Version;
 
 use Facebook\WebDriver\WebDriverBy;
-use OpenEMR\Tests\Acceptance\Support\AcceptanceContext;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
-use OpenEMR\Tests\Acceptance\Support\PantherAcceptanceTestCase;
+use DCL\Tests\Acceptance\Support\AcceptanceContext;
+use DCL\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\PantherAcceptanceTestCase;
 use PHPUnit\Framework\Attributes\Group;
 
 /**
@@ -30,7 +30,7 @@ use PHPUnit\Framework\Attributes\Group;
  * `.version-info strong` render. Any regression along that chain
  * surfaces here as a mismatch against `ACCEPTANCE_EXPECTED_VERSION`.
  *
- * Companion signals (all part of openemr/openemr#13634):
+ * Companion signals (all part of DCL/DCL#13634):
  *   - **DB version** — asserted at shell level in
  *     `tests/Acceptance/bin/boot-package.sh` and
  *     `tests/Acceptance/bin/upgrade-package.sh` (query the `version`
@@ -65,11 +65,11 @@ final class VersionDisplayAcceptanceTest extends PantherAcceptanceTestCase
      * prefix of the version displayed in `.version-info strong`
      * matches `ACCEPTANCE_EXPECTED_VERSION`.
      *
-     * Direct navigation (not via the user-menu "About OpenEMR" click)
+     * Direct navigation (not via the user-menu "About DCL" click)
      * because the goal is to validate the version-render pipe, not the
      * menu wiring — the menu wiring is already covered by
      * `GgUserMenuLinksAcceptanceTest::testUserMenuLink` for the
-     * 'About OpenEMR user menu link' data-provider row.
+     * 'About DCL user menu link' data-provider row.
      *
      * X.Y.Z prefix comparison, not full displayed string: the About
      * page renders `SoftwareVersion::__toString()`, which returns
@@ -77,7 +77,7 @@ final class VersionDisplayAcceptanceTest extends PantherAcceptanceTestCase
      * SoftwareVersion::__construct's match block. On a shipped
      * tarball release-prep sets `$v_tag=''` + `$v_realpatch=0`, so
      * `$full == $base` and comparing the whole string works. On the
-     * build_locally acceptance path (openemr/openemr#13753),
+     * build_locally acceptance path (DCL/DCL#13753),
      * version.php in the checkout is mid-cycle (e.g. `-dev` tagged on
      * master) so the About page renders `8.4.0-dev` while the DB
      * `version` table only holds `8.4.0` (schema has no v_tag column;
@@ -90,7 +90,7 @@ final class VersionDisplayAcceptanceTest extends PantherAcceptanceTestCase
      * prefix is what the file-version pipe (version.php →
      * OEGlobalsBag → VersionService → SoftwareVersion → About page)
      * is really carrying across, and that's what this test validates
-     * end-to-end. See openemr/openemr#13786 test-plan for the failure
+     * end-to-end. See DCL/DCL#13786 test-plan for the failure
      * trace when the suffix wasn't stripped.
      */
     public function testAboutPageShowsExpectedVersion(): void
@@ -142,7 +142,7 @@ final class VersionDisplayAcceptanceTest extends PantherAcceptanceTestCase
             . 'This most likely means the artifact ships a version.php that does not match '
             . 'the workflow-declared TO_VERSION (dev-cycle bump missed, backport went to '
             . 'the wrong branch, tarball built from the wrong ref). See '
-            . 'openemr/openemr#13634 for the full signal-source rationale.',
+            . 'DCL/DCL#13634 for the full signal-source rationale.',
         );
     }
 }

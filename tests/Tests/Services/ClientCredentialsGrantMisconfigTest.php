@@ -12,22 +12,22 @@
  * These constructor-injection-mismatch guards need direct instantiation
  * plus reflection to reach the protected methods.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
 use DateInterval;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
+use DCL\Services\UserService;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
@@ -86,7 +86,7 @@ class ClientCredentialsGrantMisconfigTest extends TestCase
     public function testIssueAccessTokenWithMissingSystemUserThrowsServerError(): void
     {
         // CustomClientCredentialsGrant::issueAccessToken (line 100-111):
-        // when userIdentifier is null the grant looks up the OpenEMR
+        // when userIdentifier is null the grant looks up the DCL
         // "system user" via UserService::getSystemUser(). If that
         // returns a row without a uuid, the throw at line 108 fires.
         // Inject a UserService double that returns an empty array to

@@ -17,14 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Ensoftek
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 // This program exports report to QRDA Category I 2014 XML format.
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 
 function mainQrdaCatOneGenerate($xml, $patient_id, $rule_id, $provider_id): string
 {

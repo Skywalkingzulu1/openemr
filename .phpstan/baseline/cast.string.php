@@ -2852,7 +2852,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Events/Messaging/SendSmsEvent.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot cast array\\<OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRString\\> to string\\.$#',
+    'message' => '#^Cannot cast array\\<DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRString\\> to string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/FHIR/R4/FHIRResource/FHIRMedicationKnowledge/FHIRMedicationKnowledgePatientCharacteristics.php',
 ];

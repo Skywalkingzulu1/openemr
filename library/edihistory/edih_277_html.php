@@ -21,7 +21,7 @@
  * MA 02110-1301, USA.
  */
 
-use OpenEMR\Billing\EdiHistory\Claim277Renderer;
+use DCL\Billing\EdiHistory\Claim277Renderer;
 
 /**
  * Produce an html display of information in

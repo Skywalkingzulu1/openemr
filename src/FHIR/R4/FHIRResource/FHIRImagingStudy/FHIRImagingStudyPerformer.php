@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImagingStudy;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
@@ -71,13 +71,13 @@ class FHIRImagingStudyPerformer extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Distinguishes the type of involvement of the performer in the series.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $function = null;
 
     /**
      * Indicates who or what performed the series.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
@@ -88,7 +88,7 @@ class FHIRImagingStudyPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Distinguishes the type of involvement of the performer in the series.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFunction()
     {
@@ -97,7 +97,7 @@ class FHIRImagingStudyPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Distinguishes the type of involvement of the performer in the series.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
      * @return $this
      */
     public function setFunction($function)
@@ -108,7 +108,7 @@ class FHIRImagingStudyPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Indicates who or what performed the series.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -117,7 +117,7 @@ class FHIRImagingStudyPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Indicates who or what performed the series.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)

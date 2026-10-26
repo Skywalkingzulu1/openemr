@@ -3,8 +3,8 @@
 /**
  * Used for adding dated reminders.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Craig Bezuidenhout <http://www.tajemo.co.za/>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2012 tajemo.co.za <http://www.tajemo.co.za/>
@@ -13,12 +13,12 @@
 
 require_once(__DIR__ . '/../../globals.php');
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\DateFormatterUtils;
 
 $isAdmin = AclMain::aclCheckCore('admin', 'users');
 ?>

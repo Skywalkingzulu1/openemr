@@ -7,18 +7,18 @@
  * Enables flexible many-to-many relationships between contacts and various entity types
  * (patients, persons, companies, providers, etc.)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\ORDataObject;
+namespace DCL\Common\ORDataObject;
 
 use DateTime;
-use OpenEMR\Common\ORDataObject\Contact;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\ORDataObject\Contact;
+use DCL\Services\Utils\DateFormatterUtils;
 
 class ContactRelation extends ORDataObject implements \JsonSerializable, \Stringable
 {

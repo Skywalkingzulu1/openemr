@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,13 +71,13 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement implements \Jso
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $ratioType = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial[]
      */
     public $startingMaterial = [];
 
@@ -88,7 +88,7 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRatioType()
     {
@@ -97,7 +97,7 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $ratioType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $ratioType
      * @return $this
      */
     public function setRatioType($ratioType)
@@ -108,7 +108,7 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial[]
      */
     public function getStartingMaterial()
     {
@@ -117,7 +117,7 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial $startingMaterial
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial $startingMaterial
      * @return $this
      */
     public function addStartingMaterial($startingMaterial)

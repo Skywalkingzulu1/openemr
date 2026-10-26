@@ -3,16 +3,16 @@
 /**
  * Generated DocBlock
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  shahar zi <shaharzi@matrix.co.il>
  * @author  Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2017 shahar zi <shaharzi@matrix.co.il>
  * @copyright Copyright (c) 2017-2023 Robert Down <robertdown@live.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 ?>
 <div id="component-border">

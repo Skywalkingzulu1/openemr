@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * An assessment of the likely outcome(s) for a patient or other subject as well as the likelihood of each outcome.
@@ -72,107 +72,107 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifier assigned to the risk assessment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A reference to the request that is fulfilled by this risk assessment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $basedOn = null;
 
     /**
      * A reference to a resource that this risk assessment is part of, such as a Procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $parent = null;
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus
      */
     public $status = null;
 
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * The type of the risk assessment performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The patient or group the risk assessment applies to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The encounter where the assessment was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
      * For assessments or prognosis specific to a particular condition, indicates the condition being assessed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $condition = null;
 
     /**
      * The provider or software application that performed the assessment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $performer = null;
 
     /**
      * The reason the risk assessment was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Resources supporting the reason the risk assessment was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basis = [];
 
     /**
      * Describes the expected outcome for the subject.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
      */
     public $prediction = [];
 
     /**
      * A description of the steps that might be taken to reduce the identified risk(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $mitigation = null;
 
     /**
      * Additional comments about the risk assessment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -183,7 +183,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifier assigned to the risk assessment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -192,7 +192,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifier assigned to the risk assessment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -203,7 +203,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the request that is fulfilled by this risk assessment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getBasedOn()
     {
@@ -212,7 +212,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the request that is fulfilled by this risk assessment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function setBasedOn($basedOn)
@@ -223,7 +223,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a resource that this risk assessment is part of, such as a Procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParent()
     {
@@ -232,7 +232,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a resource that this risk assessment is part of, such as a Procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $parent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $parent
      * @return $this
      */
     public function setParent($parent)
@@ -243,7 +243,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus
      */
     public function getStatus()
     {
@@ -252,7 +252,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -263,7 +263,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -272,7 +272,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -283,7 +283,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of the risk assessment performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -292,7 +292,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of the risk assessment performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -303,7 +303,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient or group the risk assessment applies to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -312,7 +312,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient or group the risk assessment applies to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -323,7 +323,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter where the assessment was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -332,7 +332,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter where the assessment was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -342,7 +342,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -350,7 +350,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -360,7 +360,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
@@ -368,7 +368,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
     public function setOccurrencePeriod($occurrencePeriod)
@@ -379,7 +379,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * For assessments or prognosis specific to a particular condition, indicates the condition being assessed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCondition()
     {
@@ -388,7 +388,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * For assessments or prognosis specific to a particular condition, indicates the condition being assessed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $condition
      * @return $this
      */
     public function setCondition($condition)
@@ -399,7 +399,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider or software application that performed the assessment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPerformer()
     {
@@ -408,7 +408,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider or software application that performed the assessment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function setPerformer($performer)
@@ -419,7 +419,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason the risk assessment was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -428,7 +428,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason the risk assessment was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -439,7 +439,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Resources supporting the reason the risk assessment was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -448,7 +448,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Resources supporting the reason the risk assessment was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -459,7 +459,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasis()
     {
@@ -468,7 +468,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basis
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basis
      * @return $this
      */
     public function addBasis($basis)
@@ -479,7 +479,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the expected outcome for the subject.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
      */
     public function getPrediction()
     {
@@ -488,7 +488,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the expected outcome for the subject.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $prediction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $prediction
      * @return $this
      */
     public function addPrediction($prediction)
@@ -499,7 +499,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of the steps that might be taken to reduce the identified risk(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMitigation()
     {
@@ -508,7 +508,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of the steps that might be taken to reduce the identified risk(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $mitigation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $mitigation
      * @return $this
      */
     public function setMitigation($mitigation)
@@ -519,7 +519,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional comments about the risk assessment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -528,7 +528,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional comments about the risk assessment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

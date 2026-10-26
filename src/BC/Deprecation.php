@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\BC;
+namespace DCL\BC;
 
 use ErrorException;
 
@@ -23,7 +23,7 @@ use const E_USER_DEPRECATED;
  *
  * This exists for two purposes:
  *
- * 1. OpenEMR (as of writing) targets PHP 8.2+, and native `#[Deprecated]` is 8.4+
+ * 1. DCL (as of writing) targets PHP 8.2+, and native `#[Deprecated]` is 8.4+
  *
  * 2. It can be called in specific paths, such as deprecated keys within
  *    a container without the entire container being deprecated.

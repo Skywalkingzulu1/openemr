@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A medicinal product in a container or package.
@@ -72,55 +72,55 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 {
     /**
      * Unique identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The product with this is a pack for.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subject = [];
 
     /**
      * Textual description.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The legal status of supply of the medicinal product as classified by the regulator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $legalStatusOfSupply = null;
 
     /**
      * Marketing information.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
      */
     public $marketingStatus = [];
 
     /**
      * Manufacturer of this Package Item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $marketingAuthorization = null;
 
     /**
      * Manufacturer of this Package Item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $manufacturer = [];
 
     /**
      * Batch numbering.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier[]
      */
     public $batchIdentifier = [];
 
     /**
      * A packaging item, as a contained for medicine, possibly with other packaging items within.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
      */
     public $packageItem = [];
 
@@ -131,7 +131,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Unique identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -140,7 +140,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Unique identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -151,7 +151,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * The product with this is a pack for.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubject()
     {
@@ -160,7 +160,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * The product with this is a pack for.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -171,7 +171,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Textual description.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -180,7 +180,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Textual description.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -191,7 +191,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * The legal status of supply of the medicinal product as classified by the regulator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalStatusOfSupply()
     {
@@ -200,7 +200,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * The legal status of supply of the medicinal product as classified by the regulator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
      * @return $this
      */
     public function setLegalStatusOfSupply($legalStatusOfSupply)
@@ -211,7 +211,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Marketing information.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
      */
     public function getMarketingStatus()
     {
@@ -220,7 +220,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Marketing information.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMarketingStatus $marketingStatus
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMarketingStatus $marketingStatus
      * @return $this
      */
     public function addMarketingStatus($marketingStatus)
@@ -231,7 +231,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Manufacturer of this Package Item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getMarketingAuthorization()
     {
@@ -240,7 +240,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Manufacturer of this Package Item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $marketingAuthorization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $marketingAuthorization
      * @return $this
      */
     public function setMarketingAuthorization($marketingAuthorization)
@@ -251,7 +251,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Manufacturer of this Package Item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getManufacturer()
     {
@@ -260,7 +260,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Manufacturer of this Package Item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function addManufacturer($manufacturer)
@@ -271,7 +271,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Batch numbering.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier[]
      */
     public function getBatchIdentifier()
     {
@@ -280,7 +280,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * Batch numbering.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier $batchIdentifier
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier $batchIdentifier
      * @return $this
      */
     public function addBatchIdentifier($batchIdentifier)
@@ -291,7 +291,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * A packaging item, as a contained for medicine, possibly with other packaging items within.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
      */
     public function getPackageItem()
     {
@@ -300,7 +300,7 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements \JsonSe
 
     /**
      * A packaging item, as a contained for medicine, possibly with other packaging items within.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem $packageItem
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem $packageItem
      * @return $this
      */
     public function addPackageItem($packageItem)

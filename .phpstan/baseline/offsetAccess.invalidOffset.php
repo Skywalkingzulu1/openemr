@@ -1397,7 +1397,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/SDOH/HistorySdohService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Invalid array key type OpenEMR\\\\Services\\\\Search\\\\ServiceField\\.$#',
+    'message' => '#^Invalid array key type DCL\\\\Services\\\\Search\\\\ServiceField\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../src/Services/Search/FHIRSearchFieldFactory.php',
 ];

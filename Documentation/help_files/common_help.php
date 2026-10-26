@@ -3,14 +3,14 @@
 /**
  * New Encounter Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -34,7 +34,7 @@ require_once("../../interface/globals.php");
                 <h2 class="text-center"><a name='entire_doc'><?php echo xlt("Creating and Managing Encounters");?>.</a></h2>
             </div>
             <div class="row">
-                <p><?php echo xlt("All patient interactions in OpenEMR are linked to encounters");?>.</p>
+                <p><?php echo xlt("All patient interactions in DCL are linked to encounters");?>.</p>
 
                 <p><?php echo xlt("Clicking on the + button on the patient header panel opens the New Encounter Form");?>.</p>
 
@@ -103,7 +103,7 @@ require_once("../../interface/globals.php");
 
                 <p><?php echo xlt("Hold down Ctrl button to select multiple issues");?>.</p>
 
-                <p><?php echo xlt("For more information on Issues see the ");?>. <strong><a href="https://www.open-emr.org/wiki/index.php/Issues_%26_Immunizations" rel="noopener" target="_blank" class="oe-help-redirect"><?php echo xlt("Issues and Immunizations wiki page");?></a></strong></p>
+                <p><?php echo xlt("For more information on Issues see the ");?>. <strong><a href="https://www.dcl.org/wiki/index.php/Issues_%26_Immunizations" rel="noopener" target="_blank" class="oe-help-redirect"><?php echo xlt("Issues and Immunizations wiki page");?></a></strong></p>
             </div>
         </div><!--end of container div-->
     </body>

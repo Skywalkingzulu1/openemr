@@ -4,18 +4,18 @@
  * PatientTransaction Service
  * DAL to be used for Transactions
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jonathan Moore <Jdcmoore@aol.com>
  * @copyright Copyright (c) 2022 Jonathan Moore <Jdcmoore@aol.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Validators\ProcessingResult;
 use Particle\Validator\Validator;
 
 class PatientTransactionService extends BaseService

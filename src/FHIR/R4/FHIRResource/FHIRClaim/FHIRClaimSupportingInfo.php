@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaim;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
@@ -71,60 +71,60 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * A number to uniquely identify supporting information entries.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
      * The general class of the information supplied: information; exception; accident, employment; onset, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $timingDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $valueReference = null;
 
     /**
      * Provides the reason in the situation where a reason code is required in addition to the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $reason = null;
 
@@ -135,7 +135,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A number to uniquely identify supporting information entries.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -144,7 +144,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A number to uniquely identify supporting information entries.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -155,7 +155,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The general class of the information supplied: information; exception; accident, employment; onset, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -164,7 +164,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The general class of the information supplied: information; exception; accident, employment; onset, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -175,7 +175,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -184,7 +184,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -194,7 +194,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getTimingDate()
     {
@@ -202,7 +202,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $timingDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $timingDate
      * @return $this
      */
     public function setTimingDate($timingDate)
@@ -212,7 +212,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
     {
@@ -220,7 +220,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
     public function setTimingPeriod($timingPeriod)
@@ -230,7 +230,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
     {
@@ -238,7 +238,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -248,7 +248,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -256,7 +256,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -266,7 +266,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -274,7 +274,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -284,7 +284,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
     {
@@ -292,7 +292,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $valueAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
     public function setValueAttachment($valueAttachment)
@@ -302,7 +302,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getValueReference()
     {
@@ -310,7 +310,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $valueReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
     public function setValueReference($valueReference)
@@ -321,7 +321,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Provides the reason in the situation where a reason code is required in addition to the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReason()
     {
@@ -330,7 +330,7 @@ class FHIRClaimSupportingInfo extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Provides the reason in the situation where a reason code is required in addition to the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function setReason($reason)

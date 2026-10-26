@@ -1,11 +1,11 @@
 /**
  * Appointment TeleHealth javascript library for interacting with the appointment dialog window.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 (function(window, comlink) {
 
@@ -101,7 +101,7 @@
         // if the current category has an id of one of the telehealth categories
         // grab the select options and set their display option to be hidden if the provider is not in the
         // telehealth provider lists
-        // Note this will probably max out at a few thousand providers... so if an OpenEMR install is larger than that
+        // Note this will probably max out at a few thousand providers... so if an DCL install is larger than that
         // this will need to be adjusted.
         if (isCategoryTelehealth(node.value, telehealthCategories)) {
             // now let's hide our providers

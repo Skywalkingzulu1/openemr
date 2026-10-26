@@ -21,7 +21,7 @@
  *
  * Type:     function<br />
  * Name:     xlj<br />
- * Purpose:  translate in OpenEMR and escape for js - Smarty templates<br />
+ * Purpose:  translate in DCL and escape for js - Smarty templates<br />
  *
  * Examples:
  *

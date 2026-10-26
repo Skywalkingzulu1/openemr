@@ -18,7 +18,7 @@
  *
  * This marker exists to make the patient-compartment enforcement
  * in {@see FhirServiceBase::getOne()} and
- * {@see \OpenEMR\Services\FHIR\Traits\ResourceServiceSearchTrait::createOpenEMRSearchParameters()}
+ * {@see \DCL\Services\FHIR\Traits\ResourceServiceSearchTrait::createDCLSearchParameters()}
  * explicit rather than implicit. Any service that neither implements
  * {@see IPatientCompartmentResourceService} nor this interface is treated as
  * an unrecognized shape when a patient-scoped request reaches it -- the
@@ -29,16 +29,16 @@
  * (i.e. anything that has a `patient` search field or a `puuid` column) -- for
  * those services, implement {@see IPatientCompartmentResourceService} instead.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 interface INonPatientCompartmentResourceService
 {

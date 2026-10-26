@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Build the full distribution tarball + zip for an official OpenEMR release.
+ * Build the full distribution tarball + zip for an official DCL release.
  *
  * Ports the long-standing manual release-package process: export a checked-out
  * release branch, install production-only dependencies, build front-end assets,
- * prune dev/test cruft, and emit `openemr-<version>.tar.gz` and
- * `openemr-<version>.zip` ready to attach to the GitHub release.
+ * prune dev/test cruft, and emit `DCL-<version>.tar.gz` and
+ * `DCL-<version>.zip` ready to attach to the GitHub release.
  *
  * The staging tree is produced with `git archive`, so `export-ignore` entries in
- * openemr/openemr's .gitattributes (.github, ci, docker, tests, tools, large
+ * DCL/DCL's .gitattributes (.github, ci, docker, tests, tools, large
  * docs, …) are the single source of truth for what ships — no exclude list is
  * duplicated here.
  *
@@ -22,16 +22,16 @@
  * assembler regressions pre-merge instead of at release-conductor time.
  * See docs/artifact-acceptance-testing-plan.md for the phase design.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
@@ -40,7 +40,7 @@ final readonly class PackageAssembler
 {
     public function __construct(
         private string $version,
-        private string $openemrDir,
+        private string $DCLDir,
         private string $outputDir,
         private OutputInterface $output,
     ) {
@@ -48,12 +48,12 @@ final readonly class PackageAssembler
 
     public function assemble(): int
     {
-        if (!is_dir($this->openemrDir)) {
-            $this->output->writeln("<error>OpenEMR directory not found: {$this->openemrDir}</error>");
+        if (!is_dir($this->DCLDir)) {
+            $this->output->writeln("<error>DCL directory not found: {$this->DCLDir}</error>");
             return 1;
         }
-        if (!is_file("{$this->openemrDir}/build.xml")) {
-            $this->output->writeln("<error>build.xml not found in {$this->openemrDir} — wrong checkout?</error>");
+        if (!is_file("{$this->DCLDir}/build.xml")) {
+            $this->output->writeln("<error>build.xml not found in {$this->DCLDir} — wrong checkout?</error>");
             return 1;
         }
 
@@ -61,20 +61,20 @@ final readonly class PackageAssembler
         // version bump would silently package stale content. Fail fast on a dirty
         // checkout. (The workflow commits the bump locally before this step, even
         // in dry runs, so the package validates the exact tree a release ships.)
-        $status = new Process(['git', 'status', '--porcelain'], $this->openemrDir);
+        $status = new Process(['git', 'status', '--porcelain'], $this->DCLDir);
         $status->mustRun();
         $dirty = trim($status->getOutput());
         if ($dirty !== '') {
-            $this->output->writeln("<error>Refusing to package a dirty checkout in {$this->openemrDir}:</error>");
+            $this->output->writeln("<error>Refusing to package a dirty checkout in {$this->DCLDir}:</error>");
             $this->output->writeln($dirty);
             return 1;
         }
 
-        $packageName = "openemr-{$this->version}";
+        $packageName = "DCL-{$this->version}";
 
         // Resolve the output dir to an absolute path before any command runs.
-        // The git archive below runs with cwd = openemrDir, so a relative output
-        // path (the default ./release-output) would resolve against the openemr
+        // The git archive below runs with cwd = DCLDir, so a relative output
+        // path (the default ./release-output) would resolve against the DCL
         // checkout — where the dir does not exist — and fail to open. Create the
         // dir, then canonicalize, so every command writes here regardless of its
         // own cwd.
@@ -95,14 +95,14 @@ final readonly class PackageAssembler
         }
 
         // Export the committed tree (honoring .gitattributes export-ignore) into
-        // a fresh openemr-<version>/ staging dir. git archive can't pipe through
+        // a fresh DCL-<version>/ staging dir. git archive can't pipe through
         // our no-shell Process runner, so stage via an intermediate tar. HEAD is
         // the release commit — the dirty-checkout guard above guarantees the
         // version bump is committed (in every run, dry included).
         $sourceTar = "{$outputDir}/{$packageName}-source.tar";
         $this->run(
             ['git', 'archive', '--format=tar', '--prefix', "{$packageName}/", '-o', $sourceTar, 'HEAD'],
-            $this->openemrDir,
+            $this->DCLDir,
         );
         $this->run(['tar', '-xf', $sourceTar, '-C', $outputDir]);
         unlink($sourceTar);
@@ -112,8 +112,8 @@ final readonly class PackageAssembler
         $this->run(['npm', 'ci'], $stageDir);
         $this->run(['npm', 'run', 'build'], $stageDir);
 
-        // Prune vendor/asset cruft via the openemr build.xml targets. Driving
-        // these through phing keeps the prune list owned by openemr/openemr
+        // Prune vendor/asset cruft via the DCL build.xml targets. Driving
+        // these through phing keeps the prune list owned by DCL/DCL
         // (single source of truth) rather than duplicated here. Point
         // COMPOSER_HOME at a throwaway dir so `composer global` installs phing
         // there instead of mutating the caller's real global environment — no
@@ -131,13 +131,13 @@ final readonly class PackageAssembler
             null,
             $composerEnv,
         );
-        // build.xml is export-ignore'd in openemr's .gitattributes, so git
+        // build.xml is export-ignore'd in DCL's .gitattributes, so git
         // archive strips it from the staged tree. Its prune targets resolve
         // ${project.basedir}/vendor and .../public/assets against the staged
         // tree (phing runs there), so copy the buildfile in for the prune run
         // and remove it afterward — it must not ship in the distribution.
         $buildXml = "{$stageDir}/build.xml";
-        if (!copy("{$this->openemrDir}/build.xml", $buildXml)) {
+        if (!copy("{$this->DCLDir}/build.xml", $buildXml)) {
             $this->output->writeln("<error>Failed to stage build.xml for prune: {$buildXml}</error>");
             return 1;
         }
@@ -167,7 +167,7 @@ final readonly class PackageAssembler
             $this->run(['chmod', 'a+w', $sqlconf]);
         }
 
-        // Build archives from the output dir so each unpacks to openemr-<version>/.
+        // Build archives from the output dir so each unpacks to DCL-<version>/.
         $this->run(['tar', '-zcpf', "{$packageName}.tar.gz", $packageName], $outputDir);
         $this->run(['zip', '-r', '-q', "{$packageName}.zip", $packageName], $outputDir);
 

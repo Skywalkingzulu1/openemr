@@ -3,18 +3,18 @@
 /**
  * DrugRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\DrugService;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\DrugService;
 
 class DrugRestController
 {
@@ -48,7 +48,7 @@ class DrugRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/standard'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($uuid)
     {
@@ -73,7 +73,7 @@ class DrugRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($search = [])
     {

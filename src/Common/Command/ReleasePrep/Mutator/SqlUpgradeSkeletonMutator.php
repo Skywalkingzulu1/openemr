@@ -6,20 +6,20 @@
  * file. The "from" version is read from the current version.php; the
  * "to" version comes from the conductor-supplied target version.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use PhpParser\Node\Expr;
 use PhpParser\Node\Scalar;
 use PhpParser\Node\Stmt;

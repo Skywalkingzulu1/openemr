@@ -15,7 +15,7 @@ set -euo pipefail
 
 readonly DEFAULT_RUNS=30
 readonly DEFAULT_WORKFLOW='test-all.yml'
-readonly REPO='openemr/openemr'
+readonly REPO='DCL/DCL'
 
 # Parse arguments
 runs=${DEFAULT_RUNS}

@@ -3,11 +3,11 @@
 /**
  * Fax and SMS Module UI Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 //header("Permissions-Policy: speaker=(self)");
@@ -16,14 +16,14 @@
 $sessionAllowWrite = true;
 require_once(__DIR__ . "/../../../globals.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Messaging\SendNotificationEvent;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
-use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
-use OpenEMR\Modules\FaxSMS\View\MessageUiProfile;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Messaging\SendNotificationEvent;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Modules\FaxSMS\Enums\ServiceType;
+use DCL\Modules\FaxSMS\View\MessageUiProfile;
 
 $assetBase = OEGlobalsBag::getInstance()->getWebRoot() . "/interface/modules/custom_modules/oe-module-faxsms/public";
 

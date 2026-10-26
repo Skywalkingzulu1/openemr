@@ -18,12 +18,12 @@
  * along with this program. If not, see
  * http://www.gnu.org/licenses/licenses.html#GPL .
  *
- * @package OpenEMR
+ * @package DCL
  * @license https://www.gnu.org/licenses/licenses.html#GPL GNU GPL V3+
  * @author  Rod Roark <rod@sunsetsystems.com>
- * @author  Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @link    https://www.open-emr.org
+ * @author  Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @link    https://www.dcl.org
  */
 
 require_once(__DIR__ . "/../interface/globals.php");
@@ -32,13 +32,13 @@ require_once(__DIR__ . "/../interface/drugs/drugs.inc.php");
 require_once(__DIR__ . "/options.inc.php");
 require_once(__DIR__ . "/appointment_status.inc.php");
 
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Billing\HcpcsDrugDefaults;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\PaymentProcessing\Recorder;
+use DCL\Billing\BillingUtilities;
+use DCL\Billing\HcpcsDrugDefaults;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\PaymentProcessing\Recorder;
 
 // For logging checksums set this to true.
 define('CHECKSUM_LOGGING', true);
@@ -123,7 +123,7 @@ class FeeSheet
         $visit_row = sqlQuery("SELECT fe.date, fe.provider_id, fe.supervisor_id, " .
           "opc.pc_catname, fac.extra_validation " .
           "FROM form_encounter AS fe " .
-          "LEFT JOIN openemr_postcalendar_categories AS opc ON opc.pc_catid = fe.pc_catid " .
+          "LEFT JOIN DCL_postcalendar_categories AS opc ON opc.pc_catid = fe.pc_catid " .
           "LEFT JOIN facility AS fac ON fac.id = fe.facility_id " .
           "WHERE fe.pid = ? AND fe.encounter = ? LIMIT 1", [$this->pid, $this->encounter]);
         $this->visit_date    = substr((string) $visit_row['date'], 0, 10);

@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Version;
+namespace DCL\Tests\Acceptance\Version;
 
-use OpenEMR\Tests\Acceptance\Support\AcceptanceContext;
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\OAuth2\AuthCodeFlow;
-use OpenEMR\Tests\Acceptance\Support\ResponseHeaders;
+use DCL\Tests\Acceptance\Support\AcceptanceContext;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\OAuth2\AuthCodeFlow;
+use DCL\Tests\Acceptance\Support\ResponseHeaders;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -47,7 +47,7 @@ use PHPUnit\Framework\TestCase;
  *      Independent coverage now means we catch that shift as a
  *      signal rather than a coverage gap.
  *
- * Companion signals (all part of openemr/openemr#13634):
+ * Companion signals (all part of DCL/DCL#13634):
  *   - **DB version** — shell-asserted in `boot-package.sh` and
  *     `upgrade-package.sh` (direct mysql query).
  *   - **File version** — asserted in `VersionDisplayAcceptanceTest`
@@ -164,7 +164,7 @@ final class VersionApiAcceptanceTest extends TestCase
             . 'Currently this endpoint reads the `version` DB row, so a mismatch here means '
             . 'either sql_upgrade.php did not bump the version row (silent-no-op class, see '
             . '#13586/#13587 for the shape) OR install-helper.php seeded the wrong row. See '
-            . 'openemr/openemr#13634 for the full signal-source rationale.',
+            . 'DCL/DCL#13634 for the full signal-source rationale.',
         );
     }
 }

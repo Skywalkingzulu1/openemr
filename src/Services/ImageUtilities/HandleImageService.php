@@ -3,14 +3,14 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General public License 3
  */
 
-namespace OpenEMR\Services\ImageUtilities;
+namespace DCL\Services\ImageUtilities;
 
 use Exception;
 use Imagick;
@@ -60,7 +60,7 @@ class HandleImageService
     /**
      * Resize Example:
      * $control = new HandleImageService();
-     * $sourceImage = 'C:\xampp\htdocs\openemr\public\images\balloons-154949_960_720.png';
+     * $sourceImage = 'C:\xampp\htdocs\DCL\public\images\balloons-154949_960_720.png';
      * $resizedImage = $control->resizeImage($sourceImage, 200, 200);
      *
      * @param $sourceImage

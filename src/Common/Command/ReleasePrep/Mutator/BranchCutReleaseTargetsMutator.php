@@ -6,7 +6,7 @@
  * new rel-NNN0 branch cut requires:
  *
  *   (1) Insert a new row for the freshly-cut rel branch (e.g. rel-820)
- *       carrying `docker_tags: <X.Y.0>,next` and `openemr_version_ref:
+ *       carrying `docker_tags: <X.Y.0>,next` and `DCL_version_ref:
  *       <relBranch>`. Placement: immediately after the master row +
  *       before the first existing rel-* row.
  *
@@ -24,20 +24,20 @@
  * PostReleaseTargetsMutator's approach. Symfony YAML's parser is used at
  * the end as a structural sanity check on the surgical edits.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
@@ -47,8 +47,8 @@ use Symfony\Component\Yaml\Yaml;
  *   startLine: int,
  *   dockerTags: ?string,
  *   dockerTagsLine: ?int,
- *   openemrVersionRef: ?string,
- *   openemrVersionRefLine: ?int,
+ *   DCLVersionRef: ?string,
+ *   DCLVersionRefLine: ?int,
  *   unreleased: ?string,
  * }
  */
@@ -122,8 +122,8 @@ final readonly class BranchCutReleaseTargetsMutator implements MutatorInterface
                     'startLine' => $i,
                     'dockerTags' => null,
                     'dockerTagsLine' => null,
-                    'openemrVersionRef' => null,
-                    'openemrVersionRefLine' => null,
+                    'DCLVersionRef' => null,
+                    'DCLVersionRefLine' => null,
                     'unreleased' => null,
                 ];
                 continue;
@@ -136,9 +136,9 @@ final readonly class BranchCutReleaseTargetsMutator implements MutatorInterface
                 $current['dockerTagsLine'] = $i;
                 continue;
             }
-            if (preg_match('/^  openemr_version_ref:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
-                $current['openemrVersionRef'] = trim($m[1]);
-                $current['openemrVersionRefLine'] = $i;
+            if (preg_match('/^  DCL_version_ref:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
+                $current['DCLVersionRef'] = trim($m[1]);
+                $current['DCLVersionRefLine'] = $i;
                 continue;
             }
             if (preg_match('/^  unreleased:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
@@ -349,7 +349,7 @@ final readonly class BranchCutReleaseTargetsMutator implements MutatorInterface
      * carries the acceptance surface (added by Phase 12 / #13332); this
      * field was introduced after the mutator shipped and needs to be
      * back-patched here so future cuts don't drop it (as happened on
-     * rel-830 in openemr/openemr#13484).
+     * rel-830 in DCL/DCL#13484).
      *
      * @return list<string>
      */
@@ -359,7 +359,7 @@ final readonly class BranchCutReleaseTargetsMutator implements MutatorInterface
         return [
             '- branch: ' . $relBranch,
             '  docker_tags: ' . $versionTag . ',next',
-            '  openemr_version_ref: ' . $relBranch,
+            '  DCL_version_ref: ' . $relBranch,
             '  gate_with_acceptance: true',
         ];
     }

@@ -3,21 +3,21 @@
 /**
  * AllergyIntoleranceRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\AllergyIntoleranceService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\AllergyIntoleranceService;
+use DCL\Services\PatientService;
+use DCL\Validators\ProcessingResult;
 
 #[OA\Schema(
     schema: 'api_allergy_request',
@@ -73,7 +73,7 @@ class AllergyIntoleranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($uuid)
     {
@@ -139,7 +139,7 @@ class AllergyIntoleranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     #[OA\Get(
         path: '/api/patient/{puuid}/allergy',
@@ -159,7 +159,7 @@ class AllergyIntoleranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     #[OA\Get(
         path: '/api/patient/{puuid}/allergy/{auuid}',
@@ -186,7 +186,7 @@ class AllergyIntoleranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($search = [])
     {
@@ -219,7 +219,7 @@ class AllergyIntoleranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post($puuid, $data)
     {
@@ -261,7 +261,7 @@ class AllergyIntoleranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put($puuid, $uuid, $data)
     {
@@ -318,7 +318,7 @@ class AllergyIntoleranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function delete($puuid, $uuid)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -72,121 +72,121 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this implementation guide is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the implementation guide is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this implementation guide. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the implementation guide from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate implementation guide instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the implementation guide is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The NPM package name for this Implementation Guide, used in the NPM package distribution, which is the primary mechanism by which FHIR based tooling manages IG dependencies. This value must be globally unique, and should be assigned with care.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $packageId = null;
 
     /**
      * The license that applies to this Implementation Guide, using an SPDX license code, or 'not-open-source'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSPDXLicense
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSPDXLicense
      */
     public $license = null;
 
     /**
      * The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.0.0. for this version.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
      */
     public $fhirVersion = [];
 
     /**
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[]
      */
     public $dependsOn = [];
 
     /**
      * A set of profiles that all resources covered by this implementation guide must conform to.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
      */
     public $global = [];
 
     /**
      * The information needed by an IG publisher tool to publish the whole implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDefinition
      */
     public $definition = null;
 
     /**
      * Information about an assembled implementation guide, created by the publication tooling.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideManifest
      */
     public $manifest = null;
 
@@ -197,7 +197,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this implementation guide is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the implementation guide is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -206,7 +206,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this implementation guide is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the implementation guide is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -217,7 +217,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -226,7 +226,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -237,7 +237,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -246,7 +246,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -257,7 +257,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -266,7 +266,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -277,7 +277,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this implementation guide. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -286,7 +286,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this implementation guide. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -297,7 +297,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -306,7 +306,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -317,7 +317,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -326,7 +326,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -337,7 +337,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -346,7 +346,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -357,7 +357,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -366,7 +366,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -377,7 +377,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the implementation guide from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -386,7 +386,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the implementation guide from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -397,7 +397,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate implementation guide instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -406,7 +406,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate implementation guide instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -417,7 +417,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the implementation guide is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -426,7 +426,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the implementation guide is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -437,7 +437,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -446,7 +446,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -457,7 +457,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The NPM package name for this Implementation Guide, used in the NPM package distribution, which is the primary mechanism by which FHIR based tooling manages IG dependencies. This value must be globally unique, and should be assigned with care.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getPackageId()
     {
@@ -466,7 +466,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The NPM package name for this Implementation Guide, used in the NPM package distribution, which is the primary mechanism by which FHIR based tooling manages IG dependencies. This value must be globally unique, and should be assigned with care.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $packageId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $packageId
      * @return $this
      */
     public function setPackageId($packageId)
@@ -477,7 +477,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The license that applies to this Implementation Guide, using an SPDX license code, or 'not-open-source'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSPDXLicense
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSPDXLicense
      */
     public function getLicense()
     {
@@ -486,7 +486,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The license that applies to this Implementation Guide, using an SPDX license code, or 'not-open-source'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSPDXLicense $license
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSPDXLicense $license
      * @return $this
      */
     public function setLicense($license)
@@ -497,7 +497,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.0.0. for this version.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
      */
     public function getFhirVersion()
     {
@@ -506,7 +506,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.0.0. for this version.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
      * @return $this
      */
     public function addFhirVersion($fhirVersion)
@@ -517,7 +517,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[]
      */
     public function getDependsOn()
     {
@@ -526,7 +526,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependsOn $dependsOn
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependsOn $dependsOn
      * @return $this
      */
     public function addDependsOn($dependsOn)
@@ -537,7 +537,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A set of profiles that all resources covered by this implementation guide must conform to.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
      */
     public function getGlobal()
     {
@@ -546,7 +546,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A set of profiles that all resources covered by this implementation guide must conform to.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal $global
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal $global
      * @return $this
      */
     public function addGlobal($global)
@@ -557,7 +557,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The information needed by an IG publisher tool to publish the whole implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDefinition
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDefinition
      */
     public function getDefinition()
     {
@@ -566,7 +566,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The information needed by an IG publisher tool to publish the whole implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDefinition $definition
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDefinition $definition
      * @return $this
      */
     public function setDefinition($definition)
@@ -577,7 +577,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Information about an assembled implementation guide, created by the publication tooling.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideManifest
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideManifest
      */
     public function getManifest()
     {
@@ -586,7 +586,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Information about an assembled implementation guide, created by the publication tooling.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideManifest $manifest
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideManifest $manifest
      * @return $this
      */
     public function setManifest($manifest)

@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
-use OpenEMR\Common\Database\QueryPagination;
+use DCL\Common\Database\QueryPagination;
 
 /**
- * OpenEMR Service Processing Result
+ * DCL Service Processing Result
  *
  * Data contained within a processing result includes:
  * - isValid: indicates if the data provided to the service was valid
@@ -13,13 +13,13 @@ use OpenEMR\Common\Database\QueryPagination;
  * - internalErrors: system related errors, if any, which occurred during processing
  * - data: the return value of the operation/process (array)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 class ProcessingResult

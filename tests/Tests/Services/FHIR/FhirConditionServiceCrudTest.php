@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\FHIR\FhirConditionService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\FHIR\FhirConditionService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -20,13 +20,13 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR Condition Service CRUD Tests
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirConditionServiceCrudTest extends TestCase
 {
@@ -49,7 +49,7 @@ class FhirConditionServiceCrudTest extends TestCase
             [$patientFixture['pubpid']]
         );
         $this->assertIsArray($patientRecord);
-        $this->patientUuid = \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($patientRecord['uuid']);
+        $this->patientUuid = \DCL\Common\Uuid\UuidRegistry::uuidToString($patientRecord['uuid']);
 
         // Load FHIR fixture and set patient reference
         $raw = file_get_contents(__DIR__ . '/../../Fixtures/FHIR/condition.json');
@@ -112,7 +112,7 @@ class FhirConditionServiceCrudTest extends TestCase
         $actualResult = $this->fhirConditionService->update($fhirId, $this->fhirConditionFixture);
         $this->assertTrue($actualResult->isValid(), "Update should succeed: " . json_encode($actualResult->getValidationMessages()));
 
-        // FhirServiceBase::update() re-shapes the stored row through parseOpenEMRRecord(); an
+        // FhirServiceBase::update() re-shapes the stored row through parseDCLRecord(); an
         // aggregator that leaves that on the empty trait answers a successful PUT with a null body.
         $resource = $actualResult->getFirstDataResult();
         $this->assertInstanceOf(FHIRCondition::class, $resource);
@@ -130,7 +130,7 @@ class FhirConditionServiceCrudTest extends TestCase
 
     /**
      * ICD-10-CM and ICD-9-CM are the US Core diagnosis code systems. They must
-     * map to OpenEMR's ICD10 / ICD9 code-type prefixes via CodeTypesService, not
+     * map to DCL's ICD10 / ICD9 code-type prefixes via CodeTypesService, not
      * be passed through as the raw system URL.
      */
     #[Test]
@@ -183,7 +183,7 @@ class FhirConditionServiceCrudTest extends TestCase
 
     /**
      * A full FHIR date (YYYY-MM-DD) and full date-time both resolve to the
-     * OpenEMR Y-m-d begdate.
+     * DCL Y-m-d begdate.
      */
     #[Test]
     public function testParseAcceptsFullOnsetDateTime(): void

@@ -3,9 +3,9 @@
 namespace Ccr;
 
 use Laminas\ModuleManager\ModuleManager;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
 
 class Module
 {

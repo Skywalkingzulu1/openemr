@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Your Name <you@example.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -14,7 +14,7 @@ namespace <namespace>;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\Migrations\AbstractMigration;
-use OpenEMR\Core\Migrations;
+use DCL\Core\Migrations;
 
 final class <className> extends AbstractMigration
 {

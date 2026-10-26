@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Set of definitional characteristics for a kind of observation or measurement produced or consumed by an orderable health care service.
@@ -71,49 +71,49 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 {
     /**
      * The category of interval of values for continuous or ordinal observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationRangeCategory
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRObservationRangeCategory
      */
     public $category = null;
 
     /**
      * The low and high values determining the interval. There may be only one of the two.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $range = null;
 
     /**
      * Codes to indicate the health context the range applies to. For example, the normal or therapeutic range.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $context = null;
 
     /**
      * Codes to indicate the target population this reference range applies to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $appliesTo = [];
 
     /**
      * Sex of the population the range applies to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public $gender = null;
 
     /**
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $age = null;
 
     /**
      * The gestational age to which this reference range is applicable, in the context of pregnancy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $gestationalAge = null;
 
     /**
      * Text based condition for which the reference range is valid.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $condition = null;
 
@@ -124,7 +124,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The category of interval of values for continuous or ordinal observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationRangeCategory
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRObservationRangeCategory
      */
     public function getCategory()
     {
@@ -133,7 +133,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The category of interval of values for continuous or ordinal observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationRangeCategory $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRObservationRangeCategory $category
      * @return $this
      */
     public function setCategory($category)
@@ -144,7 +144,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The low and high values determining the interval. There may be only one of the two.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getRange()
     {
@@ -153,7 +153,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The low and high values determining the interval. There may be only one of the two.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $range
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $range
      * @return $this
      */
     public function setRange($range)
@@ -164,7 +164,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Codes to indicate the health context the range applies to. For example, the normal or therapeutic range.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getContext()
     {
@@ -173,7 +173,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Codes to indicate the health context the range applies to. For example, the normal or therapeutic range.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $context
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $context
      * @return $this
      */
     public function setContext($context)
@@ -184,7 +184,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Codes to indicate the target population this reference range applies to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAppliesTo()
     {
@@ -193,7 +193,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Codes to indicate the target population this reference range applies to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $appliesTo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $appliesTo
      * @return $this
      */
     public function addAppliesTo($appliesTo)
@@ -204,7 +204,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Sex of the population the range applies to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender()
     {
@@ -213,7 +213,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Sex of the population the range applies to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
     public function setGender($gender)
@@ -224,7 +224,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAge()
     {
@@ -233,7 +233,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $age
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $age
      * @return $this
      */
     public function setAge($age)
@@ -244,7 +244,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The gestational age to which this reference range is applicable, in the context of pregnancy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getGestationalAge()
     {
@@ -253,7 +253,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * The gestational age to which this reference range is applicable, in the context of pregnancy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $gestationalAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $gestationalAge
      * @return $this
      */
     public function setGestationalAge($gestationalAge)
@@ -264,7 +264,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Text based condition for which the reference range is valid.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCondition()
     {
@@ -273,7 +273,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement imp
 
     /**
      * Text based condition for which the reference range is valid.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $condition
      * @return $this
      */
     public function setCondition($condition)

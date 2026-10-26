@@ -3,25 +3,25 @@
 /**
  * This reports checkins and checkouts for a specified patient's chart.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2008-2015 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Services\PatientService;
+use DCL\Services\Utils\DateFormatterUtils;
 
 // Per-patient chart-tracker history is medical data; gate on patients/med
 // before the pubpid-to-pid resolution or the getChartTrackerInformationActivity
@@ -81,7 +81,7 @@ $form_patient_id = trim($_POST['form_patient_id'] ?? '');
 <span class='title'><?php echo xlt('Report'); ?> - <?php echo xlt('Chart Location Activity'); ?></span>
 
 <?php
-$curr_pid = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid');
+$curr_pid = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid');
 $ptrow = [];
 if (!empty($form_patient_id)) {
     $query = "SELECT pid, pubpid, fname, mname, lname FROM patient_data WHERE " .

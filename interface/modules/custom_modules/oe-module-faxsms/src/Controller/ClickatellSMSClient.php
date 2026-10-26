@@ -3,15 +3,15 @@
 /**
  * Clickatell SMS Controller
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Contracts\SmsChannelInterface;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Contracts\SmsChannelInterface;
 
 class ClickatellSMSClient extends AppDispatch implements SmsChannelInterface
 {

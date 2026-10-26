@@ -1,16 +1,16 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\HttpRestRouteHandler;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\RestControllers\FHIR\Finder\FhirRouteFinder;
-use OpenEMR\RestControllers\Finder\PortalRouteFinder;
-use OpenEMR\RestControllers\Finder\StandardRouteFinder;
-use OpenEMR\Services\FHIR\Utils\FhirServiceLocator;
-use OpenEMR\Services\FHIR\Utils\SearchRequestNormalizer;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRouteHandler;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Core\OEHttpKernel;
+use DCL\RestControllers\FHIR\Finder\FhirRouteFinder;
+use DCL\RestControllers\Finder\PortalRouteFinder;
+use DCL\RestControllers\Finder\StandardRouteFinder;
+use DCL\Services\FHIR\Utils\FhirServiceLocator;
+use DCL\Services\FHIR\Utils\SearchRequestNormalizer;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

@@ -1,19 +1,19 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers\SMART;
+namespace DCL\Tests\Isolated\RestControllers\SMART;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\Core\TemplatePageEvent;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\RestControllers\SMART\PatientContextSearchController;
-use OpenEMR\RestControllers\SMART\SMARTAuthorizationController;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\Core\TemplatePageEvent;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\RestControllers\SMART\PatientContextSearchController;
+use DCL\RestControllers\SMART\SMARTAuthorizationController;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -342,7 +342,7 @@ class SMARTAuthorizationControllerTest extends TestCase
 //
 //        $globalsBag = new OEGlobalsBag([
 //            'site_addr_oath' => 'http://localhost:8080'
-//            ,'web_root' => 'openemr'
+//            ,'web_root' => 'DCL'
 //            ,'css_header' => 'theme_light.css'
 //        ]);
 //        $kernel = $this->createMock(OEHttpKernel::class);

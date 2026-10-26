@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
+namespace DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
@@ -70,62 +70,62 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $valueDecimal = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $valueDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $valueUri = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $valueReference = null;
 
@@ -135,7 +135,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     private $_fhirElementName = 'Questionnaire.Initial';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
     {
@@ -143,7 +143,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -153,7 +153,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
     {
@@ -161,7 +161,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
      * @return $this
      */
     public function setValueDecimal($valueDecimal)
@@ -171,7 +171,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
     {
@@ -179,7 +179,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
     public function setValueInteger($valueInteger)
@@ -189,7 +189,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getValueDate()
     {
@@ -197,7 +197,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $valueDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $valueDate
      * @return $this
      */
     public function setValueDate($valueDate)
@@ -207,7 +207,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
     {
@@ -215,7 +215,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
     public function setValueDateTime($valueDateTime)
@@ -225,7 +225,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getValueTime()
     {
@@ -233,7 +233,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $valueTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
     public function setValueTime($valueTime)
@@ -243,7 +243,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -251,7 +251,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -261,7 +261,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getValueUri()
     {
@@ -269,7 +269,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $valueUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $valueUri
      * @return $this
      */
     public function setValueUri($valueUri)
@@ -279,7 +279,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
     {
@@ -287,7 +287,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $valueAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
     public function setValueAttachment($valueAttachment)
@@ -297,7 +297,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
     {
@@ -305,7 +305,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
     public function setValueCoding($valueCoding)
@@ -315,7 +315,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -323,7 +323,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -333,7 +333,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getValueReference()
     {
@@ -341,7 +341,7 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $valueReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
     public function setValueReference($valueReference)

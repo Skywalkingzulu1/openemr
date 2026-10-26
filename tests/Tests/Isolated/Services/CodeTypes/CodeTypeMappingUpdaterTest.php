@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL <https://DCL.com>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\CodeTypes;
+namespace DCL\Tests\Isolated\Services\CodeTypes;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
-use OpenEMR\Entities\Code;
-use OpenEMR\Entities\CodeType;
-use OpenEMR\Entities\ListOption;
-use OpenEMR\Services\CodeTypes\CodeTypeMappingUpdater;
+use DCL\Entities\Code;
+use DCL\Entities\CodeType;
+use DCL\Entities\ListOption;
+use DCL\Services\CodeTypes\CodeTypeMappingUpdater;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

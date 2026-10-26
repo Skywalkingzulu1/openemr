@@ -5,21 +5,21 @@
  * against the PHP Interval type and the successor, predecessor and limit
  * helpers it closes bounds with.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cqm\Cql;
+namespace DCL\Tests\Isolated\Cqm\Cql;
 
-use OpenEMR\Cqm\Cql\Types\Comparison;
-use OpenEMR\Cqm\Cql\Types\Interval;
-use OpenEMR\Cqm\Cql\Types\Precision;
-use OpenEMR\Cqm\Cql\Util\CqlMath;
+use DCL\Cqm\Cql\Types\Comparison;
+use DCL\Cqm\Cql\Types\Interval;
+use DCL\Cqm\Cql\Types\Precision;
+use DCL\Cqm\Cql\Util\CqlMath;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

@@ -3,55 +3,55 @@
 /**
  * FhirMedicationRequestService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\DomainModels\OpenEMRFHIRDosage;
-use OpenEMR\FHIR\DomainModels\OpenEMRFHIRTiming;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FHIR\Enum\FHIRMedicationIntentEnum;
-use OpenEMR\Services\FHIR\Enum\FHIRMedicationStatusEnum;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\PrescriptionService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\Utilities;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\DomainModels\DCLFHIRDosage;
+use DCL\FHIR\DomainModels\DCLFHIRTiming;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRElement\FHIRAnnotation;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate;
+use DCL\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest;
+use DCL\Services\CodeTypesService;
+use DCL\Services\EncounterService;
+use DCL\Services\FHIR\Enum\FHIRMedicationIntentEnum;
+use DCL\Services\FHIR\Enum\FHIRMedicationStatusEnum;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\PrescriptionService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * NOTE: when making modifications to this class follow all the guidance in the US Core Medication List guidance
  * here: https://www.hl7.org/fhir/us/core/medication-list-guidance.html
  *
  * Class FhirMedicationRequestService
- * @package OpenEMR\Services\FHIR
+ * @package DCL\Services\FHIR
  */
 class FhirMedicationRequestService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService, IPatientCompartmentResourceService
 {
@@ -118,7 +118,7 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
     }
 
     /**
-     * Returns an array mapping FHIR Patient Resource search parameters to OpenEMR Patient search parameters
+     * Returns an array mapping FHIR Patient Resource search parameters to DCL Patient search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -138,13 +138,13 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
     }
 
     /**
-     * Parses an OpenEMR prescription record, returning the equivalent FHIR Patient Resource
+     * Parses an DCL prescription record, returning the equivalent FHIR Patient Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRMedicationRequest|string
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRMedicationRequest|string
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRMedicationRequest|string
     {
         $medRequestResource = new FHIRMedicationRequest();
 
@@ -164,7 +164,7 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
         $this->populateCategory($medRequestResource, $dataRecord);
 
         // reported must support
-        // we will treat everything as a primary source as OpenEMR has no way of differentiating right now primary versus secondary.
+        // we will treat everything as a primary source as DCL has no way of differentiating right now primary versus secondary.
         $this->populateReported($medRequestResource, $dataRecord);
 
         // medication[x] required 1..1
@@ -217,14 +217,14 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->getPrescriptionService()->getAll($openEMRSearchParameters);
+        return $this->getPrescriptionService()->getAll($DCLSearchParameters);
     }
 
     /**
@@ -236,7 +236,7 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
      * actually persist; ignored fields round-trip via FHIR but do not survive.
      *
      * Subject/encounter/requester references are left as uuid strings here; they are
-     * resolved to numeric ids inside insertOpenEMRRecord/updateOpenEMRRecord.
+     * resolved to numeric ids inside insertDCLRecord/updateDCLRecord.
      *
      * @param FHIRDomainResource $fhirResource
      * @return array<string, mixed>
@@ -265,7 +265,7 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
         // so writing `active` alone cannot express 'completed': active = 0 reads back as
         // 'stopped', and the caller got a 200 for a status the server did not store.
         //
-        // 'cancelled' still collapses to 'stopped' on read. OpenEMR's prescriptions table has
+        // 'cancelled' still collapses to 'stopped' on read. DCL's prescriptions table has
         // no state that distinguishes "never started" from "discontinued", so there is nothing
         // to write that would round-trip it; the value is accepted as an end-of-life status
         // rather than rejected, and reads back as the closest state the schema has.
@@ -413,10 +413,10 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      * @return ProcessingResult
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR MedicationRequest record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL MedicationRequest record array');
         }
 
         $validationError = $openEmrRecord['__validation_error__'] ?? null;
@@ -451,25 +451,25 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
     /**
      * Updates a prescriptions row from a parsed FHIR MedicationRequest.
      *
-     * @param string $fhirResourceId The OpenEMR record's FHIR Resource ID (uuid)
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param string $fhirResourceId The DCL record's FHIR Resource ID (uuid)
+     * @param array<array-key, mixed> $updatedDCLRecord
      * @return ProcessingResult
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        $validationError = $updatedOpenEMRRecord['__validation_error__'] ?? null;
+        $validationError = $updatedDCLRecord['__validation_error__'] ?? null;
         if (is_string($validationError)) {
             $result = new ProcessingResult();
             $result->setValidationMessages(['medication' => $validationError]);
             return $result;
         }
 
-        $resolveResult = $this->resolveReferences($updatedOpenEMRRecord);
+        $resolveResult = $this->resolveReferences($updatedDCLRecord);
         if ($resolveResult !== null) {
             return $resolveResult;
         }
 
-        $record = FhirPayloadReader::stringKeyed($updatedOpenEMRRecord);
+        $record = FhirPayloadReader::stringKeyed($updatedDCLRecord);
 
         // The subject the caller asserts has to be the prescription's actual owner. Without this
         // the resolved patient_id would simply be written, moving the record to another chart.
@@ -603,7 +603,7 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
             $codes = $this->getCodeTypesService()->parseCodesIntoCodeableConcepts($dataRecord['diagnosis']);
             $medRequestResource->addReasonCode(UtilsService::createCodeableConcept($codes, FhirCodeSystemConstants::SNOMED_CT, ''));
         }
-        // TODO: if we want a linkage to the Condition resource we need to implement that in OpenEMR first
+        // TODO: if we want a linkage to the Condition resource we need to implement that in DCL first
     }
 
     public function populateDosageInstruction(FHIRMedicationRequest $medRequestResource, array $dataRecord): void
@@ -612,7 +612,7 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
             return;
         }
 
-        $dosage = new OpenEMRFHIRDosage();
+        $dosage = new DCLFHIRDosage();
         // need to support text 0..1, timing 0..1, route 0..1, doseAndRate 0..*
 
         // Text instruction (prescription will set dosage to be a single numeric value even though its a textfield)
@@ -634,14 +634,14 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
                 ]
             ]);
             $intervalConcept->setText($dataRecord['interval_notes'] ?? $dataRecord['interval_title']);
-            $fhirTiming = new OpenEMRFHIRTiming();
+            $fhirTiming = new DCLFHIRTiming();
             $fhirTiming->setCode($intervalConcept);
             $dosage->setTiming($fhirTiming);
         } elseif (!empty($dataRecord['interval_notes'])) {
             // if we have notes but no corresponding code, just set the text
             $intervalConcept = new FHIRCodeableConcept();
             $intervalConcept->setText($dataRecord['interval_notes']);
-            $fhirTiming = new OpenEMRFHIRTiming();
+            $fhirTiming = new DCLFHIRTiming();
             $fhirTiming->setCode($intervalConcept);
             $dosage->setTiming($fhirTiming);
         }
@@ -826,7 +826,7 @@ class FhirMedicationRequestService extends FhirServiceBase implements IResourceU
 
     public function populateCategory(FHIRMedicationRequest $medRequestResource, array $dataRecord)
     {
-        // The coding's display must be the code system's; OpenEMR's own (translated) title goes in text.
+        // The coding's display must be the code system's; DCL's own (translated) title goes in text.
         $categoryCode = $dataRecord['category'] ?? null;
         if (is_string($categoryCode) && $categoryCode !== '') {
             $categoryTitle = is_string($dataRecord['category_title'] ?? null) ? $dataRecord['category_title'] : '';

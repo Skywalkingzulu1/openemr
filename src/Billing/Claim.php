@@ -3,27 +3,27 @@
 /**
  * Claim Class
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2009-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
 use InsuranceCompany;
-use OpenEMR\Billing\InvoiceSummary;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\PhoneNumberService;
-use OpenEMR\Services\UserService;
+use DCL\Billing\InvoiceSummary;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\EncounterService;
+use DCL\Services\FacilityService;
+use DCL\Services\PatientService;
+use DCL\Services\PhoneNumberService;
+use DCL\Services\UserService;
 
 class Claim
 {

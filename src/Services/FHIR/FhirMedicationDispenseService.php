@@ -3,29 +3,29 @@
 /**
  * FHIR MedicationDispense Service
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2025 OpenEMR <info@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL <info@dcl.org>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\FHIR\MedicationDispense\FhirMedicationDispenseLocalDispensaryService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceCodeTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Services\BaseService;
+use DCL\Services\FHIR\MedicationDispense\FhirMedicationDispenseLocalDispensaryService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\MappedServiceCodeTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR MedicationDispense Service
@@ -62,7 +62,7 @@ class FhirMedicationDispenseService extends FhirServiceBase implements
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -81,7 +81,7 @@ class FhirMedicationDispenseService extends FhirServiceBase implements
     }
 
     /**
-     * Retrieves all of the fhir medication dispense resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir medication dispense resources mapped to the underlying DCL data elements.
      * @param $fhirSearchParameters The FHIR resource search parameters
      * @param $puuidBind - Optional variable to only allow visibility of the patient with this puuid.
      * @return ProcessingResult
@@ -154,7 +154,7 @@ class FhirMedicationDispenseService extends FhirServiceBase implements
 
     /**
      * Performs a FHIR MedicationDispense Resource lookup by FHIR Resource ID
-     * @param $fhirResourceId The OpenEMR uuid or mapped uuid that is to be looked up
+     * @param $fhirResourceId The DCL uuid or mapped uuid that is to be looked up
      * @param $puuidBind - Optional variable to only allow visibility of the patient with this puuid.
      * @return ProcessingResult
      */

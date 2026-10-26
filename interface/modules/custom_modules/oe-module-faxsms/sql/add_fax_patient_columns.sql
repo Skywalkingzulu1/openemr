@@ -25,7 +25,7 @@ ADD COLUMN `media_path` VARCHAR(255) DEFAULT NULL COMMENT 'Local path to downloa
 -- Add site_id column for multi-site support
 #IfMissingColumn oe_faxsms_queue site_id
 ALTER TABLE `oe_faxsms_queue`
-ADD COLUMN `site_id` VARCHAR(63) DEFAULT 'default' COMMENT 'OpenEMR site ID',
+ADD COLUMN `site_id` VARCHAR(63) DEFAULT 'default' COMMENT 'DCL site ID',
 ADD INDEX `idx_site_id` (`site_id`);
 #EndIf
 

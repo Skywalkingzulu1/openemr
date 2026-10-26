@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The technical details of an endpoint that can be used for electronic services, such as for web services providing XDS.b or a REST endpoint for another FHIR server. This may include any security context information.
@@ -72,67 +72,67 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * active | suspended | error | off | test.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREndpointStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREndpointStatus
      */
     public $status = null;
 
     /**
      * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $connectionType = null;
 
     /**
      * A friendly name that this endpoint can be referred to with.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The organization that manages this endpoint (even if technically another organization is hosting this in the cloud, it is the organization associated with the data).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $managingOrganization = null;
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $contact = [];
 
     /**
      * The interval during which the endpoint is expected to be operational.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $payloadType = [];
 
     /**
      * The mime type to send the payload in - e.g. application/fhir+xml, application/fhir+json. If the mime type is not specified, then the sender could send any content (including no content depending on the connectionType).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $payloadMimeType = [];
 
     /**
      * The uri that describes the actual end-point to connect to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $address = null;
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $header = [];
 
@@ -143,7 +143,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -152,7 +152,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -163,7 +163,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * active | suspended | error | off | test.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREndpointStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREndpointStatus
      */
     public function getStatus()
     {
@@ -172,7 +172,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * active | suspended | error | off | test.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREndpointStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREndpointStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -183,7 +183,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getConnectionType()
     {
@@ -192,7 +192,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $connectionType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $connectionType
      * @return $this
      */
     public function setConnectionType($connectionType)
@@ -203,7 +203,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A friendly name that this endpoint can be referred to with.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -212,7 +212,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A friendly name that this endpoint can be referred to with.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -223,7 +223,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that manages this endpoint (even if technically another organization is hosting this in the cloud, it is the organization associated with the data).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManagingOrganization()
     {
@@ -232,7 +232,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that manages this endpoint (even if technically another organization is hosting this in the cloud, it is the organization associated with the data).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
      * @return $this
      */
     public function setManagingOrganization($managingOrganization)
@@ -243,7 +243,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getContact()
     {
@@ -252,7 +252,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $contact
      * @return $this
      */
     public function addContact($contact)
@@ -263,7 +263,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The interval during which the endpoint is expected to be operational.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -272,7 +272,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The interval during which the endpoint is expected to be operational.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -283,7 +283,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPayloadType()
     {
@@ -292,7 +292,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $payloadType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $payloadType
      * @return $this
      */
     public function addPayloadType($payloadType)
@@ -303,7 +303,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The mime type to send the payload in - e.g. application/fhir+xml, application/fhir+json. If the mime type is not specified, then the sender could send any content (including no content depending on the connectionType).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getPayloadMimeType()
     {
@@ -312,7 +312,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The mime type to send the payload in - e.g. application/fhir+xml, application/fhir+json. If the mime type is not specified, then the sender could send any content (including no content depending on the connectionType).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $payloadMimeType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $payloadMimeType
      * @return $this
      */
     public function addPayloadMimeType($payloadMimeType)
@@ -323,7 +323,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The uri that describes the actual end-point to connect to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getAddress()
     {
@@ -332,7 +332,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The uri that describes the actual end-point to connect to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $address
      * @return $this
      */
     public function setAddress($address)
@@ -343,7 +343,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getHeader()
     {
@@ -352,7 +352,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $header
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $header
      * @return $this
      */
     public function addHeader($header)

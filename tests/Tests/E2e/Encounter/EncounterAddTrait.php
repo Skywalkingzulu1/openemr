@@ -3,25 +3,25 @@
 /**
  * EncounterAddTrait
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2024 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e\Encounter;
+namespace DCL\Tests\E2e\Encounter;
 
-use OpenEMR\Tests\E2e\Base\BaseTrait;
-use OpenEMR\Tests\E2e\Encounter\EncounterTestData;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
-use OpenEMR\Tests\E2e\Login\LoginTrait;
-use OpenEMR\Tests\E2e\Patient\PatientOpenTrait;
-use OpenEMR\Tests\E2e\Patient\PatientTestData;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstants;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstantsEncounterAddTrait;
+use DCL\Tests\E2e\Base\BaseTrait;
+use DCL\Tests\E2e\Encounter\EncounterTestData;
+use DCL\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Login\LoginTrait;
+use DCL\Tests\E2e\Patient\PatientOpenTrait;
+use DCL\Tests\E2e\Patient\PatientTestData;
+use DCL\Tests\E2e\Xpaths\XpathsConstants;
+use DCL\Tests\E2e\Xpaths\XpathsConstantsEncounterAddTrait;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Test;
 

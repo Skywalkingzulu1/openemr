@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ @package OpenEMR
-  ~ @link      https://www.open-emr.org
+  ~ @package DCL
+  ~ @link      https://www.dcl.org
   ~ @author    Ken Chapple <ken@mi-squared.com>
   ~ @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
-  ~ @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+  ~ @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
   -->
 
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">

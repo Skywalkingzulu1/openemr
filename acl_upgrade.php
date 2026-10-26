@@ -42,18 +42,18 @@
  *
  * See header in src/Common/Acl/AclMain.php for list of ACOs
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2012-2017 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with DCL:
 require_once(__DIR__ . "/src/Common/Compatibility/Checker.php");
-$response = OpenEMR\Common\Compatibility\Checker::checkPhpVersion();
+$response = DCL\Common\Compatibility\Checker::checkPhpVersion();
 if ($response !== true) {
     die(htmlspecialchars($response));
 }
@@ -62,9 +62,9 @@ $ignoreAuth = true; // no login required
 
 require_once('interface/globals.php');
 
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\DuplicateAclMerger;
-use OpenEMR\Gacl\GaclApi;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\DuplicateAclMerger;
+use DCL\Gacl\GaclApi;
 
 $acl_version = AclExtended::getAclVersion();
 if (empty($acl_version)) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIROperationDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
@@ -71,13 +71,13 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
 {
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBindingStrength
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBindingStrength
      */
     public $strength = null;
 
     /**
      * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $valueSet = null;
 
@@ -88,7 +88,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
 
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBindingStrength
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBindingStrength
      */
     public function getStrength()
     {
@@ -97,7 +97,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
 
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBindingStrength $strength
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBindingStrength $strength
      * @return $this
      */
     public function setStrength($strength)
@@ -108,7 +108,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
 
     /**
      * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getValueSet()
     {
@@ -117,7 +117,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
 
     /**
      * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
      * @return $this
      */
     public function setValueSet($valueSet)

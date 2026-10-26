@@ -9,19 +9,19 @@
  * edih_271_codes class (a stateless value-lookup table), loaded here because
  * it lives outside the PSR-4 tree and is not autoloaded.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Billing\EdiHistory;
+namespace DCL\Tests\Isolated\Billing\EdiHistory;
 
 use edih_271_codes;
-use OpenEMR\Billing\EdiHistory\Claim277Renderer;
+use DCL\Billing\EdiHistory\Claim277Renderer;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

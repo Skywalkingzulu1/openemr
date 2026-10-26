@@ -2,28 +2,28 @@
 
 /**
  * This file contains functions that service ajax requests for
- * ACL(php-gacl) administration within OpenEMR. All returns are
+ * ACL(php-gacl) administration within DCL. All returns are
  * done via xml.
  *
  *  Important - Ensure that display_errors=Off in php.ini settings.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2007-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\UserService;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\UserService;
 
 
 header("Content-type: text/xml");

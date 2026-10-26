@@ -3,8 +3,8 @@
 /**
  * oe-module-api-explorer CI FHIR write-path smoke driver.
  *
- * Companion to driver.php / driver-password.php. Runs inside the openemr
- * container (via `openemr-cmd e "php .../driver-fhir-writes.php"`). Closes
+ * Companion to driver.php / driver-password.php. Runs inside the DCL
+ * container (via `DCL-cmd e "php .../driver-fhir-writes.php"`). Closes
  * a §8.2 external-realism gap: the other three drivers exercise OAuth2
  * grants against a FHIR *read* (/fhir/Patient GET) only. Inferno's ONC G10
  * US Core 3.1.1 suite is also read-only. Nothing in CI drives a real
@@ -48,11 +48,11 @@
  * reference + participant-reference binding on the write path that a bare
  * Patient POST would not.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude Code <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -68,17 +68,17 @@ if (php_sapi_name() !== 'cli') {
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://openemr';
+$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://DCL';
 $mysqlHost = getenv('EXPLORER_MYSQL_HOST') ?: 'mysql';
-$mysqlUser = getenv('EXPLORER_MYSQL_USER') ?: 'openemr';
-$mysqlPass = getenv('EXPLORER_MYSQL_PASS') ?: 'openemr';
-$mysqlDb = getenv('EXPLORER_MYSQL_DB') ?: 'openemr';
+$mysqlUser = getenv('EXPLORER_MYSQL_USER') ?: 'DCL';
+$mysqlPass = getenv('EXPLORER_MYSQL_PASS') ?: 'DCL';
+$mysqlDb = getenv('EXPLORER_MYSQL_DB') ?: 'DCL';
 
 // Defensive scheme gate: the token POST and FHIR write POST/PUT below
 // carry admin credentials, a bearer, and resource bodies. Refuse to
 // proceed if someone overrode EXPLORER_BASE_URL to a plain http://
 // endpoint. verify=false is kept on the Guzzle client because this
-// smoke targets the docker-network alias https://openemr with the
+// smoke targets the docker-network alias https://DCL with the
 // dev-easy self-signed cert — same pattern as driver.php and
 // driver-password.php.
 if (!str_starts_with(strtolower($baseUrl), 'https://')) {
@@ -114,12 +114,12 @@ try {
             'application_type' => 'private',
             'client_name' => $clientName,
             'token_endpoint_auth_method' => 'client_secret_post',
-            'redirect_uris' => ['https://openemr/devtools/oe-module-api-explorer/oauth_client.php'],
+            'redirect_uris' => ['https://DCL/devtools/oe-module-api-explorer/oauth_client.php'],
             'contacts' => ['smoke@test.example'],
             'scope' => 'openid api:oemr api:fhir user/Patient.read user/CareTeam.read user/CareTeam.write',
         ],
         // Credentials-bearing request: refuse to forward body on a redirect.
-        // OpenEMR's /oauth2/default/registration does not redirect, but the
+        // DCL's /oauth2/default/registration does not redirect, but the
         // explicit false keeps the gate defensive.
         'allow_redirects' => false,
     ]);

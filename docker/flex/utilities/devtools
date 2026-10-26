@@ -1,8 +1,8 @@
 #!/bin/sh
 # ============================================================================
-# OpenEMR Flex Container - Development Tools Script
+# DCL Flex Container - Development Tools Script
 # ============================================================================
-# This script provides a command-line interface for common OpenEMR development,
+# This script provides a command-line interface for common DCL development,
 # testing, and maintenance tasks within the flex container.
 #
 # Usage:
@@ -39,7 +39,7 @@
 #   code-quality                - Run full composer "code-quality" suite
 #
 # BUILD & ASSETS:
-#   build-themes            - Build OpenEMR CSS themes
+#   build-themes            - Build DCL CSS themes
 #   build-api-docs          - Generate API Swagger documentation
 #
 # TESTING:
@@ -60,9 +60,9 @@
 #   clean-sweep-tests       - Run all tests only
 #
 # DEVELOPMENT SETUP:
-#   dev-reset                   - Reset OpenEMR to clean state
-#   dev-install                 - Install OpenEMR (assumes reset done)
-#   dev-reset-install           - Reset and install OpenEMR
+#   dev-reset                   - Reset DCL to clean state
+#   dev-install                 - Install DCL (assumes reset done)
+#   dev-reset-install           - Reset and install DCL
 #   dev-reset-install-demodata  - Reset, install, and load demo data
 #   dev-sqldrive                - Import SQL data from SQL_DATA_DRIVE
 #   dev-reset-install-sqldrive  - Reset, install, and import SQL data
@@ -81,7 +81,7 @@
 #   list-capsules           - List backup files (alias for list-snapshots)
 #
 # UPGRADE & MAINTENANCE:
-#   upgrade <version>                                - Upgrade OpenEMR from specified version
+#   upgrade <version>                                - Upgrade DCL from specified version
 #   change-encoding-collation <charset> <collation>  - Change DB encoding
 #
 # SSL/TLS CERTIFICATES:
@@ -120,28 +120,28 @@
 #   register-oauth2-client-demo <url>  - Register OAuth2 client for online demo
 #
 # Examples:
-#   docker exec openemr-flex /root/devtools php-log
-#   docker exec openemr-flex /root/devtools dev-reset-install-demodata
-#   docker exec openemr-flex /root/devtools backup my-backup-2024
-#   docker exec openemr-flex /root/devtools clean-sweep
+#   docker exec DCL-flex /root/devtools php-log
+#   docker exec DCL-flex /root/devtools dev-reset-install-demodata
+#   docker exec DCL-flex /root/devtools backup my-backup-2024
+#   docker exec DCL-flex /root/devtools clean-sweep
 # ============================================================================
 
 source /root/devtoolsLibrary.source
 
-# Run a command from the openemr web root. Lets handlers say what they're
+# Run a command from the DCL web root. Lets handlers say what they're
 # doing in one line instead of the cd-then-cmd two-step. `cd || exit 1`
 # aborts the script if the webroot is missing rather than silently invoking
 # from a wrong cwd (devtools has no `set -e`).
-run_at_openemr_root() {
-    cd /var/www/localhost/htdocs/openemr || exit 1
+run_at_DCL_root() {
+    cd /var/www/localhost/htdocs/DCL || exit 1
     "$@"
 }
 
 # Composer-specific convenience wrapper; equivalent to
-# `run_at_openemr_root composer "$@"` but reads more naturally for the
+# `run_at_DCL_root composer "$@"` but reads more naturally for the
 # many composer-based code-quality handlers.
 run_composer_at_root() {
-    run_at_openemr_root composer "$@"
+    run_at_DCL_root composer "$@"
 }
 
 # ============================================================================
@@ -160,8 +160,8 @@ fi
 # BUILD COMMANDS
 # ============================================================================
 if [ "$1" = "build-themes" ]; then
-    echo "Building OpenEMR Themes"
-    cd /var/www/localhost/htdocs/openemr
+    echo "Building DCL Themes"
+    cd /var/www/localhost/htdocs/DCL
     npm run build
 fi
 
@@ -183,12 +183,12 @@ do_psr12_src_report() {
 
 do_lint_themes_report() {
     echo "Generating lint themes error report "
-    run_at_openemr_root npm run stylelint
+    run_at_DCL_root npm run stylelint
 }
 
 do_lint_javascript_report() {
     echo "Generating lint javascript error report "
-    run_at_openemr_root npm run lint:js
+    run_at_DCL_root npm run lint:js
 }
 
 do_psr12_fix() {
@@ -198,13 +198,13 @@ do_psr12_fix() {
 
 do_lint_themes_fix() {
     echo "Fixing lint themes errors "
-    run_at_openemr_root npm run stylelint
-    run_at_openemr_root npm run stylelint-fix
+    run_at_DCL_root npm run stylelint
+    run_at_DCL_root npm run stylelint-fix
 }
 
 do_lint_javascript_fix() {
     echo "Fixing lint javascript errors "
-    run_at_openemr_root npm run lint:js-fix
+    run_at_DCL_root npm run lint:js-fix
 }
 
 do_php_parserror() {
@@ -212,23 +212,23 @@ do_php_parserror() {
     # Fix pre-existing typo: './ccdaservice/node_modules}/*' had a stray '}'
     # so the exclusion silently never matched, causing php -l to be run on
     # every .php file under ccdaservice/node_modules. Now correctly excluded.
-    run_at_openemr_root sh -c 'find . -type f \( -name "*.php" -or -name "*.inc" \) \( -not -path "./vendor/*" -and -not -path "./node_modules/*" -and -not -path "./ccdaservice/node_modules/*" \) -exec php -d error_reporting=32767 -l {} \; 2>&1 >&- | grep "^"'
+    run_at_DCL_root sh -c 'find . -type f \( -name "*.php" -or -name "*.inc" \) \( -not -path "./vendor/*" -and -not -path "./node_modules/*" -and -not -path "./ccdaservice/node_modules/*" \) -exec php -d error_reporting=32767 -l {} \; 2>&1 >&- | grep "^"'
 }
 
 do_rector_dry_run() {
     echo "Rector PHP process dry-run changes"
-    run_at_openemr_root php vendor/bin/rector process --dry-run
+    run_at_DCL_root php vendor/bin/rector process --dry-run
 }
 
 do_rector_process() {
     echo "Rector PHP process changes"
-    run_at_openemr_root php vendor/bin/rector process
+    run_at_DCL_root php vendor/bin/rector process
 }
 
 do_phpstan() {
     echo "PHPStan diagnose"
-    run_at_openemr_root php vendor/bin/phpstan --memory-limit=8G diagnose
-    run_at_openemr_root php vendor/bin/phpstan --memory-limit=8G analyze
+    run_at_DCL_root php vendor/bin/phpstan --memory-limit=8G diagnose
+    run_at_DCL_root php vendor/bin/phpstan --memory-limit=8G analyze
 }
 
 do_phpstan_generate() {
@@ -282,61 +282,61 @@ do_code_quality() {
 }
 
 do_unit_test() {
-    echo "Running OpenEMR PHP Unit tests"
-    run_at_openemr_root vendor/bin/phpunit --testsuite unit --testdox
+    echo "Running DCL PHP Unit tests"
+    run_at_DCL_root vendor/bin/phpunit --testsuite unit --testdox
 }
 
 do_javascript_unit_test() {
-    echo "Running OpenEMR Javascript Unit tests"
-    run_at_openemr_root npm run test:js
+    echo "Running DCL Javascript Unit tests"
+    run_at_DCL_root npm run test:js
 }
 
 do_jut_reports_build() {
     echo "Building javascript unit testing reports browser user interface, which can view in web browser at HOST/coverage/js-unit/lcov-report (HOST is the server host, for example http://localhost:8300)"
-    run_at_openemr_root npm run test:js-coverage
+    run_at_DCL_root npm run test:js-coverage
     echo "Done, you can view reports in web browser at HOST/coverage/js-unit/lcov-report (HOST is the server host, for example http://localhost:8300)"
 }
 
 do_api_test() {
-    echo "Running OpenEMR API tests"
-    run_at_openemr_root vendor/bin/phpunit --testsuite api --testdox
+    echo "Running DCL API tests"
+    run_at_DCL_root vendor/bin/phpunit --testsuite api --testdox
 }
 
 do_e2e_test() {
-    echo "Running OpenEMR e2e tests"
+    echo "Running DCL e2e tests"
     export PANTHER_NO_SANDBOX=1
     export PANTHER_CHROME_ARGUMENTS='--disable-dev-shm-usage'
     export PANTHER_CHROME_DRIVER_BINARY=/usr/lib/chromium/chromedriver
-    run_at_openemr_root vendor/bin/phpunit --testsuite e2e --testdox
+    run_at_DCL_root vendor/bin/phpunit --testsuite e2e --testdox
 }
 
 do_fixtures_test() {
-    echo "Running OpenEMR Fixture tests"
-    run_at_openemr_root vendor/bin/phpunit --testsuite fixtures --testdox
+    echo "Running DCL Fixture tests"
+    run_at_DCL_root vendor/bin/phpunit --testsuite fixtures --testdox
 }
 
 do_services_test() {
-    echo "Running OpenEMR Service tests"
-    run_at_openemr_root vendor/bin/phpunit --testsuite services --testdox
+    echo "Running DCL Service tests"
+    run_at_DCL_root vendor/bin/phpunit --testsuite services --testdox
 }
 
 do_validators_test() {
-    echo "Running OpenEMR Validator tests"
-    run_at_openemr_root vendor/bin/phpunit --testsuite validators --testdox
+    echo "Running DCL Validator tests"
+    run_at_DCL_root vendor/bin/phpunit --testsuite validators --testdox
 }
 
 do_controllers_test() {
-    echo "Running OpenEMR Controller tests"
-    run_at_openemr_root vendor/bin/phpunit --testsuite controllers --testdox
+    echo "Running DCL Controller tests"
+    run_at_DCL_root vendor/bin/phpunit --testsuite controllers --testdox
 }
 
 do_common_test() {
-    echo "Running OpenEMR Common tests"
-    run_at_openemr_root vendor/bin/phpunit --testsuite common --testdox
+    echo "Running DCL Common tests"
+    run_at_DCL_root vendor/bin/phpunit --testsuite common --testdox
 }
 
 do_phpunit_isolated() {
-    echo "Running OpenEMR PHP isolated tests (no database required)"
+    echo "Running DCL PHP isolated tests (no database required)"
     run_composer_at_root phpunit-isolated
 }
 
@@ -435,31 +435,31 @@ esac
 # DEVELOPMENT SETUP COMMANDS
 # ============================================================================
 if [ "$1" = "dev-reset" ]; then
-    echo "Resetting OpenEMR"
+    echo "Resetting DCL"
     prepareVariables
-    resetOpenemr
+    resetDCL
 fi
 
 if [ "$1" = "dev-install" ]; then
-    echo "Installing OpenEMR (assuming reset has already been completed)"
+    echo "Installing DCL (assuming reset has already been completed)"
     prepareVariables
-    installOpenemr
+    installDCL
     setGlobalSettings
 fi
 
 if [ "$1" = "dev-reset-install" ]; then
-    echo "Reinstalling OpenEMR"
+    echo "Reinstalling DCL"
     prepareVariables
-    resetOpenemr
-    installOpenemr
+    resetDCL
+    installDCL
     setGlobalSettings
 fi
 
 if [ "$1" = "dev-reset-install-demodata" ]; then
-    echo "Reinstalling OpenEMR with standard demo data"
+    echo "Reinstalling DCL with standard demo data"
     prepareVariables
-    resetOpenemr
-    installOpenemr
+    resetDCL
+    installDCL
     demoData
     setGlobalSettings
 fi
@@ -471,19 +471,19 @@ if [ "$1" = "dev-sqldrive" ]; then
 fi
 
 if [ "$1" = "dev-reset-install-sqldrive" ]; then
-    echo "Reinstalling OpenEMR with sql data from drive"
+    echo "Reinstalling DCL with sql data from drive"
     prepareVariables
-    resetOpenemr
-    installOpenemr
+    resetDCL
+    installDCL
     sqlDataDrive
     setGlobalSettings
 fi
 
 if [ "$1" = "dev-reset-install-demodata-sqldrive" ]; then
-    echo "Reinstalling OpenEMR with standard demo data and sql data from drive"
+    echo "Reinstalling DCL with standard demo data and sql data from drive"
     prepareVariables
-    resetOpenemr
-    installOpenemr
+    resetDCL
+    installDCL
     demoData
     sqlDataDrive
     setGlobalSettings
@@ -494,7 +494,7 @@ fi
 # ============================================================================
 if [ "$1" = "list-multisites" ]; then
     echo "Listing multisites:"
-    cd /var/www/localhost/htdocs/openemr/sites;
+    cd /var/www/localhost/htdocs/DCL/sites;
     for i in $(ls -d */); do echo ${i%%/}; done
 fi
 
@@ -504,13 +504,13 @@ if [ "$1" = "set-swagger-to-multisite" ]; then
         site="${2}"
     fi
     echo "Setting swagger to use site ${site}"
-    # first reset the openemr-api.yaml to go back to default
-    run_php_as_apache php /var/www/localhost/htdocs/openemr/bin/command-runner -c CreateAPIDocumentation
+    # first reset the DCL-api.yaml to go back to default
+    run_php_as_apache php /var/www/localhost/htdocs/DCL/bin/command-runner -c CreateAPIDocumentation
     # now make the needed changes if site is not default (since already set to default in above line)
     if [ "${site}" != "default" ]; then
-        sed -i "s@/apis/default/@/apis/${site}/@" /var/www/localhost/htdocs/openemr/swagger/openemr-api.yaml
-        sed -i "s@/oauth2/default/authorize@/oauth2/${site}/authorize@" /var/www/localhost/htdocs/openemr/swagger/openemr-api.yaml
-        sed -i "s@/oauth2/default/token@/oauth2/${site}/token@" /var/www/localhost/htdocs/openemr/swagger/openemr-api.yaml
+        sed -i "s@/apis/default/@/apis/${site}/@" /var/www/localhost/htdocs/DCL/swagger/DCL-api.yaml
+        sed -i "s@/oauth2/default/authorize@/oauth2/${site}/authorize@" /var/www/localhost/htdocs/DCL/swagger/DCL-api.yaml
+        sed -i "s@/oauth2/default/token@/oauth2/${site}/token@" /var/www/localhost/htdocs/DCL/swagger/DCL-api.yaml
         # when done testing recommend reverting back to default to avoid these getting changed in repo
         echo "When done testing recommend reverting back to default via devtools 'set-swagger-to-multisite default' command to avoid making permanent changes in repo"
     fi
@@ -518,14 +518,14 @@ fi
 
 if [ "$1" = "enable-multisite" ]; then
     echo "Enabling multisite in setup.php"
-    sed -i "s@\$allow_multisite_setup = false;@\$allow_multisite_setup = true;@" /var/www/localhost/htdocs/openemr/setup.php
-    sed -i "s@\$allow_cloning_setup = false;@\$allow_cloning_setup = true;@" /var/www/localhost/htdocs/openemr/setup.php
+    sed -i "s@\$allow_multisite_setup = false;@\$allow_multisite_setup = true;@" /var/www/localhost/htdocs/DCL/setup.php
+    sed -i "s@\$allow_cloning_setup = false;@\$allow_cloning_setup = true;@" /var/www/localhost/htdocs/DCL/setup.php
 fi
 
 if [ "$1" = "disable-multisite" ]; then
     echo "Disabling multisite in setup.php"
-    sed -i "s@\$allow_multisite_setup = true;@\$allow_multisite_setup = false;@" /var/www/localhost/htdocs/openemr/setup.php
-    sed -i "s@\$allow_cloning_setup = true;@\$allow_cloning_setup = false;@" /var/www/localhost/htdocs/openemr/setup.php
+    sed -i "s@\$allow_multisite_setup = true;@\$allow_multisite_setup = false;@" /var/www/localhost/htdocs/DCL/setup.php
+    sed -i "s@\$allow_cloning_setup = true;@\$allow_cloning_setup = false;@" /var/www/localhost/htdocs/DCL/setup.php
 fi
 
 # ============================================================================
@@ -548,7 +548,7 @@ if [ "$1" = "backup" ]; then
         exit
     fi
     prepareVariables
-    backupOpenemr "$2"
+    backupDCL "$2"
 fi
 
 if [ "$1" = "restore" ]; then
@@ -568,9 +568,9 @@ if [ "$1" = "restore" ]; then
         exit
     fi
     prepareVariables
-    resetOpenemr
-    installOpenemr
-    restoreOpenemr "$2"
+    resetDCL
+    installDCL
+    restoreDCL "$2"
 fi
 
 if [ "$1" = "list-snapshots" ]; then
@@ -598,7 +598,7 @@ fi
 # ============================================================================
 if [ "$1" = "upgrade" ]; then
     echo "Performing upgrade from version ${2}"
-    upgradeOpenEMR "$2"
+    upgradeDCL "$2"
 fi
 
 if [ "$1" = "change-encoding-collation" ] && [ ! -z "$2" ] && [ ! -z "$3" ]; then
@@ -629,40 +629,40 @@ fi
 # ============================================================================
 if [ "$1" = "sql-ssl" ]; then
     echo "Copying the testing sql SSL CA cert"
-    if [ "${OPENEMR_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
+    if [ "${DCL_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
         #using insane dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
     else
         #using easy dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
     fi
 fi
 
 if [ "$1" = "sql-ssl-off" ]; then
     echo "Removing the testing sql SSL CA cert"
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
 fi
 
 if [ "$1" = "sql-ssl-client" ]; then
     echo "Copying the testing sql SSL CA cert and testing client certs"
-    if [ "${OPENEMR_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
+    if [ "${DCL_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
         #using insane dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/insane/client-cert.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-cert
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/insane/client-key.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-key
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/insane/client-cert.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-cert
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/insane/client-key.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-key
     else
         #using easy dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/easy/client-cert.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-cert
-        cp /var/www/localhost/htdocs/openemr/docker/library/sql-ssl-certs-keys/easy/client-key.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-key
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/easy/client-cert.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-cert
+        cp /var/www/localhost/htdocs/DCL/docker/library/sql-ssl-certs-keys/easy/client-key.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-key
     fi
 fi
 
 if [ "$1" = "sql-ssl-client-off" ]; then
     echo "Removing testing sql SSL CA cert and testing client certs"
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-cert
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-key
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-cert
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-key
 fi
 
 # ============================================================================
@@ -670,40 +670,40 @@ fi
 # ============================================================================
 if [ "$1" = "couchdb-ssl" ]; then
     echo "Copying the testing couchdb SSL CA cert"
-    if [ "${OPENEMR_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
+    if [ "${DCL_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
         #using insane dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/insane/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/insane/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca
     else
         #using easy dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/easy/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/easy/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca
     fi
 fi
 
 if [ "$1" = "couchdb-ssl-off" ]; then
     echo "Removing the testing couchdb SSL CA cert"
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca
 fi
 
 if [ "$1" = "couchdb-ssl-client" ]; then
     echo "Copying the testing couchdb SSL CA cert and testing client certs"
-    if [ "${OPENEMR_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
+    if [ "${DCL_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
         #using insane dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/insane/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/insane/client-cert.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-cert
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/insane/client-key.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-key
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/insane/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/insane/client-cert.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-cert
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/insane/client-key.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-key
     else
         #using easy dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/easy/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/easy/client-cert.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-cert
-        cp /var/www/localhost/htdocs/openemr/docker/library/couchdb-config-ssl-cert-keys/easy/client-key.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-key
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/easy/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/easy/client-cert.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-cert
+        cp /var/www/localhost/htdocs/DCL/docker/library/couchdb-config-ssl-cert-keys/easy/client-key.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-key
     fi
 fi
 
 if [ "$1" = "couchdb-ssl-client-off" ]; then
     echo "Removing testing couchdb SSL CA cert and testing client certs"
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-cert
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-key
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-cert
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-key
 fi
 
 # ============================================================================
@@ -711,40 +711,40 @@ fi
 # ============================================================================
 if [ "$1" = "ldap-ssl" ]; then
     echo "Copying the testing ldap SSL CA cert"
-    if [ "${OPENEMR_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
+    if [ "${DCL_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
         #using insane dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca
     else
         #using easy dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca
     fi
 fi
 
 if [ "$1" = "ldap-ssl-off" ]; then
     echo "Removing the testing ldap SSL CA cert"
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca
 fi
 
 if [ "$1" = "ldap-ssl-client" ]; then
     echo "Copying the testing ldap SSL CA cert and testing client certs"
-    if [ "${OPENEMR_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
+    if [ "${DCL_DOCKER_ENV_TAG}" = "insane-dev-docker" ]; then
         #using insane dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/insane/client-cert.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-cert
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/insane/client-key.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-key
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/insane/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/insane/client-cert.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-cert
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/insane/client-key.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-key
     else
         #using easy dev docker env
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/easy/client-cert.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-cert
-        cp /var/www/localhost/htdocs/openemr/docker/library/ldap-ssl-certs-keys/easy/client-key.pem /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-key
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/easy/ca.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/easy/client-cert.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-cert
+        cp /var/www/localhost/htdocs/DCL/docker/library/ldap-ssl-certs-keys/easy/client-key.pem /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-key
     fi
 fi
 
 if [ "$1" = "ldap-ssl-client-off" ]; then
     echo "Removing testing ldap SSL CA cert and testing client certs"
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-cert
-    rm /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-key
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-cert
+    rm /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-key
 fi
 
 if [ "$1" = "enable-ldap" ]; then
@@ -790,7 +790,7 @@ fi
 # ============================================================================
 if [ "$1" = "build-api-docs" ]; then
     echo "Building and placing api swagger docs"
-    run_php_as_apache php /var/www/localhost/htdocs/openemr/bin/console openemr:create-api-documentation
+    run_php_as_apache php /var/www/localhost/htdocs/DCL/bin/console DCL:create-api-documentation
 fi
 
 # ============================================================================
@@ -803,7 +803,7 @@ if [ "$1" = "register-oauth2-client" ]; then
     fi
     echo "Registering a oauth2 client to site ${site}"
     # collect scopes
-    scopes=$(cat /var/www/localhost/htdocs/openemr/docker/library/api-scope-listing)
+    scopes=$(cat /var/www/localhost/htdocs/DCL/docker/library/api-scope-listing)
     returnJson=$(curl -X POST -k -H 'Content-Type: application/json' -s https://localhost/oauth2/${site}/registration --data "{
        \"application_type\": \"private\",
        \"redirect_uris\":
@@ -822,7 +822,7 @@ fi
 if [ "$1" = "register-oauth2-client-demo" ] && [ ! -z "$2" ]; then
     echo "Registering a oauth2 client on online demo at ${2}"
     # collect scopes
-    scopes=$(cat /var/www/localhost/htdocs/openemr/docker/library/api-scope-listing)
+    scopes=$(cat /var/www/localhost/htdocs/DCL/docker/library/api-scope-listing)
     returnJson=$(curl -X POST -H 'Content-Type: application/json' -s "${2}/oauth2/default/registration" --data "{
        \"application_type\": \"private\",
        \"redirect_uris\":

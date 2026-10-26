@@ -2,14 +2,14 @@
 
 /**
  * CustomClientCredentialsGrantTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Auth\OpenIDConnect\Grant;
+namespace DCL\Tests\Unit\Common\Auth\OpenIDConnect\Grant;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
@@ -24,14 +24,14 @@ use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
 use League\OAuth2\Server\ResponseTypes\ResponseTypeInterface;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
-use OpenEMR\Common\Http\SsrfSafeUrlValidator;
-use OpenEMR\Services\JWTClientAuthenticationService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
+use DCL\Common\Http\SsrfSafeUrlValidator;
+use DCL\Services\JWTClientAuthenticationService;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Ramsey\Uuid\Uuid;
@@ -196,8 +196,8 @@ class CustomClientCredentialsGrantTest extends TestCase
         $configuration = Configuration::forAsymmetricSigner(
         // You may use RSA or ECDSA and all their variations (256, 384, and 512)
             new Sha384(),
-            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key"),
-            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem")
+            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/DCL-rsa384-private.key"),
+            InMemory::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/DCL-rsa384-public.pem")
             // You may also override the JOSE encoder/decoder if needed by providing extra arguments here
         );
 
@@ -304,8 +304,8 @@ class CustomClientCredentialsGrantTest extends TestCase
         $configuration = Configuration::forAsymmetricSigner(
         // You may use RSA or ECDSA and all their variations (256, 384, and 512)
             new Sha384(),
-            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key"),
-            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem")
+            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/DCL-rsa384-private.key"),
+            LocalFileReference::file(__DIR__ . "/../../../../../data/Unit/Common/Auth/Grant/DCL-rsa384-public.pem")
             // You may also override the JOSE encoder/decoder if needed by providing extra arguments here
         );
 

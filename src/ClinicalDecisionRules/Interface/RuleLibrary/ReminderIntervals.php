@@ -6,14 +6,14 @@
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
 
 /**
- * This object maintains a collection of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail for a given rule.
+ * This object maintains a collection of DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail for a given rule.
  * Reminder details are derived from the rule_reminder table.
  * @author aron
  *
@@ -28,7 +28,7 @@ class ReminderIntervals
     }
 
     /**
-     * Adds a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail to the collection, which is a map
+     * Adds a DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail to the collection, which is a map
      * @param ReminderIntervalDetail $detail
      */
     public function addDetail($detail)

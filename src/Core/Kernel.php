@@ -1,12 +1,12 @@
 <?php
 
 /**
- * OpenEMR <https://open-emr.org>.
+ * DCL <https://dcl.org>.
  *
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Core;
+namespace DCL\Core;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -18,17 +18,17 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * Core OpenEMR kernel.
+ * Core DCL kernel.
  *
  * Holds the service container, event dispatcher, and infrastructure paths.
  * Path accessors follow Symfony's convention (getProjectDir(), etc.).
  *
- * @package   OpenEMR
+ * @package   DCL
  * @subpackage Core
  * @author    Robert Down <robertdown@live.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2017-2022 Robert Down
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  */
 class Kernel
 {
@@ -36,10 +36,10 @@ class Kernel
     private $container;
 
     /**
-     * @param ?string $projectDir Absolute filesystem root (e.g. "/var/www/openemr").
+     * @param ?string $projectDir Absolute filesystem root (e.g. "/var/www/DCL").
      *                            Optional for backward compat with modules that construct
      *                            a Kernel without paths; path getters throw if null.
-     * @param ?string $webRoot    URL path prefix (e.g. "/openemr" or "").
+     * @param ?string $webRoot    URL path prefix (e.g. "/DCL" or "").
      *                            Optional for the same reason as $projectDir.
      * @param ?EventDispatcherInterface $dispatcher Pre-built event dispatcher to inject.
      */
@@ -76,7 +76,7 @@ class Kernel
     // ---- Path accessors (web-relative) ------------------------------------
 
     /**
-     * URL path prefix, e.g. "/openemr" or ""
+     * URL path prefix, e.g. "/DCL" or ""
      */
     public function getWebRoot(): string
     {
@@ -118,7 +118,7 @@ class Kernel
     // ---- Path accessors (filesystem-absolute) -----------------------------
 
     /**
-     * Absolute filesystem root, e.g. "/var/www/openemr"
+     * Absolute filesystem root, e.g. "/var/www/DCL"
      */
     public function getProjectDir(): string
     {
@@ -194,13 +194,13 @@ class Kernel
     // ---- Existing API -----------------------------------------------------
 
     /**
-     * Return true if the environment variable OPENEMR__ENVIRONMENT is set to dev.
+     * Return true if the environment variable DCL__ENVIRONMENT is set to dev.
      *
      * @return bool
      */
     public function isDev(): bool
     {
-        return ($_ENV['OPENEMR__ENVIRONMENT'] ?? '') === 'dev';
+        return ($_ENV['DCL__ENVIRONMENT'] ?? '') === 'dev';
     }
 
     /**

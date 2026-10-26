@@ -3,8 +3,8 @@
 /**
  * address class for smarty templates.  Follows the Active Record Design Pattern
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    duhlman
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
@@ -13,12 +13,12 @@
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2022 David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\ORDataObject;
+namespace DCL\Common\ORDataObject;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class Address extends ORDataObject implements \JsonSerializable
 {

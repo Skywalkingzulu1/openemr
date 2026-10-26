@@ -21,30 +21,30 @@
  *     fax/sms clients treat email purely as a forward/backup action).
  *
  * Pure static method, no globals beyond the xlt()/xla() label helpers, which
- * are stubbed below so the isolated suite needs no OpenEMR gettext bootstrap.
+ * are stubbed below so the isolated suite needs no DCL gettext bootstrap.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\View {
+namespace DCL\Modules\FaxSMS\View {
     // Identity stubs for the label helpers MessageUiProfile calls. Declared IN
     // the class-under-test's namespace - matching the in-namespace stub style of
     // Notification/runner_test_stubs.php - so they shadow the unqualified
     // xlt()/xla() calls and cannot collide with the global namespace (or other
     // suites' stubs) when the isolated suite shares a process.
-    if (!function_exists('OpenEMR\Modules\FaxSMS\View\xlt')) {
+    if (!function_exists('DCL\Modules\FaxSMS\View\xlt')) {
         function xlt(string $s): string
         {
             return $s;
         }
     }
-    if (!function_exists('OpenEMR\Modules\FaxSMS\View\xla')) {
+    if (!function_exists('DCL\Modules\FaxSMS\View\xla')) {
         function xla(string $s): string
         {
             return $s;
@@ -57,7 +57,7 @@ namespace {
     // PSR-4 loader for the module namespace pointed at its src/ dir (mirrors the
     // module Bootstrap and the rest of the isolated suite).
     spl_autoload_register(static function (string $class): void {
-        $prefix = 'OpenEMR\\Modules\\FaxSMS\\';
+        $prefix = 'DCL\\Modules\\FaxSMS\\';
         if (!str_starts_with($class, $prefix)) {
             return;
         }
@@ -71,10 +71,10 @@ namespace {
     });
 }
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS\View {
+namespace DCL\Tests\Isolated\Modules\FaxSMS\View {
 
-    use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
-    use OpenEMR\Modules\FaxSMS\View\MessageUiProfile;
+    use DCL\Modules\FaxSMS\Enums\ServiceType;
+    use DCL\Modules\FaxSMS\View\MessageUiProfile;
     use PHPUnit\Framework\Attributes\DataProvider;
     use PHPUnit\Framework\TestCase;
 

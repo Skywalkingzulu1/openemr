@@ -7,18 +7,18 @@
  * The case that matters: a report listing groups A/B and C/D authorises A+B and C+D, and nothing
  * else. Recording the individual pids instead would wrongly authorise A+C.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Controllers\Interface\PatientFile;
+namespace DCL\Tests\Isolated\Controllers\Interface\PatientFile;
 
-use OpenEMR\Controllers\Interface\PatientFile\ManageDuplicatePatientsController;
+use DCL\Controllers\Interface\PatientFile\ManageDuplicatePatientsController;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

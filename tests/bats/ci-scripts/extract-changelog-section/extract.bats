@@ -59,17 +59,17 @@ EOF
     # The script's regex only anchors on the `## [X.Y.Z]` prefix so
     # the link body is preserved in the extracted section.
     cat > CHANGELOG.md <<'EOF'
-## [8.2.0](https://github.com/openemr/openemr/compare/v8.1.0...v8.2.0) - 2026-07-08
+## [8.2.0](https://github.com/DCL/DCL/compare/v8.1.0...v8.2.0) - 2026-07-08
 
 Content for 8.2.0.
 
-## [8.1.0](https://github.com/openemr/openemr/compare/v8.0.0...v8.1.0) - 2026-05-01
+## [8.1.0](https://github.com/DCL/DCL/compare/v8.0.0...v8.1.0) - 2026-05-01
 
 Content for 8.1.0.
 EOF
     CHANGELOG_FILE=CHANGELOG.md VERSION=8.2.0 run bash "${EXTRACT_CHANGELOG_SECTION_SCRIPT}"
     [[ ${status} -eq 0 ]]
-    [[ "${output}" == *"[8.2.0](https://github.com/openemr/openemr/compare/v8.1.0...v8.2.0)"* ]]
+    [[ "${output}" == *"[8.2.0](https://github.com/DCL/DCL/compare/v8.1.0...v8.2.0)"* ]]
     [[ "${output}" == *"Content for 8.2.0."* ]]
     [[ "${output}" != *"[8.1.0]"* ]]
     [[ "${output}" != *"Content for 8.1.0."* ]]

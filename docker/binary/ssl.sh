@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR SSL/TLS Configuration Script
+# DCL SSL/TLS Configuration Script
 # ============================================================================
 # This script configures SSL/TLS certificates for the Apache web server.
 # It supports two modes:
@@ -13,7 +13,7 @@
 #   OPERATOR  - Set to "yes" to enable cron for certificate renewal
 #
 # Usage:
-#   Called automatically by openemr.sh during container startup
+#   Called automatically by DCL.sh during container startup
 # ============================================================================
 
 set -e
@@ -97,12 +97,12 @@ if [[ "${DOMAIN:-}" != "" ]]; then
 
         # Request certificate using webroot validation method
         if [[ -n "${EMAIL_ARG:-}" ]]; then
-            certbot certonly --webroot -n -w /var/www/localhost/htdocs/openemr/ -d "${DOMAIN}" "${EMAIL_ARG}" --agree-tos
+            certbot certonly --webroot -n -w /var/www/localhost/htdocs/DCL/ -d "${DOMAIN}" "${EMAIL_ARG}" --agree-tos
         else
-            certbot certonly --webroot -n -w /var/www/localhost/htdocs/openemr/ -d "${DOMAIN}" --agree-tos
+            certbot certonly --webroot -n -w /var/www/localhost/htdocs/DCL/ -d "${DOMAIN}" --agree-tos
         fi
 
-        # Stop Apache (it will be started again by openemr.sh)
+        # Stop Apache (it will be started again by DCL.sh)
         /usr/sbin/httpd -k stop
 
         # Schedule automatic renewal via cron (runs daily at 23:01)

@@ -3,11 +3,11 @@
 /**
  * interface/eRxSOAP.php Functions for interacting with Ensora eRx SOAP calls.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sam Likins <sam.likins@wsi-services.com>
  * @copyright Copyright (c) 2015 Sam Likins <sam.likins@wsi-services.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 

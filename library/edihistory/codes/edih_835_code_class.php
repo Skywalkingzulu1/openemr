@@ -38,7 +38,7 @@
  * @return object
  */
 
-use OpenEMR\Billing\BillingUtilities;
+use DCL\Billing\BillingUtilities;
 
 class edih_835_codes
 {

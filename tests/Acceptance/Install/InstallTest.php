@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Install;
+namespace DCL\Tests\Acceptance\Install;
 
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\LoginFlow;
-use OpenEMR\Tests\Acceptance\Support\ResponseHeaders;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\LoginFlow;
+use DCL\Tests\Acceptance\Support\ResponseHeaders;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Phase 1 exit-criterion test: verifies the openemr artifact under test
+ * Phase 1 exit-criterion test: verifies the DCL artifact under test
  * completed its install cleanly and that the default admin credentials
  * (from OE_USER/OE_PASS env vars in docker/production/docker-compose.yml)
  * work end-to-end through the login flow.
@@ -43,7 +43,7 @@ final class InstallTest extends TestCase
 {
     public function testHomepageRedirectsToLoginAfterInstall(): void
     {
-        // A freshly-installed openemr artifact should serve `/` as a 302
+        // A freshly-installed DCL artifact should serve `/` as a 302
         // redirect to the login page. If the install didn't complete
         // (env-var auto-install failed, container crashed, DB not
         // reachable), the redirect target would be setup.php or a
@@ -54,7 +54,7 @@ final class InstallTest extends TestCase
 
         self::assertSame(302, $response->getStatusCode(), 'GET / should redirect (302) on an installed artifact');
         $location = ResponseHeaders::location($response);
-        // openemr's redirect target is relative ("interface/login/login.php?..."),
+        // DCL's redirect target is relative ("interface/login/login.php?..."),
         // no leading slash. Assert on the trailing path fragment.
         self::assertStringContainsString(
             'interface/login/login.php',

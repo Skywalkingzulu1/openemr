@@ -2,7 +2,7 @@
 # Shared Redis Sentinel cluster template.
 #
 # Defines a minimal Redis Sentinel cluster (1 master + 2 replicas + 3 sentinels)
-# and extends the openemr service with the env vars required to activate predis-sentinel
+# and extends the DCL service with the env vars required to activate predis-sentinel
 # session storage.
 #
 # Three sentinels (quorum 2) so a failover election always has a majority.  With
@@ -14,7 +14,7 @@
 #
 # Include this file in COMPOSE_FILE when you want the full test suite to run
 # against Redis-backed sessions.  Redis containers are always started (no profile
-# guard) so the openemr container finds them when it boots.
+# guard) so the DCL container finds them when it boots.
 #
 # Sentinel config is written inline via the startup command rather than bind-mounted
 # from a host file.  Bind-mounting conf files caused persistent failures in CI:
@@ -210,7 +210,7 @@ services:
       retries: 10
       start_period: 15s
 
-  openemr:
+  DCL:
     environment:
       SESSION_STORAGE_MODE: predis-sentinel
       REDIS_SENTINELS: sentinel-1|||sentinel-2|||sentinel-3

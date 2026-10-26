@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCarePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.
@@ -71,31 +71,31 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Identifies the outcome at the point when the status of the activity is assessed.  For example, the outcome of an education activity could be patient understands (or not).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $outcomeCodeableConcept = [];
 
     /**
      * Details of the outcome or action resulting from the activity.  The reference to an "event" resource, such as Procedure or Encounter or Observation, is the result/outcome of the activity itself.  The activity can be conveyed using CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference to a “request” resource).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $outcomeReference = [];
 
     /**
      * Notes about the adherence/status/progress of the activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $progress = [];
 
     /**
      * The details of the proposed activity represented in a specific resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $reference = null;
 
     /**
      * A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail
      */
     public $detail = null;
 
@@ -106,7 +106,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifies the outcome at the point when the status of the activity is assessed.  For example, the outcome of an education activity could be patient understands (or not).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getOutcomeCodeableConcept()
     {
@@ -115,7 +115,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifies the outcome at the point when the status of the activity is assessed.  For example, the outcome of an education activity could be patient understands (or not).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcomeCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcomeCodeableConcept
      * @return $this
      */
     public function addOutcomeCodeableConcept($outcomeCodeableConcept)
@@ -126,7 +126,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Details of the outcome or action resulting from the activity.  The reference to an "event" resource, such as Procedure or Encounter or Observation, is the result/outcome of the activity itself.  The activity can be conveyed using CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference to a “request” resource).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getOutcomeReference()
     {
@@ -135,7 +135,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Details of the outcome or action resulting from the activity.  The reference to an "event" resource, such as Procedure or Encounter or Observation, is the result/outcome of the activity itself.  The activity can be conveyed using CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference to a “request” resource).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $outcomeReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $outcomeReference
      * @return $this
      */
     public function addOutcomeReference($outcomeReference)
@@ -146,7 +146,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Notes about the adherence/status/progress of the activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getProgress()
     {
@@ -155,7 +155,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Notes about the adherence/status/progress of the activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $progress
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $progress
      * @return $this
      */
     public function addProgress($progress)
@@ -166,7 +166,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The details of the proposed activity represented in a specific resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReference()
     {
@@ -175,7 +175,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The details of the proposed activity represented in a specific resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reference
      * @return $this
      */
     public function setReference($reference)
@@ -186,7 +186,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail
      */
     public function getDetail()
     {
@@ -195,7 +195,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail $detail
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail $detail
      * @return $this
      */
     public function setDetail($detail)

@@ -2,18 +2,18 @@
 
 /**
  * SMARTLaunchTokenTest Unit tests the SmartLaunchTokenTest for serialization & deserialization of the token.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\FHIR\SMART;
+namespace DCL\Tests\Unit\FHIR\SMART;
 
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
+use DCL\FHIR\SMART\SMARTLaunchToken;
 use PHPUnit\Framework\TestCase;
 
 class SMARTLaunchTokenTest extends TestCase

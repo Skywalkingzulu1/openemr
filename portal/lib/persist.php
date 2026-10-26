@@ -3,20 +3,20 @@
 /**
  * persist.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\PortalSessionPidGuard;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\PatientPortalService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\PortalSessionPidGuard;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\PatientPortalService;
 
-// Will start the (patient) portal OpenEMR session/cookie.
+// Will start the (patient) portal DCL session/cookie.
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../../vendor/autoload.php");
 // Session writes (whereto) happen on most requests, so keep session writable.

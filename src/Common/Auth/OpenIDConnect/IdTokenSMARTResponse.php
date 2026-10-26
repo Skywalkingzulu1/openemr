@@ -4,14 +4,14 @@
  * Handles extra claims required for SMART on FHIR requests
  * @see http://hl7.org/fhir/smart-app-launch/scopes-and-launch-context/index.html
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect;
+namespace DCL\Common\Auth\OpenIDConnect;
 
 use Lcobucci\JWT\Encoding\ChainedFormatter;
 use Lcobucci\JWT\Encoding\JoseEncoder;
@@ -20,8 +20,8 @@ use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Entities\UserEntityInterface;
 use LogicException;
 use Nyholm\Psr7\Stream;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Core\OEGlobalsBag;
 use OpenIDConnectServer\ClaimExtractor;
 use OpenIDConnectServer\IdTokenResponse;
 use OpenIDConnectServer\Repositories\IdentityProviderInterface;
@@ -29,7 +29,7 @@ use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-// TODO: Look at renaming this class to OEIdTokenResponse since it applies to all OpenEMR OAuth2 responses
+// TODO: Look at renaming this class to OEIdTokenResponse since it applies to all DCL OAuth2 responses
 class IdTokenSMARTResponse extends IdTokenResponse
 {
     use SystemLoggerAwareTrait;

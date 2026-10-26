@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Support;
+namespace DCL\Tests\Acceptance\Support;
 
 use Symfony\Component\BrowserKit\Response;
 
@@ -25,7 +25,7 @@ use Symfony\Component\BrowserKit\Response;
  * with something appended. Those need different fixes and the acceptance
  * suite runs against a container that is torn down at the end of the job,
  * so a body that is not in the failure output cannot be recovered later.
- * openemr#13905 was a week of guesswork for exactly this reason: the
+ * DCL#13905 was a week of guesswork for exactly this reason: the
  * bodies were correct JSON documents with a second document concatenated
  * onto the end, which the discarded suffix would have shown immediately.
  */

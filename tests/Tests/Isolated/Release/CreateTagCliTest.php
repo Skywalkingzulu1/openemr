@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
@@ -39,10 +39,10 @@ final class CreateTagCliTest extends TestCase
         $process = new Process([
             'php',
             self::BIN,
-            '--repo=openemr/openemr',
+            '--repo=DCL/DCL',
             '--release-version=8.1.0',
             '--commit-sha=notasha',
-            '--conductor-pr-url=https://github.com/openemr/openemr/pull/1',
+            '--conductor-pr-url=https://github.com/DCL/DCL/pull/1',
             '--app-token=t',
             '--date=2026-07-21',
         ]);
@@ -59,10 +59,10 @@ final class CreateTagCliTest extends TestCase
         $process = new Process([
             'php',
             self::BIN,
-            '--repo=openemr/openemr',
+            '--repo=DCL/DCL',
             '--release-version=v8.1.0',
             '--commit-sha=' . self::VALID_SHA,
-            '--conductor-pr-url=https://github.com/openemr/openemr/pull/1',
+            '--conductor-pr-url=https://github.com/DCL/DCL/pull/1',
             '--app-token=t',
             '--date=2026-07-21',
         ]);
@@ -81,7 +81,7 @@ final class CreateTagCliTest extends TestCase
             self::BIN,
             '--release-version=8.1.0',
             '--commit-sha=' . self::VALID_SHA,
-            '--conductor-pr-url=https://github.com/openemr/openemr/pull/1',
+            '--conductor-pr-url=https://github.com/DCL/DCL/pull/1',
             '--app-token=t',
             '--date=2026-07-21',
         ]);
@@ -102,10 +102,10 @@ final class CreateTagCliTest extends TestCase
             $process = new Process([
                 'php',
                 self::BIN,
-                '--repo=openemr/openemr',
+                '--repo=DCL/DCL',
                 '--release-version=8.1.0',
                 '--commit-sha=' . self::VALID_SHA,
-                '--conductor-pr-url=https://github.com/openemr/openemr/pull/1',
+                '--conductor-pr-url=https://github.com/DCL/DCL/pull/1',
                 '--date=2026-07-21',
             ]);
             $process->run();
@@ -137,10 +137,10 @@ final class CreateTagCliTest extends TestCase
             [
                 'php',
                 self::BIN,
-                '--repo=openemr/openemr',
+                '--repo=DCL/DCL',
                 '--release-version=8.1.0',
                 '--commit-sha=' . self::VALID_SHA,
-                '--conductor-pr-url=https://github.com/openemr/openemr/pull/1',
+                '--conductor-pr-url=https://github.com/DCL/DCL/pull/1',
                 '--date=BAD',
             ],
             null,
@@ -163,10 +163,10 @@ final class CreateTagCliTest extends TestCase
         $process = new Process([
             'php',
             self::BIN,
-            '--repo=openemr/openemr',
+            '--repo=DCL/DCL',
             '--release-version=8.1.0',
             '--commit-sha=' . self::VALID_SHA,
-            '--conductor-pr-url=https://github.com/openemr/openemr/pull/1',
+            '--conductor-pr-url=https://github.com/DCL/DCL/pull/1',
             '--app-token=t',
             '--date=BAD',
             '--test',
@@ -194,10 +194,10 @@ final class CreateTagCliTest extends TestCase
             $process = new Process([
                 'php',
                 self::BIN,
-                '--repo=openemr/openemr',
+                '--repo=DCL/DCL',
                 '--release-version=8.1.0',
                 '--commit-sha=' . self::VALID_SHA,
-                '--conductor-pr-url=https://github.com/openemr/openemr/pull/1',
+                '--conductor-pr-url=https://github.com/DCL/DCL/pull/1',
                 '--app-token=t',
                 '--date=BAD',
             ]);

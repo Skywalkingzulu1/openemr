@@ -11,36 +11,36 @@
  * The same report is also served as a spreadsheet; both views come from the same
  * {@see DuplicatePatientGroup} list so they cannot disagree.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @author    Ruth Moulton <ruth@muswell.me.uk>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2017-2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @copyright Copyright (c) 2026 Ruth Moulton <ruth@muswell.me.uk>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Controllers\Interface\PatientFile;
+namespace DCL\Controllers\Interface\PatientFile;
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Events\Patient\DuplicatePatientReportColumnsEvent;
-use OpenEMR\Services\Patient\DuplicatePatientAction;
-use OpenEMR\Services\Patient\DuplicatePatientColumn;
-use OpenEMR\Services\Patient\DuplicatePatientCsvWriter;
-use OpenEMR\Services\Patient\DuplicatePatientGroup;
-use OpenEMR\Services\Patient\DuplicatePatientService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Events\Patient\DuplicatePatientReportColumnsEvent;
+use DCL\Services\Patient\DuplicatePatientAction;
+use DCL\Services\Patient\DuplicatePatientColumn;
+use DCL\Services\Patient\DuplicatePatientCsvWriter;
+use DCL\Services\Patient\DuplicatePatientGroup;
+use DCL\Services\Patient\DuplicatePatientService;
 use Psr\Clock\ClockInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -163,7 +163,7 @@ class ManageDuplicatePatientsController
             }
         }
 
-        // SessionUtil rather than $session->set(): OpenEMR serves pages with the session closed for
+        // SessionUtil rather than $session->set(): DCL serves pages with the session closed for
         // reading, so a direct write is silently dropped -- and the merge page's safeguard depends
         // on this landing.
         SessionUtil::setSession(self::SESSION_SCORED_PAIRS, array_values(array_unique($pairs)));

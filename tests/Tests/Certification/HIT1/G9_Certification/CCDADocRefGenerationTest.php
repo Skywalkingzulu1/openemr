@@ -2,14 +2,14 @@
 
 /*
  * CCDADocRefGenerationTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Certification\HIT1\G9_Certification;
+namespace DCL\Tests\Certification\HIT1\G9_Certification;
 
 use DOMAttr;
 use DOMDocument;
@@ -18,7 +18,7 @@ use DOMNameSpaceNode;
 use DOMNode;
 use DOMText;
 use DOMXPath;
-use OpenEMR\Tests\Api\ApiTestClient;
+use DCL\Tests\Api\ApiTestClient;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -28,18 +28,18 @@ class CCDADocRefGenerationTest extends TestCase
     // in a private location not accessible to the public repo
     const EXPECTED_RESPONSE_CCDA = __DIR__ . '/../../../../../ci/inferno/inferno-files/files/data/ccda/CCDA_Newman_Alice_expected.xml';
 
-    const DEFAULT_OPENEMR_BASE_URL_API = 'http://openemr';
+    const DEFAULT_DCL_BASE_URL_API = 'http://DCL';
     const PATIENT_ID_PRIMARY = '96506861-511f-4f6d-bc97-b65a78cf1995';
     private static ApiTestClient $testClient;
 
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: self::DEFAULT_OPENEMR_BASE_URL_API;
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: self::DEFAULT_DCL_BASE_URL_API;
         self::$testClient = new ApiTestClient($baseUrl, false);
         // for now this uses the admin user to authenticate
         // TODO: @adunsulag need to implement this using a test practitioner user so we can test the inferno single patient API from a regular provider
-        self::$testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        self::$testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
     }
 
     public function testGenerateCCDADocRef(): void

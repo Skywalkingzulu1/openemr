@@ -2,20 +2,20 @@
 /**
  * interface/modules/zend_modules/module/Installer/view/installer/installer/index.phtml
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T.Paul <jacob@zhservices.com>
  * @author    Vipin Kumar <vipink@zhservices.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Control access
-use OpenEMR\Core\ModulesApplication;
+use DCL\Core\ModulesApplication;
 
-if (!OpenEMR\Common\Acl\AclMain::aclCheckCore('admin', 'manage_modules')) {
+if (!DCL\Common\Acl\AclMain::aclCheckCore('admin', 'manage_modules')) {
     echo xlt('Not Authorized');
     exit;
 }
@@ -33,7 +33,7 @@ $depObj = $this->dependencyObject;
 $coreModules = $this->coreModules ?? [];
 
 $help_items = [
-    xlt('') . '<a  class="text-dark" href="https://www.open-emr.org/wiki/index.php/OpenEMR_Modules" target="_blank">' . xlt("Visit additional modules for OpenEMR developed and listed by third party vendors.") . '</a>',
+    xlt('') . '<a  class="text-dark" href="https://www.dcl.org/wiki/index.php/DCL_Modules" target="_blank">' . xlt("Visit additional modules for DCL developed and listed by third party vendors.") . '</a>',
     xlt('Laminas Modules are the original modules framework.'),
     xlt('Custom Modules were added to allow developers more freedom by using other development frameworks.'),
     xlt('The "Nick Name" is used to identify the module in the menu and not required.'),
@@ -114,7 +114,7 @@ $help_items = [
 <div class="installer bg-light text-dark">
     <div class="bg-light text-dark text-center" id="helpPanel">
         <button class="btn btn-outline-primary btn-sm btn-show my-2" type="button" onclick="toggleHelp()"><?php echo xlt('Modules Help'); ?></button>
-        <a class="btn btn-outline-info btn-sm btn-show bg-light text-dark my-2" href="https://www.open-emr.org/wiki/index.php/OpenEMR_Modules" target="_blank"><?php echo xlt('Visit Third Party Modules Wiki'); ?></a>
+        <a class="btn btn-outline-info btn-sm btn-show bg-light text-dark my-2" href="https://www.dcl.org/wiki/index.php/DCL_Modules" target="_blank"><?php echo xlt('Visit Third Party Modules Wiki'); ?></a>
         <div class="help-content bg-light text-dark text-left d-none" id="helpContent">
             <ul style="font-size: 1.0rem;">
                 <?php

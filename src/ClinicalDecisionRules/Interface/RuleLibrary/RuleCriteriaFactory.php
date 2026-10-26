@@ -6,17 +6,17 @@
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaAgeBuilder;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseBuilder;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaListsBuilder;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaSexBuilder;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaAgeBuilder;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseBuilder;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaListsBuilder;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaSexBuilder;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFactory
+ * Description of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFactory
  *
  * @author aron
  */

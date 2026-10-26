@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
@@ -71,7 +71,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
 {
     /**
      * Captures constraints on each element within the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRElementDefinition[]
      */
     public $element = [];
 
@@ -82,7 +82,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
 
     /**
      * Captures constraints on each element within the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRElementDefinition[]
      */
     public function getElement()
     {
@@ -91,7 +91,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \Js
 
     /**
      * Captures constraints on each element within the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition $element
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRElementDefinition $element
      * @return $this
      */
     public function addElement($element)

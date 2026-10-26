@@ -44,10 +44,10 @@
   <g class="c-teal">
     <rect x="40" y="208" width="160" height="130" rx="8" stroke-width="0.5"/>
     <text class="th" x="120" y="232" text-anchor="middle">&lt;git-dir&gt;/</text>
-    <text class="ts" x="120" y="248" text-anchor="middle">openemr/</text>
-    <text class="ts" x="120" y="264" text-anchor="middle">openemr-wt-1/</text>
-    <text class="ts" x="120" y="280" text-anchor="middle">openemr-wt-2/</text>
-    <text class="ts" x="120" y="296" text-anchor="middle">openemr-wt-3/</text>
+    <text class="ts" x="120" y="248" text-anchor="middle">DCL/</text>
+    <text class="ts" x="120" y="264" text-anchor="middle">DCL-wt-1/</text>
+    <text class="ts" x="120" y="280" text-anchor="middle">DCL-wt-2/</text>
+    <text class="ts" x="120" y="296" text-anchor="middle">DCL-wt-3/</text>
     <text class="ts" x="120" y="312" text-anchor="middle">.worktrees.json</text>
   </g>
 
@@ -73,7 +73,7 @@
   <g class="c-gray">
     <rect x="248" y="128" width="374" height="56" rx="8" stroke-width="0.5"/>
     <text class="th" x="435" y="147" text-anchor="middle">Lean toolchain</text>
-    <text class="ts" x="435" y="163" text-anchor="middle">openemr-cmd · git · gh · docker · jq</text>
+    <text class="ts" x="435" y="163" text-anchor="middle">DCL-cmd · git · gh · docker · jq</text>
     <text class="ts" x="435" y="178" text-anchor="middle">kubectl · kind · helm</text>
   </g>
 
@@ -92,12 +92,12 @@
   <g class="c-coral">
     <rect x="248" y="276" width="110" height="56" rx="8" stroke-width="0.5"/>
     <text class="th" x="303" y="298" text-anchor="middle">agent-1</text>
-    <text class="ts" x="303" y="314" text-anchor="middle">openemr-wt-1</text>
+    <text class="ts" x="303" y="314" text-anchor="middle">DCL-wt-1</text>
   </g>
   <g class="c-coral">
     <rect x="375" y="276" width="110" height="56" rx="8" stroke-width="0.5"/>
     <text class="th" x="430" y="298" text-anchor="middle">agent-2</text>
-    <text class="ts" x="430" y="314" text-anchor="middle">openemr-wt-2</text>
+    <text class="ts" x="430" y="314" text-anchor="middle">DCL-wt-2</text>
   </g>
   <g class="c-coral">
     <rect x="502" y="276" width="110" height="56" rx="8" stroke-width="0.5"/>
@@ -122,14 +122,14 @@
   <g class="c-blue">
     <rect x="502" y="354" width="110" height="80" rx="8" stroke-width="0.5"/>
     <text class="th" x="557" y="374" text-anchor="middle">kind cluster</text>
-    <text class="ts" x="557" y="390" text-anchor="middle">OpenEMR · MariaDB</text>
+    <text class="ts" x="557" y="390" text-anchor="middle">DCL · MariaDB</text>
     <text class="ts" x="557" y="406" text-anchor="middle">Redis · Sentinel</text>
     <text class="ts" x="557" y="422" text-anchor="middle">cert-manager</text>
   </g>
 
   <g class="c-gray">
     <rect x="248" y="452" width="234" height="44" rx="8" stroke-width="0.5"/>
-    <text class="th" x="365" y="470" text-anchor="middle">openemr-cmd</text>
+    <text class="th" x="365" y="470" text-anchor="middle">DCL-cmd</text>
     <text class="ts" x="365" y="486" text-anchor="middle">PHP/JS/CSS ops via docker exec</text>
   </g>
 

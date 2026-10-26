@@ -16,18 +16,18 @@
  * All Redis and inner-handler interactions are verified with mocks — no
  * real Redis connection or Docker environment is required.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Session\Predis;
+namespace DCL\Tests\Isolated\Common\Session\Predis;
 
-use OpenEMR\Common\Session\Predis\LockingRedisSessionHandler;
+use DCL\Common\Session\Predis\LockingRedisSessionHandler;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;

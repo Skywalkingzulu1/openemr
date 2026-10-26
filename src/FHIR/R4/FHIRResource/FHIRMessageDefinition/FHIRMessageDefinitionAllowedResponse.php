@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Defines the characteristics of a message that can be shared between systems, including the type of event that initiates the message, the content to be transmitted and what response(s), if any, are permitted.
@@ -71,13 +71,13 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
 {
     /**
      * A reference to the message definition that must be adhered to by this supported response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $message = null;
 
     /**
      * Provides a description of the circumstances in which this response should be used (as opposed to one of the alternative responses).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $situation = null;
 
@@ -88,7 +88,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
 
     /**
      * A reference to the message definition that must be adhered to by this supported response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getMessage()
     {
@@ -97,7 +97,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
 
     /**
      * A reference to the message definition that must be adhered to by this supported response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $message
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $message
      * @return $this
      */
     public function setMessage($message)
@@ -108,7 +108,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
 
     /**
      * Provides a description of the circumstances in which this response should be used (as opposed to one of the alternative responses).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getSituation()
     {
@@ -117,7 +117,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
 
     /**
      * Provides a description of the circumstances in which this response should be used (as opposed to one of the alternative responses).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $situation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $situation
      * @return $this
      */
     public function setSituation($situation)

@@ -8,7 +8,7 @@
 // of the License, or (at your option) any later version.
 //
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 require_once(__DIR__ . "/../../../../clinical_rules.php");
 

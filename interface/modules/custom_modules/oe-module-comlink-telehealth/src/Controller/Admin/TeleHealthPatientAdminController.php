@@ -1,26 +1,26 @@
 <?php
 
 /**
- * This controller class handles the hooks and connections for the patient administrative pages in the OpenEMR system.
+ * This controller class handles the hooks and connections for the patient administrative pages in the DCL system.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Controller\Admin;
+namespace Comlink\DCL\Modules\TeleHealthModule\Controller\Admin;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthUser;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TelehealthRegistrationCodeService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthRemoteRegistrationService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Events\Patient\Summary\PortalCredentialsTemplateDataFilterEvent;
-use OpenEMR\Events\Patient\Summary\PortalCredentialsUpdatedEvent;
-use OpenEMR\Services\PatientService;
+use Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthUser;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TelehealthRegistrationCodeService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthRemoteRegistrationService;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Events\Patient\Summary\PortalCredentialsTemplateDataFilterEvent;
+use DCL\Events\Patient\Summary\PortalCredentialsUpdatedEvent;
+use DCL\Services\PatientService;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class TeleHealthPatientAdminController

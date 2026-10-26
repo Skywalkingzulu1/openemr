@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG OPENEMR_VERSION=master
+ARG DCL_VERSION=master
 FROM alpine:3.23 AS base
 
 # ============================================================================

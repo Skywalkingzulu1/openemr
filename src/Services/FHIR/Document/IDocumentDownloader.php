@@ -3,14 +3,14 @@
 /**
  * IDocumentDownloader Response for handling Document downloads.  A class that implements this interface can be used
  * in the FHIR Document endpoints to handle documents, process any additional security or processing requirements.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Document;
+namespace DCL\Services\FHIR\Document;
 
 use Psr\Http\Message\ResponseInterface;
 

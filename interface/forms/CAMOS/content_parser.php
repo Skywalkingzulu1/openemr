@@ -3,17 +3,17 @@
 /**
  * CAMOS content_parser.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Mark Leeds <drleeds@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2006-2009 Mark Leeds <drleeds@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 if (!defined('CAMOS_CONTENT_PARSER_SKIP_INCLUDES')) {
     require_once(__DIR__ . "/../../forms/vitals/C_FormVitals.class.php");
@@ -26,14 +26,14 @@ function addAppt(string $days, string $time): int
         return 0;
     }
     $session = SessionWrapperFactory::getInstance()->getActiveSession();
-    $sql = "insert into openemr_postcalendar_events (pc_pid, pc_eventDate," .
+    $sql = "insert into DCL_postcalendar_events (pc_pid, pc_eventDate," .
     "pc_comments, pc_aid,pc_startTime) values (?, date_add(current_date(), interval " . $intervalDays .
     " day),'from CAMOS', ?, ?)";
     return QueryUtils::sqlInsert($sql, [$session->get('pid'), $session->get('authUserID'), $time]);
 }
 function addVitals(string $weight, string $height, string $systolic, string $diastolic, string $pulse, string $temp): void
 {
-//This is based on code from /openemr/interface/forms/vitals/C_FormVitals.class.phpif it doesn't work, look there for changes.
+//This is based on code from /DCL/interface/forms/vitals/C_FormVitals.class.phpif it doesn't work, look there for changes.
     $_POST['process'] = 'true';
     $_POST['weight'] = $weight;
     $_POST['height'] = $height;
@@ -290,7 +290,7 @@ function replace(int $pid, int $enc, string $content): string
         [$name,$age,strtolower($gender),$doctorname],
         $content
     );
-    //Below will fix blocks that were inadvertently double escaped in openemr versions 5.0.1.0 - 5.0.1.5
+    //Below will fix blocks that were inadvertently double escaped in DCL versions 5.0.1.0 - 5.0.1.5
     return str_replace("\\n", "\n", $ret ?? '');
 }
 function patient_age(string $birthday, string $date): int

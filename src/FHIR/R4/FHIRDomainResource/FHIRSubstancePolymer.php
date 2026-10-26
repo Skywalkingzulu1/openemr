@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Todo.
@@ -72,37 +72,37 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $class = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $geometry = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $copolymerConnectivity = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $modification = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
      */
     public $monomerSet = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
      */
     public $repeat = [];
 
@@ -113,7 +113,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getClass()
     {
@@ -122,7 +122,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $class
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $class
      * @return $this
      */
     public function setClass($class)
@@ -133,7 +133,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getGeometry()
     {
@@ -142,7 +142,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $geometry
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $geometry
      * @return $this
      */
     public function setGeometry($geometry)
@@ -153,7 +153,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCopolymerConnectivity()
     {
@@ -162,7 +162,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $copolymerConnectivity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $copolymerConnectivity
      * @return $this
      */
     public function addCopolymerConnectivity($copolymerConnectivity)
@@ -173,7 +173,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getModification()
     {
@@ -182,7 +182,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $modification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $modification
      * @return $this
      */
     public function addModification($modification)
@@ -193,7 +193,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
      */
     public function getMonomerSet()
     {
@@ -202,7 +202,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet $monomerSet
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet $monomerSet
      * @return $this
      */
     public function addMonomerSet($monomerSet)
@@ -213,7 +213,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
      */
     public function getRepeat()
     {
@@ -222,7 +222,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat $repeat
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat $repeat
      * @return $this
      */
     public function addRepeat($repeat)

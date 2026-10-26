@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\BinaryForgePin;
-use OpenEMR\Release\BinaryForgeResolver;
-use OpenEMR\Tests\Isolated\Release\Fakes\FakeGitHubApi;
+use DCL\Release\BinaryForgePin;
+use DCL\Release\BinaryForgeResolver;
+use DCL\Tests\Isolated\Release\Fakes\FakeGitHubApi;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -57,7 +57,7 @@ final class BinaryForgeResolverTest extends TestCase
                 self::linuxRelease('amd64', '8_3_0', '08232026'),
                 self::linuxRelease('arm64', '8_3_0', '08232026', [
                     'php-fpm-v8_3_0-linux-arm64',
-                    'openemr.phar',
+                    'DCL.phar',
                 ]),
             ],
             ['/contents/tests?ref=v8_3_0'],
@@ -66,7 +66,7 @@ final class BinaryForgeResolverTest extends TestCase
         self::assertSame('8_0_0/03102026', (string)$resolved);
     }
 
-    public function testHoldsWhenTheOpenemrTagHasNoTestsTree(): void
+    public function testHoldsWhenTheDCLTagHasNoTestsTree(): void
     {
         $resolved = $this->resolve(
             [
@@ -104,12 +104,12 @@ final class BinaryForgeResolverTest extends TestCase
             self::linuxRelease('amd64', '7_0_4', '12292025'),
             self::linuxRelease('arm64', '7_0_4', '12292025'),
         ]);
-        $openemr = new FakeGitHubApi([], ['/contents/tests?ref=v7_0_4']);
+        $DCL = new FakeGitHubApi([], ['/contents/tests?ref=v7_0_4']);
 
-        $resolved = (new BinaryForgeResolver($forge, $openemr))->resolve($this->currentPin());
+        $resolved = (new BinaryForgeResolver($forge, $DCL))->resolve($this->currentPin());
 
         self::assertSame('8_0_0/03102026', (string)$resolved);
-        self::assertSame([], $openemr->existenceChecks, 'an older release should not cost an API call');
+        self::assertSame([], $DCL->existenceChecks, 'an older release should not cost an API call');
     }
 
     /**
@@ -151,9 +151,9 @@ final class BinaryForgeResolverTest extends TestCase
             self::linuxRelease('amd64', '8_0_0', '09012026'),
             self::linuxRelease('arm64', '8_0_0', '09012026'),
         ]);
-        $openemr = new FakeGitHubApi([], ['/contents/tests?ref=v8_0_0']);
+        $DCL = new FakeGitHubApi([], ['/contents/tests?ref=v8_0_0']);
 
-        $resolved = (new BinaryForgeResolver($forge, $openemr))->resolve($this->currentPin());
+        $resolved = (new BinaryForgeResolver($forge, $DCL))->resolve($this->currentPin());
 
         self::assertSame('8_0_0/09012026', (string)$resolved);
     }
@@ -164,9 +164,9 @@ final class BinaryForgeResolverTest extends TestCase
             self::linuxRelease('amd64', '8_3_0', '08232026'),
             self::linuxRelease('arm64', '8_3_0', '08232026'),
         ]);
-        $openemr = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0']);
+        $DCL = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0']);
 
-        $resolver = new BinaryForgeResolver($forge, $openemr);
+        $resolver = new BinaryForgeResolver($forge, $DCL);
 
         self::assertTrue($resolver->isPublished(new BinaryForgePin('8_3_0', '08232026', '8.5')));
     }
@@ -183,9 +183,9 @@ final class BinaryForgeResolverTest extends TestCase
             self::linuxRelease('amd64', '8_4_0', '09152026'),
             self::linuxRelease('arm64', '8_4_0', '09152026'),
         ]);
-        $openemr = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0', '/contents/tests?ref=v8_4_0']);
+        $DCL = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0', '/contents/tests?ref=v8_4_0']);
 
-        $resolver = new BinaryForgeResolver($forge, $openemr);
+        $resolver = new BinaryForgeResolver($forge, $DCL);
 
         self::assertFalse($resolver->isPublished(new BinaryForgePin('8_3_0', '09152026', '8.5')));
     }
@@ -193,9 +193,9 @@ final class BinaryForgeResolverTest extends TestCase
     public function testIsPublishedRejectsAPinMissingAnArch(): void
     {
         $forge = new FakeGitHubApi([self::linuxRelease('amd64', '8_3_0', '08232026')]);
-        $openemr = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0']);
+        $DCL = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0']);
 
-        $resolver = new BinaryForgeResolver($forge, $openemr);
+        $resolver = new BinaryForgeResolver($forge, $DCL);
 
         self::assertFalse($resolver->isPublished(new BinaryForgePin('8_3_0', '08232026', '8.5')));
     }
@@ -219,14 +219,14 @@ final class BinaryForgeResolverTest extends TestCase
         $resolved = $this->resolve(
             [
                 [
-                    'tag_name' => 'mac_os-php85-openemr-v8_3_0-arm64-08232026',
+                    'tag_name' => 'mac_os-php85-DCL-v8_3_0-arm64-08232026',
                     'draft' => false,
-                    'assets' => [['name' => 'openemr.phar']],
+                    'assets' => [['name' => 'DCL.phar']],
                 ],
                 [
-                    'tag_name' => 'freebsd15.1-php85-openemr-v8_3_0-arm64-08232026',
+                    'tag_name' => 'freebsd15.1-php85-DCL-v8_3_0-arm64-08232026',
                     'draft' => false,
-                    'assets' => [['name' => 'openemr.phar']],
+                    'assets' => [['name' => 'DCL.phar']],
                 ],
             ],
             ['/contents/tests?ref=v8_3_0'],
@@ -253,17 +253,17 @@ final class BinaryForgeResolverTest extends TestCase
         self::assertSame('8_0_0/03102026', (string)$this->resolve([], []));
     }
 
-    public function testChecksTheTestsTreeAtTheMatchingOpenemrTag(): void
+    public function testChecksTheTestsTreeAtTheMatchingDCLTag(): void
     {
         $forge = new FakeGitHubApi([
             self::linuxRelease('amd64', '8_3_0', '08232026'),
             self::linuxRelease('arm64', '8_3_0', '08232026'),
         ]);
-        $openemr = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0']);
+        $DCL = new FakeGitHubApi([], ['/contents/tests?ref=v8_3_0']);
 
-        (new BinaryForgeResolver($forge, $openemr))->resolve($this->currentPin());
+        (new BinaryForgeResolver($forge, $DCL))->resolve($this->currentPin());
 
-        self::assertSame(['/contents/tests?ref=v8_3_0'], $openemr->existenceChecks);
+        self::assertSame(['/contents/tests?ref=v8_3_0'], $DCL->existenceChecks);
     }
 
     /**

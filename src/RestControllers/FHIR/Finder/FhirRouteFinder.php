@@ -2,12 +2,12 @@
 
 // TODO: need copyright header here
 
-namespace OpenEMR\RestControllers\FHIR\Finder;
+namespace DCL\RestControllers\FHIR\Finder;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\RestApiExtend\RestApiCreateEvent;
-use OpenEMR\RestControllers\Finder\IRouteFinder;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\RestApiExtend\RestApiCreateEvent;
+use DCL\RestControllers\Finder\IRouteFinder;
 
 class FhirRouteFinder implements IRouteFinder
 {

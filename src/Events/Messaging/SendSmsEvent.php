@@ -3,26 +3,26 @@
 /**
  * PatientReportEvent class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Messaging;
+namespace DCL\Events\Messaging;
 
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AclMain;
 use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Class SendSmsEvent
  *
- * @package OpenEMR\Events\Messaging
+ * @package DCL\Events\Messaging
  *
  * Enables adding a general send SMS messages dialog. It includes a patient select dialog.
- * See for example: interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php
+ * See for example: interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php
  */
 
 class SendSmsEvent extends Event

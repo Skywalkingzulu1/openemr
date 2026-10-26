@@ -98,7 +98,7 @@ teardown() {
     export VERSION="8.4.0"
     export RELEASE_TAG="v8_4_0"
     export VERSION_BRANCH="rel-840"
-    export ARTIFACT_NAME="openemr-release-candidate-8.4.0"
+    export ARTIFACT_NAME="DCL-release-candidate-8.4.0"
     run bash "${ASSERT_INPUTS_NONEMPTY_SCRIPT}" \
         "reusable-publish-release.yml" \
         VERSION RELEASE_TAG VERSION_BRANCH ARTIFACT_NAME

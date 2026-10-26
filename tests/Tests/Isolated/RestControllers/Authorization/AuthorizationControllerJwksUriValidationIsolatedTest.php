@@ -18,16 +18,16 @@
  * is out of scope for an isolated tier, but locking down the shape of the
  * guard is exactly what stops a silent change from shipping.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -67,7 +67,7 @@ class AuthorizationControllerJwksUriValidationIsolatedTest extends TestCase
     public function testWritePathImportsSsrfSafeUrlValidator(): void
     {
         $this->assertMatchesRegularExpression(
-            '/use\s+OpenEMR\\\\Common\\\\Http\\\\SsrfSafeUrlValidator;/',
+            '/use\s+DCL\\\\Common\\\\Http\\\\SsrfSafeUrlValidator;/',
             $this->writePathContent,
             'AuthorizationController must import SsrfSafeUrlValidator'
         );
@@ -151,7 +151,7 @@ class AuthorizationControllerJwksUriValidationIsolatedTest extends TestCase
     public function testReadPathImportsSsrfSafeUrlValidator(): void
     {
         $this->assertMatchesRegularExpression(
-            '/use\s+OpenEMR\\\\Common\\\\Http\\\\SsrfSafeUrlValidator;/',
+            '/use\s+DCL\\\\Common\\\\Http\\\\SsrfSafeUrlValidator;/',
             $this->readPathContent,
             'JWTClientAuthenticationService must import SsrfSafeUrlValidator'
         );

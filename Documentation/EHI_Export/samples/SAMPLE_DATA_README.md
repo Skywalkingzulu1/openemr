@@ -1,7 +1,7 @@
 # Synthetic EHI export samples
 
 These CSV files demonstrate how related clinical records can appear in an
-OpenEMR EHI export. Every person, identifier, address, date, and clinical event
+DCL EHI export. Every person, identifier, address, date, and clinical event
 in this directory is fictional and was created only for documentation.
 
 The samples are intentionally small and focus on commonly used columns. An
@@ -25,7 +25,7 @@ order.
 
 ## Important limitations
 
-- These files are examples, not an import package or a complete OpenEMR export.
+- These files are examples, not an import package or a complete DCL export.
 - Blank values demonstrate nullable or unavailable data.
 - Codes are illustrative and should be validated against the terminology and
   configuration used by a real installation.

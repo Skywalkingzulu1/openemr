@@ -3,14 +3,14 @@
 /**
  * Message Center Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -54,7 +54,7 @@ require_once("../../interface/globals.php");
                     <ul>
                         <li><a href="#section1"><?php echo xlt("Create an Order for a Single Test");?></a></li>
                         <li><a href="#section2"><?php echo xlt("Create an Order for a Panel of Tests");?></a></li>
-                        <li><a href="#section3"><?php echo xlt("Creating a Custom Group of Tests as Favorites");?>  <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i></a>&nbsp;<strong><?php echo xlt("New in openEMR ver 5.0.2 "); ?></strong></li>
+                        <li><a href="#section3"><?php echo xlt("Creating a Custom Group of Tests as Favorites");?>  <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i></a>&nbsp;<strong><?php echo xlt("New in DCL ver 5.0.2 "); ?></strong></li>
                         <li><a href="#section4"><?php echo xlt("Configuring Multiple Orders");?></a></li>
                         <li><a href="#section5"><?php echo xlt("Electronic orders");?></a></li>
                     </ul>
@@ -75,7 +75,7 @@ require_once("../../interface/globals.php");
                     <h4 class="oe-help-heading"><?php echo xlt("Create an Order for a Single Test"); ?><a href="#"><i class="fa fa-arrow-circle-up oe-pull-away oe-help-redirect" aria-hidden="true"></i></a></h4>
                     <p><?php echo xlt("We will go through the process of setting up the order for a single blood test - Serum Uric Acid");?>.</p>
 
-                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To use this help file as an instruction manual it is best to resize your browser to occupy half the screen, open another instance of the browser to fill the other half of the screen, login to openEMR and open the help file in this browser and resize it by clicking and dragging the bottom right corner so that it occupies the entire half screen");?>.</p>
+                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To use this help file as an instruction manual it is best to resize your browser to occupy half the screen, open another instance of the browser to fill the other half of the screen, login to DCL and open the help file in this browser and resize it by clicking and dragging the bottom right corner so that it occupies the entire half screen");?>.</p>
 
                     <p><strong><?php echo xlt("CREATE A TOP LEVEL ENTRY"); ?> :</strong></p>
 
@@ -390,8 +390,8 @@ require_once("../../interface/globals.php");
                     <p><?php echo xlt("It has three tiers ");?>:</p>
 
                     <ul>
-                        <li><?php echo xlt("Custom Favorite Group - to group individual tests "); ?> <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i>&nbsp;<strong><?php echo xlt("New in openEMR ver 5.0.2 "); ?></strong></li>
-                        <li><?php echo xlt("Custom Favorite Item  - for individual orders or tests"); ?> <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i>&nbsp;<strong><?php echo xlt("New in openEMR ver 5.0.2 "); ?></strong></li>
+                        <li><?php echo xlt("Custom Favorite Group - to group individual tests "); ?> <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i>&nbsp;<strong><?php echo xlt("New in DCL ver 5.0.2 "); ?></strong></li>
+                        <li><?php echo xlt("Custom Favorite Item  - for individual orders or tests"); ?> <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i>&nbsp;<strong><?php echo xlt("New in DCL ver 5.0.2 "); ?></strong></li>
                         <li><?php echo xlt("Discrete Results - for manual entry of returned result values"); ?></li>
                     </ul>
 
@@ -535,7 +535,7 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("Based on the individual practice's need the tests can be organized into various groups");?>.</p>
 
-                    <p><i class="fa fa-exclamation-circle oe-text-orange"  aria-hidden="true"></i> <strong><?php echo xlt("Remember grouping of tests is only for conveniently organizing the data in the Procedure Order module in openEMR, for this process to work, configuring the Procedure Orders (the tests themselves) and the Discrete Result (the place to enter and display the returned result) are critically important");?>.</strong></p>
+                    <p><i class="fa fa-exclamation-circle oe-text-orange"  aria-hidden="true"></i> <strong><?php echo xlt("Remember grouping of tests is only for conveniently organizing the data in the Procedure Order module in DCL, for this process to work, configuring the Procedure Orders (the tests themselves) and the Discrete Result (the place to enter and display the returned result) are critically important");?>.</strong></p>
 
                     <p><?php echo xlt("Using the main headings on the lab slip will help start this process - Organ/Disease Panels, Hematology, Individual Tests, Microbiology, Other");?>.</p>
 
@@ -561,13 +561,13 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("Check the Sequence numbers");?>.</p>
 
-                    <p><?php echo xlt("Now is the time to check and adjust the settings in openEMR for default units, sites, etc., refer to the help file in Procedures > Providers");?>.</p>
+                    <p><?php echo xlt("Now is the time to check and adjust the settings in DCL for default units, sites, etc., refer to the help file in Procedures > Providers");?>.</p>
 
                     <p><?php echo xlt("Before you start entering data check the spreadsheet once again and make adjustments as needed");?>.</p>
 
-                    <p><?php echo xlt("It is far easier and intuitive to make major changes and reorganize the data on the spreadsheet before you start entering the data in openEMR");?>.</p>
+                    <p><?php echo xlt("It is far easier and intuitive to make major changes and reorganize the data on the spreadsheet before you start entering the data in DCL");?>.</p>
 
-                    <p><?php echo xlt("It is useful to practice on a trial site to become familiar with the process before doing so on the production openEMR application");?>.</p>
+                    <p><?php echo xlt("It is useful to practice on a trial site to become familiar with the process before doing so on the production DCL application");?>.</p>
 
                     <p><?php echo xlt("Set aside some uninterrupted time for the data entry");?>.</p>
 
@@ -595,7 +595,7 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("The latest version is FHIR – Fast Healthcare Interoperability Resources – is a next generation standards framework created by HL7. This is gaining popularity but has not yet been widely implemented");?>.</p>
 
-                    <p><?php echo xlt("Version 2.x is widely used in the healthcare industry and openEMR uses HL7 version 2.3 ");?>.</p>
+                    <p><?php echo xlt("Version 2.x is widely used in the healthcare industry and DCL uses HL7 version 2.3 ");?>.</p>
 
                     <p><?php echo xlt("A HL7 v2.x message simply consists of several lines of text, each line is called a segment and is further divided into fields by using the pipe (|) character");?>.</p>
 
@@ -605,7 +605,7 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("The other Segments contain additional information in a strictly structured fashion");?>.</p>
 
-                    <p><?php echo xlt("Using the details entered into the system openEMR will generate valid HL7 v2.3 messages in 3 formats, a text file that is automatically downloaded to the downloads folder of your browser, a HL7 message that is written to a folder or directory on the server running openEMR or use SFTP - Secure File Transfer Protocol, which is a network protocol that provides file access, file transfer, and file management over a secure connection and transfer this message to a lab");?>.</p>
+                    <p><?php echo xlt("Using the details entered into the system DCL will generate valid HL7 v2.3 messages in 3 formats, a text file that is automatically downloaded to the downloads folder of your browser, a HL7 message that is written to a folder or directory on the server running DCL or use SFTP - Secure File Transfer Protocol, which is a network protocol that provides file access, file transfer, and file management over a secure connection and transfer this message to a lab");?>.</p>
 
                     <p><?php echo xlt("To enable any other form of connectivity will require writing new code");?>.</p>
 

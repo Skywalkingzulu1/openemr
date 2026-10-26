@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.
@@ -71,13 +71,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
 {
     /**
      * Identifies the actual instance of what caused the adverse event.  May be a substance, medication, medication administration, medication statement or a device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $instance = null;
 
     /**
      * Information on the possible cause of the event.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventCausality[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventCausality[]
      */
     public $causality = [];
 
@@ -88,7 +88,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
 
     /**
      * Identifies the actual instance of what caused the adverse event.  May be a substance, medication, medication administration, medication statement or a device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInstance()
     {
@@ -97,7 +97,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
 
     /**
      * Identifies the actual instance of what caused the adverse event.  May be a substance, medication, medication administration, medication statement or a device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $instance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $instance
      * @return $this
      */
     public function setInstance($instance)
@@ -108,7 +108,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
 
     /**
      * Information on the possible cause of the event.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventCausality[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventCausality[]
      */
     public function getCausality()
     {
@@ -117,7 +117,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
 
     /**
      * Information on the possible cause of the event.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventCausality $causality
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventCausality $causality
      * @return $this
      */
     public function addCausality($causality)

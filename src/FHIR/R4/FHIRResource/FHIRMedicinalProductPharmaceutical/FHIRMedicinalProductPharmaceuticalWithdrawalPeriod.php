@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A pharmaceutical product described in terms of its composition and dose form.
@@ -71,19 +71,19 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 {
     /**
      * Coded expression for the type of tissue for which the withdrawal period applues, e.g. meat, milk.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $tissue = null;
 
     /**
      * A value for the time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $value = null;
 
     /**
      * Extra information about the withdrawal period.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $supportingInformation = null;
 
@@ -94,7 +94,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 
     /**
      * Coded expression for the type of tissue for which the withdrawal period applues, e.g. meat, milk.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTissue()
     {
@@ -103,7 +103,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 
     /**
      * Coded expression for the type of tissue for which the withdrawal period applues, e.g. meat, milk.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $tissue
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $tissue
      * @return $this
      */
     public function setTissue($tissue)
@@ -114,7 +114,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 
     /**
      * A value for the time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValue()
     {
@@ -123,7 +123,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 
     /**
      * A value for the time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $value
      * @return $this
      */
     public function setValue($value)
@@ -134,7 +134,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 
     /**
      * Extra information about the withdrawal period.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSupportingInformation()
     {
@@ -143,7 +143,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
 
     /**
      * Extra information about the withdrawal period.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $supportingInformation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $supportingInformation
      * @return $this
      */
     public function setSupportingInformation($supportingInformation)

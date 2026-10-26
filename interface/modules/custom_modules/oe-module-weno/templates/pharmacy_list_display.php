@@ -3,20 +3,20 @@
 /**
  * Handles the display of weno selected pharmacies
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Kofi Appiah <kkappiah@medsov.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Omega Systems Group International. <info@omegasystemsgroup.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Modules\WenoModule\Services\PharmacyService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Modules\WenoModule\Services\PharmacyService;
 
 // This template is embedded in demographics dashboard rendering via
 // RenderPharmacySectionEvent. Do not hard-exit the parent page when the

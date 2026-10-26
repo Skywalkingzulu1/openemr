@@ -4,18 +4,18 @@
  * This file was adapted from the following file: https://github.com/projectcypress/cypress/blob/v6.2.2.1/lib/ext/individual_result.rb
  * But I believe it should rather be adapted from this project: https://github.com/projecttacoma/cqm-models/blob/master/app/models/cqm/individual_result.rb
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm;
+namespace DCL\Services\Qdm;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\AbstractType;
-use OpenEMR\Cqm\Qdm\Identifier;
-use OpenEMR\Services\Qdm\Services\PatientService;
+use DCL\Cqm\Qdm\BaseTypes\AbstractType;
+use DCL\Cqm\Qdm\Identifier;
+use DCL\Services\Qdm\Services\PatientService;
 
 class IndividualResult extends AbstractType
 {
@@ -63,7 +63,7 @@ class IndividualResult extends AbstractType
      * IndividualResult constructor.
      *
      * @param array<mixed> $_result one population set's result from the calculation engine
-     * @param \OpenEMR\Services\Qdm\Measure $measure
+     * @param \DCL\Services\Qdm\Measure $measure
      */
     public function __construct(array $_result, public $measure)
     {

@@ -2,22 +2,22 @@
 
 /*
  * FhirQuestionnaireRestControllerTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\RestControllers\FHIR;
+namespace DCL\Tests\RestControllers\FHIR;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Logging\SystemLogger;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\RestControllers\FHIR\FhirQuestionnaireRestController;
-use OpenEMR\Services\FHIR\FhirQuestionnaireService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Logging\SystemLogger;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\RestControllers\FHIR\FhirQuestionnaireRestController;
+use DCL\Services\FHIR\FhirQuestionnaireService;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;

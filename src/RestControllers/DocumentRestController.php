@@ -3,21 +3,21 @@
 /**
  * DocumentRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\DocumentService;
-use OpenEMR\Services\PatientService;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\DocumentService;
+use DCL\Services\PatientService;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -92,7 +92,7 @@ class DocumentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAllAtPath($pid, $path)
     {
@@ -148,7 +148,7 @@ class DocumentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function postWithPath($pid, $path, $fileData, $eid)
     {
@@ -217,7 +217,7 @@ class DocumentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function downloadFile($pid, $did)
     {
@@ -235,7 +235,7 @@ class DocumentRestController
         // Emit the document body via StreamedResponse rather than BinaryFileResponse.
         // BinaryFileResponse's first constructor argument is a filesystem path --
         // when the stored document body happens to look like an absolute path
-        // (e.g. `/var/www/localhost/htdocs/openemr/sites/default/sqlconf.php`)
+        // (e.g. `/var/www/localhost/htdocs/DCL/sites/default/sqlconf.php`)
         // Symfony streams the local file at that path rather than the bytes the caller
         // uploaded. Handing bytes to a callback keeps the response class out of the
         // filesystem entirely.

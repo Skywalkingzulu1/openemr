@@ -3,21 +3,21 @@
 /**
  * FhirMedicationDispenseRestController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirMedicationDispenseService;
-use OpenEMR\Services\FHIR\FhirResourcesService;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirMedicationDispenseService;
+use DCL\Services\FHIR\FhirResourcesService;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -129,7 +129,7 @@ class FhirMedicationDispenseRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll(array $searchParams, ?string $puuidBind = null): Response
     {
@@ -236,7 +236,7 @@ class FhirMedicationDispenseRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne(string $fhirId, ?string $puuidBind = null): Response
     {

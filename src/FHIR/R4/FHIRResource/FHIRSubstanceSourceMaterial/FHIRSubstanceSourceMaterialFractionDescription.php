@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical origins as well as the fraction of a material that can result in or can be modified to form a substance. This set of data elements shall be used to define polymer substances isolated from biological matrices. Taxonomic and anatomical origins shall be described using a controlled vocabulary as required. This information is captured for naturally derived polymers ( . starch) and structurally diverse substances. For Organisms belonging to the Kingdom Plantae the Substance level defines the fresh material of a single species or infraspecies, the Herbal Drug and the Herbal preparation. For Herbal preparations, the fraction information will be captured at the Substance information level and additional information for herbal extracts will be captured at the Specified Substance Group 1 information level. See for further explanation the Substance Class: Structurally Diverse and the herbal annex.
@@ -71,13 +71,13 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
 {
     /**
      * This element is capturing information about the fraction of a plant part, or human plasma for fractionation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $fraction = null;
 
     /**
      * The specific type of the material constituting the component. For Herbal preparations the particulars of the extracts (liquid/dry) is described in Specified Substance Group 1.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $materialType = null;
 
@@ -88,7 +88,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
 
     /**
      * This element is capturing information about the fraction of a plant part, or human plasma for fractionation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getFraction()
     {
@@ -97,7 +97,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
 
     /**
      * This element is capturing information about the fraction of a plant part, or human plasma for fractionation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $fraction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $fraction
      * @return $this
      */
     public function setFraction($fraction)
@@ -108,7 +108,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
 
     /**
      * The specific type of the material constituting the component. For Herbal preparations the particulars of the extracts (liquid/dry) is described in Specified Substance Group 1.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMaterialType()
     {
@@ -117,7 +117,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
 
     /**
      * The specific type of the material constituting the component. For Herbal preparations the particulars of the extracts (liquid/dry) is described in Specified Substance Group 1.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $materialType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $materialType
      * @return $this
      */
     public function setMaterialType($materialType)

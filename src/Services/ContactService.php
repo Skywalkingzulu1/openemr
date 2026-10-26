@@ -4,18 +4,18 @@
  * Contact Service - Clean Design with 1:1 Entity Relationship
  * Manages Contact entities with a 1:1 relationship to foreign entities
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\ORDataObject\Contact;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\ORDataObject\Contact;
+use DCL\Services\BaseService;
+use DCL\Validators\ProcessingResult;
 
 class ContactService extends BaseService
 {
@@ -157,7 +157,7 @@ class ContactService extends BaseService
     {
         $contact = $this->getForEntity($foreignTable, $foreignId);
 
-        if (!$contact instanceof \OpenEMR\Common\ORDataObject\Contact) {
+        if (!$contact instanceof \DCL\Common\ORDataObject\Contact) {
             $processingResult = new ProcessingResult();
             $processingResult->addProcessingError("No contact found for entity");
             return $processingResult;
@@ -227,7 +227,7 @@ class ContactService extends BaseService
 
             // Get the contact
             $contact = $this->get($contactId);
-            if (!$contact instanceof \OpenEMR\Common\ORDataObject\Contact) {
+            if (!$contact instanceof \DCL\Common\ORDataObject\Contact) {
                 $processingResult->addProcessingError("Contact not found");
                 return $processingResult;
             }

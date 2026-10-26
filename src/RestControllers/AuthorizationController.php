@@ -3,18 +3,18 @@
 /**
  * Authorization Server Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2020-2026 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use DateInterval;
 use DateTimeImmutable;
@@ -37,56 +37,56 @@ use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
 use Nyholm\Psr7\Stream;
 use Nyholm\Psr7Server\ServerRequestCreator;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\AuthEvent;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Auth\MfaUtils;
-use OpenEMR\Common\Auth\OAuth2KeyConfig;
-use OpenEMR\Common\Auth\OAuth2KeyException;
-use OpenEMR\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomAuthCodeGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomPasswordGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomRefreshTokenGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\IdTokenSMARTResponse;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AuthCodeRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\UserRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\SMARTSessionTokenContextBuilder;
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\HttpSessionFactory;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Http\SsrfSafeUrlValidator;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Common\Utils\HttpUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\Core\TemplatePageEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
-use OpenEMR\RestControllers\SMART\ScopeConsentResolver;
-use OpenEMR\RestControllers\SMART\ScopePermissionParser;
-use OpenEMR\RestControllers\SMART\SMARTAuthorizationController;
-use OpenEMR\Services\DecisionSupportInterventionService;
-use OpenEMR\Services\JWTClientAuthenticationService;
-use OpenEMR\Services\TrustedUserService;
-use OpenEMR\Services\UserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\AuthEvent;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Auth\MfaUtils;
+use DCL\Common\Auth\OAuth2KeyConfig;
+use DCL\Common\Auth\OAuth2KeyException;
+use DCL\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomAuthCodeGrant;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomPasswordGrant;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomRefreshTokenGrant;
+use DCL\Common\Auth\OpenIDConnect\IdTokenSMARTResponse;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AuthCodeRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\UserRepository;
+use DCL\Common\Auth\OpenIDConnect\SMARTSessionTokenContextBuilder;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpSessionFactory;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Http\SsrfSafeUrlValidator;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Common\Utils\HttpUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\Core\TemplatePageEvent;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\SMART\SMARTLaunchToken;
+use DCL\RestControllers\SMART\ScopeConsentResolver;
+use DCL\RestControllers\SMART\ScopePermissionParser;
+use DCL\RestControllers\SMART\SMARTAuthorizationController;
+use DCL\Services\DecisionSupportInterventionService;
+use DCL\Services\JWTClientAuthenticationService;
+use DCL\Services\TrustedUserService;
+use DCL\Services\UserService;
 use OpenIDConnectServer\ClaimExtractor;
 use OpenIDConnectServer\Entities\ClaimSetEntity;
 use Psr\Http\Message\ResponseInterface;
@@ -192,7 +192,7 @@ class AuthorizationController implements LoggerAwareInterface
         $this->globalsBag = $globalsBag;
         if (empty($this->session->get('site_id'))) {
             // should never reach this but just in case
-            throw OAuthServerException::serverError("OpenEMR error - unable to collect site id, so forced exit");
+            throw OAuthServerException::serverError("DCL error - unable to collect site id, so forced exit");
         }
         $this->siteId = $this->session->get('site_id');
         $this->authBaseUrl = $this->webroot . '/oauth2/' . $this->siteId;
@@ -251,7 +251,7 @@ class AuthorizationController implements LoggerAwareInterface
             $this->oaEncryptionKey = $oauth2KeyConfig->getEncryptionKey();
             $this->passphrase = $oauth2KeyConfig->getPassPhrase();
         } catch (OAuth2KeyException $exception) {
-            $this->logger->error("OpenEMR error - " . $exception->getMessage() . ", so forced exit");
+            $this->logger->error("DCL error - " . $exception->getMessage() . ", so forced exit");
             $serverException = OAuthServerException::serverError(
                 "Security error - problem with authorization server keys.",
                 $exception
@@ -821,7 +821,7 @@ class AuthorizationController implements LoggerAwareInterface
                 return $psrFactory->createResponse(Response::HTTP_TEMPORARY_REDIRECT)->withHeader("Location", $this->authBaseUrl . "/provider/login");
             } else {
                 throw OAuthServerException::serverError(
-                    "OpenEMR error - unable to process authorization request, provider form is not enabled"
+                    "DCL error - unable to process authorization request, provider form is not enabled"
                 );
             }
         } catch (OAuthServerException $exception) {
@@ -1411,7 +1411,7 @@ class AuthorizationController implements LoggerAwareInterface
     }
 
     /**
-     * Route handler for any SMART authorization contexts that we need for OpenEMR
+     * Route handler for any SMART authorization contexts that we need for DCL
      * @param $end_point
      */
     public function dispatchSMARTAuthorizationEndpoint($end_point, HttpRestRequest $request): ResponseInterface

@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Eric Stern <erics@opencoreemr.com>
+ * @author    Eric Stern <erics@DCL.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL <https://DCL.com>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\CodeTypes;
+namespace DCL\Services\CodeTypes;
 
 use Doctrine\ORM\EntityManagerInterface;
-use OpenEMR\Entities\Code;
-use OpenEMR\Entities\CodeType;
-use OpenEMR\Entities\ListOption;
+use DCL\Entities\Code;
+use DCL\Entities\CodeType;
+use DCL\Entities\ListOption;
 use Psr\Log\LoggerInterface;
 
 /**

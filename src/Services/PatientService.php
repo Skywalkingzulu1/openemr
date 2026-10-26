@@ -3,39 +3,39 @@
 /**
  * Patient Service
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Victor Kofia <victor.kofia@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2017 Victor Kofia <victor.kofia@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryPagination;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\TableTypes;
-use OpenEMR\Common\ORDataObject\ContactAddress;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Patient\BeforePatientCreatedEvent;
-use OpenEMR\Events\Patient\BeforePatientUpdatedEvent;
-use OpenEMR\Events\Patient\PatientCreatedEvent;
-use OpenEMR\Events\Patient\PatientUpdatedEvent;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchConfigClauseBuilder;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\SearchQueryConfig;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\PatientValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryPagination;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\TableTypes;
+use DCL\Common\ORDataObject\ContactAddress;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Patient\BeforePatientCreatedEvent;
+use DCL\Events\Patient\BeforePatientUpdatedEvent;
+use DCL\Events\Patient\PatientCreatedEvent;
+use DCL\Events\Patient\PatientUpdatedEvent;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchConfigClauseBuilder;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\SearchQueryConfig;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\PatientValidator;
+use DCL\Validators\ProcessingResult;
 
 /**
  * @phpstan-import-type PatientDataRow from TableTypes

@@ -8,22 +8,22 @@
  * Can get developer sandbox credentials for server https://www.assessmentcenter.net/ac_api by
  *  getting an account at https://www.assessmentcenter.net
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Shiqiang Tao <StrongTSQ@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Shiqiang Tao <StrongTSQ@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Easipro;
+namespace DCL\Easipro;
 
 use MyMailer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\oeHttp;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\oeHttp;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\DateFormatterUtils;
 
 class Easipro
 {
@@ -162,7 +162,7 @@ class Easipro
         $message .= 'Dear ' . text($user_name) . ', <br><br>Your patient ' . text($pt_name) . ' completed a measurement: <b>';
         $message .= text($row['form_name']);
         $message .= '</b><br>';
-        $message .= 'Please log in to OpenEMR and review it.';
+        $message .= 'Please log in to DCL and review it.';
         $message .= '<center> Thanks';
         $message .= '</td></tr></tbody></table>';
         $message .= '</td></tr></tbody></table>';

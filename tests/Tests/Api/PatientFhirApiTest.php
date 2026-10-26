@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\RestControllers\FHIR\FhirPatientRestController;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
+use DCL\RestControllers\FHIR\FhirPatientRestController;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
  * GET/PUT /fhir/Patient/:uuid HTTP-level coverage (see #12343), added to the pre-existing
  * search tests below.
  *
- * OpenEMR vs FHIR conventions pinned by these tests (server behavior, not the spec):
+ * DCL vs FHIR conventions pinned by these tests (server behavior, not the spec):
  * - Read-one errors return validationErrors (400) for a malformed uuid, or an empty JSON
  *   array (404) for an unknown-but-well-formed one -- same shape as every other FHIR
  *   read-one route in this codebase (RestControllerHelper::handleFhirProcessingResult()).
@@ -35,9 +35,9 @@ class PatientFhirApiTest extends TestCase
     private FhirPatientRestController $fhirPatientController;
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 //        $this->baseUrl = $baseUrl;
 //        $this->oauthBaseUrl = $baseUrl . self::CAPABILITY_OAUTH_PREFIX;
 
@@ -236,7 +236,7 @@ class PatientFhirApiTest extends TestCase
      */
     public function testGetOneUnauthorizedReturns401(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $unauthClient = new ApiTestClient($baseUrl, false);
         // Deliberately do NOT call setAuthToken().
         $result = $unauthClient->getOne(self::ENDPOINT, "11111111-1111-1111-1111-111111111111");

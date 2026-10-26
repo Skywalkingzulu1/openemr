@@ -3,19 +3,19 @@
 /**
  * login_counter_ip_tracker.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2023 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\SessionWrapperFactory;
 
 require_once(__DIR__ . "/../../interface/globals.php");
 

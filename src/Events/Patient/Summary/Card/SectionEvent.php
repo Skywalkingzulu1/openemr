@@ -5,14 +5,14 @@
  *
  * Event that can be used to render a block of Cards.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2022 Robert Down <robertdown@live.com
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Patient\Summary\Card;
+namespace DCL\Events\Patient\Summary\Card;
 
 use DomainException;
 use Symfony\Contracts\EventDispatcher\Event;

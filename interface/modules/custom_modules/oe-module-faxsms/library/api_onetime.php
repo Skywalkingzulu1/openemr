@@ -3,20 +3,20 @@
 /**
  * Portal OneTime for API
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c)2023-2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General public License 3
  */
 
 require_once(__DIR__ . "/../../../../globals.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Messaging\SendNotificationEvent;
-use OpenEMR\Services\PatientPortalService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Messaging\SendNotificationEvent;
+use DCL\Services\PatientPortalService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!CsrfUtils::verifyCsrfToken($_REQUEST["csrf_token_form"] ?? '', $session, 'contact-form')) {
@@ -116,7 +116,7 @@ function doOnetimeDocumentRequest(): void
 
 /**
  * One-time request guards, kept in a class so the helpers are not defined in
- * the global function namespace (openemr.noGlobalNsFunctions). Inlined here
+ * the global function namespace (DCL.noGlobalNsFunctions). Inlined here
  * rather than autoloaded from src/ because this is a direct entry point.
  */
 final class OneTimeRequestGuard
@@ -165,7 +165,7 @@ final class OneTimeRequestGuard
      */
     public static function fail(\Throwable $e): never
     {
-        \OpenEMR\BC\ServiceContainer::getLogger()->error('api_onetime.php request failed', ['exception' => $e]);
+        \DCL\BC\ServiceContainer::getLogger()->error('api_onetime.php request failed', ['exception' => $e]);
         http_response_code(400);
         die(xlt('Error: the request could not be completed.'));
     }

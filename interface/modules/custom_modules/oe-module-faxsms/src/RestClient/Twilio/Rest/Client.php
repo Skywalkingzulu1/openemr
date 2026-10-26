@@ -15,14 +15,14 @@
  * core and adds no new dependency. Twilio Programmable Fax was sunset in 2021,
  * so only the SMS surface is reproduced.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\RestClient\Twilio\Rest;
+namespace DCL\Modules\FaxSMS\RestClient\Twilio\Rest;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;

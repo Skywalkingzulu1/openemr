@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.
@@ -72,91 +72,91 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 {
     /**
      * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this graph definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the graph definition is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * The identifier that is used to identify this version of the graph definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the graph definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the graph definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The status of this graph definition. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the graph definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the graph definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the graph definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate graph definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the graph definition is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this graph definition is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * The type of FHIR resource at which instances of this graph start.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $start = null;
 
     /**
      * The profile that describes the use of the base resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
     /**
      * Links this graph makes rules about.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
     public $link = [];
 
@@ -167,7 +167,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this graph definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the graph definition is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -176,7 +176,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this graph definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the graph definition is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -187,7 +187,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The identifier that is used to identify this version of the graph definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the graph definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -196,7 +196,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The identifier that is used to identify this version of the graph definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the graph definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -207,7 +207,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A natural language name identifying the graph definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -216,7 +216,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A natural language name identifying the graph definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -227,7 +227,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The status of this graph definition. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -236,7 +236,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The status of this graph definition. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -247,7 +247,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A Boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -256,7 +256,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A Boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -267,7 +267,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The date  (and optionally time) when the graph definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -276,7 +276,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The date  (and optionally time) when the graph definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -287,7 +287,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the organization or individual that published the graph definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -296,7 +296,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the organization or individual that published the graph definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -307,7 +307,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -316,7 +316,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -327,7 +327,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A free text natural language description of the graph definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -336,7 +336,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A free text natural language description of the graph definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -347,7 +347,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate graph definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -356,7 +356,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate graph definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -367,7 +367,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A legal or geographic region in which the graph definition is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -376,7 +376,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A legal or geographic region in which the graph definition is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -387,7 +387,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Explanation of why this graph definition is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -396,7 +396,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Explanation of why this graph definition is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -407,7 +407,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The type of FHIR resource at which instances of this graph start.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getStart()
     {
@@ -416,7 +416,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The type of FHIR resource at which instances of this graph start.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $start
      * @return $this
      */
     public function setStart($start)
@@ -427,7 +427,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The profile that describes the use of the base resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -436,7 +436,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The profile that describes the use of the base resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)
@@ -447,7 +447,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Links this graph makes rules about.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
     public function getLink()
     {
@@ -456,7 +456,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Links this graph makes rules about.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink $link
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink $link
      * @return $this
      */
     public function addLink($link)

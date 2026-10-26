@@ -3,28 +3,28 @@
 /**
  * Immunizations
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 require_once($srcdir . "/options.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\Types\EncounterListOptionType;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Menu\PatientMenuRole;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\Types\EncounterListOptionType;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Menu\PatientMenuRole;
 
 if (!AclMain::aclCheckCore('patients', 'med')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/med: Immunizations", xl("Immunizations"));

@@ -1,9 +1,9 @@
 /*
- * OpenEMR native FHIR R4 / SDC Questionnaire runtime.
+ * DCL native FHIR R4 / SDC Questionnaire runtime.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Jerry Padgett <sjpadgett@gmail.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 (function (global) {
     'use strict';
@@ -1550,12 +1550,12 @@
         emitWarnings() {
             const warnings = [...this.compiled.warnings, ...this.expressionEngine.warnings];
             if (warnings.length > 0 && global.console?.warn) {
-                console.warn('OpenEMR Questionnaire runtime warnings:', warnings);
+                console.warn('DCL Questionnaire runtime warnings:', warnings);
             }
         }
     }
 
-    global.OpenEMRQuestionnaire = {
+    global.DCLQuestionnaire = {
         version: '0.2.0',
         EXTENSIONS,
         QuestionnaireCompiler,

@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient;
-use OpenEMR\Services\FHIR\FhirPatientService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPatient;
+use DCL\Services\FHIR\FhirPatientService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -14,11 +14,11 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR Patient Service Query Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 
@@ -48,7 +48,7 @@ class FhirPatientServiceQueryTest extends TestCase
 
     /**
      * Executes assertions against a 'GetAll' Patient Search processing result
-     * @param $processingResult The OpenEMR Processing Result
+     * @param $processingResult The DCL Processing Result
      * @param $isExpectedToHaveAResult Indicates if the result is expected to have at least one search result
      */
     private function assertGetAllSearchResults($processingResult, $isExpectedToHaveAResult = true)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance;
+namespace DCL\FHIR\R4\FHIRResource\FHIRProvenance;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
@@ -71,25 +71,25 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * The participation the agent had with respect to the activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $role = [];
 
     /**
      * The individual, device or organization that participated in the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $who = null;
 
     /**
      * The individual, device, or organization for whom the change was made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $onBehalfOf = null;
 
@@ -100,7 +100,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The participation the agent had with respect to the activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -109,7 +109,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The participation the agent had with respect to the activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -120,7 +120,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRole()
     {
@@ -129,7 +129,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function addRole($role)
@@ -140,7 +140,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The individual, device or organization that participated in the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getWho()
     {
@@ -149,7 +149,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The individual, device or organization that participated in the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $who
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $who
      * @return $this
      */
     public function setWho($who)
@@ -160,7 +160,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The individual, device, or organization for whom the change was made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf()
     {
@@ -169,7 +169,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The individual, device, or organization for whom the change was made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
      * @return $this
      */
     public function setOnBehalfOf($onBehalfOf)

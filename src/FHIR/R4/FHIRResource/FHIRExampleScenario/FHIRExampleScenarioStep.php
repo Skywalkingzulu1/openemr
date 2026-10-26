@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,25 +71,25 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * Nested process.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
     public $process = [];
 
     /**
      * If there is a pause in the flow.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $pause = null;
 
     /**
      * Each interaction or action.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioOperation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioOperation
      */
     public $operation = null;
 
     /**
      * Indicates an alternative step that can be taken instead of the operations on the base step in exceptional/atypical circumstances.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
      */
     public $alternative = [];
 
@@ -100,7 +100,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Nested process.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
     public function getProcess()
     {
@@ -109,7 +109,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Nested process.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess $process
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioProcess $process
      * @return $this
      */
     public function addProcess($process)
@@ -120,7 +120,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * If there is a pause in the flow.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getPause()
     {
@@ -129,7 +129,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * If there is a pause in the flow.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $pause
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $pause
      * @return $this
      */
     public function setPause($pause)
@@ -140,7 +140,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Each interaction or action.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioOperation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioOperation
      */
     public function getOperation()
     {
@@ -149,7 +149,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Each interaction or action.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioOperation $operation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioOperation $operation
      * @return $this
      */
     public function setOperation($operation)
@@ -160,7 +160,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Indicates an alternative step that can be taken instead of the operations on the base step in exceptional/atypical circumstances.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
      */
     public function getAlternative()
     {
@@ -169,7 +169,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Indicates an alternative step that can be taken instead of the operations on the base step in exceptional/atypical circumstances.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioAlternative $alternative
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioAlternative $alternative
      * @return $this
      */
     public function addAlternative($alternative)

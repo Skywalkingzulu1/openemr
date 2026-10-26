@@ -2,32 +2,32 @@
 
 /**
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Brad Sharp <brad.sharp@claimrev.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022-2025 Brad Sharp <brad.sharp@claimrev.com>
  * @copyright Copyright (c) 2024-2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
- namespace OpenEMR\Modules\Dorn;
+ namespace DCL\Modules\Dorn;
 
 /**
- * Note the below use statements are importing classes from the OpenEMR core codebase
+ * Note the below use statements are importing classes from the DCL core codebase
  */
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\TwigEnvironmentEvent;
-use OpenEMR\Events\Globals\GlobalsInitializedEvent;
-use OpenEMR\Events\Main\Tabs\RenderEvent;
-use OpenEMR\Events\RestApiExtend\RestApiResourceServiceEvent;
-use OpenEMR\Menu\MenuEvent;
-use OpenEMR\Modules\Dorn\EventSubscriber\DornLabSubscriber;
-use OpenEMR\Services\Globals\GlobalSetting;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\TwigEnvironmentEvent;
+use DCL\Events\Globals\GlobalsInitializedEvent;
+use DCL\Events\Main\Tabs\RenderEvent;
+use DCL\Events\RestApiExtend\RestApiResourceServiceEvent;
+use DCL\Menu\MenuEvent;
+use DCL\Modules\Dorn\EventSubscriber\DornLabSubscriber;
+use DCL\Services\Globals\GlobalSetting;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Twig\Error\LoaderError;
@@ -56,7 +56,7 @@ class Bootstrap
     private readonly LoggerInterface $logger;
 
     /**
-     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the OpenEMR system
+     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the DCL system
      * @param ?Kernel $kernel
      */
     public function __construct(
@@ -191,7 +191,7 @@ class Bootstrap
         $menuItem->acl_req = ["patients", "lab"];
         $menuItem->label = xlt("DORN Lab Integration");
         $menuItem->global_req = [];
-            // TODO: pull the install location into a constant into the codebase so if OpenEMR changes this location it
+            // TODO: pull the install location into a constant into the codebase so if DCL changes this location it
         // doesn't break any modules.
         $menuItem->url = "/interface/modules/custom_modules/oe-module-dorn/public/index.php";
         $menuItem->children = [];
@@ -214,7 +214,7 @@ class Bootstrap
 
 
         /**
-         * This menu flag takes a boolean property defined in the $GLOBALS array that OpenEMR populates.
+         * This menu flag takes a boolean property defined in the $GLOBALS array that DCL populates.
          * It allows a menu item to display if the property is true, and be hidden if the property is false
          */
         //$menuItem->global_req = ["custom_skeleton_module_enable"];

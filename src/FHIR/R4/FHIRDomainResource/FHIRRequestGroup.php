@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A group of related requests that can be used to capture intended activities that have inter-dependencies such as "give this medication after that one".
@@ -72,109 +72,109 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Allows a service to provide a unique, business identifier for the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * Completed or terminated request(s) whose function is taken by this new request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $replaces = [];
 
     /**
      * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $groupIdentifier = null;
 
     /**
      * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public $status = null;
 
     /**
      * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public $intent = null;
 
     /**
      * Indicates how quickly the request should be addressed with respect to other requests.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
      * A code that identifies what the overall request group is.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The subject for which the request group was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * Describes the context of the request group, if any.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * Indicates when the request group was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $authoredOn = null;
 
     /**
      * Provides a reference to the author of the request group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * Describes the reason for the request group in coded or textual form.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates another resource whose existence justifies this request group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     public $action = [];
 
@@ -185,7 +185,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Allows a service to provide a unique, business identifier for the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -194,7 +194,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Allows a service to provide a unique, business identifier for the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -205,7 +205,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -214,7 +214,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -225,7 +225,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -234,7 +234,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -245,7 +245,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -254,7 +254,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -265,7 +265,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Completed or terminated request(s) whose function is taken by this new request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReplaces()
     {
@@ -274,7 +274,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Completed or terminated request(s) whose function is taken by this new request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $replaces
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $replaces
      * @return $this
      */
     public function addReplaces($replaces)
@@ -285,7 +285,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getGroupIdentifier()
     {
@@ -294,7 +294,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $groupIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $groupIdentifier
      * @return $this
      */
     public function setGroupIdentifier($groupIdentifier)
@@ -305,7 +305,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public function getStatus()
     {
@@ -314,7 +314,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -325,7 +325,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public function getIntent()
     {
@@ -334,7 +334,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -345,7 +345,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the request should be addressed with respect to other requests.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -354,7 +354,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the request should be addressed with respect to other requests.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -365,7 +365,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that identifies what the overall request group is.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -374,7 +374,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that identifies what the overall request group is.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -385,7 +385,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The subject for which the request group was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -394,7 +394,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The subject for which the request group was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -405,7 +405,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the context of the request group, if any.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -414,7 +414,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the context of the request group, if any.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -425,7 +425,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates when the request group was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn()
     {
@@ -434,7 +434,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates when the request group was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
     public function setAuthoredOn($authoredOn)
@@ -445,7 +445,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a reference to the author of the request group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -454,7 +454,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a reference to the author of the request group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -465,7 +465,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the reason for the request group in coded or textual form.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -474,7 +474,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the reason for the request group in coded or textual form.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -485,7 +485,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource whose existence justifies this request group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -494,7 +494,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource whose existence justifies this request group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -505,7 +505,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -514,7 +514,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -525,7 +525,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     public function getAction()
     {
@@ -534,7 +534,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction $action
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction $action
      * @return $this
      */
     public function addAction($action)

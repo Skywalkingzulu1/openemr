@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Events\RestApiExtend;
+namespace DCL\Events\RestApiExtend;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

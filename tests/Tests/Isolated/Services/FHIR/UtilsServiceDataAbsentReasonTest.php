@@ -10,17 +10,17 @@ declare(strict_types=1);
  * element's extensions produced an extension without a url (Observation.performer failed
  * US Core validation in the Inferno certification run).
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\UtilsService;
 use PHPUnit\Framework\TestCase;
 
 class UtilsServiceDataAbsentReasonTest extends TestCase

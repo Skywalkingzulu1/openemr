@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,25 +71,25 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Indicates a purpose for which the contact can be reached.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $purpose = null;
 
     /**
      * A name associated with the contact.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public $name = null;
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Visiting or postal addresses for the contact.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public $address = null;
 
@@ -100,7 +100,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates a purpose for which the contact can be reached.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPurpose()
     {
@@ -109,7 +109,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates a purpose for which the contact can be reached.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -120,7 +120,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A name associated with the contact.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public function getName()
     {
@@ -129,7 +129,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A name associated with the contact.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHumanName $name
      * @return $this
      */
     public function setName($name)
@@ -140,7 +140,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -149,7 +149,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -160,7 +160,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Visiting or postal addresses for the contact.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public function getAddress()
     {
@@ -169,7 +169,7 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Visiting or postal addresses for the contact.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function setAddress($address)

@@ -6,8 +6,8 @@
  * This program creates the segments for the x12 270 eligibility file
  * It also allows the reading and storing of the x12 271 file
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Terry Hill <terry@lilysystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -19,18 +19,18 @@
  * @copyright Copyright (c) 2019 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2023 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
 use edih_271_codes;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\MultipartStream;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Billing\BillingProcessor\BillingClaimBatchControlNumber;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Billing\BillingProcessor\BillingClaimBatchControlNumber;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Core\OEGlobalsBag;
 
 require_once(__DIR__ . "/../../library/edihistory/codes/edih_271_code_class.php");
 

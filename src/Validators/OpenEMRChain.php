@@ -1,22 +1,22 @@
 <?php
 
 /**
- * OpenEMRChain - OpenEMR specific validator chain.
- * This class extends the Particle\Validator\Chain class to provide OpenEMR specific validation rules.
+ * DCLChain - DCL specific validator chain.
+ * This class extends the Particle\Validator\Chain class to provide DCL specific validation rules.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
-use OpenEMR\Validators\Rules\ListOptionRule;
+use DCL\Validators\Rules\ListOptionRule;
 use Particle\Validator\Chain;
 
-class OpenEMRChain extends Chain
+class DCLChain extends Chain
 {
     /**
      * @return $this

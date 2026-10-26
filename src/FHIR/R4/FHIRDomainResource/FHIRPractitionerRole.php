@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.
@@ -72,85 +72,85 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * Business Identifiers that are specific to a role/location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Whether this practitioner role record is in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Practitioner that is able to provide the defined services for the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $practitioner = null;
 
     /**
      * The organization where the Practitioner performs the roles associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $organization = null;
 
     /**
      * Roles which this practitioner is authorized to perform for the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * Specific specialty of the practitioner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialty = [];
 
     /**
      * The location(s) at which this practitioner provides care.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $location = [];
 
     /**
      * The list of healthcare services that this worker provides for this role's Organization/Location(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $healthcareService = [];
 
     /**
      * Contact details that are specific to the role/location/service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * A collection of times the practitioner is available or performing this role at the location and/or healthcareservice.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
      */
     public $availableTime = [];
 
     /**
      * The practitioner is not available or performing this role during this period of time due to the provided reason.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[]
      */
     public $notAvailable = [];
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $availabilityExceptions = null;
 
     /**
      * Technical endpoints providing access to services operated for the practitioner with this role.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
@@ -161,7 +161,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Business Identifiers that are specific to a role/location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -170,7 +170,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Business Identifiers that are specific to a role/location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -181,7 +181,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Whether this practitioner role record is in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -190,7 +190,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Whether this practitioner role record is in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -201,7 +201,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -210,7 +210,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -221,7 +221,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Practitioner that is able to provide the defined services for the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPractitioner()
     {
@@ -230,7 +230,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Practitioner that is able to provide the defined services for the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $practitioner
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $practitioner
      * @return $this
      */
     public function setPractitioner($practitioner)
@@ -241,7 +241,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The organization where the Practitioner performs the roles associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOrganization()
     {
@@ -250,7 +250,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The organization where the Practitioner performs the roles associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $organization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $organization
      * @return $this
      */
     public function setOrganization($organization)
@@ -261,7 +261,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Roles which this practitioner is authorized to perform for the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -270,7 +270,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Roles which this practitioner is authorized to perform for the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -281,7 +281,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Specific specialty of the practitioner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
@@ -290,7 +290,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Specific specialty of the practitioner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -301,7 +301,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The location(s) at which this practitioner provides care.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getLocation()
     {
@@ -310,7 +310,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The location(s) at which this practitioner provides care.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function addLocation($location)
@@ -321,7 +321,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The list of healthcare services that this worker provides for this role's Organization/Location(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getHealthcareService()
     {
@@ -330,7 +330,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The list of healthcare services that this worker provides for this role's Organization/Location(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $healthcareService
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $healthcareService
      * @return $this
      */
     public function addHealthcareService($healthcareService)
@@ -341,7 +341,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Contact details that are specific to the role/location/service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -350,7 +350,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Contact details that are specific to the role/location/service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -361,7 +361,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A collection of times the practitioner is available or performing this role at the location and/or healthcareservice.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
      */
     public function getAvailableTime()
     {
@@ -370,7 +370,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A collection of times the practitioner is available or performing this role at the location and/or healthcareservice.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime $availableTime
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime $availableTime
      * @return $this
      */
     public function addAvailableTime($availableTime)
@@ -381,7 +381,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The practitioner is not available or performing this role during this period of time due to the provided reason.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable[]
      */
     public function getNotAvailable()
     {
@@ -390,7 +390,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The practitioner is not available or performing this role during this period of time due to the provided reason.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable $notAvailable
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable $notAvailable
      * @return $this
      */
     public function addNotAvailable($notAvailable)
@@ -401,7 +401,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAvailabilityExceptions()
     {
@@ -410,7 +410,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $availabilityExceptions
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $availabilityExceptions
      * @return $this
      */
     public function setAvailabilityExceptions($availabilityExceptions)
@@ -421,7 +421,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Technical endpoints providing access to services operated for the practitioner with this role.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -430,7 +430,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Technical endpoints providing access to services operated for the practitioner with this role.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)

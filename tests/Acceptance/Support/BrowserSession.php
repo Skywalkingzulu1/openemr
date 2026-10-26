@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Support;
+namespace DCL\Tests\Acceptance\Support;
 
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Symfony\Component\Panther\Client;
@@ -104,13 +104,13 @@ final class BrowserSession
     /**
      * Selenium grid path — WebDriver session on a remote grid. Env
      * inputs mirror what tests/Tests/E2e BaseTrait already accepts,
-     * so a dev running acceptance from inside the dev-easy openemr
+     * so a dev running acceptance from inside the dev-easy DCL
      * container just needs SELENIUM_USE_GRID=true and things work.
      */
     private static function createGridClient(): Client
     {
         $host = getenv('SELENIUM_HOST') ?: 'selenium';
-        $externalBaseUri = getenv('SELENIUM_BASE_URL') ?: 'http://openemr';
+        $externalBaseUri = getenv('SELENIUM_BASE_URL') ?: 'http://DCL';
 
         $capabilities = DesiredCapabilities::chrome();
         $capabilities->setCapability('goog:chromeOptions', ['args' => self::CHROME_ARGS]);

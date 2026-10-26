@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
@@ -71,25 +71,25 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 {
     /**
      * An Internal id that is used to identify this mapping set when specific mappings are made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $identity = null;
 
     /**
      * An absolute URI that identifies the specification that this mapping is expressed to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $uri = null;
 
     /**
      * A name for the specification that is being mapped to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Comments about this mapping, including version notes, issues, scope limitations, and other important notes for usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
@@ -100,7 +100,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * An Internal id that is used to identify this mapping set when specific mappings are made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getIdentity()
     {
@@ -109,7 +109,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * An Internal id that is used to identify this mapping set when specific mappings are made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $identity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $identity
      * @return $this
      */
     public function setIdentity($identity)
@@ -120,7 +120,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * An absolute URI that identifies the specification that this mapping is expressed to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUri()
     {
@@ -129,7 +129,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * An absolute URI that identifies the specification that this mapping is expressed to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $uri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $uri
      * @return $this
      */
     public function setUri($uri)
@@ -140,7 +140,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * A name for the specification that is being mapped to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -149,7 +149,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * A name for the specification that is being mapped to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -160,7 +160,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * Comments about this mapping, including version notes, issues, scope limitations, and other important notes for usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -169,7 +169,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
 
     /**
      * Comments about this mapping, including version notes, issues, scope limitations, and other important notes for usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)

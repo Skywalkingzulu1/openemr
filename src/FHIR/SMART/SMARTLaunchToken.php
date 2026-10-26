@@ -3,18 +3,18 @@
 /**
  * SmartLaunchToken represents the opaque SMART 'launch' context values that are used to send the EHR session context
  * to the app which the app then hands back to the oauth2 authorization server.
- * @package OpenEMR\FHIR\SMART
- * @link      https://www.open-emr.org
+ * @package DCL\FHIR\SMART
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\FHIR\SMART;
+namespace DCL\FHIR\SMART;
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 
 class SMARTLaunchToken
 {
@@ -25,7 +25,7 @@ class SMARTLaunchToken
     public const VALID_INTENTS = [self::INTENT_PATIENT_DEMOGRAPHICS_DIALOG, self::INTENT_APPOINTMENT_DIALOG, self::INTENT_ENCOUNTER_DIALOG, self::INTENT_MAIN_TAB, self::INTENT_QUESTIONNAIRE_ASSESSMENT];
 
     // used on the appointment add/edit dialog, context will include the selected appointment
-    // for now this intent is used by custom apps that consume the openemr.appointment.add_edit_event.close.before event
+    // for now this intent is used by custom apps that consume the DCL.appointment.add_edit_event.close.before event
     // to present a SMART app as a 2nd step to the add/edit appointment workflow
     public const INTENT_APPOINTMENT_DIALOG = 'appointment.edit.dialog';
 

@@ -6,14 +6,14 @@
  * Verifies that health check endpoints return proper JSON responses
  * without requiring authentication (no login redirect).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
@@ -24,7 +24,7 @@ class HealthEndpointTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->client = new Client([
             "verify" => false,
             "base_uri" => $baseUrl,

@@ -3,11 +3,11 @@
 **Author:** Jerry Padgett <sjpadgett@gmail.com>
 **Copyright:** Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
 
-OpenEMR can launch an enabled SMART EHR application from the patient Questionnaire Assessments workspace while preserving the existing native Start, Continue, and View/Edit assessment actions.
+DCL can launch an enabled SMART EHR application from the patient Questionnaire Assessments workspace while preserving the existing native Start, Continue, and View/Edit assessment actions.
 
 ## Token response context
 
-An assessment launch returns the normal patient context. It does not carry the session encounter: assessments launched here are patient-level, so no `encounter` is returned for this intent even when an encounter is open in OpenEMR. The assessment resources are returned as standard SMART `fhirContext` references:
+An assessment launch returns the normal patient context. It does not carry the session encounter: assessments launched here are patient-level, so no `encounter` is returned for this intent even when an encounter is open in DCL. The assessment resources are returned as standard SMART `fhirContext` references:
 
 ```json
 {
@@ -29,7 +29,7 @@ An assessment launch returns the normal patient context. It does not carry the s
 
 ## Server-side validation
 
-The browser submits only OpenEMR internal Questionnaire and QuestionnaireResponse row identifiers. The SMART launch controller resolves the FHIR UUIDs and validates that:
+The browser submits only DCL internal Questionnaire and QuestionnaireResponse row identifiers. The SMART launch controller resolves the FHIR UUIDs and validates that:
 
 - the Questionnaire exists and is active;
 - an active SMART availability rule offers the Questionnaire to the launching app at the user's facility (SMART launch is opt-in per questionnaire, set on the Availability tab of the Questionnaire Assessments workspace);

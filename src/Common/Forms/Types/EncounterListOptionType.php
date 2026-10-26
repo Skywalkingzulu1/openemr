@@ -3,18 +3,18 @@
 /**
  * Provider List Type represents a user selector widget for displaying local users that can be used in the LBF forms or independently in the system.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Forms\Types;
+namespace DCL\Common\Forms\Types;
 
-use OpenEMR\Common\Layouts\LayoutsUtils;
-use OpenEMR\Services\EncounterService;
+use DCL\Common\Layouts\LayoutsUtils;
+use DCL\Services\EncounterService;
 
 class EncounterListOptionType implements IOptionFormType
 {

@@ -4,22 +4,22 @@
  *
  * This program creates an X12 5010 837P file.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @author Daniel Pflieger <daniel@mi-squared.com>, <daniel@growlingflea.com>
  * @copyright Copyright (c) 2009 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2025 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2021 Daniel Pflieger <daniel@mi-squared.com>, <daniel@growlingflea.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
-use OpenEMR\Billing\BillingProcessor\BillingClaimBatchControlNumber;
-use OpenEMR\Billing\Claim;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Billing\BillingProcessor\BillingClaimBatchControlNumber;
+use DCL\Billing\Claim;
+use DCL\Core\OEGlobalsBag;
 
 class X125010837P
 {

@@ -3,21 +3,21 @@
 /**
  * Handles the saving, retrieving, and updating of ehi_export_job_tasks records.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter\Services;
+namespace DCL\Modules\EhiExporter\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Modules\EhiExporter\Models\EhiExportJobTask;
-use OpenEMR\Modules\EhiExporter\Models\ExportResult;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Modules\EhiExporter\Models\EhiExportJobTask;
+use DCL\Modules\EhiExporter\Models\ExportResult;
+use DCL\Services\BaseService;
+use DCL\Validators\ProcessingResult;
 
 class EhiExportJobTaskService extends BaseService
 {

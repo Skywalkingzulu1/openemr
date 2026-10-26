@@ -2,15 +2,15 @@
 
 /**
  * Holds functions for the calendar, one is for holidays
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2005 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\HolidayService;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\HolidayService;
 
 // Returns an array of the facility ids and names that the user is allowed to access.
 // Access might be for inventory purposes ($inventory=true) or calendar purposes.

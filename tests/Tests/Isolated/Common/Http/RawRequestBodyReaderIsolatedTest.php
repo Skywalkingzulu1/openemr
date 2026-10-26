@@ -6,19 +6,19 @@
  * Verifies the reader returns the stream contents as a typed string, caches
  * subsequent reads, and throws a typed exception on stream-open failure.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Andrew Alanis <progradedteam@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Http;
+namespace DCL\Tests\Isolated\Common\Http;
 
-use OpenEMR\Common\Http\RawPostParserException;
-use OpenEMR\Common\Http\RawRequestBodyReader;
+use DCL\Common\Http\RawPostParserException;
+use DCL\Common\Http\RawRequestBodyReader;
 use PHPUnit\Framework\TestCase;
 
 class RawRequestBodyReaderIsolatedTest extends TestCase
@@ -52,7 +52,7 @@ class RawRequestBodyReaderIsolatedTest extends TestCase
 
     public function testThrowsOnUnreadableStream(): void
     {
-        $reader = new RawRequestBodyReader('/this/path/does/not/exist/openemr');
+        $reader = new RawRequestBodyReader('/this/path/does/not/exist/DCL');
 
         // Use error_reporting() instead of set_error_handler() so the test
         // still exercises the real error_get_last() path — set_error_handler

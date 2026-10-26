@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * An authorization for the provision of glasses and/or contact lenses to a patient.
@@ -72,49 +72,49 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * A unique identifier assigned to this vision prescription.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * The date this resource was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * A resource reference to the person to whom the vision prescription applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * A reference to a resource that identifies the particular occurrence of contact between patient and health care provider during which the prescription was issued.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The date (and perhaps time) when the prescription was written.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $dateWritten = null;
 
     /**
      * The healthcare professional responsible for authorizing the prescription.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $prescriber = null;
 
     /**
      * Contain the details of  the individual lens specifications and serves as the authorization for the fullfillment by certified professionals.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification[]
      */
     public $lensSpecification = [];
 
@@ -125,7 +125,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A unique identifier assigned to this vision prescription.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A unique identifier assigned to this vision prescription.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -154,7 +154,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -165,7 +165,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date this resource was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -174,7 +174,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date this resource was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -185,7 +185,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A resource reference to the person to whom the vision prescription applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -194,7 +194,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A resource reference to the person to whom the vision prescription applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -205,7 +205,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a resource that identifies the particular occurrence of contact between patient and health care provider during which the prescription was issued.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -214,7 +214,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a resource that identifies the particular occurrence of contact between patient and health care provider during which the prescription was issued.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -225,7 +225,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date (and perhaps time) when the prescription was written.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDateWritten()
     {
@@ -234,7 +234,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date (and perhaps time) when the prescription was written.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $dateWritten
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $dateWritten
      * @return $this
      */
     public function setDateWritten($dateWritten)
@@ -245,7 +245,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The healthcare professional responsible for authorizing the prescription.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPrescriber()
     {
@@ -254,7 +254,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The healthcare professional responsible for authorizing the prescription.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $prescriber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $prescriber
      * @return $this
      */
     public function setPrescriber($prescriber)
@@ -265,7 +265,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Contain the details of  the individual lens specifications and serves as the authorization for the fullfillment by certified professionals.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification[]
      */
     public function getLensSpecification()
     {
@@ -274,7 +274,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Contain the details of  the individual lens specifications and serves as the authorization for the fullfillment by certified professionals.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification $lensSpecification
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionLensSpecification $lensSpecification
      * @return $this
      */
     public function addLensSpecification($lensSpecification)

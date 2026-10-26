@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
- * @author Michael A. Smith <michael@opencoreemr.com>
+ * @author Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2005-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2023 Stephen Waite <stephen.waite@cmsvt.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Utils;
+namespace DCL\Common\Utils;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class FormatMoney

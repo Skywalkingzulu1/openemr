@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,23 +71,23 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
 {
     /**
      * Dosage for the medication for the specific guidelines.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[]
      */
     public $dosage = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $indicationCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $indicationReference = null;
 
     /**
      * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[]
      */
     public $patientCharacteristics = [];
 
@@ -98,7 +98,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
 
     /**
      * Dosage for the medication for the specific guidelines.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[]
      */
     public function getDosage()
     {
@@ -107,7 +107,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
 
     /**
      * Dosage for the medication for the specific guidelines.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage $dosage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage $dosage
      * @return $this
      */
     public function addDosage($dosage)
@@ -117,7 +117,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getIndicationCodeableConcept()
     {
@@ -125,7 +125,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
      * @return $this
      */
     public function setIndicationCodeableConcept($indicationCodeableConcept)
@@ -135,7 +135,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getIndicationReference()
     {
@@ -143,7 +143,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $indicationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $indicationReference
      * @return $this
      */
     public function setIndicationReference($indicationReference)
@@ -154,7 +154,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
 
     /**
      * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[]
      */
     public function getPatientCharacteristics()
     {
@@ -163,7 +163,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
 
     /**
      * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics
      * @return $this
      */
     public function addPatientCharacteristics($patientCharacteristics)

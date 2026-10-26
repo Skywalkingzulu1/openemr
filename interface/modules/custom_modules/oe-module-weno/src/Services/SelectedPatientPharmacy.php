@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @package     OpenEMR
- * @link        https://www.open-emr.org
+ * @package     DCL
+ * @link        https://www.dcl.org
  * @author      Kofi Appiah <kkappiah@medsov.com>
  * @copyright   Copyright (c) 2024 Omegasystems Group Intl <info@omegasystemsgroup.com>
- * @license     https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license     https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\WenoModule\Services;
+namespace DCL\Modules\WenoModule\Services;
 
 class SelectedPatientPharmacy
 {

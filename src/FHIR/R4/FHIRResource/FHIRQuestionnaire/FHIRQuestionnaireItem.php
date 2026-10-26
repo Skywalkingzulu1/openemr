@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
+namespace DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
@@ -71,7 +71,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $linkId = null;
 
@@ -85,91 +85,91 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 * maxLength (ElementDefinition.maxLength)
 * answerValueSet (ElementDefinition.binding)
 * options (ElementDefinition.binding).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $definition = null;
 
     /**
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $code = [];
 
     /**
      * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $prefix = null;
 
     /**
      * The name of a section, the text of a question or text content for a display item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireItemType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireItemType
      */
     public $type = null;
 
     /**
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
     public $enableWhen = [];
 
     /**
      * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREnableWhenBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREnableWhenBehavior
      */
     public $enableBehavior = null;
 
     /**
      * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $required = null;
 
     /**
      * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers for questions or multiple sets of answers for groups.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $repeats = null;
 
     /**
      * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $readOnly = null;
 
     /**
      * The maximum number of characters that are permitted in the answer to be considered a "valid" QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $maxLength = null;
 
     /**
      * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $answerValueSet = null;
 
     /**
      * One of the permitted answers for a "choice" or "open-choice" question.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption[]
      */
     public $answerOption = [];
 
     /**
      * One or more values that should be pre-populated in the answer when initially rendering the questionnaire for user input.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireInitial[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireInitial[]
      */
     public $initial = [];
 
     /**
      * Text, questions and other groups to be nested beneath a question or group.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
     public $item = [];
 
@@ -180,7 +180,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLinkId()
     {
@@ -189,7 +189,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $linkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $linkId
      * @return $this
      */
     public function setLinkId($linkId)
@@ -208,7 +208,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 * maxLength (ElementDefinition.maxLength)
 * answerValueSet (ElementDefinition.binding)
 * options (ElementDefinition.binding).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getDefinition()
     {
@@ -225,7 +225,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 * maxLength (ElementDefinition.maxLength)
 * answerValueSet (ElementDefinition.binding)
 * options (ElementDefinition.binding).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $definition
      * @return $this
      */
     public function setDefinition($definition)
@@ -236,7 +236,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getCode()
     {
@@ -245,7 +245,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $code
      * @return $this
      */
     public function addCode($code)
@@ -256,7 +256,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPrefix()
     {
@@ -265,7 +265,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $prefix
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $prefix
      * @return $this
      */
     public function setPrefix($prefix)
@@ -276,7 +276,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The name of a section, the text of a question or text content for a display item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -285,7 +285,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The name of a section, the text of a question or text content for a display item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -296,7 +296,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireItemType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireItemType
      */
     public function getType()
     {
@@ -305,7 +305,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireItemType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireItemType $type
      * @return $this
      */
     public function setType($type)
@@ -316,7 +316,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
     public function getEnableWhen()
     {
@@ -325,7 +325,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $enableWhen
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $enableWhen
      * @return $this
      */
     public function addEnableWhen($enableWhen)
@@ -336,7 +336,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREnableWhenBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREnableWhenBehavior
      */
     public function getEnableBehavior()
     {
@@ -345,7 +345,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREnableWhenBehavior $enableBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREnableWhenBehavior $enableBehavior
      * @return $this
      */
     public function setEnableBehavior($enableBehavior)
@@ -356,7 +356,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getRequired()
     {
@@ -365,7 +365,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $required
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $required
      * @return $this
      */
     public function setRequired($required)
@@ -376,7 +376,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers for questions or multiple sets of answers for groups.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getRepeats()
     {
@@ -385,7 +385,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers for questions or multiple sets of answers for groups.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $repeats
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $repeats
      * @return $this
      */
     public function setRepeats($repeats)
@@ -396,7 +396,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getReadOnly()
     {
@@ -405,7 +405,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $readOnly
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $readOnly
      * @return $this
      */
     public function setReadOnly($readOnly)
@@ -416,7 +416,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The maximum number of characters that are permitted in the answer to be considered a "valid" QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getMaxLength()
     {
@@ -425,7 +425,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The maximum number of characters that are permitted in the answer to be considered a "valid" QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $maxLength
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $maxLength
      * @return $this
      */
     public function setMaxLength($maxLength)
@@ -436,7 +436,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getAnswerValueSet()
     {
@@ -445,7 +445,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $answerValueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $answerValueSet
      * @return $this
      */
     public function setAnswerValueSet($answerValueSet)
@@ -456,7 +456,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * One of the permitted answers for a "choice" or "open-choice" question.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption[]
      */
     public function getAnswerOption()
     {
@@ -465,7 +465,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * One of the permitted answers for a "choice" or "open-choice" question.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption $answerOption
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption $answerOption
      * @return $this
      */
     public function addAnswerOption($answerOption)
@@ -476,7 +476,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * One or more values that should be pre-populated in the answer when initially rendering the questionnaire for user input.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireInitial[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireInitial[]
      */
     public function getInitial()
     {
@@ -485,7 +485,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * One or more values that should be pre-populated in the answer when initially rendering the questionnaire for user input.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireInitial $initial
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireInitial $initial
      * @return $this
      */
     public function addInitial($initial)
@@ -496,7 +496,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Text, questions and other groups to be nested beneath a question or group.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
     public function getItem()
     {
@@ -505,7 +505,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Text, questions and other groups to be nested beneath a question or group.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem $item
      * @return $this
      */
     public function addItem($item)

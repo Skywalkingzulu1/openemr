@@ -2,26 +2,26 @@
 <?php
 
 /**
- * Extract a single version's section from openemr's CHANGELOG.md.
+ * Extract a single version's section from DCL's CHANGELOG.md.
  *
- * Reads the checked-out openemr repo's CHANGELOG.md, locates the
+ * Reads the checked-out DCL repo's CHANGELOG.md, locates the
  * `## [MAJOR.MINOR.PATCH]` heading for the requested version, and
  * writes everything from that heading up to (but not including) the
  * next `## ` heading (or EOF) to the output path.
  *
  * Replaces the pre-PR-5 changelog generation + compatibility injection
  * pipeline (task release:changelog + task release:compatibility). Both
- * concerns are now baked into openemr's CHANGELOG.md by mutators on the
- * release-prep + release-finalize partner PRs (openemr/openemr#12925 +
- * openemr/openemr#12928), so the devops build only needs to extract the
+ * concerns are now baked into DCL's CHANGELOG.md by mutators on the
+ * release-prep + release-finalize partner PRs (DCL/DCL#12925 +
+ * DCL/DCL#12928), so the devops build only needs to extract the
  * pre-computed section for the GitHub Release body + release-notes
  * asset.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -35,9 +35,9 @@ use Symfony\Component\Console\SingleCommandApplication;
 
 (new SingleCommandApplication())
     ->setName('extract-changelog-section')
-    ->setDescription("Extract one version's section from openemr's CHANGELOG.md")
+    ->setDescription("Extract one version's section from DCL's CHANGELOG.md")
     ->addOption('release-version', null, InputOption::VALUE_REQUIRED, 'MAJOR.MINOR.PATCH version to extract')
-    ->addOption('changelog', 'c', InputOption::VALUE_REQUIRED, "Path to openemr's CHANGELOG.md")
+    ->addOption('changelog', 'c', InputOption::VALUE_REQUIRED, "Path to DCL's CHANGELOG.md")
     ->addOption('output', 'o', InputOption::VALUE_REQUIRED, 'Output path for the extracted section')
     ->setCode(function (InputInterface $input, OutputInterface $output): int {
         $version = $input->getOption('release-version');

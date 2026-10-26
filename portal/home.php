@@ -3,8 +3,8 @@
 /**
  * Patient Portal Home
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Shiqiang Tao <StrongTSQ@gmail.com>
@@ -13,20 +13,20 @@
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Shiqiang Tao <StrongTSQ@gmail.com>
  * @copyright Copyright (c) 2021 Ben Marte <benmarte@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientPortal\AppointmentFilterEvent;
-use OpenEMR\Events\PatientPortal\RenderEvent;
-use OpenEMR\Events\PatientReport\PatientReportFilterEvent;
-use OpenEMR\Services\LogoService;
-use OpenEMR\Services\Utils\TranslationService;
-use OpenEMR\Telemetry\TelemetryService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientPortal\AppointmentFilterEvent;
+use DCL\Events\PatientPortal\RenderEvent;
+use DCL\Events\PatientReport\PatientReportFilterEvent;
+use DCL\Services\LogoService;
+use DCL\Services\Utils\TranslationService;
+use DCL\Telemetry\TelemetryService;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -54,7 +54,7 @@ if (!$session->has('portal_init')) {
     SessionUtil::setSession('portal_init', true);
 }
 
-// Example https://localhost/openemr/portal/index.php?site=default&landOn=BillingSummary
+// Example https://localhost/DCL/portal/index.php?site=default&landOn=BillingSummary
 // landOn query is used to redirect to a specific section of the portal.
 $landOnHref = [
     'ClinicalDocuments' => '#onsitedocuments',
@@ -371,7 +371,7 @@ try {
         'youHave' => xl('You have'),
         'navMenu' => $navMenu,
         'primaryMenuLogoHeight' => $globalsBag->getString('portal_primary_menu_logo_height') ?? '30',
-        'pagetitle' => $globalsBag->getString('openemr_name') . ' ' . xl('Portal'),
+        'pagetitle' => $globalsBag->getString('DCL_name') . ' ' . xl('Portal'),
         'messagesURL' => $messagesURL,
         'patientID' => $pid,
         'patientName' => $session->get('ptName', null),

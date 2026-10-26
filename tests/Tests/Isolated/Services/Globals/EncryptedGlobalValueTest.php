@@ -3,21 +3,21 @@
 /**
  * EncryptedGlobalValue isolated tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Globals;
+namespace DCL\Tests\Isolated\Services\Globals;
 
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Services\Globals\EncryptedGlobalValue;
-use OpenEMR\Services\Globals\GlobalSetting;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Services\Globals\EncryptedGlobalValue;
+use DCL\Services\Globals\GlobalSetting;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @package OpenEMR
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Tests\ECQM;
+namespace DCL\Tests\ECQM;
 
-use OpenEMR\Services\Qdm\QdmBuilder;
-use OpenEMR\Services\Qdm\QdmRequestAll;
+use DCL\Services\Qdm\QdmBuilder;
+use DCL\Services\Qdm\QdmRequestAll;
 use PHPUnit\Framework\TestCase;
 
 class AllPatientsTest extends TestCase

@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Filesystem;
+namespace DCL\Tests\Isolated\Common\Filesystem;
 
-use OpenEMR\Common\Filesystem\SafeIncludeResolver;
+use DCL\Common\Filesystem\SafeIncludeResolver;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -75,7 +75,7 @@ class SafeIncludeResolverTest extends TestCase
 
     public function testResolveReturnsFalseForEdiSuffix(): void
     {
-        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'openemr-sir-' . uniqid('', true);
+        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'DCL-sir-' . uniqid('', true);
         mkdir($tmp);
         try {
             file_put_contents($tmp . '/payload.edi', "<?php echo 'ran'; ?>");
@@ -88,7 +88,7 @@ class SafeIncludeResolverTest extends TestCase
 
     public function testResolveReturnsFalseForNoSuffix(): void
     {
-        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'openemr-sir-' . uniqid('', true);
+        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'DCL-sir-' . uniqid('', true);
         mkdir($tmp);
         try {
             file_put_contents($tmp . '/payload', "<?php echo 'ran'; ?>");
@@ -101,7 +101,7 @@ class SafeIncludeResolverTest extends TestCase
 
     public function testResolveReturnsFalseForPhpInfixButDifferentSuffix(): void
     {
-        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'openemr-sir-' . uniqid('', true);
+        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'DCL-sir-' . uniqid('', true);
         mkdir($tmp);
         try {
             file_put_contents($tmp . '/report.php.txt', "<?php echo 'ran'; ?>");
@@ -114,7 +114,7 @@ class SafeIncludeResolverTest extends TestCase
 
     public function testResolveAcceptsPhpSuffixCaseInsensitive(): void
     {
-        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'openemr-sir-' . uniqid('', true);
+        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'DCL-sir-' . uniqid('', true);
         mkdir($tmp);
         try {
             file_put_contents($tmp . '/report.PHP', "<?php echo 'ran'; ?>");
@@ -147,7 +147,7 @@ class SafeIncludeResolverTest extends TestCase
 
     public function testResolveReturnsFalseForPhpSymlinkTargetingNonPhp(): void
     {
-        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'openemr-sir-' . uniqid('', true);
+        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'DCL-sir-' . uniqid('', true);
         mkdir($tmp);
         $target = $tmp . '/payload.edi';
         $link = $tmp . '/legit.php';
@@ -169,12 +169,12 @@ class SafeIncludeResolverTest extends TestCase
     public function testResolveReturnsFalseForSymlinkPointingOutsideBaseDir(): void
     {
         $projectRoot = dirname(__DIR__, 5);
-        $tempFile = tempnam(sys_get_temp_dir(), 'openemr-safe-');
+        $tempFile = tempnam(sys_get_temp_dir(), 'DCL-safe-');
         if ($tempFile === false) {
             $this->fail('Failed to create temp file');
         }
 
-        $linkName = 'openemr-safe-link-' . uniqid('', true) . '.php';
+        $linkName = 'DCL-safe-link-' . uniqid('', true) . '.php';
         $linkPath = $projectRoot . '/' . $linkName;
 
         try {

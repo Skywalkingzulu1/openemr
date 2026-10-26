@@ -5,17 +5,17 @@
  *
  *  This class will allow collection of user data and user roles with an identifying uuid.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth;
+namespace DCL\Common\Auth;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\UserService;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\UserService;
 
 class UuidUserAccount
 {
@@ -59,7 +59,7 @@ class UuidUserAccount
 
         $userIdBinary = UuidRegistry::uuidToBytes($this->userId);
         if (empty($userIdBinary)) {
-            error_log("OpenEMR ERROR: error in conversion of string uuid to binary id");
+            error_log("DCL ERROR: error in conversion of string uuid to binary id");
             return null;
         }
         $userAccount = sqlQueryNoLog($account_sql, [$userIdBinary]);
@@ -94,7 +94,7 @@ class UuidUserAccount
 
         $userIdBinary = UuidRegistry::uuidToBytes($this->userId);
         if (empty($userIdBinary)) {
-            error_log("OpenEMR ERROR: error in conversion of string uuid to binary id");
+            error_log("DCL ERROR: error in conversion of string uuid to binary id");
             return null;
         }
         $userRole = sqlQueryNoLog("SELECT `id`,`username` FROM `users` WHERE `uuid` = ?", [$userIdBinary]);
@@ -117,7 +117,7 @@ class UuidUserAccount
             return null;
         }
         if ($counter > 1) {
-            error_log("OpenEMR Error: the same uuid has been found in different role tables");
+            error_log("DCL Error: the same uuid has been found in different role tables");
             return null;
         }
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\Services\Traits;
+namespace DCL\Services\Traits;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Services\ServiceSaveEvent;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Services\ServiceSaveEvent;
 
 trait ServiceEventTrait
 {

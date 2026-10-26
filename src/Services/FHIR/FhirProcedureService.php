@@ -3,33 +3,33 @@
 /**
  * FHIR Procedure Service
  *
- * @package            OpenEMR
- * @link               https://www.open-emr.org
+ * @package            DCL
+ * @link               https://www.dcl.org
  * @author             Yash Bothra <yashrajbothra786gmail.com>
  * @author             Stephen Nielson <stephen@nielson.org>
  * @copyright          Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright          Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Services\FHIR\Enum\EventStatusEnum;
-use OpenEMR\Services\FHIR\Procedure\FhirProcedureOEProcedureService;
-use OpenEMR\Services\FHIR\Procedure\FhirProcedureSurgeryService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\ProcedureService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Services\FHIR\Enum\EventStatusEnum;
+use DCL\Services\FHIR\Procedure\FhirProcedureOEProcedureService;
+use DCL\Services\FHIR\Procedure\FhirProcedureSurgeryService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\MappedServiceTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\ProcedureService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 class FhirProcedureService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService, IPatientCompartmentResourceService
 {
@@ -78,7 +78,7 @@ class FhirProcedureService extends FhirServiceBase implements IResourceUSCIGProf
     }
 
     /**
-     * Returns an array mapping FHIR Procedure Resource search parameters to OpenEMR Procedure search parameters
+     * Returns an array mapping FHIR Procedure Resource search parameters to DCL Procedure search parameters
      *
      * @return array The search parameters
      */
@@ -99,7 +99,7 @@ class FhirProcedureService extends FhirServiceBase implements IResourceUSCIGProf
 
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying DCL data elements.
      */
     public function getAll($fhirSearchParameters, $puuidBind = null): ProcessingResult
     {

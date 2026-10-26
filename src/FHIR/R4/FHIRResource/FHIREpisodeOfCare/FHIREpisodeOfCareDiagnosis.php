@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare;
+namespace DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.
@@ -71,19 +71,19 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $condition = null;
 
     /**
      * Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
     /**
      * Ranking of the diagnosis (for each role type).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $rank = null;
 
@@ -94,7 +94,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCondition()
     {
@@ -103,7 +103,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $condition
      * @return $this
      */
     public function setCondition($condition)
@@ -114,7 +114,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -123,7 +123,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Role that this diagnosis has within the episode of care (e.g. admission, billing, discharge …).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)
@@ -134,7 +134,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Ranking of the diagnosis (for each role type).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getRank()
     {
@@ -143,7 +143,7 @@ class FHIREpisodeOfCareDiagnosis extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Ranking of the diagnosis (for each role type).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $rank
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $rank
      * @return $this
      */
     public function setRank($rank)

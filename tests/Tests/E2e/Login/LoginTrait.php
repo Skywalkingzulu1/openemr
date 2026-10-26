@@ -3,25 +3,25 @@
 /**
  * LoginTrait trait
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2024 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e\Login;
+namespace DCL\Tests\E2e\Login;
 
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\WebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\Tests\E2e\Base\BaseTrait;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Base\BaseTrait;
+use DCL\Tests\E2e\Login\LoginTestData;
 
 trait LoginTrait
 {
@@ -105,13 +105,13 @@ trait LoginTrait
             // The post-login redirect is asynchronous: submit() returns
             // once the POST responds, but the browser still needs to
             // follow the redirect and load the main shell before
-            // document.title transitions from 'OpenEMR Login' to
-            // 'OpenEMR'. Under CI load the lag is long enough that
+            // document.title transitions from 'DCL Login' to
+            // 'DCL'. Under CI load the lag is long enough that
             // reading getTitle() immediately races the redirect and
-            // fails with "Expected 'OpenEMR'; actual 'OpenEMR Login'".
+            // fails with "Expected 'DCL'; actual 'DCL Login'".
             try {
                 $this->client->wait(10)->until(
-                    static fn(WebDriver $driver): bool => $driver->getTitle() === 'OpenEMR'
+                    static fn(WebDriver $driver): bool => $driver->getTitle() === 'DCL'
                 );
             } catch (TimeoutException) {
                 // Fall through so the assertSame below reports the
@@ -120,9 +120,9 @@ trait LoginTrait
         }
         $title = $this->client->getTitle();
         if ($goalPass) {
-            $this->assertSame('OpenEMR', $title, 'Login FAILED');
+            $this->assertSame('DCL', $title, 'Login FAILED');
         } else {
-            $this->assertSame('OpenEMR Login', $title, 'Login was successful, but should have FAILED');
+            $this->assertSame('DCL Login', $title, 'Login was successful, but should have FAILED');
         }
     }
 }

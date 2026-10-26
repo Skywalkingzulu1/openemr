@@ -3,19 +3,19 @@
 /**
  * Regression test for FaxSMS AppDispatch typed-session-property fatal.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS;
+namespace DCL\Tests\Isolated\Modules\FaxSMS;
 
 use Composer\Autoload\ClassLoader;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -39,7 +39,7 @@ final class AppDispatchLazyInitTest extends TestCase
             self::fail('Composer ClassLoader not available to register module autoload prefix.');
         }
         $loader->addPsr4(
-            'OpenEMR\\Modules\\FaxSMS\\',
+            'DCL\\Modules\\FaxSMS\\',
             dirname(__DIR__, 5) . '/interface/modules/custom_modules/oe-module-faxsms/src/'
         );
     }

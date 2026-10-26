@@ -1,29 +1,29 @@
 <?php
 
 /**
- * @package    OpenEMR
+ * @package    DCL
  * Claude A.I contributed to this file for the QRDA III consolidated report xml generation.
  *
- * @link       https://www.open-emr.org
+ * @link       https://www.dcl.org
  * @author     Ken Chapple <ken@mi-squared.com>
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright  Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qrda;
+namespace DCL\Services\Qrda;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Cqm\Qdm\Patient;
-use OpenEMR\Services\Qdm\CqmCalculator;
-use OpenEMR\Services\Qdm\IndividualResult;
-use OpenEMR\Services\Qdm\Interfaces\QdmRequestInterface;
-use OpenEMR\Services\Qdm\Measure;
-use OpenEMR\Services\Qdm\MeasureService;
-use OpenEMR\Services\Qdm\QdmBuilder;
-use OpenEMR\Services\Qdm\ResultsCalculator;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Cqm\Qdm\Patient;
+use DCL\Services\Qdm\CqmCalculator;
+use DCL\Services\Qdm\IndividualResult;
+use DCL\Services\Qdm\Interfaces\QdmRequestInterface;
+use DCL\Services\Qdm\Measure;
+use DCL\Services\Qdm\MeasureService;
+use DCL\Services\Qdm\QdmBuilder;
+use DCL\Services\Qdm\ResultsCalculator;
 
 class ExportCat3Service
 {
@@ -202,8 +202,8 @@ class ExportCat3Service
     </addr>
     <telecom use="WP" value="tel:(555)555-5555"/>
     <assignedAuthoringDevice>
-      <manufacturerModelName>OpenEMR</manufacturerModelName>
-      <softwareName>OpenEMR CQM</softwareName>
+      <manufacturerModelName>DCL</manufacturerModelName>
+      <softwareName>DCL CQM</softwareName>
     </assignedAuthoringDevice>
     <representedOrganization>
       <id root="2.16.840.1.113883.19.5" extension="{$organizationInfo['tin']}"/>
@@ -427,7 +427,7 @@ XML;
     private function getOrganizationInfo(): array
     {
         return [
-            'name' => OEGlobalsBag::getInstance()->getString('openemr_name') ?? 'OpenEMR Practice',
+            'name' => OEGlobalsBag::getInstance()->getString('DCL_name') ?? 'DCL Practice',
             'npi' => OEGlobalsBag::getInstance()->get('practice_npi') ?? '1234567890',
             'tin' => OEGlobalsBag::getInstance()->get('practice_tin') ?? '123456789',
             'address' => [

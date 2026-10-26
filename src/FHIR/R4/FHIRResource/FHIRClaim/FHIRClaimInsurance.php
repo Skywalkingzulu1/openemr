@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaim;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
@@ -71,43 +71,43 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * A number to uniquely identify insurance entries and provide a sequence of coverages to convey coordination of benefit order.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
      * A flag to indicate that this Coverage is to be used for adjudication of this claim when set to true.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $focal = null;
 
     /**
      * The business identifier to be used when the claim is sent for adjudication against this insurance policy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $coverage = null;
 
     /**
      * A business agreement number established between the provider and the insurer for special business processing purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $businessArrangement = null;
 
     /**
      * Reference numbers previously provided by the insurer to the provider to be quoted on subsequent claims containing services or products related to the prior authorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $preAuthRef = [];
 
     /**
      * The result of the adjudication of the line items for the Coverage specified in this insurance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $claimResponse = null;
 
@@ -118,7 +118,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A number to uniquely identify insurance entries and provide a sequence of coverages to convey coordination of benefit order.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -127,7 +127,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A number to uniquely identify insurance entries and provide a sequence of coverages to convey coordination of benefit order.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -138,7 +138,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A flag to indicate that this Coverage is to be used for adjudication of this claim when set to true.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getFocal()
     {
@@ -147,7 +147,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A flag to indicate that this Coverage is to be used for adjudication of this claim when set to true.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $focal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $focal
      * @return $this
      */
     public function setFocal($focal)
@@ -158,7 +158,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The business identifier to be used when the claim is sent for adjudication against this insurance policy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -167,7 +167,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The business identifier to be used when the claim is sent for adjudication against this insurance policy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -178,7 +178,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCoverage()
     {
@@ -187,7 +187,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverage
      * @return $this
      */
     public function setCoverage($coverage)
@@ -198,7 +198,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A business agreement number established between the provider and the insurer for special business processing purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getBusinessArrangement()
     {
@@ -207,7 +207,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A business agreement number established between the provider and the insurer for special business processing purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $businessArrangement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $businessArrangement
      * @return $this
      */
     public function setBusinessArrangement($businessArrangement)
@@ -218,7 +218,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reference numbers previously provided by the insurer to the provider to be quoted on subsequent claims containing services or products related to the prior authorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getPreAuthRef()
     {
@@ -227,7 +227,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reference numbers previously provided by the insurer to the provider to be quoted on subsequent claims containing services or products related to the prior authorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $preAuthRef
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $preAuthRef
      * @return $this
      */
     public function addPreAuthRef($preAuthRef)
@@ -238,7 +238,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The result of the adjudication of the line items for the Coverage specified in this insurance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getClaimResponse()
     {
@@ -247,7 +247,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The result of the adjudication of the line items for the Coverage specified in this insurance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $claimResponse
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $claimResponse
      * @return $this
      */
     public function setClaimResponse($claimResponse)

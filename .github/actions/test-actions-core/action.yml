@@ -1,5 +1,5 @@
-name: 'OpenEMR Dockers Test Suite'
-description: 'Run OpenEMR tests with Docker'
+name: 'DCL Dockers Test Suite'
+description: 'Run DCL tests with Docker'
 inputs:
   is_production_docker:
     required: true
@@ -18,12 +18,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
-  - name: Checkout OpenEMR
-    if: ${{ env.OPENEMR_SERVICE_NAME == 'openemr-dev' || env.OPENEMR_SERVICE_NAME == 'openemr-kcov-dev' }}
+  - name: Checkout DCL
+    if: ${{ env.DCL_SERVICE_NAME == 'DCL-dev' || env.DCL_SERVICE_NAME == 'DCL-kcov-dev' }}
     uses: actions/checkout@v6
     with:
-      repository: openemr/openemr
-      path: openemr
+      repository: DCL/DCL
+      path: DCL
 
   - name: Verify Docker Compose Configuration
     run: docker compose config
@@ -31,7 +31,7 @@ runs:
     working-directory: .github/docker
 
   - name: Create coverage directory
-    if: ${{ env.OPENEMR_SERVICE_NAME == 'openemr-kcov-dev' || env.OPENEMR_SERVICE_NAME == 'openemr-kcov' }}
+    if: ${{ env.DCL_SERVICE_NAME == 'DCL-kcov-dev' || env.DCL_SERVICE_NAME == 'DCL-kcov' }}
     run: mkdir -p coverage-reports
     shell: bash
     working-directory: .github/docker
@@ -49,7 +49,7 @@ runs:
     working-directory: .github/docker
 
   - name: Run the containers
-    run: docker compose up --detach --wait --wait-timeout 600 mysql "${OPENEMR_SERVICE_NAME}"
+    run: docker compose up --detach --wait --wait-timeout 600 mysql "${DCL_SERVICE_NAME}"
     shell: bash
     working-directory: .github/docker
 
@@ -57,76 +57,76 @@ runs:
     if: always()
     run: |
       docker compose ps
-      docker compose logs "${OPENEMR_SERVICE_NAME}"
+      docker compose logs "${DCL_SERVICE_NAME}"
     shell: bash
     working-directory: .github/docker
 
   - name: Get PHP Configuration
     if: always()
     run: |
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" php -i
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" php -i
     shell: bash
     working-directory: .github/docker
 
   - name: Test web connectivity
     run: |
-      # Test that OpenEMR web server is responding
+      # Test that DCL web server is responding
       HTTP_CODE=$(curl -f -s -o /dev/null -w "%{http_code}" http://localhost:8080/)
-      echo "OpenEMR HTTP status code: $HTTP_CODE"
+      echo "DCL HTTP status code: $HTTP_CODE"
       if (( HTTP_CODE == 200 || HTTP_CODE == 302 )); then
-        echo "OpenEMR web server is responding correctly!"
+        echo "DCL web server is responding correctly!"
         exit 0
       fi
-      echo "OpenEMR web server is not responding correctly!"
+      echo "DCL web server is not responding correctly!"
       exit 1
     shell: bash
 
   - name: Install
     run: |
-      # Run as apache, not root: openemr/openemr#12267 added RootCliGuard,
+      # Run as apache, not root: DCL/DCL#12267 added RootCliGuard,
       # which aborts the installer when it runs as root (UID 0). apache owns
       # the baked source in every slot's Dockerfile, so it can write sqlconf.php
       # and generated keys. --user is portable across all slots (unlike su-exec,
       # which #743 only added to flex/8.1.1/binary).
       docker compose exec \
         --user apache \
-        --env OPENEMR_ENABLE_INSTALLER_AUTO=1 \
-        --workdir /var/www/localhost/htdocs/openemr/contrib/util/installScripts \
-        "${OPENEMR_SERVICE_NAME}" sh -c 'sed -e "s@^exit;@ @" InstallerAuto.php |
+        --env DCL_ENABLE_INSTALLER_AUTO=1 \
+        --workdir /var/www/localhost/htdocs/DCL/contrib/util/installScripts \
+        "${DCL_SERVICE_NAME}" sh -c 'sed -e "s@^exit;@ @" InstallerAuto.php |
                                          php -- rootpass=root server=mysql loginhost=%'
     shell: bash
     working-directory: .github/docker
 
   - name: Initialize MySQL
     run: |
-      docker compose exec "${OPENEMR_SERVICE_NAME}" mysql -u openemr --password="openemr" -h mysql -e '
+      docker compose exec "${DCL_SERVICE_NAME}" mysql -u DCL --password="DCL" -h mysql -e '
           INSERT INTO product_registration (opt_out) VALUES (1);
           UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api";
           UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api";
           UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api";
           UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant";
           UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api";
-      ' openemr
+      ' DCL
     shell: bash
     working-directory: .github/docker
 
   - name: Install Dev Tools
     run: |
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" \
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" \
         composer install --dev --no-interaction --optimize-autoloader --ignore-platform-reqs
     shell: bash
     working-directory: .github/docker
 
   - name: Unit Test
     run: |
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" \
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" \
         php -d memory_limit=8G ./vendor/bin/phpunit --colors=always --testdox --stop-on-failure --testsuite unit
     shell: bash
     working-directory: .github/docker
 
   - name: Fixtures testing
     run: |
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" \
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" \
         php -d memory_limit=8G ./vendor/bin/phpunit --colors=always --testdox --stop-on-failure --testsuite fixtures
     shell: bash
     working-directory: .github/docker
@@ -140,7 +140,7 @@ runs:
           exclude=(--exclude-filter "${SERVICES_EXCLUDE_FILTER}")
           echo "::notice::Excluding from the services suite: ${SERVICES_EXCLUDE_FILTER}"
       fi
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" \
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" \
         php -d memory_limit=8G ./vendor/bin/phpunit --colors=always --testdox --stop-on-failure --testsuite services \
         "${exclude[@]}"
     shell: bash
@@ -148,30 +148,30 @@ runs:
 
   - name: Validators testing
     run: |
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" \
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" \
         php -d memory_limit=8G ./vendor/bin/phpunit --colors=always --testdox --stop-on-failure --testsuite validators
     shell: bash
     working-directory: .github/docker
 
   - name: Controllers testing
     run: |
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" \
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" \
         php -d memory_limit=8G ./vendor/bin/phpunit --colors=always --testdox --stop-on-failure --testsuite controllers
     shell: bash
     working-directory: .github/docker
 
   - name: Common testing
     run: |
-      docker compose exec --workdir /var/www/localhost/htdocs/openemr "${OPENEMR_SERVICE_NAME}" \
+      docker compose exec --workdir /var/www/localhost/htdocs/DCL "${DCL_SERVICE_NAME}" \
         php -d memory_limit=8G ./vendor/bin/phpunit --colors=always --testdox --stop-on-failure --testsuite common
     shell: bash
     working-directory: .github/docker
 
   - name: Upload coverage reports
-    if: ${{ env.OPENEMR_SERVICE_NAME == 'openemr-kcov-dev' || env.OPENEMR_SERVICE_NAME == 'openemr-kcov' }}
+    if: ${{ env.DCL_SERVICE_NAME == 'DCL-kcov-dev' || env.DCL_SERVICE_NAME == 'DCL-kcov' }}
     uses: actions/upload-artifact@v4
     with:
-      name: ${{ format('{0}', inputs.is_production_docker) == 'true' && 'kcov-coverage-reports-production' || (env.OPENEMR_SERVICE_NAME == 'openemr-kcov' && 'kcov-coverage-reports-flex-prod' || 'kcov-coverage-reports-flex-dev') }}
+      name: ${{ format('{0}', inputs.is_production_docker) == 'true' && 'kcov-coverage-reports-production' || (env.DCL_SERVICE_NAME == 'DCL-kcov' && 'kcov-coverage-reports-flex-prod' || 'kcov-coverage-reports-flex-dev') }}
       path: .github/docker/coverage-reports/
       retention-days: 7
 

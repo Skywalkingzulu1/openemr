@@ -4,8 +4,8 @@
  * SQLUpgradeService used for upgrading the database for the entire system as well as individual modules to install
  * and upgrade their SQL.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Teny <teny@zhservices.com>
@@ -13,19 +13,19 @@
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (C) 2008-2012 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Utils;
+namespace DCL\Services\Utils;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\SQLUpgradeEvent;
-use OpenEMR\Services\Utils\Interfaces\ISQLUpgradeService;
-use OpenEMR\Services\VersionService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\SQLUpgradeEvent;
+use DCL\Services\Utils\Interfaces\ISQLUpgradeService;
+use DCL\Services\VersionService;
 
 class SQLUpgradeService implements ISQLUpgradeService
 {
@@ -870,7 +870,7 @@ class SQLUpgradeService implements ISQLUpgradeService
     }
 
     /**
-     * Return the name of the OpenEMR database.
+     * Return the name of the DCL database.
      *
      * @return string
      */

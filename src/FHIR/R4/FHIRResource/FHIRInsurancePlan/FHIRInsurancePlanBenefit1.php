@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,13 +71,13 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Type of specific benefit (preventative; primary care office visit; speciality office visit; hospitalization; emergency room; urgent care).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * List of the costs associated with a specific benefit.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCost[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCost[]
      */
     public $cost = [];
 
@@ -88,7 +88,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Type of specific benefit (preventative; primary care office visit; speciality office visit; hospitalization; emergency room; urgent care).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Type of specific benefit (preventative; primary care office visit; speciality office visit; hospitalization; emergency room; urgent care).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * List of the costs associated with a specific benefit.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCost[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCost[]
      */
     public function getCost()
     {
@@ -117,7 +117,7 @@ class FHIRInsurancePlanBenefit1 extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * List of the costs associated with a specific benefit.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCost $cost
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCost $cost
      * @return $this
      */
     public function addCost($cost)

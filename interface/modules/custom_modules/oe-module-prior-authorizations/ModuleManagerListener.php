@@ -11,15 +11,15 @@
  * Catch any exceptions because chances are they will be overlooked in Laminas module.
  * Report them in the return value.
  *
- * @package   OpenEMR Modules
- * @link      https://www.open-emr.org
+ * @package   DCL Modules
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\AbstractModuleActionListener;
+use DCL\BC\ServiceContainer;
+use DCL\Core\AbstractModuleActionListener;
 
 /* Allows maintenance of background tasks depending on Module Manager action. */
 
@@ -56,7 +56,7 @@ class ModuleManagerListener extends AbstractModuleActionListener
     public static function getModuleNamespace(): string
     {
         // Module Manager will register this namespace.
-        return 'Juggernaut\\OpenEMR\\Modules\\PriorAuthModule\\';
+        return 'Juggernaut\\DCL\\Modules\\PriorAuthModule\\';
     }
 
     /**

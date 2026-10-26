@@ -3,16 +3,16 @@
 /**
  * X12 837I
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2017-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
-use OpenEMR\Billing\BillingProcessor\BillingClaimBatchControlNumber;
+use DCL\Billing\BillingProcessor\BillingClaimBatchControlNumber;
 
 class X125010837I
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,37 +71,37 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 {
     /**
      * Precusory content structure and use, i.e., a boilerplate, template, application for a contract such as an insurance policy or benefits under a program, e.g., workers compensation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Detailed Precusory content type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subType = null;
 
     /**
      * The  individual or organization that published the Contract precursor content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $publisher = null;
 
     /**
      * The date (and optionally time) when the contract was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the contract changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $publicationDate = null;
 
     /**
      * draft | active | retired | unknown.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
     public $publicationStatus = null;
 
     /**
      * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
@@ -112,7 +112,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * Precusory content structure and use, i.e., a boilerplate, template, application for a contract such as an insurance policy or benefits under a program, e.g., workers compensation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -121,7 +121,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * Precusory content structure and use, i.e., a boilerplate, template, application for a contract such as an insurance policy or benefits under a program, e.g., workers compensation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -132,7 +132,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * Detailed Precusory content type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubType()
     {
@@ -141,7 +141,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * Detailed Precusory content type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
      * @return $this
      */
     public function setSubType($subType)
@@ -152,7 +152,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * The  individual or organization that published the Contract precursor content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPublisher()
     {
@@ -161,7 +161,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * The  individual or organization that published the Contract precursor content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -172,7 +172,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * The date (and optionally time) when the contract was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the contract changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getPublicationDate()
     {
@@ -181,7 +181,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * The date (and optionally time) when the contract was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the contract changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $publicationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $publicationDate
      * @return $this
      */
     public function setPublicationDate($publicationDate)
@@ -192,7 +192,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * draft | active | retired | unknown.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
     public function getPublicationStatus()
     {
@@ -201,7 +201,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * draft | active | retired | unknown.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
      * @return $this
      */
     public function setPublicationStatus($publicationStatus)
@@ -212,7 +212,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -221,7 +221,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement implements \Json
 
     /**
      * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)

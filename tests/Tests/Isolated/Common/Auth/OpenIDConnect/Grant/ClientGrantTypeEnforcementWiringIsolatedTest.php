@@ -7,22 +7,22 @@
  * Behaviour is covered by ClientGrantTypePolicyIsolatedTest, ClientGrantTypeGuardTraitIsolatedTest
  * and the API grant tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Auth\OpenIDConnect\Grant;
+namespace DCL\Tests\Isolated\Common\Auth\OpenIDConnect\Grant;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\ClientGrantTypeGuardTrait;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomAuthCodeGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomPasswordGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomRefreshTokenGrant;
+use DCL\Common\Auth\OpenIDConnect\Grant\ClientGrantTypeGuardTrait;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomAuthCodeGrant;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomPasswordGrant;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomRefreshTokenGrant;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;

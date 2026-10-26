@@ -3,23 +3,23 @@
 /**
  * PatientMenuRole class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Eyal Wolanowski <eyal.wolanowski@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Eyal Wolanowski <eyal.wolanowski@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Menu;
+namespace DCL\Menu;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Menu\PatientMenuEvent;
-use OpenEMR\Services\UserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Menu\PatientMenuEvent;
+use DCL\Services\UserService;
 
 class PatientMenuRole extends MenuRole
 {

@@ -1,18 +1,18 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\Common\Forms;
+namespace DCL\Tests\Unit\Common\Forms;
 
-use OpenEMR\Common\Forms\FormLocator;
+use DCL\Common\Forms\FormLocator;
 use PHPUnit\Framework\TestCase;
 
 /**
  * FormLocator Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    GitHub Copilot <copilot@github.com>
- * @copyright Copyright (c) 2025 OpenEMR <info@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL <info@dcl.org>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FormLocatorTest extends TestCase
 {
@@ -24,7 +24,7 @@ class FormLocatorTest extends TestCase
 
         // Store original fileroot
         $this->fileRoot = $GLOBALS['fileroot'] ?? '';
-        // Set fileroot to the OpenEMR root directory for tests
+        // Set fileroot to the DCL root directory for tests
         $GLOBALS['fileroot'] = dirname(__FILE__, 6);
 
         $this->formLocator = new FormLocator();

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
+namespace DCL\FHIR\R4\FHIRResource\FHIREncounter;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -71,13 +71,13 @@ class FHIREncounterStatusHistory extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREncounterStatus
      */
     public $status = null;
 
     /**
      * The time that the episode was in the specified status.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -88,7 +88,7 @@ class FHIREncounterStatusHistory extends FHIRBackboneElement implements \JsonSer
 
     /**
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREncounterStatus
      */
     public function getStatus()
     {
@@ -97,7 +97,7 @@ class FHIREncounterStatusHistory extends FHIRBackboneElement implements \JsonSer
 
     /**
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREncounterStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -108,7 +108,7 @@ class FHIREncounterStatusHistory extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The time that the episode was in the specified status.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -117,7 +117,7 @@ class FHIREncounterStatusHistory extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The time that the episode was in the specified status.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

@@ -1,36 +1,36 @@
 <?php
 
-namespace OpenEMR\RestControllers\FHIR\Operations;
+namespace DCL\RestControllers\FHIR\Operations;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Http\StatusCode;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Export\ExportException;
-use OpenEMR\FHIR\Export\ExportJob;
-use OpenEMR\FHIR\Export\ExportMemoryStreamWriter;
-use OpenEMR\FHIR\Export\ExportWillShutdownException;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGroup;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIssueSeverity;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIssueType;
-use OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue;
-use OpenEMR\RestControllers\FHIR\Operations\InvalidExportHeaderException;
-use OpenEMR\Services\FHIR\FhirExportJobService;
-use OpenEMR\Services\FHIR\FhirExportServiceLocator;
-use OpenEMR\Services\FHIR\FhirGroupService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IFhirExportableResourceService;
-use OpenEMR\Services\FHIR\Utils\FhirServiceLocator;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\IGlobalsAware;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\SessionAwareInterface;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Http\StatusCode;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Export\ExportException;
+use DCL\FHIR\Export\ExportJob;
+use DCL\FHIR\Export\ExportMemoryStreamWriter;
+use DCL\FHIR\Export\ExportWillShutdownException;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRGroup;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRIssueSeverity;
+use DCL\FHIR\R4\FHIRElement\FHIRIssueType;
+use DCL\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue;
+use DCL\RestControllers\FHIR\Operations\InvalidExportHeaderException;
+use DCL\Services\FHIR\FhirExportJobService;
+use DCL\Services\FHIR\FhirExportServiceLocator;
+use DCL\Services\FHIR\FhirGroupService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IFhirExportableResourceService;
+use DCL\Services\FHIR\Utils\FhirServiceLocator;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\IGlobalsAware;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\SessionAwareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Ramsey\Uuid\Uuid;
@@ -124,30 +124,30 @@ class FhirOperationExportRestController
      */
     #[OA\Get(
         path: '/fhir/$export',
-        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>",
-        security: [['openemr_auth' => []]],
+        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>",
+        security: [['DCL_auth' => []]],
         tags: ['fhir'],
         responses: [
-            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"),
+            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"),
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ]
     )]
     #[OA\Get(
         path: '/fhir/Patient/$export',
-        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>",
-        security: [['openemr_auth' => []]],
+        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>",
+        security: [['DCL_auth' => []]],
         tags: ['fhir'],
         responses: [
-            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"),
+            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"),
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ]
     )]
     #[OA\Get(
         path: '/fhir/Group/{id}/$export',
-        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>",
-        security: [['openemr_auth' => []]],
+        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>",
+        security: [['DCL_auth' => []]],
         tags: ['fhir'],
         parameters: [
             new OA\Parameter(
@@ -159,7 +159,7 @@ class FhirOperationExportRestController
             ),
         ],
         responses: [
-            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"),
+            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"),
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ]
@@ -257,11 +257,11 @@ class FhirOperationExportRestController
      */
     #[OA\Get(
         path: '/fhir/$bulkdata-status',
-        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>",
-        security: [['openemr_auth' => []]],
+        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>",
+        security: [['DCL_auth' => []]],
         tags: ['fhir'],
         responses: [
-            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"),
+            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"),
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ]
@@ -331,11 +331,11 @@ class FhirOperationExportRestController
      */
     #[OA\Delete(
         path: '/fhir/$bulkdata-status',
-        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>",
-        security: [['openemr_auth' => []]],
+        description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>",
+        security: [['DCL_auth' => []]],
         tags: ['fhir'],
         responses: [
-            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"),
+            new OA\Response(response: '200', description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"),
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ]
@@ -390,7 +390,7 @@ class FhirOperationExportRestController
 
     /**
      * Given a job that contains a list of resources to export, process each of those resources and save their results
-     * into Documents stored inside OpenEMR in the ndjson format.  There will be one file per resource and the resources
+     * into Documents stored inside DCL in the ndjson format.  There will be one file per resource and the resources
      * are saved in the FHIR_DOCUMENT_FOLDER under the file name of <resource>-<jobUuidString>.ndjson with the ndjson
      * mimetype.  The results and any errors of the export are saved back into the ExportJob.  The ExportJob's status
      * is marked as completed upon completion.
@@ -441,7 +441,7 @@ class FhirOperationExportRestController
                     $service->setSession($this->request->getSession());
                 }
                 // this could be a file pointer, or whatever else we wanted to be able to handle this
-                // for now we assume that OpenEMR data can all fit inside memory per resource.... if that changes
+                // for now we assume that DCL data can all fit inside memory per resource.... if that changes
                 // we should be able to rewrite just a little bit of this to be more efficient.
                 $exportWriter = new ExportMemoryStreamWriter($shutdownTime);
                 $service->export($exportWriter, $jobForResource, $lastResourceIdExported);

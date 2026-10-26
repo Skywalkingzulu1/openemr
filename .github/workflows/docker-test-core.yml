@@ -1,4 +1,4 @@
-name: OpenEMR Docker Test Core
+name: DCL Docker Test Core
 
 on:
   workflow_call:
@@ -19,7 +19,7 @@ on:
       flex_coverage_php_version:
         required: false
         type: string
-      production_coverage_openemr_version:
+      production_coverage_DCL_version:
         required: false
         type: string
       flex_timing:
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
-    - name: Collect OpenEMR Prod Dockerfiles
+    - name: Collect DCL Prod Dockerfiles
       id: docker-dirs
       ##
       # Parse out the test parameters from subdirectories of docker/
@@ -59,23 +59,23 @@ jobs:
           printf 'docker_dirs='
           printf '"%s"\n' "${dirs[@]}" | jq -sc '.'
         } >> "$GITHUB_OUTPUT"
-    - name: Validate production_coverage_openemr_version is a discovered target
+    - name: Validate production_coverage_DCL_version is a discovered target
       # Fail fast if the caller asked for kcov instrumentation on a variant
       # the matrix never builds. Without this, the kcov profile is silently
       # disabled (every docker_dir != coverage_variant) and the whole run
       # passes with zero coverage uploaded -- the exact silent regression
       # the cross-branch review caught when the value drifted to a tag that
-      # doesn't exist under the openemr core layout.
-      if: ${{ inputs.production_coverage_openemr_version != '' }}
+      # doesn't exist under the DCL core layout.
+      if: ${{ inputs.production_coverage_DCL_version != '' }}
       env:
-        COVERAGE_VARIANT: ${{ inputs.production_coverage_openemr_version }}
+        COVERAGE_VARIANT: ${{ inputs.production_coverage_DCL_version }}
         DOCKER_DIRS: ${{ steps.docker-dirs.outputs.docker_dirs }}
       run: |
         if ! printf '%s\n' "$DOCKER_DIRS" | jq -e --arg t "$COVERAGE_VARIANT" 'index($t)' >/dev/null; then
-          echo "::error::production_coverage_openemr_version='${COVERAGE_VARIANT}' is not in the discovered docker_dirs: ${DOCKER_DIRS}"
+          echo "::error::production_coverage_DCL_version='${COVERAGE_VARIANT}' is not in the discovered docker_dirs: ${DOCKER_DIRS}"
           exit 1
         fi
-        echo "✓ production_coverage_openemr_version='${COVERAGE_VARIANT}' is in the discovered docker_dirs"
+        echo "✓ production_coverage_DCL_version='${COVERAGE_VARIANT}' is in the discovered docker_dirs"
     outputs:
       docker_dirs: ${{ steps.docker-dirs.outputs.docker_dirs }}
 
@@ -89,9 +89,9 @@ jobs:
       matrix:
         docker_dir: ${{ fromJSON(needs.collect-production-targets.outputs.docker_dirs) }}
     env:
-      COMPOSE_PROFILES: ${{ inputs.production_coverage_openemr_version && matrix.docker_dir == inputs.production_coverage_openemr_version && 'kcov' || 'prod' }}
+      COMPOSE_PROFILES: ${{ inputs.production_coverage_DCL_version && matrix.docker_dir == inputs.production_coverage_DCL_version && 'kcov' || 'prod' }}
       DOCKER_CONTEXT_PATH: ${{ matrix.docker_dir }}
-      OPENEMR_SERVICE_NAME: ${{ inputs.production_coverage_openemr_version && matrix.docker_dir == inputs.production_coverage_openemr_version && 'openemr-kcov' || 'openemr' }}
+      DCL_SERVICE_NAME: ${{ inputs.production_coverage_DCL_version && matrix.docker_dir == inputs.production_coverage_DCL_version && 'DCL-kcov' || 'DCL' }}
       COMPOSE_BAKE: "1"
       DOCKER_BUILDKIT: "1"
     steps:
@@ -100,7 +100,7 @@ jobs:
       with:
         is_production_docker: ${{ inputs.is_production_docker }}
         # The binary image does not test this checkout: it runs the released
-        # v${OPENEMR_VERSION} PHAR, with tests/ and phpunit*.xml cloned from
+        # v${DCL_VERSION} PHAR, with tests/ and phpunit*.xml cloned from
         # that same tag (see docker/binary/Dockerfile). Only this filter comes
         # from the PR, so it has to match what that release does, not what
         # the branch does.
@@ -112,7 +112,7 @@ jobs:
         # oe-cqm-parsers' measure JSON. Release installs those deps in its
         # Dockerfile and flex does it at container start, so both must keep
         # running these tests -- weakening the assertions for everybody
-        # would hide a real gap. That gap is tracked in openemr/openemr#13851.
+        # would hide a real gap. That gap is tracked in DCL/DCL#13851.
         #
         # CdaValidateDocumentsTest can come off this list once the pinned
         # binary release includes the pure-PHP schematron validator, which
@@ -136,11 +136,11 @@ jobs:
     env:
       COMPOSE_PROFILES: ${{ matrix.mode == 'dev' && (inputs.is_flex_coverage_docker && matrix.php_version == inputs.flex_coverage_php_version && 'kcov-dev' || 'dev') || (inputs.is_flex_coverage_docker && matrix.php_version == inputs.flex_coverage_php_version && 'kcov' || 'prod') }}
       DOCKER_CONTEXT_PATH: "flex"
-      OPENEMR_SERVICE_NAME: ${{ matrix.mode == 'dev' && (inputs.is_flex_coverage_docker && matrix.php_version == inputs.flex_coverage_php_version && 'openemr-kcov-dev' || 'openemr-dev') || (inputs.is_flex_coverage_docker && matrix.php_version == inputs.flex_coverage_php_version && 'openemr-kcov' || 'openemr') }}
+      DCL_SERVICE_NAME: ${{ matrix.mode == 'dev' && (inputs.is_flex_coverage_docker && matrix.php_version == inputs.flex_coverage_php_version && 'DCL-kcov-dev' || 'DCL-dev') || (inputs.is_flex_coverage_docker && matrix.php_version == inputs.flex_coverage_php_version && 'DCL-kcov' || 'DCL') }}
       COMPOSE_BAKE: "1"
       DOCKER_BUILDKIT: "1"
-      # Surfaces phase timing in openemr.sh — see openemr-devops#797.
-      OPENEMR_FLEX_TIMING: ${{ inputs.flex_timing && '1' || '' }}
+      # Surfaces phase timing in DCL.sh — see DCL-devops#797.
+      DCL_FLEX_TIMING: ${{ inputs.flex_timing && '1' || '' }}
     steps:
     - uses: actions/checkout@v7
     - uses: ./.github/actions/test-actions-core

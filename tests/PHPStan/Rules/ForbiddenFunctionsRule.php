@@ -9,14 +9,14 @@
  * - error_log() (use ServiceContainer::getLogger() instead)
  * - mail() (use MyMailer instead, so sends respect the configured EMAIL_METHOD/SMTP settings)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025-2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025-2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\FuncCall;
@@ -48,7 +48,7 @@ class ForbiddenFunctionsRule implements Rule
         'sqlQueryNoLog' => 'Use QueryUtils::querySingleRow() instead of sqlQueryNoLog().',
         'call_user_func' => 'Use uniform variable syntax $callable(...$args) or the argument unpacking operator instead of call_user_func().',
         'call_user_func_array' => 'Use uniform variable syntax $callable(...$args) or the argument unpacking operator instead of call_user_func_array().',
-        'error_log' => 'Use a PSR-3 logger such as OpenEMR\BC\ServiceContainer::getLogger() instead of error_log().',
+        'error_log' => 'Use a PSR-3 logger such as DCL\BC\ServiceContainer::getLogger() instead of error_log().',
         'mail' => 'Use MyMailer instead of mail(), so sends respect the configured EMAIL_METHOD/SMTP settings.',
     ];
 
@@ -80,7 +80,7 @@ class ForbiddenFunctionsRule implements Rule
         if (in_array($functionName, ['call_user_func', 'call_user_func_array'], true)) {
             return [
                 RuleErrorBuilder::message($message)
-                    ->identifier('openemr.legacyCallUserFunc')
+                    ->identifier('DCL.legacyCallUserFunc')
                     ->tip('Example: $myFunction(...$args) or [$object, \'method\'](...$args)')
                     ->build()
             ];
@@ -89,7 +89,7 @@ class ForbiddenFunctionsRule implements Rule
         if ($functionName === 'error_log') {
             return [
                 RuleErrorBuilder::message($message)
-                    ->identifier('openemr.forbiddenErrorLog')
+                    ->identifier('DCL.forbiddenErrorLog')
                     ->tip('Example: ServiceContainer::getLogger()->error("message", ["context" => $data])')
                     ->build()
             ];
@@ -98,7 +98,7 @@ class ForbiddenFunctionsRule implements Rule
         if ($functionName === 'mail') {
             return [
                 RuleErrorBuilder::message($message)
-                    ->identifier('openemr.forbiddenMailFunction')
+                    ->identifier('DCL.forbiddenMailFunction')
                     ->tip('See library/classes/postmaster.php; $mail = new MyMailer(); $mail->addAddress(...); $mail->send();')
                     ->build()
             ];
@@ -107,7 +107,7 @@ class ForbiddenFunctionsRule implements Rule
         // Default for SQL functions
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.deprecatedSqlFunction')
+                ->identifier('DCL.deprecatedSqlFunction')
                 ->tip('Or use DatabaseQueryTrait in your class')
                 ->build()
         ];

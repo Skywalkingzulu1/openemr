@@ -1,24 +1,24 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers\FHIR;
+namespace DCL\Tests\RestControllers\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
-use OpenEMR\RestControllers\FHIR\FhirPractitionerRestController;
-use OpenEMR\Tests\Fixtures\PractitionerFixtureManager;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\FhirResponseAssertionTrait;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
+use DCL\RestControllers\FHIR\FhirPractitionerRestController;
+use DCL\Tests\Fixtures\PractitionerFixtureManager;
+use DCL\Tests\RestControllers\FHIR\Trait\FhirResponseAssertionTrait;
+use DCL\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirPractitionerRestControllerTest extends TestCase
 {

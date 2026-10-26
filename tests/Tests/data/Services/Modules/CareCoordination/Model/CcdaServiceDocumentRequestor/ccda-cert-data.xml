@@ -1,4 +1,4 @@
-<CCDA><serverRoot></serverRoot><document_location>C:/xampp/htdocs/openemr-master/sites/default</document_location><username></username><password></password><hie>MyHealth</hie><time_start>19800801000000-0400</time_start><time_end>20260705052020-0400</time_end><client_id></client_id><created_time>20260705052020</created_time><created_time_timezone>20260705052020-0400</created_time_timezone><timezone_local_offset>-0400</timezone_local_offset><send>0</send><doc_type></doc_type><assignedEntity>
+<CCDA><serverRoot></serverRoot><document_location>C:/xampp/htdocs/DCL-master/sites/default</document_location><username></username><password></password><hie>MyHealth</hie><time_start>19800801000000-0400</time_start><time_end>20260705052020-0400</time_end><client_id></client_id><created_time>20260705052020</created_time><created_time_timezone>20260705052020-0400</created_time_timezone><timezone_local_offset>-0400</timezone_local_offset><send>0</send><doc_type></doc_type><assignedEntity>
         <streetAddressLine></streetAddressLine>
         <city></city>
         <state></state>

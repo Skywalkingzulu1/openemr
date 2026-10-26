@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Indication for the Medicinal Product.
@@ -72,55 +72,55 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 {
     /**
      * The medication for which this is an indication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subject = [];
 
     /**
      * The disease, symptom or procedure that is the indication for treatment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $diseaseSymptomProcedure = null;
 
     /**
      * The status of the disease or symptom for which the indication applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $diseaseStatus = null;
 
     /**
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $comorbidity = [];
 
     /**
      * The intended effect, aim or strategy to be achieved by the indication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $intendedEffect = null;
 
     /**
      * Timing or duration information as part of the indication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $duration = null;
 
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
      */
     public $otherTherapy = [];
 
     /**
      * Describe the undesirable effects of the medicinal product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $undesirableEffect = [];
 
     /**
      * The population group to which this applies.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPopulation[]
      */
     public $population = [];
 
@@ -131,7 +131,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The medication for which this is an indication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubject()
     {
@@ -140,7 +140,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The medication for which this is an indication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -151,7 +151,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The disease, symptom or procedure that is the indication for treatment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDiseaseSymptomProcedure()
     {
@@ -160,7 +160,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The disease, symptom or procedure that is the indication for treatment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $diseaseSymptomProcedure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $diseaseSymptomProcedure
      * @return $this
      */
     public function setDiseaseSymptomProcedure($diseaseSymptomProcedure)
@@ -171,7 +171,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The status of the disease or symptom for which the indication applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDiseaseStatus()
     {
@@ -180,7 +180,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The status of the disease or symptom for which the indication applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
      * @return $this
      */
     public function setDiseaseStatus($diseaseStatus)
@@ -191,7 +191,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getComorbidity()
     {
@@ -200,7 +200,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $comorbidity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $comorbidity
      * @return $this
      */
     public function addComorbidity($comorbidity)
@@ -211,7 +211,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The intended effect, aim or strategy to be achieved by the indication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getIntendedEffect()
     {
@@ -220,7 +220,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The intended effect, aim or strategy to be achieved by the indication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $intendedEffect
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $intendedEffect
      * @return $this
      */
     public function setIntendedEffect($intendedEffect)
@@ -231,7 +231,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Timing or duration information as part of the indication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDuration()
     {
@@ -240,7 +240,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Timing or duration information as part of the indication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $duration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $duration
      * @return $this
      */
     public function setDuration($duration)
@@ -251,7 +251,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
      */
     public function getOtherTherapy()
     {
@@ -260,7 +260,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy $otherTherapy
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy $otherTherapy
      * @return $this
      */
     public function addOtherTherapy($otherTherapy)
@@ -271,7 +271,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Describe the undesirable effects of the medicinal product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getUndesirableEffect()
     {
@@ -280,7 +280,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * Describe the undesirable effects of the medicinal product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $undesirableEffect
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $undesirableEffect
      * @return $this
      */
     public function addUndesirableEffect($undesirableEffect)
@@ -291,7 +291,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The population group to which this applies.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPopulation[]
      */
     public function getPopulation()
     {
@@ -300,7 +300,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements \Json
 
     /**
      * The population group to which this applies.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation $population
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPopulation $population
      * @return $this
      */
     public function addPopulation($population)

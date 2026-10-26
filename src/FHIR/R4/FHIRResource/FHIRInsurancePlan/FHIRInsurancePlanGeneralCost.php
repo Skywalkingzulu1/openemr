@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,25 +71,25 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Type of cost.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Number of participants enrolled in the plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $groupSize = null;
 
     /**
      * Value of the cost.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $cost = null;
 
     /**
      * Additional information about the general costs associated with this plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
@@ -100,7 +100,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Type of cost.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -109,7 +109,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Type of cost.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -120,7 +120,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Number of participants enrolled in the plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getGroupSize()
     {
@@ -129,7 +129,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Number of participants enrolled in the plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $groupSize
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $groupSize
      * @return $this
      */
     public function setGroupSize($groupSize)
@@ -140,7 +140,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Value of the cost.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getCost()
     {
@@ -149,7 +149,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Value of the cost.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $cost
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $cost
      * @return $this
      */
     public function setCost($cost)
@@ -160,7 +160,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Additional information about the general costs associated with this plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -169,7 +169,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement implements \JsonS
 
     /**
      * Additional information about the general costs associated with this plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)

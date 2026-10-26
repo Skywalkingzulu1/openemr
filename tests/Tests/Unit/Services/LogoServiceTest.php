@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\Services;
+namespace DCL\Tests\Unit\Services;
 
-use OpenEMR\Events\Services\LogoFilterEvent;
-use OpenEMR\Services\LogoService;
+use DCL\Events\Services\LogoFilterEvent;
+use DCL\Services\LogoService;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

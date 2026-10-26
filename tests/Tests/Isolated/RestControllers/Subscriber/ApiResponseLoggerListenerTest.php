@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Subscriber;
+namespace DCL\Tests\Isolated\RestControllers\Subscriber;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Logging\Audit\ApiLogRedactor;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\RestControllers\Subscriber\ApiResponseLoggerListener;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Logging\Audit\ApiLogRedactor;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
+use DCL\RestControllers\Subscriber\ApiResponseLoggerListener;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;

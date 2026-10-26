@@ -15,10 +15,10 @@
 
  require_once("../interface/globals.php");
 
- use OpenEMR\Common\Acl\AccessDeniedHelper;
- use OpenEMR\Common\Acl\AclMain;
- use OpenEMR\Common\Csrf\CsrfUtils;
- use OpenEMR\Core\Header;
+ use DCL\Common\Acl\AccessDeniedHelper;
+ use DCL\Common\Acl\AclMain;
+ use DCL\Common\Csrf\CsrfUtils;
+ use DCL\Core\Header;
 
 if (!AclMain::aclCheckCore('patients', 'demo')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/demo: Export Patient Demographics LabWorks", xl("Export Patient Demographics LabWorks"));
@@ -29,7 +29,7 @@ CsrfUtils::checkCsrfInput(INPUT_GET, dieOnFail: true);
  // then set $FTP_SERVER to an empty string.
  //
  $FTP_SERVER = "192.168.0.30";
- $FTP_USER   = "openemr";
+ $FTP_USER   = "DCL";
  $FTP_PASS   = "secret";
  $FTP_DIR    = "";
 
@@ -154,7 +154,7 @@ if ($row['providerID']) {
  $out .= custom_labworks_Add($row['postal_code']);         // zip
  $out .= custom_labworks_Add(Digits($row['phone_home']));  // home phone
 
- // Guarantor Section.  OpenEMR does not have guarantors so we use the primary
+ // Guarantor Section.  DCL does not have guarantors so we use the primary
  // insurance subscriber if there is one, otherwise the patient.
  //
 if (trim((string) $row['lname1'])) {

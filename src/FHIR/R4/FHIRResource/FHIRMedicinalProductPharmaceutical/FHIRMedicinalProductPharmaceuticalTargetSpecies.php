@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A pharmaceutical product described in terms of its composition and dose form.
@@ -71,13 +71,13 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
 {
     /**
      * Coded expression for the species.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A species specific time during which consumption of animal product is not appropriate.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod[]
      */
     public $withdrawalPeriod = [];
 
@@ -88,7 +88,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
 
     /**
      * Coded expression for the species.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
 
     /**
      * Coded expression for the species.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
 
     /**
      * A species specific time during which consumption of animal product is not appropriate.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod[]
      */
     public function getWithdrawalPeriod()
     {
@@ -117,7 +117,7 @@ class FHIRMedicinalProductPharmaceuticalTargetSpecies extends FHIRBackboneElemen
 
     /**
      * A species specific time during which consumption of animal product is not appropriate.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod $withdrawalPeriod
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalWithdrawalPeriod $withdrawalPeriod
      * @return $this
      */
     public function addWithdrawalPeriod($withdrawalPeriod)

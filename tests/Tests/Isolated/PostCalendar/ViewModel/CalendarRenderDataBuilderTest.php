@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\PostCalendar\ViewModel;
+namespace DCL\Tests\Isolated\PostCalendar\ViewModel;
 
-use OpenEMR\PostCalendar\ViewModel\CalendarRenderDataBuilder;
-use OpenEMR\PostCalendar\ViewModel\CalendarViewModel;
-use OpenEMR\PostCalendar\ViewModel\ViewType;
+use DCL\PostCalendar\ViewModel\CalendarRenderDataBuilder;
+use DCL\PostCalendar\ViewModel\CalendarViewModel;
+use DCL\PostCalendar\ViewModel\ViewType;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -362,7 +362,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
             1,
             0,
             '/img',
-            '/openemr',
+            '/DCL',
             '?prev',
             '?next',
             'fa-chevron-left',
@@ -399,7 +399,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
             1,
             0,
             '/img',
-            '/openemr',
+            '/DCL',
             '?prev',
             '?next',
             'fa-chevron-left',
@@ -579,7 +579,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
                 $pcFacility,
                 0,
                 '/img',
-                '/openemr',
+                '/DCL',
                 '?prev',
                 '?next',
                 'fa-chevron-left',
@@ -600,7 +600,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
                 $pcFacility,
                 0,
                 '/img',
-                '/openemr',
+                '/DCL',
                 '?prev',
                 '?next',
                 'fa-chevron-left',
@@ -622,7 +622,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
                 $pcFacility,
                 0,
                 '/img',
-                '/openemr',
+                '/DCL',
                 '?prev',
                 '?next',
                 'fa-chevron-left',
@@ -656,7 +656,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
             1,
             0,
             '/img',
-            '/openemr',
+            '/DCL',
             '?prev',
             '?next',
             'fa-chevron-left',
@@ -729,7 +729,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
             1,
             0,
             '/img',
-            '/openemr',
+            '/DCL',
             '?prev',
             '?next',
             'fa-chevron-left',
@@ -761,7 +761,7 @@ final class CalendarRenderDataBuilderTest extends TestCase
             1,
             0,
             '/img',
-            '/openemr',
+            '/DCL',
             '?prev',
             '?next',
             'fa-chevron-left',

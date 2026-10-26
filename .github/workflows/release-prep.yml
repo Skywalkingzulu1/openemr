@@ -1,12 +1,12 @@
 name: Release Prep Conductor
 
 # Long-lived release-prep PR pattern (release-please-shaped) for the
-# openemr/openemr conductor in the three-PR release-automation flow
-# (openemr/openemr-devops#664). On every push to a rel-* branch, runs
+# DCL/DCL conductor in the three-PR release-automation flow
+# (DCL/DCL-devops#664). On every push to a rel-* branch, runs
 # the mechanical edits and force-pushes them to release-prep/<rel-branch>
 # (only when the branch is in an active dev cycle -- $v_tag == '-dev'),
 # opening or updating a draft PR. On merge of that PR, creates the
-# annotated release tag and dispatches openemr-tag to the consumer
+# annotated release tag and dispatches DCL-tag to the consumer
 # repos.
 
 on:
@@ -75,7 +75,7 @@ jobs:
     strategy:
       matrix:
         # The conductor itself is tooling (only runs on CI) so per OCE
-        # conventions it tracks the latest stable PHP, not the openemr
+        # conventions it tracks the latest stable PHP, not the DCL
         # application floor. The release-prep mutators only need to
         # parse application code, not execute it on this PHP version.
         php-version:
@@ -96,7 +96,7 @@ jobs:
         # targets, otherwise repository_dispatch to the consumer repos
         # returns 403 "Resource not accessible by integration".
         owner: ${{ github.repository_owner }}
-        repositories: openemr,openemr-devops,website-openemr,demo_farm_openemr
+        repositories: DCL,DCL-devops,website-DCL,demo_farm_DCL
 
     - name: Setup PHP and Composer
       uses: ./.github/actions/setup-php-composer
@@ -255,7 +255,7 @@ jobs:
         # refuses to run under GitHub Actions.
         GH_TOKEN: ${{ github.token }}
       run: |
-        php bin/console openemr:release-prep \
+        php bin/console DCL:release-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -275,12 +275,12 @@ jobs:
         title: 'chore(release): prep ${{ steps.resolve.outputs.version }}${{ steps.resolve.outputs.title-suffix }}'
         body: ${{ steps.pr-body.outputs.body }}
         commit-message: 'chore(release): prep ${{ steps.resolve.outputs.version }}${{ steps.resolve.outputs.title-suffix }}'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         draft: true
         delete-branch: false
 
-    # Phase 7c follow-up (openemr/openemr#13207): fire the pre-merge
+    # Phase 7c follow-up (DCL/DCL#13207): fire the pre-merge
     # acceptance gate against the just-force-pushed
     # release-prep/<rel-branch> tip. Peter-evans already wrote the
     # mutator output above; this validates that the resulting tarball
@@ -308,7 +308,7 @@ jobs:
     #
     # Skipped when acceptance-package.yml on the target rel-branch
     # predates its workflow_dispatch trigger's `build_locally` input
-    # (openemr/openemr#13204, Phase 3.5, master + rel-830+). On rel-820
+    # (DCL/DCL#13204, Phase 3.5, master + rel-830+). On rel-820
     # the dispatch would fail with "unknown input"; the swallow here
     # keeps release-prep flowing on legacy branches and pre-Phase-3.5
     # backports.
@@ -342,10 +342,10 @@ jobs:
     # Dockerfile-side regressions on the release-in-flight get caught
     # pre-merge rather than surfacing at docker-orchestrator time.
     #
-    # No openemr_version_ref override needed: the rel-branch's
-    # docker/release/Dockerfile already has OPENEMR_VERSION baked in
-    # via DockerfileOpenemrVersionMutator at branch-cut time
-    # (rel-830's Dockerfile defaults to OPENEMR_VERSION=rel-830). The
+    # No DCL_version_ref override needed: the rel-branch's
+    # docker/release/Dockerfile already has DCL_VERSION baked in
+    # via DockerfileDCLVersionMutator at branch-cut time
+    # (rel-830's Dockerfile defaults to DCL_VERSION=rel-830). The
     # release-prep branch is based on rel-branch tip and inherits that
     # Dockerfile, so `docker build docker/release` under --ref
     # release-prep/<rel-branch> naturally clones rel-branch source
@@ -361,7 +361,7 @@ jobs:
     # when the release-finalize PR merges to master). In FULL-AUTO
     # ship-release mode Finalize won't merge until the tarball
     # GitHub Release object exists, and tarball publish is now gated
-    # by tarball acceptance (Phase 7c, openemr/openemr#13207) — so
+    # by tarball acceptance (Phase 7c, DCL/DCL#13207) — so
     # under full-auto a broken release-cycle codebase blocks tarball
     # publish → blocks finalize merge → blocks docker orchestrator,
     # transitively gating docker on tarball acceptance.
@@ -470,7 +470,7 @@ jobs:
         REL_BRANCH: ${{ steps.resolve.outputs.branch }}
         GH_TOKEN: ${{ github.token }}
       run: |
-        php bin/console openemr:release-prep \
+        php bin/console DCL:release-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -502,8 +502,8 @@ jobs:
         title: 'chore(release): finalize ${{ steps.resolve.outputs.version }} on master'
         body: ${{ steps.finalize-pr-body.outputs.body }}
         commit-message: 'chore(release): finalize ${{ steps.resolve.outputs.version }} on master'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         draft: true
         delete-branch: false
 
@@ -528,13 +528,13 @@ jobs:
         # treat it as rel-update — rel-cut is only correct on the very
         # first PR creation.
         case "${OPERATION}" in
-          created) event='openemr-rel-cut' ;;
-          *)       event='openemr-rel-update' ;;
+          created) event='DCL-rel-cut' ;;
+          *)       event='DCL-rel-update' ;;
         esac
         php tools/release/bin/dispatch.php \
           --event="${event}" \
           --sha="${PUSH_SHA}" \
-          --actor='openemr-release-bot' \
+          --actor='DCL-release-bot' \
           --branch="${REL_BRANCH}" \
           --release-version="${VERSION}" \
           --prev-release="${prev_release}"
@@ -571,17 +571,17 @@ jobs:
         # targets, otherwise repository_dispatch to the consumer repos
         # returns 403 "Resource not accessible by integration".
         #
-        # After workstream 7 Phase 2 PR 2c (openemr-tag dispatch cutover
-        # from openemr-devops -> openemr), the finalize dispatch fanout
-        # is `openemr/openemr,openemr/website-openemr`. `openemr` needs
+        # After workstream 7 Phase 2 PR 2c (DCL-tag dispatch cutover
+        # from DCL-devops -> DCL), the finalize dispatch fanout
+        # is `DCL/DCL,DCL/website-DCL`. `DCL` needs
         # to be in the token scope both as the running repo and as the
-        # dispatch target. `openemr-devops` dropped: no dispatch to it
-        # remains from this job. `demo_farm_openemr` never in scope
-        # here: bump-tag.yml was retired in demo_farm_openemr#141 in
+        # dispatch target. `DCL-devops` dropped: no dispatch to it
+        # remains from this job. `demo_farm_DCL` never in scope
+        # here: bump-tag.yml was retired in demo_farm_DCL#141 in
         # favor of the auto-derive bot subscribing to
         # release-targets-changed instead.
         owner: ${{ github.repository_owner }}
-        repositories: openemr,website-openemr
+        repositories: DCL,website-DCL
 
     - name: Setup PHP and Composer
       uses: ./.github/actions/setup-php-composer
@@ -652,7 +652,7 @@ jobs:
         git fetch --tags --quiet
         php tools/release/bin/verify-tag.php "${TAG_NAME}"
 
-    - name: Dispatch openemr-tag to consumers
+    - name: Dispatch DCL-tag to consumers
       env:
         RELEASE_APP_TOKEN: ${{ steps.app-token.outputs.token }}
         VERSION: ${{ steps.resolve.outputs.version }}
@@ -660,34 +660,34 @@ jobs:
         MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
         TAG_NAME: ${{ steps.tag.outputs.tag-name }}
       run: |
-        # G20: openemr-tag now carries prev_release so website-openemr's
+        # G20: DCL-tag now carries prev_release so website-DCL's
         # release-docs.yml can generate acknowledgements + release-notes
         # on the FINAL cut. Historically this dispatch omitted the field
         # and the two generators SKIPPED (their `if: prev_release != ''`
         # gates) on every release, leaving each shipped version without
-        # markdown files on master until a manual openemr-rel-update
+        # markdown files on master until a manual DCL-rel-update
         # recovery dispatch. Derived from the same
         # BranchVersionResolver::previousRelease() the sibling rel-cut/
         # update dispatches use.
         prev_release="$(php tools/release/bin/derive-prev-release.php "${VERSION}")"
         # Explicit --target-repos to shape the fanout differently from
         # dispatch.php's default list (see Dispatcher::DEFAULT_TARGET_REPOS):
-        #   * `openemr/openemr` -- intra-repo, consumed by openemr's own
+        #   * `DCL/DCL` -- intra-repo, consumed by DCL's own
         #     build-release-on-tag.yml (workstream 7 Phase 2 PR 2b landed
         #     the consumer; PR 2c retargeted this dispatch to it, from the
-        #     historical openemr/openemr-devops build-release-on-tag.yml).
-        #   * `openemr/website-openemr` -- consumed by release-docs.yml
+        #     historical DCL/DCL-devops build-release-on-tag.yml).
+        #   * `DCL/website-DCL` -- consumed by release-docs.yml
         #     for acknowledgements + release-notes markdown generation.
-        #   * Demo_farm_openemr dropped from the default list: its
-        #     bump-tag.yml was retired in demo_farm_openemr#141 in favor
+        #   * Demo_farm_DCL dropped from the default list: its
+        #     bump-tag.yml was retired in demo_farm_DCL#141 in favor
         #     of the auto-derive bot subscribing to
         #     release-targets-changed instead. Without the explicit
         #     --target-repos the dispatch would fire into a void there.
         php tools/release/bin/dispatch.php \
-          --event=openemr-tag \
-          --target-repos=openemr/openemr,openemr/website-openemr \
+          --event=DCL-tag \
+          --target-repos=DCL/DCL,DCL/website-DCL \
           --sha="${MERGE_SHA}" \
-          --actor='openemr-release-bot' \
+          --actor='DCL-release-bot' \
           --branch="${REL_BRANCH}" \
           --release-version="${VERSION}" \
           --tag="${TAG_NAME}" \
@@ -699,7 +699,7 @@ jobs:
     # cycle. Under the G16 fix that same prep job skips on the release-prep
     # merge push (Layer 2 gate rejects $v_tag == '' post-mutator), so
     # nothing was updating the release-finalize PR to reflect the actual
-    # just-shipped state -- openemr_version_ref would stay pinned at the
+    # just-shipped state -- DCL_version_ref would stay pinned at the
     # rel-branch tip instead of the just-created annotated tag. Fold the
     # master-scope mutator + PR update work into the finalize job here so
     # the release-finalize PR content and its draft/ready state both
@@ -734,7 +734,7 @@ jobs:
         REL_BRANCH: ${{ steps.resolve.outputs.branch }}
         GH_TOKEN: ${{ github.token }}
       run: |
-        php bin/console openemr:release-prep \
+        php bin/console DCL:release-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -767,15 +767,15 @@ jobs:
         title: 'chore(release): finalize ${{ steps.resolve.outputs.version }} on master'
         body: ${{ steps.finalize-pr-body-post-tag.outputs.body }}
         commit-message: 'chore(release): finalize ${{ steps.resolve.outputs.version }} on master (post-tag)'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         draft: false
         delete-branch: false
 
     # peter-evans's `draft: false` only applies on PR creation -- it does
     # NOT flip an existing draft PR out of draft. Do that explicitly here.
     # Also post a maintainer-facing comment on the PR to signal the phase-2
-    # transition: content now reflects post-tag reality (openemr_version_
+    # transition: content now reflects post-tag reality (DCL_version_
     # ref pinned to the just-created annotated tag) and the PR is ready
     # to be merged onto master.
     #
@@ -800,4 +800,4 @@ jobs:
           gh pr ready "$PR_NUMBER" --repo "$REPO"
         fi
         gh pr comment "$PR_NUMBER" --repo "$REPO" --body \
-          "Post-tag update applied. \`openemr_version_ref\` for \`${REL_BRANCH}\` is now pinned to \`${TAG_NAME}\` (the just-created annotated tag for ${VERSION}) and \`docker_tags\` slot rotations reflect actual shipped state. PR flipped out of draft; ready to merge to master."
+          "Post-tag update applied. \`DCL_version_ref\` for \`${REL_BRANCH}\` is now pinned to \`${TAG_NAME}\` (the just-created annotated tag for ${VERSION}) and \`docker_tags\` slot rotations reflect actual shipped state. PR flipped out of draft; ready to merge to master."

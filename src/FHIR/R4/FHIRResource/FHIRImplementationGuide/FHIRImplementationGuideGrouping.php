@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,13 +71,13 @@ class FHIRImplementationGuideGrouping extends FHIRBackboneElement implements \Js
 {
     /**
      * The human-readable title to display for the package of resources when rendering the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Human readable text describing the package.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
@@ -88,7 +88,7 @@ class FHIRImplementationGuideGrouping extends FHIRBackboneElement implements \Js
 
     /**
      * The human-readable title to display for the package of resources when rendering the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -97,7 +97,7 @@ class FHIRImplementationGuideGrouping extends FHIRBackboneElement implements \Js
 
     /**
      * The human-readable title to display for the package of resources when rendering the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -108,7 +108,7 @@ class FHIRImplementationGuideGrouping extends FHIRBackboneElement implements \Js
 
     /**
      * Human readable text describing the package.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -117,7 +117,7 @@ class FHIRImplementationGuideGrouping extends FHIRBackboneElement implements \Js
 
     /**
      * Human readable text describing the package.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)

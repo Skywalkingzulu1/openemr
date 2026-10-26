@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
+namespace DCL\FHIR\R4\FHIRResource\FHIRValueSet;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
@@ -71,37 +71,37 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may reuse the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $identifier = null;
 
     /**
      * The time at which the expansion was produced by the expanding system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timestamp = null;
 
     /**
      * The total number of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $total = null;
 
     /**
      * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $offset = null;
 
     /**
      * A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetParameter[]
      */
     public $parameter = [];
 
     /**
      * The codes that are contained in the value set expansion.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
      */
     public $contains = [];
 
@@ -112,7 +112,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may reuse the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getIdentifier()
     {
@@ -121,7 +121,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier that uniquely identifies this expansion of the valueset, based on a unique combination of the provided parameters, the system default parameters, and the underlying system code system versions etc. Systems may reuse the same identifier as long as those factors remain the same, and the expansion is the same, but are not required to do so. This is a business identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -132,7 +132,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The time at which the expansion was produced by the expanding system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimestamp()
     {
@@ -141,7 +141,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The time at which the expansion was produced by the expanding system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timestamp
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timestamp
      * @return $this
      */
     public function setTimestamp($timestamp)
@@ -152,7 +152,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The total number of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getTotal()
     {
@@ -161,7 +161,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The total number of concepts in the expansion. If the number of concept nodes in this resource is less than the stated number, then the server can return more using the offset parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $total
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $total
      * @return $this
      */
     public function setTotal($total)
@@ -172,7 +172,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getOffset()
     {
@@ -181,7 +181,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * If paging is being used, the offset at which this resource starts.  I.e. this resource is a partial view into the expansion. If paging is not being used, this element SHALL NOT be present.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $offset
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $offset
      * @return $this
      */
     public function setOffset($offset)
@@ -192,7 +192,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetParameter[]
      */
     public function getParameter()
     {
@@ -201,7 +201,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -212,7 +212,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The codes that are contained in the value set expansion.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
      */
     public function getContains()
     {
@@ -221,7 +221,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The codes that are contained in the value set expansion.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains $contains
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains $contains
      * @return $this
      */
     public function addContains($contains)

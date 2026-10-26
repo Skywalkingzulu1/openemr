@@ -3,13 +3,13 @@
 /**
  * Escaping Functions
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Boyd Stephen Smith Jr.
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 Boyd Stephen Smith Jr.
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * Design note for the escape helpers below (attr, text, js_escape, attr_js,
  * attr_url, js_url, xmlEscape, errorLogEscape, csvEscape, ...):
@@ -121,7 +121,7 @@ function safe_href(?string $url): string
     }
 
     // Disallowed scheme — log and return safe fallback
-    \OpenEMR\BC\ServiceContainer::getLogger()->warning(
+    \DCL\BC\ServiceContainer::getLogger()->warning(
         "safe_href(): blocked disallowed URL scheme",
         ['scheme' => $scheme]
     );

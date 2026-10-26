@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\Billing;
+namespace DCL\Tests\Isolated\Billing;
 
-use OpenEMR\Billing\BillingProcessor\BillingClaimBatch;
+use DCL\Billing\BillingProcessor\BillingClaimBatch;
 use PHPUnit\Framework\TestCase;
 
 /**

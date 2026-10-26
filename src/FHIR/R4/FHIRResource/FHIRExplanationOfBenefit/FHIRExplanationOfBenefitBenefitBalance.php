@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -71,49 +71,49 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 {
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicates the product or service is included in the coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $excluded = null;
 
     /**
      * A short name or tag for the benefit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A richer description of the benefit or services covered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $network = null;
 
     /**
      * Indicates if the benefits apply to an individual or to the family.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unit = null;
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual visits'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $term = null;
 
     /**
      * Benefits Used to date.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial[]
      */
     public $financial = [];
 
@@ -124,7 +124,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -133,7 +133,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -144,7 +144,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicates the product or service is included in the coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExcluded()
     {
@@ -153,7 +153,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicates the product or service is included in the coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $excluded
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $excluded
      * @return $this
      */
     public function setExcluded($excluded)
@@ -164,7 +164,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * A short name or tag for the benefit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -173,7 +173,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * A short name or tag for the benefit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -184,7 +184,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * A richer description of the benefit or services covered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -193,7 +193,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * A richer description of the benefit or services covered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -204,7 +204,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getNetwork()
     {
@@ -213,7 +213,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $network
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $network
      * @return $this
      */
     public function setNetwork($network)
@@ -224,7 +224,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Indicates if the benefits apply to an individual or to the family.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnit()
     {
@@ -233,7 +233,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Indicates if the benefits apply to an individual or to the family.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
      * @return $this
      */
     public function setUnit($unit)
@@ -244,7 +244,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual visits'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTerm()
     {
@@ -253,7 +253,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual visits'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $term
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $term
      * @return $this
      */
     public function setTerm($term)
@@ -264,7 +264,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Benefits Used to date.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial[]
      */
     public function getFinancial()
     {
@@ -273,7 +273,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement impleme
 
     /**
      * Benefits Used to date.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial $financial
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial $financial
      * @return $this
      */
     public function addFinancial($financial)

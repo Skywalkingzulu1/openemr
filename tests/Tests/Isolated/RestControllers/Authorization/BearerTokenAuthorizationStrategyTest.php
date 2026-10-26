@@ -1,24 +1,24 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
 use League\OAuth2\Server\CryptKey;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\RestControllers\Authorization\BearerTokenAuthorizationStrategy;
-use OpenEMR\Services\TrustedUserService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Core\OEGlobalsBag;
+use DCL\RestControllers\Authorization\BearerTokenAuthorizationStrategy;
+use DCL\Services\TrustedUserService;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Filesystem\Filesystem;
@@ -33,8 +33,8 @@ class BearerTokenAuthorizationStrategyTest extends TestCase
     const ISSUER = 'http://example.com';
     const AUDIENCE = 'http://example.com/oauth2/token';
 
-    const KEY_PATH_PUBLIC = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/openemr-rsa384-public.pem';
-    const KEY_PATH_PRIVATE = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/openemr-rsa384-private.key';
+    const KEY_PATH_PUBLIC = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/DCL-rsa384-public.pem';
+    const KEY_PATH_PRIVATE = __DIR__ . '/../../../data/Unit/Common/Auth/Grant/DCL-rsa384-private.key';
 
     private function getMockSessionForRequest(HttpRestRequest $request): SessionInterface
     {
@@ -161,7 +161,7 @@ class BearerTokenAuthorizationStrategyTest extends TestCase
 
     /**
      * Mints a signed access token whose iat/nbf are offset from now, mirroring the claim set
-     * OpenEMR's AccessTokenEntity::convertToJWT() produces.
+     * DCL's AccessTokenEntity::convertToJWT() produces.
      *
      * @param list<string> $scopes
      */

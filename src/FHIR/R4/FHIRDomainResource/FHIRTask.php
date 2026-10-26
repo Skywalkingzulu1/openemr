@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A task to be performed.
@@ -72,187 +72,187 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The business identifier for this task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $instantiatesCanonical = null;
 
     /**
      * The URL pointing to an *externally* maintained  protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $instantiatesUri = null;
 
     /**
      * BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a "request" resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the "request" resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * An identifier that links together multiple tasks and other requests that were created in the same context.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $groupIdentifier = null;
 
     /**
      * Task that this particular task is part of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * The current status of the task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTaskStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTaskStatus
      */
     public $status = null;
 
     /**
      * An explanation as to why this task is held, failed, was refused, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $statusReason = null;
 
     /**
      * Contains business-specific nuances of the business state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $businessStatus = null;
 
     /**
      * Indicates the "level" of actionability associated with the Task, i.e. i+R[9]Cs this a proposed task, a planned task, an actionable task, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTaskIntent
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTaskIntent
      */
     public $intent = null;
 
     /**
      * Indicates how quickly the Task should be addressed with respect to other requests.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
      * A name or code (or both) briefly describing what the task involves.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A free-text description of what is to be performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The request being actioned or the resource being manipulated by this task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $focus = null;
 
     /**
      * The entity who benefits from the performance of the service specified in the task (e.g., the patient).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $for = null;
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this task was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * Identifies the time action was first taken against the task (start) and/or the time final action was taken against the task prior to marking it as completed (end).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $executionPeriod = null;
 
     /**
      * The date and time this task was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $authoredOn = null;
 
     /**
      * The date and time of last modification to this task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $lastModified = null;
 
     /**
      * The creator of the task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requester = null;
 
     /**
      * The kind of participant that should perform the task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $performerType = [];
 
     /**
      * Individual organization or Device currently responsible for task execution.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $owner = null;
 
     /**
      * Principal physical location where the this task is performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * A description or code indicating why this task needs to be performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCode = null;
 
     /**
      * A resource reference indicating why this task needs to be performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be relevant to the Task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $insurance = [];
 
     /**
      * Free-text information captured about the task as it progresses.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Links to Provenance records for past versions of this Task that identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the task.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $relevantHistory = [];
 
     /**
      * If the Task.focus is a request resource and the task is seeking fulfillment (i.e. is asking for the request to be actioned), this element identifies any limitations on what parts of the referenced request should be actioned.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskRestriction
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskRestriction
      */
     public $restriction = null;
 
     /**
      * Additional information that may be needed in the execution of the task.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskInput[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskInput[]
      */
     public $input = [];
 
     /**
      * Outputs produced by the Task.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskOutput[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskOutput[]
      */
     public $output = [];
 
@@ -263,7 +263,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The business identifier for this task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -272,7 +272,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The business identifier for this task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -283,7 +283,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getInstantiatesCanonical()
     {
@@ -292,7 +292,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function setInstantiatesCanonical($instantiatesCanonical)
@@ -303,7 +303,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an *externally* maintained  protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getInstantiatesUri()
     {
@@ -312,7 +312,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an *externally* maintained  protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function setInstantiatesUri($instantiatesUri)
@@ -323,7 +323,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a "request" resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the "request" resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -332,7 +332,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a "request" resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the "request" resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -343,7 +343,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An identifier that links together multiple tasks and other requests that were created in the same context.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getGroupIdentifier()
     {
@@ -352,7 +352,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An identifier that links together multiple tasks and other requests that were created in the same context.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $groupIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $groupIdentifier
      * @return $this
      */
     public function setGroupIdentifier($groupIdentifier)
@@ -363,7 +363,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Task that this particular task is part of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -372,7 +372,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Task that this particular task is part of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -383,7 +383,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current status of the task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTaskStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTaskStatus
      */
     public function getStatus()
     {
@@ -392,7 +392,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current status of the task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTaskStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTaskStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -403,7 +403,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An explanation as to why this task is held, failed, was refused, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatusReason()
     {
@@ -412,7 +412,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An explanation as to why this task is held, failed, was refused, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function setStatusReason($statusReason)
@@ -423,7 +423,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contains business-specific nuances of the business state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getBusinessStatus()
     {
@@ -432,7 +432,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contains business-specific nuances of the business state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $businessStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $businessStatus
      * @return $this
      */
     public function setBusinessStatus($businessStatus)
@@ -443,7 +443,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the "level" of actionability associated with the Task, i.e. i+R[9]Cs this a proposed task, a planned task, an actionable task, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTaskIntent
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTaskIntent
      */
     public function getIntent()
     {
@@ -452,7 +452,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the "level" of actionability associated with the Task, i.e. i+R[9]Cs this a proposed task, a planned task, an actionable task, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTaskIntent $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTaskIntent $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -463,7 +463,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the Task should be addressed with respect to other requests.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -472,7 +472,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the Task should be addressed with respect to other requests.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -483,7 +483,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name or code (or both) briefly describing what the task involves.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -492,7 +492,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name or code (or both) briefly describing what the task involves.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -503,7 +503,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free-text description of what is to be performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -512,7 +512,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free-text description of what is to be performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -523,7 +523,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request being actioned or the resource being manipulated by this task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getFocus()
     {
@@ -532,7 +532,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request being actioned or the resource being manipulated by this task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $focus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $focus
      * @return $this
      */
     public function setFocus($focus)
@@ -543,7 +543,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity who benefits from the performance of the service specified in the task (e.g., the patient).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getFor()
     {
@@ -552,7 +552,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity who benefits from the performance of the service specified in the task (e.g., the patient).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $for
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $for
      * @return $this
      */
     public function setFor($for)
@@ -563,7 +563,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this task was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -572,7 +572,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this task was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -583,7 +583,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the time action was first taken against the task (start) and/or the time final action was taken against the task prior to marking it as completed (end).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getExecutionPeriod()
     {
@@ -592,7 +592,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the time action was first taken against the task (start) and/or the time final action was taken against the task prior to marking it as completed (end).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $executionPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $executionPeriod
      * @return $this
      */
     public function setExecutionPeriod($executionPeriod)
@@ -603,7 +603,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time this task was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn()
     {
@@ -612,7 +612,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time this task was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
     public function setAuthoredOn($authoredOn)
@@ -623,7 +623,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time of last modification to this task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getLastModified()
     {
@@ -632,7 +632,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time of last modification to this task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $lastModified
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $lastModified
      * @return $this
      */
     public function setLastModified($lastModified)
@@ -643,7 +643,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The creator of the task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequester()
     {
@@ -652,7 +652,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The creator of the task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requester
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requester
      * @return $this
      */
     public function setRequester($requester)
@@ -663,7 +663,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of participant that should perform the task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPerformerType()
     {
@@ -672,7 +672,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of participant that should perform the task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
      * @return $this
      */
     public function addPerformerType($performerType)
@@ -683,7 +683,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual organization or Device currently responsible for task execution.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOwner()
     {
@@ -692,7 +692,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual organization or Device currently responsible for task execution.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $owner
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $owner
      * @return $this
      */
     public function setOwner($owner)
@@ -703,7 +703,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Principal physical location where the this task is performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -712,7 +712,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Principal physical location where the this task is performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -723,7 +723,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description or code indicating why this task needs to be performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCode()
     {
@@ -732,7 +732,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description or code indicating why this task needs to be performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function setReasonCode($reasonCode)
@@ -743,7 +743,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A resource reference indicating why this task needs to be performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReasonReference()
     {
@@ -752,7 +752,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A resource reference indicating why this task needs to be performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function setReasonReference($reasonReference)
@@ -763,7 +763,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be relevant to the Task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getInsurance()
     {
@@ -772,7 +772,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be relevant to the Task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $insurance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $insurance
      * @return $this
      */
     public function addInsurance($insurance)
@@ -783,7 +783,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Free-text information captured about the task as it progresses.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -792,7 +792,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Free-text information captured about the task as it progresses.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -803,7 +803,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Links to Provenance records for past versions of this Task that identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the task.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRelevantHistory()
     {
@@ -812,7 +812,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Links to Provenance records for past versions of this Task that identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the task.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
      * @return $this
      */
     public function addRelevantHistory($relevantHistory)
@@ -823,7 +823,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the Task.focus is a request resource and the task is seeking fulfillment (i.e. is asking for the request to be actioned), this element identifies any limitations on what parts of the referenced request should be actioned.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskRestriction
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskRestriction
      */
     public function getRestriction()
     {
@@ -832,7 +832,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the Task.focus is a request resource and the task is seeking fulfillment (i.e. is asking for the request to be actioned), this element identifies any limitations on what parts of the referenced request should be actioned.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskRestriction $restriction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskRestriction $restriction
      * @return $this
      */
     public function setRestriction($restriction)
@@ -843,7 +843,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional information that may be needed in the execution of the task.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskInput[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskInput[]
      */
     public function getInput()
     {
@@ -852,7 +852,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional information that may be needed in the execution of the task.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskInput $input
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskInput $input
      * @return $this
      */
     public function addInput($input)
@@ -863,7 +863,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Outputs produced by the Task.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskOutput[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskOutput[]
      */
     public function getOutput()
     {
@@ -872,7 +872,7 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Outputs produced by the Task.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskOutput $output
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTask\FHIRTaskOutput $output
      * @return $this
      */
     public function addOutput($output)

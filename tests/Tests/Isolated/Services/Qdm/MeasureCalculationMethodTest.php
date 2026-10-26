@@ -5,18 +5,18 @@
  * calculator. It used to force EPISODE_OF_CARE on all but a few measures,
  * which changed the results of patient-based measures.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Qdm;
+namespace DCL\Tests\Isolated\Services\Qdm;
 
-use OpenEMR\Services\Qdm\Measure;
+use DCL\Services\Qdm\Measure;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -43,7 +43,7 @@ class MeasureCalculationMethodTest extends TestCase
      */
     public static function measureProvider(): array
     {
-        $root = dirname(__DIR__, 5) . '/vendor/openemr/oe-cqm-parsers';
+        $root = dirname(__DIR__, 5) . '/vendor/DCL/oe-cqm-parsers';
         $cases = [];
         foreach (glob($root . '/*_reporting_period/json_measures/*/CMS*.json') ?: [] as $path) {
             $year = basename(dirname($path, 3));

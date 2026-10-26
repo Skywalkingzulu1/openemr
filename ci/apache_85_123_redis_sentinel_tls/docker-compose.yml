@@ -50,7 +50,7 @@ services:
 
       # --- Client cert (for mTLS variant; harmless to generate always) ---
       openssl genrsa -out client.key 2048
-      openssl req -new -key client.key -subj "/CN=openemr-client" \
+      openssl req -new -key client.key -subj "/CN=DCL-client" \
         | openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial \
             -days 1 -out client.crt
 
@@ -307,9 +307,9 @@ services:
       - SENTINEL
       - masters
 
-  # ---------- OpenEMR: add TLS env vars + cert volume ----------
-  openemr:
-    image: openemr/openemr:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
+  # ---------- DCL: add TLS env vars + cert volume ----------
+  DCL:
+    image: DCL/DCL:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
     environment:
       REDIS_TLS: "yes"
       REDIS_TLS_CERT_KEY_PATH: /redis-certs

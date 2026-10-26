@@ -13,9 +13,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Kevin Yeh <kevin.y@integralemr.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 function find_or_create_constant($constant)

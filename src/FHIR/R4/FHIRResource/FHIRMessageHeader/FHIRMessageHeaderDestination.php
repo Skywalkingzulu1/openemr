@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMessageHeader;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
@@ -71,25 +71,25 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Human-readable name for the target system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Identifies the target end system in situations where the initial message transmission is to an intermediary system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $target = null;
 
     /**
      * Indicates where the message should be routed to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $endpoint = null;
 
     /**
      * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $receiver = null;
 
@@ -100,7 +100,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Human-readable name for the target system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -109,7 +109,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Human-readable name for the target system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -120,7 +120,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Identifies the target end system in situations where the initial message transmission is to an intermediary system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTarget()
     {
@@ -129,7 +129,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Identifies the target end system in situations where the initial message transmission is to an intermediary system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $target
      * @return $this
      */
     public function setTarget($target)
@@ -140,7 +140,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates where the message should be routed to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getEndpoint()
     {
@@ -149,7 +149,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates where the message should be routed to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $endpoint
      * @return $this
      */
     public function setEndpoint($endpoint)
@@ -160,7 +160,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReceiver()
     {
@@ -169,7 +169,7 @@ class FHIRMessageHeaderDestination extends FHIRBackboneElement implements \JsonS
 
     /**
      * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $receiver
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $receiver
      * @return $this
      */
     public function setReceiver($receiver)

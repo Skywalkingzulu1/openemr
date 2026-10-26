@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,31 +71,31 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 {
     /**
      * A logical group of resources. Logical groups can be used when building pages.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGrouping[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGrouping[]
      */
     public $grouping = [];
 
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource[]
      */
     public $resource = [];
 
     /**
      * A page / section in the implementation guide. The root page is the implementation guide home page.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
     public $page = null;
 
     /**
      * Defines how IG is built by tools.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideParameter[]
      */
     public $parameter = [];
 
     /**
      * A template for building resources.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideTemplate[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideTemplate[]
      */
     public $template = [];
 
@@ -106,7 +106,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A logical group of resources. Logical groups can be used when building pages.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGrouping[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGrouping[]
      */
     public function getGrouping()
     {
@@ -115,7 +115,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A logical group of resources. Logical groups can be used when building pages.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGrouping $grouping
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGrouping $grouping
      * @return $this
      */
     public function addGrouping($grouping)
@@ -126,7 +126,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource[]
      */
     public function getResource()
     {
@@ -135,7 +135,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource $resource
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource $resource
      * @return $this
      */
     public function addResource($resource)
@@ -146,7 +146,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A page / section in the implementation guide. The root page is the implementation guide home page.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
     public function getPage()
     {
@@ -155,7 +155,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A page / section in the implementation guide. The root page is the implementation guide home page.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage $page
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage $page
      * @return $this
      */
     public function setPage($page)
@@ -166,7 +166,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * Defines how IG is built by tools.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideParameter[]
      */
     public function getParameter()
     {
@@ -175,7 +175,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * Defines how IG is built by tools.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -186,7 +186,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A template for building resources.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideTemplate[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideTemplate[]
      */
     public function getTemplate()
     {
@@ -195,7 +195,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement implements \
 
     /**
      * A template for building resources.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideTemplate $template
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideTemplate $template
      * @return $this
      */
     public function addTemplate($template)

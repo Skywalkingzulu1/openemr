@@ -3,16 +3,16 @@
 /**
  * _FormsHeader.tpl.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 ?>
@@ -23,7 +23,7 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
 <title><?php $this->eprint($this->title); ?></title>
 
-<meta name="description" content="OpenEMR Portal" />
+<meta name="description" content="DCL Portal" />
 <meta name="author" content="Form | sjpadgett@gmail.com" />
 
 <!-- Styles -->

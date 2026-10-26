@@ -36,7 +36,7 @@ teardown() {
 }
 
 @test "Release hash changed -> exit 2 with GUARDRAIL FAILED" {
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"edited","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"edited","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
     run bash "${RECOVERY_SMOKETEST_VERIFY_SCRIPT}"
     [[ ${status} -eq 2 ]]
     [[ "${output}" == *"GUARDRAIL FAILED"* ]]
@@ -144,7 +144,7 @@ teardown() {
     # install-check) and downloadCount bumps, the verify step must
     # NOT flag it as a mutation. The projection strips downloadCount
     # from both sides.
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"openemr-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:aaaa"}]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"DCL-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:aaaa"}]}'
     # Re-derive BASELINE_RELEASE_HASH against this new payload
     # (the helper computed it against the empty-assets default).
     BASELINE_RELEASE_HASH="$(compute_release_hash "${MOCK_GH_RELEASE_VIEW_JSON}")"
@@ -152,7 +152,7 @@ teardown() {
 
     # Now current state has bumped downloadCount but is otherwise
     # identical. Verify should pass.
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"openemr-8.4.0.tar.gz","size":123,"downloadCount":42,"digest":"sha256:aaaa"}]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"DCL-8.4.0.tar.gz","size":123,"downloadCount":42,"digest":"sha256:aaaa"}]}'
     run bash "${RECOVERY_SMOKETEST_VERIFY_SCRIPT}"
     [[ ${status} -eq 0 ]]
     [[ "${output}" == *"Guardrail OK"* ]]

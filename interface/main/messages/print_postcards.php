@@ -7,10 +7,10 @@
  * @link    http://www.MedExBank.com
  * @author  MedEx <support@MedExBank.com>
  * @copyright Copyright (c) 2017 MedEx <support@MedExBank.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 require_once("../../globals.php");
 
@@ -58,4 +58,4 @@ foreach ($pid_list as $pid) {
 }
 $pdf->Output('postcards.pdf', 'D');
 //D forces the file download instead of showing it in browser
-//isn't there an openEMR global for this?
+//isn't there an DCL global for this?

@@ -7,21 +7,21 @@
  * and table header elements include explicit text color properties to
  * ensure readability across all themes.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @see       https://github.com/openemr/openemr/issues/10842
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @see       https://github.com/DCL/DCL/issues/10842
  * @author    Josh Baiad <josh@jbaiad.com>
  * @copyright Copyright (c) 2026 Josh Baiad <josh@jbaiad.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e;
+namespace DCL\Tests\E2e;
 
-use OpenEMR\Tests\E2e\Base\BaseTrait;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
-use OpenEMR\Tests\E2e\Login\LoginTrait;
+use DCL\Tests\E2e\Base\BaseTrait;
+use DCL\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Login\LoginTrait;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Panther\PantherTestCase;
@@ -34,7 +34,7 @@ class FrontPaymentCssContrastTest extends PantherTestCase
     /**
      * Verify that the front payment receipt CSS includes explicit text
      * color on elements that set a background-color, ensuring readable
-     * contrast across all OpenEMR themes.
+     * contrast across all DCL themes.
      *
      * The light and solar themes map --secondary to a dark color, which
      * causes text to be invisible when no explicit color property is set.

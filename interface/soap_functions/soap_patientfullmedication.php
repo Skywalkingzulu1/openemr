@@ -17,16 +17,16 @@
  * General Public License along with this program.
  * If not, see <http://opensource.org/licenses/gpl-license.php>.
  *
- * @package    OpenEMR
+ * @package    DCL
  * @subpackage Ensora
  * @author     Eldho Chacko <eldho@zhservices.com>
  * @author     Vinish K <vinish@zhservices.com>
  * @author     Sam Likins <sam.likins@wsi-services.com>
- * @link       https://www.open-emr.org
+ * @link       https://www.dcl.org
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 require_once(__DIR__ . '/../globals.php');
 require_once(OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRxGlobals.php');

@@ -11,16 +11,16 @@
  * writing the file to disk. In the case of X-12 it also manages
  * the claim separators and the trailing indicators.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing\BillingProcessor;
+namespace DCL\Billing\BillingProcessor;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class BillingClaimBatch
 {
@@ -248,7 +248,7 @@ class BillingClaimBatch
             }
 
             if ($elems[0] == 'BHT') {
-                // needle is set in OpenEMR\Billing\X125010837P
+                // needle is set in DCL\Billing\X125010837P
                 $this->bat_content .= substr_replace($seg, '*' . "1" . '*', strpos((string) $seg, '*0123*'), 6);
                 $this->bat_content .= "~";
                 continue;

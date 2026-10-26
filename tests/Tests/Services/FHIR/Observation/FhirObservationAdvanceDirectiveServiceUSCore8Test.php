@@ -6,27 +6,27 @@
  * Tests compliance with US Core 8.0.0 Observation ADI Documentation Profile:
  * http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-adi-documentation
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @copyright Elements marked with AI GENERATED CODE - are in the public domain
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\Observation;
+namespace DCL\Tests\Services\FHIR\Observation;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRInstant;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\Observation\FhirObservationAdvanceDirectiveService;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRInstant;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\Observation\FhirObservationAdvanceDirectiveService;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\ListService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -177,7 +177,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[Test]
     public function testUSCore8ProfileMetadata(): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $observation = $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData);
 
         // Test observation is created
         $this->assertInstanceOf(FHIRObservation::class, $observation);
@@ -203,7 +203,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredStatus(): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $observation = $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData);
 
         // US Core requires status (1..1 cardinality, must-support)
         $status = $observation->getStatus();
@@ -225,7 +225,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredCodeWithLoincSystem(): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $observation = $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData);
 
         // US Core requires code (1..1 cardinality, must-support)
         $code = $observation->getCode();
@@ -257,7 +257,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[DataProvider('allSupportedCodesProvider')]
     public function testAllSupportedLoincCodes(array $testData, string $expectedCode, string $expectedDisplay): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($testData);
+        $observation = $this->fhirAdiService->parseDCLRecord($testData);
 
         $code = $observation->getCode();
         $codings = $code->getCoding();
@@ -371,7 +371,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredSubject(): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $observation = $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData);
 
         // US Core requires subject (1..1 cardinality, must-support)
         $subject = $observation->getSubject();
@@ -394,7 +394,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredCategoryAdiDocumentation(): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $observation = $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData);
 
         // US Core requires category:us-core slice with specific pattern
         $categories = $observation->getCategory();
@@ -425,7 +425,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportValueCodeableConcept(): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $observation = $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData);
 
         // value[x] is must-support as CodeableConcept (0..1 cardinality)
         $value = $observation->getValueCodeableConcept();
@@ -483,7 +483,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
         $testData['value'] = $fullValueCode;
         $testData['value_code_description'] = $expectedDisplay;
 
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($testData);
+        $observation = $this->fhirAdiService->parseDCLRecord($testData);
         $value = $observation->getValueCodeableConcept();
 
         $this->assertNotNull($value, 'Observation must have value');
@@ -519,7 +519,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
         $testData['last_updated_time'] = '2024-01-15 10:30:00';
         $expectedDate = UtilsService::getLocalDateAsUTC($testData['last_updated_time']);
 
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($testData);
+        $observation = $this->fhirAdiService->parseDCLRecord($testData);
 
         // issued is must-support (0..1 cardinality)
         // If present, verify it's properly formatted
@@ -539,7 +539,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
         $testData = $this->compliantLivingWillData;
         $testData['author_id'] = 1;
 
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($testData);
+        $observation = $this->fhirAdiService->parseDCLRecord($testData);
 
         // performer is must-support (0..* cardinality)
         // If present, verify structure
@@ -569,7 +569,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportSupportingInfoExtension(): void
     {
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $observation = $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData);
 
         // extension:supporting-info is must-support (0..*)
         // URL: http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
@@ -692,7 +692,7 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
             'date' => '2024-01-15'
         ];
 
-        $observation = $this->fhirAdiService->parseOpenEMRRecord($minimalData);
+        $observation = $this->fhirAdiService->parseDCLRecord($minimalData);
 
         // Should still create valid observation with mandatory elements
         $this->assertInstanceOf(FHIRObservation::class, $observation);
@@ -707,10 +707,10 @@ class FhirObservationAdvanceDirectiveServiceUSCore8Test extends TestCase
     {
         // Test that different ADI types can coexist for same patient
         $observations = [
-            $this->fhirAdiService->parseOpenEMRRecord($this->compliantLivingWillData),
-            $this->fhirAdiService->parseOpenEMRRecord($this->compliantPowerOfAttorneyData),
-            $this->fhirAdiService->parseOpenEMRRecord($this->compliantDnrOrderData),
-            $this->fhirAdiService->parseOpenEMRRecord($this->compliantGenericAdiData)
+            $this->fhirAdiService->parseDCLRecord($this->compliantLivingWillData),
+            $this->fhirAdiService->parseDCLRecord($this->compliantPowerOfAttorneyData),
+            $this->fhirAdiService->parseDCLRecord($this->compliantDnrOrderData),
+            $this->fhirAdiService->parseDCLRecord($this->compliantGenericAdiData)
         ];
 
         $this->assertCount(4, $observations, 'Should create 4 distinct observations');

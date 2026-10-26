@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,19 +71,19 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement implemen
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $geneSequenceOrigin = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $gene = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
@@ -94,7 +94,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement implemen
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getGeneSequenceOrigin()
     {
@@ -103,7 +103,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement implemen
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $geneSequenceOrigin
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $geneSequenceOrigin
      * @return $this
      */
     public function setGeneSequenceOrigin($geneSequenceOrigin)
@@ -114,7 +114,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement implemen
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getGene()
     {
@@ -123,7 +123,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement implemen
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $gene
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $gene
      * @return $this
      */
     public function setGene($gene)
@@ -134,7 +134,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement implemen
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement implemen
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)

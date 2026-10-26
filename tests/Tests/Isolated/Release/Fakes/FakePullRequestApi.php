@@ -7,20 +7,20 @@
  * across repos (entirely possible — PR numbers are per-repo on GitHub) don't
  * silently mask cross-repo bugs in the orchestrator.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release\Fakes;
+namespace DCL\Tests\Isolated\Release\Fakes;
 
-use OpenEMR\Release\PullRequestApi;
-use OpenEMR\Release\PullRequestReadiness;
-use OpenEMR\Release\PullRequestSnapshot;
+use DCL\Release\PullRequestApi;
+use DCL\Release\PullRequestReadiness;
+use DCL\Release\PullRequestSnapshot;
 
 class FakePullRequestApi implements PullRequestApi
 {

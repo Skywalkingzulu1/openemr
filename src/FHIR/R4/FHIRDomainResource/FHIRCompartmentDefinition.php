@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A compartment definition that defines how resources are accessed on a server.
@@ -72,85 +72,85 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 {
     /**
      * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this compartment definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the compartment definition is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * The identifier that is used to identify this version of the compartment definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the compartment definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the compartment definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The status of this compartment definition. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the compartment definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the compartment definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the compartment definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate compartment definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * Explanation of why this compartment definition is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * Which compartment this definition describes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCompartmentType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCompartmentType
      */
     public $code = null;
 
     /**
      * Whether the search syntax is supported,.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $search = null;
 
     /**
      * Information about how a resource is related to the compartment.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
      */
     public $resource = [];
 
@@ -161,7 +161,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this compartment definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the compartment definition is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -170,7 +170,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this compartment definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the compartment definition is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -181,7 +181,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The identifier that is used to identify this version of the compartment definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the compartment definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -190,7 +190,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The identifier that is used to identify this version of the compartment definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the compartment definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -201,7 +201,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A natural language name identifying the compartment definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -210,7 +210,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A natural language name identifying the compartment definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -221,7 +221,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of this compartment definition. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -230,7 +230,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of this compartment definition. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -241,7 +241,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A Boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -250,7 +250,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A Boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -261,7 +261,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date  (and optionally time) when the compartment definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -270,7 +270,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date  (and optionally time) when the compartment definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -281,7 +281,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The name of the organization or individual that published the compartment definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -290,7 +290,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The name of the organization or individual that published the compartment definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -301,7 +301,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -310,7 +310,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -321,7 +321,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A free text natural language description of the compartment definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -330,7 +330,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A free text natural language description of the compartment definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -341,7 +341,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate compartment definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -350,7 +350,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate compartment definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -361,7 +361,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Explanation of why this compartment definition is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -370,7 +370,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Explanation of why this compartment definition is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -381,7 +381,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Which compartment this definition describes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCompartmentType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCompartmentType
      */
     public function getCode()
     {
@@ -390,7 +390,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Which compartment this definition describes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCompartmentType $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCompartmentType $code
      * @return $this
      */
     public function setCode($code)
@@ -401,7 +401,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Whether the search syntax is supported,.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getSearch()
     {
@@ -410,7 +410,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Whether the search syntax is supported,.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $search
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $search
      * @return $this
      */
     public function setSearch($search)
@@ -421,7 +421,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Information about how a resource is related to the compartment.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
      */
     public function getResource()
     {
@@ -430,7 +430,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Information about how a resource is related to the compartment.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource $resource
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource $resource
      * @return $this
      */
     public function addResource($resource)

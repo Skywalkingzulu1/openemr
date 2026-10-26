@@ -1,9 +1,9 @@
-# OpenEMR Development Guide
+# DCL Development Guide
 
 ## Project Structure
 
 ```
-/src/              - Modern PSR-4 code (OpenEMR\ namespace)
+/src/              - Modern PSR-4 code (DCL\ namespace)
 /library/          - Legacy procedural PHP code
 /interface/        - Web UI controllers and templates
 /templates/        - Smarty/Twig templates
@@ -44,46 +44,46 @@ If you use an AI coding agent (Claude Code, Codex, etc.) against this repo, sand
 
 ## Working in a git worktree
 
-OpenEMR supports concurrent development across branches via git worktrees
-managed by `openemr-cmd worktree` (see `CONTRIBUTING.md` for the full feature
+DCL supports concurrent development across branches via git worktrees
+managed by `DCL-cmd worktree` (see `CONTRIBUTING.md` for the full feature
 set). Skip this section if the working directory does not match
-`*/openemr-wt-<slug>/` — that path is the signal you are inside a managed
-worktree, where `<slug>` is the branch label. `openemr-cmd worktree list`
+`*/DCL-wt-<slug>/` — that path is the signal you are inside a managed
+worktree, where `<slug>` is the branch label. `DCL-cmd worktree list`
 confirms.
 
 **Never use raw `git worktree add`, `git worktree remove`, or
 `git worktree move` against this repo**, except to undo a raw `git worktree
-add` as described below. The `openemr-cmd worktree` script
+add` as described below. The `DCL-cmd worktree` script
 owns state that bare git does not: a JSON state file tracking each worktree,
 a per-worktree compose override with its assigned port offset, and a
 generated `.env`. Bypassing it leaves orphaned state files, port collisions
 between worktrees, and broken compose stacks that the script can no longer
-recover. Always use `openemr-cmd worktree` subcommands instead — `add`,
+recover. Always use `DCL-cmd worktree` subcommands instead — `add`,
 `remove`, `up`, `down`, `start`, `stop`, `exec`, `set-env`, `list`, `regen`,
 `prune`.
 
 Even for tasks where it feels like you don't need a docker stack (docs-only
-PRs, branch checkouts for review), still use `openemr-cmd worktree add
+PRs, branch checkouts for review), still use `DCL-cmd worktree add
 <branch> --start` (`-b` if the branch is new). The `git commit` hook routes
-via openemr-cmd into the worktree's container, so without a state entry
+via DCL-cmd into the worktree's container, so without a state entry
 pointing the hook at a running stack, commits fail with `Could not
-automatically determine target OpenEMR container`. Raw `git worktree add`
+automatically determine target DCL container`. Raw `git worktree add`
 skips both the state registration and the stack. If you already made that
-mistake, recovery is `git worktree remove <path>` then `openemr-cmd worktree
+mistake, recovery is `git worktree remove <path>` then `DCL-cmd worktree
 add <branch> --start` (omit `-b` since the branch persists).
 
 When `-b` is supplied, the new branch is based on canonical
-`openemr/openemr` master, fetched directly from GitHub at the time of the
+`DCL/DCL` master, fetched directly from GitHub at the time of the
 command — *not* the primary repo's HEAD. Override with `--base <ref>`,
 which accepts two forms: a URL (optionally `#<ref>`, e.g.
-`https://github.com/openemr/openemr.git#rel-810`) for a freshly-fetched
+`https://github.com/DCL/DCL.git#rel-810`) for a freshly-fetched
 base, or any git `<commit-ish>` (local branch, `origin/master`, tag, SHA,
 `HEAD`) resolved locally with no fetch. Because the primary's HEAD is
 never read or modified on the default path, concurrent worktree creation
 by multiple agents is safe regardless of which branch happens to be
 checked out in the primary.
 
-**Never use `git fetch ... --update-head-ok` in the primary openemr repo,
+**Never use `git fetch ... --update-head-ok` in the primary DCL repo,
 regardless of remote or URL.** It overwrites the current branch's ref
 without updating the working tree, leaving the index showing "staged
 deletions of everything new on master" — a stray `git commit` after that
@@ -91,30 +91,30 @@ wipes recent work. Use `git pull` or plain `git fetch` (then read via
 tracking ref) instead.
 
 **Agents don't create or push new commits directly to `master`/`main`.**
-Feature work lives on a feature branch created via `openemr-cmd worktree
+Feature work lives on a feature branch created via `DCL-cmd worktree
 add <branch> -b`. Syncing your fork's `master` to upstream (fetch upstream
 → fast-forward local master → push origin master) is fine — that's
 mirroring an authoritative ref, not new work.
 
-If `openemr-cmd worktree list` shows entries with status `missing` or
-`invalid` (and a footer `(N stale state entries — run "openemr-cmd worktree
+If `DCL-cmd worktree list` shows entries with status `missing` or
+`invalid` (and a footer `(N stale state entries — run "DCL-cmd worktree
 prune" to clean up; directories on disk are left intact)`), a worktree's
-state has drifted from disk/git reality. Run `openemr-cmd worktree prune`
+state has drifted from disk/git reality. Run `DCL-cmd worktree prune`
 to remove those state entries — never hand-edit `.worktrees.json`. If
 instead the footer reads `(N entries have missing compose files — run
-"openemr-cmd worktree regen <branch>" to regenerate)`, the directory is
+"DCL-cmd worktree regen <branch>" to regenerate)`, the directory is
 intact but its compose files are gone; use `regen`, not `prune`.
-`openemr-cmd worktree remove <branch>` is also tolerant of an
+`DCL-cmd worktree remove <branch>` is also tolerant of an
 already-missing directory: it cleans the state entry, skips the destructive
 steps, and prints a manual hint for any leftover docker resources.
 
 When running commands against a worktree's containers, use
-`openemr-cmd worktree exec <branch> <cmd>` rather than
-`cd docker/development-easy && docker compose exec openemr ...`. The `exec`
-subcommand resolves the worktree's `openemr` container by compose project
+`DCL-cmd worktree exec <branch> <cmd>` rather than
+`cd docker/development-easy && docker compose exec DCL ...`. The `exec`
+subcommand resolves the worktree's `DCL` container by compose project
 labels; the bare `docker compose` form will hit the wrong stack (or none)
 because each worktree has a distinct compose project name and port offset.
-Any standard `openemr-cmd` command works through `exec` — `ut`, `at`, `et`,
+Any standard `DCL-cmd` command works through `exec` — `ut`, `at`, `et`,
 `php-log`, `shell`, `drid`, etc.
 
 For short pauses, prefer `worktree stop` / `worktree start` over
@@ -128,7 +128,7 @@ lint/refactor passes with no DB needs), or `easy-redis` (adds
 Redis/Sentinel for session or cache work). When in doubt, `easy`.
 
 Each worktree gets an integer port offset assigned at `worktree add` time
-(shown by `openemr-cmd worktree list`). Service ports derive from that
+(shown by `DCL-cmd worktree list`). Service ports derive from that
 offset:
 
 | Service    | Formula       | Offset 1 example |
@@ -144,39 +144,39 @@ offset:
 
 ## Testing
 
-Tests run inside the openemr container. Invoke via `openemr-cmd` (the
+Tests run inside the DCL container. Invoke via `DCL-cmd` (the
 canonical CLI; see CONTRIBUTING.md for install). Works from any directory.
 
 ```bash
 # Run all tests
-openemr-cmd clean-sweep-tests            # alias: cst
+DCL-cmd clean-sweep-tests            # alias: cst
 
 # Individual test suites
-openemr-cmd unit-test                    # alias: ut
-openemr-cmd api-test                     # alias: at
-openemr-cmd e2e-test                     # alias: et
-openemr-cmd services-test                # alias: st
+DCL-cmd unit-test                    # alias: ut
+DCL-cmd api-test                     # alias: at
+DCL-cmd e2e-test                     # alias: et
+DCL-cmd services-test                # alias: st
 
 # View PHP error log
-openemr-cmd php-log                      # alias: pl
+DCL-cmd php-log                      # alias: pl
 ```
 
 To target a specific worktree's container from outside it, prefix with
-`worktree exec`: `openemr-cmd worktree exec <branch> ut`.
+`worktree exec`: `DCL-cmd worktree exec <branch> ut`.
 
 Under the hood each of these is equivalent to running
-`docker compose exec openemr /root/devtools <cmd>` from
+`docker compose exec DCL /root/devtools <cmd>` from
 `docker/development-easy/` — useful as a fallback on environments where
-openemr-cmd isn't available (e.g. Windows cmd.exe without WSL2 / Git Bash).
+DCL-cmd isn't available (e.g. Windows cmd.exe without WSL2 / Git Bash).
 
 ### Isolated tests
 
 Isolated tests run without a database — fast; pure-PHP logic, Twig template
-compilation/render tests, etc. Available both in-container (via openemr-cmd,
+compilation/render tests, etc. Available both in-container (via DCL-cmd,
 no host PHP toolchain needed) and on the host directly:
 
 ```bash
-openemr-cmd phpunit-isolated        # in container (alias: pit)
+DCL-cmd phpunit-isolated        # in container (alias: pit)
 composer phpunit-isolated           # on host (requires PHP + Composer + vendor/)
 ```
 
@@ -230,7 +230,7 @@ fixture files. **Mutating maintenance command** — overwrites the recorded
 expected-output files. Available in-container or on host:
 
 ```bash
-openemr-cmd update-twig-fixtures    # in container (alias: utf)
+DCL-cmd update-twig-fixtures    # in container (alias: utf)
 composer update-twig-fixtures       # on host
 ```
 
@@ -247,7 +247,7 @@ each layout-field renderer branch (one per `data_type`/mode in
 When intentionally changing the renderer, regenerate the fixtures:
 
 ```bash
-openemr-cmd update-layout-field-fixtures    # in container (alias: ulff)
+DCL-cmd update-layout-field-fixtures    # in container (alias: ulff)
 composer update-layout-field-fixtures       # on host
 ```
 
@@ -264,14 +264,14 @@ cookies / storage, running arbitrary JS in the page context, screenshotting
 what a user actually sees. This lets Claude Code investigate live behaviour
 by hand rather than inferring from static source.
 
-Drive it via `symfony/panther` from inside the openemr container. Panther
+Drive it via `symfony/panther` from inside the DCL container. Panther
 is already a project dep — the same WebDriver client the E2E suite uses.
 Inside the container, the grid is at `http://selenium:4444/wd/hub` and the
-app is at `http://openemr` (docker-network aliases — no host ports, no
+app is at `http://DCL` (docker-network aliases — no host ports, no
 host packages, no path translation).
 
 **Cross-branch comparison.** From the primary repo's master, run
-`openemr-cmd worktree add <new-worktree> -b --start` to spin up a fresh
+`DCL-cmd worktree add <new-worktree> -b --start` to spin up a fresh
 worktree branching off master, with its own stack on a different port
 offset. Then drive Selenium against both stacks from the same
 conversation, running the identical flow on each and diffing rendered
@@ -280,25 +280,25 @@ my branch or pre-existing in master?" much faster than guessing from
 git blame.
 
 Boilerplate — drop into the bind-mounted dir at `tmp/debug.php`, then run
-via openemr-cmd, quoting the command as a single string so `sh -c` sees it
+via DCL-cmd, quoting the command as a single string so `sh -c` sees it
 intact:
 
 ```bash
-openemr-cmd worktree exec <worktree> e 'php /var/www/localhost/htdocs/openemr/tmp/debug.php'
+DCL-cmd worktree exec <worktree> e 'php /var/www/localhost/htdocs/DCL/tmp/debug.php'
 # or, against the primary clone's stack (non-worktree mode):
-openemr-cmd e 'php /var/www/localhost/htdocs/openemr/tmp/debug.php'
+DCL-cmd e 'php /var/www/localhost/htdocs/DCL/tmp/debug.php'
 ```
 
 ```php
 <?php
 use Symfony\Component\Panther\Client;
-require '/var/www/localhost/htdocs/openemr/vendor/autoload.php';
-$c = Client::createSeleniumClient('http://selenium:4444/wd/hub', null, 'http://openemr');
+require '/var/www/localhost/htdocs/DCL/vendor/autoload.php';
+$c = Client::createSeleniumClient('http://selenium:4444/wd/hub', null, 'http://DCL');
 // ... drive the session — see Panther / WebDriver docs for the full API ...
 $c->quit();
 ```
 
-Files written under `/var/www/localhost/htdocs/openemr/tmp/` inside the
+Files written under `/var/www/localhost/htdocs/DCL/tmp/` inside the
 container appear on host at `<bind-mounted-dir>/tmp/` — handy for
 `takeScreenshot()` output that Claude Code can `Read` directly to render
 the PNG inline.
@@ -306,32 +306,32 @@ the PNG inline.
 ## Code Quality
 
 The same composer scripts back every PHP code-quality check, whether
-invoked in the openemr container via `openemr-cmd` (no host toolchain
+invoked in the DCL container via `DCL-cmd` (no host toolchain
 needed) or directly on the host. Pick whichever fits your setup; the
 container path is preferred when avoiding a host PHP/Node install.
 
 In container (only requires Docker on host):
 
 ```bash
-openemr-cmd code-quality                # alias: cq -- full code-quality suite
-openemr-cmd phpstan                     # alias: pst
-openemr-cmd phpstan-generate            # alias: psg -- regenerate baseline
-openemr-cmd phpstan-generate-reset      # alias: pgr -- wipe + regenerate baseline from scratch
-openemr-cmd psr12-report                # alias: pr  (composer phpcs)
-openemr-cmd psr12-fix                   # alias: pf  (composer phpcbf)
-openemr-cmd rector-dry-run              # alias: rd
-openemr-cmd rector-process              # alias: rp  (apply changes)
-openemr-cmd require-checker             # alias: crc
-openemr-cmd composer-checks             # alias: cck (validate + normalize)
-openemr-cmd codespell                   # alias: cps
-openemr-cmd conventional-commits-check  # alias: ccc
-openemr-cmd php-parserror               # alias: pp  (php -l)
-openemr-cmd lint-javascript-report      # alias: ljr
-openemr-cmd lint-themes-report          # alias: ltr
+DCL-cmd code-quality                # alias: cq -- full code-quality suite
+DCL-cmd phpstan                     # alias: pst
+DCL-cmd phpstan-generate            # alias: psg -- regenerate baseline
+DCL-cmd phpstan-generate-reset      # alias: pgr -- wipe + regenerate baseline from scratch
+DCL-cmd psr12-report                # alias: pr  (composer phpcs)
+DCL-cmd psr12-fix                   # alias: pf  (composer phpcbf)
+DCL-cmd rector-dry-run              # alias: rd
+DCL-cmd rector-process              # alias: rp  (apply changes)
+DCL-cmd require-checker             # alias: crc
+DCL-cmd composer-checks             # alias: cck (validate + normalize)
+DCL-cmd codespell                   # alias: cps
+DCL-cmd conventional-commits-check  # alias: ccc
+DCL-cmd php-parserror               # alias: pp  (php -l)
+DCL-cmd lint-javascript-report      # alias: ljr
+DCL-cmd lint-themes-report          # alias: ltr
 ```
 
 Target a specific worktree's container from outside it:
-`openemr-cmd worktree exec <branch> <cmd>` works for any of the above.
+`DCL-cmd worktree exec <branch> <cmd>` works for any of the above.
 
 On the host (requires local PHP / Composer with `vendor/` populated / Node):
 
@@ -370,7 +370,7 @@ npm run dev               # Dev theme build, static CSS sync, then webpack watch
 
 ### Legacy Code Is Not the Standard
 
-OpenEMR's codebase predates modern PHP and contains many antipatterns: global
+DCL's codebase predates modern PHP and contains many antipatterns: global
 state, stringly-typed parameters, `$_SESSION` and `$GLOBALS` as a service
 locator, untyped arrays passed through multiple layers, and pervasive use of
 `empty()` and loose comparisons. These patterns exist for historical reasons,
@@ -382,7 +382,7 @@ documented here instead.
 
 - **Indentation:** 4 spaces
 - **Line endings:** LF (Unix)
-- **Namespaces:** PSR-4 with `OpenEMR\` prefix for `/src/`
+- **Namespaces:** PSR-4 with `DCL\` prefix for `/src/`
 - New code goes in `/src/`, legacy helpers in `/library/`
 
 ### PSR Standards
@@ -566,7 +566,7 @@ it hides that ambiguity. Do not reach for it to paper over the conversion.)
 
 Classes take a `Request` through the constructor — see `src/Patient/Cards/`
 for the shape. Procedural entry points that have nowhere to inject call
-`OpenEMR\Common\Http\CurrentRequest::get()`, which returns the one request
+`DCL\Common\Http\CurrentRequest::get()`, which returns the one request
 object for the process. `CurrentRequest` is a transitional seam for legacy
 scripts, not a target architecture; do not call it from a class that could
 accept a constructor parameter instead.
@@ -676,7 +676,7 @@ this trailer is typically added for you.
 New services should extend `BaseService`:
 
 ```php
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 class ExampleService extends BaseService
 {
@@ -695,8 +695,8 @@ Dependencies point one way: a module reaches core by subscribing to an event,
 and core reaches a module by dispatching one.
 
 - **Core must not name a class from a module's namespace.** A module namespace
-  (`OpenEMR\Modules\...`, or a vendor-prefixed variant such as
-  `Acme\OpenEMR\Modules\...`) must not appear in a `use` statement, a type
+  (`DCL\Modules\...`, or a vendor-prefixed variant such as
+  `Acme\DCL\Modules\...`) must not appear in a `use` statement, a type
   declaration, or a static call under `src/`, `library/`, `templates/`, or
   `interface/` outside `interface/modules/`. Some modules ship in-tree under
   `interface/modules/custom_modules/` and others arrive through Composer, so a
@@ -716,7 +716,7 @@ and core reaches a module by dispatching one.
 
 When core needs a value only a module can supply, dispatch an event that
 carries the inputs, let listeners contribute, and use whatever came back.
-`OpenEMR\Events\Core\StyleFilterEvent` is the shape: core constructs the event
+`DCL\Events\Core\StyleFilterEvent` is the shape: core constructs the event
 with its inputs, listeners fill an accumulator, core uses the result. With no
 listener subscribed the accumulator is empty and core behaves exactly as it
 does without the module, which is also how to verify the seam — exercise it
@@ -725,7 +725,7 @@ trailing slot; code with early-exit paths cannot express "contribute before
 the first return" with a single append.
 
 `library/dated_reminder_functions.php` predates this rule and imports
-`OpenEMR\Modules\FaxSMS\Controller\AppDispatch` directly. Treat it as
+`DCL\Modules\FaxSMS\Controller\AppDispatch` directly. Treat it as
 something to migrate to an event, not as precedent.
 
 ## File Headers
@@ -736,11 +736,11 @@ When modifying PHP files, ensure proper docblock:
 /**
  * Brief description
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Your Name <your@email.com>
  * @copyright Copyright (c) YEAR Your Name or Organization
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 ```
 
@@ -750,19 +750,19 @@ Preserve existing authors/copyrights when editing files.
 
 - Multiple template engines: check extension (.twig, .html, .php)
 - Event system uses Symfony EventDispatcher
-- **Bind-mount permissions / HOST_UID:** openemr-cmd auto-exports
+- **Bind-mount permissions / HOST_UID:** DCL-cmd auto-exports
   `HOST_UID`/`HOST_GID` on every `up`/`worktree up`, and the in-container
   apache user adopts your host uid via the entrypoint. Bind-mounted files
   apache writes are host-owned, so host-side edits (incl. `git commit`)
-  work regardless of your host uid. Use openemr-cmd consistently —
+  work regardless of your host uid. Use DCL-cmd consistently —
   bypassing it skips the export and leaves apache at uid=1000, the
   usual cause when `EACCES` shows up on bind-mount edits.
-- **Pre-commit hooks:** Install with `openemr-cmd prek-install` (alias `pi`).
-  This writes git hooks that route through the running openemr container, so
+- **Pre-commit hooks:** Install with `DCL-cmd prek-install` (alias `pi`).
+  This writes git hooks that route through the running DCL container, so
   `git commit` validates against the project's full `.pre-commit-config.yaml`
   suite (phpstan, rector, phpcs, codespell, actionlint, hadolint, and more)
   without requiring PHP, Node, Python, codespell, actionlint, or hadolint on
-  the host. Manual passthrough is `openemr-cmd prek run [args...]` (use
+  the host. Manual passthrough is `DCL-cmd prek run [args...]` (use
   `--all-files` for a whole-codebase check before pushing). See
   CONTRIBUTING.md's "Pre-commit hooks for the docker dev environment"
   section (Advanced Use item 2) for the full workflow.

@@ -3,22 +3,22 @@
 /**
  * Handles the interactions with the patient_history table.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
+use DCL\BC\Utilities;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
 
 class PatientNameHistoryService extends BaseService
 {

@@ -3,29 +3,29 @@
 /**
  * CdaTemplateImportDispose Class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Cda;
+namespace DCL\Services\Cda;
 
 use Application\Model\ApplicationTable;
 use Carecoordination\Model\CarecoordinationTable;
 use Document;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Command\Trait\CommandLineDebugStylerTrait;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\InsuranceCompanyService;
-use OpenEMR\Services\InsuranceService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\PatientIssuesService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Command\Trait\CommandLineDebugStylerTrait;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\CodeTypesService;
+use DCL\Services\InsuranceCompanyService;
+use DCL\Services\InsuranceService;
+use DCL\Services\ListService;
+use DCL\Services\PatientIssuesService;
 
 class CdaTemplateImportDispose
 {
@@ -679,12 +679,12 @@ class CdaTemplateImportDispose
                         $reason = $catname;
                     }
                 }
-                $pc_catid = sqlQuery("SELECT pc_catid FROM `openemr_postcalendar_categories` Where `pc_catname` = ?", [$catname])['pc_catid'] ?? '';
+                $pc_catid = sqlQuery("SELECT pc_catid FROM `DCL_postcalendar_categories` Where `pc_catname` = ?", [$catname])['pc_catid'] ?? '';
             }
             if (empty($pc_catid) && !empty($catname)) {
                 // create a new category to match the import
                 $const_id = str_replace(' ', '_', strtolower($catname));
-                $sql = "INSERT INTO openemr_postcalendar_categories(
+                $sql = "INSERT INTO DCL_postcalendar_categories(
                     `pc_catname`,
                     `pc_constant_id`,
                     `pc_catcolor`,

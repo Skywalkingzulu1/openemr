@@ -3,8 +3,8 @@
 /*
  * This program sets the global variables.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -12,7 +12,7 @@
  * @copyright Copyright (c) 2018 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021-2023 Robert Down <robertdown@live.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 //  Current supported languages:    // Allow capture of term for translation:
@@ -76,16 +76,16 @@
 //   Uzbek                          // xl('Uzbek')
 //   Vietnamese                     // xl('Vietnamese')
 
-use OpenEMR\Common\Calendar\DayOfWeek;
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Globals\GlobalsInitializedEvent;
-use OpenEMR\OeUI\RenderFormFieldHelper;
-use OpenEMR\Services\Globals\GlobalAppearanceEnum;
-use OpenEMR\Services\Globals\GlobalConnectorsEnum;
-use OpenEMR\Services\Globals\GlobalFeaturesEnum;
-use OpenEMR\Services\Globals\GlobalSetting;
-use OpenEMR\Services\Globals\GlobalsService;
+use DCL\Common\Calendar\DayOfWeek;
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Globals\GlobalsInitializedEvent;
+use DCL\OeUI\RenderFormFieldHelper;
+use DCL\Services\Globals\GlobalAppearanceEnum;
+use DCL\Services\Globals\GlobalConnectorsEnum;
+use DCL\Services\Globals\GlobalFeaturesEnum;
+use DCL\Services\Globals\GlobalSetting;
+use DCL\Services\Globals\GlobalsService;
 
 // OS-dependent stuff.
 if (stristr(PHP_OS, 'WIN')) {
@@ -431,10 +431,10 @@ $GLOBALS_METADATA = [
     ],
 
     'Branding' => [
-        'openemr_name' => [
+        'DCL_name' => [
             xl('Application Title'),
             'text',
-            'OpenEMR',
+            'DCL',
             xl('Application name used throughout the user interface.')
         ],
 
@@ -448,7 +448,7 @@ $GLOBALS_METADATA = [
         'main_menu_logo_link' => [
             xl('Main menu logo link URL'),
             'text',
-            'https://www.open-emr.org/',
+            'https://www.dcl.org/',
             xl('URL the main menu logo links to. Leave blank to make the logo non-clickable.'),
         ],
 
@@ -456,13 +456,13 @@ $GLOBALS_METADATA = [
             xl('Main menu logo link title'),
             'text',
             '',
-            xl('Tooltip shown when hovering over the main menu logo. Leave blank to use the default (OpenEMR Website).'),
+            xl('Tooltip shown when hovering over the main menu logo. Leave blank to use the default (DCL Website).'),
         ],
 
         'online_support_link' => [
             xl('Online Support Link'),
             'text',                           // data type
-            'http://open-emr.org/',
+            'http://dcl.org/',
             xl('URL to a support page.')
         ],
 
@@ -2289,7 +2289,7 @@ $GLOBALS_METADATA = [
             xl('LDAP - Distinguished Name of User'),
             'text',
             '',
-            xl('Embed {login} where the OpenEMR login name of the user is to be; for example: uid={login},dc=example,dc=com')
+            xl('Embed {login} where the DCL login name of the user is to be; for example: uid={login},dc=example,dc=com')
         ],
         'gbl_ldap_exclusions' => [
             xl('LDAP - Login Exclusions'),
@@ -3079,7 +3079,7 @@ $GLOBALS_METADATA = [
         'portal_onsite_two_address' => [
             xl('Patient Portal Site Address'),
             'text',                           // data type
-            'https://your_web_site.com/openemr/portal',
+            'https://your_web_site.com/DCL/portal',
             xl('Website link for the Patient Portal.')
         ],
 
@@ -3257,42 +3257,42 @@ $GLOBALS_METADATA = [
             xl('Site Address Override (if needed for OAuth2, FHIR, CCDA, or Payment Processing)'),
             'text',
             '',
-            xl('The hostname for OAuth2, FHIR, CCDA, and Payment Processing, pointing back back to this OpenEMR instance. e.g. https://localhost:9300.')
+            xl('The hostname for OAuth2, FHIR, CCDA, and Payment Processing, pointing back back to this DCL instance. e.g. https://localhost:9300.')
         ],
 
         GlobalConnectorsEnum::REST_FHIR_API->value => [
-            xl('Enable OpenEMR Standard FHIR REST API'),
+            xl('Enable DCL Standard FHIR REST API'),
             'bool',
             '0',
-            xl('Enable OpenEMR Standard FHIR RESTful API.')
+            xl('Enable DCL Standard FHIR RESTful API.')
         ],
 
         GlobalConnectorsEnum::SMART_TEST_LAUNCHES_ENABLE->value => [
-            xl('Enable OpenEMR SMART ON FHIR Context Test Launches (Turn on only if you know what you are doing)'),
+            xl('Enable DCL SMART ON FHIR Context Test Launches (Turn on only if you know what you are doing)'),
             'bool',
             '0',
-            xl('Enable OpenEMR SMART ON FHIR Current Context Test Launches.')
+            xl('Enable DCL SMART ON FHIR Current Context Test Launches.')
         ],
 
         GlobalConnectorsEnum::REST_SYSTEM_SCOPES_API->value => [
-            xl('Enable OpenEMR FHIR System Scopes (Turn on only if you know what you are doing)'),
+            xl('Enable DCL FHIR System Scopes (Turn on only if you know what you are doing)'),
             'bool',
             '0',
-            xl('Enable OpenEMR FHIR System Scopes.')
+            xl('Enable DCL FHIR System Scopes.')
         ],
 
         GlobalConnectorsEnum::REST_API->value => [
-            xl('Enable OpenEMR Standard REST API'),
+            xl('Enable DCL Standard REST API'),
             'bool',
             '0',
-            xl('Enable OpenEMR Standard RESTful API.')
+            xl('Enable DCL Standard RESTful API.')
         ],
 
         GlobalConnectorsEnum::REST_PORTAL_API->value => [
-            xl('Enable OpenEMR Patient Portal REST API (EXPERIMENTAL)'),
+            xl('Enable DCL Patient Portal REST API (EXPERIMENTAL)'),
             'bool',
             '0',
-            xl('Enable OpenEMR Patient Portal RESTful API.')
+            xl('Enable DCL Patient Portal RESTful API.')
         ],
 
         GlobalConnectorsEnum::OAUTH_PASSWORD_GRANT->value => [
@@ -3480,7 +3480,7 @@ $GLOBALS_METADATA = [
             xl('Sphere Void/Credit Confirmation PIN'),
             'encrypted_hash',
             '',
-            xl('Sphere Void/Credit Confirmation Password. OpenEMR confirms pin/password before proceeding with void/credit.')
+            xl('Sphere Void/Credit Confirmation Password. DCL confirms pin/password before proceeding with void/credit.')
         ],
 
         'medex_enable' => [
@@ -4449,9 +4449,9 @@ $GLOBALS_METADATA = [
         'questionnaire_display_style' => [
             xl('Questionnaire Form Display Style'),
             [
-                '0' => xl('OpenEMR Auto Select Dark/Light Theme'),
-                '3' => xl('OpenEMR Light Theme Always'),
-                '4' => xl('OpenEMR Dark Theme Always'),
+                '0' => xl('DCL Auto Select Dark/Light Theme'),
+                '3' => xl('DCL Light Theme Always'),
+                '4' => xl('DCL Dark Theme Always'),
             ],
             '0',
             xl('Choose automatic theme selection or always use the light or dark Questionnaire theme.')

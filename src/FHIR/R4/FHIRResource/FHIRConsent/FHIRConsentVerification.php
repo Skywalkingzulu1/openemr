@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConsent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
@@ -71,19 +71,19 @@ class FHIRConsentVerification extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * Has the instruction been verified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $verified = null;
 
     /**
      * Who verified the instruction (Patient, Relative or other Authorized Person).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $verifiedWith = null;
 
     /**
      * Date verification was collected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $verificationDate = null;
 
@@ -94,7 +94,7 @@ class FHIRConsentVerification extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Has the instruction been verified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getVerified()
     {
@@ -103,7 +103,7 @@ class FHIRConsentVerification extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Has the instruction been verified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $verified
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $verified
      * @return $this
      */
     public function setVerified($verified)
@@ -114,7 +114,7 @@ class FHIRConsentVerification extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Who verified the instruction (Patient, Relative or other Authorized Person).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getVerifiedWith()
     {
@@ -123,7 +123,7 @@ class FHIRConsentVerification extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Who verified the instruction (Patient, Relative or other Authorized Person).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $verifiedWith
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $verifiedWith
      * @return $this
      */
     public function setVerifiedWith($verifiedWith)
@@ -134,7 +134,7 @@ class FHIRConsentVerification extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Date verification was collected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getVerificationDate()
     {
@@ -143,7 +143,7 @@ class FHIRConsentVerification extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Date verification was collected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $verificationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $verificationDate
      * @return $this
      */
     public function setVerificationDate($verificationDate)

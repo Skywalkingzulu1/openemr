@@ -41,7 +41,7 @@
 #
 # Falling back to Option (a): explicit workflow_dispatch inputs for
 # the two operator-authoritative values (candidate_tag + docker_tags),
-# with the other three (openemr_version_ref, image_version, build_date)
+# with the other three (DCL_version_ref, image_version, build_date)
 # derived from the candidate image's own OCI labels via `docker
 # inspect --format`. Reduces the operator-input burden from 5 to 3
 # while preserving reliability:
@@ -50,7 +50,7 @@
 #     as the run's dispatch input) — operator copies both.
 #   * source_run_id: informational only (48h age check + docker-build-
 #     release.yml eligibility check) — no data extracted from it.
-#   * openemr_version_ref, image_version, build_date: derived from
+#   * DCL_version_ref, image_version, build_date: derived from
 #     the candidate image's OCI labels, which is:
 #       * dependency-free (no operator input)
 #       * a "candidate hasn't been tampered with post-build" smoke test
@@ -141,14 +141,14 @@ jobs:
     # byte-identical exclusion for rel-800). Enforce master
     # here for symmetry with acceptance-only.yml.
     if: >-
-      github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+      github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
       && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     outputs:
       candidate_tag: ${{ inputs.candidate_tag }}
       expanded_tags: ${{ steps.expand_docker_tags.outputs.list }}
-      openemr_version_ref: ${{ steps.inspect_candidate.outputs.revision }}
+      DCL_version_ref: ${{ steps.inspect_candidate.outputs.revision }}
       image_version: ${{ steps.inspect_candidate.outputs.version }}
       build_date: ${{ steps.inspect_candidate.outputs.created }}
     steps:
@@ -303,10 +303,10 @@ jobs:
         # Pull the candidate here so both this step and the label-inspect
         # step below can inspect it locally (docker inspect is a
         # metadata-only op post-pull).
-        docker pull "openemr/openemr:${CANDIDATE_TAG}" > /dev/null
-        BUILD_DATE=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.created" }}' "openemr/openemr:${CANDIDATE_TAG}")
+        docker pull "DCL/DCL:${CANDIDATE_TAG}" > /dev/null
+        BUILD_DATE=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.created" }}' "DCL/DCL:${CANDIDATE_TAG}")
         if [ -z "$BUILD_DATE" ] || [ "$BUILD_DATE" = "<no value>" ]; then
-          echo "::error::Candidate image openemr/openemr:${CANDIDATE_TAG} has no org.opencontainers.image.created label — cannot derive BUILD_DATE for dated-variant expansion."
+          echo "::error::Candidate image DCL/DCL:${CANDIDATE_TAG} has no org.opencontainers.image.created label — cannot derive BUILD_DATE for dated-variant expansion."
           exit 1
         fi
         echo "    candidate BUILD_DATE (from OCI label)=${BUILD_DATE}"
@@ -332,7 +332,7 @@ jobs:
     #
     # Real independent-source verification would require pulling the
     # source run's workflow inputs and re-computing IMAGE_VERSION from
-    # version.php at the openemr_version_ref — much more machinery for
+    # version.php at the DCL_version_ref — much more machinery for
     # a check that only defends against Docker Hub tag mutation, which
     # would fail loudly at pull time anyway.
     - name: Inspect candidate labels to derive publish inputs
@@ -343,9 +343,9 @@ jobs:
         set -euo pipefail
         # Image was already pulled in the previous step; re-inspect is
         # cheap (local metadata).
-        REVISION=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.revision" }}' "openemr/openemr:${CANDIDATE_TAG}")
-        VERSION=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.version" }}' "openemr/openemr:${CANDIDATE_TAG}")
-        CREATED=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.created" }}' "openemr/openemr:${CANDIDATE_TAG}")
+        REVISION=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.revision" }}' "DCL/DCL:${CANDIDATE_TAG}")
+        VERSION=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.version" }}' "DCL/DCL:${CANDIDATE_TAG}")
+        CREATED=$(docker inspect --format '{{ index .Config.Labels "org.opencontainers.image.created" }}' "DCL/DCL:${CANDIDATE_TAG}")
 
         for pair in "revision:${REVISION}" "version:${VERSION}" "created:${CREATED}"; do
           key="${pair%%:*}"
@@ -430,7 +430,7 @@ jobs:
     with:
       candidate_tag: ${{ needs.fetch-source-run-outputs.outputs.candidate_tag }}
       expanded_tags: ${{ needs.fetch-source-run-outputs.outputs.expanded_tags }}
-      openemr_version_ref: ${{ needs.fetch-source-run-outputs.outputs.openemr_version_ref }}
+      DCL_version_ref: ${{ needs.fetch-source-run-outputs.outputs.DCL_version_ref }}
       image_version: ${{ needs.fetch-source-run-outputs.outputs.image_version }}
       build_date: ${{ needs.fetch-source-run-outputs.outputs.build_date }}
     secrets: inherit

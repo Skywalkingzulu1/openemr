@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,67 +71,67 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 {
     /**
      * The actual name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Name type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The status of the name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * If this is the preferred name for this substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $preferred = null;
 
     /**
      * Language of the name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $language = [];
 
     /**
      * The use context of this name for example if there is a different name a drug active ingredient as opposed to a food colour additive.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $domain = [];
 
     /**
      * The jurisdiction where this name applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * A synonym of this name.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
     public $synonym = [];
 
     /**
      * A translation for this name.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
     public $translation = [];
 
     /**
      * Details of the official nature of this name.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial[]
      */
     public $official = [];
 
     /**
      * Supporting literature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
@@ -142,7 +142,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The actual name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -151,7 +151,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The actual name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -162,7 +162,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Name type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -171,7 +171,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Name type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -182,7 +182,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The status of the name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -191,7 +191,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The status of the name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -202,7 +202,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * If this is the preferred name for this substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getPreferred()
     {
@@ -211,7 +211,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * If this is the preferred name for this substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $preferred
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $preferred
      * @return $this
      */
     public function setPreferred($preferred)
@@ -222,7 +222,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Language of the name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getLanguage()
     {
@@ -231,7 +231,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Language of the name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
      * @return $this
      */
     public function addLanguage($language)
@@ -242,7 +242,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The use context of this name for example if there is a different name a drug active ingredient as opposed to a food colour additive.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getDomain()
     {
@@ -251,7 +251,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The use context of this name for example if there is a different name a drug active ingredient as opposed to a food colour additive.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $domain
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $domain
      * @return $this
      */
     public function addDomain($domain)
@@ -262,7 +262,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The jurisdiction where this name applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -271,7 +271,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * The jurisdiction where this name applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -282,7 +282,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * A synonym of this name.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
     public function getSynonym()
     {
@@ -291,7 +291,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * A synonym of this name.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $synonym
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $synonym
      * @return $this
      */
     public function addSynonym($synonym)
@@ -302,7 +302,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * A translation for this name.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
     public function getTranslation()
     {
@@ -311,7 +311,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * A translation for this name.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $translation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName $translation
      * @return $this
      */
     public function addTranslation($translation)
@@ -322,7 +322,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Details of the official nature of this name.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial[]
      */
     public function getOfficial()
     {
@@ -331,7 +331,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Details of the official nature of this name.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial $official
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial $official
      * @return $this
      */
     public function addOfficial($official)
@@ -342,7 +342,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Supporting literature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -351,7 +351,7 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement implements \Jso
 
     /**
      * Supporting literature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)

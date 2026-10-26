@@ -3,21 +3,21 @@
 /**
  * Twilio Fax SMS Controller
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use DateTime;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Contracts\SmsChannelInterface;
-use OpenEMR\Modules\FaxSMS\RestClient\Twilio\Rest\Client;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Contracts\SmsChannelInterface;
+use DCL\Modules\FaxSMS\RestClient\Twilio\Rest\Client;
 use RuntimeException;
 use Throwable;
 

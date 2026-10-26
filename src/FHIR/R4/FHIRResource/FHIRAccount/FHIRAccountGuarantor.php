@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAccount;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAccount;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAccount;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centers, etc.
@@ -71,19 +71,19 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * The entity who is responsible.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $party = null;
 
     /**
      * A guarantor may be placed on credit hold or otherwise have their role temporarily suspended.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $onHold = null;
 
     /**
      * The timeframe during which the guarantor accepts responsibility for the account.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -94,7 +94,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The entity who is responsible.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParty()
     {
@@ -103,7 +103,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The entity who is responsible.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $party
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $party
      * @return $this
      */
     public function setParty($party)
@@ -114,7 +114,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A guarantor may be placed on credit hold or otherwise have their role temporarily suspended.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getOnHold()
     {
@@ -123,7 +123,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A guarantor may be placed on credit hold or otherwise have their role temporarily suspended.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $onHold
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $onHold
      * @return $this
      */
     public function setOnHold($onHold)
@@ -134,7 +134,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The timeframe during which the guarantor accepts responsibility for the account.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -143,7 +143,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The timeframe during which the guarantor accepts responsibility for the account.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

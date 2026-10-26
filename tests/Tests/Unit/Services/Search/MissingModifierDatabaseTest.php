@@ -3,29 +3,29 @@
 /**
  * Runs the MISSING modifier's SQL against the database.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Marcello Costagliola <marcello.costagliola1@gmail.com>
  * @copyright Copyright (c) 2026 Marcello Costagliola <marcello.costagliola1@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\Services\Search;
+namespace DCL\Tests\Unit\Services\Search;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Search\SearchFieldStatementResolver;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Search\SearchFieldStatementResolver;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
  * The isolated tests pin the SQL text of the MISSING modifier; this one runs it. The difference
  * matters on MySQL 8, where `CAST(col AS CHAR)` of a binary uuid that is not valid UTF-8 is cut
- * at the first invalid byte (to '' when that is the first byte) under the sql_mode OpenEMR sets,
+ * at the first invalid byte (to '' when that is the first byte) under the sql_mode DCL sets,
  * or NULL in strict mode, so the uuid looked missing. MariaDB returns the bytes, so the same SQL
  * worked there.
  *

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a "System" used within the Identifier and Coding data types.
@@ -72,79 +72,79 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A natural language name identifying the naming system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The status of this naming system. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * Indicates the purpose for the naming system - what kinds of things does it make unique?
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRNamingSystemType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRNamingSystemType
      */
     public $kind = null;
 
     /**
      * The date  (and optionally time) when the naming system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the naming system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $responsible = null;
 
     /**
      * Categorizes a naming system for easier search by grouping related naming systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A free text natural language description of the naming system from a consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate naming system instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the naming system is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $usage = null;
 
     /**
      * Indicates how the system may be identified when referenced in electronic exchange.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
      */
     public $uniqueId = [];
 
@@ -155,7 +155,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the naming system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -164,7 +164,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the naming system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -175,7 +175,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of this naming system. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -184,7 +184,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of this naming system. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -195,7 +195,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the purpose for the naming system - what kinds of things does it make unique?
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRNamingSystemType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRNamingSystemType
      */
     public function getKind()
     {
@@ -204,7 +204,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the purpose for the naming system - what kinds of things does it make unique?
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRNamingSystemType $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRNamingSystemType $kind
      * @return $this
      */
     public function setKind($kind)
@@ -215,7 +215,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the naming system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -224,7 +224,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the naming system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -235,7 +235,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the naming system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -244,7 +244,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the naming system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -255,7 +255,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -264,7 +264,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -275,7 +275,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getResponsible()
     {
@@ -284,7 +284,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $responsible
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $responsible
      * @return $this
      */
     public function setResponsible($responsible)
@@ -295,7 +295,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorizes a naming system for easier search by grouping related naming systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -304,7 +304,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorizes a naming system for easier search by grouping related naming systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -315,7 +315,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the naming system from a consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -324,7 +324,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the naming system from a consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -335,7 +335,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate naming system instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -344,7 +344,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate naming system instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -355,7 +355,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the naming system is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -364,7 +364,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the naming system is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -375,7 +375,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getUsage()
     {
@@ -384,7 +384,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $usage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $usage
      * @return $this
      */
     public function setUsage($usage)
@@ -395,7 +395,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how the system may be identified when referenced in electronic exchange.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
      */
     public function getUniqueId()
     {
@@ -404,7 +404,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how the system may be identified when referenced in electronic exchange.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId $uniqueId
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId $uniqueId
      * @return $this
      */
     public function addUniqueId($uniqueId)

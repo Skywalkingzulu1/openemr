@@ -29,8 +29,8 @@
 //=================================================================
 //  define constants used to make the code more readable
 //=================================================================
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 define('_IS_SUNDAY', 0);
 define('_IS_MONDAY', 1);
@@ -161,7 +161,7 @@ function &pcVarPrepHTMLDisplay($s)
 }
 function pcGetTopicName($topicid): string
 {
-    // not using topics in OpenEMR, so just return nothing
+    // not using topics in DCL, so just return nothing
     return '';
 }
 function &postcalendar_makeValidURL($s)
@@ -212,7 +212,7 @@ function postcalendar_getDate($format = 'Ymd'): string
     $y = substr((string) $Date, 0, 4);
     $m = substr((string) $Date, 4, 2);
     $d = substr((string) $Date, 6, 2);
-    OpenEMR\Common\Session\SessionUtil::setSession('lastcaldate', "$y-$m-$d"); // remember the last chosen date
+    DCL\Common\Session\SessionUtil::setSession('lastcaldate', "$y-$m-$d"); // remember the last chosen date
     return date($format, mktime(0, 0, 0, $m, $d, $y));
 }
 

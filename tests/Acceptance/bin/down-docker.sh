@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Tear down the acceptance-testing openemr Docker stack booted by
+# Tear down the acceptance-testing DCL Docker stack booted by
 # tests/Acceptance/bin/boot-docker.sh.
 #
 # Removes containers, network, AND the named volumes (databasevolume,
@@ -17,12 +17,12 @@ REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../../.." &>/dev/null && pwd)"
 
 cd "${REPO_ROOT}"
 
-echo "==> Tearing down openemr acceptance stack (removing volumes)"
+echo "==> Tearing down DCL acceptance stack (removing volumes)"
 
 docker compose \
     -f docker/production/docker-compose.yml \
     -f .github/docker/acceptance-docker-compose.yml \
-    -p openemr-acceptance \
+    -p DCL-acceptance \
     down --volumes --remove-orphans
 
 echo "==> Teardown complete."

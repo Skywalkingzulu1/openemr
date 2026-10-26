@@ -47,12 +47,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationPatientService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Offset string on array\\<string, OpenEMR\\\\Services\\\\Search\\\\ISearchField\\|string\\> in isset\\(\\) always exists and is not nullable\\.$#',
+    'message' => '#^Offset string on array\\<string, DCL\\\\Services\\\\Search\\\\ISearchField\\|string\\> in isset\\(\\) always exists and is not nullable\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FacilityService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Offset OpenEMR\\\\Services\\\\Search\\\\ServiceField on array\\<OpenEMR\\\\Services\\\\Search\\\\FhirSearchParameterDefinition\\> in isset\\(\\) does not exist\\.$#',
+    'message' => '#^Offset DCL\\\\Services\\\\Search\\\\ServiceField on array\\<DCL\\\\Services\\\\Search\\\\FhirSearchParameterDefinition\\> in isset\\(\\) does not exist\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/Search/FHIRSearchFieldFactory.php',
 ];

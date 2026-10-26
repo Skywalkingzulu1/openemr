@@ -1,18 +1,18 @@
 <?php
 
 /**
- * ValidationUtils is intended for validation methods that are used in OpenEMR.
+ * ValidationUtils is intended for validation methods that are used in DCL.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Utils;
+namespace DCL\Tests\Unit\Common\Utils;
 
-use OpenEMR\Common\Utils\ValidationUtils;
+use DCL\Common\Utils\ValidationUtils;
 use PHPUnit\Framework\TestCase;
 
 class ValidationUtilsTest extends TestCase
@@ -35,7 +35,7 @@ class ValidationUtilsTest extends TestCase
         }
 
         $invalidEmails = [
-            'example@example' // this is a valid email per RFC but we DO NOT allow it in OpenEMR
+            'example@example' // this is a valid email per RFC but we DO NOT allow it in DCL
             ,'localonly' // not valid as there is no domain specifier
             ,'@domain.com' // not valid as there is no local part
             ,'a@a'

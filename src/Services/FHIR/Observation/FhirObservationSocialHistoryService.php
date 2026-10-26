@@ -2,33 +2,33 @@
 
 /**
  * FhirObservationSocialHistoryService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
-use OpenEMR\Common\Uuid\UuidMapping;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Observation\Trait\FhirObservationTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Services\SocialHistoryService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Uuid\UuidMapping;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Observation\Trait\FhirObservationTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Services\SocialHistoryService;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationSocialHistoryService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
 {
@@ -113,7 +113,7 @@ class FhirObservationSocialHistoryService extends FhirServiceBase implements IPa
 
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -133,11 +133,11 @@ class FhirObservationSocialHistoryService extends FhirServiceBase implements IPa
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
 
@@ -145,19 +145,19 @@ class FhirObservationSocialHistoryService extends FhirServiceBase implements IPa
             $observationCodesToReturn = [];
 
             // we check to make sure we only have our category
-            if (isset($openEMRSearchParameters['category']) && $openEMRSearchParameters['category'] instanceof TokenSearchField) {
-                if (!$openEMRSearchParameters['category']->hasCodeValue(self::CATEGORY)) {
+            if (isset($DCLSearchParameters['category']) && $DCLSearchParameters['category'] instanceof TokenSearchField) {
+                if (!$DCLSearchParameters['category']->hasCodeValue(self::CATEGORY)) {
                     throw new SearchFieldException("category", "invalid value");
                 }
                 // we only support one category and then we remove it.
-                unset($openEMRSearchParameters['category']);
+                unset($DCLSearchParameters['category']);
             }
 
-            if (isset($openEMRSearchParameters['code'])) {
+            if (isset($DCLSearchParameters['code'])) {
                 /**
                  * @var TokenSearchField
                  */
-                $code = $openEMRSearchParameters['code'];
+                $code = $DCLSearchParameters['code'];
                 if (!($code instanceof TokenSearchField)) {
                     throw new SearchFieldException('code', "Invalid code");
                 }
@@ -165,7 +165,7 @@ class FhirObservationSocialHistoryService extends FhirServiceBase implements IPa
                     $code = $value->getCode();
                     $observationCodesToReturn[$code] = $code;
                 }
-                unset($openEMRSearchParameters['code']);
+                unset($DCLSearchParameters['code']);
             }
 
             if (empty($observationCodesToReturn)) {
@@ -177,10 +177,10 @@ class FhirObservationSocialHistoryService extends FhirServiceBase implements IPa
             // convert vital sign records from 1:many
 
             // only return social history where tobacco is populated
-            $openEMRSearchParameters['tobacco'] = new TokenSearchField('tobacco', [new TokenSearchValue(false)]);
-            $openEMRSearchParameters['tobacco']->setModifier(SearchModifier::MISSING);
+            $DCLSearchParameters['tobacco'] = new TokenSearchField('tobacco', [new TokenSearchValue(false)]);
+            $DCLSearchParameters['tobacco']->setModifier(SearchModifier::MISSING);
 
-            $result = $this->service->search($openEMRSearchParameters, true);
+            $result = $this->service->search($DCLSearchParameters, true);
             $data = $result->getData() ?? [];
 
             // need to transform these into something we can consume
@@ -198,7 +198,7 @@ class FhirObservationSocialHistoryService extends FhirServiceBase implements IPa
     private function parseSocialHistoryIntoObservationRecords(ProcessingResult $processingResult, $record, $observationCodesToReturn): void
     {
         $uuidMappings = $this->getUuidMappings(UuidRegistry::uuidToBytes($record['uuid']));
-        // convert each record into it's own openEMR record array
+        // convert each record into it's own DCL record array
 
 
         foreach ($observationCodesToReturn as $code) {
@@ -267,7 +267,7 @@ class FhirObservationSocialHistoryService extends FhirServiceBase implements IPa
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return false|string|FHIRProvenance the FHIR Resource. Returned format is defined using $encode parameter.
      */

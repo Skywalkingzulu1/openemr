@@ -8,8 +8,8 @@ Use `./cli list migrations` to show all available migrations commands.
 We are in the process of overhauling CLI and module-related tooling, so this covers the current state of things.
 
 > [!IMPORTANT]
-> The Doctrine Migrations system is NOT fully integrated into OpenEMR yet.
-> Don't make database changes using this until [#10708](https://github.com/openemr/openemr/issues/10708) is completed (at minimum).
+> The Doctrine Migrations system is NOT fully integrated into DCL yet.
+> Don't make database changes using this until [#10708](https://github.com/DCL/DCL/issues/10708) is completed (at minimum).
 
 ## Creating a Migration Script
 

@@ -3,8 +3,8 @@
 /**
  * display.php  Is responsible for display a CCR/CCD/CCDA document previewed from the documents folder.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Ajil P.M <ajilpm@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
@@ -12,17 +12,17 @@
  * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <ajilpm@zhservices.com>
  * @copyright Copyright (c) 2013 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../interface/globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDocuments\PatientDocumentViewCCDAEvent;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Http\RequestTerminator;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDocuments\PatientDocumentViewCCDAEvent;
 use Symfony\Component\HttpFoundation\Response;
 
 $type = $_GET['type'];

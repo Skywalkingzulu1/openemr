@@ -22,22 +22,22 @@
  * ClientRepository::validateClient, which would have broken every
  * confidential client using private_key_jwt on authorization_code.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use Lcobucci\JWT\Signer\Key\InMemory;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Tools\OAuth2\ClientCredentialsAssertionGenerator;
+use DCL\Common\Database\QueryUtils;
+use DCL\Tools\OAuth2\ClientCredentialsAssertionGenerator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DomCrawler\Crawler;
@@ -55,17 +55,17 @@ class AuthorizationGrantJwtAssertionFlowTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
         // Match AuthorizationLogoutFullFlowTest's runner-probe logic: skip
         // only on runners that explicitly opt out of the Secure-cookie
         // OAuth flow; hard-fail on any other runner that silently drops
         // its Server header (would otherwise turn regressions into
         // green-skipped tests).
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
             $this->markTestSkipped(
-                'Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1 — this runner is known to be'
-                . ' unable to serve OpenEMR\'s Secure-cookie OAuth session (typically php -S over HTTP).'
+                'Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1 — this runner is known to be'
+                . ' unable to serve DCL\'s Secure-cookie OAuth session (typically php -S over HTTP).'
             );
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
@@ -76,7 +76,7 @@ class AuthorizationGrantJwtAssertionFlowTest extends TestCase
             if (getenv('CI') !== false) {
                 self::fail($message . ' In CI this is a hard failure — a real webserver runner unexpectedly'
                     . ' stopped emitting the Server header, which would silently disable this test if we only'
-                    . ' skipped. If this runner is intentionally limited, set OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1'
+                    . ' skipped. If this runner is intentionally limited, set DCL_ALLOW_OAUTH_HTTPS_SKIP=1'
                     . ' in its workflow to opt out explicitly.');
             }
             $this->markTestSkipped($message);
@@ -451,8 +451,8 @@ class AuthorizationGrantJwtAssertionFlowTest extends TestCase
         // so a key rotation is a single-file change.
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
         $jwks = json_decode((string) file_get_contents($keyLocation . 'jwk-public-valid.json'));
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
 
         // DCR: register a confidential client that authenticates at /token
         // with a signed JWT rather than a shared secret. Scope set is

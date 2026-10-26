@@ -2,20 +2,20 @@
 
 /**
  * Thin delegators kept for the existing call sites of library/gprelations.inc.php.
- * The bodies live in GpRelationService; see the migration tracker, openemr/openemr#11674.
+ * The bodies live in GpRelationService; see the migration tracker, DCL/DCL#11674.
  *
  * Type codes for the gprelations table are documented in GpRelationService's docblock.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Marcello Costagliola <marcello.costagliola1@gmail.com>
  * @copyright Copyright (C) 2009 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2026 Marcello Costagliola <marcello.costagliola1@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Services\GpRelationService;
+use DCL\Services\GpRelationService;
 
 /**
  * Whether a relation between the two given records already exists in gprelations.

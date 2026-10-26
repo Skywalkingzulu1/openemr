@@ -4,13 +4,13 @@
  * This module is invoked by add_edit_issue.php as an extension to
  * add support for issue types that are specific to IPPF.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2008-2009 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("$srcdir/options.inc.php");
@@ -71,11 +71,11 @@ function issue_ippf_gcac_save($issue): void
         // target table before concatenating.
         try {
             $escaped_field = escape_sql_column_name($field_id, ['lists_ippf_gcac'], false, true);
-        } catch (\OpenEMR\Common\Database\SqlQueryException) {
+        } catch (\DCL\Common\Database\SqlQueryException) {
             // Log the unknown identifier so administrators can diagnose a
             // layout_options row whose field_id no longer matches a real
             // column of lists_ippf_gcac (typo or renamed column).
-            \OpenEMR\BC\ServiceContainer::getLogger()->warning(
+            \DCL\BC\ServiceContainer::getLogger()->warning(
                 'issue_ippf_gcac_save: skipped unknown layout field_id',
                 ['field_id' => $field_id]
             );
@@ -228,11 +228,11 @@ function issue_ippf_con_save($issue): void
         // target table before concatenating.
         try {
             $escaped_field = escape_sql_column_name($field_id, ['lists_ippf_con'], false, true);
-        } catch (\OpenEMR\Common\Database\SqlQueryException) {
+        } catch (\DCL\Common\Database\SqlQueryException) {
             // Log the unknown identifier so administrators can diagnose a
             // layout_options row whose field_id no longer matches a real
             // column of lists_ippf_con (typo or renamed column).
-            \OpenEMR\BC\ServiceContainer::getLogger()->warning(
+            \DCL\BC\ServiceContainer::getLogger()->warning(
                 'issue_ippf_con_save: skipped unknown layout field_id',
                 ['field_id' => $field_id]
             );

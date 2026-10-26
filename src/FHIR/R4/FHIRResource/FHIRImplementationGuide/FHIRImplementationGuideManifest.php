@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,31 +71,31 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 {
     /**
      * A pointer to official web page, PDF or other rendering of the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $rendering = null;
 
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource1[]
      */
     public $resource = [];
 
     /**
      * Information about a page within the IG.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage1[]
      */
     public $page = [];
 
     /**
      * Indicates a relative path to an image that exists within the IG.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $image = [];
 
     /**
      * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $other = [];
 
@@ -106,7 +106,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * A pointer to official web page, PDF or other rendering of the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getRendering()
     {
@@ -115,7 +115,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * A pointer to official web page, PDF or other rendering of the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $rendering
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $rendering
      * @return $this
      */
     public function setRendering($rendering)
@@ -126,7 +126,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource1[]
      */
     public function getResource()
     {
@@ -135,7 +135,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource1 $resource
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource1 $resource
      * @return $this
      */
     public function addResource($resource)
@@ -146,7 +146,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * Information about a page within the IG.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage1[]
      */
     public function getPage()
     {
@@ -155,7 +155,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * Information about a page within the IG.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage1 $page
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage1 $page
      * @return $this
      */
     public function addPage($page)
@@ -166,7 +166,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates a relative path to an image that exists within the IG.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getImage()
     {
@@ -175,7 +175,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates a relative path to an image that exists within the IG.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $image
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $image
      * @return $this
      */
     public function addImage($image)
@@ -186,7 +186,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getOther()
     {
@@ -195,7 +195,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $other
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $other
      * @return $this
      */
     public function addOther($other)

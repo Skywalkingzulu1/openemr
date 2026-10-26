@@ -1,20 +1,20 @@
 <?php
 
 /**
- * This file is part of OpenEMR.
+ * This file is part of DCL.
  *
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events;
+namespace DCL\Events;
 
 use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Event object template for creating bound filter events
  *
- * @package OpenEMR\Events
+ * @package DCL\Events
  * @author Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2019 Ken Chapple <ken@mi-squared.com>
  */

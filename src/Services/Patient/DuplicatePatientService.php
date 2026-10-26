@@ -14,13 +14,13 @@
  * library/patient.inc.php delegate here so CLI tools and legacy callers stay in step with the
  * report and with {@see PatientMergeService}.
  *
- * Deliberately does not extend {@see \OpenEMR\Services\BaseService}. BaseService models CRUD over
+ * Deliberately does not extend {@see \DCL\Services\BaseService}. BaseService models CRUD over
  * a single table through a UUID-keyed record set; this class owns no records. It builds a SQL
  * scoring expression, maintains a derived column on patient_data, and assembles a report -- none of
  * which BaseService's search, insert and update machinery applies to.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -28,14 +28,14 @@
  * @copyright Copyright (c) 2017-2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Patient;
+namespace DCL\Services\Patient;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use Psr\Clock\ClockInterface;
 
 class DuplicatePatientService

@@ -3,18 +3,18 @@
 /**
  * Helpers for the physical exam diagnosis editor.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR Contributors
- * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL Contributors
+ * @copyright Copyright (c) 2026 DCL Contributors
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Forms\PhysicalExam;
+namespace DCL\Forms\PhysicalExam;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class DiagnosisHelper
 {

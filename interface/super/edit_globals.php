@@ -3,8 +3,8 @@
 /**
  * Script for the globals editor.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ranganath Pathak <pathak@scrs1.org>
@@ -15,32 +15,32 @@
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2020-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 require_once("../../custom/code_types.inc.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/globals.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/globals.inc.php");
 
 /** @var array<string,array<string,array<int,mixed>>> $GLOBALS_METADATA */
 /** @var list<string> $USER_SPECIFIC_GLOBALS */
 /** @var list<string> $USER_SPECIFIC_TABS */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\AuthHash;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\OeUI\OemrUI;
-use OpenEMR\Services\Globals\EncryptedGlobalValue;
-use OpenEMR\Services\Globals\GlobalSetting;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\AuthHash;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\OeUI\OemrUI;
+use DCL\Services\Globals\EncryptedGlobalValue;
+use DCL\Services\Globals\GlobalSetting;
 use Ramsey\Uuid\Uuid;
 
 // Set up crypto object
@@ -317,7 +317,7 @@ function checkBackgroundServices(): void
                             switch ($fldid) {
                                 case 'first_day_week':
                                     // update PostCalendar config as well
-                                    sqlStatement("UPDATE openemr_module_vars SET pn_value = ? WHERE pn_name = 'pcFirstDayOfWeek'", [$fldvalue]);
+                                    sqlStatement("UPDATE DCL_module_vars SET pn_value = ? WHERE pn_name = 'pcFirstDayOfWeek'", [$fldvalue]);
                                     break;
                             }
 
@@ -790,7 +790,7 @@ function checkBackgroundServices(): void
                                                         "<input type='button' value='" . xla('Default') . "' onclick=\"document.forms[0].form_$i.jscolor.fromString(" . attr_js($flddef) . ")\">\n";
                                                 } elseif ($fldtype == GlobalSetting::DATA_TYPE_DEFAULT_VISIT_CATEGORY) {
                                                     $sql = "SELECT pc_catid, pc_catname, pc_cattype
-                                                FROM openemr_postcalendar_categories
+                                                FROM DCL_postcalendar_categories
                                                 WHERE pc_active = 1 ORDER BY pc_seq";
                                                     $result = sqlStatement($sql);
                                                     echo "<select class='form-control' name='form_{$i}' id='form_{$i}'>\n";

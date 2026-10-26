@@ -2,7 +2,7 @@
 
 /* Copyright © 2010 by Andrew Moore */
 /* Licensing information appears at the end of this file. */
-namespace OpenEMR\Tests\Unit;
+namespace DCL\Tests\Unit;
 
 use NumberToText;
 use PHPUnit\Framework\Attributes\DataProvider;

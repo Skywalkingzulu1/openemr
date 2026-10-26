@@ -2,22 +2,22 @@
 
 /**
  * FHIRSearchFieldFactory.php Represents an object factory that creates Search Fields that are used by FHIR services
- * to process searching within the OpenEMR system.  Given a FhirSearchParameterDefinition it will construct the corresponding
+ * to process searching within the DCL system.  Given a FhirSearchParameterDefinition it will construct the corresponding
  * search field that can be used by the system.
  *
  * Types of fields constructed are defined in the FhirSearchParameterType class.
- * @see OpenEMR\FHIR\FhirSearchParameterType
- * @package openemr
- * @link      https://www.open-emr.org
+ * @see DCL\FHIR\FhirSearchParameterType
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Search;
+namespace DCL\Services\Search;
 
-use OpenEMR\Services\FHIR\FhirUrlResolver;
-use OpenEMR\Services\Search\SearchFieldType;
+use DCL\Services\FHIR\FhirUrlResolver;
+use DCL\Services\Search\SearchFieldType;
 
 class FHIRSearchFieldFactory
 {
@@ -223,7 +223,7 @@ class FHIRSearchFieldFactory
     private function createCompositeFieldForMultipleMappedFields(FhirSearchParameterDefinition $definition, $fhirSearchField, $fhirSearchValues): CompositeSearchField
     {
         $isAnd = false; // when we are building our composite field here we want the UNION of values since the internal
-        // we want to search across all of the mapped OpenEMR columns which is an intersection(logical OR) rather than
+        // we want to search across all of the mapped DCL columns which is an intersection(logical OR) rather than
         // the logical AND of everything.
         $composite = new CompositeSearchField($definition->getName(), $fhirSearchValues, $isAnd);
         $modifiers = $this->extractFieldModifiers($fhirSearchField);

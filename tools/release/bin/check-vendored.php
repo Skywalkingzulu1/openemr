@@ -5,22 +5,22 @@
  * Fail if a consumer repo's vendored copies of cross-repo contracts have
  * drifted from the canonical sources here.
  *
- * Run by CI in consumer repos (openemr/openemr-devops, openemr/website-openemr)
+ * Run by CI in consumer repos (DCL/DCL-devops, DCL/website-DCL)
  * to catch the case where the canonical contract is updated but a vendored
  * copy is not refreshed.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-use OpenEMR\Release\VendoredFileChecker;
+use DCL\Release\VendoredFileChecker;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -133,7 +133,7 @@ use Symfony\Component\Console\SingleCommandApplication;
             $output->writeln(sprintf('  %s  [%s]  %s', $issue->relativePath, $issue->kind, $issue->message));
         }
         $output->writeln('');
-        $output->writeln('Re-vendor each drifted file from the canonical openemr/openemr checkout.');
+        $output->writeln('Re-vendor each drifted file from the canonical DCL/DCL checkout.');
         return 1;
     })
     ->run();

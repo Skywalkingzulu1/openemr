@@ -7,7 +7,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../ccr/createCCR.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to static method OpenEMR\\\\Common\\\\Database\\\\QueryUtils\\:\\:rollbackTransaction\\(\\) with incorrect case\\: rollBackTransaction$#',
+    'message' => '#^Call to static method DCL\\\\Common\\\\Database\\\\QueryUtils\\:\\:rollbackTransaction\\(\\) with incorrect case\\: rollBackTransaction$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/patient_file/history/history_sdoh_health_concerns.php',
 ];
@@ -17,7 +17,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../library/ADODB_mysqli_log.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to static method OpenEMR\\\\Billing\\\\BillingReport\\:\\:generateTheQueryPart\\(\\) with incorrect case\\: GenerateTheQueryPart$#',
+    'message' => '#^Call to static method DCL\\\\Billing\\\\BillingReport\\:\\:generateTheQueryPart\\(\\) with incorrect case\\: GenerateTheQueryPart$#',
     'count' => 1,
     'path' => __DIR__ . '/../../library/daysheet.inc.php',
 ];
@@ -32,7 +32,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../portal/patient/fwk/libs/verysimple/String/VerySimpleStringUtil.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to static method OpenEMR\\\\RestControllers\\\\Config\\\\RestConfig\\:\\:SetPaths\\(\\) with incorrect case\\: setPaths$#',
+    'message' => '#^Call to static method DCL\\\\RestControllers\\\\Config\\\\RestConfig\\:\\:SetPaths\\(\\) with incorrect case\\: setPaths$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/Config/RestConfig.php',
 ];

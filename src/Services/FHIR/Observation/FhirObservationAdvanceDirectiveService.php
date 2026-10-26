@@ -7,38 +7,38 @@
  *
  * This class structure initial version was created by Claude A.I.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRUri;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Observation\Trait\FhirObservationTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\PatientAdvanceDirectiveService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRElement\FHIRUri;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Observation\Trait\FhirObservationTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\PatientAdvanceDirectiveService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
 {
@@ -122,7 +122,7 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      * @return array<string, FhirSearchParameterDefinition>
      */
     protected function loadSearchParameters(): array
@@ -172,9 +172,9 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
      * @return FHIRDomainResource|string
      * @throws \JsonException
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
     {
-        $resource = $this->parseObservationOpenEMRRecord($dataRecord, false);
+        $resource = $this->parseObservationDCLRecord($dataRecord, false);
         $this->populateIssued($resource, $dataRecord);
         $this->populateSupportingInformation($resource, $dataRecord);
         return $encode ? json_encode($resource, JSON_THROW_ON_ERROR) : $resource;
@@ -191,10 +191,10 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
     /**
      * Search for advance directive observations
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
 
@@ -202,19 +202,19 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
             $observationCodesToReturn = [];
 
             // Validate category if provided
-            if (isset($openEMRSearchParameters['category']) && $openEMRSearchParameters['category'] instanceof TokenSearchField) {
-                if (!$openEMRSearchParameters['category']->hasCodeValue(self::CATEGORY_OBSERVATION_ADI)) {
+            if (isset($DCLSearchParameters['category']) && $DCLSearchParameters['category'] instanceof TokenSearchField) {
+                if (!$DCLSearchParameters['category']->hasCodeValue(self::CATEGORY_OBSERVATION_ADI)) {
                     throw new SearchFieldException("category", "invalid value - only 'assessment' category is supported");
                 }
-                unset($openEMRSearchParameters['category']);
+                unset($DCLSearchParameters['category']);
             }
 
             // Process code parameter to filter specific advance directive types
-            if (isset($openEMRSearchParameters['code'])) {
+            if (isset($DCLSearchParameters['code'])) {
                 /**
                  * @var TokenSearchField
                  */
-                $code = $openEMRSearchParameters['code'];
+                $code = $DCLSearchParameters['code'];
                 if (!($code instanceof TokenSearchField)) {
                     throw new SearchFieldException('code', "Invalid code");
                 }
@@ -224,7 +224,7 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
                         $observationCodesToReturn[$codeValue] = $codeValue;
                     }
                 }
-                unset($openEMRSearchParameters['code']);
+                unset($DCLSearchParameters['code']);
             }
 
             // If no specific codes requested, return all supported codes
@@ -236,8 +236,8 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
             // Extract patient UUID from search parameters
             // The search field contains ReferenceSearchValue objects with the UUID
             $patientUuidBytes = null;
-            if (isset($openEMRSearchParameters['puuid'])) {
-                $puuidField = $openEMRSearchParameters['puuid'];
+            if (isset($DCLSearchParameters['puuid'])) {
+                $puuidField = $DCLSearchParameters['puuid'];
 
                 // Extract the UUID bytes from the search field
                 if (is_object($puuidField) && method_exists($puuidField, 'getValues')) {
@@ -274,7 +274,7 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
 
             if (!$patientUuidBytes) {
                 $this->getSystemLogger()->debug(
-                    "FhirObservationAdvanceDirectiveService->searchForOpenEMRRecords() - No patient UUID found in search parameters"
+                    "FhirObservationAdvanceDirectiveService->searchForDCLRecords() - No patient UUID found in search parameters"
                 );
                 return $processingResult;
             }
@@ -282,7 +282,7 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
             // Validate it's the right length (16 bytes for binary UUID)
             if (!is_string($patientUuidBytes) || strlen($patientUuidBytes) !== 16) {
                 $this->getSystemLogger()->error(
-                    "FhirObservationAdvanceDirectiveService->searchForOpenEMRRecords() - Invalid UUID format",
+                    "FhirObservationAdvanceDirectiveService->searchForDCLRecords() - Invalid UUID format",
                     [
                         'type' => gettype($patientUuidBytes),
                         'length' => is_string($patientUuidBytes) ? strlen($patientUuidBytes) : 'N/A',
@@ -298,7 +298,7 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
 
             if (empty($result['pid'])) {
                 $this->getSystemLogger()->debug(
-                    "FhirObservationAdvanceDirectiveService->searchForOpenEMRRecords() - Patient not found for UUID",
+                    "FhirObservationAdvanceDirectiveService->searchForDCLRecords() - Patient not found for UUID",
                     ['uuid_hex' => bin2hex($patientUuidBytes)]
                 );
                 return $processingResult;
@@ -317,7 +317,7 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
             $patientUuidString = UuidRegistry::uuidToString($patientUuidBytes);
 
             $codeTypesService = new CodeTypesService();
-            // Transform observations to OpenEMR record format
+            // Transform observations to DCL record format
             foreach ($adiData['observations'] as $observation) {
                 $code = $observation['code'];
 
@@ -384,7 +384,7 @@ class FhirObservationAdvanceDirectiveService extends FhirServiceBase implements 
             $processingResult->setValidationMessages([$exception->getField() => $exception->getMessage()]);
         } catch (\Throwable $exception) {
             $this->getSystemLogger()->error(
-                "FhirObservationAdvanceDirectiveService->searchForOpenEMRRecords() exception",
+                "FhirObservationAdvanceDirectiveService->searchForDCLRecords() exception",
                 ['message' => $exception->getMessage(), 'trace' => $exception->getTraceAsString()]
             );
             $processingResult->addInternalError("Error retrieving advance directive observations");

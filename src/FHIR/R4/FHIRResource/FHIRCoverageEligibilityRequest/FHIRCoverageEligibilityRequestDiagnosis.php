@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
@@ -70,12 +70,12 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $diagnosisCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $diagnosisReference = null;
 
@@ -85,7 +85,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement implem
     private $_fhirElementName = 'CoverageEligibilityRequest.Diagnosis';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDiagnosisCodeableConcept()
     {
@@ -93,7 +93,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement implem
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
      * @return $this
      */
     public function setDiagnosisCodeableConcept($diagnosisCodeableConcept)
@@ -103,7 +103,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement implem
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDiagnosisReference()
     {
@@ -111,7 +111,7 @@ class FHIRCoverageEligibilityRequestDiagnosis extends FHIRBackboneElement implem
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $diagnosisReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $diagnosisReference
      * @return $this
      */
     public function setDiagnosisReference($diagnosisReference)

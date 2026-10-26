@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively, and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
@@ -72,61 +72,61 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique business identifier for this group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * Identifies the broad classification of the kind of resources the group includes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGroupType
      */
     public $type = null;
 
     /**
      * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $actual = null;
 
     /**
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe", etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A label assigned to the group for human identification and communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A count of the number of resource instances that are part of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $quantity = null;
 
     /**
      * Entity responsible for defining and maintaining Group characteristics and/or registered members.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $managingEntity = null;
 
     /**
      * Identifies traits whose presence r absence is shared by members of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupCharacteristic[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupCharacteristic[]
      */
     public $characteristic = [];
 
     /**
      * Identifies the resource instances that are members of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupMember[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupMember[]
      */
     public $member = [];
 
@@ -137,7 +137,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique business identifier for this group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -146,7 +146,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique business identifier for this group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -157,7 +157,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -166,7 +166,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -177,7 +177,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the broad classification of the kind of resources the group includes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGroupType
      */
     public function getType()
     {
@@ -186,7 +186,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the broad classification of the kind of resources the group includes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGroupType $type
      * @return $this
      */
     public function setType($type)
@@ -197,7 +197,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActual()
     {
@@ -206,7 +206,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $actual
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $actual
      * @return $this
      */
     public function setActual($actual)
@@ -217,7 +217,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe", etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -226,7 +226,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe", etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -237,7 +237,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A label assigned to the group for human identification and communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -246,7 +246,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A label assigned to the group for human identification and communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -257,7 +257,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A count of the number of resource instances that are part of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getQuantity()
     {
@@ -266,7 +266,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A count of the number of resource instances that are part of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -277,7 +277,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Entity responsible for defining and maintaining Group characteristics and/or registered members.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManagingEntity()
     {
@@ -286,7 +286,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Entity responsible for defining and maintaining Group characteristics and/or registered members.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $managingEntity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $managingEntity
      * @return $this
      */
     public function setManagingEntity($managingEntity)
@@ -297,7 +297,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies traits whose presence r absence is shared by members of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupCharacteristic[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupCharacteristic[]
      */
     public function getCharacteristic()
     {
@@ -306,7 +306,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies traits whose presence r absence is shared by members of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupCharacteristic $characteristic
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupCharacteristic $characteristic
      * @return $this
      */
     public function addCharacteristic($characteristic)
@@ -317,7 +317,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the resource instances that are members of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupMember[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupMember[]
      */
     public function getMember()
     {
@@ -326,7 +326,7 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the resource instances that are members of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupMember $member
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRGroup\FHIRGroupMember $member
      * @return $this
      */
     public function addMember($member)

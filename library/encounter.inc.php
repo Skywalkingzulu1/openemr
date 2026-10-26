@@ -1,6 +1,6 @@
 <?php
 
-use OpenEMR\Common\Session\EncounterSessionUtil;
+use DCL\Common\Session\EncounterSessionUtil;
 
 //function called to set the global session variable for encounter number
 function setencounter($enc): int

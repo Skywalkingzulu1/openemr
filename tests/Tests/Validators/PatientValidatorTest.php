@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\Tests\Validators;
+namespace DCL\Tests\Validators;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\PatientValidator;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\PatientValidator;
 use PHPUnit\Framework\TestCase;
 
 class PatientValidatorTest extends TestCase

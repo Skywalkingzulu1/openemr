@@ -1,21 +1,21 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers;
+namespace DCL\Tests\RestControllers;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\PractitionerRestController;
-use OpenEMR\Tests\Fixtures\PractitionerFixtureManager;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\PractitionerRestController;
+use DCL\Tests\Fixtures\PractitionerFixtureManager;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\InputBag;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ServerBag;
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class PractitionerRestControllerTest extends TestCase
 {

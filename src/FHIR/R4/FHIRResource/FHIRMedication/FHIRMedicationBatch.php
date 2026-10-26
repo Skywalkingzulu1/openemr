@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedication;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedication;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedication;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource is primarily used for the identification and definition of a medication for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.
@@ -71,13 +71,13 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * The assigned lot number of a batch of the specified product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $lotNumber = null;
 
     /**
      * When this specific batch of product will expire.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $expirationDate = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The assigned lot number of a batch of the specified product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLotNumber()
     {
@@ -97,7 +97,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The assigned lot number of a batch of the specified product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $lotNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $lotNumber
      * @return $this
      */
     public function setLotNumber($lotNumber)
@@ -108,7 +108,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * When this specific batch of product will expire.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getExpirationDate()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationBatch extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * When this specific batch of product will expire.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $expirationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $expirationDate
      * @return $this
      */
     public function setExpirationDate($expirationDate)

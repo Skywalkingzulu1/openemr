@@ -7,10 +7,10 @@
 // 10 CPI, 6 LPI, 65 columns, 54 lines per page.
 // If lpr services are installed on Windows this setting will be similar.
 // Otherwise configure it as needed (print /d:PRN) might be an option for Windows parallel printers.
-const OPENEMR_PRINT_COMMAND = 'lpr -P HPLaserjet6P -o cpi=10 -o lpi=6 -o page-left=72 -o page-top=72';
+const DCL_PRINT_COMMAND = 'lpr -P HPLaserjet6P -o cpi=10 -o lpi=6 -o page-left=72 -o page-top=72';
 
 // Enscript command used by HylaFAX (fax_dispatch.php).
-const OPENEMR_HYLAFAX_ENSCRIPT = 'enscript -M Letter -B -e^ --margins=36:36:36:36';
+const DCL_HYLAFAX_ENSCRIPT = 'enscript -M Letter -B -e^ --margins=36:36:36:36';
 
 //used differently by different applications, intuit programs only like numbers
 $GLOBALS['oer_config']['ofx']['bankid']     = "123456789";

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
+ * @copyright Copyright (c) 2026 DCL Inc.
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\TagDispatchPayload;
+use DCL\Release\TagDispatchPayload;
 use PHPUnit\Framework\TestCase;
 
 final class TagDispatchPayloadTest extends TestCase
@@ -24,13 +24,13 @@ final class TagDispatchPayloadTest extends TestCase
     /**
      * @return array<string, mixed>
      */
-    private function envelope(string $event = 'openemr-tag', mixed $data = self::VALID_DATA): array
+    private function envelope(string $event = 'DCL-tag', mixed $data = self::VALID_DATA): array
     {
         return [
             'event' => $event,
-            'repo' => 'openemr/openemr',
+            'repo' => 'DCL/DCL',
             'sha' => str_repeat('a', 40),
-            'actor' => 'openemr-release-bot[bot]',
+            'actor' => 'DCL-release-bot[bot]',
             'dispatched_at' => '2026-04-29T12:00:00Z',
             'data' => $data,
         ];
@@ -68,8 +68,8 @@ final class TagDispatchPayloadTest extends TestCase
     public function testRejectsWrongEvent(): void
     {
         $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage('Expected event=openemr-tag');
-        TagDispatchPayload::fromEnvelope($this->envelope('openemr-rel-cut'));
+        $this->expectExceptionMessage('Expected event=DCL-tag');
+        TagDispatchPayload::fromEnvelope($this->envelope('DCL-rel-cut'));
     }
 
     public function testRejectsMissingDataObject(): void

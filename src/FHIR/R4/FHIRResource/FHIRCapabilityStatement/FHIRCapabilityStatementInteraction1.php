@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,13 +71,13 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
 {
     /**
      * A coded identifier of the operation, supported by the system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSystemRestfulInteraction
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSystemRestfulInteraction
      */
     public $code = null;
 
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $documentation = null;
 
@@ -88,7 +88,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
 
     /**
      * A coded identifier of the operation, supported by the system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSystemRestfulInteraction
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSystemRestfulInteraction
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
 
     /**
      * A coded identifier of the operation, supported by the system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSystemRestfulInteraction $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSystemRestfulInteraction $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
 
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation()
     {
@@ -117,7 +117,7 @@ class FHIRCapabilityStatementInteraction1 extends FHIRBackboneElement implements
 
     /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
      * @return $this
      */
     public function setDocumentation($documentation)

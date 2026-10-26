@@ -20,7 +20,7 @@
 
 namespace Patientvalidation\Model;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class PatientDataTable
 {

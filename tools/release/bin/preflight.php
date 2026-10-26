@@ -4,19 +4,19 @@
 /**
  * Run pre-release checks: milestone completeness and unpublished GHSAs.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-use OpenEMR\Release\GitHubApi;
-use OpenEMR\Release\PreflightChecker;
+use DCL\Release\GitHubApi;
+use DCL\Release\PreflightChecker;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -26,7 +26,7 @@ use Symfony\Component\Console\SingleCommandApplication;
     ->setName('preflight')
     ->setDescription('Run pre-release checks')
     ->addOption('milestone', 'm', InputOption::VALUE_REQUIRED, 'Milestone name')
-    ->addOption('repo', 'r', InputOption::VALUE_REQUIRED, 'GitHub repo', 'openemr/openemr')
+    ->addOption('repo', 'r', InputOption::VALUE_REQUIRED, 'GitHub repo', 'DCL/DCL')
     ->addOption('skip-milestone', null, InputOption::VALUE_NONE, 'Skip milestone check')
     ->addOption('skip-ghsa', null, InputOption::VALUE_NONE, 'Skip GHSA check')
     ->setCode(function (InputInterface $input, OutputInterface $output): int {

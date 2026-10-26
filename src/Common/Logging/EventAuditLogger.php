@@ -3,26 +3,26 @@
 /**
  * Class to log audited events - must be high performance
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Kyle Wiering <kyle@softwareadvice.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Kyle Wiering <kyle@softwareadvice.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Logging;
+namespace DCL\Common\Logging;
 
-use OpenEMR\BC\{
+use DCL\BC\{
     DatabaseConnectionFactory,
     DatabaseConnectionOptions,
     ServiceContainer,
 };
-use OpenEMR\Common\Auth\AuthEvent;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\Traits\SingletonTrait;
+use DCL\Common\Auth\AuthEvent;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\Traits\SingletonTrait;
 use Psr\Clock\ClockInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -183,10 +183,10 @@ class EventAuditLogger implements AuditLoggerInterface
         "registry" => EventCategory::SecurityAdministration,
         "users" => EventCategory::SecurityAdministration,
         "groups" => EventCategory::SecurityAdministration,
-        "openemr_postcalendar_events" => EventCategory::Scheduling,
-        "openemr_postcalendar_categories" => EventCategory::SecurityAdministration,
-        "openemr_postcalendar_limits" => EventCategory::SecurityAdministration,
-        "openemr_postcalendar_topics" => EventCategory::SecurityAdministration,
+        "DCL_postcalendar_events" => EventCategory::Scheduling,
+        "DCL_postcalendar_categories" => EventCategory::SecurityAdministration,
+        "DCL_postcalendar_limits" => EventCategory::SecurityAdministration,
+        "DCL_postcalendar_topics" => EventCategory::SecurityAdministration,
         "gacl_acl" => EventCategory::SecurityAdministration,
         "gacl_acl_sections" => EventCategory::SecurityAdministration,
         "gacl_acl_seq" => EventCategory::SecurityAdministration,
@@ -705,7 +705,7 @@ class EventAuditLogger implements AuditLoggerInterface
 
         $current_datetime = $this->clock->now()->format('Y-m-d H:i:s');
 
-        // Note that no longer using checksum field in log table in OpenEMR 6.0 and onward since using the checksum in log_comment_encrypt table.
+        // Note that no longer using checksum field in log table in DCL 6.0 and onward since using the checksum in log_comment_encrypt table.
         //  Need to keep to maintain backward compatibility since the checksum is used when calculating checksum stored in log_comment_encrypt table
         //   in pre 6.0.
         // Note also need to use lower case for 'insert into' to prevent a endless loop
@@ -834,7 +834,7 @@ class EventAuditLogger implements AuditLoggerInterface
             }
         } elseif ($table == 'amendments' || $table == 'amendments_history') {
             return "Amendments";
-        } elseif ($table == 'openemr_postcalendar_events') {
+        } elseif ($table == 'DCL_postcalendar_events') {
             return "Scheduling";
         } elseif ($table == 'procedure_order' || $table == 'procedure_order_code') {
             return "Lab Order";

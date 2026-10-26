@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAuditEvent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -71,19 +71,19 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Logical source location within the healthcare enterprise network.  For example, a hospital or other provider location within a multi-entity provider group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $site = null;
 
     /**
      * Identifier of the source where the event was detected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $observer = null;
 
     /**
      * Code specifying the type of source where event originated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $type = [];
 
@@ -94,7 +94,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Logical source location within the healthcare enterprise network.  For example, a hospital or other provider location within a multi-entity provider group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSite()
     {
@@ -103,7 +103,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Logical source location within the healthcare enterprise network.  For example, a hospital or other provider location within a multi-entity provider group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $site
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $site
      * @return $this
      */
     public function setSite($site)
@@ -114,7 +114,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifier of the source where the event was detected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getObserver()
     {
@@ -123,7 +123,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifier of the source where the event was detected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $observer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $observer
      * @return $this
      */
     public function setObserver($observer)
@@ -134,7 +134,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Code specifying the type of source where event originated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getType()
     {
@@ -143,7 +143,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Code specifying the type of source where event originated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function addType($type)

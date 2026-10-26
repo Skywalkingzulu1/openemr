@@ -3,11 +3,11 @@
 /**
  * OnsiteActivityViewReporter.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2017 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -18,7 +18,7 @@
  *
  * Note that Reporters are read-only and cannot be used for saving data.
  *
- * @package Openemr::Model::DAO
+ * @package DCL::Model::DAO
  * @author ClassBuilder
  * @version 1.0
  */

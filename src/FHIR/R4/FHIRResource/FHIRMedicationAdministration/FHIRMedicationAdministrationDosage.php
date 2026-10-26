@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationAdministration;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.  Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
@@ -73,41 +73,41 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
      * Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
 
 The dosage instructions should reflect the dosage of the medication that was administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $site = null;
 
     /**
      * A code specifying the route or physiological path of administration of a therapeutic agent into or onto the patient.  For example, topical, intravenous, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $route = null;
 
     /**
      * A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $dose = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $rateQuantity = null;
 
@@ -120,7 +120,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
 
 The dosage instructions should reflect the dosage of the medication that was administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -131,7 +131,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
 
 The dosage instructions should reflect the dosage of the medication that was administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -142,7 +142,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSite()
     {
@@ -151,7 +151,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $site
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $site
      * @return $this
      */
     public function setSite($site)
@@ -162,7 +162,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * A code specifying the route or physiological path of administration of a therapeutic agent into or onto the patient.  For example, topical, intravenous, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRoute()
     {
@@ -171,7 +171,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * A code specifying the route or physiological path of administration of a therapeutic agent into or onto the patient.  For example, topical, intravenous, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $route
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $route
      * @return $this
      */
     public function setRoute($route)
@@ -182,7 +182,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -191,7 +191,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -202,7 +202,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDose()
     {
@@ -211,7 +211,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 
     /**
      * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $dose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $dose
      * @return $this
      */
     public function setDose($dose)
@@ -221,7 +221,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
     {
@@ -229,7 +229,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $rateRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
     public function setRateRatio($rateRatio)
@@ -239,7 +239,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity()
     {
@@ -247,7 +247,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $rateQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return $this
      */
     public function setRateQuantity($rateQuantity)

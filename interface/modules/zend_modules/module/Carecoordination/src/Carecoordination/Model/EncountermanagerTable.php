@@ -3,12 +3,12 @@
 /**
  * interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncountermanagerTable.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Riju K P <rijukp@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Model;
@@ -16,11 +16,11 @@ namespace Carecoordination\Model;
 use CouchDB;
 use DOMDocument;
 use Dompdf\Dompdf;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\DirectMessaging\ErrorConstants;
-use OpenEMR\Common\Utils\XmlUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\DirectMessaging\ErrorConstants;
+use DCL\Common\Utils\XmlUtils;
+use DCL\Core\OEGlobalsBag;
 use XSLTProcessor;
 
 // TODO: we need to refactor all of this so it can go into a class for this functionality

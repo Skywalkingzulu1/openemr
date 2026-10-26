@@ -4,17 +4,17 @@
  * This displays the search criteria. The master processing is done here. This page
  * is included in the billing_report.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Eldho Chacko <eldho@zhservices.com>
  * @author    Paul Simon K <paul@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Billing\BillingReport;
+use DCL\Billing\BillingReport;
 
 /** @var string                     $EXPORT_INC */
 /** @var string                     $RadioSeperator */
@@ -266,7 +266,7 @@ for ($TPSCriteriaIndex = 0; $TPSCriteriaIndex < count($TPSCriteriaDataType); $TP
                     <li class="list-group-item bg-light d-flex justify-content-between align-items-center">
                         <a class="link_submit" href="#" onclick="javascript:return SubmitTheScreen();"><strong><?php echo xlt('Update List') ?></strong></a><i id='update-tooltip' class="fa fa-info-circle fa-lg text-primary" aria-hidden="true"></i>
                     </li>
-                    <?php if (file_exists(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('webserver_root') . "/custom/BillingExport.php")) { ?>
+                    <?php if (file_exists(\DCL\Core\OEGlobalsBag::getInstance()->getString('webserver_root') . "/custom/BillingExport.php")) { ?>
                         <li class="list-group-item bg-light">
                             <a class='link_submit' href="#" onclick="javascript:return SubmitTheScreenExportOFX();"><strong><?php echo xlt('Export OFX'); ?></strong></a>
                         </li>
@@ -292,7 +292,7 @@ for ($TPSCriteriaIndex = 0; $TPSCriteriaIndex < count($TPSCriteriaDataType); $TP
                         <li class="list-group-item bg-light"><a href='#' id="view-log-link" data-toggle="modal" data-target="#myModal" class='link_submit' title='<?php echo xla('See messages from the last set of generated claims'); ?>'><strong><?php echo xlt('View Log'); ?></strong></a>
                         </li>
                     <?php } ?>
-                    <li class="list-group-item bg-light"><a href="<?php echo \OpenEMR\Core\OEGlobalsBag::getInstance()->getWebRoot() ?>/interface/billing/customize_log.php" rel="noopener" target="_blank" onclick="top.restoreSession()"><strong><?php echo xlt('Tab Log') ?></strong></a>
+                    <li class="list-group-item bg-light"><a href="<?php echo \DCL\Core\OEGlobalsBag::getInstance()->getWebRoot() ?>/interface/billing/customize_log.php" rel="noopener" target="_blank" onclick="top.restoreSession()"><strong><?php echo xlt('Tab Log') ?></strong></a>
                     </li>
                     <li class="list-group-item bg-light"><a class="link_submit" href="JavaScript:void(0);" onclick="select_all(); return false;"><strong><?php echo xlt('Select All'); ?></strong></a>
                     </li>

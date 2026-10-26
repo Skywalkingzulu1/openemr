@@ -1,7 +1,7 @@
 {
-    "name": "openemr/oe-module-weno",
+    "name": "DCL/oe-module-weno",
     "description": "Weno EZ Integration Module",
-    "type": "openemr-module",
+    "type": "DCL-module",
     "minimum-stability": "stable",
     "license": "GPL-3.0",
     "authors": [
@@ -12,7 +12,7 @@
     ],
     "require": {},
     "conflict": {
-        "openemr/openemr": ">=7.0.1"
+        "DCL/DCL": ">=7.0.1"
     },
     "config": {}
 }

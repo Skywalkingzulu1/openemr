@@ -4,21 +4,21 @@
  * gad-7 form using form api     view.php
  * open a previously completed GAD-7 form for further editing
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ruth Moulton <moulton ruth@muswell.me.uk>
  * @copyright Copyright (c) 2021 ruth moulton <ruth@muswell.me.uk>
  *
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("gad7.inc.php");  // common strings, require_once(globals.php), other includes etc
 
-use OpenEMR\Common\Csrf\CsrfUtils;    // security module
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;    // security module
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $form_folder = "gad7";
 $session = SessionWrapperFactory::getInstance()->getActiveSession();

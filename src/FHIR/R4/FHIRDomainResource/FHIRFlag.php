@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Prospective warnings of potential issues when providing care to the patient.
@@ -72,49 +72,49 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this flag by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Supports basic workflow.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFlagStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFlagStatus
      */
     public $status = null;
 
     /**
      * Allows a flag to be divided into different categories like clinical, administrative etc. Intended to be used as a means of filtering which flags are displayed to particular user or in a given context.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * The coded value or textual component of the flag to display to the user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The patient, location, group, organization, or practitioner etc. this is about record this flag is associated with.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The period of time from the activation of the flag to inactivation of the flag. If the flag is active, the end of the period should be unspecified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * This alert is only relevant during the encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The person, organization or device that created the flag.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
@@ -125,7 +125,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this flag by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this flag by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Supports basic workflow.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFlagStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFlagStatus
      */
     public function getStatus()
     {
@@ -154,7 +154,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Supports basic workflow.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFlagStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFlagStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -165,7 +165,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Allows a flag to be divided into different categories like clinical, administrative etc. Intended to be used as a means of filtering which flags are displayed to particular user or in a given context.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -174,7 +174,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Allows a flag to be divided into different categories like clinical, administrative etc. Intended to be used as a means of filtering which flags are displayed to particular user or in a given context.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -185,7 +185,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The coded value or textual component of the flag to display to the user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -194,7 +194,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The coded value or textual component of the flag to display to the user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -205,7 +205,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient, location, group, organization, or practitioner etc. this is about record this flag is associated with.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -214,7 +214,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient, location, group, organization, or practitioner etc. this is about record this flag is associated with.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -225,7 +225,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time from the activation of the flag to inactivation of the flag. If the flag is active, the end of the period should be unspecified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -234,7 +234,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time from the activation of the flag to inactivation of the flag. If the flag is active, the end of the period should be unspecified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -245,7 +245,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This alert is only relevant during the encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -254,7 +254,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This alert is only relevant during the encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -265,7 +265,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person, organization or device that created the flag.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -274,7 +274,7 @@ class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person, organization or device that created the flag.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)

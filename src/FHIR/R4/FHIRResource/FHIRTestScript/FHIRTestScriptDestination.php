@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,13 +71,13 @@ class FHIRTestScriptDestination extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Abstract name given to a destination server in this test script.  The name is provided as a number starting at 1.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $index = null;
 
     /**
      * The type of destination profile the test system supports.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $profile = null;
 
@@ -88,7 +88,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Abstract name given to a destination server in this test script.  The name is provided as a number starting at 1.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getIndex()
     {
@@ -97,7 +97,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Abstract name given to a destination server in this test script.  The name is provided as a number starting at 1.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $index
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $index
      * @return $this
      */
     public function setIndex($index)
@@ -108,7 +108,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The type of destination profile the test system supports.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getProfile()
     {
@@ -117,7 +117,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The type of destination profile the test system supports.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $profile
      * @return $this
      */
     public function setProfile($profile)

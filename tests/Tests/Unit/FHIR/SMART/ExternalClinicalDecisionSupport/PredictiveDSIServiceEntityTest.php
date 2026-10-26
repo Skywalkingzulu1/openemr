@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\FHIR\SMART\ExternalClinicalDecisionSupport;
+namespace DCL\Tests\Unit\FHIR\SMART\ExternalClinicalDecisionSupport;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\DecisionSupportInterventionEntity;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\PredictiveDSIServiceEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Twig\TwigContainer;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\DecisionSupportInterventionEntity;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\PredictiveDSIServiceEntity;
 use PHPUnit\Framework\TestCase;
 
 class PredictiveDSIServiceEntityTest extends TestCase

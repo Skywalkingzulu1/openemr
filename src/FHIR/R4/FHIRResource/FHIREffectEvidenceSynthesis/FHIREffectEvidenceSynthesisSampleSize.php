@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
+namespace DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
@@ -71,19 +71,19 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement implemen
 {
     /**
      * Human-readable summary of sample size.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Number of studies included in this evidence synthesis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $numberOfStudies = null;
 
     /**
      * Number of participants included in this evidence synthesis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $numberOfParticipants = null;
 
@@ -94,7 +94,7 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement implemen
 
     /**
      * Human-readable summary of sample size.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -103,7 +103,7 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement implemen
 
     /**
      * Human-readable summary of sample size.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -114,7 +114,7 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement implemen
 
     /**
      * Number of studies included in this evidence synthesis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getNumberOfStudies()
     {
@@ -123,7 +123,7 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement implemen
 
     /**
      * Number of studies included in this evidence synthesis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numberOfStudies
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numberOfStudies
      * @return $this
      */
     public function setNumberOfStudies($numberOfStudies)
@@ -134,7 +134,7 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement implemen
 
     /**
      * Number of participants included in this evidence synthesis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getNumberOfParticipants()
     {
@@ -143,7 +143,7 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement implemen
 
     /**
      * Number of participants included in this evidence synthesis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numberOfParticipants
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numberOfParticipants
      * @return $this
      */
     public function setNumberOfParticipants($numberOfParticipants)

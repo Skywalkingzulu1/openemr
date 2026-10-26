@@ -20,7 +20,7 @@
  *
  * Type:     function<br />
  * Name:     xla<br />
- * Purpose:  translate in OpenEMR and escape for html attr - Smarty templates<br />
+ * Purpose:  translate in DCL and escape for html attr - Smarty templates<br />
  *
  * Examples:
  *

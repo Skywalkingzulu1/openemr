@@ -1,7 +1,7 @@
 <?php
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;

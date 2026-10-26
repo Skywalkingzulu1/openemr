@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols.
@@ -71,195 +71,195 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * A user-visible prefix for the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $prefix = null;
 
     /**
      * The title of the action displayed to a user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A brief description of the action used to provide a summary to display to the user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $textEquivalent = null;
 
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * A description of why this action is necessary or appropriate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reason = [];
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $documentation = [];
 
     /**
      * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId[]
      */
     public $goalId = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subjectCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subjectReference = null;
 
     /**
      * A description of when the action should be triggered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition[]
      */
     public $trigger = [];
 
     /**
      * An expression that describes applicability criteria or start/stop conditions for the action.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
      */
     public $condition = [];
 
     /**
      * Defines input data requirements for the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public $input = [];
 
     /**
      * Defines the outputs of the action, if any.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public $output = [];
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[]
      */
     public $relatedAction = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $timingAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $timingDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $timingRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
      * Indicates who should participate in performing the action described.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
      */
     public $participant = [];
 
     /**
      * The type of action to perform (create, update, remove).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
      */
     public $groupingBehavior = null;
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
      */
     public $selectionBehavior = null;
 
     /**
      * Defines the required behavior for the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
      */
     public $requiredBehavior = null;
 
     /**
      * Defines whether the action should usually be preselected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
      */
     public $precheckBehavior = null;
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
      */
     public $cardinalityBehavior = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $definitionCanonical = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $definitionUri = null;
 
     /**
      * A reference to a StructureMap resource that defines a transform that can be executed to produce the intent resource using the ActivityDefinition instance as the input.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $transform = null;
 
     /**
      * Customizations that should be applied to the statically defined resource. For example, if the dosage of a medication must be computed based on the patient's weight, a customization would be used to specify an expression that calculated the weight, and the path on the resource that would contain the result.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
      */
     public $dynamicValue = [];
 
     /**
      * Sub actions that are contained within the action. The behavior of this action determines the functionality of the sub-actions. For example, a selection behavior of at-most-one indicates that of the sub-actions, at most one may be chosen as part of realizing the action definition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
     public $action = [];
 
@@ -270,7 +270,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A user-visible prefix for the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPrefix()
     {
@@ -279,7 +279,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A user-visible prefix for the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $prefix
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $prefix
      * @return $this
      */
     public function setPrefix($prefix)
@@ -290,7 +290,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The title of the action displayed to a user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -299,7 +299,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The title of the action displayed to a user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -310,7 +310,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A brief description of the action used to provide a summary to display to the user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -319,7 +319,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A brief description of the action used to provide a summary to display to the user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -330,7 +330,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTextEquivalent()
     {
@@ -339,7 +339,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $textEquivalent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $textEquivalent
      * @return $this
      */
     public function setTextEquivalent($textEquivalent)
@@ -350,7 +350,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -359,7 +359,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -370,7 +370,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -379,7 +379,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -390,7 +390,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A description of why this action is necessary or appropriate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReason()
     {
@@ -399,7 +399,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A description of why this action is necessary or appropriate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -410,7 +410,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getDocumentation()
     {
@@ -419,7 +419,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $documentation
      * @return $this
      */
     public function addDocumentation($documentation)
@@ -430,7 +430,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId[]
      */
     public function getGoalId()
     {
@@ -439,7 +439,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $goalId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $goalId
      * @return $this
      */
     public function addGoalId($goalId)
@@ -449,7 +449,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubjectCodeableConcept()
     {
@@ -457,7 +457,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return $this
      */
     public function setSubjectCodeableConcept($subjectCodeableConcept)
@@ -467,7 +467,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubjectReference()
     {
@@ -475,7 +475,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subjectReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subjectReference
      * @return $this
      */
     public function setSubjectReference($subjectReference)
@@ -486,7 +486,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A description of when the action should be triggered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition[]
      */
     public function getTrigger()
     {
@@ -495,7 +495,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A description of when the action should be triggered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition $trigger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition $trigger
      * @return $this
      */
     public function addTrigger($trigger)
@@ -506,7 +506,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * An expression that describes applicability criteria or start/stop conditions for the action.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
      */
     public function getCondition()
     {
@@ -515,7 +515,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * An expression that describes applicability criteria or start/stop conditions for the action.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionCondition $condition
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionCondition $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -526,7 +526,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines input data requirements for the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public function getInput()
     {
@@ -535,7 +535,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines input data requirements for the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $input
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $input
      * @return $this
      */
     public function addInput($input)
@@ -546,7 +546,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the outputs of the action, if any.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public function getOutput()
     {
@@ -555,7 +555,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the outputs of the action, if any.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $output
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $output
      * @return $this
      */
     public function addOutput($output)
@@ -566,7 +566,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[]
      */
     public function getRelatedAction()
     {
@@ -575,7 +575,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $relatedAction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction $relatedAction
      * @return $this
      */
     public function addRelatedAction($relatedAction)
@@ -585,7 +585,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
     {
@@ -593,7 +593,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
     public function setTimingDateTime($timingDateTime)
@@ -603,7 +603,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getTimingAge()
     {
@@ -611,7 +611,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @return $this
      */
     public function setTimingAge($timingAge)
@@ -621,7 +621,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
     {
@@ -629,7 +629,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
     public function setTimingPeriod($timingPeriod)
@@ -639,7 +639,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getTimingDuration()
     {
@@ -647,7 +647,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return $this
      */
     public function setTimingDuration($timingDuration)
@@ -657,7 +657,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getTimingRange()
     {
@@ -665,7 +665,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $timingRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $timingRange
      * @return $this
      */
     public function setTimingRange($timingRange)
@@ -675,7 +675,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getTimingTiming()
     {
@@ -683,7 +683,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
      * @return $this
      */
     public function setTimingTiming($timingTiming)
@@ -694,7 +694,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates who should participate in performing the action described.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
      */
     public function getParticipant()
     {
@@ -703,7 +703,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates who should participate in performing the action described.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionParticipant $participant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -714,7 +714,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The type of action to perform (create, update, remove).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -723,7 +723,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The type of action to perform (create, update, remove).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -734,7 +734,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
      */
     public function getGroupingBehavior()
     {
@@ -743,7 +743,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
      * @return $this
      */
     public function setGroupingBehavior($groupingBehavior)
@@ -754,7 +754,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
      */
     public function getSelectionBehavior()
     {
@@ -763,7 +763,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
      * @return $this
      */
     public function setSelectionBehavior($selectionBehavior)
@@ -774,7 +774,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the required behavior for the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
      */
     public function getRequiredBehavior()
     {
@@ -783,7 +783,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines the required behavior for the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
      * @return $this
      */
     public function setRequiredBehavior($requiredBehavior)
@@ -794,7 +794,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines whether the action should usually be preselected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
      */
     public function getPrecheckBehavior()
     {
@@ -803,7 +803,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines whether the action should usually be preselected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
      * @return $this
      */
     public function setPrecheckBehavior($precheckBehavior)
@@ -814,7 +814,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
      */
     public function getCardinalityBehavior()
     {
@@ -823,7 +823,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
      * @return $this
      */
     public function setCardinalityBehavior($cardinalityBehavior)
@@ -833,7 +833,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefinitionCanonical()
     {
@@ -841,7 +841,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
      * @return $this
      */
     public function setDefinitionCanonical($definitionCanonical)
@@ -851,7 +851,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getDefinitionUri()
     {
@@ -859,7 +859,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $definitionUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $definitionUri
      * @return $this
      */
     public function setDefinitionUri($definitionUri)
@@ -870,7 +870,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A reference to a StructureMap resource that defines a transform that can be executed to produce the intent resource using the ActivityDefinition instance as the input.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getTransform()
     {
@@ -879,7 +879,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A reference to a StructureMap resource that defines a transform that can be executed to produce the intent resource using the ActivityDefinition instance as the input.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $transform
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $transform
      * @return $this
      */
     public function setTransform($transform)
@@ -890,7 +890,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Customizations that should be applied to the statically defined resource. For example, if the dosage of a medication must be computed based on the patient's weight, a customization would be used to specify an expression that calculated the weight, and the path on the resource that would contain the result.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
      */
     public function getDynamicValue()
     {
@@ -899,7 +899,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Customizations that should be applied to the statically defined resource. For example, if the dosage of a medication must be computed based on the patient's weight, a customization would be used to specify an expression that calculated the weight, and the path on the resource that would contain the result.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue $dynamicValue
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue $dynamicValue
      * @return $this
      */
     public function addDynamicValue($dynamicValue)
@@ -910,7 +910,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Sub actions that are contained within the action. The behavior of this action determines the functionality of the sub-actions. For example, a selection behavior of at-most-one indicates that of the sub-actions, at most one may be chosen as part of realizing the action definition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
     public function getAction()
     {
@@ -919,7 +919,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Sub actions that are contained within the action. The behavior of this action determines the functionality of the sub-actions. For example, a selection behavior of at-most-one indicates that of the sub-actions, at most one may be chosen as part of realizing the action definition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
      * @return $this
      */
     public function addAction($action)

@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport;
+namespace DCL\FHIR\SMART\ExternalClinicalDecisionSupport;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\FHIR\SMART\ActionUrlBuilder;
-use OpenEMR\Services\DecisionSupportInterventionService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\FHIR\SMART\ActionUrlBuilder;
+use DCL\Services\DecisionSupportInterventionService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

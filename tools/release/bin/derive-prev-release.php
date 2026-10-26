@@ -4,31 +4,31 @@
 /**
  * Print the previous release version (the most recent v<MAJOR>_<MINOR>_<PATCH>
  * tag in the local checkout). Used by the conductor workflow to populate
- * the prev_release field of openemr-rel-cut / openemr-rel-update payloads.
+ * the prev_release field of DCL-rel-cut / DCL-rel-update payloads.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-// OpenEMR\Release\ classes live under autoload-dev so composer-require-checker
+// DCL\Release\ classes live under autoload-dev so composer-require-checker
 // does not demand conductor-only deps in production. Anything invoking this
 // script needs a `composer install` that includes dev dependencies.
-if (!class_exists(\OpenEMR\Release\BranchVersionResolver::class)) {
+if (!class_exists(\DCL\Release\BranchVersionResolver::class)) {
     fwrite(
         STDERR,
-        "OpenEMR\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
+        "DCL\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
     );
     exit(2);
 }
 
-use OpenEMR\Release\BranchVersionResolver;
+use DCL\Release\BranchVersionResolver;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -51,7 +51,7 @@ use Symfony\Component\HttpClient\HttpClient;
         'manifest-url',
         null,
         InputOption::VALUE_REQUIRED,
-        'Overrides the website-openemr data/releases.json URL used to filter skipped tags',
+        'Overrides the website-DCL data/releases.json URL used to filter skipped tags',
         BranchVersionResolver::DEFAULT_MANIFEST_URL,
     )
     ->setCode(function (InputInterface $input, OutputInterface $output): int {

@@ -4,19 +4,19 @@
  * Isolated test for GetServiceOtherCounts() when the Fax/SMS module classes
  * cannot be loaded (module disabled or removed while its flags are still on).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS;
+namespace DCL\Tests\Isolated\Modules\FaxSMS;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
 use PHPUnit\Framework\Attributes\PreserveGlobalState;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use PHPUnit\Framework\TestCase;

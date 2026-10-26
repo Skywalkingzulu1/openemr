@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
@@ -72,83 +72,83 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique identifier for this copy of the Consent Statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates the current state of this consent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRConsentState
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRConsentState
      */
     public $status = null;
 
     /**
      * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $scope = null;
 
     /**
      * A classification of the type of consents found in the statement. This element supports indexing and retrieval of consent statements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * The patient/healthcare consumer to whom this consent applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * When this  Consent was issued / created / indexed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $dateTime = null;
 
     /**
      * Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $performer = [];
 
     /**
      * The organization that manages the consent, and the framework within which it is executed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $organization = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $sourceAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $sourceReference = null;
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentPolicy[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentPolicy[]
      */
     public $policy = [];
 
     /**
      * A reference to the specific base computable regulation or policy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $policyRule = null;
 
     /**
      * Whether a treatment instruction (e.g. artificial respiration yes or no) was verified with the patient, his/her family or another authorized person.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentVerification[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentVerification[]
      */
     public $verification = [];
 
     /**
      * An exception to the base policy of this consent. An exception can be an addition or removal of access permissions.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision
      */
     public $provision = null;
 
@@ -159,7 +159,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier for this copy of the Consent Statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -168,7 +168,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier for this copy of the Consent Statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -179,7 +179,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of this consent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRConsentState
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRConsentState
      */
     public function getStatus()
     {
@@ -188,7 +188,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of this consent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRConsentState $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRConsentState $status
      * @return $this
      */
     public function setStatus($status)
@@ -199,7 +199,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getScope()
     {
@@ -208,7 +208,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $scope
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $scope
      * @return $this
      */
     public function setScope($scope)
@@ -219,7 +219,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A classification of the type of consents found in the statement. This element supports indexing and retrieval of consent statements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -228,7 +228,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A classification of the type of consents found in the statement. This element supports indexing and retrieval of consent statements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -239,7 +239,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient/healthcare consumer to whom this consent applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -248,7 +248,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient/healthcare consumer to whom this consent applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -259,7 +259,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When this  Consent was issued / created / indexed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDateTime()
     {
@@ -268,7 +268,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When this  Consent was issued / created / indexed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $dateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $dateTime
      * @return $this
      */
     public function setDateTime($dateTime)
@@ -279,7 +279,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPerformer()
     {
@@ -288,7 +288,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -299,7 +299,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that manages the consent, and the framework within which it is executed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getOrganization()
     {
@@ -308,7 +308,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that manages the consent, and the framework within which it is executed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $organization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $organization
      * @return $this
      */
     public function addOrganization($organization)
@@ -318,7 +318,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getSourceAttachment()
     {
@@ -326,7 +326,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $sourceAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $sourceAttachment
      * @return $this
      */
     public function setSourceAttachment($sourceAttachment)
@@ -336,7 +336,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSourceReference()
     {
@@ -344,7 +344,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $sourceReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $sourceReference
      * @return $this
      */
     public function setSourceReference($sourceReference)
@@ -355,7 +355,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentPolicy[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentPolicy[]
      */
     public function getPolicy()
     {
@@ -364,7 +364,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentPolicy $policy
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentPolicy $policy
      * @return $this
      */
     public function addPolicy($policy)
@@ -375,7 +375,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the specific base computable regulation or policy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPolicyRule()
     {
@@ -384,7 +384,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the specific base computable regulation or policy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $policyRule
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $policyRule
      * @return $this
      */
     public function setPolicyRule($policyRule)
@@ -395,7 +395,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether a treatment instruction (e.g. artificial respiration yes or no) was verified with the patient, his/her family or another authorized person.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentVerification[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentVerification[]
      */
     public function getVerification()
     {
@@ -404,7 +404,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether a treatment instruction (e.g. artificial respiration yes or no) was verified with the patient, his/her family or another authorized person.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentVerification $verification
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentVerification $verification
      * @return $this
      */
     public function addVerification($verification)
@@ -415,7 +415,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An exception to the base policy of this consent. An exception can be an addition or removal of access permissions.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision
      */
     public function getProvision()
     {
@@ -424,7 +424,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An exception to the base policy of this consent. An exception can be an addition or removal of access permissions.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision $provision
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision $provision
      * @return $this
      */
     public function setProvision($provision)

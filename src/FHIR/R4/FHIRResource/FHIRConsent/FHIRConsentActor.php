@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConsent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
@@ -71,13 +71,13 @@ class FHIRConsentActor extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * How the individual is involved in the resources content that is described in the exception.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
     /**
      * The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $reference = null;
 
@@ -88,7 +88,7 @@ class FHIRConsentActor extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How the individual is involved in the resources content that is described in the exception.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -97,7 +97,7 @@ class FHIRConsentActor extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How the individual is involved in the resources content that is described in the exception.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)
@@ -108,7 +108,7 @@ class FHIRConsentActor extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReference()
     {
@@ -117,7 +117,7 @@ class FHIRConsentActor extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reference
      * @return $this
      */
     public function setReference($reference)

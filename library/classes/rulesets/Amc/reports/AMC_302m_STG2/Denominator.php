@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Ensoftek
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 class AMC_302m_STG2_Denominator implements AmcFilterIF
@@ -31,7 +31,7 @@ class AMC_302m_STG2_Denominator implements AmcFilterIF
 
     public function test(AmcPatient $patient, $beginDate, $endDate): bool
     {
-        $off_visits = sqlQuery("select count(encounter) as cnt from form_encounter e inner join openemr_postcalendar_categories opc on opc.pc_catid = e.pc_catid where e.pid = ? and e.date >= ? and e.date <= ? and opc.pc_catname = 'office visit'", [$patient->id,$beginDate,$endDate]);
+        $off_visits = sqlQuery("select count(encounter) as cnt from form_encounter e inner join DCL_postcalendar_categories opc on opc.pc_catid = e.pc_catid where e.pid = ? and e.date >= ? and e.date <= ? and opc.pc_catname = 'office visit'", [$patient->id,$beginDate,$endDate]);
         if ($off_visits['cnt'] >= 1) {
             return true;
         }

@@ -3,21 +3,21 @@
 /**
  * EncounterRestControllerTest - Isolated tests for EncounterRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers;
+namespace DCL\Tests\Isolated\RestControllers;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\EncounterRestController;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\EncounterRestController;
+use DCL\Services\EncounterService;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,8 +33,8 @@ class EncounterRestControllerTest extends TestCase
     {
         // Prevent code_types.inc.php from issuing DB queries when autoloading
         // BaseService (which EncounterService extends).
-        if (!defined('OPENEMR_STATIC_ANALYSIS')) {
-            define('OPENEMR_STATIC_ANALYSIS', true);
+        if (!defined('DCL_STATIC_ANALYSIS')) {
+            define('DCL_STATIC_ANALYSIS', true);
         }
 
         $this->encounterService = $this->createMock(EncounterService::class);

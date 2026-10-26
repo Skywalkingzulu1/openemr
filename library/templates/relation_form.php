@@ -4,26 +4,26 @@
  * Handles the editing, updating, creating, and deleting of the relation list datatype in LBF
  * Updated to use ContactService, ContactRelationService, PersonService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * Portions of this code were developed with assistance from Claude (Anthropic)
  *
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\ContactAddressService;
-use OpenEMR\Services\ContactRelationService;
-use OpenEMR\Services\ContactService;
-use OpenEMR\Services\ContactTelecomService;
-use OpenEMR\Services\PersonService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\ContactAddressService;
+use DCL\Services\ContactRelationService;
+use DCL\Services\ContactService;
+use DCL\Services\ContactTelecomService;
+use DCL\Services\PersonService;
 
 $logger = ServiceContainer::getLogger();
 

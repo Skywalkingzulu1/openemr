@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Api;
+namespace DCL\Tests\Acceptance\Api;
 
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\JsonBody;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\JsonBody;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 

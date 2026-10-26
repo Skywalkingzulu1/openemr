@@ -3,19 +3,19 @@
 /**
  * SMARTSessionTokenContextBuilderTest verifies SMART EHR launch context returned with an access token.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\FHIR\SMART;
+namespace DCL\Tests\Unit\FHIR\SMART;
 
-use OpenEMR\Common\Auth\OpenIDConnect\SMARTSessionTokenContextBuilder;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
+use DCL\Common\Auth\OpenIDConnect\SMARTSessionTokenContextBuilder;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\SMART\SMARTLaunchToken;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDataRequirement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.
@@ -72,28 +72,28 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
 {
     /**
      * The date-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type date, dateTime, Period, Schedule, or Timing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $searchParam = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $valuePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $valueDuration = null;
 
@@ -104,7 +104,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The date-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type date, dateTime, Period, Schedule, or Timing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -113,7 +113,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * The date-valued attribute of the filter. The specified path SHALL be a FHIRPath resolveable on the specified type of the DataRequirement, and SHALL consist only of identifiers, constant indexers, and .resolve(). The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details). Note that the index must be an integer constant. The path must resolve to an element of type date, dateTime, Period, Schedule, or Timing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -124,7 +124,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSearchParam()
     {
@@ -133,7 +133,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
 
     /**
      * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $searchParam
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $searchParam
      * @return $this
      */
     public function setSearchParam($searchParam)
@@ -143,7 +143,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
     {
@@ -151,7 +151,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
     public function setValueDateTime($valueDateTime)
@@ -161,7 +161,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
     {
@@ -169,7 +169,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $valuePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $valuePeriod
      * @return $this
      */
     public function setValuePeriod($valuePeriod)
@@ -179,7 +179,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getValueDuration()
     {
@@ -187,7 +187,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @return $this
      */
     public function setValueDuration($valueDuration)

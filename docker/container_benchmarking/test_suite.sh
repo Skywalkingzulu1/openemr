@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR Container Functional Test Suite
+# DCL Container Functional Test Suite
 # ============================================================================
-# This script runs comprehensive functional tests for OpenEMR container
+# This script runs comprehensive functional tests for DCL container
 # functionality including installation, configuration, and various deployment
 # scenarios.
 #
@@ -16,7 +16,7 @@ set -euo pipefail
 # ============================================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_NAME="${PROJECT_NAME:-openemr-test}"
+PROJECT_NAME="${PROJECT_NAME:-DCL-test}"
 RESULTS_DIR="${RESULTS_DIR:-${SCRIPT_DIR}/test_results}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 RESULT_FILE="${RESULTS_DIR}/test_results_${TIMESTAMP}.txt"
@@ -26,7 +26,7 @@ mkdir -p "${RESULTS_DIR}"
 # Test configuration
 # Note: Using DOCKERFILE_CONTEXT instead of DOCKER_CONTEXT to avoid conflict with Docker CLI's context variable
 DOCKERFILE_CONTEXT="${DOCKERFILE_CONTEXT:-${DOCKER_CONTEXT:-../release}}"
-IMAGE_TAG="${IMAGE_TAG:-openemr:release-test}"
+IMAGE_TAG="${IMAGE_TAG:-DCL:release-test}"
 KEEP_CONTAINERS="${KEEP_CONTAINERS:-no}"
 VERBOSE="${VERBOSE:-no}"
 
@@ -45,9 +45,9 @@ if [[ -z "${VERSION:-}" ]]; then
     fi
 fi
 
-# Flex container repository configuration (defaults to official OpenEMR repo)
+# Flex container repository configuration (defaults to official DCL repo)
 # These can be overridden via environment variables when testing flex container
-FLEX_REPOSITORY="${FLEX_REPOSITORY:-https://github.com/openemr/openemr.git}"
+FLEX_REPOSITORY="${FLEX_REPOSITORY:-https://github.com/DCL/DCL.git}"
 FLEX_REPOSITORY_BRANCH="${FLEX_REPOSITORY_BRANCH:-master}"
 
 # Test directories (relative to script directory)
@@ -206,11 +206,11 @@ wait_for_http() {
     return 1
 }
 
-# Check if OpenEMR is configured
-check_openemr_configured() {
+# Check if DCL is configured
+check_DCL_configured() {
     local container_name="$1"
     docker exec "${container_name}" php -r "
-        require_once('/var/www/localhost/htdocs/openemr/sites/default/sqlconf.php');
+        require_once('/var/www/localhost/htdocs/DCL/sites/default/sqlconf.php');
         echo isset(\$config) && \$config ? '1' : '0';
     " 2>/dev/null || echo "0"
 }
@@ -270,12 +270,12 @@ run_docker_compose() {
 
 # Get flex-specific environment variables if testing flex container
 # Uses FLEX_REPOSITORY and FLEX_REPOSITORY_BRANCH environment variables if set,
-# otherwise defaults to the official OpenEMR repository and master branch
+# otherwise defaults to the official DCL repository and master branch
 get_flex_env_vars() {
     local docker_context_abs
     docker_context_abs=$(get_docker_context_abs)
     if [[ "${docker_context_abs}" == *"/flex"* ]]; then
-        local flex_repo="${FLEX_REPOSITORY:-https://github.com/openemr/openemr.git}"
+        local flex_repo="${FLEX_REPOSITORY:-https://github.com/DCL/DCL.git}"
         local flex_branch="${FLEX_REPOSITORY_BRANCH:-master}"
         echo "
       FLEX_REPOSITORY: ${flex_repo}
@@ -321,7 +321,7 @@ services:
     networks:
       - test-network
 
-  openemr:
+  DCL:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -329,9 +329,9 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123${flex_env_vars}
     ports:
@@ -366,7 +366,7 @@ EOF
     fi
     cd - >/dev/null
 
-    local container_name="${PROJECT_NAME}-fresh-openemr-1"
+    local container_name="${PROJECT_NAME}-fresh-DCL-1"
 
     # Wait for container to be healthy
     # shellcheck disable=SC2310
@@ -374,16 +374,16 @@ EOF
         log_test_result "${test_name}" "FAIL" "Container did not become healthy"
         cd "${test_dir}"
         # shellcheck disable=SC2310  # Log retrieval and cleanup should not fail the test
-        run_docker_compose "${PROJECT_NAME}-fresh" -f docker-compose.yml logs openemr | tee -a "${LOG_FILE}" || true
+        run_docker_compose "${PROJECT_NAME}-fresh" -f docker-compose.yml logs DCL | tee -a "${LOG_FILE}" || true
         # shellcheck disable=SC2310  # Cleanup should not fail the test
         run_docker_compose "${PROJECT_NAME}-fresh" -f docker-compose.yml down --volumes >/dev/null 2>&1 || true
         cd - >/dev/null
         return 1
     fi
 
-    # Check if OpenEMR is configured
+    # Check if DCL is configured
     local config_status
-    config_status=$(check_openemr_configured "${container_name}")
+    config_status=$(check_DCL_configured "${container_name}")
 
     # Check if we can access the login page
     local http_status
@@ -396,7 +396,7 @@ EOF
     cd - >/dev/null
 
     if [[ "${config_status}" = "1" ]] && [[ "${http_status}" = "200" ]]; then
-        log_test_result "${test_name}" "PASS" "OpenEMR configured and accessible"
+        log_test_result "${test_name}" "PASS" "DCL configured and accessible"
         return 0
     else
         log_test_result "${test_name}" "FAIL" "Config status: ${config_status}, HTTP status: ${http_status}"
@@ -438,7 +438,7 @@ services:
     networks:
       - test-network
 
-  openemr:
+  DCL:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -476,7 +476,7 @@ EOF
         return 1
     fi
 
-    local container_name="${PROJECT_NAME}-manual-openemr-1"
+    local container_name="${PROJECT_NAME}-manual-DCL-1"
 
     # Wait for container to be healthy
     # shellcheck disable=SC2310
@@ -490,17 +490,17 @@ EOF
 
     # Check that auto_configure.php still exists (not removed)
     # Flex containers have it at /var/www/localhost/htdocs/auto_configure.php
-    # Versioned containers have it at /var/www/localhost/htdocs/openemr/auto_configure.php
+    # Versioned containers have it at /var/www/localhost/htdocs/DCL/auto_configure.php
     local auto_config_exists
     if [[ "${docker_context_abs}" == *"/flex"* ]]; then
         auto_config_exists=$(docker exec "${container_name}" test -f /var/www/localhost/htdocs/auto_configure.php && echo "1" || echo "0")
     else
-        auto_config_exists=$(docker exec "${container_name}" test -f /var/www/localhost/htdocs/openemr/auto_configure.php && echo "1" || echo "0")
+        auto_config_exists=$(docker exec "${container_name}" test -f /var/www/localhost/htdocs/DCL/auto_configure.php && echo "1" || echo "0")
     fi
 
-    # Check that OpenEMR is NOT configured
+    # Check that DCL is NOT configured
     local config_status
-    config_status=$(check_openemr_configured "${container_name}")
+    config_status=$(check_DCL_configured "${container_name}")
 
     # Cleanup
     # shellcheck disable=SC2310  # Cleanup should not fail the test
@@ -550,7 +550,7 @@ services:
     networks:
       - test-network
 
-  openemr:
+  DCL:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -558,9 +558,9 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123${flex_env_vars}
     ports:
@@ -591,7 +591,7 @@ EOF
         return 1
     fi
 
-    local container_name="${PROJECT_NAME}-ssl-openemr-1"
+    local container_name="${PROJECT_NAME}-ssl-DCL-1"
 
     # shellcheck disable=SC2310
     if ! wait_for_healthy "${container_name}" 600; then
@@ -668,7 +668,7 @@ services:
     networks:
       - test-network
 
-  openemr:
+  DCL:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -678,9 +678,9 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123${flex_env_vars}
       REDIS_SERVER: redis:6379
@@ -714,7 +714,7 @@ EOF
         return 1
     fi
 
-    local container_name="${PROJECT_NAME}-redis-openemr-1"
+    local container_name="${PROJECT_NAME}-redis-DCL-1"
 
     # shellcheck disable=SC2310
     if ! wait_for_healthy "${container_name}" 600; then
@@ -788,7 +788,7 @@ services:
     networks:
       - test-network
 
-  openemr-leader:
+  DCL-leader:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -796,14 +796,14 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123${flex_env_vars}
       SWARM_MODE: "yes"
     volumes:
-      - swarm_sites:/var/www/localhost/htdocs/openemr/sites
+      - swarm_sites:/var/www/localhost/htdocs/DCL/sites
     healthcheck:
       test: ["CMD", "curl", "-fsSLo", "/dev/null", "http://localhost/"]
       start_period: 10m
@@ -813,22 +813,22 @@ services:
     networks:
       - test-network
 
-  openemr-follower:
+  DCL-follower:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
         condition: service_healthy
-      openemr-leader:
+      DCL-leader:
         condition: service_started
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       SWARM_MODE: "yes"
     volumes:
-      - swarm_sites:/var/www/localhost/htdocs/openemr/sites
+      - swarm_sites:/var/www/localhost/htdocs/DCL/sites
     healthcheck:
       test: ["CMD", "curl", "-fsSLo", "/dev/null", "http://localhost/"]
       start_period: 10m
@@ -857,8 +857,8 @@ EOF
         return 1
     fi
 
-    local leader_name="${PROJECT_NAME}-swarm-openemr-leader-1"
-    local follower_name="${PROJECT_NAME}-swarm-openemr-follower-1"
+    local leader_name="${PROJECT_NAME}-swarm-DCL-leader-1"
+    local follower_name="${PROJECT_NAME}-swarm-DCL-follower-1"
 
     # Wait for leader to be healthy
     # shellcheck disable=SC2310
@@ -882,7 +882,7 @@ EOF
 
     # Check that docker-completed marker exists
     local completed_marker
-    completed_marker=$(docker exec "${leader_name}" test -f /var/www/localhost/htdocs/openemr/sites/docker-completed && echo "1" || echo "0")
+    completed_marker=$(docker exec "${leader_name}" test -f /var/www/localhost/htdocs/DCL/sites/docker-completed && echo "1" || echo "0")
 
     # Check that leader has authority (check logs for "docker-leader" or check if it created the completion marker)
     # The leader should have created the docker-completed marker
@@ -941,7 +941,7 @@ services:
     networks:
       - test-network
 
-  openemr-admin:
+  DCL-admin:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -949,35 +949,35 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123
       K8S: "admin"
     volumes:
-      - k8s_sites:/var/www/localhost/htdocs/openemr/sites
+      - k8s_sites:/var/www/localhost/htdocs/DCL/sites
     networks:
       - test-network
 
-  openemr-worker:
+  DCL-worker:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
         condition: service_healthy
-      openemr-admin:
+      DCL-admin:
         condition: service_completed_successfully
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       K8S: "worker"
     ports:
       - "8085:80"
     volumes:
-      - k8s_sites:/var/www/localhost/htdocs/openemr/sites
+      - k8s_sites:/var/www/localhost/htdocs/DCL/sites
     healthcheck:
       test: ["CMD", "curl", "-fsSLo", "/dev/null", "http://localhost/"]
       start_period: 10m
@@ -1007,7 +1007,7 @@ EOF
     fi
 
     # Wait for admin to complete (it should exit after setup)
-    local admin_name="${PROJECT_NAME}-k8s-openemr-admin-1"
+    local admin_name="${PROJECT_NAME}-k8s-DCL-admin-1"
     local admin_exit_code=1
     local waited=0
     log_info "Waiting for admin container to complete setup..."
@@ -1039,7 +1039,7 @@ EOF
     sleep 5
 
     # Check worker
-    local worker_name="${PROJECT_NAME}-k8s-openemr-worker-1"
+    local worker_name="${PROJECT_NAME}-k8s-DCL-worker-1"
     # shellcheck disable=SC2310
     if ! wait_for_healthy "${worker_name}" 600; then
         log_test_result "${test_name}" "FAIL" "Worker container did not become healthy"
@@ -1050,9 +1050,9 @@ EOF
         return 1
     fi
 
-    # Check that OpenEMR is configured
+    # Check that DCL is configured
     local config_status
-    config_status=$(check_openemr_configured "${worker_name}")
+    config_status=$(check_DCL_configured "${worker_name}")
 
     # shellcheck disable=SC2310  # Cleanup should not fail the test
     run_docker_compose "${PROJECT_NAME}-k8s" -f docker-compose.yml down --volumes >/dev/null 2>&1 || true
@@ -1099,7 +1099,7 @@ services:
     networks:
       - test-network
 
-  openemr:
+  DCL:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -1107,9 +1107,9 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123
       XDEBUG_ON: 1
@@ -1143,7 +1143,7 @@ EOF
         return 1
     fi
 
-    local container_name="${PROJECT_NAME}-xdebug-openemr-1"
+    local container_name="${PROJECT_NAME}-xdebug-DCL-1"
 
     # shellcheck disable=SC2310
     if ! wait_for_healthy "${container_name}" 600; then
@@ -1224,7 +1224,7 @@ services:
     networks:
       - test-network
 
-  openemr:
+  DCL:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -1232,15 +1232,15 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123${flex_env_vars}
     ports:
       - "8087:80"
     volumes:
-      - documents_data:/var/www/localhost/htdocs/openemr/sites/default/documents
+      - documents_data:/var/www/localhost/htdocs/DCL/sites/default/documents
     healthcheck:
       test: ["CMD", "curl", "-fsSLo", "/dev/null", "http://localhost/"]
       start_period: 10m
@@ -1269,7 +1269,7 @@ EOF
         return 1
     fi
 
-    local container_name="${PROJECT_NAME}-docs-openemr-1"
+    local container_name="${PROJECT_NAME}-docs-DCL-1"
 
     # shellcheck disable=SC2310
     if ! wait_for_healthy "${container_name}" 600; then
@@ -1282,11 +1282,11 @@ EOF
 
     # Check that documents directory exists and is writable
     local docs_dir_exists
-    docs_dir_exists=$(docker exec "${container_name}" test -d /var/www/localhost/htdocs/openemr/sites/default/documents && echo "1" || echo "0")
+    docs_dir_exists=$(docker exec "${container_name}" test -d /var/www/localhost/htdocs/DCL/sites/default/documents && echo "1" || echo "0")
 
     # Try to create a test file in documents directory
     local can_write
-    can_write=$(docker exec "${container_name}" touch /var/www/localhost/htdocs/openemr/sites/default/documents/test.txt 2>/dev/null && echo "1" || echo "0")
+    can_write=$(docker exec "${container_name}" touch /var/www/localhost/htdocs/DCL/sites/default/documents/test.txt 2>/dev/null && echo "1" || echo "0")
 
     # shellcheck disable=SC2310  # Cleanup should not fail the test
     run_docker_compose "${PROJECT_NAME}-docs" -f docker-compose.yml down --volumes >/dev/null 2>&1 || true
@@ -1340,7 +1340,7 @@ services:
     networks:
       - test-network
 
-  openemr:
+  DCL:
     image: ${IMAGE_TAG}
     depends_on:
       mysql:
@@ -1348,15 +1348,15 @@ services:
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: testpass123${flex_env_vars}
     ports:
       - "8088:80"
     volumes:
-      - upgrade_sites:/var/www/localhost/htdocs/openemr/sites
+      - upgrade_sites:/var/www/localhost/htdocs/DCL/sites
     healthcheck:
       test: ["CMD", "curl", "-fsSLo", "/dev/null", "http://localhost/"]
       start_period: 10m
@@ -1385,7 +1385,7 @@ EOF
         return 1
     fi
 
-    local container_name="${PROJECT_NAME}-upgrade-openemr-1"
+    local container_name="${PROJECT_NAME}-upgrade-DCL-1"
 
     # Wait for container to be healthy and configured
     # shellcheck disable=SC2310
@@ -1397,14 +1397,14 @@ EOF
         return 1
     fi
 
-    # Wait for OpenEMR to be configured
-    log_info "Waiting for OpenEMR to be configured..."
+    # Wait for DCL to be configured
+    log_info "Waiting for DCL to be configured..."
     local config_status="0"
     local waited=0
     while [[ "${waited}" -lt 300 ]] && [[ "${config_status}" != "1" ]]; do
-        config_status=$(check_openemr_configured "${container_name}")
+        config_status=$(check_DCL_configured "${container_name}")
         if [[ "${config_status}" = "1" ]]; then
-            log_info "OpenEMR is configured"
+            log_info "DCL is configured"
             break
         fi
         sleep 5
@@ -1412,7 +1412,7 @@ EOF
     done
 
     if [[ "${config_status}" != "1" ]]; then
-        log_test_result "${test_name}" "FAIL" "OpenEMR was not configured"
+        log_test_result "${test_name}" "FAIL" "DCL was not configured"
         # shellcheck disable=SC2310  # Cleanup should not fail the test
         run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml down --volumes >/dev/null 2>&1 || true
         cd - >/dev/null
@@ -1426,24 +1426,24 @@ EOF
 
     # Verify code version file exists (needed for upgrade check)
     local code_version_exists
-    code_version_exists=$(docker exec "${container_name}" test -f /var/www/localhost/htdocs/openemr/docker-version && echo "1" || echo "0")
+    code_version_exists=$(docker exec "${container_name}" test -f /var/www/localhost/htdocs/DCL/docker-version && echo "1" || echo "0")
     if [[ "${code_version_exists}" = "0" ]]; then
         log_info "Creating code version file to match root version..."
-        docker exec "${container_name}" sh -c "echo -n '${current_version}' > /var/www/localhost/htdocs/openemr/docker-version" 2>/dev/null || true
+        docker exec "${container_name}" sh -c "echo -n '${current_version}' > /var/www/localhost/htdocs/DCL/docker-version" 2>/dev/null || true
     fi
 
     local code_version
-    code_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/openemr/docker-version 2>/dev/null || echo "0")
-    log_info "Code version (from /var/www/localhost/htdocs/openemr/docker-version): ${code_version}"
+    code_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/DCL/docker-version 2>/dev/null || echo "0")
+    log_info "Code version (from /var/www/localhost/htdocs/DCL/docker-version): ${code_version}"
 
     # Step 3: Set an older version in sites/default/docker-version to trigger upgrade
     # Set it to version 1 (assuming current version is higher)
     log_info "Step 2: Setting older version marker to trigger upgrade..."
-    docker exec "${container_name}" sh -c 'echo -n "1" > /var/www/localhost/htdocs/openemr/sites/default/docker-version' 2>/dev/null || true
+    docker exec "${container_name}" sh -c 'echo -n "1" > /var/www/localhost/htdocs/DCL/sites/default/docker-version' 2>/dev/null || true
 
     # Verify the old version was set
     local old_version
-    old_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/openemr/sites/default/docker-version 2>/dev/null || echo "0")
+    old_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/DCL/sites/default/docker-version 2>/dev/null || echo "0")
     log_info "Set sites version to: ${old_version}"
 
     if [[ "${old_version}" != "1" ]]; then
@@ -1457,12 +1457,12 @@ EOF
 
     # Prepare code-version bind-mount used only for the recreate below.
     #
-    # openemr.sh's check_upgrade guard requires /root/docker-version to equal
+    # DCL.sh's check_upgrade guard requires /root/docker-version to equal
     # the code copy at ${OE_ROOT}/docker-version before it fires. In a normal
     # production image both come from the same build so they always match; in
     # a locally-built branch-cut PR image the /root/ copy is ahead (bumped by
     # the PR) while the code copy came from a fresh git clone of the target
-    # branch that predates the PR merge. openemr.sh's setup writeback syncs
+    # branch that predates the PR merge. DCL.sh's setup writeback syncs
     # them in the writable layer during Step 1, but the recreate in Step 3
     # wipes the writable layer, so the code copy reverts to the git-cloned
     # value and the guard fails again — the recreate boot skips the upgrade
@@ -1471,9 +1471,9 @@ EOF
     # The bind-mount pins the code-version file to the /root/ value across
     # the recreate. We can't apply it during Step 1 because with the pin in
     # place on a fresh install, the fresh-boot check_upgrade fires before
-    # openemr is configured (root == code from the pin, sites still at the
+    # DCL is configured (root == code from the pin, sites still at the
     # git-cloned value → guard passes → run_upgrade → "Cannot upgrade -
-    # OpenEMR is not configured yet" → unhealthy container). Passing the
+    # DCL is not configured yet" → unhealthy container). Passing the
     # override compose file only to the recreate's up command scopes the
     # bind-mount to Step 3 alone.
     log_info "Preparing code-version bind-mount for recreate..."
@@ -1493,14 +1493,14 @@ EOF
     # Full healthcheck redeclared (rather than just the overridden
     # start_period key) to sidestep any compose-version differences in
     # partial-healthcheck merge behavior -- keys here must stay in sync
-    # with the base docker-compose.yml openemr healthcheck EXCEPT
+    # with the base docker-compose.yml DCL healthcheck EXCEPT
     # start_period (10m -> 20m for the upgrade cascade, per above).
     cat > "${test_dir}/docker-compose.recreate.yml" <<EOF
 
 services:
-  openemr:
+  DCL:
     volumes:
-      - ${test_dir}/code-version-override:/var/www/localhost/htdocs/openemr/docker-version:ro
+      - ${test_dir}/code-version-override:/var/www/localhost/htdocs/DCL/docker-version:ro
     healthcheck:
       test: ["CMD", "curl", "-fsSLo", "/dev/null", "http://localhost/"]
       start_period: 20m
@@ -1522,11 +1522,11 @@ EOF
     log_info "Step 3: Recreating container to trigger upgrade..."
     cd "${test_dir}"
     # shellcheck disable=SC2310  # Stop/rm may no-op if container already exited
-    run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml stop openemr 2>&1 | tee -a "${LOG_FILE}" || true
+    run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml stop DCL 2>&1 | tee -a "${LOG_FILE}" || true
     # shellcheck disable=SC2310  # rm may no-op if container was never created
-    run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml rm -f openemr 2>&1 | tee -a "${LOG_FILE}" || true
+    run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml rm -f DCL 2>&1 | tee -a "${LOG_FILE}" || true
     # shellcheck disable=SC2310  # Error handling is explicit via if/return
-    if ! run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml -f docker-compose.recreate.yml up -d openemr 2>&1 | tee -a "${LOG_FILE}"; then
+    if ! run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml -f docker-compose.recreate.yml up -d DCL 2>&1 | tee -a "${LOG_FILE}"; then
         log_test_result "${test_name}" "FAIL" "Failed to recreate container"
         # shellcheck disable=SC2310  # Cleanup should not fail the test
         run_docker_compose "${PROJECT_NAME}-upgrade" -f docker-compose.yml down --volumes >/dev/null 2>&1 || true
@@ -1543,7 +1543,7 @@ EOF
     # Timeout deliberately higher than the sibling wait_for_healthy calls
     # in this file: this is the only path that runs the FULL upgrade
     # cascade. Step 2 above sets sites/default/docker-version=1
-    # intentionally (worst-case starting point) so openemr.sh walks
+    # intentionally (worst-case starting point) so DCL.sh walks
     # every fsupgrade-N.sh from 2 up to /root/docker-version, processes
     # the SQL upgrade file, then sets up SSL/cert/config before Apache
     # starts. That's the point of this test -- catch accidental
@@ -1551,7 +1551,7 @@ EOF
     # the PR added. Total pre-Apache time grows linearly with N because
     # each patch cycle adds one more fsupgrade-N.sh to walk (see G12 /
     # G34 / G40 for the surrounding history). Patch-prep PR
-    # openemr/openemr#14072 (8.4.1 dev cycle on rel-840, adding
+    # DCL/DCL#14072 (8.4.1 dev cycle on rel-840, adding
     # fsupgrade-15.sh) was the first observation that the classic 600s
     # window is now tight; total-time was 605s on the runner, missing
     # the health check by 5s even though the upgrade + Apache start
@@ -1587,10 +1587,10 @@ EOF
     all_logs=$(docker logs "${container_name}" 2>&1 || echo "")
 
     local upgrade_started
-    upgrade_started=$(echo "${all_logs}" | grep -q "Starting OpenEMR upgrade process\|Upgrade detected" && echo "1" || echo "0")
+    upgrade_started=$(echo "${all_logs}" | grep -q "Starting DCL upgrade process\|Upgrade detected" && echo "1" || echo "0")
 
     local upgrade_completed
-    upgrade_completed=$(echo "${all_logs}" | grep -q "OpenEMR upgrade completed successfully" && echo "1" || echo "0")
+    upgrade_completed=$(echo "${all_logs}" | grep -q "DCL upgrade completed successfully" && echo "1" || echo "0")
 
     # Also check for upgrade script execution messages
     local upgrade_scripts_run
@@ -1599,19 +1599,19 @@ EOF
     # Step 6: Verify version marker was updated
     log_info "Step 5: Verifying version marker was updated..."
     local new_version
-    new_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/openemr/sites/default/docker-version 2>/dev/null || echo "0")
+    new_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/DCL/sites/default/docker-version 2>/dev/null || echo "0")
     log_info "Version after upgrade: ${new_version} (was ${old_version}, should be ${current_version})"
 
     # Also verify the version files exist and match
     local root_version
     root_version=$(docker exec "${container_name}" cat /root/docker-version 2>/dev/null || echo "0")
     local code_version
-    code_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/openemr/docker-version 2>/dev/null || echo "0")
+    code_version=$(docker exec "${container_name}" cat /var/www/localhost/htdocs/DCL/docker-version 2>/dev/null || echo "0")
     log_info "Root version: ${root_version}, Code version: ${code_version}, Sites version: ${new_version}"
 
-    # Step 7: Verify OpenEMR is still configured and accessible
+    # Step 7: Verify DCL is still configured and accessible
     local config_after_upgrade
-    config_after_upgrade=$(check_openemr_configured "${container_name}")
+    config_after_upgrade=$(check_DCL_configured "${container_name}")
 
     local http_status
     http_status=$(curl -sL -o /dev/null -w "%{http_code}" "http://localhost:8088/interface/login/login.php" || echo "000")
@@ -1631,7 +1631,7 @@ EOF
     # Upgrade is successful if:
     # 1. Version was updated from old to current (even if logs aren't perfect)
     # 2. OR upgrade messages are found in logs
-    # 3. AND OpenEMR is still configured and accessible
+    # 3. AND DCL is still configured and accessible
     local version_updated="0"
     if [[ "${new_version}" = "${current_version}" ]] && [[ "${new_version}" != "${old_version}" ]]; then
         version_updated="1"
@@ -1678,7 +1678,7 @@ main() {
             --version)
                 VERSION="${2:-release}"
                 DOCKERFILE_CONTEXT="../${VERSION}"
-                IMAGE_TAG="openemr:${VERSION}-test"
+                IMAGE_TAG="DCL:${VERSION}-test"
                 shift 2
                 ;;
             *)
@@ -1689,7 +1689,7 @@ main() {
         esac
     done
 
-    log_section "OpenEMR Container Functional Test Suite"
+    log_section "DCL Container Functional Test Suite"
 
     # Clean up any leftover containers/volumes from previous test runs
     log_info "Cleaning up any leftover test containers and volumes..."
@@ -1709,7 +1709,7 @@ main() {
     local result_date
     result_date=$(date)
     {
-        echo "OpenEMR Container Functional Test Results - ${result_date}"
+        echo "DCL Container Functional Test Results - ${result_date}"
         echo "Test Suite Version: 1.0"
         echo "Docker Context: ${DOCKERFILE_CONTEXT}"
         echo "Image Tag: ${IMAGE_TAG}"
@@ -1717,14 +1717,14 @@ main() {
         echo ""
     } > "${RESULT_FILE}"
 
-    # Pre-build the OpenEMR image once so all tests reuse it.
+    # Pre-build the DCL image once so all tests reuse it.
     # This avoids rebuilding from the Dockerfile in every test, which is both
     # slow (~5 min each) and triggers BuildKit cache corruption in CI.
-    log_info "Pre-building OpenEMR image: ${IMAGE_TAG}..."
+    log_info "Pre-building DCL image: ${IMAGE_TAG}..."
     local docker_context_abs
     docker_context_abs=$(get_docker_context_abs)
     if ! docker build -t "${IMAGE_TAG}" "${docker_context_abs}" 2>&1 | tee -a "${LOG_FILE}"; then
-        log_error "Failed to build OpenEMR image"
+        log_error "Failed to build DCL image"
         return 1
     fi
     log_success "Image ${IMAGE_TAG} built successfully"

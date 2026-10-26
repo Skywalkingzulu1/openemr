@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImagingStudy;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
@@ -71,25 +71,25 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * The DICOM SOP Instance UID for this image or other DICOM content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $uid = null;
 
     /**
      * DICOM instance  type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $sopClass = null;
 
     /**
      * The number of instance in the series.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $number = null;
 
     /**
      * The description of the instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
@@ -100,7 +100,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The DICOM SOP Instance UID for this image or other DICOM content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getUid()
     {
@@ -109,7 +109,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The DICOM SOP Instance UID for this image or other DICOM content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $uid
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $uid
      * @return $this
      */
     public function setUid($uid)
@@ -120,7 +120,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * DICOM instance  type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getSopClass()
     {
@@ -129,7 +129,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * DICOM instance  type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $sopClass
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $sopClass
      * @return $this
      */
     public function setSopClass($sopClass)
@@ -140,7 +140,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of instance in the series.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getNumber()
     {
@@ -149,7 +149,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of instance in the series.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $number
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $number
      * @return $this
      */
     public function setNumber($number)
@@ -160,7 +160,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The description of the instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -169,7 +169,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The description of the instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)

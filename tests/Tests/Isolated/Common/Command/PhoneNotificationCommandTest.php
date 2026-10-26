@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command;
+namespace DCL\Tests\Isolated\Common\Command;
 
 use MaviqClient;
-use OpenEMR\Common\Command\PhoneNotificationCommand;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Command\PhoneNotificationCommand;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use RestResponse;

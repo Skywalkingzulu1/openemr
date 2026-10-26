@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Panther-driven bootstrap: enable OpenEMR's REST API globals + set
+ * Panther-driven bootstrap: enable DCL's REST API globals + set
  * site_addr_oath to the acceptance-runner-visible URL, both via the
  * admin panel's Administration → Globals → Connectors tab.
  *
@@ -29,16 +29,16 @@
  *                             used as site_addr_oath so the OAuth
  *                             issuer claim matches what tests hit.
  *   SELENIUM_USE_GRID       — see Support/BrowserSession.
- *   OPENEMR_ENABLE_API_BOOTSTRAP — opt-in guard. Set to 1 to run;
+ *   DCL_ENABLE_API_BOOTSTRAP — opt-in guard. Set to 1 to run;
  *                             refuse without it. Same
  *                             defence-in-depth pattern
  *                             install-helper.php uses.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -48,8 +48,8 @@ if (PHP_SAPI !== 'cli') {
     exit("api-enable.php is a CLI-only bootstrap; refusing non-CLI invocation\n");
 }
 
-if (!getenv('OPENEMR_ENABLE_API_BOOTSTRAP')) {
-    fwrite(STDERR, "api-enable.php: refusing to run without OPENEMR_ENABLE_API_BOOTSTRAP=1\n");
+if (!getenv('DCL_ENABLE_API_BOOTSTRAP')) {
+    fwrite(STDERR, "api-enable.php: refusing to run without DCL_ENABLE_API_BOOTSTRAP=1\n");
     exit(1);
 }
 
@@ -57,8 +57,8 @@ require_once dirname(__DIR__, 3) . '/vendor/autoload.php';
 
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\BrowserSession;
 
 $baseUrl = ArtifactBrowser::baseUrl();
 
@@ -107,9 +107,9 @@ try {
         }
         return JSON.stringify({
             site_addr_oath:   findInputByLabel('Site Address Override'),
-            rest_api:         findInputByLabel('Enable OpenEMR Standard REST API'),
-            rest_fhir_api:    findInputByLabel('Enable OpenEMR Standard FHIR REST API'),
-            rest_portal_api:  findInputByLabel('Enable OpenEMR Patient Portal REST API'),
+            rest_api:         findInputByLabel('Enable DCL Standard REST API'),
+            rest_fhir_api:    findInputByLabel('Enable DCL Standard FHIR REST API'),
+            rest_portal_api:  findInputByLabel('Enable DCL Patient Portal REST API'),
         });
     JS_WRAP);
     $mapping = json_decode($mappingJson, true, 512, JSON_THROW_ON_ERROR);
@@ -125,7 +125,7 @@ try {
     }
 
     // Step 4: set the 3 checkbox toggles + the text field. Uses JS
-    // rather than WebDriver's click()/sendKeys() because openemr's
+    // rather than WebDriver's click()/sendKeys() because DCL's
     // edit_globals form has a very high field count (400+) with lots
     // of scrolling; JS assignment is faster and doesn't depend on
     // scrolling elements into view.
@@ -229,9 +229,9 @@ try {
         }
         return JSON.stringify({
             site_addr_oath:   findInputByLabel('Site Address Override'),
-            rest_api:         findInputByLabel('Enable OpenEMR Standard REST API'),
-            rest_fhir_api:    findInputByLabel('Enable OpenEMR Standard FHIR REST API'),
-            rest_portal_api:  findInputByLabel('Enable OpenEMR Patient Portal REST API'),
+            rest_api:         findInputByLabel('Enable DCL Standard REST API'),
+            rest_fhir_api:    findInputByLabel('Enable DCL Standard FHIR REST API'),
+            rest_portal_api:  findInputByLabel('Enable DCL Patient Portal REST API'),
         });
     JS_WRAP);
     $verify = json_decode($verifyJson, true, 512, JSON_THROW_ON_ERROR);

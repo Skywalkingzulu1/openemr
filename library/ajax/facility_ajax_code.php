@@ -4,22 +4,22 @@
  * While creating new encounter this code is used to change the "Billing Facility:".
  * This happens on change of the "Facility:" field.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Eldho Chacko <eldho@zhservices.com>
  * @author    Jacob T.Paul <jacob@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 require_once("$srcdir/options.inc.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\FacilityService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!CsrfUtils::verifyCsrfToken($_REQUEST["csrf_token_form"], session: $session)) {
@@ -48,6 +48,6 @@ if ($_GET['mode'] === 'get_user_data') {
 $pid = $_POST['pid'];
 $facility = $_POST['facility'];
 $date = $_POST['date'];
-$q = sqlStatement("SELECT pc_billing_location FROM openemr_postcalendar_events WHERE pc_pid=? AND pc_eventDate=? AND pc_facility=?", [$pid, $date, $facility]);
+$q = sqlStatement("SELECT pc_billing_location FROM DCL_postcalendar_events WHERE pc_pid=? AND pc_eventDate=? AND pc_facility=?", [$pid, $date, $facility]);
 $row = sqlFetchArray($q);
 billing_facility('billing_facility', $row['pc_billing_location']);

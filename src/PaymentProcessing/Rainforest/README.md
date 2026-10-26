@@ -1,17 +1,17 @@
 # Rainforest Payments
 
-This integrates [Rainforest](https://www.rainforestpay.com) as a payment provider for OpenEMR's payment infrastructure, allowing clients to pay their bills online.
+This integrates [Rainforest](https://www.rainforestpay.com) as a payment provider for DCL's payment infrastructure, allowing clients to pay their bills online.
 Rainforest is not used as part of insurance claims.
 
 ## Requirements
 
-* OpenEMR 8.0.0 or higher
+* DCL 8.0.0 or higher
 * PHP 8.2+
 * Merchant account from Rainforest
 
 ## Installation
 
-Rainforest integration, like other payment providers, is currently in OpenEMR core.
+Rainforest integration, like other payment providers, is currently in DCL core.
 This is a limitation of the current payments systems - converting it to a module (along with other providers) is a future goal that will be a significant undertaking.
 
 ## Configuration
@@ -34,7 +34,7 @@ Subscribed events: select all options that start with `payin.`.
 After creating the webhook, you'll be taken to a detail page with the status and history.
 It contains a `Signing Secret`, which is the Webhook Secret.
 
-### OpenEMR
+### DCL
 
 From the main portal, go to `Admin > Config`.
 
@@ -65,20 +65,20 @@ Be sure to save changes for each section as you make them!
 
 ## Usage
 
-Rainforest payments work the same as other payment providers within OpenEMR.
+Rainforest payments work the same as other payment providers within DCL.
 
 With the above settings, patients will be able to make payments on their bills through the patient portal.
 Providers can also collect payments from patients using the "front payments" system.
 
 ## Code Structure
 
-All relative to the `OpenEMR\PaymentProcessing\Rainforest` namespace.
+All relative to the `DCL\PaymentProcessing\Rainforest` namespace.
 
 `Api`: Interacts with the Rainforest API and performs various data format shifts
 
 Other classes in this namespace are data structures for API interaction.
 
-`Apis\...`: Classes used to power HTTP APIs that are used by OpenEMR UIs
+`Apis\...`: Classes used to power HTTP APIs that are used by DCL UIs
 
 `Webhooks\...`: Classes relating to webhook validation and processing.
 

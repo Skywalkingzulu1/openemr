@@ -3,24 +3,24 @@
 /**
  * AppointmentRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\AppointmentService;
+use DCL\Services\PatientService;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\HttpFoundation\Response;
 
 class AppointmentRestController
@@ -54,7 +54,7 @@ class AppointmentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($eid): Response
     {
@@ -100,7 +100,7 @@ class AppointmentRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOneScopedByPatient(string $pid, string $eid): Response
     {
@@ -141,7 +141,7 @@ class AppointmentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOneForPatient($auuid, $patientUuid)
     {
@@ -185,7 +185,7 @@ class AppointmentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll()
     {
@@ -202,7 +202,7 @@ class AppointmentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAllForPatientByUuid($puuid)
     {
@@ -240,7 +240,7 @@ class AppointmentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAllForPatient($pid)
     {
@@ -326,7 +326,7 @@ class AppointmentRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post($pid, $data)
     {
@@ -372,7 +372,7 @@ class AppointmentRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function delete(string $pid, string $eid): Response
     {

@@ -1,7 +1,7 @@
 <?php
 
-use OpenEMR\Common\ORDataObject\ORDataObject;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\ORDataObject\ORDataObject;
+use DCL\Core\OEGlobalsBag;
 
 /*
  * Copyright Medical Information Integration,LLC info@mi-squared.com

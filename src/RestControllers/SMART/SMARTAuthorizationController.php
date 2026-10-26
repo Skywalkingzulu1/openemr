@@ -2,30 +2,30 @@
 
 /**
  * SMARTAuthorizationController.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\SMART;
+namespace DCL\RestControllers\SMART;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\RedirectUriValidators\RedirectUriValidator;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\Core\TemplatePageEvent;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\Services\LogoService;
-use OpenEMR\Services\PatientService;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\Core\TemplatePageEvent;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\Services\LogoService;
+use DCL\Services\PatientService;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
@@ -74,7 +74,7 @@ class SMARTAuthorizationController
      * SMARTAuthorizationController constructor.
      * TODO: @adunsulag this constructor has a lot of parameters, we should look at refactoring this to use a configuration object or reduce the scope of what this class does.
      * @param SessionInterface $session The session interface to use for storing session data.
-     * @param OEHttpKernel $kernel The OpenEMR kernel to use for getting the system logger and event dispatcher.
+     * @param OEHttpKernel $kernel The DCL kernel to use for getting the system logger and event dispatcher.
      * @param string $authBaseFullURL The base URL of the oauth2 url
      * @param string $smartFinalRedirectURL The URL that should be redirected to once all SMART authorizations are complete.
      * @param string $oauthTemplateDir The directory that the oauth template files can be included from.

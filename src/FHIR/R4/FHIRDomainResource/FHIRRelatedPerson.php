@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.
@@ -72,73 +72,73 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for a person within a particular scope.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Whether this related person record is in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * The patient this person is related to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The nature of the relationship between a patient and the related person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $relationship = [];
 
     /**
      * A name associated with the person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHumanName[]
      */
     public $name = [];
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public $gender = null;
 
     /**
      * The date on which the related person was born.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $birthDate = null;
 
     /**
      * Address where the related person can be contacted or visited.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public $address = [];
 
     /**
      * Image of the person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public $photo = [];
 
     /**
      * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * A language which may be used to communicate with about the patient's health.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRelatedPerson\FHIRRelatedPersonCommunication[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRelatedPerson\FHIRRelatedPersonCommunication[]
      */
     public $communication = [];
 
@@ -149,7 +149,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for a person within a particular scope.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -158,7 +158,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for a person within a particular scope.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -169,7 +169,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether this related person record is in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -178,7 +178,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether this related person record is in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -189,7 +189,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient this person is related to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -198,7 +198,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient this person is related to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -209,7 +209,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The nature of the relationship between a patient and the related person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRelationship()
     {
@@ -218,7 +218,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The nature of the relationship between a patient and the related person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
     public function addRelationship($relationship)
@@ -229,7 +229,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name associated with the person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHumanName[]
      */
     public function getName()
     {
@@ -238,7 +238,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name associated with the person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHumanName $name
      * @return $this
      */
     public function addName($name)
@@ -249,7 +249,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -258,7 +258,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -269,7 +269,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender()
     {
@@ -278,7 +278,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
     public function setGender($gender)
@@ -289,7 +289,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date on which the related person was born.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getBirthDate()
     {
@@ -298,7 +298,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date on which the related person was born.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $birthDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $birthDate
      * @return $this
      */
     public function setBirthDate($birthDate)
@@ -309,7 +309,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Address where the related person can be contacted or visited.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
     {
@@ -318,7 +318,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Address where the related person can be contacted or visited.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function addAddress($address)
@@ -329,7 +329,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Image of the person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public function getPhoto()
     {
@@ -338,7 +338,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Image of the person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $photo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function addPhoto($photo)
@@ -349,7 +349,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -358,7 +358,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -369,7 +369,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A language which may be used to communicate with about the patient's health.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRelatedPerson\FHIRRelatedPersonCommunication[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRelatedPerson\FHIRRelatedPersonCommunication[]
      */
     public function getCommunication()
     {
@@ -378,7 +378,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A language which may be used to communicate with about the patient's health.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRelatedPerson\FHIRRelatedPersonCommunication $communication
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRelatedPerson\FHIRRelatedPersonCommunication $communication
      * @return $this
      */
     public function addCommunication($communication)

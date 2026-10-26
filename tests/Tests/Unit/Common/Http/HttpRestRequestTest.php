@@ -2,18 +2,18 @@
 
 /*
  * HttpRestRequestTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Http;
+namespace DCL\Tests\Unit\Common\Http;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Http\HttpRestRequest;
 use PHPUnit\Framework\TestCase;
 
 class HttpRestRequestTest extends TestCase
@@ -56,11 +56,11 @@ class HttpRestRequestTest extends TestCase
         $_SERVER = [
             'REQUEST_METHOD' => 'GET',
             'HTTP_HOST' => 'localhost',
-            'DOCUMENT_ROOT' => '/var/www/html/openemr/',
+            'DOCUMENT_ROOT' => '/var/www/html/DCL/',
             'REQUEST_URI' => '/apis/dispatch.php?_REWRITE_COMMAND=default/fhir/Patient/123&name=john',
             'QUERY_STRING' => '_REWRITE_COMMAND=default/fhir/Patient/123&name=john',
             'SCRIPT_NAME' => '/apis/dispatch.php',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php'
+            'SCRIPT_FILENAME' => '/var/www/html/DCL/apis/dispatch.php'
         ];
 
         $request = HttpRestRequest::createFromGlobals();
@@ -107,11 +107,11 @@ class HttpRestRequestTest extends TestCase
         $_SERVER = [
             'REQUEST_METHOD' => 'POST',
             'HTTP_HOST' => 'localhost',
-            'DOCUMENT_ROOT' => '/var/www/html/openemr/',
+            'DOCUMENT_ROOT' => '/var/www/html/DCL/',
             'REQUEST_URI' => '/apis/dispatch.php?_REWRITE_COMMAND=default/fhir/Patient/123',
             'QUERY_STRING' => '_REWRITE_COMMAND=default/fhir/Patient/123',
             'SCRIPT_NAME' => '/apis/dispatch.php',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php'
+            'SCRIPT_FILENAME' => '/var/www/html/DCL/apis/dispatch.php'
         ];
 
         $request = HttpRestRequest::createFromGlobals();
@@ -182,7 +182,7 @@ class HttpRestRequestTest extends TestCase
             'REQUEST_URI' => '/apis/dispatch.php?_REWRITE_COMMAND=/default/fhir/Patient/123/',
             'QUERY_STRING' => '_REWRITE_COMMAND=/default/fhir/Patient/123/',
             'SCRIPT_NAME' => '/apis/dispatch.php',
-            'SCRIPT_FILENAME' => '/var/www/html/openemr/apis/dispatch.php'
+            'SCRIPT_FILENAME' => '/var/www/html/DCL/apis/dispatch.php'
         ];
 
         $request = HttpRestRequest::createFromGlobals();

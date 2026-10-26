@@ -4,33 +4,33 @@
  * ObservationController handles observation form operations with QuestionnaireResponse linking
  * AI Generated: Enhanced to support QuestionnaireResponse linking functionality
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Controllers\Interface\Forms\Observation;
+namespace DCL\Controllers\Interface\Forms\Observation;
 
 use InvalidArgumentException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Forms\ReasonStatusCodes;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FormService;
-use OpenEMR\Services\ObservationService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Forms\ReasonStatusCodes;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FormService;
+use DCL\Services\ObservationService;
+use DCL\Services\PatientService;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Services\Utils\DateFormatterUtils;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -80,7 +80,7 @@ class ObservationController
         $formId = $request->query->getInt('form_id');
         $id = $request->query->getInt('id', 0);
         if ($formId <= 0) {
-            $formId = $id; // openemr sends us the form_id as the id param for new forms
+            $formId = $id; // DCL sends us the form_id as the id param for new forms
         }
 
         $session = SessionWrapperFactory::getInstance()->getActiveSession();

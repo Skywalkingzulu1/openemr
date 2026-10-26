@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -70,30 +70,30 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $nameUrl = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $nameReference = null;
 
     /**
      * A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A code that indicates how the page is generated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGuidePageGeneration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGuidePageGeneration
      */
     public $generation = null;
 
     /**
      * Nested Pages/Sections under this page.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage[]
      */
     public $page = [];
 
@@ -103,7 +103,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
     private $_fhirElementName = 'ImplementationGuide.Page';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getNameUrl()
     {
@@ -111,7 +111,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $nameUrl
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $nameUrl
      * @return $this
      */
     public function setNameUrl($nameUrl)
@@ -121,7 +121,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getNameReference()
     {
@@ -129,7 +129,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $nameReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $nameReference
      * @return $this
      */
     public function setNameReference($nameReference)
@@ -140,7 +140,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -149,7 +149,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -160,7 +160,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A code that indicates how the page is generated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGuidePageGeneration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGuidePageGeneration
      */
     public function getGeneration()
     {
@@ -169,7 +169,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A code that indicates how the page is generated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGuidePageGeneration $generation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGuidePageGeneration $generation
      * @return $this
      */
     public function setGeneration($generation)
@@ -180,7 +180,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Nested Pages/Sections under this page.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage[]
      */
     public function getPage()
     {
@@ -189,7 +189,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Nested Pages/Sections under this page.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage $page
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage $page
      * @return $this
      */
     public function addPage($page)

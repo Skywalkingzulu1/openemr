@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
@@ -72,163 +72,163 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this claim.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * The category of claim, e.g. oral, pharmacy, vision, institutional, professional.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subType = null;
 
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUse
      */
     public $use = null;
 
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The period for which charges are being submitted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $billablePeriod = null;
 
     /**
      * The date this resource was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * Individual who created the claim, predetermination or preauthorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $enterer = null;
 
     /**
      * The Insurer who is target of the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $insurer = null;
 
     /**
      * The provider which is responsible for the claim, predetermination or preauthorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $provider = null;
 
     /**
      * The provider-required urgency of processing the request. Typical values include: stat, routine deferred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $priority = null;
 
     /**
      * A code to indicate whether and for whom funds are to be reserved for future claims.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $fundsReserve = null;
 
     /**
      * Other claims which are related to this claim such as prior submissions or claims for related services or for the same event.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimRelated[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimRelated[]
      */
     public $related = [];
 
     /**
      * Prescription to support the dispensing of pharmacy, device or vision products.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $prescription = null;
 
     /**
      * Original prescription which has been superseded by this prescription to support the dispensing of pharmacy services, medications or products.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $originalPrescription = null;
 
     /**
      * The party to be reimbursed for cost of the products and services according to the terms of the policy.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimPayee
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimPayee
      */
     public $payee = null;
 
     /**
      * A reference to a referral resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $referral = null;
 
     /**
      * Facility where the services were provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $facility = null;
 
     /**
      * The members of the team who provided the products and services.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimCareTeam[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimCareTeam[]
      */
     public $careTeam = [];
 
     /**
      * Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimSupportingInfo[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimSupportingInfo[]
      */
     public $supportingInfo = [];
 
     /**
      * Information about diagnoses relevant to the claim items.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimDiagnosis[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimDiagnosis[]
      */
     public $diagnosis = [];
 
     /**
      * Procedures performed on the patient relevant to the billing items with the claim.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimProcedure[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimProcedure[]
      */
     public $procedure = [];
 
     /**
      * Financial instruments for reimbursement for the health care products and services specified on the claim.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimInsurance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimInsurance[]
      */
     public $insurance = [];
 
     /**
      * Details of an accident which resulted in injuries which required the products and services listed in the claim.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimAccident
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimAccident
      */
     public $accident = null;
 
     /**
      * A claim line. Either a simple  product or service or a 'group' of details which can each be a simple items or groups of sub-details.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimItem[]
      */
     public $item = [];
 
     /**
      * The total value of the all the items in the claim.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $total = null;
 
@@ -239,7 +239,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this claim.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -248,7 +248,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this claim.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -259,7 +259,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -268,7 +268,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -279,7 +279,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The category of claim, e.g. oral, pharmacy, vision, institutional, professional.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -288,7 +288,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The category of claim, e.g. oral, pharmacy, vision, institutional, professional.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -299,7 +299,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubType()
     {
@@ -308,7 +308,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
      * @return $this
      */
     public function setSubType($subType)
@@ -319,7 +319,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUse
      */
     public function getUse()
     {
@@ -328,7 +328,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUse $use
      * @return $this
      */
     public function setUse($use)
@@ -339,7 +339,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -348,7 +348,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -359,7 +359,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period for which charges are being submitted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getBillablePeriod()
     {
@@ -368,7 +368,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period for which charges are being submitted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $billablePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $billablePeriod
      * @return $this
      */
     public function setBillablePeriod($billablePeriod)
@@ -379,7 +379,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date this resource was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -388,7 +388,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date this resource was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -399,7 +399,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who created the claim, predetermination or preauthorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEnterer()
     {
@@ -408,7 +408,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who created the claim, predetermination or preauthorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $enterer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $enterer
      * @return $this
      */
     public function setEnterer($enterer)
@@ -419,7 +419,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Insurer who is target of the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInsurer()
     {
@@ -428,7 +428,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Insurer who is target of the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $insurer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $insurer
      * @return $this
      */
     public function setInsurer($insurer)
@@ -439,7 +439,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider which is responsible for the claim, predetermination or preauthorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvider()
     {
@@ -448,7 +448,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider which is responsible for the claim, predetermination or preauthorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function setProvider($provider)
@@ -459,7 +459,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider-required urgency of processing the request. Typical values include: stat, routine deferred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority()
     {
@@ -468,7 +468,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider-required urgency of processing the request. Typical values include: stat, routine deferred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -479,7 +479,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate whether and for whom funds are to be reserved for future claims.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFundsReserve()
     {
@@ -488,7 +488,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate whether and for whom funds are to be reserved for future claims.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $fundsReserve
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $fundsReserve
      * @return $this
      */
     public function setFundsReserve($fundsReserve)
@@ -499,7 +499,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Other claims which are related to this claim such as prior submissions or claims for related services or for the same event.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimRelated[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimRelated[]
      */
     public function getRelated()
     {
@@ -508,7 +508,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Other claims which are related to this claim such as prior submissions or claims for related services or for the same event.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimRelated $related
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimRelated $related
      * @return $this
      */
     public function addRelated($related)
@@ -519,7 +519,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Prescription to support the dispensing of pharmacy, device or vision products.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPrescription()
     {
@@ -528,7 +528,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Prescription to support the dispensing of pharmacy, device or vision products.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $prescription
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $prescription
      * @return $this
      */
     public function setPrescription($prescription)
@@ -539,7 +539,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Original prescription which has been superseded by this prescription to support the dispensing of pharmacy services, medications or products.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOriginalPrescription()
     {
@@ -548,7 +548,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Original prescription which has been superseded by this prescription to support the dispensing of pharmacy services, medications or products.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $originalPrescription
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $originalPrescription
      * @return $this
      */
     public function setOriginalPrescription($originalPrescription)
@@ -559,7 +559,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party to be reimbursed for cost of the products and services according to the terms of the policy.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimPayee
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimPayee
      */
     public function getPayee()
     {
@@ -568,7 +568,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party to be reimbursed for cost of the products and services according to the terms of the policy.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimPayee $payee
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimPayee $payee
      * @return $this
      */
     public function setPayee($payee)
@@ -579,7 +579,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a referral resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReferral()
     {
@@ -588,7 +588,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a referral resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $referral
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $referral
      * @return $this
      */
     public function setReferral($referral)
@@ -599,7 +599,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Facility where the services were provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getFacility()
     {
@@ -608,7 +608,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Facility where the services were provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $facility
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $facility
      * @return $this
      */
     public function setFacility($facility)
@@ -619,7 +619,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The members of the team who provided the products and services.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimCareTeam[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimCareTeam[]
      */
     public function getCareTeam()
     {
@@ -628,7 +628,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The members of the team who provided the products and services.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimCareTeam $careTeam
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimCareTeam $careTeam
      * @return $this
      */
     public function addCareTeam($careTeam)
@@ -639,7 +639,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimSupportingInfo[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimSupportingInfo[]
      */
     public function getSupportingInfo()
     {
@@ -648,7 +648,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimSupportingInfo $supportingInfo
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimSupportingInfo $supportingInfo
      * @return $this
      */
     public function addSupportingInfo($supportingInfo)
@@ -659,7 +659,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information about diagnoses relevant to the claim items.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimDiagnosis[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimDiagnosis[]
      */
     public function getDiagnosis()
     {
@@ -668,7 +668,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information about diagnoses relevant to the claim items.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimDiagnosis $diagnosis
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimDiagnosis $diagnosis
      * @return $this
      */
     public function addDiagnosis($diagnosis)
@@ -679,7 +679,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Procedures performed on the patient relevant to the billing items with the claim.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimProcedure[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimProcedure[]
      */
     public function getProcedure()
     {
@@ -688,7 +688,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Procedures performed on the patient relevant to the billing items with the claim.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimProcedure $procedure
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimProcedure $procedure
      * @return $this
      */
     public function addProcedure($procedure)
@@ -699,7 +699,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Financial instruments for reimbursement for the health care products and services specified on the claim.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimInsurance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimInsurance[]
      */
     public function getInsurance()
     {
@@ -708,7 +708,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Financial instruments for reimbursement for the health care products and services specified on the claim.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimInsurance $insurance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimInsurance $insurance
      * @return $this
      */
     public function addInsurance($insurance)
@@ -719,7 +719,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details of an accident which resulted in injuries which required the products and services listed in the claim.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimAccident
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimAccident
      */
     public function getAccident()
     {
@@ -728,7 +728,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details of an accident which resulted in injuries which required the products and services listed in the claim.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimAccident $accident
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimAccident $accident
      * @return $this
      */
     public function setAccident($accident)
@@ -739,7 +739,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A claim line. Either a simple  product or service or a 'group' of details which can each be a simple items or groups of sub-details.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimItem[]
      */
     public function getItem()
     {
@@ -748,7 +748,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A claim line. Either a simple  product or service or a 'group' of details which can each be a simple items or groups of sub-details.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaim\FHIRClaimItem $item
      * @return $this
      */
     public function addItem($item)
@@ -759,7 +759,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The total value of the all the items in the claim.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getTotal()
     {
@@ -768,7 +768,7 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The total value of the all the items in the claim.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $total
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $total
      * @return $this
      */
     public function setTotal($total)

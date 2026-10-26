@@ -1,6 +1,6 @@
 # Developer Guide
 
-Complete guide for developers working with or extending the OpenEMR API.
+Complete guide for developers working with or extending the DCL API.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -50,10 +50,10 @@ Complete guide for developers working with or extending the OpenEMR API.
 ## Overview
 
 This guide is for developers who are:
-- **Integrating** with OpenEMR APIs
-- **Extending** OpenEMR API functionality
-- **Contributing** to OpenEMR API development
-- **Operating** OpenEMR in production environments
+- **Integrating** with DCL APIs
+- **Extending** DCL API functionality
+- **Contributing** to DCL API development
+- **Operating** DCL in production environments
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@ This guide is for developers who are:
 - Git version control
 
 **Development Environment:**
-- OpenEMR 7.0+ installation
+- DCL 7.0+ installation
 - PHP development environment
 - MySQL/MariaDB database
 - Composer (PHP dependency manager)
@@ -74,7 +74,7 @@ This guide is for developers who are:
 
 ## Internal API Usage
 
-OpenEMR supports making API calls from within authenticated sessions, useful for:
+DCL supports making API calls from within authenticated sessions, useful for:
 - Custom modules
 - Internal workflows
 - Administrative tools
@@ -89,9 +89,9 @@ This file provides examples of internal API usage patterns.
 #### Example: Direct Service Call
 ```php
 <?php
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Services\PatientService;
+use DCL\Services\PatientService;
 
 class InternalApiExample
 {
@@ -116,13 +116,13 @@ class InternalApiExample
 #### Example: Using Controller
 ```php
 <?php
-use OpenEMR\RestControllers\PatientRestController;
+use DCL\RestControllers\PatientRestController;
 
 // Instantiate controller
 $controller = new PatientRestController();
 
 // Call controller method (simulates REST request)
-$httpRequest = new \OpenEMR\Common\Http\HttpRestRequest();
+$httpRequest = new \DCL\Common\Http\HttpRestRequest();
 $httpRequest->setRequestUserId($userId);
 $httpRequest->setRequestUserRole('users');
 
@@ -139,7 +139,7 @@ $data = json_decode($response->getBody(), true);
 #### Check User Permissions
 ```php
 <?php
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AclMain;
 
 // Check if user has specific permission
 $hasAccess = AclMain::aclCheckCore('patients', 'demo');
@@ -156,8 +156,8 @@ rejected by the `ForbiddenSessionSuperglobalRule` PHPStan rule.
 
 ```php
 <?php
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 // Get current user ID
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
@@ -172,7 +172,7 @@ $userData = QueryUtils::querySingleRow(
 
 ## Multisite Support
 
-OpenEMR supports multiple independent sites within a single installation.
+DCL supports multiple independent sites within a single installation.
 
 ### Multisite Architecture
 
@@ -252,8 +252,8 @@ rules reject both. Use the session wrapper for session values and
 
 ```php
 <?php
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 // Get current site
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
@@ -310,7 +310,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1Qi...
 ```php
 <?php
 // Always validate tokens
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\JsonWebToken;
+use DCL\Common\Auth\OpenIDConnect\JWT\JsonWebToken;
 
 function validateToken($bearerToken) {
     try {
@@ -348,7 +348,7 @@ const scopes = [
 **Validate Scopes in Code:**
 ```php
 <?php
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\JsonWebToken;
+use DCL\Common\Auth\OpenIDConnect\JWT\JsonWebToken;
 
 function checkScope($token, $requiredScope) {
     $jwt = new JsonWebToken($token);
@@ -377,7 +377,7 @@ if (!checkScope($token, 'patient/Patient.rs')) {
 ✅ **Access controls**
 ```php
 <?php
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AclMain;
 
 function checkPatientAccess($userId, $patientId) {
     // Check if user has access to patient
@@ -500,11 +500,11 @@ HTTP Response
 `src/Services/MyResourceService.php`:
 ```php
 <?php
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Validators\ProcessingResult;
 
 class MyResourceService extends BaseService
 {
@@ -607,12 +607,12 @@ class MyResourceService extends BaseService
 `src/RestControllers/MyResourceRestController.php`:
 ```php
 <?php
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Services\MyResourceService;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Validators\MyResourceValidator;
+use DCL\Services\MyResourceService;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Validators\MyResourceValidator;
 
 class MyResourceRestController
 {
@@ -632,7 +632,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["DCL_auth" => []]]
     )]
     public function getAll($search = array())
     {
@@ -658,7 +658,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["DCL_auth" => []]]
     )]
     public function getOne($uuid)
     {
@@ -682,7 +682,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["DCL_auth" => []]]
     )]
     public function post($data)
     {
@@ -724,7 +724,7 @@ class MyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["DCL_auth" => []]]
     )]
     public function put($uuid, $data)
     {
@@ -751,11 +751,11 @@ The OpenAPI attributes (`#[OA\Get]`, `#[OA\Post]`, etc.) document the API endpoi
 - **parameters**: Query or path parameters
 - **requestBody**: For POST/PUT, defines the expected request body schema
 - **responses**: Maps HTTP status codes to response schemas (use refs to reusable components)
-- **security**: Authentication requirements (usually `[["openemr_auth" => []]]`)
+- **security**: Authentication requirements (usually `[["DCL_auth" => []]]`)
 
 To regenerate the Swagger documentation after changes:
 ```bash
-php bin/console openemr:create-api-documentation --skip-globals
+php bin/console DCL:create-api-documentation --skip-globals
 ```
 
 **Step 3: Add Routes**
@@ -764,8 +764,8 @@ Standard routes are added to _rest_routes_standard.inc.php
 Portal Routes are added to _rest_routes_portal.inc.php
 ```php
 <?php
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\MyResourceRestController;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\MyResourceRestController;
 
 // Add to existing routes array
 "GET /api/myresource" => function (HttpRestRequest $request) {
@@ -800,7 +800,7 @@ use OpenEMR\RestControllers\MyResourceRestController;
 `src/Validators/MyResourceValidator.php`:
 ```php
 <?php
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
 class MyResourceValidator extends BaseValidator
 {
@@ -836,11 +836,11 @@ class MyResourceValidator extends BaseValidator
 `src/Services/FHIR/FhirMyResourceService.php`:
 ```php
 <?php
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Services\MyResourceService;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRMyResource;
+use DCL\Services\MyResourceService;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle;
+use DCL\FHIR\R4\FHIRResource\FHIRMyResource;
 
 class FhirMyResourceService extends FhirServiceBase
 {
@@ -859,7 +859,7 @@ class FhirMyResourceService extends FhirServiceBase
         if (!$processingResult->hasErrors()) {
             $results = [];
             foreach ($processingResult->getData() as $record) {
-                $fhirResource = $this->parseOpenEMRRecord($record);
+                $fhirResource = $this->parseDCLRecord($record);
                 $results[] = $fhirResource;
             }
             $processingResult->setData($results);
@@ -874,19 +874,19 @@ class FhirMyResourceService extends FhirServiceBase
 
         if (!$processingResult->hasErrors() && $processingResult->hasData()) {
             $record = $processingResult->getData()[0];
-            $fhirResource = $this->parseOpenEMRRecord($record);
+            $fhirResource = $this->parseDCLRecord($record);
             $processingResult->setData([$fhirResource]);
         }
 
         return $processingResult;
     }
 
-    public function parseOpenEMRRecord($dataRecord)
+    public function parseDCLRecord($dataRecord)
     {
         $fhirResource = new FHIRMyResource();
 
-        // Map OpenEMR fields to FHIR resource
-        $id = new \OpenEMR\FHIR\R4\FHIRElement\FHIRId();
+        // Map DCL fields to FHIR resource
+        $id = new \DCL\FHIR\R4\FHIRElement\FHIRId();
         $id->setValue($dataRecord['uuid']);
         $fhirResource->setId($id);
 
@@ -902,11 +902,11 @@ class FhirMyResourceService extends FhirServiceBase
 `src/RestControllers/FHIR/FhirMyResourceRestController.php`:
 ```php
 <?php
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Services\FHIR\FhirMyResourceService;
-use OpenEMR\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirMyResourceService;
+use DCL\RestControllers\RestControllerHelper;
 
 class FhirMyResourceRestController
 {
@@ -950,7 +950,7 @@ class FhirMyResourceRestController
             new OA\Response(response: "400", ref: "#/components/responses/badrequest"),
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["DCL_auth" => []]]
     )]
     public function getAll($search)
     {
@@ -992,7 +992,7 @@ class FhirMyResourceRestController
             new OA\Response(response: "401", ref: "#/components/responses/unauthorized"),
             new OA\Response(response: "404", ref: "#/components/responses/uuidnotfound"),
         ],
-        security: [["openemr_auth" => []]]
+        security: [["DCL_auth" => []]]
     )]
     public function getOne($uuid)
     {
@@ -1013,7 +1013,7 @@ FHIR Routes are added to the appropriate FHIR version _rest_routes_fhir_r4_us_co
 `apis/routes/_rest_routes_fhir_r4_us_core_3_1_0.inc.php`:
 ```php
 <?php
-use OpenEMR\RestControllers\FHIR\FhirMyResourceRestController;
+use DCL\RestControllers\FHIR\FhirMyResourceRestController;
 
 // Add to FHIR routes
 "GET /fhir/MyResource" => function (HttpRestRequest $request) {
@@ -1044,7 +1044,7 @@ use OpenEMR\RestControllers\FHIR\FhirMyResourceRestController;
 **Base Structure:**
 ```php
 <?php
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 class ExampleRestController
 {
@@ -1095,10 +1095,10 @@ class ExampleRestController
 **Example:**
 ```php
 <?php
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
-use OpenEMR\Services\FHIR\FhirPatientService;
-use OpenEMR\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirPatientService;
+use DCL\RestControllers\RestControllerHelper;
 
 class FhirPatientRestController
 {
@@ -1175,7 +1175,7 @@ try {
 All services extend `BaseService`:
 ```php
 <?php
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 abstract class BaseService
 {
@@ -1225,26 +1225,26 @@ abstract class BaseService
 **Location:** `src/Services/FHIR/`
 
 **Purpose:**
-- Map OpenEMR data to FHIR
+- Map DCL data to FHIR
 - FHIR validation
 - US Core compliance
 
 **Example:**
 ```php
 <?php
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRPatient;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName;
+use DCL\FHIR\R4\FHIRResource\FHIRPatient;
+use DCL\FHIR\R4\FHIRElement\FHIRHumanName;
 
 class FhirPatientService extends FhirServiceBase
 {
-    public function parseOpenEMRRecord($dataRecord)
+    public function parseDCLRecord($dataRecord)
     {
         $patient = new FHIRPatient();
 
         // Map ID
-        $id = new \OpenEMR\FHIR\R4\FHIRElement\FHIRId();
+        $id = new \DCL\FHIR\R4\FHIRElement\FHIRId();
         $id->setValue($dataRecord['uuid']);
         $patient->setId($id);
 
@@ -1346,7 +1346,7 @@ route — it happens automatically for every REST call.
 
 **Query parameters:**
 ```php
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRequest;
 
 "GET /api/patient" => function (HttpRestRequest $request) {
     // Read query parameters off the request, never $_GET
@@ -1391,7 +1391,7 @@ Outside a route closure — in a service or a controller that has no request —
 call the ACL layer directly:
 
 ```php
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AclMain;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 if (!AclMain::aclCheckCore('admin', 'super')) {
@@ -1415,7 +1415,7 @@ permission. Reading `$_SESSION` directly is separately rejected by the
 **Base Validator:**
 ```php
 <?php
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
 abstract class BaseValidator
 {
@@ -1480,7 +1480,7 @@ abstract class BaseValidator
 **Example validator:**
 ```php
 <?php
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
 class PatientValidator extends BaseValidator
 {
@@ -1529,10 +1529,10 @@ protected function validateSSN($ssn)
 **Example:**
 ```php
 <?php
-namespace OpenEMR\Tests\Unit\Services;
+namespace DCL\Tests\Unit\Services;
 
 use PHPUnit\Framework\TestCase;
-use OpenEMR\Services\PatientService;
+use DCL\Services\PatientService;
 
 class PatientServiceTest extends TestCase
 {
@@ -1609,8 +1609,8 @@ class PatientServiceTest extends TestCase
 
 1. **Fork the repository**
 ```bash
-   git clone https://github.com/openemr/openemr.git
-   cd openemr
+   git clone https://github.com/DCL/DCL.git
+   cd DCL
    git checkout -b feature/my-new-feature
 ```
 
@@ -1634,7 +1634,7 @@ class PatientServiceTest extends TestCase
 **Follow PSR-12:**
 ```php
 <?php
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 class ExampleService
 {
@@ -1696,14 +1696,14 @@ Brief description of changes
 ---
 
 **Resources:**
-- **API Forum Thread:** https://community.open-emr.org/t/v6-authorization-and-api-changes-afoot/15450
-- **GitHub:** https://github.com/openemr/openemr
-- **Documentation:** https://www.open-emr.org/wiki/
+- **API Forum Thread:** https://community.dcl.org/t/v6-authorization-and-api-changes-afoot/15450
+- **GitHub:** https://github.com/DCL/DCL
+- **Documentation:** https://www.dcl.org/wiki/
 
 **Support:**
-- **Community Forum:** https://community.open-emr.org/
-- **Chat:** https://chat.open-emr.org/
-- **Issues:** https://github.com/openemr/openemr/issues
+- **Community Forum:** https://community.dcl.org/
+- **Chat:** https://chat.dcl.org/
+- **Issues:** https://github.com/DCL/DCL/issues
 
 For questions about extending the API, post in the community forum or join the developer chat.
 
@@ -1711,9 +1711,9 @@ For questions about extending the API, post in the community forum or join the d
 ## Documentation Attribution
 
 ### Authorship
-This documentation represents the collective knowledge and contributions of the OpenEMR open-source community. The content is based on:
-- Original documentation by OpenEMR developers and contributors
-- Technical specifications from the OpenEMR codebase
+This documentation represents the collective knowledge and contributions of the DCL open-source community. The content is based on:
+- Original documentation by DCL developers and contributors
+- Technical specifications from the DCL codebase
 - Community feedback and real-world implementation experience
 
 ### AI Assistance
@@ -1726,10 +1726,10 @@ The organization, structure, and presentation of this documentation was enhanced
 All technical accuracy is maintained from the original community-authored documentation.
 
 ### Contributing
-OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
-- **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+DCL is an open-source project. To contribute to this documentation:
+- **Report Issues:** [GitHub Issues](https://github.com/DCL/DCL/issues)
+- **Discuss:** [Community Forum](https://community.dcl.org/)
+- **Submit Changes:** [Pull Requests](https://github.com/DCL/DCL/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

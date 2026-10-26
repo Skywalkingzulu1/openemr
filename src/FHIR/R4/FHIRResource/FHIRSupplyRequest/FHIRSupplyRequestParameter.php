@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyRequest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSupplyRequest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyRequest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of a request for a medication, substance or device used in the healthcare setting.
@@ -71,27 +71,27 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * A code or string that identifies the device detail being asserted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
@@ -102,7 +102,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A code or string that identifies the device detail being asserted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -111,7 +111,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A code or string that identifies the device detail being asserted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -121,7 +121,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
     {
@@ -129,7 +129,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
     public function setValueCodeableConcept($valueCodeableConcept)
@@ -139,7 +139,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -147,7 +147,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -157,7 +157,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getValueRange()
     {
@@ -165,7 +165,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $valueRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
     public function setValueRange($valueRange)
@@ -175,7 +175,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
     {
@@ -183,7 +183,7 @@ class FHIRSupplyRequestParameter extends FHIRBackboneElement implements \JsonSer
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)

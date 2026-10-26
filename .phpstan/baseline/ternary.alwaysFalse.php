@@ -29,7 +29,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Ternary operator condition is always false\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Ternary operator condition is always false\\.$#',

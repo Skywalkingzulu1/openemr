@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Nucleic acids are defined by three distinct elements: the base, sugar and linkage. Individual substance/moiety IDs will be created for each of these elements. The nucleotide sequence will be always entered in the 5’-3’ direction.
@@ -71,49 +71,49 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 {
     /**
      * Index of linear sequences of nucleic acids in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $subunit = null;
 
     /**
      * Actual nucleotide sequence notation from 5' to 3' end using standard single letter codes. In addition to the base sequence, sugar and type of phosphate or non-phosphate linkage should also be captured.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $sequence = null;
 
     /**
      * The length of the sequence shall be captured.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $length = null;
 
     /**
      * (TBC).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $sequenceAttachment = null;
 
     /**
      * The nucleotide present at the 5’ terminal shall be specified based on a controlled vocabulary. Since the sequence is represented from the 5' to the 3' end, the 5’ prime nucleotide is the letter at the first position in the sequence. A separate representation would be redundant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $fivePrime = null;
 
     /**
      * The nucleotide present at the 3’ terminal shall be specified based on a controlled vocabulary. Since the sequence is represented from the 5' to the 3' end, the 5’ prime nucleotide is the letter at the last position in the sequence. A separate representation would be redundant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $threePrime = null;
 
     /**
      * The linkages between sugar residues will also be captured.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[]
      */
     public $linkage = [];
 
     /**
      * 5.3.6.8.1 Sugar ID (Mandatory).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
      */
     public $sugar = [];
 
@@ -124,7 +124,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * Index of linear sequences of nucleic acids in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getSubunit()
     {
@@ -133,7 +133,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * Index of linear sequences of nucleic acids in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $subunit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $subunit
      * @return $this
      */
     public function setSubunit($subunit)
@@ -144,7 +144,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * Actual nucleotide sequence notation from 5' to 3' end using standard single letter codes. In addition to the base sequence, sugar and type of phosphate or non-phosphate linkage should also be captured.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSequence()
     {
@@ -153,7 +153,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * Actual nucleotide sequence notation from 5' to 3' end using standard single letter codes. In addition to the base sequence, sugar and type of phosphate or non-phosphate linkage should also be captured.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -164,7 +164,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The length of the sequence shall be captured.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getLength()
     {
@@ -173,7 +173,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The length of the sequence shall be captured.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $length
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $length
      * @return $this
      */
     public function setLength($length)
@@ -184,7 +184,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * (TBC).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getSequenceAttachment()
     {
@@ -193,7 +193,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * (TBC).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $sequenceAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $sequenceAttachment
      * @return $this
      */
     public function setSequenceAttachment($sequenceAttachment)
@@ -204,7 +204,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The nucleotide present at the 5’ terminal shall be specified based on a controlled vocabulary. Since the sequence is represented from the 5' to the 3' end, the 5’ prime nucleotide is the letter at the first position in the sequence. A separate representation would be redundant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFivePrime()
     {
@@ -213,7 +213,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The nucleotide present at the 5’ terminal shall be specified based on a controlled vocabulary. Since the sequence is represented from the 5' to the 3' end, the 5’ prime nucleotide is the letter at the first position in the sequence. A separate representation would be redundant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $fivePrime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $fivePrime
      * @return $this
      */
     public function setFivePrime($fivePrime)
@@ -224,7 +224,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The nucleotide present at the 3’ terminal shall be specified based on a controlled vocabulary. Since the sequence is represented from the 5' to the 3' end, the 5’ prime nucleotide is the letter at the last position in the sequence. A separate representation would be redundant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getThreePrime()
     {
@@ -233,7 +233,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The nucleotide present at the 3’ terminal shall be specified based on a controlled vocabulary. Since the sequence is represented from the 5' to the 3' end, the 5’ prime nucleotide is the letter at the last position in the sequence. A separate representation would be redundant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $threePrime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $threePrime
      * @return $this
      */
     public function setThreePrime($threePrime)
@@ -244,7 +244,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The linkages between sugar residues will also be captured.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[]
      */
     public function getLinkage()
     {
@@ -253,7 +253,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * The linkages between sugar residues will also be captured.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage $linkage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage $linkage
      * @return $this
      */
     public function addLinkage($linkage)
@@ -264,7 +264,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * 5.3.6.8.1 Sugar ID (Mandatory).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
      */
     public function getSugar()
     {
@@ -273,7 +273,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement implements \Js
 
     /**
      * 5.3.6.8.1 Sugar ID (Mandatory).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar $sugar
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar $sugar
      * @return $this
      */
     public function addSugar($sugar)

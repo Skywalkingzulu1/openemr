@@ -3,16 +3,16 @@
 /*
  * CdaValidateDocumentsTest.php  Does a smoke test of the CdaValidateDocuments service to make sure the validation is running
  * and reporting errors as expected.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\Cda;
+namespace DCL\Tests\Services\Cda;
 
-use OpenEMR\Services\Cda\CdaValidateDocuments;
+use DCL\Services\Cda\CdaValidateDocuments;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 

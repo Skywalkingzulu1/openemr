@@ -2,31 +2,31 @@
 
 /*
  * FhirMediaService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedia;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRUrl;
-use OpenEMR\Services\DocumentService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedia;
+use DCL\FHIR\R4\FHIRElement\FHIRAttachment;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRUrl;
+use DCL\Services\DocumentService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class FhirMediaService extends FhirServiceBase implements IFhirExportableResourceService, IPatientCompartmentResourceService
@@ -36,7 +36,7 @@ class FhirMediaService extends FhirServiceBase implements IFhirExportableResourc
     use FhirBulkExportDomainResourceTrait;
 
     /**
-     * @var DocumentService The OpenEMR Document Service
+     * @var DocumentService The DCL Document Service
      */
     private DocumentService $service;
 
@@ -53,7 +53,7 @@ class FhirMediaService extends FhirServiceBase implements IFhirExportableResourc
     }
 
     /**
-     * Returns an array mapping FHIR Media Resource search parameters to OpenEMR Media search parameters
+     * Returns an array mapping FHIR Media Resource search parameters to DCL Media search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -81,7 +81,7 @@ class FhirMediaService extends FhirServiceBase implements IFhirExportableResourc
     /**
      * @inheritDoc
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRMedia|string|false
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRMedia|string|false
     {
         $fhirMedia = new FHIRMedia();
         $fhirMeta = new FHIRMeta();
@@ -116,40 +116,40 @@ class FhirMediaService extends FhirServiceBase implements IFhirExportableResourc
     /**
      * @inheritDoc
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (isset($openEMRSearchParameters['patient'])) {
+        if (isset($DCLSearchParameters['patient'])) {
             // make sure that no other modifier such as NOT_EQUALS, OR missing=true is sent which would let system file names be
             // leaked out in the API
-            $openEMRSearchParameters['patient']->setModifier(SearchModifier::EXACT);
+            $DCLSearchParameters['patient']->setModifier(SearchModifier::EXACT);
         } else {
             // make sure we only return documents that are tied to patients
-            $openEMRSearchParameters['patient'] = new TokenSearchField('puuid', [new TokenSearchValue(false, null)]);
-            $openEMRSearchParameters['patient']->setModifier(SearchModifier::MISSING);
+            $DCLSearchParameters['patient'] = new TokenSearchField('puuid', [new TokenSearchValue(false, null)]);
+            $DCLSearchParameters['patient']->setModifier(SearchModifier::MISSING);
         }
         // only pull in media with supported mimetypes
         $supportedMimetypes = ['application/dicom', 'image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/tiff', 'video/mp4', 'video/quicktime'];
-        if (isset($openEMRSearchParameters['mimetype'])) {
+        if (isset($DCLSearchParameters['mimetype'])) {
             // grab all of the mime type codes
             /**
              * @var StringSearchField
              */
-            $mimetype = $openEMRSearchParameters['mimetype'];
+            $mimetype = $DCLSearchParameters['mimetype'];
             $mimetypeValues = $mimetype->getValues();
             $filteredMimetypes = array_intersect($mimetypeValues, $supportedMimetypes);
-            $openEMRSearchParameters['mimetype'] = new StringSearchField(
+            $DCLSearchParameters['mimetype'] = new StringSearchField(
                 'mimetype',
                 array_values($filteredMimetypes),
                 SearchModifier::EXACT
             );
         } else {
-            $openEMRSearchParameters['mimetype'] = new StringSearchField(
+            $DCLSearchParameters['mimetype'] = new StringSearchField(
                 'mimetype',
                 $supportedMimetypes,
                 SearchModifier::EXACT
             );
         }
 
-        return $this->service->search($openEMRSearchParameters);
+        return $this->service->search($DCLSearchParameters);
     }
 }

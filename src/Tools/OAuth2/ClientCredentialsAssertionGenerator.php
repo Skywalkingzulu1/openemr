@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Tools\OAuth2;
+namespace DCL\Tools\OAuth2;
 
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Key;

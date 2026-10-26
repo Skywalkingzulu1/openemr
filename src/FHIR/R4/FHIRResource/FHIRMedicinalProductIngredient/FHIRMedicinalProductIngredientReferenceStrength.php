@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
@@ -71,31 +71,31 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 {
     /**
      * Relevant reference substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $substance = null;
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $strength = null;
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $strengthLowLimit = null;
 
     /**
      * For when strength is measured at a particular point or distance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $measurementPoint = null;
 
     /**
      * The country or countries for which the strength range applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $country = [];
 
@@ -106,7 +106,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * Relevant reference substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstance()
     {
@@ -115,7 +115,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * Relevant reference substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $substance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $substance
      * @return $this
      */
     public function setSubstance($substance)
@@ -126,7 +126,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getStrength()
     {
@@ -135,7 +135,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $strength
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $strength
      * @return $this
      */
     public function setStrength($strength)
@@ -146,7 +146,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getStrengthLowLimit()
     {
@@ -155,7 +155,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $strengthLowLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $strengthLowLimit
      * @return $this
      */
     public function setStrengthLowLimit($strengthLowLimit)
@@ -166,7 +166,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * For when strength is measured at a particular point or distance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMeasurementPoint()
     {
@@ -175,7 +175,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * For when strength is measured at a particular point or distance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $measurementPoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $measurementPoint
      * @return $this
      */
     public function setMeasurementPoint($measurementPoint)
@@ -186,7 +186,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * The country or countries for which the strength range applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCountry()
     {
@@ -195,7 +195,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
 
     /**
      * The country or countries for which the strength range applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
      * @return $this
      */
     public function addCountry($country)

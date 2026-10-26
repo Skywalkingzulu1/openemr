@@ -3,29 +3,29 @@
 /**
  * Patient history form.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
 require_once("history.inc.php");
 require_once($srcdir . "/options.inc.php");
 require_once($srcdir . "/options.js.php");
 require_once($srcdir . "/validation/LBF_Validation.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\OeUI\OemrUI;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\OeUI\OemrUI;
 
 /** @var string $date_init */
 $date_init = OEGlobalsBag::getInstance()->get('date_init', '');
@@ -263,7 +263,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
 <div id="container_div" class="container-xl mt-3">
     <div class="row">
         <div class="col-12">
-            <?php require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir() . "/interface/patient_file/summary/dashboard_header.php"); ?>
+            <?php require_once(\DCL\Core\OEGlobalsBag::getInstance()->getProjectDir() . "/interface/patient_file/summary/dashboard_header.php"); ?>
         </div>
     </div>
     <div class="row">

@@ -3,25 +3,25 @@
 /**
  * UB04 Functions
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2017-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Billing\Claim;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Pdf\PdfCreator;
+use DCL\Billing\BillingUtilities;
+use DCL\Billing\Claim;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\RequestTerminator;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Core\OEGlobalsBag;
+use DCL\Pdf\PdfCreator;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

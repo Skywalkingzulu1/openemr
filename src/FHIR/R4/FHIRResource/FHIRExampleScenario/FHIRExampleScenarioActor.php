@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,25 +71,25 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * ID or acronym of actor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $actorId = null;
 
     /**
      * The type of actor - person or system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExampleScenarioActorType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExampleScenarioActorType
      */
     public $type = null;
 
     /**
      * The name of the actor as shown in the page.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The description of the actor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
@@ -100,7 +100,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * ID or acronym of actor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getActorId()
     {
@@ -109,7 +109,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * ID or acronym of actor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $actorId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $actorId
      * @return $this
      */
     public function setActorId($actorId)
@@ -120,7 +120,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The type of actor - person or system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExampleScenarioActorType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExampleScenarioActorType
      */
     public function getType()
     {
@@ -129,7 +129,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The type of actor - person or system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExampleScenarioActorType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExampleScenarioActorType $type
      * @return $this
      */
     public function setType($type)
@@ -140,7 +140,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The name of the actor as shown in the page.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -149,7 +149,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The name of the actor as shown in the page.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -160,7 +160,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The description of the actor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -169,7 +169,7 @@ class FHIRExampleScenarioActor extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The description of the actor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)

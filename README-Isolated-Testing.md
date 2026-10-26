@@ -1,15 +1,15 @@
 # Isolated Testing Suite
 
-OpenEMR includes an isolated testing setup that allows you to run PHPUnit tests without database or service dependencies.
+DCL includes an isolated testing setup that allows you to run PHPUnit tests without database or service dependencies.
 
 ## Problem
 
-The default OpenEMR test bootstrap loads `interface/globals.php`, which:
+The default DCL test bootstrap loads `interface/globals.php`, which:
 - Connects to the database through `library/sql.inc.php`
 - Loads configuration from `sqlconf.php`
-- Initializes various OpenEMR services and dependencies
+- Initializes various DCL services and dependencies
 
-This prevents running simple unit tests without a full OpenEMR environment.
+This prevents running simple unit tests without a full DCL environment.
 
 ## Solution
 
@@ -24,7 +24,7 @@ Key files:
 ## What's NOT Loaded
 
 - Database connections
-- OpenEMR session management
+- DCL session management
 - Configuration from `sqlconf.php`
 - Service containers and OEGlobalsBag
 - Authentication systems
@@ -62,10 +62,10 @@ vendor/bin/phpunit -c phpunit-isolated.xml tests/Tests/Isolated/ExampleIsolatedT
    - For `src/Validators/` classes → `tests/Tests/Isolated/Validators/`
    - For `src/Services/` classes → `tests/Tests/Isolated/Services/`
    - For `src/Common/` classes → `tests/Tests/Isolated/Common/`
-2. Use appropriate namespace: `OpenEMR\Tests\Isolated\{Module}`
+2. Use appropriate namespace: `DCL\Tests\Isolated\{Module}`
 3. Extend `PHPUnit\Framework\TestCase`
-4. Avoid using OpenEMR classes that require database connections
-5. Only use classes that don't require the OpenEMR bootstrap
+4. Avoid using DCL classes that require database connections
+5. Only use classes that don't require the DCL bootstrap
 6. Use dependency injection — classes under test should accept dependencies via
    constructor parameters so tests can provide mocks or stubs
 
@@ -84,10 +84,10 @@ tests/Tests/Isolated/
 ### Example Test
 ```php
 <?php
-namespace OpenEMR\Tests\Isolated\Services;
+namespace DCL\Tests\Isolated\Services;
 
-use OpenEMR\Services\SomeService;
-use OpenEMR\Repositories\SomeRepositoryInterface;
+use DCL\Services\SomeService;
+use DCL\Repositories\SomeRepositoryInterface;
 use PHPUnit\Framework\TestCase;
 
 class SomeServiceTest extends TestCase

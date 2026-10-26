@@ -8,9 +8,9 @@
  * listing property names to exclude from serialization.
  *
  * @package verysimple::Phreeze
- * @link https://www.open-emr.org
- * @author Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @link https://www.dcl.org
+ * @author Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @license http://www.gnu.org/licenses/lgpl.html LGPL
  */
 trait SerializableTrait

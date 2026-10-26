@@ -4,25 +4,25 @@
  * FhirBulkExportDomainResourceTrait implements a simple export method that can be incorporated into classes to quickly
  * allow FHIR bulk export of resources.  Advanced searching or filtering on the exported resources is not supported and
  * should be implemented directly in the class rather than using this trait.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Traits;
+namespace DCL\Services\FHIR\Traits;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\FHIR\Export\ExportCannotEncodeException;
-use OpenEMR\FHIR\Export\ExportException;
-use OpenEMR\FHIR\Export\ExportJob;
-use OpenEMR\FHIR\Export\ExportStreamWriter;
-use OpenEMR\FHIR\Export\ExportWillShutdownException;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceReadableService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
+use DCL\BC\ServiceContainer;
+use DCL\FHIR\Export\ExportCannotEncodeException;
+use DCL\FHIR\Export\ExportException;
+use DCL\FHIR\Export\ExportJob;
+use DCL\FHIR\Export\ExportStreamWriter;
+use DCL\FHIR\Export\ExportWillShutdownException;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceReadableService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
 
 trait FhirBulkExportDomainResourceTrait
 {

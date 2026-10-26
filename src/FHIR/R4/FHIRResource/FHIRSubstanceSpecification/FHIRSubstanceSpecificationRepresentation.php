@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,19 +71,19 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement imple
 {
     /**
      * The type of structure (e.g. Full, Partial, Representative).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The structural representation as text string in a format e.g. InChI, SMILES, MOLFILE, CDX.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $representation = null;
 
     /**
      * An attached file with the structural representation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $attachment = null;
 
@@ -94,7 +94,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement imple
 
     /**
      * The type of structure (e.g. Full, Partial, Representative).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement imple
 
     /**
      * The type of structure (e.g. Full, Partial, Representative).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement imple
 
     /**
      * The structural representation as text string in a format e.g. InChI, SMILES, MOLFILE, CDX.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRepresentation()
     {
@@ -123,7 +123,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement imple
 
     /**
      * The structural representation as text string in a format e.g. InChI, SMILES, MOLFILE, CDX.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $representation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $representation
      * @return $this
      */
     public function setRepresentation($representation)
@@ -134,7 +134,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement imple
 
     /**
      * An attached file with the structural representation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getAttachment()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement imple
 
     /**
      * An attached file with the structural representation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $attachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $attachment
      * @return $this
      */
     public function setAttachment($attachment)

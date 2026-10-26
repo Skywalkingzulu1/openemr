@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 - 2026 <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Telemetry;
+namespace DCL\Telemetry;
 
-use OpenEMR\Common\Database\DatabaseQueryTrait;
+use DCL\Common\Database\DatabaseQueryTrait;
 
 class TelemetryRepository
 {

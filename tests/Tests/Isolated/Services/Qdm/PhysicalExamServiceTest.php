@@ -4,22 +4,22 @@
  * Physical exam results: a number keeps its decimals; anything else is the exam's
  * coded result, or no result, never a quantity without a value.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Qdm;
+namespace DCL\Tests\Isolated\Services\Qdm;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\Code;
-use OpenEMR\Cqm\Qdm\BaseTypes\Quantity;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\Qdm\QdmRequestSome;
-use OpenEMR\Services\Qdm\Services\PhysicalExamService;
+use DCL\Cqm\Qdm\BaseTypes\Code;
+use DCL\Cqm\Qdm\BaseTypes\Quantity;
+use DCL\Services\CodeTypesService;
+use DCL\Services\Qdm\QdmRequestSome;
+use DCL\Services\Qdm\Services\PhysicalExamService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

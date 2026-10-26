@@ -3,7 +3,7 @@
 /**
  * KeyVersion enum
  *
- * Defines encryption algorithm versions used by OpenEMR's CryptoGen class.
+ * Defines encryption algorithm versions used by DCL's CryptoGen class.
  * This versioning system allows for algorithm improvements while maintaining
  * backwards compatibility for decrypting data encrypted with older versions.
  *
@@ -16,14 +16,14 @@
  * - Versions 1-4: Keys stored as base64 on drive (unencrypted)
  * - Versions 5-7: Keys encrypted using database keys before drive storage
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Crypto;
+namespace DCL\Common\Crypto;
 
 enum KeyVersion: int
 {

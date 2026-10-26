@@ -3,25 +3,25 @@
 /**
  * PractitionerRoleService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\BaseValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\BaseValidator;
+use DCL\Validators\ProcessingResult;
 
 class PractitionerRoleService extends BaseService
 {
@@ -116,10 +116,10 @@ class PractitionerRoleService extends BaseService
     {
         $result = new ProcessingResult();
 
-        // Accept any resolved numeric id. We don't enforce > 0 because OpenEMR test
+        // Accept any resolved numeric id. We don't enforce > 0 because DCL test
         // fixtures use explicit negative ids (e.g. users.id = -1) and the actual
         // sanity check is whether the FHIR uuid resolved to a row at all — that
-        // happens upstream in FhirPractitionerRoleService::insertOpenEMRRecord which
+        // happens upstream in FhirPractitionerRoleService::insertDCLRecord which
         // returns null on lookup failure.
         $providerId = $data['provider_id'] ?? null;
         $facilityId = $data['facility_id'] ?? null;
@@ -276,7 +276,7 @@ class PractitionerRoleService extends BaseService
             });
 
             $result->addData(['uuid' => $uuid]);
-        } catch (\RuntimeException | \OpenEMR\Common\Database\SqlQueryException $e) {
+        } catch (\RuntimeException | \DCL\Common\Database\SqlQueryException $e) {
             $this->getLogger()->error('PractitionerRole update failed', ['uuid' => $uuid, 'exception' => $e]);
             $result->addInternalError('PractitionerRole could not be updated');
         }

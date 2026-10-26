@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\DecisionSupportInterventionEntity;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\EvidenceBasedDSIServiceEntity;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\PredictiveDSIServiceEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Database\QueryUtils;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\DecisionSupportInterventionEntity;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\EvidenceBasedDSIServiceEntity;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\PredictiveDSIServiceEntity;
 
 class DecisionSupportInterventionService extends BaseService
 {

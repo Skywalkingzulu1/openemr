@@ -6,10 +6,10 @@ chdir(dirname(__DIR__, 2));
 require_once 'vendor/autoload.php';
 
 use Http\Discovery\Psr17Factory;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\PaymentProcessing\Rainforest\Apis\GetPayinComponentParameters;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\PaymentProcessing\Rainforest\Apis\GetPayinComponentParameters;
 
 $req = (new Psr17Factory())->createServerRequestFromGlobals();
 $csrfToken = $req->getHeaderLine('X-CSRF-TOKEN');

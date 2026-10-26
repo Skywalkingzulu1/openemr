@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaimResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -71,25 +71,25 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 {
     /**
      * A number to uniquely identify a note entry.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $number = null;
 
     /**
      * The business purpose of the note text.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRNoteType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRNoteType
      */
     public $type = null;
 
     /**
      * The explanation or description associated with the processing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * A code to define the language used in the text of the note.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $language = null;
 
@@ -100,7 +100,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * A number to uniquely identify a note entry.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getNumber()
     {
@@ -109,7 +109,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * A number to uniquely identify a note entry.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $number
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $number
      * @return $this
      */
     public function setNumber($number)
@@ -120,7 +120,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * The business purpose of the note text.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRNoteType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRNoteType
      */
     public function getType()
     {
@@ -129,7 +129,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * The business purpose of the note text.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRNoteType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRNoteType $type
      * @return $this
      */
     public function setType($type)
@@ -140,7 +140,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * The explanation or description associated with the processing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -149,7 +149,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * The explanation or description associated with the processing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -160,7 +160,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * A code to define the language used in the text of the note.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguage()
     {
@@ -169,7 +169,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement implements \JsonS
 
     /**
      * A code to define the language used in the text of the note.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $language
      * @return $this
      */
     public function setLanguage($language)

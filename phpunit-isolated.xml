@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-OpenEMR has two different kinds of tests:
+DCL has two different kinds of tests:
 - "Isolated tests": Tests that run without secondary services, a data layer or significant initialization requirements
 - "Tests": Tests that require a database and initialization before they can run or pass.
 
@@ -29,7 +29,7 @@ This file configures the kind that does not require initialization.
          testdox="false">
 
   <extensions>
-    <bootstrap class="OpenEMR\PHPUnit\Extension" />
+    <bootstrap class="DCL\PHPUnit\Extension" />
   </extensions>
 
   <php>

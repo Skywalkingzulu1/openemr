@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubscription;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubscription;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubscription;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system can take an appropriate action.
@@ -71,25 +71,25 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * The type of channel to send notifications on.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSubscriptionChannelType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSubscriptionChannelType
      */
     public $type = null;
 
     /**
      * The url that describes the actual end-point to send messages to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $endpoint = null;
 
     /**
      * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification. The mime type "text/plain" may also be used for Email and SMS subscriptions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $payload = null;
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $header = [];
 
@@ -100,7 +100,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The type of channel to send notifications on.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSubscriptionChannelType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSubscriptionChannelType
      */
     public function getType()
     {
@@ -109,7 +109,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The type of channel to send notifications on.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSubscriptionChannelType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSubscriptionChannelType $type
      * @return $this
      */
     public function setType($type)
@@ -120,7 +120,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The url that describes the actual end-point to send messages to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getEndpoint()
     {
@@ -129,7 +129,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The url that describes the actual end-point to send messages to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $endpoint
      * @return $this
      */
     public function setEndpoint($endpoint)
@@ -140,7 +140,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification. The mime type "text/plain" may also be used for Email and SMS subscriptions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getPayload()
     {
@@ -149,7 +149,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification. The mime type "text/plain" may also be used for Email and SMS subscriptions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $payload
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $payload
      * @return $this
      */
     public function setPayload($payload)
@@ -160,7 +160,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getHeader()
     {
@@ -169,7 +169,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Additional headers / information to send as part of the notification.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $header
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $header
      * @return $this
      */
     public function addHeader($header)

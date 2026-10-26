@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR Container Functionality Test Runner
+# DCL Container Functionality Test Runner
 # ============================================================================
 # Wrapper that runs the container_benchmarking test_suite.sh for a given
-# OpenEMR container type (release, binary, flex). Used by CI to ensure all
+# DCL container type (release, binary, flex). Used by CI to ensure all
 # three container variants perform as expected.
 #
 # Usage:
@@ -17,7 +17,7 @@
 #   ./test_functionality.sh flex --verbose
 #
 # Environment (optional):
-#   FLEX_REPOSITORY       - Git URL for flex container (default: openemr/openemr)
+#   FLEX_REPOSITORY       - Git URL for flex container (default: DCL/DCL)
 #   FLEX_REPOSITORY_BRANCH - Branch for flex container (default: master)
 # ============================================================================
 
@@ -53,16 +53,16 @@ shift
 case "${VERSION}" in
     release)
         export DOCKERFILE_CONTEXT="${DOCKERFILE_CONTEXT:-${SCRIPT_DIR}/../../docker/release}"
-        export IMAGE_TAG="${IMAGE_TAG:-openemr:release-test}"
+        export IMAGE_TAG="${IMAGE_TAG:-DCL:release-test}"
         ;;
     binary)
         export DOCKERFILE_CONTEXT="${DOCKERFILE_CONTEXT:-${SCRIPT_DIR}/../../docker/binary}"
-        export IMAGE_TAG="${IMAGE_TAG:-openemr:binary-test}"
+        export IMAGE_TAG="${IMAGE_TAG:-DCL:binary-test}"
         ;;
     flex)
         export DOCKERFILE_CONTEXT="${DOCKERFILE_CONTEXT:-${SCRIPT_DIR}/../../docker/flex}"
-        export IMAGE_TAG="${IMAGE_TAG:-openemr:flex-test}"
-        export FLEX_REPOSITORY="${FLEX_REPOSITORY:-https://github.com/openemr/openemr.git}"
+        export IMAGE_TAG="${IMAGE_TAG:-DCL:flex-test}"
+        export FLEX_REPOSITORY="${FLEX_REPOSITORY:-https://github.com/DCL/DCL.git}"
         export FLEX_REPOSITORY_BRANCH="${FLEX_REPOSITORY_BRANCH:-master}"
         ;;
     *)

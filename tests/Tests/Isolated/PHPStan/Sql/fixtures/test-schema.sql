@@ -1,7 +1,7 @@
 -- Minimal schema fixture for SqlReservedWordRuleTest.
 -- Provides identifiers that collide with MySQL 8+ reserved words so the
 -- rule's (reserved ∩ schema-identifier) gate can fire deterministically
--- without depending on OpenEMR's full sql/database.sql.
+-- without depending on DCL's full sql/database.sql.
 
 DROP TABLE IF EXISTS `contact_telecom`;
 CREATE TABLE `contact_telecom` (

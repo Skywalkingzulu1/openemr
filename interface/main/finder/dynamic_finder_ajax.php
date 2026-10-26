@@ -5,27 +5,27 @@
  *
  * Sponsored by David Eschelbacher, MD
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2012 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019, 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\BoundFilter;
-use OpenEMR\Events\PatientFinder\ColumnFilter;
-use OpenEMR\Events\PatientFinder\PatientFinderFilterEvent;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\BoundFilter;
+use DCL\Events\PatientFinder\ColumnFilter;
+use DCL\Events\PatientFinder\PatientFinderFilterEvent;
 
 // Align the permission check with the Patient Finder page (`patients/demo`
 // per `standard.json`). The AJAX endpoint reads the same `patient_data`
@@ -36,7 +36,7 @@ if (!AclMain::aclCheckCore('patients', 'demo')) {
 
 // Not checking csrf since it breaks when opening up a patient in a new frame.
 //  Also note that csrf checking is not needed in this script because of following 2 reasons.
-//  1. cookie_samesite in OpenEMR is set to 'Strict', which is an effective security measure to stop csrf vulnerabilities.
+//  1. cookie_samesite in DCL is set to 'Strict', which is an effective security measure to stop csrf vulnerabilities.
 //  2. Additionally, in this script there are no state changes, thus it is not even sensitive to csrf vulnerabilities.
 
 $popup = empty($_REQUEST['popup']) ? 0 : 1;

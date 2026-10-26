@@ -5,7 +5,7 @@
  *
  * Copyright (C) 2013-2016 Rod Roark <rod@sunsetsystems.com>
  * Copyright (C) 2017-2020 Jerry Padgett <sjpadgett@gmail.com>
- * Copyright (C) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * Copyright (C) 2026 DCL Inc <https://DCL.com/>
  *
  * LICENSE: This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,18 +18,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://opensource.org/licenses/gpl-license.php>.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @author  Jerry Padgett <sjpadgett@gmail.com>
- * @author  Michael A. Smith <michael@opencoreemr.com>
+ * @author  Michael A. Smith <michael@DCL.com>
  * 07-2015: Ensoftek: Edited for MU2 170.314(b)(5)(A)
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 use phpseclib3\Net\SFTP;
 
 $rhl7_return = [];

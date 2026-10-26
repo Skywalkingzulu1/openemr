@@ -2,8 +2,8 @@
 # Container Benchmarking Docker Compose Configuration
 # ============================================================================
 # This compose file sets up the benchmarking environment with:
-#   - Two MySQL databases (one for each OpenEMR container to avoid conflicts)
-#   - Two OpenEMR containers to compare (Image A and Image B)
+#   - Two MySQL databases (one for each DCL container to avoid conflicts)
+#   - Two DCL containers to compare (Image A and Image B)
 #   - Load generator container (for performance testing)
 #
 # Usage: See README.md for instructions
@@ -19,9 +19,9 @@ services:
     container_name: benchmark-load-generator
     command: sh -c "apk add --no-cache apache2-utils curl && tail -f /dev/null"
     depends_on:
-      openemr-image-a:
+      DCL-image-a:
         condition: service_healthy
-      openemr-image-b:
+      DCL-image-b:
         condition: service_healthy
     networks:
     - benchmark-network
@@ -72,7 +72,7 @@ services:
 
   # Image A: Local build from repository
   # This container uses the image built from the local Dockerfile
-  openemr-image-a:
+  DCL-image-a:
     build:
       context: ${IMAGE_A_CONTEXT:-../../docker/release}
       dockerfile: Dockerfile
@@ -83,9 +83,9 @@ services:
     environment:
       MYSQL_HOST: mysql-a
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: pass
     ports:
@@ -102,8 +102,8 @@ services:
 
   # Image B: Public Docker Hub image
   # This container uses the image from Docker Hub
-  openemr-image-b:
-    image: ${IMAGE_B_IMAGE:-openemr/openemr:8.1.0}
+  DCL-image-b:
+    image: ${IMAGE_B_IMAGE:-DCL/DCL:8.1.0}
     container_name: benchmark-image-b
     depends_on:
       mysql-b:
@@ -111,9 +111,9 @@ services:
     environment:
       MYSQL_HOST: mysql-b
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
-      MYSQL_DATABASE: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
+      MYSQL_DATABASE: DCL
       OE_USER: admin
       OE_PASS: pass
     ports:

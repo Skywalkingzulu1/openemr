@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasureReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
@@ -71,25 +71,25 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * The meaning of the population group as defined in the measure definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The populations that make up the population group, one for each type of population appropriate for the measure.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation[]
      */
     public $population = [];
 
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $measureScore = null;
 
     /**
      * When a measure includes multiple stratifiers, there will be a stratifier group for each stratifier defined by the measure.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier[]
      */
     public $stratifier = [];
 
@@ -100,7 +100,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The meaning of the population group as defined in the measure definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The meaning of the population group as defined in the measure definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The populations that make up the population group, one for each type of population appropriate for the measure.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation[]
      */
     public function getPopulation()
     {
@@ -129,7 +129,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The populations that make up the population group, one for each type of population appropriate for the measure.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation $population
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation $population
      * @return $this
      */
     public function addPopulation($population)
@@ -140,7 +140,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMeasureScore()
     {
@@ -149,7 +149,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $measureScore
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $measureScore
      * @return $this
      */
     public function setMeasureScore($measureScore)
@@ -160,7 +160,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * When a measure includes multiple stratifiers, there will be a stratifier group for each stratifier defined by the measure.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier[]
      */
     public function getStratifier()
     {
@@ -169,7 +169,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * When a measure includes multiple stratifiers, there will be a stratifier group for each stratifier defined by the measure.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier $stratifier
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier $stratifier
      * @return $this
      */
     public function addStratifier($stratifier)

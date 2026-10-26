@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describes validation requirements, source(s), status and dates for one or more elements.
@@ -72,85 +72,85 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * A resource that was validated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $target = [];
 
     /**
      * The fhirpath location(s) within the resource that was validated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $targetLocation = [];
 
     /**
      * The frequency with which the target must be validated (none; initial; periodic).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $need = null;
 
     /**
      * The validation status of the target (attested; validated; in process; requires revalidation; validation failed; revalidation failed).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStatus
      */
     public $status = null;
 
     /**
      * When the validation status was updated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $statusDate = null;
 
     /**
      * What the target is validated against (nothing; primary source; multiple sources).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $validationType = null;
 
     /**
      * The primary process by which the target is validated (edit check; value set; primary source; multiple sources; standalone; in context).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $validationProcess = [];
 
     /**
      * Frequency of revalidation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $frequency = null;
 
     /**
      * The date/time validation was last completed (including failed validations).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $lastPerformed = null;
 
     /**
      * The date when target is next validated, if appropriate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $nextScheduled = null;
 
     /**
      * The result if validation fails (fatal; warning; record only; none).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $failureAction = null;
 
     /**
      * Information about the primary source(s) involved in validation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultPrimarySource[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultPrimarySource[]
      */
     public $primarySource = [];
 
     /**
      * Information about the entity attesting to information.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
     public $attestation = null;
 
     /**
      * Information about the entity validating information.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultValidator[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultValidator[]
      */
     public $validator = [];
 
@@ -161,7 +161,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A resource that was validated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getTarget()
     {
@@ -170,7 +170,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A resource that was validated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $target
      * @return $this
      */
     public function addTarget($target)
@@ -181,7 +181,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The fhirpath location(s) within the resource that was validated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getTargetLocation()
     {
@@ -190,7 +190,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The fhirpath location(s) within the resource that was validated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $targetLocation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $targetLocation
      * @return $this
      */
     public function addTargetLocation($targetLocation)
@@ -201,7 +201,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The frequency with which the target must be validated (none; initial; periodic).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getNeed()
     {
@@ -210,7 +210,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The frequency with which the target must be validated (none; initial; periodic).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $need
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $need
      * @return $this
      */
     public function setNeed($need)
@@ -221,7 +221,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The validation status of the target (attested; validated; in process; requires revalidation; validation failed; revalidation failed).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStatus
      */
     public function getStatus()
     {
@@ -230,7 +230,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The validation status of the target (attested; validated; in process; requires revalidation; validation failed; revalidation failed).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -241,7 +241,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * When the validation status was updated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getStatusDate()
     {
@@ -250,7 +250,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * When the validation status was updated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $statusDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $statusDate
      * @return $this
      */
     public function setStatusDate($statusDate)
@@ -261,7 +261,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * What the target is validated against (nothing; primary source; multiple sources).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValidationType()
     {
@@ -270,7 +270,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * What the target is validated against (nothing; primary source; multiple sources).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $validationType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $validationType
      * @return $this
      */
     public function setValidationType($validationType)
@@ -281,7 +281,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The primary process by which the target is validated (edit check; value set; primary source; multiple sources; standalone; in context).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getValidationProcess()
     {
@@ -290,7 +290,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The primary process by which the target is validated (edit check; value set; primary source; multiple sources; standalone; in context).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $validationProcess
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $validationProcess
      * @return $this
      */
     public function addValidationProcess($validationProcess)
@@ -301,7 +301,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Frequency of revalidation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getFrequency()
     {
@@ -310,7 +310,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Frequency of revalidation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $frequency
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $frequency
      * @return $this
      */
     public function setFrequency($frequency)
@@ -321,7 +321,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date/time validation was last completed (including failed validations).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getLastPerformed()
     {
@@ -330,7 +330,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date/time validation was last completed (including failed validations).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $lastPerformed
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $lastPerformed
      * @return $this
      */
     public function setLastPerformed($lastPerformed)
@@ -341,7 +341,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date when target is next validated, if appropriate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getNextScheduled()
     {
@@ -350,7 +350,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date when target is next validated, if appropriate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $nextScheduled
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $nextScheduled
      * @return $this
      */
     public function setNextScheduled($nextScheduled)
@@ -361,7 +361,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The result if validation fails (fatal; warning; record only; none).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFailureAction()
     {
@@ -370,7 +370,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The result if validation fails (fatal; warning; record only; none).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $failureAction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $failureAction
      * @return $this
      */
     public function setFailureAction($failureAction)
@@ -381,7 +381,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information about the primary source(s) involved in validation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultPrimarySource[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultPrimarySource[]
      */
     public function getPrimarySource()
     {
@@ -390,7 +390,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information about the primary source(s) involved in validation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultPrimarySource $primarySource
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultPrimarySource $primarySource
      * @return $this
      */
     public function addPrimarySource($primarySource)
@@ -401,7 +401,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information about the entity attesting to information.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultAttestation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
     public function getAttestation()
     {
@@ -410,7 +410,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information about the entity attesting to information.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultAttestation $attestation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultAttestation $attestation
      * @return $this
      */
     public function setAttestation($attestation)
@@ -421,7 +421,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information about the entity validating information.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultValidator[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultValidator[]
      */
     public function getValidator()
     {
@@ -430,7 +430,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information about the entity validating information.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultValidator $validator
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRVerificationResult\FHIRVerificationResultValidator $validator
      * @return $this
      */
     public function addValidator($validator)

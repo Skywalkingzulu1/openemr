@@ -16,11 +16,11 @@
  * Copyright (C) 2022 Discover and Change, Inc.
 
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @copyright 2022 Discover and Change, Inc.
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 
@@ -103,7 +103,7 @@ class AMC_315g_7_Numerator implements AmcFilterIF, IAmcItemizedReport
         }
         if (!empty($amcElementElecSent) && !(empty($amcElementConfirmed))) {
             // we check the problems, allergies, and medications pieces at the time we generate the send_sum_elec_amc
-            // when OpenEMR is used to generate the CCDA
+            // when DCL is used to generate the CCDA
             // If a provider is marking these items off on their Referral Form (in transactions) and using some OTHER
             // 2015 CEHRT product for generating / transmitting the CCDA (such as a smart app), or downloading the CCDA
             // and emailing it or some other mechanism, then they are responsible for checking that the CCDA had the

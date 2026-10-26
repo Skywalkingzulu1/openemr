@@ -21,6 +21,6 @@ setup() {
     assert_script_contains "${SCRIPT_DIR}/pcov.sh" 'pcov.directory'
 }
 
-@test "flex pcov.sh: pcov.directory openemr" {
+@test "flex pcov.sh: pcov.directory DCL" {
     assert_script_contains "${SCRIPT_DIR}/pcov.sh" 'pcov.directory'
 }

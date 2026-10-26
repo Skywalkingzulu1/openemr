@@ -32,32 +32,32 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-dorn/ModuleManagerListener.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\:\\:processMessageStoreList\\(\\) never returns false so it can be removed from the return type\\.$#',
+    'message' => '#^Method DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\:\\:processMessageStoreList\\(\\) never returns false so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Controller/RCFaxClient.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\:\\:processMessageStoreList\\(\\) never returns string so it can be removed from the return type\\.$#',
+    'message' => '#^Method DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\:\\:processMessageStoreList\\(\\) never returns string so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Controller/RCFaxClient.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method OpenEMR\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\EtherFaxClient\\:\\:clientHttpPost\\(\\) never returns bool so it can be removed from the return type\\.$#',
+    'message' => '#^Method DCL\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\EtherFaxClient\\:\\:clientHttpPost\\(\\) never returns bool so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/EtherFax/EtherFaxClient.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method OpenEMR\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\EtherFaxClient\\:\\:clientHttpPost\\(\\) never returns string so it can be removed from the return type\\.$#',
+    'message' => '#^Method DCL\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\EtherFaxClient\\:\\:clientHttpPost\\(\\) never returns string so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/EtherFax/EtherFaxClient.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method Juggernaut\\\\OpenEMR\\\\Modules\\\\PriorAuthModule\\\\Controller\\\\ListAuthorizations\\:\\:formPriorAuth\\(\\) never returns false so it can be removed from the return type\\.$#',
+    'message' => '#^Method Juggernaut\\\\DCL\\\\Modules\\\\PriorAuthModule\\\\Controller\\\\ListAuthorizations\\:\\:formPriorAuth\\(\\) never returns false so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/src/Controller/ListAuthorizations.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method Juggernaut\\\\OpenEMR\\\\Modules\\\\PriorAuthModule\\\\Controller\\\\ListAuthorizations\\:\\:getAuthsFromModulePriorAuth\\(\\) never returns false so it can be removed from the return type\\.$#',
+    'message' => '#^Method Juggernaut\\\\DCL\\\\Modules\\\\PriorAuthModule\\\\Controller\\\\ListAuthorizations\\:\\:getAuthsFromModulePriorAuth\\(\\) never returns false so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/src/Controller/ListAuthorizations.php',
 ];
@@ -77,12 +77,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../library/lab.inc.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceRequestService\\:\\:mapOrderTypeToCategory\\(\\) never returns null so it can be removed from the return type\\.$#',
+    'message' => '#^Method DCL\\\\Services\\\\FHIR\\\\FhirServiceRequestService\\:\\:mapOrderTypeToCategory\\(\\) never returns null so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirServiceRequestService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Method OpenEMR\\\\Tests\\\\Services\\\\FHIR\\\\FhirPatientServiceMappingTest\\:\\:findIdentiferCodeValue\\(\\) never returns null so it can be removed from the return type\\.$#',
+    'message' => '#^Method DCL\\\\Tests\\\\Services\\\\FHIR\\\\FhirPatientServiceMappingTest\\:\\:findIdentiferCodeValue\\(\\) never returns null so it can be removed from the return type\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirPatientServiceMappingTest.php',
 ];

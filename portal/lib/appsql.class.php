@@ -3,17 +3,17 @@
 /**
  * Patient Portal
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2019 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 class ApplicationTable
 {
@@ -124,7 +124,7 @@ class ApplicationTable
      * @param array $auditvals
      *            Parameters of audit
      * @param bool $log
-     *            openemr Logging True / False
+     *            DCL Logging True / False
      * @param bool $error
      *            Error Display True / False
      * @param mixed $type audit array params for portal audits
@@ -239,7 +239,7 @@ class ApplicationTable
      * Function errorHandler
      * All error display and log
      * Display the Error, Line and File
-     * Same behavior of HelpfulDie function in OpenEMR
+     * Same behavior of HelpfulDie function in DCL
      * Path /library/sql.inc.php
      *
      * @param \Throwable $e
@@ -361,7 +361,7 @@ class ApplicationTable
     }
 
     /*
-     * Using generate id function from OpenEMR sql.inc.php library file
+     * Using generate id function from DCL sql.inc.php library file
      * @param string $seqname table name containing sequence (default is adodbseq)
      * @param integer $startID id to start with for a new sequence (default is 1)
      * @return integer returns the sequence integer

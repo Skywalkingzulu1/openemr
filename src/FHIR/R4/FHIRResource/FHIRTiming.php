@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Specifies an event that may occur multiple times. Timing schedules are used to record when things are planned, expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds, and may be used for reporting the schedule to which past regular activities were carried out.
@@ -72,19 +72,19 @@ class FHIRTiming extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies specific times when the event occurs.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime[]
      */
     public $event = [];
 
     /**
      * A set of rules that describe when the event is scheduled.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming\FHIRTimingRepeat
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming\FHIRTimingRepeat
      */
     public $repeat = null;
 
     /**
      * A code for the timing schedule (or just text in code.text). Some codes such as BID are ubiquitous, but many institutions define their own additional codes. If a code is provided, the code is understood to be a complete statement of whatever is specified in the structured timing data, and either the code or the data may be used to interpret the Timing, with the exception that .repeat.bounds still applies over the code (and is not contained in the code).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
@@ -95,7 +95,7 @@ class FHIRTiming extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Identifies specific times when the event occurs.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime[]
      */
     public function getEvent()
     {
@@ -104,7 +104,7 @@ class FHIRTiming extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Identifies specific times when the event occurs.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $event
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $event
      * @return $this
      */
     public function addEvent($event)
@@ -115,7 +115,7 @@ class FHIRTiming extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A set of rules that describe when the event is scheduled.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming\FHIRTimingRepeat
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming\FHIRTimingRepeat
      */
     public function getRepeat()
     {
@@ -124,7 +124,7 @@ class FHIRTiming extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A set of rules that describe when the event is scheduled.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming\FHIRTimingRepeat $repeat
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming\FHIRTimingRepeat $repeat
      * @return $this
      */
     public function setRepeat($repeat)
@@ -135,7 +135,7 @@ class FHIRTiming extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A code for the timing schedule (or just text in code.text). Some codes such as BID are ubiquitous, but many institutions define their own additional codes. If a code is provided, the code is understood to be a complete statement of whatever is specified in the structured timing data, and either the code or the data may be used to interpret the Timing, with the exception that .repeat.bounds still applies over the code (and is not contained in the code).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -144,7 +144,7 @@ class FHIRTiming extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A code for the timing schedule (or just text in code.text). Some codes such as BID are ubiquitous, but many institutions define their own additional codes. If a code is provided, the code is understood to be a complete statement of whatever is specified in the structured timing data, and either the code or the data may be used to interpret the Timing, with the exception that .repeat.bounds still applies over the code (and is not contained in the code).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)

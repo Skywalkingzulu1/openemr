@@ -3,26 +3,26 @@
 /**
  * DocumentService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 require_once(__DIR__ . "/../../controllers/C_Document.class.php");
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Validators\ProcessingResult;
 
 class DocumentService extends BaseService
 {
@@ -36,7 +36,7 @@ class DocumentService extends BaseService
 
     /**
      * Retrieves a browser download link to retrieve a document given a document id.  The link assumes a valid
-     * OpenEMR session
+     * DCL session
      * @return string The absolute path download link to retrieve a document
      */
     public function getDownloadLink($documentId, $pid = null): string
@@ -128,13 +128,13 @@ class DocumentService extends BaseService
     {
         // Ensure filetype is allowed
         if (OEGlobalsBag::getInstance()->getBoolean('secure_upload') && !isWhiteFile($fileData["tmp_name"])) {
-            error_log("OpenEMR API Error: Attempt to upload insecure patient document was declined");
+            error_log("DCL API Error: Attempt to upload insecure patient document was declined");
             return false;
         }
 
         // Ensure category exists
         if (!$this->isValidPath($path)) {
-            error_log("OpenEMR API Error: Attempt to upload patient document to category that did not exist was declined");
+            error_log("DCL API Error: Attempt to upload patient document to category that did not exist was declined");
             return false;
         }
 
@@ -144,15 +144,15 @@ class DocumentService extends BaseService
         // Store file in variable
         $file = file_get_contents($fileData["tmp_name"]);
         if (empty($file)) {
-            error_log("OpenEMR API Error: Patient document was empty, so declined request");
+            error_log("DCL API Error: Patient document was empty, so declined request");
             return false;
         }
 
-        // Store the document in OpenEMR
+        // Store the document in DCL
         $doc = new \Document();
         $ret = $doc->createDocument($pid, $categoryId, $fileData["name"], mime_content_type($fileData["tmp_name"]), $file, eid: $eid);
         if (!empty($ret)) {
-            error_log("OpenEMR API Error: There was an error in attempt to upload a patient document");
+            error_log("DCL API Error: There was an error in attempt to upload a patient document");
             return false;
         }
 
@@ -169,7 +169,7 @@ class DocumentService extends BaseService
         $obj->onReturnRetrieveKey();
         $document = $obj->retrieve_action($pid, $did, true, true, true);
         if (empty($document)) {
-            error_log("OpenEMR API Error: Requested patient document was empty, so declined request");
+            error_log("DCL API Error: Requested patient document was empty, so declined request");
             return false;
         }
 

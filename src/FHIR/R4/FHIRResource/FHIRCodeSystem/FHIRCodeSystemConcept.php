@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCodeSystem;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -71,37 +71,37 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * A code - a text symbol - that uniquely identifies the concept within the code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * A human readable string that is the recommended default way to present this concept to a user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $definition = null;
 
     /**
      * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemDesignation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemDesignation[]
      */
     public $designation = [];
 
     /**
      * A property value for this concept.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty1[]
      */
     public $property = [];
 
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     public $concept = [];
 
@@ -112,7 +112,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A code - a text symbol - that uniquely identifies the concept within the code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -121,7 +121,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A code - a text symbol - that uniquely identifies the concept within the code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -132,7 +132,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A human readable string that is the recommended default way to present this concept to a user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -141,7 +141,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A human readable string that is the recommended default way to present this concept to a user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -152,7 +152,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDefinition()
     {
@@ -161,7 +161,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $definition
      * @return $this
      */
     public function setDefinition($definition)
@@ -172,7 +172,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemDesignation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemDesignation[]
      */
     public function getDesignation()
     {
@@ -181,7 +181,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
      * @return $this
      */
     public function addDesignation($designation)
@@ -192,7 +192,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A property value for this concept.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty1[]
      */
     public function getProperty()
     {
@@ -201,7 +201,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A property value for this concept.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty1 $property
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty1 $property
      * @return $this
      */
     public function addProperty($property)
@@ -212,7 +212,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     public function getConcept()
     {
@@ -221,7 +221,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept $concept
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept $concept
      * @return $this
      */
     public function addConcept($concept)

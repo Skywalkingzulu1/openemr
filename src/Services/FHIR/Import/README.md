@@ -4,10 +4,10 @@ Counterpart to `contrib/util/ccda_import/import_ccda.php` for the FHIR path.
 Walks Synthea FHIR R4 Bundle `*.json` files and POSTs each entry to the
 per-resource FHIR write endpoints added in #13281.
 
-- CLI entry: `bin/console openemr:fhir-import`
+- CLI entry: `bin/console DCL:fhir-import`
   (`src/Common/Command/FhirImport.php`).
 - Core: `src/Services/FHIR/Import/FhirBundleImporter.php`.
-- Driven by `openemr-cmd irp --format=fhir` (openemr-devops repo), which
+- Driven by `DCL-cmd irp --format=fhir` (DCL-devops repo), which
   reaches the command via
   `docker/flex/utilities/devtoolsLibrary.source::importRandomPatients`.
 
@@ -27,7 +27,7 @@ logical-identifier form (`{identifier: {system, value}}` with no `reference`
 string). The map is populated with all three keys per resource at POST time.
 
 A **peelable transform layer** in `FhirBundleImporter` works around each
-misfit between Synthea's output and OpenEMR's current write validators. Every
+misfit between Synthea's output and DCL's current write validators. Every
 transform is tagged with its checklist item in this file (e.g. `[README A1]`);
 when the upstream fix lands, a single method plus its registry entry in the
 constructor can be deleted and the next irp run exercises the real path.
@@ -38,7 +38,7 @@ Log: `/tmp/fhir_import.log` (absolute path so the write works under
 
 ## FHIR irp readiness checklist
 
-Items marked ✅ have a working peelable transform shim; the OpenEMR change can
+Items marked ✅ have a working peelable transform shim; the DCL change can
 land independently, and when it does we delete the transform. Items marked ⬜
 are fully open — Synthea produces resources that fail silently (skipped) or
 noisily (counted under `failed`).
@@ -136,9 +136,9 @@ land in the `skipped (unsupported)` counter, not `failed`):
   vital-signs is caught by the LOINC tier). Re-include categories as those
   write paths land.
 
-### D. Likely permanent — Synthea → OpenEMR transform needed on the client side
+### D. Likely permanent — Synthea → DCL transform needed on the client side
 
-These enforce OpenEMR semantics (and in Organization's case likely
+These enforce DCL semantics (and in Organization's case likely
 ONC-certification boundaries) that will not and should not relax to accept
 Synthea's shape. The transforms here are expected to live on indefinitely.
 
@@ -152,7 +152,7 @@ Synthea's shape. The transforms here are expected to live on indefinitely.
   carry `identifier[system=http://hl7.org/fhir/sid/us-npi]`, so no mint is
   needed on the client side today, but the write path's practitioner
   identifier handling is still coupled to Synthea's exact
-  `name[0].use="official"` fix (A2). If OpenEMR's practitioner write adds
+  `name[0].use="official"` fix (A2). If DCL's practitioner write adds
   its own NPI requirements analogous to Organization's, a mint transform
   will join D1 here.
 

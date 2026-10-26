@@ -2,40 +2,40 @@
 <?php
 
 /**
- * Print the newest openemr-static-binary-forge release the binary Docker
- * image can be bumped to, as `<OPENEMR_VERSION>/<BINARY_RELEASE_DATE>`
+ * Print the newest DCL-static-binary-forge release the binary Docker
+ * image can be bumped to, as `<DCL_VERSION>/<BINARY_RELEASE_DATE>`
  * (e.g. `8_3_0/08232026`).
  *
  * This is the source resource for .github/updatecli/binary-image.yaml.
  * When nothing newer qualifies it prints the pin already in the
  * Dockerfile, so updatecli sees no change and writes nothing.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-// OpenEMR\Release\ classes live under autoload-dev so composer-require-checker
+// DCL\Release\ classes live under autoload-dev so composer-require-checker
 // does not demand conductor-only deps in production. Anything invoking this
 // script needs a `composer install` that includes dev dependencies.
-if (!class_exists(\OpenEMR\Release\BinaryForgeResolver::class)) {
+if (!class_exists(\DCL\Release\BinaryForgeResolver::class)) {
     fwrite(
         STDERR,
-        "OpenEMR\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
+        "DCL\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
     );
     exit(2);
 }
 
-use OpenEMR\Release\BinaryForgePinReader;
-use OpenEMR\Release\BinaryForgeResolver;
-use OpenEMR\Release\GitHubApi;
-use OpenEMR\Release\OptionReader;
+use DCL\Release\BinaryForgePinReader;
+use DCL\Release\BinaryForgeResolver;
+use DCL\Release\GitHubApi;
+use DCL\Release\OptionReader;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -128,7 +128,7 @@ use Symfony\Component\Console\SingleCommandApplication;
         // through to a silently wrong answer.
         $output->writeln(match ($field) {
             'pin' => (string)$resolved,
-            'version' => $resolved->openemrVersion,
+            'version' => $resolved->DCLVersion,
             'date' => $resolved->releaseDate,
         });
 

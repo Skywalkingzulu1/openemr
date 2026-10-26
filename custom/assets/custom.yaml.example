@@ -1,5 +1,5 @@
 ---
-# In the case that custom.yaml file found It's parse by \OpenEMR\Core\Header::includeAsset
+# In the case that custom.yaml file found It's parse by \DCL\Core\Header::includeAsset
 # after config/config.yaml. the structure of custom.yaml is equal to config.yaml.
 #
 # Use %KEY-NAME% in this file and it will be replaced with the value of

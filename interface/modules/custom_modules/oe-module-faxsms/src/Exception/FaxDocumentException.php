@@ -3,14 +3,14 @@
 /**
  * Exception thrown when fax document operations fail
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    SignalWire Integration
  * @copyright Copyright (c) 2025
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Exception;
+namespace DCL\Modules\FaxSMS\Exception;
 
 class FaxDocumentException extends FaxException
 {

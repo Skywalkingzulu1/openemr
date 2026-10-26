@@ -10,9 +10,9 @@
  * `constant.notFound`. This stub makes the names visible to static analysis
  * without changing runtime behavior — values are never read here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 defined("_ACO") || define("_ACO", "");

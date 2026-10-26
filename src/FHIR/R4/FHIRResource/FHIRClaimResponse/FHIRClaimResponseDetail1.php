@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaimResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -71,55 +71,55 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * When the value is a group code then this item collects a set of related claim details, otherwise this contains the product, service, drug or other billing code for the item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productOrService = null;
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $modifier = [];
 
     /**
      * The number of repetitions of a service or product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * If the item is not a group then this is the fee for the product or service, otherwise this is the total of the fees for the details of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $unitPrice = null;
 
     /**
      * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $factor = null;
 
     /**
      * The quantity times the unit price for an additional service or product or charge.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $net = null;
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $noteNumber = [];
 
     /**
      * The adjudication results.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public $adjudication = [];
 
     /**
      * The third-tier service adjudications for payor added services.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail1[]
      */
     public $subDetail = [];
 
@@ -130,7 +130,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * When the value is a group code then this item collects a set of related claim details, otherwise this contains the product, service, drug or other billing code for the item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductOrService()
     {
@@ -139,7 +139,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * When the value is a group code then this item collects a set of related claim details, otherwise this contains the product, service, drug or other billing code for the item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
      * @return $this
      */
     public function setProductOrService($productOrService)
@@ -150,7 +150,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getModifier()
     {
@@ -159,7 +159,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -170,7 +170,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of repetitions of a service or product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -179,7 +179,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of repetitions of a service or product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -190,7 +190,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * If the item is not a group then this is the fee for the product or service, otherwise this is the total of the fees for the details of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -199,7 +199,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * If the item is not a group then this is the fee for the product or service, otherwise this is the total of the fees for the details of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -210,7 +210,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFactor()
     {
@@ -219,7 +219,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $factor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $factor
      * @return $this
      */
     public function setFactor($factor)
@@ -230,7 +230,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The quantity times the unit price for an additional service or product or charge.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getNet()
     {
@@ -239,7 +239,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The quantity times the unit price for an additional service or product or charge.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $net
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $net
      * @return $this
      */
     public function setNet($net)
@@ -250,7 +250,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getNoteNumber()
     {
@@ -259,7 +259,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
      * @return $this
      */
     public function addNoteNumber($noteNumber)
@@ -270,7 +270,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The adjudication results.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public function getAdjudication()
     {
@@ -279,7 +279,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The adjudication results.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
      * @return $this
      */
     public function addAdjudication($adjudication)
@@ -290,7 +290,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The third-tier service adjudications for payor added services.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail1[]
      */
     public function getSubDetail()
     {
@@ -299,7 +299,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The third-tier service adjudications for payor added services.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail1 $subDetail
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail1 $subDetail
      * @return $this
      */
     public function addSubDetail($subDetail)

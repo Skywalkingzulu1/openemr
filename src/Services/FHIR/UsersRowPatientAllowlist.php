@@ -10,29 +10,29 @@
  * keeps the two services from drifting apart.
  *
  * The allowlist is deliberately narrow: any column not enumerated here
- * is dropped at the row boundary before it reaches parseOpenEMRRecord,
+ * is dropped at the row boundary before it reaches parseDCLRecord,
  * and any search parameter not enumerated here is dropped before it
  * reaches the SQL WHERE builder. New columns or search parameters added
  * downstream default to blocked for patient callers until explicitly
  * added here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 final class UsersRowPatientAllowlist
 {
     /**
      * Columns on the `users` row a patient caller may see, keyed by the
-     * OpenEMR column name each FHIR builder reads. Everything else is
-     * dropped before parseOpenEMRRecord runs — the empty guards in the
+     * DCL column name each FHIR builder reads. Everything else is
+     * dropped before parseDCLRecord runs — the empty guards in the
      * builder methods then omit the corresponding FHIR fields.
      *
      * Included:

@@ -2,15 +2,15 @@
 
 /**
  * Psr17Factory is a Decorator around an external PSR17 factory.  It allows us to easily swap the library out for another
- * if we need to and insulates OpenEMR from external changes.
- * @package openemr
- * @link      https://www.open-emr.org
+ * if we need to and insulates DCL from external changes.
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Http;
+namespace DCL\Common\Http;
 
 use Nyholm\Psr7\Factory\Psr17Factory as NyholmPsr17Factory;
 use Psr\Http\Message\RequestFactoryInterface;

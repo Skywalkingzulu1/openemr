@@ -3,9 +3,9 @@
 # Mock `gh` for BATS tests of create-release-tag.sh.
 #
 # The script under test makes two gh calls:
-#   1. gh release view <tag> --repo openemr/openemr    (idempotency
+#   1. gh release view <tag> --repo DCL/DCL    (idempotency
 #                                                       check)
-#   2. gh release create <tag> --repo openemr/openemr ...
+#   2. gh release create <tag> --repo DCL/DCL ...
 #                                                      (only if 1
 #                                                       returned
 #                                                       non-zero)

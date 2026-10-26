@@ -20,20 +20,20 @@
  * `FhirRouteAclEnforcementIsolatedTest`) sit in front of this as a
  * second gate with clearer error semantics.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\Services\FHIR\FhirPersonService;
-use OpenEMR\Services\FHIR\INonPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\FhirPersonService;
+use DCL\Services\FHIR\INonPatientCompartmentResourceService;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
 use PHPUnit\Framework\TestCase;
 
 class FhirPersonServiceNonPatientCompartmentIsolatedTest extends TestCase

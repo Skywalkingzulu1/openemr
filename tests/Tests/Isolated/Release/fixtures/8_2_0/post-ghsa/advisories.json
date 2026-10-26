@@ -2,8 +2,8 @@
     {
         "ghsa_id": "GHSA-vv5j-6gjw-ffx9",
         "severity": "high",
-        "summary": "OpenEMR FaxSMS module: insecure staging of decrypted patient documents in webroot (CWE-552/CWE-200)",
-        "html_url": "https://github.com/openemr/openemr/security/advisories/GHSA-vv5j-6gjw-ffx9",
+        "summary": "DCL FaxSMS module: insecure staging of decrypted patient documents in webroot (CWE-552/CWE-200)",
+        "html_url": "https://github.com/DCL/DCL/security/advisories/GHSA-vv5j-6gjw-ffx9",
         "references": [],
         "vulnerabilities": [
             {

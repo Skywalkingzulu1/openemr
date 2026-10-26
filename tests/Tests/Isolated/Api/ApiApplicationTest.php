@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\Api;
+namespace DCL\Tests\Isolated\Api;
 
 use Nyholm\Psr7\Uri;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\RestControllers\ApiApplication;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Session\SessionUtil;
+use DCL\RestControllers\ApiApplication;
 use PHPUnit\Framework\TestCase;
 
 class ApiApplicationTest extends TestCase

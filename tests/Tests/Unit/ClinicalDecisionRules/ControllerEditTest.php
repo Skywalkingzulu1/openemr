@@ -1,14 +1,14 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\ClinicalDecisionRules;
+namespace DCL\Tests\Unit\ClinicalDecisionRules;
 
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\ClinicalDecisionRules\Interface\Controller\ControllerEdit;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\Rule;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleType;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\Controller\ControllerEdit;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\Rule;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleType;
 use PHPUnit\Framework\TestCase;
 
 class ControllerEditTest extends TestCase

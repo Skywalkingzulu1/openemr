@@ -3,14 +3,14 @@
 {#
  # Menu loader.
  #
- # @package   OpenEMR
- # @link      https://www.open-emr.org
+ # @package   DCL
+ # @link      https://www.dcl.org
  # @author    Kevin Yeh <kevin.y@integralemr.com>
 # @author    Robert Down <robertdown@live.com>
 # @author    Brady Miller <brady.g.miller@gmail.com>
 # @copyright Copyright (c) 2016 Kevin Yeh <kevin.y@integralemr.com>
 # @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
-# @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+# @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 #}
 
 
@@ -114,7 +114,7 @@
     build_main_menu(menu_objects);
 
     /**
-     * Rebuild the main menu from the server without reloading OpenEMR, for a
+     * Rebuild the main menu from the server without reloading DCL, for a
      * module whose menu entries depend on something the user just changed.
      * Call it from any frame as top.refreshMainMenu(). Resolves to true when
      * the menu was replaced, false when it couldn't be fetched or built (the

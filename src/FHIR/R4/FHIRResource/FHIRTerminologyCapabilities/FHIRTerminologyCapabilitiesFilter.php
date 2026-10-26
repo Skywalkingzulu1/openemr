@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,13 +71,13 @@ class FHIRTerminologyCapabilitiesFilter extends FHIRBackboneElement implements \
 {
     /**
      * Code of the property supported.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * Operations supported for the property.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $op = [];
 
@@ -88,7 +88,7 @@ class FHIRTerminologyCapabilitiesFilter extends FHIRBackboneElement implements \
 
     /**
      * Code of the property supported.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRTerminologyCapabilitiesFilter extends FHIRBackboneElement implements \
 
     /**
      * Code of the property supported.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRTerminologyCapabilitiesFilter extends FHIRBackboneElement implements \
 
     /**
      * Operations supported for the property.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getOp()
     {
@@ -117,7 +117,7 @@ class FHIRTerminologyCapabilitiesFilter extends FHIRBackboneElement implements \
 
     /**
      * Operations supported for the property.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $op
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $op
      * @return $this
      */
     public function addOp($op)

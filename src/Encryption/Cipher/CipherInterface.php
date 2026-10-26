@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Encryption\Cipher;
+namespace DCL\Encryption\Cipher;
 
-use OpenEMR\Encryption\{
+use DCL\Encryption\{
     Ciphertext,
     Plaintext,
 };

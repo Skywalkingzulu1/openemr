@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Cqm\Qdm\BaseTypes;
+namespace DCL\Cqm\Qdm\BaseTypes;
 
 class Quantity extends AbstractType
 {

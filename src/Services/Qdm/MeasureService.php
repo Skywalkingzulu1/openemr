@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Services\Qdm;
+namespace DCL\Services\Qdm;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class MeasureService
 {
@@ -12,7 +12,7 @@ class MeasureService
 
     /**
      * Get measure sources with dynamic path building
-     * The 'openemr/oe-cqm-parsers' path is built at runtime using the global cqm_performance_period
+     * The 'DCL/oe-cqm-parsers' path is built at runtime using the global cqm_performance_period
      */
     public static function fetchMeasureSourceOptions(): array
     {
@@ -20,7 +20,7 @@ class MeasureService
         $reporting_year .= '_reporting_period';
 
         return [
-            'openemr/oe-cqm-parsers' => "/vendor/openemr/oe-cqm-parsers/$reporting_year/json_measures",
+            'DCL/oe-cqm-parsers' => "/vendor/DCL/oe-cqm-parsers/$reporting_year/json_measures",
             'contrib' => '/contrib/ecqm/EP-EC-eCQM-2020-05'
         ];
     }
@@ -31,7 +31,7 @@ class MeasureService
     public static function fetchMeasureOptions(): array
     {
         $measureSources = self::fetchMeasureSourceOptions();
-        $measureSourcePath = $measureSources['openemr/oe-cqm-parsers'];
+        $measureSourcePath = $measureSources['DCL/oe-cqm-parsers'];
         $measurePath = OEGlobalsBag::getInstance()->getProjectDir() . $measureSourcePath;
         $options = [];
 
@@ -45,7 +45,7 @@ class MeasureService
     public static function fetchMeasuresPath(): string
     {
         $measureSources = self::fetchMeasureSourceOptions();
-        $measureSourcePath = $measureSources['openemr/oe-cqm-parsers'];
+        $measureSourcePath = $measureSources['DCL/oe-cqm-parsers'];
         return OEGlobalsBag::getInstance()->getProjectDir() . $measureSourcePath;
     }
 
@@ -107,7 +107,7 @@ class MeasureService
         OEGlobalsBag::getInstance()->set('cqm_performance_period', $year);
 
         $measureSources = self::fetchMeasureSourceOptions();
-        $measurePath = OEGlobalsBag::getInstance()->getProjectDir() . $measureSources['openemr/oe-cqm-parsers'];
+        $measurePath = OEGlobalsBag::getInstance()->getProjectDir() . $measureSources['DCL/oe-cqm-parsers'];
 
         // Restore original global
         OEGlobalsBag::getInstance()->set('cqm_performance_period', $tempGlobal);

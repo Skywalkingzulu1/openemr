@@ -3,30 +3,30 @@
 /**
  * Encounter form save script.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Roberto Vasquez <robertogagliotta@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2015 Roberto Vasquez <robertogagliotta@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Set $sessionAllowWrite to true since the encounter is written to the session via setencounter() below.
 $sessionAllowWrite = true;
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\PatientIssuesService;
-use OpenEMR\Services\PatientService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\CodeTypesService;
+use DCL\Services\EncounterService;
+use DCL\Services\FacilityService;
+use DCL\Services\ListService;
+use DCL\Services\PatientIssuesService;
+use DCL\Services\PatientService;
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
 $srcdir = OEGlobalsBag::getInstance()->getSrcDir();
@@ -47,7 +47,7 @@ $patientService = new PatientService();
  */
 $patient = $patientService->findByPid($pid);
 if (empty($patient)) {
-    (new \OpenEMR\Common\Logging\SystemLogger())->error("newpatient/save.php: Patient not found, this should never happen");
+    (new \DCL\Common\Logging\SystemLogger())->error("newpatient/save.php: Patient not found, this should never happen");
     die("Patient not found");
 }
 $puuid = UuidRegistry::uuidToString($patient['uuid']);
@@ -188,8 +188,8 @@ setencounter($encounter);
 $patientIssueService = new PatientIssuesService();
 $patientIssueService->replaceIssuesForEncounter($pid, $encounter, $_POST['issues'] ?? [], $session->get('authUserID'));
 
-$result4 = sqlStatement("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-    " left join openemr_postcalendar_categories on fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? order by fe.date desc", [$pid]);
+$result4 = sqlStatement("SELECT fe.encounter,fe.date,DCL_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+    " left join DCL_postcalendar_categories on fe.pc_catid=DCL_postcalendar_categories.pc_catid  WHERE fe.pid = ? order by fe.date desc", [$pid]);
 ?>
 <html>
 <body>

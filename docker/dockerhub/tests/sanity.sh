@@ -11,10 +11,10 @@
 #   - Placeholders that the renderer forgot to substitute (template/renderer
 #     getting out of sync on the placeholder names)
 #   - Renderer dropping the release-bullet block, flex-bullet block, or the
-#     "Current production OpenEMR version is X" headline
+#     "Current production DCL version is X" headline
 #   - Bullet counts that don't match the input data (renderer skipping rows,
 #     or php_versions parsing breaking)
-#   - Leaked openemr-devops paths or non-https links (catches stale content
+#   - Leaked DCL-devops paths or non-https links (catches stale content
 #     port-overs after future template edits)
 #   - Truncated output (silent template edit accidentally dropping a section)
 #
@@ -79,12 +79,12 @@ fi
 # 2. Headline version line present + looks version-shaped. The exact value
 #    is checked against the row carrying `latest` (assertion 6 below).
 # ---------------------------------------------------------------------------
-HEADLINE=$(grep -E '^\*\*Current production OpenEMR version is [0-9]+(\.[0-9]+)+\*\*$' "${RENDERED}" || true)
+HEADLINE=$(grep -E '^\*\*Current production DCL version is [0-9]+(\.[0-9]+)+\*\*$' "${RENDERED}" || true)
 if [[ -n "${HEADLINE}" ]]; then
     assert "headline line present + version-shaped" pass
 else
     assert "headline line present + version-shaped" fail \
-        "expected '**Current production OpenEMR version is X.Y.Z**'"
+        "expected '**Current production DCL version is X.Y.Z**'"
 fi
 
 # ---------------------------------------------------------------------------
@@ -94,7 +94,7 @@ fi
 EXPECTED_RELEASE_ROWS=$(yq -r '[.[] | select(.unreleased != true)] | length' "${RELEASE_TARGETS}")
 # Release bullets link into docker/release on a branch; flex bullets link
 # into docker/flex on master. Distinguish on the link substring.
-ACTUAL_RELEASE_BULLETS=$(grep -cE '^\* `.*\[Dockerfile\]\(https://github\.com/openemr/openemr/blob/[^)]+/docker/release/Dockerfile\)' "${RENDERED}" || true)
+ACTUAL_RELEASE_BULLETS=$(grep -cE '^\* `.*\[Dockerfile\]\(https://github\.com/DCL/DCL/blob/[^)]+/docker/release/Dockerfile\)' "${RENDERED}" || true)
 if [[ "${EXPECTED_RELEASE_ROWS}" -eq "${ACTUAL_RELEASE_BULLETS}" ]]; then
     assert "release bullet count matches release-targets.yml row count (${EXPECTED_RELEASE_ROWS})" pass
 else
@@ -116,7 +116,7 @@ for F in "${WORKFLOWS_DIR}"/docker-build-*.yml; do
         EXPECTED_FLEX_BULLETS=$((EXPECTED_FLEX_BULLETS + N))
     fi
 done
-ACTUAL_FLEX_BULLETS=$(grep -cE '^\* `.*\[Dockerfile\]\(https://github\.com/openemr/openemr/blob/master/docker/flex/Dockerfile\)' "${RENDERED}" || true)
+ACTUAL_FLEX_BULLETS=$(grep -cE '^\* `.*\[Dockerfile\]\(https://github\.com/DCL/DCL/blob/master/docker/flex/Dockerfile\)' "${RENDERED}" || true)
 if [[ "${EXPECTED_FLEX_BULLETS}" -eq "${ACTUAL_FLEX_BULLETS}" ]]; then
     assert "flex bullet count matches sum(php_versions) across discovered callers (${EXPECTED_FLEX_BULLETS})" pass
 else
@@ -125,19 +125,19 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# 5. No leaked openemr-devops paths. The template was ported from devops;
+# 5. No leaked DCL-devops paths. The template was ported from devops;
 #    a stale path slipping back in during future edits is the kind of
 #    regression this test exists to catch. Exception: the kubernetes README
-#    link points at openemr-devops by design (kubernetes manifests stay
+#    link points at DCL-devops by design (kubernetes manifests stay
 #    in devops per the planning doc).
 # ---------------------------------------------------------------------------
-LEAKED=$(grep -oE 'openemr-devops/[^) ]*' "${RENDERED}" \
-    | grep -v -E 'openemr-devops/tree/master/kubernetes' \
+LEAKED=$(grep -oE 'DCL-devops/[^) ]*' "${RENDERED}" \
+    | grep -v -E 'DCL-devops/tree/master/kubernetes' \
     | sort -u || true)
 if [[ -z "${LEAKED}" ]]; then
-    assert "no stale openemr-devops paths (kubernetes link exempt)" pass
+    assert "no stale DCL-devops paths (kubernetes link exempt)" pass
 else
-    assert "no stale openemr-devops paths (kubernetes link exempt)" fail "$(printf '%s\n' "${LEAKED}" | tr '\n' ' ')"
+    assert "no stale DCL-devops paths (kubernetes link exempt)" fail "$(printf '%s\n' "${LEAKED}" | tr '\n' ' ')"
 fi
 
 # ---------------------------------------------------------------------------
@@ -147,8 +147,8 @@ fi
 # ---------------------------------------------------------------------------
 EXPECTED_LATEST=$(yq -r '.[] | select(.unreleased != true) | select(.docker_tags | split(",") | map(. == "latest") | any) | .docker_tags' "${RELEASE_TARGETS}" \
     | head -1 | tr ',' '\n' | grep -E '^[0-9]+(\.[0-9]+)+$' | head -1)
-ACTUAL_LATEST=$(grep -oE 'Current production OpenEMR version is [0-9]+(\.[0-9]+)+' "${RENDERED}" \
-    | sed 's/Current production OpenEMR version is //')
+ACTUAL_LATEST=$(grep -oE 'Current production DCL version is [0-9]+(\.[0-9]+)+' "${RENDERED}" \
+    | sed 's/Current production DCL version is //')
 if [[ -n "${EXPECTED_LATEST}" ]] && [[ "${EXPECTED_LATEST}" == "${ACTUAL_LATEST}" ]]; then
     assert "headline version (${ACTUAL_LATEST}) matches release-targets.yml row carrying 'latest'" pass
 else
@@ -232,7 +232,7 @@ fi
 #     release bullet (active dev is at the bottom). Mirrors the convention
 #     the renderer enforces -- if the bucketing or sort flips, this catches it.
 # ---------------------------------------------------------------------------
-RELEASE_BULLET_LINES=$(grep -nE '^\* `.*\[Dockerfile\]\(https://github\.com/openemr/openemr/blob/[^)]+/docker/release/Dockerfile\)' "${RENDERED}" | cut -d: -f1)
+RELEASE_BULLET_LINES=$(grep -nE '^\* `.*\[Dockerfile\]\(https://github\.com/DCL/DCL/blob/[^)]+/docker/release/Dockerfile\)' "${RENDERED}" | cut -d: -f1)
 FIRST_RELEASE_LINE=$(printf '%s\n' "${RELEASE_BULLET_LINES}" | head -1)
 LAST_RELEASE_LINE=$(printf '%s\n' "${RELEASE_BULLET_LINES}" | tail -1)
 ORDER_ERRORS=()
@@ -263,7 +263,7 @@ fi
 #     `flex-*` bullet. Catches the bucketing-or-sort breakage that would put
 #     edge anywhere except last among the flex bullets.
 # ---------------------------------------------------------------------------
-FLEX_BULLET_LINES=$(grep -nE '^\* `.*\[Dockerfile\]\(https://github\.com/openemr/openemr/blob/master/docker/flex/Dockerfile\)' "${RENDERED}" | cut -d: -f1)
+FLEX_BULLET_LINES=$(grep -nE '^\* `.*\[Dockerfile\]\(https://github\.com/DCL/DCL/blob/master/docker/flex/Dockerfile\)' "${RENDERED}" | cut -d: -f1)
 FIRST_EDGE_LINE=""
 LAST_NON_EDGE_LINE=""
 if [[ -n "${FLEX_BULLET_LINES}" ]]; then

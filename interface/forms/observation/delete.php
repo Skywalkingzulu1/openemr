@@ -5,14 +5,14 @@
  * TODO: would be better to just make all of this a controller action, but in the desire to just quickly finish this
  * , I went this route.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T Paul <jacob@zhservices.com>
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2015 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2017-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
@@ -21,13 +21,13 @@ require_once(__DIR__ . "/../../globals.php");
  */
 global $srcdir;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Controllers\Interface\Forms\Observation\ObservationController;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FormService;
-use OpenEMR\Services\ObservationService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Controllers\Interface\Forms\Observation\ObservationController;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FormService;
+use DCL\Services\ObservationService;
 
 $logger = ServiceContainer::getLogger();
 

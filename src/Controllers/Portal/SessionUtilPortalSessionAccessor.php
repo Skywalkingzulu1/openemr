@@ -5,16 +5,16 @@
  * reads to the supplied SessionInterface and routes writes through SessionUtil, so the
  * portal's read-and-close session lock is reopened correctly on each write.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Controllers\Portal;
+namespace DCL\Controllers\Portal;
 
-use OpenEMR\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionUtil;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class SessionUtilPortalSessionAccessor implements PortalSessionAccessor

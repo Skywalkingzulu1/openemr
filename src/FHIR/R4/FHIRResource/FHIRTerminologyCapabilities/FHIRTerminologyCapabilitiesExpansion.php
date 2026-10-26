@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,31 +71,31 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 {
     /**
      * Whether the server can return nested value sets.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $hierarchical = null;
 
     /**
      * Whether the server supports paging on expansion.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $paging = null;
 
     /**
      * Allow request for incomplete expansions?
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $incomplete = null;
 
     /**
      * Supported expansion parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter[]
      */
     public $parameter = [];
 
     /**
      * Documentation about text searching works.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $textFilter = null;
 
@@ -106,7 +106,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Whether the server can return nested value sets.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getHierarchical()
     {
@@ -115,7 +115,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Whether the server can return nested value sets.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $hierarchical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $hierarchical
      * @return $this
      */
     public function setHierarchical($hierarchical)
@@ -126,7 +126,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Whether the server supports paging on expansion.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getPaging()
     {
@@ -135,7 +135,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Whether the server supports paging on expansion.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $paging
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $paging
      * @return $this
      */
     public function setPaging($paging)
@@ -146,7 +146,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Allow request for incomplete expansions?
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getIncomplete()
     {
@@ -155,7 +155,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Allow request for incomplete expansions?
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $incomplete
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $incomplete
      * @return $this
      */
     public function setIncomplete($incomplete)
@@ -166,7 +166,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Supported expansion parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter[]
      */
     public function getParameter()
     {
@@ -175,7 +175,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Supported expansion parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -186,7 +186,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Documentation about text searching works.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getTextFilter()
     {
@@ -195,7 +195,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement implement
 
     /**
      * Documentation about text searching works.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $textFilter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $textFilter
      * @return $this
      */
     public function setTextFilter($textFilter)

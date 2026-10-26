@@ -3,37 +3,37 @@
 /**
  * FhirSpecimenService.php
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSpecimen;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\ProcedureService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRSpecimen;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection;
+use DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\ProcedureService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirSpecimenService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
     , IFhirExportableResourceService
@@ -56,7 +56,7 @@ class FhirSpecimenService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -73,29 +73,29 @@ class FhirSpecimenService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
 
         try {
             // Translate FHIR status values to database values before search
-            if (isset($openEMRSearchParameters['deleted'])) {
-                $openEMRSearchParameters['deleted'] = $this->translateStatusToDeleted(
-                    $openEMRSearchParameters['deleted']
+            if (isset($DCLSearchParameters['deleted'])) {
+                $DCLSearchParameters['deleted'] = $this->translateStatusToDeleted(
+                    $DCLSearchParameters['deleted']
                 );
             } else {
                 // Default: exclude deleted specimens (only show 'available' status)
                 // Create a TokenSearchField for deleted = '0'
-                $openEMRSearchParameters['deleted'] = new TokenSearchField('deleted', ['0']);
+                $DCLSearchParameters['deleted'] = new TokenSearchField('deleted', ['0']);
             }
 
             // Get specimens from procedure service
-            $specimens = $this->searchSpecimens($openEMRSearchParameters);
+            $specimens = $this->searchSpecimens($DCLSearchParameters);
 
             foreach ($specimens as $specimen) {
                 $processingResult->addData($specimen);
@@ -148,7 +148,7 @@ class FhirSpecimenService extends FhirServiceBase implements IPatientCompartment
     /**
      * Search for specimens across all procedure orders
      *
-     * @param array $searchParams OpenEMR search parameters (as ISearchField objects)
+     * @param array $searchParams DCL search parameters (as ISearchField objects)
      * @return array
      */
     private function searchSpecimens(array $searchParams): array
@@ -211,7 +211,7 @@ class FhirSpecimenService extends FhirServiceBase implements IPatientCompartment
     {
         return [
             'id' => $row['procedure_specimen_id'],
-            'uuid' => \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($row['uuid']),
+            'uuid' => \DCL\Common\Uuid\UuidRegistry::uuidToString($row['uuid']),
             'procedure_order_id' => $row['procedure_order_id'],
             'procedure_order_seq' => $row['procedure_order_seq'],
             'identifier' => $row['specimen_identifier'],
@@ -234,18 +234,18 @@ class FhirSpecimenService extends FhirServiceBase implements IPatientCompartment
             'created_at' => $row['created_at'],
             'updated_at' => $row['updated_at'],
             'patient_id' => $row['patient_id'],
-            'patient_uuid' => \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($row['patient_uuid'])
+            'patient_uuid' => \DCL\Common\Uuid\UuidRegistry::uuidToString($row['patient_uuid'])
         ];
     }
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR Resource
+     * Parses an DCL data record, returning the equivalent FHIR Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string
      * @return FHIRSpecimen
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $specimen = new FHIRSpecimen();
 
@@ -432,7 +432,7 @@ class FhirSpecimenService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Map OpenEMR deleted flag to FHIR Specimen status
+     * Map DCL deleted flag to FHIR Specimen status
      *
      * @param string $deleted The deleted flag ('0' or '1')
      * @return string FHIR Specimen status code

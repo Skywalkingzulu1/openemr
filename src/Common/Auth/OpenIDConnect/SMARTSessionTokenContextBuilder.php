@@ -6,26 +6,26 @@
  *
  * @see http://hl7.org/fhir/smart-app-launch/scopes-and-launch-context/index.html
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect;
+namespace DCL\Common\Auth\OpenIDConnect;
 
 use League\OAuth2\Server\Entities\ScopeEntityInterface;
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
-use OpenEMR\RestControllers\SMART\SMARTAuthorizationController;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\FHIR\SMART\SMARTLaunchToken;
+use DCL\RestControllers\SMART\SMARTAuthorizationController;
+use DCL\Services\FHIR\UtilsService;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class SMARTSessionTokenContextBuilder
@@ -150,7 +150,7 @@ class SMARTSessionTokenContextBuilder
     }
 
     /**
-     * Needed for OpenEMR\FHIR\SMART\Capability::CONTEXT_STYLE support
+     * Needed for DCL\FHIR\SMART\Capability::CONTEXT_STYLE support
      * Reading the SMART FHIR spec author forums so few app writers are actually using this at all, it seems like we
      * can just use defaults without getting trying to load up based upon which skin we have, or using node &
      * gulp to auto generate a skin.

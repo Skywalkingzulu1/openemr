@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService;
+namespace DCL\FHIR\R4\FHIRResource\FHIRHealthcareService;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The details of a healthcare service available at a location.
@@ -71,13 +71,13 @@ class FHIRHealthcareServiceEligibility extends FHIRBackboneElement implements \J
 {
     /**
      * Coded value for the eligibility.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Describes the eligibility conditions for the service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $comment = null;
 
@@ -88,7 +88,7 @@ class FHIRHealthcareServiceEligibility extends FHIRBackboneElement implements \J
 
     /**
      * Coded value for the eligibility.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRHealthcareServiceEligibility extends FHIRBackboneElement implements \J
 
     /**
      * Coded value for the eligibility.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRHealthcareServiceEligibility extends FHIRBackboneElement implements \J
 
     /**
      * Describes the eligibility conditions for the service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getComment()
     {
@@ -117,7 +117,7 @@ class FHIRHealthcareServiceEligibility extends FHIRBackboneElement implements \J
 
     /**
      * Describes the eligibility conditions for the service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $comment
      * @return $this
      */
     public function setComment($comment)

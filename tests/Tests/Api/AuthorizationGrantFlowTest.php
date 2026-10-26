@@ -2,26 +2,26 @@
 
 /*
  * AuthorizationGrantFlowTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\RestControllers\AuthorizationController;
-use OpenEMR\RestControllers\SMART\SMARTAuthorizationController;
-use OpenEMR\Services\TrustedUserService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\Kernel;
+use DCL\Core\OEHttpKernel;
+use DCL\RestControllers\AuthorizationController;
+use DCL\RestControllers\SMART\SMARTAuthorizationController;
+use DCL\Services\TrustedUserService;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -365,7 +365,7 @@ class AuthorizationGrantFlowTest extends TestCase
             ],
             "client_name" => "Test Client",
             "token_endpoint_auth_method" => "client_secret_post",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "scope" => $scopesString
         ];
 
@@ -633,7 +633,7 @@ class AuthorizationGrantFlowTest extends TestCase
      */
     private function getBaseUrlApi(): string
     {
-        $url = getenv("OPENEMR_BASE_URL_API", true);
+        $url = getenv("DCL_BASE_URL_API", true);
         if (is_array($url)) {
             return (string)$url[0];
         } elseif (is_string($url)) {

@@ -6,13 +6,13 @@
  * This rule prevents use of legacy sql.inc.php functions in the src/ directory.
  * Contributors should use QueryUtils or DatabaseQueryTrait instead.
  *
- * @package   OpenEMR
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;
@@ -66,7 +66,7 @@ class ForbiddenMethodsRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.deprecatedSqlFunction')
+                ->identifier('DCL.deprecatedSqlFunction')
                 ->tip('Or use DatabaseQueryTrait in your class')
                 ->build()
         ];

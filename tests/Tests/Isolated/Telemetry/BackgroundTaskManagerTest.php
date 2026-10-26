@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\Telemetry;
+namespace DCL\Tests\Isolated\Telemetry;
 
-use OpenEMR\Telemetry\BackgroundTaskManager;
+use DCL\Telemetry\BackgroundTaskManager;
 use PHPUnit\Framework\TestCase;
 
 class BackgroundTaskManagerTest extends TestCase

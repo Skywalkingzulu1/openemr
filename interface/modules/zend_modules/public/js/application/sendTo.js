@@ -1,13 +1,13 @@
 /**
  * interface/modules/zend_modules/public/js/application/sendTo.js
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    BASIL PT <basil@zhservices.com>
  * @author    FASALU RAHMAN K.M <fasalu@zhservices.com>
  * @author    Riju K P <rijukp@zhservices.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Hide Menu if clicked outside

@@ -15,7 +15,7 @@
  *
  * Args:
  *   path (optional) Path to version.php. Defaults to
- *                   /var/www/localhost/htdocs/openemr/version.php
+ *                   /var/www/localhost/htdocs/DCL/version.php
  *                   (the acceptance-docker container's canonical
  *                   location).
  *
@@ -27,16 +27,16 @@
  * Unit-tested by
  * tests/Tests/Isolated/Common/Command/Ci/ReadVersionPhpTest.php.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-$path = $argv[1] ?? '/var/www/localhost/htdocs/openemr/version.php';
+$path = $argv[1] ?? '/var/www/localhost/htdocs/DCL/version.php';
 
 if (!is_readable($path)) {
     fwrite(STDERR, "read-version-php.php: cannot read '{$path}'\n");

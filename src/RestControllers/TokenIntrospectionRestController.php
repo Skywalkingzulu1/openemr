@@ -3,39 +3,39 @@
 /*
  * TokenIntrospectionRestController.php  handles OAuth2 token introspection requests as per RFC 7662 and SMART on FHIR v2.2 specifications.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
-* @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+* @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OAuth2KeyConfig;
-use OpenEMR\Common\Auth\OpenIDConnect\FhirUserClaim;
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\JsonWebKeyParser;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\Services\JWTClientAuthenticationService;
-use OpenEMR\Services\Trait\GlobalInterfaceTrait;
-use OpenEMR\Services\TrustedUserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OAuth2KeyConfig;
+use DCL\Common\Auth\OpenIDConnect\FhirUserClaim;
+use DCL\Common\Auth\OpenIDConnect\JWT\JsonWebKeyParser;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\Services\JWTClientAuthenticationService;
+use DCL\Services\Trait\GlobalInterfaceTrait;
+use DCL\Services\TrustedUserService;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
@@ -182,7 +182,7 @@ class TokenIntrospectionRestController {
 
     /**
      * @return OAuth2KeyConfig
-     * @throws \OpenEMR\Common\Auth\OAuth2KeyException
+     * @throws \DCL\Common\Auth\OAuth2KeyException
      */
     public function getOAuth2KeyConfig(): OAuth2KeyConfig {
         if (!isset($this->oauth2KeyConfig)) {

@@ -5,20 +5,20 @@
  *
  * @package MedEx
  * @author MedEx <support@MedExBank.com>
- * @author Michael A. Smith <michael@opencoreemr.com>
+ * @author Michael A. Smith <michael@DCL.com>
  * @link http://www.MedExBank.com
  * @copyright Copyright (c) 2018 MedEx <support@MedExBank.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace MedExApi;
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\VersionService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\VersionService;
 
 // Events::calculateEvents() needs checkEvent() and Date_Calc, which the background service does not load.
 require_once __DIR__ . '/../appointments.inc.php';
@@ -204,7 +204,7 @@ class Practice extends Base
             }
         }
         $runQuery = "SELECT pc_catid, pc_catname, pc_catdesc, pc_catcolor, pc_seq
-                     FROM openemr_postcalendar_categories WHERE pc_active = 1 AND pc_cattype='0' ORDER BY pc_catid";
+                     FROM DCL_postcalendar_categories WHERE pc_active = 1 AND pc_cattype='0' ORDER BY pc_catid";
         $ures = sqlStatement($runQuery);
         while ($urow = sqlFetchArray($ures)) {
             $fields2['categories'][] = $urow;
@@ -246,7 +246,7 @@ class Practice extends Base
         $sql = "SELECT * FROM medex_outgoing WHERE msg_pc_eid != 'recall_%' AND msg_reply LIKE 'To Send'";
         $test = sqlStatement($sql);
         while ($result1 = sqlFetchArray($test)) {
-            $query  = "SELECT * FROM openemr_postcalendar_events WHERE pc_eid = ?";
+            $query  = "SELECT * FROM DCL_postcalendar_events WHERE pc_eid = ?";
             $test2 = sqlStatement($query, [$result1['msg_pc_eid']]);
             $result2 = sqlFetchArray($test2);
             // withdraw queued messages for cancelled appointments, and for '*' (reminder done by staff)
@@ -263,7 +263,7 @@ class Practice extends Base
         $result = sqlStatement($sql);
         while ($row = sqlFetchArray($result)) {
             $pid = trim((string) $row['msg_pc_eid'], "recall_");
-            $query  = "SELECT pc_eid FROM openemr_postcalendar_events WHERE (pc_eventDate > CURDATE()) AND pc_pid=?";
+            $query  = "SELECT pc_eid FROM DCL_postcalendar_events WHERE (pc_eventDate > CURDATE()) AND pc_pid=?";
             $test3 = sqlStatement($query, [$pid]);
             $result3 = sqlFetchArray($test3);
             if ($result3) {
@@ -430,7 +430,7 @@ class Events extends Base
                         continue;
                     }
                     $places = implode(',', $facilityIds);
-                    $query  = "SELECT * FROM openemr_postcalendar_events AS cal
+                    $query  = "SELECT * FROM DCL_postcalendar_events AS cal
                                 LEFT JOIN patient_data AS pat ON cal.pc_pid=pat.pid
                                 WHERE
                                 " . $target_lang . "
@@ -667,7 +667,7 @@ class Events extends Base
                     $visit_types = '';
                 }
 
-                $sql_ANNOUNCE = "SELECT * FROM openemr_postcalendar_events AS cal
+                $sql_ANNOUNCE = "SELECT * FROM DCL_postcalendar_events AS cal
                             LEFT JOIN patient_data AS pat ON cal.pc_pid=pat.pid
                             WHERE " . $target_dates . "
                                 " . $appt_status . "
@@ -753,7 +753,7 @@ class Events extends Base
                     }
 
                     $escapedArr[] = $k;
-                    $query  = "SELECT * FROM openemr_postcalendar_events AS cal
+                    $query  = "SELECT * FROM DCL_postcalendar_events AS cal
                                     LEFT JOIN patient_data AS pat ON cal.pc_pid=pat.pid
                                     WHERE (
                                         cal.pc_eventDate > CURDATE() - INTERVAL " . filter_var($event['timing'], FILTER_VALIDATE_INT, ['options' => ['default' => 180]]) . " DAY AND
@@ -974,7 +974,7 @@ class Events extends Base
                         }
                     }
                 }
-                $sql_GOGREEN = "SELECT * FROM openemr_postcalendar_events AS cal
+                $sql_GOGREEN = "SELECT * FROM DCL_postcalendar_events AS cal
                                 LEFT JOIN patient_data AS pat ON cal.pc_pid=pat.pid
                                 WHERE
                                     " . $target_lang . "
@@ -998,7 +998,7 @@ class Events extends Base
                         continue; //not happening - either not allowed or not possible
                     }
                     if ($no_fu) {
-                        $sql_NoFollowUp = "SELECT COUNT(*) AS num FROM openemr_postcalendar_events WHERE
+                        $sql_NoFollowUp = "SELECT COUNT(*) AS num FROM DCL_postcalendar_events WHERE
                             pc_pid = ? AND
                             pc_eventDate > ( ? + INTERVAL " . (int) $no_interval . " DAY)";
                         $result = sqlQuery($sql_NoFollowUp, [$appt['pc_pid'], $appt['pc_eventDate']]);
@@ -1100,7 +1100,7 @@ class Events extends Base
                 $oldRecurrspec['exdate'] .= $exclude;
             }
             // mod original event recur specs to exclude this date
-            sqlStatement("UPDATE openemr_postcalendar_events SET pc_recurrspec = ? WHERE pc_eid = ?", [serialize($oldRecurrspec),$appt['pc_eid']]);
+            sqlStatement("UPDATE DCL_postcalendar_events SET pc_recurrspec = ? WHERE pc_eid = ?", [serialize($oldRecurrspec),$appt['pc_eid']]);
             // specify some special variables needed for the INSERT
             // no recurr specs, this is used for adding a new non-recurring event
             $noRecurrspec = ["event_repeat_freq" => "",
@@ -1127,7 +1127,7 @@ class Events extends Base
             $args['form_enddate'] = null;
             //$args['prefcatid'] = (int)$appt['prefcatid'];
 
-            $sql = "INSERT INTO openemr_postcalendar_events ( " .
+            $sql = "INSERT INTO DCL_postcalendar_events ( " .
             "pc_catid, pc_multiple, pc_aid, pc_pid, pc_gid, pc_title, " .
             "pc_time, " .
             "pc_hometext, pc_informant, pc_eventDate, pc_endDate, pc_duration, pc_recurrtype, " .
@@ -1523,7 +1523,7 @@ class Callback extends Base
             if ($data['e_pid']) {
                 $data['patient_id'] = $data['e_pid'];
             } elseif ($data['pc_eid']) {
-                $query = "SELECT * FROM openemr_postcalendar_events WHERE pc_eid=?";
+                $query = "SELECT * FROM DCL_postcalendar_events WHERE pc_eid=?";
                 $patient = sqlFetchArray(sqlStatement($query, [$data['pc_eid']]));
                 $data['patient_id'] = $patient['pid'];
             }
@@ -1537,7 +1537,7 @@ class Callback extends Base
             sqlQuery($sqlINSERT, [$data['pc_eid'],$data['patient_id'], $data['campaign_uid'], $data['M_type'],$data['msg_reply'],$data['msg_extra'],$data['msg_uid']]);
 
             if ($data['msg_reply'] == "CONFIRMED") {
-                $sqlUPDATE = "UPDATE openemr_postcalendar_events SET pc_apptstatus = ? WHERE pc_eid=?";
+                $sqlUPDATE = "UPDATE DCL_postcalendar_events SET pc_apptstatus = ? WHERE pc_eid=?";
                 sqlStatement($sqlUPDATE, [$data['msg_type'],$data['pc_eid']]);
                 $query = "SELECT * FROM patient_tracker WHERE eid=?";
                 $tracker = sqlFetchArray(sqlStatement($query, [$data['pc_eid']]));
@@ -1555,7 +1555,7 @@ class Callback extends Base
                     );
                 }
             } elseif ($data['msg_reply'] == "CALL") {
-                $sqlUPDATE = "UPDATE openemr_postcalendar_events SET pc_apptstatus = 'CALL' WHERE pc_eid=?";
+                $sqlUPDATE = "UPDATE DCL_postcalendar_events SET pc_apptstatus = 'CALL' WHERE pc_eid=?";
                 sqlQuery($sqlUPDATE, [$data['pc_eid']]);
                 //this requires attention.  Send up the FLAG!
                 //$this->MedEx->logging->new_message($data);
@@ -2293,7 +2293,7 @@ class Display extends Base
                  data-date="' . attr($recall['r_eventDate']) . '"
                  id="recall_' . attr($recall['pid']) . '" style="display:none;">';
 
-            $query = "SELECT cal.pc_eventDate,pat.DOB FROM openemr_postcalendar_events AS cal JOIN patient_data AS pat ON cal.pc_pid=pat.pid WHERE cal.pc_pid =? ORDER BY cal.pc_eventDate DESC LIMIT 1";
+            $query = "SELECT cal.pc_eventDate,pat.DOB FROM DCL_postcalendar_events AS cal JOIN patient_data AS pat ON cal.pc_pid=pat.pid WHERE cal.pc_pid =? ORDER BY cal.pc_eventDate DESC LIMIT 1";
             $result2 = sqlQuery($query, [$recall['pid']]);
             $last_visit = $result2['pc_eventDate'];
             if (empty($result2['DOB'] ?? '')) {
@@ -2415,7 +2415,7 @@ class Display extends Base
         $show['AVM']['text'] = '';
         $show['progression'] = '';
         $show['DONE'] = '';
-        $query = "SELECT * FROM openemr_postcalendar_events WHERE
+        $query = "SELECT * FROM DCL_postcalendar_events WHERE
                   pc_eventDate >= CURDATE() AND pc_pid =? AND pc_eventDate > (? - INTERVAL 90 DAY)  AND pc_time >  (CURDATE()- INTERVAL 16 HOUR)";
         $count = sqlFetchArray(sqlStatement($query, [$recall['r_pid'],$recall['r_eventDate']]));
 
@@ -2544,7 +2544,7 @@ class Display extends Base
             }
         }
 
-        $query  = "SELECT * FROM openemr_postcalendar_events WHERE pc_eventDate > CURDATE() AND pc_pid =? AND pc_time >  CURDATE()- INTERVAL 16 HOUR";
+        $query  = "SELECT * FROM DCL_postcalendar_events WHERE pc_eventDate > CURDATE() AND pc_pid =? AND pc_time >  CURDATE()- INTERVAL 16 HOUR";
         $result = sqlFetchArray(sqlStatement($query, [$recall['r_pid']]));
 
         if ($something_happened || $result) {
@@ -3505,7 +3505,7 @@ class MedEx
         'username'  => $info['ME_username'],
         'key'       => $info['ME_api_key'],
         'UID'       => $info['MedEx_id'],
-        'MedEx'     => 'OpenEMR',
+        'MedEx'     => 'DCL',
         'major'     => (string) $version['v_major'],
         'minor'     => (string) $version['v_minor'],
         'patch'     => (string) $version['v_patch'],

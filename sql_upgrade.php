@@ -2,17 +2,17 @@
 
 /* sql_upgrade.php
  *
- * This may be run after an upgraded OpenEMR has been installed.
- * It's purpose is to upgrade the MySQL OpenEMR database as needed
+ * This may be run after an upgraded DCL has been installed.
+ * It's purpose is to upgrade the MySQL DCL database as needed
  * for the new release.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2008-2010 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2011-2021 Brady Miller <brady.g.miller@gmail.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /* @TODO add language selection. needs RTL testing */
@@ -29,7 +29,7 @@ if ($isCli) {
     $GLOBALS['force_simple_sql_upgrade'] = true;
 
     // Set HTTP_HOST for CLI mode so globals.php can determine the site
-    // @phpstan-ignore openemr.forbiddenRequestGlobals (Required for write)
+    // @phpstan-ignore DCL.forbiddenRequestGlobals (Required for write)
     $_SERVER['HTTP_HOST'] = 'default';
 
     // Parse --from=VERSION argument for CLI upgrades
@@ -41,9 +41,9 @@ if ($isCli) {
     }
 }
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with DCL:
 require_once(__DIR__ . "/src/Common/Compatibility/Checker.php");
-$response = OpenEMR\Common\Compatibility\Checker::checkPhpVersion();
+$response = DCL\Common\Compatibility\Checker::checkPhpVersion();
 if ($response !== true) {
     if ($isCli) {
         fwrite(STDERR, $response . "\n");
@@ -74,15 +74,15 @@ $skipAuditLog = true; // disable audit logging during upgrades
 
 require_once('interface/globals.php');
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\SQLUpgradeService;
-use OpenEMR\Services\VersionService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\SQLUpgradeService;
+use DCL\Services\VersionService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
@@ -164,7 +164,7 @@ header('Content-type: text/html; charset=utf-8');
 <!-- @todo Adding DOCTYPE html breaks BS width/height percentages. Why? -->
 <html>
 <head>
-    <title>OpenEMR Database Upgrade</title>
+    <title>DCL Database Upgrade</title>
     <?php Header::setupHeader(); ?>
     <link rel="shortcut icon" href="public/images/favicon.ico" />
     <script>
@@ -419,7 +419,7 @@ header('Content-type: text/html; charset=utf-8');
         <div class="text-center">
             <div class="row">
                 <div class="col-12">
-                    <h2><?php echo xlt("OpenEMR Database Upgrade"); ?></h2>
+                    <h2><?php echo xlt("DCL Database Upgrade"); ?></h2>
                 </div>
             </div>
             <div class="row">

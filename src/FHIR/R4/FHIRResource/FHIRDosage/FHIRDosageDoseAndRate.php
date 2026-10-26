@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDosage;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDosage;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDosage;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Indicates how the medication is/was taken or should be taken by the patient.
@@ -72,32 +72,32 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * The kind of dose or rate specified, for example, ordered or calculated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $doseRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $doseQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $rateRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $rateQuantity = null;
 
@@ -108,7 +108,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The kind of dose or rate specified, for example, ordered or calculated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -117,7 +117,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The kind of dose or rate specified, for example, ordered or calculated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -127,7 +127,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getDoseRange()
     {
@@ -135,7 +135,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $doseRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $doseRange
      * @return $this
      */
     public function setDoseRange($doseRange)
@@ -145,7 +145,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDoseQuantity()
     {
@@ -153,7 +153,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $doseQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $doseQuantity
      * @return $this
      */
     public function setDoseQuantity($doseQuantity)
@@ -163,7 +163,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
     {
@@ -171,7 +171,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $rateRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
     public function setRateRatio($rateRatio)
@@ -181,7 +181,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getRateRange()
     {
@@ -189,7 +189,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $rateRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $rateRange
      * @return $this
      */
     public function setRateRange($rateRange)
@@ -199,7 +199,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity()
     {
@@ -207,7 +207,7 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $rateQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return $this
      */
     public function setRateQuantity($rateQuantity)

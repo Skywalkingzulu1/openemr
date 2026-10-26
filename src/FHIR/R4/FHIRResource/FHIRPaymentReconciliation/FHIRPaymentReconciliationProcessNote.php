@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the details including amount of a payment and allocates the payment items being paid.
@@ -71,13 +71,13 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement implement
 {
     /**
      * The business purpose of the note text.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRNoteType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRNoteType
      */
     public $type = null;
 
     /**
      * The explanation or description associated with the processing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
@@ -88,7 +88,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement implement
 
     /**
      * The business purpose of the note text.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRNoteType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRNoteType
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement implement
 
     /**
      * The business purpose of the note text.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRNoteType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRNoteType $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement implement
 
     /**
      * The explanation or description associated with the processing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -117,7 +117,7 @@ class FHIRPaymentReconciliationProcessNote extends FHIRBackboneElement implement
 
     /**
      * The explanation or description associated with the processing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)

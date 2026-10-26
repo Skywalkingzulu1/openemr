@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\RestControllers\Authorization\LocalApiAuthorizationController;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\RestControllers\Authorization\LocalApiAuthorizationController;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\Session;

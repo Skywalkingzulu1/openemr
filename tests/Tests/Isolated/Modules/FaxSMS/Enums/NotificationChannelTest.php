@@ -8,23 +8,23 @@
  * The factory's behavior gates which WHERE clause runs in
  * cron_GetAlertPatientData(), so its mapping must be exhaustively covered.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS\Enums;
+namespace DCL\Tests\Isolated\Modules\FaxSMS\Enums;
 
-use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
+use DCL\Modules\FaxSMS\Enums\NotificationChannel;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 // The faxsms module's classes are not registered in the root composer
-// autoloader (the module is loaded by OpenEMR's runtime module system).
+// autoloader (the module is loaded by DCL's runtime module system).
 // Pull the enum file in directly so this isolated test can run without
 // bootstrapping the full module loader.
 require_once __DIR__ . '/../../../../../../interface/modules/custom_modules/oe-module-faxsms/src/Enums/NotificationChannel.php';

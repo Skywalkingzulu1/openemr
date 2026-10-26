@@ -23,7 +23,7 @@ Since 2\\.40\\.0\\. This class will be remove in 3\\.0 without replacement\\. Vi
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Application/src/Application/Helper/TranslatorViewHelper.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Class OpenEMR\\\\Tests\\\\Services\\\\DocumentTest extends deprecated class Monolog\\\\Test\\\\TestCase\\:
+    'message' => '#^Class DCL\\\\Tests\\\\Services\\\\DocumentTest extends deprecated class Monolog\\\\Test\\\\TestCase\\:
 use MonologTestCase instead\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/DocumentTest.php',

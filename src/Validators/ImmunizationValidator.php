@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
 use Particle\Validator\Chain;
 use Particle\Validator\Validator;
@@ -8,13 +8,13 @@ use Particle\Validator\Validator;
 /**
  * Supports Immunization Record Validation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class ImmunizationValidator extends BaseValidator
 {

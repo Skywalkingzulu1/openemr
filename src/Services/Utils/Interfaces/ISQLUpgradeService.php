@@ -4,20 +4,20 @@
  * Interface for SQL Upgrade Service
  *
  * This interface defines the contract for services that handle SQL upgrades
- * within the OpenEMR system. Implementations should provide methods for
+ * within the DCL system. Implementations should provide methods for
  * analyzing, executing, and tracking database schema upgrades.
  *
- * @package    OpenEMR
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @subpackage Services
- * @author     Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @author     Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * This interface was generated with the assistance of GitHub Copilot and Claude 3.7 Sonnet
  */
 
-namespace OpenEMR\Services\Utils\Interfaces;
+namespace DCL\Services\Utils\Interfaces;
 
 interface ISQLUpgradeService
 {

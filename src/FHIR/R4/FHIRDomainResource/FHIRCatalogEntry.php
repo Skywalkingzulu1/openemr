@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Catalog entries are wrappers that contextualize items included in a catalog.
@@ -72,79 +72,79 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Used in supporting different identifiers for the same product, e.g. manufacturer code and retailer code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The type of item - medication, device, service, protocol or other.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Whether the entry represents an orderable item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $orderable = null;
 
     /**
      * The item in a catalog or definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $referencedItem = null;
 
     /**
      * Used in supporting related concepts, e.g. NDC to RxNorm.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $additionalIdentifier = [];
 
     /**
      * Classes of devices, or ATC for medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $classification = [];
 
     /**
      * Used to support catalog exchange even for unsupported products, e.g. getting list of medications even if not prescribable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * The time period in which this catalog entry is expected to be active.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $validityPeriod = null;
 
     /**
      * The date until which this catalog entry is expected to be active.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $validTo = null;
 
     /**
      * Typically date of issue is different from the beginning of the validity. This can be used to see when an item was last updated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $lastUpdated = null;
 
     /**
      * Used for examplefor Out of Formulary, or any specifics.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $additionalCharacteristic = [];
 
     /**
      * User for example for ATC classification, or.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $additionalClassification = [];
 
     /**
      * Used for example, to point to a substance, or to a device used to administer a medication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry[]
      */
     public $relatedEntry = [];
 
@@ -155,7 +155,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used in supporting different identifiers for the same product, e.g. manufacturer code and retailer code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -164,7 +164,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used in supporting different identifiers for the same product, e.g. manufacturer code and retailer code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -175,7 +175,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of item - medication, device, service, protocol or other.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -184,7 +184,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of item - medication, device, service, protocol or other.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -195,7 +195,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the entry represents an orderable item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getOrderable()
     {
@@ -204,7 +204,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the entry represents an orderable item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $orderable
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $orderable
      * @return $this
      */
     public function setOrderable($orderable)
@@ -215,7 +215,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The item in a catalog or definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReferencedItem()
     {
@@ -224,7 +224,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The item in a catalog or definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $referencedItem
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $referencedItem
      * @return $this
      */
     public function setReferencedItem($referencedItem)
@@ -235,7 +235,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used in supporting related concepts, e.g. NDC to RxNorm.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getAdditionalIdentifier()
     {
@@ -244,7 +244,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used in supporting related concepts, e.g. NDC to RxNorm.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $additionalIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $additionalIdentifier
      * @return $this
      */
     public function addAdditionalIdentifier($additionalIdentifier)
@@ -255,7 +255,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Classes of devices, or ATC for medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getClassification()
     {
@@ -264,7 +264,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Classes of devices, or ATC for medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
      * @return $this
      */
     public function addClassification($classification)
@@ -275,7 +275,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used to support catalog exchange even for unsupported products, e.g. getting list of medications even if not prescribable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -284,7 +284,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used to support catalog exchange even for unsupported products, e.g. getting list of medications even if not prescribable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -295,7 +295,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time period in which this catalog entry is expected to be active.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod()
     {
@@ -304,7 +304,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time period in which this catalog entry is expected to be active.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
      * @return $this
      */
     public function setValidityPeriod($validityPeriod)
@@ -315,7 +315,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date until which this catalog entry is expected to be active.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getValidTo()
     {
@@ -324,7 +324,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date until which this catalog entry is expected to be active.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $validTo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $validTo
      * @return $this
      */
     public function setValidTo($validTo)
@@ -335,7 +335,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Typically date of issue is different from the beginning of the validity. This can be used to see when an item was last updated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getLastUpdated()
     {
@@ -344,7 +344,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Typically date of issue is different from the beginning of the validity. This can be used to see when an item was last updated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $lastUpdated
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $lastUpdated
      * @return $this
      */
     public function setLastUpdated($lastUpdated)
@@ -355,7 +355,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used for examplefor Out of Formulary, or any specifics.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAdditionalCharacteristic()
     {
@@ -364,7 +364,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used for examplefor Out of Formulary, or any specifics.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalCharacteristic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalCharacteristic
      * @return $this
      */
     public function addAdditionalCharacteristic($additionalCharacteristic)
@@ -375,7 +375,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * User for example for ATC classification, or.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAdditionalClassification()
     {
@@ -384,7 +384,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * User for example for ATC classification, or.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalClassification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalClassification
      * @return $this
      */
     public function addAdditionalClassification($additionalClassification)
@@ -395,7 +395,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used for example, to point to a substance, or to a device used to administer a medication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry[]
      */
     public function getRelatedEntry()
     {
@@ -404,7 +404,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Used for example, to point to a substance, or to a device used to administer a medication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry $relatedEntry
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry $relatedEntry
      * @return $this
      */
     public function addRelatedEntry($relatedEntry)

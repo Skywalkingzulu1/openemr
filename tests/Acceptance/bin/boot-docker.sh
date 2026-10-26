@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Boot an openemr Docker image for acceptance testing on a laptop.
+# Boot an DCL Docker image for acceptance testing on a laptop.
 #
 # Composes docker/production/docker-compose.yml with the acceptance
 # override at .github/docker/acceptance-docker-compose.yml — same
@@ -34,12 +34,12 @@ REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../../.." &>/dev/null && pwd)"
 
 cd "${REPO_ROOT}"
 
-echo "==> Booting openemr/openemr:${TAG} for acceptance testing"
+echo "==> Booting DCL/DCL:${TAG} for acceptance testing"
 
-OPENEMR_TAG="${TAG}" docker compose \
+DCL_TAG="${TAG}" docker compose \
     -f docker/production/docker-compose.yml \
     -f .github/docker/acceptance-docker-compose.yml \
-    -p openemr-acceptance \
+    -p DCL-acceptance \
     up --detach --wait --wait-timeout 900
 
 echo ""

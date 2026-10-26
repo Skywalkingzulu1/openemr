@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Core;
+namespace DCL\Core;
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;

@@ -4,8 +4,8 @@
  * SmokingStatusType.php - Form Type for Smoking Status Field used in options.inc.php
  * with the LBF forms.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * Copyright (C) 2007-2021 Rod Roark <rod@sunsetsystems.com>
  * Copyright © 2010 by Andrew Moore <amoore@cpan.org>
@@ -14,12 +14,12 @@
  * Copyright (c) 2021 Robert Down <robertdown@live.com>
  * Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Forms\Types;
+namespace DCL\Common\Forms\Types;
 
-use OpenEMR\Common\Layouts\LayoutsUtils;
+use DCL\Common\Layouts\LayoutsUtils;
 
 class SmokingStatusType implements IOptionFormType {
 

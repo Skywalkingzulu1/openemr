@@ -4,24 +4,24 @@
  * QrdaDocumentService.php
  * Several methods borrowed or refactored from Ken's CQM Tool.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2022 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Qrda;
+namespace DCL\Services\Qrda;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Qdm\CqmCalculator;
-use OpenEMR\Services\Qdm\MeasureService;
-use OpenEMR\Services\Qdm\QdmBuilder;
-use OpenEMR\Services\Qdm\QdmRequestAll;
-use OpenEMR\Services\Qdm\QdmRequestOne;
-use OpenEMR\Services\Qdm\QdmRequestSome;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Qdm\CqmCalculator;
+use DCL\Services\Qdm\MeasureService;
+use DCL\Services\Qdm\QdmBuilder;
+use DCL\Services\Qdm\QdmRequestAll;
+use DCL\Services\Qdm\QdmRequestOne;
+use DCL\Services\Qdm\QdmRequestSome;
 
 class QrdaReportService
 {
@@ -190,7 +190,7 @@ class QrdaReportService
             $reportingPeriod = trim(OEGlobalsBag::getInstance()->getString('cqm_performance_period') ?? '2023');
         }
 
-        $orgName = OEGlobalsBag::getInstance()->getString('openemr_name') ?? 'OpenEMR_Practice';
+        $orgName = OEGlobalsBag::getInstance()->getString('DCL_name') ?? 'DCL_Practice';
         $orgName = preg_replace('/[^a-zA-Z0-9]/', '_', $orgName);
         $timestamp = date('Ymd_His');
 

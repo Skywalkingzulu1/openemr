@@ -1,11 +1,11 @@
 /**
  * Contains all of the TeleHealth stylesheet settings
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 :root {
   /**
@@ -141,7 +141,7 @@
 
 /** sidebar highlight **/
 .conference-room .sidebar .conference-highlight {
-  /** patient portal has var(--black) but OpenEMR theme does not... so we use #000 **/
+  /** patient portal has var(--black) but DCL theme does not... so we use #000 **/
   background: #000;
   position: absolute;
   transition: opacity 1s;

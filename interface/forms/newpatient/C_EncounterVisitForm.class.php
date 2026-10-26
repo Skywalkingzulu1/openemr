@@ -7,8 +7,8 @@
  * supposed to be self-contained, I'm leaving this here.
  * TODO: investigate moving this into the src/ folder.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ranganath Pathak <pathak@scrs1.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -16,29 +16,29 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2025 Mountain Valley Health <mvhinspire@mountainvalleyhealthinc.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  * @license   There are segments of code in this file that have been generated via Claude.ai and are licensed as Public Domain.  They have been marked with a header and footer.
  */
 
-namespace OpenEMR\Forms\NewPatient;
+namespace DCL\Forms\NewPatient;
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Billing\MiscBillingOptions;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\TemplatePageEvent;
-use OpenEMR\OeUI\RenderFormFieldHelper;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\UserService;
+use DCL\BC\Utilities;
+use DCL\Billing\MiscBillingOptions;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\TemplatePageEvent;
+use DCL\OeUI\RenderFormFieldHelper;
+use DCL\Services\FacilityService;
+use DCL\Services\ListService;
+use DCL\Services\UserService;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
 use Twig\TwigFunction;
@@ -205,7 +205,7 @@ class C_EncounterVisitForm
     public function getVisitCategoriesForTemplate($viewmode, $encounter, $default_visit_category): array
     {
         $visitSQL = "SELECT pc_catid, pc_catname, pc_cattype
-                 FROM openemr_postcalendar_categories
+                 FROM DCL_postcalendar_categories
                  WHERE pc_active = 1 AND pc_cattype IN (0,3)
                  AND pc_constant_id != 'no_show'
                  ORDER BY pc_seq";
@@ -386,7 +386,7 @@ class C_EncounterVisitForm
     {
         $categories = [];
         $visitSQL = "SELECT pc_catid, pc_catname, pc_cattype
-                 FROM openemr_postcalendar_categories
+                 FROM DCL_postcalendar_categories
                  WHERE pc_active = 1 AND pc_cattype = 3
                  AND pc_constant_id != 'no_show'
                  ORDER BY pc_seq";
@@ -582,7 +582,7 @@ class C_EncounterVisitForm
             $validationConstraints = json_decode((string) $validationConstraints["new_encounter"]["rules"], true);
             if ($validationConstraints === false) {
                 $validationConstraints = [];
-                (new \OpenEMR\Common\Logging\SystemLogger())->error("C_EncounterVisitForm: Error decoding validation constraints for encounter form");
+                (new \DCL\Common\Logging\SystemLogger())->error("C_EncounterVisitForm: Error decoding validation constraints for encounter form");
             }
         }
 
@@ -599,7 +599,7 @@ class C_EncounterVisitForm
             $encnow = date('Y-m-d 00:00:00');
             $time = date("H:i:00");
             $q = "SELECT pc_aid, pc_facility, pc_billing_location, pc_catid, pc_startTime" .
-                " FROM openemr_postcalendar_events WHERE pc_pid=? AND pc_eventDate=?" .
+                " FROM DCL_postcalendar_events WHERE pc_pid=? AND pc_eventDate=?" .
                 " ORDER BY pc_startTime ASC";
             $q_events = sqlStatement($q, [$pid, $now]);
             while ($override = sqlFetchArray($q_events)) {

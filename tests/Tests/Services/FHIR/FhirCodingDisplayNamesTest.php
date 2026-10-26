@@ -6,21 +6,21 @@ declare(strict_types=1);
  * FhirCodingDisplayNamesTest.php
  *
  * Codings for HL7 code systems must use the code system's display. The MedicationRequest
- * category, the dosage timing code and the Observation category used OpenEMR's own titles,
+ * category, the dosage timing code and the Observation category used DCL's own titles,
  * notes or the code itself, which the FHIR validator reports as "Wrong Display Name".
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirMedicationRequestService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationSocialHistoryService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirMedicationRequestService;
+use DCL\Services\FHIR\Observation\FhirObservationSocialHistoryService;
 use PHPUnit\Framework\TestCase;
 
 class FhirCodingDisplayNamesTest extends TestCase

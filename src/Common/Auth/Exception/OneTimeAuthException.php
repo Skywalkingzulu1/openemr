@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Common\Auth\Exception;
+namespace DCL\Common\Auth\Exception;
 
 class OneTimeAuthException extends \Exception
 {

@@ -4,8 +4,8 @@
  * 2012 - Refactored extensively to allow for creating multiple feesheets on demand
  * uses a session array of PIDS by Medical Information Integration, LLC - mi-squared.com
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ron Pulcer <rspulcer_2k@yahoo.com>
@@ -14,19 +14,19 @@
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ron Pulcer <rspulcer_2k@yahoo.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $encounter = $session->get('encounter', 0);
 $pid = $session->get('pid', 0);
 require_once($srcdir . "/appointments.inc.php");
 
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 
 $facilityService = new FacilityService();
@@ -358,7 +358,7 @@ if (empty($frow)) {
 
 $logo = '';
 $ma_logo_path = "sites/" . $session->get('site_id') . "/images/ma_logo.png";
-$logo = is_file(\OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir() . "/$ma_logo_path") ? "$web_root/$ma_logo_path" : "";
+$logo = is_file(\DCL\Core\OEGlobalsBag::getInstance()->getProjectDir() . "/$ma_logo_path") ? "$web_root/$ma_logo_path" : "";
 
 // Loop on array of PIDS
 $saved_pages = $pages; //Save calculated page count of a single fee sheet
@@ -466,7 +466,7 @@ foreach ($pid_list as $pid) {
             }
 
             // Note: You would think that pc_comments would have the Appt. comments,
-            // but it is actually stored in pc_hometext in DB table (openemr_postcalendar_events).
+            // but it is actually stored in pc_hometext in DB table (DCL_postcalendar_events).
             // Output-escape — the FHIR Appointment write path persists
             // Appointment.comment into this column verbatim, so without
             // escaping any API client with patients/appt could store HTML

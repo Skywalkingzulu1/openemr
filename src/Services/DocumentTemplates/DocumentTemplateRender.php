@@ -6,26 +6,26 @@
  * to substitute directives with html to create a document.
  * Greatly expanded from a core feature by Rod Roark for portal.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Ruth Moulton
  * Copyright (C) 2013-2014 Rod Roark <rod@sunsetsystems.com>
  * Copyright (C) 2016-2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\DocumentTemplates;
+namespace DCL\Services\DocumentTemplates;
 
 use HTMLPurifier;
 use HTMLPurifier_Config;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\PhoneNumberService;
-use OpenEMR\Services\VersionService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\PhoneNumberService;
+use DCL\Services\VersionService;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 
@@ -516,7 +516,7 @@ class DocumentTemplateRender
                  * 'YYYY-MM-DD', 'MM/DD/YYYY', 'DD/MM/YYYY' override the global setting
                  * anything else is ignored
                  *
-                 * oeFormatShortDate($date = 'today', $showYear = true) - OpenEMR function to format
+                 * oeFormatShortDate($date = 'today', $showYear = true) - DCL function to format
                  * date using global setting, defaults to ISO standard yyyy-mm-dd
                 */
                 $this->keyLength = strlen($matches[0]);

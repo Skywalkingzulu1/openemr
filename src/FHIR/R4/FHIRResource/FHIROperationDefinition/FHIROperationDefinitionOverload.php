@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIROperationDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
@@ -71,13 +71,13 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
 {
     /**
      * Name of parameter to include in overload.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $parameterName = [];
 
     /**
      * Comments to go on overload.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
@@ -88,7 +88,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
 
     /**
      * Name of parameter to include in overload.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getParameterName()
     {
@@ -97,7 +97,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
 
     /**
      * Name of parameter to include in overload.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $parameterName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $parameterName
      * @return $this
      */
     public function addParameterName($parameterName)
@@ -108,7 +108,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
 
     /**
      * Comments to go on overload.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -117,7 +117,7 @@ class FHIROperationDefinitionOverload extends FHIRBackboneElement implements \Js
 
     /**
      * Comments to go on overload.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)

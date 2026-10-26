@@ -2,7 +2,7 @@
 
 /**
  *
- * @package OpenEMR
+ * @package DCL
  * @author Eldho Chacko <eldho@zhservices.com>
  * @author Paul Simon K <paul@zhservices.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
@@ -10,15 +10,15 @@
  * @copyright Copyright (c) 2010 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2018 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2020 Rod Roark <rod@sunsetsystems.com>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Billing\SLEOB;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\PaymentProcessing\Recorder;
+use DCL\BC\Utilities;
+use DCL\Billing\SLEOB;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\PaymentProcessing\Recorder;
 
 // Post a payment to the payments table.
 //

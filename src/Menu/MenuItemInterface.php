@@ -3,16 +3,16 @@
 /**
  * The MenuItemInterface, ensuring provided menu items can successfully be rendered
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2023 Providence Healthtech
  * @copyright Copyright (c) 2023 Robert Down <robertdown@live.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Menu;
+namespace DCL\Menu;
 
 interface MenuItemInterface
 {

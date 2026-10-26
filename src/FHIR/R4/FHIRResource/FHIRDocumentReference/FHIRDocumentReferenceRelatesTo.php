@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDocumentReference;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any serialized object with a mime-type, so includes formal patient centric documents (CDA), clinical notes, scanned paper, and non-patient specific documents like policy text.
@@ -71,13 +71,13 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
 {
     /**
      * The type of relationship that this document has with anther document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
      */
     public $code = null;
 
     /**
      * The target document of this relationship.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $target = null;
 
@@ -88,7 +88,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
 
     /**
      * The type of relationship that this document has with anther document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
 
     /**
      * The type of relationship that this document has with anther document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
 
     /**
      * The target document of this relationship.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTarget()
     {
@@ -117,7 +117,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
 
     /**
      * The target document of this relationship.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $target
      * @return $this
      */
     public function setTarget($target)

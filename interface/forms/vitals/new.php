@@ -3,17 +3,17 @@
 /**
  * vitals new.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 
 require_once "C_FormVitals.class.php";
 

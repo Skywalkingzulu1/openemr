@@ -29,19 +29,19 @@
  * fresh renderer per request, so this is fine; if a caller ever
  * reuses an instance across renders it needs to manage that itself.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PostCalendar;
+namespace DCL\PostCalendar;
 
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Core\OEGlobalsBag;
 use Twig\Environment;
 
 final class CalendarRenderer
@@ -55,7 +55,7 @@ final class CalendarRenderer
     }
 
     /**
-     * Build a renderer wired to the OpenEMR-configured Twig environment.
+     * Build a renderer wired to the DCL-configured Twig environment.
      *
      * Used by the legacy entry points (pnuserapi.php, pnuser.php,
      * pnadmin.php) where constructor injection isn't practical because

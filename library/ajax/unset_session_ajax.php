@@ -3,20 +3,20 @@
 /**
  * library/ajax/unset_session_ajax.php Clear active patient on the server side.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Visolve <services@visolve.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2012 Visolve <services@visolve.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 require_once("../group.inc.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 CsrfUtils::checkCsrfInput(INPUT_POST, session: SessionWrapperFactory::getInstance()->getCoreSession(), dieOnFail: true);
 

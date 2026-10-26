@@ -3,20 +3,20 @@
 /**
  * MfaUtils.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2020 Amiel Elboim <amielel@matrix.co.il>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth;
+namespace DCL\Common\Auth;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\KeyVersion;
-use OpenEMR\Common\Crypto\PasswordBasedCrypto;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\KeyVersion;
+use DCL\Common\Crypto\PasswordBasedCrypto;
+use DCL\Common\Database\QueryUtils;
 
 class MfaUtils
 {
@@ -225,7 +225,7 @@ class MfaUtils
                     $passwordCrypto = new PasswordBasedCrypto(KeyVersion::CURRENT);
                     try {
                         $secret = $passwordCrypto->decrypt($registrationSecret, (string) $passwordResults["password"]);
-                    } catch (\OpenEMR\Common\Crypto\CryptoGenException) {
+                    } catch (\DCL\Common\Crypto\CryptoGenException) {
                         $secret = null;
                     }
                     if (!empty($secret)) {

@@ -59,8 +59,8 @@ teardown() {
     # Must have pushed.
     [[ "${calls}" == *"git push origin v8_2_0"* ]]
     # Must have checked release existence, then created it.
-    [[ "${calls}" == *"gh release view v8_2_0 --repo openemr/openemr"* ]]
-    [[ "${calls}" == *"gh release create v8_2_0 --repo openemr/openemr"* ]]
+    [[ "${calls}" == *"gh release view v8_2_0 --repo DCL/DCL"* ]]
+    [[ "${calls}" == *"gh release create v8_2_0 --repo DCL/DCL"* ]]
     [[ "${output}" == *"Creating release v8_2_0"* ]]
     [[ "${output}" != *"::error::"* ]]
 }
@@ -100,7 +100,7 @@ teardown() {
     [[ "${output}" == *"Tag v8_2_0 already exists on origin, skipping tag creation"* ]]
     [[ "${calls}" != *"git tag "* ]]
     [[ "${calls}" != *"git push "* ]]
-    [[ "${calls}" == *"gh release create v8_2_0 --repo openemr/openemr"* ]]
+    [[ "${calls}" == *"gh release create v8_2_0 --repo DCL/DCL"* ]]
     [[ "${output}" == *"Creating release v8_2_0"* ]]
     [[ "${output}" != *"::error::"* ]]
 }

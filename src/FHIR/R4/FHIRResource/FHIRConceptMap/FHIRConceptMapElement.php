@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConceptMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -71,19 +71,19 @@ class FHIRConceptMapElement extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Identity (code or path) or the element/item being mapped.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * A concept from the target value set that this concept maps to.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapTarget[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapTarget[]
      */
     public $target = [];
 
@@ -94,7 +94,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Identity (code or path) or the element/item being mapped.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -103,7 +103,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Identity (code or path) or the element/item being mapped.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -114,7 +114,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -123,7 +123,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -134,7 +134,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A concept from the target value set that this concept maps to.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapTarget[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapTarget[]
      */
     public function getTarget()
     {
@@ -143,7 +143,7 @@ class FHIRConceptMapElement extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A concept from the target value set that this concept maps to.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapTarget $target
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapTarget $target
      * @return $this
      */
     public function addTarget($target)

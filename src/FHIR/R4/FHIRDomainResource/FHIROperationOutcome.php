@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A collection of error, warning, or information messages that result from a system action.
@@ -72,7 +72,7 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * An error, warning, or information message that results from a system action.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue[]
      */
     public $issue = [];
 
@@ -83,7 +83,7 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An error, warning, or information message that results from a system action.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue[]
      */
     public function getIssue()
     {
@@ -92,7 +92,7 @@ class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An error, warning, or information message that results from a system action.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue $issue
+     * @param \DCL\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue $issue
      * @return $this
      */
     public function addIssue($issue)

@@ -4,35 +4,35 @@
  *
  * Multi Site Administration script.
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (C) 2010 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
- * DISABLED BY DEFAULT — set OPENEMR_ADMIN_PHP_ENABLED=1 as an environment
+ * DISABLED BY DEFAULT — set DCL_ADMIN_PHP_ENABLED=1 as an environment
  * variable to enable.
  *
  *   Apache (vhost or .htaccess):
- *     SetEnv OPENEMR_ADMIN_PHP_ENABLED 1
+ *     SetEnv DCL_ADMIN_PHP_ENABLED 1
  *
  *   PHP-FPM (pool config):
- *     env[OPENEMR_ADMIN_PHP_ENABLED] = 1
+ *     env[DCL_ADMIN_PHP_ENABLED] = 1
  *
  *   Shell:
- *     export OPENEMR_ADMIN_PHP_ENABLED=1
+ *     export DCL_ADMIN_PHP_ENABLED=1
  *
  * When enabled, restrict access via network controls — this script performs
  * no user authentication.
  */
 
 if (
-    filter_input(INPUT_SERVER, 'OPENEMR_ADMIN_PHP_ENABLED') !== '1'
-    && (getenv('OPENEMR_ADMIN_PHP_ENABLED') ?: '') !== '1'
+    filter_input(INPUT_SERVER, 'DCL_ADMIN_PHP_ENABLED') !== '1'
+    && (getenv('DCL_ADMIN_PHP_ENABLED') ?: '') !== '1'
 ) {
     http_response_code(403);
     header('Content-Type: text/plain');
@@ -40,9 +40,9 @@ if (
     exit;
 }
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with DCL:
 require_once(__DIR__ . "/src/Common/Compatibility/Checker.php");
-$response = OpenEMR\Common\Compatibility\Checker::checkPhpVersion();
+$response = DCL\Common\Compatibility\Checker::checkPhpVersion();
 if ($response !== true) {
     die(htmlspecialchars($response));
 }
@@ -64,7 +64,7 @@ function adminSqlQuery($statement, $link)
 ?>
 <html>
 <head>
-    <title>OpenEMR Site Administration</title>
+    <title>DCL Site Administration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/assets/bootstrap/dist/css/bootstrap.min.css">
     <script src="public/assets/jquery/dist/jquery.min.js"></script>
@@ -77,7 +77,7 @@ function adminSqlQuery($statement, $link)
         <div class="row">
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>OpenEMR Multi Site Administration</h2>
+                    <h2>DCL Multi Site Administration</h2>
                     <a class="text-secondary" data-target="#myModal" data-toggle="modal" href="#" id="help-href" name="help-href">
                         <i class="fa fa-question-circle fa-lg" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Click to view Help"></i>
                     </a>
@@ -158,13 +158,13 @@ function adminSqlQuery($statement, $link)
                                 echo "  <td colspan='3' class='text-danger'>" . htmlspecialchars($errmsg, ENT_NOQUOTES) . "</td>\n";
                             } else {
                                 // Get site name for display.
-                                $row = adminSqlQuery("SELECT gl_value FROM globals WHERE gl_name = 'openemr_name' LIMIT 1", $dbh);
-                                $openemr_name = is_string($row['gl_value'] ?? null) ? $row['gl_value'] : '';
+                                $row = adminSqlQuery("SELECT gl_value FROM globals WHERE gl_name = 'DCL_name' LIMIT 1", $dbh);
+                                $DCL_name = is_string($row['gl_value'] ?? null) ? $row['gl_value'] : '';
 
                                 // Get version indicators from the database.
                                 $row = adminSqlQuery("SHOW TABLES LIKE 'version'", $dbh);
                                 if (empty($row)) {
-                                    $openemr_version = 'Unknown';
+                                    $DCL_version = 'Unknown';
                                     $database_version = 0;
                                 } else {
                                     $row = adminSqlQuery("SELECT * FROM version LIMIT 1", $dbh);
@@ -173,7 +173,7 @@ function adminSqlQuery($statement, $link)
                                         $database_patch_txt = " (" . $row['v_realpatch'] . ")";
                                     }
 
-                                    $openemr_version = $row['v_major'] . "." . $row['v_minor'] . "." .
+                                    $DCL_version = $row['v_major'] . "." . $row['v_minor'] . "." .
                                     $row['v_patch'] . $row['v_tag'] . $database_patch_txt;
                                     $database_version = 0 + $row['v_database'];
                                     $database_acl = 0 + $row['v_acl'];
@@ -181,8 +181,8 @@ function adminSqlQuery($statement, $link)
                                 }
 
                                 // Display relevant columns.
-                                echo "  <td>" . htmlspecialchars($openemr_name, ENT_NOQUOTES) . "</td>\n";
-                                echo "  <td>" . htmlspecialchars($openemr_version, ENT_NOQUOTES) . "</td>\n";
+                                echo "  <td>" . htmlspecialchars($DCL_name, ENT_NOQUOTES) . "</td>\n";
+                                echo "  <td>" . htmlspecialchars($DCL_version, ENT_NOQUOTES) . "</td>\n";
                                 if ($v_database != $database_version) {
                                     echo "  <td><a href='sql_upgrade.php?site=" . htmlspecialchars(urlencode($sfname), ENT_QUOTES) . "' class='text-decoration-none'>Upgrade Database</a></td>\n";
                                 } elseif (($v_acl > $database_acl)) {
@@ -240,7 +240,7 @@ function adminSqlQuery($statement, $link)
     <script>
         $(function () {
             $('#help-href').click (function() {
-                document.getElementById('targetiframe').src = "Documentation/help_files/openemr_multisite_admin_help.php";
+                document.getElementById('targetiframe').src = "Documentation/help_files/DCL_multisite_admin_help.php";
             });
         });
         $(function () {

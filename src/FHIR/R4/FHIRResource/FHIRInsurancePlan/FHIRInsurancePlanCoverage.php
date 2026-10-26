@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,19 +71,19 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Type of coverage  (Medical; Dental; Mental Health; Substance Abuse; Vision; Drug; Short Term; Long Term Care; Hospice; Home Health).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Reference to the network that providing the type of coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $network = [];
 
     /**
      * Specific benefits under this type of coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanBenefit[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanBenefit[]
      */
     public $benefit = [];
 
@@ -94,7 +94,7 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Type of coverage  (Medical; Dental; Mental Health; Substance Abuse; Vision; Drug; Short Term; Long Term Care; Hospice; Home Health).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Type of coverage  (Medical; Dental; Mental Health; Substance Abuse; Vision; Drug; Short Term; Long Term Care; Hospice; Home Health).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Reference to the network that providing the type of coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getNetwork()
     {
@@ -123,7 +123,7 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Reference to the network that providing the type of coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $network
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $network
      * @return $this
      */
     public function addNetwork($network)
@@ -134,7 +134,7 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Specific benefits under this type of coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanBenefit[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanBenefit[]
      */
     public function getBenefit()
     {
@@ -143,7 +143,7 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Specific benefits under this type of coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanBenefit $benefit
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanBenefit $benefit
      * @return $this
      */
     public function addBenefit($benefit)

@@ -1,30 +1,30 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm\Services;
+namespace DCL\Services\Qdm\Services;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\Address;
-use OpenEMR\Cqm\Qdm\BaseTypes\Code;
-use OpenEMR\Cqm\Qdm\BaseTypes\DateTime;
-use OpenEMR\Cqm\Qdm\BaseTypes\Interval;
-use OpenEMR\Cqm\Qdm\BaseTypes\Telcom;
-use OpenEMR\Cqm\Qdm\Identifier;
-use OpenEMR\Cqm\Qdm\Patient;
-use OpenEMR\Cqm\Qdm\PatientCharacteristicBirthdate;
-use OpenEMR\Cqm\Qdm\PatientCharacteristicEthnicity;
-use OpenEMR\Cqm\Qdm\PatientCharacteristicExpired;
-use OpenEMR\Cqm\Qdm\PatientCharacteristicPayer;
-use OpenEMR\Cqm\Qdm\PatientCharacteristicRace;
-use OpenEMR\Cqm\Qdm\PatientCharacteristicSex;
-use OpenEMR\Services\Qdm\Interfaces\QdmServiceInterface;
-use OpenEMR\Services\Qdm\QdmRecord;
+use DCL\Cqm\Qdm\BaseTypes\Address;
+use DCL\Cqm\Qdm\BaseTypes\Code;
+use DCL\Cqm\Qdm\BaseTypes\DateTime;
+use DCL\Cqm\Qdm\BaseTypes\Interval;
+use DCL\Cqm\Qdm\BaseTypes\Telcom;
+use DCL\Cqm\Qdm\Identifier;
+use DCL\Cqm\Qdm\Patient;
+use DCL\Cqm\Qdm\PatientCharacteristicBirthdate;
+use DCL\Cqm\Qdm\PatientCharacteristicEthnicity;
+use DCL\Cqm\Qdm\PatientCharacteristicExpired;
+use DCL\Cqm\Qdm\PatientCharacteristicPayer;
+use DCL\Cqm\Qdm\PatientCharacteristicRace;
+use DCL\Cqm\Qdm\PatientCharacteristicSex;
+use DCL\Services\Qdm\Interfaces\QdmServiceInterface;
+use DCL\Services\Qdm\QdmRecord;
 
 class PatientService extends AbstractQdmService implements QdmServiceInterface
 {
@@ -88,7 +88,7 @@ class PatientService extends AbstractQdmService implements QdmServiceInterface
         // Make a formatted BSON that can be used as an index in a PHP associative array,
         // this will be used for aggregating results
         $formatted_id = self::convertIdFromBSONObjectIdFormat($_id);
-        $id = self::makeQdmIdentifier('OpenEMR BSON', $formatted_id);
+        $id = self::makeQdmIdentifier('DCL BSON', $formatted_id);
 
         $qdmPatient = new Patient([
             'patientName' => [

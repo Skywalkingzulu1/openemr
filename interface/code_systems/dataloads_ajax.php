@@ -2,10 +2,10 @@
 
 /**
  * This file implements the main jquery interface for loading external
- * database files into openEMR
+ * database files into DCL
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    (Mac) Kevin McAloon <mcaloon@patienthealthcareanalytics.com>
  * @author    Rohit Kumar <pandit.rohit@netsity.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -13,14 +13,14 @@
  * @copyright Copyright (c) 2011 Phyaura, LLC <info@phyaura.com>
  * @copyright Copyright (c) 2012 Patient Healthcare Analytics, Inc.
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
 
 // Ensure script doesn't time out
 set_time_limit(0);
@@ -219,7 +219,7 @@ if (!AclMain::aclCheckCore('admin', 'super')) {
                         });
                     });
                     // Initial tooltip
-                    $(`#${dbName}_unsupportedmsg`).attr({"title": "<?php echo xla("OpenEMR does not recognize the incoming file in the contrib directory. This is most likely because you need to configure the release in the supported_external_dataloads table in the MySQL database."); ?>", "data-toggle":"tooltip", "data-placement":"bottom"}).tooltip();
+                    $(`#${dbName}_unsupportedmsg`).attr({"title": "<?php echo xla("DCL does not recognize the incoming file in the contrib directory. This is most likely because you need to configure the release in the supported_external_dataloads table in the MySQL database."); ?>", "data-toggle":"tooltip", "data-placement":"bottom"}).tooltip();
 
                     $(`#${dbName}_dirmsg`).attr({"title": "<?php echo xla("Please create the following directory before proceeding"); ?>: contrib/" + (dbName).toLowerCase(), "data-toggle":"tooltip", "data-placement":"bottom"}).tooltip();
 

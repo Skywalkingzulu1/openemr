@@ -1,16 +1,16 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OAuth2KeyConfig;
-use OpenEMR\Common\Auth\OAuth2KeyException;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\HttpSessionFactory;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\FHIR\Config\ServerConfig;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OAuth2KeyConfig;
+use DCL\Common\Auth\OAuth2KeyException;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpSessionFactory;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEHttpKernel;
+use DCL\FHIR\Config\ServerConfig;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
@@ -63,7 +63,7 @@ class SiteSetupListener implements EventSubscriberInterface
 
 // The webserver_root and web_root are now automatically collected.
 // If not working, can set manually below.
-// Auto collect the full absolute directory path for openemr.
+// Auto collect the full absolute directory path for DCL.
         $webserver_root = dirname(__FILE__, 4);
         if (IS_WINDOWS) {
             //convert windows path separators
@@ -78,11 +78,11 @@ class SiteSetupListener implements EventSubscriberInterface
         }
 
 // Auto collect the relative html path, i.e. what you would type into the web
-// browser after the server address to get to OpenEMR.
+// browser after the server address to get to DCL.
 // This removes the leading portion of $webserver_root that it has in common with the web server's document
 // root and assigns the result to $web_root. In addition to the common case where $webserver_root is
-// /var/www/openemr and document root is /var/www, this also handles the case where document root is
-// /var/www/html and there is an Apache "Alias" command that directs /openemr to /var/www/openemr.
+// /var/www/DCL and document root is /var/www, this also handles the case where document root is
+// /var/www/html and there is an Apache "Alias" command that directs /DCL to /var/www/DCL.
         $web_root = substr($webserver_root, strspn($webserver_root ^ $server_document_root, "\0"));
 // Ensure web_root starts with a path separator
         if (preg_match("/^[^\/]/", $web_root)) {
@@ -106,8 +106,8 @@ class SiteSetupListener implements EventSubscriberInterface
         if (empty($siteId)) {
             // TODO: @adunsulag do we need to do a 401 when its an oauth2 request?
             // we don't use system logger here because we don't have access to our database that configures the logging
-            error_log("OpenEMR Error - api site error, so forced exit " . "siteId: $siteId, pathInfo: $pathInfo");
-            throw new HttpException(Response::HTTP_BAD_REQUEST, "OpenEMR Error: api site error, so forced exit.  Please ensure that the site is set up correctly in the OpenEMR configuration.");
+            error_log("DCL Error - api site error, so forced exit " . "siteId: $siteId, pathInfo: $pathInfo");
+            throw new HttpException(Response::HTTP_BAD_REQUEST, "DCL Error: api site error, so forced exit.  Please ensure that the site is set up correctly in the DCL configuration.");
         }
         $request->attributes->set('siteId', $siteId);
         $webroot = self::getWebroot();
@@ -177,7 +177,7 @@ class SiteSetupListener implements EventSubscriberInterface
 
     /**
      * Load globals.php and configure the kernel logger.
-     * Override in tests to avoid requiring the full OpenEMR environment.
+     * Override in tests to avoid requiring the full DCL environment.
      *
      * globals.php reads several variables from the caller's local scope via
      * PHP include semantics. Set them here so they remain visible to the

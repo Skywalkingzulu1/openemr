@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Expand a comma-separated list of docker tag labels into a newline-
-# separated list of full `openemr/openemr:<tag>` refs, adding a
+# separated list of full `DCL/DCL:<tag>` refs, adding a
 # `<tag>-<BUILD_DATE>` dated sibling for version-number tags.
 #
 # Rule (unchanged from the pre-extraction inline sites):
@@ -24,7 +24,7 @@
 # date format) lands once instead of two.
 #
 # Inputs (env, all required)
-#   INPUT_TAGS   comma-separated list of tag labels (no `openemr/openemr:`
+#   INPUT_TAGS   comma-separated list of tag labels (no `DCL/DCL:`
 #                prefix -- the script adds it). Whitespace tolerated.
 #                Empty entries skipped.
 #                Example: "8.2.0,latest" or "next" or "  8.1.0 , latest "
@@ -36,7 +36,7 @@
 #                have produced.
 #
 # Stdout
-#   Newline-separated `openemr/openemr:<tag>` refs, one per line, in
+#   Newline-separated `DCL/DCL:<tag>` refs, one per line, in
 #   input order (each version-number tag immediately followed by its
 #   dated sibling). Callers capture this into their $GITHUB_OUTPUT via
 #   a heredoc form.
@@ -55,11 +55,11 @@ IFS=',' read -ra TAGS <<< "${INPUT_TAGS}"
 for t in "${TAGS[@]}"; do
     t="${t// /}"   # strip whitespace
     [[ -z "${t}" ]] && continue
-    echo "openemr/openemr:${t}"
+    echo "DCL/DCL:${t}"
     # Rule: version-number tags (digits and dots only) also get a dated sibling.
     # "8.1.0" -> push "8.1.0" + "8.1.0-2026-06-13"
     # "next" / "dev" / "latest" / "manual-test" -> no dated variant.
     if [[ "${t}" =~ ^[0-9]+(\.[0-9]+)+$ ]]; then
-        echo "openemr/openemr:${t}-${BUILD_DATE}"
+        echo "DCL/DCL:${t}-${BUILD_DATE}"
     fi
 done

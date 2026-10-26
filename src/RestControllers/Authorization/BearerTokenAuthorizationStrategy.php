@@ -1,31 +1,31 @@
 <?php
 
-namespace OpenEMR\RestControllers\Authorization;
+namespace DCL\RestControllers\Authorization;
 
 use League\OAuth2\Server\AuthorizationValidators\BearerTokenValidator;
 use League\OAuth2\Server\CryptKey;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\ResourceServer;
 use LogicException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\TrustedUserService;
-use OpenEMR\Services\UserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\Services\PatientService;
+use DCL\Services\TrustedUserService;
+use DCL\Services\UserService;
 use Psr\Log\LoggerInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\HttpFoundation\Request;
@@ -131,7 +131,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
      */
     public function getUuidUserAccountFactory(): callable
     {
-        $this->uuidUserAccountFactory ??= fn($userUuid): \OpenEMR\Common\Auth\UuidUserAccount => new UuidUserAccount($userUuid);
+        $this->uuidUserAccountFactory ??= fn($userUuid): \DCL\Common\Auth\UuidUserAccount => new UuidUserAccount($userUuid);
         return $this->uuidUserAccountFactory;
     }
 
@@ -166,7 +166,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         $tokenRaw = $this->verifyAccessToken($repository, $request);
         // collect token attributes
         $attributes = $tokenRaw->getAttributes();
-        // collect openemr user uuid
+        // collect DCL user uuid
         $userId = $attributes['oauth_user_id'];
         // collect client id (will be empty for PKCE)
         $clientId = $attributes['oauth_client_id'] ?? null;
@@ -174,8 +174,8 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         $tokenId = $attributes['oauth_access_token_id'];
         // ensure user uuid and token id are populated
         if (empty($userId) || empty($tokenId)) {
-            $this->getSystemLogger()->error("OpenEMR Error - userid or tokenid not available, so forced exit", ['attributes' => $attributes]);
-            throw new HttpException(400, "OpenEMR Error: userid or tokenid not available, so forced exit. Please ensure that the access token is valid and contains the necessary attributes.");
+            $this->getSystemLogger()->error("DCL Error - userid or tokenid not available, so forced exit", ['attributes' => $attributes]);
+            throw new HttpException(400, "DCL Error: userid or tokenid not available, so forced exit. Please ensure that the access token is valid and contains the necessary attributes.");
         }
         $logger = $this->getSystemLogger();
 
@@ -223,14 +223,14 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         // we should look at removing this and see if it causes any issues
         if (!$this->authenticateUserToken($request, $repository, $tokenId, $clientId, $userId)) {
             $this->getSystemLogger()->error("dispatch.php api call with invalid token");
-            throw new UnauthorizedHttpException("Bearer", "OpenEMR Error: API call failed due to invalid token or expired token.");
+            throw new UnauthorizedHttpException("Bearer", "DCL Error: API call failed due to invalid token or expired token.");
         }
         $uuidToUser = $this->getUuidUserAccountFactory()($userId);
         $user = $uuidToUser->getUserAccount();
         $userRole = $uuidToUser->getUserRole();
         if (empty($user)) {
             // unable to identify the users user role
-            $this->getSystemLogger()->error("OpenEMR Error - api user account could not be identified, so forced exit", [
+            $this->getSystemLogger()->error("DCL Error - api user account could not be identified, so forced exit", [
                 'userId' => $userId,
                 'userRole' => $uuidToUser->getUserRole()]);
             // TODO: @adunsulag shouldn't this be 500? if token is valid but user isn't found, seems like a system error as it never should happen
@@ -238,7 +238,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         }
         if (empty($userRole)) {
             // unable to identify the users user role
-            $this->getSystemLogger()->error("OpenEMR Error - api user role for user could not be identified, so forced exit");
+            $this->getSystemLogger()->error("DCL Error - api user role for user could not be identified, so forced exit");
             // TODO: @adunsulag shouldn't this be 500? if token is valid but user role isn't found, seems like a system error as it never should happen
             throw new HttpException(400);
         }
@@ -268,8 +268,8 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
             if (!empty($user['pid'])) {
                 $request->setPatientUuidString($userId);
             } else {
-                $this->getSystemLogger()->error("OpenEMR Error - api patient user role but no patient id found");
-                throw new HttpException(401, "OpenEMR Error: API call failed due to invalid patient user id.");
+                $this->getSystemLogger()->error("DCL Error - api patient user role but no patient id found");
+                throw new HttpException(401, "DCL Error: API call failed due to invalid patient user id.");
             }
         }
         $request->setClientId($clientId);
@@ -294,7 +294,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
             $session->set('authProvider', $authProvider);
             if (empty($session->get('authUser')) || empty($session->get('authUserID')) || empty($session->get('authProvider'))) {
                 // this should never happen
-                $this->getSystemLogger()->error("OpenEMR Error: api failed because unable to set critical users session variables");
+                $this->getSystemLogger()->error("DCL Error: api failed because unable to set critical users session variables");
                 throw new HttpException(401);
             }
             $this->getSystemLogger()->debug("BearerTokenAuthorizationStrategy::setupSessionForUserRole request setup for user role", ['authUserID' => $user['id'], 'authUser' => $user['username']]);
@@ -314,10 +314,10 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
             if (
                 empty($session->get('authUser'))
                 // this should never happen as the system role depends on the system username... but we safety check it anyways
-                || $session->get('authUser') != \OpenEMR\Services\UserService::SYSTEM_USER_USERNAME
+                || $session->get('authUser') != \DCL\Services\UserService::SYSTEM_USER_USERNAME
                 || empty($session->get('authUserID'))
             ) {
-                $this->getSystemLogger()->error("OpenEMR Error: api failed because unable to set critical users session variables");
+                $this->getSystemLogger()->error("DCL Error: api failed because unable to set critical users session variables");
                 throw new HttpException(401);
             }
         }
@@ -450,7 +450,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
             (self::is_portal_request($resource) && !in_array('api:port', $oauthScopes))
         ) {
             $this->getSystemLogger()->error("API call with token that does not cover the requested route");
-            throw new HttpException(403, "OpenEMR Error: API call failed due to insufficient permissions for the requested resource.");
+            throw new HttpException(403, "DCL Error: API call failed due to insufficient permissions for the requested resource.");
         }
         // ensure user role has access to the resource
         //  for now assuming:
@@ -465,8 +465,8 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         } elseif ($userRole === 'system' && (self::is_fhir_request($resource))) {
             $this->getSystemLogger()->debug("dispatch.php valid role and system has access to api/fhir resource", ['resource' => $resource]);
         } else {
-            $this->getSystemLogger()->error("OpenEMR Error: api failed because user role does not have access to the resource", ['resource' => $resource, 'userRole' => $userRole]);
-            throw new HttpException(403, "OpenEMR Error: API call failed due to insufficient permissions for the requested resource.");
+            $this->getSystemLogger()->error("DCL Error: api failed because user role does not have access to the resource", ['resource' => $resource, 'userRole' => $userRole]);
+            throw new HttpException(403, "DCL Error: API call failed due to insufficient permissions for the requested resource.");
         }
         return true;
     }
@@ -527,11 +527,11 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
             if ($this->checkUserHasAccessToPatient($restRequest->getRequestUserId(), $patientUuid)) {
                 $restRequest->setPatientUuidString($patientUuid);
             } else {
-                $this->getSystemLogger()->error("OpenEMR Error: api had patient launch scope but user did not have access to patient uuid."
+                $this->getSystemLogger()->error("DCL Error: api had patient launch scope but user did not have access to patient uuid."
                     . " Resources restricted with patient scopes will not return results");
             }
         } else {
-            $this->getSystemLogger()->error("OpenEMR Error: api had patient launch scope but no patient was set in the "
+            $this->getSystemLogger()->error("DCL Error: api had patient launch scope but no patient was set in the "
                 . " session cache.  Resources restricted with patient scopes will not return results");
         }
         return $restRequest;
@@ -547,7 +547,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         try {
             return json_decode($context, true);
         } catch (\Throwable $exception) {
-            $this->getSystemLogger()->error("OpenEMR Error: failed to decode token context json", ['exception' => $exception->getMessage()
+            $this->getSystemLogger()->error("DCL Error: failed to decode token context json", ['exception' => $exception->getMessage()
                 , 'tokenId' => $restRequest->getAccessTokenId()]);
         }
         return [];
@@ -557,7 +557,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
     /**
      * Checks whether a user has access to the patient. Returns true if the user can access the given patient, false otherwise.
      *
-     * Mirrors OpenEMR's core UI enforcement model for patient chart access:
+     * Mirrors DCL's core UI enforcement model for patient chart access:
      *   1. The caller must resolve to a real user record.
      *   2. The patient UUID must resolve to a real patient record.
      *   3. The user must hold the `patients / demo` ACL (the minimum PHI ACL, used
@@ -594,14 +594,14 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         // not silently drop the audit line.
         if (!is_string($userId) || $userId === '' || !UuidRegistry::isValidStringUUID($userId)) {
             $this->auditLogger()->error(
-                "OpenEMR Error: checkUserHasAccessToPatient rejected — user id missing or not a valid UUID",
+                "DCL Error: checkUserHasAccessToPatient rejected — user id missing or not a valid UUID",
                 ['userIdType' => gettype($userId)]
             );
             return false;
         }
         if (!is_string($patientUuid) || $patientUuid === '' || !UuidRegistry::isValidStringUUID($patientUuid)) {
             $this->auditLogger()->error(
-                "OpenEMR Error: checkUserHasAccessToPatient rejected — patient uuid missing or not a valid UUID",
+                "DCL Error: checkUserHasAccessToPatient rejected — patient uuid missing or not a valid UUID",
                 ['patientUuidType' => gettype($patientUuid)]
             );
             return false;
@@ -611,7 +611,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         $user = $this->getUserService()->getUserByUUID($userId);
         if (!is_array($user)) {
             $this->auditLogger()->error(
-                "OpenEMR Error: checkUserHasAccessToPatient rejected — user uuid did not resolve to a user record",
+                "DCL Error: checkUserHasAccessToPatient rejected — user uuid did not resolve to a user record",
                 ['userId' => $userId]
             );
             return false;
@@ -619,7 +619,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         $username = $user['username'] ?? null;
         if (!is_string($username) || $username === '') {
             $this->auditLogger()->error(
-                "OpenEMR Error: checkUserHasAccessToPatient rejected — resolved user record has no username",
+                "DCL Error: checkUserHasAccessToPatient rejected — resolved user record has no username",
                 ['userId' => $userId]
             );
             return false;
@@ -630,7 +630,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         $patient = $this->findPatientByUuid($patientUuid);
         if ($patient === null) {
             $this->auditLogger()->error(
-                "OpenEMR Error: checkUserHasAccessToPatient rejected — patient uuid did not resolve to a patient record",
+                "DCL Error: checkUserHasAccessToPatient rejected — patient uuid did not resolve to a patient record",
                 ['patientUuid' => $patientUuid]
             );
             return false;
@@ -638,7 +638,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
         $pid = $patient['pid'] ?? null;
         if (!is_numeric($pid) || (int) $pid <= 0) {
             $this->auditLogger()->error(
-                "OpenEMR Error: checkUserHasAccessToPatient rejected — resolved patient record has no pid",
+                "DCL Error: checkUserHasAccessToPatient rejected — resolved patient record has no pid",
                 ['patientUuid' => $patientUuid]
             );
             return false;
@@ -690,7 +690,7 @@ class BearerTokenAuthorizationStrategy implements IAuthorizationStrategy
     }
 
     /**
-     * Applies OpenEMR's user-to-patient ACL policy: base `patients / demo`
+     * Applies DCL's user-to-patient ACL policy: base `patients / demo`
      * plus, when the patient carries a squad tag, the matching `squads / <squad>`
      * ACL. Split out so isolated tests can stub the AclMain interaction without
      * standing up the gACL database.

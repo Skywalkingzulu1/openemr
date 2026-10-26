@@ -12,19 +12,19 @@
  * dupscore put the group on the report -- and offers the Mark Unique / Recompute actions. The rest
  * are "matches", scored against that primary, and offer the merge actions.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2017-2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Patient;
+namespace DCL\Services\Patient;
 
 final class DuplicatePatientRow
 {

@@ -1,18 +1,18 @@
 # syntax=docker/dockerfile:1
 # ============================================================================
-# OpenEMR Flex Dockerfile
+# DCL Flex Dockerfile
 # ============================================================================
-# This Dockerfile builds a flexible OpenEMR container image designed for
+# This Dockerfile builds a flexible DCL container image designed for
 # development and testing. Unlike the versioned containers (e.g., 7.0.5),
-# the flex container fetches OpenEMR source code at runtime from a configurable
+# the flex container fetches DCL source code at runtime from a configurable
 # git repository, making it suitable for testing different branches, tags, or forks.
 #
 # Key Features:
-#   - Runtime OpenEMR source fetching (configurable via FLEX_REPOSITORY env vars)
+#   - Runtime DCL source fetching (configurable via FLEX_REPOSITORY env vars)
 #   - Developer tools included (bash, vim, nano, tree, etc.)
 #   - Runtime dependency building (composer/npm can run at container startup)
 #   - Support for multiple development modes (EASY_DEV_MODE, EASY_DEV_MODE_NEW, etc.)
-#   - Apache web server for serving OpenEMR
+#   - Apache web server for serving DCL
 #   - PHP with all required extensions
 #   - Support for SSL/TLS certificates
 #   - Multi-stage build support for coverage testing (kcov target)
@@ -58,7 +58,7 @@ RUN apk add --no-cache \
     unzip \
     vim
 
-# Install system packages required for OpenEMR and Apache
+# Install system packages required for DCL and Apache
 # These packages provide web server, database clients, build tools, and utilities
 # Packages: apache2 (HTTP server), apache2-proxy (proxy module), apache2-ssl (SSL/TLS),
 # apache2-utils (utilities), certbot (Let's Encrypt), curl (HTTP client),
@@ -66,7 +66,7 @@ RUN apk add --no-cache \
 # jq (JSON processor), mariadb-client (database client), mariadb-connector-c (DB connector),
 # ncurses (terminal), nodejs/npm (JavaScript runtime), openssl/openssl-dev (cryptography),
 # perl (interpreter), rsync (file sync), shadow (user management), su-exec (lightweight
-# privilege-drop tool used by run_php_as_apache to invoke OpenEMR CLI scripts as
+# privilege-drop tool used by run_php_as_apache to invoke DCL CLI scripts as
 # the apache user without an intermediate shell — busybox `su` rescans options
 # across the whole arg list, which breaks argv-passthrough), tar (archives)
 RUN apk add --no-cache \
@@ -93,8 +93,8 @@ RUN apk add --no-cache \
     su-exec \
     tar
 
-# Install PHP and all required extensions for OpenEMR
-# OpenEMR requires a comprehensive set of PHP extensions for full functionality
+# Install PHP and all required extensions for DCL
+# DCL requires a comprehensive set of PHP extensions for full functionality
 # Core: php, php-apache2 (Apache integration)
 # Database: php-mysqli, php-pdo, php-pdo_mysql (MySQL support)
 # XML/Data: php-dom, php-xml, php-xmlreader, php-xmlwriter, php-xsl, php-simplexml, php-soap
@@ -164,7 +164,7 @@ RUN sed -i 's/^Listen 80$/Listen 0.0.0.0:80/' /etc/apache2/httpd.conf
 # USER AND PERMISSIONS CONFIGURATION
 # ============================================================================
 # Set Apache user UID to 1000 to ensure consistent permissions across
-# shared volumes when using multiple containers (OpenEMR, nginx, php-fpm)
+# shared volumes when using multiple containers (DCL, nginx, php-fpm)
 # This prevents permission conflicts in multi-container deployments
 RUN usermod -u 1000 apache
 
@@ -176,7 +176,7 @@ RUN usermod -u 1000 apache
 # The symlink ensures 'php' command points to the correct versioned binary
 RUN ln -sf /usr/bin/php${PHP_VERSION_ABBR} /usr/bin/php
 
-# Install Composer (PHP dependency manager) for OpenEMR package installation
+# Install Composer (PHP dependency manager) for DCL package installation
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 # Per-file retries for GitHub zipball 504s during runtime composer install
 ENV COMPOSER_MAX_RETRIES=8
@@ -185,14 +185,14 @@ ENV COMPOSER_MAX_RETRIES=8
 # BUILD TOOLS AND DIRECTORY SETUP
 # ============================================================================
 # Note: build-base is kept in the image (not removed after use) because
-# npm package libxmljs needs to be built during OpenEMR runtime builds.
+# npm package libxmljs needs to be built during DCL runtime builds.
 # This is part of the ccda npm build process.
 # TODO: When this issue is fixed, we can remove build-base installation,
 #       which will decrease image size by ~190MB
 #
 # IMPORTANT: Unlike versioned containers (e.g., 7.0.5), the flex container
 # does NOT use multi-stage builds for composer/npm dependencies because:
-#   1. OpenEMR source is fetched at runtime (not build time) via git
+#   1. DCL source is fetched at runtime (not build time) via git
 #   2. Dependencies are built at runtime when the container starts
 #   3. Different branches/tags may require different dependencies
 #   4. Users may want to mount volumes with pre-built dependencies
@@ -207,8 +207,8 @@ ENV COMPOSER_MAX_RETRIES=8
 #   - Conditional dependency building (only when needed)
 #   - Support for pre-built dependencies via volumes
 RUN apk add --no-cache build-base \
-    && mkdir -p /var/www/localhost/htdocs/openemr/sites \
-    && chown -R apache:apache /var/www/localhost/htdocs/openemr \
+    && mkdir -p /var/www/localhost/htdocs/DCL/sites \
+    && chown -R apache:apache /var/www/localhost/htdocs/DCL \
     && mkdir -p /etc/ssl/certs /etc/ssl/private \
     # Disable Apache logging to reduce disk usage (logs handled by Docker)
     && sed -i 's/^ *CustomLog/#CustomLog/' /etc/apache2/httpd.conf \
@@ -219,7 +219,7 @@ RUN apk add --no-cache build-base \
 # ============================================================================
 # WORKING DIRECTORY AND VOLUMES
 # ============================================================================
-# Set working directory to web root (OpenEMR will be cloned here at runtime)
+# Set working directory to web root (DCL will be cloned here at runtime)
 WORKDIR /var/www/localhost/htdocs
 
 # Define volumes for SSL certificates and Let's Encrypt certificates
@@ -232,22 +232,22 @@ VOLUME [ "/etc/letsencrypt/", "/etc/ssl" ]
 # Set Apache log directory environment variable
 ENV APACHE_LOG_DIR=/var/log/apache2
 
-# Copy PHP configuration file with OpenEMR-optimized settings
+# Copy PHP configuration file with DCL-optimized settings
 COPY configs/php${PHP_VERSION}/php.ini /etc/php${PHP_VERSION_ABBR}/php.ini
 
-# Copy Apache virtual host configuration for OpenEMR
-COPY openemr.conf /etc/apache2/conf.d/
+# Copy Apache virtual host configuration for DCL
+COPY DCL.conf /etc/apache2/conf.d/
 
 # ============================================================================
-# OPENEMR SCRIPTS AND UTILITIES
+# DCL SCRIPTS AND UTILITIES
 # ============================================================================
 # Copy main startup and configuration scripts
-# - openemr.sh: Main container startup script (handles setup, upgrades, Apache)
+# - DCL.sh: Main container startup script (handles setup, upgrades, Apache)
 # - ssl.sh: SSL/TLS certificate management script
 # - xdebug.sh: XDebug configuration script (for development debugging)
 # - pcov.sh: PCOV configuration script (for code coverage)
-# - auto_configure.php: Automated OpenEMR installation script
-COPY openemr.sh ssl.sh xdebug.sh pcov.sh auto_configure.php /var/www/localhost/htdocs/
+# - auto_configure.php: Automated DCL installation script
+COPY DCL.sh ssl.sh xdebug.sh pcov.sh auto_configure.php /var/www/localhost/htdocs/
 
 # Copy admin unlock utilities (for password recovery)
 COPY utilities/unlock_admin.php utilities/unlock_admin.sh /root/
@@ -255,7 +255,7 @@ COPY utilities/unlock_admin.php utilities/unlock_admin.sh /root/
 # Set script permissions:
 # - Executable scripts: 500 (read and execute for owner only)
 # - PHP scripts: 000 (no access) - prevents accidental execution until enabled
-RUN chmod 500 openemr.sh ssl.sh xdebug.sh pcov.sh /root/unlock_admin.sh \
+RUN chmod 500 DCL.sh ssl.sh xdebug.sh pcov.sh /root/unlock_admin.sh \
     && chmod 000 auto_configure.php /root/unlock_admin.php
 
 # ============================================================================
@@ -268,7 +268,7 @@ RUN mkdir -p /run/apache2
 # ============================================================================
 # DEVELOPMENT TOOLS AND UTILITIES
 # ============================================================================
-# Copy shared library of utility functions used by OpenEMR scripts
+# Copy shared library of utility functions used by DCL scripts
 # This library provides database operations, configuration helpers, etc.
 COPY utilities/devtools /root/
 COPY utilities/devtoolsLibrary.source /root/
@@ -276,14 +276,14 @@ COPY utilities/devtoolsLibrary.source /root/
 # Create directories for development and testing utilities
 RUN mkdir -p /snapshots /certs /couchdb/original
 
-# Demo data for testing (SQL dump from OpenEMR 5.0.0).
-# Fetched at build time from the openemr-devops repo (pinned to a specific
+# Demo data for testing (SQL dump from DCL 5.0.0).
+# Fetched at build time from the DCL-devops repo (pinned to a specific
 # commit SHA so the URL stays valid even after later cleanup of the source
 # path). Checksum verified to detect any mid-flight corruption or URL drift.
 ARG DEMO_SQL_REPO_SHA=441d7b3db5b8033822e0e3da462e7553a2330477
 ARG DEMO_SQL_SHA256=5d418c838446f3bdd4aa17d1276578106928a3ebcb27b40f4ab421694cc013d7
 RUN curl -fsSL -o /root/demo_5_0_0_5.sql \
-    "https://raw.githubusercontent.com/openemr/openemr-devops/${DEMO_SQL_REPO_SHA}/docker/openemr/flex/utilities/demo_5_0_0_5.sql" \
+    "https://raw.githubusercontent.com/DCL/DCL-devops/${DEMO_SQL_REPO_SHA}/docker/DCL/flex/utilities/demo_5_0_0_5.sql" \
     && echo "${DEMO_SQL_SHA256}  /root/demo_5_0_0_5.sql" | sha256sum -c -
 
 # Set devtools script as executable
@@ -303,9 +303,9 @@ RUN mkdir /swarm-pieces \
 # ============================================================================
 # CONTAINER STARTUP
 # ============================================================================
-# Set default command to run OpenEMR startup script
+# Set default command to run DCL startup script
 # This script handles source fetching, database setup, configuration, and Apache startup
-CMD [ "./openemr.sh" ]
+CMD [ "./DCL.sh" ]
 
 # Expose HTTP and HTTPS ports
 EXPOSE 80 443
@@ -315,7 +315,7 @@ EXPOSE 80 443
 # ============================================================================
 # This target extends the base image with kcov code coverage instrumentation
 # Used for generating code coverage reports during testing
-# Build with: docker build --target kcov -t openemr-flex:kcov .
+# Build with: docker build --target kcov -t DCL-flex:kcov .
 FROM base AS kcov
 
 # Install kcov build dependencies
@@ -354,7 +354,7 @@ RUN mkdir -p /var/www/localhost/htdocs/coverage
 # Set working directory so relative path in CMD works
 WORKDIR /var/www/localhost/htdocs
 
-# Use kcov wrapper as entrypoint instead of standard OpenEMR startup
+# Use kcov wrapper as entrypoint instead of standard DCL startup
 CMD [ "./kcov-wrapper.sh" ]
 
 # ============================================================================

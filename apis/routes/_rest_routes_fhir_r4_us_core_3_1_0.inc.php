@@ -3,89 +3,89 @@
 /**
  * FHIR API Routes
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Yash Raj Bothra <yashrajbothra786@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018-2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Yash Raj Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\RestControllers\Config\RestConfig;
-use OpenEMR\RestControllers\FHIR\FhirAllergyIntoleranceRestController;
-use OpenEMR\RestControllers\FHIR\FhirAppointmentRestController;
-use OpenEMR\RestControllers\FHIR\FhirCarePlanRestController;
-use OpenEMR\RestControllers\FHIR\FhirCareTeamRestController;
-use OpenEMR\RestControllers\FHIR\FhirCoverageRestController;
-use OpenEMR\RestControllers\FHIR\FhirDeviceRestController;
-use OpenEMR\RestControllers\FHIR\FhirDiagnosticReportRestController;
-use OpenEMR\RestControllers\FHIR\FhirDocumentReferenceRestController;
-use OpenEMR\RestControllers\FHIR\FhirEncounterRestController;
-use OpenEMR\RestControllers\FHIR\FhirGenericRestController;
-use OpenEMR\RestControllers\FHIR\FhirGoalRestController;
-use OpenEMR\RestControllers\FHIR\FhirGroupRestController;
-use OpenEMR\RestControllers\FHIR\FhirImmunizationRestController;
-use OpenEMR\RestControllers\FHIR\FhirLocationRestController;
-use OpenEMR\RestControllers\FHIR\FhirMediaRestController;
-use OpenEMR\RestControllers\FHIR\FhirMedicationDispenseRestController;
-use OpenEMR\RestControllers\FHIR\FhirMedicationRequestRestController;
-use OpenEMR\RestControllers\FHIR\FhirMedicationRestController;
-use OpenEMR\RestControllers\FHIR\FhirMetaDataRestController;
-use OpenEMR\RestControllers\FHIR\FhirOrganizationRestController;
-use OpenEMR\RestControllers\FHIR\FhirPatientRestController;
-use OpenEMR\RestControllers\FHIR\FhirPersonRestController;
-use OpenEMR\RestControllers\FHIR\FhirPractitionerRestController;
-use OpenEMR\RestControllers\FHIR\FhirPractitionerRoleRestController;
-use OpenEMR\RestControllers\FHIR\FhirProcedureRestController;
-use OpenEMR\RestControllers\FHIR\FhirProvenanceRestController;
-use OpenEMR\RestControllers\FHIR\FhirQuestionnaireResponseRestController;
-use OpenEMR\RestControllers\FHIR\FhirQuestionnaireRestController;
-use OpenEMR\RestControllers\FHIR\FhirServiceRequestRestController;
-use OpenEMR\RestControllers\FHIR\FhirSpecimenRestController;
-use OpenEMR\RestControllers\FHIR\FhirTaskRestController;
-use OpenEMR\RestControllers\FHIR\FhirValueSetRestController;
-use OpenEMR\RestControllers\FHIR\Operations\FhirOperationDefinitionRestController;
-use OpenEMR\RestControllers\FHIR\Operations\FhirOperationDocRefRestController;
-use OpenEMR\RestControllers\FHIR\Operations\FhirOperationExportRestController;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\RestControllers\SMART\SMARTConfigurationController;
-use OpenEMR\Services\FHIR\FhirAllergyIntoleranceService;
-use OpenEMR\Services\FHIR\FhirAppointmentService;
-use OpenEMR\Services\FHIR\FhirCarePlanService;
-use OpenEMR\Services\FHIR\FhirCareTeamService;
-use OpenEMR\Services\FHIR\FhirConditionService;
-use OpenEMR\Services\FHIR\FhirCoverageService;
-use OpenEMR\Services\FHIR\FhirDeviceService;
-use OpenEMR\Services\FHIR\FhirEncounterService;
-use OpenEMR\Services\FHIR\FhirGoalService;
-use OpenEMR\Services\FHIR\FhirImmunizationService;
-use OpenEMR\Services\FHIR\FhirMedicationRequestService;
-use OpenEMR\Services\FHIR\FhirMedicationService;
-use OpenEMR\Services\FHIR\FhirObservationService;
-use OpenEMR\Services\FHIR\FhirPersonService;
-use OpenEMR\Services\FHIR\FhirPractitionerRoleService;
-use OpenEMR\Services\FHIR\FhirPractitionerService;
-use OpenEMR\Services\FHIR\FhirQuestionnaireResponseService;
-use OpenEMR\Services\FHIR\FhirQuestionnaireService;
-use OpenEMR\Services\FHIR\FhirRelatedPersonService;
-use OpenEMR\Services\FHIR\FhirServiceRequestService;
-use OpenEMR\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
-use OpenEMR\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\RestControllers\Config\RestConfig;
+use DCL\RestControllers\FHIR\FhirAllergyIntoleranceRestController;
+use DCL\RestControllers\FHIR\FhirAppointmentRestController;
+use DCL\RestControllers\FHIR\FhirCarePlanRestController;
+use DCL\RestControllers\FHIR\FhirCareTeamRestController;
+use DCL\RestControllers\FHIR\FhirCoverageRestController;
+use DCL\RestControllers\FHIR\FhirDeviceRestController;
+use DCL\RestControllers\FHIR\FhirDiagnosticReportRestController;
+use DCL\RestControllers\FHIR\FhirDocumentReferenceRestController;
+use DCL\RestControllers\FHIR\FhirEncounterRestController;
+use DCL\RestControllers\FHIR\FhirGenericRestController;
+use DCL\RestControllers\FHIR\FhirGoalRestController;
+use DCL\RestControllers\FHIR\FhirGroupRestController;
+use DCL\RestControllers\FHIR\FhirImmunizationRestController;
+use DCL\RestControllers\FHIR\FhirLocationRestController;
+use DCL\RestControllers\FHIR\FhirMediaRestController;
+use DCL\RestControllers\FHIR\FhirMedicationDispenseRestController;
+use DCL\RestControllers\FHIR\FhirMedicationRequestRestController;
+use DCL\RestControllers\FHIR\FhirMedicationRestController;
+use DCL\RestControllers\FHIR\FhirMetaDataRestController;
+use DCL\RestControllers\FHIR\FhirOrganizationRestController;
+use DCL\RestControllers\FHIR\FhirPatientRestController;
+use DCL\RestControllers\FHIR\FhirPersonRestController;
+use DCL\RestControllers\FHIR\FhirPractitionerRestController;
+use DCL\RestControllers\FHIR\FhirPractitionerRoleRestController;
+use DCL\RestControllers\FHIR\FhirProcedureRestController;
+use DCL\RestControllers\FHIR\FhirProvenanceRestController;
+use DCL\RestControllers\FHIR\FhirQuestionnaireResponseRestController;
+use DCL\RestControllers\FHIR\FhirQuestionnaireRestController;
+use DCL\RestControllers\FHIR\FhirServiceRequestRestController;
+use DCL\RestControllers\FHIR\FhirSpecimenRestController;
+use DCL\RestControllers\FHIR\FhirTaskRestController;
+use DCL\RestControllers\FHIR\FhirValueSetRestController;
+use DCL\RestControllers\FHIR\Operations\FhirOperationDefinitionRestController;
+use DCL\RestControllers\FHIR\Operations\FhirOperationDocRefRestController;
+use DCL\RestControllers\FHIR\Operations\FhirOperationExportRestController;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\RestControllers\SMART\SMARTConfigurationController;
+use DCL\Services\FHIR\FhirAllergyIntoleranceService;
+use DCL\Services\FHIR\FhirAppointmentService;
+use DCL\Services\FHIR\FhirCarePlanService;
+use DCL\Services\FHIR\FhirCareTeamService;
+use DCL\Services\FHIR\FhirConditionService;
+use DCL\Services\FHIR\FhirCoverageService;
+use DCL\Services\FHIR\FhirDeviceService;
+use DCL\Services\FHIR\FhirEncounterService;
+use DCL\Services\FHIR\FhirGoalService;
+use DCL\Services\FHIR\FhirImmunizationService;
+use DCL\Services\FHIR\FhirMedicationRequestService;
+use DCL\Services\FHIR\FhirMedicationService;
+use DCL\Services\FHIR\FhirObservationService;
+use DCL\Services\FHIR\FhirPersonService;
+use DCL\Services\FHIR\FhirPractitionerRoleService;
+use DCL\Services\FHIR\FhirPractitionerService;
+use DCL\Services\FHIR\FhirQuestionnaireResponseService;
+use DCL\Services\FHIR\FhirQuestionnaireService;
+use DCL\Services\FHIR\FhirRelatedPersonService;
+use DCL\Services\FHIR\FhirServiceRequestService;
+use DCL\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
+use DCL\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
@@ -472,7 +472,7 @@ return [
         return $return;
     },
     'GET /fhir/Binary/:id' => function ($documentId, HttpRestRequest $request) {
-        $docController = new \OpenEMR\RestControllers\FHIR\FhirDocumentRestController($request);
+        $docController = new \DCL\RestControllers\FHIR\FhirDocumentRestController($request);
 
         if ($request->isPatientRequest()) {
             $response = $docController->downloadDocument($documentId, $request->getPatientUUIDString());
@@ -617,18 +617,18 @@ return [
         return $return;
     },
 
-    // Group writes are not implemented. OpenEMR's FHIR Group is a virtual/computed
+    // Group writes are not implemented. DCL's FHIR Group is a virtual/computed
     // aggregation of patients by provider; there is no persistent group table to
     // write to. POST/PUT return 405 with a FHIR OperationOutcome.
     "POST /fhir/Group" => RestControllerHelper::fhirWriteNotImplemented(
         'POST',
         'Group',
-        'FHIR Group is a computed aggregation in OpenEMR (e.g. patients-by-provider); it has no persistent storage and cannot be written directly.'
+        'FHIR Group is a computed aggregation in DCL (e.g. patients-by-provider); it has no persistent storage and cannot be written directly.'
     ),
     "PUT /fhir/Group/:uuid" => RestControllerHelper::fhirWriteNotImplemented(
         'PUT',
         'Group',
-        'FHIR Group is a computed aggregation in OpenEMR (e.g. patients-by-provider); it has no persistent storage and cannot be written directly.'
+        'FHIR Group is a computed aggregation in DCL (e.g. patients-by-provider); it has no persistent storage and cannot be written directly.'
     ),
 
     "GET /fhir/Immunization" => function (HttpRestRequest $request) {
@@ -690,7 +690,7 @@ return [
         return $return;
     },
 
-    // Location writes are deliberately not implemented. In OpenEMR, Location is a virtual
+    // Location writes are deliberately not implemented. In DCL, Location is a virtual
     // projection over patient_data, users, and facility — there is no single underlying
     // entity to write to. A POST or PUT here would either need to discriminate the target
     // table based on identifier conventions (fragile and unspecified by FHIR) or duplicate
@@ -699,12 +699,12 @@ return [
     "POST /fhir/Location" => RestControllerHelper::fhirWriteNotImplemented(
         'POST',
         'Location',
-        'FHIR Location is a virtual projection over patient_data/users/facility in OpenEMR; writes are not supported. Create the underlying Patient, Practitioner, or Organization instead.'
+        'FHIR Location is a virtual projection over patient_data/users/facility in DCL; writes are not supported. Create the underlying Patient, Practitioner, or Organization instead.'
     ),
     "PUT /fhir/Location/:uuid" => RestControllerHelper::fhirWriteNotImplemented(
         'PUT',
         'Location',
-        'FHIR Location is a virtual projection over patient_data/users/facility in OpenEMR; writes are not supported. Update the underlying Patient, Practitioner, or Organization instead.'
+        'FHIR Location is a virtual projection over patient_data/users/facility in DCL; writes are not supported. Update the underlying Patient, Practitioner, or Organization instead.'
     ),
 
     "GET /fhir/Media" => function (HttpRestRequest $request) {
@@ -1296,7 +1296,7 @@ return [
     "POST /fhir/DiagnosticReport" => RestControllerHelper::fhirWriteNotImplemented(
         'POST',
         'DiagnosticReport',
-        'FHIR DiagnosticReport writes are not yet supported. The OpenEMR read path federates Laboratory and ClinicalNotes sub-services; writing requires choosing a target sub-service per request (typically via category code) which is being designed in a follow-up PR.'
+        'FHIR DiagnosticReport writes are not yet supported. The DCL read path federates Laboratory and ClinicalNotes sub-services; writing requires choosing a target sub-service per request (typically via category code) which is being designed in a follow-up PR.'
     ),
     "PUT /fhir/DiagnosticReport/:uuid" => RestControllerHelper::fhirWriteNotImplemented(
         'PUT',
@@ -1307,7 +1307,7 @@ return [
     "POST /fhir/DocumentReference" => RestControllerHelper::fhirWriteNotImplemented(
         'POST',
         'DocumentReference',
-        'FHIR DocumentReference writes are not yet supported. The OpenEMR read path federates three sub-services (clinical notes, patient documents, advance care directives); writing requires routing per sub-service which is being designed in a follow-up PR. The existing $docref operation remains available.'
+        'FHIR DocumentReference writes are not yet supported. The DCL read path federates three sub-services (clinical notes, patient documents, advance care directives); writing requires routing per sub-service which is being designed in a follow-up PR. The existing $docref operation remains available.'
     ),
     "PUT /fhir/DocumentReference/:uuid" => RestControllerHelper::fhirWriteNotImplemented(
         'PUT',
@@ -1318,7 +1318,7 @@ return [
     "POST /fhir/MedicationDispense" => RestControllerHelper::fhirWriteNotImplemented(
         'POST',
         'MedicationDispense',
-        'FHIR MedicationDispense writes are not yet supported. Pharmacy dispensary persistence in OpenEMR varies by deployment (drug_inventory, pharmacy module, external dispensary integrations); writing needs a per-deployment design that is being scoped in a follow-up PR.'
+        'FHIR MedicationDispense writes are not yet supported. Pharmacy dispensary persistence in DCL varies by deployment (drug_inventory, pharmacy module, external dispensary integrations); writing needs a per-deployment design that is being scoped in a follow-up PR.'
     ),
     "PUT /fhir/MedicationDispense/:uuid" => RestControllerHelper::fhirWriteNotImplemented(
         'PUT',
@@ -1329,7 +1329,7 @@ return [
     "POST /fhir/Procedure" => RestControllerHelper::fhirWriteNotImplemented(
         'POST',
         'Procedure',
-        'FHIR Procedure writes are not yet supported. The OpenEMR read path federates clinical procedures (procedure_order/procedure_order_code) with surgery procedures; writing overlaps with ServiceRequest writes already provided. Use POST /fhir/ServiceRequest with intent=order for procedure orders; standalone Procedure writes are being designed in a follow-up PR.'
+        'FHIR Procedure writes are not yet supported. The DCL read path federates clinical procedures (procedure_order/procedure_order_code) with surgery procedures; writing overlaps with ServiceRequest writes already provided. Use POST /fhir/ServiceRequest with intent=order for procedure orders; standalone Procedure writes are being designed in a follow-up PR.'
     ),
     "PUT /fhir/Procedure/:uuid" => RestControllerHelper::fhirWriteNotImplemented(
         'PUT',
@@ -1337,9 +1337,9 @@ return [
         'FHIR Procedure writes are not yet supported. See POST /fhir/Procedure for the rationale.'
     ),
 
-    // FHIR Provenance in OpenEMR is synthesized at read time from other domain
+    // FHIR Provenance in DCL is synthesized at read time from other domain
     // resources; there is no underlying provenance table to write to. The FHIR
-    // spec itself permits Provenance writes — this is an OpenEMR implementation
+    // spec itself permits Provenance writes — this is an DCL implementation
     // limitation, not a spec restriction. POST/PUT return 405 with a FHIR
     // OperationOutcome.
     "POST /fhir/Provenance" => RestControllerHelper::fhirWriteNotImplemented(
@@ -1476,7 +1476,7 @@ return [
     },
 
     // other endpoints
-    "GET /fhir/metadata" => function (\OpenEMR\Common\Http\HttpRestRequest $request) {
+    "GET /fhir/metadata" => function (\DCL\Common\Http\HttpRestRequest $request) {
         $return = (new FhirMetaDataRestController())->getMetaData();
         return $return;
     },
@@ -1521,7 +1521,7 @@ return [
         RestConfig::request_authorization_check($request, "admin", "users");
         $jobUuidString = $request->getQueryParam('job');
         // if we were truly async we would return 202 here to say we are in progress with a JSON response
-        // since OpenEMR data is so small we just return the JSON from the database
+        // since DCL data is so small we just return the JSON from the database
         $fhirExportService = new FhirOperationExportRestController($request, $globalsBag);
         $return = $fhirExportService->processExportStatusRequestForJob($jobUuidString);
 

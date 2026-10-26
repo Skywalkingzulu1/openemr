@@ -3,17 +3,17 @@
 /**
  * RxListTest.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    GitHub Copilot <copilot@github.com>
  * @copyright Copyright (c) 2025 GitHub Copilot <copilot@github.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Start of AI-generated code by GitHub Copilot
-namespace OpenEMR\Tests\Isolated\Rx;
+namespace DCL\Tests\Isolated\Rx;
 
-use OpenEMR\Rx\RxList;
+use DCL\Rx\RxList;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 

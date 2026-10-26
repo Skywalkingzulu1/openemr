@@ -3,23 +3,23 @@
 /**
  * CDR trigger log report.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2015-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php";
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/clinical_rules.php";
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php";
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/clinical_rules.php";
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\ClinicalDecisionRules\Interface\ControllerRouter;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Http\CurrentRequest;
+use DCL\BC\ServiceContainer;
+use DCL\ClinicalDecisionRules\Interface\ControllerRouter;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Http\CurrentRequest;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
+namespace DCL\FHIR\R4\FHIRResource\FHIRValueSet;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
@@ -71,31 +71,31 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * An absolute URI which is the code system from which the selected codes come from.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $system = null;
 
     /**
      * The version of the code system that the codes are selected from, or the special version '*' for all versions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * Specifies a concept to be included or excluded.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
      */
     public $concept = [];
 
     /**
      * Select concepts by specify a matching criterion based on the properties (including relationships) defined by the system, or on filters defined by the system. If multiple filters are specified, they SHALL all be true.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetFilter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetFilter[]
      */
     public $filter = [];
 
     /**
      * Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $valueSet = [];
 
@@ -106,7 +106,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * An absolute URI which is the code system from which the selected codes come from.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSystem()
     {
@@ -115,7 +115,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * An absolute URI which is the code system from which the selected codes come from.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $system
      * @return $this
      */
     public function setSystem($system)
@@ -126,7 +126,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The version of the code system that the codes are selected from, or the special version '*' for all versions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -135,7 +135,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The version of the code system that the codes are selected from, or the special version '*' for all versions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -146,7 +146,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Specifies a concept to be included or excluded.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
      */
     public function getConcept()
     {
@@ -155,7 +155,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Specifies a concept to be included or excluded.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept $concept
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept $concept
      * @return $this
      */
     public function addConcept($concept)
@@ -166,7 +166,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Select concepts by specify a matching criterion based on the properties (including relationships) defined by the system, or on filters defined by the system. If multiple filters are specified, they SHALL all be true.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetFilter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetFilter[]
      */
     public function getFilter()
     {
@@ -175,7 +175,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Select concepts by specify a matching criterion based on the properties (including relationships) defined by the system, or on filters defined by the system. If multiple filters are specified, they SHALL all be true.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetFilter $filter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetFilter $filter
      * @return $this
      */
     public function addFilter($filter)
@@ -186,7 +186,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getValueSet()
     {
@@ -195,7 +195,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Selects the concepts found in this value set (based on its value set definition). This is an absolute URI that is a reference to ValueSet.url.  If multiple value sets are specified this includes the union of the contents of all of the referenced value sets.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
      * @return $this
      */
     public function addValueSet($valueSet)

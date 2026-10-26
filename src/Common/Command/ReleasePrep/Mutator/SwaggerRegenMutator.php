@@ -1,25 +1,25 @@
 <?php
 
 /**
- * Regenerate swagger/openemr-api.yaml by subprocessing the existing
- * `openemr:create-api-documentation` console command. We don't duplicate
+ * Regenerate swagger/DCL-api.yaml by subprocessing the existing
+ * `DCL:create-api-documentation` console command. We don't duplicate
  * its logic; the conductor just re-runs it after OpenApiVersionMutator
  * has bumped the source-of-truth version constant.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
@@ -29,7 +29,7 @@ use Symfony\Component\Yaml\Yaml;
  */
 final readonly class SwaggerRegenMutator implements MutatorInterface
 {
-    private const RELATIVE_PATH = 'swagger/openemr-api.yaml';
+    private const RELATIVE_PATH = 'swagger/DCL-api.yaml';
 
     /**
      * @param ProcessRunner|null $processRunner Override only in tests.
@@ -41,7 +41,7 @@ final readonly class SwaggerRegenMutator implements MutatorInterface
 
     public function name(): string
     {
-        return self::RELATIVE_PATH . ' (regenerate via openemr:create-api-documentation)';
+        return self::RELATIVE_PATH . ' (regenerate via DCL:create-api-documentation)';
     }
 
     public function apply(MutatorContext $context): MutatorResult
@@ -53,7 +53,7 @@ final readonly class SwaggerRegenMutator implements MutatorInterface
         $exitCode = $this->runProcess($process);
         if ($exitCode !== 0) {
             throw new \RuntimeException(
-                'openemr:create-api-documentation exited ' . $exitCode,
+                'DCL:create-api-documentation exited ' . $exitCode,
             );
         }
 
@@ -68,7 +68,7 @@ final readonly class SwaggerRegenMutator implements MutatorInterface
             $parsed = Yaml::parse($after);
         } catch (ParseException $e) {
             throw new \RuntimeException(
-                self::RELATIVE_PATH . ': openemr:create-api-documentation produced invalid YAML',
+                self::RELATIVE_PATH . ': DCL:create-api-documentation produced invalid YAML',
                 0,
                 $e,
             );
@@ -96,7 +96,7 @@ final readonly class SwaggerRegenMutator implements MutatorInterface
     public function buildProcess(string $projectDir): Process
     {
         return new Process(
-            ['php', $projectDir . '/bin/console', 'openemr:create-api-documentation', '--skip-globals'],
+            ['php', $projectDir . '/bin/console', 'DCL:create-api-documentation', '--skip-globals'],
             $projectDir,
         );
     }

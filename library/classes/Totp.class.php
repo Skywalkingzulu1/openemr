@@ -3,13 +3,13 @@
 /**
  * Totp class used to generated MultiFactor App Based 2FA
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Anthony Zullo <anthonykzullo@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Anthony Zullo <anthonykzullo@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE CNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE CNU General Public License 3
  */
 
 use RobThree\Auth\Algorithm;
@@ -24,7 +24,7 @@ class Totp
     /** @var bool|string - totp hashed secret */
     private $_secret = false;
     /** @var string - issuer mentioned in the QR App  */
-    private $_issuer = "OpenEMR";
+    private $_issuer = "DCL";
 
     /**
      * @param bool $secret - user secret or false to generate
@@ -40,7 +40,7 @@ class Totp
             //   be 32 characters in base32 (below line does all this)
             $this->_secret = $tfa->createSecret(160);
             if (empty($this->_secret)) {
-                error_log('OpenEMR Error : MFA was unable to create secret - exiting');
+                error_log('DCL Error : MFA was unable to create secret - exiting');
                 die();
             }
         }

@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\ClinicalDecisionRules;
+namespace DCL\Tests\Isolated\ClinicalDecisionRules;
 
-use OpenEMR\ClinicalDecisionRules\Interface\ControllerRouter;
+use DCL\ClinicalDecisionRules\Interface\ControllerRouter;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

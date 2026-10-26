@@ -3,18 +3,18 @@
 /**
  * Manages test fixtures for procedure providers (labs).
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 /**
  * Manages test fixtures for procedure providers (labs)
@@ -61,7 +61,7 @@ class ProcedureProviderFixtureManager extends BaseFixtureManager
      *
      * @param array<string, mixed> $fixture Provider data to insert
      * @return int Inserted provider ID (ppid)
-     * @throws \OpenEMR\Common\Database\SqlQueryException If the database insert fails
+     * @throws \DCL\Common\Database\SqlQueryException If the database insert fails
      */
     private function insertProcedureProvider(array $fixture): int
     {
@@ -120,7 +120,7 @@ class ProcedureProviderFixtureManager extends BaseFixtureManager
      *
      * Removes every procedure_providers row whose name carries the fixture prefix.
      *
-     * @throws \OpenEMR\Common\Database\SqlQueryException If the database deletion fails
+     * @throws \DCL\Common\Database\SqlQueryException If the database deletion fails
      */
     protected function removeInstalledFixtures(): void
     {

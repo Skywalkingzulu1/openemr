@@ -6,19 +6,19 @@
  *
  * Much of this code was refactored from the patient_tracker.inc.php file.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (C) 2015 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Services\ServiceSaveEvent;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Services\ServiceSaveEvent;
 
 class PatientTrackerService extends BaseService
 {
@@ -174,7 +174,7 @@ class PatientTrackerService extends BaseService
     public function manage_tracker_status($apptdate, $appttime, $eid, $pid, $user, $status = '', $room = '', $enc_id = '')
     {
         #First ensure the eid is not a recurrent appointment. If it is, then do not do anything and return false.
-        $pc_appt =  sqlQuery("SELECT `pc_recurrtype` FROM `openemr_postcalendar_events` WHERE `pc_eid` = ?", [$eid]);
+        $pc_appt =  sqlQuery("SELECT `pc_recurrtype` FROM `DCL_postcalendar_events` WHERE `pc_eid` = ?", [$eid]);
         if ($pc_appt['pc_recurrtype'] != 0) {
             return false;
         }
@@ -263,13 +263,13 @@ class PatientTrackerService extends BaseService
         }
 
         #Ensure the entry in calendar appt entry has been updated.
-        $pc_appt =  sqlQuery("SELECT `pc_apptstatus`, `pc_room` FROM `openemr_postcalendar_events` WHERE `pc_eid` = ?", [$eid]);
+        $pc_appt =  sqlQuery("SELECT `pc_apptstatus`, `pc_room` FROM `DCL_postcalendar_events` WHERE `pc_eid` = ?", [$eid]);
         if ($status != $pc_appt['pc_apptstatus']) {
-            sqlStatement("UPDATE `openemr_postcalendar_events` SET `pc_apptstatus` = ? WHERE `pc_eid` = ?", [$status,$eid]);
+            sqlStatement("UPDATE `DCL_postcalendar_events` SET `pc_apptstatus` = ? WHERE `pc_eid` = ?", [$status,$eid]);
         }
 
         if ($room != $pc_appt['pc_room']) {
-            sqlStatement("UPDATE `openemr_postcalendar_events` SET `pc_room` = ? WHERE `pc_eid` = ?", [$room,$eid]);
+            sqlStatement("UPDATE `DCL_postcalendar_events` SET `pc_room` = ? WHERE `pc_eid` = ?", [$room,$eid]);
         }
 
         OEGlobalsBag::getInstance()->getKernel()->getEventDispatcher()->dispatch(new ServiceSaveEvent($this, $tracker), ServiceSaveEvent::EVENT_POST_SAVE);

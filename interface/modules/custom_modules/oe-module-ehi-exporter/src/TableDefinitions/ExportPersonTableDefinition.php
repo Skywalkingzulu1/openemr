@@ -5,18 +5,18 @@
  * this table since the table does not have a direct foreign key to the patient_data table. Instead
  * the table must be mapped through the forms table and the form_encounter table.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter\TableDefinitions;
+namespace DCL\Modules\EhiExporter\TableDefinitions;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTableDefinition;
+use DCL\Common\Database\QueryUtils;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportTableDefinition;
 
 class ExportPersonTableDefinition extends ExportTableDefinition
 {

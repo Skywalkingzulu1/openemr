@@ -1,21 +1,21 @@
 <?php
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\SearchQueryFragment;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\SearchQueryFragment;
 
 /**
- * Provides OpenEMR Fixtures/Sample Records to test cases as Objects or Database Records.
+ * Provides DCL Fixtures/Sample Records to test cases as Objects or Database Records.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 abstract class BaseFixtureManager
 {
@@ -74,7 +74,7 @@ abstract class BaseFixtureManager
      *
      * This will return a recorded uuid (recorded in uuid_registry)
      *
-     * @param $tableName The target OpenEMR DB table name.
+     * @param $tableName The target DCL DB table name.
      * @return string uuid
      */
     protected function getUuid($tableName)
@@ -103,9 +103,9 @@ abstract class BaseFixtureManager
     }
 
     /**
-     * Installs fixtures into the OpenEMR DB.
+     * Installs fixtures into the DCL DB.
      *
-     * @param $tableName The target OpenEMR DB table name.
+     * @param $tableName The target DCL DB table name.
      * @param $fixtures Array of fixture objects to install.
      * @return int the number of fixtures installed.
      */

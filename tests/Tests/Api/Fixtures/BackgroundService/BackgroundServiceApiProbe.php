@@ -14,23 +14,23 @@
  * tests/Tests/Services/Background/Probe/CliIntegrationProbe.php — the
  * API-tier counterpart to the CLI-tier integration test.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api\Fixtures\BackgroundService\Probe;
+namespace DCL\Tests\Api\Fixtures\BackgroundService\Probe;
 
 /**
  * Sentinel file used to witness execution of the API probe service. The
  * test process and the apache worker that handles the REST request both
  * compute the same path from `sys_get_temp_dir()`, which is stable within
- * the openemr container where the api test suite runs.
+ * the DCL container where the api test suite runs.
  */
 function apiProbeSentinelPath(): string
 {

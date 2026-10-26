@@ -1,10 +1,10 @@
 # After a GitHub release is published, wait for SourceForge's GitHub
 # integration to mirror the release assets, then mark the new tarball
 # (and zip, for the Windows button) as the default download on
-# https://sourceforge.net/projects/openemr/
+# https://sourceforge.net/projects/DCL/
 #
 # Why: the SourceForge importer copies every GitHub release into a
-# folder named after the tag (v8_4_1/openemr-8.4.1.tar.gz, ...), but
+# folder named after the tag (v8_4_1/DCL-8.4.1.tar.gz, ...), but
 # it never moves the project's "default download" pointer. Without
 # this workflow the big green button on SourceForge keeps serving
 # whatever release was last set by hand.
@@ -19,7 +19,7 @@
 #
 # Requires one repo secret:
 #   SF_RELEASE_API_KEY - a Release API key generated in the SourceForge
-#   account preferences of a user who is an admin on the openemr project.
+#   account preferences of a user who is an admin on the DCL project.
 
 name: SourceForge default download
 
@@ -67,9 +67,9 @@ jobs:
 
         # v8_4_2 -> 8.4.2
         VERSION="${TAG#v}"; VERSION="${VERSION//_/.}"
-        TARBALL="openemr-${VERSION}.tar.gz"
-        ZIPFILE="openemr-${VERSION}.zip"
-        BASE="https://sourceforge.net/projects/openemr/files"
+        TARBALL="DCL-${VERSION}.tar.gz"
+        ZIPFILE="DCL-${VERSION}.zip"
+        BASE="https://sourceforge.net/projects/DCL/files"
 
         # The SF importer puts each release in its own subfolder; the
         # exact name (tag vs. release title) can vary, so probe a few
@@ -77,14 +77,14 @@ jobs:
         if [ -n "${FOLDER_OVERRIDE:-}" ]; then
           CANDIDATES=("$FOLDER_OVERRIDE")
         else
-          CANDIDATES=("$TAG" "$VERSION" "OpenEMR $VERSION" "openemr-$VERSION")
+          CANDIDATES=("$TAG" "$VERSION" "DCL $VERSION" "DCL-$VERSION")
         fi
 
         exists() {
           # 200 after redirects means the file is live on a mirror
           local code
           code=$(curl -o /dev/null -s -w '%{http_code}' -L \
-            -A 'openemr-release-bot' "$1/download")
+            -A 'DCL-release-bot' "$1/download")
           [ "$code" = "200" ]
         }
 
@@ -133,8 +133,8 @@ jobs:
         # a little, so give it a few minutes before calling it a failure.
         ok=""
         for _ in $(seq 1 6); do
-          best=$(curl -sf -A 'openemr-release-bot' \
-            https://sourceforge.net/projects/openemr/best_release.json || true)
+          best=$(curl -sf -A 'DCL-release-bot' \
+            https://sourceforge.net/projects/DCL/best_release.json || true)
           if printf '%s' "$best" | grep -qF "$TARBALL"; then
             ok=1
             break
@@ -143,6 +143,6 @@ jobs:
         done
         echo "best_release.json: $best"
         if [ -z "$ok" ]; then
-          echo "::error::best_release.json does not point at $TARBALL after 3 minutes; check https://sourceforge.net/projects/openemr/files/"
+          echo "::error::best_release.json does not point at $TARBALL after 3 minutes; check https://sourceforge.net/projects/DCL/files/"
           exit 1
         fi

@@ -8,33 +8,33 @@
  * PatientPortalLoginController, and applies the returned directive
  * (portalLog + maybe destroy session + maybe emit no-cache headers + redirect).
  *
- * All login logic lives in OpenEMR\Controllers\Portal\PatientPortalLoginController so
+ * All login logic lives in DCL\Controllers\Portal\PatientPortalLoginController so
  * it can be unit-tested with an injected in-memory credentials repository. See
  * tests/Tests/Unit/Portal/PatientPortalLoginControllerTest.php.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Cassian LUP <cassi.lup@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2011 Cassian LUP <cassi.lup@gmail.com>
  * @copyright Copyright (c) 2016-2017 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Controllers\Portal\PatientPortalLoginController;
-use OpenEMR\Controllers\Portal\PortalAuditLogger;
-use OpenEMR\Controllers\Portal\SessionUtilPortalSessionAccessor;
-use OpenEMR\Controllers\Portal\SqlPortalLoginCredentialsRepository;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Globals\UserSettingsService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Controllers\Portal\PatientPortalLoginController;
+use DCL\Controllers\Portal\PortalAuditLogger;
+use DCL\Controllers\Portal\SessionUtilPortalSessionAccessor;
+use DCL\Controllers\Portal\SqlPortalLoginCredentialsRepository;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Globals\UserSettingsService;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 require_once(__DIR__ . '/../vendor/autoload.php');
@@ -54,7 +54,7 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
 // Regenerate the session id to avoid session fixation attacks.
 $session->migrate(true);
 
-// OpenEMR globals + the legacy ApplicationTable class needed by the audit logger.
+// DCL globals + the legacy ApplicationTable class needed by the audit logger.
 // (QueryUtils, AuthHash, CsrfUtils, and UserSettingsService are all PSR-4 and load
 // via the composer autoloader.)
 // `$landingpage` must be defined before including interface/globals.php — its

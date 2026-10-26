@@ -3,19 +3,19 @@
 /**
  * Date is a mustache helper trait with various helper methods for dealing with dates, date ranges, and timestamps.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qrda\Helpers;
+namespace DCL\Services\Qrda\Helpers;
 
 use Mustache_Context;
-use OpenEMR\Services\Qrda\Util\DateHelper;
+use DCL\Services\Qrda\Util\DateHelper;
 
 trait Date
 {

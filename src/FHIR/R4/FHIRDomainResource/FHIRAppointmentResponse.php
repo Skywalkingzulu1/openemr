@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
@@ -72,49 +72,49 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Appointment that this response is replying to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $appointment = null;
 
     /**
      * Date/Time that the appointment is to take place, or requested new start time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $start = null;
 
     /**
      * This may be either the same as the appointment request to confirm the details of the appointment, or alternately a new time to request a re-negotiation of the end time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $end = null;
 
     /**
      * Role of participant in the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $participantType = [];
 
     /**
      * A Person, Location, HealthcareService, or Device that is participating in the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
     /**
      * Participation status of the participant. When the status is declined or tentative if the start/end times are different to the appointment, then these times should be interpreted as a requested time change. When the status is accepted, the times can either be the time of the appointment (as a confirmation of the time) or can be empty.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRParticipationStatus
      */
     public $participantStatus = null;
 
     /**
      * Additional comments about the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
@@ -125,7 +125,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Appointment that this response is replying to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAppointment()
     {
@@ -154,7 +154,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Appointment that this response is replying to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $appointment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $appointment
      * @return $this
      */
     public function setAppointment($appointment)
@@ -165,7 +165,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Date/Time that the appointment is to take place, or requested new start time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getStart()
     {
@@ -174,7 +174,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Date/Time that the appointment is to take place, or requested new start time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $start
      * @return $this
      */
     public function setStart($start)
@@ -185,7 +185,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This may be either the same as the appointment request to confirm the details of the appointment, or alternately a new time to request a re-negotiation of the end time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getEnd()
     {
@@ -194,7 +194,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This may be either the same as the appointment request to confirm the details of the appointment, or alternately a new time to request a re-negotiation of the end time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $end
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $end
      * @return $this
      */
     public function setEnd($end)
@@ -205,7 +205,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Role of participant in the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getParticipantType()
     {
@@ -214,7 +214,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Role of participant in the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $participantType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $participantType
      * @return $this
      */
     public function addParticipantType($participantType)
@@ -225,7 +225,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Person, Location, HealthcareService, or Device that is participating in the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -234,7 +234,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Person, Location, HealthcareService, or Device that is participating in the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)
@@ -245,7 +245,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Participation status of the participant. When the status is declined or tentative if the start/end times are different to the appointment, then these times should be interpreted as a requested time change. When the status is accepted, the times can either be the time of the appointment (as a confirmation of the time) or can be empty.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRParticipationStatus
      */
     public function getParticipantStatus()
     {
@@ -254,7 +254,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Participation status of the participant. When the status is declined or tentative if the start/end times are different to the appointment, then these times should be interpreted as a requested time change. When the status is accepted, the times can either be the time of the appointment (as a confirmation of the time) or can be empty.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipationStatus $participantStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRParticipationStatus $participantStatus
      * @return $this
      */
     public function setParticipantStatus($participantStatus)
@@ -265,7 +265,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional comments about the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -274,7 +274,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Additional comments about the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)

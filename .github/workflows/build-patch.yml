@@ -9,12 +9,12 @@ run-name: "Build Patch Release ${{ inputs.version }}${{ inputs.dry_run && ' (dry
 # uploads the patch as an asset.
 #
 # Intentionally parallel to the automated release flow (no
-# openemr-tag dispatch consumer, no cascade). Patch release cadence is
+# DCL-tag dispatch consumer, no cascade). Patch release cadence is
 # irregular and maintainer-driven, so this path is expected to be run
 # by hand when the situation calls for it. Distribution model: user
 # extracts the patch zip on top of an existing install.
 #
-# Migrated from openemr/openemr-devops in workstream 7 Phase 2 (PR 2b).
+# Migrated from DCL/DCL-devops in workstream 7 Phase 2 (PR 2b).
 # Three devops-side steps dropped at migration time:
 #
 #   1. `task release:version-bump MODE=patch` (Bump version.php) +
@@ -23,12 +23,12 @@ run-name: "Build Patch Release ${{ inputs.version }}${{ inputs.dry_run && ' (dry
 #      pushes to the rel branch before invoking this workflow. That
 #      push fires the workstream-6 `patch-prep-automation.yml`, which
 #      handles the mutator-side release-targets + docker-scaffolding
-#      updates via a coordinated 2-PR flow (openemr/openemr#12697).
+#      updates via a coordinated 2-PR flow (DCL/DCL#12697).
 #      This workflow packages the resulting patch; it doesn't own the
 #      version-bump.
 #
 #   3. `task release:changelog-pr` (Create CHANGELOG PRs)
-#      Retired from devops's Taskfile in openemr/openemr-devops#857
+#      Retired from devops's Taskfile in DCL/DCL-devops#857
 #      (2026-07-13) when ChangelogMutator became authoritative for
 #      main-release CHANGELOG.md writes. build-patch's invocation had
 #      been broken since #857 landed. Patches don't rewrite the
@@ -37,12 +37,12 @@ run-name: "Build Patch Release ${{ inputs.version }}${{ inputs.dry_run && ' (dry
 #      lives in the standalone `changelog.md` artifact produced below.
 #
 # The `Generate changelog` step below reactivates patch-time changelog
-# generation using openemr's `bin/changelog.php` (same PHP CLI that
+# generation using DCL's `bin/changelog.php` (same PHP CLI that
 # feeds ChangelogMutator for main releases) via the `changelog` task,
 # producing a standalone `changelog.md` alongside the patch zip. The
 # devops-side `task release:changelog` invocation was broken since
-# openemr/openemr-devops#858 retired the task; this replacement wires
-# to the openemr-side CLI directly. changelog.md gets attached to the
+# DCL/DCL-devops#858 retired the task; this replacement wires
+# to the DCL-side CLI directly. changelog.md gets attached to the
 # release + included in the dry-run artifact so the maintainer can
 # paste it into forum/announcement posts without a manual walk of
 # git log.
@@ -123,12 +123,12 @@ jobs:
     # Full checkout first — composite actions (generate-app-token,
     # setup-php-composer) resolve against a real workspace, and
     # composer.json is present for setup-php-composer's cache/install
-    # steps. The earlier sparse-first pattern (openemr/openemr#13480
+    # steps. The earlier sparse-first pattern (DCL/DCL#13480
     # + #13509) worked around one bug but not the underlying git-
     # sparse-then-full-checkout leak: files not in the initial sparse
     # pattern (like composer.json) still weren't materialized by the
     # second full checkout. Full-checkout-first sidesteps the leak.
-    - name: Checkout openemr release branch
+    - name: Checkout DCL release branch
       uses: actions/checkout@v7
       with:
         ref: ${{ inputs.version_branch }}
@@ -145,15 +145,15 @@ jobs:
         client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
         private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
         owner: ${{ github.repository_owner }}
-        repositories: openemr
+        repositories: DCL
 
     - name: Verify app token
       if: '!inputs.dry_run'
       env:
         GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: |
-        echo "Checking app token can access openemr/openemr milestones..."
-        gh api repos/openemr/openemr/milestones --jq '.[].title' | head -5
+        echo "Checking app token can access DCL/DCL milestones..."
+        gh api repos/DCL/DCL/milestones --jq '.[].title' | head -5
         echo 'App token verified.'
 
 
@@ -212,7 +212,7 @@ jobs:
         START_TAG="$VERSION_START"
         BRANCH="$VERSION_BRANCH"
         FILENAME="$PATCH_FILENAME"
-        OPENEMR_DIR="$GITHUB_WORKSPACE"
+        DCL_DIR="$GITHUB_WORKSPACE"
         COPY_STYLES="$COPY_STYLES"
 
     # Generate a git-log-derived changelog for the patch. Patches don't
@@ -310,17 +310,17 @@ jobs:
             push origin "$tag"
         fi
 
-        if ! gh release view "$tag" --repo openemr/openemr > /dev/null 2>&1; then
+        if ! gh release view "$tag" --repo DCL/DCL > /dev/null 2>&1; then
           echo "Creating release $tag"
           gh release create "$tag" \
-            --repo openemr/openemr \
+            --repo DCL/DCL \
             --title "$tag" \
             --notes-file "${output_dir}/changelog.md" \
             --verify-tag
         fi
 
         gh release upload "$tag" \
-          --repo openemr/openemr \
+          --repo DCL/DCL \
           "${output_dir}/${PATCH_FILENAME}" \
           "${output_dir}/${PATCH_FILENAME}.md5" \
           "${output_dir}/${PATCH_FILENAME}.sha256" \

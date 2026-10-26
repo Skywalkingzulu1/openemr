@@ -3,18 +3,18 @@
 /**
  * class InsuranceNumbers
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    tekknogenius
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2005 tekknogenius
  * @copyright Copyright (c) 2016-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2022 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\ORDataObject\ORDataObject;
+use DCL\Common\ORDataObject\ORDataObject;
 
 class InsuranceNumbers extends ORDataObject
 {

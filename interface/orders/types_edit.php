@@ -3,27 +3,27 @@
 /**
  * types_edit.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2010-2017 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 if (!AclMain::aclCheckCore('admin', 'super')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for admin/super: Configure Orders and Results", xl("Configure Orders and Results"));
@@ -364,7 +364,7 @@ function recursiveDelete($typeid): void
                                     <p><?php echo xlt("Tier 3 - Procedure Order - e.g. Electrolyte Panel"); ?></p>
                                     <p><?php echo xlt("Tier 4 - Discrete Result - The actual test names to hold the results returned Na, K, Cl, CO2 and Default Units, Default Range etc"); ?></p>
                                     <p><?php echo xlt("The difference between the two is that for a panel of tests that are ordered together the individual tests are represented by Discrete Result only and these tests cannot be ordered separately unless they have also been setup as single tests"); ?></p>
-                                    <p><strong><?php echo xlt("For Custom Groups"); ?>: <i class="fa fa-exclamation-circle oe-text-red" aria-hidden="true"></i>&nbsp;<?php echo xlt("New in openEMR ver 5.0.2 "); ?></strong></p>
+                                    <p><strong><?php echo xlt("For Custom Groups"); ?>: <i class="fa fa-exclamation-circle oe-text-red" aria-hidden="true"></i>&nbsp;<?php echo xlt("New in DCL ver 5.0.2 "); ?></strong></p>
                                     <p><?php echo xlt("Custom Favorite Group > Custom Favorite Item > Discrete results"); ?></p>
                                     <p><?php echo xlt("As the first step choose Group or Custom Favorite Group, as the case may be, as the Top Level Tier 1 and fill in the required details"); ?></p>
                                     <p><?php echo xlt("For detailed instructions close the 'Enter Details' pop-up and click on the Help icon on the main form. "); ?><i class="fa fa-question-circle" aria-hidden="true"></i></p>

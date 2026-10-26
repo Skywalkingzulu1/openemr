@@ -1,7 +1,7 @@
 <?php
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\InsuranceCompanyService;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\InsuranceCompanyService;
 
 class C_InsuranceCompany extends Controller
 {

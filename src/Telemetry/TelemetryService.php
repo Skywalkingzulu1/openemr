@@ -1,30 +1,30 @@
 <?php
 
 /**
- * @package        OpenEMR
- * @link           https://www.open-emr.org
+ * @package        DCL
+ * @link           https://www.dcl.org
  * @author         Jerry Padgett <sjpadgett@gmail.com>
  * @copyright      Copyright (c) 2025 - 2026 <sjpadgett@gmail.com>
- * @license        https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license        https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Telemetry;
+namespace DCL\Telemetry;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\DatabaseQueryTrait;
-use OpenEMR\Common\Uuid\UniqueInstallationUuid;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\VersionService;
-use OpenEMR\Services\VersionServiceInterface;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\DatabaseQueryTrait;
+use DCL\Common\Uuid\UniqueInstallationUuid;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\VersionService;
+use DCL\Services\VersionServiceInterface;
 use Psr\Log\LoggerInterface;
 
 /**
  * Provides telemetry reporting functionality.
  *
- * @package   OpenEMR\Telemetry
+ * @package   DCL\Telemetry
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 - 2026 <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class TelemetryService
 {
@@ -168,7 +168,7 @@ class TelemetryService
             ];
         }
 
-        $endpoint = "https://reg.open-emr.org/api/usage?SiteID=" . urlencode($site_uuid);
+        $endpoint = "https://reg.dcl.org/api/usage?SiteID=" . urlencode($site_uuid);
         $interval = date("Ym", strtotime("-33 Days"));
 
         $timeZoneResult = $this->querySingleRow("SELECT `gl_value` as zone FROM `globals` WHERE `gl_value` > '' AND `gl_name` = 'gbl_time_zone' LIMIT 1", []);
@@ -192,7 +192,7 @@ class TelemetryService
             'locale' => locale_get_default(),
             'version' => (string) $this->versionService->getSoftwareVersion(),
             'environment' => php_uname('s') . ', ' . php_uname('r') . ', ' . phpversion(),
-            'distribution' => getenv('OPENEMR_DOCKER_ENV_TAG') ?: '',
+            'distribution' => getenv('DCL_DOCKER_ENV_TAG') ?: '',
             'settings' => json_encode($settings),
             'populationData' => json_encode($populationData),
             'moduleCounts' => json_encode($moduleCounts),

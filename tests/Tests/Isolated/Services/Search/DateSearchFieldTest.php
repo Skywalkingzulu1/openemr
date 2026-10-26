@@ -6,20 +6,20 @@
  * Pins which FHIR date search values DateSearchField accepts and the range
  * that each value covers.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    oldrobotdev <hi@oldrobot.us>
  * @copyright Copyright (c) 2026 oldrobotdev <hi@oldrobot.us>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Search;
+namespace DCL\Tests\Isolated\Services\Search;
 
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\SearchComparator;
-use OpenEMR\Services\Search\SearchFieldComparableValue;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\SearchComparator;
+use DCL\Services\Search\SearchFieldComparableValue;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

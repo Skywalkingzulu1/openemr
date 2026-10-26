@@ -1,24 +1,24 @@
 <?php
 
 /**
- * ehr-launch-client.php  Main entry point for the OpenEMR OAUTH2 / SMART client in ehr launch
- * Allows a smart app to launch into the OpenEMR EHR in a seamless interaction
- * @package openemr
- * @link      https://www.open-emr.org
+ * ehr-launch-client.php  Main entry point for the DCL OAUTH2 / SMART client in ehr launch
+ * Allows a smart app to launch into the DCL EHR in a seamless interaction
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\FHIR\SMART\SmartLaunchController;
 
 $controller = new SmartLaunchController();
 

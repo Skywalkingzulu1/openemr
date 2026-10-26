@@ -14,8 +14,8 @@
  * of the License, or (at your option) any later version.
  */
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDocuments\PatientDocumentEvent;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDocuments\PatientDocumentEvent;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
 /**

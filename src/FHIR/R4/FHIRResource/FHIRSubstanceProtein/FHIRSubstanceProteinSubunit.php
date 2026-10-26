@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceProtein;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceProtein;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceProtein;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A SubstanceProtein is defined as a single unit of a linear amino acid sequence, or a combination of subunits that are either covalently linked or have a defined invariant stoichiometric relationship. This includes all synthetic, recombinant and purified SubstanceProteins of defined sequence, whether the use is therapeutic or prophylactic. This set of elements will be used to describe albumins, coagulation factors, cytokines, growth factors, peptide/SubstanceProtein hormones, enzymes, toxins, toxoids, recombinant vaccines, and immunomodulators.
@@ -71,49 +71,49 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * Index of primary sequences of amino acids linked through peptide bonds in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $subunit = null;
 
     /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $sequence = null;
 
     /**
      * Length of linear sequences of amino acids contained in the subunit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $length = null;
 
     /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $sequenceAttachment = null;
 
     /**
      * Unique identifier for molecular fragment modification based on the ISO 11238 Substance ID.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $nTerminalModificationId = null;
 
     /**
      * The name of the fragment modified at the N-terminal of the SubstanceProtein shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $nTerminalModification = null;
 
     /**
      * Unique identifier for molecular fragment modification based on the ISO 11238 Substance ID.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $cTerminalModificationId = null;
 
     /**
      * The modification at the C-terminal shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $cTerminalModification = null;
 
@@ -124,7 +124,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Index of primary sequences of amino acids linked through peptide bonds in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getSubunit()
     {
@@ -133,7 +133,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Index of primary sequences of amino acids linked through peptide bonds in order of decreasing length. Sequences of the same length will be ordered by molecular weight. Subunits that have identical sequences will be repeated and have sequential subscripts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $subunit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $subunit
      * @return $this
      */
     public function setSubunit($subunit)
@@ -144,7 +144,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSequence()
     {
@@ -153,7 +153,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -164,7 +164,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Length of linear sequences of amino acids contained in the subunit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getLength()
     {
@@ -173,7 +173,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Length of linear sequences of amino acids contained in the subunit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $length
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $length
      * @return $this
      */
     public function setLength($length)
@@ -184,7 +184,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getSequenceAttachment()
     {
@@ -193,7 +193,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $sequenceAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $sequenceAttachment
      * @return $this
      */
     public function setSequenceAttachment($sequenceAttachment)
@@ -204,7 +204,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Unique identifier for molecular fragment modification based on the ISO 11238 Substance ID.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getNTerminalModificationId()
     {
@@ -213,7 +213,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Unique identifier for molecular fragment modification based on the ISO 11238 Substance ID.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $nTerminalModificationId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $nTerminalModificationId
      * @return $this
      */
     public function setNTerminalModificationId($nTerminalModificationId)
@@ -224,7 +224,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The name of the fragment modified at the N-terminal of the SubstanceProtein shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getNTerminalModification()
     {
@@ -233,7 +233,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The name of the fragment modified at the N-terminal of the SubstanceProtein shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $nTerminalModification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $nTerminalModification
      * @return $this
      */
     public function setNTerminalModification($nTerminalModification)
@@ -244,7 +244,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Unique identifier for molecular fragment modification based on the ISO 11238 Substance ID.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getCTerminalModificationId()
     {
@@ -253,7 +253,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Unique identifier for molecular fragment modification based on the ISO 11238 Substance ID.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $cTerminalModificationId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $cTerminalModificationId
      * @return $this
      */
     public function setCTerminalModificationId($cTerminalModificationId)
@@ -264,7 +264,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The modification at the C-terminal shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCTerminalModification()
     {
@@ -273,7 +273,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The modification at the C-terminal shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $cTerminalModification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $cTerminalModification
      * @return $this
      */
     public function setCTerminalModification($cTerminalModification)

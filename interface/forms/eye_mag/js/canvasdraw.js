@@ -4,11 +4,11 @@
  * Base concept code by Chtiwi Malek ===> CODICODE.COM
  * Adapted to process multiple canvases on a single page
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <magauran@MedFetch.com>
  * @copyright Copyright (c) 2016 Raymond Magauran <magauran@MedFetch.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 var mousePressed = false;
@@ -68,7 +68,7 @@ function InitThis(zone)
 function drawImage(zone)
 {
     image[zone] = new Image();
-        // We need to get the openEMR pointer for this image, which is either
+        // We need to get the DCL pointer for this image, which is either
         // a stored image from a previous drawing and is not editable (VIEW)
         // or the base image.
         // The PHP code determines which when the page is called

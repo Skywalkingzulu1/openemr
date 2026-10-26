@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,19 +71,19 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement implements \Js
 {
     /**
      * The drug concentration measured at certain discrete points in time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity[]
      */
     public $areaUnderCurve = [];
 
     /**
      * The median lethal dose of a drug.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity[]
      */
     public $lethalDose50 = [];
 
     /**
      * The time required for any specified property (e.g., the concentration of a substance in the body) to decrease by half.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $halfLifePeriod = null;
 
@@ -94,7 +94,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement implements \Js
 
     /**
      * The drug concentration measured at certain discrete points in time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity[]
      */
     public function getAreaUnderCurve()
     {
@@ -103,7 +103,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement implements \Js
 
     /**
      * The drug concentration measured at certain discrete points in time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $areaUnderCurve
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $areaUnderCurve
      * @return $this
      */
     public function addAreaUnderCurve($areaUnderCurve)
@@ -114,7 +114,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement implements \Js
 
     /**
      * The median lethal dose of a drug.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity[]
      */
     public function getLethalDose50()
     {
@@ -123,7 +123,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement implements \Js
 
     /**
      * The median lethal dose of a drug.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $lethalDose50
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $lethalDose50
      * @return $this
      */
     public function addLethalDose50($lethalDose50)
@@ -134,7 +134,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement implements \Js
 
     /**
      * The time required for any specified property (e.g., the concentration of a substance in the body) to decrease by half.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getHalfLifePeriod()
     {
@@ -143,7 +143,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement implements \Js
 
     /**
      * The time required for any specified property (e.g., the concentration of a substance in the body) to decrease by half.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $halfLifePeriod
      * @return $this
      */
     public function setHalfLifePeriod($halfLifePeriod)

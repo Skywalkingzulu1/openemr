@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -71,19 +71,19 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * The name of this test used for tracking/logging purposes by test engines.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short description of the test used by test engines for tracking and reporting purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Action would contain either an operation or an assertion.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction1[]
      */
     public $action = [];
 
@@ -94,7 +94,7 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The name of this test used for tracking/logging purposes by test engines.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -103,7 +103,7 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The name of this test used for tracking/logging purposes by test engines.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -114,7 +114,7 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A short description of the test used by test engines for tracking and reporting purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -123,7 +123,7 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A short description of the test used by test engines for tracking and reporting purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -134,7 +134,7 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Action would contain either an operation or an assertion.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction1[]
      */
     public function getAction()
     {
@@ -143,7 +143,7 @@ class FHIRTestReportTest extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Action would contain either an operation or an assertion.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction1 $action
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction1 $action
      * @return $this
      */
     public function addAction($action)

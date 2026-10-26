@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,25 +71,25 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $numberOfUnits = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $averageMolecularFormula = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $repeatUnitAmountType = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
      */
     public $repeatUnit = [];
 
@@ -100,7 +100,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getNumberOfUnits()
     {
@@ -109,7 +109,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numberOfUnits
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numberOfUnits
      * @return $this
      */
     public function setNumberOfUnits($numberOfUnits)
@@ -120,7 +120,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAverageMolecularFormula()
     {
@@ -129,7 +129,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $averageMolecularFormula
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $averageMolecularFormula
      * @return $this
      */
     public function setAverageMolecularFormula($averageMolecularFormula)
@@ -140,7 +140,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRepeatUnitAmountType()
     {
@@ -149,7 +149,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $repeatUnitAmountType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $repeatUnitAmountType
      * @return $this
      */
     public function setRepeatUnitAmountType($repeatUnitAmountType)
@@ -160,7 +160,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
      */
     public function getRepeatUnit()
     {
@@ -169,7 +169,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $repeatUnit
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $repeatUnit
      * @return $this
      */
     public function addRepeatUnit($repeatUnit)

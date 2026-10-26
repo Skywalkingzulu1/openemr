@@ -1,5 +1,5 @@
 # Reusable docker-publish workflow — the docker side of Phase 10c
-# (openemr/openemr#TBD). Extracts what was inline in docker-build-
+# (DCL/DCL#TBD). Extracts what was inline in docker-build-
 # release.yml's `publish` + `cleanup-candidate` jobs so both docker-
 # build-release.yml (the primary release path) and docker-acceptance-
 # only.yml (the Phase 10c recovery path) can call the same publish
@@ -17,12 +17,12 @@
 #                         deleted by cleanup-candidate on success.
 #
 #   expanded_tags       - whitespace-separated list of full tag refs
-#                         (e.g. `openemr/openemr:8.2.0 openemr/openemr:
-#                         latest openemr/openemr:8.2.0-2026-07-29`).
+#                         (e.g. `DCL/DCL:8.2.0 DCL/DCL:
+#                         latest DCL/DCL:8.2.0-2026-07-29`).
 #                         The reusable aliases the candidate manifest
 #                         onto each entry.
 #
-#   openemr_version_ref - baked-in OPENEMR_VERSION for the verify-oci-
+#   DCL_version_ref - baked-in DCL_VERSION for the verify-oci-
 #                         labels.sh check's EXPECTED_REVISION.
 #
 #   image_version       - baked-in IMAGE_VERSION for EXPECTED_VERSION.
@@ -70,11 +70,11 @@ on:
         required: true
         type: string
       expanded_tags:
-        description: Whitespace-separated list of full `openemr/openemr:<tag>` refs to alias the candidate onto
+        description: Whitespace-separated list of full `DCL/DCL:<tag>` refs to alias the candidate onto
         required: true
         type: string
-      openemr_version_ref:
-        description: OpenEMR git ref baked into the image (verify-oci-labels.sh EXPECTED_REVISION)
+      DCL_version_ref:
+        description: DCL git ref baked into the image (verify-oci-labels.sh EXPECTED_REVISION)
         required: true
         type: string
       image_version:
@@ -126,13 +126,13 @@ jobs:
       env:
         CANDIDATE_TAG: ${{ inputs.candidate_tag }}
         EXPANDED_TAGS: ${{ inputs.expanded_tags }}
-        OPENEMR_VERSION_REF: ${{ inputs.openemr_version_ref }}
+        DCL_VERSION_REF: ${{ inputs.DCL_version_ref }}
         IMAGE_VERSION: ${{ inputs.image_version }}
         BUILD_DATE: ${{ inputs.build_date }}
       run: >-
         .github/scripts/assert-inputs-nonempty.sh
         "reusable-docker-publish.yml"
-        CANDIDATE_TAG EXPANDED_TAGS OPENEMR_VERSION_REF IMAGE_VERSION BUILD_DATE
+        CANDIDATE_TAG EXPANDED_TAGS DCL_VERSION_REF IMAGE_VERSION BUILD_DATE
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v4
@@ -153,7 +153,7 @@ jobs:
         # Multi-arch is preserved (the source manifest is a manifest list).
         # Idempotent: re-running against an existing tag rewrites its
         # pointer (harmless if source digest is the same).
-        SRC="openemr/openemr:${CANDIDATE_TAG}"
+        SRC="DCL/DCL:${CANDIDATE_TAG}"
         for tag in $TAGS_LIST; do
           [ -z "$tag" ] && continue
           echo "==> aliasing ${SRC} -> ${tag}"
@@ -162,7 +162,7 @@ jobs:
 
     - name: Verify pushed image OCI labels
       env:
-        EXPECTED_REVISION: ${{ inputs.openemr_version_ref }}
+        EXPECTED_REVISION: ${{ inputs.DCL_version_ref }}
         EXPECTED_VERSION: ${{ inputs.image_version }}
         EXPECTED_BUILD_DATE: ${{ inputs.build_date }}
         TAGS_LIST: ${{ inputs.expanded_tags }}

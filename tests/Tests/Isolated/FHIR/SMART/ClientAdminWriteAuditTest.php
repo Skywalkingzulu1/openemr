@@ -3,27 +3,27 @@
 /**
  * Verify administrator audit records for clients requesting FHIR writes.
  *
- * @package OpenEMR
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package DCL
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\FHIR\SMART;
+namespace DCL\Tests\Isolated\FHIR\SMART;
 
 use DateTimeImmutable;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\Audit\Event;
-use OpenEMR\Common\Logging\Audit\SinkInterface;
-use OpenEMR\Common\Logging\AuditConfig;
-use OpenEMR\Common\Logging\BreakglassCheckerInterface;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\SMART\ActionUrlBuilder;
-use OpenEMR\FHIR\SMART\ClientAdminController;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\Audit\Event;
+use DCL\Common\Logging\Audit\SinkInterface;
+use DCL\Common\Logging\AuditConfig;
+use DCL\Common\Logging\BreakglassCheckerInterface;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\SMART\ActionUrlBuilder;
+use DCL\FHIR\SMART\ClientAdminController;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Clock\ClockInterface;

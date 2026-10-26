@@ -10,12 +10,12 @@
 
 require_once("../../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\ClinicalDecisionRules\Interface\ControllerRouter;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Http\CurrentRequest;
+use DCL\BC\ServiceContainer;
+use DCL\ClinicalDecisionRules\Interface\ControllerRouter;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Http\CurrentRequest;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 

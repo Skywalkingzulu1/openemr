@@ -8,7 +8,7 @@
  * Symfony\Component\HttpFoundation\BinaryFileResponse.
  * BinaryFileResponse's first constructor argument is interpreted as a
  * filesystem path, so a document whose body happens to look like an
- * absolute path (e.g. `/var/www/localhost/htdocs/openemr/sites/default/sqlconf.php`)
+ * absolute path (e.g. `/var/www/localhost/htdocs/DCL/sites/default/sqlconf.php`)
  * would cause Symfony to stream the local file at that path rather than
  * the bytes the uploader stored.
  *
@@ -18,20 +18,20 @@
  * invariant, the metadata-not-body header derivation, and the empty-result
  * path.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers;
+namespace DCL\Tests\Isolated\RestControllers;
 
-use OpenEMR\RestControllers\DocumentRestController;
-use OpenEMR\Services\DocumentService;
-use OpenEMR\Services\PatientService;
+use DCL\RestControllers\DocumentRestController;
+use DCL\Services\DocumentService;
+use DCL\Services\PatientService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -51,8 +51,8 @@ class DocumentRestControllerDownloadFileIsolatedTest extends TestCase
     {
         // Prevent sql.inc.php from opening a real DB connection when it is
         // eventually loaded by the require chain below.
-        if (!defined('OPENEMR_STATIC_ANALYSIS')) {
-            define('OPENEMR_STATIC_ANALYSIS', true);
+        if (!defined('DCL_STATIC_ANALYSIS')) {
+            define('DCL_STATIC_ANALYSIS', true);
         }
 
         // DocumentService.php `require_once`s controllers/C_Document.class.php
@@ -175,7 +175,7 @@ class DocumentRestControllerDownloadFileIsolatedTest extends TestCase
     {
         return [
             'body is absolute path to sqlconf' => [
-                '/var/www/localhost/htdocs/openemr/sites/default/sqlconf.php',
+                '/var/www/localhost/htdocs/DCL/sites/default/sqlconf.php',
             ],
             'body is absolute path to /etc/passwd' => [
                 '/etc/passwd',

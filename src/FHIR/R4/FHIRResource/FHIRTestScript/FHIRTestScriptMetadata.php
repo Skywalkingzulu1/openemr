@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,13 +71,13 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * A link to the FHIR specification that this test is covering.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptLink[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptLink[]
      */
     public $link = [];
 
     /**
      * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptCapability[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptCapability[]
      */
     public $capability = [];
 
@@ -88,7 +88,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A link to the FHIR specification that this test is covering.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptLink[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptLink[]
      */
     public function getLink()
     {
@@ -97,7 +97,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A link to the FHIR specification that this test is covering.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptLink $link
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptLink $link
      * @return $this
      */
     public function addLink($link)
@@ -108,7 +108,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptCapability[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptCapability[]
      */
     public function getCapability()
     {
@@ -117,7 +117,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptCapability $capability
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptCapability $capability
      * @return $this
      */
     public function addCapability($capability)

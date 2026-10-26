@@ -3,19 +3,19 @@
 /**
  * FHIRResources service class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink;
-use OpenEMR\FHIR\R4\PHPFHIRResponseParser;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink;
+use DCL\FHIR\R4\PHPFHIRResponseParser;
 
 class FhirResourcesService
 {

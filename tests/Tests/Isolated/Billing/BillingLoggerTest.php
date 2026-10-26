@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\Billing;
+namespace DCL\Tests\Isolated\Billing;
 
 use League\Flysystem\Filesystem;
 use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use OpenEMR\Billing\BillingProcessor\BillingLogger;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Services\Storage\Location;
-use OpenEMR\Services\Storage\ManagerInterface;
+use DCL\Billing\BillingProcessor\BillingLogger;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Services\Storage\Location;
+use DCL\Services\Storage\ManagerInterface;
 use PHPUnit\Framework\TestCase;
 
 /**

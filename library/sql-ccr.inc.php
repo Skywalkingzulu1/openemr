@@ -16,12 +16,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Garden State Health Systems <http://www.gshsys.com/>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 if ($_POST['ccrAction'] == 'generate') {
     if (isset($_POST['show_date'])) {
@@ -312,7 +312,7 @@ function getProblemData()
   #  be easy to upgrade this to other codesets in future (ICD10,SNOMED) by using already
   #  existent flags in the code_types table.
   # Additionally, only using problems that have one diagnosis code set in diagnosis field.
-  #  Note OpenEMR allows multiple codes set per problem, but will limit to showing only
+  #  Note DCL allows multiple codes set per problem, but will limit to showing only
   #  problems with one diagnostic code set in order to maintain previous behavior
   #  (this will likely need to be dealt with at some point; ie. support multiple dx codes per problem).
 

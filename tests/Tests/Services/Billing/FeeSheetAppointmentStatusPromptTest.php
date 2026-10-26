@@ -3,20 +3,20 @@
 /**
  * Database tests for the fee sheet's offer to set the visit's appointment status on Save.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Billing;
+namespace DCL\Tests\Services\Billing;
 
-use OpenEMR\Billing\FeeSheetAppointmentPrompt;
-use OpenEMR\Billing\FeeSheetAppointmentStatusPrompt;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Billing\FeeSheetAppointmentPrompt;
+use DCL\Billing\FeeSheetAppointmentStatusPrompt;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -41,7 +41,7 @@ class FeeSheetAppointmentStatusPromptTest extends TestCase
 
     protected function tearDown(): void
     {
-        QueryUtils::sqlStatementThrowException('DELETE FROM openemr_postcalendar_events WHERE pc_pid = ?', [$this->pid]);
+        QueryUtils::sqlStatementThrowException('DELETE FROM DCL_postcalendar_events WHERE pc_pid = ?', [$this->pid]);
         QueryUtils::sqlStatementThrowException('DELETE FROM users WHERE id = ?', [$this->providerId]);
         parent::tearDown();
     }
@@ -99,7 +99,7 @@ class FeeSheetAppointmentStatusPromptTest extends TestCase
     private function appointment(string $startTime, string $status): int
     {
         return QueryUtils::sqlInsert(
-            'INSERT INTO openemr_postcalendar_events (pc_catid, pc_multiple, pc_aid, pc_pid, pc_title, pc_eventDate,'
+            'INSERT INTO DCL_postcalendar_events (pc_catid, pc_multiple, pc_aid, pc_pid, pc_title, pc_eventDate,'
             . ' pc_startTime, pc_apptstatus, pc_recurrtype) VALUES (5, 0, ?, ?, ?, ?, ?, ?, 0)',
             [$this->providerId, $this->pid, 'Office Visit', self::DATE, $startTime, $status]
         );

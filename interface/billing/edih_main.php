@@ -3,24 +3,24 @@
 /**
  * edi_history_main.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kevin McCormick Longview, Texas
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2012 Kevin McCormick Longview, Texas
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 // Access control - same permission required as edih_view.php
 if (!AclMain::aclCheckCore('acct', 'eob')) {
@@ -38,7 +38,7 @@ define('SITE_IN', 1);
 // however for a startup they may, or a "mask" value of 1000 or 10000
 // would be a good idea if there are problems with deciphering the pid-encounter
 // same idea for pid value, but since encounter is unique and always last, it is essential
-// possibly check the mask value in OpenEMR globals to set this
+// possibly check the mask value in DCL globals to set this
 
 
 // Try to prevent search for too short encounter value
@@ -46,7 +46,7 @@ if (!defined("ENCOUNTER_MIN_DIGIT_LENGTH")) {
     define("ENCOUNTER_MIN_DIGIT_LENGTH", 1);
 }
 
-// these delimiters are hardcoded into OpenEMR batch files
+// these delimiters are hardcoded into DCL batch files
 if (!defined("SEG_ELEM_DELIM")) {
     define("SEG_ELEM_DELIM", "*");
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).
@@ -72,121 +72,121 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * Business identifier for this product. Could be an MPID.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Regulatory type, e.g. Investigational or Authorized.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * If this medicine applies to human or veterinary uses.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $domain = null;
 
     /**
      * The dose form for a single part product, or combined form of a multiple part product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $combinedPharmaceuticalDoseForm = null;
 
     /**
      * The legal status of supply of the medicinal product as classified by the regulator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $legalStatusOfSupply = null;
 
     /**
      * Whether the Medicinal Product is subject to additional monitoring for regulatory reasons.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $additionalMonitoringIndicator = null;
 
     /**
      * Whether the Medicinal Product is subject to special measures for regulatory reasons.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $specialMeasures = [];
 
     /**
      * If authorised for use in children.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $paediatricUseIndicator = null;
 
     /**
      * Allows the product to be classified by various systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $productClassification = [];
 
     /**
      * Marketing status of the medicinal product, in contrast to marketing authorizaton.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
      */
     public $marketingStatus = [];
 
     /**
      * Pharmaceutical aspects of product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $pharmaceuticalProduct = [];
 
     /**
      * Package representation for the product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $packagedMedicinalProduct = [];
 
     /**
      * Supporting documentation, typically for regulatory submission.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $attachedDocument = [];
 
     /**
      * A master file for to the medicinal product (e.g. Pharmacovigilance System Master File).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $masterFile = [];
 
     /**
      * A product specific contact, person (in a role), or an organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $contact = [];
 
     /**
      * Clinical trials or studies that this product is involved in.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $clinicalTrial = [];
 
     /**
      * The product's name, including full name and possibly coded parts.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductName[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductName[]
      */
     public $name = [];
 
     /**
      * Reference to another product, e.g. for linking authorised to investigational product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $crossReference = [];
 
     /**
      * An operation applied to the product, for manufacturing or administrative purpose.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation[]
      */
     public $manufacturingBusinessOperation = [];
 
     /**
      * Indicates if the medicinal product has an orphan designation for the treatment of a rare disease.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation[]
      */
     public $specialDesignation = [];
 
@@ -197,7 +197,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Business identifier for this product. Could be an MPID.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -206,7 +206,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Business identifier for this product. Could be an MPID.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -217,7 +217,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Regulatory type, e.g. Investigational or Authorized.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -226,7 +226,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Regulatory type, e.g. Investigational or Authorized.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -237,7 +237,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * If this medicine applies to human or veterinary uses.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getDomain()
     {
@@ -246,7 +246,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * If this medicine applies to human or veterinary uses.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $domain
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $domain
      * @return $this
      */
     public function setDomain($domain)
@@ -257,7 +257,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The dose form for a single part product, or combined form of a multiple part product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCombinedPharmaceuticalDoseForm()
     {
@@ -266,7 +266,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The dose form for a single part product, or combined form of a multiple part product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $combinedPharmaceuticalDoseForm
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $combinedPharmaceuticalDoseForm
      * @return $this
      */
     public function setCombinedPharmaceuticalDoseForm($combinedPharmaceuticalDoseForm)
@@ -277,7 +277,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The legal status of supply of the medicinal product as classified by the regulator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalStatusOfSupply()
     {
@@ -286,7 +286,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The legal status of supply of the medicinal product as classified by the regulator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
      * @return $this
      */
     public function setLegalStatusOfSupply($legalStatusOfSupply)
@@ -297,7 +297,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Whether the Medicinal Product is subject to additional monitoring for regulatory reasons.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAdditionalMonitoringIndicator()
     {
@@ -306,7 +306,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Whether the Medicinal Product is subject to additional monitoring for regulatory reasons.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalMonitoringIndicator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalMonitoringIndicator
      * @return $this
      */
     public function setAdditionalMonitoringIndicator($additionalMonitoringIndicator)
@@ -317,7 +317,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Whether the Medicinal Product is subject to special measures for regulatory reasons.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getSpecialMeasures()
     {
@@ -326,7 +326,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Whether the Medicinal Product is subject to special measures for regulatory reasons.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $specialMeasures
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $specialMeasures
      * @return $this
      */
     public function addSpecialMeasures($specialMeasures)
@@ -337,7 +337,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * If authorised for use in children.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPaediatricUseIndicator()
     {
@@ -346,7 +346,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * If authorised for use in children.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $paediatricUseIndicator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $paediatricUseIndicator
      * @return $this
      */
     public function setPaediatricUseIndicator($paediatricUseIndicator)
@@ -357,7 +357,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Allows the product to be classified by various systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getProductClassification()
     {
@@ -366,7 +366,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Allows the product to be classified by various systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productClassification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productClassification
      * @return $this
      */
     public function addProductClassification($productClassification)
@@ -377,7 +377,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Marketing status of the medicinal product, in contrast to marketing authorizaton.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMarketingStatus[]
      */
     public function getMarketingStatus()
     {
@@ -386,7 +386,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Marketing status of the medicinal product, in contrast to marketing authorizaton.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMarketingStatus $marketingStatus
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMarketingStatus $marketingStatus
      * @return $this
      */
     public function addMarketingStatus($marketingStatus)
@@ -397,7 +397,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Pharmaceutical aspects of product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPharmaceuticalProduct()
     {
@@ -406,7 +406,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Pharmaceutical aspects of product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $pharmaceuticalProduct
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $pharmaceuticalProduct
      * @return $this
      */
     public function addPharmaceuticalProduct($pharmaceuticalProduct)
@@ -417,7 +417,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Package representation for the product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPackagedMedicinalProduct()
     {
@@ -426,7 +426,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Package representation for the product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $packagedMedicinalProduct
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $packagedMedicinalProduct
      * @return $this
      */
     public function addPackagedMedicinalProduct($packagedMedicinalProduct)
@@ -437,7 +437,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Supporting documentation, typically for regulatory submission.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAttachedDocument()
     {
@@ -446,7 +446,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Supporting documentation, typically for regulatory submission.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $attachedDocument
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $attachedDocument
      * @return $this
      */
     public function addAttachedDocument($attachedDocument)
@@ -457,7 +457,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A master file for to the medicinal product (e.g. Pharmacovigilance System Master File).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getMasterFile()
     {
@@ -466,7 +466,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A master file for to the medicinal product (e.g. Pharmacovigilance System Master File).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $masterFile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $masterFile
      * @return $this
      */
     public function addMasterFile($masterFile)
@@ -477,7 +477,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A product specific contact, person (in a role), or an organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getContact()
     {
@@ -486,7 +486,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A product specific contact, person (in a role), or an organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $contact
      * @return $this
      */
     public function addContact($contact)
@@ -497,7 +497,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Clinical trials or studies that this product is involved in.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getClinicalTrial()
     {
@@ -506,7 +506,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Clinical trials or studies that this product is involved in.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $clinicalTrial
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $clinicalTrial
      * @return $this
      */
     public function addClinicalTrial($clinicalTrial)
@@ -517,7 +517,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The product's name, including full name and possibly coded parts.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductName[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductName[]
      */
     public function getName()
     {
@@ -526,7 +526,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The product's name, including full name and possibly coded parts.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductName $name
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductName $name
      * @return $this
      */
     public function addName($name)
@@ -537,7 +537,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Reference to another product, e.g. for linking authorised to investigational product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getCrossReference()
     {
@@ -546,7 +546,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Reference to another product, e.g. for linking authorised to investigational product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $crossReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $crossReference
      * @return $this
      */
     public function addCrossReference($crossReference)
@@ -557,7 +557,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An operation applied to the product, for manufacturing or administrative purpose.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation[]
      */
     public function getManufacturingBusinessOperation()
     {
@@ -566,7 +566,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An operation applied to the product, for manufacturing or administrative purpose.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation $manufacturingBusinessOperation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation $manufacturingBusinessOperation
      * @return $this
      */
     public function addManufacturingBusinessOperation($manufacturingBusinessOperation)
@@ -577,7 +577,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Indicates if the medicinal product has an orphan designation for the treatment of a rare disease.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation[]
      */
     public function getSpecialDesignation()
     {
@@ -586,7 +586,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Indicates if the medicinal product has an orphan designation for the treatment of a rare disease.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation $specialDesignation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductSpecialDesignation $specialDesignation
      * @return $this
      */
     public function addSpecialDesignation($specialDesignation)

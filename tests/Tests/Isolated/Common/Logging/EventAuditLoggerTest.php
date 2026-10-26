@@ -3,24 +3,24 @@
 /**
  * Isolated tests for EventAuditLogger sink dispatch
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
  * @copyright Copyright (c) 2026 Eric Stern
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Logging;
+namespace DCL\Tests\Isolated\Common\Logging;
 
 use Lcobucci\Clock\FrozenClock;
-use OpenEMR\Common\Logging\Audit\Event;
-use OpenEMR\Common\Logging\Audit\SinkInterface;
-use OpenEMR\Common\Logging\AuditConfig;
-use OpenEMR\Common\Logging\BreakglassCheckerInterface;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Logging\EventCategory;
+use DCL\Common\Logging\Audit\Event;
+use DCL\Common\Logging\Audit\SinkInterface;
+use DCL\Common\Logging\AuditConfig;
+use DCL\Common\Logging\BreakglassCheckerInterface;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Logging\EventCategory;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

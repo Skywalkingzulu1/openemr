@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available.
@@ -72,31 +72,31 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * The country in which the marketing authorisation has been granted shall be specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $country = null;
 
     /**
      * Where a Medicines Regulatory Agency has granted a marketing authorisation for which specific provisions within a jurisdiction apply, the jurisdiction can be specified using an appropriate controlled terminology The controlled term and the controlled term identifier shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $jurisdiction = null;
 
     /**
      * This attribute provides information on the status of the marketing of the medicinal product See ISO/TS 20443 for more information and examples.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * The date when the Medicinal Product is placed on the market by the Marketing Authorisation Holder (or where applicable, the manufacturer/distributor) in a country and/or jurisdiction shall be provided A complete date consisting of day, month and year shall be specified using the ISO 8601 date format NOTE “Placed on the market” refers to the release of the Medicinal Product into the distribution chain.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $dateRange = null;
 
     /**
      * The date when the Medicinal Product is placed on the market by the Marketing Authorisation Holder (or where applicable, the manufacturer/distributor) in a country and/or jurisdiction shall be provided A complete date consisting of day, month and year shall be specified using the ISO 8601 date format NOTE “Placed on the market” refers to the release of the Medicinal Product into the distribution chain.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $restoreDate = null;
 
@@ -107,7 +107,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The country in which the marketing authorisation has been granted shall be specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCountry()
     {
@@ -116,7 +116,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The country in which the marketing authorisation has been granted shall be specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
      * @return $this
      */
     public function setCountry($country)
@@ -127,7 +127,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Where a Medicines Regulatory Agency has granted a marketing authorisation for which specific provisions within a jurisdiction apply, the jurisdiction can be specified using an appropriate controlled terminology The controlled term and the controlled term identifier shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getJurisdiction()
     {
@@ -136,7 +136,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Where a Medicines Regulatory Agency has granted a marketing authorisation for which specific provisions within a jurisdiction apply, the jurisdiction can be specified using an appropriate controlled terminology The controlled term and the controlled term identifier shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function setJurisdiction($jurisdiction)
@@ -147,7 +147,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * This attribute provides information on the status of the marketing of the medicinal product See ISO/TS 20443 for more information and examples.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -156,7 +156,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * This attribute provides information on the status of the marketing of the medicinal product See ISO/TS 20443 for more information and examples.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -167,7 +167,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The date when the Medicinal Product is placed on the market by the Marketing Authorisation Holder (or where applicable, the manufacturer/distributor) in a country and/or jurisdiction shall be provided A complete date consisting of day, month and year shall be specified using the ISO 8601 date format NOTE “Placed on the market” refers to the release of the Medicinal Product into the distribution chain.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getDateRange()
     {
@@ -176,7 +176,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The date when the Medicinal Product is placed on the market by the Marketing Authorisation Holder (or where applicable, the manufacturer/distributor) in a country and/or jurisdiction shall be provided A complete date consisting of day, month and year shall be specified using the ISO 8601 date format NOTE “Placed on the market” refers to the release of the Medicinal Product into the distribution chain.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $dateRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $dateRange
      * @return $this
      */
     public function setDateRange($dateRange)
@@ -187,7 +187,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The date when the Medicinal Product is placed on the market by the Marketing Authorisation Holder (or where applicable, the manufacturer/distributor) in a country and/or jurisdiction shall be provided A complete date consisting of day, month and year shall be specified using the ISO 8601 date format NOTE “Placed on the market” refers to the release of the Medicinal Product into the distribution chain.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getRestoreDate()
     {
@@ -196,7 +196,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The date when the Medicinal Product is placed on the market by the Marketing Authorisation Holder (or where applicable, the manufacturer/distributor) in a country and/or jurisdiction shall be provided A complete date consisting of day, month and year shall be specified using the ISO 8601 date format NOTE “Placed on the market” refers to the release of the Medicinal Product into the distribution chain.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $restoreDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $restoreDate
      * @return $this
      */
     public function setRestoreDate($restoreDate)

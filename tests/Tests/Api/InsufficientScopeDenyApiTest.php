@@ -25,22 +25,22 @@
  * context-role-axis deny gates (testUserRoleTokenCannotReachPortalRoute,
  * testPatientRoleTokenCannotReachStandardApiRoute).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Fixtures\AppointmentFixtureManager;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Fixtures\AppointmentFixtureManager;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -61,13 +61,13 @@ class InsufficientScopeDenyApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
         $globals = OEGlobalsBag::getInstance();
         $this->originalPasswordGrantSettingWasSet = $globals->has('oauth_password_grant');
         $this->originalPasswordGrantSetting = $globals->get('oauth_password_grant');
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         // Guzzle throws ConnectException on a hard network failure (no DNS
         // resolution, connection refused, etc). Treat it the same as a probe
@@ -511,7 +511,7 @@ class InsufficientScopeDenyApiTest extends TestCase
         $this->assertIsArray($row);
         $uuidBinary = $row['uuid'] ?? null;
         $this->assertNotNull($uuidBinary);
-        return \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($uuidBinary);
+        return \DCL\Common\Uuid\UuidRegistry::uuidToString($uuidBinary);
     }
 
     /**
@@ -531,7 +531,7 @@ class InsufficientScopeDenyApiTest extends TestCase
         // ApiTestClient::setAuthToken returns the token-endpoint response
         // regardless of status, and getClientId() reflects the DCR state
         // which happens before the token call.
-        $authResp = $apptClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $authResp = $apptClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
         $seedClientId = $apptClient->getClientId();
         $this->assertNotNull($seedClientId, 'DCR must return a client id for cleanup.');
         $this->registeredClientIds[] = $seedClientId;

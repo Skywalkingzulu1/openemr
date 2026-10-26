@@ -13,9 +13,9 @@
  *
  * Run with: npm run test:js -- tests/js/portal-messaging-helpers.test.js
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 const fs = require('fs');
@@ -209,7 +209,7 @@ describe('messages.js secureMessageEditorOptions', () => {
 // ---------------------------------------------------------------------------
 // messages.js: renderMessageBody — the only sink that passes user-supplied
 // HTML straight into innerHTML. Must be DOMPurify-sanitized and must forbid
-// <a> and <img> per OpenEMR policy.
+// <a> and <img> per DCL policy.
 // ---------------------------------------------------------------------------
 describe('messages.js renderMessageBody', () => {
     const { renderMessageBody } = messagesHelpers;

@@ -1,19 +1,19 @@
 <?php
 
 /**
- * HttpRestParsedRoute represents a parsed http rest api request.  It splits apart an OpenEMR route definition and
+ * HttpRestParsedRoute represents a parsed http rest api request.  It splits apart an DCL route definition and
  * parses the provided http request against that route definition.  Validates the route definition and extracts the
  * resource name as well as any route parameters defined in the route definition.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Http;
+namespace DCL\Common\Http;
 
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
 
 class HttpRestParsedRoute
 {
@@ -56,7 +56,7 @@ class HttpRestParsedRoute
     /**
      * @param mixed $requestMethod
      * @param string $requestRoute The current HTTP request route we are attempting to match against a route definition
-     * @param string $routeDefinition The OpenEMR route definition that this request is being matched / parsed against
+     * @param string $routeDefinition The DCL route definition that this request is being matched / parsed against
      */
     public function __construct(
         private $requestMethod,

@@ -3,7 +3,7 @@
 /**
  * oe-module-api-explorer CI smoke driver.
  *
- * Runs inside the openemr container (via `openemr-cmd e "php .../driver.php"`).
+ * Runs inside the DCL container (via `DCL-cmd e "php .../driver.php"`).
  * Exercises the explorer's JWT client-credentials path end to end:
  *
  *   1. GET oeApiExplorer.php?api_site=<site>     — initialize PHP session + site selection.
@@ -16,14 +16,14 @@
  * body prefix for the failing step).
  *
  * No Panther / Selenium required — the explorer sets $ignoreAuth=true so its pages work
- * without an OpenEMR login, and the JWT client-credentials grant is server-to-server inside
+ * without an DCL login, and the JWT client-credentials grant is server-to-server inside
  * the explorer's PHP, so no browser auth or consent click-through is needed.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude Code <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -39,7 +39,7 @@ if (php_sapi_name() !== 'cli') {
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://openemr';
+$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://DCL';
 $apiSite = getenv('EXPLORER_API_SITE') ?: 'docker';
 $explorerPath = '/devtools/oe-module-api-explorer';
 

@@ -7,12 +7,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Common/Database/QueryUtils.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @var with type OpenEMR\\\\Services\\\\Search\\\\TokenSearchField is not subtype of type OpenEMR\\\\Services\\\\FHIR\\\\Observation\\\\ISearchField\\.$#',
+    'message' => '#^PHPDoc tag @var with type DCL\\\\Services\\\\Search\\\\TokenSearchField is not subtype of type DCL\\\\Services\\\\FHIR\\\\Observation\\\\ISearchField\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationAdvanceDirectiveService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @var with type OpenEMR\\\\Services\\\\Search\\\\TokenSearchField is not subtype of type OpenEMR\\\\Services\\\\FHIR\\\\Observation\\\\ISearchField\\.$#',
+    'message' => '#^PHPDoc tag @var with type DCL\\\\Services\\\\Search\\\\TokenSearchField is not subtype of type DCL\\\\Services\\\\FHIR\\\\Observation\\\\ISearchField\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationSocialHistoryService.php',
 ];

@@ -3,14 +3,14 @@
 /**
  * Config Module.
  *
- * @package   OpenEMR Module
- * @link      https://www.open-emr.org
+ * @package   DCL Module
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Core;
+namespace DCL\Events\Core;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

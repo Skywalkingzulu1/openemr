@@ -3,7 +3,7 @@
 /**
  * Isolated test for the bundled SignalWire REST client shim.
  *
- * The shim (OpenEMR\Modules\FaxSMS\RestClient\SignalWire\Rest\Client) replaces
+ * The shim (DCL\Modules\FaxSMS\RestClient\SignalWire\Rest\Client) replaces
  * the legacy `signalwire/signalwire` Composer package and reproduces only the
  * Compatibility/LaML Fax surface that SignalWireClient consumes:
  *
@@ -17,24 +17,24 @@
  * Basic auth, and the camelCase -> PascalCase parameter mapping, in addition
  * to the snake_case -> camelCase response mapping.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    SignalWire Integration
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS\RestClient;
+namespace DCL\Tests\Isolated\Modules\FaxSMS\RestClient;
 
 use Composer\Autoload\ClassLoader;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use OpenEMR\Modules\FaxSMS\RestClient\SignalWire\Rest\Client;
-use OpenEMR\Modules\FaxSMS\RestClient\SignalWire\Rest\FaxInstance;
-use OpenEMR\Modules\FaxSMS\RestClient\SignalWire\Rest\RestException;
+use DCL\Modules\FaxSMS\RestClient\SignalWire\Rest\Client;
+use DCL\Modules\FaxSMS\RestClient\SignalWire\Rest\FaxInstance;
+use DCL\Modules\FaxSMS\RestClient\SignalWire\Rest\RestException;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 
@@ -66,7 +66,7 @@ final class SignalWireRestClientTest extends TestCase
             self::fail('Composer ClassLoader not available to register module autoload prefix.');
         }
         $loader->addPsr4(
-            'OpenEMR\\Modules\\FaxSMS\\',
+            'DCL\\Modules\\FaxSMS\\',
             dirname(__DIR__, 6) . '/interface/modules/custom_modules/oe-module-faxsms/src/'
         );
     }

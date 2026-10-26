@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,13 +71,13 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement 
 {
     /**
      * The type of category for the medication (for example, therapeutic classification, therapeutic sub-classification).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Specific category assigned to the medication (e.g. anti-infective, anti-hypertensive, antibiotic, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $classification = [];
 
@@ -88,7 +88,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement 
 
     /**
      * The type of category for the medication (for example, therapeutic classification, therapeutic sub-classification).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement 
 
     /**
      * The type of category for the medication (for example, therapeutic classification, therapeutic sub-classification).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement 
 
     /**
      * Specific category assigned to the medication (e.g. anti-infective, anti-hypertensive, antibiotic, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getClassification()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement 
 
     /**
      * Specific category assigned to the medication (e.g. anti-infective, anti-hypertensive, antibiotic, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
      * @return $this
      */
     public function addClassification($classification)

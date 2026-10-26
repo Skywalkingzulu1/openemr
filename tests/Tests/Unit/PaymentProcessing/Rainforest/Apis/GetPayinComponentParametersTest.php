@@ -3,21 +3,21 @@
 /**
  * Tests for the GetPayinComponentParameters API class
  *
- * @package   OpenEMR
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @package   DCL
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @license   GNU General Public License 3
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\PaymentProcessing\Rainforest\Apis;
+namespace DCL\Tests\Unit\PaymentProcessing\Rainforest\Apis;
 
 use JsonException;
 use Nyholm\Psr7\Factory\Psr17Factory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\PaymentProcessing\Rainforest\Apis\GetPayinComponentParameters;
+use DCL\Core\OEGlobalsBag;
+use DCL\PaymentProcessing\Rainforest\Apis\GetPayinComponentParameters;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use UnexpectedValueException;

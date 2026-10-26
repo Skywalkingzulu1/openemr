@@ -3,23 +3,23 @@
 /**
  * Maintenance for the list of procedure providers.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2012-2014 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_GET)) {
@@ -377,7 +377,7 @@ $info_msg = "";
                             <p><?php echo xlt("Download will download a text file containing the order in the HL7v2.3 message format to the downloads directory of your computer"); ?></p>
                             <p><?php echo xlt("SFTP will send the order as a HL7v2.3 message to the receiving lab using the SFTP protocol"); ?></p>
                             <p><?php echo xlt("Secure File Transfer Protocol, or SFTP is a network protocol that provides file access, file transfer, and file management over a secure connection"); ?></p>
-                            <p><?php echo xlt("Local Filesystem will store the order as a HL7v2.3 message in a predefined location in the local server hosting openEMR"); ?></p>
+                            <p><?php echo xlt("Local Filesystem will store the order as a HL7v2.3 message in a predefined location in the local server hosting DCL"); ?></p>
                             <p><?php echo xlt("Select Bidirectional or Results Only as appropriate, again only used for electronic orders"); ?></p>
                         </div>
                     </div>

@@ -13,11 +13,11 @@
  * along with this program. If not, see
  * http://www.gnu.org/licenses/licenses.html#GPL .
  *
- * @package OpenEMR
+ * @package DCL
  * @license http://www.gnu.org/licenses/licenses.html#GPL GNU GPL V3+
  * @author  Sharon Cohen <sharonco@matrix.co.il>
  * @author  Amiel Elboim <amielel@matrix.co.il>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 class LBF_Validation

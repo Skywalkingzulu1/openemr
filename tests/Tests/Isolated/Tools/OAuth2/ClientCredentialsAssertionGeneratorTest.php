@@ -7,21 +7,21 @@
  * database connections or external dependencies. Validates JWT generation, claim structure,
  * RSA-SHA384 signing, timing logic, and edge case handling for OAuth2 client credentials flow.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Generated Tests
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Tools\OAuth2;
+namespace DCL\Tests\Isolated\Tools\OAuth2;
 
 use Lcobucci\JWT\Encoding\JoseEncoder;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Token\Parser;
 use Lcobucci\JWT\UnencryptedToken;
-use OpenEMR\Tools\OAuth2\ClientCredentialsAssertionGenerator;
+use DCL\Tools\OAuth2\ClientCredentialsAssertionGenerator;
 use PHPUnit\Framework\TestCase;
 
 class ClientCredentialsAssertionGeneratorTest extends TestCase

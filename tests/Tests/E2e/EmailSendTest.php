@@ -3,20 +3,20 @@
 /**
  * EmailSendTest class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e;
+namespace DCL\Tests\E2e;
 
 use MyMailer;
-use OpenEMR\Tests\E2e\Email\EmailTestData;
-use OpenEMR\Tests\E2e\Email\EmailTestingTrait;
+use DCL\Tests\E2e\Email\EmailTestData;
+use DCL\Tests\E2e\Email\EmailTestingTrait;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -32,14 +32,14 @@ class EmailSendTest extends TestCase
         // Set up SMTP configuration in $GLOBALS for MyMailer
         // These values should match what's in ci/compose-shared-mailpit.yml
         $GLOBALS['EMAIL_METHOD'] = 'SMTP';
-        $GLOBALS['SMTP_HOST'] = getenv('OPENEMR_SETTING_SMTP_HOST') ?: 'mailpit';
-        $GLOBALS['SMTP_PORT'] = getenv('OPENEMR_SETTING_SMTP_PORT') ?: '1025';
-        $GLOBALS['SMTP_USER'] = getenv('OPENEMR_SETTING_SMTP_USER') ?: 'openemr';
-        $GLOBALS['SMTP_PASS'] = getenv('OPENEMR_SETTING_SMTP_PASS') ?: 'openemr';
+        $GLOBALS['SMTP_HOST'] = getenv('DCL_SETTING_SMTP_HOST') ?: 'mailpit';
+        $GLOBALS['SMTP_PORT'] = getenv('DCL_SETTING_SMTP_PORT') ?: '1025';
+        $GLOBALS['SMTP_USER'] = getenv('DCL_SETTING_SMTP_USER') ?: 'DCL';
+        $GLOBALS['SMTP_PASS'] = getenv('DCL_SETTING_SMTP_PASS') ?: 'DCL';
         // Note: SMTP_SECURE empty string fails MyMailer::isConfigured() check
         // Use 'none' for no encryption (Mailpit accepts any value)
-        $GLOBALS['SMTP_SECURE'] = getenv('OPENEMR_SETTING_SMTP_SECURE') ?: 'none';
-        $GLOBALS['SMTP_Auth'] = getenv('OPENEMR_SETTING_SMTP_Auth') ?: 'TRUE';
+        $GLOBALS['SMTP_SECURE'] = getenv('DCL_SETTING_SMTP_SECURE') ?: 'none';
+        $GLOBALS['SMTP_Auth'] = getenv('DCL_SETTING_SMTP_Auth') ?: 'TRUE';
 
         $this->initializeMailpit();
         // Clear all existing emails before each test
@@ -78,7 +78,7 @@ class EmailSendTest extends TestCase
     {
         // Send an email directly using MyMailer (bypassing queue to avoid Twig template dependencies)
         $mailer = new MyMailer();
-        $mailer->setFrom(EmailTestData::TEST_SENDER, 'OpenEMR Test');
+        $mailer->setFrom(EmailTestData::TEST_SENDER, 'DCL Test');
         $mailer->addAddress(EmailTestData::TEST_RECIPIENT);
         $mailer->Subject = EmailTestData::TEST_SUBJECT_BASIC;
         $mailer->Body = EmailTestData::TEST_BODY_BASIC;
@@ -123,7 +123,7 @@ class EmailSendTest extends TestCase
 
         foreach ($recipients as $recipient) {
             $mailer = new MyMailer();
-            $mailer->setFrom(EmailTestData::TEST_SENDER, 'OpenEMR Test');
+            $mailer->setFrom(EmailTestData::TEST_SENDER, 'DCL Test');
             $mailer->addAddress($recipient);
             $mailer->Subject = EmailTestData::TEST_SUBJECT_BASIC;
             $mailer->Body = EmailTestData::TEST_BODY_BASIC;
@@ -158,7 +158,7 @@ class EmailSendTest extends TestCase
     {
         // Send an email with HTML content using MyMailer directly
         $mailer = new MyMailer();
-        $mailer->setFrom(EmailTestData::TEST_SENDER, 'OpenEMR');
+        $mailer->setFrom(EmailTestData::TEST_SENDER, 'DCL');
         $mailer->addAddress(EmailTestData::TEST_RECIPIENT);
         $mailer->Subject = EmailTestData::TEST_SUBJECT_BASIC;
         $mailer->Body = EmailTestData::TEST_BODY_HTML;
@@ -195,7 +195,7 @@ class EmailSendTest extends TestCase
 
         // Send an email with a unique subject
         $mailer = new MyMailer();
-        $mailer->setFrom(EmailTestData::TEST_SENDER, 'OpenEMR Test');
+        $mailer->setFrom(EmailTestData::TEST_SENDER, 'DCL Test');
         $mailer->addAddress(EmailTestData::TEST_RECIPIENT);
         $mailer->Subject = $uniqueSubject;
         $mailer->Body = EmailTestData::TEST_BODY_BASIC;

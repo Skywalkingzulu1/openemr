@@ -3,40 +3,40 @@
 /**
  * FhirObservationLaboratoryService.php
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Observation\Trait\FhirObservationTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\ProcedureService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Observation\Trait\FhirObservationTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\ProcedureService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationLaboratoryService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
 {
@@ -103,7 +103,7 @@ class FhirObservationLaboratoryService extends FhirServiceBase implements IPatie
 
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -124,26 +124,26 @@ class FhirObservationLaboratoryService extends FhirServiceBase implements IPatie
 
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
 
         try {
             // if we have a category let's remove it as its being passed from our upper layer and we don't want to map
             // it to our procedure codes.
-            unset($openEMRSearchParameters['category']);
+            unset($DCLSearchParameters['category']);
 
-            if (!empty($openEMRSearchParameters['result_code'])) {
-                if ($openEMRSearchParameters['result_code'] instanceof TokenSearchField) {
+            if (!empty($DCLSearchParameters['result_code'])) {
+                if ($DCLSearchParameters['result_code'] instanceof TokenSearchField) {
                     /**
                      * @var TokenSearchField
                      */
-                    $codeField = $openEMRSearchParameters['result_code'];
+                    $codeField = $DCLSearchParameters['result_code'];
                     // transform the code values into something our procedure service can understand
                     $codeField->transformValues(function ($tokenValue) {
                         // we only support LOINC codes here so if we have a system of LOINC we can strip it out
@@ -156,7 +156,7 @@ class FhirObservationLaboratoryService extends FhirServiceBase implements IPatie
                 }
             }
 //            $result = $this->service->search($newSearchParams, true);
-            $result = $this->getProcedureService()->search($openEMRSearchParameters, true);
+            $result = $this->getProcedureService()->search($DCLSearchParameters, true);
             $data = $result->getData() ?? [];
 
             // need to transform these into something we can consume
@@ -204,12 +204,12 @@ class FhirObservationLaboratoryService extends FhirServiceBase implements IPatie
     }
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR Resource
+     * Parses an DCL data record, returning the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode     Indicates if the returned resource is encoded into a string. Defaults to True.
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRObservation
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRObservation
     {
         $observation = new FHIRObservation();
         $meta = new FHIRMeta();
@@ -372,7 +372,7 @@ class FhirObservationLaboratoryService extends FhirServiceBase implements IPatie
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param      $dataRecord - The source OpenEMR data record
+     * @param      $dataRecord - The source DCL data record
      * @param bool $encode     - Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return false|FHIRProvenance|string|null - the FHIR Resource. Returned format is defined using $encode parameter.
      */

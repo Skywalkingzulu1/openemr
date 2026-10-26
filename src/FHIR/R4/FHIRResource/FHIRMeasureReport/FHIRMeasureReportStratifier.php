@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasureReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
@@ -71,13 +71,13 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * The meaning of this stratifier, as defined in the measure definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
     public $stratum = [];
 
@@ -88,7 +88,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The meaning of this stratifier, as defined in the measure definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The meaning of this stratifier, as defined in the measure definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -108,7 +108,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
     public function getStratum()
     {
@@ -117,7 +117,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
      * @return $this
      */
     public function addStratum($stratum)

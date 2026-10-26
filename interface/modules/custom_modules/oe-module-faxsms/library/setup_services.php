@@ -3,24 +3,24 @@
 /**
  * Config Module.
  *
- * @package   OpenEMR Module
- * @link      https://www.open-emr.org
+ * @package   DCL Module
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023-2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $sessionAllowWrite = true;
 require_once(__DIR__ . "/../../../../globals.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Modules\FaxSMS\BootstrapService;
-use OpenEMR\Modules\FaxSMS\Controller\NotificationTaskManager;
-use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
-use OpenEMR\Modules\FaxSMS\Service\PermissionUsers;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Modules\FaxSMS\BootstrapService;
+use DCL\Modules\FaxSMS\Controller\NotificationTaskManager;
+use DCL\Modules\FaxSMS\Enums\ServiceType;
+use DCL\Modules\FaxSMS\Service\PermissionUsers;
 
 $module_config = 1;
 

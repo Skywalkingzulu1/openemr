@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
+namespace DCL\FHIR\R4\FHIRResource\FHIRValueSet;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
@@ -71,19 +71,19 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * Specifies a code for the concept to be included or excluded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
     public $designation = [];
 
@@ -94,7 +94,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Specifies a code for the concept to be included or excluded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -103,7 +103,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Specifies a code for the concept to be included or excluded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -114,7 +114,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -123,7 +123,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -134,7 +134,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
     public function getDesignation()
     {
@@ -143,7 +143,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
      * @return $this
      */
     public function addDesignation($designation)

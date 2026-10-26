@@ -3,19 +3,19 @@
 /**
  * Retrieves, creates, and updates database telehealth session records that track a provider/patient session relationship
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Repository;
+namespace Comlink\DCL\Modules\TeleHealthModule\Repository;
 
 use InvalidArgumentException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\PatientService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\PatientService;
 
 class TeleHealthSessionRepository
 {

@@ -1,16 +1,16 @@
 <?php
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FixtureManagerTest extends TestCase
 {

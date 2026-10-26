@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\RestControllers\Config;
+namespace DCL\RestControllers\Config;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;

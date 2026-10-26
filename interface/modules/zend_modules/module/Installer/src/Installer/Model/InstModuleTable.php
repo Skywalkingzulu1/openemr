@@ -3,27 +3,27 @@
 /**
  * interface/modules/zend_modules/module/Installer/src/Installer/Model/InstModuleTable.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T.Paul <jacob@zhservices.com>
  * @author    Vipin Kumar <vipink@zhservices.com>
  * @author    Remesh Babu S <remesh@zhservices.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Installer\Model;
 
 use Interop\Container\ContainerInterface;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\InfoTxt;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\SQLUpgradeService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\InfoTxt;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\SQLUpgradeService;
 
 class InstModuleTable
 {

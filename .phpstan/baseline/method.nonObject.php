@@ -1102,12 +1102,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleHealthCalendarController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEventCategories\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Repository\\\\CalendarEventCategoryRepository\\|null\\.$#',
+    'message' => '#^Cannot call method getEventCategories\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Repository\\\\CalendarEventCategoryRepository\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleHealthCalendarController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEventCategoryForId\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Repository\\\\CalendarEventCategoryRepository\\|null\\.$#',
+    'message' => '#^Cannot call method getEventCategoryForId\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Repository\\\\CalendarEventCategoryRepository\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleHealthCalendarController.php',
 ];
@@ -1137,7 +1137,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleHealthVideoRegistrationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getAuthToken\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
+    'message' => '#^Cannot call method getAuthToken\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleconferenceRoomController.php',
 ];
@@ -1152,7 +1152,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleconferenceRoomController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getId\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
+    'message' => '#^Cannot call method getId\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleconferenceRoomController.php',
 ];
@@ -1162,7 +1162,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleconferenceRoomController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getUsername\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
+    'message' => '#^Cannot call method getUsername\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
     'count' => 5,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleconferenceRoomController.php',
 ];
@@ -1177,17 +1177,17 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Services/ParticipantListService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getUsername\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
+    'message' => '#^Cannot call method getUsername\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Services/ParticipantListService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getAuthToken\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
+    'message' => '#^Cannot call method getAuthToken\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Services/TelehealthConfigurationVerifier.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getUsername\\(\\) on Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
+    'message' => '#^Cannot call method getUsername\\(\\) on Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Models\\\\TeleHealthUser\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Services/TelehealthConfigurationVerifier.php',
 ];
@@ -1312,7 +1312,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-ehi-exporter/src/Services/EhiExporter.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getRecords\\(\\) on OpenEMR\\\\Modules\\\\EhiExporter\\\\TableDefinitions\\\\ExportTableDefinition\\|null\\.$#',
+    'message' => '#^Cannot call method getRecords\\(\\) on DCL\\\\Modules\\\\EhiExporter\\\\TableDefinitions\\\\ExportTableDefinition\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-ehi-exporter/src/Services/EhiExporter.php',
 ];
@@ -1352,52 +1352,52 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/ModuleManagerListener.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method authenticate\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method authenticate\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/contact.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getRequest\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method getRequest\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 18,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/contact.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method verifyAcl\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method verifyAcl\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/contact.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getCredentials\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method getCredentials\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/library/rc_sms_notification.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEmailSetup\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method getEmailSetup\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/library/rc_sms_notification.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method verifyAcl\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method verifyAcl\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/library/rc_sms_notification.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method chartFaxDocument\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method chartFaxDocument\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/library/utility.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method verifyAcl\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method verifyAcl\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/messageUI.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getCredentials\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method getCredentials\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/setup_voice.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method verifyAcl\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method verifyAcl\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/setup_voice.php',
 ];
@@ -1532,12 +1532,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Controller/VoiceClient.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getCredentials\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method getCredentials\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Events/NotificationEventListener.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method sendSMS\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method sendSMS\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Events/NotificationEventListener.php',
 ];
@@ -3057,7 +3057,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../library/classes/thumbnail/ThumbnailGenerator.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method fetchReminderCount\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call method fetchReminderCount\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../library/dated_reminder_functions.php',
 ];
@@ -4122,7 +4122,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/ClinicalDecisionRules/Interface/Controller/ControllerEdit.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getView\\(\\) on OpenEMR\\\\ClinicalDecisionRules\\\\Interface\\\\RuleLibrary\\\\RuleCriteria\\|null\\.$#',
+    'message' => '#^Cannot call method getView\\(\\) on DCL\\\\ClinicalDecisionRules\\\\Interface\\\\RuleLibrary\\\\RuleCriteria\\|null\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/ClinicalDecisionRules/Interface/Controller/ControllerEdit.php',
 ];
@@ -4457,7 +4457,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Common/ORDataObject/Person.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method deleteObservationById\\(\\) on OpenEMR\\\\Services\\\\ObservationService\\|null\\.$#',
+    'message' => '#^Cannot call method deleteObservationById\\(\\) on DCL\\\\Services\\\\ObservationService\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
@@ -4467,32 +4467,32 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getNewObservationTemplate\\(\\) on OpenEMR\\\\Services\\\\ObservationService\\|null\\.$#',
+    'message' => '#^Cannot call method getNewObservationTemplate\\(\\) on DCL\\\\Services\\\\ObservationService\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getObservationById\\(\\) on OpenEMR\\\\Services\\\\ObservationService\\|null\\.$#',
+    'message' => '#^Cannot call method getObservationById\\(\\) on DCL\\\\Services\\\\ObservationService\\|null\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getUuid\\(\\) on OpenEMR\\\\Services\\\\PatientService\\|null\\.$#',
+    'message' => '#^Cannot call method getUuid\\(\\) on DCL\\\\Services\\\\PatientService\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method saveObservation\\(\\) on OpenEMR\\\\Services\\\\ObservationService\\|null\\.$#',
+    'message' => '#^Cannot call method saveObservation\\(\\) on DCL\\\\Services\\\\ObservationService\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method searchAndPopulateChildObservations\\(\\) on OpenEMR\\\\Services\\\\ObservationService\\|null\\.$#',
+    'message' => '#^Cannot call method searchAndPopulateChildObservations\\(\\) on DCL\\\\Services\\\\ObservationService\\|null\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method validateObservationData\\(\\) on OpenEMR\\\\Services\\\\ObservationService\\|null\\.$#',
+    'message' => '#^Cannot call method validateObservationData\\(\\) on DCL\\\\Services\\\\ObservationService\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Controllers/Interface/Forms/Observation/ObservationController.php',
 ];
@@ -5227,7 +5227,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/RestControllers/FHIR/FhirProvenanceRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getAll\\(\\) on OpenEMR\\\\Services\\\\FHIR\\\\FhirQuestionnaireResponseService\\|null\\.$#',
+    'message' => '#^Cannot call method getAll\\(\\) on DCL\\\\Services\\\\FHIR\\\\FhirQuestionnaireResponseService\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/FHIR/FhirQuestionnaireResponseRestController.php',
 ];
@@ -5237,7 +5237,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/RestControllers/FHIR/FhirQuestionnaireResponseRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getOne\\(\\) on OpenEMR\\\\Services\\\\FHIR\\\\FhirQuestionnaireResponseService\\|null\\.$#',
+    'message' => '#^Cannot call method getOne\\(\\) on DCL\\\\Services\\\\FHIR\\\\FhirQuestionnaireResponseService\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/FHIR/FhirQuestionnaireResponseRestController.php',
 ];
@@ -5302,7 +5302,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/RestControllers/FHIR/Operations/FhirOperationDocRefRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValue\\(\\) on OpenEMR\\\\Services\\\\Search\\\\SearchFieldComparableValue\\|false\\.$#',
+    'message' => '#^Cannot call method getValue\\(\\) on DCL\\\\Services\\\\Search\\\\SearchFieldComparableValue\\|false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/FHIR/Operations/FhirOperationExportRestController.php',
 ];
@@ -5507,7 +5507,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/RestControllers/RestControllerHelper.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getRedirectUri\\(\\) on OpenEMR\\\\Common\\\\Auth\\\\OpenIDConnect\\\\Entities\\\\ClientEntity\\|false\\.$#',
+    'message' => '#^Cannot call method getRedirectUri\\(\\) on DCL\\\\Common\\\\Auth\\\\OpenIDConnect\\\\Entities\\\\ClientEntity\\|false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/SMART/SMARTAuthorizationController.php',
 ];
@@ -5527,7 +5527,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/RestControllers/Subscriber/SiteSetupListener.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method createResponse\\(\\) on OpenEMR\\\\Common\\\\Http\\\\Psr17Factory\\|null\\.$#',
+    'message' => '#^Cannot call method createResponse\\(\\) on DCL\\\\Common\\\\Http\\\\Psr17Factory\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/TokenIntrospectionRestController.php',
 ];
@@ -6157,7 +6157,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/MedicationDispense/FhirMedicationDispenseLocalDispensaryService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method addExtension\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRObservation\\|string\\.$#',
+    'message' => '#^Cannot call method addExtension\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRObservation\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationAdvanceDirectiveService.php',
 ];
@@ -6222,7 +6222,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationVitalsService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method search\\(\\) on OpenEMR\\\\Services\\\\QuestionnaireService\\|null\\.$#',
+    'message' => '#^Cannot call method search\\(\\) on DCL\\\\Services\\\\QuestionnaireService\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Questionnaire/FhirQuestionnaireFormService.php',
 ];
@@ -6897,7 +6897,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Isolated/RestControllers/HandleProcessingResultTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getAbatementDateTime\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
+    'message' => '#^Cannot call method getAbatementDateTime\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Condition/FhirConditionEncounterDiagnosisServiceTest.php',
 ];
@@ -6912,42 +6912,42 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getDataAbsentReason\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getDataAbsentReason\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEffectiveDateTime\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getEffectiveDateTime\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEncounter\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getEncounter\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getField\\(\\) on OpenEMR\\\\Services\\\\Search\\\\ServiceField\\|string\\.$#',
+    'message' => '#^Cannot call method getField\\(\\) on DCL\\\\Services\\\\Search\\\\ServiceField\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getHasMember\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getHasMember\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getMeta\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getMeta\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getNote\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getNote\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getPerformer\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getPerformer\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
@@ -6957,7 +6957,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
@@ -6972,17 +6972,17 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueQuantity\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getValueQuantity\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueString\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getValueString\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/FHIR/Observation/FhirObservationQuestionnaireItemServiceTest.php',
 ];
@@ -7162,27 +7162,27 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService3_1_1Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getClinicalStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
+    'message' => '#^Cannot call method getClinicalStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService8_0_0Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEncounter\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
+    'message' => '#^Cannot call method getEncounter\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService8_0_0Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getId\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
+    'message' => '#^Cannot call method getId\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService8_0_0Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getMeta\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
+    'message' => '#^Cannot call method getMeta\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService8_0_0Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getRecordedDate\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
+    'message' => '#^Cannot call method getRecordedDate\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService8_0_0Test.php',
 ];
@@ -7192,57 +7192,57 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService8_0_0Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getVerificationStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
+    'message' => '#^Cannot call method getVerificationStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCondition\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService8_0_0Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getAuthenticator\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getAuthenticator\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getAuthor\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getAuthor\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getCategory\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getCategory\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getContent\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getContent\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getContext\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getContext\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getDate\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getDate\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getIdentifier\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getIdentifier\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getSubject\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getSubject\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getType\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
+    'message' => '#^Cannot call method getType\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDocumentReference\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test.php',
 ];
@@ -7267,37 +7267,37 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirAllergyIntoleranceServiceQueryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getId\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
+    'message' => '#^Cannot call method getId\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirCareTeamServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getManagingOrganization\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
+    'message' => '#^Cannot call method getManagingOrganization\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirCareTeamServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getMeta\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
+    'message' => '#^Cannot call method getMeta\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirCareTeamServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getName\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
+    'message' => '#^Cannot call method getName\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirCareTeamServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getParticipant\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
+    'message' => '#^Cannot call method getParticipant\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
     'count' => 8,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirCareTeamServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
+    'message' => '#^Cannot call method getStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirCareTeamServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getSubject\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
+    'message' => '#^Cannot call method getSubject\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRCareTeam\\|string\\|false\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirCareTeamServiceUSCore8Test.php',
 ];
@@ -7397,7 +7397,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationDispenseUSCore8ComplianceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method parseOpenEMRRecord\\(\\) on mixed\\.$#',
+    'message' => '#^Cannot call method parseDCLRecord\\(\\) on mixed\\.$#',
     'count' => 12,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationDispenseUSCore8ComplianceTest.php',
 ];
@@ -7407,72 +7407,72 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationDispenseUSCore8ComplianceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getAuthoredOn\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getAuthoredOn\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getCategory\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getCategory\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getDispenseRequest\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getDispenseRequest\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getDosageInstruction\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getDosageInstruction\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEncounter\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getEncounter\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getIntent\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getIntent\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getMedicationCodeableConcept\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getMedicationCodeableConcept\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getMedicationReference\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getMedicationReference\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getReportedBoolean\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getReportedBoolean\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getReportedReference\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getReportedReference\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getRequester\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getRequester\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getSubject\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
+    'message' => '#^Cannot call method getSubject\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRMedicationRequest\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRExtension\\|null\\.$#',
+    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRExtension\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirMedicationRequestServiceUSCore8Test.php',
 ];
@@ -7632,12 +7632,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirPractitionerServiceCrudTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getCategory\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getCategory\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getCode\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getCode\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
@@ -7657,17 +7657,17 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getExtension\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getExtension\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getIssued\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getIssued\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getPerformer\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getPerformer\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
@@ -7677,12 +7677,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getSubject\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getSubject\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
@@ -7692,7 +7692,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationAdvanceDirectiveServiceUSCore8Test.php',
 ];
@@ -7762,37 +7762,37 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getDataAbsentReason\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getDataAbsentReason\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEffectiveDateTime\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getEffectiveDateTime\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getEncounter\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getEncounter\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getField\\(\\) on OpenEMR\\\\Services\\\\Search\\\\ServiceField\\|string\\.$#',
+    'message' => '#^Cannot call method getField\\(\\) on DCL\\\\Services\\\\Search\\\\ServiceField\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getHasMember\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getHasMember\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getNote\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getNote\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getPerformer\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getPerformer\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
@@ -7802,7 +7802,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getStatus\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getStatus\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
@@ -7817,17 +7817,17 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getValueCodeableConcept\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueQuantity\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getValueQuantity\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call method getValueString\\(\\) on OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
+    'message' => '#^Cannot call method getValueString\\(\\) on DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\|string\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Observation/FhirObservationObservationFormServiceTest.php',
 ];

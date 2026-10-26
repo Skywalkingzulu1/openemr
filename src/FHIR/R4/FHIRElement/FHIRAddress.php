@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.
@@ -72,61 +72,61 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 {
     /**
      * The purpose of this address.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddressUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddressUse
      */
     public $use = null;
 
     /**
      * Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddressType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddressType
      */
     public $type = null;
 
     /**
      * Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $line = [];
 
     /**
      * The name of the city, town, suburb, village or other community or delivery center.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $city = null;
 
     /**
      * The name of the administrative area (county).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $district = null;
 
     /**
      * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $state = null;
 
     /**
      * A postal code designating a region defined by the postal service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $postalCode = null;
 
     /**
      * Country - a nation as commonly understood or generally accepted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $country = null;
 
     /**
      * Time period when address was/is in use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -137,7 +137,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * The purpose of this address.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddressUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddressUse
      */
     public function getUse()
     {
@@ -146,7 +146,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * The purpose of this address.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddressUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddressUse $use
      * @return $this
      */
     public function setUse($use)
@@ -157,7 +157,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddressType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddressType
      */
     public function getType()
     {
@@ -166,7 +166,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddressType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddressType $type
      * @return $this
      */
     public function setType($type)
@@ -177,7 +177,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -186,7 +186,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -197,7 +197,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getLine()
     {
@@ -206,7 +206,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $line
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $line
      * @return $this
      */
     public function addLine($line)
@@ -217,7 +217,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the city, town, suburb, village or other community or delivery center.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCity()
     {
@@ -226,7 +226,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the city, town, suburb, village or other community or delivery center.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $city
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $city
      * @return $this
      */
     public function setCity($city)
@@ -237,7 +237,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the administrative area (county).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDistrict()
     {
@@ -246,7 +246,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the administrative area (county).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $district
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $district
      * @return $this
      */
     public function setDistrict($district)
@@ -257,7 +257,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getState()
     {
@@ -266,7 +266,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $state
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $state
      * @return $this
      */
     public function setState($state)
@@ -277,7 +277,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * A postal code designating a region defined by the postal service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPostalCode()
     {
@@ -286,7 +286,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * A postal code designating a region defined by the postal service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $postalCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $postalCode
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -297,7 +297,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Country - a nation as commonly understood or generally accepted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCountry()
     {
@@ -306,7 +306,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Country - a nation as commonly understood or generally accepted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $country
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $country
      * @return $this
      */
     public function setCountry($country)
@@ -317,7 +317,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Time period when address was/is in use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -326,7 +326,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
 
     /**
      * Time period when address was/is in use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

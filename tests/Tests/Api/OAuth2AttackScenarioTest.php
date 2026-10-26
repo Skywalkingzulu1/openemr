@@ -17,16 +17,16 @@
  * Each test is self-contained: DCR + any required state is created and
  * torn down per test. No shared mutable state between tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use DateTimeImmutable;
 use GuzzleHttp\Client;
@@ -35,8 +35,8 @@ use Lcobucci\JWT\Encoding\JoseEncoder;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa\Sha256 as RsaSha256Signer;
 use Lcobucci\JWT\Token\Builder as JwtTokenBuilder;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -53,7 +53,7 @@ class OAuth2AttackScenarioTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
         // Capture the original password-grant global BEFORE any skip path:
         // PHPUnit still runs tearDown() for a test skipped from setUp().
         // Without this, a skip here would leave the "was-set" flag false,
@@ -64,8 +64,8 @@ class OAuth2AttackScenarioTest extends TestCase
         $this->originalPasswordGrantSettingWasSet = $globals->has('oauth_password_grant');
         $this->originalPasswordGrantSetting = $globals->get('oauth_password_grant');
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -157,7 +157,7 @@ class OAuth2AttackScenarioTest extends TestCase
         // name, no host component. Must be accepted so native-app clients
         // can register.
         $resp = $this->dcr([
-            'redirect_uris' => ['com.openemr.attacktest:/oauth2redirect/example-provider'],
+            'redirect_uris' => ['com.DCL.attacktest:/oauth2redirect/example-provider'],
         ]);
         $this->assertSame(
             200,
@@ -230,7 +230,7 @@ class OAuth2AttackScenarioTest extends TestCase
     {
         [$cid, $_csec] = $this->dcrConfidentialPasswordGrantClient('ForeignKeyAssertion');
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
-        $foreignPrivateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
+        $foreignPrivateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
         $signer = new RsaSha256Signer();
         $assertion = (new JwtTokenBuilder(new JoseEncoder(), ChainedFormatter::default()))
             ->issuedBy($cid)
@@ -355,7 +355,7 @@ class OAuth2AttackScenarioTest extends TestCase
     {
         // response_type=token selects the implicit grant per RFC 6749
         // §4.2. The implicit grant is deprecated by RFC 9700 (OAuth 2.0
-        // Security BCP) §2.1.2 and OAuth 2.1 drops it entirely. OpenEMR
+        // Security BCP) §2.1.2 and OAuth 2.1 drops it entirely. DCL
         // does not enable the implicit grant in its authorization
         // server, so a /authorize GET with response_type=token must be
         // rejected rather than issue a token in the redirect fragment.
@@ -369,7 +369,7 @@ class OAuth2AttackScenarioTest extends TestCase
     {
         // response_type=id_token is the OIDC implicit flow (OIDC Core
         // §3.2) and inherits the implicit-grant deprecation per RFC
-        // 9700 §2.1.2. OpenEMR enables only the auth-code grant for
+        // 9700 §2.1.2. DCL enables only the auth-code grant for
         // SMART-on-FHIR, so id_token must be rejected rather than
         // return an id_token in the fragment.
         [$cid, $_csec] = $this->dcrConfidentialAuthCodeClient('IdTokenResponseType');
@@ -486,7 +486,7 @@ class OAuth2AttackScenarioTest extends TestCase
     public function testFhirRejectsBearerSignedByForeignKey(): void
     {
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
-        $foreignPrivateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
+        $foreignPrivateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
         $signer = new RsaSha256Signer();
         $forged = (new JwtTokenBuilder(new JoseEncoder(), ChainedFormatter::default()))
             ->issuedBy('http://attacker.example/oauth2/default')
@@ -884,7 +884,7 @@ class OAuth2AttackScenarioTest extends TestCase
     #[Test]
     public function testVersionEndpointRequiresAuthentication(): void
     {
-        // The /api/version OpenAPI annotation declares openemr_auth as a
+        // The /api/version OpenAPI annotation declares DCL_auth as a
         // required security scheme and documents a 401 response. The runtime
         // must match that contract rather than silently returning the
         // installed-version row to any unauthenticated caller.
@@ -900,7 +900,7 @@ class OAuth2AttackScenarioTest extends TestCase
     public function testProductEndpointRequiresAuthentication(): void
     {
         // Same contract as /api/version — the OpenAPI annotation declares
-        // openemr_auth as required and 401 as a documented response.
+        // DCL_auth as required and 401 as a documented response.
         $resp = $this->rawGet('/apis/default/api/product', []);
         $this->assertSame(
             401,
@@ -1027,7 +1027,7 @@ class OAuth2AttackScenarioTest extends TestCase
         // Build a portal patient fixture (needed because the password
         // grant with user_role=patient requires it) and mint a
         // patient-role token.
-        $portalFixtures = new \OpenEMR\Tests\Fixtures\PortalPatientFixtureManager();
+        $portalFixtures = new \DCL\Tests\Fixtures\PortalPatientFixtureManager();
         $fixture = $portalFixtures->installPortalPatient(
             portalLoginUsername: 'crossscope-patient-' . bin2hex(random_bytes(4)),
             plainPassword: 'CrossScopePortalPassword1!',
@@ -1085,7 +1085,7 @@ class OAuth2AttackScenarioTest extends TestCase
         // `Access-Control-Allow-Credentials: true`. The response-side
         // listener emits the request's Origin (never `*`) and only when
         // the authenticated client's scope allows it. The semgrep rule
-        // openemr-oauth2-cors-reflect-origin-without-allowlist blocks
+        // DCL-oauth2-cors-reflect-origin-without-allowlist blocks
         // source-side introduction. This test adds a runtime invariant:
         // no response ever emits both headers in that forbidden shape.
         //

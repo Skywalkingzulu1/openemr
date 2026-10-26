@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,8 +62,8 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
-use OpenEMR\FHIR\R4\PHPFHIRHelper;
+use DCL\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\PHPFHIRHelper;
 
 /**
  * A human-readable summary of the resource conveying the essential clinical and business information for the resource.
@@ -73,7 +73,7 @@ class FHIRNarrative extends FHIRElement implements \JsonSerializable
 {
     /**
      * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRNarrativeStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRNarrativeStatus
      */
     public $status = null;
 
@@ -90,7 +90,7 @@ class FHIRNarrative extends FHIRElement implements \JsonSerializable
 
     /**
      * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRNarrativeStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRNarrativeStatus
      */
     public function getStatus()
     {
@@ -99,7 +99,7 @@ class FHIRNarrative extends FHIRElement implements \JsonSerializable
 
     /**
      * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRNarrativeStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRNarrativeStatus $status
      * @return $this
      */
     public function setStatus($status)

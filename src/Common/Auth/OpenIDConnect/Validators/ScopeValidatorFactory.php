@@ -2,17 +2,17 @@
 
 /*
  * ScopeValidatorFactory.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Validators;
+namespace DCL\Common\Auth\OpenIDConnect\Validators;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
 
 class ScopeValidatorFactory
 {

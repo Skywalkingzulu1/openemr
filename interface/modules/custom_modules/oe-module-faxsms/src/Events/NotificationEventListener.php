@@ -3,25 +3,25 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Events;
+namespace DCL\Modules\FaxSMS\Events;
 
 use MyMailer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OneTimeAuth;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Main\Tabs\RenderEvent;
-use OpenEMR\Events\Messaging\SendNotificationEvent;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OneTimeAuth;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Main\Tabs\RenderEvent;
+use DCL\Events\Messaging\SendNotificationEvent;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

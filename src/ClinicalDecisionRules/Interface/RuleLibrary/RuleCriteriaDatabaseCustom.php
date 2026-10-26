@@ -1,24 +1,24 @@
 <?php
 
 /**
- * interface/super/rules/library/OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseCustom.php
+ * interface/super/rules/library/DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseCustom.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Aron Racho <aron@mi-squared.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2010-2011 Aron Racho <aron@mi-squared.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseCustom
+ * Description of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseCustom
  *
  * @author aron
  */

@@ -16,21 +16,21 @@
  *
  * Pure enum logic; the methods under test do not touch globals.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\Enums {
+namespace DCL\Modules\FaxSMS\Enums {
     // Some ServiceType label helpers call xlt(); an identity stub declared IN
     // the enum's namespace (matching runner_test_stubs.php's in-namespace style)
-    // keeps the isolated suite free of OpenEMR's gettext bootstrap without
+    // keeps the isolated suite free of DCL's gettext bootstrap without
     // touching the global namespace.
-    if (!function_exists('OpenEMR\Modules\FaxSMS\Enums\xlt')) {
+    if (!function_exists('DCL\Modules\FaxSMS\Enums\xlt')) {
         function xlt(string $s): string
         {
             return $s;
@@ -40,7 +40,7 @@ namespace OpenEMR\Modules\FaxSMS\Enums {
 
 namespace {
     spl_autoload_register(static function (string $class): void {
-        $prefix = 'OpenEMR\\Modules\\FaxSMS\\';
+        $prefix = 'DCL\\Modules\\FaxSMS\\';
         if (!str_starts_with($class, $prefix)) {
             return;
         }
@@ -54,9 +54,9 @@ namespace {
     });
 }
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS\Enums {
+namespace DCL\Tests\Isolated\Modules\FaxSMS\Enums {
 
-    use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
+    use DCL\Modules\FaxSMS\Enums\ServiceType;
     use PHPUnit\Framework\Attributes\DataProvider;
     use PHPUnit\Framework\TestCase;
 

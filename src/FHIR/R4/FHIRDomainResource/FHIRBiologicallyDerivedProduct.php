@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A material substance originating from a biological entity intended to be transplanted or infused
@@ -73,67 +73,67 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 {
     /**
      * This records identifiers associated with this biologically derived product instance that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Broad category of this product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory
      */
     public $productCategory = null;
 
     /**
      * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productCode = null;
 
     /**
      * Whether the product is currently available.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
      */
     public $status = null;
 
     /**
      * Procedure request to obtain this biologically derived product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $request = [];
 
     /**
      * Number of discrete units within this product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $quantity = null;
 
     /**
      * Parent product (if any).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $parent = [];
 
     /**
      * How this product was collected.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
     public $collection = null;
 
     /**
      * Any processing of the product during collection that does not change the fundamental nature of the product. For example adding anti-coagulants during the collection of Peripheral Blood Stem Cells.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
      */
     public $processing = [];
 
     /**
      * Any manipulation of product post-collection that is intended to alter the product.  For example a buffy-coat enrichment or CD8 reduction of Peripheral Blood Stem Cells to make it more suitable for infusion.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
      */
     public $manipulation = null;
 
     /**
      * Product storage.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage[]
      */
     public $storage = [];
 
@@ -144,7 +144,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * This records identifiers associated with this biologically derived product instance that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -153,7 +153,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * This records identifiers associated with this biologically derived product instance that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -164,7 +164,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Broad category of this product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory
      */
     public function getProductCategory()
     {
@@ -173,7 +173,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Broad category of this product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory $productCategory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory $productCategory
      * @return $this
      */
     public function setProductCategory($productCategory)
@@ -184,7 +184,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCode()
     {
@@ -193,7 +193,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCode
      * @return $this
      */
     public function setProductCode($productCode)
@@ -204,7 +204,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Whether the product is currently available.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
      */
     public function getStatus()
     {
@@ -213,7 +213,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Whether the product is currently available.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -224,7 +224,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Procedure request to obtain this biologically derived product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRequest()
     {
@@ -233,7 +233,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Procedure request to obtain this biologically derived product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function addRequest($request)
@@ -244,7 +244,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Number of discrete units within this product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getQuantity()
     {
@@ -253,7 +253,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Number of discrete units within this product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -264,7 +264,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Parent product (if any).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getParent()
     {
@@ -273,7 +273,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Parent product (if any).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $parent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $parent
      * @return $this
      */
     public function addParent($parent)
@@ -284,7 +284,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * How this product was collected.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
     public function getCollection()
     {
@@ -293,7 +293,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * How this product was collected.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $collection
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $collection
      * @return $this
      */
     public function setCollection($collection)
@@ -304,7 +304,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Any processing of the product during collection that does not change the fundamental nature of the product. For example adding anti-coagulants during the collection of Peripheral Blood Stem Cells.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
      */
     public function getProcessing()
     {
@@ -313,7 +313,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Any processing of the product during collection that does not change the fundamental nature of the product. For example adding anti-coagulants during the collection of Peripheral Blood Stem Cells.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing $processing
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing $processing
      * @return $this
      */
     public function addProcessing($processing)
@@ -324,7 +324,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Any manipulation of product post-collection that is intended to alter the product.  For example a buffy-coat enrichment or CD8 reduction of Peripheral Blood Stem Cells to make it more suitable for infusion.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
      */
     public function getManipulation()
     {
@@ -333,7 +333,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Any manipulation of product post-collection that is intended to alter the product.  For example a buffy-coat enrichment or CD8 reduction of Peripheral Blood Stem Cells to make it more suitable for infusion.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation $manipulation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation $manipulation
      * @return $this
      */
     public function setManipulation($manipulation)
@@ -344,7 +344,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Product storage.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage[]
      */
     public function getStorage()
     {
@@ -353,7 +353,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements \Json
 
     /**
      * Product storage.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage $storage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage $storage
      * @return $this
      */
     public function addStorage($storage)

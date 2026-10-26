@@ -3,17 +3,17 @@
 /**
  * Custom PHPStan Rule to forbid direct instantiation of ServiceContainer-managed classes.
  *
- * @package   OpenEMR
- * @author    Eric Stern <erics@opencoreemr.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @author    Eric Stern <erics@DCL.com>
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common;
+use DCL\BC\ServiceContainer;
+use DCL\Common;
 use PHPMailer\PHPMailer\PHPMailer;
 use PhpParser\Node;
 use PhpParser\Node\Expr\New_;
@@ -112,7 +112,7 @@ class ForbiddenInstantiationsRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.forbiddenInstantiation')
+                ->identifier('DCL.forbiddenInstantiation')
                 ->tip($tip)
                 ->build()
         ];

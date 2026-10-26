@@ -10,8 +10,8 @@
  // This program implements the XML Writer to generate PQRI 2009 XML.
 
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 class PQRIXml extends XmlWriterOemr
 {

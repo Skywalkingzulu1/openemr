@@ -3,18 +3,18 @@
 /**
  * A billing line the eye exam's Populate Fee Sheet writes, built as the fee sheet builds it.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Forms\EyeMag;
+namespace DCL\Forms\EyeMag;
 
-use OpenEMR\Billing\HcpcsDrugDefaults;
+use DCL\Billing\HcpcsDrugDefaults;
 
 /**
  * Units, fee, NDC and modifier for a code the eye exam bills (a visit code or a

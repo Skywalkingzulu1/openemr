@@ -3,26 +3,26 @@
 /**
  * Bootstrap file for the exporter
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter;
+namespace DCL\Modules\EhiExporter;
 
 /**
- * Note the below use statements are importing classes from the OpenEMR core codebase
+ * Note the below use statements are importing classes from the DCL core codebase
  */
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Globals\GlobalsInitializedEvent;
-use OpenEMR\Menu\MenuEvent;
-use OpenEMR\Modules\EhiExporter\Services\EhiExporter;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Globals\GlobalsInitializedEvent;
+use DCL\Menu\MenuEvent;
+use DCL\Modules\EhiExporter\Services\EhiExporter;
 use Psr\Log\LoggerInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
@@ -55,7 +55,7 @@ class Bootstrap
     private static self $instance;
 
     /**
-     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the OpenEMR system
+     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the DCL system
      * @param ?Kernel $kernel
      */
     public function __construct(
@@ -100,7 +100,7 @@ class Bootstrap
     public function getExporter(): EhiExporter
     {
         $xmlConfigPath = OEGlobalsBag::getInstance()->get('webserver_root') . DIRECTORY_SEPARATOR . 'Documentation' . DIRECTORY_SEPARATOR . 'EHI_Export';
-        // . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'openemr.openemr.xml';
+        // . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'DCL.DCL.xml';
         return new EhiExporter(
             OEGlobalsBag::getInstance()->get('webserver_root') . $this->getPublicPath(),
             $this->getPublicPath(),

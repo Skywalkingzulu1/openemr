@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -70,90 +70,90 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $entityCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $entityReference = null;
 
     /**
      * Identifies a Contract Valued Item instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Indicates the time during which this Contract ValuedItem information is effective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $effectiveTime = null;
 
     /**
      * Specifies the units by which the Contract Valued Item is measured or counted, and quantifies the countable or measurable Contract Valued Item instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * A Contract Valued Item unit valuation measure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $unitPrice = null;
 
     /**
      * A real number that represents a multiplier used in determining the overall value of the Contract Valued Item delivered. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $factor = null;
 
     /**
      * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the Contract Valued Item delivered. The concept of Points allows for assignment of point values for a Contract Valued Item, such that a monetary amount can be assigned to each point.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $points = null;
 
     /**
      * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $net = null;
 
     /**
      * Terms of valuation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $payment = null;
 
     /**
      * When payment is due.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $paymentDate = null;
 
     /**
      * Who will make payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $responsible = null;
 
     /**
      * Who will receive payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $recipient = null;
 
     /**
      * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $linkId = [];
 
     /**
      * A set of security labels that define which terms are controlled by this condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public $securityLabelNumber = [];
 
@@ -163,7 +163,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     private $_fhirElementName = 'Contract.ValuedItem';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getEntityCodeableConcept()
     {
@@ -171,7 +171,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $entityCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $entityCodeableConcept
      * @return $this
      */
     public function setEntityCodeableConcept($entityCodeableConcept)
@@ -181,7 +181,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEntityReference()
     {
@@ -189,7 +189,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $entityReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $entityReference
      * @return $this
      */
     public function setEntityReference($entityReference)
@@ -200,7 +200,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies a Contract Valued Item instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -209,7 +209,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies a Contract Valued Item instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -220,7 +220,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates the time during which this Contract ValuedItem information is effective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEffectiveTime()
     {
@@ -229,7 +229,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates the time during which this Contract ValuedItem information is effective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $effectiveTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $effectiveTime
      * @return $this
      */
     public function setEffectiveTime($effectiveTime)
@@ -240,7 +240,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specifies the units by which the Contract Valued Item is measured or counted, and quantifies the countable or measurable Contract Valued Item instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -249,7 +249,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specifies the units by which the Contract Valued Item is measured or counted, and quantifies the countable or measurable Contract Valued Item instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -260,7 +260,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A Contract Valued Item unit valuation measure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -269,7 +269,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A Contract Valued Item unit valuation measure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -280,7 +280,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A real number that represents a multiplier used in determining the overall value of the Contract Valued Item delivered. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFactor()
     {
@@ -289,7 +289,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A real number that represents a multiplier used in determining the overall value of the Contract Valued Item delivered. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $factor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $factor
      * @return $this
      */
     public function setFactor($factor)
@@ -300,7 +300,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the Contract Valued Item delivered. The concept of Points allows for assignment of point values for a Contract Valued Item, such that a monetary amount can be assigned to each point.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getPoints()
     {
@@ -309,7 +309,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the Contract Valued Item delivered. The concept of Points allows for assignment of point values for a Contract Valued Item, such that a monetary amount can be assigned to each point.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $points
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $points
      * @return $this
      */
     public function setPoints($points)
@@ -320,7 +320,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getNet()
     {
@@ -329,7 +329,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $net
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $net
      * @return $this
      */
     public function setNet($net)
@@ -340,7 +340,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Terms of valuation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPayment()
     {
@@ -349,7 +349,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Terms of valuation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $payment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $payment
      * @return $this
      */
     public function setPayment($payment)
@@ -360,7 +360,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * When payment is due.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getPaymentDate()
     {
@@ -369,7 +369,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * When payment is due.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $paymentDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $paymentDate
      * @return $this
      */
     public function setPaymentDate($paymentDate)
@@ -380,7 +380,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Who will make payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResponsible()
     {
@@ -389,7 +389,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Who will make payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $responsible
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $responsible
      * @return $this
      */
     public function setResponsible($responsible)
@@ -400,7 +400,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Who will receive payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRecipient()
     {
@@ -409,7 +409,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Who will receive payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recipient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function setRecipient($recipient)
@@ -420,7 +420,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getLinkId()
     {
@@ -429,7 +429,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $linkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $linkId
      * @return $this
      */
     public function addLinkId($linkId)
@@ -440,7 +440,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A set of security labels that define which terms are controlled by this condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public function getSecurityLabelNumber()
     {
@@ -449,7 +449,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A set of security labels that define which terms are controlled by this condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
      * @return $this
      */
     public function addSecurityLabelNumber($securityLabelNumber)

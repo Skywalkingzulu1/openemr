@@ -4,15 +4,15 @@
  * JWTClientAuthenticationService handles JWT-based client authentication for OAuth2 flows
  * Implements RFC 7523 and SMART Backend Services specifications
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Public Domain for portions marked as AI Generated which were created with the assistance of Claude.AI and Microsoft Copilot
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 use DateInterval;
 use GuzzleHttp\Client;
@@ -30,17 +30,17 @@ use Lcobucci\JWT\Validation\Constraint\SignedWith;
 use Lcobucci\JWT\Validation\RequiredConstraintsViolated;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\JsonWebKeySet;
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\JWKValidatorException;
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\RsaSha384Signer;
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\Validation\UniqueID;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Http\SsrfSafeUrlValidator;
-use OpenEMR\Common\Logging\EventAuditLogger;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\JWT\JsonWebKeySet;
+use DCL\Common\Auth\OpenIDConnect\JWT\JWKValidatorException;
+use DCL\Common\Auth\OpenIDConnect\JWT\RsaSha384Signer;
+use DCL\Common\Auth\OpenIDConnect\JWT\Validation\UniqueID;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Http\SsrfSafeUrlValidator;
+use DCL\Common\Logging\EventAuditLogger;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
@@ -263,9 +263,9 @@ class JWTClientAuthenticationService
         // 3. aud claim required && must match this oauth2 server.  Token endpoint may be used.  This value needs to
         // be communicated out of band to registering applications (put in SMART App registration page
         // 4. exp claim required && must be > (current time - skew time[60seconds]).
-        //      OPTIONAL choice reject extended period exp claim.  OpenEMR choice set to 24 hours
+        //      OPTIONAL choice reject extended period exp claim.  DCL choice set to 24 hours
         // 5. nbf claim if sent must be < (current time) or REJECT
-        // 6. iat claim if sent may be rejected.  OpenEMR choice set to 5 minutes
+        // 6. iat claim if sent may be rejected.  DCL choice set to 5 minutes
         // 7. jti claim represents id of the web token, may be stored and checked against to prevent replay attacks
         // 8. has other claims
         // 9. MAC signature verification or REJECT

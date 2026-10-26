@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity;
+namespace DCL\FHIR\R4\FHIRElement\FHIRQuantity;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity;
+use DCL\FHIR\R4\FHIRElement\FHIRQuantity;
 
 /**
  * A length of time.

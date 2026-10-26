@@ -4,18 +4,18 @@
  * Responsible for filtering and customizing an ExportKeyDefinition for custom table logic especially our list_options
  * table where the foreign keys are not unique or need special processing such as denormalized keys.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter\Services;
+namespace DCL\Modules\EhiExporter\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Modules\EhiExporter\Models\ExportKeyDefinition;
+use DCL\Common\Database\QueryUtils;
+use DCL\Modules\EhiExporter\Models\ExportKeyDefinition;
 
 class ExportKeyDefinitionFilterer
 {
@@ -104,7 +104,7 @@ class ExportKeyDefinitionFilterer
         ,'patient_tracker_element' => [
             'room' => ['localValueOverride' => 'patient_flow_board_rooms', 'foreignKeyColumn' => 'list_id']
         ]
-        ,'openemr_postcalendar_events' => [
+        ,'DCL_postcalendar_events' => [
             'pc_apptstatus' => ['localValueOverride' => 'apptstat', 'foreignKeyColumn' => 'list_id'],
             'pc_room' => ['localValueOverride' => 'patient_flow_board_rooms', 'foreignKeyColumn' => 'list_id']
         ]

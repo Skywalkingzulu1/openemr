@@ -1,10 +1,10 @@
 <?php
 
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->get('fileroot') . '/custom/code_types.inc.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->get('fileroot') . '/custom/code_types.inc.php');
 
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\CodeTypesService;
+use DCL\Common\Acl\AclExtended;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\CodeTypesService;
 
 class C_DocumentCategory extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describe the undesirable effects of the medicinal product.
@@ -72,31 +72,31 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 {
     /**
      * The medication for which this is an indication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subject = [];
 
     /**
      * The symptom, condition or undesirable effect.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $symptomConditionEffect = null;
 
     /**
      * Classification of the effect.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $classification = null;
 
     /**
      * The frequency of occurrence of the effect.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $frequencyOfOccurrence = null;
 
     /**
      * The population group to which this applies.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPopulation[]
      */
     public $population = [];
 
@@ -107,7 +107,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The medication for which this is an indication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubject()
     {
@@ -116,7 +116,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The medication for which this is an indication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -127,7 +127,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The symptom, condition or undesirable effect.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSymptomConditionEffect()
     {
@@ -136,7 +136,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The symptom, condition or undesirable effect.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $symptomConditionEffect
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $symptomConditionEffect
      * @return $this
      */
     public function setSymptomConditionEffect($symptomConditionEffect)
@@ -147,7 +147,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * Classification of the effect.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getClassification()
     {
@@ -156,7 +156,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * Classification of the effect.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
      * @return $this
      */
     public function setClassification($classification)
@@ -167,7 +167,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The frequency of occurrence of the effect.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFrequencyOfOccurrence()
     {
@@ -176,7 +176,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The frequency of occurrence of the effect.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $frequencyOfOccurrence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $frequencyOfOccurrence
      * @return $this
      */
     public function setFrequencyOfOccurrence($frequencyOfOccurrence)
@@ -187,7 +187,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The population group to which this applies.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPopulation[]
      */
     public function getPopulation()
     {
@@ -196,7 +196,7 @@ class FHIRMedicinalProductUndesirableEffect extends FHIRDomainResource implement
 
     /**
      * The population group to which this applies.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation $population
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPopulation $population
      * @return $this
      */
     public function addPopulation($population)

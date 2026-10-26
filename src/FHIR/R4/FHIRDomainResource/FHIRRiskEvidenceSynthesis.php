@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.
@@ -72,187 +72,187 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 {
     /**
      * An absolute URI that is used to identify this risk evidence synthesis when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this risk evidence synthesis is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the risk evidence synthesis is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this risk evidence synthesis when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the risk evidence synthesis when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the risk evidence synthesis author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the risk evidence synthesis. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the risk evidence synthesis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this risk evidence synthesis. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * The date  (and optionally time) when the risk evidence synthesis was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the risk evidence synthesis changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the risk evidence synthesis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the risk evidence synthesis from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate risk evidence synthesis instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the risk evidence synthesis is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * A copyright statement relating to the risk evidence synthesis and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the risk evidence synthesis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
      * The period during which the risk evidence synthesis content was or is planned to be in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics provide a high-level categorization grouping types of EffectEvidenceSynthesiss that can be useful for filtering and searching.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = [];
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $author = [];
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $editor = [];
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $reviewer = [];
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $endorser = [];
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $relatedArtifact = [];
 
     /**
      * Type of synthesis eg meta-analysis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $synthesisType = null;
 
     /**
      * Type of study eg randomized trial.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $studyType = null;
 
     /**
      * A reference to a EvidenceVariable resource that defines the population for the research.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $population = null;
 
     /**
      * A reference to a EvidenceVariable resource that defines the exposure for the research.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $exposure = null;
 
     /**
      * A reference to a EvidenceVariable resomece that defines the outcome for the research.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $outcome = null;
 
     /**
      * A description of the size of the sample involved in the synthesis.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize
      */
     public $sampleSize = null;
 
     /**
      * The estimated risk of the outcome.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
      */
     public $riskEstimate = null;
 
     /**
      * A description of the certainty of the risk estimate.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty[]
      */
     public $certainty = [];
 
@@ -263,7 +263,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An absolute URI that is used to identify this risk evidence synthesis when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this risk evidence synthesis is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the risk evidence synthesis is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -272,7 +272,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An absolute URI that is used to identify this risk evidence synthesis when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this risk evidence synthesis is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the risk evidence synthesis is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -283,7 +283,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A formal identifier that is used to identify this risk evidence synthesis when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -292,7 +292,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A formal identifier that is used to identify this risk evidence synthesis when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -303,7 +303,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The identifier that is used to identify this version of the risk evidence synthesis when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the risk evidence synthesis author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -312,7 +312,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The identifier that is used to identify this version of the risk evidence synthesis when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the risk evidence synthesis author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -323,7 +323,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A natural language name identifying the risk evidence synthesis. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -332,7 +332,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A natural language name identifying the risk evidence synthesis. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -343,7 +343,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A short, descriptive, user-friendly title for the risk evidence synthesis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -352,7 +352,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A short, descriptive, user-friendly title for the risk evidence synthesis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -363,7 +363,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of this risk evidence synthesis. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -372,7 +372,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of this risk evidence synthesis. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -383,7 +383,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date  (and optionally time) when the risk evidence synthesis was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the risk evidence synthesis changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -392,7 +392,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date  (and optionally time) when the risk evidence synthesis was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the risk evidence synthesis changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -403,7 +403,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The name of the organization or individual that published the risk evidence synthesis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -412,7 +412,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The name of the organization or individual that published the risk evidence synthesis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -423,7 +423,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -432,7 +432,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -443,7 +443,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A free text natural language description of the risk evidence synthesis from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -452,7 +452,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A free text natural language description of the risk evidence synthesis from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -463,7 +463,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -472,7 +472,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -483,7 +483,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate risk evidence synthesis instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -492,7 +492,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate risk evidence synthesis instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -503,7 +503,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A legal or geographic region in which the risk evidence synthesis is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -512,7 +512,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A legal or geographic region in which the risk evidence synthesis is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -523,7 +523,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A copyright statement relating to the risk evidence synthesis and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the risk evidence synthesis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -532,7 +532,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A copyright statement relating to the risk evidence synthesis and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the risk evidence synthesis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -543,7 +543,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
     {
@@ -552,7 +552,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $approvalDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
     public function setApprovalDate($approvalDate)
@@ -563,7 +563,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
     {
@@ -572,7 +572,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
     public function setLastReviewDate($lastReviewDate)
@@ -583,7 +583,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The period during which the risk evidence synthesis content was or is planned to be in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -592,7 +592,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The period during which the risk evidence synthesis content was or is planned to be in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -603,7 +603,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics provide a high-level categorization grouping types of EffectEvidenceSynthesiss that can be useful for filtering and searching.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
     {
@@ -612,7 +612,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics provide a high-level categorization grouping types of EffectEvidenceSynthesiss that can be useful for filtering and searching.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
     public function addTopic($topic)
@@ -623,7 +623,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getAuthor()
     {
@@ -632,7 +632,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $author
      * @return $this
      */
     public function addAuthor($author)
@@ -643,7 +643,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEditor()
     {
@@ -652,7 +652,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $editor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $editor
      * @return $this
      */
     public function addEditor($editor)
@@ -663,7 +663,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getReviewer()
     {
@@ -672,7 +672,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
      * @return $this
      */
     public function addReviewer($reviewer)
@@ -683,7 +683,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEndorser()
     {
@@ -692,7 +692,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
      * @return $this
      */
     public function addEndorser($endorser)
@@ -703,7 +703,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
@@ -712,7 +712,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
     public function addRelatedArtifact($relatedArtifact)
@@ -723,7 +723,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Type of synthesis eg meta-analysis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSynthesisType()
     {
@@ -732,7 +732,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Type of synthesis eg meta-analysis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $synthesisType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $synthesisType
      * @return $this
      */
     public function setSynthesisType($synthesisType)
@@ -743,7 +743,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Type of study eg randomized trial.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStudyType()
     {
@@ -752,7 +752,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Type of study eg randomized trial.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $studyType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $studyType
      * @return $this
      */
     public function setStudyType($studyType)
@@ -763,7 +763,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A reference to a EvidenceVariable resource that defines the population for the research.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPopulation()
     {
@@ -772,7 +772,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A reference to a EvidenceVariable resource that defines the population for the research.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $population
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $population
      * @return $this
      */
     public function setPopulation($population)
@@ -783,7 +783,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A reference to a EvidenceVariable resource that defines the exposure for the research.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getExposure()
     {
@@ -792,7 +792,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A reference to a EvidenceVariable resource that defines the exposure for the research.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $exposure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $exposure
      * @return $this
      */
     public function setExposure($exposure)
@@ -803,7 +803,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A reference to a EvidenceVariable resomece that defines the outcome for the research.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOutcome()
     {
@@ -812,7 +812,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A reference to a EvidenceVariable resomece that defines the outcome for the research.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -823,7 +823,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A description of the size of the sample involved in the synthesis.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize
      */
     public function getSampleSize()
     {
@@ -832,7 +832,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A description of the size of the sample involved in the synthesis.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize $sampleSize
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize $sampleSize
      * @return $this
      */
     public function setSampleSize($sampleSize)
@@ -843,7 +843,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The estimated risk of the outcome.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
      */
     public function getRiskEstimate()
     {
@@ -852,7 +852,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The estimated risk of the outcome.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate
      * @return $this
      */
     public function setRiskEstimate($riskEstimate)
@@ -863,7 +863,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A description of the certainty of the risk estimate.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty[]
      */
     public function getCertainty()
     {
@@ -872,7 +872,7 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A description of the certainty of the risk estimate.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty $certainty
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty $certainty
      * @return $this
      */
     public function addCertainty($certainty)

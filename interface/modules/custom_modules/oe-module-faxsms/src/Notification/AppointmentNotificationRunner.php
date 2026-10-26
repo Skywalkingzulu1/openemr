@@ -14,27 +14,27 @@
  * and ACL gating stay outside: the calling entry point resolves those and
  * hands the runner a fully configured client.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\Notification;
+namespace DCL\Modules\FaxSMS\Notification;
 
-use OpenEMR\Appointment\Reminder\ReminderRunResult;
-use OpenEMR\Common\ValueObjects\PhoneNumber;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
-use OpenEMR\Modules\FaxSMS\Controller\EmailClient;
-use OpenEMR\Modules\FaxSMS\Controller\NotificationTaskManager;
-use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
-use OpenEMR\Modules\FaxSMS\Exception\EmailSendFailedException;
-use OpenEMR\Modules\FaxSMS\Exception\InvalidEmailAddressException;
-use OpenEMR\Modules\FaxSMS\Exception\SmtpNotConfiguredException;
+use DCL\Appointment\Reminder\ReminderRunResult;
+use DCL\Common\ValueObjects\PhoneNumber;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Modules\FaxSMS\Controller\EmailClient;
+use DCL\Modules\FaxSMS\Controller\NotificationTaskManager;
+use DCL\Modules\FaxSMS\Enums\NotificationChannel;
+use DCL\Modules\FaxSMS\Exception\EmailSendFailedException;
+use DCL\Modules\FaxSMS\Exception\InvalidEmailAddressException;
+use DCL\Modules\FaxSMS\Exception\SmtpNotConfiguredException;
 use PHPMailer\PHPMailer\Exception as PHPMailerException;
 use Psr\Clock\ClockInterface;
 use Psr\Log\LoggerInterface;

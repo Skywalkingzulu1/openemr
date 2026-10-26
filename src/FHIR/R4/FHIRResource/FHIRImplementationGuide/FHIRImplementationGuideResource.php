@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,41 +71,41 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 {
     /**
      * Where this resource is found.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $reference = null;
 
     /**
      * Indicates the FHIR Version(s) this artifact is intended to apply to. If no versions are specified, the resource is assumed to apply to all the versions stated in ImplementationGuide.fhirVersion.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
      */
     public $fhirVersion = [];
 
     /**
      * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A description of the reason that a resource has been included in the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $exampleBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $exampleCanonical = null;
 
     /**
      * Reference to the id of the grouping this resource appears in.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $groupingId = null;
 
@@ -116,7 +116,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * Where this resource is found.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReference()
     {
@@ -125,7 +125,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * Where this resource is found.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reference
      * @return $this
      */
     public function setReference($reference)
@@ -136,7 +136,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates the FHIR Version(s) this artifact is intended to apply to. If no versions are specified, the resource is assumed to apply to all the versions stated in ImplementationGuide.fhirVersion.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion[]
      */
     public function getFhirVersion()
     {
@@ -145,7 +145,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates the FHIR Version(s) this artifact is intended to apply to. If no versions are specified, the resource is assumed to apply to all the versions stated in ImplementationGuide.fhirVersion.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
      * @return $this
      */
     public function addFhirVersion($fhirVersion)
@@ -156,7 +156,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -165,7 +165,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -176,7 +176,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * A description of the reason that a resource has been included in the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -185,7 +185,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * A description of the reason that a resource has been included in the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -195,7 +195,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExampleBoolean()
     {
@@ -203,7 +203,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $exampleBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $exampleBoolean
      * @return $this
      */
     public function setExampleBoolean($exampleBoolean)
@@ -213,7 +213,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getExampleCanonical()
     {
@@ -221,7 +221,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $exampleCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $exampleCanonical
      * @return $this
      */
     public function setExampleCanonical($exampleCanonical)
@@ -232,7 +232,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * Reference to the id of the grouping this resource appears in.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getGroupingId()
     {
@@ -241,7 +241,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
 
     /**
      * Reference to the id of the grouping this resource appears in.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $groupingId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $groupingId
      * @return $this
      */
     public function setGroupingId($groupingId)

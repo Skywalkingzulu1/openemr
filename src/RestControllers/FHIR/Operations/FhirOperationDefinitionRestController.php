@@ -1,18 +1,18 @@
 <?php
 
-namespace OpenEMR\RestControllers\FHIR\Operations;
+namespace DCL\RestControllers\FHIR\Operations;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Http\StatusCode;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationDefinition;
-use OpenEMR\FHIR\R4\FHIRElement\FHIROperationKind;
-use OpenEMR\FHIR\R4\FHIRElement\FHIROperationParameterUse;
-use OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirResourcesService;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Http\StatusCode;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROperationDefinition;
+use DCL\FHIR\R4\FHIRElement\FHIROperationKind;
+use DCL\FHIR\R4\FHIRElement\FHIROperationParameterUse;
+use DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirResourcesService;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Validators\ProcessingResult;
 
 class FhirOperationDefinitionRestController
 {
@@ -33,7 +33,7 @@ class FhirOperationDefinitionRestController
      */
     #[OA\Get(
         path: '/fhir/OperationDefinition',
-        description: 'Returns a list of the OperationDefinition resources that are specific to this OpenEMR installation',
+        description: 'Returns a list of the OperationDefinition resources that are specific to this DCL installation',
         tags: ['fhir'],
         responses: [
             new OA\Response(
@@ -57,7 +57,7 @@ class FhirOperationDefinitionRestController
 
     #[OA\Get(
         path: '/fhir/OperationDefinition/{operation}',
-        description: 'Returns a single OperationDefinition resource that is specific to this OpenEMR installation',
+        description: 'Returns a single OperationDefinition resource that is specific to this DCL installation',
         tags: ['fhir'],
         parameters: [
             new OA\Parameter(

@@ -24,34 +24,34 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  DCL:
     restart: always
-    image: openemr/openemr:flex@sha256:b24b6eb7de71289d65e29aad20b10a47df01dad0f28bf9cfd40da1d2c15bb863
+    image: DCL/DCL:flex@sha256:b24b6eb7de71289d65e29aad20b10a47df01dad0f28bf9cfd40da1d2c15bb863
     ports:
     - "${WT_HTTP_PORT:-8300}:80"
     - "${WT_HTTPS_PORT:-9300}:443"
     volumes:
-    - ${OPENEMR_DIR:-../..}:/openemr:ro
-    - ${OPENEMR_DIR:-../..}:/var/www/localhost/htdocs/openemr:rw
-    - assetvolume:/var/www/localhost/htdocs/openemr/public/assets:rw
-    - themevolume:/var/www/localhost/htdocs/openemr/public/themes:rw
-    - sitesvolume:/var/www/localhost/htdocs/openemr/sites:rw
-    - nodemodules:/var/www/localhost/htdocs/openemr/node_modules:rw
-    - vendordir:/var/www/localhost/htdocs/openemr/vendor:rw
-    - phpstanvolume:/var/www/localhost/htdocs/openemr/tmp-phpstan:rw
-    - webpackcachevolume:/var/www/localhost/htdocs/openemr/.webpack-cache:rw
+    - ${DCL_DIR:-../..}:/DCL:ro
+    - ${DCL_DIR:-../..}:/var/www/localhost/htdocs/DCL:rw
+    - assetvolume:/var/www/localhost/htdocs/DCL/public/assets:rw
+    - themevolume:/var/www/localhost/htdocs/DCL/public/themes:rw
+    - sitesvolume:/var/www/localhost/htdocs/DCL/sites:rw
+    - nodemodules:/var/www/localhost/htdocs/DCL/node_modules:rw
+    - vendordir:/var/www/localhost/htdocs/DCL/vendor:rw
+    - phpstanvolume:/var/www/localhost/htdocs/DCL/tmp-phpstan:rw
+    - webpackcachevolume:/var/www/localhost/htdocs/DCL/.webpack-cache:rw
     - logvolume:/var/log
     - couchdbvolume:/couchdb/data
     environment:
       # HOST_UID/HOST_GID let the entrypoint adopt the host user's uid for
-      # apache (see docker/flex/openemr.sh — adoption is a no-op when these
+      # apache (see docker/flex/DCL.sh — adoption is a no-op when these
       # default to 1000). Without override, behavior matches the original
       # Dockerfile-baked uid=1000. Override (e.g. `HOST_UID=$(id -u)
       # docker compose up`) so apache writes bind-mount files as your host
       # user — eliminates the uid-mismatch class of bugs for any host whose
       # uid != 1000 (CI runners, multi-user dev boxes, distros that start
       # uids at 1001+, macOS via Docker Desktop). Always exported by
-      # openemr-cmd, optional everywhere else.
+      # DCL-cmd, optional everywhere else.
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: "true"
@@ -59,8 +59,8 @@ services:
       COLORTERM: truecolor
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
       OE_USER: admin
       OE_PASS: pass
       EASY_DEV_MODE: "yes"
@@ -73,17 +73,17 @@ services:
       GITHUB_COMPOSER_TOKEN: c313de1ed5a00eb6ff9309559ec9ad01fcc553f0
       GITHUB_COMPOSER_TOKEN_ENCODED: Z2hwX0NpbnJ4aXlNd0NzcGZXWG1UWFUwcXhGa040elFKSDJoZGJXVw==
       GITHUB_COMPOSER_TOKEN_ENCODED_ALTERNATE: '103 104 112 95 57 54 108 115 88 116 87 72 51 75 81 105 69 88 88 119 97 79 80 78 109 69 66 115 85 97 106 78 112 71 49 81 90 102 74 121'
-      OPENEMR_DOCKER_ENV_TAG: easy-dev-docker
+      DCL_DOCKER_ENV_TAG: easy-dev-docker
       # for v_js_includes in version.php
-      OPENEMR__ENVIRONMENT: "dev"
-      OPENEMR_SETTING_site_addr_oath: 'https://localhost:${WT_HTTPS_PORT:-9300}'
-      OPENEMR_SETTING_oauth_password_grant: 3
-      OPENEMR_SETTING_rest_system_scopes_api: 1
-      OPENEMR_SETTING_rest_api: 1
-      OPENEMR_SETTING_rest_fhir_api: 1
-      OPENEMR_SETTING_rest_portal_api: 1
-      OPENEMR_SETTING_portal_onsite_two_enable: 1
-      OPENEMR_SETTING_ccda_alt_service_enable: 3
+      DCL__ENVIRONMENT: "dev"
+      DCL_SETTING_site_addr_oath: 'https://localhost:${WT_HTTPS_PORT:-9300}'
+      DCL_SETTING_oauth_password_grant: 3
+      DCL_SETTING_rest_system_scopes_api: 1
+      DCL_SETTING_rest_api: 1
+      DCL_SETTING_rest_fhir_api: 1
+      DCL_SETTING_rest_portal_api: 1
+      DCL_SETTING_portal_onsite_two_enable: 1
+      DCL_SETTING_ccda_alt_service_enable: 3
     depends_on:
       mysql:
         condition: service_healthy

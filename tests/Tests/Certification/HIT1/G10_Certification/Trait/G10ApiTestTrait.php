@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\Tests\Certification\HIT1\G10_Certification\Trait;
+namespace DCL\Tests\Certification\HIT1\G10_Certification\Trait;
 
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ServerException;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Globals\GlobalConnectorsEnum;
-use OpenEMR\Tests\Api\ApiTestClient;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Globals\GlobalConnectorsEnum;
+use DCL\Tests\Api\ApiTestClient;
 
 trait G10ApiTestTrait
 {
@@ -31,7 +31,7 @@ trait G10ApiTestTrait
     const TEST_SUITE_G10_CERTIFICATION = 'g10_certification'; // this is the test suite id for the US Core v3.11 certification tests
 
     const TEST_SUITE = self::TEST_SUITE_G10_CERTIFICATION;
-    const DEFAULT_OPENEMR_BASE_URL_API = 'http://openemr';
+    const DEFAULT_DCL_BASE_URL_API = 'http://DCL';
     const DEFAULT_INFERNO_BASE_URL = 'http://nginx';
     const DEFAULT_TEST_GROUP_ID = 'us_core_v311-us_core_v311_fhir_api';
 
@@ -54,7 +54,7 @@ trait G10ApiTestTrait
 
     public static function setupG10Test(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: self::DEFAULT_OPENEMR_BASE_URL_API;
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: self::DEFAULT_DCL_BASE_URL_API;
         self::$testClient = new ApiTestClient($baseUrl, false);
         self::$baseUrl = $baseUrl;
         $infernoUrl = getenv("INFERNO_BASE_URL", true) ?: self::DEFAULT_INFERNO_BASE_URL;

@@ -1,25 +1,25 @@
 <?php
 
 /**
- * Export table definition for the openemr_postcalendar_events table that handles the custom
+ * Export table definition for the DCL_postcalendar_events table that handles the custom
  * therapy groups calendar events.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter\TableDefinitions;
+namespace DCL\Modules\EhiExporter\TableDefinitions;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTableDefinition;
+use DCL\Common\Database\QueryUtils;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportTableDefinition;
 
 class ExportOpenEmrPostCalendarEventsTableDefinition extends ExportTableDefinition
 {
-    const TABLE_NAME = 'openemr_postcalendar_events';
+    const TABLE_NAME = 'DCL_postcalendar_events';
 
     public function getRecords(): array
     {

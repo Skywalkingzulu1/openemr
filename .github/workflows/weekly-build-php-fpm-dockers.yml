@@ -12,7 +12,7 @@ jobs:
 
   build_8_2:
     # Only run from master branch on the main repository
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout repository
@@ -30,14 +30,14 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: ./docker/library/dockers/dev-php-fpm-8-2
-        tags: openemr/dev-php-fpm:8.2
+        tags: DCL/dev-php-fpm:8.2
         platforms: linux/amd64
         push: true
         no-cache: true
 
   build_8_3:
     # Only run from master branch on the main repository
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout repository
@@ -55,14 +55,14 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: ./docker/library/dockers/dev-php-fpm-8-3
-        tags: openemr/dev-php-fpm:8.3
+        tags: DCL/dev-php-fpm:8.3
         platforms: linux/amd64
         push: true
         no-cache: true
 
   build_8_4:
     # Only run from master branch on the main repository
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout repository
@@ -80,14 +80,14 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: ./docker/library/dockers/dev-php-fpm-8-4
-        tags: openemr/dev-php-fpm:8.4
+        tags: DCL/dev-php-fpm:8.4
         platforms: linux/amd64
         push: true
         no-cache: true
 
   build_8_5:
     # Only run from master branch on the main repository
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout repository
@@ -105,14 +105,14 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: ./docker/library/dockers/dev-php-fpm-8-5
-        tags: openemr/dev-php-fpm:8.5
+        tags: DCL/dev-php-fpm:8.5
         platforms: linux/amd64
         push: true
         no-cache: true
 
   build_8_6:
     # Only run from master branch on the main repository
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout repository
@@ -130,14 +130,14 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: ./docker/library/dockers/dev-php-fpm-8-6
-        tags: openemr/dev-php-fpm:8.6
+        tags: DCL/dev-php-fpm:8.6
         platforms: linux/amd64
         push: true
         no-cache: true
 
   build_8_7:
     # Only run from master branch on the main repository
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout repository
@@ -155,7 +155,7 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: ./docker/library/dockers/dev-php-fpm-8-7
-        tags: openemr/dev-php-fpm:8.7
+        tags: DCL/dev-php-fpm:8.7
         platforms: linux/amd64
         push: true
         no-cache: true

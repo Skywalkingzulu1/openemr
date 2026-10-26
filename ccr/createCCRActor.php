@@ -16,12 +16,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Garden State Health Systems <http://www.gshsys.com/>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 
 /**
  * @var \DOMDocument $ccr (created in createCCR.php)
@@ -227,7 +227,7 @@ $row1 = sqlFetchArray($result[1]);
     $e_Name = $ccr->createElement('Name', 'OEMR');
     $e_InformationSystem->appendChild($e_Name);
 
-  $e_Type = $ccr->createElement('Type', 'OpenEMR');
+  $e_Type = $ccr->createElement('Type', 'DCL');
     $e_InformationSystem->appendChild($e_Type);
 
   $e_Version = $ccr->createElement('Version', '4.x');

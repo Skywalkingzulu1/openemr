@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\BC;
+namespace DCL\BC;
 
 use ADODB_mysqli_log;
 use Doctrine\DBAL\{
@@ -10,8 +10,8 @@ use Doctrine\DBAL\{
     DriverManager,
 };
 use mysqli;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

@@ -12,26 +12,26 @@
  * or stratification id, the population counts, observation_values, the
  * population relevance, the statement results with their relevance and
  * final outcome, patient_id, measure_id and state. Pretty-printed statement
- * values and clause results are not included; nothing in OpenEMR reads them.
+ * values and clause results are not included; nothing in DCL reads them.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Cqm\Cql\Engine;
+namespace DCL\Cqm\Cql\Engine;
 
-use OpenEMR\Cqm\Cql\Elm\ElmRepository;
-use OpenEMR\Cqm\Cql\Qdm\QdmObject;
-use OpenEMR\Cqm\Cql\Qdm\QdmPatient;
-use OpenEMR\Cqm\Cql\Types\Code;
-use OpenEMR\Cqm\Cql\Types\CqlDateTime;
-use OpenEMR\Cqm\Cql\Types\Interval;
-use OpenEMR\Cqm\Cql\Types\Tuple;
+use DCL\Cqm\Cql\Elm\ElmRepository;
+use DCL\Cqm\Cql\Qdm\QdmObject;
+use DCL\Cqm\Cql\Qdm\QdmPatient;
+use DCL\Cqm\Cql\Types\Code;
+use DCL\Cqm\Cql\Types\CqlDateTime;
+use DCL\Cqm\Cql\Types\Interval;
+use DCL\Cqm\Cql\Types\Tuple;
 
 final readonly class MeasureCalculator
 {
@@ -104,7 +104,7 @@ final readonly class MeasureCalculator
             $start = self::parseTimeString($effectiveDate);
             $end = $effectiveDateEnd !== null
                 ? self::parseTimeString($effectiveDateEnd)
-                : $start->add(1, \OpenEMR\Cqm\Cql\Types\Precision::Year)?->add(-1, \OpenEMR\Cqm\Cql\Types\Precision::Second);
+                : $start->add(1, \DCL\Cqm\Cql\Types\Precision::Year)?->add(-1, \DCL\Cqm\Cql\Types\Precision::Second);
         } else {
             $start = self::parseTimeString(self::text(self::at($this->measure, 'measure_period', 'low', 'value')));
             $end = self::parseTimeString(self::text(self::at($this->measure, 'measure_period', 'high', 'value')));

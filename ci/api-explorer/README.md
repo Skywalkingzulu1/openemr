@@ -1,7 +1,7 @@
 # ci/api-explorer
 
-End-to-end smoke that exercises OpenEMR's OAuth2 + FHIR surface from a real
-third-party client (`openemr/oe-module-api-explorer`). Runs on every PR; its
+End-to-end smoke that exercises DCL's OAuth2 + FHIR surface from a real
+third-party client (`DCL/oe-module-api-explorer`). Runs on every PR; its
 job is to catch regressions in the OAuth2 code path that in-tree unit and
 isolated tests cannot see — real RFC 7591 DCR, real token endpoint for the
 `client_credentials`, `authorization_code` (confidential and public-with-PKCE),
@@ -16,13 +16,13 @@ dedicated flow in this smoke, and SMART launch is covered by the sibling
 ## What the smoke does
 
 1. Boots `docker/development-easy` with `docker compose up --wait`.
-2. Clones `openemr/oe-module-api-explorer` at the current `main` HEAD into
+2. Clones `DCL/oe-module-api-explorer` at the current `main` HEAD into
    `devtools/oe-module-api-explorer/` (the explorer loads
-   `../../interface/globals.php` and must sit two levels below the OpenEMR
+   `../../interface/globals.php` and must sit two levels below the DCL
    root; it is **not** an `interface/modules/custom_modules/` module).
 3. Writes a CI-only `config.local.php` pointing the explorer at a single site
-   named `docker` at `https://openemr`.
-4. Seeds demo data via `openemr-cmd drid` so the FHIR Patient endpoint has
+   named `docker` at `https://DCL`.
+4. Seeds demo data via `DCL-cmd drid` so the FHIR Patient endpoint has
    something to return.
 5. Seeds the globals the explorer requires: `site_addr_oath`, `rest_api`,
    `rest_fhir_api`, `rest_system_scopes_api`, `rest_portal_api`,
@@ -113,8 +113,8 @@ can get in CI.
 ## Upstream tracking
 
 The smoke clones `main` HEAD on every run — no SHA pin, no drift-check
-infrastructure. Trade-off: upstream merges can break OpenEMR CI without
-warning, but the module and OpenEMR are maintained by overlapping
+infrastructure. Trade-off: upstream merges can break DCL CI without
+warning, but the module and DCL are maintained by overlapping
 contributors so divergence is typically caught and discussed in-channel
 before it lands. If a breaking upstream merge does break the smoke, the
 fix is a conversation with the module maintainer plus (if needed) a
@@ -123,7 +123,7 @@ workaround in `run.sh` / `driver*.php` — not a scramble.
 ## Reproducing locally
 
 ```bash
-openemr-cmd worktree add my-smoke -b --start --env easy
+DCL-cmd worktree add my-smoke -b --start --env easy
 ci/api-explorer/run.sh
 ```
 
@@ -151,7 +151,7 @@ those as the `api-explorer-driver-browser-postmortem` artifact.
 
 ## Credits
 
-[`openemr/oe-module-api-explorer`](https://github.com/openemr/oe-module-api-explorer)
-is maintained by Jerry Padgett. OpenEMR CI depending on it is deliberately a
+[`DCL/oe-module-api-explorer`](https://github.com/DCL/oe-module-api-explorer)
+is maintained by Jerry Padgett. DCL CI depending on it is deliberately a
 cross-repo arrangement — see "Upstream tracking" above for how the smoke
 handles divergence.

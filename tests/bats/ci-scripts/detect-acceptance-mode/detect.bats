@@ -16,7 +16,7 @@
 #   - push/pull_request with no relevant change
 #   - emit_to_version's X.Y.Z validation
 #   - DISPATCH_TO_VERSION overriding the PR-title preferred value
-#   - emit_expected_version + read_tree_version (openemr/openemr#13753):
+#   - emit_expected_version + read_tree_version (DCL/DCL#13753):
 #     build_locally=true reads version.php; build_locally=false mirrors
 #     to_version; missing/malformed version.php fails loud
 #
@@ -56,7 +56,7 @@ teardown() {
     # read from the checkout's version.php (seeded here at 8.4.99). The
     # caller-supplied tarball was built with --release-version=to_version
     # so the running artifact self-reports to_version verbatim. Reading
-    # from the checkout was the openemr/openemr#13761 regression that
+    # from the checkout was the DCL/DCL#13761 regression that
     # made the 8.4.0 ship's acceptance-gate fail (expected=8.5.0 vs
     # actual=8.4.0); guard against reintroduction.
     [[ "${emitted}" == *"expected_version=8.2.1"* ]]
@@ -358,7 +358,7 @@ teardown() {
     [[ "${emitted}" == *"expected_version=8.4.99"* ]]
 }
 
-# --- emit_expected_version + read_tree_version (openemr/openemr#13753) ---
+# --- emit_expected_version + read_tree_version (DCL/DCL#13753) ---
 #
 # The build_locally acceptance path historically used `TO_VERSION` as
 # the expected value for the post-install / post-upgrade version-display
@@ -440,7 +440,7 @@ PHP
     [[ "${emitted}" == *"expected_version=8.2.0"* ]]
 }
 
-# --- from_version derivation from sql/*-to-*_upgrade.sql (openemr/openemr#13573) ---
+# --- from_version derivation from sql/*-to-*_upgrade.sql (DCL/DCL#13573) ---
 
 @test "empty DISPATCH_FROM_VERSION -> derives from checkout's sql/*-to-*_upgrade.sql (rel-820 shape)" {
     # rel-820 shape: upgrade files stop at 8_1_1-to-8_2_0, so the
@@ -514,7 +514,7 @@ PHP
     # derive_from_version would pick from=8.4.0 (=to_version) and
     # the resulting upgrade test would be a degenerate 8.4.0 ->
     # 8.4.0 no-op. Filter ensures from = next-highest shipped that
-    # isn't to_version. Openemr/openemr#13991 nightly smoketest is
+    # isn't to_version. DCL/DCL#13991 nightly smoketest is
     # the primary consumer.
     seed_sql_upgrade_fixtures \
         8_2_0-to-8_3_0 \
@@ -624,14 +624,14 @@ PHP
     [[ "${output}" == *"::error::derive_from_version: no well-formed sql/*-to-*_upgrade.sql files found in checkout"* ]]
 }
 
-# --- manifest-membership filter (openemr/openemr#13573 followup) ---
+# --- manifest-membership filter (DCL/DCL#13573 followup) ---
 
 @test "manifest filter excludes unshipped max FROM (patch-prep scaffold scenario)" {
     # Simulates the concrete failure the manifest filter fixes:
     # a patch-prep run has scaffolded sql/8_3_1-to-8_4_0_upgrade.sql
     # on master BEFORE 8.3.1 has shipped. sql-only derivation would
     # return 8.3.1 (max FROM), and boot-package.sh would 404 trying
-    # to download openemr-8.3.1.tar.gz from GitHub Releases.
+    # to download DCL-8.3.1.tar.gz from GitHub Releases.
     #
     # With the manifest filter, 8.3.1 is excluded (not in the
     # mocked shipped set), and derivation falls back to the next-
@@ -667,7 +667,7 @@ PHP
     [[ "${output}" == *"::error::derive_from_version: no sql-derived from-version candidate matches the shipped-versions manifest"* ]]
     [[ "${output}" == *"Candidates from sql/: 9.0.0 9.1.0"* ]]
     [[ "${output}" == *"Shipped per manifest: 8.2.0 8.3.0"* ]]
-    [[ "${output}" == *"raw.githubusercontent.com/openemr/website-openemr/master/data/releases.json"* ]]
+    [[ "${output}" == *"raw.githubusercontent.com/DCL/website-DCL/master/data/releases.json"* ]]
 }
 
 @test "manifest fetch failure surfaces error (does not silently fall back)" {

@@ -15,16 +15,16 @@
  * Service-layer tests in InsuranceCompanyServiceTest and AddressServiceTest
  * cover the AddressData DTO integration that this PR introduces.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -37,9 +37,9 @@ class InsuranceCompanyApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
     }
 
     protected function tearDown(): void

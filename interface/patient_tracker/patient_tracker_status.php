@@ -6,13 +6,13 @@
  * This allows entry and editing of current status for the patient from within patient tracker and updates the status on the calendar.
  * Contains a drop down for the Room information driven by the list Patient Flow Board Rooms.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Terry Hill <terry@lillysystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2015 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -20,10 +20,10 @@ require_once("$srcdir/options.inc.php");
 require_once("$srcdir/encounter_events.inc.php");
 require_once("$srcdir/patient_tracker.inc.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_GET)) {
@@ -69,7 +69,7 @@ if (!empty($_POST['statustype'])) {
         if (OEGlobalsBag::getInstance()->get('auto_create_new_encounters') && $apptdate == date('Y-m-d') && (is_checkin($status) == '1') && !$is_tracker) {
             # Gather information for encounter fields
             $genenc = sqlQuery("select pc_catid as category, pc_hometext as reason, pc_aid as provider, pc_facility as facility, pc_billing_location as billing_facility " .
-                      "from openemr_postcalendar_events where pc_eid =? ", [$pceid]);
+                      "from DCL_postcalendar_events where pc_eid =? ", [$pceid]);
             $encounter = todaysEncounterCheck($tkpid, $apptdate, $genenc['reason'], $genenc['facility'], $genenc['billing_facility'], $genenc['provider'], $genenc['category'], false);
             # Capture the appt status and room number for patient tracker. This will map the encounter to it also.
             if (!empty($pceid)) {

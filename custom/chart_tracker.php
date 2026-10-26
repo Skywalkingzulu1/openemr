@@ -7,8 +7,8 @@
  *   INSERT INTO list_options VALUES ('lists','chartloc','Chart Storage Locations',51,0,0);
  * </pre>
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @author  Roberto Vasquez <robertogagliotta@gmail.com>
@@ -20,13 +20,13 @@
 require_once("../interface/globals.php");
 require_once("$srcdir/options.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Services\UserService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Services\UserService;
+use DCL\Services\Utils\DateFormatterUtils;
 
 if (!AclMain::aclCheckCore('patients', 'appt')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/appt: Chart Tracker", xl("Chart Tracker"));

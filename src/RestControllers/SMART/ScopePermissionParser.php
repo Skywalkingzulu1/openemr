@@ -4,13 +4,13 @@
  * Scope Permission Parser
  * TODO: @adunsulag this needs to be consolidated later with ServerScopeListEntity
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    AI Generated - Claude (Anthropic)
  * @copyright Copyright (c) 2025 - Public Domain for AI generated content
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // ============================================================================
@@ -19,10 +19,10 @@
 // This helper class parses OAuth scopes and structures them for improved UI display
 // ============================================================================
 
-namespace OpenEMR\RestControllers\SMART;
+namespace DCL\RestControllers\SMART;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
 
 class ScopePermissionParser
 {

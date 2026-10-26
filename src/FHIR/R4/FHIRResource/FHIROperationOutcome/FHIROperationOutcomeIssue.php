@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome;
+namespace DCL\FHIR\R4\FHIRResource\FHIROperationOutcome;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A collection of error, warning, or information messages that result from a system action.
@@ -71,25 +71,25 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Indicates whether the issue indicates a variation from successful processing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIssueSeverity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIssueSeverity
      */
     public $severity = null;
 
     /**
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIssueType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIssueType
      */
     public $code = null;
 
     /**
      * Additional details about the error. This may be a text description of the error or a system code that identifies the error.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $details = null;
 
     /**
      * Additional diagnostic information about the issue.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $diagnostics = null;
 
@@ -97,13 +97,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * This element is deprecated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse.
 
 For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $location = [];
 
     /**
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $expression = [];
 
@@ -114,7 +114,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Indicates whether the issue indicates a variation from successful processing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIssueSeverity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIssueSeverity
      */
     public function getSeverity()
     {
@@ -123,7 +123,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Indicates whether the issue indicates a variation from successful processing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIssueSeverity $severity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIssueSeverity $severity
      * @return $this
      */
     public function setSeverity($severity)
@@ -134,7 +134,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIssueType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIssueType
      */
     public function getCode()
     {
@@ -143,7 +143,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIssueType $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIssueType $code
      * @return $this
      */
     public function setCode($code)
@@ -154,7 +154,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Additional details about the error. This may be a text description of the error or a system code that identifies the error.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDetails()
     {
@@ -163,7 +163,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Additional details about the error. This may be a text description of the error or a system code that identifies the error.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $details
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $details
      * @return $this
      */
     public function setDetails($details)
@@ -174,7 +174,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Additional diagnostic information about the issue.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDiagnostics()
     {
@@ -183,7 +183,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * Additional diagnostic information about the issue.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $diagnostics
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $diagnostics
      * @return $this
      */
     public function setDiagnostics($diagnostics)
@@ -196,7 +196,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
      * This element is deprecated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse.
 
 For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getLocation()
     {
@@ -207,7 +207,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
      * This element is deprecated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse.
 
 For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $location
      * @return $this
      */
     public function addLocation($location)
@@ -218,7 +218,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getExpression()
     {
@@ -227,7 +227,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
 
     /**
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child accessor that identifies one of the elements in the resource that caused this issue to be raised.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function addExpression($expression)

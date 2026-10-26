@@ -2,14 +2,14 @@
 
 /**
  * CreateAPIDocumentation.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use OpenApi\Analysers\AttributeAnnotationFactory;
 use OpenApi\Analysers\ReflectionAnalyser;
@@ -17,7 +17,7 @@ use OpenApi\Generator;
 use OpenApi\Processors\DocBlockDescriptions;
 use OpenApi\Processors\OperationId;
 use OpenApi\Utils\SourceFinder;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -30,8 +30,8 @@ class CreateAPIDocumentationCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('openemr:create-api-documentation')
-            ->setDescription("Generates an OpenAPI swagger file that documents the OpenEMR API")
+            ->setName('DCL:create-api-documentation')
+            ->setDescription("Generates an OpenAPI swagger file that documents the DCL API")
             ->addUsage('--site=default')
             ->setDefinition(
                 new InputDefinition([
@@ -43,7 +43,7 @@ class CreateAPIDocumentationCommand extends Command
     {
         $fileroot = OEGlobalsBag::getInstance()->getProjectDir();
         $fileDestinationFolder = $fileroot . DIRECTORY_SEPARATOR . "swagger" . DIRECTORY_SEPARATOR;
-        $fileDestinationYaml =  $fileDestinationFolder . "openemr-api.yaml";
+        $fileDestinationYaml =  $fileDestinationFolder . "DCL-api.yaml";
 
         $generator = new Generator();
         // Use only AttributeAnnotationFactory to avoid picking up docblock comments as summaries

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Defines the characteristics of a message that can be shared between systems, including the type of event that initiates the message, the content to be transmitted and what response(s), if any, are permitted.
@@ -72,149 +72,149 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 {
     /**
      * The business identifier that is used to reference the MessageDefinition and *is* expected to be consistent from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the message definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the message definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A MessageDefinition that is superseded by this definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $replaces = [];
 
     /**
      * The status of this message definition. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the message definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the message definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the message definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate message definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the message definition is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this message definition is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The MessageDefinition that is the basis for the contents of this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $base = null;
 
     /**
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $parent = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $eventCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $eventUri = null;
 
     /**
      * The impact of the content of the message.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMessageSignificanceCategory
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMessageSignificanceCategory
      */
     public $category = null;
 
     /**
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
      */
     public $focus = [];
 
     /**
      * Declare at a message definition level whether a response is required or only upon error or success, or never.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMessageheaderResponseRequest
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMessageheaderResponseRequest
      */
     public $responseRequired = null;
 
     /**
      * Indicates what types of messages may be sent as an application-level response to this message.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
      */
     public $allowedResponse = [];
 
     /**
      * Canonical reference to a GraphDefinition. If a URL is provided, it is the canonical reference to a [[[GraphDefinition]]] that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $graph = [];
 
@@ -225,7 +225,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The business identifier that is used to reference the MessageDefinition and *is* expected to be consistent from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -234,7 +234,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The business identifier that is used to reference the MessageDefinition and *is* expected to be consistent from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -245,7 +245,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -254,7 +254,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -265,7 +265,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -274,7 +274,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -285,7 +285,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A natural language name identifying the message definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -294,7 +294,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A natural language name identifying the message definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -305,7 +305,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A short, descriptive, user-friendly title for the message definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -314,7 +314,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A short, descriptive, user-friendly title for the message definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -325,7 +325,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A MessageDefinition that is superseded by this definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getReplaces()
     {
@@ -334,7 +334,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A MessageDefinition that is superseded by this definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $replaces
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $replaces
      * @return $this
      */
     public function addReplaces($replaces)
@@ -345,7 +345,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of this message definition. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -354,7 +354,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of this message definition. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -365,7 +365,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A Boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -374,7 +374,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A Boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -385,7 +385,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The date  (and optionally time) when the message definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -394,7 +394,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The date  (and optionally time) when the message definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -405,7 +405,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The name of the organization or individual that published the message definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -414,7 +414,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The name of the organization or individual that published the message definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -425,7 +425,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -434,7 +434,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -445,7 +445,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A free text natural language description of the message definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -454,7 +454,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A free text natural language description of the message definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -465,7 +465,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate message definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -474,7 +474,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate message definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -485,7 +485,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A legal or geographic region in which the message definition is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -494,7 +494,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A legal or geographic region in which the message definition is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -505,7 +505,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Explanation of why this message definition is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -514,7 +514,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Explanation of why this message definition is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -525,7 +525,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -534,7 +534,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -545,7 +545,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The MessageDefinition that is the basis for the contents of this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getBase()
     {
@@ -554,7 +554,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The MessageDefinition that is the basis for the contents of this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $base
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $base
      * @return $this
      */
     public function setBase($base)
@@ -565,7 +565,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getParent()
     {
@@ -574,7 +574,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $parent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $parent
      * @return $this
      */
     public function addParent($parent)
@@ -584,7 +584,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getEventCoding()
     {
@@ -592,7 +592,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $eventCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $eventCoding
      * @return $this
      */
     public function setEventCoding($eventCoding)
@@ -602,7 +602,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getEventUri()
     {
@@ -610,7 +610,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $eventUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $eventUri
      * @return $this
      */
     public function setEventUri($eventUri)
@@ -621,7 +621,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The impact of the content of the message.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMessageSignificanceCategory
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMessageSignificanceCategory
      */
     public function getCategory()
     {
@@ -630,7 +630,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The impact of the content of the message.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMessageSignificanceCategory $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMessageSignificanceCategory $category
      * @return $this
      */
     public function setCategory($category)
@@ -641,7 +641,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
      */
     public function getFocus()
     {
@@ -650,7 +650,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus $focus
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus $focus
      * @return $this
      */
     public function addFocus($focus)
@@ -661,7 +661,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Declare at a message definition level whether a response is required or only upon error or success, or never.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMessageheaderResponseRequest
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMessageheaderResponseRequest
      */
     public function getResponseRequired()
     {
@@ -670,7 +670,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Declare at a message definition level whether a response is required or only upon error or success, or never.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMessageheaderResponseRequest $responseRequired
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMessageheaderResponseRequest $responseRequired
      * @return $this
      */
     public function setResponseRequired($responseRequired)
@@ -681,7 +681,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Indicates what types of messages may be sent as an application-level response to this message.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
      */
     public function getAllowedResponse()
     {
@@ -690,7 +690,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Indicates what types of messages may be sent as an application-level response to this message.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $allowedResponse
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $allowedResponse
      * @return $this
      */
     public function addAllowedResponse($allowedResponse)
@@ -701,7 +701,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Canonical reference to a GraphDefinition. If a URL is provided, it is the canonical reference to a [[[GraphDefinition]]] that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getGraph()
     {
@@ -710,7 +710,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Canonical reference to a GraphDefinition. If a URL is provided, it is the canonical reference to a [[[GraphDefinition]]] that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $graph
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $graph
      * @return $this
      */
     public function addGraph($graph)

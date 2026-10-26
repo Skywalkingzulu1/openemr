@@ -3,24 +3,24 @@
 /**
  * external_data.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T Paul <jacob@zhservices.com>
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2015 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php";
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php";
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
-use OpenEMR\Menu\PatientMenuRole;
-use OpenEMR\OeUI\OemrUI;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
+use DCL\Menu\PatientMenuRole;
+use DCL\OeUI\OemrUI;
 
 // Chart-view page for the open patient; align the permission check with the
 // surrounding `patients/med` chart views.
@@ -35,7 +35,7 @@ $records2 = [];
     <head>
         <?php Header::setupHeader();?>
         <title><?php echo xlt('External Data'); ?></title>
-        <script><?php require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/erx_patient_portal_js.php"); // jQuery for popups for eRx and patient portal ?></script>
+        <script><?php require_once(\DCL\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/erx_patient_portal_js.php"); // jQuery for popups for eRx and patient portal ?></script>
         <?php
         $arrOeUiSettings = [
             'heading_title' => xl('External Data'),
@@ -56,7 +56,7 @@ $records2 = [];
             <div class="row">
                 <div class="col-sm-12">
                     <?php
-                    require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/summary/dashboard_header.php")
+                    require_once(\DCL\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/summary/dashboard_header.php")
                     ?>
                 </div>
             </div>
@@ -87,7 +87,7 @@ $records2 = [];
                                     LEFT JOIN users AS u1 ON u1.id = ee.ee_provider_id
                                     LEFT JOIN users AS u2 ON u2.id = ee.ee_facility_id
                                     WHERE ee.ee_pid = ?";
-                                $res1 = sqlStatement($query1, [\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid')]);
+                                $res1 = sqlStatement($query1, [\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid')]);
                                 while ($row1 = sqlFetchArray($res1)) {
                                     $records1[] = $row1;
                                 }
@@ -126,7 +126,7 @@ $records2 = [];
                             <div class="table-responsive">
                                 <?php
                                 $query2 = "SELECT ep.*,u.organization AS facility FROM external_procedures AS ep LEFT JOIN users AS u ON u.id = ep.ep_facility_id WHERE ep.ep_pid = ?";
-                                $res2 = sqlStatement($query2, [\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid')]);
+                                $res2 = sqlStatement($query2, [\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid')]);
                                 while ($row2 = sqlFetchArray($res2)) {
                                     $records2[] = $row2;
                                 }

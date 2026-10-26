@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
+namespace DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -71,23 +71,23 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
 {
     /**
      * The time period and frequency at which the enteral formula should be delivered to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $schedule = null;
 
     /**
      * The volume of formula to provide to the patient per the specified administration schedule.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $rateQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
@@ -98,7 +98,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
 
     /**
      * The time period and frequency at which the enteral formula should be delivered to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getSchedule()
     {
@@ -107,7 +107,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
 
     /**
      * The time period and frequency at which the enteral formula should be delivered to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $schedule
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $schedule
      * @return $this
      */
     public function setSchedule($schedule)
@@ -118,7 +118,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
 
     /**
      * The volume of formula to provide to the patient per the specified administration schedule.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -127,7 +127,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
 
     /**
      * The volume of formula to provide to the patient per the specified administration schedule.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -137,7 +137,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity()
     {
@@ -145,7 +145,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $rateQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $rateQuantity
      * @return $this
      */
     public function setRateQuantity($rateQuantity)
@@ -155,7 +155,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
     {
@@ -163,7 +163,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $rateRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
     public function setRateRatio($rateRatio)

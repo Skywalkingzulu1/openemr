@@ -19,12 +19,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://opensource.org/licenses/gpl-license.php>.
  *
- * @package   OpenEMR
+ * @package   DCL
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Teny <teny@zhservices.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  */
 
 
@@ -139,6 +139,6 @@
  */
 function upgradeFromSqlFile($filename, $path = ''): void
 {
-    $sqlUpgradeService = new \OpenEMR\Services\Utils\SQLUpgradeService();
+    $sqlUpgradeService = new \DCL\Services\Utils\SQLUpgradeService();
     $sqlUpgradeService->upgradeFromSqlFile($filename, $path);
 } // end function

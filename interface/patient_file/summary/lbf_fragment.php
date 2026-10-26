@@ -3,21 +3,21 @@
 /**
  * Functions to globally validate and prepare data for sql database insertion.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2010-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Core\OEGlobalsBag;
 
 CsrfUtils::checkCsrfInput(INPUT_POST, dieOnFail: true);
 

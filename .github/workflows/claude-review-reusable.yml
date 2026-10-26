@@ -1,5 +1,5 @@
 # .github/workflows/claude-review-reusable.yml
-# Lives ONCE in openemr/openemr. All four repos (including openemr itself)
+# Lives ONCE in DCL/DCL. All four repos (including DCL itself)
 # call it via the thin caller workflow claude-review.yml.
 #
 # On-demand only: fires when an OWNER/MEMBER/COLLABORATOR comments

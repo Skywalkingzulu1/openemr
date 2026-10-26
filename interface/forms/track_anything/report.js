@@ -1,11 +1,11 @@
 /**
  * Javascript functions for the track anything form
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Joe Slam <trackanything@produnis.de>
  * @copyright Copyright (c) 2014 Joe Slam <trackanything@produnis.de>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 //-------------- checkboxes checked checker --------------------

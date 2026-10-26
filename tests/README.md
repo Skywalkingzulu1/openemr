@@ -1,6 +1,6 @@
-# OpenEMR Tests
+# DCL Tests
 
-OpenEMR uses [PHPUnit](https://phpunit.de/) for PHP tests and [Jest](https://jestjs.io/) for JavaScript tests. Browser-based tests use [Symfony Panther](https://github.com/symfony/panther).
+DCL uses [PHPUnit](https://phpunit.de/) for PHP tests and [Jest](https://jestjs.io/) for JavaScript tests. Browser-based tests use [Symfony Panther](https://github.com/symfony/panther).
 
 ## Directory Structure
 
@@ -18,17 +18,17 @@ See [`Tests/README.md`](Tests/README.md) for detailed PHPUnit test documentation
 
 ### Docker (recommended)
 
-Install [openemr-cmd](https://github.com/openemr/openemr-devops/tree/master/utilities/openemr-cmd) for shorthand commands that work from any directory:
+Install [DCL-cmd](https://github.com/DCL/DCL-devops/tree/master/utilities/DCL-cmd) for shorthand commands that work from any directory:
 
 ```bash
-openemr-cmd ut    # Unit tests
-openemr-cmd at    # API tests
-openemr-cmd et    # E2E browser tests
-openemr-cmd st    # Services tests
-openemr-cmd cst   # All tests (clean-sweep-tests)
+DCL-cmd ut    # Unit tests
+DCL-cmd at    # API tests
+DCL-cmd et    # E2E browser tests
+DCL-cmd st    # Services tests
+DCL-cmd cst   # All tests (clean-sweep-tests)
 ```
 
-Use `openemr-cmd -h` to list all available commands.
+Use `DCL-cmd -h` to list all available commands.
 
 ### Isolated tests (no Docker required)
 
@@ -59,4 +59,4 @@ npm run test:js-coverage  # With coverage
 
 ## Certification Reference
 
-The [`certification/tests.md`](certification/tests.md) document maps OpenEMR features to Meaningful Use certification requirements. It links to official ONC test procedures and test data for manual QA verification—these are not automated tests.
+The [`certification/tests.md`](certification/tests.md) document maps DCL features to Meaningful Use certification requirements. It links to official ONC test procedures and test data for manual QA verification—these are not automated tests.

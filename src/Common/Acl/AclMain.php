@@ -109,22 +109,22 @@
  * Note admin/drugs permission is required to create products;
  * we also allow that to substitute for all inventory permissions.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Acl;
+namespace DCL\Common\Acl;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Gacl\Gacl;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Gacl\Gacl;
 
 class AclMain
 {
@@ -269,7 +269,7 @@ class AclMain
      *
      * Same Functionality in the Zend Module
      * for ACL Check in Zend
-     * Path openemr/interface/modules/zend_modules/module/Application/src/Application/Model/ApplicationTable
+     * Path DCL/interface/modules/zend_modules/module/Application/src/Application/Model/ApplicationTable
      * Function Name zAclCheck
      *
      * @param String $user_id Auth user Id
@@ -401,7 +401,7 @@ class AclMain
     public static function fetchPostCalendarCategoryACO($pc_catid)
     {
         $aco = sqlQuery(
-            "SELECT aco_spec FROM openemr_postcalendar_categories WHERE pc_catid = ? LIMIT 1",
+            "SELECT aco_spec FROM DCL_postcalendar_categories WHERE pc_catid = ? LIMIT 1",
             [$pc_catid]
         );
         return $aco['aco_spec'];

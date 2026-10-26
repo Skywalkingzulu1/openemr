@@ -7,7 +7,7 @@
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
 /**
  * Enumerates rule types
@@ -49,8 +49,8 @@ class RuleType
             self::ActiveAlert => new RuleType(self::ActiveAlert, xl('Active Alert')),
             self::PassiveAlert => new RuleType(self::PassiveAlert, xl('Passive Alert')),
             // not yet supported
-//            self::CQM   =>  new OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleType( self::CQM, xl( 'CQM' ) ),
-//            self::AMC   =>  new OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleType( self::AMC, xl( 'AMC' ) ),
+//            self::CQM   =>  new DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleType( self::CQM, xl( 'CQM' ) ),
+//            self::AMC   =>  new DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleType( self::AMC, xl( 'AMC' ) ),
             self::PatientReminder => new RuleType(self::PatientReminder, xl('Patient Reminder'))
         ];
         return $map;

@@ -3,27 +3,27 @@
 /**
  * Clinical Decision Rules(CDR) engine functions.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Medical Information Integration, LLC
  * @author    Ensofttek, LLC
- * @author    Stephen Waite <stephen.waite@open-emr.org>
+ * @author    Stephen Waite <stephen.waite@dcl.org>
  * @copyright Copyright (c) 2010-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 Medical Information Integration, LLC
  * @copyright Copyright (c) 2011 Ensofttek, LLC
- * @copyright Copyright (c) 2026 OpenEMR Foundation Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Foundation Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/options.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\ClinicalDecisionRules\AMC\CertificationReportTypes;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\BC\ServiceContainer;
+use DCL\ClinicalDecisionRules\AMC\CertificationReportTypes;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 /**
  * Return listing of CDR reminders in log.
@@ -2573,15 +2573,15 @@ function appointment_check($patient_id, $dateFocus = '', $dateTarget = '')
 
     // Basically, if the appointment is within the current date to the target date,
     //  then return true. (will not send reminders on same day as appointment)
-    $sql = sqlStatementCdrEngine("SELECT openemr_postcalendar_events.pc_eid, " .
-        "openemr_postcalendar_events.pc_title, " .
-        "openemr_postcalendar_events.pc_eventDate, " .
-        "openemr_postcalendar_events.pc_startTime, " .
-        "openemr_postcalendar_events.pc_endTime " .
-        "FROM openemr_postcalendar_events " .
-        "WHERE openemr_postcalendar_events.pc_eventDate > ? " .
-        "AND openemr_postcalendar_events.pc_eventDate <= ? " .
-        "AND openemr_postcalendar_events.pc_pid = ?", [$currentDate,$dateTarget,$patient_id]);
+    $sql = sqlStatementCdrEngine("SELECT DCL_postcalendar_events.pc_eid, " .
+        "DCL_postcalendar_events.pc_title, " .
+        "DCL_postcalendar_events.pc_eventDate, " .
+        "DCL_postcalendar_events.pc_startTime, " .
+        "DCL_postcalendar_events.pc_endTime " .
+        "FROM DCL_postcalendar_events " .
+        "WHERE DCL_postcalendar_events.pc_eventDate > ? " .
+        "AND DCL_postcalendar_events.pc_eventDate <= ? " .
+        "AND DCL_postcalendar_events.pc_pid = ?", [$currentDate,$dateTarget,$patient_id]);
 
     // return results of check
     //
@@ -3224,7 +3224,7 @@ function collect_database_label($label, $table)
             // unknown label, so return the original label
             $returnedLabel = $label;
         }
-    } elseif ($table == 'openemr_postcalendar_events') {
+    } elseif ($table == 'DCL_postcalendar_events') {
         // return requested label for prescriptions table
         if ($label == "pid") {
             $returnedLabel = "pc_pid";

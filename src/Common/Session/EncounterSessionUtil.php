@@ -3,19 +3,19 @@
 /**
  * EncounterSessionUtil refactored from encounter.inc.php handles setting the encounter in the session
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    <Unknown> Authorship was not listed in encounter.inc.php
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Session;
+namespace DCL\Common\Session;
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\FormService;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\FormService;
 
 class EncounterSessionUtil
 {

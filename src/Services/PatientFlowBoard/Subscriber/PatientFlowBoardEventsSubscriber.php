@@ -4,21 +4,21 @@
  * PatientFlowBoardEventsSubscriber Listens to system data save events for the patient flow board and updates flow board
  * data.  It can be used to listen to any patient flow board events and trigger system functionality for the flow board
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (C) 2015 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\PatientFlowBoard\Subscriber;
+namespace DCL\Services\PatientFlowBoard\Subscriber;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\PatientTrackerService;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\AppointmentService;
+use DCL\Services\PatientTrackerService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class PatientFlowBoardEventsSubscriber implements EventSubscriberInterface
@@ -37,7 +37,7 @@ class PatientFlowBoardEventsSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Receives all of the save events from the OpenEMR services (that support the event) and populates any mapping uuids
+     * Receives all of the save events from the DCL services (that support the event) and populates any mapping uuids
      * that are needed.
      * @param ServiceSaveEvent $event
      */

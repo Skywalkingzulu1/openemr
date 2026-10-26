@@ -17,7 +17,7 @@ parameters:
     # not maintained in this repo, so exclude it from analysis the same way vendor/
     # is excluded.
     - interface/modules/custom_modules/oe-module-claimrev-connect/*
-    # ci/api-explorer/run.sh clones openemr/oe-module-api-explorer into
+    # ci/api-explorer/run.sh clones DCL/oe-module-api-explorer into
     # /devtools/oe-module-api-explorer/ on every smoke run. It is third-party code,
     # not maintained in this repo, so exclude it from analysis the same way vendor/
     # is excluded.
@@ -25,7 +25,7 @@ parameters:
     # Acceptance-harness bootstrap scripts — runtime-only. install-helper.php
     # is copied into a running container's mount point at execution time
     # and depends on container-absolute paths (autoload.php under
-    # /var/www/localhost/htdocs/openemr) that don't exist on the runner
+    # /var/www/localhost/htdocs/DCL) that don't exist on the runner
     # where phpstan runs. Nothing else references these files at build
     # time, so excluding from analysis is appropriate.
     - tests/Acceptance/bin/*.php

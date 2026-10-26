@@ -2,9 +2,9 @@
 # ============================================================================
 # Container Benchmarking Script
 # ============================================================================
-# This script runs comparative benchmarks between two OpenEMR container images:
+# This script runs comparative benchmarks between two DCL container images:
 #   - Image A: Local build from repository (default: ./docker/release/)
-#   - Image B: Public Docker Hub image (default: openemr/openemr:8.1.0)
+#   - Image B: Public Docker Hub image (default: DCL/DCL:8.1.0)
 #
 # Benchmarks measured:
 #   1. Startup time (time to healthy status)
@@ -25,7 +25,7 @@ set -euo pipefail
 IMAGE_A_CONTEXT="${IMAGE_A_CONTEXT:-../release}"
 
 # Image B: Docker Hub image name and tag
-IMAGE_B_IMAGE="${IMAGE_B_IMAGE:-openemr/openemr:8.1.0}"
+IMAGE_B_IMAGE="${IMAGE_B_IMAGE:-DCL/DCL:8.1.0}"
 
 # Port mappings (must be different for both containers)
 IMAGE_A_PORT="${IMAGE_A_PORT:-8080}"
@@ -269,7 +269,7 @@ benchmark_performance() {
 
     log_info "Running performance benchmark for ${label}..."
 
-    # Wait for OpenEMR to be ready (check login page)
+    # Wait for DCL to be ready (check login page)
     log_info "Waiting for ${label} to be ready..."
     local max_wait=120
     local waited=0
@@ -298,9 +298,9 @@ benchmark_performance() {
     # Determine container hostname based on label
     local target_host
     if [[ "${label}" = "Image_A" ]]; then
-        target_host="openemr-image-a"
+        target_host="DCL-image-a"
     else
-        target_host="openemr-image-b"
+        target_host="DCL-image-b"
     fi
 
     local ab_output
@@ -457,7 +457,7 @@ main() {
     # Build and start containers
     log_section "Building and Starting Containers"
     log_info "Building Image A from ${IMAGE_A_CONTEXT}..."
-    if ! docker compose -p "${PROJECT_NAME}" build openemr-image-a; then
+    if ! docker compose -p "${PROJECT_NAME}" build DCL-image-a; then
         log_error "Failed to build Image A"
         exit 1
     fi
@@ -577,7 +577,7 @@ main() {
     log_info "Starting Image_A and measuring startup time..."
 
     # Start the container
-    docker compose -p "${PROJECT_NAME}" up -d openemr-image-a >/dev/null 2>&1
+    docker compose -p "${PROJECT_NAME}" up -d DCL-image-a >/dev/null 2>&1
 
     # Wait for container to become healthy
     waited=0
@@ -684,7 +684,7 @@ PYTHON_SCRIPT
     log_info "Starting Image_B and measuring startup time..."
 
     # Start the container
-    docker compose -p "${PROJECT_NAME}" up -d openemr-image-b >/dev/null 2>&1
+    docker compose -p "${PROJECT_NAME}" up -d DCL-image-b >/dev/null 2>&1
 
     # Wait for container to become healthy
     waited=0

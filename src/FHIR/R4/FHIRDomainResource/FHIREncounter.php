@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -72,139 +72,139 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier(s) by which this encounter is known.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREncounterStatus
      */
     public $status = null;
 
     /**
      * The status history permits the encounter resource to contain the status history without needing to read through the historical versions of the resource, or even have the server store them.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterStatusHistory[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterStatusHistory[]
      */
     public $statusHistory = [];
 
     /**
      * Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $class = null;
 
     /**
      * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.  This would be used for a case where an admission starts of as an emergency encounter, then transitions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kind of discharge from emergency to inpatient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterClassHistory[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterClassHistory[]
      */
     public $classHistory = [];
 
     /**
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * Broad categorization of the service that is to be provided (e.g. cardiology).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $serviceType = null;
 
     /**
      * Indicates the urgency of the encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $priority = null;
 
     /**
      * The patient or group present at the encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $episodeOfCare = [];
 
     /**
      * The request this encounter satisfies (e.g. incoming referral or procedure request).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * The list of people responsible for providing the service.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant[]
      */
     public $participant = [];
 
     /**
      * The appointment that scheduled this encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $appointment = [];
 
     /**
      * The start and end time of the encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $length = null;
 
     /**
      * Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * The list of diagnosis relevant to this encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterDiagnosis[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterDiagnosis[]
      */
     public $diagnosis = [];
 
     /**
      * The set of accounts that may be used for billing for this Encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $account = [];
 
     /**
      * Details about the admission to a healthcare service.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization
      */
     public $hospitalization = null;
 
     /**
      * List of locations where  the patient has been during this encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation[]
      */
     public $location = [];
 
     /**
      * The organization that is primarily responsible for this Encounter's services. This MAY be the same as the organization on the Patient record, however it could be different, such as if the actor performing the services was from an external organization (which may be billed separately) for an external consultation.  Refer to the example bundle showing an abbreviated set of Encounters for a colonoscopy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $serviceProvider = null;
 
     /**
      * Another Encounter of which this encounter is a part of (administratively or in time).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $partOf = null;
 
@@ -215,7 +215,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier(s) by which this encounter is known.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -224,7 +224,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier(s) by which this encounter is known.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -235,7 +235,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREncounterStatus
      */
     public function getStatus()
     {
@@ -244,7 +244,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREncounterStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -255,7 +255,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status history permits the encounter resource to contain the status history without needing to read through the historical versions of the resource, or even have the server store them.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterStatusHistory[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterStatusHistory[]
      */
     public function getStatusHistory()
     {
@@ -264,7 +264,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status history permits the encounter resource to contain the status history without needing to read through the historical versions of the resource, or even have the server store them.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterStatusHistory $statusHistory
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterStatusHistory $statusHistory
      * @return $this
      */
     public function addStatusHistory($statusHistory)
@@ -275,7 +275,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getClass()
     {
@@ -284,7 +284,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $class
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $class
      * @return $this
      */
     public function setClass($class)
@@ -295,7 +295,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.  This would be used for a case where an admission starts of as an emergency encounter, then transitions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kind of discharge from emergency to inpatient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterClassHistory[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterClassHistory[]
      */
     public function getClassHistory()
     {
@@ -304,7 +304,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.  This would be used for a case where an admission starts of as an emergency encounter, then transitions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kind of discharge from emergency to inpatient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterClassHistory $classHistory
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterClassHistory $classHistory
      * @return $this
      */
     public function addClassHistory($classHistory)
@@ -315,7 +315,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -324,7 +324,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -335,7 +335,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Broad categorization of the service that is to be provided (e.g. cardiology).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getServiceType()
     {
@@ -344,7 +344,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Broad categorization of the service that is to be provided (e.g. cardiology).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
      * @return $this
      */
     public function setServiceType($serviceType)
@@ -355,7 +355,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the urgency of the encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority()
     {
@@ -364,7 +364,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the urgency of the encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -375,7 +375,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient or group present at the encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -384,7 +384,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient or group present at the encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -395,7 +395,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEpisodeOfCare()
     {
@@ -404,7 +404,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $episodeOfCare
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $episodeOfCare
      * @return $this
      */
     public function addEpisodeOfCare($episodeOfCare)
@@ -415,7 +415,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request this encounter satisfies (e.g. incoming referral or procedure request).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -424,7 +424,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request this encounter satisfies (e.g. incoming referral or procedure request).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -435,7 +435,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of people responsible for providing the service.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant[]
      */
     public function getParticipant()
     {
@@ -444,7 +444,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of people responsible for providing the service.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant $participant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -455,7 +455,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The appointment that scheduled this encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAppointment()
     {
@@ -464,7 +464,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The appointment that scheduled this encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $appointment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $appointment
      * @return $this
      */
     public function addAppointment($appointment)
@@ -475,7 +475,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The start and end time of the encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -484,7 +484,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The start and end time of the encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -495,7 +495,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getLength()
     {
@@ -504,7 +504,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $length
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $length
      * @return $this
      */
     public function setLength($length)
@@ -515,7 +515,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -524,7 +524,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -535,7 +535,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -544,7 +544,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -555,7 +555,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of diagnosis relevant to this encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterDiagnosis[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterDiagnosis[]
      */
     public function getDiagnosis()
     {
@@ -564,7 +564,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of diagnosis relevant to this encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterDiagnosis $diagnosis
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterDiagnosis $diagnosis
      * @return $this
      */
     public function addDiagnosis($diagnosis)
@@ -575,7 +575,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The set of accounts that may be used for billing for this Encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAccount()
     {
@@ -584,7 +584,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The set of accounts that may be used for billing for this Encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $account
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $account
      * @return $this
      */
     public function addAccount($account)
@@ -595,7 +595,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about the admission to a healthcare service.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization
      */
     public function getHospitalization()
     {
@@ -604,7 +604,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about the admission to a healthcare service.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization $hospitalization
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization $hospitalization
      * @return $this
      */
     public function setHospitalization($hospitalization)
@@ -615,7 +615,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * List of locations where  the patient has been during this encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation[]
      */
     public function getLocation()
     {
@@ -624,7 +624,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * List of locations where  the patient has been during this encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation $location
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation $location
      * @return $this
      */
     public function addLocation($location)
@@ -635,7 +635,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that is primarily responsible for this Encounter's services. This MAY be the same as the organization on the Patient record, however it could be different, such as if the actor performing the services was from an external organization (which may be billed separately) for an external consultation.  Refer to the example bundle showing an abbreviated set of Encounters for a colonoscopy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getServiceProvider()
     {
@@ -644,7 +644,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that is primarily responsible for this Encounter's services. This MAY be the same as the organization on the Patient record, however it could be different, such as if the actor performing the services was from an external organization (which may be billed separately) for an external consultation.  Refer to the example bundle showing an abbreviated set of Encounters for a colonoscopy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $serviceProvider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $serviceProvider
      * @return $this
      */
     public function setServiceProvider($serviceProvider)
@@ -655,7 +655,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Another Encounter of which this encounter is a part of (administratively or in time).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPartOf()
     {
@@ -664,7 +664,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Another Encounter of which this encounter is a part of (administratively or in time).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function setPartOf($partOf)

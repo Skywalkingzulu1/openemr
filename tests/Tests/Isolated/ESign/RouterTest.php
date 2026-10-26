@@ -14,19 +14,19 @@
  * directly; its own top-level require resolves through OEGlobalsBag, which
  * we seed with the library path.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @copyright Copyright (c) 2026 OpenEMR Foundation
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @copyright Copyright (c) 2026 DCL Foundation
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\ESign;
+namespace DCL\Tests\Isolated\ESign;
 
 use ESign\Router;
 use InvalidArgumentException;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

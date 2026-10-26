@@ -2,18 +2,18 @@
 
 /*
  * CapabilityStatementTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Certification\HIT1\G10_Certification\SinglePatientApi;
+namespace DCL\Tests\Certification\HIT1\G10_Certification\SinglePatientApi;
 
-use OpenEMR\Services\FHIR\FhirCareTeamService;
-use OpenEMR\Services\FHIR\FhirPatientService;
-use OpenEMR\Tests\Certification\HIT1\G10_Certification\Trait\G10ApiTestTrait;
+use DCL\Services\FHIR\FhirCareTeamService;
+use DCL\Services\FHIR\FhirPatientService;
+use DCL\Tests\Certification\HIT1\G10_Certification\Trait\G10ApiTestTrait;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -152,7 +152,7 @@ class CapabilityStatementTest extends TestCase
      */
     protected function getSupportedProfiles(): array
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: self::DEFAULT_OPENEMR_BASE_URL_API;
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: self::DEFAULT_DCL_BASE_URL_API;
         $url = $baseUrl . '/apis/default/fhir/metadata';
         $response = file_get_contents($url);
         if ($response === false) {

@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Pre-loader for OpenEMR BS4 SCSS themes.
+ * Pre-loader for DCL BS4 SCSS themes.
  *
  * Reads an optional `?variant=` resource query from the webpack entry to apply
  * the SCSS transformations needed for each theme variant (prepend/append/

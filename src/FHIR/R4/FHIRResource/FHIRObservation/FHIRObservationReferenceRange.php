@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRObservation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
@@ -71,37 +71,37 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 {
     /**
      * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $low = null;
 
     /**
      * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $high = null;
 
     /**
      * Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.  Multiple `appliesTo`  are interpreted as an "AND" of the target populations.  For example, to represent a target population of African American females, both a code of female and a code for African American would be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $appliesTo = [];
 
     /**
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $age = null;
 
     /**
      * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
@@ -112,7 +112,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getLow()
     {
@@ -121,7 +121,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $low
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $low
      * @return $this
      */
     public function setLow($low)
@@ -132,7 +132,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getHigh()
     {
@@ -141,7 +141,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9). If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $high
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $high
      * @return $this
      */
     public function setHigh($high)
@@ -152,7 +152,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -161,7 +161,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -172,7 +172,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.  Multiple `appliesTo`  are interpreted as an "AND" of the target populations.  For example, to represent a target population of African American females, both a code of female and a code for African American would be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAppliesTo()
     {
@@ -181,7 +181,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.  Multiple `appliesTo`  are interpreted as an "AND" of the target populations.  For example, to represent a target population of African American females, both a code of female and a code for African American would be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $appliesTo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $appliesTo
      * @return $this
      */
     public function addAppliesTo($appliesTo)
@@ -192,7 +192,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAge()
     {
@@ -201,7 +201,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $age
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $age
      * @return $this
      */
     public function setAge($age)
@@ -212,7 +212,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -221,7 +221,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
 
     /**
      * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)

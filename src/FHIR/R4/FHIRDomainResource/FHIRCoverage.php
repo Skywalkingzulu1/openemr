@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Financial instrument which may be used to reimburse or pay for health care products and services. Includes both insurance and self-payment.
@@ -72,103 +72,103 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The party who 'owns' the insurance policy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $policyHolder = null;
 
     /**
      * The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subscriber = null;
 
     /**
      * The insurer assigned ID for the Subscriber.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $subscriberId = null;
 
     /**
      * The party who benefits from the insurance coverage; the patient when products and/or services are provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $beneficiary = null;
 
     /**
      * A unique identifier for a dependent under the coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $dependent = null;
 
     /**
      * The relationship of beneficiary (patient) to the subscriber.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $relationship = null;
 
     /**
      * Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $payor = [];
 
     /**
      * A suite of underwriter specific classifiers.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass[]
      */
     public $class = [];
 
     /**
      * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $order = null;
 
     /**
      * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $network = null;
 
     /**
      * A suite of codes indicating the cost category and associated amount which have been detailed in the policy and may have been  included on the health card.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary[]
      */
     public $costToBeneficiary = [];
 
     /**
      * When 'subrogation=true' this insurance instance has been included not for adjudication but to provide insurers with the details to recover costs.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $subrogation = null;
 
     /**
      * The policy(s) which constitute this insurance coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $contract = [];
 
@@ -179,7 +179,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -188,7 +188,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -199,7 +199,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -208,7 +208,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -219,7 +219,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -228,7 +228,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -239,7 +239,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who 'owns' the insurance policy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPolicyHolder()
     {
@@ -248,7 +248,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who 'owns' the insurance policy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $policyHolder
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $policyHolder
      * @return $this
      */
     public function setPolicyHolder($policyHolder)
@@ -259,7 +259,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubscriber()
     {
@@ -268,7 +268,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subscriber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subscriber
      * @return $this
      */
     public function setSubscriber($subscriber)
@@ -279,7 +279,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The insurer assigned ID for the Subscriber.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSubscriberId()
     {
@@ -288,7 +288,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The insurer assigned ID for the Subscriber.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $subscriberId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $subscriberId
      * @return $this
      */
     public function setSubscriberId($subscriberId)
@@ -299,7 +299,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who benefits from the insurance coverage; the patient when products and/or services are provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getBeneficiary()
     {
@@ -308,7 +308,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who benefits from the insurance coverage; the patient when products and/or services are provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $beneficiary
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $beneficiary
      * @return $this
      */
     public function setBeneficiary($beneficiary)
@@ -319,7 +319,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier for a dependent under the coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDependent()
     {
@@ -328,7 +328,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier for a dependent under the coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $dependent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $dependent
      * @return $this
      */
     public function setDependent($dependent)
@@ -339,7 +339,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The relationship of beneficiary (patient) to the subscriber.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship()
     {
@@ -348,7 +348,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The relationship of beneficiary (patient) to the subscriber.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
     public function setRelationship($relationship)
@@ -359,7 +359,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -368,7 +368,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -379,7 +379,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPayor()
     {
@@ -388,7 +388,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $payor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $payor
      * @return $this
      */
     public function addPayor($payor)
@@ -399,7 +399,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A suite of underwriter specific classifiers.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass[]
      */
     public function getClass()
     {
@@ -408,7 +408,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A suite of underwriter specific classifiers.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass $class
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass $class
      * @return $this
      */
     public function addClass($class)
@@ -419,7 +419,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getOrder()
     {
@@ -428,7 +428,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $order
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $order
      * @return $this
      */
     public function setOrder($order)
@@ -439,7 +439,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getNetwork()
     {
@@ -448,7 +448,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $network
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $network
      * @return $this
      */
     public function setNetwork($network)
@@ -459,7 +459,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A suite of codes indicating the cost category and associated amount which have been detailed in the policy and may have been  included on the health card.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary[]
      */
     public function getCostToBeneficiary()
     {
@@ -468,7 +468,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A suite of codes indicating the cost category and associated amount which have been detailed in the policy and may have been  included on the health card.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary $costToBeneficiary
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary $costToBeneficiary
      * @return $this
      */
     public function addCostToBeneficiary($costToBeneficiary)
@@ -479,7 +479,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When 'subrogation=true' this insurance instance has been included not for adjudication but to provide insurers with the details to recover costs.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getSubrogation()
     {
@@ -488,7 +488,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When 'subrogation=true' this insurance instance has been included not for adjudication but to provide insurers with the details to recover costs.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $subrogation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $subrogation
      * @return $this
      */
     public function setSubrogation($subrogation)
@@ -499,7 +499,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The policy(s) which constitute this insurance coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getContract()
     {
@@ -508,7 +508,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The policy(s) which constitute this insurance coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $contract
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $contract
      * @return $this
      */
     public function addContract($contract)

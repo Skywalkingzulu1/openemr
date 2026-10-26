@@ -3,22 +3,22 @@
 /**
  * Batch Email processor, included from batchcom
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  cfapress
  * @author  Jason 'Toolbox' Oettinger <jason@oettinger.email>
  * @copyright Copyright (c) 2008 cfapress
  * @copyright Copyright (c) 2017 Jason 'Toolbox' Oettinger <jason@oettinger.email>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // create file header.
 // menu for fields could be added in the future
 require_once("../globals.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
 
 // This script is meant to be required from batchcom.php, which sets $res
 // (the SQL result of the patient query). Direct access has nothing to send.

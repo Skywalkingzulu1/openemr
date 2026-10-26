@@ -3,20 +3,20 @@
 /**
  * Common.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Aron Racho <aron@mi-squared.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Discover And Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2010-2011 Aron Racho <aron@mi-squared.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\ClinicalDecisionRules\Interface;
+namespace DCL\ClinicalDecisionRules\Interface;
 
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Component\HttpFoundation\Request;
 
 class Common

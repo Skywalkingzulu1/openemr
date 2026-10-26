@@ -1,17 +1,17 @@
 <?php
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\Controller;
+namespace DCL\ClinicalDecisionRules\Interface\Controller;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\ClinicalDecisionRules\Interface\BaseController;
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\Rule;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\BC\ServiceContainer;
+use DCL\ClinicalDecisionRules\Interface\BaseController;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\Rule;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ControllerReview extends BaseController

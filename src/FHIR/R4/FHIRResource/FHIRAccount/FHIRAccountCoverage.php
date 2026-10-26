@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAccount;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAccount;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAccount;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centers, etc.
@@ -73,13 +73,13 @@ class FHIRAccountCoverage extends FHIRBackboneElement implements \JsonSerializab
      * The party(s) that contribute to payment (or part of) of the charges applied to this account (including self-pay).
 
 A coverage may only be responsible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $coverage = null;
 
     /**
      * The priority of the coverage in the context of this account.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $priority = null;
 
@@ -92,7 +92,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
      * The party(s) that contribute to payment (or part of) of the charges applied to this account (including self-pay).
 
 A coverage may only be responsible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCoverage()
     {
@@ -103,7 +103,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
      * The party(s) that contribute to payment (or part of) of the charges applied to this account (including self-pay).
 
 A coverage may only be responsible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverage
      * @return $this
      */
     public function setCoverage($coverage)
@@ -114,7 +114,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
 
     /**
      * The priority of the coverage in the context of this account.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getPriority()
     {
@@ -123,7 +123,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
 
     /**
      * The priority of the coverage in the context of this account.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $priority
      * @return $this
      */
     public function setPriority($priority)

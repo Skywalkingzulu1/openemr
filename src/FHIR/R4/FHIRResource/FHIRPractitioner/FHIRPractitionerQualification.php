@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPractitioner;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPractitioner;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPractitioner;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A person who is directly or indirectly involved in the provisioning of healthcare.
@@ -71,25 +71,25 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 {
     /**
      * An identifier that applies to this person's qualification in this role.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Coded representation of the qualification.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Period during which the qualification is valid.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Organization that regulates and issues the qualification.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $issuer = null;
 
@@ -100,7 +100,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * An identifier that applies to this person's qualification in this role.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -109,7 +109,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * An identifier that applies to this person's qualification in this role.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -120,7 +120,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * Coded representation of the qualification.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -129,7 +129,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * Coded representation of the qualification.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -140,7 +140,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * Period during which the qualification is valid.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -149,7 +149,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * Period during which the qualification is valid.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -160,7 +160,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * Organization that regulates and issues the qualification.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getIssuer()
     {
@@ -169,7 +169,7 @@ class FHIRPractitionerQualification extends FHIRBackboneElement implements \Json
 
     /**
      * Organization that regulates and issues the qualification.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $issuer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $issuer
      * @return $this
      */
     public function setIssuer($issuer)

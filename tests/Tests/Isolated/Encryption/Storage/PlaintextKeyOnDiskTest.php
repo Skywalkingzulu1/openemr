@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Encryption\Storage;
+namespace DCL\Tests\Isolated\Encryption\Storage;
 
-use OpenEMR\Encryption\Keys\KeyMaterial;
-use OpenEMR\Encryption\Storage\KeyMaterialId;
-use OpenEMR\Encryption\Storage\PlaintextKeyOnDisk;
+use DCL\Encryption\Keys\KeyMaterial;
+use DCL\Encryption\Storage\KeyMaterialId;
+use DCL\Encryption\Storage\PlaintextKeyOnDisk;
 use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
 use UnexpectedValueException;
@@ -28,7 +28,7 @@ final class PlaintextKeyOnDiskTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tempDir = sys_get_temp_dir() . '/openemr_key_test_' . uniqid();
+        $this->tempDir = sys_get_temp_dir() . '/DCL_key_test_' . uniqid();
         mkdir($this->tempDir);
     }
 

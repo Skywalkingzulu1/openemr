@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\RestControllers\Authorization\OAuth2DiscoveryController;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\RestControllers\Authorization\OAuth2DiscoveryController;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;

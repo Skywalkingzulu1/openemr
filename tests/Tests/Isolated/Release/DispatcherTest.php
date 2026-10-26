@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\Dispatcher;
-use OpenEMR\Release\DispatchRequest;
+use DCL\Release\Dispatcher;
+use DCL\Release\DispatchRequest;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
@@ -24,9 +24,9 @@ final class DispatcherTest extends TestCase
 
     public function testDefaultTargetReposIncludesAllConsumers(): void
     {
-        self::assertContains('openemr/openemr-devops', Dispatcher::DEFAULT_TARGET_REPOS);
-        self::assertContains('openemr/website-openemr', Dispatcher::DEFAULT_TARGET_REPOS);
-        self::assertContains('openemr/demo_farm_openemr', Dispatcher::DEFAULT_TARGET_REPOS);
+        self::assertContains('DCL/DCL-devops', Dispatcher::DEFAULT_TARGET_REPOS);
+        self::assertContains('DCL/website-DCL', Dispatcher::DEFAULT_TARGET_REPOS);
+        self::assertContains('DCL/demo_farm_DCL', Dispatcher::DEFAULT_TARGET_REPOS);
     }
 
     public function testValidRelCutDispatchesToBothConsumers(): void
@@ -46,17 +46,17 @@ final class DispatcherTest extends TestCase
 
         $request = $this->buildRelCutRequest();
         $dispatcher = new Dispatcher($http, self::SCHEMA_PATH, 'https://api.example.test');
-        $results = $dispatcher->dispatch($request, ['openemr/openemr-devops', 'openemr/website-openemr']);
+        $results = $dispatcher->dispatch($request, ['DCL/DCL-devops', 'DCL/website-DCL']);
 
         self::assertCount(2, $results);
-        self::assertSame('openemr/openemr-devops', $results[0]->repo);
+        self::assertSame('DCL/DCL-devops', $results[0]->repo);
         self::assertTrue($results[0]->accepted);
-        self::assertSame('openemr/website-openemr', $results[1]->repo);
+        self::assertSame('DCL/website-DCL', $results[1]->repo);
         self::assertCount(2, $captured);
-        self::assertStringContainsString('/repos/openemr/openemr-devops/dispatches', $captured[0]['url']);
+        self::assertStringContainsString('/repos/DCL/DCL-devops/dispatches', $captured[0]['url']);
         $body = json_decode($captured[0]['body'], true, 512, JSON_THROW_ON_ERROR);
         self::assertIsArray($body);
-        self::assertSame('openemr-rel-cut', $body['event_type']);
+        self::assertSame('DCL-rel-cut', $body['event_type']);
         self::assertIsArray($body['client_payload']);
         $payload = $body['client_payload'];
         self::assertIsArray($payload['data']);
@@ -70,7 +70,7 @@ final class DispatcherTest extends TestCase
 
         $request = new DispatchRequest(
             event: DispatchRequest::EVENT_REL_CUT,
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             sha: 'not-a-sha', // invalid
             actor: 'bot',
             dispatchedAt: '2026-04-29T12:00:00Z',
@@ -80,7 +80,7 @@ final class DispatcherTest extends TestCase
 
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessageMatches('/schema validation/');
-        $dispatcher->dispatch($request, ['openemr/openemr-devops']);
+        $dispatcher->dispatch($request, ['DCL/DCL-devops']);
     }
 
     public function testProbeBypassesSchemaValidation(): void
@@ -90,7 +90,7 @@ final class DispatcherTest extends TestCase
 
         $request = new DispatchRequest(
             event: DispatchRequest::EVENT_PROBE,
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             sha: str_repeat('a', 40),
             actor: 'bot',
             dispatchedAt: '2026-04-29T12:00:00Z',
@@ -99,7 +99,7 @@ final class DispatcherTest extends TestCase
             probe: true,
         );
 
-        $results = $dispatcher->dispatch($request, ['openemr/openemr-devops']);
+        $results = $dispatcher->dispatch($request, ['DCL/DCL-devops']);
         self::assertCount(1, $results);
         self::assertTrue($results[0]->accepted);
     }
@@ -114,7 +114,7 @@ final class DispatcherTest extends TestCase
 
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessageMatches('/HTTP 422/');
-        $dispatcher->dispatch($this->buildRelCutRequest(), ['openemr/openemr-devops']);
+        $dispatcher->dispatch($this->buildRelCutRequest(), ['DCL/DCL-devops']);
     }
 
     public function testEmptyTargetReposIsRejected(): void
@@ -149,15 +149,15 @@ final class DispatcherTest extends TestCase
 
         $request = new DispatchRequest(
             event: DispatchRequest::EVENT_RELEASE_TARGETS_CHANGED,
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             sha: str_repeat('a', 40),
-            actor: 'openemr-release-bot',
+            actor: 'DCL-release-bot',
             dispatchedAt: '2026-04-29T12:00:00Z',
             appToken: 'tok',
             data: [],
         );
         $dispatcher = new Dispatcher($http, self::SCHEMA_PATH, 'https://api.example.test');
-        $results = $dispatcher->dispatch($request, ['openemr/demo_farm_openemr']);
+        $results = $dispatcher->dispatch($request, ['DCL/demo_farm_DCL']);
 
         self::assertCount(1, $results);
         self::assertTrue($results[0]->accepted);
@@ -178,9 +178,9 @@ final class DispatcherTest extends TestCase
     {
         return new DispatchRequest(
             event: DispatchRequest::EVENT_REL_CUT,
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             sha: str_repeat('a', 40),
-            actor: 'openemr-release-bot',
+            actor: 'DCL-release-bot',
             dispatchedAt: '2026-04-29T12:00:00Z',
             appToken: 'tok',
             data: ['branch' => 'rel-810', 'version' => '8.1.0', 'prev_release' => '8.0.0'],

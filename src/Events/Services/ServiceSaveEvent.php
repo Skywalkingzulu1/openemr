@@ -1,18 +1,18 @@
 <?php
 
 /**
- * ServiceSaveEvent is intended to be used and dispatched whenever an OpenEMR Service saves a record.  Listeners
+ * ServiceSaveEvent is intended to be used and dispatched whenever an DCL Service saves a record.  Listeners
  * can filter data before the record is saved and respond to whatever data was saved by the service.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Services;
+namespace DCL\Events\Services;
 
-use OpenEMR\Services\BaseService;
+use DCL\Services\BaseService;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class ServiceSaveEvent extends Event

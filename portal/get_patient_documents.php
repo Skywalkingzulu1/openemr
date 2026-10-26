@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Download documents from OpenEMR to the patient portal in a zip file(get_patient_documents.php)
+ * Download documents from DCL to the patient portal in a zip file(get_patient_documents.php)
  * This program is used to download patient documents in a zip file in the Patient Portal.
  * Added parse and show documents for selection instead of all by default
  * The original author did not pursue this but I thought it would be a good addition to
  * the patient portal
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Giorgos Vasilakos <giorg.vasilakos@gmail.com>
  * @author    Terry Hill <terry@lilysystems.com>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
@@ -17,13 +17,13 @@
  * @copyright Copyright (c) 2015-2017 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2017-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../vendor/autoload.php");
@@ -32,7 +32,7 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
 require_once("./verify_session.php");
 /**
- * @Global $srcdir openemr src folder, setup during verify_session.php
+ * @Global $srcdir DCL src folder, setup during verify_session.php
  */
 require_once("{$globalsBag->getString('srcdir')}/documents.php");
 require_once($globalsBag->getString('fileroot') . "/controllers/C_Document.class.php");

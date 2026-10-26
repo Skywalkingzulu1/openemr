@@ -1,31 +1,31 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\OAuth;
+namespace DCL\Tests\Acceptance\OAuth;
 
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\JsonBody;
-use OpenEMR\Tests\Acceptance\Support\ResponseHeaders;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\JsonBody;
+use DCL\Tests\Acceptance\Support\ResponseHeaders;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
 /**
  * OAuth2 API-disabled gate smoke test.
  *
- * Openemr's `OAuth2AuthorizationListener` gates every `/oauth2/*`
+ * DCL's `OAuth2AuthorizationListener` gates every `/oauth2/*`
  * request behind "at least one of `rest_api`, `rest_fhir_api`, or
  * `rest_portal_api` must be enabled" — see
  * src/RestControllers/Subscriber/OAuth2AuthorizationListener.php.
- * The default openemr install ships with all three globals set to
+ * The default DCL install ships with all three globals set to
  * `0` (defense-in-depth: API off unless admins explicitly opt in via
  * the UI), so this is the state every fresh production docker image
  * and tarball install starts in.
@@ -70,7 +70,7 @@ final class OAuth2SmokeTest extends TestCase
         // hits before any auth handshake. If the API-disabled gate is
         // accidentally removed here, the entire OAuth2 surface (auth,
         // token, DCR, jwks) becomes reachable by anonymous callers on
-        // any freshly-installed openemr artifact.
+        // any freshly-installed DCL artifact.
         $browser = ArtifactBrowser::create();
         $browser->request(
             'GET',
@@ -132,7 +132,7 @@ final class OAuth2SmokeTest extends TestCase
                 'redirect_uris' => ['https://acceptance-harness.example/callback'],
                 'client_name' => 'AcceptanceHarnessApiDisabledGateProbe',
                 'token_endpoint_auth_method' => 'client_secret_post',
-                'contacts' => ['acceptance-harness@openemr.example'],
+                'contacts' => ['acceptance-harness@DCL.example'],
                 'scope' => 'openid fhirUser',
             ], JSON_THROW_ON_ERROR),
         );
@@ -141,7 +141,7 @@ final class OAuth2SmokeTest extends TestCase
         self::assertSame(
             404,
             $response->getStatusCode(),
-            'DCR must be 404 on a default (API-disabled) install — a 200/201 response means anonymous callers can now mint client credentials against a fresh openemr',
+            'DCR must be 404 on a default (API-disabled) install — a 200/201 response means anonymous callers can now mint client credentials against a fresh DCL',
         );
 
         self::assertStringStartsWith(

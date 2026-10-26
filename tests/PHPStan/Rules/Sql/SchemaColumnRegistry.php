@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Schema-derived identifier set for OpenEMR's column-collision check.
+ * Schema-derived identifier set for DCL's column-collision check.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPStan\Rules\Sql;
+namespace DCL\PHPStan\Rules\Sql;
 
 use PhpMyAdmin\SqlParser\Parser;
 use PhpMyAdmin\SqlParser\Statements\CreateStatement;
@@ -20,7 +20,7 @@ use RuntimeException;
 
 /**
  * Set of backtick-quoted identifiers (table + column + index names) defined
- * in OpenEMR's canonical schema file.
+ * in DCL's canonical schema file.
  *
  * Used by SqlReservedWordRule to suppress false positives: a token only fires
  * the rule if it's both a reserved word AND a known schema identifier.
@@ -41,7 +41,7 @@ final readonly class SchemaColumnRegistry
 
     /**
      * @param string|null $schemaPath Absolute path to sql/database.sql, or
-     *                                null to use OpenEMR's canonical schema.
+     *                                null to use DCL's canonical schema.
      *                                Tests pass a fixture path here.
      * @param string|null $cachePath Optional override for the cache file
      *                               path. When null and $cacheEnabled is

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaimResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -71,25 +71,25 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * A number to uniquely reference the claim item entries.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $itemSequence = null;
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $noteNumber = [];
 
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public $adjudication = [];
 
     /**
      * A claim detail. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseDetail[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseDetail[]
      */
     public $detail = [];
 
@@ -100,7 +100,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A number to uniquely reference the claim item entries.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getItemSequence()
     {
@@ -109,7 +109,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A number to uniquely reference the claim item entries.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $itemSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $itemSequence
      * @return $this
      */
     public function setItemSequence($itemSequence)
@@ -120,7 +120,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getNoteNumber()
     {
@@ -129,7 +129,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
      * @return $this
      */
     public function addNoteNumber($noteNumber)
@@ -140,7 +140,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public function getAdjudication()
     {
@@ -149,7 +149,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
      * @return $this
      */
     public function addAdjudication($adjudication)
@@ -160,7 +160,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A claim detail. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseDetail[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseDetail[]
      */
     public function getDetail()
     {
@@ -169,7 +169,7 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A claim detail. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseDetail $detail
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseDetail $detail
      * @return $this
      */
     public function addDetail($detail)

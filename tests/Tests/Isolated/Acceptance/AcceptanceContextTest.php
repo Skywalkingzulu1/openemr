@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Acceptance;
+namespace DCL\Tests\Isolated\Acceptance;
 
-use OpenEMR\Tests\Acceptance\Support\AcceptanceContext;
+use DCL\Tests\Acceptance\Support\AcceptanceContext;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
@@ -142,14 +142,14 @@ class AcceptanceContextTest extends TestCase
 
     public function testArtifactUrlStripsTrailingSlash(): void
     {
-        putenv('ACCEPTANCE_ARTIFACT_URL=https://openemr.example.com/');
-        self::assertSame('https://openemr.example.com', AcceptanceContext::artifactUrl());
+        putenv('ACCEPTANCE_ARTIFACT_URL=https://DCL.example.com/');
+        self::assertSame('https://DCL.example.com', AcceptanceContext::artifactUrl());
     }
 
     public function testArtifactUrlStripsMultipleTrailingSlashes(): void
     {
-        putenv('ACCEPTANCE_ARTIFACT_URL=https://openemr.example.com///');
-        self::assertSame('https://openemr.example.com', AcceptanceContext::artifactUrl());
+        putenv('ACCEPTANCE_ARTIFACT_URL=https://DCL.example.com///');
+        self::assertSame('https://DCL.example.com', AcceptanceContext::artifactUrl());
     }
 
     public function testArtifactUrlFallsBackToDefaultWhenTrimmedToEmpty(): void

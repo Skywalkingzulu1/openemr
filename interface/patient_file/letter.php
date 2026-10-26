@@ -3,23 +3,23 @@
 /**
  * letter.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2007-2011 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 
 // Set up crypto object
@@ -119,7 +119,7 @@ if (!empty($_POST['formaction']) && ($_POST['formaction'] == "generate")) {
 
     if (! fwrite($fh, $temp_bodytext)) {
         echo xlt('Error while saving to the file') . ' ' . text($template_dir) . "/autosaved" . ' . ' .
-             xlt('Ensure OpenEMR has write privileges to directory') . ' ' . text($template_dir)  . "/ ." ;
+             xlt('Ensure DCL has write privileges to directory') . ' ' . text($template_dir)  . "/ ." ;
         die;
     }
 

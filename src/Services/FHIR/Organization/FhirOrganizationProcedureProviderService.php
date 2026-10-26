@@ -2,33 +2,33 @@
 
 /**
  * FhirOrganizationProcedureProviderService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Organization;
+namespace DCL\Services\FHIR\Organization;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\INonPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\ProcedureProviderService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROrganization;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\INonPatientCompartmentResourceService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\ProcedureProviderService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class FhirOrganizationProcedureProviderService extends FhirServiceBase implements INonPatientCompartmentResourceService
 {
@@ -47,7 +47,7 @@ class FhirOrganizationProcedureProviderService extends FhirServiceBase implement
     }
 
     /**
-     * Returns an array mapping FHIR Organization Resource search parameters to OpenEMR Organization search parameters
+     * Returns an array mapping FHIR Organization Resource search parameters to DCL Organization search parameters
      *
      * @return array The search parameters
      */
@@ -66,29 +66,29 @@ class FhirOrganizationProcedureProviderService extends FhirServiceBase implement
     }
 
     /**
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (!isset($openEMRSearchParameters['name'])) {
+        if (!isset($DCLSearchParameters['name'])) {
             // make sure we only return records that have a name or an identifier, otherwise its invalid for FHIR
 
             $name = new TokenSearchField('name', [new TokenSearchValue(false)]);
             $name->setModifier(SearchModifier::MISSING);
-            $openEMRSearchParameters['name'] = $name;
+            $DCLSearchParameters['name'] = $name;
         }
-        return $this->service->search($openEMRSearchParameters);
+        return $this->service->search($DCLSearchParameters);
     }
 
     /**
-     * Parses an OpenEMR organization record, returning the equivalent FHIR Organization Resource
+     * Parses an DCL organization record, returning the equivalent FHIR Organization Resource
      *
-     * @param  array   $dataRecord The source OpenEMR data record
+     * @param  array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIROrganization
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $organizationResource = new FHIROrganization();
 

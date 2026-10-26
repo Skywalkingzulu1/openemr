@@ -7,20 +7,20 @@
  * {@see self::getFilePath()} and claim the event by calling {@see self::setHandled()}. Claiming an
  * event stops propagation, so at most one listener imports any given upload.
  *
- * OpenEMR core registers its own importers at {@see self::PRIORITY_CORE_FALLBACK}; see that
+ * DCL core registers its own importers at {@see self::PRIORITY_CORE_FALLBACK}; see that
  * constant for how a module overrides a code type core also supports.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (C) 2026 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Events\Codes;
+namespace DCL\Events\Codes;
 
 use InvalidArgumentException;
 use Symfony\Contracts\EventDispatcher\Event;
@@ -33,7 +33,7 @@ class CodeImportEvent extends Event
     public const MESSAGE_TYPE_ERROR = 'error';
 
     /**
-     * Priority at which OpenEMR core registers its own code type importers.
+     * Priority at which DCL core registers its own code type importers.
      *
      * Symfony sorts listeners in descending priority order, so any listener registered above this
      * value -- the default priority of 0 is enough -- runs first and may claim the import by

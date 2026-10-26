@@ -1,12 +1,12 @@
 <?php
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Services;
+namespace Comlink\DCL\Modules\TeleHealthModule\Services;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Exception\TelehealthProvisioningServiceRequestException;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthUser;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Util\TelehealthAuthUtils;
+use Comlink\DCL\Modules\TeleHealthModule\Exception\TelehealthProvisioningServiceRequestException;
+use Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthUser;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use Comlink\DCL\Modules\TeleHealthModule\Util\TelehealthAuthUtils;
 use GuzzleHttp\Client;
 use Psr\Log\LoggerInterface;
 

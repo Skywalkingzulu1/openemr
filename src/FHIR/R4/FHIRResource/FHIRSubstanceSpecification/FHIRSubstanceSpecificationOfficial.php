@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,19 +71,19 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement implements 
 {
     /**
      * Which authority uses this official name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $authority = null;
 
     /**
      * The status of the official name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * Date of official name change.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
@@ -94,7 +94,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement implements 
 
     /**
      * Which authority uses this official name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAuthority()
     {
@@ -103,7 +103,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement implements 
 
     /**
      * Which authority uses this official name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $authority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $authority
      * @return $this
      */
     public function setAuthority($authority)
@@ -114,7 +114,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement implements 
 
     /**
      * The status of the official name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -123,7 +123,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement implements 
 
     /**
      * The status of the official name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -134,7 +134,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement implements 
 
     /**
      * Date of official name change.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceSpecificationOfficial extends FHIRBackboneElement implements 
 
     /**
      * Date of official name change.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)

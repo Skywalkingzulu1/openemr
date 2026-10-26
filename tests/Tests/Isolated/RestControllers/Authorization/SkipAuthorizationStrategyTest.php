@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\Authorization\SkipAuthorizationStrategy;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\Authorization\SkipAuthorizationStrategy;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -159,7 +159,7 @@ class SkipAuthorizationStrategyTest extends TestCase
         $session->set("authUserId", $userId);
         $request->setSession($session);
         $skipAuthorizationStrategy = new SkipAuthorizationStrategy();
-        $mockUserService = $this->createMock(\OpenEMR\Services\UserService::class);
+        $mockUserService = $this->createMock(\DCL\Services\UserService::class);
         $userUuid = '123e4567-e89b-12d3-a456-426614174000';
         $mockUserService->expects($this->once())
             ->method('getUser')

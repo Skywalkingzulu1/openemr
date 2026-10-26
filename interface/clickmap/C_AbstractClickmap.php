@@ -17,8 +17,8 @@
  * to lock the path to this script (so if called from different scripts) use the dirname(FILE) variable
 */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 require_once(__DIR__ . '/../globals.php');
 

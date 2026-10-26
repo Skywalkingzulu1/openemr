@@ -4,22 +4,22 @@
  * IFhirExportableResourceService defines the methods a Fhir Resource Service must implement in order to be able to
  * export data for the system.  If a Fhir Resource Service is in the correct namespace and implements this service it
  * will be picked up the by export service locator.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\Export\ExportCannotEncodeException;
-use OpenEMR\FHIR\Export\ExportException;
-use OpenEMR\FHIR\Export\ExportJob;
-use OpenEMR\FHIR\Export\ExportStreamWriter;
-use OpenEMR\FHIR\Export\ExportWillShutdownException;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
+use DCL\FHIR\Export\ExportCannotEncodeException;
+use DCL\FHIR\Export\ExportException;
+use DCL\FHIR\Export\ExportJob;
+use DCL\FHIR\Export\ExportStreamWriter;
+use DCL\FHIR\Export\ExportWillShutdownException;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
 
 interface IFhirExportableResourceService
 {

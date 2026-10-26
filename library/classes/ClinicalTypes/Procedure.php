@@ -4,7 +4,7 @@
  * Copyright (C) 2016 Visolve <services@visolve.com>
  *
  *
- * @package OpenEMR - MU2
+ * @package DCL - MU2
  * @author  ViSolve Inc <services@visolve.com>
  * @link    http://www.visolve.com
  */

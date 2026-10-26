@@ -5,21 +5,21 @@
  * through PhysicalExamService): one deleted in the Observation form, or whose Observation form was
  * deleted from the visit, is left out; an import's, with no form, is kept.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Qdm;
+namespace DCL\Tests\Services\Qdm;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\Qdm\QdmRequestOne;
-use OpenEMR\Services\Qdm\Services\PhysicalExamService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\CodeTypesService;
+use DCL\Services\Qdm\QdmRequestOne;
+use DCL\Services\Qdm\Services\PhysicalExamService;
 use PHPUnit\Framework\TestCase;
 
 class PhysicalExamServiceDatabaseTest extends TestCase

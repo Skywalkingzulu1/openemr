@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Tests\Rector\Fixture;
+namespace DCL\Tests\Rector\Fixture;
 
 use Doctrine\DBAL\Exception\DriverException as Exception;
 

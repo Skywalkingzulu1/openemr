@@ -11994,7 +11994,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access an offset on mixed\\.$#',
     'count' => 4,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'account\' on mixed\\.$#',
@@ -12694,7 +12694,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access an offset on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'email\' on mixed\\.$#',
@@ -15602,7 +15602,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'city\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'city\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -15667,7 +15667,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'country\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'country\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -15777,7 +15777,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'line1\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'line1\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -15787,7 +15787,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'line2\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'line2\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -15832,12 +15832,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'period_end\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'period_end\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'period_start\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'period_start\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -15942,7 +15942,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'state\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'state\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -16002,7 +16002,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'use\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'use\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -16052,7 +16052,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'zip\' on OpenEMR\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
+    'message' => '#^Cannot access offset \'zip\' on DCL\\\\Common\\\\ORDataObject\\\\ContactAddress\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php',
 ];
@@ -36064,47 +36064,47 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'_extension\' on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFHIRDateTime.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFHIRDateTime.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'value\' on mixed\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFHIRDateTime.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFHIRDateTime.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'_questionnaire\' on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'answer\' on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'author\' on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'extension\' on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'item\' on mixed\\.$#',
     'count' => 3,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'reference\' on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access offset \'subject\' on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access an offset on mixed\\.$#',
@@ -40932,12 +40932,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirCoverageService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'_count\'\\|\'_offset\'\\|\'_sort\' on array\\{\\}\\|array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|OpenEMR\\\\Services\\\\Search\\\\ISearchField\\.$#',
+    'message' => '#^Cannot access offset \'_count\'\\|\'_offset\'\\|\'_sort\' on array\\{\\}\\|array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|DCL\\\\Services\\\\Search\\\\ISearchField\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirDocRefService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'_sort\' on non\\-empty\\-array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|OpenEMR\\\\Services\\\\Search\\\\ISearchField\\.$#',
+    'message' => '#^Cannot access offset \'_sort\' on non\\-empty\\-array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|DCL\\\\Services\\\\Search\\\\ISearchField\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirDocRefService.php',
 ];
@@ -41187,12 +41187,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirRelatedPersonService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'_count\'\\|\'_offset\'\\|\'_sort\' on array\\{\\}\\|array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|OpenEMR\\\\Services\\\\Search\\\\ISearchField\\.$#',
+    'message' => '#^Cannot access offset \'_count\'\\|\'_offset\'\\|\'_sort\' on array\\{\\}\\|array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|DCL\\\\Services\\\\Search\\\\ISearchField\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirServiceBase.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'_sort\' on non\\-empty\\-array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|OpenEMR\\\\Services\\\\Search\\\\ISearchField\\.$#',
+    'message' => '#^Cannot access offset \'_sort\' on non\\-empty\\-array\\{_count\\?\\: mixed, _offset\\?\\: mixed, _sort\\?\\: mixed\\}\\|DCL\\\\Services\\\\Search\\\\ISearchField\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirServiceBase.php',
 ];
@@ -41982,7 +41982,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/Organization/FhirOrganizationFacilityService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'identifier\' on OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIROrganization\\.$#',
+    'message' => '#^Cannot access offset \'identifier\' on DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIROrganization\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Organization/FhirOrganizationInsuranceService.php',
 ];
@@ -46002,7 +46002,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirPatientServiceMappingTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'div\' on OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRNarrative\\.$#',
+    'message' => '#^Cannot access offset \'div\' on DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRNarrative\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirPatientServiceMappingTest.php',
 ];
@@ -46067,7 +46067,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirPatientServiceMappingTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access offset \'status\' on OpenEMR\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRNarrative\\.$#',
+    'message' => '#^Cannot access offset \'status\' on DCL\\\\FHIR\\\\R4\\\\FHIRElement\\\\FHIRNarrative\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirPatientServiceMappingTest.php',
 ];

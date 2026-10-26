@@ -4,23 +4,23 @@
  * PasswordVerifyTest.
  *
  * Test to ensure works with following hashes
- *   - pre OpenEMR 5.0.0 $2a$05 hashes (removed these tests on 3/9/23 since no longer work in modern operating systems)
- *   - at and post OpenEMR 5.0.0 $2a$05 hashes
- *   - standard OpenEMR PASSWORD_BCRYPT hashes (at and post OpenEMR 6.0.0)
- *   - standard OpenEMR PASSWORD_ARGON2I hashes (at and post OpenEMR 6.0.0)
- *   - standard OpenEMR PASSWORD_ARGON2ID hashes (at and post OpenEMR 6.0.0)
- *   - standard OpenEMR CRYPT_SHA512 hashes (at and post OpenEMR 6.0.0)
+ *   - pre DCL 5.0.0 $2a$05 hashes (removed these tests on 3/9/23 since no longer work in modern operating systems)
+ *   - at and post DCL 5.0.0 $2a$05 hashes
+ *   - standard DCL PASSWORD_BCRYPT hashes (at and post DCL 6.0.0)
+ *   - standard DCL PASSWORD_ARGON2I hashes (at and post DCL 6.0.0)
+ *   - standard DCL PASSWORD_ARGON2ID hashes (at and post DCL 6.0.0)
+ *   - standard DCL CRYPT_SHA512 hashes (at and post DCL 6.0.0)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Common\Auth;
+namespace DCL\Tests\Isolated\Common\Auth;
 
-use OpenEMR\Common\Auth\AuthHash;
+use DCL\Common\Auth\AuthHash;
 use PHPUnit\Framework\TestCase;
 
 class PasswordVerifyTest extends TestCase
@@ -61,9 +61,9 @@ class PasswordVerifyTest extends TestCase
         $this->assertTrue($result === $expected);
     }
 
-    // Legacy are hashes created at and after OpenEMR 5.0.0 (and prior to 6.0.0)
-    //  (note that 'Old Legacy' hashes prior to OpenEMR 5.0.0 do not work in modern
-    //   OpenEMR versions)
+    // Legacy are hashes created at and after DCL 5.0.0 (and prior to 6.0.0)
+    //  (note that 'Old Legacy' hashes prior to DCL 5.0.0 do not work in modern
+    //   DCL versions)
     public function testLegacyBcryptCorrectPasswordOne(): void
     {
         $pass = 'pass';
@@ -118,7 +118,7 @@ class PasswordVerifyTest extends TestCase
         $this->assertTrue($result === $expected);
     }
 
-    // Standard are hashes created at and after OpenEMR 6.0.0
+    // Standard are hashes created at and after DCL 6.0.0
     public function testStandardBcryptCorrectPasswordOne(): void
     {
         $pass = 'pass';

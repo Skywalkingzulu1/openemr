@@ -5,23 +5,23 @@
  * simulate the user's checkbox post, resolve, and verify every granted scope passes the
  * grant check against the request.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers\SMART;
+namespace DCL\Tests\Isolated\RestControllers\SMART;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\RestControllers\SMART\ScopeConsentResolver;
-use OpenEMR\RestControllers\SMART\ScopePermissionParser;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\RestControllers\SMART\ScopeConsentResolver;
+use DCL\RestControllers\SMART\ScopePermissionParser;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

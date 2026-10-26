@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBundle;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A container for a collection of resources.
@@ -71,37 +71,37 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHTTPVerb
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHTTPVerb
      */
     public $method = null;
 
     /**
      * The URL for this entry, relative to the root (the address to which the request is posted).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * If the ETag values match, return a 304 Not Modified status. See the API documentation for ["Conditional Read"](http.html#cread).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $ifNoneMatch = null;
 
     /**
      * Only perform the operation if the last updated date matches. See the API documentation for ["Conditional Read"](http.html#cread).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $ifModifiedSince = null;
 
     /**
      * Only perform the operation if the Etag value matches. For more information, see the API section ["Managing Resource Contention"](http.html#concurrency).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $ifMatch = null;
 
     /**
      * Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for ["Conditional Create"](http.html#ccreate). This is just the query portion of the URL - what follows the "?" (not including the "?").
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $ifNoneExist = null;
 
@@ -112,7 +112,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHTTPVerb
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHTTPVerb
      */
     public function getMethod()
     {
@@ -121,7 +121,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * In a transaction or batch, this is the HTTP action to be executed for this entry. In a history bundle, this indicates the HTTP action that occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHTTPVerb $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHTTPVerb $method
      * @return $this
      */
     public function setMethod($method)
@@ -132,7 +132,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The URL for this entry, relative to the root (the address to which the request is posted).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -141,7 +141,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The URL for this entry, relative to the root (the address to which the request is posted).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -152,7 +152,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If the ETag values match, return a 304 Not Modified status. See the API documentation for ["Conditional Read"](http.html#cread).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getIfNoneMatch()
     {
@@ -161,7 +161,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * If the ETag values match, return a 304 Not Modified status. See the API documentation for ["Conditional Read"](http.html#cread).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $ifNoneMatch
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $ifNoneMatch
      * @return $this
      */
     public function setIfNoneMatch($ifNoneMatch)
@@ -172,7 +172,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Only perform the operation if the last updated date matches. See the API documentation for ["Conditional Read"](http.html#cread).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getIfModifiedSince()
     {
@@ -181,7 +181,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Only perform the operation if the last updated date matches. See the API documentation for ["Conditional Read"](http.html#cread).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $ifModifiedSince
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $ifModifiedSince
      * @return $this
      */
     public function setIfModifiedSince($ifModifiedSince)
@@ -192,7 +192,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Only perform the operation if the Etag value matches. For more information, see the API section ["Managing Resource Contention"](http.html#concurrency).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getIfMatch()
     {
@@ -201,7 +201,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Only perform the operation if the Etag value matches. For more information, see the API section ["Managing Resource Contention"](http.html#concurrency).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $ifMatch
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $ifMatch
      * @return $this
      */
     public function setIfMatch($ifMatch)
@@ -212,7 +212,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for ["Conditional Create"](http.html#ccreate). This is just the query portion of the URL - what follows the "?" (not including the "?").
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getIfNoneExist()
     {
@@ -221,7 +221,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for ["Conditional Create"](http.html#ccreate). This is just the query portion of the URL - what follows the "?" (not including the "?").
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $ifNoneExist
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $ifNoneExist
      * @return $this
      */
     public function setIfNoneExist($ifNoneExist)

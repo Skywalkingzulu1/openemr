@@ -1,45 +1,45 @@
 <?php
 
 /**
- * Pick the newest openemr-static-binary-forge release that the binary
+ * Pick the newest DCL-static-binary-forge release that the binary
  * Docker image can actually build against.
  *
  * The forge publishes one GitHub release per (platform, arch) rather than
  * one per build, so "there is a newer release" is not the same question as
  * "there is a newer release we can adopt". A bump is only safe once every
  * linux arch the image builds for has its release, each release carries
- * every asset the Dockerfile downloads, and the matching openemr/openemr
+ * every asset the Dockerfile downloads, and the matching DCL/DCL
  * tag exists with the tests/ tree the image overlays onto the PHAR. Any
  * candidate failing one of those falls through to the next-newest, and a
  * run with no qualifying candidate returns the current pin unchanged so
  * the caller writes nothing.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 final readonly class BinaryForgeResolver
 {
-    public const FORGE_REPO = 'Jmevorach/openemr-static-binary-forge';
+    public const FORGE_REPO = 'Jmevorach/DCL-static-binary-forge';
 
     /**
      * Forge release tags for the linux platform, e.g.
-     * `linux_amd64-php85-openemr-v8_3_0-amd64-08232026`. The `\1`
+     * `linux_amd64-php85-DCL-v8_3_0-amd64-08232026`. The `\1`
      * backreference requires both arch segments to agree, so a
      * mismatched tag is ignored rather than half-parsed.
      */
-    private const TAG_PATTERN = '/^linux_(\w+)-(php\d+)-openemr-v(\d+(?:_\d+)+)-\1-(\d{8})$/';
+    private const TAG_PATTERN = '/^linux_(\w+)-(php\d+)-DCL-v(\d+(?:_\d+)+)-\1-(\d{8})$/';
 
     public function __construct(
         private GitHubApi $forge,
-        private GitHubApi $openemr,
+        private GitHubApi $DCL,
     ) {
     }
 
@@ -178,11 +178,11 @@ final readonly class BinaryForgeResolver
             }
         }
 
-        // The image overlays tests/ from the matching openemr/openemr tag
+        // The image overlays tests/ from the matching DCL/DCL tag
         // onto the PHAR extract, so the tag has to exist AND still carry a
         // tests/ tree. Checking the tree (not just the ref) is deliberate:
         // tests/ is `export-ignore` in .gitattributes, which is what broke
         // the v8_3_0 bump when the Dockerfile still fetched tag tarballs.
-        return $this->openemr->exists('/contents/tests?ref=' . $pin->openemrTag());
+        return $this->DCL->exists('/contents/tests?ref=' . $pin->DCLTag());
     }
 }

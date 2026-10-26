@@ -3,17 +3,17 @@
 /**
  * lab_results_messages.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2010 OpenEMR Support LLC
+ * @copyright Copyright (c) 2010 DCL Support LLC
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('include_root') . "/globals.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getString('include_root') . "/globals.php");
 
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AclMain;
 
 
 function lab_results_messages($set_pid, $rid, $provider_id = ""): void

@@ -4,25 +4,25 @@
  * Sets the visit's appointment to the status the fee sheet offered after Save
  * (global fee_sheet_save_appt_status). Answers JSON.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\Billing\FeeSheetAppointmentStatusPrompt;
-use OpenEMR\Billing\FeeSheetAppointmentStatusSetter;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\AppointmentService;
+use DCL\Billing\FeeSheetAppointmentStatusPrompt;
+use DCL\Billing\FeeSheetAppointmentStatusSetter;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\AppointmentService;
 
 header('Content-Type: application/json');
 

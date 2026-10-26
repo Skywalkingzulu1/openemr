@@ -9,7 +9,7 @@
  *      Consider setting this service to run every 5 minutes in background_services:
  *          e.g. every 5 minutes ==> active=1, execute_interval=5
  *
- *      While anyone is logged into your OpenEMR instance, this will run.
+ *      While anyone is logged into your DCL instance, this will run.
  *      Consider adding a cronjob to run this file also, so messaging for upcoming events
  *      will run even if no one is logged in, e.g. the office is closed/vacation etc.
  *
@@ -19,16 +19,16 @@
  *          php bin/console background:services crontab
  *      You can append " >> /tmp/medex.log " to output success/failure to a log file.
  *
- * @package   OpenEMR
+ * @package   DCL
  * @subpackage MedEx
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @link      https://www.MedExBank.com
  * @author    MedEx <support@MedExBank.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2017 MedEx <support@MedExBank.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $ignoreAuth = true;

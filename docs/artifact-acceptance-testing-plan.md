@@ -1,7 +1,7 @@
 # Artifact acceptance testing
 
 Architectural rationale, phase-by-phase design record, and running debt
-list for OpenEMR's black-box acceptance test surface that validates the
+list for DCL's black-box acceptance test surface that validates the
 shipped production artifacts (Docker image + release tarball) end-to-end,
 without requiring test infrastructure inside the artifacts themselves.
 
@@ -9,7 +9,7 @@ Companion to [`release-mechanism-migration-from-devops.md`](release-mechanism-mi
 (release-mechanism consolidation, completed 2026-07-23) and
 [`docker-migration-from-devops.md`](docker-migration-from-devops.md)
 (docker-pipeline consolidation, completed 2026-06-20). Sits alongside those
-as one of the three major structural changes to how OpenEMR ships.
+as one of the three major structural changes to how DCL ships.
 
 **Doc scope.** This is the design record — the *why* behind the current
 acceptance surface. Every Phase N section documents one shipped chunk of
@@ -36,12 +36,12 @@ phase that owns the affected area.
 ## Goal
 
 Add a black-box test surface that validates the two production artifacts
-OpenEMR ships to end users:
+DCL ships to end users:
 
-- **Docker image** (`openemr/openemr:X.Y.Z` on Docker Hub, built by
+- **Docker image** (`DCL/DCL:X.Y.Z` on Docker Hub, built by
   [`.github/workflows/docker-build-release.yml`](../.github/workflows/docker-build-release.yml)
   from [`docker/release/Dockerfile`](../docker/release/Dockerfile))
-- **Release tarball / zip** (`openemr-X.Y.Z.tar.gz` on the GitHub release
+- **Release tarball / zip** (`DCL-X.Y.Z.tar.gz` on the GitHub release
   page, built by the release toolchain's `PackageAssembler`)
 
 Tests are **external to the artifact**. They boot it (docker run / extract
@@ -85,7 +85,7 @@ different file sets. SBOM, provenance, and audit reviews see divergence.
 `docker-test-core.yml` → `test-actions-core` invokes PHPUnit *inside* the
 built container against `tests/` and `phpunit.xml`. If we align the Docker
 image to the tarball (strip export-ignored paths), PHPUnit inside the
-container has nothing to run. Openemr/openemr#12790 demonstrated this
+container has nothing to run. DCL/DCL#12790 demonstrated this
 exact failure mode — the coverage-instrumented (`kcov`) path failed with
 PHPUnit's `--help` output because it couldn't find its config or tests.
 
@@ -102,23 +102,23 @@ Today's test surfaces:
 | `tests/Tests/Isolated/**` | dev-stack container | Source tree | Pure PHP logic, no DB |
 | `tests/Tests/Api/**`, `E2e/**`, `Services/**`, `Unit/**` | dev-stack container | Source tree | Full DB, browser, HTTP |
 | `docker-test-release.yml` → `docker-test-core.yml` → `test-actions-core` | GitHub runner (prod profile) | Built Docker image | Boot + install + web-response smoke |
-| `docker-test-core.yml` (kcov profile, `production_coverage_openemr_version: release`) | GitHub runner | Built Docker image with `tests/` inside | PHPUnit test suite inside container, kcov coverage collected |
+| `docker-test-core.yml` (kcov profile, `production_coverage_DCL_version: release`) | GitHub runner | Built Docker image with `tests/` inside | PHPUnit test suite inside container, kcov coverage collected |
 | `test-all.yml` (matrix of ci/apache_*_*) | GitHub runner | ci/*/docker-compose.yml test rigs (not the shipped Docker image) | PHP × webserver × DB matrix |
 | `test-all.yml` `_upgrade` variants | GitHub runner | ci/*_upgrade/docker-compose.yml (flex/dev image + seeded 5.0.0 SQL) | SQL-schema upgrade from ancient version |
 
 Gaps:
 
 - **No test validates the release tarball at all.** Nothing extracts
-  `openemr-X.Y.Z.tar.gz`, boots it, and confirms it installs cleanly.
+  `DCL-X.Y.Z.tar.gz`, boots it, and confirms it installs cleanly.
 - **No docker upgrade-path test** — no CI job boots a prior Docker Hub image,
   swaps to the new one, and confirms the auto-upgrade path works. (An
-  in-flight PR at openemr/openemr#12791 sketched the workflow scaffolding
+  in-flight PR at DCL/DCL#12791 sketched the workflow scaffolding
   but was parked in favor of this plan's more complete design.)
 - **Coverage instrumentation ties the Docker image to test infrastructure.**
   The `kcov` profile in `docker-test-core.yml` fires PHPUnit inside the
   built image, so `tests/` and `phpunit.xml` have to be present in the
   clone. This blocks the docker/tarball content parity that
-  openemr/openemr#12790 attempted.
+  DCL/DCL#12790 attempted.
 
 Effect at ship time: we ship two artifacts on faith that they'll install
 and upgrade correctly for end users, because no CI test exercises those
@@ -144,10 +144,10 @@ Two-layer testing:
 Each artifact has one acceptance workflow:
 
 - `.github/workflows/acceptance-docker.yml` — boots
-  `openemr/openemr:${TAG}` from Docker Hub (or from a local build for
+  `DCL/DCL:${TAG}` from Docker Hub (or from a local build for
   PR validation of Dockerfile changes)
 - `.github/workflows/acceptance-package.yml` — extracts
-  `openemr-${VERSION}.tar.gz` (or `.zip`) into a generic PHP+Apache+MySQL
+  `DCL-${VERSION}.tar.gz` (or `.zip`) into a generic PHP+Apache+MySQL
   stack
 
 Both workflows drive a shared test harness in `tests/Acceptance/` (or
@@ -159,7 +159,7 @@ Once acceptance tests exist and prove their value:
 
 - Retire or restructure `docker-test-core.yml`'s `kcov` profile
 - Land the Dockerfile `git clone` → `git archive` switch that
-  openemr/openemr#12790 explored — docker image content parity with the
+  DCL/DCL#12790 explored — docker image content parity with the
   tarball becomes achievable
 - Consider making acceptance tests required checks on release-prep PRs
   (replacing today's implicit reliance on docker-test-release for that
@@ -183,7 +183,7 @@ Deleted:
 
 ### `tests/Acceptance/`
 
-New PSR-4 namespace, `OpenEMR\Tests\Acceptance\`.
+New PSR-4 namespace, `DCL\Tests\Acceptance\`.
 
 **Historical sketch** — the Phase-1 aspirational directory shape below
 predates the phased shipping. Some names (`ArtifactClient`,
@@ -201,7 +201,7 @@ tests/Acceptance/
 │                                    # DB creds, admin creds
 ├── Support/
 │   ├── ArtifactClient.php           # HTTP client wrapping the artifact endpoint
-│   ├── ArtifactDatabase.php         # DB reader (raw PDO), not through OpenEMR abstractions
+│   ├── ArtifactDatabase.php         # DB reader (raw PDO), not through DCL abstractions
 │   ├── ArtifactBrowser.php          # Panther client pointed at artifact endpoint
 │   ├── DataSeed/                    # seed helpers (create patient, encounter, user)
 │   │   ├── PatientSeeder.php
@@ -216,8 +216,8 @@ tests/Acceptance/
 ```
 
 Composer wiring: `autoload-dev` PSR-4 entry mapping
-`OpenEMR\Tests\Acceptance\` to `tests/Acceptance/`. Existing
-`OpenEMR\Tests\` mapping to `tests/Tests/` unchanged.
+`DCL\Tests\Acceptance\` to `tests/Acceptance/`. Existing
+`DCL\Tests\` mapping to `tests/Tests/` unchanged.
 
 ### Workflows
 
@@ -287,13 +287,13 @@ inputs:
 steps:
   - checkout
   - install composer deps for acceptance harness on the runner
-  - download or build from-tarball, extract to /tmp/openemr-from
-  - boot generic stack (mariadb + php-apache) with mount pointing at /tmp/openemr-from
+  - download or build from-tarball, extract to /tmp/DCL-from
+  - boot generic stack (mariadb + php-apache) with mount pointing at /tmp/DCL-from
   - run acceptance harness --group=post-install
   - seed reference data
   - stop app container (keep DB + sites/ volume)
-  - download or build to-tarball, extract to /tmp/openemr-to
-  - swap mount to /tmp/openemr-to
+  - download or build to-tarball, extract to /tmp/DCL-to
+  - swap mount to /tmp/DCL-to
   - start app container, trigger sql_upgrade.php + any post-upgrade CLI needed
   - run acceptance harness --group=post-upgrade
 ```
@@ -313,13 +313,13 @@ Shared harness compose files under `.github/docker/`:
 - `.github/docker/acceptance-docker-compose.yml` — an override on top
   of `docker/production/docker-compose.yml` that:
   - Replaces the sha-pinned `image:` with an env-driven ref
-  - Relaxes the healthcheck for compatibility with older openemr images
+  - Relaxes the healthcheck for compatibility with older DCL images
     that predate `/meta/health/readyz`
   - Removes `restart: always` (workflow manages lifecycle)
 
 - `.github/docker/acceptance-package-compose.yml` — generic
-  PHP+Apache+MySQL stack that mounts an extracted openemr tarball into
-  `/var/www/localhost/htdocs/openemr`:
+  PHP+Apache+MySQL stack that mounts an extracted DCL tarball into
+  `/var/www/localhost/htdocs/DCL`:
   - MariaDB service (matching production-supported version)
   - php:${VER}-apache image with required extensions installed
   - Volume mounts driven by env vars
@@ -368,7 +368,7 @@ job that produces the `pr-built` image the matrix cells then load.
 
 | # | Trigger | Artifact source | Expected-version source | Matrix |
 |---|---------|-----------------|-------------------------|--------|
-| 1 | `schedule` (09:00 UTC daily) | Docker Hub `openemr/openemr:<from_tag>` (from) + `:next` (to); `from_tag` resolved per-row by `detect-mode`'s `resolve-from-tag` step via [`derive_from_version_sql_candidates`](../.github/scripts/lib/derive-from-version.sh) from the checkout's own `sql/*-to-*_upgrade.sql` filenames (rel-820 → `8.1.1`, rel-830 → `8.2.0`, rel-840 → `8.3.0`, master during active cycle → prior shipped) | OCI label `org.opencontainers.image.version` on the running image (X.Y.Z prefix); `version.php` fallback | Default (fresh-install-from + fresh-install-to + upgrade) |
+| 1 | `schedule` (09:00 UTC daily) | Docker Hub `DCL/DCL:<from_tag>` (from) + `:next` (to); `from_tag` resolved per-row by `detect-mode`'s `resolve-from-tag` step via [`derive_from_version_sql_candidates`](../.github/scripts/lib/derive-from-version.sh) from the checkout's own `sql/*-to-*_upgrade.sql` filenames (rel-820 → `8.1.1`, rel-830 → `8.2.0`, rel-840 → `8.3.0`, master during active cycle → prior shipped) | OCI label `org.opencontainers.image.version` on the running image (X.Y.Z prefix); `version.php` fallback | Default (fresh-install-from + fresh-install-to + upgrade) |
 | 2 | `push` (see paths + branch exclusions below) | Same as (1) unless `docker/release/**` diff triggers `build_locally=true` → `pr-built` image via `build-image` job | Same OCI-first path (OCI label may be empty on `pr-built` → `version.php` fallback fires) | Default → adds `build-image` when build_locally |
 | 3 | `pull_request` (same paths as push) | Same detection as (2) | Same | Same |
 | 4 | `workflow_dispatch` | Docker Hub OR `pr-built` per operator input; `from_tag` honors an explicit operator string, otherwise derives per (1) | Same OCI-first path | Default (operator picks tags) |
@@ -523,14 +523,14 @@ add the wiring in a targeted PR).
 ## What stays unchanged
 
 - `tests/Tests/` and its full existing structure
-- `docker/development-easy/` dev stack + all its openemr-cmd tooling
+- `docker/development-easy/` dev stack + all its DCL-cmd tooling
 - `test-all.yml` and its ci/apache_*_* matrix — these test the PHP
   application in a variety of runtimes, complementary to but distinct
   from acceptance
-- All existing source-level PHPUnit invocations (`openemr-cmd ut`,
-  `openemr-cmd at`, etc.)
+- All existing source-level PHPUnit invocations (`DCL-cmd ut`,
+  `DCL-cmd at`, etc.)
 - Contributor development flow — writing new PHPUnit tests still goes in
-  `tests/Tests/`, running still uses `openemr-cmd`
+  `tests/Tests/`, running still uses `DCL-cmd`
 - Existing docker builds and their tags
 
 ## Phased plan
@@ -555,7 +555,7 @@ insertions:
 ### Phase 1 — Planning + one representative test  *(SHIPPED 2026-07-24)*
 
 **STATUS: SHIPPED 2026-07-24** as
-[openemr/openemr#13149](https://github.com/openemr/openemr/pull/13149).
+[DCL/DCL#13149](https://github.com/DCL/DCL/pull/13149).
 Delivered:
 - Planning doc landed for community discussion (this doc, draft PR #12811)
 - `tests/Acceptance/Install/InstallTest.php` + `Support/ArtifactBrowser.php`
@@ -566,13 +566,13 @@ Delivered:
   login flow (form POST, no JS). Panther+Selenium deferred to Phase 4.
 
 Exit criterion met: `InstallTest` runs from a developer laptop against
-`openemr/openemr:latest`, verifies install completes + admin login works
+`DCL/DCL:latest`, verifies install completes + admin login works
 (302 → `interface/main/tabs/main.php?token_main=<hex>` + 200 on follow).
 
 ### Phase 2 — Docker acceptance workflow + upgrade coverage  *(SHIPPED 2026-07-24)*
 
 **STATUS: SHIPPED 2026-07-24** as
-[openemr/openemr#13159](https://github.com/openemr/openemr/pull/13159).
+[DCL/DCL#13159](https://github.com/DCL/DCL/pull/13159).
 Delivered:
 - `.github/workflows/acceptance-docker.yml` — 3-scenario parallel
   matrix (fail-fast disabled): `fresh-install-from` (default
@@ -601,7 +601,7 @@ Exit criterion met: workflow succeeds on `latest` → `next` upgrade
 Adds `build_locally: bool` workflow_dispatch input + auto-fire on
 any PR/push touching `docker/release/**` (detected via `git diff`).
 When enabled, a `build-image` job runs `docker build docker/release/`
-against the PR's Dockerfile and hands the resulting `openemr/openemr:pr-built`
+against the PR's Dockerfile and hands the resulting `DCL/DCL:pr-built`
 image to the acceptance matrix via a workflow artifact
 (`docker save | zstd | upload-artifact` → `download-artifact | zstd -d
 | docker load`, no registry needed).
@@ -622,7 +622,7 @@ Two invocation shapes fire from a single workflow run:
 
 **Known limitation (addressed by Phase 6, NOT Phase 5):** the
 current Dockerfile does `git clone
-https://github.com/openemr/openemr.git --branch ${OPENEMR_VERSION}`
+https://github.com/DCL/DCL.git --branch ${DCL_VERSION}`
 at build time (defaults to `master`), so the PR-built image reflects
 PR's Dockerfile applied to *master* source — NOT the PR's source.
 Full-fidelity artifact testing (PR Dockerfile + PR source) needs
@@ -661,9 +661,9 @@ upgrade path. Roughly 1 week.
 - Install choreography uses a standalone `install-helper.php` invoked
   via `docker compose exec` (not `/root/devtools dev-install` — that
   path depends on `/root/auto_configure.php` which the flex image's
-  `openemr.sh` removes at boot with `EMPTY=yes`).
+  `DCL.sh` removes at boot with `EMPTY=yes`).
 - Three guard layers on the helper: outside-webroot mount +
-  `PHP_SAPI !== 'cli'` + `OPENEMR_ENABLE_ACCEPTANCE_HELPER=1` env
+  `PHP_SAPI !== 'cli'` + `DCL_ENABLE_ACCEPTANCE_HELPER=1` env
   opt-in (matches `contrib/util/installScripts/InstallerAuto.php`).
 - `.github/docker/` added to dependabot; mariadb + flex images
   sha-pinned.
@@ -694,7 +694,7 @@ time). Also added a `detect-mode` job that resolves the flag
 identically to acceptance-docker.yml (dispatch input wins;
 otherwise diff the PR/push base against HEAD). When enabled, a
 `build-tarball` job runs `PackageAssembler` against the PR
-checkout, uploads `openemr-<to_version>.tar.gz` as a workflow
+checkout, uploads `DCL-<to_version>.tar.gz` as a workflow
 artifact (~200 MB via `actions/upload-artifact`, retention 1 day,
 node-version 24 to match `build-release.yml`'s canonical shape).
 
@@ -755,7 +755,7 @@ ${TO}/sites` had a latent perm-denied on OAuth key files
 (`sites/default/documents/certificates/oaprivate.key` / `oapublic.key`)
 created by the flex-image apache uid, unreadable to the host runner
 user. Was previously masked by the "identical from/to versions" bug
-that fired first. Fix runs `docker compose exec openemr chown -R ...`
+that fired first. Fix runs `docker compose exec DCL chown -R ...`
 inside the still-live from-container to rewrite ownership via the
 shared bind mount before the cp; bounded to `sites/` since ownership
 is discarded seconds later when compose recreates the container with
@@ -771,7 +771,7 @@ keeps the artifact filename aligned with what `boot-package.sh`'s
 `<version>` arg + scratch-dir naming expects downstream.
 
 **`TO_VERSION` (label) vs `EXPECTED_VERSION` (actual) split**
-(openemr/openemr#13753): downstream of the label-is-cosmetic
+(DCL/DCL#13753): downstream of the label-is-cosmetic
 principle above, the version-display / version-api acceptance
 groups compare the running artifact's self-reported version
 against `ACCEPTANCE_EXPECTED_VERSION`. That env var is populated
@@ -794,7 +794,7 @@ assertion to `TO_VERSION` — the pattern that #13635 originally
 shipped, and #13753 later corrected — made the acceptance groups
 un-passable on `build_locally=true`. Do not re-couple.
 
-**Follow-up fix (openemr/openemr#13786)**: #13761 covered the six
+**Follow-up fix (DCL/DCL#13786)**: #13761 covered the six
 workflow-level `ACCEPTANCE_EXPECTED_VERSION` sites (the PHPUnit
 version-display / version-api groups) but missed the two identical
 shell-level DB assertions in `boot-package.sh` and `upgrade-package.sh`,
@@ -812,7 +812,7 @@ build_locally=true` smoke test against master post-#13761 merge —
 that PR's own CI hadn't exercised the build_locally path because
 #13761 didn't touch `tools/release/**`.
 
-**Second follow-up (openemr/openemr#13790)** discovered by re-running
+**Second follow-up (DCL/DCL#13790)** discovered by re-running
 the same smoke test after #13786 landed: the About page displays
 `SoftwareVersion::__toString()` which returns
 `"{base}[{tag}][.{realpatch}]"`, so on master (with `$v_tag='-dev'`)
@@ -826,7 +826,7 @@ release-prep sets `$v_tag=''` + `$v_realpatch=0`, so the strip is a
 no-op there; the divergence only shows up on `build_locally=true`
 against a dev-tagged checkout.
 
-**Third follow-up (openemr/openemr#13791)** cleaned up a related
+**Third follow-up (DCL/DCL#13791)** cleaned up a related
 ergonomic bug in the same code path: the workflow's `to_version`
 `workflow_dispatch` input had been `required: true` with
 `default: '8.2.0'`. On a manual dispatch with `-f build_locally=true`
@@ -871,7 +871,7 @@ page) requires:
   'success'`. If acceptance fails, the tarball never publishes.
 
 Small follow-up scope. Could ship alongside Phase 7b's
-repository_dispatch listener for `openemr-tag` events (fires
+repository_dispatch listener for `DCL-tag` events (fires
 acceptance against a just-shipped floating-tag artifact within
 minutes of publish) — the two together give both pre-publish
 gating and post-publish latency-catching.
@@ -909,7 +909,7 @@ varies between local-built PR artifact and shipped tag.
 Testing surface for the tarball/zip artifact split by trigger:
 
   * **push / schedule** (default `build_locally=false`) — tests
-    already-released packages. Downloads `openemr-<from>.tar.gz`
+    already-released packages. Downloads `DCL-<from>.tar.gz`
     + `.zip` from the GitHub Release page. No PackageAssembler
     run.
   * **workflow_dispatch** — operator toggles `build_locally`.
@@ -946,7 +946,7 @@ dispatch — would additionally require a mechanism that keeps
 current static default drifts stale as new versions ship. Small
 follow-up scoping question, not a full phase.
 
-**`from_version` auto-derivation from checkout (openemr/openemr#13573,
+**`from_version` auto-derivation from checkout (DCL/DCL#13573,
 SHIPPED post-8.3.0).** Historically `FROM_VERSION` defaulted to a
 hardcoded `8.2.0` in the workflow. That works on master (currently
 8.4.0-dev — 8.2.0 is a valid predecessor in master's `sql_upgrade.php`
@@ -965,7 +965,7 @@ rel-820 sync PRs hit this consistently. Fix: derive `from_version` at detect-mod
    — the sql-filename pattern is the project-wide
    "shipped-predecessors" source; every entry is guaranteed to
    appear in the branch's `sql_upgrade.php` wizard dropdown.
-2. **Intersect** that candidate set with the website-openemr
+2. **Intersect** that candidate set with the website-DCL
    `data/releases.json` manifest (the authoritative "which
    versions have actually shipped tarballs on GitHub Releases"
    source of truth, filtered to `status: FINAL`).
@@ -977,7 +977,7 @@ Neither the sql set nor the manifest set alone is sufficient.
 sql-only would return a version scaffolded by patch-prep before
 it ships (e.g., `8_3_1-to-8_4_0_upgrade.sql` on master mid-8.3.1-
 prep would return 8.3.1, and boot-package.sh would 404 trying to
-download `openemr-8.3.1.tar.gz`). Manifest-only would return a
+download `DCL-8.3.1.tar.gz`). Manifest-only would return a
 released version that isn't in the current branch's dropdown
 (e.g., a rel-830 test with from=8.3.0 fails dropdown-membership).
 
@@ -995,8 +995,8 @@ context):**
 
 Phase 3 through Phase 7c-tarball built the full "test the shipped
 tarball, at PR time + release-time gate" story. But the shipped
-package artifact list is TWO files: `openemr-<version>.tar.gz`
-AND `openemr-<version>.zip`. Only the tarball flows through
+package artifact list is TWO files: `DCL-<version>.tar.gz`
+AND `DCL-<version>.zip`. Only the tarball flows through
 acceptance today; the ZIP ships tested only in the "same
 PackageAssembler produced both" sense (byte-similar content
 guarantee, not black-box behavior guarantee). Deferred-known-debt
@@ -1017,10 +1017,10 @@ theoretical:
     impact: `.sh` scripts in the extracted tree can't run.
   * Empty-directory handling — ZIP treats zero-file dirs as
     optional entries; PackageAssembler may skip them. Some
-    OpenEMR install paths expect specific empty dirs to exist.
+    DCL install paths expect specific empty dirs to exist.
   * Path-separator handling — ZIP uses `/` (like tar), but
     extractors on Windows can transform to `\`. Content-wise
-    fine, but if any OpenEMR runtime code does path-string
+    fine, but if any DCL runtime code does path-string
     comparison, could surface only on ZIP-extracted installs.
 
 Design mirrors the tarball path:
@@ -1097,7 +1097,7 @@ gate + DCR gate, both asserting 404 + `Content-Type: application/json`
 FhirSmokeTest (which proves FHIR discovery BYPASSES the auth gate
 via `SkipAuthorizationStrategy`) by proving OAuth2 does NOT bypass
 it. Original plan for this slice was successful DCR + authenticated
-`/api/version` — cut back after local repro on `openemr/openemr:latest`
+`/api/version` — cut back after local repro on `DCL/DCL:latest`
 showed OAuth2 endpoints are 404-gated on any default install.
 
 **4b — SHIPPED 2026-07-26 (#13196)**. `Support/BrowserSession`
@@ -1153,7 +1153,7 @@ docker skips wizards entirely via env-var auto-install. Depends on
   * **4a-3 (1/2) — SHIPPED 2026-07-26 (#13201)**. Panther admin-
     panel bootstrap for API-enable + `site_addr_oath` (via new
     `tests/Acceptance/bin/api-enable.php`, guarded by
-    `OPENEMR_ENABLE_API_BOOTSTRAP=1` opt-in + CLI-only guard) plus
+    `DCL_ENABLE_API_BOOTSTRAP=1` opt-in + CLI-only guard) plus
     `OAuth2ApiEnabledTest` with the successful-flow OIDC discovery
     + DCR assertions that were cut back from 4a-2. Workflow wired
     in both acceptance-docker and acceptance-package to run the
@@ -1189,10 +1189,10 @@ docker skips wizards entirely via env-var auto-install. Depends on
         helper drives that approval through a second HttpBrowser
         session (admin auth via `LoginFlow`, then GET
         `?action=edit/<id>/enable&csrf_token=<t>`) — cheaper than
-        replicating openemr's manual-approval rules on the harness
+        replicating DCL's manual-approval rules on the harness
         side, and unconditional so the flow keeps working if the
         rules change. Not covered by the source-side
-        `AuthorizationLogoutFullFlowTest` (openemr/openemr#13175)
+        `AuthorizationLogoutFullFlowTest` (DCL/DCL#13175)
         that this ports from, since that test seeds `is_enabled=1`
         directly in the DB.
 
@@ -1208,13 +1208,13 @@ Two prerequisites, both handled inside this slice:
 
      Alternative considered: install-time env-var override (add
      OE_ENABLE_API=1 handling to install-helper.php +
-     docker/production/openemr.sh, flip globals via post-install
+     docker/production/DCL.sh, flip globals via post-install
      SQL). Faster to land but changes the artifact-under-test's
      default configuration for the test run and doesn't exercise
      the real user-facing enable path. Rejected in favor of the
      Panther admin-panel approach for fidelity.
 
-  2. **`site_addr_oath` install-time configuration.** OpenEMR's
+  2. **`site_addr_oath` install-time configuration.** DCL's
      token endpoint stamps the `iss` claim from
      `globals.site_addr_oath`. The artifact detects its own base
      URL from `HTTP_HOST` at install time, but the acceptance
@@ -1222,7 +1222,7 @@ Two prerequisites, both handled inside this slice:
      alias vs mapped host port) — so minted tokens' `iss` doesn't
      match the acceptance URL. Fix: env-var override for
      `site_addr_oath` in `install-helper.php` +
-     `docker/production/openemr.sh` (or drive the same value
+     `docker/production/DCL.sh` (or drive the same value
      through Panther admin-panel automation alongside the API-enable
      flip — one-time setup, then all authenticated tests work).
 
@@ -1253,7 +1253,7 @@ Per-function slicing map (scoped 2026-07-29):
   | Function                | Class         | Effort | Notes |
   |-------------------------|---------------|--------|-------|
   | fresh_installation      | DUPLICATE     | 0      | Covered by `InstallTest`. Delete bash version after parity check. |
-  | manual_setup            | PORTABLE      | Small  | Net-new. `MANUAL_SETUP=yes` boot; assert `auto_configure.php` present + OpenEMR NOT configured. |
+  | manual_setup            | PORTABLE      | Small  | Net-new. `MANUAL_SETUP=yes` boot; assert `auto_configure.php` present + DCL NOT configured. |
   | ssl_configuration       | PORTABLE      | Medium | Net-new. HTTPS on :443 with self-signed cert; Panther health-check via HTTPS. |
   | redis_sessions          | PORTABLE      | Small  | Net-new. `REDIS_SERVER` env; assert 99-redis-sessions.ini + marker file. |
   | xdebug_configuration    | PORTABLE      | Small  | Net-new. `XDEBUG_ON=1`; `php -m` assert + opcache-disabled assert. Binary variant skipped upstream. |
@@ -1329,9 +1329,9 @@ Per-class slicing map (scoped 2026-07-29):
 
   | Class                                 | Effort | Notes |
   |---------------------------------------|--------|-------|
-  | AaLoginTest                           | Small  | **SHIPPED 2026-08-02 as #13336 (partial port — 2/5 scenarios).** Login-page-happy-path duplicated E2eCriticalPathTest; admin.php-disabled scenarios impossible against release image (openemr.sh deletes admin.php post-configure). Ported: testLoginUnauthorized + testurlWithoutTokenShouldRedirectToLoginPage. Support/ extract SHIPPED 2026-08-02 as #13344. Post-upgrade dual-tag SHIPPED 2026-08-02 as #13345. |
-  | GgUserMenuLinksTest                   | Small  | **SHIPPED 2026-08-02 as #13338 (full port — 5/5 scenarios).** All menuLinkProvider scenarios (Settings, Change Password, MFA Management, About OpenEMR, Logout). Absorbed release-image-specific gotcha: shipped image shows a Product Registration modal on first login that intercepts user-icon click; dismissed via jQuery `.modal('hide')` after waiting for Bootstrap's show-transition. Support/ extract SHIPPED 2026-08-02 as #13344. Post-upgrade dual-tag SHIPPED 2026-08-02 as #13345. |
-  | FrontPaymentCssContrastTest           | Small  | **SHIPPED 2026-08-02 as #13340 (full port — 1/1 scenario).** `testReceiptCssHasExplicitTextColor` — CSS-inspection assertion on `front_payment.php?receipt=1`, real signal for openemr#10842 (light/solar-theme text visibility). No login needed, no modal-dismiss needed. Support/ extract SHIPPED 2026-08-02 as #13344. Post-upgrade dual-tag SHIPPED 2026-08-02 as #13345. |
+  | AaLoginTest                           | Small  | **SHIPPED 2026-08-02 as #13336 (partial port — 2/5 scenarios).** Login-page-happy-path duplicated E2eCriticalPathTest; admin.php-disabled scenarios impossible against release image (DCL.sh deletes admin.php post-configure). Ported: testLoginUnauthorized + testurlWithoutTokenShouldRedirectToLoginPage. Support/ extract SHIPPED 2026-08-02 as #13344. Post-upgrade dual-tag SHIPPED 2026-08-02 as #13345. |
+  | GgUserMenuLinksTest                   | Small  | **SHIPPED 2026-08-02 as #13338 (full port — 5/5 scenarios).** All menuLinkProvider scenarios (Settings, Change Password, MFA Management, About DCL, Logout). Absorbed release-image-specific gotcha: shipped image shows a Product Registration modal on first login that intercepts user-icon click; dismissed via jQuery `.modal('hide')` after waiting for Bootstrap's show-transition. Support/ extract SHIPPED 2026-08-02 as #13344. Post-upgrade dual-tag SHIPPED 2026-08-02 as #13345. |
+  | FrontPaymentCssContrastTest           | Small  | **SHIPPED 2026-08-02 as #13340 (full port — 1/1 scenario).** `testReceiptCssHasExplicitTextColor` — CSS-inspection assertion on `front_payment.php?receipt=1`, real signal for DCL#10842 (light/solar-theme text visibility). No login needed, no modal-dismiss needed. Support/ extract SHIPPED 2026-08-02 as #13344. Post-upgrade dual-tag SHIPPED 2026-08-02 as #13345. |
   | KkEncounterFormNavbarUrlTest          | Small  | **SHIPPED 2026-08-02 as #13341 (full port — 1/1 scenario).** First 4e port requiring UI-driven seeding (patient + encounter). Menu XPaths calibrated live via Panther probe against booted stack — release-image uses `Patient` label (not `Patient/Client`) and `<div class="menuLabel">` (not `<a>`); dev-checkout blind-copy would silently break. Modal-dismiss included defensively. Support/ extract SHIPPED 2026-08-02 as #13344. **Post-upgrade dual-tag DEFERRED**: WebDriver `alertIsPresent()` timeout surfaced on rel-820 sync PR #13342's upgrade scenario pre-flight (line 412 inside `addEncounterViaUi`); dual-tag ships bundled with the flake root-cause fix. |
   | BbCreateStaffTest                     | Medium | UI-driven user creation. **SHIPPED 2026-08-04 as #13383.** Third 4f Medium port. New `addStaffUserViaUi()` helper on UiSeedingTrait (Admin → Users → Add User modal → fill `rumple`/`stiltskin`/`fname`/`lname`/`adminPass` via JS value-set → Save → wait modal-close → wait users-table row). Historically the flakiest test on core E2E; acceptance port uses JS value-set (fires input/change, NOT keyup) to side-step the `checkPasswordStrength` onkeyup handler + adds the source-side defensive gates (wait for submitform function defined, field-value verification loop). Per-instance random `foobar<suffix>` username (8-byte suffix per rabbit round-1 nit). Locally smoke-tested end-to-end against dev stack before push. Dual-tagged fresh-install + post-upgrade. |
   | CcCreatePatientTest                   | **SKIP** | **PERMANENTLY SKIPPED per user 2026-08-04.** Would be an attribution-only port with no new functional coverage: `addPatientViaUi` (Cc's underlying flow) is already exercised by KkEncounterFormNavbarUrlAcceptanceTest + DdOpenPatientAcceptanceTest as their setup on every acceptance CI run (8+ executions per PR cycle across all scenarios × arches × prongs). A patient-create regression would already surface via Kk/Dd failures. Standalone Cc port would add maintenance surface for a "clearer failure attribution" benefit that isn't a real pain point today. |
@@ -1425,7 +1425,7 @@ Post-upgrade DB-state assertion in `tests/Acceptance/bin/upgrade-package.sh`:
 after `sql_upgrade.php` completes, assert Clinicians hold exactly one
 `write` ACL carrying both `patients/med` and `patients/appt` — the
 merged union of a duplicate pair that had sat on every install since
-8.2.0's openemr/openemr#8087. Guarded by a `test -f
+8.2.0's DCL/DCL#8087. Guarded by a `test -f
 .../src/Common/Acl/DuplicateAclMerger.php` probe on the TO package,
 so targets predating the merger (any shipped tarball ≤ 8.4.1) skip
 cleanly without a false-negative. The assertion's in-script
@@ -1436,7 +1436,7 @@ check; follows the same "shell SQL + explicit `::error::` prefix +
 skip-when-feature-absent" shape. See `release-mechanism-gaps.md` G52
 for the underlying discovery (the 8.5.0 `acl_upgrade.php` ERROR line
 that was failing `wizard-upgrade` acceptance cells on every
-`tools/release/**` PR, e.g. openemr/openemr#14487).
+`tools/release/**` PR, e.g. DCL/DCL#14487).
 
 Original Phase 4 scope preserved below for reference:
 
@@ -1471,9 +1471,9 @@ Roughly 2 weeks.
 ### Phase 5 — Retire the tests-in-image dependency
 
 - Land the Dockerfile `git clone` → `git clone + git archive HEAD
-  | tar -x` change (equivalent to parked openemr/openemr#12790).
+  | tar -x` change (equivalent to parked DCL/DCL#12790).
   The clone stays — source is still fetched from GitHub via
-  `${OPENEMR_VERSION}` — but the cloned content is piped through
+  `${DCL_VERSION}` — but the cloned content is piped through
   `git archive HEAD` to honor `.gitattributes` `export-ignore`
   rules. Result: image content matches tarball content (strips
   `tests/`, `.github/`, `ci/`, `docker/`, `tools/`, most of
@@ -1486,19 +1486,19 @@ Roughly 2 weeks.
   provenance parity across the two artifacts).
 
 **What Phase 5 does NOT do:** it does not enable full-fidelity
-PR-image validation. `${OPENEMR_VERSION}` still drives the source
+PR-image validation. `${DCL_VERSION}` still drives the source
 fetch from GitHub — Phase 2.5's PR-built images still contain
 master source, not PR source. That's Phase 6's scope; the two
 changes are orthogonal.
 
 **Rel-branch invocation model (important context for both Phase 5
-and Phase 6):** the `ARG OPENEMR_VERSION=...` default in the
+and Phase 6):** the `ARG DCL_VERSION=...` default in the
 Dockerfile is fallback-only. The correct invocation path always
 goes through `docker-build-release.yml` (orchestrated from master's
 `docker-release-orchestrator.yml`), which reads
 `.github/release-targets.yml` as source of truth and passes
-`--build-arg OPENEMR_VERSION=<value>` — overriding the Dockerfile
-default per-branch. `DockerfileOpenemrVersionMutator` (which sets
+`--build-arg DCL_VERSION=<value>` — overriding the Dockerfile
+default per-branch. `DockerfileDCLVersionMutator` (which sets
 the ARG default to `rel-820` on branch cut) is cosmetic
 self-documentation for anyone running `docker build docker/release/`
 directly — an "if you invoke this the wrong way" safety net, not
@@ -1528,7 +1528,7 @@ Roughly 1 week.
 Closes the gap Phase 2.5 leaves open: today Phase 2.5's
 `build_locally=true` runs produce a PR-Dockerfile-plus-master-source
 hybrid, because the Dockerfile hardcodes `git clone
-https://github.com/openemr/openemr.git --branch "${OPENEMR_VERSION}"`.
+https://github.com/DCL/DCL.git --branch "${DCL_VERSION}"`.
 Phase 6 lets the docker build consume the PR's local checkout as
 source (matching what Phase 3.5 gives the tarball path via
 `PackageAssembler` — the tarball toolchain already builds from local
@@ -1537,7 +1537,7 @@ source with no source-vs-checkout decoupling to unwind).
 **Non-trivial constraint** — the release pipeline currently
 depends on the "checkout ref vs source ref are different"
 decoupling: `docker-release-orchestrator.yml` dispatches
-`docker-build-release.yml --ref rel-820 -f openemr_version_ref=v8_2_0`,
+`docker-build-release.yml --ref rel-820 -f DCL_version_ref=v8_2_0`,
 so the workflow file + Dockerfile come from `rel-820` but the
 source that goes INTO the image comes from `v8_2_0` (via
 `git clone --branch v8_2_0`). Any Phase 6 design MUST preserve
@@ -1550,44 +1550,44 @@ implementation time, no fundamental blockers on any of these):
 
 - **Option A — Source-mode build-arg with conditional stage selection**
   ```dockerfile
-  ARG OPENEMR_SOURCE_MODE=github   # or "context"
-  ARG OPENEMR_VERSION=master
-  FROM base AS openemr-source-github
-  RUN git clone https://github.com/openemr/openemr.git --branch "${OPENEMR_VERSION}" ...
-  FROM base AS openemr-source-context
-  COPY openemr-src/ /openemr/
-  FROM openemr-source-${OPENEMR_SOURCE_MODE} AS openemr-source
+  ARG DCL_SOURCE_MODE=github   # or "context"
+  ARG DCL_VERSION=master
+  FROM base AS DCL-source-github
+  RUN git clone https://github.com/DCL/DCL.git --branch "${DCL_VERSION}" ...
+  FROM base AS DCL-source-context
+  COPY DCL-src/ /DCL/
+  FROM DCL-source-${DCL_SOURCE_MODE} AS DCL-source
   ```
   Well-known BuildKit pattern (ARG-templated stage FROM). Release
   builds keep `github` default and existing workflow, so no ship-
   pipeline coordination change. Phase 2.5's build-image job passes
-  `context` + prepares an `openemr-src/` from the PR checkout
+  `context` + prepares an `DCL-src/` from the PR checkout
   (probably via `git archive HEAD | tar -x` locally).
 
 - **Option B — Named build contexts (BuildKit `--build-context`)**
   ```bash
   docker build \
-    --build-context openemr-source=/tmp/prepared-src \
+    --build-context DCL-source=/tmp/prepared-src \
     --file docker/release/Dockerfile \
     docker/release
   ```
   Dockerfile references the named context via
-  `COPY --from=openemr-source ...`. Workflow prepares
+  `COPY --from=DCL-source ...`. Workflow prepares
   `/tmp/prepared-src` from either `git clone` (release path) or PR
   checkout (Phase 2.5 build-image path). Semantically cleaner than
   Option A (separation between docker/release/ build context vs
-  openemr source context) but requires the ship pipeline to prepare
+  DCL source context) but requires the ship pipeline to prepare
   the source context too — coordination change with existing
   release-build workflow.
 
-- **Option C — Workflow pushes PR ref to openemr/openemr as temp branch**
+- **Option C — Workflow pushes PR ref to DCL/DCL as temp branch**
   ```bash
   git push origin HEAD:refs/heads/tmp-pr-<PR#>-<sha>
-  # docker build with OPENEMR_VERSION=tmp-pr-<PR#>-<sha>
+  # docker build with DCL_VERSION=tmp-pr-<PR#>-<sha>
   git push origin :refs/heads/tmp-pr-<PR#>-<sha>   # cleanup
   ```
   Zero Dockerfile change; zero release-pipeline coordination change.
-  BUT works only for internal branches on `openemr/openemr` — fork
+  BUT works only for internal branches on `DCL/DCL` — fork
   PRs (most contributor PRs) don't have push access to the parent
   repo. Would need to scope auto-fire to internal-only.
 
@@ -1605,11 +1605,11 @@ starts.
 - Existing release-build flow stays intact — new modes are opt-in
   per invocation (Options A + B)
 
-**Also needs**: `DockerfileOpenemrVersionMutator` (which bumps
-`ARG OPENEMR_VERSION=master` → `ARG OPENEMR_VERSION=rel-820` on
+**Also needs**: `DockerfileDCLVersionMutator` (which bumps
+`ARG DCL_VERSION=master` → `ARG DCL_VERSION=rel-820` on
 branch cut) keeps working as-is. Its purpose was already cosmetic
 self-documentation — the correct invocation path
-(`docker-build-release.yml` → `--build-arg OPENEMR_VERSION=<value
+(`docker-build-release.yml` → `--build-arg DCL_VERSION=<value
 from release-targets.yml>`) always overrides the Dockerfile
 default. Post-Phase-6 nothing changes about that — the mutator
 stays because the safety-net cosmetic value is real, and any new
@@ -1652,11 +1652,11 @@ finalize PR on master). Wire acceptance to fire on those PRs'
 push events, validating the artifacts the release will ship:
 
 - Docker path: **SHIPPED as Phase 7a-docker 2026-07-27
-  (openemr/openemr#13210).** `release-prep.yml` dispatches
+  (DCL/DCL#13210).** `release-prep.yml` dispatches
   acceptance-docker.yml alongside acceptance-package.yml after
   every peter-evans force-push. No changes to acceptance-docker
-  itself were needed — `DockerfileOpenemrVersionMutator` already
-  bakes `OPENEMR_VERSION=<rel-branch>` into the rel-branch's
+  itself were needed — `DockerfileDCLVersionMutator` already
+  bakes `DCL_VERSION=<rel-branch>` into the rel-branch's
   Dockerfile at branch-cut time, so `docker build docker/release`
   on `release-prep/rel-830` naturally clones rel-830 source during
   the image build; the existing Phase 2.5 `build-image` job does
@@ -1684,7 +1684,7 @@ checks on release-prep PRs" folds into this: once 7a fires on
 release-prep PRs and proves stable, promoting to required check
 is a small branch-protection change.
 
-**7c. Release-time pre-publish gate — SHIPPED 2026-07-27 (openemr/openemr#13207).**
+**7c. Release-time pre-publish gate — SHIPPED 2026-07-27 (DCL/DCL#13207).**
 Closes the last gap between "PR-built tarball validated" (Phase 3.5)
 and "actual shipped tarball validated": now the literal same bytes
 that reach the GitHub releases page have already passed the full
@@ -1697,12 +1697,12 @@ Shipped shape:
   those set, `detect-mode` fast-paths to `build_locally=true`,
   `build-tarball` self-skips (caller already built it), and the
   new download step grabs the caller-supplied artifact into the
-  same `/tmp/pr-built-tarball/openemr-<version>.tar.gz` path
+  same `/tmp/pr-built-tarball/DCL-<version>.tar.gz` path
   Phase 3.5 uses — downstream `boot-package.sh --local-tarball`
   plumbing unchanged.
 - `build-release.yml` split from one job into three:
   `build-package` (existing build steps + upload-artifact
-  `openemr-release-candidate-<version>`) → `acceptance-gate`
+  `DCL-release-candidate-<version>`) → `acceptance-gate`
   (calls acceptance-package via reusable workflow) → `publish`
   (needs both, re-generates app token, re-checks out, re-downloads
   artifact, runs the existing tag + `gh release create` + upload
@@ -1738,7 +1738,7 @@ just-shipped artifact within minutes of publish, catching
 "artifact published broken, users hit it before daily schedule
 fires":
 
-- Add `repository_dispatch` listener for `openemr-tag` events
+- Add `repository_dispatch` listener for `DCL-tag` events
   to both `acceptance-docker.yml` and `acceptance-package.yml`
 - Dispatch payload includes the version number → workflows
   pull that Docker Hub tag / GitHub release tarball and run
@@ -1760,11 +1760,11 @@ constructed.
 
 Exit criterion: release-prep PRs auto-fire the acceptance
 matrix against the PR's artifacts (**7a tarball: DONE via
-Phase 3.5 + release-prep.yml dispatch wire-up (openemr/openemr#13207),
+Phase 3.5 + release-prep.yml dispatch wire-up (DCL/DCL#13207),
 effective rel-830+**; **7a docker: DONE via
-openemr/openemr#13210**); the release pipeline gates
+DCL/DCL#13210**); the release pipeline gates
 GitHub-releases publish on acceptance against the literal
-shipped tarball (**7c tarball: DONE via openemr/openemr#13207**;
+shipped tarball (**7c tarball: DONE via DCL/DCL#13207**;
 **7c docker-latest-gate: SCOPED + DEFERRED until 8.3.0 ships**
 — narrow scope covers only the daily orchestrator's `latest`-
 tagged build; in-place docker-build-release.yml refactor becomes
@@ -1772,7 +1772,7 @@ trivial once acceptance-docker.yml is present on the `latest`-
 owning rel-branch, which happens when 8.3.0 ships and rotates
 latest ownership from rel-820 to rel-830); publish verifies
 byte-integrity of the uploaded release assets (**7b: DONE via
-openemr/openemr#13217** as a scoped-down sha256 re-verify inside
+DCL/DCL#13217** as a scoped-down sha256 re-verify inside
 build-release.yml's publish job — the original repository_dispatch
 full-matrix re-run was rejected as redundant given 7c-tarball
 validated the same exact bytes). **7c-docker-latest-gate DONE
@@ -1843,11 +1843,11 @@ Shipped shape:
 
 Validated 2026-07-29 via manual orchestrator dispatch
 (`gh workflow run docker-release-orchestrator.yml --repo
-openemr/openemr --ref master`): rel-820's gated flow ran all
+DCL/DCL --ref master`): rel-820's gated flow ran all
 6 acceptance matrix cells (3 scenarios × amd64/arm64) green,
 publish (imagetools alias) succeeded, cleanup-candidate
 deleted the temporary tag. `docker manifest inspect
-openemr/openemr:latest` confirmed multi-arch manifest with
+DCL/DCL:latest` confirmed multi-arch manifest with
 amd64 digest c8d3b10f... and arm64 digest 1c5423c1... —
 identical to what acceptance tested against. First true
 end-to-end validation of Phase 7c-docker + arm64 coverage.
@@ -1882,7 +1882,7 @@ Shipped shape:
     existing `test_arm64` input. Each arch builds natively
     (no QEMU emulation) on its own runner and uploads its
     arch-specific artifact under a distinct name
-    (`openemr-pr-built-image-amd64` / `openemr-pr-built-image-arm64`).
+    (`DCL-pr-built-image-amd64` / `DCL-pr-built-image-arm64`).
   * The `acceptance` job's "Download PR-built image" step
     resolves runner arch via `uname -m` and picks the matching
     artifact — amd64 runners load the amd64 tarball, arm64
@@ -2001,7 +2001,7 @@ Concrete shape:
     run artifact with 7-day retention. Add a new
     `acceptance-only` workflow_dispatch entry point that takes a
     workflow run ID as input, downloads that run's
-    `openemr-release-candidate-<version>` artifact, and calls
+    `DCL-release-candidate-<version>` artifact, and calls
     acceptance-package.yml against it via the existing
     `caller_tarball_artifact` workflow_call surface. If
     acceptance passes, the operator manually re-fires the publish
@@ -2387,12 +2387,12 @@ drift-bug sources.
   tag at publish time rather than pinning to the immutable digest
   returned by build. Rabbit flagged this as a data-integrity gap: a
   retagged image with matching OCI labels could pass acceptance-gate
-  and then be alias-published (attacker with `openemr/openemr`
+  and then be alias-published (attacker with `DCL/DCL`
   Docker Hub write access; window is ~minutes on normal path, up to
   48h on Phase 9 recovery). Fix: `docker buildx imagetools inspect
   ${CANDIDATE_TAG} --format '{{json .Manifest}}' | jq -r .digest`
   right after build; thread digest through as job output; publish
-  and recovery both reference `openemr/openemr@sha256:${DIGEST}`
+  and recovery both reference `DCL/DCL@sha256:${DIGEST}`
   instead of tag. Two callsites to update
   (`reusable-docker-publish.yml` + `docker-acceptance-only.yml`).
   Cost: moderate — untested for our multi-arch aliasing pattern
@@ -2400,7 +2400,7 @@ drift-bug sources.
   verified).
 
   **Why unclear if worth doing at all:** threat model requires
-  already-compromised Docker Hub write access on the openemr org.
+  already-compromised Docker Hub write access on the DCL org.
   An attacker at that level can push a NEW digest under any tag
   anyway — including a "pinned" digest tag they retag over. So
   digest-pinning defends against a self-signed-org-only tag-swap
@@ -2521,7 +2521,7 @@ arm64). See activity-log 2026-08-01 for full detail.
 
 **Not in Phase 11 (initial) scope — flex builds** *(`.github/
 workflows/docker-build-flex-core.yml`; same `linux/amd64,linux/
-arm64` single-runner QEMU pattern as release, moved to openemr core
+arm64` single-runner QEMU pattern as release, moved to DCL core
 in the 2026-06-20 docker-migration)*:
 
 Flex would benefit from the same native-arm64 treatment in principle
@@ -2751,7 +2751,7 @@ gates) fired against a real production release rather than a
 release-prep-PR dry run.
 
 **Tarball gate (build-release-on-tag Phase 7c):** all 8 matrix cells
-passed against the shipped `openemr-8.3.0.tar.gz` + `openemr-8.3.0.zip`
+passed against the shipped `DCL-8.3.0.tar.gz` + `DCL-8.3.0.zip`
 before the publish job fired — fresh-install + wizard-install +
 upgrade + wizard-upgrade × tar + zip. GitHub Release object only
 came into existence after acceptance-gate returned green (per Phase
@@ -2762,10 +2762,10 @@ per-branch acceptance gates fired (master, rel-820, rel-830), each
 covering fresh-install-from + fresh-install-to + upgrade on both
 amd64 + arm64 runners (6 cells per branch, 18 gated cells total).
 rel-820 and rel-830 passed all 6 cells cleanly (12/12) and published:
-rel-820 promoted to `openemr/openemr:latest`; rel-830 published
-`openemr/openemr:8.3.0`. Master's gate FAILED on the arm64
+rel-820 promoted to `DCL/DCL:latest`; rel-830 published
+`DCL/DCL:8.3.0`. Master's gate FAILED on the arm64
 `Fresh install of from_tag` cell (5/6 on that branch); per Phase 7c
-design the master publish job was skipped, so `openemr/openemr:next`
+design the master publish job was skipped, so `DCL/DCL:next`
 / `dev` did not refresh on this ship-day dispatch (they refresh on
 the next scheduled orchestrator run or `docker-acceptance-only.yml`
 recovery dispatch). rel-800 + rel-704 legacy single-job builds
@@ -2813,13 +2813,13 @@ addressed (e.g. Panther/Selenium setup — solved in Phase 4b via the
 install); the rest remain worth periodic re-visit.
 
 - **Docker Hub image availability.** Acceptance runs against
-  `openemr/openemr:latest` and `:next`. If either tag goes stale
+  `DCL/DCL:latest` and `:next`. If either tag goes stale
   (rotator down, orchestrator broken, Docker Hub outage), acceptance
   runs fail spuriously. Mitigation: allow `workflow_dispatch` overrides
   to specific version-tagged variants. Detection: acceptance fails
   with a clear "couldn't pull image" error, not a mysterious install
   failure.
-- **Install wizard flakiness.** OpenEMR's install wizard has historically
+- **Install wizard flakiness.** DCL's install wizard has historically
   been the most fragile part of the boot flow. Acceptance tests hit
   it every run. Watch for regressions here — the acceptance surface is
   the primary automated coverage of the setup wizard path.
@@ -2877,7 +2877,7 @@ install); the rest remain worth periodic re-visit.
 **Status:** Deferred until after the next release cut. Captured here so
 the work is pickable-up-cold without relying on session context. Trigger
 that surfaced this: adding version-display coverage in
-openemr/openemr#13635 (three signals: DB via shell, About page via
+DCL/DCL#13635 (three signals: DB via shell, About page via
 Panther, `/apis/default/api/version` via Panther) required workarounds
 whose shape teaches the wrong pattern for future contributors.
 
@@ -2885,14 +2885,14 @@ whose shape teaches the wrong pattern for future contributors.
 ship-day cascade (see [`release-mechanism-gaps.md` G35](release-mechanism-gaps.md#g35--first-ship-of-840-surfaced-3-latent-acceptance-recovery-bugs-in-cascade--discovered-2026-09-13-all-shipped-2026-09-13))
 exposed a related failure mode adjacent to the group-tag / workflow-isolation
 coupling this refactor is designed to eliminate. The chain: the
-`version-display` group was introduced (in openemr/openemr#13635) precisely
+`version-display` group was introduced (in DCL/DCL#13635) precisely
 because `acceptance-docker.yml` cannot resolve floating tags to `X.Y.Z`
 at runtime, forcing a workaround-based plumbing of
 `ACCEPTANCE_EXPECTED_VERSION` through `detect-acceptance-mode.sh`; a
-later refactor of that plumbing (openemr/openemr#13761) introduced the
+later refactor of that plumbing (DCL/DCL#13761) introduced the
 workflow_call gate bug that made every acceptance-gate cell fail on
 8.4.0's ship. Root cause of G35 was specifically the plumbing refactor
-(fixed by openemr/openemr#13974), not the coupling itself — but the
+(fixed by DCL/DCL#13974), not the coupling itself — but the
 workaround plumbing existed only because the coupling forced it. So the
 refactor below wouldn't have prevented G35 directly, but it removes the
 class of workaround that turned into G35's regression surface. Bumps this
@@ -2946,14 +2946,14 @@ supersedes them.
 
 ### Refactor items (proposed, in priority order)
 
-**Item 1: `AcceptanceContext` support class** *(highest leverage, smallest surface)* — **SHIPPED (openemr/openemr#TBD, 2026-09-21)**
+**Item 1: `AcceptanceContext` support class** *(highest leverage, smallest surface)* — **SHIPPED (DCL/DCL#TBD, 2026-09-21)**
 Central resolver for "what am I running against?" — expected version, base URL, feature-flag state, scenario name — read from a common `ACCEPTANCE_*` env contract. Tests call `AcceptanceContext::expectedVersion()` instead of `getenv('ACCEPTANCE_EXPECTED_VERSION')`. Fail-fast diagnostic if the context isn't ready (rather than tests failing at their business assertions).
 
 As-shipped scope: three existing `ACCEPTANCE_*` env reads consolidated (`ACCEPTANCE_EXPECTED_VERSION` with X.Y.Z shape check + fail-fast; `ACCEPTANCE_ARTIFACT_URL` with default + trailing-slash strip; `ACCEPTANCE_TRUST_SELF_SIGNED` opt-in). `VersionApiAcceptanceTest` + `VersionDisplayAcceptanceTest` migrated as first direct consumers; `ArtifactBrowser` migrated internally (its `baseUrl()` + client-construction API unchanged for the ~15 other consumers). 19 isolated tests pin the resolver behavior (env-set / unset / empty / malformed / dev-suffix leak / trailing-slash strip / trust-string allowlist). Feature-flag / scenario-name / workflow-context accessors deferred to Items 2/3 as originally scoped.
 
 Migration path: introduce class, migrate `VersionDisplayAcceptanceTest` + `VersionApiAcceptanceTest` as the first consumers (they're already env-aware), then adopt in future tests. Existing tests can migrate opportunistically.
 
-**Item 2: Split scenario-timeline from runtime-state group tags** — **SHIPPED (openemr/openemr#TBD, 2026-09-21)**
+**Item 2: Split scenario-timeline from runtime-state group tags** — **SHIPPED (DCL/DCL#TBD, 2026-09-21)**
 Rename group tags into two dimensions:
 - Scenario timeline: `post-install`, `post-upgrade`, `wizard-completed`
 - Runtime state: `api-enabled`, `demo-data-seeded`
@@ -2984,24 +2984,24 @@ The 17 CI failures are triggered by something specific to Panther/ChromeDriver d
 
 **Persistence-test structural fix (collateral)**: `DocumentPersistenceAcceptanceTest` + `AppointmentPersistenceAcceptanceTest` split from single dual-tagged idempotent-seed methods into per-scenario method pairs. The old pattern silently masked upgrade data-loss regressions (seed-if-missing would just re-create anything the upgrade dropped, and the viewer assertion would pass with the freshly-created data). New shape: `testSeedsAndVerifies*InPostInstall()` (tagged post-install, seeds + verifies immediately) + `testStill*AfterUpgrade()` (tagged post-upgrade, verifies WITHOUT seed helpers). Missing-fixture is now a structural assertion failure. Two new `UiSeedingTrait` helpers (`assertPersistPatientExists`, `assertPersistDocumentExists`) provide strict-assert companions to the seed helpers.
 
-**Item 3: Shared boot-orchestration composite action** — **SHIPPED (openemr/openemr#TBD, 2026-09-22)**
+**Item 3: Shared boot-orchestration composite action** — **SHIPPED (DCL/DCL#TBD, 2026-09-22)**
 Both workflows repeat the boot→group→api-enable→group→teardown shape. Extract to a composite action at `.github/actions/run-acceptance-scenario/` (or a shared shell library at `tests/Acceptance/bin/lib/`). Workflows declare "here's the artifact, here's the expected version, run scenario X." Cuts YAML duplication; makes drift impossible (e.g., item #3 friction, and the `api-enabled` post-upgrade gap in docker workflow).
 
 **As-shipped scope**: two smaller composite actions instead of one big scenario wrapper. Boot mechanism stays in the workflow (differs enough between `boot-package.sh` and `docker compose up` that a unifying composite would need too many conditionals for too little payoff).
 
 - **`.github/actions/run-acceptance-group/`** — wraps `env: ACCEPTANCE_EXPECTED_VERSION` + `run: composer acceptance -- --group=<X>`. Replaces ~11 identical step blocks across both workflows. Callers pass `group` + `expected_version` (empty string in docker context until Item 4 lands; version tests skip cleanly via `AcceptanceContext::hasExpectedVersion()` when unset).
-- **`.github/actions/api-enable-artifact/`** — wraps `OPENEMR_ENABLE_API_BOOTSTRAP=1 php tests/Acceptance/bin/api-enable.php`. Replaces 3 identical step blocks. No inputs.
+- **`.github/actions/api-enable-artifact/`** — wraps `DCL_ENABLE_API_BOOTSTRAP=1 php tests/Acceptance/bin/api-enable.php`. Replaces 3 identical step blocks. No inputs.
 
 **Collateral fix — closes friction point #3**: `acceptance-docker.yml`'s `upgrade` scenario now also runs api-enable + `--group=api-enabled-post-upgrade` after the upgrade completes, matching what `acceptance-package.yml` already does. The pre-Item-3 gap (docker upgrade path never exercised api-enable so a regression to /api/facility / OIDC discovery / DCR on upgrade would slip past) is closed by two new composite invocations in the docker workflow's upgrade branch.
 
 **Explicitly deferred (not in this PR)**: `AcceptanceContext::scenarioName()` / feature-flag / workflow-context accessors were called out as Item 3 scope originally, but no test currently needs them (persistence tests were split per-scenario in Item 2 rather than scenario-branching). Scaffolding-without-a-caller — drops in cleanly whenever a first concrete caller appears (e.g., an Item 4 docker path that needs to gate on scenario, or a future test wanting scenario-aware diagnostics).
 
-**Item 4: Docker workflow tag→version resolution** — **SHIPPED (openemr/openemr#TBD, 2026-09-22)**
+**Item 4: Docker workflow tag→version resolution** — **SHIPPED (DCL/DCL#TBD, 2026-09-22)**
 So `ACCEPTANCE_EXPECTED_VERSION` can be set in docker context too and the `version-display` / `version-api` isolation isn't needed. Options: query Docker Hub API for the tag→digest→config manifest, OR pull the image and read `version.php`, OR require the caller to pass the version explicitly (already the case for workflow_call gates). Simplest is the last one — scheduled/floating-tag runs can skip version-check by not setting the env.
 
 **As-shipped scope**: two-tier resolution — OCI label first, `version.php` fallback for pr-built. Two new steps in `acceptance-docker.yml`:
 
-- `Resolve running artifact version (OCI label, fallback version.php)` runs after the initial boot; tries `docker inspect --format='{{index .Config.Labels "org.opencontainers.image.version"}}'` first, extracts X.Y.Z prefix (regex `^\d+\.\d+\.\d+`) so `8.5.0-dev` → `8.5.0`. When the OCI label lacks a valid X.Y.Z prefix (empty on pr-built images built without `--build-arg IMAGE_VERSION`, or non-empty but malformed), falls back to `docker compose cp` (production + acceptance-docker compose files) that stages [`.github/scripts/read-version-php.php`](../.github/scripts/read-version-php.php) into the container, then `docker compose exec -T openemr php /tmp/read-version-php.php` reads `$v_major.$v_minor.$v_patch` from `version.php`. The parse/validate/emit + fallback decision live in [`.github/scripts/parse-artifact-version.sh`](../.github/scripts/parse-artifact-version.sh) (Item 4 followup extracted the inline logic for BATS + PHPUnit-isolated coverage). Asserts final X.Y.Z shape, emits as `boot-version.resolved`.
+- `Resolve running artifact version (OCI label, fallback version.php)` runs after the initial boot; tries `docker inspect --format='{{index .Config.Labels "org.opencontainers.image.version"}}'` first, extracts X.Y.Z prefix (regex `^\d+\.\d+\.\d+`) so `8.5.0-dev` → `8.5.0`. When the OCI label lacks a valid X.Y.Z prefix (empty on pr-built images built without `--build-arg IMAGE_VERSION`, or non-empty but malformed), falls back to `docker compose cp` (production + acceptance-docker compose files) that stages [`.github/scripts/read-version-php.php`](../.github/scripts/read-version-php.php) into the container, then `docker compose exec -T DCL php /tmp/read-version-php.php` reads `$v_major.$v_minor.$v_patch` from `version.php`. The parse/validate/emit + fallback decision live in [`.github/scripts/parse-artifact-version.sh`](../.github/scripts/parse-artifact-version.sh) (Item 4 followup extracted the inline logic for BATS + PHPUnit-isolated coverage). Asserts final X.Y.Z shape, emits as `boot-version.resolved`.
 - `Resolve running artifact version after upgrade (OCI label, fallback version.php)` runs after the upgrade-target boot (upgrade scenario only); same two-tier logic against the new image, emits as `upgrade-target-version.resolved`. Needed because the swap-and-reboot brings up a different image reporting a different (upgraded) version.
 
 **Why OCI-label first, version.php fallback**: OCI label is set at docker-BUILD time from `--build-arg IMAGE_VERSION` baked into the release pipeline. It's an INDEPENDENT source from both `version.php` (in the image's code tree) and the DB `version` table (populated by `sql_upgrade.php`). Using the OCI label as `ACCEPTANCE_EXPECTED_VERSION` gives a genuine three-source cross-check when the version-display + version-api tests run: OCI label vs `version.php` (via About page render pipeline) vs DB (via `/api/version`). That catches the "mislabeled image" bug class (label says `8.4.1`, image code says `8.4.0`). A version.php-only approach can't catch that — it would be asserting `version.php == version.php` via the render pipeline, which weakens the signal to just "the render pipeline works." Reserved for the pr-built case where the OCI label is empty and no independent source exists (the PR IS the version source of truth, may contain `version.php` changes itself).
@@ -3023,7 +3023,7 @@ When either criterion fires, all upgrade-scenario steps (from boot, from-tag tes
 
 Real signal preserved: `fresh-install-from` + `fresh-install-to` cells still exercise both images independently.
 
-**Item 4 followup: BATS + PHPUnit-isolated coverage** — **SHIPPED (openemr/openemr#TBD, 2026-09-22)**. Inline shell/php-r logic in `acceptance-docker.yml`'s three post-Item-4 steps (detect-upgrade-cell-skip, boot-version, upgrade-target-version) was extracted to three standalone scripts:
+**Item 4 followup: BATS + PHPUnit-isolated coverage** — **SHIPPED (DCL/DCL#TBD, 2026-09-22)**. Inline shell/php-r logic in `acceptance-docker.yml`'s three post-Item-4 steps (detect-upgrade-cell-skip, boot-version, upgrade-target-version) was extracted to three standalone scripts:
 
 - `.github/scripts/detect-upgrade-cell-skip.sh` — pure-shell skip decision logic (BATS: `tests/bats/ci-scripts/detect-upgrade-cell-skip/`, 17 cases).
 - `.github/scripts/parse-artifact-version.sh` — OCI-first + version.php-fallback parse/validate/emit (BATS: `tests/bats/ci-scripts/parse-artifact-version/`, 15 cases).
@@ -3031,9 +3031,9 @@ Real signal preserved: `fresh-install-from` + `fresh-install-to` cells still exe
 
 The workflow steps now compose `docker inspect` / `docker compose exec` (both need the Docker daemon so stay inline) with `bash <script>` invocations that own the pure logic. All three scripts added to `.github/byte-identical.yml` with `exclude-branches: [rel-800]` per G45/G47 pattern (script referenced by synced workflow must itself sync).
 
-**Item 4 followup: release-mode guardrail** — **SHIPPED (openemr/openemr#14215, 2026-09-23)**. The Item 4 upgrade-cell skip logic is silent by design (correct for tolerant paths — daily schedule, arbitrary workflow_dispatch — where the skip is a legitimate "no meaningful signal to produce" answer during between-cycles). In *release mode* the same silent skip is a red flag: we're about to publish an artifact whose auto-upgrade path was never validated. Guardrail: new `require_upgrade_cell` boolean input on `acceptance-docker.yml` (default false, backward-compatible) on both `workflow_dispatch` and `workflow_call`. When true, a step immediately after `detect_upgrade_skip` fails the job with a descriptive error naming which skip criterion fired. Callers who set it: `release-prep.yml`'s `gh workflow run acceptance-docker.yml` dispatch (release-prep-time), `docker-build-release.yml`'s acceptance-gate `workflow_call` (ship-time), `docker-acceptance-only.yml`'s recovery `workflow_call` (recovery-time). Scheduled runs and push/PR triggers can't override the default false and keep tolerant skip behavior; operator `workflow_dispatch` runs default to false but can be flipped from the Actions UI if the operator wants the same guardrail for a manual re-run. Package side needs no equivalent because `acceptance-package.yml` has no runtime skip mechanism — its "conditional coverage" is matrix-level and caller-driven, and release-time callers unconditionally trigger the expanded matrix that includes upgrade + wizard-upgrade cells.
+**Item 4 followup: release-mode guardrail** — **SHIPPED (DCL/DCL#14215, 2026-09-23)**. The Item 4 upgrade-cell skip logic is silent by design (correct for tolerant paths — daily schedule, arbitrary workflow_dispatch — where the skip is a legitimate "no meaningful signal to produce" answer during between-cycles). In *release mode* the same silent skip is a red flag: we're about to publish an artifact whose auto-upgrade path was never validated. Guardrail: new `require_upgrade_cell` boolean input on `acceptance-docker.yml` (default false, backward-compatible) on both `workflow_dispatch` and `workflow_call`. When true, a step immediately after `detect_upgrade_skip` fails the job with a descriptive error naming which skip criterion fired. Callers who set it: `release-prep.yml`'s `gh workflow run acceptance-docker.yml` dispatch (release-prep-time), `docker-build-release.yml`'s acceptance-gate `workflow_call` (ship-time), `docker-acceptance-only.yml`'s recovery `workflow_call` (recovery-time). Scheduled runs and push/PR triggers can't override the default false and keep tolerant skip behavior; operator `workflow_dispatch` runs default to false but can be flipped from the Actions UI if the operator wants the same guardrail for a manual re-run. Package side needs no equivalent because `acceptance-package.yml` has no runtime skip mechanism — its "conditional coverage" is matrix-level and caller-driven, and release-time callers unconditionally trigger the expanded matrix that includes upgrade + wizard-upgrade cells.
 
-**Item 4 followup: orchestrator between-cycles tolerance** — **SHIPPED (openemr/openemr#TBD, 2026-10-06)**. The release-mode guardrail above landed with the correct behavior for every caller that genuinely represents a ship moment, but [`docker-release-orchestrator.yml`](../.github/workflows/docker-release-orchestrator.yml) fans out to [`docker-build-release.yml`](../.github/workflows/docker-build-release.yml) on a daily cron (plus push + manual dispatch), and that caller hardcoded `require_upgrade_cell: true` on its inner `acceptance-docker.yml` `workflow_call`. For the daily master-row dispatch during a between-cycles window (post-finalize, pre-patch-prep — master's row carries `next`) the result was: real ship = correctly loud-fail (as designed); daily master refresh = loud-fail *every day* until the next patch-prep PR stripped `next` from master. Observed between 2026-09-23 (guardrail landed) and 2026-10-06 (fix): `openemr/openemr:dev`, `:next`, and `:8.5.0` tags frozen at the 2026-09-23 digest for 13 days despite daily orchestrator runs succeeding at the dispatch step; the acceptance gate inside each dispatched build loudly refused to publish an artifact it couldn't validate.
+**Item 4 followup: orchestrator between-cycles tolerance** — **SHIPPED (DCL/DCL#TBD, 2026-10-06)**. The release-mode guardrail above landed with the correct behavior for every caller that genuinely represents a ship moment, but [`docker-release-orchestrator.yml`](../.github/workflows/docker-release-orchestrator.yml) fans out to [`docker-build-release.yml`](../.github/workflows/docker-build-release.yml) on a daily cron (plus push + manual dispatch), and that caller hardcoded `require_upgrade_cell: true` on its inner `acceptance-docker.yml` `workflow_call`. For the daily master-row dispatch during a between-cycles window (post-finalize, pre-patch-prep — master's row carries `next`) the result was: real ship = correctly loud-fail (as designed); daily master refresh = loud-fail *every day* until the next patch-prep PR stripped `next` from master. Observed between 2026-09-23 (guardrail landed) and 2026-10-06 (fix): `DCL/DCL:dev`, `:next`, and `:8.5.0` tags frozen at the 2026-09-23 digest for 13 days despite daily orchestrator runs succeeding at the dispatch step; the acceptance gate inside each dispatched build loudly refused to publish an artifact it couldn't validate.
 
 **The fix extracts the Item-4 criterion-2 predicate into a shared lib** (`.github/scripts/lib/release-targets-queries.sh::master_row_carries_next`) so the orchestrator and `detect-upgrade-cell-skip.sh` consume the exact same signal. In `docker-release-orchestrator.yml`'s compute-matrix step, the predicate runs once against master's authoritative `release-targets.yml` and enriches each matrix row with `require_upgrade_cell`: non-master rows always get `true` (they ship real version-tagged artifacts and keep the loud-fail); master's row gets `false` only when the predicate fires (between-cycles state) — in that window the dispatched build's acceptance gate inherits the pre-Item-4-followup tolerant-skip behavior (silent skip on criterion 2, downstream `fresh-install-*` cells still exercise the image, publish proceeds on that reduced signal). `docker-build-release.yml` grew a `require_upgrade_cell` input (default `true` for backward compatibility) that passes through to its `acceptance-docker.yml` `workflow_call`. The orchestrator only emits `-f require_upgrade_cell=false` when the per-row value is `false`, following the same "omit on default" pattern as `gate_with_acceptance` to protect branches whose `docker-build-release.yml` predates the input (rel-800, pre-sync rel-820/830).
 
@@ -3041,17 +3041,17 @@ The workflow steps now compose `docker inspect` / `docker compose exec` (both ne
 
 **Signal single-sourcing**: both consumers (acceptance side via criterion 2, orchestrator side via per-row enrichment) read `master_row_carries_next`. A future contract change (predicate semantics, match rule, or row-identity concept) propagates to both call sites at once, so false-positive and false-negative behavior cannot drift between them. The lib file is byte-identical-synced with the same `exclude-branches: [rel-800]` as its first caller (G45/G47 pattern); `release-targets.yml` itself remains master-authoritative and is NOT synced, which is why rel-branch callers of `detect-upgrade-cell-skip.sh` must fetch master's copy explicitly (see `acceptance-docker.yml`'s "release-targets.yml is master-authoritative" step for the pattern — the orchestrator doesn't need this dance because it only runs from master).
 
-**Item 4 followup: per-row from_tag derivation on docker side** — **SHIPPED (openemr/openemr#TBD, 2026-10-06)**. The orchestrator between-cycles tolerance above fixed master's row; two rel-branch rows (rel-820, rel-830) were ALSO failing their orchestrator-dispatched acceptance gates but for a different reason — the upgrade cell's `from_tag` defaulted to the literal string `'latest'`, which currently resolves to rel-840's build (`8.4.1`). For rel-820's build (`8.2.0`) the "upgrade" cell was attempting `8.4.1 → 8.2.0`, a downgrade; OpenEMR has no DB-downgrade machinery, so the DB stayed at `8.4.1` while code advanced to `8.2.0`, and the version-check test loudly failed with `/api/version returned '8.4.1' does not match expected '8.2.0'`. rel-830 hit the same shape (`8.4.1 → 8.3.0`). rel-840 passed vacuously via a degenerate self-upgrade (`from=latest=8.4.1 → to=self=8.4.1`, no-op "upgrade" + matching version). Fix: port the sql-file-based `from_version` derivation already in `detect-acceptance-mode.sh::derive_from_version` (package side, openemr/openemr#13573) to the docker side as a shared lib, and have `acceptance-docker.yml`'s detect-mode job resolve `from_tag` per-row from the checkout's own `sql/*-to-*_upgrade.sql` filenames. Each rel branch's acceptance now exercises its actual intended upgrade path (rel-820 → 8.1.1→8.2.0, rel-830 → 8.2.0→8.3.0, rel-840 → 8.3.0→8.4.1 replacing the degenerate self-upgrade). Master's row during active cycle derives similarly (from the branch-cut-added `sql/<prior>-to-<master-version>_upgrade.sql`); during between-cycles, criterion 2 of `detect-upgrade-cell-skip.sh` still fires first and skips the cell (fsupgrade machinery not cross-propagated yet). PR-triggered acceptance runs on rel branches during release cycles continue to execute the upgrade cell — the invariant is preserved and strengthened (every row now has a legitimate upgrade path, not just the one that holds `latest`).
+**Item 4 followup: per-row from_tag derivation on docker side** — **SHIPPED (DCL/DCL#TBD, 2026-10-06)**. The orchestrator between-cycles tolerance above fixed master's row; two rel-branch rows (rel-820, rel-830) were ALSO failing their orchestrator-dispatched acceptance gates but for a different reason — the upgrade cell's `from_tag` defaulted to the literal string `'latest'`, which currently resolves to rel-840's build (`8.4.1`). For rel-820's build (`8.2.0`) the "upgrade" cell was attempting `8.4.1 → 8.2.0`, a downgrade; DCL has no DB-downgrade machinery, so the DB stayed at `8.4.1` while code advanced to `8.2.0`, and the version-check test loudly failed with `/api/version returned '8.4.1' does not match expected '8.2.0'`. rel-830 hit the same shape (`8.4.1 → 8.3.0`). rel-840 passed vacuously via a degenerate self-upgrade (`from=latest=8.4.1 → to=self=8.4.1`, no-op "upgrade" + matching version). Fix: port the sql-file-based `from_version` derivation already in `detect-acceptance-mode.sh::derive_from_version` (package side, DCL/DCL#13573) to the docker side as a shared lib, and have `acceptance-docker.yml`'s detect-mode job resolve `from_tag` per-row from the checkout's own `sql/*-to-*_upgrade.sql` filenames. Each rel branch's acceptance now exercises its actual intended upgrade path (rel-820 → 8.1.1→8.2.0, rel-830 → 8.2.0→8.3.0, rel-840 → 8.3.0→8.4.1 replacing the degenerate self-upgrade). Master's row during active cycle derives similarly (from the branch-cut-added `sql/<prior>-to-<master-version>_upgrade.sql`); during between-cycles, criterion 2 of `detect-upgrade-cell-skip.sh` still fires first and skips the cell (fsupgrade machinery not cross-propagated yet). PR-triggered acceptance runs on rel branches during release cycles continue to execute the upgrade cell — the invariant is preserved and strengthened (every row now has a legitimate upgrade path, not just the one that holds `latest`).
 
-**Docker-vs-package asymmetry — why no manifest intersect on the docker side.** The package-side derivation intersects sql candidates with a shipped-versions manifest so tarball downloads from GitHub Releases can't 404 (openemr/openemr#13573 rationale). On the docker side, Docker Hub carries pre-production tags alongside shipped releases (`openemr/openemr:8.5.0` currently points at master's dev build), so a manifest intersect wouldn't distinguish shipped from pre-shipped tags anyway. The docker side uses sql-only derivation: if the derived version was never actually published (rare — a rel branch that cut but never shipped), the downstream `docker pull openemr/openemr:<version>` fails loud naming the exact tag. The "nothing-breaks-on-unreleased-version" invariant depends on that loud-pull-fail; the lib header documents it, and the BATS corpus covers the sql-side derivation shape without expecting the manifest filter.
+**Docker-vs-package asymmetry — why no manifest intersect on the docker side.** The package-side derivation intersects sql candidates with a shipped-versions manifest so tarball downloads from GitHub Releases can't 404 (DCL/DCL#13573 rationale). On the docker side, Docker Hub carries pre-production tags alongside shipped releases (`DCL/DCL:8.5.0` currently points at master's dev build), so a manifest intersect wouldn't distinguish shipped from pre-shipped tags anyway. The docker side uses sql-only derivation: if the derived version was never actually published (rare — a rel branch that cut but never shipped), the downstream `docker pull DCL/DCL:<version>` fails loud naming the exact tag. The "nothing-breaks-on-unreleased-version" invariant depends on that loud-pull-fail; the lib header documents it, and the BATS corpus covers the sql-side derivation shape without expecting the manifest filter.
 
 **Guardrail against false-skip regressions on the derivation.** The new BATS corpus at [`tests/bats/ci-scripts/derive-from-version/`](../tests/bats/ci-scripts/derive-from-version/) is weighted toward negative-case coverage because the primary failure mode to prevent is **upgrade cell skip when it should run** — a false "no derivation possible" result would cause the acceptance gate to skip or hard-fail an otherwise-valid upgrade test. The corpus explicitly covers each release-cycle shape (rel-820/830/840 fixtures, master active-cycle, master between-cycles), the exclude-version recovery mode (to-equals-max case), and bad-input cases (missing `sql/`, empty `sql/`, non-upgrade files only, malformed `X_Y_Z-to-A_B_C` filenames). The existing `detect-acceptance-mode.sh` 36-test BATS corpus is preserved unchanged — the refactor factors the sql-parse logic into the lib while keeping the package side's manifest-intersect + exclude-after-intersect wrapper, so external behavior and all error-message shapes stay identical.
 
 **Signal single-sourcing (part 2)**: both consumers (package via `detect-acceptance-mode.sh::derive_from_version`, docker via `acceptance-docker.yml::resolve-from-tag`) now read `derive_from_version_sql_candidates` from the shared lib. The sql-side enumeration is one implementation; package layers manifest-intersect + to-exclude on top for its stronger "tarball-must-exist-on-Releases" guarantee; docker consumes the sql result directly. Same lib, two legitimate different wrappings — no duplication, consistent signal.
 
-**Item 4 followup: AppointmentPersistence flake fix + on-failure capture infrastructure** — **SHIPPED (openemr/openemr#TBD, 2026-10-09)**. `AppointmentPersistenceAcceptanceTest::testSeedsAndFlowBoardShowsAppointmentInPostInstall` was flaking ~1-2 times a day across both acceptance workflows and accounting for roughly half of all docker-side acceptance failures. The Oct 1 `add_edit_event.php` response-path fix (openemr/openemr#14325) covered one throw path (`window.opener.pattrk` on null opener), but the sibling `find_appt_popup.php` confirm branches (holiday / provider-not-available / slot-already-used, lines 486-505, unchanged since 2017-2019) still had an unguarded `opener.top.restoreSession(); opener.document.forms[0].submit(); dlgclose();` chain. The `opener` reference comes through `include_opener.js:21-24`'s `opener = top.get_opener(window.name)` fallback, which depends on `dialog.js:678`'s `top.set_opener(winname, window)` having already completed. The two run in independent script contexts (parent frame vs iframe); the iframe can parse its include_opener.js before the parent's set_opener call completes in some scheduling windows, leaving `opener` undefined. Any one of the three member accesses in the confirm branch then throws, `dlgclose()` never fires, the modalframe stays open, and the acceptance harness times out on `invisibilityOfElementLocated`.
+**Item 4 followup: AppointmentPersistence flake fix + on-failure capture infrastructure** — **SHIPPED (DCL/DCL#TBD, 2026-10-09)**. `AppointmentPersistenceAcceptanceTest::testSeedsAndFlowBoardShowsAppointmentInPostInstall` was flaking ~1-2 times a day across both acceptance workflows and accounting for roughly half of all docker-side acceptance failures. The Oct 1 `add_edit_event.php` response-path fix (DCL/DCL#14325) covered one throw path (`window.opener.pattrk` on null opener), but the sibling `find_appt_popup.php` confirm branches (holiday / provider-not-available / slot-already-used, lines 486-505, unchanged since 2017-2019) still had an unguarded `opener.top.restoreSession(); opener.document.forms[0].submit(); dlgclose();` chain. The `opener` reference comes through `include_opener.js:21-24`'s `opener = top.get_opener(window.name)` fallback, which depends on `dialog.js:678`'s `top.set_opener(winname, window)` having already completed. The two run in independent script contexts (parent frame vs iframe); the iframe can parse its include_opener.js before the parent's set_opener call completes in some scheduling windows, leaving `opener` undefined. Any one of the three member accesses in the confirm branch then throws, `dlgclose()` never fires, the modalframe stays open, and the acceptance harness times out on `invisibilityOfElementLocated`.
 
-**Fix A — guard the find_appt_popup.php confirm branches.** All three branches now share a `$submitParentJs` heredoc that wraps the restore + submit chain in try/catch and resolves the parent window robustly (prefers `opener` if it has a `document`, else re-queries `top.get_opener(window.name)` at use time instead of load time to avoid the race). `dlgclose()` always fires regardless. Same shape as the openemr/openemr#14325 fix on `add_edit_event.php`'s response-path. The alert-only branches (ACL-less read-only path, no form submission) stay unchanged.
+**Fix A — guard the find_appt_popup.php confirm branches.** All three branches now share a `$submitParentJs` heredoc that wraps the restore + submit chain in try/catch and resolves the parent window robustly (prefers `opener` if it has a `document`, else re-queries `top.get_opener(window.name)` at use time instead of load time to avoid the race). `dlgclose()` always fires regardless. Same shape as the DCL/DCL#14325 fix on `add_edit_event.php`'s response-path. The alert-only branches (ACL-less read-only path, no form submission) stay unchanged.
 
 **Fix B — on-failure capture in `PantherAcceptanceTestCase`.** Overrides PHPUnit 11's `onNotSuccessfulTest(Throwable $t): never` hook, which fires BEFORE `tearDown()` runs — so the Panther client is still live and able to screenshot / dump the DOM / read the browser console log at the exact moment of failure. Captures:
 
@@ -3066,9 +3066,9 @@ Both `acceptance-docker.yml` and `acceptance-package.yml` grew an `actions/uploa
 
 **Why screenshot + DOM + console (not video)**: the e2e workflow's selenium/video sidecar needs a selenium grid container to attach to via `DISPLAY_CONTAINER_NAME: selenium`. `acceptance-docker.yml` runs host-level Chrome + ChromeDriver (via `.github/actions/setup-chromedriver-multiarch`), not a grid service, so the e2e pattern doesn't drop in cleanly. For this specific flake class (single-moment Selenium-wait timeout) the signal density of a screenshot + DOM + browser console log at the moment of failure is higher per byte than a 30-second video of a mostly-static modal; the console log in particular surfaces the throwing line in the opener-chain, which is the key diagnostic. Switching to grid-mode for video is a separate larger refactor worth considering if other flake classes emerge that need time-sequence signal rather than moment-state signal.
 
-**Item 5 (hygiene): "Invocation contexts" reference section in this doc** — **SHIPPED (openemr/openemr#TBD, 2026-09-22)**. New [Invocation contexts reference](#invocation-contexts-reference) section added above between "What lives where (concrete)" and "What stays unchanged". Four subsections: trigger contexts (per-workflow trigger × artifact × version × matrix), scenario → step sequence, group → tests → scenario cells, `AcceptanceContext` env contract. Also closes Friction point #6 (no mapping-doc reference table). The pre-Item-1..4 "Current-state snapshot" tables under this section were superseded and trimmed to a pointer.
+**Item 5 (hygiene): "Invocation contexts" reference section in this doc** — **SHIPPED (DCL/DCL#TBD, 2026-09-22)**. New [Invocation contexts reference](#invocation-contexts-reference) section added above between "What lives where (concrete)" and "What stays unchanged". Four subsections: trigger contexts (per-workflow trigger × artifact × version × matrix), scenario → step sequence, group → tests → scenario cells, `AcceptanceContext` env contract. Also closes Friction point #6 (no mapping-doc reference table). The pre-Item-1..4 "Current-state snapshot" tables under this section were superseded and trimmed to a pointer.
 
-**Item 6 (hygiene): Directory structure by concern as suite grows** — **SHIPPED (openemr/openemr#TBD, 2026-09-23)**. Six subdirs under `tests/Acceptance/`: `Install/` (2 files), `Upgrade/` (2), `Version/` (2), `OAuth/` (2), `Api/` (2), `Ui/` (10). Each moved file's namespace bumped from `OpenEMR\Tests\Acceptance` to `OpenEMR\Tests\Acceptance\<Subdir>`. `Support/` and `bin/` unchanged (already subdirs). PHPUnit's `<directory>.</directory>` recursively discovers the new layout; composer autoload PSR-4 rule `OpenEMR\Tests\Acceptance\ => tests/Acceptance` handles the deeper paths automatically. Byte-identical manifest's `tests/Acceptance/**` glob (recursive via `**` → `.*` in the glob-expand regex) picks up the subdir contents, and the sync script's rename-sweep deletes the old flat paths from rel branches on next propagation. Item 6 needed no test-file cross-reference updates (each test only imports from `Support/*`, which stays put).
+**Item 6 (hygiene): Directory structure by concern as suite grows** — **SHIPPED (DCL/DCL#TBD, 2026-09-23)**. Six subdirs under `tests/Acceptance/`: `Install/` (2 files), `Upgrade/` (2), `Version/` (2), `OAuth/` (2), `Api/` (2), `Ui/` (10). Each moved file's namespace bumped from `DCL\Tests\Acceptance` to `DCL\Tests\Acceptance\<Subdir>`. `Support/` and `bin/` unchanged (already subdirs). PHPUnit's `<directory>.</directory>` recursively discovers the new layout; composer autoload PSR-4 rule `DCL\Tests\Acceptance\ => tests/Acceptance` handles the deeper paths automatically. Byte-identical manifest's `tests/Acceptance/**` glob (recursive via `**` → `.*` in the glob-expand regex) picks up the subdir contents, and the sync script's rename-sweep deletes the old flat paths from rel branches on next propagation. Item 6 needed no test-file cross-reference updates (each test only imports from `Support/*`, which stays put).
 
 ### Sequencing recommendation
 

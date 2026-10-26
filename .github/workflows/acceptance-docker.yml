@@ -1,4 +1,4 @@
-# Artifact acceptance testing against the openemr Docker image.
+# Artifact acceptance testing against the DCL Docker image.
 #
 # Black-box validation of the two production-critical entry points end
 # users experience with the Docker artifact:
@@ -25,7 +25,7 @@
 # path is also broken).
 #
 # The InstallTest / UpgradeIntegrityTest classes are tag-agnostic: they
-# don't know which openemr version they're testing. ACCEPTANCE_ARTIFACT_URL
+# don't know which DCL version they're testing. ACCEPTANCE_ARTIFACT_URL
 # decides. Same classes work against Docker Hub tags, locally-built PR
 # images (Phase 2.5, coming), and tarball-mounted stacks (Phase 3, coming).
 #
@@ -55,12 +55,12 @@ on:
   workflow_dispatch:
     inputs:
       from_tag:
-        description: 'Prior openemr Docker Hub tag (fresh + upgrade source). Leave empty to auto-derive from the checkout''s sql/*-to-*_upgrade.sql filenames (per-rel-branch prior-shipped version — rel-820 → 8.1.1, rel-830 → 8.2.0, rel-840 → 8.3.0, etc.). Pass an explicit tag string to override (e.g. `latest` for the pre-fix behavior).'
+        description: 'Prior DCL Docker Hub tag (fresh + upgrade source). Leave empty to auto-derive from the checkout''s sql/*-to-*_upgrade.sql filenames (per-rel-branch prior-shipped version — rel-820 → 8.1.1, rel-830 → 8.2.0, rel-840 → 8.3.0, etc.). Pass an explicit tag string to override (e.g. `latest` for the pre-fix behavior).'
         required: false
         type: string
         default: ''
       to_tag:
-        description: 'Target openemr Docker Hub tag (fresh + upgrade target)'
+        description: 'Target DCL Docker Hub tag (fresh + upgrade target)'
         required: true
         type: string
         default: 'next'
@@ -74,7 +74,7 @@ on:
         default: false
   # Phase 7c-docker-latest-gate: called by docker-build-release.yml as
   # a pre-publish gate. Caller has already pushed the release image to
-  # Docker Hub under a candidate tag (e.g., openemr/openemr:release-
+  # Docker Hub under a candidate tag (e.g., DCL/DCL:release-
   # candidate-<run-id>-<attempt>) and dispatches this workflow with
   # to_tag set to that candidate suffix. The candidate is a real Docker
   # Hub tag on the same repo, so the acceptance matrix pulls it via the
@@ -88,12 +88,12 @@ on:
   workflow_call:
     inputs:
       from_tag:
-        description: 'Prior openemr Docker Hub tag. Leave empty (default) to auto-derive from the checkout''s sql/*-to-*_upgrade.sql filenames.'
+        description: 'Prior DCL Docker Hub tag. Leave empty (default) to auto-derive from the checkout''s sql/*-to-*_upgrade.sql filenames.'
         required: false
         type: string
         default: ''
       to_tag:
-        description: 'Target openemr Docker Hub tag (typically a Phase 7c-docker gate candidate tag suffix; may also be next / a version-pinned tag / etc.).'
+        description: 'Target DCL Docker Hub tag (typically a Phase 7c-docker gate candidate tag suffix; may also be next / a version-pinned tag / etc.).'
         required: false
         type: string
         default: 'next'
@@ -161,7 +161,7 @@ concurrency:
   #    share a group). Separate keys mean push/PR still cancels its
   #    own in-flight runs, but never kills a schedule run.
   #
-  # 2. G46 (openemr/openemr#TBD, 2026-09-20): when called via
+  # 2. G46 (DCL/DCL#TBD, 2026-09-20): when called via
   #    workflow_call from docker-build-release.yml (fanned out by
   #    docker-release-orchestrator.yml on a Finalize-merge push),
   #    every per-row call inherits github.ref=master +
@@ -206,7 +206,7 @@ jobs:
   # Docker Hub tags (Phase 2 behavior — unchanged for scheduled
   # runs and acceptance-surface-only PRs).
   detect-mode:
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
     runs-on: ubuntu-24.04
     outputs:
       build_locally: ${{ steps.decide.outputs.build_locally }}
@@ -315,7 +315,7 @@ jobs:
     # branch that currently publishes `latest` (today rel-840 →
     # 8.4.1). For every rel branch BELOW that (rel-820, rel-830),
     # `from=latest=8.4.1 → to=own-candidate=8.2.0/8.3.0` is a
-    # downgrade — OpenEMR has no DB-downgrade machinery, so the
+    # downgrade — DCL has no DB-downgrade machinery, so the
     # auto-upgrade cell boots 8.4.1, swaps to 8.2.0 image, DB stays
     # at 8.4.1, and the version-check test fails loud with
     # "returned version 8.4.1 does not match expected 8.2.0".
@@ -338,7 +338,7 @@ jobs:
     # pre-production tags in addition to shipped releases, so a
     # manifest intersect wouldn't correctly distinguish them anyway.
     # Rare edge case where the derived version was never shipped
-    # (branch cut but never published): `docker pull openemr/openemr:
+    # (branch cut but never published): `docker pull DCL/DCL:
     # <version>` in the acceptance cell's boot step fails loud naming
     # the exact tag — no silent skip. See the lib header for the full
     # "nothing-breaks-on-unreleased-version" invariant.
@@ -420,7 +420,7 @@ jobs:
   # Build the target image from the PR's docker/release/Dockerfile.
   # Runs only when detect-mode resolved build_locally=true.
   #
-  # Output: openemr/openemr:pr-built loaded from a per-arch
+  # Output: DCL/DCL:pr-built loaded from a per-arch
   # workflow-artifact tarball. Each acceptance matrix job downloads
   # + loads the image locally, so nothing is pushed to Docker Hub
   # (or GHCR) — the build is self-contained to this workflow run.
@@ -463,7 +463,7 @@ jobs:
         esac
 
     - name: Build target image from PR Dockerfile
-      # Uses the Dockerfile's default OPENEMR_VERSION=master, so the
+      # Uses the Dockerfile's default DCL_VERSION=master, so the
       # built image reflects PR's Dockerfile changes layered over
       # current master's source. That's the validated shape:
       # "does this PR's Dockerfile still boot cleanly against current
@@ -472,7 +472,7 @@ jobs:
       run: |
         docker build \
           --file docker/release/Dockerfile \
-          --tag openemr/openemr:pr-built \
+          --tag DCL/DCL:pr-built \
           docker/release
 
     - name: Save image to artifact
@@ -481,17 +481,17 @@ jobs:
       # (not for supply-chain provenance) and zstd-compresses
       # ~50-60% of the raw image size.
       run: |
-        docker save openemr/openemr:pr-built \
-          | zstd -T0 -3 -o /tmp/openemr-pr-built.tar.zst
-        ls -lh /tmp/openemr-pr-built.tar.zst
+        docker save DCL/DCL:pr-built \
+          | zstd -T0 -3 -o /tmp/DCL-pr-built.tar.zst
+        ls -lh /tmp/DCL-pr-built.tar.zst
 
     - uses: actions/upload-artifact@v7
       with:
         # Per-arch artifact name so amd64 + arm64 uploads coexist
         # without stomping each other. Acceptance job's download step
         # picks the one matching its runner arch.
-        name: openemr-pr-built-image-${{ steps.arch.outputs.label }}
-        path: /tmp/openemr-pr-built.tar.zst
+        name: DCL-pr-built-image-${{ steps.arch.outputs.label }}
+        path: /tmp/DCL-pr-built.tar.zst
         retention-days: 1
         compression-level: 0  # Already zstd-compressed; skip re-compress
 
@@ -503,7 +503,7 @@ jobs:
     # detect-mode failed (shouldn't happen — trivial job).
     if: >-
       always()
-      && github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+      && github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
       && needs.detect-mode.result == 'success'
       && (needs.build-image.result == 'success' || needs.build-image.result == 'skipped')
     runs-on: ${{ matrix.runs_on }}
@@ -548,7 +548,7 @@ jobs:
       # Pin project name so `docker compose down` preserves named
       # volumes reliably across the from_tag -> to_tag swap in the
       # upgrade scenario.
-      COMPOSE_PROJECT_NAME: openemr-acceptance
+      COMPOSE_PROJECT_NAME: DCL-acceptance
       ACCEPTANCE_ARTIFACT_URL: http://localhost:8580
     # Arch suffix in the job name so amd64 vs arm64 runs of the same
     # scenario are distinguishable in the Actions UI + `gh pr checks`
@@ -582,14 +582,14 @@ jobs:
       if: needs.build-image.result == 'success'
       uses: actions/download-artifact@v8
       with:
-        name: openemr-pr-built-image-${{ steps.arch.outputs.label }}
+        name: DCL-pr-built-image-${{ steps.arch.outputs.label }}
         path: /tmp
 
     - name: Load PR-built image into docker (if downloaded)
       if: needs.build-image.result == 'success'
       run: |
-        zstd -d -c /tmp/openemr-pr-built.tar.zst | docker load
-        docker image inspect openemr/openemr:pr-built --format 'loaded: {{.Id}}'
+        zstd -d -c /tmp/DCL-pr-built.tar.zst | docker load
+        docker image inspect DCL/DCL:pr-built --format 'loaded: {{.Id}}'
 
     - name: Resolve effective image tags
       # Matrix.image_tag holds the Docker Hub default. When
@@ -613,9 +613,9 @@ jobs:
       run: |
         # Tag portion only — the compose override at
         # .github/docker/acceptance-docker-compose.yml expands this into
-        # `openemr/openemr:${OPENEMR_TAG:-latest}`. Including
-        # `openemr/openemr:` here doubles the prefix and Docker rejects
-        # the resulting `openemr/openemr:openemr/openemr:pr-built` as an
+        # `DCL/DCL:${DCL_TAG:-latest}`. Including
+        # `DCL/DCL:` here doubles the prefix and Docker rejects
+        # the resulting `DCL/DCL:DCL/DCL:pr-built` as an
         # invalid reference format.
         LOCAL_TAG="pr-built"
         if [[ "$BUILD_IMAGE_RESULT" == "success" ]]; then
@@ -680,7 +680,7 @@ jobs:
       uses: ./.github/actions/setup-chromedriver-multiarch
 
     - name: Install acceptance-suite composer dependencies
-      # `--no-scripts` skips OpenEMR's post-install scripts (they assume
+      # `--no-scripts` skips DCL's post-install scripts (they assume
       # the full app runtime context; acceptance only needs vendor/).
       # Cache-friendly via composer.lock hash.
       run: composer install --prefer-dist --no-progress --no-scripts --no-interaction
@@ -702,12 +702,12 @@ jobs:
         # Ensure both images are locally available so docker inspect can
         # read Config.Labels. Try local inspect first; only pull from
         # Docker Hub if the image isn't already loaded. Critical for
-        # openemr/openemr:pr-built which is docker-load'd from the
+        # DCL/DCL:pr-built which is docker-load'd from the
         # build-image artifact and does NOT exist on Docker Hub --
         # unconditional pull would fail with tag-not-found.
         for TAG in "${FROM_TAG}" "${TO_TAG}"; do
-          if ! docker image inspect "openemr/openemr:${TAG}" >/dev/null 2>&1; then
-            docker pull "openemr/openemr:${TAG}" 2>&1 | tail -1
+          if ! docker image inspect "DCL/DCL:${TAG}" >/dev/null 2>&1; then
+            docker pull "DCL/DCL:${TAG}" 2>&1 | tail -1
           fi
         done
 
@@ -729,8 +729,8 @@ jobs:
         # docker inspect needs the Docker daemon so stays in the workflow;
         # the pure decision logic lives in detect-upgrade-cell-skip.sh
         # (BATS-tested by tests/bats/ci-scripts/detect-upgrade-cell-skip/).
-        FROM_REV=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.revision"}}' "openemr/openemr:${FROM_TAG}" 2>/dev/null || echo "")
-        TO_REV=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.revision"}}' "openemr/openemr:${TO_TAG}" 2>/dev/null || echo "")
+        FROM_REV=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.revision"}}' "DCL/DCL:${FROM_TAG}" 2>/dev/null || echo "")
+        TO_REV=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.revision"}}' "DCL/DCL:${TO_TAG}" 2>/dev/null || echo "")
         export FROM_REV TO_REV
         RELEASE_TARGETS_PATH="${MASTER_RELEASE_TARGETS}" bash .github/scripts/detect-upgrade-cell-skip.sh
 
@@ -778,11 +778,11 @@ jobs:
       if: matrix.scenario != 'upgrade' || steps.detect_upgrade_skip.outputs.skip != 'true'
       env:
         # boot_tag holds the effective image ref: either the matrix's
-        # Docker Hub default OR openemr/openemr:pr-built when
+        # Docker Hub default OR DCL/DCL:pr-built when
         # build-image ran and this scenario targets the "to" side.
-        OPENEMR_TAG: ${{ steps.tags.outputs.boot_tag }}
+        DCL_TAG: ${{ steps.tags.outputs.boot_tag }}
       run: |
-        echo "==> Booting ${OPENEMR_TAG} for scenario '${{ matrix.scenario }}'"
+        echo "==> Booting ${DCL_TAG} for scenario '${{ matrix.scenario }}'"
         docker compose \
           -f docker/production/docker-compose.yml \
           -f .github/docker/acceptance-docker-compose.yml \
@@ -797,7 +797,7 @@ jobs:
       id: boot-version
       if: matrix.scenario != 'upgrade' || steps.detect_upgrade_skip.outputs.skip != 'true'
       env:
-        OPENEMR_TAG: ${{ steps.tags.outputs.boot_tag }}
+        DCL_TAG: ${{ steps.tags.outputs.boot_tag }}
       run: |
         set -eo pipefail
         # docker inspect + docker compose exec need the Docker daemon so
@@ -807,7 +807,7 @@ jobs:
         # version.php read logic lives in read-version-php.php (PHPUnit-
         # isolated by tests/Tests/Isolated/Common/Command/Ci/
         # ReadVersionPhpTest.php).
-        OCI_VERSION_LABEL=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.version"}}' "openemr/openemr:${OPENEMR_TAG}" 2>/dev/null || echo "")
+        OCI_VERSION_LABEL=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.version"}}' "DCL/DCL:${DCL_TAG}" 2>/dev/null || echo "")
         FALLBACK_VERSION=""
         # Trigger the fallback whenever the OCI label doesn't carry a
         # valid X.Y.Z prefix. Empty label = pr-built case (build-image
@@ -819,18 +819,18 @@ jobs:
         # short-circuiting on the empty-only shape. Regex matches the
         # same prefix parse-artifact-version.sh applies.
         if [[ ! "${OCI_VERSION_LABEL}" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then
-          # docker cp the reader into the container -- the openemr
+          # docker cp the reader into the container -- the DCL
           # container has no host bind-mount so .github/scripts isn't
           # visible inside without an explicit copy.
           docker compose \
             -f docker/production/docker-compose.yml \
             -f .github/docker/acceptance-docker-compose.yml \
-            cp .github/scripts/read-version-php.php openemr:/tmp/read-version-php.php
+            cp .github/scripts/read-version-php.php DCL:/tmp/read-version-php.php
           FALLBACK_VERSION=$(
             docker compose \
               -f docker/production/docker-compose.yml \
               -f .github/docker/acceptance-docker-compose.yml \
-              exec -T openemr php /tmp/read-version-php.php
+              exec -T DCL php /tmp/read-version-php.php
           )
         fi
         export OCI_VERSION_LABEL FALLBACK_VERSION
@@ -890,8 +890,8 @@ jobs:
       if: matrix.scenario == 'upgrade' && steps.detect_upgrade_skip.outputs.skip != 'true'
       env:
         # upgrade_target_tag = TO_TAG in the default path, or
-        # openemr/openemr:pr-built when build-image ran
-        OPENEMR_TAG: ${{ steps.tags.outputs.upgrade_target_tag }}
+        # DCL/DCL:pr-built when build-image ran
+        DCL_TAG: ${{ steps.tags.outputs.upgrade_target_tag }}
       run: |
         # `up --wait` blocks until healthy. The acceptance healthcheck
         # asserts the specific `interface/login/login.php` redirect
@@ -915,24 +915,24 @@ jobs:
       id: upgrade-target-version
       if: matrix.scenario == 'upgrade' && steps.detect_upgrade_skip.outputs.skip != 'true'
       env:
-        OPENEMR_TAG: ${{ steps.tags.outputs.upgrade_target_tag }}
+        DCL_TAG: ${{ steps.tags.outputs.upgrade_target_tag }}
       run: |
         set -eo pipefail
         # Same OCI-first + version.php-fallback pattern as the pre-
         # upgrade boot-version step -- see there for the extracted-
         # scripts test-coverage pointers.
-        OCI_VERSION_LABEL=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.version"}}' "openemr/openemr:${OPENEMR_TAG}" 2>/dev/null || echo "")
+        OCI_VERSION_LABEL=$(docker inspect --format='{{index .Config.Labels "org.opencontainers.image.version"}}' "DCL/DCL:${DCL_TAG}" 2>/dev/null || echo "")
         FALLBACK_VERSION=""
         if [[ ! "${OCI_VERSION_LABEL}" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then
           docker compose \
             -f docker/production/docker-compose.yml \
             -f .github/docker/acceptance-docker-compose.yml \
-            cp .github/scripts/read-version-php.php openemr:/tmp/read-version-php.php
+            cp .github/scripts/read-version-php.php DCL:/tmp/read-version-php.php
           FALLBACK_VERSION=$(
             docker compose \
               -f docker/production/docker-compose.yml \
               -f .github/docker/acceptance-docker-compose.yml \
-              exec -T openemr php /tmp/read-version-php.php
+              exec -T DCL php /tmp/read-version-php.php
           )
         fi
         export OCI_VERSION_LABEL FALLBACK_VERSION
@@ -973,17 +973,17 @@ jobs:
           -f .github/docker/acceptance-docker-compose.yml \
           ps || true
         echo ""
-        echo "=== openemr container image ID ==="
+        echo "=== DCL container image ID ==="
         docker inspect --format '{{ .Image }}' \
-          "$(docker compose -f docker/production/docker-compose.yml -f .github/docker/acceptance-docker-compose.yml ps -q openemr)" || true
+          "$(docker compose -f docker/production/docker-compose.yml -f .github/docker/acceptance-docker-compose.yml ps -q DCL)" || true
 
-    - name: Capture openemr container logs (on failure)
+    - name: Capture DCL container logs (on failure)
       if: failure()
       run: |
         docker compose \
           -f docker/production/docker-compose.yml \
           -f .github/docker/acceptance-docker-compose.yml \
-          logs openemr || true
+          logs DCL || true
 
     # On any acceptance-cell failure, upload the per-test artifacts
     # written by PantherAcceptanceTestCase::onNotSuccessfulTest()

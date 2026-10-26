@@ -1,12 +1,12 @@
 <?php
 
 // TODO: missing header
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Services;
+namespace Comlink\DCL\Modules\TeleHealthModule\Services;
 
 use InvalidArgumentException;
-use OpenEMR\Services\Address\AddressRecord;
-use OpenEMR\Services\AddressService;
-use OpenEMR\Services\PatientService;
+use DCL\Services\Address\AddressRecord;
+use DCL\Services\AddressService;
+use DCL\Services\PatientService;
 
 class FormattedPatientService
 {

@@ -7,21 +7,21 @@
  * MISSING modifier so DATETIME columns are never compared directly to
  * empty strings (which MySQL strict mode rejects).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Search;
+namespace DCL\Tests\Isolated\Services\Search;
 
-use OpenEMR\Services\Search\SearchFieldStatementResolver;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
+use DCL\Services\Search\SearchFieldStatementResolver;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
 use PHPUnit\Framework\TestCase;
 
 class SearchFieldStatementResolverTokenTest extends TestCase

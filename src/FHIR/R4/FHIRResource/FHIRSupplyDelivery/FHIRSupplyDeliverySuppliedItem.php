@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyDelivery;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSupplyDelivery;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyDelivery;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Record of delivery of what is supplied.
@@ -71,17 +71,17 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
 {
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $itemCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $itemReference = null;
 
@@ -92,7 +92,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -101,7 +101,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -111,7 +111,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
     {
@@ -119,7 +119,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
     public function setItemCodeableConcept($itemCodeableConcept)
@@ -129,7 +129,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getItemReference()
     {
@@ -137,7 +137,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $itemReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $itemReference
      * @return $this
      */
     public function setItemReference($itemReference)

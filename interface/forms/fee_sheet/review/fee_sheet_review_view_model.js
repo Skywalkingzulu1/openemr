@@ -1,13 +1,13 @@
 /**
  * knockout.js view model for review of previous fee sheets
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @link      https://www.open-emr.org/wiki/index.php/OEMR_wiki_page OEMR
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @link      https://www.dcl.org/wiki/index.php/OEMR_wiki_page OEMR
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 OEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 function code_entry(json_source) {
     this.code = ko.observable(json_source.code);

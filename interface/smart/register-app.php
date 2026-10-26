@@ -1,12 +1,12 @@
 <?php
 
 /**
- * register-app.php Handles the registration of a new OpenEMR OAuth2 application.  This is just a front-end GUI for the
+ * register-app.php Handles the registration of a new DCL OAuth2 application.  This is just a front-end GUI for the
  * /oauth2/<site>/registration endpoint.
  * TODO: @adunsulag we should twigify this file.
  *
- * @package OpenEMR
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @author  Kevin Yeh <kevin.y@integralemr.com>
@@ -20,15 +20,15 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\Services\DecisionSupportInterventionService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\Services\DecisionSupportInterventionService;
 
 // not sure if we need the site id or not...
 $ignoreAuth = true;
@@ -68,8 +68,8 @@ switch (OEGlobalsBag::getInstance()->get('login_page_layout')) {
         break;
 }
 
-// TODO: adunsulag find out where our openemr name comes from
-$openemr_name ??= '';
+// TODO: adunsulag find out where our DCL name comes from
+$DCL_name ??= '';
 
 $serverConfig = new ServerConfig();
 $fhirRegisterURL = $serverConfig->getRegistrationUrl();
@@ -90,7 +90,7 @@ $dsiTypesStringNames = DecisionSupportInterventionService::DSI_TYPES_CLIENT_STRI
 <head>
     <?php Header::setupHeader(); ?>
 
-    <title><?php echo xlt('OpenEMR App Registration'); ?></title>
+    <title><?php echo xlt('DCL App Registration'); ?></title>
     <style>
         .hidden {
             display: none;
@@ -388,7 +388,7 @@ $dsiTypesStringNames = DecisionSupportInterventionService::DSI_TYPES_CLIENT_STRI
             <?php } ?>
             <?php if (OEGlobalsBag::getInstance()->getBoolean('show_label_login')) { ?>
             <div class="text-center login-title-label">
-                    <?php echo text($openemr_name); ?>
+                    <?php echo text($DCL_name); ?>
             </div>
             <?php } ?>
             <?php
@@ -587,8 +587,8 @@ $dsiTypesStringNames = DecisionSupportInterventionService::DSI_TYPES_CLIENT_STRI
                         </ul>
                     </div>
                     <p><?php echo xlt("If you continue to have errors, have your server administrator turn on detailed API debug logs in the Admin -> Config -> Logging -> System Error Logging Options setting"); ?></p>
-                    <p><a target="_blank" href="https://community.open-emr.org/"><?php echo xlt("More support can be found on the OpenEMR community form"); ?></a></p>
-                    <p><a target="_blank" href="https://github.com/openemr/openemr/issues"><?php echo xlt("File bug report on issue tracker"); ?></a></p>
+                    <p><a target="_blank" href="https://community.dcl.org/"><?php echo xlt("More support can be found on the DCL community form"); ?></a></p>
+                    <p><a target="_blank" href="https://github.com/DCL/DCL/issues"><?php echo xlt("File bug report on issue tracker"); ?></a></p>
                 </div>
                 <div class="form-group successResponse hidden">
                     <div id="successResponseContainer">

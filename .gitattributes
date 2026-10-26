@@ -3,7 +3,7 @@
 
 # Exclude dev-only infrastructure from release archives and Composer installs.
 # GitHub uses these rules when generating source downloads for tagged releases.
-# Keep anything needed to install, configure, or run OpenEMR.
+# Keep anything needed to install, configure, or run DCL.
 .github/                       export-ignore
 .phpstan/                      export-ignore
 ci/                            export-ignore
@@ -53,10 +53,10 @@ README-Isolated-Testing.md     export-ignore
 # globs (which match immediate children only, leaving the parent dirs
 # walkable) plus -export-ignore carve-outs for the two files.
 Documentation/EHI_Export/docs/* export-ignore
-Documentation/EHI_Export/docs/openemr.openemr.xml -export-ignore
+Documentation/EHI_Export/docs/DCL.DCL.xml -export-ignore
 Documentation/EHI_Export/schemaspy/* export-ignore
 Documentation/EHI_Export/schemaspy/schemas -export-ignore
 Documentation/EHI_Export/schemaspy/schemas/* export-ignore
-Documentation/EHI_Export/schemaspy/schemas/openemr.meta.xml -export-ignore
+Documentation/EHI_Export/schemaspy/schemas/DCL.meta.xml -export-ignore
 .phpstan/**/*.* text eol=lf
 .phpstan/*.* text eol=lf

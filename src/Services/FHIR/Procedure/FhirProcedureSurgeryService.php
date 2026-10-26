@@ -2,36 +2,36 @@
 
 /**
  * FhirProcedureSurgeryService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Procedure;
+namespace DCL\Services\FHIR\Procedure;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProcedure;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\FhirProcedureService;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\SurgeryService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProcedure;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\FhirProcedureService;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\SurgeryService;
+use DCL\Validators\ProcessingResult;
 
 class FhirProcedureSurgeryService extends FhirServiceBase implements IPatientCompartmentResourceService
 {
@@ -53,7 +53,7 @@ class FhirProcedureSurgeryService extends FhirServiceBase implements IPatientCom
     }
 
     /**
-     * Returns an array mapping FHIR Procedure Resource search parameters to OpenEMR Procedure search parameters
+     * Returns an array mapping FHIR Procedure Resource search parameters to DCL Procedure search parameters
      *
      * @return array The search parameters
      */
@@ -73,24 +73,24 @@ class FhirProcedureSurgeryService extends FhirServiceBase implements IPatientCom
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->service->search($openEMRSearchParameters);
+        return $this->service->search($DCLSearchParameters);
     }
 
 
     /**
-     * Parses an OpenEMR procedure record, returning the equivalent FHIR Procedure Resource
+     * Parses an DCL procedure record, returning the equivalent FHIR Procedure Resource
      *
-     * @param  array   $dataRecord The source OpenEMR data record
+     * @param  array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRProcedure
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $procedureResource = new FHIRProcedure();
 
@@ -164,7 +164,7 @@ class FhirProcedureSurgeryService extends FhirServiceBase implements IPatientCom
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return the FHIR Resource. Returned format is defined using $encode parameter.
      */

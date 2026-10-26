@@ -16,24 +16,24 @@
  * General Public License along with this program.
  * If not, see <http://opensource.org/licenses/gpl-license.php>.
  *
- * @package    OpenEMR
+ * @package    DCL
  * @subpackage Ensora
  * @author     Eldho Chacko <eldho@zhservices.com>
  * @author     Vinish K <vinish@zhservices.com>
  * @author     Sam Likins <sam.likins@wsi-services.com>
- * @link       https://www.open-emr.org
+ * @link       https://www.dcl.org
  */
 
 require_once(__DIR__ . '/../globals.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRxGlobals.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRxStore.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/xmltoarray_parser_htmlfix.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRxSOAP.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRx_xml.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRxGlobals.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRxStore.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/xmltoarray_parser_htmlfix.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRxSOAP.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getProjectDir() . '/interface/eRx_xml.php');
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 set_time_limit(0);
 $GLOBALS_REF = $GLOBALS;

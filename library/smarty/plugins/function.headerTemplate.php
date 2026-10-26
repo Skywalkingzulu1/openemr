@@ -14,14 +14,14 @@
  * of the License, or (at your option) any later version.
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 /**
  * Smarty {headerTemplate} function plugin.
  *
  * Type:     function<br />
  * Name:     headerTemplate<br />
- * Purpose:  headerTemplate in OpenEMR - Smarty templates<br />
+ * Purpose:  headerTemplate in DCL - Smarty templates<br />
  *
  * @param array $params
  * @param mixed $smarty
@@ -38,6 +38,6 @@ function smarty_function_headerTemplate($params, &$smarty): string
     // With the default $echoOutput = true, setupHeader() would also echo the markup,
     // emitting the entire header (jQuery, Bootstrap, etc.) twice from a single tag --
     // double-binding Bootstrap's data-api handlers (e.g. dropdowns open then instantly
-    // close). See OpenEMR\Core\Header::setupHeader().
+    // close). See DCL\Core\Header::setupHeader().
     return Header::setupHeader($assets, false);
 }

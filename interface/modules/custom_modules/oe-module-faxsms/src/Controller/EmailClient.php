@@ -3,25 +3,25 @@
 /**
  * Email Controller
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2023 Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use MyMailer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Contracts\EmailChannelInterface;
-use OpenEMR\Modules\FaxSMS\Exception\EmailSendFailedException;
-use OpenEMR\Modules\FaxSMS\Exception\InvalidEmailAddressException;
-use OpenEMR\Modules\FaxSMS\Exception\SmtpNotConfiguredException;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Contracts\EmailChannelInterface;
+use DCL\Modules\FaxSMS\Exception\EmailSendFailedException;
+use DCL\Modules\FaxSMS\Exception\InvalidEmailAddressException;
+use DCL\Modules\FaxSMS\Exception\SmtpNotConfiguredException;
 use PHPMailer\PHPMailer\Exception;
 
 class EmailClient extends AppDispatch implements EmailChannelInterface

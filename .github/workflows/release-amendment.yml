@@ -80,7 +80,7 @@ jobs:
         client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
         private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
         owner: ${{ github.repository_owner }}
-        repositories: openemr
+        repositories: DCL
         # Least-privilege: this workflow only pushes amendment branches
         # + opens PRs + calls `gh release edit`. contents:write covers
         # the branch push and the Release-body edit; pull-requests:write
@@ -200,7 +200,7 @@ jobs:
       # current advisory set + compatibility state -- which is exactly
       # the amendment we want.
       run: |
-        php bin/console openemr:release-prep \
+        php bin/console DCL:release-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -349,8 +349,8 @@ jobs:
 
           Dispatched via `.github/workflows/release-amendment.yml`. Sibling amendment PR against master is opened in the same run.
         commit-message: 'chore(release): amend ${{ inputs.version }} CHANGELOG (post-GHSA-publish)'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         delete-branch: false
 
     # Remove rel-checkout before master steps run. rel-checkout is a
@@ -359,7 +359,7 @@ jobs:
     # peter-evans call runs `git add -A` at the workflow root, which
     # treats any nested-git subdirectory as a submodule and adds a
     # spurious `Subproject commit <sha>` entry to the amendment PR
-    # (observed in openemr/openemr#13003's first version). By this
+    # (observed in DCL/DCL#13003's first version). By this
     # point Extract has already saved the section to $RUNNER_TEMP and
     # rel-side peter-evans has captured its diff, so nothing else
     # downstream reads from rel-checkout.
@@ -377,7 +377,7 @@ jobs:
         # Same GH_TOKEN requirement as the rel-scope mutator run above.
         GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: |
-        php bin/console openemr:release-prep \
+        php bin/console DCL:release-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -437,8 +437,8 @@ jobs:
 
           Dispatched via `.github/workflows/release-amendment.yml`.
         commit-message: 'chore(release): amend ${{ inputs.version }} CHANGELOG on master (post-GHSA-publish)'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         delete-branch: false
 
     # --- Release body sync ---------------------------------------------

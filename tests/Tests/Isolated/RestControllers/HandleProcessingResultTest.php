@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\RestControllers;
+namespace DCL\Tests\Isolated\RestControllers;
 
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\TestCase;
 
 class HandleProcessingResultTest extends TestCase

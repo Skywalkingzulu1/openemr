@@ -35,7 +35,7 @@ jobs:
   branch-cut:
     name: Open rel-side + master-side branch-cut PRs
     if: |
-      github.repository == 'openemr/openemr'
+      github.repository == 'DCL/DCL'
       && (
         (github.event_name == 'create'
          && github.event.ref_type == 'branch'
@@ -80,7 +80,7 @@ jobs:
         # consumers (the conductor's rel-cut dispatch covers that on the
         # first push to the rel branch).
         owner: ${{ github.repository_owner }}
-        repositories: openemr
+        repositories: DCL
         # Least-privilege: this workflow needs to push branches (contents)
         # and open PRs (pull-requests). Without explicit permission-*
         # inputs, the token inherits the App installation's full grant.
@@ -176,7 +176,7 @@ jobs:
         REL_BRANCH: ${{ steps.resolve.outputs.rel-branch }}
         PREV_REL_BRANCH: ${{ steps.resolve.outputs.prev-rel-branch }}
       run: |
-        php bin/console openemr:branch-cut \
+        php bin/console DCL:branch-cut \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -208,8 +208,8 @@ jobs:
         title: 'chore(release): branch-cut ${{ steps.resolve.outputs.rel-branch }} (rel-side)'
         body: ${{ steps.rel-pr-body.outputs.body }}
         commit-message: 'chore(release): branch-cut ${{ steps.resolve.outputs.rel-branch }} (rel-side)'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         draft: false
         delete-branch: false
 
@@ -236,7 +236,7 @@ jobs:
         REL_BRANCH: ${{ steps.resolve.outputs.rel-branch }}
         PREV_REL_BRANCH: ${{ steps.resolve.outputs.prev-rel-branch }}
       run: |
-        php bin/console openemr:branch-cut \
+        php bin/console DCL:branch-cut \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -268,7 +268,7 @@ jobs:
         title: 'chore(release): branch-cut ${{ steps.resolve.outputs.rel-branch }} (master-side)'
         body: ${{ steps.master-pr-body.outputs.body }}
         commit-message: 'chore(release): branch-cut ${{ steps.resolve.outputs.rel-branch }} (master-side)'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         draft: false
         delete-branch: false

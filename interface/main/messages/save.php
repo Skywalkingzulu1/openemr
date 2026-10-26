@@ -7,17 +7,17 @@
  * @link    http://www.MedExBank.com
  * @author  MedEx <support@MedExBank.com>
  * @copyright Copyright (c) 2017 MedEx <support@MedExBank.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once "../../globals.php";
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 require_once OEGlobalsBag::getInstance()->getSrcDir() . "/MedEx/API.php";
 
@@ -197,7 +197,7 @@ if ($_REQUEST['action'] == "new_recall") {
         $result['PLAN'] = $result2['ORDER_DETAILS'];
     }
 
-    $query = "SELECT * FROM openemr_postcalendar_events WHERE pc_pid =? ORDER BY pc_eventDate DESC LIMIT 1";
+    $query = "SELECT * FROM DCL_postcalendar_events WHERE pc_pid =? ORDER BY pc_eventDate DESC LIMIT 1";
     $result2 = sqlQuery($query, [$targetPidInput]);
     if ($result2) { //if they were never actually scheduled this would be blank
         $result['DOLV']     = oeFormatShortDate($result2['pc_eventDate']);

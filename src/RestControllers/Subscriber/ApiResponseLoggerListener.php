@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Logging\Audit\ApiLogRedactor;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Logging\Audit\ApiLogRedactor;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,7 +61,7 @@ class ApiResponseLoggerListener implements EventSubscriberInterface
         $kernel = $event->getKernel();
         $globalsBag = $kernel instanceof OEHttpKernel ? $kernel->getGlobalsBag() : new OEGlobalsBag([]);
 
-        // only log when using standard api calls (skip when using local api calls from within OpenEMR)
+        // only log when using standard api calls (skip when using local api calls from within DCL)
         //  and when api log option is set
         if (
             !$request->isLocalApi() &&

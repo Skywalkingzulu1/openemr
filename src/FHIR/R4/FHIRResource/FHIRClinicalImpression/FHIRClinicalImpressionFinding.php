@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
@@ -71,19 +71,19 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
 {
     /**
      * Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $itemCodeableConcept = null;
 
     /**
      * Specific reference for finding or diagnosis, which may include ruled-out or resolved conditions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $itemReference = null;
 
     /**
      * Which investigations support finding or diagnosis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $basis = null;
 
@@ -94,7 +94,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
 
     /**
      * Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
     {
@@ -103,7 +103,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
 
     /**
      * Specific text or code for finding or diagnosis, which may include ruled-out or resolved conditions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
     public function setItemCodeableConcept($itemCodeableConcept)
@@ -114,7 +114,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
 
     /**
      * Specific reference for finding or diagnosis, which may include ruled-out or resolved conditions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getItemReference()
     {
@@ -123,7 +123,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
 
     /**
      * Specific reference for finding or diagnosis, which may include ruled-out or resolved conditions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $itemReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $itemReference
      * @return $this
      */
     public function setItemReference($itemReference)
@@ -134,7 +134,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
 
     /**
      * Which investigations support finding or diagnosis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getBasis()
     {
@@ -143,7 +143,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \Json
 
     /**
      * Which investigations support finding or diagnosis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $basis
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $basis
      * @return $this
      */
     public function setBasis($basis)

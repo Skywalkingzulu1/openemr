@@ -3,30 +3,30 @@
 /**
  * vitals C_FormVitals.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\BmiCategory;
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Common\Forms\FormVitalDetails;
-use OpenEMR\Common\Forms\FormVitals;
-use OpenEMR\Common\Forms\ReasonStatusCodes;
-use OpenEMR\Common\Forms\VitalsFieldRanges;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\VitalsService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\BmiCategory;
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Common\Forms\FormVitalDetails;
+use DCL\Common\Forms\FormVitals;
+use DCL\Common\Forms\ReasonStatusCodes;
+use DCL\Common\Forms\VitalsFieldRanges;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\ListService;
+use DCL\Services\VitalsService;
 
 class C_FormVitals
 {

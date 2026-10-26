@@ -1,44 +1,44 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\AllergyIntoleranceService;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\PractitionerAttributionPolicy;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance;
+use DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory;
+use DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\AllergyIntoleranceService;
+use DCL\Services\BaseService;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\PractitionerAttributionPolicy;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR AllergyIntolerance Service
  *
- * @package   OpenEMR
+ * @package   DCL
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirAllergyIntoleranceService extends FhirServiceBase implements IResourceUSCIGProfileService, IPatientCompartmentResourceService, IFhirExportableResourceService
 {
@@ -61,7 +61,7 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
     }
 
     /**
-     * Returns an array mapping FHIR AllergyIntolerance Resource search parameters to OpenEMR AllergyIntolerance search parameters
+     * Returns an array mapping FHIR AllergyIntolerance Resource search parameters to DCL AllergyIntolerance search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -79,9 +79,9 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
     }
 
     /**
-     * Parses an OpenEMR allergyIntolerance record, returning the equivalent FHIR AllergyIntolerance Resource
+     * Parses an DCL allergyIntolerance record, returning the equivalent FHIR AllergyIntolerance Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRAllergyIntolerance
      */
@@ -100,13 +100,13 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
     }
 
     /**
-     * Parses an OpenEMR allergyIntolerance record, returning the equivalent FHIR AllergyIntolerance Resource
+     * Parses an DCL allergyIntolerance record, returning the equivalent FHIR AllergyIntolerance Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRAllergyIntolerance
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $allergyIntoleranceResource = new FHIRAllergyIntolerance();
         $fhirMeta = new FHIRMeta();
@@ -172,7 +172,7 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
         }
 
         // cardinality is 0..*
-        // however in OpenEMR we currently only track a single reaction, we will populate it if we have it.
+        // however in DCL we currently only track a single reaction, we will populate it if we have it.
         // if a reaction is unassigned, it has no codes and so we will skip over this as it has no meaning in FHIR.
         // AllergyIntoleranceService only expands `reaction` into a coding array when the row
         // carries reaction_codes; without them it stays the raw list_options string, which
@@ -258,10 +258,10 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
     }
 
     /**
-     * Parses a FHIR AllergyIntolerance resource, returning the equivalent OpenEMR record.
+     * Parses a FHIR AllergyIntolerance resource, returning the equivalent DCL record.
      *
      * @param FHIRDomainResource $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record
+     * @return array a mapped DCL data record
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -287,7 +287,7 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
             $parsedUuid = UtilsService::parseReferenceString($patientRef, 'Patient')['uuid'] ?? null;
             if (
                 is_string($parsedUuid) && $parsedUuid !== ''
-                && \OpenEMR\Common\Uuid\UuidRegistry::isValidStringUUID($parsedUuid)
+                && \DCL\Common\Uuid\UuidRegistry::isValidStringUUID($parsedUuid)
             ) {
                 $data['puuid'] = $parsedUuid;
             }
@@ -304,7 +304,7 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
                 $system = is_string($systemValue) ? $systemValue : '';
                 $codeValue = $coding['code'] ?? null;
                 if (is_scalar($codeValue) && $codeValue !== '' && $codeValue !== false) {
-                    $diagnosisParts[] = $codeTypesService->getOpenEMRCodeForSystemAndCode($system, $codeValue);
+                    $diagnosisParts[] = $codeTypesService->getDCLCodeForSystemAndCode($system, $codeValue);
                 }
                 $display = $coding['display'] ?? null;
                 if (is_string($display) && $display !== '' && !isset($data['title'])) {
@@ -324,7 +324,7 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
         $clinicalStatus = FhirPayloadReader::firstCodingCode($json['clinicalStatus'] ?? null);
         if ($clinicalStatus !== '') {
             $data['outcome'] = ($clinicalStatus === 'resolved') ? '1' : '0';
-            // enddate carries the other half of the status. parseOpenEMRRecord() reads 'active'
+            // enddate carries the other half of the status. parseDCLRecord() reads 'active'
             // whenever enddate is unset and needs it set (with outcome '1') to read 'resolved',
             // so writing outcome alone meant every non-active status read back as active.
             if ($clinicalStatus !== 'active') {
@@ -426,7 +426,7 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
                 if (is_scalar($codeValue) && $codeValue !== '' && $codeValue !== false) {
                     $systemValue = $coding['system'] ?? null;
                     $system = is_string($systemValue) ? $systemValue : '';
-                    $reactionParts[] = $codeTypesService->getOpenEMRCodeForSystemAndCode($system, $codeValue);
+                    $reactionParts[] = $codeTypesService->getDCLCodeForSystemAndCode($system, $codeValue);
                 }
             }
             if ($reactionParts !== []) {
@@ -445,35 +445,35 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      *
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      * @return ProcessingResult
      */
-    protected function insertOpenEMRRecord($openEmrRecord)
+    protected function insertDCLRecord($openEmrRecord)
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR AllergyIntolerance record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL AllergyIntolerance record array');
         }
 
         return $this->allergyIntoleranceService->insert($openEmrRecord);
     }
 
     /**
-     * Updates an existing OpenEMR record.
+     * Updates an existing DCL record.
      *
-     * @param string $fhirResourceId The OpenEMR record's FHIR Resource ID (uuid)
-     * @param array $updatedOpenEMRRecord The updated OpenEMR record
+     * @param string $fhirResourceId The DCL record's FHIR Resource ID (uuid)
+     * @param array $updatedDCLRecord The updated DCL record
      * @return ProcessingResult
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
         // The patient the caller asserts has to be the allergy's actual owner. parseFhirResource()
         // sets puuid only when AllergyIntolerance.patient resolves, and without it update() has
         // nothing to compare the stored row against. AllergyIntolerance.patient is 1..1 in R4, so
         // rejecting the omission is also what the spec asks for, and it matches how
         // MedicationRequest and ServiceRequest already handle their subject on this path.
-        $puuid = $updatedOpenEMRRecord['puuid'] ?? null;
+        $puuid = $updatedDCLRecord['puuid'] ?? null;
         if (!is_string($puuid) || $puuid === '') {
             $result = new ProcessingResult();
             $result->setValidationMessages([
@@ -491,18 +491,18 @@ class FhirAllergyIntoleranceService extends FhirServiceBase implements IResource
             return $result;
         }
 
-        return $this->allergyIntoleranceService->update($fhirResourceId, $updatedOpenEMRRecord, (int) $pid);
+        return $this->allergyIntoleranceService->update($fhirResourceId, $updatedDCLRecord, (int) $pid);
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->allergyIntoleranceService->search($openEMRSearchParameters, true);
+        return $this->allergyIntoleranceService->search($DCLSearchParameters, true);
     }
 
     public function getProfileURIs(): array

@@ -3,21 +3,21 @@
 /**
  * Isolated tests for the SMART on FHIR configuration document
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Marcello Costagliola <marcello.costagliola1@gmail.com>
  * @copyright Copyright (c) 2026 Marcello Costagliola <marcello.costagliola1@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers\SMART;
+namespace DCL\Tests\Isolated\RestControllers\SMART;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\RestControllers\SMART\SMARTConfigurationController;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\RestControllers\SMART\SMARTConfigurationController;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

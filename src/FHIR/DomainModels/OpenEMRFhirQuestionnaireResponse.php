@@ -1,25 +1,25 @@
 <?php
 
 /*
- * OpenEMRFhirQuestionnaireResponse.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * DCLFhirQuestionnaireResponse.php
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\FHIR\DomainModels;
+namespace DCL\FHIR\DomainModels;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer;
+use DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem;
 use SimpleXMLElement;
 
-class OpenEMRFhirQuestionnaireResponse extends FHIRQuestionnaireResponse
+class DCLFhirQuestionnaireResponse extends FHIRQuestionnaireResponse
 {
     /**
      * Note that _questionnaire is a primitive type override that allows for questionnaire to be overridden, newer versions of FHIR R4

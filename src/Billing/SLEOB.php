@@ -3,19 +3,19 @@
 /**
  * This class has various billing functions for posting charges and payments.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2005-2009 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\PaymentProcessing\Recorder;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\PaymentProcessing\Recorder;
 
 class SLEOB
 {
@@ -115,7 +115,7 @@ class SLEOB
      * @param string $codetype
      * @param ?string $date,
      * @param ?string $payer_claim_number
-     * @deprecated Use \OpenEMR\PaymentProcessing\Recorder::recordActivity directly
+     * @deprecated Use \DCL\PaymentProcessing\Recorder::recordActivity directly
      */
     public static function arPostPayment(
         $patient_id,
@@ -217,7 +217,7 @@ class SLEOB
      * @param string $reason
      * @param string $codetype
      * @param ?string $payer_claim_number
-     * @deprecated Use \OpenEMR\PaymentProcessing\Recorder::recordActivity directly
+     * @deprecated Use \DCL\PaymentProcessing\Recorder::recordActivity directly
      */
     public static function arPostAdjustment($patient_id, $encounter_id, $session_id, $amount, $code, $payer_type, $reason, $codetype = '', $payer_claim_number = null)
     {

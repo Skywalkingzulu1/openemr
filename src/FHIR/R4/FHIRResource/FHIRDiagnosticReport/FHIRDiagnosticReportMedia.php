@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDiagnosticReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDiagnosticReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDiagnosticReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretations, and formatted representation of diagnostic reports.
@@ -71,13 +71,13 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * Reference to the image source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $link = null;
 
@@ -88,7 +88,7 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -97,7 +97,7 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -108,7 +108,7 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Reference to the image source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLink()
     {
@@ -117,7 +117,7 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Reference to the image source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $link
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $link
      * @return $this
      */
     public function setLink($link)

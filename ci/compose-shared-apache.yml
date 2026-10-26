@@ -1,10 +1,10 @@
 services:
-  openemr:
+  DCL:
     ports:
     - 80:80
     - 443:443
     volumes:
-    - ../:/var/www/localhost/htdocs/openemr
+    - ../:/var/www/localhost/htdocs/DCL
     # Allow the container to write coredumps when an Apache worker segfaults
     # (issue #12438/#12439): the kernel will not dump a process whose core
     # ulimit is 0. The on-failure CI diagnostics step extracts and backtraces
@@ -16,14 +16,14 @@ services:
     environment:
       EMPTY: yes
       FORCE_NO_BUILD_MODE: yes
-      OPENEMR_DEPRECATION_MODE: error
-      OPENEMR_ENABLE_CI_PHP: '1'
+      DCL_DEPRECATION_MODE: error
+      DCL_ENABLE_CI_PHP: '1'
       ENABLE_COVERAGE: ${ENABLE_COVERAGE:-false}
       PCOV_ON: ${ENABLE_COVERAGE:-false}
-      SELENIUM_BASE_URL: http://openemr
+      SELENIUM_BASE_URL: http://DCL
       # Disable the patient birthday-alert modal so e2e tests don't get blocked
       # on the seed patient's birthday (DOB 1958-05-02). See issue #11980.
-      OPENEMR_SETTING_patient_birthday_alert: '0'
+      DCL_SETTING_patient_birthday_alert: '0'
     healthcheck:
       test:
       - CMD

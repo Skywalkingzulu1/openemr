@@ -72,7 +72,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../contrib/util/ccda_import/import_ccda.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'OpenEMR path\\: \' and mixed results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'DCL path\\: \' and mixed results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../contrib/util/ccda_import/import_ccda.php',
 ];
@@ -3614,7 +3614,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Binary operation "\\." between \'/interface/modules…\' and mixed results in an error\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Binary operation "\\." between mixed and \'\\:\\:\' results in an error\\.$#',
@@ -4137,7 +4137,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Form/ModuleconfigForm.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'OpenEMR CCDA import…\' and mixed results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'DCL CCDA import…\' and mixed results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/CarecoordinationTable.php',
 ];
@@ -4397,7 +4397,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Immunization/src/Immunization/Controller/ImmunizationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'MSH\\|\\^~\\\\\\\\&\\|OPENEMR\\|\' and mixed results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'MSH\\|\\^~\\\\\\\\&\\|DCL\\|\' and mixed results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Immunization/src/Immunization/Controller/ImmunizationController.php',
 ];
@@ -12057,7 +12057,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Common/Auth/AuthUtils.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'OpenEMR Notice\\:…\' and mixed results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'DCL Notice\\:…\' and mixed results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Common/Auth/AuthUtils.php',
 ];
@@ -12167,7 +12167,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Common/Command/Register.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'OpenEMR\\\\\\\\Common…\' and list\\<mixed\\>\\|string\\|false results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'DCL\\\\\\\\Common…\' and list\\<mixed\\>\\|string\\|false results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Common/Command/Runner/CommandRunner.php',
 ];
@@ -12457,7 +12457,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Core/ModulesClassLoader.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'OpenEMR\\\\\\\\Cqm\\\\\\\\Qdm\\\\\\\\\' and mixed results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'DCL\\\\\\\\Cqm\\\\\\\\Qdm\\\\\\\\\' and mixed results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Cqm/Generator.php',
 ];
@@ -13792,7 +13792,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirProcedureService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'OpenEMR\\\\\\\\Services…\' and mixed results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'DCL\\\\\\\\Services…\' and mixed results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirProvenanceService.php',
 ];
@@ -14477,7 +14477,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/PractitionerRoleService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'%%\' and OpenEMR\\\\Services\\\\Search\\\\ISearchField\\|string results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'%%\' and DCL\\\\Services\\\\Search\\\\ISearchField\\|string results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/PractitionerRoleService.php',
 ];
@@ -15112,7 +15112,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Unit/Common/Forms/FormLocatorTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Binary operation "\\." between \'OpenEMR\\\\\\\\Common…\' and 5\\|120\\|14411518807585587\\|array\\{pulse\\: array\\{id\\: 7, interpretation_codes\\: \'A\', interpretation_title\\: \'Abnormal\', vitals_column\\: \'pulse\'\\}\\} results in an error\\.$#',
+    'message' => '#^Binary operation "\\." between \'DCL\\\\\\\\Common…\' and 5\\|120\\|14411518807585587\\|array\\{pulse\\: array\\{id\\: 7, interpretation_codes\\: \'A\', interpretation_title\\: \'Abnormal\', vitals_column\\: \'pulse\'\\}\\} results in an error\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Unit/Common/Forms/FormVitalsTest.php',
 ];

@@ -2,7 +2,7 @@
 #
 # Calls docker-test-core.yml which discovers all docker/<variant>/Dockerfile
 # subdirectories and runs the production test path against each. Under
-# openemr core's flatter layout that means flex + binary + release; the
+# DCL core's flatter layout that means flex + binary + release; the
 # matrix is built dynamically inside docker-test-core.yml.
 #
 # Triggers on changes to docker/release/** since that's the Dockerfile this
@@ -20,7 +20,7 @@
 #  - is_production_docker: true  -- triggers the production-mode test path
 #    inside docker-test-core.yml (vs the dev-mode path used by the
 #    docker-test-flex-*.yml callers).
-#  - production_coverage_openemr_version: 'release' -- variant to enable
+#  - production_coverage_DCL_version: 'release' -- variant to enable
 #    coverage instrumentation on; only one variant gets kcov per run.
 #
 # No `branches:` filter on the triggers. Branch scoping is implicit -- the
@@ -64,4 +64,4 @@ jobs:
     uses: ./.github/workflows/docker-test-core.yml
     with:
       is_production_docker: true
-      production_coverage_openemr_version: 'release'
+      production_coverage_DCL_version: 'release'

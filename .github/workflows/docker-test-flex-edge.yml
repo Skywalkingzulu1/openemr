@@ -1,13 +1,13 @@
-# This will run the OpenEMR flex dockers with Alpine Edge version. It will test the flex docker images in both
+# This will run the DCL flex dockers with Alpine Edge version. It will test the flex docker images in both
 #  development (ie. dev) mode (codebase used from a shared volume) and production (ie. prod) mode (codebase collected via git).
 #  - is_production_docker is required and needs to be false.
 #  - alpine_versions is set to edge
 #  - php_versions are set to 8.3, 8.4 and 8.5
 #  - is_flex_coverage_docker is set to true (so coverage will be collected in both dev mode and prod mode dockers)
 #  - flex_coverage_php_version is set to 8.5 (this is the docker's php versions to use for coverage collection)
-#  - flex_timing is set to true to emit TIMING markers in openemr.sh (openemr-devops#797).
+#  - flex_timing is set to true to emit TIMING markers in DCL.sh (DCL-devops#797).
 
-name: OpenEMR Flex Edge Docker Test
+name: DCL Flex Edge Docker Test
 
 on:
   push:

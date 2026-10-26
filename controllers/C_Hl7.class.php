@@ -3,14 +3,14 @@
 /**
  * C_HL7 Class.
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class C_Hl7 extends Controller
 {

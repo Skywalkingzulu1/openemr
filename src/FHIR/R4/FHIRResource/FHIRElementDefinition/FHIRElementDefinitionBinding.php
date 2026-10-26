@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,19 +72,19 @@ class FHIRElementDefinitionBinding extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBindingStrength
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBindingStrength
      */
     public $strength = null;
 
     /**
      * Describes the intended use of this particular set of codes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Refers to the value set that identifies the set of codes the binding refers to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $valueSet = null;
 
@@ -95,7 +95,7 @@ class FHIRElementDefinitionBinding extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBindingStrength
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBindingStrength
      */
     public function getStrength()
     {
@@ -104,7 +104,7 @@ class FHIRElementDefinitionBinding extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBindingStrength $strength
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBindingStrength $strength
      * @return $this
      */
     public function setStrength($strength)
@@ -115,7 +115,7 @@ class FHIRElementDefinitionBinding extends FHIRBackboneElement implements \JsonS
 
     /**
      * Describes the intended use of this particular set of codes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -124,7 +124,7 @@ class FHIRElementDefinitionBinding extends FHIRBackboneElement implements \JsonS
 
     /**
      * Describes the intended use of this particular set of codes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -135,7 +135,7 @@ class FHIRElementDefinitionBinding extends FHIRBackboneElement implements \JsonS
 
     /**
      * Refers to the value set that identifies the set of codes the binding refers to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getValueSet()
     {
@@ -144,7 +144,7 @@ class FHIRElementDefinitionBinding extends FHIRBackboneElement implements \JsonS
 
     /**
      * Refers to the value set that identifies the set of codes the binding refers to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
      * @return $this
      */
     public function setValueSet($valueSet)

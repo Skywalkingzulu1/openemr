@@ -6,22 +6,22 @@
  * Replaces the legacy custom/zutil.cli.doc_import.php script that was
  * invoked via library/allow_cronjobs.php.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2017 MD Support <mdsupport@users.sf.net>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use Document;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\IGlobalsAware;
-use OpenEMR\Services\Trait\GlobalInterfaceTrait;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\IGlobalsAware;
+use DCL\Services\Trait\GlobalInterfaceTrait;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -144,7 +144,7 @@ class DocumentImportCommand extends Command implements IGlobalsAware
      * with a no-op.
      *
      * @codeCoverageIgnore Overridden in tests; the real implementation pulls
-     *     in legacy procedural files that require a full OpenEMR bootstrap.
+     *     in legacy procedural files that require a full DCL bootstrap.
      */
     protected function loadHelpers(): void
     {

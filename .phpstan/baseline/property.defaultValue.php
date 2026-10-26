@@ -47,12 +47,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../portal/patient/fwk/libs/verysimple/String/VerySimpleStringUtil.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Static property OpenEMR\\\\RestControllers\\\\Config\\\\RestConfig\\:\\:\\$localCall \\(OpenEMR\\\\RestControllers\\\\Config\\\\set\\) does not accept default value of type false\\.$#',
+    'message' => '#^Static property DCL\\\\RestControllers\\\\Config\\\\RestConfig\\:\\:\\$localCall \\(DCL\\\\RestControllers\\\\Config\\\\set\\) does not accept default value of type false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/Config/RestConfig.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Static property OpenEMR\\\\RestControllers\\\\Config\\\\RestConfig\\:\\:\\$notRestCall \\(OpenEMR\\\\RestControllers\\\\Config\\\\set\\) does not accept default value of type false\\.$#',
+    'message' => '#^Static property DCL\\\\RestControllers\\\\Config\\\\RestConfig\\:\\:\\$notRestCall \\(DCL\\\\RestControllers\\\\Config\\\\set\\) does not accept default value of type false\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/Config/RestConfig.php',
 ];

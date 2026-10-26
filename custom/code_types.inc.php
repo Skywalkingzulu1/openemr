@@ -39,8 +39,8 @@
  *  </pre>
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Kevin Yeh <kevin.y@integralemr.com>
@@ -50,14 +50,14 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021-2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (C) 2025 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Codes\ExternalCodesCreatedEvent;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Codes\ExternalCodesCreatedEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-$isStaticAnalysis = defined('OPENEMR_STATIC_ANALYSIS') && OPENEMR_STATIC_ANALYSIS;
+$isStaticAnalysis = defined('DCL_STATIC_ANALYSIS') && DCL_STATIC_ANALYSIS;
 
 if ($isStaticAnalysis) {
     require_once(__DIR__ . "/../library/sql.inc.php");
@@ -68,7 +68,7 @@ global $code_types;
 
 
 // Skip database queries during static analysis
-// The OPENEMR_STATIC_ANALYSIS constant can be defined in static analysis tool bootstrap files
+// The DCL_STATIC_ANALYSIS constant can be defined in static analysis tool bootstrap files
 if (!$isStaticAnalysis) {
     $ctres = sqlStatement("SELECT * FROM code_types WHERE ct_active=1 ORDER BY ct_seq, ct_key");
     while ($ctrow = sqlFetchArray($ctres)) {
@@ -206,7 +206,7 @@ if (!$isStaticAnalysis) {
 
     define_external_table($code_external_tables, 13, 'valueset', 'code', 'description', 'description', [], '');
     define_external_table($code_external_tables, 14, 'valueset_oid', 'code', 'description', 'description', [], '');
-} // End of OPENEMR_STATIC_ANALYSIS guard for code_external_tables
+} // End of DCL_STATIC_ANALYSIS guard for code_external_tables
 
 /**
  * This array stores the external table options. See above for $code_types array

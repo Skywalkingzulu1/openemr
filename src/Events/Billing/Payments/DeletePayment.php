@@ -1,14 +1,14 @@
 <?php
 
 /*
- * @package openemr
- * @link https://www.open-emr.org
+ * @package DCL
+ * @link https://www.dcl.org
  * @author Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright (c) 2023
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Billing\Payments;
+namespace DCL\Events\Billing\Payments;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

@@ -3,30 +3,30 @@
 /**
  * Patient questionnaire assessment launcher.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require_once(dirname(__FILE__, 3) . "/globals.php");
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\Menu\PatientMenuRole;
-use OpenEMR\Services\Questionnaire\AvailabilityContext;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\Menu\PatientMenuRole;
+use DCL\Services\Questionnaire\AvailabilityContext;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
 
 $pid = PatientSessionUtil::getPid();
 $authorized = AclMain::aclCheckCore('patients', 'med');
@@ -263,7 +263,7 @@ $selfUrl = $webRoot . '/interface/patient_file/assessment/fhir_assessments.php';
                     </div>
                     <div class="card-body">
                         <div class="small text-muted mb-3">
-                            <?php echo xlt('Launch a registered SMART app with standard OpenEMR patient, encounter, main-tab, or appointment context.'); ?>
+                            <?php echo xlt('Launch a registered SMART app with standard DCL patient, encounter, main-tab, or appointment context.'); ?>
                         </div>
                         <?php foreach ($smartAssessmentClients as $smartClient) : ?>
                             <?php $smartClientId = $assessmentString($smartClient->getIdentifier()); ?>
@@ -275,7 +275,7 @@ $selfUrl = $webRoot . '/interface/patient_file/assessment/fhir_assessments.php';
                                         class="btn btn-outline-primary btn-sm mr-2 mb-2 smart-context-launch"
                                         data-smart-name="<?php echo attr($assessmentString($smartClient->getName())); ?>"
                                         data-client-id="<?php echo attr($smartClientId); ?>"
-                                        data-intent="<?php echo attr(\OpenEMR\FHIR\SMART\SMARTLaunchToken::INTENT_PATIENT_DEMOGRAPHICS_DIALOG); ?>"
+                                        data-intent="<?php echo attr(\DCL\FHIR\SMART\SMARTLaunchToken::INTENT_PATIENT_DEMOGRAPHICS_DIALOG); ?>"
                                     >
                                         <?php echo xlt('Patient'); ?>
                                     </button>
@@ -284,7 +284,7 @@ $selfUrl = $webRoot . '/interface/patient_file/assessment/fhir_assessments.php';
                                         class="btn btn-outline-primary btn-sm mr-2 mb-2 smart-context-launch"
                                         data-smart-name="<?php echo attr($assessmentString($smartClient->getName())); ?>"
                                         data-client-id="<?php echo attr($smartClientId); ?>"
-                                        data-intent="<?php echo attr(\OpenEMR\FHIR\SMART\SMARTLaunchToken::INTENT_ENCOUNTER_DIALOG); ?>"
+                                        data-intent="<?php echo attr(\DCL\FHIR\SMART\SMARTLaunchToken::INTENT_ENCOUNTER_DIALOG); ?>"
                                         <?php echo $currentEncounterId === null ? 'disabled' : ''; ?>
                                     >
                                         <?php echo xlt('Current Encounter'); ?>
@@ -294,7 +294,7 @@ $selfUrl = $webRoot . '/interface/patient_file/assessment/fhir_assessments.php';
                                         class="btn btn-outline-primary btn-sm mr-2 mb-2 smart-context-launch"
                                         data-smart-name="<?php echo attr($assessmentString($smartClient->getName())); ?>"
                                         data-client-id="<?php echo attr($smartClientId); ?>"
-                                        data-intent="<?php echo attr(\OpenEMR\FHIR\SMART\SMARTLaunchToken::INTENT_MAIN_TAB); ?>"
+                                        data-intent="<?php echo attr(\DCL\FHIR\SMART\SMARTLaunchToken::INTENT_MAIN_TAB); ?>"
                                     >
                                         <?php echo xlt('Main Tab'); ?>
                                     </button>
@@ -312,7 +312,7 @@ $selfUrl = $webRoot . '/interface/patient_file/assessment/fhir_assessments.php';
                                                 class="btn btn-outline-primary smart-context-launch"
                                                 data-smart-name="<?php echo attr($assessmentString($smartClient->getName())); ?>"
                                                 data-client-id="<?php echo attr($smartClientId); ?>"
-                                                data-intent="<?php echo attr(\OpenEMR\FHIR\SMART\SMARTLaunchToken::INTENT_APPOINTMENT_DIALOG); ?>"
+                                                data-intent="<?php echo attr(\DCL\FHIR\SMART\SMARTLaunchToken::INTENT_APPOINTMENT_DIALOG); ?>"
                                                 data-appointment-launch="true"
                                             >
                                                 <?php echo xlt('Appointment'); ?>
@@ -700,7 +700,7 @@ $selfUrl = $webRoot . '/interface/patient_file/assessment/fhir_assessments.php';
             const smartLaunchUrl = <?php echo js_escape($smartLaunchUrl); ?>;
             const smartLaunchCsrfToken = <?php echo js_escape($smartLaunchCsrfToken); ?>;
             const smartLaunchIntent = <?php echo js_escape(
-                \OpenEMR\FHIR\SMART\SMARTLaunchToken::INTENT_QUESTIONNAIRE_ASSESSMENT
+                \DCL\FHIR\SMART\SMARTLaunchToken::INTENT_QUESTIONNAIRE_ASSESSMENT
                                       ); ?>;
             let assessmentSavePending = false
 

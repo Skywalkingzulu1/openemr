@@ -12,24 +12,24 @@
  * the cert surface. Adding mint-level coverage here closes the
  * public-client leg of the auth-code grant matrix.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Support\OAuth2\AuthCodeFlow;
-use OpenEMR\Tests\Support\OAuth2\DcrClient;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Support\OAuth2\AuthCodeFlow;
+use DCL\Tests\Support\OAuth2\DcrClient;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -54,10 +54,10 @@ class PublicClientPkceMintTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {

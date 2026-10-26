@@ -1,6 +1,6 @@
 # Render docker/dockerhub-overview.md against the live state of
 # release-targets.yml + the three flex build callers, then PATCH it to
-# Docker Hub's repo description for openemr/openemr.
+# Docker Hub's repo description for DCL/DCL.
 #
 # Three trigger paths:
 #
@@ -78,7 +78,7 @@ jobs:
     - name: Sanity-check rendered output (Tier 1)
       # Structural assertions in docker/dockerhub/tests/sanity.sh:
       # placeholder substitution, bullet counts vs input data, no stale
-      # openemr-devops paths, headline version matches the row carrying
+      # DCL-devops paths, headline version matches the row carrying
       # `latest`, dated example uses today's date, key env-var
       # documentation markers present, output is non-trivially long,
       # and every release-targets.yml branch appears in exactly one
@@ -121,10 +121,10 @@ jobs:
         fi
 
     - name: Push readme to Docker Hub
-      if: ${{ steps.decide.outputs.push == 'true' && github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' }}
+      if: ${{ steps.decide.outputs.push == 'true' && github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' }}
       uses: peter-evans/dockerhub-description@v5
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        repository: openemr/openemr
+        repository: DCL/DCL
         readme-filepath: ${{ runner.temp }}/rendered/dockerhub-readme.md

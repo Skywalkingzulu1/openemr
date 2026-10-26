@@ -1,8 +1,8 @@
 <?php
 
 /*
- *  package OpenEMR
- *  link    https://www.open-emr.org
+ *  package DCL
+ *  link    https://www.dcl.org
  *  author  Sherwin Gaddis <sherwingaddis@gmail.com>
  *  Copyright (c) 2022.
  *  All Rights Reserved

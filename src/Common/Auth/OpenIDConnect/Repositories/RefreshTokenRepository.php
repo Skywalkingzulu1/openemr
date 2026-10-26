@@ -3,21 +3,21 @@
 /**
  * Authorization Server Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Repositories;
+namespace DCL\Common\Auth\OpenIDConnect\Repositories;
 
 use League\OAuth2\Server\Entities\RefreshTokenEntityInterface;
 use League\OAuth2\Server\Exception\UniqueTokenIdentifierConstraintViolationException;
 use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\RefreshTokenEntity;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Auth\OpenIDConnect\Entities\RefreshTokenEntity;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
 
 class RefreshTokenRepository implements RefreshTokenRepositoryInterface
 {

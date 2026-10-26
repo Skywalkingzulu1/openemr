@@ -6,19 +6,19 @@
  * The row filters asserted here are the ones the legacy interface/super/load_codes.php applied, so
  * these tests double as a regression guard on that behaviour surviving the move into src/.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (C) 2026 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\CodeTypes\Importer;
+namespace DCL\Tests\Isolated\Services\CodeTypes\Importer;
 
-use OpenEMR\Services\CodeTypes\CodeImportException;
-use OpenEMR\Services\CodeTypes\Importer\RXCUIImportService;
+use DCL\Services\CodeTypes\CodeImportException;
+use DCL\Services\CodeTypes\Importer\RXCUIImportService;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use ZipArchive;

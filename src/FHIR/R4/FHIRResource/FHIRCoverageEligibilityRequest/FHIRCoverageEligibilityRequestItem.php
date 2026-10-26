@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
@@ -71,61 +71,61 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 {
     /**
      * Exceptions, special conditions and supporting information applicable for this service or product line.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $supportingInfoSequence = [];
 
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * This contains the product, service, drug or other billing code for the item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productOrService = null;
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $modifier = [];
 
     /**
      * The practitioner who is responsible for the product or service to be rendered to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $provider = null;
 
     /**
      * The number of repetitions of a service or product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * The amount charged to the patient by the provider for a single unit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $unitPrice = null;
 
     /**
      * Facility where the services will be provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $facility = null;
 
     /**
      * Patient diagnosis for which care is sought.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis[]
      */
     public $diagnosis = [];
 
     /**
      * The plan/proposal/order describing the proposed service in detail.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $detail = [];
 
@@ -136,7 +136,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Exceptions, special conditions and supporting information applicable for this service or product line.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getSupportingInfoSequence()
     {
@@ -145,7 +145,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Exceptions, special conditions and supporting information applicable for this service or product line.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $supportingInfoSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $supportingInfoSequence
      * @return $this
      */
     public function addSupportingInfoSequence($supportingInfoSequence)
@@ -156,7 +156,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -165,7 +165,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -176,7 +176,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * This contains the product, service, drug or other billing code for the item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductOrService()
     {
@@ -185,7 +185,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * This contains the product, service, drug or other billing code for the item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
      * @return $this
      */
     public function setProductOrService($productOrService)
@@ -196,7 +196,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getModifier()
     {
@@ -205,7 +205,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -216,7 +216,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The practitioner who is responsible for the product or service to be rendered to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvider()
     {
@@ -225,7 +225,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The practitioner who is responsible for the product or service to be rendered to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function setProvider($provider)
@@ -236,7 +236,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The number of repetitions of a service or product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -245,7 +245,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The number of repetitions of a service or product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -256,7 +256,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The amount charged to the patient by the provider for a single unit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -265,7 +265,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The amount charged to the patient by the provider for a single unit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -276,7 +276,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Facility where the services will be provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getFacility()
     {
@@ -285,7 +285,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Facility where the services will be provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $facility
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $facility
      * @return $this
      */
     public function setFacility($facility)
@@ -296,7 +296,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Patient diagnosis for which care is sought.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis[]
      */
     public function getDiagnosis()
     {
@@ -305,7 +305,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * Patient diagnosis for which care is sought.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis $diagnosis
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis $diagnosis
      * @return $this
      */
     public function addDiagnosis($diagnosis)
@@ -316,7 +316,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The plan/proposal/order describing the proposed service in detail.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDetail()
     {
@@ -325,7 +325,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement implements 
 
     /**
      * The plan/proposal/order describing the proposed service in detail.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $detail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $detail
      * @return $this
      */
     public function addDetail($detail)

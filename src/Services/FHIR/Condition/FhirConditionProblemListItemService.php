@@ -2,40 +2,40 @@
 
 /*
  * FhirConditionProblemsHealthConcernService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Public Domain for portions marked as AI Generated which were created with the assistance of Claude.AI and Microsoft Copilot
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Condition;
+namespace DCL\Services\FHIR\Condition;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\Services\ConditionService;
-use OpenEMR\Services\FHIR\Condition\Enum\FhirConditionCategory;
-use OpenEMR\Services\FHIR\Condition\Trait\FhirConditionTrait;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceCategoryTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\Services\ConditionService;
+use DCL\Services\FHIR\Condition\Enum\FhirConditionCategory;
+use DCL\Services\FHIR\Condition\Trait\FhirConditionTrait;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\MappedServiceCategoryTrait;
+use DCL\Services\FHIR\Traits\MappedServiceTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class FhirConditionProblemListItemService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
 {
@@ -106,24 +106,24 @@ class FhirConditionProblemListItemService extends FhirServiceBase implements IPa
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      * This handles problem list items and health concerns (NOT linked to specific encounters)
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (isset($openEMRSearchParameters['category'])) {
-            // there is no category field in the OpenEMR problem list items, so we'll remove the field to avoid confusion
+        if (isset($DCLSearchParameters['category'])) {
+            // there is no category field in the DCL problem list items, so we'll remove the field to avoid confusion
             // we should never get other categories here because the service is only mapped to the problem list category
-            unset($openEMRSearchParameters['category']);
+            unset($DCLSearchParameters['category']);
         }
-        $openEMRSearchParameters['type'] = new StringSearchField('type', ['medical_problem'], SearchModifier::EXACT);
-        $openEMRSearchParameters['activity'] = new StringSearchField('activity', ['1'], SearchModifier::EXACT);
+        $DCLSearchParameters['type'] = new StringSearchField('type', ['medical_problem'], SearchModifier::EXACT);
+        $DCLSearchParameters['activity'] = new StringSearchField('activity', ['1'], SearchModifier::EXACT);
         // we don't want conditions linked to encounters for problem list items
-        $openEMRSearchParameters['list_id'] = new TokenSearchField('list_id', [new TokenSearchValue(true)]);
-        $openEMRSearchParameters['list_id']->setModifier(SearchModifier::MISSING);
+        $DCLSearchParameters['list_id'] = new TokenSearchField('list_id', [new TokenSearchValue(true)]);
+        $DCLSearchParameters['list_id']->setModifier(SearchModifier::MISSING);
         // This query finds conditions that are NOT linked to specific encounters via issue_encounter
         // These represent ongoing problems/health concerns rather than encounter-specific diagnoses
         $sql = "
@@ -180,7 +180,7 @@ class FhirConditionProblemListItemService extends FhirServiceBase implements IPa
         ) ie ON l.id = ie.list_id AND l.pid = ie.issue_encounter_pid
         ";
 
-        $whereClause = FhirSearchWhereClauseBuilder::build($openEMRSearchParameters);
+        $whereClause = FhirSearchWhereClauseBuilder::build($DCLSearchParameters);
         $sql .= $whereClause->getFragment();
         $sqlBindArray = $whereClause->getBoundValues();
 
@@ -217,13 +217,13 @@ class FhirConditionProblemListItemService extends FhirServiceBase implements IPa
     }
 
     /**
-     * Parses an OpenEMR condition record, returning the equivalent FHIR Condition Resource
+     * Parses an DCL condition record, returning the equivalent FHIR Condition Resource
      *
-     * @param  array   $dataRecord The source OpenEMR data record
+     * @param  array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRCondition
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $conditionResource = new FHIRCondition();
 

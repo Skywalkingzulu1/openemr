@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSpecimen;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A sample to be used for analysis.
@@ -71,29 +71,29 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Textual description of procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * A coded value specifying the procedure used to process the specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $procedure = null;
 
     /**
      * Material used in the processing step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $additive = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timeDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $timePeriod = null;
 
@@ -104,7 +104,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Textual description of procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -113,7 +113,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Textual description of procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -124,7 +124,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A coded value specifying the procedure used to process the specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProcedure()
     {
@@ -133,7 +133,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A coded value specifying the procedure used to process the specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedure
      * @return $this
      */
     public function setProcedure($procedure)
@@ -144,7 +144,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Material used in the processing step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAdditive()
     {
@@ -153,7 +153,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Material used in the processing step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $additive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $additive
      * @return $this
      */
     public function addAdditive($additive)
@@ -163,7 +163,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimeDateTime()
     {
@@ -171,7 +171,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timeDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timeDateTime
      * @return $this
      */
     public function setTimeDateTime($timeDateTime)
@@ -181,7 +181,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getTimePeriod()
     {
@@ -189,7 +189,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $timePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $timePeriod
      * @return $this
      */
     public function setTimePeriod($timePeriod)

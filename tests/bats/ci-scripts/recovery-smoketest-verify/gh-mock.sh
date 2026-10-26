@@ -58,7 +58,7 @@ case "${subcommand}" in
                 # Compute default in a variable to avoid brace-
                 # counting ambiguity in ${VAR:-DEFAULT} when the
                 # DEFAULT itself contains braces (as JSON does).
-                default_json='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
+                default_json='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
                 payload="${MOCK_GH_RELEASE_VIEW_JSON:-${default_json}}"
                 if [[ -n "${jq_expr}" ]]; then
                     printf '%s' "${payload}" | jq "${jq_expr}"

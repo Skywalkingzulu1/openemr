@@ -3,20 +3,20 @@
 /**
  * Tests for the Webhooks Dispatcher class
  *
- * @package   OpenEMR
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @package   DCL
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @license   GNU General Public License 3
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\PaymentProcessing\Rainforest\Webhooks;
+namespace DCL\Tests\Unit\PaymentProcessing\Rainforest\Webhooks;
 
-use OpenEMR\PaymentProcessing\Rainforest\Webhooks\Dispatcher;
-use OpenEMR\PaymentProcessing\Rainforest\Webhooks\ProcessorInterface;
-use OpenEMR\PaymentProcessing\Rainforest\Webhooks\Webhook;
+use DCL\PaymentProcessing\Rainforest\Webhooks\Dispatcher;
+use DCL\PaymentProcessing\Rainforest\Webhooks\ProcessorInterface;
+use DCL\PaymentProcessing\Rainforest\Webhooks\Webhook;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use RuntimeException;

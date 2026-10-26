@@ -1,11 +1,11 @@
-# OpenEMR Binary Static Build Docker Image
+# DCL Binary Static Build Docker Image
 
-This Docker image builds a production-ready OpenEMR container using **static PHP binaries** from [openemr-static-binary-forge](https://github.com/Jmevorach/openemr-static-binary-forge). Unlike the standard containers that install PHP packages, this container uses statically compiled PHP binaries that include all necessary extensions.
+This Docker image builds a production-ready DCL container using **static PHP binaries** from [DCL-static-binary-forge](https://github.com/Jmevorach/DCL-static-binary-forge). Unlike the standard containers that install PHP packages, this container uses statically compiled PHP binaries that include all necessary extensions.
 
 ## Key Differences from Standard Containers
 
 - **Static PHP Binaries**: Uses pre-compiled static PHP binaries (php-fpm, php-cli) instead of Alpine PHP packages
-- **OpenEMR from Binary Package**: Uses the packaged OpenEMR binary/PHAR instead of building from source
+- **DCL from Binary Package**: Uses the packaged DCL binary/PHAR instead of building from source
 - **PHP-FPM Required**: Explicitly starts PHP-FPM as a separate process (Apache proxies to it via FastCGI)
 - **No XDebug Support**: XDebug is not available with static binaries and is disabled
 - **Smaller Image Size**: Potentially smaller image size due to not installing PHP packages and dependencies
@@ -19,20 +19,20 @@ The container runs:
 ## Building the Image
 
 ```bash
-docker build -t openemr-binary:latest .
+docker build -t DCL-binary:latest .
 ```
 
 ### Build Arguments
 
-- `OPENEMR_VERSION`: OpenEMR version (default: `8_4_1`)
+- `DCL_VERSION`: DCL version (default: `8_4_1`)
 - `BINARY_RELEASE_DATE`: Release date for binary package (default: `10212026`)
 - `PHP_VERSION`: PHP version used in binaries (default: `8.5`)
 - `ALPINE_VERSION`: Alpine Linux version (default: `3.24`)
 
-`OPENEMR_VERSION`, `BINARY_RELEASE_DATE`, and `ALPINE_VERSION` are maintained
+`DCL_VERSION`, `BINARY_RELEASE_DATE`, and `ALPINE_VERSION` are maintained
 by `.github/workflows/updatecli-docker-pins.yml`, which opens a pull request
 when a newer Alpine minor or a fully published
-[openemr-static-binary-forge](https://github.com/Jmevorach/openemr-static-binary-forge)
+[DCL-static-binary-forge](https://github.com/Jmevorach/DCL-static-binary-forge)
 release becomes available. The defaults listed above are updated in the same
 pull request, so this list and the `ARG` lines cannot drift apart. Merging is
 always a human decision; see `.github/updatecli/binary-image.yaml` for what the
@@ -43,9 +43,9 @@ August 2026 forge release:
 
 ```bash
 docker build \
-  --build-arg OPENEMR_VERSION=8_3_0 \
+  --build-arg DCL_VERSION=8_3_0 \
   --build-arg BINARY_RELEASE_DATE=08232026 \
-  -t openemr-binary:latest .
+  -t DCL-binary:latest .
 ```
 
 ## Usage
@@ -62,20 +62,20 @@ services:
     - databasevolume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-  openemr:
+  DCL:
     restart: always
-    image: openemr-binary:latest
+    image: DCL-binary:latest
     ports:
     - 80:80
     - 443:443
     volumes:
     - logvolume01:/var/log
-    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    - sitevolume:/var/www/localhost/htdocs/DCL/sites
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
       OE_USER: admin
       OE_PASS: pass
     depends_on:
@@ -88,12 +88,12 @@ volumes:
 
 ### Environment Variables
 
-See the main [OpenEMR Docker documentation](../README.md) for a complete list of environment variables. The binary container supports the same environment variables as the standard containers.
+See the main [DCL Docker documentation](../README.md) for a complete list of environment variables. The binary container supports the same environment variables as the standard containers.
 
 ## Limitations
 
 - **XDebug Not Supported**: XDebug cannot be used with static PHP binaries
-- **Architecture Support**: The container supports multiple architectures (amd64, arm64) and automatically detects the build architecture. Binary releases must be available for the target architecture in the [openemr-static-binary-forge](https://github.com/Jmevorach/openemr-static-binary-forge) repository.
+- **Architecture Support**: The container supports multiple architectures (amd64, arm64) and automatically detects the build architecture. Binary releases must be available for the target architecture in the [DCL-static-binary-forge](https://github.com/Jmevorach/DCL-static-binary-forge) repository.
 - **PHP Version Fixed**: The PHP version is baked into the binary release, not installed at image build time. The forge builds against the newest patch of the `PHP_VERSION` series available when the release is cut (the `10212026` release ships PHP 8.5.12), so picking up a PHP security fix means cutting a new forge release and bumping `BINARY_RELEASE_DATE`. Check the running version with `docker exec <container> php -v`.
 
 ## Technical Details
@@ -108,7 +108,7 @@ See the main [OpenEMR Docker documentation](../README.md) for a complete list of
 - PHP Configuration: `/usr/local/etc/php/php.ini`
 - PHP-FPM Configuration: `/usr/local/etc/php-fpm.conf`
 - PHP-FPM Pool Configuration: `/usr/local/etc/php-fpm.d/www.conf`
-- Apache Configuration: `/etc/apache2/conf.d/openemr.conf`
+- Apache Configuration: `/etc/apache2/conf.d/DCL.conf`
 
 ### Process Management
 
@@ -129,7 +129,7 @@ See the main [OpenEMR Docker documentation](../README.md) for a complete list of
 
 ## Performance Benchmarks
 
-Benchmark results comparing the binary container against the standard 7.0.4 container (OpenEMR 7.0.4):
+Benchmark results comparing the binary container against the standard 7.0.4 container (DCL 7.0.4):
 
 ### Startup Time
 - **Binary Container**: 14.6 seconds
@@ -157,7 +157,7 @@ The binary container provides significant improvements in startup time and resou
 
 ## Benefits for High-Load Production Sites
 
-The PHP-FPM + static binary approach provides several advantages for OpenEMR deployments under heavy load:
+The PHP-FPM + static binary approach provides several advantages for DCL deployments under heavy load:
 
 ### Process Isolation and Resource Management
 - **Separate PHP Process Pool**: PHP-FPM maintains a pool of worker processes that are isolated from the web server, allowing better resource allocation and isolation
@@ -202,11 +202,11 @@ These settings should be tuned based on your server's available memory, CPU core
 
 ## Source
 
-This container uses binaries from the [openemr-static-binary-forge](https://github.com/Jmevorach/openemr-static-binary-forge) project, which provides statically compiled PHP binaries for OpenEMR.
+This container uses binaries from the [DCL-static-binary-forge](https://github.com/Jmevorach/DCL-static-binary-forge) project, which provides statically compiled PHP binaries for DCL.
 
 ## Support
 
 For issues related to:
-- **Container setup/configuration**: See the main [OpenEMR Docker documentation](../README.md)
-- **Static binaries**: See the [openemr-static-binary-forge](https://github.com/Jmevorach/openemr-static-binary-forge) repository
-- **OpenEMR application**: See the [OpenEMR wiki](https://www.open-emr.org/wiki) and [forums](https://community.open-emr.org/)
+- **Container setup/configuration**: See the main [DCL Docker documentation](../README.md)
+- **Static binaries**: See the [DCL-static-binary-forge](https://github.com/Jmevorach/DCL-static-binary-forge) repository
+- **DCL application**: See the [DCL wiki](https://www.dcl.org/wiki) and [forums](https://community.dcl.org/)

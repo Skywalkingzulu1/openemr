@@ -3,18 +3,18 @@
 /**
  * FHIR MedicationDispense API tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Marcello Costagliola <marcello.costagliola1@gmail.com>
  * @copyright Copyright (c) 2026 Marcello Costagliola <marcello.costagliola1@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Tests\Fixtures\MedicationDispenseFixtureManager;
+use DCL\Tests\Fixtures\MedicationDispenseFixtureManager;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,7 +33,7 @@ use Symfony\Component\HttpFoundation\Response;
  * The routes are behind `user/MedicationDispense.read`, which ApiTestClient::ALL_SCOPES did not
  * request, so every call answered 401 until that scope was added to the list.
  *
- * OpenEMR vs FHIR conventions (tests pin current server behavior, not the spec):
+ * DCL vs FHIR conventions (tests pin current server behavior, not the spec):
  * - Search bundles use type "collection" (FhirResourcesService::createBundle()), not FHIR's
  *   "searchset".
  * - An unsupported search parameter on GET /fhir/MedicationDispense does NOT produce a 400.
@@ -48,7 +48,7 @@ use Symfony\Component\HttpFoundation\Response;
  * - `type.coding[0].code` is always "FF" (First Fill), regardless of the underlying
  *   drug_sales.dispense_type value: FhirMedicationDispenseLocalDispensaryService::
  *   mapDispenseType() hardcodes it and never reads the column.
- * - Every dispense comes back with status "completed": searchForOpenEMRRecords() forces
+ * - Every dispense comes back with status "completed": searchForDCLRecords() forces
  *   `trans_type = 1` (sale) on every query, so no other status is ever reachable through this
  *   service today.
  */
@@ -69,7 +69,7 @@ class MedicationDispenseFhirApiTest extends TestCase
     protected function setUp(): void
     {
         $this->testClient = new ApiTestClient(self::baseUrl(), false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new MedicationDispenseFixtureManager();
     }
@@ -220,11 +220,11 @@ class MedicationDispenseFhirApiTest extends TestCase
     // ---------------------------------------------------------------------
 
     /**
-     * Base URL of the app under test, from OPENEMR_BASE_URL_API like the other API tests.
+     * Base URL of the app under test, from DCL_BASE_URL_API like the other API tests.
      */
     private static function baseUrl(): string
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true);
+        $baseUrl = getenv("DCL_BASE_URL_API", true);
         return is_string($baseUrl) && $baseUrl !== '' ? $baseUrl : "https://localhost";
     }
 

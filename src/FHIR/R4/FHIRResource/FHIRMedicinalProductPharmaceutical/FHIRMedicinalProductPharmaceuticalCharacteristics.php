@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A pharmaceutical product described in terms of its composition and dose form.
@@ -71,13 +71,13 @@ class FHIRMedicinalProductPharmaceuticalCharacteristics extends FHIRBackboneElem
 {
     /**
      * A coded characteristic.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The status of characteristic e.g. assigned or pending.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicinalProductPharmaceuticalCharacteristics extends FHIRBackboneElem
 
     /**
      * A coded characteristic.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRMedicinalProductPharmaceuticalCharacteristics extends FHIRBackboneElem
 
     /**
      * A coded characteristic.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRMedicinalProductPharmaceuticalCharacteristics extends FHIRBackboneElem
 
     /**
      * The status of characteristic e.g. assigned or pending.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -117,7 +117,7 @@ class FHIRMedicinalProductPharmaceuticalCharacteristics extends FHIRBackboneElem
 
     /**
      * The status of characteristic e.g. assigned or pending.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)

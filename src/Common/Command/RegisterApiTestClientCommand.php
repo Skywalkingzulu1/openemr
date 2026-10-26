@@ -1,22 +1,22 @@
 <?php
 
 /**
- * RegisterApiTestClientCommand.php - Utility class to help test api clients by registering a test client with the OpenEMR API
+ * RegisterApiTestClientCommand.php - Utility class to help test api clients by registering a test client with the DCL API
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-//use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+//use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -29,8 +29,8 @@ class RegisterApiTestClientCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr-dev:register-api-test-client')
-            ->setDescription("Utility class to help test api clients by registering a test client with the OpenEMR API")
+            ->setName('DCL-dev:register-api-test-client')
+            ->setDescription("Utility class to help test api clients by registering a test client with the DCL API")
             ->addUsage('--site=default')
             ->setDefinition(
                 new InputDefinition([
@@ -65,11 +65,11 @@ class RegisterApiTestClientCommand extends Command
             $scopes = array_unique(array_merge($scopeList->getAllSupportedScopesList()));
             $info = [
                 'client_role' => 'user',
-                'client_name' => 'OpenEMR API Test Client ' . date("Y-m-d H:i:s"),
+                'client_name' => 'DCL API Test Client ' . date("Y-m-d H:i:s"),
                 'client_secret' => $clientRepository->generateClientSecret(),
                 'registration_access_token' => $clientRepository->generateRegistrationAccessToken(),
                 'registration_client_uri_path' => $clientRepository->generateRegistrationClientUriPath(),
-                'contacts' => 'example@open-emr.org',
+                'contacts' => 'example@dcl.org',
                 'redirect_uris' => [$redirectUri],
                 'grant_types' => 'authorization_code|password|client_credentials',
                 'scope' => implode(" ", $scopes),

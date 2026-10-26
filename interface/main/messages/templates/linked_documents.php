@@ -8,20 +8,20 @@
  * on the screen with associated error counts being displayed if they are available.  Each document is handled separately
  * as an async validation process.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Cda\CdaValidateDocumentObject;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Cda\CdaValidateDocumentObject;
+use DCL\Services\Utils\DateFormatterUtils;
 
 // This file is a sub-template included by messages.php. $noteid is a required
 // parameter from the parent context. Return silently if it is missing — this
@@ -41,8 +41,8 @@ if (empty($tmp)) {
 
 $enc_list = [];
 if (!empty($prow)) {
-    $results = QueryUtils::fetchRecords("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-        " LEFT JOIN openemr_postcalendar_categories ON fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC", [$prow['pid']]);
+    $results = QueryUtils::fetchRecords("SELECT fe.encounter,fe.date,DCL_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+        " LEFT JOIN DCL_postcalendar_categories ON fe.pc_catid=DCL_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC", [$prow['pid']]);
     foreach ($results as $row) {
         $ymd = DateFormatterUtils::dbDateToYmd($row['date']);
         $enc_list[] = [
@@ -276,7 +276,7 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
      * Given a document that we don't know what patient to attach the document to we need to look at a preview of
      * the document.  This loads up the document from the Miscellaneous -> New Documents page.  To access the page
      * the user must have the following ACLs:  "patients","docs","write","addonly"
-     * @param doc_id The id of the document we want to preview in OpenEMR
+     * @param doc_id The id of the document we want to preview in DCL
      */
     function previewDocument(doc_id) {
         top.restoreSession();

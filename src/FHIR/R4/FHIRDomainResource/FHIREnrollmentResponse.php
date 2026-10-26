@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * This resource provides enrollment and plan details from the processing of an EnrollmentRequest resource.
@@ -72,49 +72,49 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * The Response business identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * Original request resource reference.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $request = null;
 
     /**
      * Processing status: error, complete.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
      */
     public $outcome = null;
 
     /**
      * A description of the status of the adjudication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $disposition = null;
 
     /**
      * The date when the enclosed suite of services were performed or completed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * The Insurer who produced this adjudicated response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $organization = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requestProvider = null;
 
@@ -125,7 +125,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The Response business identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The Response business identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -154,7 +154,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -165,7 +165,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Original request resource reference.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequest()
     {
@@ -174,7 +174,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Original request resource reference.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function setRequest($request)
@@ -185,7 +185,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Processing status: error, complete.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
      */
     public function getOutcome()
     {
@@ -194,7 +194,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Processing status: error, complete.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRemittanceOutcome $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRemittanceOutcome $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -205,7 +205,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A description of the status of the adjudication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisposition()
     {
@@ -214,7 +214,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A description of the status of the adjudication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $disposition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $disposition
      * @return $this
      */
     public function setDisposition($disposition)
@@ -225,7 +225,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date when the enclosed suite of services were performed or completed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -234,7 +234,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date when the enclosed suite of services were performed or completed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -245,7 +245,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The Insurer who produced this adjudicated response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOrganization()
     {
@@ -254,7 +254,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The Insurer who produced this adjudicated response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $organization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $organization
      * @return $this
      */
     public function setOrganization($organization)
@@ -265,7 +265,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequestProvider()
     {
@@ -274,7 +274,7 @@ class FHIREnrollmentResponse extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requestProvider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requestProvider
      * @return $this
      */
     public function setRequestProvider($requestProvider)

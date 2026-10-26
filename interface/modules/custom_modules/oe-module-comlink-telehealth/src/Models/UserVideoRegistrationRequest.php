@@ -3,14 +3,14 @@
 /**
  * Handles the retrieval of calendar categories that are specific to TeleHealth
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Models;
+namespace Comlink\DCL\Modules\TeleHealthModule\Models;
 
 class UserVideoRegistrationRequest
 {
@@ -28,13 +28,13 @@ class UserVideoRegistrationRequest
     private $password;
 
     /**
-     * The unique UUID for the OpenEMR installation we are originating users from.  Max chars 64
+     * The unique UUID for the DCL installation we are originating users from.  Max chars 64
      * @var string
      */
     private $instituationId;
 
     /**
-     * the Unique institution name for the OpenEMR installation. Max chars 255
+     * the Unique institution name for the DCL installation. Max chars 255
      * @var string
      */
     private $institutionName;

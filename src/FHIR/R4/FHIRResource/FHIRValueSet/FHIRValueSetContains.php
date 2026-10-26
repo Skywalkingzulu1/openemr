@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
+namespace DCL\FHIR\R4\FHIRResource\FHIRValueSet;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
@@ -71,49 +71,49 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * An absolute URI which is the code system in which the code for this item in the expansion is defined.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $system = null;
 
     /**
      * If true, this entry is included in the expansion for navigational purposes, and the user cannot select the code directly as a proper value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $abstract = null;
 
     /**
      * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $inactive = null;
 
     /**
      * The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The recommended display for this item in the expansion.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
     public $designation = [];
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
      */
     public $contains = [];
 
@@ -124,7 +124,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * An absolute URI which is the code system in which the code for this item in the expansion is defined.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSystem()
     {
@@ -133,7 +133,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * An absolute URI which is the code system in which the code for this item in the expansion is defined.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $system
      * @return $this
      */
     public function setSystem($system)
@@ -144,7 +144,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * If true, this entry is included in the expansion for navigational purposes, and the user cannot select the code directly as a proper value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAbstract()
     {
@@ -153,7 +153,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * If true, this entry is included in the expansion for navigational purposes, and the user cannot select the code directly as a proper value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $abstract
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $abstract
      * @return $this
      */
     public function setAbstract($abstract)
@@ -164,7 +164,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getInactive()
     {
@@ -173,7 +173,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data. It might not be known or specified whether an concept is inactive (and it may depend on the context of use).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $inactive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $inactive
      * @return $this
      */
     public function setInactive($inactive)
@@ -184,7 +184,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -193,7 +193,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The version of the code system from this code was taken. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -204,7 +204,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -213,7 +213,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -224,7 +224,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The recommended display for this item in the expansion.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -233,7 +233,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The recommended display for this item in the expansion.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -244,7 +244,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
     public function getDesignation()
     {
@@ -253,7 +253,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
      * @return $this
      */
     public function addDesignation($designation)
@@ -264,7 +264,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
      */
     public function getContains()
     {
@@ -273,7 +273,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains $contains
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetContains $contains
      * @return $this
      */
     public function addContains($contains)

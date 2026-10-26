@@ -3,34 +3,34 @@
 /**
  * InsuranceCompanyService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Address\AddressData;
-use OpenEMR\Services\{
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Address\AddressData;
+use DCL\Services\{
     AddressService,
     PhoneNumberService,
     Search\FhirSearchWhereClauseBuilder,
     Search\ISearchField,
     Search\SearchFieldException
 };
-use OpenEMR\Validators\InsuranceCompanyValidator;
-use OpenEMR\Validators\ProcessingResult;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\BC\ServiceContainer;
+use DCL\Validators\InsuranceCompanyValidator;
+use DCL\Validators\ProcessingResult;
+use DCL\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
 
 class InsuranceCompanyService extends BaseService
 {
@@ -125,7 +125,7 @@ class InsuranceCompanyService extends BaseService
     {
         // the foreign_id here is a globally unique sequence so there is no conflict.
         // I don't like the assumption here as it should be more explicit what table we are pulling
-        // from since OpenEMR mixes a bunch of paradigms.  I initially worried about data corruption as phone_numbers
+        // from since DCL mixes a bunch of paradigms.  I initially worried about data corruption as phone_numbers
         // foreign id could be ambiguous here... but since the sequence is globally unique @see \generate_id() we can
         // join here safely...
         $sql = <<<'SQL'

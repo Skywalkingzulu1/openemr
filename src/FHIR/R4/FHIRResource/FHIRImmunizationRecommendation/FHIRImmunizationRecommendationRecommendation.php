@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A patient's point-in-time set of recommendations (i.e. forecasting) according to a published schedule with optional supporting justification.
@@ -71,81 +71,81 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 {
     /**
      * Vaccine(s) or vaccine group that pertain to the recommendation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $vaccineCode = [];
 
     /**
      * The targeted disease for the recommendation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $targetDisease = null;
 
     /**
      * Vaccine(s) which should not be used to fulfill the recommendation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $contraindicatedVaccineCode = [];
 
     /**
      * Indicates the patient status with respect to the path to immunity for the target disease.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $forecastStatus = null;
 
     /**
      * The reason for the assigned forecast status.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $forecastReason = [];
 
     /**
      * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
      */
     public $dateCriterion = [];
 
     /**
      * Contains the description about the protocol under which the vaccine was administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $series = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $doseNumberPositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $doseNumberString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $seriesDosesPositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $seriesDosesString = null;
 
     /**
      * Immunization event history and/or evaluation that supports the status and recommendation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingImmunization = [];
 
     /**
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingPatientInformation = [];
 
@@ -156,7 +156,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Vaccine(s) or vaccine group that pertain to the recommendation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getVaccineCode()
     {
@@ -165,7 +165,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Vaccine(s) or vaccine group that pertain to the recommendation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $vaccineCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $vaccineCode
      * @return $this
      */
     public function addVaccineCode($vaccineCode)
@@ -176,7 +176,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * The targeted disease for the recommendation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTargetDisease()
     {
@@ -185,7 +185,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * The targeted disease for the recommendation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $targetDisease
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $targetDisease
      * @return $this
      */
     public function setTargetDisease($targetDisease)
@@ -196,7 +196,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Vaccine(s) which should not be used to fulfill the recommendation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getContraindicatedVaccineCode()
     {
@@ -205,7 +205,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Vaccine(s) which should not be used to fulfill the recommendation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $contraindicatedVaccineCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $contraindicatedVaccineCode
      * @return $this
      */
     public function addContraindicatedVaccineCode($contraindicatedVaccineCode)
@@ -216,7 +216,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Indicates the patient status with respect to the path to immunity for the target disease.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getForecastStatus()
     {
@@ -225,7 +225,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Indicates the patient status with respect to the path to immunity for the target disease.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $forecastStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $forecastStatus
      * @return $this
      */
     public function setForecastStatus($forecastStatus)
@@ -236,7 +236,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * The reason for the assigned forecast status.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getForecastReason()
     {
@@ -245,7 +245,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * The reason for the assigned forecast status.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $forecastReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $forecastReason
      * @return $this
      */
     public function addForecastReason($forecastReason)
@@ -256,7 +256,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
      */
     public function getDateCriterion()
     {
@@ -265,7 +265,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion $dateCriterion
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion $dateCriterion
      * @return $this
      */
     public function addDateCriterion($dateCriterion)
@@ -276,7 +276,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Contains the description about the protocol under which the vaccine was administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -285,7 +285,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Contains the description about the protocol under which the vaccine was administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -296,7 +296,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSeries()
     {
@@ -305,7 +305,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $series
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $series
      * @return $this
      */
     public function setSeries($series)
@@ -315,7 +315,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getDoseNumberPositiveInt()
     {
@@ -323,7 +323,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
      * @return $this
      */
     public function setDoseNumberPositiveInt($doseNumberPositiveInt)
@@ -333,7 +333,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDoseNumberString()
     {
@@ -341,7 +341,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $doseNumberString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $doseNumberString
      * @return $this
      */
     public function setDoseNumberString($doseNumberString)
@@ -351,7 +351,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSeriesDosesPositiveInt()
     {
@@ -359,7 +359,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
      * @return $this
      */
     public function setSeriesDosesPositiveInt($seriesDosesPositiveInt)
@@ -369,7 +369,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSeriesDosesString()
     {
@@ -377,7 +377,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $seriesDosesString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $seriesDosesString
      * @return $this
      */
     public function setSeriesDosesString($seriesDosesString)
@@ -388,7 +388,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Immunization event history and/or evaluation that supports the status and recommendation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingImmunization()
     {
@@ -397,7 +397,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Immunization event history and/or evaluation that supports the status and recommendation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingImmunization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingImmunization
      * @return $this
      */
     public function addSupportingImmunization($supportingImmunization)
@@ -408,7 +408,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingPatientInformation()
     {
@@ -417,7 +417,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingPatientInformation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingPatientInformation
      * @return $this
      */
     public function addSupportingPatientInformation($supportingPatientInformation)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationRequest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationRequest" rather than "MedicationPrescription" or "MedicationOrder" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.
@@ -71,13 +71,13 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement implements \J
 {
     /**
      * The amount or quantity to provide as part of the first dispense.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * The length of time that the first dispense is expected to last.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $duration = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement implements \J
 
     /**
      * The amount or quantity to provide as part of the first dispense.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -97,7 +97,7 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement implements \J
 
     /**
      * The amount or quantity to provide as part of the first dispense.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -108,7 +108,7 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement implements \J
 
     /**
      * The length of time that the first dispense is expected to last.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDuration()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationRequestInitialFill extends FHIRBackboneElement implements \J
 
     /**
      * The length of time that the first dispense is expected to last.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $duration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $duration
      * @return $this
      */
     public function setDuration($duration)

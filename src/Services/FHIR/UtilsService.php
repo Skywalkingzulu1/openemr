@@ -3,41 +3,41 @@
 /**
  * UtilsService holds helper methods for dealing with fhir objects in the services  layer.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\ORDataObject\ContactAddress;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAddress;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAddressType;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAddressUse;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIssueSeverity;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIssueType;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRNarrative;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\ORDataObject\ContactAddress;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
+use DCL\FHIR\R4\FHIRElement\FHIRAddress;
+use DCL\FHIR\R4\FHIRElement\FHIRAddressType;
+use DCL\FHIR\R4\FHIRElement\FHIRAddressUse;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRContactPoint;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRHumanName;
+use DCL\FHIR\R4\FHIRElement\FHIRIssueSeverity;
+use DCL\FHIR\R4\FHIRElement\FHIRIssueType;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRNarrative;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRElement\FHIRQuantity;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue;
+use DCL\Services\Utils\DateFormatterUtils;
 
 class UtilsService
 {
@@ -90,10 +90,10 @@ class UtilsService
         if (count($splitParts) >= 2) {
             $uuid = array_pop($splitParts);
             $resource = array_pop($splitParts);
-            $resourceClassCheck = 'OpenEMR\\FHIR\\R4\\FHIRDomainResource\\FHIR' . $resource;
+            $resourceClassCheck = 'DCL\\FHIR\\R4\\FHIRDomainResource\\FHIR' . $resource;
             // we should always be getting canonical urls to a specific resource id, but just in case we are going
             // to
-            $idClassCheck = 'OpenEMR\\FHIR\\R4\\FHIRElement\\' . $uuid;
+            $idClassCheck = 'DCL\\FHIR\\R4\\FHIRElement\\' . $uuid;
             if (class_exists($resourceClassCheck)) {
                 $parsed_url['resource'] = $resource;
                 $parsed_url['uuid'] = $uuid;
@@ -226,7 +226,7 @@ class UtilsService
         }
 
         if (!empty($dataRecord['period_start'])) {
-            // we don't use dateStringToDateTime as that converts from OpenEMR formatted strings to DateTime objects
+            // we don't use dateStringToDateTime as that converts from DCL formatted strings to DateTime objects
             $format = str_contains((string) $dataRecord['period_start'], ':') ? "Y-m-d H:i:s" : "Y-m-d";
             $date = \DateTimeImmutable::createFromFormat($format, $dataRecord['period_start'], new \DateTimeZone(date('P')));
             if ($date === false) {
@@ -540,7 +540,7 @@ class UtilsService
     /**
      * True when an absolute reference addresses this server's own FHIR base.
      *
-     * Host alone was not enough. A second OpenEMR on the same machine differs only by port or
+     * Host alone was not enough. A second DCL on the same machine differs only by port or
      * by the path it is mounted at, and a reference into it matched on host, so its trailing
      * segment was kept and stored as one of our uuids. Scheme, host, port and the FHIR base
      * path are all compared, against ServerConfig::getFhirUrl() rather than getOauthAddress()

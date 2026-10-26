@@ -5,14 +5,14 @@
  * enables event listeners to modify the html element that is displayed for each patient document.
  * @see Carecoordination\Listener\CCDAEventsSubscriber::onPatientDocumentTreeViewFilter for an example.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\PatientDocuments;
+namespace DCL\Events\PatientDocuments;
 
 use CategoryTree;
 use HTML_TreeNode;

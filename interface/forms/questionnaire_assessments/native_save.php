@@ -3,11 +3,11 @@
 /**
  * Save a patient-context FHIR QuestionnaireResponse from the native Questionnaire runtime.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -18,16 +18,16 @@ declare(strict_types=1);
 // globals.php, so there is nothing load-bearing between the two.
 require_once(__DIR__ . '/../../globals.php');
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\NativeQuestionnaireResponseProcessor;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\QuestionnaireResponseService;
-use OpenEMR\Services\QuestionnaireService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\NativeQuestionnaireResponseProcessor;
+use DCL\Services\PatientService;
+use DCL\Services\QuestionnaireResponseService;
+use DCL\Services\QuestionnaireService;
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -143,7 +143,7 @@ try {
         'message' => xlt('Unable to save QuestionnaireResponse.'),
     ]);
 } catch (Throwable $e) {
-    // Error/TypeError must not be suppressed (openemr.forbiddenCatchType); log for
+    // Error/TypeError must not be suppressed (DCL.forbiddenCatchType); log for
     // observability, then let it propagate to the global exception handler.
     ServiceContainer::getLogger()->error(
         'Native QuestionnaireResponse save failed with a fatal error.',

@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * FhirProvenanceNullHandlingTest.php
  *
- * Regression tests for https://github.com/openemr/openemr/issues/13054 (extended sweep).
+ * Regression tests for https://github.com/DCL/DCL/issues/13054 (extended sweep).
  * Several FHIR services declared createProvenanceResource() with a return type that
  * excluded null while passing the possibly-null result of
  * FhirProvenanceService::createProvenanceForDomainResource() straight through,
@@ -13,31 +13,31 @@ declare(strict_types=1);
  * -> FhirServiceBase::getAll()) whenever no author/organization reference could be
  * resolved for a resource.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
 use BadMethodCallException;
-use OpenEMR\FHIR\DomainModels\OpenEMRFhirQuestionnaireResponse;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\DiagnosticReport\FhirDiagnosticReportLaboratoryService;
-use OpenEMR\Services\FHIR\FhirCoverageService;
-use OpenEMR\Services\FHIR\FhirMedicationRequestService;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirQuestionnaireService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\Observation\FhirObservationVitalsService;
-use OpenEMR\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
-use OpenEMR\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
+use DCL\FHIR\DomainModels\DCLFhirQuestionnaireResponse;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\DiagnosticReport\FhirDiagnosticReportLaboratoryService;
+use DCL\Services\FHIR\FhirCoverageService;
+use DCL\Services\FHIR\FhirMedicationRequestService;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirQuestionnaireService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\Observation\FhirObservationVitalsService;
+use DCL\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
+use DCL\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -61,7 +61,7 @@ class FhirProvenanceNullHandlingTest extends TestCase
             'medication-request' => [FhirMedicationRequestService::class, FHIRMedicationRequest::class],
             'questionnaire' => [FhirQuestionnaireService::class, FHIRQuestionnaire::class],
             'questionnaire-form' => [FhirQuestionnaireFormService::class, FHIRQuestionnaire::class],
-            'questionnaire-response-form' => [FhirQuestionnaireResponseFormService::class, OpenEMRFhirQuestionnaireResponse::class],
+            'questionnaire-response-form' => [FhirQuestionnaireResponseFormService::class, DCLFhirQuestionnaireResponse::class],
             'observation-vitals' => [FhirObservationVitalsService::class, FHIRObservation::class],
             'diagnostic-report-laboratory' => [FhirDiagnosticReportLaboratoryService::class, FHIRDiagnosticReport::class],
         ];

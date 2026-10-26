@@ -3,19 +3,19 @@
 /**
  * ProductRegistrationController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @license     https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license     https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Services\ProductRegistrationService;
-use OpenEMR\Services\VersionService;
-use OpenEMR\Telemetry\BackgroundTaskManager;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Services\ProductRegistrationService;
+use DCL\Services\VersionService;
+use DCL\Telemetry\BackgroundTaskManager;
 
 require_once("../../interface/globals.php");
 

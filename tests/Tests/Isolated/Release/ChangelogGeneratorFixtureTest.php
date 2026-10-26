@@ -4,7 +4,7 @@
  * Fixture-based regression: replay 8.2.0's real inputs
  * (v8_0_0...v8_2_0 range) through the current ChangelogGenerator
  * and assert the output matches the locked expected section. Base
- * is v8_0_0 (the previous shipped release per website-openemr's
+ * is v8_0_0 (the previous shipped release per website-DCL's
  * data/releases.json manifest) rather than v8_1_0 (cut but never
  * released) -- matches what ChangelogMutator now derives via
  * BranchVersionResolver.
@@ -45,21 +45,21 @@
  *   catching interactions between filter + categorization + area
  *   grouping + advisory matching that synthetic cases miss.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use DateTimeImmutable;
 use DateTimeZone;
 use Lcobucci\Clock\FrozenClock;
-use OpenEMR\Release\ChangelogGenerator;
+use DCL\Release\ChangelogGenerator;
 use PHPUnit\Framework\TestCase;
 
 final class ChangelogGeneratorFixtureTest extends TestCase
@@ -90,7 +90,7 @@ final class ChangelogGeneratorFixtureTest extends TestCase
         // the rendered heading date matches the CHANGELOG entry that
         // shipped for 8.2.0.
         $clock = new FrozenClock(new DateTimeImmutable('2026-07-08T00:00:00+0000', new DateTimeZone('UTC')));
-        $generator = new ChangelogGenerator($api, 'openemr/openemr', $clock);
+        $generator = new ChangelogGenerator($api, 'DCL/DCL', $clock);
 
         $actual = $generator->generate('v8_0_0', 'v8_2_0', '8.2.0', includeGhsa: true);
 

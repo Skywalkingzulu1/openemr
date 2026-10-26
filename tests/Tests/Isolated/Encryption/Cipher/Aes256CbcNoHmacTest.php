@@ -6,24 +6,24 @@
  * Uses known test vectors from CryptoFixtureManager to verify decryption
  * works correctly in isolation without database or filesystem dependencies.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Encryption\Cipher;
+namespace DCL\Tests\Isolated\Encryption\Cipher;
 
 use BadMethodCallException;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Encryption\Cipher\Aes256CbcNoHmac;
-use OpenEMR\Encryption\Ciphertext;
-use OpenEMR\Encryption\Keys\KeyMaterial;
-use OpenEMR\Encryption\Plaintext;
-use OpenEMR\Tests\Fixtures\CryptoFixtureManager;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Encryption\Cipher\Aes256CbcNoHmac;
+use DCL\Encryption\Ciphertext;
+use DCL\Encryption\Keys\KeyMaterial;
+use DCL\Encryption\Plaintext;
+use DCL\Tests\Fixtures\CryptoFixtureManager;
 use PHPUnit\Framework\TestCase;
 
 /**

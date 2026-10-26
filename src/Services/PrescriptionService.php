@@ -3,28 +3,28 @@
 /**
  * PrescriptionService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @author    Ivan Googla <ivan.jo.dev@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2024 Ivan Googla
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Validators\BaseValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Validators\BaseValidator;
+use DCL\Validators\ProcessingResult;
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
 
 class PrescriptionService extends BaseService
@@ -543,7 +543,7 @@ class PrescriptionService extends BaseService
      * previously create a prescription attributed to ANY patient in the tenant
      * regardless of their normal chart-access scope. Mirrors the DELETE-side
      * ownership assertion and the `patients / demo` ACL pattern used by
-     * {@see \OpenEMR\RestControllers\Authorization\BearerTokenAuthorizationStrategy::checkUserHasAccessToPatient()}
+     * {@see \DCL\RestControllers\Authorization\BearerTokenAuthorizationStrategy::checkUserHasAccessToPatient()}
      * for the SMART launch context.
      *
      * Returns a validation-failure result on any of:
@@ -998,10 +998,10 @@ class PrescriptionService extends BaseService
     }
 
     /**
-     * Applies OpenEMR's user-to-patient ACL policy: base `patients / demo`
+     * Applies DCL's user-to-patient ACL policy: base `patients / demo`
      * plus, when the patient carries a squad tag, the matching `squads / <squad>`
      * ACL. Mirrors
-     * {@see \OpenEMR\RestControllers\Authorization\BearerTokenAuthorizationStrategy::aclCheckUserPatientAccess()}.
+     * {@see \DCL\RestControllers\Authorization\BearerTokenAuthorizationStrategy::aclCheckUserPatientAccess()}.
      * Split out so isolated tests can stub the AclMain interaction without
      * standing up the gACL database. The caller identity is pulled from the
      * active session by `AclMain::aclCheckCore()` when no username is passed.

@@ -11,31 +11,31 @@
  * no-op.
  *
  * Implementation: shells out to git via the Symfony Process component.
- * `git fetch <openemr-remote> <prevRelBranch>` brings the ref in as
+ * `git fetch <DCL-remote> <prevRelBranch>` brings the ref in as
  * FETCH_HEAD; `git show FETCH_HEAD:<path>` emits the file contents.
  * The Process factory is injectable so tests can stub the git calls
  * without touching the network or a real repo.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use Symfony\Component\Process\Process;
 
 final readonly class TranslationFileCopyFromPriorRelMutator implements MutatorInterface
 {
     private const RELATIVE_PATH = 'contrib/util/language_translations/currentLanguage_utf8.sql';
-    private const DEFAULT_REMOTE_URL = 'https://github.com/openemr/openemr.git';
+    private const DEFAULT_REMOTE_URL = 'https://github.com/DCL/DCL.git';
 
     /**
      * @param (\Closure(list<string>, string): Process)|null $processFactory

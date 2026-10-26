@@ -7,19 +7,19 @@
  * fresh-add, idempotent re-run, with/without placeholder, and multi-
  * branch interleaving scenarios.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\PatchPrepReleaseTargetsMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\Mutator\PatchPrepReleaseTargetsMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
@@ -34,7 +34,7 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-ppr-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-ppr-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir . '/.github', 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir');
         }
@@ -53,21 +53,21 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,next
-          openemr_version_ref: rel-810
+          DCL_version_ref: rel-810
 
         # placeholder for the multi-row dev pattern
         - branch: rel-810
           docker_tags: 8.1.0
-          openemr_version_ref: v8_1_0
+          DCL_version_ref: v8_1_0
           unreleased: true
 
         - branch: rel-800
           docker_tags: 8.0.0,latest
-          openemr_version_ref: v8_0_0
+          DCL_version_ref: v8_0_0
         YAML;
         $this->writeTarget($input);
 
@@ -89,7 +89,7 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $rel810Rows = $this->rowsForBranch($parsed, 'rel-810');
         self::assertCount(1, $rel810Rows, 'placeholder row should be dropped, only the dev row remains');
         self::assertSame('8.1.1,next', $rel810Rows[0]['docker_tags']);
-        self::assertSame('rel-810', $rel810Rows[0]['openemr_version_ref']);
+        self::assertSame('rel-810', $rel810Rows[0]['DCL_version_ref']);
         self::assertArrayNotHasKey('unreleased', $rel810Rows[0]);
     }
 
@@ -100,15 +100,15 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
 
         - branch: rel-800
           docker_tags: 8.0.0
-          openemr_version_ref: v8_0_0
+          DCL_version_ref: v8_0_0
         YAML;
         $this->writeTarget($input);
 
@@ -136,11 +136,11 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
         YAML;
         $this->writeTarget($input);
         $mutator = new PatchPrepReleaseTargetsMutator();
@@ -156,15 +156,15 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.2,next
-          openemr_version_ref: rel-810
+          DCL_version_ref: rel-810
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
         YAML;
         $this->writeTarget($input);
 
@@ -181,24 +181,24 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.3.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-820
           docker_tags: 8.2.1,next
-          openemr_version_ref: rel-820
+          DCL_version_ref: rel-820
 
         - branch: rel-820
           docker_tags: 8.2.0
-          openemr_version_ref: v8_2_0
+          DCL_version_ref: v8_2_0
           unreleased: true
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
 
         - branch: rel-810
           docker_tags: 8.1.0
-          openemr_version_ref: v8_1_0
+          DCL_version_ref: v8_1_0
           unreleased: true
         YAML;
         $this->writeTarget($input);
@@ -235,11 +235,11 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.3.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.2,latest
-          openemr_version_ref: v8_1_2
+          DCL_version_ref: v8_1_2
         YAML;
         $this->writeTarget($input);
 
@@ -265,11 +265,11 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         - branch: master
           # comment about master
           docker_tags: 8.2.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
         YAML;
         $this->writeTarget($input);
 
@@ -283,7 +283,7 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
 
     public function testRequiresRelBranchOnContext(): void
     {
-        $input = "- branch: master\n  docker_tags: 8.2.0,dev\n  openemr_version_ref: master\n";
+        $input = "- branch: master\n  docker_tags: 8.2.0,dev\n  DCL_version_ref: master\n";
         $this->writeTarget($input);
         $context = MutatorContext::fromVersionString($this->tmpDir, '8.1.2');
         $this->expectException(\RuntimeException::class);
@@ -296,11 +296,11 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
         YAML;
         $this->writeTarget($input);
         (new PatchPrepReleaseTargetsMutator())->apply(
@@ -319,11 +319,11 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.5.0,dev,next
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-840
           docker_tags: 8.4.0,latest
-          openemr_version_ref: v8_4_0
+          DCL_version_ref: v8_4_0
         YAML;
         $this->writeTarget($input);
 
@@ -360,11 +360,11 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.5.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-840
           docker_tags: 8.4.0,latest
-          openemr_version_ref: v8_4_0
+          DCL_version_ref: v8_4_0
         YAML;
         $this->writeTarget($input);
 
@@ -384,11 +384,11 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.5.0,dev,next
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-840
           docker_tags: 8.4.0,latest
-          openemr_version_ref: v8_4_0
+          DCL_version_ref: v8_4_0
         YAML;
         $this->writeTarget($input);
         $mutator = new PatchPrepReleaseTargetsMutator();
@@ -411,12 +411,12 @@ final class PatchPrepReleaseTargetsMutatorTest extends TestCase
           # 8.5.0 is the version master is currently developing.
           # The docker_tag <-> version.php alignment guard catches drift.
           docker_tags: 8.5.0,dev,next
-          openemr_version_ref: master
+          DCL_version_ref: master
           gate_with_acceptance: true
 
         - branch: rel-840
           docker_tags: 8.4.0,latest
-          openemr_version_ref: v8_4_0
+          DCL_version_ref: v8_4_0
         YAML;
         $this->writeTarget($input);
 

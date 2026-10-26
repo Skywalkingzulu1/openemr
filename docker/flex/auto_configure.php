@@ -2,20 +2,20 @@
 
 /**
  * =======================================
- * OpenEMR Automated Configuration Script
+ * DCL Automated Configuration Script
  * =======================================
- * This script performs the initial setup and configuration of OpenEMR when
+ * This script performs the initial setup and configuration of DCL when
  * the container starts for the first time. It's like an automated installer
  * that sets up the database, creates all necessary tables, and configures
- * OpenEMR for use.
+ * DCL for use.
  *
  * What this script does:
- *   1. Loads OpenEMR's installer class (from Composer autoloader)
+ *   1. Loads DCL's installer class (from Composer autoloader)
  *   2. Sets up default configuration values (database, admin user, etc.)
  *   3. Allows these defaults to be overridden via command-line arguments
- *   4. Runs the OpenEMR installer to create the database and initial setup
+ *   4. Runs the DCL installer to create the database and initial setup
  *
- * This script is called automatically by openemr.sh during container
+ * This script is called automatically by DCL.sh during container
  * startup, but can also be run manually if needed.
  *
  * Usage:
@@ -24,22 +24,22 @@
  *
  * Example:
  *   php auto_configure.php server=mysql rootpass=secret iuserpass=secure123
- *   php auto_configure.php -f "server=mysql rootpass=secret login=openemr"
+ *   php auto_configure.php -f "server=mysql rootpass=secret login=DCL"
  * ============================================================================
  */
 
-// Load OpenEMR's Composer autoloader
-// This gives us access to all OpenEMR classes, including the Installer class
-require_once('/var/www/localhost/htdocs/openemr/vendor/autoload.php');
+// Load DCL's Composer autoloader
+// This gives us access to all DCL classes, including the Installer class
+require_once('/var/www/localhost/htdocs/DCL/vendor/autoload.php');
 
-// Support older OpenEMR versions (5.0.2 and lower) that may not have
+// Support older DCL versions (5.0.2 and lower) that may not have
 // password_hashing.php in the vendor directory
-if (file_exists('/var/www/localhost/htdocs/openemr/library/authentication/password_hashing.php')) {
-    // This is to support older code (OpenEMR 5.0.2 and lower)
-    require_once('/var/www/localhost/htdocs/openemr/library/authentication/password_hashing.php');
+if (file_exists('/var/www/localhost/htdocs/DCL/library/authentication/password_hashing.php')) {
+    // This is to support older code (DCL 5.0.2 and lower)
+    require_once('/var/www/localhost/htdocs/DCL/library/authentication/password_hashing.php');
 }
 
-use OpenEMR\Common\Logging\SystemLogger;
+use DCL\Common\Logging\SystemLogger;
 
 // ============================================================================
 // DEFAULT CONFIGURATION SETTINGS
@@ -48,7 +48,7 @@ use OpenEMR\Common\Logging\SystemLogger;
 // command-line arguments. These defaults are suitable for a typical Docker
 // development environment, but should be changed in production.
 //
-// The openemr.sh script passes custom values via command-line arguments
+// The DCL.sh script passes custom values via command-line arguments
 // (e.g., "server=mysql", "rootpass=secret") to override these defaults.
 
 $installSettings = [];
@@ -57,7 +57,7 @@ $installSettings = [];
 // Initial Administrator Account Settings
 // ----------------------------------------------------------------------------
 // These settings control the first admin user account that gets created
-// during installation. This is the account you'll use to log into OpenEMR
+// during installation. This is the account you'll use to log into DCL
 // for the first time.
 
 $installSettings['iuser']                    = 'admin';         // Admin username
@@ -68,7 +68,7 @@ $installSettings['igroup']                   = 'Default';       // User group fo
 // ----------------------------------------------------------------------------
 // Database Connection Settings
 // ----------------------------------------------------------------------------
-// These settings tell OpenEMR how to connect to the MySQL/MariaDB database.
+// These settings tell DCL how to connect to the MySQL/MariaDB database.
 // The "server" is the database hostname (e.g., "mysql", "mysql-lb").
 // The "loginhost" is the hostname of the web server (used for some internal checks).
 
@@ -79,7 +79,7 @@ $installSettings['port']                     = '3306';         // MySQL port (de
 // ----------------------------------------------------------------------------
 // Database Root Credentials
 // ----------------------------------------------------------------------------
-// These are used to create the OpenEMR database and user account.
+// These are used to create the DCL database and user account.
 // In production, use strong passwords and consider using a dedicated
 // database setup script instead of root credentials.
 
@@ -87,15 +87,15 @@ $installSettings['root']                     = 'root';         // MySQL root use
 $installSettings['rootpass']                 = 'BLANK';        // MySQL root password (BLANK = empty)
 
 // ----------------------------------------------------------------------------
-// OpenEMR Database User Credentials
+// DCL Database User Credentials
 // ----------------------------------------------------------------------------
-// These are the credentials for the dedicated database user that OpenEMR
+// These are the credentials for the dedicated database user that DCL
 // will use to connect to the database. This user is created during installation
-// and has permissions only for the OpenEMR database.
+// and has permissions only for the DCL database.
 
-$installSettings['login']                    = 'openemr';      // OpenEMR database username
-$installSettings['pass']                     = 'openemr';      // OpenEMR database password
-$installSettings['dbname']                   = 'openemr';      // Database name
+$installSettings['login']                    = 'DCL';      // DCL database username
+$installSettings['pass']                     = 'DCL';      // DCL database password
+$installSettings['dbname']                   = 'DCL';      // Database name
 
 // ----------------------------------------------------------------------------
 // Database Character Encoding
@@ -109,7 +109,7 @@ $installSettings['collate']                  = 'utf8mb4_general_ci'; // Characte
 // ----------------------------------------------------------------------------
 // Site Configuration
 // ----------------------------------------------------------------------------
-// OpenEMR supports multi-site installations (multiple instances sharing one
+// DCL supports multi-site installations (multiple instances sharing one
 // codebase). For single-site installations, use "default".
 
 $installSettings['site']                     = 'default';      // Site identifier
@@ -128,22 +128,22 @@ $installSettings['development_translations'] = 'BLANK';        // Enable dev tra
 // ============================================================================
 // COMMAND-LINE ARGUMENT PARSING
 // ============================================================================
-// This section reads command-line arguments (passed from openemr.sh) and
+// This section reads command-line arguments (passed from DCL.sh) and
 // overrides the default settings above. Arguments can be provided in two formats:
 //
 // Format 1: Individual key=value pairs
 //   php auto_configure.php server=mysql rootpass=secret
 //
 // Format 2: Single -f flag with space-separated key=value pairs
-//   php auto_configure.php -f "server=mysql rootpass=secret login=openemr"
+//   php auto_configure.php -f "server=mysql rootpass=secret login=DCL"
 //
 // The -f format is useful when passing all settings as a single string from
-// the shell script (which is how openemr.sh calls this script).
+// the shell script (which is how DCL.sh calls this script).
 
 for ($i=1; $i < count($argv); $i++) {
     if ($argv[$i] == '-f' && isset($argv[$i+1])) {
         // Handle case where a single string contains all parameters
-        // This format is used by openemr.sh: php auto_configure.php -f "server=mysql rootpass=root"
+        // This format is used by DCL.sh: php auto_configure.php -f "server=mysql rootpass=root"
         $configString = $argv[$i+1];
         $configPairs = preg_split('/\s+/', trim($configString));
         foreach ($configPairs as $pair) {
@@ -184,7 +184,7 @@ foreach ($installSettings as $setting => $value) {
 $installSettings = $tempInstallSettings;
 
 // ============================================================================
-// RUN THE OPENEMR INSTALLER
+// RUN THE DCL INSTALLER
 // ============================================================================
 // This is where the actual installation happens. The Installer class:
 //   1. Connects to the database
@@ -195,14 +195,14 @@ $installSettings = $tempInstallSettings;
 //
 // The quick_install() method does all of this automatically.
 
-// Install and configure OpenEMR using the Installer class
+// Install and configure DCL using the Installer class
 $installer = new Installer($installSettings, new SystemLogger());
 
 // Run the installer and check if it succeeded
 if (! $installer->quick_install()) {
     // Installation failed - throw an exception with the error message
     // This will cause the container startup to fail, which is the correct
-    // behavior since OpenEMR cannot run without proper installation
+    // behavior since DCL cannot run without proper installation
     throw new Exception("ERROR: " . $installer->error_message . "\n");
 } else {
     // Installation succeeded - print the debug message

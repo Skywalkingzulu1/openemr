@@ -5,17 +5,17 @@
  *
  * Help File for Shorthand Entry Technique on the Eye Form
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <magauran@MedFetch.com>
  * @copyright Copyright (c) 2016 Raymond Magauran <magauran@MedFetch.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
 
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 
 $form_folder = "eye_mag";
@@ -24,7 +24,7 @@ $form_folder = "eye_mag";
     <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Eye Exam Help" />
-    <meta name="author" content="openEMR: ophthalmology help" />
+    <meta name="author" content="DCL: ophthalmology help" />
     <?php Header::setupHeader(); ?>
     </head>
     <body>
@@ -33,7 +33,7 @@ $form_folder = "eye_mag";
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/sites/default/images/login_logo.gif" width="30" height="30" alt="">
-                    OpenEMR: Eye Exam <span class="font-weight-bold">Shorthand Help</span>
+                    DCL: Eye Exam <span class="font-weight-bold">Shorthand Help</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
                     <span class="navbar-toggler-icon"></span>
@@ -70,7 +70,7 @@ $form_folder = "eye_mag";
                             <p>
                                 Starting with this "paper" shorthand, we forged an electronic Shorthand, specifically designed for rapid data entry.<br />
                                 Using Shorthand, all your findings are entered in one text box,
-                                and OpenEMR automatically knows how to store them.
+                                and DCL automatically knows how to store them.
                             </p>
                             <p>The structure is simple: <span class="font-weight-bold">Field:text;Field:text;Field:text</span></p>
                             <p>
@@ -82,7 +82,7 @@ $form_folder = "eye_mag";
                             </ol>
                             <p>In the Shorthand textbox, type the <span class="font-weight-bold">Field</span> name, then a colon, followed by your findings.</p>
                             <p>
-                                Look around the form - openEMR: Eye Exam is automatically filled.
+                                Look around the form - DCL: Eye Exam is automatically filled.
                                 <br />
                                 Done. No extra clicks.
                             </p>
@@ -291,7 +291,7 @@ $form_folder = "eye_mag";
                                 <div class="col-12 col-md-6">
                                     <div class="border border-dark p-2">
                                         <h4>Eye Exam</h4>
-                                        <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_ext_EMR.png" class="img-fluid" width="95%" alt="Shorthand Example: openEMR">
+                                        <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_ext_EMR.png" class="img-fluid" width="95%" alt="Shorthand Example: DCL">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -659,7 +659,7 @@ $form_folder = "eye_mag";
                                 <div class="col-12 col-md-6">
                                     <div class="border border-dark p-2">
                                         <h4>Eye Exam</h4>
-                                        <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_antseg_EMR.png" class="img-fluid" width="90%" alt="Shorthand Example: openEMR">
+                                        <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_antseg_EMR.png" class="img-fluid" width="90%" alt="Shorthand Example: DCL">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -1009,7 +1009,7 @@ $form_folder = "eye_mag";
                                 <div class="col-12 col-md-6">
                                     <div class="border border-dark p-2">
                                         <h4>Eye Exam</h4>
-                                        <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_retina_EMR.png" width="95%" alt="Shorthand Example: openEMR" />
+                                        <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_retina_EMR.png" width="95%" alt="Shorthand Example: DCL" />
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -1396,10 +1396,10 @@ $form_folder = "eye_mag";
                                         <h4>Eye Exam</h4>
                                         <div class="row">
                                             <div class="col-12 col-md-6 text-sm-center">
-                                                <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_neuro_EMR1.png" class="img-fluid" alt="Shorthand Example: openEMR" />
+                                                <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_neuro_EMR1.png" class="img-fluid" alt="Shorthand Example: DCL" />
                                             </div>
                                             <div class="col-12 col-md-6 text-sm-center">
-                                                <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_neuro_EMR2.png" class="img-fluid" alt="Shorthand Example: openEMR" />
+                                                <img src="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/forms/eye_mag/images/sh_neuro_EMR2.png" class="img-fluid" alt="Shorthand Example: DCL" />
                                             </div>
                                         </div>
                                     </div>

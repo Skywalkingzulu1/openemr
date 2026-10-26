@@ -1,18 +1,18 @@
 <?php
 
 /**
- * HTMLPurifier URI filter that keeps http(s) references on the OpenEMR
+ * HTMLPurifier URI filter that keeps http(s) references on the DCL
  * server's own host and rejects everything else. Relative URLs and
  * data: URIs are allowed through unchanged.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Pdf;
+namespace DCL\Pdf;
 
 use HTMLPurifier_URIFilter;
 
@@ -27,7 +27,7 @@ class SameOriginUriFilter extends HTMLPurifier_URIFilter
     public function __construct(string $allowedHostSpec)
     {
         [$this->allowedScheme, $this->allowedHost, $this->allowedPort] = self::parseSpec($allowedHostSpec);
-        $this->name = 'OpenEMRSameOrigin';
+        $this->name = 'DCLSameOrigin';
         $this->always_load = true;
     }
 

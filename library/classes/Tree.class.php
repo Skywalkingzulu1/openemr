@@ -1,6 +1,6 @@
 <?php
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 define("ROOT_TYPE_ID", 1);
 define("ROOT_TYPE_NAME", 2);

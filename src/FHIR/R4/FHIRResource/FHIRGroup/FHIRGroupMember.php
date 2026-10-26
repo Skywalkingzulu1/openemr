@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGroup;
+namespace DCL\FHIR\R4\FHIRResource\FHIRGroup;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGroup;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively, and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
@@ -71,19 +71,19 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A reference to the entity that is a member of the group. Must be consistent with Group.type. If the entity is another group, then the type must be the same.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $entity = null;
 
     /**
      * The period that the member was in the group, if known.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * A flag to indicate that the member is no longer in the group, but previously may have been a member.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $inactive = null;
 
@@ -94,7 +94,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A reference to the entity that is a member of the group. Must be consistent with Group.type. If the entity is another group, then the type must be the same.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEntity()
     {
@@ -103,7 +103,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A reference to the entity that is a member of the group. Must be consistent with Group.type. If the entity is another group, then the type must be the same.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $entity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $entity
      * @return $this
      */
     public function setEntity($entity)
@@ -114,7 +114,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The period that the member was in the group, if known.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -123,7 +123,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The period that the member was in the group, if known.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -134,7 +134,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A flag to indicate that the member is no longer in the group, but previously may have been a member.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getInactive()
     {
@@ -143,7 +143,7 @@ class FHIRGroupMember extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A flag to indicate that the member is no longer in the group, but previously may have been a member.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $inactive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $inactive
      * @return $this
      */
     public function setInactive($inactive)

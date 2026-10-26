@@ -1,12 +1,12 @@
-<h1>OpenEMR Certification Test Mappings</h1>
+<h1>DCL Certification Test Mappings</h1>
 
 <h4>Overview:</h4>
 <p>In order to verify that code changes pass certification tests, contributors must execute the relevant test cases
-before pushing changes. This document maps OpenEMR features with Meaningful Use certification tests.</p>
+before pushing changes. This document maps DCL features with Meaningful Use certification tests.</p>
 
 <h4>Notes:</h4>
 <ul>
-  <li>Feature mappings are linked to <a href="http://www.open-emr.org/wiki/index.php/OpenEMR_Features">this master list.</a></li>
+  <li>Feature mappings are linked to <a href="http://www.dcl.org/wiki/index.php/DCL_Features">this master list.</a></li>
   <li>Use <a href="http://bestonlinehtmleditor.com/">WYSIWYG HTML editor</a> for editing this document.</li>
   <li>This document is reasonably large so be sure to make use of `ctrl+f` to search for the feature you need to test.</li>
 </ul>
@@ -16,7 +16,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
   <thead>
     <tr>
       <th align="center"><span>Certification Test Name</span></th>
-      <th align="center"><span>OpenEMR Feature Mappings</span></th>
+      <th align="center"><span>DCL Feature Mappings</span></th>
       <th align="center"><span>Testing Procedures</span></th>
       <th align="center"><span>Testing Tools</span></th>
     </tr>
@@ -41,7 +41,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
         <ul>
           <li><a href="https://www.healthit.gov/sites/default/files/170-314a1cpoe_2014_tp_approvedv1.3docx.pdf">MU Test Procedure</a></li>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a1cpoe_2014_td_approvedv1.5.pdf">MU Test Data</a></li>
-          <li><a href="http://www.open-emr.org/wiki/images/1/10/CPOE.pdf">OpenEMR Test Procedure</a></li>
+          <li><a href="http://www.dcl.org/wiki/images/1/10/CPOE.pdf">DCL Test Procedure</a></li>
         </ul>
       </td>
       <td></td>
@@ -89,7 +89,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
         <ul>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a4vitalsignsbmigrowthcharts_2014_tp_approvedv1.4.pdf">MU Test Procedure</a></li>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a4vitalsignsbmigrowthcharts_2014_td_approvedv1.3.pdf">MU Test Data</a></li>
-          <li><a href="http://www.open-emr.org/wiki/images/7/74/Vitals_v2.pdf">OpenEMR Test Procedure</a></li>
+          <li><a href="http://www.dcl.org/wiki/images/7/74/Vitals_v2.pdf">DCL Test Procedure</a></li>
         </ul>
       </td>
       <td></td>
@@ -108,7 +108,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
         <ul>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a5problemlist_2014_tp_approvedv1.4.pdf">MU Test Procedure</a></li>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a5problemlist_2014_td_approvedv1.3.pdf">MU Test Data</a></li>
-          <li><a href="http://www.open-emr.org/wiki/images/7/7f/Problem_list_MU2.pdf">OpenEMR Test Procedure</a></li>
+          <li><a href="http://www.dcl.org/wiki/images/7/7f/Problem_list_MU2.pdf">DCL Test Procedure</a></li>
         </ul>
       </td>
       <td></td>
@@ -180,7 +180,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
         <ul>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a9electronic_notes_2014_tp_approved_v1.3.pdf">MU Test Procedure</a></li>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a9electronicnotes_2014_td_approvedv1.3.pdf">MU Test Data</a></li>
-          <li><a href="http://www.open-emr.org/wiki/images/f/fe/Electronic_Notes.pdf">OpenEMR Test Procedure</a></li>
+          <li><a href="http://www.dcl.org/wiki/images/f/fe/Electronic_Notes.pdf">DCL Test Procedure</a></li>
         </ul>
       </td>
       <td></td>
@@ -202,7 +202,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
       <td>
         <ul>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314a11smokingstatus_2014_tp_approvedv1.3.pdf">MU Test Procedure</a></li>
-          <li><a href="http://www.open-emr.org/wiki/images/9/9a/Smoking_status.pdf">OpenEMR Test Procedure</a></li>
+          <li><a href="http://www.dcl.org/wiki/images/9/9a/Smoking_status.pdf">DCL Test Procedure</a></li>
         </ul>
       </td>
       <td></td>
@@ -394,7 +394,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
       <td>
         <ul>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314d5automaticlogoff_2014_tp_approvedv1.2.pdf">MU Test Procedure</a></li>
-          <li><a href="http://www.open-emr.org/wiki/images/7/7a/Automatic_log_off_MU2.zip">OpenEMR Test Procedure</a></li>
+          <li><a href="http://www.dcl.org/wiki/images/7/7a/Automatic_log_off_MU2.zip">DCL Test Procedure</a></li>
         </ul>
       </td>
       <td></td>
@@ -477,7 +477,7 @@ before pushing changes. This document maps OpenEMR features with Meaningful Use 
       <td></td>
       <td>
         <ul>
-          <li><a href="http://www.open-emr.org/wiki/images/9/97/Immunization_Information_MU2.pdf">OpenEMR Test Procedure</a></li>
+          <li><a href="http://www.dcl.org/wiki/images/9/97/Immunization_Information_MU2.pdf">DCL Test Procedure</a></li>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314f1immunizationinformation_2014_tp_approved_v1.2.pdf">MU Test Procedure</a></li>
           <li><a href="https://www.healthit.gov/sites/default/files/170.314f1immunizationinformation_2014_td_approved_v1.2.pdf">MU Test Data</a></li>
         </ul>

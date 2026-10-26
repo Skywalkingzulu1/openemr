@@ -6,20 +6,20 @@
  * Call it only after the client has authenticated, so an unauthenticated caller still gets
  * invalid_client and cannot probe which grants a client is registered for (RFC 6749 5.2).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Grant;
+namespace DCL\Common\Auth\OpenIDConnect\Grant;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 

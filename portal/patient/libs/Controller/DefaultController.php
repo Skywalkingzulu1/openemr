@@ -1,6 +1,6 @@
 <?php
 
-/** @package Openemr::Controller */
+/** @package DCL::Controller */
 
 /**
  * DefaultController is the entry point to the application
@@ -8,7 +8,7 @@
  * From phreeze package
  * @license http://www.gnu.org/copyleft/lesser.html LGPL
  *
- * @package Openemr::Controller
+ * @package DCL::Controller
  * @author ClassBuilder
  * @version 1.0
  */

@@ -60,7 +60,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_USER: ci
           MYSQL_PASSWORD: topsecret
-          MYSQL_DATABASE: openemr_test
+          MYSQL_DATABASE: DCL_test
         options: >-
           --health-cmd="${{ matrix.database.health-cmd }}"
           --health-interval=3s
@@ -82,11 +82,11 @@ jobs:
         php-version: ${{ matrix.php.version }}
 
     - name: Run CLI installer
-      run: ./cli install --db-host=127.0.0.1 --db-port=3306 --db-root-user=root --db-root-password=root --db-user=ci --db-password=topsecret --db-name=openemr_test --oe-admin-username=admin --oe-admin-password=pass --no-interaction -vvv
+      run: ./cli install --db-host=127.0.0.1 --db-port=3306 --db-root-user=root --db-root-password=root --db-user=ci --db-password=topsecret --db-name=DCL_test --oe-admin-username=admin --oe-admin-password=pass --no-interaction -vvv
 
     - name: Verify installation
       run: |
-        mysql -h 127.0.0.1 -u ci -ptopsecret openemr_test \
+        mysql -h 127.0.0.1 -u ci -ptopsecret DCL_test \
           -e "SELECT COUNT(*) as user_count FROM users WHERE username='admin';" \
           | grep -q "1"
 

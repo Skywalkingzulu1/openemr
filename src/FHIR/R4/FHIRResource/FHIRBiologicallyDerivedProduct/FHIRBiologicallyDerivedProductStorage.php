@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A material substance originating from a biological entity intended to be transplanted or infused
@@ -72,25 +72,25 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 {
     /**
      * Description of storage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Storage temperature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $temperature = null;
 
     /**
      * Temperature scale used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStorageScale
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStorageScale
      */
     public $scale = null;
 
     /**
      * Storage timeperiod.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $duration = null;
 
@@ -101,7 +101,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Description of storage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -110,7 +110,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Description of storage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -121,7 +121,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Storage temperature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getTemperature()
     {
@@ -130,7 +130,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Storage temperature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $temperature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $temperature
      * @return $this
      */
     public function setTemperature($temperature)
@@ -141,7 +141,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Temperature scale used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStorageScale
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStorageScale
      */
     public function getScale()
     {
@@ -150,7 +150,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Temperature scale used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStorageScale $scale
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBiologicallyDerivedProductStorageScale $scale
      * @return $this
      */
     public function setScale($scale)
@@ -161,7 +161,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Storage timeperiod.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getDuration()
     {
@@ -170,7 +170,7 @@ class FHIRBiologicallyDerivedProductStorage extends FHIRBackboneElement implemen
 
     /**
      * Storage timeperiod.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $duration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $duration
      * @return $this
      */
     public function setDuration($duration)

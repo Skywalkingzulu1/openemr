@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The characteristics, operational status and capabilities of a medical-related component of a medical device.
@@ -71,14 +71,14 @@ class FHIRDeviceDefinitionDeviceName extends FHIRBackboneElement implements \Jso
 {
     /**
      * The name of the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The type of deviceName.
 UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceNameType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDeviceNameType
      */
     public $type = null;
 
@@ -89,7 +89,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
 
     /**
      * The name of the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -98,7 +98,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
 
     /**
      * The name of the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -110,7 +110,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
     /**
      * The type of deviceName.
 UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceNameType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDeviceNameType
      */
     public function getType()
     {
@@ -120,7 +120,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
     /**
      * The type of deviceName.
 UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceNameType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDeviceNameType $type
      * @return $this
      */
     public function setType($type)

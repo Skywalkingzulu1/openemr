@@ -3,16 +3,16 @@
 /**
  * Access Control List Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ranganath Pathak <pathak01@hotmail.com>
  * @copyright Copyright (c) 2017 Ranganath Pathak <pathak01@hotmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 ?>
 <!DOCTYPE html>
@@ -35,9 +35,9 @@ use OpenEMR\Core\Header;
                 <h2 class="text-center"><a name='entire_doc'><?php echo xlt("Access Control Lists");?></a></h2>
             </div>
             <div class= "row">
-                <p><?php echo xlt("A large application like openEMR is used by a multitude of users with varying roles and degrees of responsibility. It is imperative that access to various parts of the program be granted to users on a need to know basis. To achieve this - Access Control Lists (ACL) are used.");?></p>
+                <p><?php echo xlt("A large application like DCL is used by a multitude of users with varying roles and degrees of responsibility. It is imperative that access to various parts of the program be granted to users on a need to know basis. To achieve this - Access Control Lists (ACL) are used.");?></p>
 
-                <p><?php echo xlt("These lists are used to determine who can access what in openEMR. They work in a top down manner, i.e. initially everybody is denied access to those parts of the program controlled by the ACL.");?></p>
+                <p><?php echo xlt("These lists are used to determine who can access what in DCL. They work in a top down manner, i.e. initially everybody is denied access to those parts of the program controlled by the ACL.");?></p>
 
                 <p><?php echo xlt("Access is then granted selectively to portions of the program on a need to know basis.");?></p>
 
@@ -259,7 +259,7 @@ use OpenEMR\Core\Header;
 
                 <p><?php echo xlt("You have to have an understanding how the program is structured and the ability and willingness to modify the underlying code."); ?></p>
 
-                <p><?php echo xlt("Click on the the following link to learn more about what is involved."); ?><strong><a href="http://www.open-emr.org/wiki/index.php/ACL_Fine_Granular_Control" rel="noopener" target="_blank"><?php echo xlt("ACL Fine Granular Control"); ?></a></strong></p>
+                <p><?php echo xlt("Click on the the following link to learn more about what is involved."); ?><strong><a href="http://www.dcl.org/wiki/index.php/ACL_Fine_Granular_Control" rel="noopener" target="_blank"><?php echo xlt("ACL Fine Granular Control"); ?></a></strong></p>
 
                 <p><?php echo xlt("Best of Luck."); ?> :)</p>
             </div>

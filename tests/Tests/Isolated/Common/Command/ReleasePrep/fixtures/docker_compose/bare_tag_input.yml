@@ -1,5 +1,5 @@
 services:
-  openemr:
-    image: openemr/openemr:latest
+  DCL:
+    image: DCL/DCL:latest
     ports:
     - 80:80

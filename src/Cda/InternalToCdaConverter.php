@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
+ * @copyright Copyright (c) 2026 DCL <https://DCL.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Cda;
+namespace DCL\Cda;
 
 use DOMDocument;
 use DOMElement;
@@ -2840,7 +2840,7 @@ class InternalToCdaConverter
         // Interpretation code based on abnormal_flag
         $abnormalFlag = strtoupper($this->xpathValue('abnormal_flag', $subtest));
         if ($abnormalFlag !== '') {
-            // OpenEMR's proc_res_abnormal list in HL7 ObservationInterpretation.
+            // DCL's proc_res_abnormal list in HL7 ObservationInterpretation.
             // Node mapped only yes/no, so high, low, vhigh and vlow results got an
             // interpretationCode with neither a code nor a nullFlavor.
             [$interpCode, $interpName] = match ($abnormalFlag) {

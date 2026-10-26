@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,13 +71,13 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement implements 
 {
     /**
      * The maximum number of units of the medication that can be dispensed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * The period that applies to the maximum number of units.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $period = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement implements 
 
     /**
      * The maximum number of units of the medication that can be dispensed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -97,7 +97,7 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement implements 
 
     /**
      * The maximum number of units of the medication that can be dispensed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -108,7 +108,7 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement implements 
 
     /**
      * The period that applies to the maximum number of units.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getPeriod()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationKnowledgeMaxDispense extends FHIRBackboneElement implements 
 
     /**
      * The period that applies to the maximum number of units.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $period
      * @return $this
      */
     public function setPeriod($period)

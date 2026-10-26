@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The regulatory authorization of a medicinal product.
@@ -71,31 +71,31 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 {
     /**
      * The assigned number for the marketing authorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Country of authorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $country = null;
 
     /**
      * Jurisdiction within a country.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * The legal status of supply in a jurisdiction or region.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $legalStatusOfSupply = null;
 
     /**
      * The start and expected end date of the authorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $validityPeriod = null;
 
@@ -106,7 +106,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * The assigned number for the marketing authorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -115,7 +115,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * The assigned number for the marketing authorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -126,7 +126,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * Country of authorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCountry()
     {
@@ -135,7 +135,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * Country of authorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
      * @return $this
      */
     public function setCountry($country)
@@ -146,7 +146,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * Jurisdiction within a country.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -155,7 +155,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * Jurisdiction within a country.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -166,7 +166,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * The legal status of supply in a jurisdiction or region.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalStatusOfSupply()
     {
@@ -175,7 +175,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * The legal status of supply in a jurisdiction or region.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalStatusOfSupply
      * @return $this
      */
     public function setLegalStatusOfSupply($legalStatusOfSupply)
@@ -186,7 +186,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * The start and expected end date of the authorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod()
     {
@@ -195,7 +195,7 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
 
     /**
      * The start and expected end date of the authorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
      * @return $this
      */
     public function setValidityPeriod($validityPeriod)

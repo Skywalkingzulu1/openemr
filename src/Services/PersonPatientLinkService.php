@@ -4,17 +4,17 @@
  * PersonPatientLinkService
  * Manages links between person records and patient_data records
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\BaseService;
+use DCL\Validators\ProcessingResult;
 use Psr\Log\LoggerInterface;
 
 class PersonPatientLinkService extends BaseService

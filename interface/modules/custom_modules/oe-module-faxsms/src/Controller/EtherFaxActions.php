@@ -3,28 +3,28 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023-2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use Document;
 use Exception;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Contracts\FaxChannelInterface;
-use OpenEMR\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
-use OpenEMR\Modules\FaxSMS\EtherFax\EtherFaxClient;
-use OpenEMR\Modules\FaxSMS\EtherFax\FaxResult;
-use OpenEMR\Modules\FaxSMS\Service\FaxMailer;
-use OpenEMR\Modules\FaxSMS\Service\FaxUploadStaging;
-use OpenEMR\Services\ImageUtilities\HandleImageService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Contracts\FaxChannelInterface;
+use DCL\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
+use DCL\Modules\FaxSMS\EtherFax\EtherFaxClient;
+use DCL\Modules\FaxSMS\EtherFax\FaxResult;
+use DCL\Modules\FaxSMS\Service\FaxMailer;
+use DCL\Modules\FaxSMS\Service\FaxUploadStaging;
+use DCL\Services\ImageUtilities\HandleImageService;
 
 class EtherFaxActions extends AppDispatch implements FaxChannelInterface, FaxDocumentDisposalInterface
 {

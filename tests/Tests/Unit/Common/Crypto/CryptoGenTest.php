@@ -4,21 +4,21 @@
  * Tests for the CryptoGen class
  *
  * @category  Test
- * @package   OpenEMR\Tests\Unit\Common\Crypto
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @package   DCL\Tests\Unit\Common\Crypto
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
  * @license   GNU General Public License 3
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\Common\Crypto;
+namespace DCL\Tests\Unit\Common\Crypto;
 
-use OpenEMR\Common\Crypto\CryptoGen;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\KeySource;
-use OpenEMR\Common\Crypto\KeyVersion;
+use DCL\Common\Crypto\CryptoGen;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\KeySource;
+use DCL\Common\Crypto\KeyVersion;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
@@ -56,7 +56,7 @@ final class CryptoGenTest extends TestCase
         $this->originalGlobals = $globalsCopy;
 
         // Create test site directory
-        $this->testSiteDir = sys_get_temp_dir() . '/openemr_test_' . uniqid();
+        $this->testSiteDir = sys_get_temp_dir() . '/DCL_test_' . uniqid();
         mkdir($this->testSiteDir . '/documents/logs_and_misc/methods', 0755, true);
 
         // Mock GLOBALS for testing

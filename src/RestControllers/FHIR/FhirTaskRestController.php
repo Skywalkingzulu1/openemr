@@ -6,24 +6,24 @@
  * carry the task's version as an ETag, and an update may send it back as
  * If-Match so that it fails (412) if someone changed the task since.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\RestControllers\Config\RestConfig;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirTaskService;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\RestControllers\Config\RestConfig;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirTaskService;
+use DCL\Services\FHIR\UtilsService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -58,7 +58,7 @@ class FhirTaskRestController
 
     /**
      * The task's version, from the resource in a response body, as its ETag. A client can read
-     * the same version from meta.versionId: OpenEMR's Docker image removes ETag headers
+     * the same version from meta.versionId: DCL's Docker image removes ETag headers
      * ("Header unset ETag" in its Apache configuration).
      */
     public static function withETag(Response $response): Response
@@ -151,7 +151,7 @@ class FhirTaskRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne(string $uuid): Response
     {
@@ -268,7 +268,7 @@ class FhirTaskRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll(): JsonResponse|Response
     {
@@ -301,7 +301,7 @@ class FhirTaskRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post(): Response
     {
@@ -344,7 +344,7 @@ class FhirTaskRestController
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
             new OA\Response(response: '412', description: 'If-Match named a version the task no longer has.'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put(string $uuid): Response
     {

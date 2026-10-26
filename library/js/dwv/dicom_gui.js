@@ -1,14 +1,14 @@
 /**
  * DWV (Dicom Web Viewer) application GUI
- * OpenEMR v5.0.2
+ * DCL v5.0.2
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Victor Kofia <victor.kofia@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com> (complete rework 7/1/2020)
  * @copyright Copyright (c) 2016 Victor Kofia <victor.kofia@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // namespaces

@@ -1,50 +1,50 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMoney;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\InsuranceService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRMoney;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRElement\FHIRPositiveInt;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageClass;
+use DCL\FHIR\R4\FHIRResource\FHIRCoverage\FHIRCoverageCostToBeneficiary;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\InsuranceService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR Coverage Service - US Core 8.0 / USCDI v5 Compliant
  *
- * @package            OpenEMR
- * @link               https://www.open-emr.org
+ * @package            DCL
+ * @link               https://www.dcl.org
  * @author             Vishnu Yarmaneni <vardhanvishnu@gmail.com>
  * @author             Jerry Padgett <sjpadgett@gmail.com>
  * @copyright          Copyright (c) 2021 Vishnu Yarmaneni <vardhanvishnu@gmail.com>
  * @copyright          Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -94,7 +94,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Returns an array mapping FHIR Coverage Resource search parameters to OpenEMR Coverage search parameters
+     * Returns an array mapping FHIR Coverage Resource search parameters to DCL Coverage search parameters
      *
      * @return array The search parameters
      */
@@ -116,14 +116,14 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Parses an OpenEMR Insurance record, returning the equivalent FHIR Coverage Resource
+     * Parses an DCL Insurance record, returning the equivalent FHIR Coverage Resource
      * Compliant with US Core 8.0 and USCDI v5
      *
-     * @param array   $dataRecord The source OpenEMR data record
+     * @param array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRCoverage
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $coverageResource = new FHIRCoverage();
 
@@ -160,7 +160,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
         // Policy Type as additional identifier if present
         if (!empty($dataRecord['policy_type'])) {
             $policyTypeIdentifier = new FHIRIdentifier();
-            $policyTypeIdentifier->setSystem("http://openemr.org/fhir/policy-type");
+            $policyTypeIdentifier->setSystem("http://dcl.org/fhir/policy-type");
             $policyTypeIdentifier->setValue($dataRecord['policy_type']);
             $coverageResource->addIdentifier($policyTypeIdentifier);
         }
@@ -432,20 +432,20 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Parses a FHIR Coverage resource, returning the equivalent OpenEMR insurance_data row.
+     * Parses a FHIR Coverage resource, returning the equivalent DCL insurance_data row.
      *
-     * The reverse of parseOpenEMRRecord. Unresolved references (Patient/uuid, Organization/uuid)
-     * stay as opaque uuid strings here; insertOpenEMRRecord/updateOpenEMRRecord resolve them to
+     * The reverse of parseDCLRecord. Unresolved references (Patient/uuid, Organization/uuid)
+     * stay as opaque uuid strings here; insertDCLRecord/updateDCLRecord resolve them to
      * internal numeric ids against patient_data / insurance_companies.
      *
-     * Note: FHIR Coverage carries less information than OpenEMR's insurance_data schema requires
+     * Note: FHIR Coverage carries less information than DCL's insurance_data schema requires
      * (no subscriber DOB, sex, address, etc.). When the FHIR resource declares
      * relationship == 'self' we backfill those required fields from the beneficiary's patient_data
-     * row inside insertOpenEMRRecord. Non-self relationships require the missing fields to be
+     * row inside insertDCLRecord. Non-self relationships require the missing fields to be
      * supplied via FHIR extensions; without them the CoverageValidator will surface a 422.
      *
      * @param FHIRDomainResource $fhirResource
-     * @return array<string, mixed> OpenEMR-shaped record
+     * @return array<string, mixed> DCL-shaped record
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -545,7 +545,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
             }
         }
 
-        // status (R4 1..1 modifier). OpenEMR has no status column; the read side derives
+        // status (R4 1..1 modifier). DCL has no status column; the read side derives
         // status from date/date_end. Rather than silently dropping caller-supplied status,
         // we stash it for the insert/update path to validate against the derived status.
         // If the values disagree the caller gets a 422.
@@ -572,7 +572,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Inserts an OpenEMR insurance_data record from a parsed FHIR Coverage.
+     * Inserts an DCL insurance_data record from a parsed FHIR Coverage.
      *
      * Resolves Patient/uuid -> pid and Organization/uuid -> insurance_companies.id. Backfills
      * subscriber_* fields from patient_data when relationship == 'self'. Applies safe defaults
@@ -581,10 +581,10 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      * @return ProcessingResult
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Coverage record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Coverage record array');
         }
 
         $statusError = $this->validateStatusAgainstDates($openEmrRecord);
@@ -604,17 +604,17 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Updates an existing OpenEMR insurance_data record from a parsed FHIR Coverage.
+     * Updates an existing DCL insurance_data record from a parsed FHIR Coverage.
      *
-     * @param string $fhirResourceId The OpenEMR record's FHIR Resource ID (uuid)
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param string $fhirResourceId The DCL record's FHIR Resource ID (uuid)
+     * @param array<array-key, mixed> $updatedDCLRecord
      * @return ProcessingResult
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        $updatedOpenEMRRecord['uuid'] = $fhirResourceId;
+        $updatedDCLRecord['uuid'] = $fhirResourceId;
 
-        $resolveResult = $this->resolveReferences($updatedOpenEMRRecord);
+        $resolveResult = $this->resolveReferences($updatedDCLRecord);
         if ($resolveResult !== null) {
             return $resolveResult;
         }
@@ -634,7 +634,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
         // the request's pid win, so without this a PUT could move the coverage into another
         // patient's chart; omitting beneficiary entirely still keeps the stored pid, because
         // then there is no pid in the parsed record to override it with.
-        $requestedPid = $updatedOpenEMRRecord['pid'] ?? null;
+        $requestedPid = $updatedDCLRecord['pid'] ?? null;
         $storedPid = $existing['pid'] ?? null;
         if (is_numeric($requestedPid) && is_numeric($storedPid) && (int) $requestedPid !== (int) $storedPid) {
             $result = new ProcessingResult();
@@ -644,21 +644,21 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
             return $result;
         }
 
-        $updatedOpenEMRRecord = array_merge($existing, $updatedOpenEMRRecord);
+        $updatedDCLRecord = array_merge($existing, $updatedDCLRecord);
 
         // Validated after the overlay, not before: a PUT that carries `status` but omits
         // `period` has no dates of its own, so checking the request body alone would compare
         // the caller's status against an empty period and accept -- or reject -- the wrong
         // thing. The merged record is what actually gets written, so it is what gets checked.
-        $statusError = $this->validateStatusAgainstDates($updatedOpenEMRRecord);
+        $statusError = $this->validateStatusAgainstDates($updatedDCLRecord);
         if ($statusError !== null) {
             return $statusError;
         }
-        unset($updatedOpenEMRRecord['__fhir_status__']);
+        unset($updatedDCLRecord['__fhir_status__']);
 
-        $this->applyDefaults($updatedOpenEMRRecord);
+        $this->applyDefaults($updatedDCLRecord);
 
-        $result = $this->coverageService->update($updatedOpenEMRRecord);
+        $result = $this->coverageService->update($updatedDCLRecord);
 
         return $result instanceof ProcessingResult ? $result : new ProcessingResult();
     }
@@ -695,7 +695,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
 
     /**
      * Validate caller-supplied FHIR Coverage.status (R4 1..1 modifier) against what
-     * determineStatus() would derive from the supplied dates. OpenEMR has no status
+     * determineStatus() would derive from the supplied dates. DCL has no status
      * column, so the read side is authoritative — but rather than silently dropping
      * a disagreeing input we surface a 422 so callers get an explicit signal.
      * Accepts 'active', 'cancelled', 'draft', and 'entered-in-error'.
@@ -712,7 +712,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
             $result = new ProcessingResult();
             $result->setValidationMessages([
                 'status' => 'FHIR Coverage.status="entered-in-error" is not writable; '
-                    . 'OpenEMR has no equivalent state.',
+                    . 'DCL has no equivalent state.',
             ]);
             return $result;
         }
@@ -722,7 +722,7 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
             $result->setValidationMessages([
                 'status' => "FHIR Coverage.status='" . $supplied . "' disagrees with "
                     . "the status derived from period dates ('" . $derived . "'). "
-                    . "OpenEMR derives status from period.start / period.end at read time; "
+                    . "DCL derives status from period.start / period.end at read time; "
                     . "adjust the dates or omit status.",
             ]);
             return $result;
@@ -876,14 +876,14 @@ class FhirCoverageService extends FhirServiceBase implements IPatientCompartment
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        $result = $this->coverageService->search($openEMRSearchParameters);
+        $result = $this->coverageService->search($DCLSearchParameters);
 
         // Filter out records without insurance company (required payor)
         $filteredData = [];

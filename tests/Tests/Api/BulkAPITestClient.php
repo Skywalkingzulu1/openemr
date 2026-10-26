@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use Lcobucci\JWT\Signer\Key\InMemory;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Tools\OAuth2\ClientCredentialsAssertionGenerator;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Tools\OAuth2\ClientCredentialsAssertionGenerator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\NullLogger;
 
 /**
- * BulkAPITestClient is a test client for the OpenEMR Bulk API.
+ * BulkAPITestClient is a test client for the DCL Bulk API.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 class BulkAPITestClient extends ApiTestClient
@@ -67,8 +67,8 @@ class BulkAPITestClient extends ApiTestClient
                 throw new \RuntimeException("JWKs file not found: " . $jwksFile);
             }
             $credentials['jwks'] = json_decode((string) file_get_contents($jwksFile));
-            $privateKey = InMemory::file($keyLocation . "openemr-rsa384-private.key");
-            $publicKey = InMemory::file($keyLocation . "openemr-rsa384-public.pem");
+            $privateKey = InMemory::file($keyLocation . "DCL-rsa384-private.key");
+            $publicKey = InMemory::file($keyLocation . "DCL-rsa384-public.pem");
         }
 
         if ($this->client_id === null || $this->client_id === '') {

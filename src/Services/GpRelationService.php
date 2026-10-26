@@ -5,23 +5,23 @@
  * gprelations table (moved here from library/gprelations.inc.php).
  *
  * Type codes: 1 documents, 2 form_encounter (visits), 3 immunizations, 4 lists (issues),
- * 5 openemr_postcalendar_events (appointments), 6 pnotes, 7 prescriptions,
+ * 5 DCL_postcalendar_events (appointments), 6 pnotes, 7 prescriptions,
  * 8 transactions (e.g. referrals). By convention type1 <= type2.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Marcello Costagliola <marcello.costagliola1@gmail.com>
  * @copyright Copyright (C) 2009 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2026 Marcello Costagliola <marcello.costagliola1@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class GpRelationService extends BaseService
 {

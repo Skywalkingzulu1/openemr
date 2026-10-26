@@ -5,27 +5,27 @@
  *
  * Functions which extend clinical forms
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <rmagauran@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2016- Raymond Magauran <rmagauran@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Forms\EyeMag\BaseDrawing;
-use OpenEMR\Forms\EyeMag\CopyForward;
-use OpenEMR\Forms\EyeMag\CopyMode;
-use OpenEMR\Forms\EyeMag\FamilyHistory;
-use OpenEMR\Forms\EyeMag\PmsfhPanel;
-use OpenEMR\Forms\EyeMag\Zone;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Forms\EyeMag\BaseDrawing;
+use DCL\Forms\EyeMag\CopyForward;
+use DCL\Forms\EyeMag\CopyMode;
+use DCL\Forms\EyeMag\FamilyHistory;
+use DCL\Forms\EyeMag\PmsfhPanel;
+use DCL\Forms\EyeMag\Zone;
+use DCL\Services\FacilityService;
 
 $facilityService = new FacilityService();
 
@@ -1895,7 +1895,7 @@ function build_PMSFH($pid): array
     // ie. parent,sibling, offspring has X, or the other by "relatives_disease" basis.
     // Hmmm, neither really meets our needs.  This is an eye form; we do a focused family history.
     // Cataracts, glaucoma, AMD, RD, cancer, heart disease etc.
-    // The openEMR people who want to adapt this for another specialty will no doubt
+    // The DCL people who want to adapt this for another specialty will no doubt
     // have different diseases they want listed in the FH specifically.  We all need to be able to
     // adjust the form.  Perhaps we should use the UserDefined fields at the end of this history_data table?
     // Question 1. is, does anything use this family history data - any higher function like reporting?
@@ -1961,7 +1961,7 @@ function build_PMSFH($pid): array
     $PMSFH['FH']['other']['short_title'] = xlt("Other");
 
     // Thinking this might be a good place to put in last_retinal exam and last_HbA1C?
-    // I don't know enough about the reporting parameters - it is probably something already in OpenEMR?
+    // I don't know enough about the reporting parameters - it is probably something already in DCL?
     // Pull it in if it is and put it where?
     // $PMSFH['SOCH'][$field_id]['resnote'] = nl2br(htmlspecialchars($currvalue,ENT_NOQUOTES));
 
@@ -1969,7 +1969,7 @@ function build_PMSFH($pid): array
     // ROS is not static and is directly linked to each encounter
     // True it could be a separate table, but it is currently in form_eye_mag for each visit
     // To use this for any other forms, we should consider making this its own separate table with id,pid and ?encounter link,
-    // just like we are doing for Impression Plan.  Maybe we can piggyback onto one of the ROS tables already in OpenEMR?
+    // just like we are doing for Impression Plan.  Maybe we can piggyback onto one of the ROS tables already in DCL?
 
     //define the ROS area to include = $given
     $given = "ROSGENERAL,ROSHEENT,ROSCV,ROSPULM,ROSGI,ROSGU,ROSDERM,ROSNEURO,ROSPSYCH,ROSMUSCULO,ROSIMMUNO,ROSENDOCRINE,ROSCOMMENTS";
@@ -2948,7 +2948,7 @@ function show_PMSFH_report($PMSFH): void
 /**
  *  This function returns the Provider-specific Quick Pick selections for a zone (2 input values)
  *
- *  These selections are drawn from an OpenEMR list, Eye_QP_$zone_$provider_id.
+ *  These selections are drawn from an DCL list, Eye_QP_$zone_$provider_id.
  *  This list is created from Eye_QP_$zone_defaults when a new provider opens the form.
  *  Because it is a "list", the end-user can modify it.
  *  A link to the list "the pencil icon" is provided to allow customization - displayed in RTop frame.
@@ -3530,7 +3530,7 @@ function display($pid, $encounter, $category_value): array
             </a>
         </td>
         <td>";
-        //open via OpenEMR Documents with treemenu
+        //open via DCL Documents with treemenu
         if ($count_here > '0') {
             $episode .= '<a onclick="openNewForm(' . attr_js($viewUrl) . ', ' . attr_js(xl('Documents') . ': ' . $categoryName) . ');"><img src="../../forms/' . $form_folder . '/images/jpg.png" class="little_image" /></a>';
         }
@@ -3621,7 +3621,7 @@ function menu_overhaul_top($pid, $encounter, $title = "Eye Exam"): void
                             <?php
                                 /*
                                 // This only shows up in fullscreen currently so hide it.
-                                // If the decision is made to show this is framed openEMR, then display it
+                                // If the decision is made to show this is framed DCL, then display it
                                 */
                             if ($display !== "fullscreen") { ?>
                                     <li class="divider"></li>
@@ -3845,7 +3845,7 @@ function menu_overhaul_bottom($pid, $encounter): void
 }
 
 /*
- * This was taken from new_form.php and is helping to integrate new menu with openEMR
+ * This was taken from new_form.php and is helping to integrate new menu with DCL
  * menu seen on encounter page.
  */
 function Menu_myGetRegistered($state = "1", $limit = "unlimited", $offset = "0")
@@ -3955,10 +3955,10 @@ function report_header($pid, $direction = 'shell')
  *      the text value for the form_field (Notes) (found in the list Coding_Eye_Form_Fields: Notes)
  *      and the codebase is searched for a match.
  *  For example: the term "ptosis" is entered in the RUL clinical field of The Eye Form, and there is no Code value in the
- *      Eye_Coding_Terms list's Code(s) field.  Thus openEMR Eye Form searches the active codebases for a match.
+ *      Eye_Coding_Terms list's Code(s) field.  Thus DCL Eye Form searches the active codebases for a match.
  *      The codebases are determined in Admin->Forms->Lists->Code Types and include those Codesets flagged
  *      as active and as Diagnostic codes.  The terms "ptosis right eyelid" are sent to the
- *      standard openEMR code search engine.
+ *      standard DCL code search engine.
  *  @param string $FIELDS - all the clinical fields we are going to scour for clinical terms to code.
  *  @return mixed the codes found
  */
@@ -4073,7 +4073,7 @@ function start_your_engines($FIELDS)
                     // possible results for the Builder.
                     // 'option_values' contains pertinent DXs separated by '|', eg. CSME has option values='DM|IOL|RVO'
                     // Need to see if any of these DX apply and builder Codes_found based on the currently installed list of codes
-                    // Currently for most users this is ICD10 but it is built to allow extension to any code sets in openEMR,
+                    // Currently for most users this is ICD10 but it is built to allow extension to any code sets in DCL,
                     // including foreign language code sets.
                     $options = explode("|", $option_values);
                     $hit_here = "0";
@@ -5741,7 +5741,7 @@ function findProvider($pid, $encounter)
     if ($providerid < '1') {
        //find the default providerID from the calendar
         $visit_date = date('Y-m-d', strtotime($find_provider['date'] ?? ''));
-        $query = "select * from openemr_postcalendar_events where pc_pid=? and pc_eventDate=?";
+        $query = "select * from DCL_postcalendar_events where pc_pid=? and pc_eventDate=?";
         $find_provider3 = sqlQuery($query, [$pid,$visit_date]);
         $new_providerid = $find_provider3['pc_aid'] ?? '';
         if (($new_providerid < '1') || (!$new_providerid)) {
@@ -6369,7 +6369,7 @@ function getIOPTARGETS($pid, $id, $provider_id): array
     $OSIOPTARGET = '';
     //iterate through this patient's encounters to find IOPTARGETS.
     //if none use provider's default value, or 21.
-    //If a practice is loading old visits into OpenEMR, the visit date and id will not correlate linearly.
+    //If a practice is loading old visits into DCL, the visit date and id will not correlate linearly.
     //We cannot rely on visit id to represent visit order.  We need to use visit dates to make this work.
 
     $query = "SELECT ODIOPTARGET, OSIOPTARGET from form_eye_vitals join form_encounter on form_encounter.id=form_eye_vitals.id

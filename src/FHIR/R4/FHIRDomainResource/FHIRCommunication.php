@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * An occurrence of information being transmitted; e.g. an alert that was sent to a responsible provider, a public health agency that was notified about a reportable condition.
@@ -72,139 +72,139 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this communication by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * An order, proposal or plan fulfilled in whole or in part by this Communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * Part of this action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * Prior communication that this communication is in response to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $inResponseTo = [];
 
     /**
      * The status of the transmission.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREventStatus
      */
     public $status = null;
 
     /**
      * Captures the reason for the current state of the Communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $statusReason = null;
 
     /**
      * The type of message conveyed such as alert, notification, reminder, instruction, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Characterizes how quickly the planned or in progress communication must be addressed. Includes concepts such as stat, urgent, routine.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
      * A channel that was used for this communication (e.g. email, fax).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $medium = [];
 
     /**
      * The patient or group that was the focus of this communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * Description of the purpose/content, similar to a subject line in an email.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $topic = null;
 
     /**
      * Other resources that pertain to this communication and to which this communication should be associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $about = [];
 
     /**
      * The Encounter during which this Communication was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The time when this communication was sent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $sent = null;
 
     /**
      * The time when this communication arrived at the destination.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $received = null;
 
     /**
      * The entity (e.g. person, organization, clinical information system, care team or device) which was the target of the communication. If receipts need to be tracked by an individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in aggregate (all emails confirmed received by a particular time).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $recipient = [];
 
     /**
      * The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $sender = null;
 
     /**
      * The reason or justification for the communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates another resource whose existence justifies this communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCommunication\FHIRCommunicationPayload[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCommunication\FHIRCommunicationPayload[]
      */
     public $payload = [];
 
     /**
      * Additional notes or commentary about the communication by the sender, receiver or other interested parties.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -215,7 +215,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this communication by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -224,7 +224,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this communication by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -235,7 +235,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -244,7 +244,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -255,7 +255,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -264,7 +264,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -275,7 +275,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An order, proposal or plan fulfilled in whole or in part by this Communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -284,7 +284,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An order, proposal or plan fulfilled in whole or in part by this Communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -295,7 +295,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Part of this action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -304,7 +304,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Part of this action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -315,7 +315,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Prior communication that this communication is in response to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getInResponseTo()
     {
@@ -324,7 +324,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Prior communication that this communication is in response to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $inResponseTo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $inResponseTo
      * @return $this
      */
     public function addInResponseTo($inResponseTo)
@@ -335,7 +335,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the transmission.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREventStatus
      */
     public function getStatus()
     {
@@ -344,7 +344,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the transmission.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREventStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -355,7 +355,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Captures the reason for the current state of the Communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatusReason()
     {
@@ -364,7 +364,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Captures the reason for the current state of the Communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function setStatusReason($statusReason)
@@ -375,7 +375,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of message conveyed such as alert, notification, reminder, instruction, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -384,7 +384,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of message conveyed such as alert, notification, reminder, instruction, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -395,7 +395,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Characterizes how quickly the planned or in progress communication must be addressed. Includes concepts such as stat, urgent, routine.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -404,7 +404,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Characterizes how quickly the planned or in progress communication must be addressed. Includes concepts such as stat, urgent, routine.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -415,7 +415,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A channel that was used for this communication (e.g. email, fax).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getMedium()
     {
@@ -424,7 +424,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A channel that was used for this communication (e.g. email, fax).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $medium
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $medium
      * @return $this
      */
     public function addMedium($medium)
@@ -435,7 +435,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient or group that was the focus of this communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -444,7 +444,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient or group that was the focus of this communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -455,7 +455,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Description of the purpose/content, similar to a subject line in an email.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTopic()
     {
@@ -464,7 +464,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Description of the purpose/content, similar to a subject line in an email.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
     public function setTopic($topic)
@@ -475,7 +475,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Other resources that pertain to this communication and to which this communication should be associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAbout()
     {
@@ -484,7 +484,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Other resources that pertain to this communication and to which this communication should be associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $about
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $about
      * @return $this
      */
     public function addAbout($about)
@@ -495,7 +495,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this Communication was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -504,7 +504,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this Communication was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -515,7 +515,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time when this communication was sent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getSent()
     {
@@ -524,7 +524,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time when this communication was sent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $sent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $sent
      * @return $this
      */
     public function setSent($sent)
@@ -535,7 +535,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time when this communication arrived at the destination.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getReceived()
     {
@@ -544,7 +544,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time when this communication arrived at the destination.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $received
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $received
      * @return $this
      */
     public function setReceived($received)
@@ -555,7 +555,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity (e.g. person, organization, clinical information system, care team or device) which was the target of the communication. If receipts need to be tracked by an individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in aggregate (all emails confirmed received by a particular time).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRecipient()
     {
@@ -564,7 +564,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity (e.g. person, organization, clinical information system, care team or device) which was the target of the communication. If receipts need to be tracked by an individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in aggregate (all emails confirmed received by a particular time).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recipient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function addRecipient($recipient)
@@ -575,7 +575,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSender()
     {
@@ -584,7 +584,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $sender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $sender
      * @return $this
      */
     public function setSender($sender)
@@ -595,7 +595,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason or justification for the communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -604,7 +604,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason or justification for the communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -615,7 +615,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource whose existence justifies this communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -624,7 +624,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource whose existence justifies this communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -635,7 +635,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCommunication\FHIRCommunicationPayload[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCommunication\FHIRCommunicationPayload[]
      */
     public function getPayload()
     {
@@ -644,7 +644,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCommunication\FHIRCommunicationPayload $payload
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCommunication\FHIRCommunicationPayload $payload
      * @return $this
      */
     public function addPayload($payload)
@@ -655,7 +655,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional notes or commentary about the communication by the sender, receiver or other interested parties.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -664,7 +664,7 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional notes or commentary about the communication by the sender, receiver or other interested parties.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

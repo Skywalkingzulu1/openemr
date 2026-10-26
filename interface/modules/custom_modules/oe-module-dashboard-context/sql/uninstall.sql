@@ -2,11 +2,11 @@
 -- Dashboard Context Manager Module
 -- Uninstall SQL Script
 --
--- @package   OpenEMR
--- @link      https://www.open-emr.org
+-- @package   DCL
+-- @link      https://www.dcl.org
 -- @author    Jerry Padgett <sjpadgett@gmail.com>
 -- @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
--- @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+-- @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 --
 -- WARNING: This will permanently delete all dashboard context data!
 -- Run this only when completely removing the module.

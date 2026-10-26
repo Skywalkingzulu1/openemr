@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCodeSystem;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -71,42 +71,42 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * A code that is a reference to CodeSystem.property.code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $valueCode = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $valueDecimal = null;
 
@@ -117,7 +117,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A code that is a reference to CodeSystem.property.code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -126,7 +126,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A code that is a reference to CodeSystem.property.code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -136,7 +136,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getValueCode()
     {
@@ -144,7 +144,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $valueCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $valueCode
      * @return $this
      */
     public function setValueCode($valueCode)
@@ -154,7 +154,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
     {
@@ -162,7 +162,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
     public function setValueCoding($valueCoding)
@@ -172,7 +172,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -180,7 +180,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -190,7 +190,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
     {
@@ -198,7 +198,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
     public function setValueInteger($valueInteger)
@@ -208,7 +208,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
     {
@@ -216,7 +216,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -226,7 +226,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
     {
@@ -234,7 +234,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
     public function setValueDateTime($valueDateTime)
@@ -244,7 +244,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
     {
@@ -252,7 +252,7 @@ class FHIRCodeSystemProperty1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
      * @return $this
      */
     public function setValueDecimal($valueDecimal)

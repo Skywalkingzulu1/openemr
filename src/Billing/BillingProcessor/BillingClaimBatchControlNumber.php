@@ -6,16 +6,16 @@
  * There is an ISA control number, in the thirteenth field, of the ISA segment which is zero padded to 9 characters.
  * and a GS control number in the sixth field of the GS segment which does not require padding.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Stephen Waite stephen.waite@open-emr.org
- * @copyright Copyright (c) 2023 Stephen Waite stephen.waite@open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Stephen Waite stephen.waite@dcl.org
+ * @copyright Copyright (c) 2023 Stephen Waite stephen.waite@dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing\BillingProcessor;
+namespace DCL\Billing\BillingProcessor;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class BillingClaimBatchControlNumber
 {

@@ -4,14 +4,14 @@
  * Sphere class.
  *  A static class that contains constants used by the other Sphere classes.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PaymentProcessing\Sphere;
+namespace DCL\PaymentProcessing\Sphere;
 
 class Sphere
 {
@@ -26,6 +26,6 @@ class Sphere
     // Sphere void/credit processing url (Trustee API)
     public const TRUSTEE_API_URL = 'https://vault.trustcommerce.com/trusteeapi/';
 
-    // Partner Registry Key for OpenEMR
+    // Partner Registry Key for DCL
     public const AGGREGATOR_ID = "21AA1ES";
 }

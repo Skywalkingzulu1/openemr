@@ -3,13 +3,13 @@
 /**
  * Pharmacy class for smarty templates
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    duhlman
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) duhlman
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 define("TRANSMIT_PRINT", 1);
@@ -17,13 +17,13 @@ define("TRANSMIT_EMAIL", 2);
 define("TRANSMIT_FAX", 3);
 define("TRANSMIT_ERX", 4);
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\ORDataObject\Address;
-use OpenEMR\Common\ORDataObject\ORDataObject;
-use OpenEMR\Common\ValueObjects\TypedPhoneNumber;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\PhoneNumberService;
-use OpenEMR\Services\PhoneType;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\ORDataObject\Address;
+use DCL\Common\ORDataObject\ORDataObject;
+use DCL\Common\ValueObjects\TypedPhoneNumber;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\PhoneNumberService;
+use DCL\Services\PhoneType;
 
 class Pharmacy extends ORDataObject
 {

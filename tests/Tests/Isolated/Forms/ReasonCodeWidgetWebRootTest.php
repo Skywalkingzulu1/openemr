@@ -6,25 +6,25 @@
  * Regression test for issue #13016. vitals.html.twig and care_plan_form.html.twig
  * (and later observation_edit.html.twig and procedure_order/common.php)
  * passed the web root to their init() through the js_url filter, which URL-encodes
- * it: a web root of "/openemr" reached the reason code widget as "%2Fopenemr", so
+ * it: a web root of "/DCL" reached the reason code widget as "%2FDCL", so
  * "Select Reason Code" opened
- * "%2Fopenemr/interface/patient_file/encounter/find_code_popup.php", a relative URL
+ * "%2FDCL/interface/patient_file/encounter/find_code_popup.php", a relative URL
  * that does not exist ("Not Found"). Installs served from the domain root have an
  * empty web root and never saw the problem.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude Code <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Contributors
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Forms;
+namespace DCL\Tests\Isolated\Forms;
 
-use OpenEMR\Common\Twig\TwigExtension;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Twig\TwigExtension;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
@@ -48,7 +48,7 @@ class ReasonCodeWidgetWebRootTest extends TestCase
     public static function webRootProvider(): array
     {
         return [
-            'subdirectory install' => ['/openemr'],
+            'subdirectory install' => ['/DCL'],
             'domain root install' => [''],
         ];
     }

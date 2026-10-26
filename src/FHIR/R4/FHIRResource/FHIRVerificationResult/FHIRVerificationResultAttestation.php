@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult;
+namespace DCL\FHIR\R4\FHIRResource\FHIRVerificationResult;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes validation requirements, source(s), status and dates for one or more elements.
@@ -71,49 +71,49 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 {
     /**
      * The individual or organization attesting to information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $who = null;
 
     /**
      * When the who is asserting on behalf of another (organization or individual).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $onBehalfOf = null;
 
     /**
      * The method by which attested information was submitted/retrieved (manual; API; Push).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $communicationMethod = null;
 
     /**
      * The date the information was attested to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $date = null;
 
     /**
      * A digital identity certificate associated with the attestation source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $sourceIdentityCertificate = null;
 
     /**
      * A digital identity certificate associated with the proxy entity submitting attested information on behalf of the attestation source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $proxyIdentityCertificate = null;
 
     /**
      * Signed assertion by the proxy entity indicating that they have the right to submit attested information on behalf of the attestation source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public $proxySignature = null;
 
     /**
      * Signed assertion by the attestation source that they have attested to the information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public $sourceSignature = null;
 
@@ -124,7 +124,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * The individual or organization attesting to information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getWho()
     {
@@ -133,7 +133,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * The individual or organization attesting to information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $who
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $who
      * @return $this
      */
     public function setWho($who)
@@ -144,7 +144,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * When the who is asserting on behalf of another (organization or individual).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf()
     {
@@ -153,7 +153,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * When the who is asserting on behalf of another (organization or individual).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
      * @return $this
      */
     public function setOnBehalfOf($onBehalfOf)
@@ -164,7 +164,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * The method by which attested information was submitted/retrieved (manual; API; Push).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCommunicationMethod()
     {
@@ -173,7 +173,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * The method by which attested information was submitted/retrieved (manual; API; Push).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $communicationMethod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $communicationMethod
      * @return $this
      */
     public function setCommunicationMethod($communicationMethod)
@@ -184,7 +184,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * The date the information was attested to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getDate()
     {
@@ -193,7 +193,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * The date the information was attested to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $date
      * @return $this
      */
     public function setDate($date)
@@ -204,7 +204,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * A digital identity certificate associated with the attestation source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSourceIdentityCertificate()
     {
@@ -213,7 +213,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * A digital identity certificate associated with the attestation source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $sourceIdentityCertificate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $sourceIdentityCertificate
      * @return $this
      */
     public function setSourceIdentityCertificate($sourceIdentityCertificate)
@@ -224,7 +224,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * A digital identity certificate associated with the proxy entity submitting attested information on behalf of the attestation source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getProxyIdentityCertificate()
     {
@@ -233,7 +233,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * A digital identity certificate associated with the proxy entity submitting attested information on behalf of the attestation source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $proxyIdentityCertificate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $proxyIdentityCertificate
      * @return $this
      */
     public function setProxyIdentityCertificate($proxyIdentityCertificate)
@@ -244,7 +244,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * Signed assertion by the proxy entity indicating that they have the right to submit attested information on behalf of the attestation source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public function getProxySignature()
     {
@@ -253,7 +253,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * Signed assertion by the proxy entity indicating that they have the right to submit attested information on behalf of the attestation source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $proxySignature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $proxySignature
      * @return $this
      */
     public function setProxySignature($proxySignature)
@@ -264,7 +264,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * Signed assertion by the attestation source that they have attested to the information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public function getSourceSignature()
     {
@@ -273,7 +273,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement implements \
 
     /**
      * Signed assertion by the attestation source that they have attested to the information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $sourceSignature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $sourceSignature
      * @return $this
      */
     public function setSourceSignature($sourceSignature)

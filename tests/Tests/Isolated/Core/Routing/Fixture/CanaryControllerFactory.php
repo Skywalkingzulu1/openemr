@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Core\Routing\Fixture;
+namespace DCL\Tests\Isolated\Core\Routing\Fixture;
 
 use Laminas\Mvc\Controller\AbstractActionController;
 

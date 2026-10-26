@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @package OpenEMR
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm\Services;
+namespace DCL\Services\Qdm\Services;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\DateTime;
-use OpenEMR\Services\Qdm\QdmRecord;
+use DCL\Cqm\Qdm\BaseTypes\DateTime;
+use DCL\Services\Qdm\QdmRecord;
 
 /**
  * Class AbstractCarePlanService
- * @package OpenEMR\Services\Qdm\Services
+ * @package DCL\Services\Qdm\Services
  *
  * This class gets data from the form_care_plan which contains plans for
  * interventions, medications, lab tests, etc

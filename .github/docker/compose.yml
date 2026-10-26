@@ -13,8 +13,8 @@
 #                             walks from this compose.yml's location
 #                             (`.github/docker/`) back to the repo-root
 #                             `docker/` tree where the Dockerfiles live.
-#   OPENEMR_SERVICE_NAME   -- "openemr", "openemr-dev", "openemr-kcov",
-#                             "openemr-kcov-dev"; selects which service profile
+#   DCL_SERVICE_NAME   -- "DCL", "DCL-dev", "DCL-kcov",
+#                             "DCL-kcov-dev"; selects which service profile
 #                             below to bring up
 #   COMPOSE_PROFILES       -- "prod", "dev", "kcov", or "kcov-dev"
 
@@ -38,7 +38,7 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  DCL:
     profiles:
     - prod
     build:
@@ -51,14 +51,14 @@ services:
     environment:
       MANUAL_SETUP: 'yes'
       MYSQL_HOST: mysql
-      MYSQL_PASS: openemr
+      MYSQL_PASS: DCL
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
+      MYSQL_USER: DCL
       OE_PASS: pass
       OE_USER: admin
       # Pass-through default empty. Flex workflows set this to '1' to emit
-      # phase timing in openemr.sh (openemr-devops#797).
-      OPENEMR_FLEX_TIMING: ${OPENEMR_FLEX_TIMING:-}
+      # phase timing in DCL.sh (DCL-devops#797).
+      DCL_FLEX_TIMING: ${DCL_FLEX_TIMING:-}
     healthcheck:
       test:
       - CMD
@@ -70,9 +70,9 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr-kcov:
+  DCL-kcov:
     extends:
-      service: openemr
+      service: DCL
     profiles: !override
     - kcov
     build:
@@ -80,27 +80,27 @@ services:
       target: kcov
     volumes:
     - ./coverage-reports:/var/www/localhost/htdocs/coverage
-  openemr-dev:
+  DCL-dev:
     extends:
-      service: openemr
+      service: DCL
     profiles: !override
     - dev
     environment:
       EMPTY: "yes"
     volumes:
-    # The composite's "Checkout OpenEMR" step (gated on OPENEMR_SERVICE_NAME
-    # matching openemr-dev or openemr-kcov-dev) checks out openemr/openemr
-    # into a subdirectory `openemr/` of the workflow's repo root, regardless
+    # The composite's "Checkout DCL" step (gated on DCL_SERVICE_NAME
+    # matching DCL-dev or DCL-kcov-dev) checks out DCL/DCL
+    # into a subdirectory `DCL/` of the workflow's repo root, regardless
     # of which repo we're running from. Mount that into the dev container.
-    # This is slightly redundant when we ARE in openemr/openemr (the primary
+    # This is slightly redundant when we ARE in DCL/DCL (the primary
     # checkout already has the source), but it keeps the composite +
-    # compose.yml contract identical to devops's setup. `../../openemr`
-    # resolves to the repo-root `openemr/` from this compose.yml at
+    # compose.yml contract identical to devops's setup. `../../DCL`
+    # resolves to the repo-root `DCL/` from this compose.yml at
     # `.github/docker/compose.yml`.
-    - ../../openemr:/var/www/localhost/htdocs/openemr
-  openemr-kcov-dev:
+    - ../../DCL:/var/www/localhost/htdocs/DCL
+  DCL-kcov-dev:
     extends:
-      service: openemr-dev
+      service: DCL-dev
     profiles: !override
     - kcov-dev
     build:

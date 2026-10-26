@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDocumentReference;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any serialized object with a mime-type, so includes formal patient centric documents (CDA), clinical notes, scanned paper, and non-patient specific documents like policy text.
@@ -71,43 +71,43 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Describes the clinical encounter or type of care that the document content is associated with.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $encounter = [];
 
     /**
      * This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the type Code, such as a "History and Physical Report" in which the procedure being documented is necessarily a "History and Physical" act.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $event = [];
 
     /**
      * The time period over which the service that is described by the document was provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * The kind of facility where the patient was seen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $facilityType = null;
 
     /**
      * This property may convey specifics about the practice setting where the content was created, often reflecting the clinical specialty.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $practiceSetting = null;
 
     /**
      * The Patient Information as known when the document was published. May be a reference to a version specific, or contained.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $sourcePatientInfo = null;
 
     /**
      * Related identifiers or resources associated with the DocumentReference.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $related = [];
 
@@ -118,7 +118,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * Describes the clinical encounter or type of care that the document content is associated with.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEncounter()
     {
@@ -127,7 +127,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * Describes the clinical encounter or type of care that the document content is associated with.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function addEncounter($encounter)
@@ -138,7 +138,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the type Code, such as a "History and Physical Report" in which the procedure being documented is necessarily a "History and Physical" act.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getEvent()
     {
@@ -147,7 +147,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the type Code, such as a "History and Physical Report" in which the procedure being documented is necessarily a "History and Physical" act.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $event
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $event
      * @return $this
      */
     public function addEvent($event)
@@ -158,7 +158,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * The time period over which the service that is described by the document was provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -167,7 +167,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * The time period over which the service that is described by the document was provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -178,7 +178,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * The kind of facility where the patient was seen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFacilityType()
     {
@@ -187,7 +187,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * The kind of facility where the patient was seen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $facilityType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $facilityType
      * @return $this
      */
     public function setFacilityType($facilityType)
@@ -198,7 +198,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * This property may convey specifics about the practice setting where the content was created, often reflecting the clinical specialty.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPracticeSetting()
     {
@@ -207,7 +207,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * This property may convey specifics about the practice setting where the content was created, often reflecting the clinical specialty.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $practiceSetting
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $practiceSetting
      * @return $this
      */
     public function setPracticeSetting($practiceSetting)
@@ -218,7 +218,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * The Patient Information as known when the document was published. May be a reference to a version specific, or contained.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSourcePatientInfo()
     {
@@ -227,7 +227,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * The Patient Information as known when the document was published. May be a reference to a version specific, or contained.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $sourcePatientInfo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $sourcePatientInfo
      * @return $this
      */
     public function setSourcePatientInfo($sourcePatientInfo)
@@ -238,7 +238,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * Related identifiers or resources associated with the DocumentReference.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRelated()
     {
@@ -247,7 +247,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
 
     /**
      * Related identifiers or resources associated with the DocumentReference.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $related
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $related
      * @return $this
      */
     public function addRelated($related)

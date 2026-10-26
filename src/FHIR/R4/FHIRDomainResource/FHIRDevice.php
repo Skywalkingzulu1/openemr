@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.
@@ -72,157 +72,157 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique instance identifiers assigned to a device by manufacturers other organizations or owners.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The reference to the definition for the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $definition = null;
 
     /**
      * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier[]
      */
     public $udiCarrier = [];
 
     /**
      * Status of the Device availability.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRDeviceStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFHIRDeviceStatus
      */
     public $status = null;
 
     /**
      * Reason for the dtatus of the Device availability.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $statusReason = [];
 
     /**
      * The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $distinctIdentifier = null;
 
     /**
      * A name of the manufacturer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $manufacturer = null;
 
     /**
      * The date and time when the device was manufactured.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $manufactureDate = null;
 
     /**
      * The date and time beyond which this device is no longer valid or should not be used (if applicable).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $expirationDate = null;
 
     /**
      * Lot number assigned by the manufacturer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $lotNumber = null;
 
     /**
      * The serial number assigned by the organization when the device was manufactured.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $serialNumber = null;
 
     /**
      * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceDeviceName[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceDeviceName[]
      */
     public $deviceName = [];
 
     /**
      * The model number for the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $modelNumber = null;
 
     /**
      * The part number of the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $partNumber = null;
 
     /**
      * The kind or type of device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceSpecialization[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceSpecialization[]
      */
     public $specialization = [];
 
     /**
      * The actual design of the device or software version running on the device.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceVersion[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceVersion[]
      */
     public $version = [];
 
     /**
      * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceProperty[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceProperty[]
      */
     public $property = [];
 
     /**
      * Patient information, If the device is affixed to a person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * An organization that is responsible for the provision and ongoing maintenance of the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $owner = null;
 
     /**
      * Contact details for an organization or a particular human that is responsible for the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $contact = [];
 
     /**
      * The place where the device can be found.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * A network address on which the device may be contacted directly.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $safety = [];
 
     /**
      * The parent device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $parent = null;
 
@@ -233,7 +233,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique instance identifiers assigned to a device by manufacturers other organizations or owners.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -242,7 +242,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique instance identifiers assigned to a device by manufacturers other organizations or owners.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -253,7 +253,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reference to the definition for the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDefinition()
     {
@@ -262,7 +262,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reference to the definition for the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $definition
      * @return $this
      */
     public function setDefinition($definition)
@@ -273,7 +273,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier[]
      */
     public function getUdiCarrier()
     {
@@ -282,7 +282,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier $udiCarrier
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier $udiCarrier
      * @return $this
      */
     public function addUdiCarrier($udiCarrier)
@@ -293,7 +293,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Status of the Device availability.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRDeviceStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFHIRDeviceStatus
      */
     public function getStatus()
     {
@@ -302,7 +302,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Status of the Device availability.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRDeviceStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFHIRDeviceStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -313,7 +313,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason for the dtatus of the Device availability.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getStatusReason()
     {
@@ -322,7 +322,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason for the dtatus of the Device availability.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function addStatusReason($statusReason)
@@ -333,7 +333,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDistinctIdentifier()
     {
@@ -342,7 +342,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $distinctIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $distinctIdentifier
      * @return $this
      */
     public function setDistinctIdentifier($distinctIdentifier)
@@ -353,7 +353,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name of the manufacturer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getManufacturer()
     {
@@ -362,7 +362,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A name of the manufacturer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $manufacturer
      * @return $this
      */
     public function setManufacturer($manufacturer)
@@ -373,7 +373,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time when the device was manufactured.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getManufactureDate()
     {
@@ -382,7 +382,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time when the device was manufactured.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $manufactureDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $manufactureDate
      * @return $this
      */
     public function setManufactureDate($manufactureDate)
@@ -393,7 +393,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time beyond which this device is no longer valid or should not be used (if applicable).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getExpirationDate()
     {
@@ -402,7 +402,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time beyond which this device is no longer valid or should not be used (if applicable).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $expirationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $expirationDate
      * @return $this
      */
     public function setExpirationDate($expirationDate)
@@ -413,7 +413,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Lot number assigned by the manufacturer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLotNumber()
     {
@@ -422,7 +422,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Lot number assigned by the manufacturer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $lotNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $lotNumber
      * @return $this
      */
     public function setLotNumber($lotNumber)
@@ -433,7 +433,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The serial number assigned by the organization when the device was manufactured.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSerialNumber()
     {
@@ -442,7 +442,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The serial number assigned by the organization when the device was manufactured.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $serialNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $serialNumber
      * @return $this
      */
     public function setSerialNumber($serialNumber)
@@ -453,7 +453,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceDeviceName[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceDeviceName[]
      */
     public function getDeviceName()
     {
@@ -462,7 +462,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceDeviceName $deviceName
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceDeviceName $deviceName
      * @return $this
      */
     public function addDeviceName($deviceName)
@@ -473,7 +473,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The model number for the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getModelNumber()
     {
@@ -482,7 +482,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The model number for the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $modelNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $modelNumber
      * @return $this
      */
     public function setModelNumber($modelNumber)
@@ -493,7 +493,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The part number of the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPartNumber()
     {
@@ -502,7 +502,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The part number of the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $partNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $partNumber
      * @return $this
      */
     public function setPartNumber($partNumber)
@@ -513,7 +513,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind or type of device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -522,7 +522,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind or type of device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -533,7 +533,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceSpecialization[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceSpecialization[]
      */
     public function getSpecialization()
     {
@@ -542,7 +542,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceSpecialization $specialization
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceSpecialization $specialization
      * @return $this
      */
     public function addSpecialization($specialization)
@@ -553,7 +553,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual design of the device or software version running on the device.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceVersion[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceVersion[]
      */
     public function getVersion()
     {
@@ -562,7 +562,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual design of the device or software version running on the device.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceVersion $version
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceVersion $version
      * @return $this
      */
     public function addVersion($version)
@@ -573,7 +573,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceProperty[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceProperty[]
      */
     public function getProperty()
     {
@@ -582,7 +582,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceProperty $property
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceProperty $property
      * @return $this
      */
     public function addProperty($property)
@@ -593,7 +593,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Patient information, If the device is affixed to a person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -602,7 +602,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Patient information, If the device is affixed to a person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -613,7 +613,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An organization that is responsible for the provision and ongoing maintenance of the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOwner()
     {
@@ -622,7 +622,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An organization that is responsible for the provision and ongoing maintenance of the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $owner
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $owner
      * @return $this
      */
     public function setOwner($owner)
@@ -633,7 +633,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details for an organization or a particular human that is responsible for the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getContact()
     {
@@ -642,7 +642,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details for an organization or a particular human that is responsible for the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $contact
      * @return $this
      */
     public function addContact($contact)
@@ -653,7 +653,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The place where the device can be found.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -662,7 +662,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The place where the device can be found.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -673,7 +673,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A network address on which the device may be contacted directly.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -682,7 +682,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A network address on which the device may be contacted directly.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -693,7 +693,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -702,7 +702,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -713,7 +713,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSafety()
     {
@@ -722,7 +722,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $safety
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $safety
      * @return $this
      */
     public function addSafety($safety)
@@ -733,7 +733,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The parent device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParent()
     {
@@ -742,7 +742,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The parent device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $parent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $parent
      * @return $this
      */
     public function setParent($parent)

@@ -14,7 +14,7 @@ The original location of this file is /home/duhlman/uml-generated-code/prescript
  *
  */
 
-use OpenEMR\Common\ORDataObject\ORDataObject;
+use DCL\Common\ORDataObject\ORDataObject;
 
 class PrescriptionPatient extends ORDataObject
 {

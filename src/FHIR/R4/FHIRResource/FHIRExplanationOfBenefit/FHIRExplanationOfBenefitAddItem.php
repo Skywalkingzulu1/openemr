@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -71,122 +71,122 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 {
     /**
      * Claim items which this service line is intended to replace.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $itemSequence = [];
 
     /**
      * The sequence number of the details within the claim item which this line is intended to replace.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $detailSequence = [];
 
     /**
      * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $subDetailSequence = [];
 
     /**
      * The providers who are authorized for the services rendered to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $provider = [];
 
     /**
      * When the value is a group code then this item collects a set of related claim details, otherwise this contains the product, service, drug or other billing code for the item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productOrService = null;
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $modifier = [];
 
     /**
      * Identifies the program under which this may be recovered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $programCode = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $servicedDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $servicedPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $locationCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public $locationAddress = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $locationReference = null;
 
     /**
      * The number of repetitions of a service or product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * If the item is not a group then this is the fee for the product or service, otherwise this is the total of the fees for the details of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $unitPrice = null;
 
     /**
      * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $factor = null;
 
     /**
      * The quantity times the unit price for an additional service or product or charge.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $net = null;
 
     /**
      * Physical service site on the patient (limb, tooth, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $bodySite = null;
 
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $subSite = [];
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $noteNumber = [];
 
     /**
      * The adjudication results.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
     public $adjudication = [];
 
     /**
      * The second-tier service adjudications for payor added services.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1[]
      */
     public $detail = [];
 
@@ -197,7 +197,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Claim items which this service line is intended to replace.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getItemSequence()
     {
@@ -206,7 +206,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Claim items which this service line is intended to replace.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $itemSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $itemSequence
      * @return $this
      */
     public function addItemSequence($itemSequence)
@@ -217,7 +217,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The sequence number of the details within the claim item which this line is intended to replace.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getDetailSequence()
     {
@@ -226,7 +226,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The sequence number of the details within the claim item which this line is intended to replace.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $detailSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $detailSequence
      * @return $this
      */
     public function addDetailSequence($detailSequence)
@@ -237,7 +237,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getSubDetailSequence()
     {
@@ -246,7 +246,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $subDetailSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $subDetailSequence
      * @return $this
      */
     public function addSubDetailSequence($subDetailSequence)
@@ -257,7 +257,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The providers who are authorized for the services rendered to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getProvider()
     {
@@ -266,7 +266,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The providers who are authorized for the services rendered to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function addProvider($provider)
@@ -277,7 +277,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * When the value is a group code then this item collects a set of related claim details, otherwise this contains the product, service, drug or other billing code for the item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductOrService()
     {
@@ -286,7 +286,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * When the value is a group code then this item collects a set of related claim details, otherwise this contains the product, service, drug or other billing code for the item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
      * @return $this
      */
     public function setProductOrService($productOrService)
@@ -297,7 +297,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getModifier()
     {
@@ -306,7 +306,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -317,7 +317,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Identifies the program under which this may be recovered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getProgramCode()
     {
@@ -326,7 +326,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Identifies the program under which this may be recovered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $programCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $programCode
      * @return $this
      */
     public function addProgramCode($programCode)
@@ -336,7 +336,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getServicedDate()
     {
@@ -344,7 +344,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $servicedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $servicedDate
      * @return $this
      */
     public function setServicedDate($servicedDate)
@@ -354,7 +354,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getServicedPeriod()
     {
@@ -362,7 +362,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $servicedPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $servicedPeriod
      * @return $this
      */
     public function setServicedPeriod($servicedPeriod)
@@ -372,7 +372,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLocationCodeableConcept()
     {
@@ -380,7 +380,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
      * @return $this
      */
     public function setLocationCodeableConcept($locationCodeableConcept)
@@ -390,7 +390,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public function getLocationAddress()
     {
@@ -398,7 +398,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $locationAddress
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $locationAddress
      * @return $this
      */
     public function setLocationAddress($locationAddress)
@@ -408,7 +408,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocationReference()
     {
@@ -416,7 +416,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $locationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $locationReference
      * @return $this
      */
     public function setLocationReference($locationReference)
@@ -427,7 +427,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The number of repetitions of a service or product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -436,7 +436,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The number of repetitions of a service or product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -447,7 +447,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * If the item is not a group then this is the fee for the product or service, otherwise this is the total of the fees for the details of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -456,7 +456,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * If the item is not a group then this is the fee for the product or service, otherwise this is the total of the fees for the details of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -467,7 +467,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFactor()
     {
@@ -476,7 +476,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * A real number that represents a multiplier used in determining the overall value of services delivered and/or goods received. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $factor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $factor
      * @return $this
      */
     public function setFactor($factor)
@@ -487,7 +487,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The quantity times the unit price for an additional service or product or charge.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getNet()
     {
@@ -496,7 +496,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The quantity times the unit price for an additional service or product or charge.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $net
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $net
      * @return $this
      */
     public function setNet($net)
@@ -507,7 +507,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Physical service site on the patient (limb, tooth, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite()
     {
@@ -516,7 +516,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * Physical service site on the patient (limb, tooth, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function setBodySite($bodySite)
@@ -527,7 +527,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSubSite()
     {
@@ -536,7 +536,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subSite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subSite
      * @return $this
      */
     public function addSubSite($subSite)
@@ -547,7 +547,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getNoteNumber()
     {
@@ -556,7 +556,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
      * @return $this
      */
     public function addNoteNumber($noteNumber)
@@ -567,7 +567,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The adjudication results.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
     public function getAdjudication()
     {
@@ -576,7 +576,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The adjudication results.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication $adjudication
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication $adjudication
      * @return $this
      */
     public function addAdjudication($adjudication)
@@ -587,7 +587,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The second-tier service adjudications for payor added services.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1[]
      */
     public function getDetail()
     {
@@ -596,7 +596,7 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement implements \Js
 
     /**
      * The second-tier service adjudications for payor added services.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1 $detail
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1 $detail
      * @return $this
      */
     public function addDetail($detail)

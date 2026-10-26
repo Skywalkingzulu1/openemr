@@ -1,21 +1,21 @@
 <?php
 
 /**
- * CLI installer command for OpenEMR.
+ * CLI installer command for DCL.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <eric@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <eric@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Console\Command;
+namespace DCL\Console\Command;
 
-use OpenEMR\Common\Installer\InstallerInterface;
-use OpenEMR\Services\Globals\GlobalConnectorsEnum;
+use DCL\Common\Installer\InstallerInterface;
+use DCL\Services\Globals\GlobalConnectorsEnum;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Attribute\Option;
 use Symfony\Component\Console\Command\Command;
@@ -24,7 +24,7 @@ use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-#[AsCommand(name: 'install', description: 'Install OpenEMR (experimental)')]
+#[AsCommand(name: 'install', description: 'Install DCL (experimental)')]
 class InstallCommand extends Command
 {
     public function __construct(private readonly InstallerInterface $installer)
@@ -37,15 +37,15 @@ class InstallCommand extends Command
         OutputInterface $output,
         #[Option(description: 'Database server hostname')] string $dbHost = '127.0.0.1',
         #[Option(description: 'Database server port')] int $dbPort = 3306,
-        #[Option(description: 'Database username for OpenEMR')] string $dbUser = '',
-        #[Option(description: 'Database password for OpenEMR')] string $dbPassword = '',
-        #[Option(description: 'Database name')] string $dbName = 'openemr',
+        #[Option(description: 'Database username for DCL')] string $dbUser = '',
+        #[Option(description: 'Database password for DCL')] string $dbPassword = '',
+        #[Option(description: 'Database name')] string $dbName = 'DCL',
         #[Option(description: 'Database root username')] string $dbRootUser = 'root',
         #[Option(description: 'Database root password')] string $dbRootPassword = '',
-        #[Option(description: 'OpenEMR admin display name')] string $oeAdminName = 'Administrator',
-        #[Option(description: 'OpenEMR admin username')] string $oeAdminUsername = 'admin',
-        #[Option(description: 'OpenEMR admin password')] string $oeAdminPassword = '',
-        #[Option(description: 'OpenEMR practice group name')] string $oeAdminGroup = 'Default',
+        #[Option(description: 'DCL admin display name')] string $oeAdminName = 'Administrator',
+        #[Option(description: 'DCL admin username')] string $oeAdminUsername = 'admin',
+        #[Option(description: 'DCL admin password')] string $oeAdminPassword = '',
+        #[Option(description: 'DCL practice group name')] string $oeAdminGroup = 'Default',
         #[Option(description: 'Enable REST API')] bool $enableRestApi = false,
         #[Option(description: 'Enable FHIR API')] bool $enableFhirApi = false,
         #[Option(description: 'Enable Portal API')] bool $enablePortalApi = false,
@@ -106,7 +106,7 @@ class InstallCommand extends Command
             $io->error(['Installation failed:', $this->installer->getErrorMessage()]);
             return Command::FAILURE;
         }
-        $io->success('OpenEMR has been installed!');
+        $io->success('DCL has been installed!');
         return Command::SUCCESS;
     }
 

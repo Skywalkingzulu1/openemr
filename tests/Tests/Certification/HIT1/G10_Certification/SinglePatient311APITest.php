@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\Tests\Certification\HIT1\G10_Certification;
+namespace DCL\Tests\Certification\HIT1\G10_Certification;
 
 use Exception;
-use OpenEMR\Tests\Api\ApiTestClient;
-use OpenEMR\Tests\Certification\HIT1\G10_Certification\Trait\G10ApiTestTrait;
+use DCL\Tests\Api\ApiTestClient;
+use DCL\Tests\Certification\HIT1\G10_Certification\Trait\G10ApiTestTrait;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -24,7 +24,7 @@ class SinglePatient311APITest extends TestCase
         self::setupG10Test();
         // for now this uses the admin user to authenticate
         // TODO: @adunsulag need to implement this using a test practitioner user so we can test the inferno single patient API from a regular provider
-        self::$testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        self::$testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
     }
 
     public static function tearDownAfterClass(): void
@@ -50,7 +50,7 @@ class SinglePatient311APITest extends TestCase
     public function testSingleApiRunWithV2Scopes(): void
     {
         $scopes = self::FHIR_SCOPES_V2;
-        self::$testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT, [
+        self::$testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT, [
             'username' => 'admin',
             'password' => 'pass',
             'scopes' => $scopes

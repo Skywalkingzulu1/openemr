@@ -10,23 +10,23 @@
  * Create only: there is no PUT /fhir/Appointment/{uuid} route, and FhirAppointmentService
  * implements no update path. Add a PUT test here when that route lands.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -45,9 +45,9 @@ class AppointmentFhirWriteApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthTokenOrFail(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthTokenOrFail(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new FixtureManager();
         $this->facilityFixtureManager = new FacilityFixtureManager();
@@ -105,7 +105,7 @@ class AppointmentFhirWriteApiTest extends TestCase
         // Error that aborts the rest of the cleanup -- taking the OAuth client teardown below
         // with it and leaking a registered client per failed run.
         QueryUtils::sqlStatementThrowException(
-            "DELETE FROM openemr_postcalendar_events WHERE pc_hometext LIKE 'test-fixture%'"
+            "DELETE FROM DCL_postcalendar_events WHERE pc_hometext LIKE 'test-fixture%'"
         );
         if (isset($this->fixtureManager)) {
             $this->fixtureManager->removePatientFixtures();

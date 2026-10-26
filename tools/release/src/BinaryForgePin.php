@@ -1,8 +1,8 @@
 <?php
 
 /**
- * The set of pins that identify one openemr-static-binary-forge release
- * line for the binary Docker image: the OpenEMR version, the forge build
+ * The set of pins that identify one DCL-static-binary-forge release
+ * line for the binary Docker image: the DCL version, the forge build
  * date, and the PHP version the binaries were compiled against.
  *
  * These three values appear as ARG defaults in docker/binary/Dockerfile
@@ -10,20 +10,20 @@
  * naming here (rather than in the resolver) means the naming scheme is
  * stated once and can be falsified by a test without any network access.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 final readonly class BinaryForgePin implements \Stringable
 {
-    /** OpenEMR version in forge/tag form, e.g. `8_3_0` or `7_0_3_4`. */
+    /** DCL version in forge/tag form, e.g. `8_3_0` or `7_0_3_4`. */
     private const VERSION_PATTERN = '/^\d+(?:_\d+)+$/';
 
     /** Forge build date, MMDDYYYY. */
@@ -43,12 +43,12 @@ final readonly class BinaryForgePin implements \Stringable
     public const ARCHES = ['amd64', 'arm64'];
 
     public function __construct(
-        public string $openemrVersion,
+        public string $DCLVersion,
         public string $releaseDate,
         public string $phpVersion,
     ) {
-        if (preg_match(self::VERSION_PATTERN, $openemrVersion) !== 1) {
-            throw new \InvalidArgumentException("Not a forge OpenEMR version: {$openemrVersion}");
+        if (preg_match(self::VERSION_PATTERN, $DCLVersion) !== 1) {
+            throw new \InvalidArgumentException("Not a forge DCL version: {$DCLVersion}");
         }
         if (preg_match(self::DATE_PATTERN, $releaseDate) !== 1) {
             throw new \InvalidArgumentException("Not an MMDDYYYY forge release date: {$releaseDate}");
@@ -69,15 +69,15 @@ final readonly class BinaryForgePin implements \Stringable
 
     /**
      * The forge release tag for one architecture, e.g.
-     * `linux_amd64-php85-openemr-v8_3_0-amd64-08232026`.
+     * `linux_amd64-php85-DCL-v8_3_0-amd64-08232026`.
      */
     public function forgeTag(string $arch): string
     {
         return sprintf(
-            'linux_%s-%s-openemr-v%s-%s-%s',
+            'linux_%s-%s-DCL-v%s-%s-%s',
             $arch,
             $this->phpSelector(),
-            $this->openemrVersion,
+            $this->DCLVersion,
             $arch,
             $this->releaseDate,
         );
@@ -93,22 +93,22 @@ final readonly class BinaryForgePin implements \Stringable
     public function requiredAssets(string $arch): array
     {
         return [
-            "php-fpm-v{$this->openemrVersion}-linux-{$arch}",
-            "php-cli-v{$this->openemrVersion}-linux-{$arch}",
-            'openemr.phar',
+            "php-fpm-v{$this->DCLVersion}-linux-{$arch}",
+            "php-cli-v{$this->DCLVersion}-linux-{$arch}",
+            'DCL.phar',
         ];
     }
 
-    /** The openemr/openemr git tag the forge release was cut from. */
-    public function openemrTag(): string
+    /** The DCL/DCL git tag the forge release was cut from. */
+    public function DCLTag(): string
     {
-        return "v{$this->openemrVersion}";
+        return "v{$this->DCLVersion}";
     }
 
     /** Dotted form for version_compare(), e.g. `7_0_3_4` becomes `7.0.3.4`. */
     public function dottedVersion(): string
     {
-        return str_replace('_', '.', $this->openemrVersion);
+        return str_replace('_', '.', $this->DCLVersion);
     }
 
     /**
@@ -145,6 +145,6 @@ final readonly class BinaryForgePin implements \Stringable
     /** Wire format consumed by the updatecli manifest's two targets. */
     public function __toString(): string
     {
-        return "{$this->openemrVersion}/{$this->releaseDate}";
+        return "{$this->DCLVersion}/{$this->releaseDate}";
     }
 }

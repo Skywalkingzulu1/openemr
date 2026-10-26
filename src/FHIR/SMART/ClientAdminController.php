@@ -1,44 +1,44 @@
 <?php
 
 /**
- * ClientAdminController is both the controller and presentation class for the OAUTH2 clients in the OpenEMR system.
- * @package openemr
- * @link      https://www.open-emr.org
+ * ClientAdminController is both the controller and presentation class for the OAUTH2 clients in the DCL system.
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\FHIR\SMART;
+namespace DCL\FHIR\SMART;
 
 use Exception;
 use JsonException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\OAuth2KeyConfig;
-use OpenEMR\Common\Auth\OAuth2KeyException;
-use OpenEMR\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\JWT\JsonWebKeyParser;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\TemplatePageEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\RouteController;
-use OpenEMR\Services\DecisionSupportInterventionService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\TrustedUserService;
-use OpenEMR\Services\UserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\OAuth2KeyConfig;
+use DCL\Common\Auth\OAuth2KeyException;
+use DCL\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\JWT\JsonWebKeyParser;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\TemplatePageEvent;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\RouteController;
+use DCL\Services\DecisionSupportInterventionService;
+use DCL\Services\PatientService;
+use DCL\Services\TrustedUserService;
+use DCL\Services\UserService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

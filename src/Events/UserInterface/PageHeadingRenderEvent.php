@@ -4,22 +4,22 @@
  * PageHeadingRenderEvent class is fired from the OemrUI class prior to rendering the page-level action buttons, allowing
  * event listeners to render action buttons into the list with limited UI flexibility.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Robert Down <robertdown@live.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Providence Healthtech
  * @copyright Copyright (c) 2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\UserInterface;
+namespace DCL\Events\UserInterface;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Menu\MenuItemInterface;
-use OpenEMR\Menu\MenuItems;
+use DCL\Common\Acl\AclMain;
+use DCL\Menu\MenuItemInterface;
+use DCL\Menu\MenuItems;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class PageHeadingRenderEvent extends Event

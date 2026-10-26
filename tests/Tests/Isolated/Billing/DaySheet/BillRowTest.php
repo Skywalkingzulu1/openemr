@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Billing\DaySheet;
+namespace DCL\Tests\Isolated\Billing\DaySheet;
 
-use OpenEMR\Billing\DaySheet\BillRow;
+use DCL\Billing\DaySheet\BillRow;
 use PHPUnit\Framework\TestCase;
 
 final class BillRowTest extends TestCase

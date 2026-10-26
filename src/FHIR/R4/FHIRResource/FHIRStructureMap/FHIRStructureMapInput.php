@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -71,25 +71,25 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Name for this instance of data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $name = null;
 
     /**
      * Type for this instance of data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $type = null;
 
     /**
      * Mode for this instance of data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapInputMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureMapInputMode
      */
     public $mode = null;
 
     /**
      * Documentation for this instance of data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentation = null;
 
@@ -100,7 +100,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Name for this instance of data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getName()
     {
@@ -109,7 +109,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Name for this instance of data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $name
      * @return $this
      */
     public function setName($name)
@@ -120,7 +120,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Type for this instance of data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getType()
     {
@@ -129,7 +129,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Type for this instance of data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $type
      * @return $this
      */
     public function setType($type)
@@ -140,7 +140,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Mode for this instance of data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapInputMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureMapInputMode
      */
     public function getMode()
     {
@@ -149,7 +149,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Mode for this instance of data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapInputMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureMapInputMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -160,7 +160,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Documentation for this instance of data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
@@ -169,7 +169,7 @@ class FHIRStructureMapInput extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Documentation for this instance of data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentation
      * @return $this
      */
     public function setDocumentation($documentation)

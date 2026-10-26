@@ -3,19 +3,19 @@
 /**
  * ZfcModule class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use Installer\Controller\InstallerController;
 use Installer\Model\InstModule;
 use Installer\Model\InstModuleTable;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputDefinition;
@@ -45,7 +45,7 @@ class ZfcModule extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:zfc-module')
+            ->setName('DCL:zfc-module')
             ->setDescription('Module maintenance (list, discover, install_sql, install_acl, upgrade_acl, upgrade_sql, install, enable, disable, unregister)')
             ->addUsage('--modaction=list')
             ->addUsage('--modaction=discover')

@@ -5,32 +5,32 @@
  * CLI entry point for Dispatcher. Sends a repository_dispatch envelope
  * matching the cross-repo dispatch.schema.json to the consumer repos.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-// OpenEMR\Release\ classes live under autoload-dev so composer-require-checker
+// DCL\Release\ classes live under autoload-dev so composer-require-checker
 // does not demand conductor-only deps in production. Anything invoking this
 // script needs a `composer install` that includes dev dependencies.
-if (!class_exists(\OpenEMR\Release\Dispatcher::class)) {
+if (!class_exists(\DCL\Release\Dispatcher::class)) {
     fwrite(
         STDERR,
-        "OpenEMR\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
+        "DCL\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
     );
     exit(2);
 }
 
-use OpenEMR\Release\DispatchDataBuilder;
-use OpenEMR\Release\Dispatcher;
-use OpenEMR\Release\DispatchRequest;
-use OpenEMR\Release\OptionReader;
+use DCL\Release\DispatchDataBuilder;
+use DCL\Release\Dispatcher;
+use DCL\Release\DispatchRequest;
+use DCL\Release\OptionReader;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -45,7 +45,7 @@ use Symfony\Component\HttpClient\HttpClient;
         'repo',
         null,
         InputOption::VALUE_REQUIRED,
-        'Source repo (owner/name) to record in the envelope; defaults to openemr/openemr',
+        'Source repo (owner/name) to record in the envelope; defaults to DCL/DCL',
     )
     ->addOption('sha', null, InputOption::VALUE_REQUIRED, '40-hex commit SHA the event refers to')
     ->addOption('actor', null, InputOption::VALUE_REQUIRED, 'Identity dispatching the event')
@@ -65,7 +65,7 @@ use Symfony\Component\HttpClient\HttpClient;
     ->addOption('branch', null, InputOption::VALUE_REQUIRED, 'rel-* branch name (rel-cut/update/tag events)')
     ->addOption('release-version', null, InputOption::VALUE_REQUIRED, 'MAJOR.MINOR.PATCH release version')
     ->addOption('prev-release', null, InputOption::VALUE_REQUIRED, 'Previous release version (rel-cut/update)')
-    ->addOption('tag', null, InputOption::VALUE_REQUIRED, 'Tag name (openemr-tag event)')
+    ->addOption('tag', null, InputOption::VALUE_REQUIRED, 'Tag name (DCL-tag event)')
     ->addOption('probe', null, InputOption::VALUE_NONE, 'Bypass schema validation (permissions-check probe)')
     ->setCode(function (InputInterface $input, OutputInterface $output): int {
         $opts = new OptionReader($input);
@@ -81,9 +81,9 @@ use Symfony\Component\HttpClient\HttpClient;
         try {
             $request = new DispatchRequest(
                 event: $event,
-                repo: $opts->string('repo', 'openemr/openemr'),
+                repo: $opts->string('repo', 'DCL/DCL'),
                 sha: $opts->string('sha'),
-                actor: $opts->string('actor', 'openemr-release-bot'),
+                actor: $opts->string('actor', 'DCL-release-bot'),
                 dispatchedAt: gmdate('Y-m-d\TH:i:s\Z'),
                 appToken: $token,
                 data: $data,

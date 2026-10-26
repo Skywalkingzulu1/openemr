@@ -7,17 +7,17 @@
  * assistance from Claude Code (Anthropic). The code has been reviewed
  * and tested by the contributor.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Craig Allen <craigrallen@gmail.com>
  * @copyright Copyright (c) 2026 Craig Allen <craigrallen@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Tests\Fixtures\AppointmentFixtureManager;
+use DCL\Services\AppointmentService;
+use DCL\Tests\Fixtures\AppointmentFixtureManager;
 use Particle\Validator\ValidationResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

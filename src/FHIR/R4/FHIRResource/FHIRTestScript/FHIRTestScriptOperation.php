@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,103 +71,103 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * Server interaction or operation type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $type = null;
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $resource = null;
 
     /**
      * The label would be used for tracking/logging purposes by test engines.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $label = null;
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The mime-type to use for RESTful operation in the 'Accept' header.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $accept = null;
 
     /**
      * The mime-type to use for RESTful operation in the 'Content-Type' header.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $contentType = null;
 
     /**
      * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $destination = null;
 
     /**
      * Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $encodeRequestUrl = null;
 
     /**
      * The HTTP method the test engine MUST use for this operation regardless of any other operation details.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
      */
     public $method = null;
 
     /**
      * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $origin = null;
 
     /**
      * Path plus parameters after [type].  Used to set parts of the request URL explicitly.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $params = null;
 
     /**
      * Header elements would be used to set HTTP headers.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader[]
      */
     public $requestHeader = [];
 
     /**
      * The fixture id (maybe new) to map to the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $requestId = null;
 
     /**
      * The fixture id (maybe new) to map to the response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $responseId = null;
 
     /**
      * The id of the fixture used as the body of a PUT or POST request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $sourceId = null;
 
     /**
      * Id of fixture used for extracting the [id],  [type], and [vid] for GET requests.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $targetId = null;
 
     /**
      * Complete request URL.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $url = null;
 
@@ -178,7 +178,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Server interaction or operation type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getType()
     {
@@ -187,7 +187,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Server interaction or operation type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function setType($type)
@@ -198,7 +198,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getResource()
     {
@@ -207,7 +207,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $resource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $resource
      * @return $this
      */
     public function setResource($resource)
@@ -218,7 +218,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The label would be used for tracking/logging purposes by test engines.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLabel()
     {
@@ -227,7 +227,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The label would be used for tracking/logging purposes by test engines.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $label
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $label
      * @return $this
      */
     public function setLabel($label)
@@ -238,7 +238,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -247,7 +247,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -258,7 +258,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The mime-type to use for RESTful operation in the 'Accept' header.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getAccept()
     {
@@ -267,7 +267,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The mime-type to use for RESTful operation in the 'Accept' header.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $accept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $accept
      * @return $this
      */
     public function setAccept($accept)
@@ -278,7 +278,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The mime-type to use for RESTful operation in the 'Content-Type' header.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getContentType()
     {
@@ -287,7 +287,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The mime-type to use for RESTful operation in the 'Content-Type' header.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $contentType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $contentType
      * @return $this
      */
     public function setContentType($contentType)
@@ -298,7 +298,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getDestination()
     {
@@ -307,7 +307,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $destination
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $destination
      * @return $this
      */
     public function setDestination($destination)
@@ -318,7 +318,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getEncodeRequestUrl()
     {
@@ -327,7 +327,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $encodeRequestUrl
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $encodeRequestUrl
      * @return $this
      */
     public function setEncodeRequestUrl($encodeRequestUrl)
@@ -338,7 +338,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The HTTP method the test engine MUST use for this operation regardless of any other operation details.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
      */
     public function getMethod()
     {
@@ -347,7 +347,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The HTTP method the test engine MUST use for this operation regardless of any other operation details.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode $method
      * @return $this
      */
     public function setMethod($method)
@@ -358,7 +358,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getOrigin()
     {
@@ -367,7 +367,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $origin
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $origin
      * @return $this
      */
     public function setOrigin($origin)
@@ -378,7 +378,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Path plus parameters after [type].  Used to set parts of the request URL explicitly.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getParams()
     {
@@ -387,7 +387,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Path plus parameters after [type].  Used to set parts of the request URL explicitly.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $params
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $params
      * @return $this
      */
     public function setParams($params)
@@ -398,7 +398,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Header elements would be used to set HTTP headers.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader[]
      */
     public function getRequestHeader()
     {
@@ -407,7 +407,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Header elements would be used to set HTTP headers.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader $requestHeader
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader $requestHeader
      * @return $this
      */
     public function addRequestHeader($requestHeader)
@@ -418,7 +418,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The fixture id (maybe new) to map to the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getRequestId()
     {
@@ -427,7 +427,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The fixture id (maybe new) to map to the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $requestId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $requestId
      * @return $this
      */
     public function setRequestId($requestId)
@@ -438,7 +438,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The fixture id (maybe new) to map to the response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getResponseId()
     {
@@ -447,7 +447,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The fixture id (maybe new) to map to the response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $responseId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $responseId
      * @return $this
      */
     public function setResponseId($responseId)
@@ -458,7 +458,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The id of the fixture used as the body of a PUT or POST request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getSourceId()
     {
@@ -467,7 +467,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The id of the fixture used as the body of a PUT or POST request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $sourceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $sourceId
      * @return $this
      */
     public function setSourceId($sourceId)
@@ -478,7 +478,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Id of fixture used for extracting the [id],  [type], and [vid] for GET requests.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getTargetId()
     {
@@ -487,7 +487,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Id of fixture used for extracting the [id],  [type], and [vid] for GET requests.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $targetId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $targetId
      * @return $this
      */
     public function setTargetId($targetId)
@@ -498,7 +498,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Complete request URL.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getUrl()
     {
@@ -507,7 +507,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Complete request URL.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $url
      * @return $this
      */
     public function setUrl($url)

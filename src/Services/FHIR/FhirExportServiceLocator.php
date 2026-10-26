@@ -3,16 +3,16 @@
 /**
  * FhirExportServiceLocator locates all of the Fhir Resource Services that support exporting data in a server export
  * operation.  This makes it possible for any FHIR resource to be exportable by implementing the appropriate interfaces
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Services\FHIR\Utils\FhirServiceLocator;
+use DCL\Services\FHIR\Utils\FhirServiceLocator;
 
 class FhirExportServiceLocator
 {

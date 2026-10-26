@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Specifies clinical/business/etc. metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).
@@ -72,27 +72,27 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
 {
     /**
      * A code that identifies the type of context being specified by this usage context.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $code = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $valueReference = null;
 
@@ -103,7 +103,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
 
     /**
      * A code that identifies the type of context being specified by this usage context.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getCode()
     {
@@ -112,7 +112,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
 
     /**
      * A code that identifies the type of context being specified by this usage context.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $code
      * @return $this
      */
     public function setCode($code)
@@ -122,7 +122,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
     {
@@ -130,7 +130,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
     public function setValueCodeableConcept($valueCodeableConcept)
@@ -140,7 +140,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -148,7 +148,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -158,7 +158,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getValueRange()
     {
@@ -166,7 +166,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $valueRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
     public function setValueRange($valueRange)
@@ -176,7 +176,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getValueReference()
     {
@@ -184,7 +184,7 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $valueReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
     public function setValueReference($valueReference)

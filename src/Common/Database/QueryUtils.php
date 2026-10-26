@@ -3,20 +3,20 @@
 /**
  * QueryUtils.php  Is a helper class for commonly used database functions.  Eventually everything in the sql.inc.php file
  * could be migrated to this file or at least contained in this namespace.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Database;
+namespace DCL\Common\Database;
 
 use ADORecordSet;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
 use Throwable;
 
 class QueryUtils
@@ -117,7 +117,7 @@ class QueryUtils
     {
         // Reject table names containing backticks to prevent identifier-context injection
         if (str_contains($table, '`')) {
-            throw new SqlQueryException("", "ERROR: OpenEMR SQL Escaping ERROR of the following string: " . \errorLogEscape($table));
+            throw new SqlQueryException("", "ERROR: DCL SQL Escaping ERROR of the following string: " . \errorLogEscape($table));
         }
 
         // Whitelist against actual tables, then backtick-quote to keep in identifier context
@@ -256,7 +256,7 @@ class QueryUtils
     }
 
     /**
-     * Standard sql query in OpenEMR.
+     * Standard sql query in DCL.
      *
      * Function that will allow use of the adodb binding
      * feature to prevent sql-injection. Will continue to
@@ -311,7 +311,7 @@ class QueryUtils
             }
             // escape table name just DIES if the table name is not valid so we need to handle that here
             // to determine if it exists
-            // normally we'd skip throwing the exception but default OpenEMR behavior is to die if the exception isn't
+            // normally we'd skip throwing the exception but default DCL behavior is to die if the exception isn't
             // thrown which doesn't help us at all.
 
             $query = "SELECT 1 as id FROM " . $tableName . " LIMIT 1";
@@ -327,7 +327,7 @@ class QueryUtils
     }
 
     /**
-     * Sql insert query in OpenEMR.
+     * Sql insert query in DCL.
      *  Only use this function if you need to have the
      *  id returned. If doing an insert query and do
      *  not need the id returned, then use the

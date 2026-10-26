@@ -1,24 +1,24 @@
 <?php
 
 /**
- * OpenApiDefinitions - Global OpenAPI definitions for the OpenEMR API
+ * OpenApiDefinitions - Global OpenAPI definitions for the DCL API
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Eric Stern <eric@ericpstern.com>
  * @copyright Copyright (c) 2026 Eric Stern <eric@ericpstern.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\OpenApi;
+namespace DCL\RestControllers\OpenApi;
 
 use OpenApi\Attributes as OA;
 
-#[OA\Info(title: 'OpenEMR API', version: '8.5.0')]
+#[OA\Info(title: 'DCL API', version: '8.5.0')]
 #[OA\Server(url: '/apis/default/')]
 
 #[OA\SecurityScheme(
-    securityScheme: 'openemr_auth',
+    securityScheme: 'DCL_auth',
     type: 'oauth2',
     flows: [
         new OA\Flow(
@@ -29,7 +29,7 @@ use OpenApi\Attributes as OA;
             scopes: [
                 'openid' => 'Generic mandatory scope',
                 'offline_access' => 'Will signal server to provide a refresh token',
-                'launch/patient' => 'Will provide a patient selector when logging in as an OpenEMR user (required for testing patient/* scopes in swagger if not logging in as a patient)',
+                'launch/patient' => 'Will provide a patient selector when logging in as an DCL user (required for testing patient/* scopes in swagger if not logging in as a patient)',
                 'api:fhir' => 'FHIR R4 API',
                 'patient/AllergyIntolerance.rs' => 'Read,Search allergy intolerance resources for the current patient (api:fhir)',
                 'patient/Appointment.rs' => 'Read,Search appointment resources for the current patient (api:fhir)',
@@ -126,7 +126,7 @@ use OpenApi\Attributes as OA;
                 'user/RelatedPerson.rs' => 'Read,Search all related person resources the user has access to (api:fhir)',
                 'user/ServiceRequest.rs' => 'Read,Search all the service request resources the user has access to (api:fhir)',
                 'user/Specimen.rs' => 'Read,Search all specimen resources the user has access to (api:fhir)',
-                'api:oemr' => 'Standard OpenEMR API',
+                'api:oemr' => 'Standard DCL API',
                 'user/allergy.cruds' => 'Create,Read,Update,Delete,Search allergies the user has access to (api:oemr)',
                 'user/appointment.cruds' => 'Create,Read,Update,Delete,Search appointments the user has access to (api:oemr)',
                 'user/dental_issue.cruds' => 'Create,Read,Update,Delete,Search dental issues the user has access to (api:oemr)',
@@ -147,14 +147,14 @@ use OpenApi\Attributes as OA;
                 'user/practitioner.crus' => 'Create,Read,Update,Search practitioners the user has access to (api:oemr)',
                 'user/prescription.rs' => 'Read,Search prescriptions the user has access to (api:oemr)',
                 'user/procedure.rs' => 'Read,Search procedures the user has access to (api:oemr)',
-                'user/product.s' => 'Search the email registration status of OpenEMR (api:oemr)',
+                'user/product.s' => 'Search the email registration status of DCL (api:oemr)',
                 'user/soap_note.crus' => 'Create,Read,Update,Search soap notes the user has access to (api:oemr)',
                 'user/surgery.cruds' => 'Create,Read,Update,Delete,Search surgeries the user has access to (api:oemr)',
                 'user/transaction.cuds' => 'Create,Update,Delete,Search transactions the user has access to (api:oemr)',
                 'user/user.rs' => 'Read,Search users the current user has access to (api:oemr)',
                 'user/version.s' => 'Search the software version information the user has access to (api:oemr)',
                 'user/vital.crus' => 'Create,Read,Update,Search vitals the user has access to (api:oemr)',
-                'api:port' => 'Standard Patient Portal OpenEMR API',
+                'api:port' => 'Standard Patient Portal DCL API',
                 'patient/encounter.read' => 'Read encounters the patient has access to (api:port)',
                 'patient/patient.read' => 'Read patient data the patient has access to (api:port)',
                 'patient/appointment.read' => 'Read appointments the patient has access to (api:port)',
@@ -172,8 +172,8 @@ use OpenApi\Attributes as OA;
 )]
 
 #[OA\Tag(name: 'fhir', description: 'FHIR R4 API')]
-#[OA\Tag(name: 'standard', description: 'Standard OpenEMR API')]
-#[OA\Tag(name: 'standard-patient', description: 'Standard Patient Portal OpenEMR API')]
+#[OA\Tag(name: 'standard', description: 'Standard DCL API')]
+#[OA\Tag(name: 'standard-patient', description: 'Standard Patient Portal DCL API')]
 
 #[OA\Parameter(
     name: '_sort',

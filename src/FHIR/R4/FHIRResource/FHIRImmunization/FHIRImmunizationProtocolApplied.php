@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImmunization;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
@@ -71,39 +71,39 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
 {
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $series = null;
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP) that is being followed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $authority = null;
 
     /**
      * The vaccine preventable disease the dose is being administered against.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $targetDisease = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $doseNumberPositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $doseNumberString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $seriesDosesPositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $seriesDosesString = null;
 
@@ -114,7 +114,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSeries()
     {
@@ -123,7 +123,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
 
     /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $series
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $series
      * @return $this
      */
     public function setSeries($series)
@@ -134,7 +134,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP) that is being followed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthority()
     {
@@ -143,7 +143,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP) that is being followed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $authority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $authority
      * @return $this
      */
     public function setAuthority($authority)
@@ -154,7 +154,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
 
     /**
      * The vaccine preventable disease the dose is being administered against.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTargetDisease()
     {
@@ -163,7 +163,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
 
     /**
      * The vaccine preventable disease the dose is being administered against.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $targetDisease
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $targetDisease
      * @return $this
      */
     public function addTargetDisease($targetDisease)
@@ -173,7 +173,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getDoseNumberPositiveInt()
     {
@@ -181,7 +181,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
      * @return $this
      */
     public function setDoseNumberPositiveInt($doseNumberPositiveInt)
@@ -191,7 +191,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDoseNumberString()
     {
@@ -199,7 +199,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $doseNumberString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $doseNumberString
      * @return $this
      */
     public function setDoseNumberString($doseNumberString)
@@ -209,7 +209,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSeriesDosesPositiveInt()
     {
@@ -217,7 +217,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
      * @return $this
      */
     public function setSeriesDosesPositiveInt($seriesDosesPositiveInt)
@@ -227,7 +227,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSeriesDosesString()
     {
@@ -235,7 +235,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $seriesDosesString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $seriesDosesString
      * @return $this
      */
     public function setSeriesDosesString($seriesDosesString)

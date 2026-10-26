@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -70,27 +70,27 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $valueId = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $valueDecimal = null;
 
@@ -100,7 +100,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     private $_fhirElementName = 'StructureMap.Parameter';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getValueId()
     {
@@ -108,7 +108,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $valueId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $valueId
      * @return $this
      */
     public function setValueId($valueId)
@@ -118,7 +118,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -126,7 +126,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -136,7 +136,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
     {
@@ -144,7 +144,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -154,7 +154,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
     {
@@ -162,7 +162,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
     public function setValueInteger($valueInteger)
@@ -172,7 +172,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
     {
@@ -180,7 +180,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
      * @return $this
      */
     public function setValueDecimal($valueDecimal)

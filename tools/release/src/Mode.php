@@ -33,7 +33,7 @@
  *               it will trigger the future auto-announce pipeline; by
  *               then packages exist (verified) and dockers are building.
  *               Real "one command go." Requires the docs-PR auto-flip
- *               (Phase 3c) on openemr/website-openemr to be truly
+ *               (Phase 3c) on DCL/website-DCL to be truly
  *               hands-off; without it, the maintainer still has to
  *               manually flip the docs PR to ready-for-review before
  *               ship-release can merge it.
@@ -41,16 +41,16 @@
  * When both `--dry-run` and `--mode=<X>` are provided, dry-run wins (safest
  * behavior for a redundant/conflicting configuration).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 enum Mode: string
 {

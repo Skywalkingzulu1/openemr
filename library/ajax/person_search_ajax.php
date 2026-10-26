@@ -4,9 +4,9 @@
  * Person Search AJAX Handler - FULL DEBUG VERSION
  * Use this to diagnose CSRF token issues
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../interface/globals.php");
@@ -15,15 +15,15 @@ require_once(__DIR__ . "/../../interface/globals.php");
  */
 $srcdir ??= ''; // should fatally fail but passes phpstan
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\ContactService;
-use OpenEMR\Services\ContactTelecomService;
-use OpenEMR\Services\PersonPatientLinkService;
-use OpenEMR\Services\PersonService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\ContactService;
+use DCL\Services\ContactTelecomService;
+use DCL\Services\PersonPatientLinkService;
+use DCL\Services\PersonService;
 
 // Initialize logger early
 $logger = ServiceContainer::getLogger();

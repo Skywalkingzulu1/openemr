@@ -3,14 +3,14 @@
 /**
  * FhirCodeSystemUris.php
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 class FhirCodeSystemConstants
 {
@@ -70,7 +70,7 @@ class FhirCodeSystemConstants
 
     const HL7_ICD10 = "http://hl7.org/fhir/sid/icd-10";
 
-    // US Core uses the -cm variants for diagnosis codings; OpenEMR stores both
+    // US Core uses the -cm variants for diagnosis codings; DCL stores both
     // under its ICD10 / ICD9 code types.
     const HL7_ICD10_CM = "http://hl7.org/fhir/sid/icd-10-cm";
 

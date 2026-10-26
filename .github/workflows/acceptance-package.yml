@@ -1,4 +1,4 @@
-# Artifact acceptance testing against the openemr release tarball.
+# Artifact acceptance testing against the DCL release tarball.
 #
 # Black-box validation of the two production-critical entry points end
 # users experience with the tarball artifact:
@@ -19,8 +19,8 @@
 # is a Docker image (Phase 2) or a tarball-mounted stack (this one).
 #
 # Docker vs tarball distinction:
-#   - Docker artifact = openemr/openemr:<tag> image; ships own PHP+Apache
-#   - Tarball artifact = openemr-<version>.tar.gz; user provides own stack
+#   - Docker artifact = DCL/DCL:<tag> image; ships own PHP+Apache
+#   - Tarball artifact = DCL-<version>.tar.gz; user provides own stack
 # Tarball testing uses a generic PHP+Apache stack (flex image with
 # EMPTY=yes) that mirrors what a real user would set up per the wiki
 # install instructions.
@@ -51,12 +51,12 @@ on:
   workflow_dispatch:
     inputs:
       from_version:
-        description: 'Prior openemr version for the upgrade scenario (release tag suffix, e.g. 8.2.0). Leave empty to auto-derive from the checkout''s sql/*-to-*_upgrade.sql files — the derived version is guaranteed to appear in the branch''s sql_upgrade.php wizard dropdown regardless of which branch fires the workflow. See openemr/openemr#13573.'
+        description: 'Prior DCL version for the upgrade scenario (release tag suffix, e.g. 8.2.0). Leave empty to auto-derive from the checkout''s sql/*-to-*_upgrade.sql files — the derived version is guaranteed to appear in the branch''s sql_upgrade.php wizard dropdown regardless of which branch fires the workflow. See DCL/DCL#13573.'
         required: false
         type: string
         default: ''
       to_version:
-        description: 'Target openemr version (release tag suffix, e.g. 8.2.0). Leave empty to use detect-acceptance-mode.sh emit_to_version defaults — 99.99.99 label on build_locally=true, 8.2.0 shipped-tarball fallback otherwise. Explicit value here still wins over both defaults (DISPATCH_TO_VERSION takes precedence). Matches the workflow_call variant''s shape (required: false, default: empty) — the two triggers used to diverge, which caused `-f build_locally=true` dispatches to accidentally test-against-8.2.0-shipped-tarball semantics instead of the 99.99.99 label the build_locally branch was designed for.'
+        description: 'Target DCL version (release tag suffix, e.g. 8.2.0). Leave empty to use detect-acceptance-mode.sh emit_to_version defaults — 99.99.99 label on build_locally=true, 8.2.0 shipped-tarball fallback otherwise. Explicit value here still wins over both defaults (DISPATCH_TO_VERSION takes precedence). Matches the workflow_call variant''s shape (required: false, default: empty) — the two triggers used to diverge, which caused `-f build_locally=true` dispatches to accidentally test-against-8.2.0-shipped-tarball semantics instead of the 99.99.99 label the build_locally branch was designed for.'
         required: false
         type: string
         default: ''
@@ -75,7 +75,7 @@ on:
   workflow_call:
     inputs:
       from_version:
-        description: 'Prior openemr version for the upgrade scenario. Defaults to empty, which triggers auto-derive from the checkout''s sql/*-to-*_upgrade.sql files — the derived version is guaranteed to appear in the branch''s sql_upgrade.php wizard dropdown. See openemr/openemr#13573.'
+        description: 'Prior DCL version for the upgrade scenario. Defaults to empty, which triggers auto-derive from the checkout''s sql/*-to-*_upgrade.sql files — the derived version is guaranteed to appear in the branch''s sql_upgrade.php wizard dropdown. See DCL/DCL#13573.'
         required: false
         type: string
         default: ''
@@ -85,12 +85,12 @@ on:
         type: string
         default: ''
       caller_tarball_artifact:
-        description: 'Name of the workflow-run artifact holding the caller-supplied tarball (openemr-<to_version>.tar.gz). When set, skips this workflow build-tarball job and treats the caller-supplied tarball as if it were PR-built.'
+        description: 'Name of the workflow-run artifact holding the caller-supplied tarball (DCL-<to_version>.tar.gz). When set, skips this workflow build-tarball job and treats the caller-supplied tarball as if it were PR-built.'
         required: false
         type: string
         default: ''
       caller_zip_artifact:
-        description: 'Name of the workflow-run artifact holding the caller-supplied ZIP (openemr-<to_version>.zip). When set, skips this workflow build-tarball job and treats the caller-supplied ZIP as if it were PR-built. Phase 3.6 companion to caller_tarball_artifact — build-release.yml passes both since its release-output bundle contains both formats under the same artifact name.'
+        description: 'Name of the workflow-run artifact holding the caller-supplied ZIP (DCL-<to_version>.zip). When set, skips this workflow build-tarball job and treats the caller-supplied ZIP as if it were PR-built. Phase 3.6 companion to caller_tarball_artifact — build-release.yml passes both since its release-output bundle contains both formats under the same artifact name.'
         required: false
         type: string
         default: ''
@@ -175,7 +175,7 @@ jobs:
   # Mirrors the detect-mode job in acceptance-docker.yml (Phase 2.5) —
   # keep them in sync if the logic evolves.
   detect-mode:
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
     runs-on: ubuntu-24.04
     outputs:
       build_locally: ${{ steps.decide.outputs.build_locally }}
@@ -196,7 +196,7 @@ jobs:
       # DISPATCH_FROM_VERSION overrides; otherwise derived from the
       # checkout's `sql/*-to-*_upgrade.sql` filenames so the
       # resulting version is guaranteed to be in the branch's
-      # sql_upgrade.php wizard dropdown (openemr/openemr#13573).
+      # sql_upgrade.php wizard dropdown (DCL/DCL#13573).
       from_version: ${{ steps.decide.outputs.from_version }}
       # expected_version is the version the running artifact will
       # self-report post-install/post-upgrade (i.e. what
@@ -209,7 +209,7 @@ jobs:
       # default; PackageAssembler ships the checked-out version.php
       # as-is), so the acceptance groups must compare against the
       # checkout's version.php value instead of the label — otherwise
-      # they can never pass. See openemr/openemr#13753.
+      # they can never pass. See DCL/DCL#13753.
       expected_version: ${{ steps.decide.outputs.expected_version }}
     steps:
     - uses: actions/checkout@v7
@@ -236,7 +236,7 @@ jobs:
   # Build the target tarball from the PR's PackageAssembler + checkout.
   # Runs only when detect-mode resolved build_locally=true.
   #
-  # Output: openemr-<version>.tar.gz uploaded as a workflow artifact.
+  # Output: DCL-<version>.tar.gz uploaded as a workflow artifact.
   # Each downstream acceptance matrix job downloads the artifact and
   # passes its path to boot-package.sh --local-tarball, bypassing the
   # GitHub release-page download entirely — nothing goes to a public
@@ -292,7 +292,7 @@ jobs:
 
     - name: Install harness composer deps (autoloader for PackageAssembler)
       # tools/release/bin/package-assemble.php requires vendor/autoload.php
-      # to bring in the OpenEMR\Release\PackageAssembler class + its
+      # to bring in the DCL\Release\PackageAssembler class + its
       # symfony/console + symfony/process deps.
       run: composer install --prefer-dist --no-progress --no-scripts --no-interaction
 
@@ -302,26 +302,26 @@ jobs:
       # scratch-dir naming expects. Version string doesn't get baked
       # into the packaged codebase — it's a naming label only.
       #
-      # --openemr-dir is the PR checkout itself; --output-dir writes
+      # --DCL-dir is the PR checkout itself; --output-dir writes
       # under /tmp so the artifact upload step can grab it by known path.
-      # PackageAssembler produces BOTH openemr-<version>.tar.gz AND
-      # openemr-<version>.zip in one pass — both are uploaded below for
+      # PackageAssembler produces BOTH DCL-<version>.tar.gz AND
+      # DCL-<version>.zip in one pass — both are uploaded below for
       # the Phase 3.6 matrix's `format` dimension.
       run: |
         mkdir -p /tmp/release-output
         php tools/release/bin/package-assemble.php \
           --release-version="${TO_VERSION}" \
-          --openemr-dir=. \
+          --DCL-dir=. \
           --output-dir=/tmp/release-output
         ls -lh \
-          "/tmp/release-output/openemr-${TO_VERSION}.tar.gz" \
-          "/tmp/release-output/openemr-${TO_VERSION}.zip"
+          "/tmp/release-output/DCL-${TO_VERSION}.tar.gz" \
+          "/tmp/release-output/DCL-${TO_VERSION}.zip"
 
     - name: Upload PR-built tarball artifact
       uses: actions/upload-artifact@v7
       with:
-        name: openemr-pr-built-tarball
-        path: /tmp/release-output/openemr-${{ needs.detect-mode.outputs.to_version }}.tar.gz
+        name: DCL-pr-built-tarball
+        path: /tmp/release-output/DCL-${{ needs.detect-mode.outputs.to_version }}.tar.gz
         retention-days: 1
 
     # Phase 3.6: upload the ZIP under a distinct artifact name so the
@@ -333,8 +333,8 @@ jobs:
     - name: Upload PR-built zip artifact
       uses: actions/upload-artifact@v7
       with:
-        name: openemr-pr-built-zip
-        path: /tmp/release-output/openemr-${{ needs.detect-mode.outputs.to_version }}.zip
+        name: DCL-pr-built-zip
+        path: /tmp/release-output/DCL-${{ needs.detect-mode.outputs.to_version }}.zip
         retention-days: 1
 
   acceptance:
@@ -346,7 +346,7 @@ jobs:
     # trivial job).
     if: >-
       always()
-      && github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+      && github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
       && needs.detect-mode.result == 'success'
       && (needs.build-tarball.result == 'success' || needs.build-tarball.result == 'skipped')
     runs-on: ubuntu-24.04
@@ -369,8 +369,8 @@ jobs:
         #                     sql_upgrade.php via Panther
         #
         # Formats (Phase 3.6):
-        #   tar   — extracts openemr-<version>.tar.gz via tar -xzf
-        #   zip   — extracts openemr-<version>.zip via unzip
+        #   tar   — extracts DCL-<version>.tar.gz via tar -xzf
+        #   zip   — extracts DCL-<version>.zip via unzip
         # Matrix cells (per Phase 3.6 + Phase 3.5 gating rules — see
         # the plan doc's Phase 3.6 section for the full rationale):
         #   default (acceptance-surface push/PR/schedule):
@@ -396,7 +396,7 @@ jobs:
       # version-api groups below. Decoupled from TO_VERSION because
       # on build_locally the TO_VERSION label is cosmetic (99.99.99)
       # while sql_upgrade.php writes the checkout's version.php value
-      # into the DB `version` table. See openemr/openemr#13753 for
+      # into the DB `version` table. See DCL/DCL#13753 for
       # the failure trace when these two were coupled.
       EXPECTED_VERSION: ${{ needs.detect-mode.outputs.expected_version }}
       # ACCEPTANCE_EXPECTED_VERSION at job level so every step can
@@ -438,7 +438,7 @@ jobs:
     # ==== Load PR-built or caller-supplied artifact + resolve boot flags ====
     # Two source paths × two formats converge here:
     #   Phase 3.5 (PR validation): build-tarball job uploaded either
-    #     openemr-pr-built-tarball OR openemr-pr-built-zip depending
+    #     DCL-pr-built-tarball OR DCL-pr-built-zip depending
     #     on matrix.format. Download the format-matching one.
     #   Phase 7c (workflow_call gate): caller (build-release.yml)
     #     already uploaded a release-candidate bundle containing BOTH
@@ -447,7 +447,7 @@ jobs:
     #     artifact name instead.
     #
     # All four permutations land the artifact under
-    # /tmp/pr-built-tarball/openemr-<TO_VERSION>.{tar.gz,zip}, so the
+    # /tmp/pr-built-tarball/DCL-<TO_VERSION>.{tar.gz,zip}, so the
     # bootflags step below only needs to switch on matrix.format.
     #
     # upgrade + wizard-upgrade cells never fire the zip-download steps —
@@ -457,14 +457,14 @@ jobs:
       if: needs.build-tarball.result == 'success' && inputs.caller_tarball_artifact == '' && matrix.format == 'tar'
       uses: actions/download-artifact@v8
       with:
-        name: openemr-pr-built-tarball
+        name: DCL-pr-built-tarball
         path: /tmp/pr-built-tarball
 
     - name: Download PR-built zip (Phase 3.5, zip)
       if: needs.build-tarball.result == 'success' && inputs.caller_zip_artifact == '' && matrix.format == 'zip'
       uses: actions/download-artifact@v8
       with:
-        name: openemr-pr-built-zip
+        name: DCL-pr-built-zip
         path: /tmp/pr-built-tarball
 
     - name: Download caller-supplied tarball (Phase 7c gate, tar)
@@ -533,15 +533,15 @@ jobs:
         esac
         # Local-artifact sources: either build-tarball job (Phase 3.5)
         # or workflow_call caller-supplied artifact (Phase 7c). Both
-        # download to /tmp/pr-built-tarball/openemr-<TO_VERSION>.{tar.gz,zip}.
+        # download to /tmp/pr-built-tarball/DCL-<TO_VERSION>.{tar.gz,zip}.
         if [[ "$BUILD_TARBALL_RESULT" == "success" || -n "$CALLER_ARTIFACT_FOR_FORMAT" ]]; then
           case "$MATRIX_FORMAT" in
             tar)
-              LOCAL_PATH="/tmp/pr-built-tarball/openemr-${TO_VERSION}.tar.gz"
+              LOCAL_PATH="/tmp/pr-built-tarball/DCL-${TO_VERSION}.tar.gz"
               LOCAL_FLAG="--local-tarball=${LOCAL_PATH}"
               ;;
             zip)
-              LOCAL_PATH="/tmp/pr-built-tarball/openemr-${TO_VERSION}.zip"
+              LOCAL_PATH="/tmp/pr-built-tarball/DCL-${TO_VERSION}.zip"
               LOCAL_FLAG="--local-zip=${LOCAL_PATH}"
               ;;
           esac
@@ -586,7 +586,7 @@ jobs:
     # is set at every step now, not only the version-check steps).
     # EXPECTED_VERSION rather than TO_VERSION because the label and
     # the shipped self-reported version diverge on build_locally
-    # (label=99.99.99, tree=version.php); see openemr/openemr#13753.
+    # (label=99.99.99, tree=version.php); see DCL/DCL#13753.
     - name: Run post-install acceptance suite (fresh-install of to_version)
       if: matrix.scenario == 'fresh-install'
       uses: ./.github/actions/run-acceptance-group
@@ -708,7 +708,7 @@ jobs:
     # group only ran in fresh-install — running it post-upgrade too
     # closes the gap where a regression to /api/facility, OIDC
     # discovery, or DCR wouldn't be caught on the upgrade path (see
-    # openemr/openemr#13634).
+    # DCL/DCL#13634).
     - name: Bootstrap API via admin panel (post-upgrade)
       if: matrix.scenario == 'upgrade'
       uses: ./.github/actions/api-enable-artifact
@@ -786,10 +786,10 @@ jobs:
         echo "=== docker compose ps ==="
         docker compose \
           -f .github/docker/acceptance-package-compose.yml \
-          -p openemr-acceptance-package \
+          -p DCL-acceptance-package \
           ps || true
 
-    - name: Capture openemr container logs (on failure)
+    - name: Capture DCL container logs (on failure)
       if: failure()
       env:
         TARBALL_DIR: /dev/null
@@ -797,8 +797,8 @@ jobs:
       run: |
         docker compose \
           -f .github/docker/acceptance-package-compose.yml \
-          -p openemr-acceptance-package \
-          logs openemr || true
+          -p DCL-acceptance-package \
+          logs DCL || true
 
     # On any acceptance-cell failure, upload the per-test artifacts
     # written by PantherAcceptanceTestCase::onNotSuccessfulTest()

@@ -3,18 +3,18 @@
 /**
  * Tests the status recorded for an X12 claim file upload over SFTP.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\Billing;
+namespace DCL\Tests\Unit\Billing;
 
-use OpenEMR\Billing\BillingProcessor\X12RemoteTracker;
+use DCL\Billing\BillingProcessor\X12RemoteTracker;
 use phpseclib3\Net\SFTP;
 use PHPUnit\Framework\TestCase;
 

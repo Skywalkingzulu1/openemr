@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
@@ -71,13 +71,13 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement implem
 {
     /**
      * The ingredient substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
      */
     public $strength = [];
 
@@ -88,7 +88,7 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement implem
 
     /**
      * The ingredient substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement implem
 
     /**
      * The ingredient substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement implem
 
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
      */
     public function getStrength()
     {
@@ -117,7 +117,7 @@ class FHIRMedicinalProductIngredientSubstance extends FHIRBackboneElement implem
 
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $strength
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $strength
      * @return $this
      */
     public function addStrength($strength)

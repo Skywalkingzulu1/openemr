@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
+namespace DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
@@ -70,38 +70,38 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $valueDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $valueReference = null;
 
     /**
      * Indicates whether the answer value is selected when the list of possible answers is initially shown.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $initialSelected = null;
 
@@ -111,7 +111,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     private $_fhirElementName = 'Questionnaire.AnswerOption';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
     {
@@ -119,7 +119,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
     public function setValueInteger($valueInteger)
@@ -129,7 +129,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getValueDate()
     {
@@ -137,7 +137,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $valueDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $valueDate
      * @return $this
      */
     public function setValueDate($valueDate)
@@ -147,7 +147,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getValueTime()
     {
@@ -155,7 +155,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $valueTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
     public function setValueTime($valueTime)
@@ -165,7 +165,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -173,7 +173,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -183,7 +183,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
     {
@@ -191,7 +191,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
     public function setValueCoding($valueCoding)
@@ -201,7 +201,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getValueReference()
     {
@@ -209,7 +209,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $valueReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
     public function setValueReference($valueReference)
@@ -220,7 +220,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
 
     /**
      * Indicates whether the answer value is selected when the list of possible answers is initially shown.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getInitialSelected()
     {
@@ -229,7 +229,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement implements \Json
 
     /**
      * Indicates whether the answer value is selected when the list of possible answers is initially shown.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $initialSelected
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $initialSelected
      * @return $this
      */
     public function setInitialSelected($initialSelected)

@@ -2,37 +2,37 @@
 
 /**
  * FhirOrganizationFacilityService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Organization;
+namespace DCL\Services\FHIR\Organization;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\INonPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Services\UserService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROrganization;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FacilityService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\INonPatientCompartmentResourceService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Services\UserService;
+use DCL\Validators\ProcessingResult;
 
 class FhirOrganizationFacilityService extends FhirServiceBase implements INonPatientCompartmentResourceService
 {
@@ -76,7 +76,7 @@ class FhirOrganizationFacilityService extends FhirServiceBase implements INonPat
         if (!empty($user)) {
             $facilityResult = $this->facilityService->getById($user['facility_id']);
             if (!empty($facilityResult)) {
-                $organization = $this->parseOpenEMRRecord($facilityResult);
+                $organization = $this->parseDCLRecord($facilityResult);
                 $reference = new FHIRReference();
                 $reference->setType($organization->get_fhirElementName());
                 $reference->setReference(($organization->get_fhirElementName() . "/" . $organization->getId()));
@@ -87,7 +87,7 @@ class FhirOrganizationFacilityService extends FhirServiceBase implements INonPat
     }
 
     /**
-     * Returns an array mapping FHIR Organization Resource search parameters to OpenEMR Organization search parameters
+     * Returns an array mapping FHIR Organization Resource search parameters to DCL Organization search parameters
      *
      * @return array The search parameters
      */
@@ -113,13 +113,13 @@ class FhirOrganizationFacilityService extends FhirServiceBase implements INonPat
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (!isset($openEMRSearchParameters['name'])) {
+        if (!isset($DCLSearchParameters['name'])) {
             // make sure we only return records that have a name or an identifier, otherwise its invalid for FHIR
 
             $name = new TokenSearchField('name', [new TokenSearchValue(false)]);
@@ -128,27 +128,27 @@ class FhirOrganizationFacilityService extends FhirServiceBase implements INonPat
             $domainIdentifier->setModifier(SearchModifier::MISSING);
             $npi = new TokenSearchField('facility_npi', [new TokenSearchValue(false)]);
             $npi->setModifier(SearchModifier::MISSING);
-            $openEMRSearchParameters['identifier-name'] = new CompositeSearchField('identifier-name', [], false);
-            $openEMRSearchParameters['identifier-name']->setChildren([$name, $domainIdentifier, $npi]);
+            $DCLSearchParameters['identifier-name'] = new CompositeSearchField('identifier-name', [], false);
+            $DCLSearchParameters['identifier-name']->setChildren([$name, $domainIdentifier, $npi]);
         }
 
-        return $this->facilityService->search($openEMRSearchParameters);
+        return $this->facilityService->search($DCLSearchParameters);
     }
 
     /**
-     * Updates an existing OpenEMR record.
+     * Updates an existing DCL record.
      *
-     * @param  $fhirResourceId       //The OpenEMR record's FHIR Resource ID.
-     * @param  $updatedOpenEMRRecord //The "updated" OpenEMR record.
+     * @param  $fhirResourceId       //The DCL record's FHIR Resource ID.
+     * @param  $updatedDCLRecord //The "updated" DCL record.
      * @return ProcessingResult
      */
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
-        $processingResult = $this->facilityService->update($fhirResourceId, $updatedOpenEMRRecord);
+        $processingResult = $this->facilityService->update($fhirResourceId, $updatedDCLRecord);
         return $processingResult;
     }
 
-    protected function insertOpenEMRRecord($openEmrRecord)
+    protected function insertDCLRecord($openEmrRecord)
     {
         $processingResult = $this->facilityService->insert($openEmrRecord);
         return $processingResult;
@@ -156,13 +156,13 @@ class FhirOrganizationFacilityService extends FhirServiceBase implements INonPat
 
 
     /**
-     * Parses an OpenEMR organization record, returning the equivalent FHIR Organization Resource
+     * Parses an DCL organization record, returning the equivalent FHIR Organization Resource
      *
-     * @param  array   $dataRecord The source OpenEMR data record
+     * @param  array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIROrganization
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $organizationResource = new FHIROrganization();
 
@@ -238,10 +238,10 @@ class FhirOrganizationFacilityService extends FhirServiceBase implements INonPat
     }
 
     /**
-     * Parses a FHIR Organization Resource, returning the equivalent OpenEMR organization record.
+     * Parses a FHIR Organization Resource, returning the equivalent DCL organization record.
      *
      * @param  array $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record (array)
+     * @return array a mapped DCL data record (array)
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {

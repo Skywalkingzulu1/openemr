@@ -6,14 +6,14 @@
  * This rule prevents use of the `global` keyword in favor of dependency injection
  * or OEGlobalsBag::getInstance() for accessing global configuration.
  *
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- * @link      https://www.open-emr.org
- * @package   OpenEMR
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @package   DCL
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Global_;
@@ -52,7 +52,7 @@ class ForbiddenGlobalKeywordRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.forbiddenGlobalKeyword')
+                ->identifier('DCL.forbiddenGlobalKeyword')
                 ->tip('If you need to modify a variable out of function scope, it can be passed by reference.')
                 ->addTip('See https://phpstan.org/blog/enhancements-in-handling-parameters-passed-by-reference for tips on further refining type safety when doing so.')
                 ->build()

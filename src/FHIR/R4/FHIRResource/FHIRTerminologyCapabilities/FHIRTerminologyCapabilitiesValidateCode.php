@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,7 +71,7 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement implem
 {
     /**
      * Whether translations are validated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $translations = null;
 
@@ -82,7 +82,7 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement implem
 
     /**
      * Whether translations are validated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getTranslations()
     {
@@ -91,7 +91,7 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement implem
 
     /**
      * Whether translations are validated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $translations
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $translations
      * @return $this
      */
     public function setTranslations($translations)

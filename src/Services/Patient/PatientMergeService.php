@@ -22,8 +22,8 @@
  * {@see DuplicatePatientService}, so the Duplicate Patient Management report stops offering a merge
  * that has already happened.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -32,17 +32,17 @@
  * @copyright Copyright (c) 2013-2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Patient;
+namespace DCL\Services\Patient;
 
 use Document;
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
+use DCL\BC\Utilities;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -315,7 +315,7 @@ class PatientMergeService
             } elseif ($tableName === 'documents') {
                 // Already handled by moveDocuments().
                 continue;
-            } elseif ($tableName === 'openemr_postcalendar_events') {
+            } elseif ($tableName === 'DCL_postcalendar_events') {
                 $this->updateRows($tableName, 'pc_pid', $sourcePid, $targetPid, $log);
             } elseif ($tableName === 'lists_touch') {
                 $this->mergeRows($tableName, 'pid', $sourcePid, $targetPid, $log);

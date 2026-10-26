@@ -5,10 +5,10 @@
  *
  */
 
-namespace OpenEMR\Common\ORDataObject;
+namespace DCL\Common\ORDataObject;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
 
 class ORDataObject
 {

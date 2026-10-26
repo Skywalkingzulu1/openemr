@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBundle;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A container for a collection of resources.
@@ -71,7 +71,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A series of links that provide context to this entry.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
      */
     public $link = [];
 
@@ -79,31 +79,31 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
      * The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that:
 * fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)
 * Results from operations might involve resources that are not identified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $fullUrl = null;
 
     /**
      * The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type.
-     * @var \OpenEMR\FHIR\R4\FHIRResourceContainer
+     * @var \DCL\FHIR\R4\FHIRResourceContainer
      */
     public $resource = null;
 
     /**
      * Information about the search process that lead to the creation of this entry.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleSearch
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleSearch
      */
     public $search = null;
 
     /**
      * Additional information about how this entry should be processed as part of a transaction or batch.  For history, it shows how the entry was processed to create the version contained in the entry.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleRequest
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleRequest
      */
     public $request = null;
 
     /**
      * Indicates the results of processing the corresponding 'request' entry in the batch or transaction being responded to or what the results of an operation where when returning history.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleResponse
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleResponse
      */
     public $response = null;
 
@@ -114,7 +114,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A series of links that provide context to this entry.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink[]
      */
     public function getLink()
     {
@@ -123,7 +123,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A series of links that provide context to this entry.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink $link
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleLink $link
      * @return $this
      */
     public function addLink($link)
@@ -136,7 +136,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
      * The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that:
 * fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)
 * Results from operations might involve resources that are not identified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getFullUrl()
     {
@@ -147,7 +147,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
      * The Absolute URL for the resource.  The fullUrl SHALL NOT disagree with the id in the resource - i.e. if the fullUrl is not a urn:uuid, the URL shall be version-independent URL consistent with the Resource.id. The fullUrl is a version independent reference to the resource. The fullUrl element SHALL have a value except that:
 * fullUrl can be empty on a POST (although it does not need to when specifying a temporary id for reference in the bundle)
 * Results from operations might involve resources that are not identified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $fullUrl
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $fullUrl
      * @return $this
      */
     public function setFullUrl($fullUrl)
@@ -167,7 +167,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type.
-     * @param \OpenEMR\FHIR\R4\FHIRResourceContainer $resource
+     * @param \DCL\FHIR\R4\FHIRResourceContainer $resource
      * @return $this
      */
     public function setResource($resource)
@@ -178,7 +178,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Information about the search process that lead to the creation of this entry.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleSearch
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleSearch
      */
     public function getSearch()
     {
@@ -187,7 +187,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Information about the search process that lead to the creation of this entry.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleSearch $search
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleSearch $search
      * @return $this
      */
     public function setSearch($search)
@@ -198,7 +198,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Additional information about how this entry should be processed as part of a transaction or batch.  For history, it shows how the entry was processed to create the version contained in the entry.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleRequest
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleRequest
      */
     public function getRequest()
     {
@@ -207,7 +207,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Additional information about how this entry should be processed as part of a transaction or batch.  For history, it shows how the entry was processed to create the version contained in the entry.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleRequest $request
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleRequest $request
      * @return $this
      */
     public function setRequest($request)
@@ -218,7 +218,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates the results of processing the corresponding 'request' entry in the batch or transaction being responded to or what the results of an operation where when returning history.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleResponse
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleResponse
      */
     public function getResponse()
     {
@@ -227,7 +227,7 @@ class FHIRBundleEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates the results of processing the corresponding 'request' entry in the batch or transaction being responded to or what the results of an operation where when returning history.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleResponse $response
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleResponse $response
      * @return $this
      */
     public function setResponse($response)

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  *
  * @author    Igor Mukhin <igor.mukhin@gmail.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Common\Twig;
+namespace DCL\Tests\Isolated\Common\Twig;
 
-use OpenEMR\Common\Twig\TwigExtension;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Twig\TwigExtension;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -24,15 +24,15 @@ class TwigExtensionIsolatedTest extends TestCase
 {
     public function testGetGlobals(): void
     {
-        $kernel = new Kernel('/var/www/openemr', '/openemr');
+        $kernel = new Kernel('/var/www/DCL', '/DCL');
         $bag = new OEGlobalsBag([]);
         $extension = new TwigExtension($bag, $kernel);
 
         $expectedTwigGlobals = [
-            'assets_dir' => '/openemr/public/assets',
-            'srcdir' => '/var/www/openemr/library',
-            'rootdir' => '/openemr/interface',
-            'webroot' => '/openemr',
+            'assets_dir' => '/DCL/public/assets',
+            'srcdir' => '/var/www/DCL/library',
+            'rootdir' => '/DCL/interface',
+            'webroot' => '/DCL',
             'assetVersion' => null,
             'session' => [],
         ];

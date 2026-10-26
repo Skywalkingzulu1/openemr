@@ -3,11 +3,11 @@
 /**
  * SDOH (USCDI v3) widget view page.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -19,13 +19,13 @@ $srcdir = dirname(__FILE__, 4) . "/library";
 require_once(dirname(__FILE__, 3) . "/globals.php");
 require_once($srcdir . "/options.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Menu\PatientMenuRole;
-use OpenEMR\Services\SDOH\HistorySdohService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Menu\PatientMenuRole;
+use DCL\Services\SDOH\HistorySdohService;
 
 $logger = ServiceContainer::getLogger();
 $session = SessionWrapperFactory::getInstance()->getActiveSession();

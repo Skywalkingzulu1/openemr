@@ -32,14 +32,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @author  Teny <teny@zhservices.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 function getListById($id, $cols = "*")
 {

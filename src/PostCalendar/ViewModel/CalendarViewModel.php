@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Simon Quigley <squigley@altispeed.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Simon Quigley <squigley@altispeed.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PostCalendar\ViewModel;
+namespace DCL\PostCalendar\ViewModel;
 
 /**
  * Builds the data structure that PostCalendar Twig templates iterate.
@@ -55,7 +55,7 @@ namespace OpenEMR\PostCalendar\ViewModel;
  *
  * Because escape happens at the source rather than the sink, every
  * variable interpolated into those HTML strings is wrapped at the
- * production site with the OpenEMR escape function matching the
+ * production site with the DCL escape function matching the
  * destination context: `text()` for HTML text, `attr()` for HTML
  * attribute values, `attr_js()` for JS strings embedded in HTML
  * `onclick=` attributes, `attr_url()` for URL fragments in `href=`.

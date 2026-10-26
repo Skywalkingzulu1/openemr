@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Tests\Rector\Fixture;
+namespace DCL\Tests\Rector\Fixture;
 
 use Exception;
 
@@ -14,7 +14,7 @@ try {
 -----
 <?php
 
-namespace OpenEMR\Tests\Rector\Fixture;
+namespace DCL\Tests\Rector\Fixture;
 
 use Exception;
 

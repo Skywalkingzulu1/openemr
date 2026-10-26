@@ -12,22 +12,22 @@
  * The generator dependency is injected via ChangelogMutator's
  * constructor so no `gh` shell-out actually fires.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Release\BranchVersionResolver;
-use OpenEMR\Release\ChangelogGenerator;
-use OpenEMR\Release\GitHubApi;
-use OpenEMR\Release\Mutator\ChangelogMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Release\BranchVersionResolver;
+use DCL\Release\ChangelogGenerator;
+use DCL\Release\GitHubApi;
+use DCL\Release\Mutator\ChangelogMutator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
@@ -37,7 +37,7 @@ final class ChangelogMutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-changelog-mut-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-changelog-mut-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -57,11 +57,11 @@ final class ChangelogMutatorTest extends TestCase
         file_put_contents($this->tmpDir . '/CHANGELOG.md', <<<'MD'
 # CHANGELOG.md
 
-## [8.2.0](https://github.com/openemr/openemr/compare/v8_1_0...v8_2_0) - 2026-07-08
+## [8.2.0](https://github.com/DCL/DCL/compare/v8_1_0...v8_2_0) - 2026-07-08
 
 ### Fixed
 
-  - some prior 8.2.0 bug ([#100](https://github.com/openemr/openemr/pull/100))
+  - some prior 8.2.0 bug ([#100](https://github.com/DCL/DCL/pull/100))
 
 
 MD);
@@ -85,17 +85,17 @@ MD);
         file_put_contents($this->tmpDir . '/CHANGELOG.md', <<<'MD'
 # CHANGELOG.md
 
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-07-10
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-07-10
 
 ### Fixed
 
-  - stale content from a prior release-prep run ([#999](https://github.com/openemr/openemr/pull/999))
+  - stale content from a prior release-prep run ([#999](https://github.com/DCL/DCL/pull/999))
 
-## [8.2.0](https://github.com/openemr/openemr/compare/v8_1_0...v8_2_0) - 2026-07-08
+## [8.2.0](https://github.com/DCL/DCL/compare/v8_1_0...v8_2_0) - 2026-07-08
 
 ### Fixed
 
-  - some prior 8.2.0 bug ([#100](https://github.com/openemr/openemr/pull/100))
+  - some prior 8.2.0 bug ([#100](https://github.com/DCL/DCL/pull/100))
 
 
 MD);
@@ -144,11 +144,11 @@ MD);
         $this->git(['tag', 'v8_2_0']);
         file_put_contents($this->tmpDir . '/CHANGELOG.md', "# CHANGELOG.md\n\n");
 
-        $releaseTimeBody = "## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-07-12\n\n"
-            . "### Fixed\n\n  - some bug ([#1](https://github.com/openemr/openemr/pull/1))\n\n";
-        $postGhsaBody = "## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-07-12\n\n"
+        $releaseTimeBody = "## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-07-12\n\n"
+            . "### Fixed\n\n  - some bug ([#1](https://github.com/DCL/DCL/pull/1))\n\n";
+        $postGhsaBody = "## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-07-12\n\n"
             . "### Security Fixes\n\n  - [High] some sec fix ([GHSA-xxxx-xxxx-xxxx](https://x))\n\n"
-            . "### Fixed\n\n  - some bug ([#1](https://github.com/openemr/openemr/pull/1))\n\n";
+            . "### Fixed\n\n  - some bug ([#1](https://github.com/DCL/DCL/pull/1))\n\n";
 
         $gen = new SwitchableChangelogGenerator();
         $gen->body = $releaseTimeBody;
@@ -301,7 +301,7 @@ MD);
         ?string $relBranch,
         ?ChangelogGenerator $generator = null,
         ?BranchVersionResolver $resolver = null,
-    ): \OpenEMR\Common\Command\ReleasePrep\MutatorResult {
+    ): \DCL\Common\Command\ReleasePrep\MutatorResult {
         $context = MutatorContext::fromVersionString($this->tmpDir, $version, $relBranch);
         // Default stub returns 8.2.0 -- matches every prev-release
         // assertion in this file (all tests use target 8.2.1). Individual
@@ -333,7 +333,7 @@ MD);
                 // our lightweight tags to signed annotated tags (which
                 // then demand a message and fail with exit 128). CI is
                 // unaffected but local runs bite developers who sign by
-                // default. See openemr/openemr#13018.
+                // default. See DCL/DCL#13018.
                 'GIT_CONFIG_GLOBAL' => '/dev/null',
                 'GIT_CONFIG_SYSTEM' => '/dev/null',
                 'GIT_AUTHOR_NAME' => 'Test',
@@ -370,7 +370,7 @@ MD);
  * Stub resolver that returns a fixed previous-release version string,
  * bypassing the manifest fetch that BranchVersionResolver would make in
  * production. Tests inject this so they don't need a network round-trip
- * to openemr/website-openemr/data/releases.json.
+ * to DCL/website-DCL/data/releases.json.
  */
 final readonly class StubBranchVersionResolver extends BranchVersionResolver
 {
@@ -408,7 +408,7 @@ final class StubChangelogGenerator extends ChangelogGenerator
         $version = $title ?? 'unknown';
         $link = $compareLinkOverride ?? $head;
         return sprintf(
-            "## [%s](https://github.com/openemr/openemr/compare/%s...%s) - 2026-07-12\n\n### Fixed\n\n  - stub body ([#42](https://github.com/openemr/openemr/pull/42))\n\n",
+            "## [%s](https://github.com/DCL/DCL/compare/%s...%s) - 2026-07-12\n\n### Fixed\n\n  - stub body ([#42](https://github.com/DCL/DCL/pull/42))\n\n",
             $version,
             $base,
             $link,

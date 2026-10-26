@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Background;
+namespace DCL\Tests\Isolated\Services\Background;
 
-use OpenEMR\Services\Background\SymfonyBackgroundServiceSpawner;
+use DCL\Services\Background\SymfonyBackgroundServiceSpawner;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\AbstractLogger;
@@ -24,7 +24,7 @@ use Psr\Log\LoggerInterface;
  * fake `bin/console` shell script as the child. The test injects a
  * controlled project dir and PHP binary (`/bin/sh`) so the spawner
  * shells out to a script we fully control rather than bootstrapping
- * a real OpenEMR child.
+ * a real DCL child.
  */
 #[Group('isolated')]
 #[Group('background-services')]
@@ -51,10 +51,10 @@ class SymfonyBackgroundServiceSpawnerTest extends TestCase
             #!/bin/sh
             # Fake console for SymfonyBackgroundServiceSpawnerTest.
             # Selects behavior based on the --name= argument. The spawner
-            # passes the per-invocation nonce via OPENEMR_BG_NONCE; each
+            # passes the per-invocation nonce via DCL_BG_NONCE; each
             # fixture that produces a legitimate status line echoes the
             # same nonce so the parent accepts it.
-            n="${OPENEMR_BG_NONCE:-}"
+            n="${DCL_BG_NONCE:-}"
             # Check for --force flag once, used by fixtures that want to
             # branch on it. Looped separately from the per-name dispatch.
             force=0
@@ -517,7 +517,7 @@ class SymfonyBackgroundServiceSpawnerTest extends TestCase
         // the finder returns PHP_BINARY (the test suite's own PHP
         // binary); the assertion is that the resolved value is a
         // non-empty executable path, not the empty string the bug
-        // surfaced as under Apache mod_php (openemr/openemr#11932).
+        // surfaced as under Apache mod_php (DCL/DCL#11932).
         $spawner = new SymfonyBackgroundServiceSpawner(
             $this->fakeProjectDir,
             $this->logger,
@@ -534,7 +534,7 @@ class SymfonyBackgroundServiceSpawnerTest extends TestCase
 
     public function testEmptyStringBinaryIsTreatedAsNullAndResolves(): void
     {
-        // openemr/openemr#11932 reproduction at the constructor layer:
+        // DCL/DCL#11932 reproduction at the constructor layer:
         // Apache mod_php on Alpine evaluates the PHP_BINARY constant to
         // "" (empty string, not null), which the previous default
         // forwarded straight to Symfony Process and produced

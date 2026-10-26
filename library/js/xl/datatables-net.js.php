@@ -2,7 +2,7 @@
 
 /**
  *
- * This is to allow internationalization by OpenEMR of the datatables-net asset.
+ * This is to allow internationalization by DCL of the datatables-net asset.
  *
  * Example code in script:
  *    $translationsDatatablesOverride = array('search'=>(xla('Search all columns') . ':')) (optional php command)
@@ -12,11 +12,11 @@
  *  $translationsDatatablesOverride array.
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 ?>

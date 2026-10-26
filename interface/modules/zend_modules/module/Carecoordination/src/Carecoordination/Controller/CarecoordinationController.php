@@ -3,13 +3,13 @@
 /**
  * interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Controller/CarecoordinationController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Chandni Babu <chandnib@zhservices.com>
  * @author    Riju KP <rijukp@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Controller;
@@ -24,13 +24,13 @@ use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\Stdlib\Parameters;
 use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Cda\CdaValidateDocuments;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Cda\CdaValidateDocuments;
 
 /**
  * @method \Application\Plugin\CommonPlugin CommonPlugin()
@@ -1135,7 +1135,7 @@ class CarecoordinationController extends AbstractActionController
         // make sure we only have our documents folder and our ccda file
         $this->sanitizeZip($tmpFileName);
         $z->open($tmpFileName);
-        if (!\OpenEMR\Common\Zip\ZipExtractionGuard::isSafe($z)) {
+        if (!\DCL\Common\Zip\ZipExtractionGuard::isSafe($z)) {
             $z->close();
             ServiceContainer::getLogger()->warning('CCDA import archive exceeds extraction limits', [
                 'archive' => $tmpFileName,

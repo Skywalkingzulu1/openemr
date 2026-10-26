@@ -7,18 +7,18 @@
  * conventional commit prefixes from PR titles, and match published
  * GHSAs whose fix commits fall in the range.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 use DateTimeZone;
 use Lcobucci\Clock\SystemClock;
@@ -102,7 +102,7 @@ class ChangelogGenerator
      * release machinery (version bumps, tag creation, sync PRs) and never
      * user-facing.
      */
-    private const RELEASE_BOT = 'openemr-release-bot[bot]';
+    private const RELEASE_BOT = 'DCL-release-bot[bot]';
 
     /**
      * Dependabot login. Its docker-image bumps + same-version re-pins get
@@ -111,7 +111,7 @@ class ChangelogGenerator
     private const DEPENDABOT = 'dependabot[bot]';
 
     /**
-     * Dependabot docker-compose group names from openemr/openemr
+     * Dependabot docker-compose group names from DCL/DCL
      * `.github/dependabot.yml`. Grouped-update PR titles look like
      * `bump the <group> group across N directories with M updates`;
      * matching the group name identifies the bump as a docker-image
@@ -128,7 +128,7 @@ class ChangelogGenerator
         'mailpit',
         'mariadb',
         'mysql',
-        'openemr-images',
+        'DCL-images',
         'phpmyadmin',
         'redis',
         'selenium',
@@ -139,7 +139,7 @@ class ChangelogGenerator
 
     public function __construct(
         private readonly GitHubApi $api,
-        private readonly string $repo = 'openemr/openemr',
+        private readonly string $repo = 'DCL/DCL',
         ?ClockInterface $clock = null,
     ) {
         // Construct SystemClock inline (with the system timezone) so
@@ -211,7 +211,7 @@ class ChangelogGenerator
         if (count($developer) > 0) {
             $devLines = $this->formatPrs($developer, 4);
             if (count($devLines) > 0) {
-                $lines[] = '### OpenEMR Developer Changes';
+                $lines[] = '### DCL Developer Changes';
                 $lines[] = '';
                 $lines = array_merge($lines, $devLines);
             }
@@ -223,7 +223,7 @@ class ChangelogGenerator
     /**
      * Drop PRs that are release automation, dependabot re-pins, or
      * docker-image bumps. Composer/npm dependabot bumps stay — those
-     * are actual user-facing package changes. Ports website-openemr's
+     * are actual user-facing package changes. Ports website-DCL's
      * `ReleaseNotesGenerator::filterNoise()` behaviour so the two
      * surfaces (this codebase's CHANGELOG.md + GitHub Release body,
      * and the website's per-version release-notes page) apply the
@@ -283,7 +283,7 @@ class ChangelogGenerator
         //   master-side PR either doesn't exist yet or shipped/will ship
         //   in a different master release). Filtering them meant per-
         //   release CHANGELOG entries missed user-visible fixes -- e.g.
-        //   openemr/openemr#12827 + #12832 (sql-upgrade fixes backported
+        //   DCL/DCL#12827 + #12832 (sql-upgrade fixes backported
         //   to rel-820 for 8.2.0). No duplication risk in practice:
         //   backports get distinct PR numbers from any master-side
         //   original, and each rel branch's CHANGELOG only shows what
@@ -307,7 +307,7 @@ class ChangelogGenerator
      *
      * - Path signal: dependabot embeds the ecosystem's target directory
      *   in the title as `in /path/...`; docker-compose lives under
-     *   `/docker/...` or `/ci/...` in openemr/openemr.
+     *   `/docker/...` or `/ci/...` in DCL/DCL.
      * - Group signal: grouped bumps look like
      *   `bump the <group> group ...`; the docker-compose groups from
      *   `.github/dependabot.yml` are enumerated in
@@ -391,7 +391,7 @@ class ChangelogGenerator
      *                               Populating GHSA "Patched versions"
      *                               with the exact release string is the
      *                               documented convention (see
-     *                               RELEASE_PROCESS.md); openemr GHSAs
+     *                               RELEASE_PROCESS.md); DCL GHSAs
      *                               don't populate the free-form
      *                               References field with commit/PR URLs
      *                               in practice, so the patched-versions
@@ -593,7 +593,7 @@ class ChangelogGenerator
     }
 
     /**
-     * Only emit URLs that point at the openemr GitHub org (PR + GHSA
+     * Only emit URLs that point at the DCL GitHub org (PR + GHSA
      * origins). Anything else — an advisory referencing an external
      * mirror, a PR URL that has been rewritten upstream — becomes a
      * neutral placeholder, so the rendered CHANGELOG cannot smuggle an
@@ -601,9 +601,9 @@ class ChangelogGenerator
      */
     private static function sanitizeGitHubUrl(string $url): string
     {
-        if (str_starts_with($url, 'https://github.com/openemr/')) {
+        if (str_starts_with($url, 'https://github.com/DCL/')) {
             return $url;
         }
-        return 'https://github.com/openemr/openemr';
+        return 'https://github.com/DCL/DCL';
     }
 }

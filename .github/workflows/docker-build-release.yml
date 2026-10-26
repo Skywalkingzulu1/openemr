@@ -1,10 +1,10 @@
-# Builds and pushes the production OpenEMR docker image for the current
+# Builds and pushes the production DCL docker image for the current
 # branch (master's "next" build, or any rel-X.Y.Z's release build).
 #
 # This workflow file is BYTE-IDENTICAL across master and every rel-X.Y.Z
 # branch -- the only per-branch differences are the docker/release/Dockerfile
 # contents (which is also byte-identical across branches now that the
-# openemr source ref is passed in as a --build-arg). All release-config
+# DCL source ref is passed in as a --build-arg). All release-config
 # decisions live in .github/release-targets.yml on master.
 #
 # Input semantics:
@@ -17,9 +17,9 @@
 #     variants. Default `manual-test` is a safe sentinel for ad-hoc
 #     dispatches that won't clobber production tags.
 #
-#   openemr_version_ref
+#   DCL_version_ref
 #     Git ref (branch, tag, or SHA) to bake into the image as the
-#     OPENEMR_VERSION ARG. Empty input falls back to the dispatching
+#     DCL_VERSION ARG. Empty input falls back to the dispatching
 #     branch's ref name -- so a manual dispatch on rel-810 with no
 #     override bakes rel-810 source, which is what a maintainer
 #     testing a branch in isolation typically wants.
@@ -27,7 +27,7 @@
 #   gate_with_acceptance
 #     Phase 7c-docker-latest-gate: when true, split build+push into a
 #     three-job flow: (1) build multi-arch and push to a temporary
-#     candidate tag on Docker Hub (openemr/openemr:release-candidate-
+#     candidate tag on Docker Hub (DCL/DCL:release-candidate-
 #     <run-id>-<attempt>); (2) workflow_call acceptance-docker.yml with
 #     to_tag pointed at the candidate; (3) on acceptance pass, alias
 #     the candidate's manifest onto each final tag via `docker buildx
@@ -35,7 +35,7 @@
 #     build/test/publish). A cleanup-candidate job then deletes the
 #     candidate tag from Docker Hub. Default false preserves the
 #     pre-Phase-7c single-step build+push shape for rows that don't
-#     carry the mechanism. Post-Phase-12 (openemr/openemr#13332, 2026-
+#     carry the mechanism. Post-Phase-12 (DCL/DCL#13332, 2026-
 #     08-01) the orchestrator sets this true from an explicit per-row
 #     `gate_with_acceptance: true` flag in release-targets.yml (master
 #     + rel-820, plus any future rel-830+ at cut time); rel-800
@@ -94,8 +94,8 @@ on:
         required: true
         type: string
         default: 'manual-test'
-      openemr_version_ref:
-        description: 'OpenEMR git ref to bake into the image (branch, tag, or SHA). Leave empty to use the dispatching branch name -- e.g. "master" or "rel-810".'
+      DCL_version_ref:
+        description: 'DCL git ref to bake into the image (branch, tag, or SHA). Leave empty to use the dispatching branch name -- e.g. "master" or "rel-810".'
         required: false
         type: string
         default: ''
@@ -108,7 +108,7 @@ on:
         type: boolean
         default: true
       dry_run:
-        description: 'Smoketest support (openemr/openemr#TBD): build + push the candidate tag but SKIP acceptance-gate + publish-and-cleanup. The candidate tag stays on Docker Hub so a downstream docker-acceptance-only.yml dispatch can consume it (analogous to tarball build-release.yml''s dry_run producing the release-output artifact without publishing to GitHub Releases). Requires gate_with_acceptance=true (non-gated path publishes directly from merge-manifest without producing a candidate).'
+        description: 'Smoketest support (DCL/DCL#TBD): build + push the candidate tag but SKIP acceptance-gate + publish-and-cleanup. The candidate tag stays on Docker Hub so a downstream docker-acceptance-only.yml dispatch can consume it (analogous to tarball build-release.yml''s dry_run producing the release-output artifact without publishing to GitHub Releases). Requires gate_with_acceptance=true (non-gated path publishes directly from merge-manifest without producing a candidate).'
         type: boolean
         default: false
 
@@ -157,7 +157,7 @@ jobs:
   # Phase 11 job split (prep -> build-arch matrix -> merge-manifest):
   #
   # `prep` computes the shared metadata both arch builds must consume
-  # identically -- BUILD_DATE, resolved openemr_version_ref, extracted
+  # identically -- BUILD_DATE, resolved DCL_version_ref, extracted
   # IMAGE_VERSION, expanded final-tag list -- so the amd64 and arm64
   # builds bake the exact same OCI labels and the merged multi-arch
   # manifest's per-platform slices are label-consistent. Compute once
@@ -167,8 +167,8 @@ jobs:
   # Cheap ubuntu-24.04 runner: no build work happens here, just
   # metadata resolution + one gh api call for version.php.
   prep:
-    # Only run from the upstream openemr/openemr repository (not downstream forks).
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+    # Only run from the upstream DCL/DCL repository (not downstream forks).
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
     runs-on: ubuntu-24.04
     # Downstream jobs (build-arch, merge-manifest -- and via merge-
     # manifest, acceptance-gate and publish-and-cleanup) look up shared
@@ -178,7 +178,7 @@ jobs:
     outputs:
       candidate_tag: ${{ env.GATE_CANDIDATE_TAG }}
       expanded_tags: ${{ steps.expand_docker_tags.outputs.list }}
-      openemr_version_ref: ${{ steps.resolve_openemr_version_ref.outputs.ref }}
+      DCL_version_ref: ${{ steps.resolve_DCL_version_ref.outputs.ref }}
       image_version: ${{ steps.image_version.outputs.value }}
       build_date: ${{ steps.build_date.outputs.date }}
     steps:
@@ -221,10 +221,10 @@ jobs:
           echo EOF
         } >> "$GITHUB_OUTPUT"
 
-    - name: Resolve openemr_version_ref (input, or fall back to dispatching branch)
-      id: resolve_openemr_version_ref
+    - name: Resolve DCL_version_ref (input, or fall back to dispatching branch)
+      id: resolve_DCL_version_ref
       env:
-        INPUT_REF: ${{ inputs.openemr_version_ref }}
+        INPUT_REF: ${{ inputs.DCL_version_ref }}
         REF_NAME: ${{ github.ref_name }}
       run: |
         if [ -n "$INPUT_REF" ]; then
@@ -237,10 +237,10 @@ jobs:
           echo "ref=$REF_NAME" >> "$GITHUB_OUTPUT"
         fi
 
-    - name: Extract IMAGE_VERSION from openemr version.php at the resolved ref
+    - name: Extract IMAGE_VERSION from DCL version.php at the resolved ref
       id: image_version
       env:
-        REF: ${{ steps.resolve_openemr_version_ref.outputs.ref }}
+        REF: ${{ steps.resolve_DCL_version_ref.outputs.ref }}
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         # Fetch version.php at the resolved ref via the authenticated
@@ -259,7 +259,7 @@ jobs:
         #
         # `Accept: application/vnd.github.raw` returns the file body
         # directly (no base64 wrapping).
-        if ! gh api "/repos/openemr/openemr/contents/version.php?ref=${REF}" \
+        if ! gh api "/repos/DCL/DCL/contents/version.php?ref=${REF}" \
              -H 'Accept: application/vnd.github.raw' \
              > /tmp/version.php 2> /tmp/gh-api-err; then
           # Distinguish "ref doesn't resolve" (bad release-targets.yml
@@ -269,9 +269,9 @@ jobs:
           # exist" claim). 404 is the only case that means "check
           # release-targets.yml"; 429 / 5xx / network errors do not.
           if grep -qE 'HTTP 404|Not Found' /tmp/gh-api-err; then
-            echo "::error::openemr_version_ref '${REF}' does not resolve in openemr/openemr; check release-targets.yml."
+            echo "::error::DCL_version_ref '${REF}' does not resolve in DCL/DCL; check release-targets.yml."
           else
-            echo "::error::Failed to fetch version.php at openemr@${REF} (not a 404 -- check the underlying gh error below rather than release-targets.yml):"
+            echo "::error::Failed to fetch version.php at DCL@${REF} (not a 404 -- check the underlying gh error below rather than release-targets.yml):"
             cat /tmp/gh-api-err
           fi
           exit 1
@@ -294,7 +294,7 @@ jobs:
           VERSION="${VERSION}.${V_REALPATCH}"
         fi
         echo "value=$VERSION" >> "$GITHUB_OUTPUT"
-        echo "✓ Extracted IMAGE_VERSION=$VERSION from openemr@${REF}/version.php"
+        echo "✓ Extracted IMAGE_VERSION=$VERSION from DCL@${REF}/version.php"
 
   # Phase 11 native-arch build matrix: one native build per arch, each
   # pushed to a per-arch intermediate tag on Docker Hub. Replaces the
@@ -369,9 +369,9 @@ jobs:
         context: ./docker/release
         platforms: linux/${{ steps.arch.outputs.label }}
         push: true
-        tags: openemr/openemr:${{ needs.prep.outputs.candidate_tag }}-${{ steps.arch.outputs.label }}
+        tags: DCL/DCL:${{ needs.prep.outputs.candidate_tag }}-${{ steps.arch.outputs.label }}
         build-args: |
-          OPENEMR_VERSION=${{ needs.prep.outputs.openemr_version_ref }}
+          DCL_VERSION=${{ needs.prep.outputs.DCL_version_ref }}
           IMAGE_VERSION=${{ needs.prep.outputs.image_version }}
           BUILD_DATE=${{ needs.prep.outputs.build_date }}
 
@@ -390,9 +390,9 @@ jobs:
         context: ./docker/release
         platforms: linux/${{ steps.arch.outputs.label }}
         push: true
-        tags: openemr/openemr:${{ env.ARCH_INTERMEDIATE_PREFIX }}-${{ steps.arch.outputs.label }}
+        tags: DCL/DCL:${{ env.ARCH_INTERMEDIATE_PREFIX }}-${{ steps.arch.outputs.label }}
         build-args: |
-          OPENEMR_VERSION=${{ needs.prep.outputs.openemr_version_ref }}
+          DCL_VERSION=${{ needs.prep.outputs.DCL_version_ref }}
           IMAGE_VERSION=${{ needs.prep.outputs.image_version }}
           BUILD_DATE=${{ needs.prep.outputs.build_date }}
 
@@ -407,19 +407,19 @@ jobs:
     - name: Verify per-arch OCI labels — gated path
       if: inputs.gate_with_acceptance
       env:
-        EXPECTED_REVISION: ${{ needs.prep.outputs.openemr_version_ref }}
+        EXPECTED_REVISION: ${{ needs.prep.outputs.DCL_version_ref }}
         EXPECTED_VERSION: ${{ needs.prep.outputs.image_version }}
         EXPECTED_BUILD_DATE: ${{ needs.prep.outputs.build_date }}
-        REF_TAG: openemr/openemr:${{ needs.prep.outputs.candidate_tag }}-${{ steps.arch.outputs.label }}
+        REF_TAG: DCL/DCL:${{ needs.prep.outputs.candidate_tag }}-${{ steps.arch.outputs.label }}
       run: .github/scripts/verify-oci-labels.sh
 
     - name: Verify per-arch OCI labels — non-gated path
       if: ${{ !inputs.gate_with_acceptance }}
       env:
-        EXPECTED_REVISION: ${{ needs.prep.outputs.openemr_version_ref }}
+        EXPECTED_REVISION: ${{ needs.prep.outputs.DCL_version_ref }}
         EXPECTED_VERSION: ${{ needs.prep.outputs.image_version }}
         EXPECTED_BUILD_DATE: ${{ needs.prep.outputs.build_date }}
-        REF_TAG: openemr/openemr:${{ env.ARCH_INTERMEDIATE_PREFIX }}-${{ steps.arch.outputs.label }}
+        REF_TAG: DCL/DCL:${{ env.ARCH_INTERMEDIATE_PREFIX }}-${{ steps.arch.outputs.label }}
       run: .github/scripts/verify-oci-labels.sh
 
   # Phase 11 merge-manifest: unify the per-arch intermediate pushes
@@ -440,7 +440,7 @@ jobs:
     outputs:
       candidate_tag: ${{ needs.prep.outputs.candidate_tag }}
       expanded_tags: ${{ needs.prep.outputs.expanded_tags }}
-      openemr_version_ref: ${{ needs.prep.outputs.openemr_version_ref }}
+      DCL_version_ref: ${{ needs.prep.outputs.DCL_version_ref }}
       image_version: ${{ needs.prep.outputs.image_version }}
       build_date: ${{ needs.prep.outputs.build_date }}
     steps:
@@ -467,9 +467,9 @@ jobs:
       env:
         CANDIDATE_TAG: ${{ needs.prep.outputs.candidate_tag }}
       run: |
-        SRC_AMD64="openemr/openemr:${CANDIDATE_TAG}-amd64"
-        SRC_ARM64="openemr/openemr:${CANDIDATE_TAG}-arm64"
-        DST="openemr/openemr:${CANDIDATE_TAG}"
+        SRC_AMD64="DCL/DCL:${CANDIDATE_TAG}-amd64"
+        SRC_ARM64="DCL/DCL:${CANDIDATE_TAG}-arm64"
+        DST="DCL/DCL:${CANDIDATE_TAG}"
         echo "==> merging ${SRC_AMD64} + ${SRC_ARM64} -> ${DST}"
         docker buildx imagetools create -t "$DST" "$SRC_AMD64" "$SRC_ARM64"
 
@@ -483,8 +483,8 @@ jobs:
         INTERMEDIATE_PREFIX: ${{ env.ARCH_INTERMEDIATE_PREFIX }}
         TAGS_LIST: ${{ needs.prep.outputs.expanded_tags }}
       run: |
-        SRC_AMD64="openemr/openemr:${INTERMEDIATE_PREFIX}-amd64"
-        SRC_ARM64="openemr/openemr:${INTERMEDIATE_PREFIX}-arm64"
+        SRC_AMD64="DCL/DCL:${INTERMEDIATE_PREFIX}-amd64"
+        SRC_ARM64="DCL/DCL:${INTERMEDIATE_PREFIX}-arm64"
         for tag in $TAGS_LIST; do
           [ -z "$tag" ] && continue
           echo "==> merging ${SRC_AMD64} + ${SRC_ARM64} -> ${tag}"
@@ -528,13 +528,13 @@ jobs:
         fi
         for arch in amd64 arm64; do
           TAG="${PREFIX}-${arch}" .github/scripts/dockerhub-delete-tag.sh || \
-            echo "::warning::failed to delete intermediate tag openemr/openemr:${PREFIX}-${arch} (non-fatal; manual cleanup may be needed)"
+            echo "::warning::failed to delete intermediate tag DCL/DCL:${PREFIX}-${arch} (non-fatal; manual cleanup may be needed)"
         done
 
   # Phase 7c-docker gate: run the full acceptance-docker matrix against
   # the image build produced + saved as an artifact. Publish only fires
   # if this passes. Skipped when gate_with_acceptance=false (the pre-
-  # Phase-7c shape). As of Phase 12 (openemr/openemr#13332, 2026-08-01)
+  # Phase-7c shape). As of Phase 12 (DCL/DCL#13332, 2026-08-01)
   # the orchestrator sets this true from an explicit per-row
   # `gate_with_acceptance: true` flag in release-targets.yml — master
   # + rel-820 (+ future rel-830+) have it; rel-800 doesn't
@@ -558,7 +558,7 @@ jobs:
     uses: ./.github/workflows/acceptance-docker.yml
     with:
       # acceptance-docker.yml's matrix pulls both fresh-install-to and
-      # the upgrade-target boot from `openemr/openemr:${TO_TAG}`, so
+      # the upgrade-target boot from `DCL/DCL:${TO_TAG}`, so
       # passing the candidate suffix here routes all "to-side" scenarios
       # at the exact bytes we're gating. fresh-install-from stays on
       # `latest` (real currently-shipped image) — a secondary smoke of
@@ -595,7 +595,7 @@ jobs:
     # workflow_call shape).
     secrets: inherit
 
-  # Phase 7c-docker publish + cleanup — Phase 10c (openemr/openemr#TBD)
+  # Phase 7c-docker publish + cleanup — Phase 10c (DCL/DCL#TBD)
   # extracted both jobs into .github/workflows/reusable-docker-publish.yml
   # so docker-acceptance-only.yml can drive the same manifest-alias +
   # candidate-cleanup flow from its recovery path. Behavior preserved
@@ -624,7 +624,7 @@ jobs:
     with:
       candidate_tag: ${{ needs.merge-manifest.outputs.candidate_tag }}
       expanded_tags: ${{ needs.merge-manifest.outputs.expanded_tags }}
-      openemr_version_ref: ${{ needs.merge-manifest.outputs.openemr_version_ref }}
+      DCL_version_ref: ${{ needs.merge-manifest.outputs.DCL_version_ref }}
       image_version: ${{ needs.merge-manifest.outputs.image_version }}
       build_date: ${{ needs.merge-manifest.outputs.build_date }}
     secrets: inherit

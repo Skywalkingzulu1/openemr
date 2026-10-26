@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Defines an affiliation/association/relationship between 2 distinct organizations, that is not a part-of relationship/sub-division relationship.
@@ -72,73 +72,73 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 {
     /**
      * Business identifiers that are specific to this role.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Whether this organization affiliation record is in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * The period during which the participatingOrganization is affiliated with the primary organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Organization where the role is available (primary organization/has members).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $organization = null;
 
     /**
      * The Participating Organization provides/performs the role(s) defined by the code to the Primary Organization (e.g. providing services or is a member of).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $participatingOrganization = null;
 
     /**
      * Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $network = [];
 
     /**
      * Definition of the role the participatingOrganization plays in the association.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * Specific specialty of the participatingOrganization in the context of the role.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialty = [];
 
     /**
      * The location(s) at which the role occurs.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $location = [];
 
     /**
      * Healthcare services provided through the role.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $healthcareService = [];
 
     /**
      * Contact details at the participatingOrganization relevant to this Affiliation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Technical endpoints providing access to services operated for this role.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
@@ -149,7 +149,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Business identifiers that are specific to this role.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -158,7 +158,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Business identifiers that are specific to this role.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -169,7 +169,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Whether this organization affiliation record is in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -178,7 +178,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Whether this organization affiliation record is in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -189,7 +189,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * The period during which the participatingOrganization is affiliated with the primary organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -198,7 +198,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * The period during which the participatingOrganization is affiliated with the primary organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -209,7 +209,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Organization where the role is available (primary organization/has members).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOrganization()
     {
@@ -218,7 +218,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Organization where the role is available (primary organization/has members).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $organization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $organization
      * @return $this
      */
     public function setOrganization($organization)
@@ -229,7 +229,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * The Participating Organization provides/performs the role(s) defined by the code to the Primary Organization (e.g. providing services or is a member of).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParticipatingOrganization()
     {
@@ -238,7 +238,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * The Participating Organization provides/performs the role(s) defined by the code to the Primary Organization (e.g. providing services or is a member of).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $participatingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $participatingOrganization
      * @return $this
      */
     public function setParticipatingOrganization($participatingOrganization)
@@ -249,7 +249,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getNetwork()
     {
@@ -258,7 +258,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $network
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $network
      * @return $this
      */
     public function addNetwork($network)
@@ -269,7 +269,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Definition of the role the participatingOrganization plays in the association.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -278,7 +278,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Definition of the role the participatingOrganization plays in the association.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -289,7 +289,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Specific specialty of the participatingOrganization in the context of the role.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
@@ -298,7 +298,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Specific specialty of the participatingOrganization in the context of the role.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -309,7 +309,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * The location(s) at which the role occurs.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getLocation()
     {
@@ -318,7 +318,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * The location(s) at which the role occurs.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function addLocation($location)
@@ -329,7 +329,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Healthcare services provided through the role.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getHealthcareService()
     {
@@ -338,7 +338,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Healthcare services provided through the role.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $healthcareService
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $healthcareService
      * @return $this
      */
     public function addHealthcareService($healthcareService)
@@ -349,7 +349,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Contact details at the participatingOrganization relevant to this Affiliation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -358,7 +358,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Contact details at the participatingOrganization relevant to this Affiliation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -369,7 +369,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Technical endpoints providing access to services operated for this role.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -378,7 +378,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements \JsonSer
 
     /**
      * Technical endpoints providing access to services operated for this role.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)

@@ -1,6 +1,6 @@
 <?php
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 require_once("../globals.php");
 

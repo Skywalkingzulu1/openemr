@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.
@@ -72,141 +72,141 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this condition by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The clinical status of the condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $clinicalStatus = null;
 
     /**
      * The verification status to support the clinical status of the condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $verificationStatus = null;
 
     /**
      * A category assigned to the condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * A subjective assessment of the severity of the condition as evaluated by the clinician.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $severity = null;
 
     /**
      * Identification of the condition, problem or diagnosis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The anatomical location where this condition manifests itself.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $bodySite = [];
 
     /**
      * Indicates the patient or group who the condition record is associated with.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The Encounter during which this Condition was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $onsetDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $onsetAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $onsetPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $onsetRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $onsetString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $abatementDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $abatementAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $abatementPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $abatementRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $abatementString = null;
 
     /**
      * The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $recordedDate = null;
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $recorder = null;
 
     /**
      * Individual who is making the condition statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $asserter = null;
 
     /**
      * Clinical stage or grade of a condition. May include formal severity assessments.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionStage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionStage[]
      */
     public $stage = [];
 
     /**
      * Supporting evidence / manifestations that are the basis of the Condition's verification status, such as evidence that confirmed or refuted the condition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionEvidence[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionEvidence[]
      */
     public $evidence = [];
 
     /**
      * Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -217,7 +217,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this condition by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -226,7 +226,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this condition by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -237,7 +237,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The clinical status of the condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getClinicalStatus()
     {
@@ -246,7 +246,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The clinical status of the condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $clinicalStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $clinicalStatus
      * @return $this
      */
     public function setClinicalStatus($clinicalStatus)
@@ -257,7 +257,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The verification status to support the clinical status of the condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getVerificationStatus()
     {
@@ -266,7 +266,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The verification status to support the clinical status of the condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $verificationStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $verificationStatus
      * @return $this
      */
     public function setVerificationStatus($verificationStatus)
@@ -277,7 +277,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A category assigned to the condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -286,7 +286,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A category assigned to the condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -297,7 +297,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A subjective assessment of the severity of the condition as evaluated by the clinician.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSeverity()
     {
@@ -306,7 +306,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A subjective assessment of the severity of the condition as evaluated by the clinician.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $severity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $severity
      * @return $this
      */
     public function setSeverity($severity)
@@ -317,7 +317,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identification of the condition, problem or diagnosis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -326,7 +326,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identification of the condition, problem or diagnosis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -337,7 +337,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The anatomical location where this condition manifests itself.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getBodySite()
     {
@@ -346,7 +346,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The anatomical location where this condition manifests itself.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function addBodySite($bodySite)
@@ -357,7 +357,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the patient or group who the condition record is associated with.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -366,7 +366,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the patient or group who the condition record is associated with.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -377,7 +377,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this Condition was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -386,7 +386,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this Condition was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -396,7 +396,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOnsetDateTime()
     {
@@ -404,7 +404,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $onsetDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $onsetDateTime
      * @return $this
      */
     public function setOnsetDateTime($onsetDateTime)
@@ -414,7 +414,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge()
     {
@@ -422,7 +422,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return $this
      */
     public function setOnsetAge($onsetAge)
@@ -432,7 +432,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod()
     {
@@ -440,7 +440,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $onsetPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $onsetPeriod
      * @return $this
      */
     public function setOnsetPeriod($onsetPeriod)
@@ -450,7 +450,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getOnsetRange()
     {
@@ -458,7 +458,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $onsetRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $onsetRange
      * @return $this
      */
     public function setOnsetRange($onsetRange)
@@ -468,7 +468,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getOnsetString()
     {
@@ -476,7 +476,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $onsetString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $onsetString
      * @return $this
      */
     public function setOnsetString($onsetString)
@@ -486,7 +486,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAbatementDateTime()
     {
@@ -494,7 +494,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $abatementDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $abatementDateTime
      * @return $this
      */
     public function setAbatementDateTime($abatementDateTime)
@@ -504,7 +504,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAbatementAge()
     {
@@ -512,7 +512,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $abatementAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $abatementAge
      * @return $this
      */
     public function setAbatementAge($abatementAge)
@@ -522,7 +522,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getAbatementPeriod()
     {
@@ -530,7 +530,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $abatementPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $abatementPeriod
      * @return $this
      */
     public function setAbatementPeriod($abatementPeriod)
@@ -540,7 +540,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAbatementRange()
     {
@@ -548,7 +548,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $abatementRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $abatementRange
      * @return $this
      */
     public function setAbatementRange($abatementRange)
@@ -558,7 +558,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAbatementString()
     {
@@ -566,7 +566,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $abatementString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $abatementString
      * @return $this
      */
     public function setAbatementString($abatementString)
@@ -577,7 +577,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getRecordedDate()
     {
@@ -586,7 +586,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $recordedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $recordedDate
      * @return $this
      */
     public function setRecordedDate($recordedDate)
@@ -597,7 +597,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRecorder()
     {
@@ -606,7 +606,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recorder
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recorder
      * @return $this
      */
     public function setRecorder($recorder)
@@ -617,7 +617,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who is making the condition statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAsserter()
     {
@@ -626,7 +626,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who is making the condition statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $asserter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $asserter
      * @return $this
      */
     public function setAsserter($asserter)
@@ -637,7 +637,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Clinical stage or grade of a condition. May include formal severity assessments.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionStage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionStage[]
      */
     public function getStage()
     {
@@ -646,7 +646,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Clinical stage or grade of a condition. May include formal severity assessments.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionStage $stage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionStage $stage
      * @return $this
      */
     public function addStage($stage)
@@ -657,7 +657,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Supporting evidence / manifestations that are the basis of the Condition's verification status, such as evidence that confirmed or refuted the condition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionEvidence[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionEvidence[]
      */
     public function getEvidence()
     {
@@ -666,7 +666,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Supporting evidence / manifestations that are the basis of the Condition's verification status, such as evidence that confirmed or refuted the condition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionEvidence $evidence
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCondition\FHIRConditionEvidence $evidence
      * @return $this
      */
     public function addEvidence($evidence)
@@ -677,7 +677,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -686,7 +686,7 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

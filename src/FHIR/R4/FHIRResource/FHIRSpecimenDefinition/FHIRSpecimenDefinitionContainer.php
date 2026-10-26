@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A kind of specimen with associated set of requirements.
@@ -71,53 +71,53 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 {
     /**
      * The type of material of the container.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $material = null;
 
     /**
      * The type of container used to contain this kind of specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Color of container cap.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $cap = null;
 
     /**
      * The textual description of the kind of container.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The capacity (volume or other measure) of this kind of container.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $capacity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $minimumVolumeQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $minimumVolumeString = null;
 
     /**
      * Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive[]
      */
     public $additive = [];
 
     /**
      * Special processing that should be applied to the container for this kind of specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $preparation = null;
 
@@ -128,7 +128,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The type of material of the container.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMaterial()
     {
@@ -137,7 +137,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The type of material of the container.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $material
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $material
      * @return $this
      */
     public function setMaterial($material)
@@ -148,7 +148,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The type of container used to contain this kind of specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -157,7 +157,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The type of container used to contain this kind of specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -168,7 +168,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * Color of container cap.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCap()
     {
@@ -177,7 +177,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * Color of container cap.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $cap
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $cap
      * @return $this
      */
     public function setCap($cap)
@@ -188,7 +188,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The textual description of the kind of container.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -197,7 +197,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The textual description of the kind of container.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -208,7 +208,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The capacity (volume or other measure) of this kind of container.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getCapacity()
     {
@@ -217,7 +217,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * The capacity (volume or other measure) of this kind of container.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $capacity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $capacity
      * @return $this
      */
     public function setCapacity($capacity)
@@ -227,7 +227,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMinimumVolumeQuantity()
     {
@@ -235,7 +235,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $minimumVolumeQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $minimumVolumeQuantity
      * @return $this
      */
     public function setMinimumVolumeQuantity($minimumVolumeQuantity)
@@ -245,7 +245,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMinimumVolumeString()
     {
@@ -253,7 +253,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $minimumVolumeString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $minimumVolumeString
      * @return $this
      */
     public function setMinimumVolumeString($minimumVolumeString)
@@ -264,7 +264,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive[]
      */
     public function getAdditive()
     {
@@ -273,7 +273,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive $additive
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive $additive
      * @return $this
      */
     public function addAdditive($additive)
@@ -284,7 +284,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * Special processing that should be applied to the container for this kind of specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPreparation()
     {
@@ -293,7 +293,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement implements \Js
 
     /**
      * Special processing that should be applied to the container for this kind of specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $preparation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $preparation
      * @return $this
      */
     public function setPreparation($preparation)

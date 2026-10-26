@@ -10,10 +10,10 @@
  * xl() helper. The datetimepicker init and the email JAVASCRIPT_READY
  * notification dispatch stay inline because they require server rendering.
  *
- * @package   OpenEMR
+ * @package   DCL
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 const sendFax = function (filePath, from = '') {

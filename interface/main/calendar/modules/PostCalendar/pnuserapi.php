@@ -3,30 +3,30 @@
 /**
  * API for the calendar
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @copyright Copyright (c) 2002 The PostCalendar Team
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
  * @author    The PostCalendar Team
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
-use OpenEMR\Common\Calendar\Month;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Appointments\CalendarFilterEvent;
-use OpenEMR\Events\Appointments\CalendarUserGetEventsFilter;
-use OpenEMR\Events\Core\ScriptFilterEvent;
-use OpenEMR\Events\Core\StyleFilterEvent;
-use OpenEMR\PostCalendar\CalendarRenderer;
-use OpenEMR\PostCalendar\LegacyInputNarrowing;
-use OpenEMR\PostCalendar\ViewModel\CalendarRenderDataBuilder;
-use OpenEMR\PostCalendar\ViewModel\CalendarViewModel;
-use OpenEMR\PostCalendar\ViewModel\ViewType;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Calendar\Month;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Appointments\CalendarFilterEvent;
+use DCL\Events\Appointments\CalendarUserGetEventsFilter;
+use DCL\Events\Core\ScriptFilterEvent;
+use DCL\Events\Core\StyleFilterEvent;
+use DCL\PostCalendar\CalendarRenderer;
+use DCL\PostCalendar\LegacyInputNarrowing;
+use DCL\PostCalendar\ViewModel\CalendarRenderDataBuilder;
+use DCL\PostCalendar\ViewModel\CalendarViewModel;
+use DCL\PostCalendar\ViewModel\ViewType;
+use DCL\Services\PatientService;
+use DCL\Services\UserService;
 
 if (!defined('__POSTCALENDAR__')) {
     @define('__POSTCALENDAR__', 'PostCalendar');
@@ -1430,8 +1430,8 @@ function &postcalendar_userapi_pcQueryEvents($args): array
         $placeholders = implode(',', array_fill(0, count($groupEventIds), '?'));
         $counselorRows = QueryUtils::fetchRecords(
             "SELECT e.pc_eid, CONCAT(u.fname, '   ', u.lname) AS counselor_name "
-            . "FROM openemr_postcalendar_events AS e "
-            . "JOIN openemr_postcalendar_events AS sib "
+            . "FROM DCL_postcalendar_events AS e "
+            . "JOIN DCL_postcalendar_events AS sib "
             . "ON (e.pc_multiple > 0 AND sib.pc_multiple = e.pc_multiple) "
             . "OR (e.pc_multiple = 0 AND sib.pc_eid = e.pc_eid) "
             . "JOIN users AS u ON u.id = sib.pc_aid "

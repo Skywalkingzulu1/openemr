@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
@@ -72,65 +72,65 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $target = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurredPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurredDateTime = null;
 
     /**
      * The instant of time at which the activity was recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $recorded = null;
 
     /**
      * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $policy = [];
 
     /**
      * Where the activity occurred, if relevant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * The reason that the activity was taking place.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reason = [];
 
     /**
      * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $activity = null;
 
     /**
      * An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
     public $agent = [];
 
     /**
      * An entity used in this activity.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceEntity[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceEntity[]
      */
     public $entity = [];
 
     /**
      * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature[]
      */
     public $signature = [];
 
@@ -141,7 +141,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getTarget()
     {
@@ -150,7 +150,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $target
      * @return $this
      */
     public function addTarget($target)
@@ -160,7 +160,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurredPeriod()
     {
@@ -168,7 +168,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurredPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurredPeriod
      * @return $this
      */
     public function setOccurredPeriod($occurredPeriod)
@@ -178,7 +178,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurredDateTime()
     {
@@ -186,7 +186,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurredDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurredDateTime
      * @return $this
      */
     public function setOccurredDateTime($occurredDateTime)
@@ -197,7 +197,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The instant of time at which the activity was recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getRecorded()
     {
@@ -206,7 +206,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The instant of time at which the activity was recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $recorded
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $recorded
      * @return $this
      */
     public function setRecorded($recorded)
@@ -217,7 +217,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getPolicy()
     {
@@ -226,7 +226,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $policy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $policy
      * @return $this
      */
     public function addPolicy($policy)
@@ -237,7 +237,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the activity occurred, if relevant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -246,7 +246,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the activity occurred, if relevant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -257,7 +257,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason that the activity was taking place.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReason()
     {
@@ -266,7 +266,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason that the activity was taking place.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -277,7 +277,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getActivity()
     {
@@ -286,7 +286,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $activity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $activity
      * @return $this
      */
     public function setActivity($activity)
@@ -297,7 +297,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
     public function getAgent()
     {
@@ -306,7 +306,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent $agent
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent $agent
      * @return $this
      */
     public function addAgent($agent)
@@ -317,7 +317,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An entity used in this activity.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceEntity[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceEntity[]
      */
     public function getEntity()
     {
@@ -326,7 +326,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An entity used in this activity.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceEntity $entity
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceEntity $entity
      * @return $this
      */
     public function addEntity($entity)
@@ -337,7 +337,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature[]
      */
     public function getSignature()
     {
@@ -346,7 +346,7 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $signature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $signature
      * @return $this
      */
     public function addSignature($signature)

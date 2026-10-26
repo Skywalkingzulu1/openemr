@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImagingStudy;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
@@ -71,73 +71,73 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * The DICOM Series Instance UID for the series.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $uid = null;
 
     /**
      * The numeric identifier of this series in the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $number = null;
 
     /**
      * The modality of this series sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $modality = null;
 
     /**
      * A description of the series.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $numberOfInstances = null;
 
     /**
      * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.connectionType.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
     /**
      * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $bodySite = null;
 
     /**
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $laterality = null;
 
     /**
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $specimen = [];
 
     /**
      * The date and time the series was started.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $started = null;
 
     /**
      * Indicates who or what performed the series and how they were involved.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyPerformer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyPerformer[]
      */
     public $performer = [];
 
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
     public $instance = [];
 
@@ -148,7 +148,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The DICOM Series Instance UID for the series.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getUid()
     {
@@ -157,7 +157,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The DICOM Series Instance UID for the series.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $uid
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $uid
      * @return $this
      */
     public function setUid($uid)
@@ -168,7 +168,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The numeric identifier of this series in the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getNumber()
     {
@@ -177,7 +177,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The numeric identifier of this series in the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $number
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $number
      * @return $this
      */
     public function setNumber($number)
@@ -188,7 +188,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The modality of this series sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getModality()
     {
@@ -197,7 +197,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The modality of this series sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $modality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $modality
      * @return $this
      */
     public function setModality($modality)
@@ -208,7 +208,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A description of the series.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -217,7 +217,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A description of the series.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -228,7 +228,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfInstances()
     {
@@ -237,7 +237,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfInstances
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfInstances
      * @return $this
      */
     public function setNumberOfInstances($numberOfInstances)
@@ -248,7 +248,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.connectionType.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -257,7 +257,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.connectionType.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)
@@ -268,7 +268,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getBodySite()
     {
@@ -277,7 +277,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $bodySite
      * @return $this
      */
     public function setBodySite($bodySite)
@@ -288,7 +288,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getLaterality()
     {
@@ -297,7 +297,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $laterality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $laterality
      * @return $this
      */
     public function setLaterality($laterality)
@@ -308,7 +308,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSpecimen()
     {
@@ -317,7 +317,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $specimen
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $specimen
      * @return $this
      */
     public function addSpecimen($specimen)
@@ -328,7 +328,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The date and time the series was started.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getStarted()
     {
@@ -337,7 +337,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The date and time the series was started.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $started
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $started
      * @return $this
      */
     public function setStarted($started)
@@ -348,7 +348,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates who or what performed the series and how they were involved.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyPerformer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyPerformer[]
      */
     public function getPerformer()
     {
@@ -357,7 +357,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates who or what performed the series and how they were involved.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyPerformer $performer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyPerformer $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -368,7 +368,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
     public function getInstance()
     {
@@ -377,7 +377,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance $instance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance $instance
      * @return $this
      */
     public function addInstance($instance)

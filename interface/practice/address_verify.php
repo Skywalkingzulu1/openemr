@@ -3,19 +3,19 @@
 /**
  * Used in demographics edit to check address with USPS Web API v3
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vincent Gabriel
  * @author    stephen waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2012 Vincent Gabriel
  * @copyright Copyright (c) 2022-2025 stephen waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\Core\Header;
-use OpenEMR\USPS\USPSAddressVerifyV3;
+use DCL\Core\Header;
+use DCL\USPS\USPSAddressVerifyV3;
 
 $verify = new USPSAddressVerifyV3();
 

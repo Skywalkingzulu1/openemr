@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This file is part of OpenEMR.
+ * This file is part of DCL.
  *
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\PatientFinder;
+namespace DCL\Events\PatientFinder;
 
-use OpenEMR\Events\AbstractBoundFilterEvent;
-use OpenEMR\Events\BoundFilter;
+use DCL\Events\AbstractBoundFilterEvent;
+use DCL\Events\BoundFilter;
 
 /**
  * Event object for creating custom patient filters for patient finder
  *
- * @package OpenEMR\Events
+ * @package DCL\Events
  * @subpackage PatientFinder
  * @author Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2019 Ken Chapple <ken@mi-squared.com>

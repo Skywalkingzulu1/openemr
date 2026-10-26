@@ -4,20 +4,20 @@
  * Isolated tests for FhirTaskService: the patient compartment, the search
  * parameters, and how a task record becomes a FHIR Task.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTask;
-use OpenEMR\Services\FHIR\FhirTaskService;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRTask;
+use DCL\Services\FHIR\FhirTaskService;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -55,7 +55,7 @@ class FhirTaskServiceIsolatedTest extends TestCase
 
     public function testAFullRecordBecomesAFhirTask(): void
     {
-        $task = (new FhirTaskService())->parseOpenEMRRecord([
+        $task = (new FhirTaskService())->parseDCLRecord([
             'uuid' => self::TASK,
             'status' => 'in-progress',
             'status_reason' => 'Waiting for the pantry to call back',
@@ -100,7 +100,7 @@ class FhirTaskServiceIsolatedTest extends TestCase
 
     public function testASparseRecordLeavesTheOptionalElementsOut(): void
     {
-        $json = $this->toArray((new FhirTaskService())->parseOpenEMRRecord([
+        $json = $this->toArray((new FhirTaskService())->parseDCLRecord([
             'uuid' => self::TASK,
             'status' => 'requested',
             'intent' => 'order',

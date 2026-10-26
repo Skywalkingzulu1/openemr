@@ -13,11 +13,11 @@ name: Check Vendored Contracts
 #
 #   jobs:
 #     drift:
-#       uses: openemr/openemr/.github/workflows/check-vendored-contracts.yml@master
+#       uses: DCL/DCL/.github/workflows/check-vendored-contracts.yml@master
 #       with:
 #         consumer_subpath: tools/release
 #
-# website-openemr (which vendored into a non-canonical layout) passes overrides:
+# website-DCL (which vendored into a non-canonical layout) passes overrides:
 #
 #       with:
 #         consumer_subpath: tools/release-docs
@@ -33,7 +33,7 @@ on:
         required: true
         type: string
       canonical_ref:
-        description: 'Ref of openemr/openemr to compare against. Defaults to master.'
+        description: 'Ref of DCL/DCL to compare against. Defaults to master.'
         required: false
         type: string
         default: master
@@ -65,16 +65,16 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Checkout canonical openemr
+    - name: Checkout canonical DCL
       uses: actions/checkout@v7
       with:
-        repository: openemr/openemr
+        repository: DCL/DCL
         ref: ${{ inputs.canonical_ref }}
-        path: _canonical-openemr
+        path: _canonical-DCL
         persist-credentials: false
         # Sparse checkout of just tools/release + composer manifests so we
         # can install the deps check-vendored.php needs (Symfony Console)
-        # without pulling openemr's full ~1GB tree.
+        # without pulling DCL's full ~1GB tree.
         sparse-checkout: |
           tools/release
           composer.json
@@ -87,7 +87,7 @@ jobs:
         tools: composer
 
     - name: Install canonical dependencies
-      working-directory: _canonical-openemr
+      working-directory: _canonical-DCL
       # --no-dev suffices: bin/check-vendored.php only needs symfony/console +
       # composer autoload from require (non-dev) entries.
       run: composer install --no-interaction --no-progress --no-dev
@@ -96,5 +96,5 @@ jobs:
       env:
         CONSUMER_PATH: ${{ github.workspace }}/${{ inputs.consumer_subpath }}
         PATH_OVERRIDES: ${{ inputs.path_overrides }}
-      working-directory: _canonical-openemr
+      working-directory: _canonical-DCL
       run: php tools/release/bin/check-vendored.php --consumer "$CONSUMER_PATH" --overrides "$PATH_OVERRIDES"

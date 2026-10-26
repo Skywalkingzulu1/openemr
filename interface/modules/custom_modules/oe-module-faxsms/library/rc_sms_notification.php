@@ -19,24 +19,24 @@
  * triggered this split.
  *
  * The scan-and-send pipeline is
- * `OpenEMR\Modules\FaxSMS\Notification\AppointmentNotificationRunner`.
+ * `DCL\Modules\FaxSMS\Notification\AppointmentNotificationRunner`.
  * The procedural SQL/formatting helpers used by both entry points
  * live in `rc_sms_notification_helpers.php`.
  *
- * @package            OpenEMR
+ * @package            DCL
  *
- * @link               https://www.open-emr.org
+ * @link               https://www.dcl.org
  * @author             Unknown
  * @author             Larry Lart
  * @author             Jerry Padgett
  * @author             Robert Down
- * @author             Michael A. Smith <michael@opencoreemr.com>
+ * @author             Michael A. Smith <michael@DCL.com>
  * @copyright          Unknown
  * @copyright          Copyright (c) 2008 Larry Lart
  * @copyright          Copyright (c) 2018-2024 Jerry Padgett
  * @copyright          Copyright (c) 2021 Robert Down <robertdown@live.com>
- * @copyright          Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright          Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * @codeCoverageIgnore Top-level admin popup / argv entry point. Mixes
  *     globals.php bootstrap, raw `$_GET` writes for site/type, ACL gating
@@ -45,14 +45,14 @@
  *     lives in `AppointmentNotificationRunner` and is covered there.
  */
 
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
-use OpenEMR\Modules\FaxSMS\Controller\NotificationTaskManager;
-use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
-use OpenEMR\Modules\FaxSMS\Notification\AppointmentNotificationRunner;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Modules\FaxSMS\Controller\NotificationTaskManager;
+use DCL\Modules\FaxSMS\Enums\NotificationChannel;
+use DCL\Modules\FaxSMS\Notification\AppointmentNotificationRunner;
 
 $_SERVER['REQUEST_URI'] = $_SERVER['PHP_SELF'];
 $_SERVER['SERVER_NAME'] = 'localhost';

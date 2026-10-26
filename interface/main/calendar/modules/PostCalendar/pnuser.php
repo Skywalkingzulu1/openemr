@@ -1,9 +1,9 @@
 <?php
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\PostCalendar\CalendarRenderer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\PostCalendar\CalendarRenderer;
 
 @define('__POSTCALENDAR__', 'PostCalendar');
 /**

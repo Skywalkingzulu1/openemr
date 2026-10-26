@@ -11,30 +11,30 @@
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Tyler Wrenn <tyler@tylerwrenn.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Stephen Waite <stephen.waite@open-emr.org
+ * @author    Stephen Waite <stephen.waite@dcl.org
  * @copyright Copyright (c) 2011 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc <snielson@discoverandchange.com>
- * @copyright Copyright (c) 2022 Stephen Waite <stephen.waite@open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2022 Stephen Waite <stephen.waite@dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 use MyMailer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\AuthHash;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Patient\Summary\PortalCredentialsTemplateDataFilterEvent;
-use OpenEMR\Events\Patient\Summary\PortalCredentialsUpdatedEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\AuthHash;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Patient\Summary\PortalCredentialsTemplateDataFilterEvent;
+use DCL\Events\Patient\Summary\PortalCredentialsUpdatedEvent;
+use DCL\FHIR\Config\ServerConfig;
 use Psr\Log\LoggerInterface;
 use Twig\Environment;
 
@@ -67,7 +67,7 @@ class PatientAccessOnsiteService
 
     /**
      * User settings is used extensively throughout
-     * OpenEMR to persist user specific values.
+     * DCL to persist user specific values.
      *
      * @param $label
      * @param $user
@@ -128,8 +128,8 @@ class PatientAccessOnsiteService
         $hash = (new AuthHash())->passwordHash($clear_pass);
         if (empty($hash)) {
             // Something is seriously wrong
-            error_log('OpenEMR Error : OpenEMR is not working because unable to create a hash.');
-            die("OpenEMR Error : OpenEMR is not working because unable to create a hash.");
+            error_log('DCL Error : DCL is not working because unable to create a hash.');
+            die("DCL Error : DCL is not working because unable to create a hash.");
         }
         // direct array set for performance. array_push is needy.
         $query_parameters[] = $hash;
@@ -220,7 +220,7 @@ class PatientAccessOnsiteService
         $filterEvent->setData($data);
         $filterEvent->setTemplateName($templateName);
         /**
-         * @var \OpenEMR\Core\Kernel
+         * @var \DCL\Core\Kernel
          */
         $kernel = $this->kernel ?? null;
         if (!empty($kernel)) {

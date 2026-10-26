@@ -3,22 +3,22 @@
 /**
  * Database tests for setting the appointment status the fee sheet offered after Save.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Billing;
+namespace DCL\Tests\Services\Billing;
 
-use OpenEMR\Billing\FeeSheetAppointmentStatusPrompt;
-use OpenEMR\Billing\FeeSheetAppointmentStatusSetter;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\AppointmentService;
+use DCL\Billing\FeeSheetAppointmentStatusPrompt;
+use DCL\Billing\FeeSheetAppointmentStatusSetter;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\AppointmentService;
 use PHPUnit\Framework\TestCase;
 
 class FeeSheetAppointmentStatusSetterTest extends TestCase
@@ -47,7 +47,7 @@ class FeeSheetAppointmentStatusSetterTest extends TestCase
             [self::DATE . ' 00:00:00', 'test', $this->pid, $this->encounter]
         );
         $this->eid = QueryUtils::sqlInsert(
-            'INSERT INTO openemr_postcalendar_events (pc_catid, pc_multiple, pc_aid, pc_pid, pc_title, pc_eventDate,'
+            'INSERT INTO DCL_postcalendar_events (pc_catid, pc_multiple, pc_aid, pc_pid, pc_title, pc_eventDate,'
             . " pc_startTime, pc_apptstatus, pc_recurrtype) VALUES (5, 0, 1, ?, 'Office Visit', ?, '10:30:00', '@', 0)",
             [$this->pid, self::DATE]
         );
@@ -60,7 +60,7 @@ class FeeSheetAppointmentStatusSetterTest extends TestCase
             [$this->pid]
         );
         QueryUtils::sqlStatementThrowException('DELETE FROM patient_tracker WHERE pid = ?', [$this->pid]);
-        QueryUtils::sqlStatementThrowException('DELETE FROM openemr_postcalendar_events WHERE pc_pid = ?', [$this->pid]);
+        QueryUtils::sqlStatementThrowException('DELETE FROM DCL_postcalendar_events WHERE pc_pid = ?', [$this->pid]);
         QueryUtils::sqlStatementThrowException('DELETE FROM form_encounter WHERE pid = ?', [$this->pid]);
         QueryUtils::sqlStatementThrowException('DELETE FROM patient_data WHERE pid = ?', [$this->pid]);
         parent::tearDown();
@@ -98,7 +98,7 @@ class FeeSheetAppointmentStatusSetterTest extends TestCase
 
     public function testRefusesAnAppointmentNoLongerAskedAbout(): void
     {
-        QueryUtils::sqlStatementThrowException("UPDATE openemr_postcalendar_events SET pc_apptstatus = 'x' WHERE pc_eid = ?", [$this->eid]);
+        QueryUtils::sqlStatementThrowException("UPDATE DCL_postcalendar_events SET pc_apptstatus = 'x' WHERE pc_eid = ?", [$this->eid]);
 
         $this->assertFalse($this->setter()->set($this->pid, $this->encounter, $this->eid, 'coder'));
         $this->assertSame('x', $this->appointmentStatus());
@@ -111,7 +111,7 @@ class FeeSheetAppointmentStatusSetterTest extends TestCase
 
     private function appointmentStatus(): string
     {
-        $status = QueryUtils::fetchSingleValue('SELECT pc_apptstatus FROM openemr_postcalendar_events WHERE pc_eid = ?', 'pc_apptstatus', [$this->eid]);
+        $status = QueryUtils::fetchSingleValue('SELECT pc_apptstatus FROM DCL_postcalendar_events WHERE pc_eid = ?', 'pc_apptstatus', [$this->eid]);
 
         return is_string($status) ? $status : '';
     }

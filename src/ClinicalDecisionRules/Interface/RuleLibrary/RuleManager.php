@@ -1,38 +1,38 @@
 <?php
 
 /**
- * OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager.php
+ * DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Aron Racho <aron@mi-squared.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2010-2011 Aron Racho <aron@mi-squared.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\Rule;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleAction;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFactory;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFilterFactory;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaTargetFactory;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleFilters;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargetActionGroup;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleType;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\TimeUnit;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\Rule;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleAction;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFactory;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFilterFactory;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaTargetFactory;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleFilters;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargetActionGroup;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\TimeUnit;
+use DCL\Common\Database\QueryUtils;
 
 // TODO: Look at turning this file into a class so we can load it instead of doing this dynamic stuff
 require_once(Common::src_dir() . "/clinical_rules.php");
@@ -146,7 +146,7 @@ class RuleManager
     }
 
     /**
-     * Returns a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\Rule object if the supplied rule id matches a record in
+     * Returns a DCL\ClinicalDecisionRules\Interface\RuleLibrary\Rule object if the supplied rule id matches a record in
      * clinical_rules. An optional patient id parameter allows you to get the
      * rules specific to the patient.
      *
@@ -183,7 +183,7 @@ class RuleManager
     }
 
     /**
-     * Adds a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleType to the given rule based on the sql result row
+     * Adds a DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleType to the given rule based on the sql result row
      * passed to it, evaluating the *_flag columns.
      * @param Rule $rule
      */
@@ -213,8 +213,8 @@ class RuleManager
 
     /**
      * Fills the given rule with criteria derived from the rule_filter
-     * table. Relies on the OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFilterFactory for the parsing of
-     * rows in this table into concrete subtypes of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria.
+     * table. Relies on the DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFilterFactory for the parsing of
+     * rows in this table into concrete subtypes of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria.
      * @param Rule $rule
      */
     private function fillRuleFilterCriteria($rule)
@@ -400,11 +400,11 @@ class RuleManager
 
     /**
      * Given a sql source for gathering rule criteria (target or filter), this
-     * method relies on its supplied subtype of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFactory to parse out
-     * instances of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria from the sql source (typically rule_filter or
+     * method relies on its supplied subtype of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaFactory to parse out
+     * instances of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria from the sql source (typically rule_filter or
      * rule_target).
      *
-     * Returns an array of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria subtypes, if they were parsable from the
+     * Returns an array of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria subtypes, if they were parsable from the
      * supplied sql source.
      * @param Rule $rule
      * @param RuleCriteriaFactory $factory
@@ -449,8 +449,8 @@ class RuleManager
     }
 
     /**
-     * Creates a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals object from rows in the rule_reminder table,
-     * and sets it in the supplied OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\Rule.
+     * Creates a DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals object from rows in the rule_reminder table,
+     * and sets it in the supplied DCL\ClinicalDecisionRules\Interface\RuleLibrary\Rule.
      * @param Rule $rule
      */
     private function fillRuleReminderIntervals($rule)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentManifest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDocumentManifest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentManifest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A collection of documents compiled for a purpose together with metadata that applies to the collection.
@@ -71,13 +71,13 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * Related identifier to this DocumentManifest.  For example, Order numbers, accession numbers, XDW workflow numbers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Related Resource to this DocumentManifest. For example, Order, ServiceRequest,  Procedure, EligibilityRequest, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $ref = null;
 
@@ -88,7 +88,7 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Related identifier to this DocumentManifest.  For example, Order numbers, accession numbers, XDW workflow numbers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -97,7 +97,7 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Related identifier to this DocumentManifest.  For example, Order numbers, accession numbers, XDW workflow numbers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -108,7 +108,7 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Related Resource to this DocumentManifest. For example, Order, ServiceRequest,  Procedure, EligibilityRequest, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRef()
     {
@@ -117,7 +117,7 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Related Resource to this DocumentManifest. For example, Order, ServiceRequest,  Procedure, EligibilityRequest, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $ref
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $ref
      * @return $this
      */
     public function setRef($ref)

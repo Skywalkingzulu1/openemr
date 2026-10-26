@@ -3,33 +3,33 @@
 /**
  * Service for handling Questionnaires
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2022 Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 use Exception;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRNarrative;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRNarrativeStatus;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRNarrative;
+use DCL\FHIR\R4\FHIRElement\FHIRNarrativeStatus;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Validators\ProcessingResult;
 
 class QuestionnaireResponseService extends BaseService
 {

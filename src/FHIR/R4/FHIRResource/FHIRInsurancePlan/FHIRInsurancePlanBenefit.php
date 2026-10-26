@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,19 +71,19 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Type of benefit (primary care; speciality care; inpatient; outpatient).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The referral requirements to have access/coverage for this benefit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $requirement = null;
 
     /**
      * The specific limits on the benefit.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanLimit[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanLimit[]
      */
     public $limit = [];
 
@@ -94,7 +94,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Type of benefit (primary care; speciality care; inpatient; outpatient).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Type of benefit (primary care; speciality care; inpatient; outpatient).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The referral requirements to have access/coverage for this benefit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRequirement()
     {
@@ -123,7 +123,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The referral requirements to have access/coverage for this benefit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $requirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $requirement
      * @return $this
      */
     public function setRequirement($requirement)
@@ -134,7 +134,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The specific limits on the benefit.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanLimit[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanLimit[]
      */
     public function getLimit()
     {
@@ -143,7 +143,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The specific limits on the benefit.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanLimit $limit
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanLimit $limit
      * @return $this
      */
     public function addLimit($limit)

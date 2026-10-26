@@ -6,9 +6,9 @@
  * Tests Installer functionality without database dependencies.
  * Uses stubs and mocks to test business logic in isolation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -31,10 +31,10 @@ class InstallerTest extends TestCase
             'root' => 'root',
             'rootpass' => 'password',
             'port' => '3306',
-            'login' => 'openemr',
-            'pass' => 'openemr',
-            'dbname' => 'openemr',
-            'iuser' => 'openemr',
+            'login' => 'DCL',
+            'pass' => 'DCL',
+            'dbname' => 'DCL',
+            'iuser' => 'DCL',
             'iuname' => 'Administrator',
             'iuserpass' => 'admin',
             'igroup' => 'Default'
@@ -91,9 +91,9 @@ class InstallerTest extends TestCase
             'port'                     => '3306',
             'root'                     => 'root',
             'rootpass'                 => 'hunter2',
-            'login'                    => 'openemr',
-            'pass'                     => 'openemr',
-            'dbname'                   => 'openemr',
+            'login'                    => 'DCL',
+            'pass'                     => 'DCL',
+            'dbname'                   => 'DCL',
             'collate'                  => 'utf8mb4_general_ci',
             'site'                     => 'default',
             'source_site_id'           => 'default',
@@ -253,7 +253,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('connect_to_database')
-            ->with('localhost', 'openemr', 'openemr', '3306', 'openemr')
+            ->with('localhost', 'DCL', 'DCL', '3306', 'DCL')
             ->willReturn($mockMysqli);
 
         $mockInstaller->expects($this->once())
@@ -266,7 +266,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('mysqliSelectDb')
-            ->with($mockMysqli, 'openemr')
+            ->with($mockMysqli, 'DCL')
             ->willReturn(true);
 
         $result = $mockInstaller->user_database_connection();
@@ -281,13 +281,13 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('connect_to_database')
-            ->with('localhost', 'openemr', 'openemr', '3306', 'openemr')
+            ->with('localhost', 'DCL', 'DCL', '3306', 'DCL')
             ->willReturn(false);
 
         $result = $mockInstaller->user_database_connection();
 
         $this->assertFalse($result);
-        $this->assertEquals("unable to connect to database as user: 'openemr'", $mockInstaller->error_message);
+        $this->assertEquals("unable to connect to database as user: 'DCL'", $mockInstaller->error_message);
     }
 
     public function testUserDatabaseConnectionFailsWhenSqlStrictFails(): void
@@ -297,7 +297,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('connect_to_database')
-            ->with('localhost', 'openemr', 'openemr', '3306', 'openemr')
+            ->with('localhost', 'DCL', 'DCL', '3306', 'DCL')
             ->willReturn($mockMysqli);
 
         $mockInstaller->expects($this->once())
@@ -317,7 +317,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('connect_to_database')
-            ->with('localhost', 'openemr', 'openemr', '3306', 'openemr')
+            ->with('localhost', 'DCL', 'DCL', '3306', 'DCL')
             ->willReturn($mockMysqli);
 
         $mockInstaller->expects($this->once())
@@ -341,7 +341,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('connect_to_database')
-            ->with('localhost', 'openemr', 'openemr', '3306', 'openemr')
+            ->with('localhost', 'DCL', 'DCL', '3306', 'DCL')
             ->willReturn($mockMysqli);
 
         $mockInstaller->expects($this->once())
@@ -354,13 +354,13 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('mysqliSelectDb')
-            ->with($mockMysqli, 'openemr')
+            ->with($mockMysqli, 'DCL')
             ->willReturn(false);
 
         $result = $mockInstaller->user_database_connection();
 
         $this->assertFalse($result);
-        $this->assertEquals("unable to select database: 'openemr'", $mockInstaller->error_message);
+        $this->assertEquals("unable to select database: 'DCL'", $mockInstaller->error_message);
     }
 
     public function testCreateDatabaseSuccess(): void
@@ -373,7 +373,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('execute_sql')
-            ->with("create database openemr character set utf8mb4 collate utf8mb4_general_ci")
+            ->with("create database DCL character set utf8mb4 collate utf8mb4_general_ci")
             ->willReturn(true);
 
         $result = $mockInstaller->create_database();
@@ -391,7 +391,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('execute_sql')
-            ->with("create database openemr character set utf8mb4 collate utf8mb4_unicode_ci")
+            ->with("create database DCL character set utf8mb4 collate utf8mb4_unicode_ci")
             ->willReturn(true);
 
         $result = $mockInstaller->create_database();
@@ -409,7 +409,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('execute_sql')
-            ->with("create database openemr character set utf8mb4 collate utf8mb4_general_ci")
+            ->with("create database DCL character set utf8mb4 collate utf8mb4_general_ci")
             ->willReturn(true);
 
         $result = $mockInstaller->create_database();
@@ -429,7 +429,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('execute_sql')
-            ->with("create database openemr character set utf8mb4 collate utf8mb4_general_ci")
+            ->with("create database DCL character set utf8mb4 collate utf8mb4_general_ci")
             ->willReturn(false);
 
         $result = $mockInstaller->create_database();
@@ -483,7 +483,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('execute_sql')
-            ->with('drop database if exists openemr')
+            ->with('drop database if exists DCL')
             ->willReturn(true);
 
         $result = $mockInstaller->drop_database();
@@ -794,9 +794,9 @@ class InstallerTest extends TestCase
                 'root' => 'root',
                 'rootpass' => 'password',
                 'port' => '3306',
-                'login' => 'openemr',
-                'pass' => 'openemr',
-                'dbname' => 'openemr'
+                'login' => 'DCL',
+                'pass' => 'DCL',
+                'dbname' => 'DCL'
             ], new NullLogger()])
             ->onlyMethods(['openFile', 'atEndOfFile', 'getLine', 'execute_sql', 'closeFile'])
             ->getMock();
@@ -848,9 +848,9 @@ class InstallerTest extends TestCase
                 'root' => 'root',
                 'rootpass' => 'password',
                 'port' => '3306',
-                'login' => 'openemr',
-                'pass' => 'openemr',
-                'dbname' => 'openemr'
+                'login' => 'DCL',
+                'pass' => 'DCL',
+                'dbname' => 'DCL'
             ], new NullLogger()])
             ->onlyMethods(['openFile'])
             ->getMock();
@@ -873,9 +873,9 @@ class InstallerTest extends TestCase
                 'root' => 'root',
                 'rootpass' => 'password',
                 'port' => '3306',
-                'login' => 'openemr',
-                'pass' => 'openemr',
-                'dbname' => 'openemr'
+                'login' => 'DCL',
+                'pass' => 'DCL',
+                'dbname' => 'DCL'
             ], new NullLogger()])
             ->onlyMethods(['openFile', 'atEndOfFile', 'getLine', 'execute_sql'])
             ->getMock();
@@ -913,9 +913,9 @@ class InstallerTest extends TestCase
                 'root' => 'root',
                 'rootpass' => 'password',
                 'port' => '3306',
-                'login' => 'openemr',
-                'pass' => 'openemr',
-                'dbname' => 'openemr'
+                'login' => 'DCL',
+                'pass' => 'DCL',
+                'dbname' => 'DCL'
             ], new NullLogger()])
             ->onlyMethods(['execute_sql', 'escapeSql', 'mysqliError'])
             ->getMock();
@@ -2505,7 +2505,7 @@ class InstallerTest extends TestCase
         $mockInstaller = $this->createMockInstaller($config);
 
         // Create a mock GACL API
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         // Mock the newGaclApi method to return our mock
         $mockInstaller->expects($this->once())
@@ -2538,7 +2538,7 @@ class InstallerTest extends TestCase
         $mockInstaller = $this->createMockInstaller($config);
 
         // Create a mock GACL API
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->expects($this->once())
             ->method('newGaclApi')
@@ -2562,7 +2562,7 @@ class InstallerTest extends TestCase
         $result = $mockInstaller->install_gacl();
 
         $this->assertFalse($result);
-        $this->assertEquals("ERROR, Unable to create the access controls for OpenEMR.", $mockInstaller->error_message);
+        $this->assertEquals("ERROR, Unable to create the access controls for DCL.", $mockInstaller->error_message);
     }
 
     public function testInstallGaclUsesCorrectUserInfo(): void
@@ -2573,7 +2573,7 @@ class InstallerTest extends TestCase
         ];
         $mockInstaller = $this->createMockInstaller($config);
 
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->method('newGaclApi')
             ->willReturn($mockGacl);
@@ -2619,7 +2619,7 @@ class InstallerTest extends TestCase
     public function testInstallGaclCreatesExpectedSections(): void
     {
         $mockInstaller = $this->createMockInstaller();
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->method('newGaclApi')->willReturn($mockGacl);
 
@@ -2668,12 +2668,12 @@ class InstallerTest extends TestCase
     public function testInstallGaclCreatesExpectedGroups(): void
     {
         $mockInstaller = $this->createMockInstaller();
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->method('newGaclApi')->willReturn($mockGacl);
 
         $expectedGroups = [
-            ['users', 'OpenEMR Users', 0],
+            ['users', 'DCL Users', 0],
             ['admin', 'Administrators', 1], // 1 is the users group ID
             ['clin', 'Clinicians', 1],
             ['doc', 'Physicians', 1],
@@ -2708,7 +2708,7 @@ class InstallerTest extends TestCase
     public function testInstallGaclSetsAdministratorPermissions(): void
     {
         $mockInstaller = $this->createMockInstaller();
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->method('newGaclApi')->willReturn($mockGacl);
 
@@ -2759,7 +2759,7 @@ class InstallerTest extends TestCase
     {
         $mockInstaller = $this->createMockInstaller();
         $this->assertInstanceOf(\Installer::class, $mockInstaller);
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->method('newGaclApi')->willReturn($mockGacl);
 
@@ -2801,7 +2801,7 @@ class InstallerTest extends TestCase
     {
         // Test with default config values
         $mockInstaller = $this->createMockInstaller(); // No custom config
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->method('newGaclApi')->willReturn($mockGacl);
 
@@ -2814,7 +2814,7 @@ class InstallerTest extends TestCase
         // Test default user values are used
         $mockGacl->expects($this->once())
             ->method('add_group_object')
-            ->with(1, 'users', 'openemr', 'ARO') // Default iuser value
+            ->with(1, 'users', 'DCL', 'ARO') // Default iuser value
             ->willReturn(true);
 
         $result = $mockInstaller->install_gacl();
@@ -2825,7 +2825,7 @@ class InstallerTest extends TestCase
     public function testInstallGaclCreatesAllObjectTypes(): void
     {
         $mockInstaller = $this->createMockInstaller();
-        $mockGacl = $this->createMock(\OpenEMR\Gacl\GaclApi::class);
+        $mockGacl = $this->createMock(\DCL\Gacl\GaclApi::class);
 
         $mockInstaller->method('newGaclApi')->willReturn($mockGacl);
 
@@ -2851,7 +2851,7 @@ class InstallerTest extends TestCase
         $this->assertContains(['acct', 'bill', 'ACO'], $addObjectCalls);
         $this->assertContains(['admin', 'super', 'ACO'], $addObjectCalls);
         $this->assertContains(['patients', 'demo', 'ACO'], $addObjectCalls);
-        $this->assertContains(['users', 'openemr', 'ARO'], $addObjectCalls); // Default user
+        $this->assertContains(['users', 'DCL', 'ARO'], $addObjectCalls); // Default user
 
         // Should have created many objects (ACOs and at least one ARO)
         $this->assertGreaterThan(50, count($addObjectCalls));
@@ -2864,10 +2864,10 @@ class InstallerTest extends TestCase
             'root' => 'root',
             'rootpass' => 'password',
             'port' => '3306',
-            'login' => 'openemr',
-            'pass' => 'openemr',
-            'dbname' => 'openemr',
-            'iuser' => 'openemr',
+            'login' => 'DCL',
+            'pass' => 'DCL',
+            'dbname' => 'DCL',
+            'iuser' => 'DCL',
             'iuname' => 'Administrator',
             'iuserpass' => 'admin',
             'igroup' => 'Default'
@@ -2925,12 +2925,12 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('escapeDatabaseName')
-            ->with('openemr')
-            ->willReturn('`openemr`');
+            ->with('DCL')
+            ->willReturn('`DCL`');
 
         $mockInstaller->expects($this->once())
             ->method('mysqliQuery')
-            ->with($mockMysqli, "drop database if exists `openemr`")
+            ->with($mockMysqli, "drop database if exists `DCL`")
             ->willReturn(true); // DDL statements return boolean
 
         $result = $mockInstaller->drop_database();
@@ -2950,12 +2950,12 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('escapeDatabaseName')
-            ->with('openemr')
-            ->willReturn('`openemr`');
+            ->with('DCL')
+            ->willReturn('`DCL`');
 
         $mockInstaller->expects($this->once())
             ->method('mysqliQuery')
-            ->with($mockMysqli, "drop database if exists `openemr`")
+            ->with($mockMysqli, "drop database if exists `DCL`")
             ->willReturn(false);
 
         $mockInstaller->expects($this->once())
@@ -2981,8 +2981,8 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('escapeDatabaseName')
-            ->with('openemr')
-            ->willReturn('`openemr`');
+            ->with('DCL')
+            ->willReturn('`DCL`');
 
         $mockInstaller->expects($this->once())
             ->method('user_database_connection')
@@ -2993,7 +2993,7 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('mysqliQuery')
-            ->with($mockMysqli, "drop database if exists `openemr`")
+            ->with($mockMysqli, "drop database if exists `DCL`")
             ->willReturn(true);
 
         $result = $mockInstaller->drop_database();
@@ -3012,14 +3012,14 @@ class InstallerTest extends TestCase
 
         $mockInstaller->expects($this->once())
             ->method('escapeDatabaseName')
-            ->with('openemr')
-            ->willReturn('`openemr`');
+            ->with('DCL')
+            ->willReturn('`DCL`');
 
         $exception = new mysqli_sql_exception('SQL exception occurred', 1234);
 
         $mockInstaller->expects($this->once())
             ->method('mysqliQuery')
-            ->with($mockMysqli, "drop database if exists `openemr`")
+            ->with($mockMysqli, "drop database if exists `DCL`")
             ->willThrowException($exception);
 
         $result = $mockInstaller->drop_database();
@@ -3424,7 +3424,7 @@ class InstallerTest extends TestCase
         // Verify JavaScript functionality
         $this->assertStringContainsString('<script>', $output);
         $this->assertStringContainsString('#help-href', $output);
-        $this->assertStringContainsString('openemr_installation_help.php', $output);
+        $this->assertStringContainsString('DCL_installation_help.php', $output);
         $this->assertStringContainsString('drag-action', $output);
         $this->assertStringContainsString('resize-action', $output);
 
@@ -3618,9 +3618,9 @@ class InstallerTest extends TestCase
                 'root' => 'root',
                 'rootpass' => 'password',
                 'port' => '3306',
-                'login' => 'openemr',
-                'pass' => 'openemr',
-                'dbname' => 'openemr'
+                'login' => 'DCL',
+                'pass' => 'DCL',
+                'dbname' => 'DCL'
             ], new NullLogger()])
             ->onlyMethods(['openFile', 'atEndOfFile', 'getLine', 'execute_sql', 'closeFile'])
             ->getMock();

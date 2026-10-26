@@ -6,14 +6,14 @@
  * accepted mime types may change dynamically then this Event should be utilized, otherwise if the mime types are static
  * the database list should be updated instead.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2022 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Core\Sanitize;
+namespace DCL\Events\Core\Sanitize;
 
 use Symfony\Contracts\EventDispatcher\Event;
 
@@ -21,7 +21,7 @@ class IsAcceptedFileFilterEvent extends Event
 {
     /**
      * This event fires in the sanitize.inc.php::isWhiteFile method when the initial mime type list is loaded.
-     * It allows you to change what mime type files are allowed to be created as OpenEMR documents.
+     * It allows you to change what mime type files are allowed to be created as DCL documents.
      * If your allowed files will change dynamically within a single page request you should use
      * the self::EVENT_FILTER_IS_ACCEPTED_FILE to be able to modify the acceptable mime types on a file by file basis.
      */

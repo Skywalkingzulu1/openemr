@@ -27,7 +27,7 @@
 #   RELEASE_TAG          Annotated git tag to create (e.g. v8_2_0).
 #   RELEASE_VERSION      Human-readable version used in the release
 #                        title (e.g. 8.2.0). Rendered as
-#                        "OpenEMR $RELEASE_VERSION".
+#                        "DCL $RELEASE_VERSION".
 #   VERSION_BRANCH       Branch to tag from (e.g. rel-820) — the tag
 #                        points at that branch's tip in the checkout
 #                        this script runs against, NOT the ref the
@@ -100,7 +100,7 @@ fi
 # fetch-depth: 1 and does not fetch tags, so a local rev-parse always
 # misses an already-published tag. That made `git push origin "$tag"`
 # fail with "tag already exists in the remote" when re-firing after
-# the openemr/openemr conductor had already tagged via its finalize
+# the DCL/DCL conductor had already tagged via its finalize
 # job.
 #
 # `git ls-remote --exit-code` returns 0 when the tag exists and 2 when
@@ -128,11 +128,11 @@ case "${tag_lookup_status}" in
         ;;
 esac
 
-if ! gh release view "${tag}" --repo openemr/openemr > /dev/null 2>&1; then
+if ! gh release view "${tag}" --repo DCL/DCL > /dev/null 2>&1; then
     echo "Creating release ${tag}"
     gh release create "${tag}" \
-        --repo openemr/openemr \
-        --title "OpenEMR ${RELEASE_VERSION}" \
+        --repo DCL/DCL \
+        --title "DCL ${RELEASE_VERSION}" \
         --notes-file "${RELEASE_NOTES_FILE}" \
         --verify-tag
 fi

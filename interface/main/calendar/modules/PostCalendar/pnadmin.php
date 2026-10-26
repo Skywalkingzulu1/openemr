@@ -27,15 +27,15 @@
  *
  */
 
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\ScriptFilterEvent;
-use OpenEMR\Events\Core\StyleFilterEvent;
-use OpenEMR\PostCalendar\CalendarRenderer;
-use OpenEMR\Services\Storage\CacheDirectory;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\ScriptFilterEvent;
+use DCL\Events\Core\StyleFilterEvent;
+use DCL\PostCalendar\CalendarRenderer;
+use DCL\Services\Storage\CacheDirectory;
 
 //=========================================================================
 //  Load the API Functions
@@ -779,11 +779,11 @@ function postcalendar_admin_clearCache(): string
     // not set a cache option, so Twig recompiles per request). Modern
     // Smarty (vendor/smarty/smarty, used by library/classes/Controller
     // and other admin pages) does have a compiled-template cache under
-    // CacheDirectory's openemr-smarty scope; clear that here so an
+    // CacheDirectory's DCL-smarty scope; clear that here so an
     // admin clicking this button gets the work the legacy button used
     // to do against the now-deleted pcSmarty.
     $smarty = new Smarty();
-    $smarty->setCompileDir((new CacheDirectory())->for('openemr-smarty'));
+    $smarty->setCompileDir((new CacheDirectory())->for('DCL-smarty'));
     $smarty->clearAllCache();
     $smarty->clearCompiledTemplate();
 
@@ -832,11 +832,11 @@ function postcalendar_admin_testSystem(): string
     }
     array_push($infos, ['Module version', $version . " $error"]);
 
-    // Modern Smarty (vendor/smarty/smarty) is still in OpenEMR for the
+    // Modern Smarty (vendor/smarty/smarty) is still in DCL for the
     // non-calendar pages that extend Controller. Surface its version
     // and compile-dir status here the way the legacy diagnostic did
     // for pcSmarty.
-    $smartyCompileDir = (new CacheDirectory())->for('openemr-smarty');
+    $smartyCompileDir = (new CacheDirectory())->for('DCL-smarty');
     $smartyCompileDirError = '';
     if (!file_exists($smartyCompileDir)) {
         $smartyCompileDirError = ' <span class="text-danger">' . xlt('compile dir does not exist') . '</span>';

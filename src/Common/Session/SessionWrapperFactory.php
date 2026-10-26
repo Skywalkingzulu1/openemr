@@ -6,20 +6,20 @@
  * the core and portal application requests.
  * Once when the core is ported to the Symfony Session, we can remove this wrapper and use Symfony Session directly.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Milan Zivkovic <zivkovic.milan@gmail.com>
  * @copyright Copyright (c) Milan Zivkovic
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Session;
+namespace DCL\Common\Session;
 
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\HttpSessionFactory;
-use OpenEMR\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\Traits\SingletonTrait;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\HttpSessionFactory;
+use DCL\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\Traits\SingletonTrait;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
 

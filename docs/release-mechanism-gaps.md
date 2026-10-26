@@ -1,4 +1,4 @@
-# OpenEMR Release Mechanism: Gaps & Open Questions
+# DCL Release Mechanism: Gaps & Open Questions
 
 Working notes — gaps surfaced during release-automation exploration that
 aren't blockers but warrant follow-up. Captures things surfaced during
@@ -20,7 +20,7 @@ Docker image + release tarball actually install and upgrade cleanly for
 end users?" is not a gap in release-mechanism scope — it's being
 addressed by the sibling
 [`artifact-acceptance-testing-plan.md`](artifact-acceptance-testing-plan.md)
-(openemr/openemr#12811, draft). Anyone reading this file looking for
+(DCL/DCL#12811, draft). Anyone reading this file looking for
 that gap: it's not here on purpose. It sits at a distinct layer —
 release-mechanism owns the *pipeline that produces* artifacts;
 acceptance-testing owns the *verification that they work*.
@@ -28,12 +28,12 @@ acceptance-testing owns the *verification that they work*.
 ## Quick context
 
 - **Release-mechanism migration complete.** All release-mechanism code
-  lives in `openemr/openemr` (conductor + build + ship-release +
-  finalize) and `openemr/website-openemr` (docs + announcements). The
+  lives in `DCL/DCL` (conductor + build + ship-release +
+  finalize) and `DCL/website-DCL` (docs + announcements). The
   devops-side release surface was wholesale-deleted 2026-07-23 by
-  `openemr-devops#863` (workstream 7 Phase 6, closing umbrella
-  `openemr-devops#664`). No release automation remains in
-  `openemr/openemr-devops`.
+  `DCL-devops#863` (workstream 7 Phase 6, closing umbrella
+  `DCL-devops#664`). No release automation remains in
+  `DCL/DCL-devops`.
 - **8.1.1 was abandoned.** It appears throughout this doc's earlier
   entries as "the next planned release" because that framing was
   correct when those entries were written. It never shipped; the
@@ -45,7 +45,7 @@ acceptance-testing owns the *verification that they work*.
   latent bug in the `docker/container_benchmarking/` upgrade test
   (recreate wipes the writable-layer writeback that syncs code
   version to `/root/`, so the recreate-boot `check_upgrade` guard
-  now fails — root cause landed in openemr/openemr#13614 on
+  now fails — root cause landed in DCL/DCL#13614 on
   2026-08-25 as the restart→recreate change and hadn't been
   exercised by a branch-cut PR before rel-840); took a false-start
   fix + revert + correct-fix cascade same day. See
@@ -65,8 +65,8 @@ acceptance-testing owns the *verification that they work*.
     see [G33](#g33--first-automated-ship-830-surfaced-7-latent-preflight-deadlock-gates-in-cascade--discovered-2026-08-17-through-08-18-all-shipped-2026-08-18).
 - **Most recent release:** `8.4.1` shipped 2026-09-20 from `rel-840`
   — first patch-cadence exercise of the automated ship pipeline.
-  Patch-prep PRs merged 2026-09-17 (openemr/openemr#14071 rel-side
-  + openemr/openemr#14072 master-side); release-prep + release-finalize
+  Patch-prep PRs merged 2026-09-17 (DCL/DCL#14071 rel-side
+  + DCL/DCL#14072 master-side); release-prep + release-finalize
   draft pair regenerated 2026-09-19 with the G41 fix applied. Cut
   phase surfaced 5 gaps (G38 / G39 / G40 / G41 / G42); ship day
   itself surfaced 4 more (G43 dry-run acceptance skip caught the day
@@ -78,7 +78,7 @@ acceptance-testing owns the *verification that they work*.
   had fixes landed same day; 8.4.1 tarball + zip + docker images
   + release-amendment + docs + announcement all live.
 - **Canonical runbook:** `docs/RELEASE_PROCESS.md` in
-  `openemr/openemr` is the release manager's day-to-day reference.
+  `DCL/DCL` is the release manager's day-to-day reference.
   This doc is the follow-up gap log — things surfaced during automation
   work that warrant a fix but aren't blockers.
 
@@ -87,14 +87,14 @@ acceptance-testing owns the *verification that they work*.
 ### G1 — Bogus `--skip-globals` flag in `release-prep.yml` invocation
 
 - **What:** `release-prep.yml`'s "Run release-prep mutators" step invokes
-  `php bin/console openemr:release-prep --skip-globals --target-version=$V --scope=rel`.
+  `php bin/console DCL:release-prep --skip-globals --target-version=$V --scope=rel`.
   But `ReleasePrepCommand::configure()` (`src/Common/Command/ReleasePrepCommand.php`)
   defines only four options: `target-version`, `scope`, `image-digest`,
   `project-dir`. There is no `--skip-globals` option. `GlobalsIncMutator`
   is unconditionally wired into `buildDefaultRelMutators()` and runs on
   every rel-scope invocation. The flag appears to have been copy-pasted
   from `SwaggerRegenMutator`'s internal shell-out to
-  `openemr:create-api-documentation --skip-globals` (which does have that
+  `DCL:create-api-documentation --skip-globals` (which does have that
   option) and never questioned.
 - **Effective status:** the flag is likely being silently ignored by
   Symfony console (verify) or should error out (`OptionDefinition::None`
@@ -111,7 +111,7 @@ acceptance-testing owns the *verification that they work*.
   delete is the simpler read; verify no unspoken production expectation
   depends on the flag before removing.
 - **Status:** documented, not yet fixed. Rabbit round 1 on
-  openemr/openemr#12599 caught the discrepancy; this entry replaces the
+  DCL/DCL#12599 caught the discrepancy; this entry replaces the
   earlier "not investigated" framing.
 
 ### G2 — Post-release version bump (rel-810 → next "-dev")  *(effectively covered 2026-07-20 — workstreams 2 + 6)*
@@ -130,7 +130,7 @@ acceptance-testing owns the *verification that they work*.
     2, invoked via branch-cut).
   - Rel-side patch-cycle bump remains a manual `$v_patch` edit by the
     maintainer. That edit is what fires `patch-prep-automation.yml`
-    (workstream 6 / openemr/openemr#12697); the workflow then runs
+    (workstream 6 / DCL/DCL#12697); the workflow then runs
     `PatchPrepReleaseTargetsMutator`, which inserts the new
     release-targets row + removes the unreleased placeholder. The
     mutator reacts to the version bump; it does not perform it.
@@ -172,11 +172,11 @@ acceptance-testing owns the *verification that they work*.
   only the rel-branch-side blank + master-side rename dance as manual
   steps.
 - **Consumed 2026-07-01 by workstreams 2 + 6.** Workstream 2's
-  branch-cut automation (openemr/openemr#12696) now runs
-  `SqlUpgradeSkeletonMutator` as part of `openemr:branch-cut --side=master`
+  branch-cut automation (DCL/DCL#12696) now runs
+  `SqlUpgradeSkeletonMutator` as part of `DCL:branch-cut --side=master`
   when a `rel-NNN0` is cut — auto-dropping the master-side blank at
   cut time as anticipated. Workstream 6's patch-prep automation
-  (openemr/openemr#12697) then handles the master-side rename dance +
+  (DCL/DCL#12697) then handles the master-side rename dance +
   the rel-branch-side blank on subsequent patch dev-cycle starts,
   reusing `SqlUpgradeSkeletonMutator` via the new
   `MutatorContext::$fromVersion` extension. See G12 for the full
@@ -185,19 +185,19 @@ acceptance-testing owns the *verification that they work*.
 ### G4 — No workflow invocation path for `--scope=master`  *(branch-cut prerequisite)*
 
 **STATUS: SHIPPED 2026-07-01** as part of workstream 2's
-openemr/openemr#12696 (merge commit `6513b487b6`). Reality diverged
+DCL/DCL#12696 (merge commit `6513b487b6`). Reality diverged
 mildly from the original G4 framing: rather than wiring
 `VersionPhpMasterMutator` under a new invocation path of the existing
-`openemr:release-prep --scope=master`, workstream 2 introduced a
-sibling command `openemr:branch-cut` with its own mutator lists (see
+`DCL:release-prep --scope=master`, workstream 2 introduced a
+sibling command `DCL:branch-cut` with its own mutator lists (see
 G5's shipped note for the full command shape). `--scope=master` on
-`openemr:release-prep` was formalized as release-time only in
+`DCL:release-prep` was formalized as release-time only in
 workstream 3 Phase A; `VersionPhpMasterMutator` now runs from
-`openemr:branch-cut --side=master` inside the branch-cut workflow.
+`DCL:branch-cut --side=master` inside the branch-cut workflow.
 Net effect for the master-side advance is the same as the original
 design intent.
 
-- **What:** The `openemr:release-prep` console command supports
+- **What:** The `DCL:release-prep` console command supports
   `--scope=master` for "post-cut version bump on master" via
   `VersionPhpMasterMutator`. But `release-prep.yml` only ever calls
   `--scope=rel`. No `scope` input on `workflow_dispatch` either.
@@ -218,16 +218,16 @@ design intent.
 
 ### G5 — No automatic trigger when `rel-NNN0` is cut  *(workstream 2 design)*
 
-**STATUS: SHIPPED 2026-07-01** as workstream 2 / openemr/openemr#12696
+**STATUS: SHIPPED 2026-07-01** as workstream 2 / DCL/DCL#12696
 (merge commit `6513b487b6`). Delivered the full design as scoped:
-new `openemr:branch-cut` command + `.github/workflows/branch-cut-automation.yml`
+new `DCL:branch-cut` command + `.github/workflows/branch-cut-automation.yml`
 (triggering on `create` for `rel-[0-9]*0` refs + `workflow_dispatch`
 escape hatch) + 4 new mutators (`DockerUpgradeScaffoldMutator`,
-`DockerfileOpenemrVersionMutator`, `TranslationFileCopyFromPriorRelMutator`,
+`DockerfileDCLVersionMutator`, `TranslationFileCopyFromPriorRelMutator`,
 `BranchCutReleaseTargetsMutator`) + tests, all in a single PR as
 planned. Reality matched design; the mutator audit's "5 already exist,
 4 new needed" split held up. Rabbit-fix follow-up shipped in
-openemr/openemr#12709 (merge `8a01001a27`) — 3 Major items missed at
+DCL/DCL#12709 (merge `8a01001a27`) — 3 Major items missed at
 the initial merge (App-token permission scoping + `persist-credentials: false` on 3 checkouts in
 the new workflow + `endsWith` gate tightening). First real end-to-end
 production exercise was the rel-820 cut on 2026-07-02 (three earlier
@@ -242,7 +242,7 @@ fourth attempt landed cleanly — see the refinement notes below).
   - Rotate the `next` Docker tag from master to rel-NNN0
   - Add the new SQL upgrade skeleton + adjust the bridge file chain
   - Edit rel-NNN0's `docker/release/Dockerfile`
-    (`ARG OPENEMR_VERSION=master` → `ARG OPENEMR_VERSION=rel-NNN0`)
+    (`ARG DCL_VERSION=master` → `ARG DCL_VERSION=rel-NNN0`)
 - **Design (2026-06-27):** New workflow
   `.github/workflows/branch-cut-automation.yml` on master with:
 
@@ -320,22 +320,22 @@ fourth attempt landed cleanly — see the refinement notes below).
      from `'1'` (dev) to `'0'` (production). The comment in-file
      spells it out: *"default = true during development and false for
      production releases."*
-  6. In `docker/release/Dockerfile`: change `ARG OPENEMR_VERSION=master`
-     to `ARG OPENEMR_VERSION=rel-NNN0`. Single-line surgical edit.
+  6. In `docker/release/Dockerfile`: change `ARG DCL_VERSION=master`
+     to `ARG DCL_VERSION=rel-NNN0`. Single-line surgical edit.
 
   **Master side specific** (next-dev advance):
   7. `version.php`: bump `$v_minor` (8.M.0-dev → 8.(M+1).0-dev), reset
      `$v_patch = '0'`, keep `$v_tag = '-dev'`.
   8. `src/RestControllers/OpenApi/OpenApiDefinitions.php`: bump the
      `#[OA\Info(version: '8.M.0')]` attribute to `8.(M+1).0`.
-  9. `swagger/openemr-api.yaml`: regenerated from #8 via the existing
-     `openemr:create-api-documentation` command.
+  9. `swagger/DCL-api.yaml`: regenerated from #8 via the existing
+     `DCL:create-api-documentation` command.
   10. Create `sql/8_M_0-to-8_(M+1)_0_upgrade.sql` as a stub containing
       the "Comment Meta Language Constructs" big header (~150 lines of
       `--` comments documenting `#IfNotTable`, `#IfColumn`, etc.; no
       body).
   11. `.github/release-targets.yml`: add a new row for rel-NNN0
-      (`docker_tags: 8.M.0,next`, `openemr_version_ref: rel-NNN0`),
+      (`docker_tags: 8.M.0,next`, `DCL_version_ref: rel-NNN0`),
       bump the master row's docker_tags (drop `next` if present + bump
       minor, e.g., `8.2.0,dev,next` → `8.3.0,dev`), drop any rows
       marked `unreleased: true` (covers the skip-line scenario; see
@@ -351,19 +351,19 @@ fourth attempt landed cleanly — see the refinement notes below).
   | `SqlUpgradeSkeletonMutator` | ✅ Already exists. Item #10. Reads "from" from version.php; "to" from target. |
   | `GlobalsIncMutator` | ✅ Already exists. Item #5. |
   | `DockerUpgradeScaffoldMutator` | **NEW** — items #1, #2, #3 (could be 1 mutator or split into 3). |
-  | `DockerfileOpenemrVersionMutator` | **NEW** — item #6 (rel-side only). |
+  | `DockerfileDCLVersionMutator` | **NEW** — item #6 (rel-side only). |
   | `TranslationFileCopyFromPriorRelMutator` | **NEW** — item #4 (rel-side only). Needs git fetch of prior rel's blob. |
   | `BranchCutReleaseTargetsMutator` | **NEW** — item #11. Sibling to G11's `PostReleaseTargetsMutator`; same line-based surgical-edit approach to preserve comments. |
 
   **Command + workflow shape:**
 
-  - **New command** `openemr:branch-cut` (sibling to `openemr:release-prep`,
+  - **New command** `DCL:branch-cut` (sibling to `DCL:release-prep`,
     not an extension of `--scope=master` — Phase A in G11 established
     `--scope=master` as release-time only). Takes `--target-version`,
     `--rel-branch`, `--prev-rel-branch`, internal `--side=rel|master`
     to pick mutator list. Each side has its own list:
     - `relSideMutators`: `[DockerUpgradeScaffoldMutator,
-      DockerfileOpenemrVersionMutator, TranslationFileCopyFromPriorRelMutator,
+      DockerfileDCLVersionMutator, TranslationFileCopyFromPriorRelMutator,
       GlobalsIncMutator]`
     - `masterSideMutators`: `[DockerUpgradeScaffoldMutator,
       VersionPhpMasterMutator, OpenApiVersionMutator, SwaggerRegenMutator,
@@ -395,14 +395,14 @@ fourth attempt landed cleanly — see the refinement notes below).
 
   **Goal for the implementation PR: ONE PR for the entire workstream 2**
   (new command + 4 new mutators + new workflow + tests). Keeps review
-  surface manageable for OpenEMR admin review. Trade-off vs. splitting:
+  surface manageable for DCL admin review. Trade-off vs. splitting:
   a single coordinated PR is easier to reason about end-to-end (the
   pieces only make sense together) and reviewers don't have to mentally
   stitch together a half-shipped feature across multiple commits.
 
   **Conditional sequencing — resolved 2026-07-01 (revised):** 8.1.x is
   being skipped entirely — no 8.1.1 ship. Pre-cut posture landed in
-  openemr/openemr#12712 (both rel-810 rows marked `unreleased: true`,
+  DCL/DCL#12712 (both rel-810 rows marked `unreleased: true`,
   `next` moved to master interim). rel-820 cut becomes the first
   end-to-end exercise of branch-cut automation AND (subsequently) of
   the paired release-prep + release-finalize conductor (at 8.2.0 ship
@@ -432,7 +432,7 @@ fourth attempt landed cleanly — see the refinement notes below).
   **Round 2** (fix PR #12731 — 5 mutator surface fixes):
   - `DockerUpgradeScaffoldMutator`: `fsupgrade-(N+1).sh` is now a
     **full copy** of the prior file with 5 header lines substituted
-    (docker versions + priorOpenemrVersion), not a bare stub. Preserves
+    (docker versions + priorDCLVersion), not a bare stub. Preserves
     the previous release's upgrade body byte-for-byte for per-release
     refinement.
   - `PostReleaseTargetsMutator`: early-return / no-op when the target
@@ -455,11 +455,11 @@ fourth attempt landed cleanly — see the refinement notes below).
   **Round 3** (fix PR #12735 — 2 mutator fixes + PR template audit):
   - `SqlUpgradeSkeletonMutator`: no more double trailing newline in
     the generated skeleton output.
-  - `DockerUpgradeScaffoldMutator`: `priorOpenemrVersion` derivation
+  - `DockerUpgradeScaffoldMutator`: `priorDCLVersion` derivation
     now scans `sql/*_upgrade.sql` for the highest LEFT-side version
     at branch-cut time, with `MutatorContext::$fromVersion` override
     for patch-prep (where version.php has already been bumped past
-    the anchor). A `priorOpenemrVersion < target` invariant defends
+    the anchor). A `priorDCLVersion < target` invariant defends
     the derivation — mutator ordering bugs (e.g.,
     `SqlUpgradeSkeletonMutator` running before this one and inflating
     the sql-scan result to the target version) now throw loudly
@@ -467,7 +467,7 @@ fourth attempt landed cleanly — see the refinement notes below).
   - PR body templates audited for stale content: 4 of the 6
     templates (branch-cut-rel, branch-cut-master, patch-prep-rel,
     patch-prep-master) updated to remove "stub" language, describe
-    the 5-line substitution shape, note `priorOpenemrVersion`
+    the 5-line substitution shape, note `priorDCLVersion`
     derivation, and expand merge-order guidance. release-prep +
     release-finalize templates had no drift.
   - Coderabbit follow-up on #12735 hoisted validation before
@@ -480,11 +480,11 @@ fourth attempt landed cleanly — see the refinement notes below).
   master's release-targets.yml row for rel-820, kicking off:
   docker-release-orchestrator, notify-release-targets-changed,
   demo_farm auto-derive, and dockerhub-readme-push. All fired cleanly.
-  - Docker Hub: `openemr/openemr:8.2.0` + `next` + `8.2.0-2026-07-02`
+  - Docker Hub: `DCL/DCL:8.2.0` + `next` + `8.2.0-2026-07-02`
     with OCI `revision: rel-820`; `8.3.0` + `dev` + `8.3.0-2026-07-02`
     with `revision: master`.
   - Dockerhub README refreshed.
-  - `demo_farm_openemr#168` auto-derive reconciliation PR opened cleanly.
+  - `demo_farm_DCL#168` auto-derive reconciliation PR opened cleanly.
   - release-finalize PR pending — will materialize on next natural
     push to rel-820 (the "release-finalize doesn't auto-refresh on
     master pushes" gap called out in the Lifecycle section of
@@ -492,29 +492,29 @@ fourth attempt landed cleanly — see the refinement notes below).
     cycle pushes to the rel branch happen naturally).
 
   **Takeaway:** Mutator ordering matters and is now defended by the
-  `priorOpenemrVersion < target` invariant. The premature-draft
+  `priorDCLVersion < target` invariant. The premature-draft
   design worked as documented — accepted tradeoff, zero external
   noise. Three rounds of fixes is not ideal but each round caught
   something real that would have bit at some future exercise.
 
-### G6 — demo_farm_openemr's production-demo + flex-image mappings are manually maintained
+### G6 — demo_farm_DCL's production-demo + flex-image mappings are manually maintained
 
-**STATUS: SHIPPED 2026-06-28.** Bot operational end-to-end. Demo_farm PRs: #135 (scaffold + dry-run), #138 (write + auto-PR mode), #141 (atomic flip retiring `bump-tag.yml` + `tools/release/` PHP toolchain), #142 (printf-dash bash bug fix), #143 (first real bot-produced reconciliation PR — `rel-704/800/810` col-3 tag-pin transitions). Sibling infra: #136 (dependabot github-actions weekly), #139 (shellcheck workflow with ratchet `.shellcheckrc`), #140 (issue tracking first ratchet: SC2115 rm-rf guard, 5 sites in demo_build.sh). Cross-repo dispatch event: openemr-devops#846 (canonical `release-targets-changed` event in dispatch.schema.json), openemr/openemr#12657 (vendored schema + `EVENT_RELEASE_TARGETS_CHANGED` + DispatchDataBuilder case + `.github/workflows/notify-release-targets-changed.yml` firing on push to release-targets.yml). Bonus phpstan CI cleanup: openemr#12658 (COMPOSER_AUTH band-aid for the wkhtmltopdf 429 flake) + openemr#12659 (real fix: dropped vestigial `Remove Rector` step — empirically verified phpstan output is byte-identical with rector installed vs removed).
+**STATUS: SHIPPED 2026-06-28.** Bot operational end-to-end. Demo_farm PRs: #135 (scaffold + dry-run), #138 (write + auto-PR mode), #141 (atomic flip retiring `bump-tag.yml` + `tools/release/` PHP toolchain), #142 (printf-dash bash bug fix), #143 (first real bot-produced reconciliation PR — `rel-704/800/810` col-3 tag-pin transitions). Sibling infra: #136 (dependabot github-actions weekly), #139 (shellcheck workflow with ratchet `.shellcheckrc`), #140 (issue tracking first ratchet: SC2115 rm-rf guard, 5 sites in demo_build.sh). Cross-repo dispatch event: DCL-devops#846 (canonical `release-targets-changed` event in dispatch.schema.json), DCL/DCL#12657 (vendored schema + `EVENT_RELEASE_TARGETS_CHANGED` + DispatchDataBuilder case + `.github/workflows/notify-release-targets-changed.yml` firing on push to release-targets.yml). Bonus phpstan CI cleanup: DCL#12658 (COMPOSER_AUTH band-aid for the wkhtmltopdf 429 flake) + DCL#12659 (real fix: dropped vestigial `Remove Rector` step — empirically verified phpstan output is byte-identical with rector installed vs removed).
 
 **Bot behavior now:** daily 07:00 UTC + `repository_dispatch types=release-targets-changed` (immediate on upstream push) + manual `workflow_dispatch` (mode=reconcile|dry-run). On diff: force-push stable branch `auto-derive/reconciliation` + open/update PR. On no-diff: close any open reconciliation PR + delete remote branch. Stable-branch design = at-most-one bot PR open at any time; bot updates the same PR across days rather than spamming new ones.
 
 **G6 shipping notes (lessons worth keeping):**
 
-1. **Vendor sync dance is required when the canonical dispatch schema changes.** The dispatch.schema.json canonical lives in openemr-devops; openemr/openemr (and previously demo_farm via tools/release/) vendor it. Adding a new event required a devops PR (#846) BEFORE the openemr-side PR (#12657) could clear the check-vendored-contract drift check that #12619 wired into openemr CI. The check-vendored test fixtures under `tests/fixtures/vendored/good/` + `good-overrides/` also need re-sync — they're byte-identical copies of the canonical and break if you forget.
+1. **Vendor sync dance is required when the canonical dispatch schema changes.** The dispatch.schema.json canonical lives in DCL-devops; DCL/DCL (and previously demo_farm via tools/release/) vendor it. Adding a new event required a devops PR (#846) BEFORE the DCL-side PR (#12657) could clear the check-vendored-contract drift check that #12619 wired into DCL CI. The check-vendored test fixtures under `tests/fixtures/vendored/good/` + `good-overrides/` also need re-sync — they're byte-identical copies of the canonical and break if you forget.
 
-2. **The phpstan flake had a real root cause.** `composer remove` triggers full dep resolution which re-probes every `repositories.type=vcs` URL in composer.json. The wkhtmltopdf-openemr vcs entry is from 2021, isn't required by any package, but Composer probes it every time. GitHub's secondary rate limit on `/repos/.../commits/<sha>` fires on the burst. Other openemr workflows do `composer install` (reads lock, no probes) — phpstan was uniquely affected. Real fix: drop the Remove Rector step entirely (modern rector + phpstan don't interfere anymore, empirically verified byte-identical output).
+2. **The phpstan flake had a real root cause.** `composer remove` triggers full dep resolution which re-probes every `repositories.type=vcs` URL in composer.json. The wkhtmltopdf-DCL vcs entry is from 2021, isn't required by any package, but Composer probes it every time. GitHub's secondary rate limit on `/repos/.../commits/<sha>` fires on the burst. Other DCL workflows do `composer install` (reads lock, no probes) — phpstan was uniquely affected. Real fix: drop the Remove Rector step entirely (modern rector + phpstan don't interfere anymore, empirically verified byte-identical output).
 
 3. **bash printf with format starting with `-` aborts with "invalid option".** Caught in the wild by #142 when the scheduled bot run first hit the diff-path code: `printf '- bullet\n'` is parsed as printf trying to take a `-` (dash-space) option. Fix: `printf '%s\n' '- bullet'`. Worth grepping for in any new shell-heredoc workflow.
 
 4. **For PR triggers, GitHub Actions uses the workflow file from the PR's HEAD branch, not master.** So workflow fixes that land in master don't help open PRs until they rebase. Forced this dance for #12657: rebase to pick up #12658 → still failed (same flake) → land #12659 → rebase again → passed.
 
-- **What:** Two pieces of state in `openemr/demo_farm_openemr` need
-  to track openemr/openemr's release state but currently don't have
+- **What:** Two pieces of state in `DCL/demo_farm_DCL` need
+  to track DCL/DCL's release state but currently don't have
   any cross-repo sync:
   - **`ip_map_branch.txt` production rows** (`branch_tag=tag`,
     cluster `five`/`five_a`/`five_b`) — pinned at a specific release
@@ -526,18 +526,18 @@ fourth attempt landed cleanly — see the refinement notes below).
     case statement** — maps each cluster to a flex base image
     (e.g., `flex-3.22-php-8.4`). Should match the corresponding
     rel branch's `docker/release/Dockerfile` ARGs (ALPINE_VERSION
-    + PHP_VERSION) in openemr/openemr, so demo runtime matches
+    + PHP_VERSION) in DCL/DCL, so demo runtime matches
     production runtime. Currently has no cross-repo sync; manual
     maintenance only.
 - **Concrete drift example (2026-06-23):** Cluster `five` carried
   `flex-3.23-php-8.5` (rel-810's Dockerfile combo) for the entire
   pre-#111 v8_0_0_3 era + the post-#133 v8_0_0_3 era, when
-  rel-800's Dockerfile is actually 3.22 + 8.4. demo.openemr.io ran
+  rel-800's Dockerfile is actually 3.22 + 8.4. demo.DCL.io ran
   v8_0_0_3 source on a newer runtime than the released image.
-  Closed by demo_farm_openemr#134.
+  Closed by demo_farm_DCL#134.
 - **Why this matters:** demo consumers see the "production demo"
   image as representative of what they'd deploy themselves
-  (`docker pull openemr/openemr:8.0.0.3`). Runtime drift between
+  (`docker pull DCL/DCL:8.0.0.3`). Runtime drift between
   the demo and the actual release undermines the demo's
   representativeness. Same concern for rel-810 / rel-704 dev demos
   if their flex-image mapping drifts from their rel branch's
@@ -547,14 +547,14 @@ fourth attempt landed cleanly — see the refinement notes below).
   around flex docker bases (vs the prior per-version base images)
   was deliberate preparation for this. **Goal: auto-derive the
   entire `ip_map_branch.txt` + `demoLibrary.source`
-  `startDemoWrapper` case statement from upstream openemr/openemr
+  `startDemoWrapper` case statement from upstream DCL/DCL
   state via a daily reconciliation script** — with a single hand-
   curated "Miscellaneous" section reserved for non-standard demos
   that don't fit any derivable pattern.
 
   **Reconciliation, not from-scratch render.** Cluster identity is
   sticky across runs because each cluster name maps to a subdomain
-  (e.g., `eight` → `eight.openemr.io`) that's referenced from
+  (e.g., `eight` → `eight.DCL.io`) that's referenced from
   external surfaces (wiki, social, mail). Reassigning a cluster's
   meaning breaks those external references. The bot reads the
   CURRENT `ip_map_branch.txt` as state, applies a reconciliation
@@ -565,16 +565,16 @@ fourth attempt landed cleanly — see the refinement notes below).
 
   | Input | Read from | Per-branch or master-only |
   |---|---|---|
-  | `release-targets.yml` (list of rel branches, latest holder, `unreleased` flags) | openemr/openemr **master** | master-only (file is master-authoritative) |
-  | `docker/release/Dockerfile` (ARGs for ALPINE + PHP) | openemr/openemr each rel branch + master | **per-branch** (each branch's Alpine/PHP can drift independently) |
-  | Integration-tests workflow (supported PHP matrix) | openemr/openemr **master** | master-only |
-  | Current `ip_map_branch.txt` + `demoLibrary.source` | demo_farm_openemr **master** | current-state read for reconciliation |
+  | `release-targets.yml` (list of rel branches, latest holder, `unreleased` flags) | DCL/DCL **master** | master-only (file is master-authoritative) |
+  | `docker/release/Dockerfile` (ARGs for ALPINE + PHP) | DCL/DCL each rel branch + master | **per-branch** (each branch's Alpine/PHP can drift independently) |
+  | Integration-tests workflow (supported PHP matrix) | DCL/DCL **master** | master-only |
+  | Current `ip_map_branch.txt` + `demoLibrary.source` | demo_farm_DCL **master** | current-state read for reconciliation |
 
   **Section ownership matrix:**
 
   | Section | Cluster identity | Branch/tag | Flex image |
   |---|---|---|---|
-  | **Production** (five + aliases) | fixed | derived from latest holder's `openemr_version_ref` | from latest holder's Dockerfile ARGs |
+  | **Production** (five + aliases) | fixed | derived from latest holder's `DCL_version_ref` | from latest holder's Dockerfile ARGs |
   | **Up-for-grabs** (four + aliases) | fixed | **preserved** (community claims as overrides) | from **master's** Dockerfile, always (independent of any claim) |
   | **Master demos** | sticky from prior state; new from parked | derived (master) | master's Alpine + the cluster's assigned PHP |
   | **Release demos** | sticky from prior state; new from parked | derived (rel branch name) | from the assigned rel branch's Dockerfile ARGs |
@@ -589,7 +589,7 @@ fourth attempt landed cleanly — see the refinement notes below).
 
   **Reconciliation algorithm (high-level):**
 
-  1. Read inputs (upstream openemr/openemr + current demo_farm state)
+  1. Read inputs (upstream DCL/DCL + current demo_farm state)
   2. Validate upstream: **exactly one** non-unreleased row carries
      `latest` — else **FAIL LOUD** (this should never happen; if it
      does, surface immediately rather than fall back)
@@ -612,12 +612,12 @@ fourth attempt landed cleanly — see the refinement notes below).
   **Triggers:**
 
   - **Scheduled (daily cron)** at `0 7 * * *` UTC (1h after
-    openemr's docker-release-orchestrator at 06:00). The
+    DCL's docker-release-orchestrator at 06:00). The
     load-bearing trigger — catches everything (manual Dockerfile
     edits, CI matrix changes, anything not announced via dispatch).
     Self-healing.
-  - **`repository_dispatch`** on `openemr-tag`,
-    `openemr-rel-cut`, `openemr-rel-update`: eager updates so the
+  - **`repository_dispatch`** on `DCL-tag`,
+    `DCL-rel-cut`, `DCL-rel-update`: eager updates so the
     demo doesn't lag a full day after a release. Optional
     optimization — daily cron alone is functionally sufficient.
   - **`workflow_dispatch`**: manual recovery + dry-run testing
@@ -639,7 +639,7 @@ fourth attempt landed cleanly — see the refinement notes below).
     contract.
   - **`unreleased: true` rows** in release-targets.yml → skipped
     when deriving release demos (this is the demo_farm-side
-    consumer the openemr/openemr#12656 PR description tracks).
+    consumer the DCL/DCL#12656 PR description tracks).
   - **No `latest` holder** in release-targets.yml → fail loud (per
     Validate step). Should never happen.
   - **Dockerfile ARG parsing fails** (regex doesn't match, ARG
@@ -679,9 +679,9 @@ fourth attempt landed cleanly — see the refinement notes below).
 
      **Add:**
      - Eager `repository_dispatch` consumers on the new bot's
-       workflow (openemr-tag / openemr-rel-cut / openemr-rel-update)
+       workflow (DCL-tag / DCL-rel-cut / DCL-rel-update)
      - `unreleased: true` skip on release-targets.yml rows (the
-       demo_farm-side consumer of the openemr/openemr#12656 marker)
+       demo_farm-side consumer of the DCL/DCL#12656 marker)
 
      **Delete:**
      - `.github/workflows/bump-tag.yml` (109 lines) — functionally
@@ -704,10 +704,10 @@ fourth attempt landed cleanly — see the refinement notes below).
 
      **Why atomic** (single PR vs separate "wire then retire"):
      - Retiring `bump-tag.yml` BEFORE PR #3 → gap window where
-       openemr-tag dispatches don't update demo_farm (production
+       DCL-tag dispatches don't update demo_farm (production
        demo lags real release)
      - Retiring AFTER PR #3 → both workflows fire on every
-       openemr-tag dispatch → race condition on `ip_map_branch.txt`
+       DCL-tag dispatch → race condition on `ip_map_branch.txt`
        writes
      - Atomic → one dispatch consumer running at all times, clean
        cutover
@@ -721,7 +721,7 @@ fourth attempt landed cleanly — see the refinement notes below).
      `ARG ALPINE_VERSION=` and `ARG PHP_VERSION=`.
   3. Update the cluster's flex-image in
      `demoLibrary.source::startDemoWrapper` to match
-     (`openemr/openemr:flex-<alpine>-php-<php>`).
+     (`DCL/DCL:flex-<alpine>-php-<php>`).
   4. Land the ip_map_branch.txt change + the demoLibrary.source
      change together (or in coordinated PRs back-to-back).
 - **Status:** Not migration-blocking. Captured as a candidate
@@ -741,7 +741,7 @@ fourth attempt landed cleanly — see the refinement notes below).
   produces subtle wrong behavior — including stale logic in
   contexts where master has bug fixes that were never
   backported.
-- **Concrete bug exposed 2026-06-23** (openemr/openemr#12611):
+- **Concrete bug exposed 2026-06-23** (DCL/DCL#12611):
   rel-810's `BranchVersionResolver::branchToVersion()` was
   the OLD static form that decomposed the branch name without
   walking tags, returning `8.1.0` for `rel-810` regardless of
@@ -844,9 +844,9 @@ fourth attempt landed cleanly — see the refinement notes below).
   natural first step; the G7 rel-810 sync would carry them
   along as part of the broader tooling backport.
 
-### G9 — `release-docs/<version>` PRs on website-openemr don't supersede across version changes
+### G9 — `release-docs/<version>` PRs on website-DCL don't supersede across version changes
 
-- **What:** The release-docs workflow on website-openemr
+- **What:** The release-docs workflow on website-DCL
   uses `release-docs/<version>` as the head branch name (e.g.,
   `release-docs/8.1.0`, `release-docs/8.1.1`). When the
   conductor's resolved `VERSION` changes (e.g., from a buggy
@@ -876,7 +876,7 @@ fourth attempt landed cleanly — see the refinement notes below).
     dispatch source), close them with a "superseded by
     #<new-PR>" comment.
   - **B. Per-rel-branch head naming:** match the
-    `release-prep/rel-810` pattern used by openemr/openemr's
+    `release-prep/rel-810` pattern used by DCL/DCL's
     conductor. Use `release-docs/rel-810` as the head branch,
     so the same PR updates in place across version cycles
     (peter-evans flow). PR title encodes the version
@@ -884,8 +884,8 @@ fourth attempt landed cleanly — see the refinement notes below).
     per rel branch, never orphaned.
 - **Recommendation:** Option B is structurally cleaner — it
   removes the orphaning by design rather than papering over
-  it. It also makes the website-openemr side match the
-  openemr/openemr release-prep PR pattern, reducing per-system
+  it. It also makes the website-DCL side match the
+  DCL/DCL release-prep PR pattern, reducing per-system
   cognitive load for maintainers.
 - **Status:** Follow-up. Discovered 2026-06-23 during 8.1.1
   prep recovery; manual close of PR #142 is the one-time
@@ -907,7 +907,7 @@ fourth attempt landed cleanly — see the refinement notes below).
   `docker-test-core-impl.yml`,
   `docker-test-release-impl.yml`); rel branches would carry
   only thin caller stubs (`~10 LOC`) invoking master's impl
-  via `uses: openemr/openemr/.github/workflows/...-impl.yml@master`.
+  via `uses: DCL/DCL/.github/workflows/...-impl.yml@master`.
   Composite actions + config files (`test-actions-core`,
   `.github/docker/compose.yml`) are already cross-branch
   referenceable today; impl-on-master would consume master's
@@ -961,7 +961,7 @@ fourth attempt landed cleanly — see the refinement notes below).
 
 ### G11 — Post-release release-targets.yml updates are manual  *(workstream 3 design)*
 
-**STATUS: PHASE A SHIPPED 2026-07-01** as openemr/openemr#12662
+**STATUS: PHASE A SHIPPED 2026-07-01** as DCL/DCL#12662
 (merge commit `abb1e2d940`). Delivered as scoped: new
 `PostReleaseTargetsMutator`, `MutatorContext::$relBranch` extension,
 `ReleasePrepCommand --rel-branch` option + master mutator list,
@@ -971,20 +971,20 @@ plan. Phase B (originally scoped as cherry-pick to rel-810 for the
 8.1.1 ship) is moot — 8.1.x was abandoned and rel-820 became the
 first rel branch running Phase A end-to-end; the Phase A landing on
 master before rel-820 was cut removed the cherry-pick requirement.
-Auto-merge of the master partner PR on `openemr-tag` remains
+Auto-merge of the master partner PR on `DCL-tag` remains
 deferred; for shipped releases so far the maintainer marks Ready +
 merges manually after the tag fires.
 
 - **What:** After a rel-branch ships (e.g., 8.1.1 ships from
   rel-810), `.github/release-targets.yml` on master needs three
   coordinated edits that no automation produces today:
-  - **Pin the rel branch's `openemr_version_ref` to the new tag**
+  - **Pin the rel branch's `DCL_version_ref` to the new tag**
     (e.g., `rel-810 → v8_1_1`). Stops daily builds from tracking
     the rel branch tip; locks them to the immutable tag content.
   - **Slot shuffle across rows** (per the slot-promotion model
     now documented in `RELEASE_PROCESS.md` — the treatment
     previously lived in this doc, see the "Docker Hub tag model +
-    `openemr_version_ref` pattern" pointer below):
+    `DCL_version_ref` pattern" pointer below):
     - The newly-shipped rel branch promotes its `next` tag →
       `latest` (e.g., `rel-810: 8.1.1,next → 8.1.1,latest`).
     - The previous `latest` holder drops it (e.g.,
@@ -994,7 +994,7 @@ merges manually after the tag fires.
       (e.g., `master: 8.2.0,dev → 8.2.0,dev,next`).
   - **Drop the unreleased placeholder row** for the same rel
     branch (per the multi-row mechanism added in
-    openemr/openemr#12656). If the multi-row was set up for
+    DCL/DCL#12656). If the multi-row was set up for
     the in-dev publish-prior-stable case, the prior-version row
     becomes redundant once the new version ships and gets removed.
 
@@ -1014,7 +1014,7 @@ merges manually after the tag fires.
      `release-finalize/rel-810` (on master) as drafts.
   2. Maintainer marks both Ready.
   3. ship-release.yml merges conductor PR → tag fires →
-     openemr-tag dispatch consumer either auto-merges the master
+     DCL-tag dispatch consumer either auto-merges the master
      partner PR, or marks it Ready for manual merge.
   4. Optional: master partner PR has a guard refusing to merge if
      the tag doesn't exist yet (mirrors the docs-first refusal
@@ -1025,7 +1025,7 @@ merges manually after the tag fires.
     shuffle, ref pin, and unreleased-row drop in one pass).
   - Conductor extension: opens the second PR via peter-evans
     against master.
-  - openemr-tag consumer extension: after the tag fires, marks
+  - DCL-tag consumer extension: after the tag fires, marks
     `release-finalize/<rel-branch>` Ready and/or auto-merges it.
 
 - **Status:** Workstream 3 (per-release-on-rel-branch
@@ -1076,7 +1076,7 @@ merges manually after the tag fires.
   (cut from master post-Phase-A) inherited the extension in its
   cut-time snapshot, so no rel-810 backport ever happened. Kept
   here for the workflow pattern (rel-branch worktree from
-  `--base https://github.com/openemr/openemr.git#rel-810`, commit
+  `--base https://github.com/DCL/DCL.git#rel-810`, commit
   with `--no-verify`, YAML + PHP both required because rel-branch
   conductors invoke their own `src/Common/Command/...` tree) —
   applicable if a future patch on an older rel branch needs a
@@ -1100,10 +1100,10 @@ merges manually after the tag fires.
 
 ### G12 — Patch-cycle bootstrap on rel-* requires manual SQL skeleton + docker scaffolding + master file-rename  *(workstream 6 design)*
 
-**STATUS: SHIPPED 2026-07-01** as workstream 6 / openemr/openemr#12697
+**STATUS: SHIPPED 2026-07-01** as workstream 6 / DCL/DCL#12697
 (merge commit `c1af6370a0`), landed directly after workstream 2's
 #12696 the same day. Delivered as scoped in a single PR: new
-`openemr:patch-prep` command + `.github/workflows/patch-prep-automation.yml`
+`DCL:patch-prep` command + `.github/workflows/patch-prep-automation.yml`
 (triggering on push to `rel-*` with `paths: version.php` + resolver
 gate) + 2 new mutators (`MasterSqlPatchBridgeMutator`,
 `PatchPrepReleaseTargetsMutator`) + strictly-additive
@@ -1146,7 +1146,7 @@ fall back to a one-time manual patch-prep PR pair for that transition.
     the new dev row for the target rel branch (`docker_tags:
     <target-version>,next`), drop any prior placeholder rows for
     that same rel branch (rows flagged `unreleased: true` per the
-    multi-row mechanism added in openemr/openemr#12656).
+    multi-row mechanism added in DCL/DCL#12656).
 
   Today: P8 in the canonical 8.1.1 release sequence captures this
   manual work for the cut-time-only scope; the broader patch-cycle
@@ -1200,9 +1200,9 @@ fall back to a one-time manual patch-prep PR pair for that transition.
       Symfony YAML used as a structural sanity check on the result.
 
   **Command + workflow shape:** new sibling command
-  `openemr:patch-prep` (NOT a `--scope=<x>` extension to
-  `openemr:release-prep` — matches the precedent set by workstream
-  2's `openemr:branch-cut`). Takes `--target-version`,
+  `DCL:patch-prep` (NOT a `--scope=<x>` extension to
+  `DCL:release-prep` — matches the precedent set by workstream
+  2's `DCL:branch-cut`). Takes `--target-version`,
   `--rel-branch`, `--prev-version`, internal `--side=rel|master`
   for mutator-list selection. `workflow_dispatch` escape hatch
   takes the same inputs explicitly for manual recovery.
@@ -1235,7 +1235,7 @@ fall back to a one-time manual patch-prep PR pair for that transition.
 
 ### G13 — `derive-prev-release` returned skipped-version tags  *(discovered + closed 2026-07-05)*
 
-**STATUS: SHIPPED 2026-07-05** as openemr/openemr#12769 (master) +
+**STATUS: SHIPPED 2026-07-05** as DCL/DCL#12769 (master) +
 #12770 (rel-820 backport, identical patch-id), with follow-up #12771
 (master) + #12772 (rel-820 backport) fixing a secondary bug the initial
 version missed. All four merges landed same session; full chain verified
@@ -1244,20 +1244,20 @@ producing `prev_release: 8.0.0` in the dispatch payload for target 8.2.0.
 
 - **What:** `tools/release/bin/derive-prev-release.php` (called from
   `release-prep.yml`'s Dispatch step to populate the
-  `openemr-rel-cut` / `openemr-rel-update` payload's `prev_release`
+  `DCL-rel-cut` / `DCL-rel-update` payload's `prev_release`
   field) walked annotated `v<M>_<m>_<p>` tags and returned the highest
   below the target. That worked as long as every tag corresponded to a
   shipped release. But **8.1.0 was cut (`v8_1_0` exists as an annotated
   tag with GitHub Release assets) and then skipped** — never publicly
   released, permanently absent from
-  `website-openemr/data/releases.json`. So 8.2.0's dispatch payload got
+  `website-DCL/data/releases.json`. So 8.2.0's dispatch payload got
   `prev_release=8.1.0`, and its acknowledgements + release-notes
   generated against a ~30-day window (v8_1_0..HEAD) instead of the
   correct ~5-month window (v8_0_0..HEAD). Users going 8.0.0 → 8.2.0
   would have seen a truncated changelog.
 
 - **Fix:** `BranchVersionResolver` consults
-  `website-openemr/data/releases.json` at derive time and treats any
+  `website-DCL/data/releases.json` at derive time and treats any
   tag whose version isn't in the FINAL entries as skipped. Fetched
   fresh over HTTPS (`raw.githubusercontent.com`) with explicit
   timeout/max_duration. Any fetch/parse failure falls back to the
@@ -1268,7 +1268,7 @@ producing `prev_release: 8.0.0` in the dispatch payload for target 8.2.0.
   stay valid; production consumer creates `HttpClient::create()` and
   passes it in.
 
-- **Secondary bug (openemr/openemr#12771/#12772):** the initial fix
+- **Secondary bug (DCL/DCL#12771/#12772):** the initial fix
   still walked annotated tags only, then filtered via the manifest.
   Historic SourceForge-era tags like `v8_0_0` are LIGHTWEIGHT, not
   annotated — dropped silently by the walk. So for target 8.2.0 the
@@ -1297,7 +1297,7 @@ producing `prev_release: 8.0.0` in the dispatch payload for target 8.2.0.
 
 - **Verification (2026-07-05):** After all four PRs landed and a
   `workflow_dispatch` on `release-prep.yml` fired against rel-820, PR
-  openemr/website-openemr#164 regenerated with `prev_release: 8.0.0`
+  DCL/website-DCL#164 regenerated with `prev_release: 8.0.0`
   in the dispatch payload — 930 PRs in the release-notes window
   (v8_0_0..HEAD, matching 1508 total commits in that range less #173's
   bot-filter drops).
@@ -1305,13 +1305,13 @@ producing `prev_release: 8.0.0` in the dispatch payload for target 8.2.0.
 ### G14 — `release-docs/<version>` branches accumulated divergent history  *(discovered + closed 2026-07-05)*
 
 **STATUS: SHIPPED 2026-07-05** as three cascading PRs on
-openemr/website-openemr — #174 (initial reset-manifest-from-master, later
+DCL/website-DCL — #174 (initial reset-manifest-from-master, later
 subsumed), #175 (rebase-per-dispatch structural fix), and #176 (restore
 branch-ref fetch so `--force-with-lease` has a baseline).
 
 - **What:** Byproduct of validating G13's fix. Even after
   `derive-prev-release` correctly returned 8.0.0, PR
-  openemr/website-openemr#164 stayed CONFLICTING because the docs
+  DCL/website-DCL#164 stayed CONFLICTING because the docs
   branch had been committing on top of the previous branch state on
   each dispatch. Two forms of drift compounded:
   - **File-content drift** — master's edits to unrelated
@@ -1357,7 +1357,7 @@ branch-ref fetch so `--force-with-lease` has a baseline).
   `release-announcements.yml` + their supporting PHP classes (`PackageAssembler`,
   `ChangelogGenerator`, `PreflightChecker`, `CompatibilityDeriver`,
   `ShipReleaseOrchestrator`, `AnnouncementRenderer`, `PullRequest*`, etc.)
-  into `openemr/openemr`. Some of these workflows need to exist on each
+  into `DCL/DCL`. Some of these workflows need to exist on each
   rel-* branch to fire from that branch's context (build-release-on-tag
   in particular fires on `push: tags: ['v*']` which is inherently
   branch-scoped). This creates a drift surface: rel-820's copy of the
@@ -1369,7 +1369,7 @@ branch-ref fetch so `--force-with-lease` has a baseline).
   of a class that had been fixed on master weeks earlier; the drift
   wasn't discovered until 8.1.1 prep tried to use it. Cost: hours of
   troubleshooting during a live release-prep exercise + a surgical
-  backport PR (openemr/openemr#12611). Currently only rel-810 is in
+  backport PR (DCL/DCL#12611). Currently only rel-810 is in
   scope (rel-800 and rel-704 rotate out without future releases per
   maintainer 2026-06-23), but every future rel-* branch inherits the
   same drift risk unless a mechanism prevents it.
@@ -1400,7 +1400,7 @@ branch-ref fetch so `--force-with-lease` has a baseline).
   3. **Reusable workflows** (caller/impl split). Master owns the
      real workflow implementations; rel branches carry thin caller
      stubs invoking master's impl via
-     `uses: openemr/openemr/.github/workflows/*-impl.yml@master`.
+     `uses: DCL/DCL/.github/workflows/*-impl.yml@master`.
      Supporting PHP classes live on master only; the impl workflow
      checks out master's `tools/release/` tree explicitly regardless
      of which branch fired the caller. Drift impossible by
@@ -1416,7 +1416,7 @@ branch-ref fetch so `--force-with-lease` has a baseline).
 
 - **Status:** **Locked 2026-07-07 — Option 2 (byte-identical canary +
   auto-sync).** Reasons in weight order:
-  1. Production-validated this session. Track A openemr/openemr#12778
+  1. Production-validated this session. Track A DCL/DCL#12778
      landed on master → sync-byte-identical fired → produced
      #12787/#12788/#12789 auto-sync PRs against rel-820/800/704 within
      13 minutes. Zero manual per-branch work. Real evidence, not theory.
@@ -1483,7 +1483,7 @@ branch-ref fetch so `--force-with-lease` has a baseline).
 
 ### G16 — Conductor overshoots to next patch version post-tag  *(discovered live 2026-07-08, SHIPPED 2026-07-10)*
 
-**STATUS: SHIPPED 2026-07-10** as openemr/openemr#12868 (master)
+**STATUS: SHIPPED 2026-07-10** as DCL/DCL#12868 (master)
 + #12872 (rel-820 backport, patch-id parity verified via
 `c25529e29e5459dac9e3be5b5a4d4f39bd921e7b`). Also required
 #12871 as a preceding rel-820 doc catch-up to make #12872 a
@@ -1510,15 +1510,15 @@ correct.
   auto-advances rotation as if the next patch cycle has already
   started. On the 8.2.0 ship it produced four artifacts pointing at a
   nonexistent `v8_2_1`:
-  - **openemr/openemr#12767** (finalize-on-master PR): rel-820 row's
-    `openemr_version_ref` force-pushed from `rel-820` to `v8_2_1`.
+  - **DCL/DCL#12767** (finalize-on-master PR): rel-820 row's
+    `DCL_version_ref` force-pushed from `rel-820` to `v8_2_1`.
     The `docker-validate-release-targets.yml` guard blocked the merge
-    with `openemr_version_ref 'v8_2_1' does not resolve` (HTTP 404 on
+    with `DCL_version_ref 'v8_2_1' does not resolve` (HTTP 404 on
     raw.githubusercontent.com fetch).
-  - **openemr/openemr#12843** (release-prep 8.2.1 PR): new bot PR
+  - **DCL/DCL#12843** (release-prep 8.2.1 PR): new bot PR
     bumping `version.php` + `docker/production/docker-compose.yml` +
-    `swagger/openemr-api.yaml` + OpenApiDefinitions to 8.2.1.
-  - **openemr/website-openemr#179** (release-docs 8.2.1 DRAFT PR):
+    `swagger/DCL-api.yaml` + OpenApiDefinitions to 8.2.1.
+  - **DCL/website-DCL#179** (release-docs 8.2.1 DRAFT PR):
     generated acknowledgements + release-notes for a nonexistent
     8.2.1 against a `prev_release=8.2.0` window.
   - Docker Hub `latest` fanout consequence: the guard-blocked #12767
@@ -1534,14 +1534,14 @@ correct.
 
 - **Immediate workarounds applied (2026-07-08):**
   - #12767: force-pushed a corrective one-line edit changing
-    `openemr_version_ref: v8_2_1` back to `v8_2_0`; title corrected
+    `DCL_version_ref: v8_2_1` back to `v8_2_0`; title corrected
     from "finalize 8.2.1" to "finalize 8.2.0"; merged.
   - #12843: closed as "no 8.2.1 patch cycle planned; conductor
     overshoot after 8.2.0 tag creation".
   - website #179: closed as stale draft.
 
 - **Root cause hypothesis:** whichever post-tag hook in the
-  conductor computes the next `openemr_version_ref` treats the
+  conductor computes the next `DCL_version_ref` treats the
   just-shipped tag as if the branch has already entered
   `(patch+1)-dev`. Should either (a) point at the just-released tag
   (`v_X_Y_Z`) and hold until a patch cycle explicitly starts, OR
@@ -1554,10 +1554,10 @@ correct.
 
 ### G17 — Redundant `push: tags: ['v*']` trigger on `docker-build-release.yml`  *(discovered 2026-07-08, SHIPPED 2026-07-10)*
 
-**STATUS: SHIPPED 2026-07-10** as openemr/openemr#12862, bundled
+**STATUS: SHIPPED 2026-07-10** as DCL/DCL#12862, bundled
 with G18. Removes the `push: tags: ['v*']` trigger and drops the
 now-unreachable push branches in the two resolve steps
-(`resolve_docker_tags` and `resolve_openemr_version_ref`).
+(`resolve_docker_tags` and `resolve_DCL_version_ref`).
 Byte-identical-enforced file — master merge auto-syncs to rel-820
 + rel-810 + rel-800 + rel-704 via sync-byte-identical.yml.
 Companion doc update to RELEASE_PROCESS.md step 12 landed in the
@@ -1574,7 +1574,7 @@ same PR.
 
 - **8.2.0 concrete observation:** Tag-push run 28973845615
   (event=push, branch=v8_2_0) built + pushed
-  `openemr/openemr:8.2.0`. After #12767 merged, orchestrator fanout
+  `DCL/DCL:8.2.0`. After #12767 merged, orchestrator fanout
   run 28976847649 (event=workflow_dispatch, branch=rel-820) built +
   pushed the same `8.2.0` + `latest` from `release-targets.yml`
   state. Content was equivalent — no correctness issue, just
@@ -1594,7 +1594,7 @@ same PR.
 
 ### G18 — No `concurrency:` group on `docker-build-release.yml`  *(discovered 2026-07-08, SHIPPED 2026-07-10)*
 
-**STATUS: SHIPPED 2026-07-10** as openemr/openemr#12862, bundled
+**STATUS: SHIPPED 2026-07-10** as DCL/DCL#12862, bundled
 with G17. Adds `concurrency: docker-build-release-${{ github.ref
 }}-${{ inputs.docker_tags }}` with `cancel-in-progress: false`.
 Key includes `inputs.docker_tags` per CodeRabbit review — same
@@ -1632,14 +1632,14 @@ Same-branch/same-tags dispatches serialise as intended.
 
 ### G19 — `raw.githubusercontent.com` rate-limit + misleading error on version.php pre-fetch  *(discovered live 2026-07-08, SHIPPED 2026-07-11)*
 
-**STATUS: SHIPPED 2026-07-11** as openemr/openemr#12883.
+**STATUS: SHIPPED 2026-07-11** as DCL/DCL#12883.
 Applied uniformly across three version.php fetches in two
 release-flow workflows:
 
 - `.github/workflows/docker-build-release.yml` — pre-build
   IMAGE_VERSION derivation (1 call).
 - `.github/workflows/docker-validate-release-targets.yml` —
-  "Verify every openemr_version_ref resolves" step (1 call) +
+  "Verify every DCL_version_ref resolves" step (1 call) +
   "Cross-check docker_tag version" step's non-master fetch (1
   call). Master row still uses the local PR checkout (chicken-
   and-egg preserved).
@@ -1647,14 +1647,14 @@ release-flow workflows:
 Two coupled changes at each site:
 
 1. Anonymous `curl` against `raw.githubusercontent.com` → `gh api`
-   at `/repos/openemr/openemr/contents/version.php?ref=$REF`.
+   at `/repos/DCL/DCL/contents/version.php?ref=$REF`.
    Content fetches use `Accept: application/vnd.github.raw` to
    get the file body directly; status-only probes use the default
    representation and check the return code. Each step gets
    `GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}` in `env:`. Authenticated
    5000/hr per-token budget replaces anonymous 60/hr shared-IP.
 2. Error path distinguishes HTTP 404 (real bad ref → "does not
-   resolve in openemr/openemr; check release-targets.yml") from
+   resolve in DCL/DCL; check release-targets.yml") from
    any other failure (429, 5xx, network — surfaces the underlying
    `gh api` error verbatim instead of the previous misleading
    "ref likely doesn't exist" message).
@@ -1670,11 +1670,11 @@ cross-branch propagation needed.
 
 
 - **What:** `docker-build-release.yml` prefetches
-  `https://raw.githubusercontent.com/openemr/openemr/${REF}/version.
+  `https://raw.githubusercontent.com/DCL/DCL/${REF}/version.
   php` via unauthenticated `curl` to sanity-check the
-  `openemr_version_ref` before building. On the 8.2.0 orchestrator
+  `DCL_version_ref` before building. On the 8.2.0 orchestrator
   fanout, the rel-820 build hit HTTP 429 (rate limit) and reported
-  `##[error]Couldn't fetch version.php at openemr@v8_2_0. The ref
+  `##[error]Couldn't fetch version.php at DCL@v8_2_0. The ref
   likely doesn't exist; check release-targets.yml.` — a misleading
   message: the tag existed; the fetch was throttled after earlier
   validate-loop fetches + all 4 fanout branches hitting the same
@@ -1697,23 +1697,23 @@ cross-branch propagation needed.
   after diagnosing the 429 was the cause. Would have been zero with
   either fix in place.
 
-### G20 — `openemr-tag` event schema drops `prev_release` end-to-end  *(discovered 2026-07-08, refined 2026-07-09, SHIPPED 2026-07-11)*
+### G20 — `DCL-tag` event schema drops `prev_release` end-to-end  *(discovered 2026-07-08, refined 2026-07-09, SHIPPED 2026-07-11)*
 
 **STATUS: SHIPPED 2026-07-11** as a coordinated three-repo change:
 
-- openemr/openemr-devops#855 — canonical
+- DCL/DCL-devops#855 — canonical
   `tools/release/contracts/dispatch.schema.json`: `tagData`
   block adds `prev_release` to `required` + `properties`. Also
   updates the four fixture copies (dispatch/good-tag*.json and
   the two vendored self-test schemas) to carry the field and
   bump `8.1.0 → 8.2.0` (8.1.0 was a prerelease that never
   publicly shipped and read misleadingly as if it had).
-- openemr/website-openemr#189 — website envelope schema +
-  `inputs-to-envelope.jq`'s openemr-tag branch (was the sole
+- DCL/website-DCL#189 — website envelope schema +
+  `inputs-to-envelope.jq`'s DCL-tag branch (was the sole
   event that omitted `prev_release`) + three fixtures updated
   to carry the field and use 8.2.0.
-- openemr/openemr#12887 — vendored copy of the canonical
-  schema, `release-prep.yml`'s openemr-tag emitter now derives
+- DCL/DCL#12887 — vendored copy of the canonical
+  schema, `release-prep.yml`'s DCL-tag emitter now derives
   `prev_release` via `derive-prev-release.php` and passes
   `--prev-release`, `DispatchDataBuilder::EVENT_TAG` match arm
   reads the CLI option into the emitted data block, tests and
@@ -1726,17 +1726,17 @@ release-notes), gated on `if: prev_release != ''`, will fire
 on FINAL cuts instead of silently skipping.
 
 The 8.2.0 acknowledgements page recovery was already handled
-out-of-band via openemr/website-openemr#181's manual
-openemr-rel-update dispatch. This shipping is prospective.
+out-of-band via DCL/website-DCL#181's manual
+DCL-rel-update dispatch. This shipping is prospective.
 
 
-- **What:** website-openemr's `release-docs.yml` gates two steps on
+- **What:** website-DCL's `release-docs.yml` gates two steps on
   `if: prev_release != ''` — "Generate acknowledgements" (writes
   `content/acknowledgements/$VERSION.md`) and "Generate release
   notes" (writes `content/release-notes/$VERSION.md`). On the 8.2.0
-  shipping path, the `openemr-tag` dispatch fired without
-  `prev_release` and both steps SKIPPED. The `openemr-rel-cut` /
-  `openemr-rel-update` dispatches from earlier in the same cycle
+  shipping path, the `DCL-tag` dispatch fired without
+  `prev_release` and both steps SKIPPED. The `DCL-rel-cut` /
+  `DCL-rel-update` dispatches from earlier in the same cycle
   DID carry `prev_release` and generated the pages, but those were
   on the pre-final DRAFT content — and in the case of the 8.2.1
   overshoot (G16), on wrong-version content that got closed as
@@ -1746,37 +1746,37 @@ openemr-rel-update dispatch. This shipping is prospective.
 
 - **Recovery attempt (2026-07-09):** manually fired
   `workflow_dispatch` on `release-docs.yml` with explicit
-  `event=openemr-tag`, `prev_release=8.0.0`, and other v8_2_0
+  `event=DCL-tag`, `prev_release=8.0.0`, and other v8_2_0
   payload fields. Run 28990379608 completed successfully — but
   both "Generate acknowledgements" and "Generate release notes"
   STILL skipped in the output. Digging in confirmed the root cause
-  is DEEPER than "openemr/openemr's tag dispatch omits
-  `prev_release`" — the openemr-tag event actively STRIPS
+  is DEEPER than "DCL/DCL's tag dispatch omits
+  `prev_release`" — the DCL-tag event actively STRIPS
   `prev_release` at the schema/envelope layer regardless of source
   (repository_dispatch OR workflow_dispatch).
 
-- **Three-place fix (all in openemr/website-openemr):**
+- **Three-place fix (all in DCL/website-DCL):**
   1. `tools/release-docs/contracts/dispatch.schema.json` — the
-     openemr-tag event schema (lines 91-111) sets
+     DCL-tag event schema (lines 91-111) sets
      `additionalProperties: false` and lists only `["tag", "branch",
      "version"]` in `required` + `properties`. `prev_release` needs
      to be added to both. Compare to the rel-cut / rel-update event
      schemas (lines 49-69, 70-90) which already require it.
   2. `tools/release-docs/contracts/inputs-to-envelope.jq` (line
-     20-23) — the openemr-tag branch of the if/else drops
+     20-23) — the DCL-tag branch of the if/else drops
      `prev_release` even when the workflow_dispatch input carries
      it:
      ```jq
-     if   .event == "openemr-tag"
+     if   .event == "DCL-tag"
      then {tag: .tag, branch: .branch, version: .version}
      else {branch: .branch, version: .version, prev_release: .prev_release}
      end
      ```
-     Needs `prev_release: .prev_release` added to the openemr-tag
+     Needs `prev_release: .prev_release` added to the DCL-tag
      branch.
-  3. openemr/openemr side — release-prep's tag-dispatch emitter
+  3. DCL/DCL side — release-prep's tag-dispatch emitter
      needs to include `prev_release` in the `data` payload of the
-     openemr-tag repository_dispatch. Same value as the earlier
+     DCL-tag repository_dispatch. Same value as the earlier
      cut/update dispatches (via `derive-prev-release.php`, fixed
      via G13 on 2026-07-05).
 
@@ -1793,7 +1793,7 @@ openemr-rel-update dispatch. This shipping is prospective.
   release-notes markdown becomes a maintainer-preview artifact
   visible in the DRAFT PR during rel-cut/rel-update dispatches but
   is not merged to master on the FINAL cut. release-docs.yml will
-  need a companion change: on `openemr-tag` event, either skip
+  need a companion change: on `DCL-tag` event, either skip
   "Generate release notes" or delete `content/release-notes/
   $VERSION.md` from $STAGING before `workflow:commit-push`. See
   G22 for the full surface trim + upstream filter alignment.
@@ -1805,7 +1805,7 @@ openemr-rel-update dispatch. This shipping is prospective.
 ### G21 — No layout links to per-version acknowledgements or GitHub Release notes  *(discovered 2026-07-08, refined 2026-07-09, acknowledgements half CLOSED 2026-07-09, release-notes half CLOSED as won't-do 2026-07-09)*
 
 **STATUS: acknowledgements half SHIPPED 2026-07-09** via
-openemr/website-openemr#182 (`layouts/section/downloads.html` +
+DCL/website-DCL#182 (`layouts/section/downloads.html` +
 `layouts/section/releases.html`, both use
 `site.GetPage "/acknowledgements/<version>"` for graceful
 degradation).
@@ -1824,7 +1824,7 @@ the follow-up so the two surfaces stay high-quality without
 depending on the website's `gen-release-notes.php` for filtering.
 
 
-- **What:** website-openemr's release-docs workflow generates per-
+- **What:** website-DCL's release-docs workflow generates per-
   version acknowledgements markdown at
   `content/acknowledgements/$VERSION.md`. When present, Hugo renders
   it at `/acknowledgements/$VERSION/` per the section-page
@@ -1843,7 +1843,7 @@ depending on the website's `gen-release-notes.php` for filtering.
   released version:
   - **Release notes:** point at the GitHub Release URL, computed
     from the version key —
-    `https://github.com/openemr/openemr/releases/tag/v${major}_${minor}_${patch}`.
+    `https://github.com/DCL/DCL/releases/tag/v${major}_${minor}_${patch}`.
     (The website does NOT surface its own per-version release-
     notes markdown on master — that's a DRAFT-PR-only artifact.
     See G22.)
@@ -1860,62 +1860,62 @@ depending on the website's `gen-release-notes.php` for filtering.
 
 ### G22 — GitHub Release body + repo CHANGELOG.md need the website's dependabot filter algorithm  *(discovered 2026-07-09, fix in flight 2026-07-12, PRs 4+5+8 landed 2026-07-13, PRs 6+7+10 landed 2026-07-14, PR 9 landed 2026-07-15 → **CLOSED**)*
 
-**Status: CLOSED — 10 of 10 PRs SHIPPED** plus 6 post-slice follow-ups shipping the release-amendment workflow (see below). Ten-PR "Changelog surface early-migration slice" (see `docs/release-mechanism-migration-from-devops.md` for the plan). Slice consolidated the changelog content across all three surfaces (website release-notes / codebase CHANGELOG.md / GitHub Release body) into a single generator that lives in openemr/openemr, ported the website filter along the way, and retired the website generator + the two post-tag changelog PRs. As of 2026-07-15:
+**Status: CLOSED — 10 of 10 PRs SHIPPED** plus 6 post-slice follow-ups shipping the release-amendment workflow (see below). Ten-PR "Changelog surface early-migration slice" (see `docs/release-mechanism-migration-from-devops.md` for the plan). Slice consolidated the changelog content across all three surfaces (website release-notes / codebase CHANGELOG.md / GitHub Release body) into a single generator that lives in DCL/DCL, ported the website filter along the way, and retired the website generator + the two post-tag changelog PRs. As of 2026-07-15:
 
-- **PR 1** openemr/openemr#12896 — rename `docker-byte-identical.yml` → `byte-identical.yml` (SHIPPED)
-- **PR 2** openemr/openemr#12904 — glob-pattern support in validator + sync scripts (SHIPPED)
-- **PR 3** openemr/openemr#12910 — add release-mechanism surface to byte-identical.yml (SHIPPED)
-- **Pre-PR-4 refactor** openemr/openemr#12924 — extract manifest parsing into shared `list-manifest-paths.sh` + BATS coverage (SHIPPED). Not in the original slice plan; added after two consecutive workflow yq bugs traced back to three-way parsing duplication.
-- **PR 4** openemr/openemr#12925 + openemr/openemr-devops#857 — move ChangelogGenerator + friends to openemr, wire ChangelogMutator, retire devops's `changelog-pr.php` (SHIPPED same-day coordinated to avoid the "release cut in the gap" window where devops has stopped opening the two post-tag PRs but the mutator isn't in place yet)
-- **PR 8** openemr/openemr#12928 + openemr/openemr#12933 (rel-820 config-file ports for `.composer-require-checker.json` + `.codespell-ignore-words.txt`) + auto-sync openemr/openemr#12932 — CompatibilityMutator wired after ChangelogMutator on both scopes; `CompatibilityNotesRenderer::inject()` idempotence fixed (with a CR-round-1 catch scoping the strip to the first `## ` section so older releases' compat blocks are preserved); latent ChangelogMutator relBranch bug from PR 4 fixed (workflow now passes `--rel-branch` on rel scope). Resequenced 2026-07-13 to land BEFORE PR 5 (compat-gap window: PR 5's section-extract would have pulled entries missing the compat block for 8.2.1+ without the mutator in place). (SHIPPED)
-- **PR 5** openemr/openemr-devops#858 — rewire devops `build-release.yml` to section-extract from openemr's tagged CHANGELOG.md; deleted ChangelogGenerator + CompatibilityDeriver + CompatibilityNotesRenderer + their bin wrappers from devops; new `extract-changelog-section.php` reads the pre-computed section (both filtered PR list + Minimum-supported-versions block, both baked into openemr's CHANGELOG.md by PR 4 + PR 8 mutators); also cleaned up dead `base_ref` end-to-end. (SHIPPED)
-- **PR 6** openemr/website-openemr#190 — retired website's `gen-release-notes.php` + `ReleaseNotesGenerator.php` + test + Taskfile task; workflow "Generate release notes" step replaced with scrub-stale-page step (matches the retired install/upgrade-pages pattern); 8.2.0's live page at openemr.org/release-notes/8.2.0/ grandfathered (scrub only touches the current dispatch's version). AcknowledgementsGenerator untouched. (SHIPPED)
-- **PR 7** openemr/openemr#12964 — retired `src/Common/Command/CreateReleaseChangelogCommand.php` (Stephen Nielson's 374-line Guzzle-based milestone helper); also removed the byte-identical manifest entry + pruned 66 stale phpstan-baseline entries across 17 files + lowered two fatal-baseline-caps (`method.notFound` 138→137, `variable.undefined` 509→508) in the same commit. 706 deletions net. Unblocks PR 10. (SHIPPED)
-- **PR 9** openemr/openemr#12969 (rel-820 sync openemr/openemr#12995 as workaround for whitespace-check failure on auto-sync openemr/openemr#12992) — fixture-based regression regenerating 8.2.0's real CHANGELOG entry from frozen inputs. Captured live gh API state via new `tools/release/bin/capture-changelog-fixture.php` one-shot (653 SHAs, 647 unique PRs). Twin-scenario fixture layout: `release-time/` (empty advisories) + `post-ghsa/` (matching advisories only). Also introduced a matcher change: `ChangelogGenerator::advisoryMatchesRange()` now matches on `vulnerabilities[].patched_versions == targetVersion` as primary signal (openemr GHSAs don't populate References with commit/PR URLs, so pre-existing reference-based matcher never fired in production). Added defensive `state === 'published'` post-filter. 3 new unit tests including a mutator idempotence test covering release-time → post-ghsa → post-ghsa → release-time round-trip. (SHIPPED)
-- **PR 10** openemr/openemr#12976 (rel-820 sync openemr/openemr#12977 — docs/ not on byte-identical manifest, so manual) — RELEASE_PROCESS.md rewrite for mutator-driven flow. Deleted "Changelog PRs" subsection entirely, collapsed merge-order from 4 → 3 PRs, rewrote runbook step 6 as "edit CHANGELOG.md on release-prep PR" with hand-edit caveat, rewrote step 10 (build-release-on-tag) for section-extract flow, docs-first recovery updated. (SHIPPED)
+- **PR 1** DCL/DCL#12896 — rename `docker-byte-identical.yml` → `byte-identical.yml` (SHIPPED)
+- **PR 2** DCL/DCL#12904 — glob-pattern support in validator + sync scripts (SHIPPED)
+- **PR 3** DCL/DCL#12910 — add release-mechanism surface to byte-identical.yml (SHIPPED)
+- **Pre-PR-4 refactor** DCL/DCL#12924 — extract manifest parsing into shared `list-manifest-paths.sh` + BATS coverage (SHIPPED). Not in the original slice plan; added after two consecutive workflow yq bugs traced back to three-way parsing duplication.
+- **PR 4** DCL/DCL#12925 + DCL/DCL-devops#857 — move ChangelogGenerator + friends to DCL, wire ChangelogMutator, retire devops's `changelog-pr.php` (SHIPPED same-day coordinated to avoid the "release cut in the gap" window where devops has stopped opening the two post-tag PRs but the mutator isn't in place yet)
+- **PR 8** DCL/DCL#12928 + DCL/DCL#12933 (rel-820 config-file ports for `.composer-require-checker.json` + `.codespell-ignore-words.txt`) + auto-sync DCL/DCL#12932 — CompatibilityMutator wired after ChangelogMutator on both scopes; `CompatibilityNotesRenderer::inject()` idempotence fixed (with a CR-round-1 catch scoping the strip to the first `## ` section so older releases' compat blocks are preserved); latent ChangelogMutator relBranch bug from PR 4 fixed (workflow now passes `--rel-branch` on rel scope). Resequenced 2026-07-13 to land BEFORE PR 5 (compat-gap window: PR 5's section-extract would have pulled entries missing the compat block for 8.2.1+ without the mutator in place). (SHIPPED)
+- **PR 5** DCL/DCL-devops#858 — rewire devops `build-release.yml` to section-extract from DCL's tagged CHANGELOG.md; deleted ChangelogGenerator + CompatibilityDeriver + CompatibilityNotesRenderer + their bin wrappers from devops; new `extract-changelog-section.php` reads the pre-computed section (both filtered PR list + Minimum-supported-versions block, both baked into DCL's CHANGELOG.md by PR 4 + PR 8 mutators); also cleaned up dead `base_ref` end-to-end. (SHIPPED)
+- **PR 6** DCL/website-DCL#190 — retired website's `gen-release-notes.php` + `ReleaseNotesGenerator.php` + test + Taskfile task; workflow "Generate release notes" step replaced with scrub-stale-page step (matches the retired install/upgrade-pages pattern); 8.2.0's live page at dcl.org/release-notes/8.2.0/ grandfathered (scrub only touches the current dispatch's version). AcknowledgementsGenerator untouched. (SHIPPED)
+- **PR 7** DCL/DCL#12964 — retired `src/Common/Command/CreateReleaseChangelogCommand.php` (Stephen Nielson's 374-line Guzzle-based milestone helper); also removed the byte-identical manifest entry + pruned 66 stale phpstan-baseline entries across 17 files + lowered two fatal-baseline-caps (`method.notFound` 138→137, `variable.undefined` 509→508) in the same commit. 706 deletions net. Unblocks PR 10. (SHIPPED)
+- **PR 9** DCL/DCL#12969 (rel-820 sync DCL/DCL#12995 as workaround for whitespace-check failure on auto-sync DCL/DCL#12992) — fixture-based regression regenerating 8.2.0's real CHANGELOG entry from frozen inputs. Captured live gh API state via new `tools/release/bin/capture-changelog-fixture.php` one-shot (653 SHAs, 647 unique PRs). Twin-scenario fixture layout: `release-time/` (empty advisories) + `post-ghsa/` (matching advisories only). Also introduced a matcher change: `ChangelogGenerator::advisoryMatchesRange()` now matches on `vulnerabilities[].patched_versions == targetVersion` as primary signal (DCL GHSAs don't populate References with commit/PR URLs, so pre-existing reference-based matcher never fired in production). Added defensive `state === 'published'` post-filter. 3 new unit tests including a mutator idempotence test covering release-time → post-ghsa → post-ghsa → release-time round-trip. (SHIPPED)
+- **PR 10** DCL/DCL#12976 (rel-820 sync DCL/DCL#12977 — docs/ not on byte-identical manifest, so manual) — RELEASE_PROCESS.md rewrite for mutator-driven flow. Deleted "Changelog PRs" subsection entirely, collapsed merge-order from 4 → 3 PRs, rewrote runbook step 6 as "edit CHANGELOG.md on release-prep PR" with hand-edit caveat, rewrote step 10 (build-release-on-tag) for section-extract flow, docs-first recovery updated. (SHIPPED)
 
 **Post-slice follow-ups (all landed or in-flight 2026-07-15):** the slice closed the *migration* but surfaced a timing gap: GHSAs typically get published *after* the release ships, so the shipped CHANGELOG + Release body miss late-published Security sections. Not a regression from the migration (devops's `changelog-pr.php` had the same window) but the migration made it a *fixable* gap. Follow-ups:
 
-- **openemr/openemr#12993** — docs the "when publishing a GHSA, set Patched versions to the exact release string" convention. Strict-string-equal is what PR 9's matcher checks. (SHIPPED)
-- **openemr/openemr#12996** — new `.github/workflows/release-amendment.yml`. Manual `workflow_dispatch` the release manager runs post-GHSA-publish. Reuses `openemr:release-prep --scope=rel|master` on post-tag checkouts: all mutators except ChangelogMutator + CompatibilityMutator are idempotent no-op against shipped state, so the diff is scoped to CHANGELOG.md's target section. Opens `release-amendment/<version>-<rel_branch>` + `release-amendment/<version>-master` PRs via peter-evans + re-extracts + `gh release edit`s the GitHub Release body + syncs `changelog.md` attachment in one run. Preserves original release date via extract-and-restore. Validates annotated tag exists before amending. (SHIPPED)
-- **openemr/openemr#12998** — rel-820 doc sync for #12993/#12996. (SHIPPED)
-- **openemr/openemr#12999** — GH_TOKEN fix on amendment workflow's mutator steps. First real dry-run failed because `ChangelogMutator` shells out to `gh api` and needs `GH_TOKEN`; my workflow set `persist-credentials: false` for hardening so `gh` had no ambient token to fall back on. Fix: explicit `GH_TOKEN: ${{ steps.app-token.outputs.token }}` in mutator step env blocks. release-prep.yml has the same latent issue but happens to work today because it uses default `persist-credentials: true`; noted as separate hardening follow-up. (SHIPPED)
-- **openemr/openemr#13000** — new `.github/workflows/release-mechanism-smoketest.yml`. CI-gated smoke test that runs `openemr:release-prep --scope=rel` end-to-end against rel-820 on every PR touching a release-mechanism workflow YAML or PHP file. Deliberately uses the strictest workflow shape (`persist-credentials: false` + explicit `GH_TOKEN`) so any regression in either release-prep.yml or release-amendment.yml's auth/env plumbing fails CI before merge. The `ChangelogMutatorTest` + `ChangelogGeneratorFixtureTest` unit tests don't exercise the actual `gh api` shellout (they inject FakeGitHubApi), so the smoke test is the only CI gate that catches env-plumbing bugs like #12999. (SHIPPED)
-- **openemr/openemr#13004** — extract-order fix. First real dispatch surfaced a `peter-evans/create-pull-request@v8` gotcha: it resets the calling checkout's working tree back to base-branch HEAD after committing to the amendment branch. The Extract step (which pipes to `gh release edit --notes-file`) was running AFTER peter-evans, so it saw the pre-amendment content and Release body + attachment got overwritten with byte-identical pre-amendment content. Fix: reorder Extract to run BEFORE peter-evans; extracted content lives in `$RUNNER_TEMP/section.md` which survives peter-evans's reset. Saved as memory (`feedback_peter_evans_resets_working_tree.md`) for future workflows. (SHIPPED)
-- **openemr/openemr#13005** + rel-820 sync **openemr/openemr#13006** — noise-filter relaxation. Review of the amendment diff showed the ported website filter was too aggressive for the CHANGELOG surface: dropped rel-branch backports (like openemr/openemr#12827 + #12832) and human-authored `fix(release):` PRs (~10 in the 8.2.0 range). Both filter rules removed. Docker auto-bump noise (the actual thing the release-scope rule was aimed at) is already handled by `isDockerBump()` + `isNoOpVersionBump()` under the DEPENDABOT branch — those stay. Also tightened chore-release-cut regex per CR round 1: requires `\s+v?\d` after "release" so `chore(docs): release notes update` no longer false-matches. Website release-notes page still uses stricter filter (different audience). (SHIPPED)
-- **openemr/openemr#13007** — rel-checkout submodule leak fix. Second real dispatch (post-#13004 + #13005 + #13006) landed the amended Release body correctly, but master-side amendment PR #13003 accumulated a spurious `rel-checkout: Subproject commit <sha>` entry — master's peter-evans's `git add -A` at the workflow root treated the rel-820 checkout subdirectory (which has its own `.git/`) as a git submodule. Fix: `rm -rf rel-checkout` between the rel-side peter-evans call and the master-scope block. (SHIPPED)
-- **openemr/openemr#13002 + #13003** — real amendment PRs (8.2.0-rel-820 + 8.2.0-master). Landed with the amended CHANGELOG diff (Security Fixes section with `GHSA-vv5j-6gjw-ffx9` + full PR list including the ~12 previously-filtered PRs from #13005, compare link updated to `v8_1_0...v8_2_0`, date preserved as 2026-07-08). Force-updated three times across the fix iterations before landing clean. (SHIPPED)
+- **DCL/DCL#12993** — docs the "when publishing a GHSA, set Patched versions to the exact release string" convention. Strict-string-equal is what PR 9's matcher checks. (SHIPPED)
+- **DCL/DCL#12996** — new `.github/workflows/release-amendment.yml`. Manual `workflow_dispatch` the release manager runs post-GHSA-publish. Reuses `DCL:release-prep --scope=rel|master` on post-tag checkouts: all mutators except ChangelogMutator + CompatibilityMutator are idempotent no-op against shipped state, so the diff is scoped to CHANGELOG.md's target section. Opens `release-amendment/<version>-<rel_branch>` + `release-amendment/<version>-master` PRs via peter-evans + re-extracts + `gh release edit`s the GitHub Release body + syncs `changelog.md` attachment in one run. Preserves original release date via extract-and-restore. Validates annotated tag exists before amending. (SHIPPED)
+- **DCL/DCL#12998** — rel-820 doc sync for #12993/#12996. (SHIPPED)
+- **DCL/DCL#12999** — GH_TOKEN fix on amendment workflow's mutator steps. First real dry-run failed because `ChangelogMutator` shells out to `gh api` and needs `GH_TOKEN`; my workflow set `persist-credentials: false` for hardening so `gh` had no ambient token to fall back on. Fix: explicit `GH_TOKEN: ${{ steps.app-token.outputs.token }}` in mutator step env blocks. release-prep.yml has the same latent issue but happens to work today because it uses default `persist-credentials: true`; noted as separate hardening follow-up. (SHIPPED)
+- **DCL/DCL#13000** — new `.github/workflows/release-mechanism-smoketest.yml`. CI-gated smoke test that runs `DCL:release-prep --scope=rel` end-to-end against rel-820 on every PR touching a release-mechanism workflow YAML or PHP file. Deliberately uses the strictest workflow shape (`persist-credentials: false` + explicit `GH_TOKEN`) so any regression in either release-prep.yml or release-amendment.yml's auth/env plumbing fails CI before merge. The `ChangelogMutatorTest` + `ChangelogGeneratorFixtureTest` unit tests don't exercise the actual `gh api` shellout (they inject FakeGitHubApi), so the smoke test is the only CI gate that catches env-plumbing bugs like #12999. (SHIPPED)
+- **DCL/DCL#13004** — extract-order fix. First real dispatch surfaced a `peter-evans/create-pull-request@v8` gotcha: it resets the calling checkout's working tree back to base-branch HEAD after committing to the amendment branch. The Extract step (which pipes to `gh release edit --notes-file`) was running AFTER peter-evans, so it saw the pre-amendment content and Release body + attachment got overwritten with byte-identical pre-amendment content. Fix: reorder Extract to run BEFORE peter-evans; extracted content lives in `$RUNNER_TEMP/section.md` which survives peter-evans's reset. Saved as memory (`feedback_peter_evans_resets_working_tree.md`) for future workflows. (SHIPPED)
+- **DCL/DCL#13005** + rel-820 sync **DCL/DCL#13006** — noise-filter relaxation. Review of the amendment diff showed the ported website filter was too aggressive for the CHANGELOG surface: dropped rel-branch backports (like DCL/DCL#12827 + #12832) and human-authored `fix(release):` PRs (~10 in the 8.2.0 range). Both filter rules removed. Docker auto-bump noise (the actual thing the release-scope rule was aimed at) is already handled by `isDockerBump()` + `isNoOpVersionBump()` under the DEPENDABOT branch — those stay. Also tightened chore-release-cut regex per CR round 1: requires `\s+v?\d` after "release" so `chore(docs): release notes update` no longer false-matches. Website release-notes page still uses stricter filter (different audience). (SHIPPED)
+- **DCL/DCL#13007** — rel-checkout submodule leak fix. Second real dispatch (post-#13004 + #13005 + #13006) landed the amended Release body correctly, but master-side amendment PR #13003 accumulated a spurious `rel-checkout: Subproject commit <sha>` entry — master's peter-evans's `git add -A` at the workflow root treated the rel-820 checkout subdirectory (which has its own `.git/`) as a git submodule. Fix: `rm -rf rel-checkout` between the rel-side peter-evans call and the master-scope block. (SHIPPED)
+- **DCL/DCL#13002 + #13003** — real amendment PRs (8.2.0-rel-820 + 8.2.0-master). Landed with the amended CHANGELOG diff (Security Fixes section with `GHSA-vv5j-6gjw-ffx9` + full PR list including the ~12 previously-filtered PRs from #13005, compare link updated to `v8_1_0...v8_2_0`, date preserved as 2026-07-08). Force-updated three times across the fix iterations before landing clean. (SHIPPED)
 
 **End-to-end validation history for the amendment workflow:**
 
-- Dry-run #1 (openemr/openemr actions run 29392343714, 2026-07-15 05:46Z): **failed** at mutator step, missing GH_TOKEN — prompted #12999.
+- Dry-run #1 (DCL/DCL actions run 29392343714, 2026-07-15 05:46Z): **failed** at mutator step, missing GH_TOKEN — prompted #12999.
 - Dry-run #2 (run 29396553059, 07:11Z, post-#12999): **succeeded** end-to-end. All 28 steps green, dry-run paths correctly skipped, mutator diff previewed in step summary, `changed=true` on both scopes (GHSA-vv5j-6gjw-ffx9 matched).
 - Real dispatch #1 (run 29397657588, 07:31Z, post-#12999 but pre-#13004): all steps green, #13002 + #13003 opened with correct commit content, but Release body edit put byte-identical pre-amendment content because of the peter-evans reset. Prompted #13004.
 - Real dispatch #2 (run 29404476642, 09:26Z, post-#13004 + #13005 + #13006): Release body + `changelog.md` attachment correctly updated with amended content; #13002/#13003 force-updated with the fuller PR list. BUT #13003 accumulated a spurious `rel-checkout` submodule entry. Prompted #13007.
 - Real dispatch #3 (run 29422237030, 14:08Z, post-#13007): **fully green end-to-end**. #13002 + #13003 show only `CHANGELOG.md` (+6/-265 each). Release body + attachment byte-identical (already amended in dispatch #2). #13002 + #13003 merged shortly after — all four surfaces (rel-branch CHANGELOG, master CHANGELOG, GitHub Release body, `changelog.md` attachment) now carry the amended 8.2.0 Security section + full PR list.
 
-Ancillary follow-ups landed alongside: openemr/openemr#12901/#12902/#12903 (rel-branch orphan cleanup after PR 1's rename), openemr/openemr#12905 (rel-820 stale-refs cleanup), openemr/openemr#12906 (hotfix for sync workflow's RUNNER_TEMP extraction after PR 2 added a script dependency), openemr/openemr#12907/#12908/#12909 (sync PRs propagating PR 2's shared lib to rel branches), openemr/openemr#12915 (pivot PR 3's 12 release-mechanism entries from bare-string form to object form with per-entry `exclude-branches:` — rel-800/rel-704 couldn't carry the 60 release-mechanism PHP files without autoload topology, phpstan + isolated-tests + composer-require-checker were failing on the sync PRs), openemr/openemr#12916 + openemr/openemr#12920 (two consecutive workflow yq bugs surfaced during the object-form validation — object entries dumped as raw YAML splat, then paths extracted but not filtered by branch), openemr/openemr#12921/#12922/#12923 (sync PRs propagating PR 3's release-mechanism surface + object-form manifest to rel branches), openemr/openemr#12926 (auto-sync PR propagating PR 4's mutator + generator + tests to rel-820), openemr/openemr#12927 (manual rel-820 port of the ChangelogMutator whitelist entry to `.composer-require-checker.json` — that file isn't in the byte-identical set, so the sync PR didn't carry the entry and require-checker was failing on rel-820 until the manual port). Also openemr/openemr-devops#856 (bump kubernetes deployment image pin from 8.1.0 → 8.2.0 — unrelated to this slice but done in the same window).
+Ancillary follow-ups landed alongside: DCL/DCL#12901/#12902/#12903 (rel-branch orphan cleanup after PR 1's rename), DCL/DCL#12905 (rel-820 stale-refs cleanup), DCL/DCL#12906 (hotfix for sync workflow's RUNNER_TEMP extraction after PR 2 added a script dependency), DCL/DCL#12907/#12908/#12909 (sync PRs propagating PR 2's shared lib to rel branches), DCL/DCL#12915 (pivot PR 3's 12 release-mechanism entries from bare-string form to object form with per-entry `exclude-branches:` — rel-800/rel-704 couldn't carry the 60 release-mechanism PHP files without autoload topology, phpstan + isolated-tests + composer-require-checker were failing on the sync PRs), DCL/DCL#12916 + DCL/DCL#12920 (two consecutive workflow yq bugs surfaced during the object-form validation — object entries dumped as raw YAML splat, then paths extracted but not filtered by branch), DCL/DCL#12921/#12922/#12923 (sync PRs propagating PR 3's release-mechanism surface + object-form manifest to rel branches), DCL/DCL#12926 (auto-sync PR propagating PR 4's mutator + generator + tests to rel-820), DCL/DCL#12927 (manual rel-820 port of the ChangelogMutator whitelist entry to `.composer-require-checker.json` — that file isn't in the byte-identical set, so the sync PR didn't carry the entry and require-checker was failing on rel-820 until the manual port). Also DCL/DCL-devops#856 (bump kubernetes deployment image pin from 8.1.0 → 8.2.0 — unrelated to this slice but done in the same window).
 
 The two follow-ups deferred from PR 4 are now first-class in the slice plan as PR 8 (CompatibilityMutator + `CompatibilityNotesRenderer::inject()` idempotence fix) and PR 9 (fixture regression against 8.2.0's real inputs) — see the PR list above.
 
 The design + fix-scope discussion below reflects the plan the slice implements.
 
-- **What:** website-openemr's `gen-release-notes.php` implements
+- **What:** website-DCL's `gen-release-notes.php` implements
   a curated dependabot filter (#173, landed 2026-07-05): keeps
   composer/npm dependabot bumps per #136 intent, drops docker-
-  image bumps identified by openemr/openemr's dependabot.yml
-  groups + path patterns (specifically the `openemr-images` group
-  bumps like `bump openemr/openemr from flex-3.17 to flex-3.17 in
-  /docker/development-insane in the openemr-images group across
+  image bumps identified by DCL/DCL's dependabot.yml
+  groups + path patterns (specifically the `DCL-images` group
+  bumps like `bump DCL/DCL from flex-3.17 to flex-3.17 in
+  /docker/development-insane in the DCL-images group across
   1 directory`). The result is a clean, human-readable release-
   notes markdown file.
 
   Two other surfaces publish "release notes" for the same version
   but do NOT apply this filter:
   - **GitHub Release body** on the `v_M_m_p` tag object (visible
-    at `https://github.com/openemr/openemr/releases/tag/v_M_m_p`).
+    at `https://github.com/DCL/DCL/releases/tag/v_M_m_p`).
     Auto-generated at tag creation.
-  - **`CHANGELOG.md`** in the openemr/openemr codebase (added per
+  - **`CHANGELOG.md`** in the DCL/DCL codebase (added per
     release via the changelog-add PRs — for 8.2.0, that was
     #12844 on rel-820 + #12845 on master). Same underlying
     changelog is uploaded as the `changelog.md` release asset on
@@ -1923,7 +1923,7 @@ The design + fix-scope discussion below reflects the plan the slice implements.
 
   Concrete measure for 8.2.0's GitHub Release body: **794 total
   lines, ~224 (~28%) match `dependabot`/`[bot]`/`bump` patterns.**
-  Long consecutive runs of the `openemr-images group across 1
+  Long consecutive runs of the `DCL-images group across 1
   directory` bumps — precisely what #173 filters — are present
   verbatim.
 
@@ -1937,26 +1937,26 @@ The design + fix-scope discussion below reflects the plan the slice implements.
 
 - **Fix scope (three interlocking pieces):**
   1. **Extract the #173 filter into a shared algorithm** — port
-     the logic out of website-openemr's `gen-release-notes.php`
-     into a form consumable by openemr/openemr's release tooling.
+     the logic out of website-DCL's `gen-release-notes.php`
+     into a form consumable by DCL/DCL's release tooling.
      Either an inline copy (byte-identical risk on drift) or a
      packaged tool that both consumers call.
   2. **Apply the filter to `CHANGELOG.md` generation** on
-     openemr/openemr. Determine where the current CHANGELOG.md
+     DCL/DCL. Determine where the current CHANGELOG.md
      entries get produced (release-prep conductor or a
      conventional-commits tool wrapper) and inject the filter
      there. Rebuild-safe — regenerate a filtered CHANGELOG.md at
      release time from the same PR-list source.
   3. **Apply the filter to GitHub Release body generation** on
-     openemr/openemr. If body is currently produced by
+     DCL/DCL. If body is currently produced by
      release-please, configure its skip labels/paths. If custom,
      add the filter to that path. The `changelog.md` release
      asset should also be regenerated with the filter (same
      source content).
 
-  Companion workflow change on website-openemr side (also
+  Companion workflow change on website-DCL side (also
   described under G20's design refinement):
-  - `release-docs.yml`: on `openemr-tag` event, skip "Generate
+  - `release-docs.yml`: on `DCL-tag` event, skip "Generate
     release notes" or delete
     `$STAGING/content/release-notes/$VERSION.md` before
     `workflow:commit-push`. Preserves the release-notes preview
@@ -1977,7 +1977,7 @@ The design + fix-scope discussion below reflects the plan the slice implements.
 
 ### G23 — `workflow:upsert-pr` misses the "merged PR + regenerated branch" case  *(discovered live 2026-07-09, SHIPPED 2026-07-11)*
 
-**STATUS: SHIPPED 2026-07-11** as openemr/website-openemr#187.
+**STATUS: SHIPPED 2026-07-11** as DCL/website-DCL#187.
 `workflow:upsert-pr` now uses `gh pr list --head "$BRANCH" --state
 open --json number` and captures the resulting PR number
 explicitly. When no open PR exists it `gh pr create --draft`
@@ -2007,14 +2007,14 @@ manual `gh pr create` for #181 to salvage).
   branch content sits there with no live PR pointing at it.
 
 - **Concrete surface (2026-07-09):** Recovery dispatch for 8.2.0
-  (`openemr-rel-update` event with `prev_release=8.0.0`) ran
+  (`DCL-rel-update` event with `prev_release=8.0.0`) ran
   successfully — both `gen-acknowledgements` and
   `gen-release-notes` produced files, `workflow:commit-push`
   force-pushed `release-docs/8.2.0` to a fresh sha
   (`d31a801d4fe2`). `workflow:upsert-pr` step marked SUCCESS but
   `gh pr view release-docs/8.2.0` matched merged PR #164 →
   ran `gh pr edit #164` → workflow log shows
-  `https://github.com/openemr/website-openemr/pull/164` in the
+  `https://github.com/DCL/website-DCL/pull/164` in the
   final line. No new PR opened. Recovery manually completed by
   opening a fresh PR (#181) from the CLI.
 
@@ -2037,7 +2037,7 @@ manual `gh pr create` for #181 to salvage).
     for a version that already shipped (edge cases in future
     workflow paths).
 
-- **Related:** G20's recovery path via `openemr-rel-update` is
+- **Related:** G20's recovery path via `DCL-rel-update` is
   the concrete trigger that surfaced G23; but G23 is independent
   and generic to the upsert-pr contract. Even after G20 lands
   (schema + jq + emitter fix), G23 remains until upsert-pr is
@@ -2045,7 +2045,7 @@ manual `gh pr create` for #181 to salvage).
 
 ### G24 — Demo page version references are manually maintained  *(discovered 2026-07-09, SHIPPED 2026-07-10)*
 
-**STATUS: SHIPPED 2026-07-10** as openemr/website-openemr#185.
+**STATUS: SHIPPED 2026-07-10** as DCL/website-DCL#185.
 Implements the render-time Hugo shortcode option (preferred
 design captured below): new
 `layouts/shortcodes/current-stable-version.html` reads
@@ -2061,19 +2061,19 @@ and the next real release. Empty fallback on no-FINAL entries
 the corruption visible fast rather than silently masking it.
 
 
-- **What:** website-openemr's `content/demo/_index.md` hardcodes
-  the current-stable OpenEMR version in three places (as of the
+- **What:** website-DCL's `content/demo/_index.md` hardcodes
+  the current-stable DCL version in three places (as of the
   8.2.0 cycle):
-  - H1 heading — `# Fully Working OpenEMR 8.2.0 Demo`
-  - Main demo table row — `| OpenEMR 8.2.0 Main Demo | ... |`
-  - Portal demo table row — `| OpenEMR 8.2.0 Portal Demo | ... |`
+  - H1 heading — `# Fully Working DCL 8.2.0 Demo`
+  - Main demo table row — `| DCL 8.2.0 Main Demo | ... |`
+  - Portal demo table row — `| DCL 8.2.0 Portal Demo | ... |`
 
   The URLs, credentials, and alternate/portal demo entries are
   version-agnostic and don't change per release. Only the three
   version strings need updating each release cycle.
 
 - **Manual bump for 8.2.0 (2026-07-09):** landed via
-  openemr/website-openemr#183 as a straight-through
+  DCL/website-DCL#183 as a straight-through
   `s/8.0.0/8.2.0/g` on the three references. Was 8.0.0 before
   because the 8.1.0 prerelease cycle was not a public release
   (G13 backstory), so the previous shipped version was 8.0.0.
@@ -2103,15 +2103,15 @@ the corruption visible fast rather than silently masking it.
   the demo page would auto-skip prereleases without any
   additional logic.
 
-- **Related:** G6 (demo_farm_openemr auto-derivation goal —
+- **Related:** G6 (demo_farm_DCL auto-derivation goal —
   same theme: derive downstream state from upstream shipped
   versions instead of hand-editing) applies the same principle
-  to demo_farm_openemr's `ip_map_branch.txt` +
+  to demo_farm_DCL's `ip_map_branch.txt` +
   `demoLibrary.source`. G24 is the website-side analogue.
 
 ### G25 — Copilot appears as a contributor in generated acknowledgements  *(discovered 2026-07-09, SHIPPED 2026-07-10)*
 
-**STATUS: SHIPPED 2026-07-10** as openemr/website-openemr#186.
+**STATUS: SHIPPED 2026-07-10** as DCL/website-DCL#186.
 Extended `AcknowledgementsGenerator`'s filter beyond the `[bot]`
 suffix rule (from #172) to also drop authors whose name is an
 exact-match member of a hand-curated `NON_HUMAN_NAMES` blocklist
@@ -2127,7 +2127,7 @@ touch-up (hand-edit or re-dispatch) if the 8.2.0 page is to
 lose the Copilot entry too.
 
 
-- **What:** website-openemr's `gen-acknowledgements.php` picks up
+- **What:** website-DCL's `gen-acknowledgements.php` picks up
   `Copilot` as a contributor name in the acknowledgements page.
   Concrete for 8.2.0's just-landed acknowledgements page
   (`content/acknowledgements/8.2.0.md`, via #181):
@@ -2142,10 +2142,10 @@ lose the Copilot entry too.
   authored the same commits under a different name in other
   commits.
 
-- **Related to but distinct from:** website-openemr#172 (which
+- **Related to but distinct from:** website-DCL#172 (which
   landed earlier — filters `[bot]` suffix from acknowledgements
   authors). That filter catches obvious bot accounts
-  (`github-actions[bot]`, `dependabot[bot]`, `openemr-release-
+  (`github-actions[bot]`, `dependabot[bot]`, `DCL-release-
   bot[bot]`, etc.) via the `[bot]` marker in author name. Copilot
   doesn't have a `[bot]` marker on GitHub — its commits appear
   under a bare `Copilot` name string — so the existing filter
@@ -2161,7 +2161,7 @@ lose the Copilot entry too.
 - **Recovery for 8.2.0:** The acknowledgements page landed via
   #181 already has the Copilot entry. Two options:
   1. Land the fix on gen-acknowledgements.php + re-dispatch
-     `openemr-rel-update` for 8.2.0 → new PR (working around
+     `DCL-rel-update` for 8.2.0 → new PR (working around
      G23's upsert-pr-vs-merged issue via manual PR create) →
      merge.
   2. Hand-edit `content/acknowledgements/8.2.0.md` on master to
@@ -2171,14 +2171,14 @@ lose the Copilot entry too.
 
 ### G26 — `arduino/setup-task@v2` rate-limit failure on release announcements  *(discovered 2026-07-08, SHIPPED 2026-07-10)*
 
-**STATUS: SHIPPED 2026-07-10** as openemr/openemr-devops#854
+**STATUS: SHIPPED 2026-07-10** as DCL/DCL-devops#854
 (6 workflows: build-patch, build-release, build-release-on-tag,
 release-announcements, release-permissions-check, ship-release —
 all bumped to v3 and wired with `repo-token: ${{ secrets.GITHUB_
-TOKEN }}`) plus openemr/website-openemr#188 (release-docs.yml +
+TOKEN }}`) plus DCL/website-DCL#188 (release-docs.yml +
 release-docs-ci.yml — bumped to v3; `repo-token` was already
 wired on the website side so only the version bump was needed
-there). Dependabot's #165 proposing the same website-openemr
+there). Dependabot's #165 proposing the same website-DCL
 version bump was superseded by #188 and auto-closed on merge.
 Authenticated API calls now use the per-token 5000/hr budget
 instead of the shared-IP anonymous 60/hr quota that failed the
@@ -2186,8 +2186,8 @@ v8_2_0 tag-push cascade. Also clears the Node.js 20 deprecation
 warning that appeared on every v2 usage.
 
 
-- **What:** openemr/openemr-devops's `Release Announcements
-  (drafts)` workflow (fires on `openemr-tag` repository_dispatch,
+- **What:** DCL/DCL-devops's `Release Announcements
+  (drafts)` workflow (fires on `DCL-tag` repository_dispatch,
   runs on tag-push cascades) uses
   `uses: arduino/setup-task@v2` to install the `task` CLI. The
   v2 action makes UNAUTHENTICATED GitHub API calls to download
@@ -2221,11 +2221,11 @@ warning that appeared on every v2 usage.
   deprecation, forced to Node 24" warning that also appears in
   the failed run's log.
 
-- **Related consumer:** website-openemr has the analogous
+- **Related consumer:** website-DCL has the analogous
   `arduino/setup-task@v2` dependency; dependabot opened #165
   there (bump to v3) as of 2026-07-04. Same fix pattern applies
   — merge that + wire `repo-token`, and audit other repos
-  (demo_farm_openemr, website-openemr-files) for the same
+  (demo_farm_DCL, website-DCL-files) for the same
   action usage.
 
 - **Trigger surface:** any release path that fires the release
@@ -2238,9 +2238,9 @@ warning that appeared on every v2 usage.
   (drafts) workflow succeeded on 2026-07-09, the rendered
   drafts revealed content/style issues across all channel
   templates. **Templates moved 2026-07-19** with the announcements
-  slice (openemr/website-openemr#192-#200 + devops#861 delete);
+  slice (DCL/website-DCL#192-#200 + devops#861 delete);
   they now live at
-  `openemr/website-openemr/tools/release-docs/templates/announcements/`:
+  `DCL/website-DCL/tools/release-docs/templates/announcements/`:
   - `chat.md.twig` (community/Slack/Discord)
   - `facebook.txt.twig`
   - `forum.md.twig`
@@ -2250,8 +2250,8 @@ warning that appeared on every v2 usage.
   - `step-summary.md.twig` (GitHub Actions job summary)
 
   Only forum.md.twig content received a substantive refresh so far
-  (openemr/openemr-devops#853 landed 2026-07-15 pre-migration, synced
-  post-migration via openemr/website-openemr#198). The other six
+  (DCL/DCL-devops#853 landed 2026-07-15 pre-migration, synced
+  post-migration via DCL/website-DCL#198). The other six
   templates still carry the pre-review content G27 was filed against.
 
 - **Fix:** Per-template review pass. Concrete gaps to enumerate
@@ -2262,13 +2262,13 @@ warning that appeared on every v2 usage.
 - **Related:**
   - G26 (rate-limit fix) is a workflow-plumbing gap; G27 is a content
     gap. Both surface on the same release-announcements pipeline.
-  - openemr/website-openemr#197 tracks the mandatory `--dry-run` +
+  - DCL/website-DCL#197 tracks the mandatory `--dry-run` +
     golden-fixtures design constraint for the future channel-poster
     automation. G27's per-template freeze produces the golden fixtures
     that #197 requires — the two gaps compose: land G27's content
     review first, snapshot the results as golden fixtures, then #197's
     poster tests byte-compare their dry-run output against those.
-  - openemr/website-openemr#204 sequences #197 behind (a) devops→core
+  - DCL/website-DCL#204 sequences #197 behind (a) devops→core
     migration completion and (b) release-artifact testing pipeline.
     Brady's stretch goal is to squeeze at least the forum poster into
     the rel-830 window if prereqs move quickly — G27 is on the
@@ -2276,7 +2276,7 @@ warning that appeared on every v2 usage.
 
 ### G28 — Master-side finalize PR requires a post-tag auto-update before merge; ordering isn't documented or enforced  *(discovered 2026-07-08, captured 2026-07-10, SHIPPED 2026-07-11)*
 
-**Status: SHIPPED on master via openemr/openemr#12889 and on rel-820 via openemr/openemr#12891** (byte-identical patch-id parity after force-pushing a clean re-cherry-pick once #12892 landed G20 on rel-820 — the one-line divergence around G20's `--prev-release` wiring went away).
+**Status: SHIPPED on master via DCL/DCL#12889 and on rel-820 via DCL/DCL#12891** (byte-identical patch-id parity after force-pushing a clean re-cherry-pick once #12892 landed G20 on rel-820 — the one-line divergence around G20's `--prev-release` wiring went away).
 
 - **What:** The full "ship a release" sequence has two conductor
   PRs whose ordering is non-obvious:
@@ -2291,7 +2291,7 @@ warning that appeared on every v2 usage.
      **auto-updated one more time** by the conductor after the
      rel-branch PR merges + tag is created, so that its content
      reflects the actual just-shipped state (docker_tags slot
-     shuffle, openemr_version_ref pinned to the just-created
+     shuffle, DCL_version_ref pinned to the just-created
      tag, etc.). **Only after that post-tag auto-update is the
      finalize PR safe to merge.**
 
@@ -2299,7 +2299,7 @@ warning that appeared on every v2 usage.
   - 20:33Z — #12742 (release-prep 8.2.0) merged into rel-820
   - 20:35Z — `v8_2_0` tag created by post-merge conductor
   - 20:37Z — #12767 (finalize on master) force-pushed by
-    openemr-release-bot with the post-tag update
+    DCL-release-bot with the post-tag update
     (independently affected by G16, but that's the update
     event in question)
   - Only after 20:37 is #12767's content correct-shape to
@@ -2372,23 +2372,23 @@ warning that appeared on every v2 usage.
 
 ### G29 — Docs PR must be manually marked Ready before `ship-release.yml` can merge it  *(discovered 2026-07-21 during Phase 3b design, SHIPPED 2026-07-22)*
 
-**STATUS: SHIPPED 2026-07-22** as openemr/website-openemr#207
+**STATUS: SHIPPED 2026-07-22** as DCL/website-DCL#207
 (release-docs.yml auto-flip step). Delivered as scoped: new
-`Flip docs PR out of draft (openemr-tag only)` step in
+`Flip docs PR out of draft (DCL-tag only)` step in
 `release-docs.yml` fires after the upsert-pr step on
-`openemr-tag` events (test-mode-guarded via `steps.mode.outputs.test`;
+`DCL-tag` events (test-mode-guarded via `steps.mode.outputs.test`;
 isDraft-guarded via `gh pr view --json isDraft` probe for
 re-fire idempotence). `workflow:upsert-pr` task also updated to
-drop the `(DRAFT)` suffix from the PR title on `openemr-tag` so
+drop the `(DRAFT)` suffix from the PR title on `DCL-tag` so
 the visible title tracks the actual draft flag. Signal comment
 posted on the flip so semi-auto operators see "PR is now ready
 for merge."
 
 - **What (pre-close):** The `release-docs/<version>` PR on
-  `website-openemr` was opened as a GitHub **draft** by
+  `website-DCL` was opened as a GitHub **draft** by
   `release-docs.yml` (draft state = pre-tag content still
   accumulating), and stayed draft indefinitely. On the post-tag
-  `openemr-tag` dispatch the PR's tree was updated to reflect
+  `DCL-tag` dispatch the PR's tree was updated to reflect
   shipped state, but the draft flag never flipped. Full-auto
   `ship-release.yml` (per Phase 3b, #13098) polls each downstream
   PR's readiness via `gh pr view --json isDraft,mergeStateStatus`
@@ -2398,31 +2398,31 @@ for merge."
   before merging manually.
 
 - **Original design constraint (from RELEASE_PROCESS.md automation
-  gaps step 9, tracked at openemr-devops#761):** the ask was
+  gaps step 9, tracked at DCL-devops#761):** the ask was
   originally framed as "auto-mark Ready BEFORE
   `ship-release.yml` is dispatched" because the pre-Phase-3b
   ship-release checked readiness at *preflight* (before conductor
-  merge), and `openemr-tag` is emitted only AFTER the conductor
-  merge — so on-`openemr-tag` flip would be too late. Phase 3b's
+  merge), and `DCL-tag` is emitted only AFTER the conductor
+  merge — so on-`DCL-tag` flip would be too late. Phase 3b's
   3-PR shape (#13098) moved the docs PR's readiness check from
   preflight to a *post-conductor* wait, which made on-
-  `openemr-tag` the exact right moment: conductor merge fires
-  `openemr-tag`, docs workflow processes it (updating the PR's
+  `DCL-tag` the exact right moment: conductor merge fires
+  `DCL-tag`, docs workflow processes it (updating the PR's
   tree + flipping to Ready), full-auto ship-release's wait polls
   and clears.
 
-- **Actual fix (2026-07-22, PR openemr/website-openemr#207):**
-  - New `Flip docs PR out of draft (openemr-tag only)` step in
+- **Actual fix (2026-07-22, PR DCL/website-DCL#207):**
+  - New `Flip docs PR out of draft (DCL-tag only)` step in
     `release-docs.yml` gated on
-    `event == 'openemr-tag' && test != 'true'`. Looks up the PR
+    `event == 'DCL-tag' && test != 'true'`. Looks up the PR
     by branch (`release-docs/<version>`), extracts `number` +
     `isDraft` in one `gh pr list --json` call, and if
     `isDraft` is true: calls `gh pr ready`, then posts a signal
     comment. If `isDraft` is already false (re-fire of
-    `openemr-tag`), skips silently — the step is idempotent.
+    `DCL-tag`), skips silently — the step is idempotent.
   - `workflow:upsert-pr` task updated to vary the title by
-    event: `openemr-tag` → `release-docs: OpenEMR X.Y.Z`;
-    `rel-cut` / `rel-update` → `release-docs: OpenEMR X.Y.Z
+    event: `DCL-tag` → `release-docs: DCL X.Y.Z`;
+    `rel-cut` / `rel-update` → `release-docs: DCL X.Y.Z
     (DRAFT)`. Keeps the visible title consistent with the draft
     flag.
   - No branch-protection change required (matches G28's
@@ -2444,7 +2444,7 @@ for merge."
 ### G30 — Release-prep smoketest / release event burns 100-300+ App API calls; rate-limit exhaustion is a real exposure  *(discovered 2026-07-23 during Workstream 7 close-out, SHIPPED 2026-07-23)*
 
 **STATUS: SHIPPED 2026-07-23** as
-[openemr/openemr#13146](https://github.com/openemr/openemr/pull/13146)
+[DCL/DCL#13146](https://github.com/DCL/DCL/pull/13146)
 (structural batching half only; rate-limit-aware-backoff half
 explicitly skipped as obsoleted by the ~96% API-call reduction —
 see the two-fix framing below). `GitHubApi::prsForCommits()` now
@@ -2470,11 +2470,11 @@ Implementation notes worth capturing (not obvious from the code):
   PRs (`author: null` in the response) — orphaned merged PRs
   still surface in the changelog.
 
-- **What:** `changelog.php` (invoked by `openemr:release-prep` and by
-  the `openemr:release-prep smoketest against rel-820` CI job) walks
+- **What:** `changelog.php` (invoked by `DCL:release-prep` and by
+  the `DCL:release-prep smoketest against rel-820` CI job) walks
   every commit between the previous release tag and the target branch
   HEAD, and for each commit calls
-  `gh api /repos/openemr/openemr/commits/{sha}/pulls` to resolve the
+  `gh api /repos/DCL/DCL/commits/{sha}/pulls` to resolve the
   associated PR. A typical rel-branch delta of 100-300+ commits
   produces one API call per commit, plus paginated milestone/advisory
   lookups. All calls share the release GitHub App installation's
@@ -2489,7 +2489,7 @@ Implementation notes worth capturing (not obvious from the code):
   interactive `gh` calls). But the underlying exposure is real: a
   release event fires a chain
   (release-prep + ship-release + build-release + downstream dispatches
-  to website-openemr + demo_farm_openemr), all sharing the same
+  to website-DCL + demo_farm_DCL), all sharing the same
   installation quota. On a rel branch with a large delta since the
   last tag, a single event could plausibly consume 60-80% of the
   hourly budget on its own — and any concurrent activity (dependabot
@@ -2538,7 +2538,7 @@ Implementation notes worth capturing (not obvious from the code):
     lives inside the existing loop; batching changes only the
     caller shape, not the retry primitive).
   - Workstream 7 Phase 3b (#13098) — three-PR ship-release
-    orchestration; conductor merge fires `openemr-tag`, which is
+    orchestration; conductor merge fires `DCL-tag`, which is
     the event that triggers most of the downstream API-consuming
     chain.
   - RELEASE_PROCESS.md — release-event chain documentation
@@ -2563,7 +2563,7 @@ put; both branch-cut PRs eventually merged same day.
 
 **Findings + fixes (in the order they surfaced):**
 
-1. **[#13480](https://github.com/openemr/openemr/pull/13480)** —
+1. **[#13480](https://github.com/DCL/DCL/pull/13480)** —
    Sparse-checkout leak in `branch-cut-automation.yml` +
    `patch-prep-automation.yml`. The initial sparse checkout of only
    `.github/actions/generate-app-token` left
@@ -2578,11 +2578,11 @@ put; both branch-cut PRs eventually merged same day.
    which refuses to run under GitHub Actions without `GH_TOKEN`
    in env. Both bugs shipped in #13287 (composite-action extraction).
 
-2. **[#13486](https://github.com/openemr/openemr/pull/13486)** —
-   `LOCAL_TAG="openemr/openemr:pr-built"` in `acceptance-docker.yml`
+2. **[#13486](https://github.com/DCL/DCL/pull/13486)** —
+   `LOCAL_TAG="DCL/DCL:pr-built"` in `acceptance-docker.yml`
    combined with the compose override's
-   `image: openemr/openemr:${OPENEMR_TAG:-latest}` to produce
-   `openemr/openemr:openemr/openemr:pr-built` — invalid Docker
+   `image: DCL/DCL:${DCL_TAG:-latest}` to produce
+   `DCL/DCL:DCL/DCL:pr-built` — invalid Docker
    reference. Same PR also added `branches-ignore` to `push:`
    triggers on `acceptance-docker.yml` +
    `acceptance-package.yml` for release-mechanism bot branches
@@ -2594,7 +2594,7 @@ put; both branch-cut PRs eventually merged same day.
    Docker Hub's published image, not the PR-built one).
    LOCAL_TAG bug shipped in #13163 (Phase 2.5 build-from-codebase).
 
-3. **[#13487](https://github.com/openemr/openemr/pull/13487)** —
+3. **[#13487](https://github.com/DCL/DCL/pull/13487)** —
    `shopt -p nullglob dotglob` exits 1 when any listed option is
    disabled (the default bash state). The
    `extract_zip_flattening_single_top_level_dir` helper captured
@@ -2610,7 +2610,7 @@ put; both branch-cut PRs eventually merged same day.
    tests all passed while production died). Bug shipped in #13287
    (shopt-leak fix that reused #13286's helper).
 
-4. **[#13496](https://github.com/openemr/openemr/pull/13496)** —
+4. **[#13496](https://github.com/DCL/DCL/pull/13496)** —
    `BranchCutReleaseTargetsMutator::renderRelRowLines()` never
    emitted `gate_with_acceptance: true` for freshly-cut rel
    rows. Omission — Phase 12 (#13332, 2026-08-01) introduced the
@@ -2620,18 +2620,18 @@ put; both branch-cut PRs eventually merged same day.
    flag; if merged as-is, docker-release-orchestrator would have
    silently downgraded rel-830's publishes off the acceptance gate.
 
-5. **[#13499](https://github.com/openemr/openemr/pull/13499)** —
+5. **[#13499](https://github.com/DCL/DCL/pull/13499)** —
    Byte-identical manifest gap: `src/Common/Command/ReleasePrep/**`
    was byte-identical enforced, but the parallel isolated-test
    tree at `tests/Tests/Isolated/Common/Command/ReleasePrep/**`
    (PSR-4 mirror where every mutator's unit test + fixture lives)
    was not. Byte-identical sync of the mutator PHP from #13496 to
-   rel-820 (openemr/openemr#13498) propagated only the production
+   rel-820 (DCL/DCL#13498) propagated only the production
    file — test + fixture stayed at pre-#13496 content, so
    rel-820's isolated tests failed on the mismatch. Fix: add the
    missing manifest entry.
 
-6. **[#13509](https://github.com/openemr/openemr/pull/13509)** —
+6. **[#13509](https://github.com/DCL/DCL/pull/13509)** —
    Sparse-checkout leak (same as #13480's finding) also present
    in `notify-release-targets-changed.yml`, `build-patch.yml`,
    `build-release.yml`, `ship-release.yml`,
@@ -2643,13 +2643,13 @@ put; both branch-cut PRs eventually merged same day.
    all 5.
 
 **Cherry-picks + docs update (not counted above):**
-- [#13489](https://github.com/openemr/openemr/pull/13489) —
+- [#13489](https://github.com/DCL/DCL/pull/13489) —
   cherry-pick of #13480 + #13486 + #13487 fixes onto rel-830 to
   unblock the branch-cut PRs (rel-830 was cut before byte-
   identical sync could target it).
-- [#13503](https://github.com/openemr/openemr/pull/13503) —
+- [#13503](https://github.com/DCL/DCL/pull/13503) —
   same, for #13496 mutator fix + #13499 manifest addition.
-- [#13508](https://github.com/openemr/openemr/pull/13508) —
+- [#13508](https://github.com/DCL/DCL/pull/13508) —
   documented the branch-cut PR merge order (rel-side first)
   in RELEASE_PROCESS.md; landing master-side first would silently
   ship a broken rel-branch docker image because
@@ -2675,7 +2675,7 @@ put; both branch-cut PRs eventually merged same day.
 that exercises multiple workflow shapes not covered by the daily
 CI. Latent bugs accumulate between cuts (2 weeks to a few months
 apart) and surface as a cascade. The existing
-`release-mechanism-smoketest.yml` covers `openemr:release-prep
+`release-mechanism-smoketest.yml` covers `DCL:release-prep
 --scope=rel` against rel-820 but not the branch-cut workflow shape
 (sparse checkout + composite resolution), not the acceptance
 dispatch paths (LOCAL_TAG, extract-zip), and not the byte-identical
@@ -2699,7 +2699,7 @@ issue. Not in rel-830 scope; belongs to its own gap.
 
 ### G32 — Branch-cut PR content pins at open time and doesn't rebase; long-blocker windows drop intervening master commits from the new rel branch  *(discovered 2026-08-16, follow-up)*
 
-**STATUS: partial remedy via [#13589](https://github.com/openemr/openemr/pull/13589)** (migration-file moves to unbreak the shipped-8.3.0 → 8.4.0 upgrade path); root-cause auto-rebase / post-cut sweep still to design.
+**STATUS: partial remedy via [#13589](https://github.com/DCL/DCL/pull/13589)** (migration-file moves to unbreak the shipped-8.3.0 → 8.4.0 upgrade path); root-cause auto-rebase / post-cut sweep still to design.
 
 Surfaced during post-rel-830 review of two apparent bugs:
 
@@ -2727,26 +2727,26 @@ Historical context: 8.2.0 shipped 2026-07-08/09 via manual click-through — `sh
 
 **Findings + fixes (in the order they surfaced during 8.3.0 ship attempts):**
 
-1. **[#13570](https://github.com/openemr/openemr/pull/13570)** — Preflight enumerated every check in `statusCheckRollup` and blocked on any non-{SUCCESS, NEUTRAL, SKIPPED} conclusion; no bypass. `PHP 8.6 - Isolated Tests` (upstream PHP bug) failing alone would deadlock every release for weeks until PHP upstream fixed it. Added `ignore_checks` CSV workflow_dispatch input that threads through the orchestrator into `reasonsFromStatusRollup`, exact-match on `name`/`context`.
+1. **[#13570](https://github.com/DCL/DCL/pull/13570)** — Preflight enumerated every check in `statusCheckRollup` and blocked on any non-{SUCCESS, NEUTRAL, SKIPPED} conclusion; no bypass. `PHP 8.6 - Isolated Tests` (upstream PHP bug) failing alone would deadlock every release for weeks until PHP upstream fixed it. Added `ignore_checks` CSV workflow_dispatch input that threads through the orchestrator into `reasonsFromStatusRollup`, exact-match on `name`/`context`.
 
-2. **[#13574](https://github.com/openemr/openemr/pull/13574)** — Even with #13570's ignore-list working, preflight still blocked on `mergeStateStatus=UNSTABLE (need CLEAN)`. GitHub reports UNSTABLE whenever a non-required check is failing, regardless of whether that check is on our ignore-list. Extended the mergeStateStatus rule: `UNSTABLE` passes when the rollup evaluation returned no blockers (i.e. every failing check was on the ignore-list). CLEAN + UNSTABLE-with-ignore now accept; DIRTY/BEHIND/HAS_HOOKS/UNKNOWN still hard-block.
+2. **[#13574](https://github.com/DCL/DCL/pull/13574)** — Even with #13570's ignore-list working, preflight still blocked on `mergeStateStatus=UNSTABLE (need CLEAN)`. GitHub reports UNSTABLE whenever a non-required check is failing, regardless of whether that check is on our ignore-list. Extended the mergeStateStatus rule: `UNSTABLE` passes when the rollup evaluation returned no blockers (i.e. every failing check was on the ignore-list). CLEAN + UNSTABLE-with-ignore now accept; DIRTY/BEHIND/HAS_HOOKS/UNKNOWN still hard-block.
 
-3. **[#13581](https://github.com/openemr/openemr/pull/13581)** — `docker-validate-release-targets.yml` on the finalize PR failed because the proposed `openemr_version_ref: v8_3_0` row references a tag that doesn't exist yet — the conductor merge is what creates the tag. `check validate conclusion=FAILURE` + `check All Checks Passed conclusion=FAILURE` (which aggregates validate) blocked preflight for the finalize target. Made the validator finalize-PR-aware: on `release-finalize/*` PRs (three-way guard: branch prefix + head repo == this repo + opener == `openemr-release-bot[bot]` to block spoofing), ref-resolution 404s degrade from error to warning; master-row alignment stays strict.
+3. **[#13581](https://github.com/DCL/DCL/pull/13581)** — `docker-validate-release-targets.yml` on the finalize PR failed because the proposed `DCL_version_ref: v8_3_0` row references a tag that doesn't exist yet — the conductor merge is what creates the tag. `check validate conclusion=FAILURE` + `check All Checks Passed conclusion=FAILURE` (which aggregates validate) blocked preflight for the finalize target. Made the validator finalize-PR-aware: on `release-finalize/*` PRs (three-way guard: branch prefix + head repo == this repo + opener == `DCL-release-bot[bot]` to block spoofing), ref-resolution 404s degrade from error to warning; master-row alignment stays strict.
 
-4. **[#13582](https://github.com/openemr/openemr/pull/13582)** — Two issues in one PR: (a) `gh pr view --json statusCheckRollup` returns every re-run attempt on the head SHA, so a stale FAILURE from a pre-fix run kept blocking preflight even after a fresh green re-run — added dedupe by check name/context, latest-by-`completedAt`/`startedAt`/`createdAt` wins. (b) Docs + Finalize PRs are AUTO-drafted by their generator workflows and only auto-flipped by post-tag workflows; preflight blocking on their draft state deadlocked the ship (drafts don't flip until conductor merges, conductor won't merge until preflight passes). Added `$requireNonDraft` to `getReadiness`, defaults true; orchestrator passes false for Docs + Finalize (symmetric with `requireApproval`).
+4. **[#13582](https://github.com/DCL/DCL/pull/13582)** — Two issues in one PR: (a) `gh pr view --json statusCheckRollup` returns every re-run attempt on the head SHA, so a stale FAILURE from a pre-fix run kept blocking preflight even after a fresh green re-run — added dedupe by check name/context, latest-by-`completedAt`/`startedAt`/`createdAt` wins. (b) Docs + Finalize PRs are AUTO-drafted by their generator workflows and only auto-flipped by post-tag workflows; preflight blocking on their draft state deadlocked the ship (drafts don't flip until conductor merges, conductor won't merge until preflight passes). Added `$requireNonDraft` to `getReadiness`, defaults true; orchestrator passes false for Docs + Finalize (symmetric with `requireApproval`).
 
-5. **[#13590](https://github.com/openemr/openemr/pull/13590)** — Preflight required `reviewDecision=APPROVED` on the Conductor, but GitHub only populates `reviewDecision` when branch protection has enabled pull-request-review requirements on the target rel branch. rel-830 has `required_pull_request_reviews=null`, so `reviewDecision` stayed null regardless of how many times an admin clicked APPROVE. Verified via GraphQL that reviews were present, current-head-scoped, and APPROVED state — but `reviewDecision` remained null. Retired the APPROVED requirement across all roles. Human-ready signal for Conductor is now `isDraft=false` alone (already required per gate 4's `requireNonDraft`). CHANGES_REQUESTED reviews still block. Plumbing kept intact for future opt-in per-role if branch-protection posture changes.
+5. **[#13590](https://github.com/DCL/DCL/pull/13590)** — Preflight required `reviewDecision=APPROVED` on the Conductor, but GitHub only populates `reviewDecision` when branch protection has enabled pull-request-review requirements on the target rel branch. rel-830 has `required_pull_request_reviews=null`, so `reviewDecision` stayed null regardless of how many times an admin clicked APPROVE. Verified via GraphQL that reviews were present, current-head-scoped, and APPROVED state — but `reviewDecision` remained null. Retired the APPROVED requirement across all roles. Human-ready signal for Conductor is now `isDraft=false` alone (already required per gate 4's `requireNonDraft`). CHANGES_REQUESTED reviews still block. Plumbing kept intact for future opt-in per-role if branch-protection posture changes.
 
-6. **[#13607](https://github.com/openemr/openemr/pull/13607)** — After all prior fixes landed and every settled-state signal came back clean via personal-token queries, ship-release STILL saw `mergeStateStatus=BLOCKED` on the same PR at the same head SHA that a human's UI session saw as UNSTABLE. GitHub computes `mergeStateStatus` per-token; App tokens are treated as service integrations and are more restrictive (likely interpret "no review completed" as blocking regardless of branch-protection config). Extended #13574's UNSTABLE conditional-accept to also cover BLOCKED, with stricter guard `mergeable=MERGEABLE` (UNSTABLE inherently implies mergeable; BLOCKED is broader so needs explicit check). DIRTY/BEHIND/HAS_HOOKS/UNKNOWN still hard-block.
+6. **[#13607](https://github.com/DCL/DCL/pull/13607)** — After all prior fixes landed and every settled-state signal came back clean via personal-token queries, ship-release STILL saw `mergeStateStatus=BLOCKED` on the same PR at the same head SHA that a human's UI session saw as UNSTABLE. GitHub computes `mergeStateStatus` per-token; App tokens are treated as service integrations and are more restrictive (likely interpret "no review completed" as blocking regardless of branch-protection config). Extended #13574's UNSTABLE conditional-accept to also cover BLOCKED, with stricter guard `mergeable=MERGEABLE` (UNSTABLE inherently implies mergeable; BLOCKED is broader so needs explicit check). DIRTY/BEHIND/HAS_HOOKS/UNKNOWN still hard-block.
 
-7. **[#13619](https://github.com/openemr/openemr/pull/13619)** — Preflight finally cleared for semi-auto dispatch. Merge attempt returned `GraphQL: Resource not accessible by integration (mergePullRequest)`. GitHub's `mergePullRequest` mutation requires **`contents:write`**, not `pull-requests:write` (merging a PR technically writes to the base branch's content, even though the trigger is a PR action). The App installation had contents:write on both openemr and website-openemr; the workflow was scope-DOWNing the minted token to `contents:read`. One-line bump: `permission-contents: read` → `write`. Covers Conductor + Finalize + Docs merges (all three route through the same mutation; token scoped to both repos with the same permission set).
+7. **[#13619](https://github.com/DCL/DCL/pull/13619)** — Preflight finally cleared for semi-auto dispatch. Merge attempt returned `GraphQL: Resource not accessible by integration (mergePullRequest)`. GitHub's `mergePullRequest` mutation requires **`contents:write`**, not `pull-requests:write` (merging a PR technically writes to the base branch's content, even though the trigger is a PR action). The App installation had contents:write on both DCL and website-DCL; the workflow was scope-DOWNing the minted token to `contents:read`. One-line bump: `permission-contents: read` → `write`. Covers Conductor + Finalize + Docs merges (all three route through the same mutation; token scoped to both repos with the same permission set).
 
 **Config-side gap (not a code fix, but part of the same ship-day story):**
-- **Rel-branch ruleset bypass for the release App.** Between fixes #13590 and #13619, semi-auto's first live merge attempt failed with `Pull request ... is not mergeable: the base branch policy prohibits the merge`. rel-830's `Restrict updates` ruleset was scoped to admins + associate-admins + the auto-merge app; the release App wasn't in the bypass list. No code change fixes this — it's a per-rel-branch ruleset config an admin must add. Documented in `RELEASE_PROCESS.md`'s "escalate to human/org owner" section post-ship. Website-openemr's master ruleset may need the same treatment before full-auto Docs merge works; not verified yet.
+- **Rel-branch ruleset bypass for the release App.** Between fixes #13590 and #13619, semi-auto's first live merge attempt failed with `Pull request ... is not mergeable: the base branch policy prohibits the merge`. rel-830's `Restrict updates` ruleset was scoped to admins + associate-admins + the auto-merge app; the release App wasn't in the bypass list. No code change fixes this — it's a per-rel-branch ruleset config an admin must add. Documented in `RELEASE_PROCESS.md`'s "escalate to human/org owner" section post-ship. Website-DCL's master ruleset may need the same treatment before full-auto Docs merge works; not verified yet.
 
 **Also shipped as part of the ship-day batch (not preflight-deadlock but related):**
-- **[#13589](https://github.com/openemr/openemr/pull/13589)** — Moved three SQL migrations (from #13374 `api_log.client_id`, #13490 `care_plan` engagement category, plus the leftover contents of the file) from `sql/8_2_0-to-8_3_0_upgrade.sql` to `sql/8_3_0-to-8_4_0_upgrade.sql` on master. Two migrations landed post-rel-830-cut but were file-targeted to the wrong upgrade file due to the file-rename-dance-leftover pattern documented in G32. Fixed the shipped-8.3.0 → 8.4.0 upgrade-path gap. rel-830 unaffected (features not intended for 8.3.0).
-- **[#13586](https://github.com/openemr/openemr/pull/13586)** + **[#13587](https://github.com/openemr/openemr/pull/13587)** — Backports of `docker/fsupgrade` fix (#13583 by Stephen Waite, master-side) to rel-830 and rel-820. The docker fsupgrade scripts sed-patched `sql_upgrade.php` targeting a line that a code refactor had rewritten, silently no-ing out; upgrades replayed from 2.9.0 on every hop (~23 min instead of ~4). Backports needed on the 8.3.0 docker image before it built.
+- **[#13589](https://github.com/DCL/DCL/pull/13589)** — Moved three SQL migrations (from #13374 `api_log.client_id`, #13490 `care_plan` engagement category, plus the leftover contents of the file) from `sql/8_2_0-to-8_3_0_upgrade.sql` to `sql/8_3_0-to-8_4_0_upgrade.sql` on master. Two migrations landed post-rel-830-cut but were file-targeted to the wrong upgrade file due to the file-rename-dance-leftover pattern documented in G32. Fixed the shipped-8.3.0 → 8.4.0 upgrade-path gap. rel-830 unaffected (features not intended for 8.3.0).
+- **[#13586](https://github.com/DCL/DCL/pull/13586)** + **[#13587](https://github.com/DCL/DCL/pull/13587)** — Backports of `docker/fsupgrade` fix (#13583 by Stephen Waite, master-side) to rel-830 and rel-820. The docker fsupgrade scripts sed-patched `sql_upgrade.php` targeting a line that a code refactor had rewritten, silently no-ing out; upgrades replayed from 2.9.0 on every hop (~23 min instead of ~4). Backports needed on the 8.3.0 docker image before it built.
 
 **Shared trigger (all nine findings):** the 8.3.0 ship day was the first time ship-release-and-downstream ran end-to-end against a real production rel branch. All nine findings surfaced because that ship-day exercised code paths + config surfaces + downstream infrastructure that no prior dispatch or dry-run had reached.
 
@@ -2758,23 +2758,23 @@ Historical context: 8.2.0 shipped 2026-07-08/09 via manual click-through — `sh
 - **Migration-cleanup root cause (applies to #13589 SQL file moves).** Post-cut PRs #13490 + #13374 landed schema work into `sql/8_2_0-to-8_3_0_upgrade.sql` on master — the leftover-populated file after rel-830 cut. See G32 for the file-rename-dance + no-review-time-signal root cause. #13589 was a same-day cleanup of the misfile, not a preflight-related fix.
 - **Docker upgrade root cause (applies to #13586 + #13587 backports).** Stephen Waite's #13583 fixed the docker fsupgrade sed pattern on master (sed targeted a `sql_upgrade.php` line that had been refactored away → silent no-op → upgrades replayed from 2.9.0 on every hop). Backports to rel-830 + rel-820 were needed before the 8.3.0 docker image built with the fix. Same shape as any per-release docker-side backport — not preflight-related.
 
-**Systemic lesson:** every real ship-release execution is an integration event that exercises multiple GitHub API surfaces + token-permission behaviors + branch-protection interactions not covered by dispatch tests that fail earlier. The `release-mechanism-smoketest.yml` covers `openemr:release-prep` against a shipped tag but not the ship-release merge-API path (which needs a live PR + live merge to exercise). Adding a periodic smoke-test dispatch of ship-release against a throwaway PR would catch this bug class at land time; deferred as follow-up. In the meantime, treat every first real ship after significant ship-release-code churn as a cascade-discovery event similar to G31 for cuts.
+**Systemic lesson:** every real ship-release execution is an integration event that exercises multiple GitHub API surfaces + token-permission behaviors + branch-protection interactions not covered by dispatch tests that fail earlier. The `release-mechanism-smoketest.yml` covers `DCL:release-prep` against a shipped tag but not the ship-release merge-API path (which needs a live PR + live merge to exercise). Adding a periodic smoke-test dispatch of ship-release against a throwaway PR would catch this bug class at land time; deferred as follow-up. In the meantime, treat every first real ship after significant ship-release-code churn as a cascade-discovery event similar to G31 for cuts.
 
-**Also surfaced (deferred):** cosmetic gap in the forum announcement post — the `openemr_email_logo.png` referenced by `forum.md.twig` is designed to sit on the OpenEMR-blue `#00509d` email header block; it's white-on-transparent artwork that renders invisible against Discourse's default light theme. Additionally `|500x0` in the Discourse dimension syntax collapsed the image render box to zero height regardless of artwork. Durable fix: pre-composite an `openemr_forum_logo.png` (blue-background, padded) as a website asset on open-emr.org, update `forum.md.twig` to reference it. For 8.3.0 today the paster manually swapped in a `weserv.nl`-proxied composited variant; template still holds the broken reference for future releases.
+**Also surfaced (deferred):** cosmetic gap in the forum announcement post — the `DCL_email_logo.png` referenced by `forum.md.twig` is designed to sit on the DCL-blue `#00509d` email header block; it's white-on-transparent artwork that renders invisible against Discourse's default light theme. Additionally `|500x0` in the Discourse dimension syntax collapsed the image render box to zero height regardless of artwork. Durable fix: pre-composite an `DCL_forum_logo.png` (blue-background, padded) as a website asset on dcl.org, update `forum.md.twig` to reference it. For 8.3.0 today the paster manually swapped in a `weserv.nl`-proxied composited variant; template still holds the broken reference for future releases.
 
 ### G34 — rel-840 cut surfaced Docker Upgrade Process test recreate bug  *(discovered 2026-09-10, all SHIPPED 2026-09-10)*
 
 **STATUS: SHIPPED 2026-09-10** as a false-start + revert + correct-fix cascade of 4 PRs same day. Consolidated here because the findings share a single trigger event (first branch-cut PR CI to exercise the `docker/container_benchmarking/` upgrade test's post-#13614 recreate shape) and one shared root cause (writable-layer wipe on recreate breaks the check_upgrade guard when `/root/docker-version` is ahead of the git-cloned code copy).
 
-Historical context: rel-830 cut on 2026-08-12 with a passing Container Functionality release check because the upgrade test at that time used `docker-compose restart` — the writable layer survived, so openemr.sh's setup-time writeback of `${OE_ROOT}/docker-version = /root/docker-version` value carried across into the check_upgrade evaluation and the guard passed. openemr/openemr#13614 (Stephen Waite, merged 2026-08-25) changed the test's Step 3 from `restart` to `stop + rm + up` (recreate) so the test would exercise the real production-upgrade shape (new image → new container → setup-removed files like `sql_upgrade.php` are restored from the image). That change was validated against master's daily CI shape where `/root/docker-version` == the code copy from the start, so the guard never depended on the writeback and the change looked green. rel-840 was the first branch-cut PR CI to run against the post-#13614 test — 16 days after #13614 landed.
+Historical context: rel-830 cut on 2026-08-12 with a passing Container Functionality release check because the upgrade test at that time used `docker-compose restart` — the writable layer survived, so DCL.sh's setup-time writeback of `${OE_ROOT}/docker-version = /root/docker-version` value carried across into the check_upgrade evaluation and the guard passed. DCL/DCL#13614 (Stephen Waite, merged 2026-08-25) changed the test's Step 3 from `restart` to `stop + rm + up` (recreate) so the test would exercise the real production-upgrade shape (new image → new container → setup-removed files like `sql_upgrade.php` are restored from the image). That change was validated against master's daily CI shape where `/root/docker-version` == the code copy from the start, so the guard never depended on the writeback and the change looked green. rel-840 was the first branch-cut PR CI to run against the post-#13614 test — 16 days after #13614 landed.
 
 **Findings + fixes (in the order they surfaced during rel-840 cut):**
 
-1. **Broken test on branch-cut PRs.** Both branch-cut PRs (openemr/openemr#13924 rel-side and openemr/openemr#13926 master-side) failed the Container Functionality release check with `FAIL: Docker Upgrade Process - Upgrade started: 0`. Diagnosis: the built branch-cut PR image has `/root/docker-version = N` (14, from PR's Dockerfile `COPY docker/release/upgrade/docker-version`) but `${OE_ROOT}/docker-version = N-1` (13, from the Dockerfile's git clone which snapshots the target branch's pre-PR state). On Step 1 (fresh install), openemr.sh's setup writeback (openemr.sh lines 992-995) syncs `${OE_ROOT}/docker-version` and `${OE_ROOT}/sites/default/docker-version` to `/root/`'s 14 in the writable layer + upgrade_sites volume. Step 2 sets sites=1 to stage the upgrade trigger. Step 3's recreate (post-#13614) wipes the writable layer, so `${OE_ROOT}/docker-version` reverts to the git-cloned 13 while sites=1 survives on the volume. Recreate-boot check_upgrade sees `root=14, code=13, sites=1`; the guard requires `root == code AND root > sites`, first clause fails, no upgrade fires, test asserts `Upgrade started: 0`. Not a production bug — production images always have `root == code` (both baked from the same build) — but exposed on every future branch-cut PR until fixed.
+1. **Broken test on branch-cut PRs.** Both branch-cut PRs (DCL/DCL#13924 rel-side and DCL/DCL#13926 master-side) failed the Container Functionality release check with `FAIL: Docker Upgrade Process - Upgrade started: 0`. Diagnosis: the built branch-cut PR image has `/root/docker-version = N` (14, from PR's Dockerfile `COPY docker/release/upgrade/docker-version`) but `${OE_ROOT}/docker-version = N-1` (13, from the Dockerfile's git clone which snapshots the target branch's pre-PR state). On Step 1 (fresh install), DCL.sh's setup writeback (DCL.sh lines 992-995) syncs `${OE_ROOT}/docker-version` and `${OE_ROOT}/sites/default/docker-version` to `/root/`'s 14 in the writable layer + upgrade_sites volume. Step 2 sets sites=1 to stage the upgrade trigger. Step 3's recreate (post-#13614) wipes the writable layer, so `${OE_ROOT}/docker-version` reverts to the git-cloned 13 while sites=1 survives on the volume. Recreate-boot check_upgrade sees `root=14, code=13, sites=1`; the guard requires `root == code AND root > sites`, first clause fails, no upgrade fires, test asserts `Upgrade started: 0`. Not a production bug — production images always have `root == code` (both baked from the same build) — but exposed on every future branch-cut PR until fixed.
 
-2. **False-start fix (openemr/openemr#13928 master + openemr/openemr#13929 rel-840, MERGED then REVERTED).** First fix attempt bind-mounted a host-side `code-version-override` file over `${OE_ROOT}/docker-version` with `/root/`'s value, active from Step 1 of the test. That pinned the code copy across the recreate wipe, satisfying the guard on the recreate boot. But it also active from Step 1's initial `docker-compose up`, so on the fresh-install boot check_upgrade saw `root=14, code=14 (from pin), sites=13 (git-cloned to fresh volume)` — the guard passed and `run_upgrade` fired before openemr was configured. openemr.sh's run_upgrade exited with `Error: Cannot upgrade - OpenEMR is not configured yet`, leaving the container unhealthy. Result: Docker Upgrade Process test now failed at Step 1 on **every** PR touching `docker/release/**` or `docker/container_benchmarking/**` — regression scope wider than the branch-cut-only original bug the fix targeted.
+2. **False-start fix (DCL/DCL#13928 master + DCL/DCL#13929 rel-840, MERGED then REVERTED).** First fix attempt bind-mounted a host-side `code-version-override` file over `${OE_ROOT}/docker-version` with `/root/`'s value, active from Step 1 of the test. That pinned the code copy across the recreate wipe, satisfying the guard on the recreate boot. But it also active from Step 1's initial `docker-compose up`, so on the fresh-install boot check_upgrade saw `root=14, code=14 (from pin), sites=13 (git-cloned to fresh volume)` — the guard passed and `run_upgrade` fired before DCL was configured. DCL.sh's run_upgrade exited with `Error: Cannot upgrade - DCL is not configured yet`, leaving the container unhealthy. Result: Docker Upgrade Process test now failed at Step 1 on **every** PR touching `docker/release/**` or `docker/container_benchmarking/**` — regression scope wider than the branch-cut-only original bug the fix targeted.
 
-3. **Correct fix (openemr/openemr#13934 master + openemr/openemr#13935 rel-840, MERGED).** Reverted #13928/#13929 and reapplied the bind-mount scoped to Step 3's recreate only. Between Step 2 and Step 3, the test writes a `docker-compose.recreate.yml` override file with only the bind-mount volume, and Step 3's `up` command merges it via a second `-f`. Step 1's initial fresh install uses the base compose file only, so setup completes normally. The recreate then pins `${OE_ROOT}/docker-version = /root/`'s value across the writable-layer wipe, and check_upgrade fires as intended: `root=14, code=14 (from bind-mount), sites=1 (test-staged)` → guard passes → upgrade runs → sites advances 1→14. Verified on both master and rel-840 sides + on the previously-failing branch-cut PRs after their close/reopen re-triggered CI against the merged fix.
+3. **Correct fix (DCL/DCL#13934 master + DCL/DCL#13935 rel-840, MERGED).** Reverted #13928/#13929 and reapplied the bind-mount scoped to Step 3's recreate only. Between Step 2 and Step 3, the test writes a `docker-compose.recreate.yml` override file with only the bind-mount volume, and Step 3's `up` command merges it via a second `-f`. Step 1's initial fresh install uses the base compose file only, so setup completes normally. The recreate then pins `${OE_ROOT}/docker-version = /root/`'s value across the writable-layer wipe, and check_upgrade fires as intended: `root=14, code=14 (from bind-mount), sites=1 (test-staged)` → guard passes → upgrade runs → sites advances 1→14. Verified on both master and rel-840 sides + on the previously-failing branch-cut PRs after their close/reopen re-triggered CI against the merged fix.
 
 **Also observed (GitHub Actions gotcha, not a code fix):** GitHub's `refs/pull/N/merge` ref is recomputed asynchronously after base-branch pushes. When the fix PRs merged to master/rel-840 and the branch-cut PRs were closed/reopened seconds later to force fresh CI, the reopens fired against a stale `merge_commit_sha` frozen in the `pull_request.reopened` event payload — actions/checkout fetched the pre-fix merge SHA and the test failed again (same symptom pre-fix). A second close/reopen ~15 minutes later fetched the correct fresh merge (parent = current base tip = fix merge) and the test passed. Practical rule: after a base-branch push affecting a PR's merge, wait a few minutes before triggering PR CI re-runs so GitHub's merge-ref cache catches up. No code fix — a GitHub-side quirk to remember.
 
@@ -2789,26 +2789,26 @@ Historical context: rel-830 cut on 2026-08-12 with a passing Container Functiona
 
 **STATUS: SHIPPED 2026-09-13** as a root-cause fix + two blocker hotfixes exposed during recovery, all same-day. Ship completed via bypass path after the recovery workflow itself had to be repaired mid-ship. Consolidated here because all three findings share the same trigger event (first attempt to publish 8.4.0 hit an acceptance-gate false-negative, and each recovery attempt exposed the next-latent bug in the recovery path).
 
-Historical context: 8.3.0 shipped 2026-08-18 via a straight-through `ship-release.yml` + `build-release-on-tag.yml` path — acceptance-gate passed on first try, no recovery path invoked. 8.4.0 was the first ship where an acceptance-gate failure forced use of the `acceptance-only.yml` recovery workflow. Before this event nobody had exercised that workflow end-to-end since its Phase 10e-2 refactor on 2026-07-30 (openemr/openemr#13294), so multiple latent bugs surfaced in cascade as each fix uncovered the next.
+Historical context: 8.3.0 shipped 2026-08-18 via a straight-through `ship-release.yml` + `build-release-on-tag.yml` path — acceptance-gate passed on first try, no recovery path invoked. 8.4.0 was the first ship where an acceptance-gate failure forced use of the `acceptance-only.yml` recovery workflow. Before this event nobody had exercised that workflow end-to-end since its Phase 10e-2 refactor on 2026-07-30 (DCL/DCL#13294), so multiple latent bugs surfaced in cascade as each fix uncovered the next.
 
 **Findings + fixes (in the order they surfaced during 8.4.0 recovery):**
 
-1. **Root cause: `ACCEPTANCE_EXPECTED_VERSION` mismatch (openemr/openemr#13974).** `ship-release.yml` merged the Conductor and created the `v8_4_0` tag. `build-release-on-tag.yml` fired with inherited `github.ref=master`, called `acceptance-package.yml` via `workflow_call`, whose `detect-mode` step's `actions/checkout` landed on master — carrying `version.php` = `8.5.0-dev`. `detect-acceptance-mode.sh` line 421 (workflow_call gate branch) passed `build_locally=true` to `emit_expected_version`, which reads the checkout's `version.php` — stripped to `8.5.0`. Every acceptance-gate cell then failed with `expected='8.5.0' actual='8.4.0'` because the tarball was built with `--release-version=8.4.0` and self-reports 8.4.0 verbatim. Fix: `emit_expected_version("false")` in the workflow_call gate branch so `expected_version = LAST_RESOLVED_TO_VERSION = to_version = 8.4.0`. Introduced by openemr/openemr#13761 (2026-09-01, "decouple version-assertion source from TO_VERSION label"); 8.4.0 was the first ship after that change (~13-day latency).
+1. **Root cause: `ACCEPTANCE_EXPECTED_VERSION` mismatch (DCL/DCL#13974).** `ship-release.yml` merged the Conductor and created the `v8_4_0` tag. `build-release-on-tag.yml` fired with inherited `github.ref=master`, called `acceptance-package.yml` via `workflow_call`, whose `detect-mode` step's `actions/checkout` landed on master — carrying `version.php` = `8.5.0-dev`. `detect-acceptance-mode.sh` line 421 (workflow_call gate branch) passed `build_locally=true` to `emit_expected_version`, which reads the checkout's `version.php` — stripped to `8.5.0`. Every acceptance-gate cell then failed with `expected='8.5.0' actual='8.4.0'` because the tarball was built with `--release-version=8.4.0` and self-reports 8.4.0 verbatim. Fix: `emit_expected_version("false")` in the workflow_call gate branch so `expected_version = LAST_RESOLVED_TO_VERSION = to_version = 8.4.0`. Introduced by DCL/DCL#13761 (2026-09-01, "decouple version-assertion source from TO_VERSION label"); 8.4.0 was the first ship after that change (~13-day latency).
 
-2. **Recovery-path bug 1: `acceptance-only.yml` missing `actions/checkout` (openemr/openemr#13972).** With the artifact functionally validated (only version-display + shell DB-version assertions failed against the bogus expected — all fresh-install / upgrade / wizard groups passed), the plan was to use `acceptance-only.yml`'s `skip_acceptance=true` escape hatch (RELEASE_PROCESS.md action 6) to skip the flaky assertion and publish directly. First dispatch died at exit 127: `.github/scripts/validate-source-run.sh: No such file or directory`. Diagnosis: the `fetch-source-artifact` job called scripts under `.github/scripts/` without first running `actions/checkout`, so the workspace was empty at script-invocation time. Same bug on the `docker-acceptance-only.yml` sibling. Introduced by openemr/openemr#13294 (Phase 10e-2 extract of the inline validation to shared scripts, 2026-07-30) — actionlint doesn't cross-reference script existence against checkout presence, and neither workflow had been exercised end-to-end since the refactor. Fix: add `- uses: actions/checkout@v7` as the first step of both jobs.
+2. **Recovery-path bug 1: `acceptance-only.yml` missing `actions/checkout` (DCL/DCL#13972).** With the artifact functionally validated (only version-display + shell DB-version assertions failed against the bogus expected — all fresh-install / upgrade / wizard groups passed), the plan was to use `acceptance-only.yml`'s `skip_acceptance=true` escape hatch (RELEASE_PROCESS.md action 6) to skip the flaky assertion and publish directly. First dispatch died at exit 127: `.github/scripts/validate-source-run.sh: No such file or directory`. Diagnosis: the `fetch-source-artifact` job called scripts under `.github/scripts/` without first running `actions/checkout`, so the workspace was empty at script-invocation time. Same bug on the `docker-acceptance-only.yml` sibling. Introduced by DCL/DCL#13294 (Phase 10e-2 extract of the inline validation to shared scripts, 2026-07-30) — actionlint doesn't cross-reference script existence against checkout presence, and neither workflow had been exercised end-to-end since the refactor. Fix: add `- uses: actions/checkout@v7` as the first step of both jobs.
 
-3. **Recovery-path bug 2: `EXPECTED_WORKFLOW_PATH` single-value hardcoding (openemr/openemr#13973).** After #13972 unblocked the checkout, the next dispatch died at `validate-source-run.sh`'s workflow-path check: `source run ... was produced by '.github/workflows/build-release-on-tag.yml', not '.github/workflows/build-release.yml'`. `acceptance-only.yml` hardcoded `EXPECTED_WORKFLOW_PATH=.github/workflows/build-release.yml` (the manual workflow_dispatch flow), but `ship-release.yml` goes through `build-release-on-tag.yml` (auto-fires on tag creation). Both produce the same `openemr-release-candidate-<version>` artifact shape, but the exact-string check rejected the on-tag variant — tag-triggered ship failures had no recovery path. Fix: change `EXPECTED_WORKFLOW_PATH`'s contract from a single path to a comma-separated list; `acceptance-only.yml` now accepts both dispatch + on-tag variants. Backward compatible for single-path callers (docker sibling stays single-path).
+3. **Recovery-path bug 2: `EXPECTED_WORKFLOW_PATH` single-value hardcoding (DCL/DCL#13973).** After #13972 unblocked the checkout, the next dispatch died at `validate-source-run.sh`'s workflow-path check: `source run ... was produced by '.github/workflows/build-release-on-tag.yml', not '.github/workflows/build-release.yml'`. `acceptance-only.yml` hardcoded `EXPECTED_WORKFLOW_PATH=.github/workflows/build-release.yml` (the manual workflow_dispatch flow), but `ship-release.yml` goes through `build-release-on-tag.yml` (auto-fires on tag creation). Both produce the same `DCL-release-candidate-<version>` artifact shape, but the exact-string check rejected the on-tag variant — tag-triggered ship failures had no recovery path. Fix: change `EXPECTED_WORKFLOW_PATH`'s contract from a single path to a comma-separated list; `acceptance-only.yml` now accepts both dispatch + on-tag variants. Backward compatible for single-path callers (docker sibling stays single-path).
 
-**Regression tests added (openemr/openemr#13974, same PR as the root-cause fix):**
+**Regression tests added (DCL/DCL#13974, same PR as the root-cause fix):**
 - **detect-acceptance-mode BATS** — updated the "workflow_call gate happy path" test to assert `expected_version=to_version` (not `expected_version=<version.php value>`) with an explicit negation check; added a new test simulating the exact 8.4.0 shape (checkout on master with `version.php=8.5.0-dev` while `DISPATCH_TO_VERSION=8.4.0` → asserts `expected_version=8.4.0`).
 - **validate-source-run BATS** — 3 new tests for the multi-path `EXPECTED_WORKFLOW_PATH` shape (accepts first path, accepts second path with the specific 8.4.0 ship regression guard, rejects paths not in list with clear error).
-- **New `.github/scripts/lint-workflow-checkout-needed.py` + pre-commit hook** — catches the openemr/openemr#13972 class of bug generically. Scans every workflow YAML for jobs whose steps reference `.github/scripts/`, flags any that lack `actions/checkout` in the same job. Would have caught #13972 at commit time.
+- **New `.github/scripts/lint-workflow-checkout-needed.py` + pre-commit hook** — catches the DCL/DCL#13972 class of bug generically. Scans every workflow YAML for jobs whose steps reference `.github/scripts/`, flags any that lack `actions/checkout` in the same job. Would have caught #13972 at commit time.
 
 **Also observed (deferred / GitHub-side, not code fixes):**
 - **`release-amendment.yml` peter-evans timing out reading GitHub's API response after successful PR create/update.** Amendment workflow failed twice in a row at the rel-side peter-evans step (each attempt actually succeeded server-side — PR #13975 was created + updated correctly — but peter-evans's response-read timed out and returned failure). Third rerun succeeded end-to-end. Consistent with the general GitHub-side latency window during this ship. No code fix; if this recurs consistently, options are (a) adding `continue-on-error: true` on the rel-side step so master-side + release-body steps run regardless, or (b) manual completion of the missing pieces.
 - **Docker Hub 502 Bad Gateway on `docker buildx imagetools create`.** master's Docker build release run failed at publish with `received unexpected HTTP status: 502 Bad Gateway`. rel-840's publish (the load-bearing one shipping `latest`) succeeded 90 seconds later. Recovery: `gh run rerun --failed <run-id>` when Docker Hub calms down.
 - **`refs/pull/N/merge` cache lag after base-branch pushes.** Same pattern as G34's related-observation note — when a rel-branch push and a PR close/reopen fire close together, actions/checkout on the reopen may still fetch a stale merge SHA. Bit us again during the initial acceptance-only.yml debug cycle before we understood the pattern.
-- **`site` workflow `startup_failure` on the initial merge of website-openemr#218 (release-docs: 8.4.0)** with no runtime error — pure GitHub Actions infrastructure hiccup. Rerun cleared it. release-docs-ci had the same shape but its rerun API returned HTTP 500 on the first attempt; second attempt took.
+- **`site` workflow `startup_failure` on the initial merge of website-DCL#218 (release-docs: 8.4.0)** with no runtime error — pure GitHub Actions infrastructure hiccup. Rerun cleared it. release-docs-ci had the same shape but its rerun API returned HTTP 500 on the first attempt; second attempt took.
 
 **Root causes:**
 - **#13761 root cause.** The `emit_expected_version(build_locally)` function's `build_locally` parameter has a distinct meaning from the workflow_call gate's `build_locally=true` short-circuit — one means "read version.php from checkout (auto-fire path where to_version is cosmetic 99.99.99)", the other means "skip the git-diff dance; caller already has the tarball". The workflow_call gate branch incorrectly passed `"true"` to `emit_expected_version`, conflating the two.
@@ -2843,11 +2843,11 @@ For a real release to be stomped, ALL FOUR layers would need to fail simultaneou
 
 **Cascade of PRs that shipped this:**
 
-- **openemr/openemr#13985** — `no_publish` mode on `acceptance-only.yml` + `docker-acceptance-only.yml`. G35's proposed followup identified that `skip_acceptance=true` alone doesn't prevent publish — the publish job still ran when source validation succeeded, so a naive smoketest would create/overwrite real Release assets. #13985 added a required `no_publish=true` input (with mandatory audit-trail reason) that gates the publish job at the recovery-workflow layer. Prerequisite for the smoketest itself.
-- **openemr/openemr#13991** — the initial `recovery-path-smoketest.yml` workflow (synthetic `99.YYYYMMDD.HHMMSS` version marker + iterate-rel-branches picker + snapshot-before-retry marker checks).
-- **openemr/openemr#14010** + **openemr/openemr#14014** — CHANGELOG-stub band-aids for the synthetic marker. Later reverted (see below). Design decision documented at the time was to use the synthetic marker as belt-and-suspenders against any hypothetical `dry_run`-gating regression.
-- **openemr/openemr#14017** — pivot from synthetic marker to current-shipped version. First real-use surfaced a cascade of divergences from what the rel-branch source actually reports (CHANGELOG absent, package-assembler dirty check, acceptance version-display mismatch). Each divergence required a bespoke bypass — and each bypass was a new code path that could itself regress and let the smoketest silently miss real issues (the opposite of the smoketest's purpose). Traded the synthetic-marker isolation for the safety-gate + runtime-verify guardrails above. Also switched the picker to read the `latest`-marked row in `release-targets.yml` (single source of truth aligned with `docker-release-orchestrator.yml`), extracted the picker to `.github/scripts/pick-smoketest-target.sh` with 17 BATS tests, added the L4 runtime guardrail verify, and reverted the vestigial 99.x CHANGELOG-stub step from #14010/#14014.
-- **openemr/openemr#14018** — `derive_from_version` filter exclude-to_version. First smoketest run with real 8.4.0 source found variant B's upgrade / wizard-upgrade cells degenerating to "upgrade 8.4.0 -> 8.4.0" no-op because `detect-acceptance-mode.sh`'s `derive_from_version` had a latent bug: when TO happened to be in the shipped manifest (the smoketest-against-shipped case), it returned TO as the max — degenerate. Real ships never hit this because the target version isn't in the manifest yet at acceptance time. Fix: filter out `LAST_RESOLVED_TO_VERSION` after the shipped-manifest intersection. Also benefits any future real-recovery-of-already-shipped-version scenario. 3 new BATS tests.
+- **DCL/DCL#13985** — `no_publish` mode on `acceptance-only.yml` + `docker-acceptance-only.yml`. G35's proposed followup identified that `skip_acceptance=true` alone doesn't prevent publish — the publish job still ran when source validation succeeded, so a naive smoketest would create/overwrite real Release assets. #13985 added a required `no_publish=true` input (with mandatory audit-trail reason) that gates the publish job at the recovery-workflow layer. Prerequisite for the smoketest itself.
+- **DCL/DCL#13991** — the initial `recovery-path-smoketest.yml` workflow (synthetic `99.YYYYMMDD.HHMMSS` version marker + iterate-rel-branches picker + snapshot-before-retry marker checks).
+- **DCL/DCL#14010** + **DCL/DCL#14014** — CHANGELOG-stub band-aids for the synthetic marker. Later reverted (see below). Design decision documented at the time was to use the synthetic marker as belt-and-suspenders against any hypothetical `dry_run`-gating regression.
+- **DCL/DCL#14017** — pivot from synthetic marker to current-shipped version. First real-use surfaced a cascade of divergences from what the rel-branch source actually reports (CHANGELOG absent, package-assembler dirty check, acceptance version-display mismatch). Each divergence required a bespoke bypass — and each bypass was a new code path that could itself regress and let the smoketest silently miss real issues (the opposite of the smoketest's purpose). Traded the synthetic-marker isolation for the safety-gate + runtime-verify guardrails above. Also switched the picker to read the `latest`-marked row in `release-targets.yml` (single source of truth aligned with `docker-release-orchestrator.yml`), extracted the picker to `.github/scripts/pick-smoketest-target.sh` with 17 BATS tests, added the L4 runtime guardrail verify, and reverted the vestigial 99.x CHANGELOG-stub step from #14010/#14014.
+- **DCL/DCL#14018** — `derive_from_version` filter exclude-to_version. First smoketest run with real 8.4.0 source found variant B's upgrade / wizard-upgrade cells degenerating to "upgrade 8.4.0 -> 8.4.0" no-op because `detect-acceptance-mode.sh`'s `derive_from_version` had a latent bug: when TO happened to be in the shipped manifest (the smoketest-against-shipped case), it returned TO as the max — degenerate. Real ships never hit this because the target version isn't in the manifest yet at acceptance time. Fix: filter out `LAST_RESOLVED_TO_VERSION` after the shipped-manifest intersection. Also benefits any future real-recovery-of-already-shipped-version scenario. 3 new BATS tests.
 
 **First fully-green end-to-end smoketest run:** 34952720263 (2026-09-15).
 
@@ -2867,7 +2867,7 @@ For a real release to be stomped, ALL FOUR layers would need to fail simultaneou
 
 Added as the `smoketest-docker` job parallel to the tarball `smoketest` job in `.github/workflows/recovery-path-smoketest.yml`. Extends the recovery-path warm-up coverage from tarball (`acceptance-only.yml`) to docker (`docker-acceptance-only.yml`) — same G35 systemic-lesson motivation, same L1/L2/L4 guardrail model with two docker-specific differences.
 
-**Design iteration:** an initial attempt (openemr/openemr#14035) tried to reuse the last successful nightly `docker-build-release` run as source, avoiding a docker-side `dry_run` mode. That first PR shipped and was immediately reverted when manual verification failed — the reuse approach hit `docker-acceptance-only.yml`'s `verify-dockerhub-tag-exists` guardrail: `docker-build-release`'s successful publish path deletes the candidate tag as part of the `cleanup-candidate` job, so every successful nightly run has already cleaned up its candidate. No preserved candidate = no source for the smoketest. The redesign (this PR, openemr/openemr#TBD) added a proper `dry_run` mode to `docker-build-release.yml` that skips both `acceptance-gate` + `publish-and-cleanup` so the candidate stays, and the smoketest dispatches docker-build-release fresh with that mode — directly analogous to how the tarball job dispatches `build-release.yml --dry_run` for its source.
+**Design iteration:** an initial attempt (DCL/DCL#14035) tried to reuse the last successful nightly `docker-build-release` run as source, avoiding a docker-side `dry_run` mode. That first PR shipped and was immediately reverted when manual verification failed — the reuse approach hit `docker-acceptance-only.yml`'s `verify-dockerhub-tag-exists` guardrail: `docker-build-release`'s successful publish path deletes the candidate tag as part of the `cleanup-candidate` job, so every successful nightly run has already cleaned up its candidate. No preserved candidate = no source for the smoketest. The redesign (this PR, DCL/DCL#TBD) added a proper `dry_run` mode to `docker-build-release.yml` that skips both `acceptance-gate` + `publish-and-cleanup` so the candidate stays, and the smoketest dispatches docker-build-release fresh with that mode — directly analogous to how the tarball job dispatches `build-release.yml --dry_run` for its source.
 
 **Design:**
 
@@ -2896,7 +2896,7 @@ Each delete's non-zero status is downgraded to a warning rather than hard-failin
 
 **Bonus: L4a also added to the tarball job** for consistency (belt-and-suspenders — the existing "state unchanged" hash-based check plus this direct publish-job-status assertion).
 
-Cascade of PRs that shipped the docker sibling: openemr/openemr#14035 (initial attempt, reverted in same PR chain), openemr/openemr#TBD (this PR — revert + `dry_run` mode + re-add smoketest job).
+Cascade of PRs that shipped the docker sibling: DCL/DCL#14035 (initial attempt, reverted in same PR chain), DCL/DCL#TBD (this PR — revert + `dry_run` mode + re-add smoketest job).
 
 **Followup opportunities (deferred):**
 
@@ -2905,7 +2905,7 @@ Cascade of PRs that shipped the docker sibling: openemr/openemr#14035 (initial a
 
 ### G37 — Audit of G36 smoketest scripts caught 2 latent bugs + 1 design gap  *(SHIPPED 2026-09-16)*
 
-**STATUS: SHIPPED 2026-09-16** across two PRs (openemr/openemr#14045 refactor + BATS extraction that surfaced the bugs during CodeRabbit review; follow-up PR for the reusable caller-must-gate contract + preflight validation). All findings were caught by static audit rather than by a failing nightly run — this entry documents the pattern for future reference: "first-green nightly run" is not the same as "audit-clean" and both are worth doing.
+**STATUS: SHIPPED 2026-09-16** across two PRs (DCL/DCL#14045 refactor + BATS extraction that surfaced the bugs during CodeRabbit review; follow-up PR for the reusable caller-must-gate contract + preflight validation). All findings were caught by static audit rather than by a failing nightly run — this entry documents the pattern for future reference: "first-green nightly run" is not the same as "audit-clean" and both are worth doing.
 
 **Trigger event:** refactor of `.github/workflows/recovery-path-smoketest.yml`'s inline safety-gate + baseline-capture + guardrail-verify bash blocks into three shared scripts under `.github/scripts/` (`assert-release-shipped.sh`, `recovery-smoketest-baseline.sh`, `recovery-smoketest-verify.sh`) with 36 total BATS tests. The refactor was pure code-organization + testability, but writing the tests + running them against the same mock payloads the CI reviewer exercised revealed the two latent bugs; the third finding was a design observation surfaced during a defense-in-depth audit of the surrounding workflow guards.
 
@@ -2963,13 +2963,13 @@ Splitting a fix across two PRs violates patch-prep's single-push convention beca
 **Recovery:** dispatch `patch-prep-automation.yml` manually with explicit inputs — the workflow_dispatch path bypasses the delta gates entirely and just opens the 2 patch-prep PRs:
 
 ```bash
-gh workflow run patch-prep-automation.yml --repo openemr/openemr --ref master \
+gh workflow run patch-prep-automation.yml --repo DCL/DCL --ref master \
   -f rel-branch=rel-840 \
   -f target-version=8.4.1 \
   -f prev-version=8.4.0
 ```
 
-Exercised 2026-09-16 (openemr/openemr run 35160554535); opened PRs #14071 (rel-side) + #14072 (master-side) successfully. `release-prep.yml` had already re-fired successfully on the #14067 corrective push because its gate is simpler (post-state `$v_tag='-dev'` is sufficient, no delta requirement).
+Exercised 2026-09-16 (DCL/DCL run 35160554535); opened PRs #14071 (rel-side) + #14072 (master-side) successfully. `release-prep.yml` had already re-fired successfully on the #14067 corrective push because its gate is simpler (post-state `$v_tag='-dev'` is sufficient, no delta requirement).
 
 **Prevention:** [Quick action 2](../docs/RELEASE_PROCESS.md#2-start-a-new-patch-release-cycle-on-an-existing-rel-branch) in `RELEASE_PROCESS.md` updated to spell out the single-PR + hyphen requirements explicitly, with a pointer to this gap for the recovery pattern.
 
@@ -2981,7 +2981,7 @@ The delta gates could technically be relaxed — e.g., accept two consecutive pu
 
 **STATUS: SHIPPED 2026-09-16** — code fix + 4 new BATS-adjacent PHPUnit tests. Also opens a small doc question about the finalize-time `next` re-add being load-bearing across the ship→patch-prep sequence (see "Design note" below).
 
-**Trigger event:** 8.4.1 patch cycle start on rel-840 (2026-09-16). Master-side patch-prep PR #14072 correctly added the new `- branch: rel-840 / docker_tags: 8.4.1,next / openemr_version_ref: rel-840` row but left the master row's existing `docker_tags: 8.5.0,dev,next` untouched. Result: **two rows claiming `next`** — master (8.5.0 dev) AND rel-840 (8.4.1 patch dev). Docker Hub's `next` tag can only point at one image at a time; the orchestrator's next run would push both, whichever ran last wins, and the tag would flap between them on each subsequent cycle.
+**Trigger event:** 8.4.1 patch cycle start on rel-840 (2026-09-16). Master-side patch-prep PR #14072 correctly added the new `- branch: rel-840 / docker_tags: 8.4.1,next / DCL_version_ref: rel-840` row but left the master row's existing `docker_tags: 8.5.0,dev,next` untouched. Result: **two rows claiming `next`** — master (8.5.0 dev) AND rel-840 (8.4.1 patch dev). Docker Hub's `next` tag can only point at one image at a time; the orchestrator's next run would push both, whichever ran last wins, and the tag would flap between them on each subsequent cycle.
 
 **Why it went latent this long:** patch-prep-automation.yml shipped 2026-07-01 via workstream 6 (see [G12](#g12--patch-cycle-bootstrap-on-rel--requires-manual-sql-skeleton--docker-scaffolding--master-file-rename--workstream-6-design)). Between then and now the only patch-cycle exercise was the 8.1.1 transition — but rel-810 was the current-latest at that point (no post-shipping `next` on master's row), so the strip was a no-op regardless. This is the first patch-cycle where a `latest` had shifted OFF the rel line during a prior finalize, leaving master carrying `next` post-finalize.
 
@@ -3001,7 +3001,7 @@ The delta gates could technically be relaxed — e.g., accept two consecutive pu
 
 **Design note (open question, worth remembering):** the `next` re-add on the master row happens at finalize time via `PostReleaseTargetsMutator` (fires on release-finalize/<rel-branch> merge; put `next` back on master since no rel branch is currently claiming it post-ship). That's followed by the operator's next-patch-cycle bump PR (which triggers patch-prep-automation), which now strips it again. The re-add + strip pair essentially cancels out over the ship→patch-prep window. Two design alternatives worth considering later:
 
-1. Drop the finalize-time re-add. Between ship and next-patch-prep, `next` is "unclaimed" — which is arguably the correct semantic (no active dev cycle claiming it). But it does mean a docker orchestrator tick in that window would push nothing tagged `next`, leaving the last-shipped image without that alias for potentially days. Not great for `docker pull openemr/openemr:next` users.
+1. Drop the finalize-time re-add. Between ship and next-patch-prep, `next` is "unclaimed" — which is arguably the correct semantic (no active dev cycle claiming it). But it does mean a docker orchestrator tick in that window would push nothing tagged `next`, leaving the last-shipped image without that alias for potentially days. Not great for `docker pull DCL/DCL:next` users.
 2. Have finalize add `next` to the JUST-SHIPPED rel row (alongside `latest`) instead of to master. That row already carries `latest`; adding `next` there means "this image is both the latest published AND the current forward-looking tip until the next patch cycle starts." Then patch-prep only needs to move `next` off THAT row when the new patch dev row takes over, not off master. Slightly different mental model but eliminates the master-row bounce.
 
 Neither is in scope for this fix; the current cancel-out behavior is correct as long as both mutators are in sync. Filed here so a future release-targets refactor can revisit.
@@ -3010,12 +3010,12 @@ Neither is in scope for this fix; the current cancel-out behavior is correct as 
 
 **STATUS: SHIPPED 2026-09-17** — timeout bump from 600s to 1200s on the recreate-boot `wait_for_healthy` call in `docker/container_benchmarking/test_suite.sh`. Does NOT weaken the test — the upgrade + Apache start completed correctly on the failing run, the 600s window just no longer fit.
 
-**Trigger event:** Master-side patch-prep PR openemr/openemr#14072 (8.4.1 dev cycle on rel-840, adding `fsupgrade-15.sh`). Container Functionality release check failed with `Container did not become healthy after recreate` on both attempts of both matrix cells. Container health log showed `curl: (7) Failed to connect to localhost:80` right up to the 600s deadline, then the test's own captured stdout showed:
+**Trigger event:** Master-side patch-prep PR DCL/DCL#14072 (8.4.1 dev cycle on rel-840, adding `fsupgrade-15.sh`). Container Functionality release check failed with `Container did not become healthy after recreate` on both attempts of both matrix cells. Container health log showed `curl: (7) Failed to connect to localhost:80` right up to the 600s deadline, then the test's own captured stdout showed:
 
 ```
 Completed: Processing fsupgrade-15.sh upgrade script
 Version marker updated to: 15
-OpenEMR upgrade completed successfully
+DCL upgrade completed successfully
 [TIMING] Total script execution time: 605.0s before Apache start
 Starting Apache!
 [Thu Sep 17 03:26:07] Apache/2.4.68 configured -- resuming normal operations
@@ -3023,12 +3023,12 @@ Starting Apache!
 
 Missed the 600s window by 5s despite the upgrade succeeding.
 
-**Root cause:** `test_suite.sh:1442` sets `sites/default/docker-version=1` deliberately (worst-case starting point) so openemr.sh walks EVERY `fsupgrade-N.sh` from 2 up to the current `/root/docker-version`. That's the point of the test — catch accidental regressions on ANY prior fsupgrade script, not just the one the PR added. Total pre-Apache time therefore grows linearly with N (14 scripts currently, ~5s each on the runner + SQL upgrade + SSL/cert/config setup = ~600s at N=15). Every future patch cycle adds another script and pushes further past the threshold. Sites=1 is intentional and worth keeping (confirmed 2026-09-17); the timeout was the load-bearing wrong value.
+**Root cause:** `test_suite.sh:1442` sets `sites/default/docker-version=1` deliberately (worst-case starting point) so DCL.sh walks EVERY `fsupgrade-N.sh` from 2 up to the current `/root/docker-version`. That's the point of the test — catch accidental regressions on ANY prior fsupgrade script, not just the one the PR added. Total pre-Apache time therefore grows linearly with N (14 scripts currently, ~5s each on the runner + SQL upgrade + SSL/cert/config setup = ~600s at N=15). Every future patch cycle adds another script and pushes further past the threshold. Sites=1 is intentional and worth keeping (confirmed 2026-09-17); the timeout was the load-bearing wrong value.
 
 **Fix (this PR):** two changes, both scoped to the recreate step:
 
 1. Bump the recreate-boot `wait_for_healthy` timeout from 600s to 1200s (only that one call site — the sibling `wait_for_healthy` calls that don't run the full upgrade cascade stay at 600s).
-2. Bump the openemr healthcheck's `start_period` in the recreate compose override from 10m (base) to 20m (matches the wait_for_healthy budget). Without this, `wait_for_healthy` would return early on Docker's `unhealthy` verdict — the base healthcheck's `start_period: 10m + interval: 1m * retries: 3` produces `unhealthy` ~13m after startup if Apache isn't up, and wait_for_healthy short-circuits on that state (`test_suite.sh:151-154`). Keeping start_period >= max_wait means the container can only be `starting` or `healthy` for the whole window. Healthcheck fields kept explicitly in sync with the base (retries, interval, timeout, etc.) rather than relying on compose partial-merge semantics.
+2. Bump the DCL healthcheck's `start_period` in the recreate compose override from 10m (base) to 20m (matches the wait_for_healthy budget). Without this, `wait_for_healthy` would return early on Docker's `unhealthy` verdict — the base healthcheck's `start_period: 10m + interval: 1m * retries: 3` produces `unhealthy` ~13m after startup if Apache isn't up, and wait_for_healthy short-circuits on that state (`test_suite.sh:151-154`). Keeping start_period >= max_wait means the container can only be `starting` or `healthy` for the whole window. Healthcheck fields kept explicitly in sync with the base (retries, interval, timeout, etc.) rather than relying on compose partial-merge semantics.
 
 Adds a long inline comment on both changes documenting why THIS wait is bigger than the others, the sites=1 rationale, the paired healthcheck + wait_for_healthy budget requirement, and the "1200s = a real regression" tripwire.
 
@@ -3044,9 +3044,9 @@ Adds a long inline comment on both changes documenting why THIS wait is bigger t
 
 **STATUS: SHIPPED 2026-09-18** — code fix + 2 new PHPUnit tests. Same class of oversight as G39 (sibling mutator with a missed-strip case on the multi-row pattern).
 
-**Trigger event:** Master-side release-finalize PR openemr/openemr#14069 (auto-generated for 8.4.1 on rel-840). The diff correctly transitioned the new 8.4.1 row's tags from `8.4.1,next` → `8.4.1,latest` + `openemr_version_ref: rel-840 → v8_4_1`, but **left the prior 8.4.0 row's `latest` intact** — so master's `release-targets.yml` would end up with two rows claiming `latest` (8.4.0 and 8.4.1). Docker Hub can only point `latest` at one image at a time; the orchestrator's next tick would push both, and the tag would flap between them on every subsequent cycle.
+**Trigger event:** Master-side release-finalize PR DCL/DCL#14069 (auto-generated for 8.4.1 on rel-840). The diff correctly transitioned the new 8.4.1 row's tags from `8.4.1,next` → `8.4.1,latest` + `DCL_version_ref: rel-840 → v8_4_1`, but **left the prior 8.4.0 row's `latest` intact** — so master's `release-targets.yml` would end up with two rows claiming `latest` (8.4.0 and 8.4.1). Docker Hub can only point `latest` at one image at a time; the orchestrator's next tick would push both, and the tag would flap between them on every subsequent cycle.
 
-**Root cause:** `PostReleaseTargetsMutator::shuffleSlots` Step 1 loop (the "drop `latest` from any other row" pass) used `$row['branch'] === $relBranch` as the skip condition, which incorrectly protected EVERY row on the current rel branch — including prior patch rows carried forward via the multi-row pattern (openemr/openemr#12656). Original intent was "skip the just-shipped row"; the mutator identifies that specific row earlier via the `openemr_version_ref` check (matching either the rel-branch tip or an active version tag for that branch) and stores it as `$relRow`, but the loop's skip condition didn't reference `$relRow`.
+**Root cause:** `PostReleaseTargetsMutator::shuffleSlots` Step 1 loop (the "drop `latest` from any other row" pass) used `$row['branch'] === $relBranch` as the skip condition, which incorrectly protected EVERY row on the current rel branch — including prior patch rows carried forward via the multi-row pattern (DCL/DCL#12656). Original intent was "skip the just-shipped row"; the mutator identifies that specific row earlier via the `DCL_version_ref` check (matching either the rel-branch tip or an active version tag for that branch) and stores it as `$relRow`, but the loop's skip condition didn't reference `$relRow`.
 
 **Why it went latent this long:** none of the prior patch-ship exercises produced a multi-row-same-branch state at finalize time. 8.2.0 shipped 2026-07-08 (rel-820 had only one row). 8.3.0 shipped 2026-08-18 (rel-830 had only one row). 8.4.0 shipped 2026-09-13 (rel-840 fresh cut; only one row). 8.4.1 was the first patch release since the multi-row pattern landed — and its patch-prep left both `8.4.1,next` (new) and `8.4.0,latest` (kept alive per multi-row semantics) on rel-840, which is exactly the shape the Step 1 loop bug-protected.
 
@@ -3060,35 +3060,35 @@ Adds a long inline comment on both changes documenting why THIS wait is bigger t
 
 **Followup consideration (deferred):** worth a repo-wide audit of any release-targets mutator with a `$row['branch'] === $relBranch`-shaped skip condition, in case any others have the same shape latent for a future multi-row scenario. `BranchCutReleaseTargetsMutator::bumpMasterDockerTags` doesn't use this pattern (it targets master-only) so it's fine. Only `PostReleaseTargetsMutator` (fixed here) and `PatchPrepReleaseTargetsMutator` (fixed in G39) have the risk shape and both are now covered.
 
-**Outcome (2026-09-19):** #14111 landed 2026-09-18. A subsequent PR to rel-840 fired release-prep.yml which regenerated #14069 with the strip applied (run 35431909596). Diff verified: master row's `docker_tags: 8.5.0,dev,next` retained (finalize-time re-add per the design note), rel-840's `8.4.1,next` correctly promoted to `8.4.1,latest` + `openemr_version_ref: v8_4_1`, rel-840's `8.4.0,latest` correctly stripped to `8.4.0` (only one row claiming `latest` post-fix). No manual follow-up strip PR needed.
+**Outcome (2026-09-19):** #14111 landed 2026-09-18. A subsequent PR to rel-840 fired release-prep.yml which regenerated #14069 with the strip applied (run 35431909596). Diff verified: master row's `docker_tags: 8.5.0,dev,next` retained (finalize-time re-add per the design note), rel-840's `8.4.1,next` correctly promoted to `8.4.1,latest` + `DCL_version_ref: v8_4_1`, rel-840's `8.4.0,latest` correctly stripped to `8.4.0` (only one row claiming `latest` post-fix). No manual follow-up strip PR needed.
 
 ### G42 — Acknowledgements page mishandled co-authors: uncounted trailers, GitHub-noreply duplicates, bot-filter miss  *(SHIPPED 2026-09-19)*
 
-**STATUS: SHIPPED 2026-09-19** across three PRs in openemr/website-openemr: #220 (co-author trailer counting), #221 (GitHub username → real-name canonicalization + `openemr-release-bot` in NON_HUMAN_NAMES). All three surfaced on the 8.4.1 release-docs cycle; the release-docs generator lives in openemr/website-openemr but the doc entry is captured here because it's a release-mechanism concern.
+**STATUS: SHIPPED 2026-09-19** across three PRs in DCL/website-DCL: #220 (co-author trailer counting), #221 (GitHub username → real-name canonicalization + `DCL-release-bot` in NON_HUMAN_NAMES). All three surfaced on the 8.4.1 release-docs cycle; the release-docs generator lives in DCL/website-DCL but the doc entry is captured here because it's a release-mechanism concern.
 
-**Trigger event:** Release-docs PR openemr/website-openemr#219 (auto-generated 8.4.1 acknowledgements page). First-generation content showed three related bugs:
+**Trigger event:** Release-docs PR DCL/website-DCL#219 (auto-generated 8.4.1 acknowledgements page). First-generation content showed three related bugs:
 
 ```
 - Brady Miller (6 commits)
 - bradymiller (6 commits)          ← duplicate of Brady Miller via noreply-email co-author trailers
 - Jerry Padgett (4 commits)
 - Stephen Waite (2 commits)
-- openemr-release-bot (2 commits)  ← bot slipped filter via bare-name co-author trailer
+- DCL-release-bot (2 commits)  ← bot slipped filter via bare-name co-author trailer
 - Eric Stern (1 commit)
 - kojiromike (1 commit)             ← GitHub username instead of real name (Michael A. Smith)
 ```
 
 **Root causes (three related surfaces):**
 
-1. **Co-authored-by trailers weren't counted at all.** The generator's `git log --format=%aE%x09%aN` fetched only primary author fields. Co-authors on commits (via `Co-authored-by:` trailers, the GitHub-standard multi-author syntax) got zero credit. Fixed openemr/website-openemr#220 by widening the format to include `%(trailers:key=Co-authored-by,valueonly=true,unfold=true,separator=%x1e)` and emitting one record per co-author for full per-commit credit.
+1. **Co-authored-by trailers weren't counted at all.** The generator's `git log --format=%aE%x09%aN` fetched only primary author fields. Co-authors on commits (via `Co-authored-by:` trailers, the GitHub-standard multi-author syntax) got zero credit. Fixed DCL/website-DCL#220 by widening the format to include `%(trailers:key=Co-authored-by,valueonly=true,unfold=true,separator=%x1e)` and emitting one record per co-author for full per-commit credit.
 
-2. **Duplicate rows from GitHub noreply co-authors.** Once co-authors were counted, primary commits `Brady Miller <brady.g.miller@gmail.com>` + co-author trailers `bradymiller <278968+bradymiller@users.noreply.github.com>` on the same person appeared as two rows because email-based grouping + case-insensitive name merge both missed the connection. Fixed openemr/website-openemr#221 with a `GitHubUserResolver` that extracts the username from noreply-email format (`<id>+<username>@users.noreply.github.com` or bare `<username>@users.noreply.github.com`) and canonicalizes to the user's GitHub profile display name via `GET /users/{username}`. One API call per unique username (deduplicated); fails gracefully to username fallback on any API error.
+2. **Duplicate rows from GitHub noreply co-authors.** Once co-authors were counted, primary commits `Brady Miller <brady.g.miller@gmail.com>` + co-author trailers `bradymiller <278968+bradymiller@users.noreply.github.com>` on the same person appeared as two rows because email-based grouping + case-insensitive name merge both missed the connection. Fixed DCL/website-DCL#221 with a `GitHubUserResolver` that extracts the username from noreply-email format (`<id>+<username>@users.noreply.github.com` or bare `<username>@users.noreply.github.com`) and canonicalizes to the user's GitHub profile display name via `GET /users/{username}`. One API call per unique username (deduplicated); fails gracefully to username fallback on any API error.
 
-3. **`openemr-release-bot` (no `[bot]` suffix) slipped the filter.** Bot primary commits are `openemr-release-bot[bot]` (caught by `str_ends_with '[bot]'`). But conductor-generated commits carry a `Co-authored-by: openemr-release-bot <release-bot@openemr.invalid>` trailer — no `[bot]` suffix, non-GitHub-noreply email so the username-canonicalization path can't help either. Fixed by adding `openemr-release-bot` to `NON_HUMAN_NAMES` (in the same #221 PR).
+3. **`DCL-release-bot` (no `[bot]` suffix) slipped the filter.** Bot primary commits are `DCL-release-bot[bot]` (caught by `str_ends_with '[bot]'`). But conductor-generated commits carry a `Co-authored-by: DCL-release-bot <release-bot@DCL.invalid>` trailer — no `[bot]` suffix, non-GitHub-noreply email so the username-canonicalization path can't help either. Fixed by adding `DCL-release-bot` to `NON_HUMAN_NAMES` (in the same #221 PR).
 
 **Systemic lesson:** the acknowledgements generator receives strings from an external source (git commit metadata, incl. hand-crafted trailer values) that don't necessarily match its internal dedup + filter models. Three variations of the same class of mismatch surfaced together on the first patch-cycle exercise. Future release-doc changes involving new metadata sources should: (a) canonicalize to a stable identity early in the pipeline before dedup, (b) include per-source integration tests exercising realistic trailer / noreply / bot-name shapes, (c) document what the canonicalization is + isn't handling so future contributors don't need to re-derive the failure modes.
 
-**Outcome (2026-09-19):** all three PRs merged. Release-docs regenerated post-fix (run 35432004291) — page now shows clean 5-row list with Brady Miller correctly at 13 commits (primary 6 + co-author 6 merged + 1 from a subsequent backport PR), Michael A. Smith replacing `kojiromike`, and `openemr-release-bot` dropped. Full expected shape rendered.
+**Outcome (2026-09-19):** all three PRs merged. Release-docs regenerated post-fix (run 35432004291) — page now shows clean 5-row list with Brady Miller correctly at 13 commits (primary 6 + co-author 6 merged + 1 from a subsequent backport PR), Michael A. Smith replacing `kojiromike`, and `DCL-release-bot` dropped. Full expected shape rendered.
 
 **Followup consideration (deferred):** any co-author using a personal email (not a GitHub noreply) that DOES differ from their primary spelling would still slip through the API canonicalization path. Would require either a project-level `.mailmap` file (git-native canonicalization; would need generator-side application to trailer values since git's `%(trailers:...)` doesn't apply mailmap) or continued hand-curation via `NON_HUMAN_NAMES`. Not currently needed — nothing in the 8.4.1 range triggered this — but worth remembering for future non-noreply co-author-based duplicates.
 
@@ -3132,15 +3132,15 @@ Both edits land in the same PR to eliminate window (1)/(2).
 
 **STATUS: SHIPPED 2026-09-20** across two mutator changes in the same PR + defense-in-depth backfill at finalize. Fourth stomp-adjacent mutator gap in the 8.4.1 patch-cycle series (G39/G41/G44 = 3-of-3 mutator families had a "missed field" bug the pattern surfaced).
 
-**Trigger event:** review of the regenerated openemr/openemr#14069 finalize diff for 8.4.1 (2026-09-20, hours before ship). The promoted rel-840 row read:
+**Trigger event:** review of the regenerated DCL/DCL#14069 finalize diff for 8.4.1 (2026-09-20, hours before ship). The promoted rel-840 row read:
 ```yaml
 - branch: rel-840
   docker_tags: 8.4.1,latest
-  openemr_version_ref: v8_4_1
+  DCL_version_ref: v8_4_1
 ```
-No `gate_with_acceptance: true`. The 8.4.0 row above it (`- branch: rel-840 / docker_tags: 8.4.0 / openemr_version_ref: v8_4_0 / gate_with_acceptance: true`) HAS the field because branch-cut inserted it; patch-prep-inserted rows didn't.
+No `gate_with_acceptance: true`. The 8.4.0 row above it (`- branch: rel-840 / docker_tags: 8.4.0 / DCL_version_ref: v8_4_0 / gate_with_acceptance: true`) HAS the field because branch-cut inserted it; patch-prep-inserted rows didn't.
 
-**Root cause:** `PatchPrepReleaseTargetsMutator::renderRelRowLines()` emitted a 3-line row template (`- branch: / docker_tags: X.Y.P,next / openemr_version_ref: <relBranch>`). `BranchCutReleaseTargetsMutator`'s equivalent template is 4 lines — it includes `gate_with_acceptance: true`. `PostReleaseTargetsMutator`'s promotion pipeline (`pinRelBranchVersionRef` + `shuffleSlots`) doesn't touch the field either — it flows patch-prep's row shape forward without adding anything.
+**Root cause:** `PatchPrepReleaseTargetsMutator::renderRelRowLines()` emitted a 3-line row template (`- branch: / docker_tags: X.Y.P,next / DCL_version_ref: <relBranch>`). `BranchCutReleaseTargetsMutator`'s equivalent template is 4 lines — it includes `gate_with_acceptance: true`. `PostReleaseTargetsMutator`'s promotion pipeline (`pinRelBranchVersionRef` + `shuffleSlots`) doesn't touch the field either — it flows patch-prep's row shape forward without adding anything.
 
 **Downstream effect:** `docker-release-orchestrator.yml` reads `.github/release-targets.yml`, fans out one `docker-build-release.yml` dispatch per row, and passes `gate_with_acceptance=<row's value>`. A row without the field → `gate_with_acceptance=false` → docker-build-release takes the **non-gated publish path** that pushes directly to final tags **without running the acceptance-gate matrix**. Every patch-cycle docker publish (not just 8.4.1) would silently skip acceptance. Stomp-adjacent — the docker image ships but with zero pre-publish acceptance signal.
 
@@ -3219,11 +3219,11 @@ cancel-in-progress: ${{ github.event_name != 'schedule' }}
 
 **STATUS: SHIPPED 2026-09-22.** Second same-shape recurrence of the G45 gap in ~2 days -- new files referenced by an already-synced workflow but themselves not added to the manifest, so the reference resolves on master (where the files live) but fails on rel branches (where sync carried the reference but not the target).
 
-**Trigger event:** Item 3 (openemr/openemr#14168) added two composite actions (`.github/actions/run-acceptance-group/`, `.github/actions/api-enable-artifact/`) and modified `acceptance-package.yml` + `acceptance-docker.yml` to reference them via `uses: ./.github/actions/<name>`. The modified workflows are already in `.github/byte-identical.yml` and sync to rel branches on every master push. The next auto-sync PRs (openemr/openemr#14169 rel-840, #14170 rel-830, #14171 rel-820, all opened 2026-09-22) failed EVERY acceptance cell with:
+**Trigger event:** Item 3 (DCL/DCL#14168) added two composite actions (`.github/actions/run-acceptance-group/`, `.github/actions/api-enable-artifact/`) and modified `acceptance-package.yml` + `acceptance-docker.yml` to reference them via `uses: ./.github/actions/<name>`. The modified workflows are already in `.github/byte-identical.yml` and sync to rel branches on every master push. The next auto-sync PRs (DCL/DCL#14169 rel-840, #14170 rel-830, #14171 rel-820, all opened 2026-09-22) failed EVERY acceptance cell with:
 
 ```
 ##[error]Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under
-'/home/runner/work/openemr/openemr/.github/actions/run-acceptance-group'.
+'/home/runner/work/DCL/DCL/.github/actions/run-acceptance-group'.
 Did you forget to run actions/checkout before running your local action?
 ```
 
@@ -3251,9 +3251,9 @@ Same shape on both fresh-install and wizard-install cells, both tar and zip vari
 
 **Fix arc (two PRs):**
 
-1. **openemr/openemr#14199 (first attempt, correct pattern, wrong composition):** moved the composite-action checkout to its own `path: master-composite` subdir with `sparse-checkout: .github/actions/generate-app-token` still set. Intent was to isolate the sparse config in `master-composite/.git/info/sparse-checkout` so it physically couldn't touch the rel-branch tree at `./`. But `actions/checkout@v7`'s `path: <subdir>` + non-cone-mode `sparse-checkout: <pattern>` don't compose as expected: the sparse config gets written and the checkout step reports success, but the file listed in the pattern doesn't end up at `<subdir>/<pattern>/action.yml`. The Mint App token step then failed with "Can't find 'action.yml' under `/master-composite/.github/actions/generate-app-token`" on the fix-merge sync run (35816164197). Added a regression canary step (`git sparse-checkout list` post-rel-checkout; fails with a descriptive error if non-empty) which stays in place.
+1. **DCL/DCL#14199 (first attempt, correct pattern, wrong composition):** moved the composite-action checkout to its own `path: master-composite` subdir with `sparse-checkout: .github/actions/generate-app-token` still set. Intent was to isolate the sparse config in `master-composite/.git/info/sparse-checkout` so it physically couldn't touch the rel-branch tree at `./`. But `actions/checkout@v7`'s `path: <subdir>` + non-cone-mode `sparse-checkout: <pattern>` don't compose as expected: the sparse config gets written and the checkout step reports success, but the file listed in the pattern doesn't end up at `<subdir>/<pattern>/action.yml`. The Mint App token step then failed with "Can't find 'action.yml' under `/master-composite/.github/actions/generate-app-token`" on the fix-merge sync run (35816164197). Added a regression canary step (`git sparse-checkout list` post-rel-checkout; fails with a descriptive error if non-empty) which stays in place.
 
-2. **openemr/openemr#14203 (real fix):** dropped `sparse-checkout` entirely from the composite-action checkout. `path: master-composite` remains, plus a `ref: master` pin (Rabbit-caught) that makes the master-authoritative intent explicit and protects against workflow_dispatch fired from a non-master ref. A full shallow clone into `master-composite/` is a few seconds of runner time; the sparse-config surface is eliminated at the source rather than worked around; the composite action file lands at the expected path. Followed the pattern already used across `branch-cut-automation.yml` / `patch-prep-automation.yml` / `release-amendment.yml` (`path: master-checkout` / `path: rel-checkout`, no sparse-checkout).
+2. **DCL/DCL#14203 (real fix):** dropped `sparse-checkout` entirely from the composite-action checkout. `path: master-composite` remains, plus a `ref: master` pin (Rabbit-caught) that makes the master-authoritative intent explicit and protects against workflow_dispatch fired from a non-master ref. A full shallow clone into `master-composite/` is a few seconds of runner time; the sparse-config surface is eliminated at the source rather than worked around; the composite action file lands at the expected path. Followed the pattern already used across `branch-cut-automation.yml` / `patch-prep-automation.yml` / `release-amendment.yml` (`path: master-checkout` / `path: rel-checkout`, no sparse-checkout).
 
 **Recovery for the failing sync PRs:** the two intermediate PRs (#14201 rel-830, #14202 rel-820) that opened during the flaky success window merged after re-running their flaky acceptance checks (unrelated Bb-shape UI-test + api-enable POST-then-verify timing flakes). rel-840's PR #14200 auto-landed with the same flaky-then-passing pattern. All three rel branches now carry Item 5+6.
 
@@ -3263,17 +3263,17 @@ Same shape on both fresh-install and wizard-install cells, both tar and zip vari
 - **`path: <subdir>` + `sparse-checkout: <pattern>` don't compose in v7.** If you need `path:`, do a full shallow clone; the runtime cost is negligible and it eliminates the composition surface.
 - **Regression canaries at layer boundaries pay off.** The `git sparse-checkout list` guard added in #14199 (retained through the final design) fires within seconds of any future re-introduction of the leak, instead of surfacing hours later as a misleading downstream failure (empty sync PR, rename-sweep abort). Same shape as G43's "make gate independent from `dry_run`" and G37's preflight-gate philosophy: assert the invariant at the layer that's actually affected.
 
-**Fix-arc extension (2026-09-23, post-original-G48):** #14199 + #14203 (composite-isolation via `path: master-composite`) eliminated the sparse leak but introduced a cosmetic post-cleanup failure. `actions/checkout@v7` at the default path runs its OWN `Deleting the contents of '<workspace>'` at setup, independent of the `clean: true/false` flag -- it wipes `master-composite/` before the composite action's post-phase can reload its `action.yml` for token revocation. Every sync run since #14203 marked jobs as `failure` at the Post Mint App token step even though actual sync work succeeded, firing spurious "Run failed" emails per trigger. #14216 tried `clean: false` on the rel-branch checkout -- didn't help because the workspace-deletion isn't gated on `clean:`. **Final resolution (openemr/openemr#14226): rewrite to a single-checkout pattern.** Since Phase 10b propagated `generate-app-token` to every rel branch (including rel-800) and byte-identical sync keeps that copy in step with master's, use the rel-branch's own composite at `./.github/actions/generate-app-token` after the (single) checkout. Master-authoritative-by-construction, no `master-composite/` subdir, no wipe surface, no post-cleanup path-not-found. The sparse-checkout canary is retained as defense-in-depth against any future workflow edit re-introducing the leak pattern.
+**Fix-arc extension (2026-09-23, post-original-G48):** #14199 + #14203 (composite-isolation via `path: master-composite`) eliminated the sparse leak but introduced a cosmetic post-cleanup failure. `actions/checkout@v7` at the default path runs its OWN `Deleting the contents of '<workspace>'` at setup, independent of the `clean: true/false` flag -- it wipes `master-composite/` before the composite action's post-phase can reload its `action.yml` for token revocation. Every sync run since #14203 marked jobs as `failure` at the Post Mint App token step even though actual sync work succeeded, firing spurious "Run failed" emails per trigger. #14216 tried `clean: false` on the rel-branch checkout -- didn't help because the workspace-deletion isn't gated on `clean:`. **Final resolution (DCL/DCL#14226): rewrite to a single-checkout pattern.** Since Phase 10b propagated `generate-app-token` to every rel branch (including rel-800) and byte-identical sync keeps that copy in step with master's, use the rel-branch's own composite at `./.github/actions/generate-app-token` after the (single) checkout. Master-authoritative-by-construction, no `master-composite/` subdir, no wipe surface, no post-cleanup path-not-found. The sparse-checkout canary is retained as defense-in-depth against any future workflow edit re-introducing the leak pattern.
 
 **Additional systemic lesson from the extended fix arc:** `actions/checkout@v7` at the default path wipes the workspace at setup even when the caller expects existing content to survive. Any workflow that populates a workspace-level directory before an unrelated `actions/checkout` at the same path will lose it -- and `clean: false` doesn't help because the wipe isn't gated on `clean:`. Use a distinct `path: <subdir>` for the second checkout OR (better, when possible) restructure to a single checkout. The composite-isolation pattern the middle-chapter fix reached for works for the sparse leak concern but stumbles when the isolated dir needs to survive a co-located re-checkout.
 
 ### G49 — `docker-release-orchestrator.yml` fan-out hardcoded release-mode treatment, freezing `:dev`/`:next`/`:8.5.0` for 13 days during between-cycles *(SHIPPED 2026-10-06)*
 
-**STATUS: SHIPPED 2026-10-06.** G49 is an incomplete-coverage sibling to the Item 4 followup (openemr/openemr#14215, 2026-09-23) that landed the `require_upgrade_cell` guardrail. The guardrail flipped `acceptance-docker.yml`'s silent-skip to loud-fail for release-mode callers, matching the design intent that between-cycles state is brief (patch-prep PRs strip `next` from master within days). Of the three release-mode callers that got the flag set to `true` -- `release-prep.yml`, `docker-build-release.yml`'s acceptance-gate `workflow_call`, `docker-acceptance-only.yml`'s recovery `workflow_call` -- the second one is also called indirectly by `docker-release-orchestrator.yml`'s daily cron (06:00 UTC `schedule`), not just by real ship moments. The orchestrator's master-row dispatch hits the same release-mode gate as a real ship, so between-cycles turned into "every daily run loud-fails, no `:dev`/`:next`/`:8.5.0` publish happens."
+**STATUS: SHIPPED 2026-10-06.** G49 is an incomplete-coverage sibling to the Item 4 followup (DCL/DCL#14215, 2026-09-23) that landed the `require_upgrade_cell` guardrail. The guardrail flipped `acceptance-docker.yml`'s silent-skip to loud-fail for release-mode callers, matching the design intent that between-cycles state is brief (patch-prep PRs strip `next` from master within days). Of the three release-mode callers that got the flag set to `true` -- `release-prep.yml`, `docker-build-release.yml`'s acceptance-gate `workflow_call`, `docker-acceptance-only.yml`'s recovery `workflow_call` -- the second one is also called indirectly by `docker-release-orchestrator.yml`'s daily cron (06:00 UTC `schedule`), not just by real ship moments. The orchestrator's master-row dispatch hits the same release-mode gate as a real ship, so between-cycles turned into "every daily run loud-fails, no `:dev`/`:next`/`:8.5.0` publish happens."
 
-**Observed window:** 8.4.1 shipped 2026-09-20, finalize-time `PostReleaseTargetsMutator` added `next` back to master's row (`docker_tags: 8.5.0,dev,next`). First orchestrator run after #14215 landed was 2026-09-24; the gate's criterion-2 check (`detect-upgrade-cell-skip.sh`: `to_tag` revision=master AND master carries `next`) fired, `require_upgrade_cell=true` upgraded that to loud-fail, docker-build-release.yml exit 1. Daily reproduction through 2026-10-06. No patch-prep PR for 8.4.2 fired in that window (would have called `PatchPrepReleaseTargetsMutator::stripNextFromMasterRow` — G39's fix — and unblocked publishes immediately), no rel-850 branch-cut either, so master's row sat holding `next` for 13 days with the registry's `openemr/openemr:dev`, `:next`, `:8.5.0` tags frozen at the Sep 23 digest the whole time.
+**Observed window:** 8.4.1 shipped 2026-09-20, finalize-time `PostReleaseTargetsMutator` added `next` back to master's row (`docker_tags: 8.5.0,dev,next`). First orchestrator run after #14215 landed was 2026-09-24; the gate's criterion-2 check (`detect-upgrade-cell-skip.sh`: `to_tag` revision=master AND master carries `next`) fired, `require_upgrade_cell=true` upgraded that to loud-fail, docker-build-release.yml exit 1. Daily reproduction through 2026-10-06. No patch-prep PR for 8.4.2 fired in that window (would have called `PatchPrepReleaseTargetsMutator::stripNextFromMasterRow` — G39's fix — and unblocked publishes immediately), no rel-850 branch-cut either, so master's row sat holding `next` for 13 days with the registry's `DCL/DCL:dev`, `:next`, `:8.5.0` tags frozen at the Sep 23 digest the whole time.
 
-**Diagnostic signal:** `rel-840` row (`docker_tags: 8.4.1,latest`) kept publishing cleanly daily -- `latest` moved on 2026-10-05 to a fresh digest -- which ruled out "the orchestrator stopped firing" or "the acceptance gate is universally broken." `rel-820` + `rel-830` were also loud-failing but for an unrelated upstream-mock reason, which obscured the pattern until the `openemr/openemr:flex` story (`docker/development-easy` compose pin at `c9d9b010…` for 18 days despite daily nightly `Flex 3.24 Dockers Build` success) made the content-addressed-dedup-ruled-out angle inescapable.
+**Diagnostic signal:** `rel-840` row (`docker_tags: 8.4.1,latest`) kept publishing cleanly daily -- `latest` moved on 2026-10-05 to a fresh digest -- which ruled out "the orchestrator stopped firing" or "the acceptance gate is universally broken." `rel-820` + `rel-830` were also loud-failing but for an unrelated upstream-mock reason, which obscured the pattern until the `DCL/DCL:flex` story (`docker/development-easy` compose pin at `c9d9b010…` for 18 days despite daily nightly `Flex 3.24 Dockers Build` success) made the content-addressed-dedup-ruled-out angle inescapable.
 
 **Fix: single-sourced predicate across both consumers.** G49 extracts the criterion-2 "is master's row carrying `next`" awk+grep check from `detect-upgrade-cell-skip.sh` into `.github/scripts/lib/release-targets-queries.sh::master_row_carries_next` and plumbs the orchestrator's compute-matrix step through it:
 
@@ -3306,7 +3306,7 @@ Same shape on both fresh-install and wizard-install cells, both tar and zip vari
 
 **Why the rel-840 degenerate-pass was invisible for so long:** The acceptance gate reports "upgrade cell PASS" when the test suite exits 0, regardless of whether the test actually exercised the upgrade machinery. A degenerate self-upgrade satisfies the version-check assertion vacuously; the business + api-enabled tests still run against the "upgraded" (= reinstalled) artifact, so the broader signal (does the app work after boot-stop-boot) isn't completely absent. But the specific signal the cell was designed to produce — "does the DB-upgrade path from a prior shipped version complete cleanly" — was never tested on rel-840 while it held `latest`.
 
-**Fix: port `derive_from_version` from the package side (openemr/openemr#13573) to the docker side as a shared lib.**
+**Fix: port `derive_from_version` from the package side (DCL/DCL#13573) to the docker side as a shared lib.**
 
 1. **New lib** `.github/scripts/lib/derive-from-version.sh` with `derive_from_version_sql_candidates(checkout_dir, [exclude_version])`. Pure function: enumerates `<checkout_dir>/sql/*-to-*_upgrade.sql` filenames, extracts each "from" segment, filters to strict `X.Y.Z` shape, de-duplicates, sorts ascending by semver, emits as newline-separated list. Optional exclude-version argument for the recovery-mode "to-equals-max" case. Returns rc=1 with actionable `::error::` on missing/empty `sql/` or no well-formed filenames.
 2. **Refactor** `.github/scripts/detect-acceptance-mode.sh` (package side) to source the lib and call `derive_from_version_sql_candidates` for the sql-side signal. Keeps its own `fetch_shipped_versions` + manifest-intersect + exclude-after-intersect wrapper so the package side's "tarball must exist on GitHub Releases" guarantee stays intact. External behavior preserved: all 36 pre-existing BATS cases pass unchanged (the refactor adds a `derive_from_version:` echo mirroring the historical error prefix so BATS asserts don't need updating).
@@ -3314,7 +3314,7 @@ Same shape on both fresh-install and wizard-install cells, both tar and zip vari
 4. **Input default change**: `inputs.from_tag` default was `'latest'`, now `''` (empty-means-derive). Operators who genuinely want the pre-fix `latest` behavior pass `-f from_tag=latest` explicitly. Direct-pull overrides (any tag string) continue to work unchanged.
 5. **BATS corpus** at `tests/bats/ci-scripts/derive-from-version/`: 23 cases. 10 positive (each release-cycle shape explicitly covered — rel-820, rel-830, rel-840, master-active-cycle, master-between-cycles, single-candidate, dupes, semver-sort-regression, distractor-sql-files-ignored). 5 exclude-version cases (max, middle, non-existent, only-candidate-fail-loud, empty-string-no-op). 8 negative-wall (missing `sql/`, missing checkout dir, empty `sql/`, non-upgrade files, malformed `X_Y_Z-to-A_B_C` shape, mix of valid+malformed, no-args-defaults-to-cwd, checkout-is-a-file). Ratio weighted toward negative because the primary failure mode to prevent is **upgrade cell skip when it should run** — a false "no derivation possible" result would cause the acceptance gate to skip or hard-fail an otherwise-valid upgrade test on a PR-triggered rel-branch dispatch, which is exactly the invariant that must not break.
 
-**Why sql-only on docker, no manifest intersect:** Docker Hub carries pre-production tags alongside shipped releases (`openemr/openemr:8.5.0` currently points at master's dev build), so a manifest intersect wouldn't correctly distinguish them. In the rare case where a derived version was never actually published (branch cut but never shipped), the downstream `docker pull openemr/openemr:<version>` in the acceptance cell's boot step fails loud naming the exact tag — no silent skip. The "nothing-breaks-on-unreleased-version" invariant depends on that loud-pull-fail; the lib header documents it and the design intentionally accepts "sql derivation may pick a version that wasn't ever shipped" as a known imperfection in the ultra-rare case (openemr's current practice makes this effectively impossible — every rel branch cut is published).
+**Why sql-only on docker, no manifest intersect:** Docker Hub carries pre-production tags alongside shipped releases (`DCL/DCL:8.5.0` currently points at master's dev build), so a manifest intersect wouldn't correctly distinguish them. In the rare case where a derived version was never actually published (branch cut but never shipped), the downstream `docker pull DCL/DCL:<version>` in the acceptance cell's boot step fails loud naming the exact tag — no silent skip. The "nothing-breaks-on-unreleased-version" invariant depends on that loud-pull-fail; the lib header documents it and the design intentionally accepts "sql derivation may pick a version that wasn't ever shipped" as a known imperfection in the ultra-rare case (DCL's current practice makes this effectively impossible — every rel branch cut is published).
 
 **Signal single-sourcing (part 2, after G49's master_row_carries_next).** Both derive consumers (package via `detect-acceptance-mode.sh::derive_from_version`, docker via `acceptance-docker.yml::resolve-from-tag`) now read `derive_from_version_sql_candidates` from the shared lib. The sql-side enumeration is one implementation; package layers manifest-intersect + exclude on top; docker uses the raw result. Same lib, two legitimate different wrappings — no duplicated enumeration logic, no risk that a future filename-convention change (unlikely but possible) would silently break only one of the two paths.
 
@@ -3322,12 +3322,12 @@ Same shape on both fresh-install and wizard-install cells, both tar and zip vari
 
 - **A "ship-time" default that becomes wrong on cycle rotation is harder to notice than a hardcoded wrong value.** `from_tag=latest` was correct when `latest` was pinned to the rel branch under test (rel-820 shipping `latest` from 2026-07-30 through 2026-09-18). Once rotation moved `latest` to a newer rel (rel-840, 2026-09-18), the default silently became wrong for every older rel. There's no CI check "does `from_tag` resolve to a version compatible with to_tag" because the matrix was authored when such a check wasn't needed. **Design implication: when a workflow-level default references a floating tag or any value that varies by cycle state, add a validator step that cross-checks the resolved value against the row's own identity.** The new `resolve-from-tag` step is effectively that check: it refuses to default to a floating tag at all, deriving a cycle-stable value from the row's own checkout instead.
 - **"Degenerate pass" tests are more dangerous than loud failures.** rel-840's self-upgrade silently masked a real signal gap for 20 days (2026-09-18 → 2026-10-06); rel-820/830's loud failures were visible every day. The loud failures were the operator-forcing-function that surfaced the whole class of problem. Prefer tests that fail-loud-on-nothing-happening to tests that pass-when-nothing-happens.
-- **Port the known-working pattern across cousin workflows.** The package side had already solved this exact signal (openemr/openemr#13573, 2026-07) via `derive_from_version` + manifest intersect. The docker side didn't inherit the pattern because the two workflows were authored at different times by different review cycles. Same category of oversight as G49 (require_upgrade_cell shipped on 3 callers, missed the orchestrator). **Design implication: when adding a workflow-level mechanism, grep for every cousin workflow that could use it before marking the item shipped.** The acceptance-package.yml `from_version` derivation would have been one grep for `derive_from_version` away.
+- **Port the known-working pattern across cousin workflows.** The package side had already solved this exact signal (DCL/DCL#13573, 2026-07) via `derive_from_version` + manifest intersect. The docker side didn't inherit the pattern because the two workflows were authored at different times by different review cycles. Same category of oversight as G49 (require_upgrade_cell shipped on 3 callers, missed the orchestrator). **Design implication: when adding a workflow-level mechanism, grep for every cousin workflow that could use it before marking the item shipped.** The acceptance-package.yml `from_version` derivation would have been one grep for `derive_from_version` away.
 - **PR-triggered dispatches on rel branches during release cycles were the critical invariant to preserve.** Every rel-XXX during an active release cycle produces PRs (patch-prep, release-prep, release-finalize, dependency bumps, backports) that fire `acceptance-docker.yml` via the pull_request trigger. Each of those runs MUST exercise the upgrade cell with a legitimate from-version → the row's own version, because that's the signal "did this PR break the shipped-user upgrade path." Pre-fix, rel-820/rel-830 PRs loud-failed on the downgrade; rel-840 PRs vacuously passed on the self-upgrade. Post-fix, every PR exercises the real upgrade path. The BATS corpus explicitly covers each per-row shape (rel-820, rel-830, rel-840, master-active-cycle, master-between-cycles) so future refactors to the derivation can't silently flip any row's PR dispatch from "real upgrade test" to "no test."
 
 ### G51 — `AppointmentPersistenceAcceptanceTest` flake surfaced sibling opener-chain bug to #14325, plus no on-failure diagnostic capture across acceptance suite  *(SHIPPED 2026-10-09)*
 
-**STATUS: SHIPPED 2026-10-09.** G51 is partially a sibling-bug followup to the Oct 1 openemr/openemr#14325 fix and partially a diagnostic-infrastructure gap closure. Investigating `AppointmentPersistenceAcceptanceTest::testSeedsAndFlowBoardShowsAppointmentInPostInstall`'s flake pattern surfaced both halves.
+**STATUS: SHIPPED 2026-10-09.** G51 is partially a sibling-bug followup to the Oct 1 DCL/DCL#14325 fix and partially a diagnostic-infrastructure gap closure. Investigating `AppointmentPersistenceAcceptanceTest::testSeedsAndFlowBoardShowsAppointmentInPostInstall`'s flake pattern surfaced both halves.
 
 **Observed:** ~1-2 failures per day across both acceptance workflows, accounting for roughly half of all docker-side acceptance failures. Error signature: `Facebook\WebDriver\Exception\TimeoutException` (no message) from `WebDriverWait.php:71`, stack trace pointing at `UiSeedingTrait.php:1397` (the `invisibilityOfElementLocated` wait after `createCalendarEvent`'s Save click). Confirmed instances on both pre-#14325 commits (expected — #14325 was the fix) AND post-#14325 commits (`master` 2026-10-08, `ci-docker-accept-from-version-per-row` 2026-10-07), meaning #14325 was partial.
 
@@ -3360,15 +3360,15 @@ Each capture isolated in its own `catch (WebDriverException | \JsonException)` s
 **Systemic lessons:**
 
 - **Code bugs that only surface via acceptance tests predate the acceptance tests themselves.** The find_appt_popup.php code hasn't changed since 2017-2019. The race has existed since then. The ONLY thing that changed in 2026 is that AppointmentPersistenceAcceptanceTest started asserting on the modal-close completion -- which exposed the latent race. **Design implication: when adding an acceptance test that drives a legacy UI path, expect to find latent races in the UI code it exercises.** Those races aren't regressions caused by the test; they're bugs the test is now newly surfacing. Treat them as test-side wins (previously-silent-breakage is now loud-breakage) and fix the UI code, not the test.
-- **Partial fixes to a bug class should audit for sibling instances.** openemr/openemr#14325 patched `add_edit_event.php`'s response-path unguarded-opener-chain. The sibling in `find_appt_popup.php` was a `grep -rn 'opener\.top\.restoreSession' interface/` away. **Design implication: when the fix is "wrap the opener chain in try/catch so dlgclose() always fires," grep for every unguarded opener-chain in interface/ at the time of the fix.** G51 would have been part of #14325 with a 60-second grep.
+- **Partial fixes to a bug class should audit for sibling instances.** DCL/DCL#14325 patched `add_edit_event.php`'s response-path unguarded-opener-chain. The sibling in `find_appt_popup.php` was a `grep -rn 'opener\.top\.restoreSession' interface/` away. **Design implication: when the fix is "wrap the opener chain in try/catch so dlgclose() always fires," grep for every unguarded opener-chain in interface/ at the time of the fix.** G51 would have been part of #14325 with a 60-second grep.
 - **Failure diagnostics are infrastructure, not per-test polish.** The e2e side had `UserAddTrait::captureForceRefreshDiagnostics` for one specific force-refresh failure mode. The acceptance side had nothing. Both suites use Panther; both suites deserve the same baseline capture surface. **Design implication: when adopting a test framework for a new suite, port the diagnostic infrastructure alongside the framework.** The acceptance suite was authored July-September 2026 and hit its first flake months later with no capture infrastructure in place; retrofitting now was a 150-line method on the base class, trivial to have included at authoring time.
 - **"Degenerate pass" tests mask flakes until a test with a real assertion fires alongside them.** AppointmentPersistence specifically asserts that an appointment persists through install → upgrade. Earlier acceptance tests mostly checked that pages rendered without errors; a modal that fails to close silently (login still works, pages still render) could pass. Only the persist assertion catches "DB write didn't happen because modal save didn't propagate." **Design implication: audit the assertion density of each acceptance test. If a test only asserts "page rendered," it's a smoke test, not an acceptance test. Real acceptance signal requires post-condition assertions on persisted state.**
 
 ### G52 — Duplicate Clinicians `write` ACL since PR #8087 (8.2.0) made the 8.5.0 ACL upgrade print an ERROR line, failing `wizard-upgrade` acceptance on every `tools/release/**` PR  *(SHIPPED 2026-10-19)*
 
-**STATUS: SHIPPED 2026-10-19** as openemr/openemr#14707 (resolves issue openemr/openemr#14706). Latent install-state bug from openemr/openemr#8087 (shipped in 8.2.0) that gave the Clinicians group two `write` ACLs instead of one. Dormant across 8.2.0 / 8.3.0 / 8.4.0 / 8.4.1 — surfaced only when 8.5.0's new ACL upgrade block tried to modify the single-ACL-shaped target. The post-upgrade acceptance assertion's `::error::` output and in-script comment both reference the issue (#14706) rather than the fix PR (#14707) because the error is operator-facing — it points readers at the bug report that explains the state they're seeing.
+**STATUS: SHIPPED 2026-10-19** as DCL/DCL#14707 (resolves issue DCL/DCL#14706). Latent install-state bug from DCL/DCL#8087 (shipped in 8.2.0) that gave the Clinicians group two `write` ACLs instead of one. Dormant across 8.2.0 / 8.3.0 / 8.4.0 / 8.4.1 — surfaced only when 8.5.0's new ACL upgrade block tried to modify the single-ACL-shaped target. The post-upgrade acceptance assertion's `::error::` output and in-script comment both reference the issue (#14706) rather than the fix PR (#14707) because the error is operator-facing — it points readers at the bug report that explains the state they're seeing.
 
-**Trigger event:** 8.5.0's upgrade block in `acl_upgrade.php` reads "the" Clinicians `write` ACL and modifies it; with two ACLs present the second returns ambiguous results and the block prints an `ERROR` line (no non-zero exit). CI-silent until the package `wizard-upgrade` cell happens to compare post-upgrade DB state against an expected invariant — which previously no cell did for ACLs. Pre-fix, every PR that touched `tools/release/**` (which flips `detect-acceptance-mode.sh` to `build_locally=true` and pulls `upgrade` + `wizard-upgrade` into the matrix) couldn't go green on the tarball matrix without an admin override — openemr/openemr#14487 was the motivating example.
+**Trigger event:** 8.5.0's upgrade block in `acl_upgrade.php` reads "the" Clinicians `write` ACL and modifies it; with two ACLs present the second returns ambiguous results and the block prints an `ERROR` line (no non-zero exit). CI-silent until the package `wizard-upgrade` cell happens to compare post-upgrade DB state against an expected invariant — which previously no cell did for ACLs. Pre-fix, every PR that touched `tools/release/**` (which flips `detect-acceptance-mode.sh` to `build_locally=true` and pulls `upgrade` + `wizard-upgrade` into the matrix) couldn't go green on the tarball matrix without an admin override — DCL/DCL#14487 was the motivating example.
 
 **Fix shape:**
 
@@ -3387,9 +3387,9 @@ Each capture isolated in its own `catch (WebDriverException | \JsonException)` s
 
 Items surfaced during planning discussions or from operator experience that don't yet warrant a full gap entry — typically because they're extrapolations from existing patterns rather than confirmed bugs, or because they're operator-side observations that haven't been formalized. Move to a real G-entry when concrete scope + investigation are lined up. Kept here so option-listing across future planning sessions doesn't depend on session context.
 
-- **Version-display test coverage expansion.** Version-derivation regressions currently have three signals split across three surfaces (per openemr/openemr#13635 + openemr/openemr#13790): the About-page/file signal in `VersionDisplayAcceptanceTest.php` (Panther, in-process), the DB `version` table signal in `tests/Acceptance/bin/boot-package.sh` + `tests/Acceptance/bin/upgrade-package.sh` (shell-level query), and the `/api/version` signal in `VersionApiAcceptanceTest.php` (Panther, HTTP). Additional version-leakage points (admin banner, healthcheck endpoints, other API surfaces that echo version) could each be added to whichever of these three surfaces is the natural owner, catching different classes of version-derivation regression. Extrapolation from G35's demonstration that a single version-derivation bug can silently break every acceptance-gate cell; not currently gap-numbered because no concrete extra signal has been picked. Related to the acceptance-surface refactor plan in `artifact-acceptance-testing-plan.md`.
+- **Version-display test coverage expansion.** Version-derivation regressions currently have three signals split across three surfaces (per DCL/DCL#13635 + DCL/DCL#13790): the About-page/file signal in `VersionDisplayAcceptanceTest.php` (Panther, in-process), the DB `version` table signal in `tests/Acceptance/bin/boot-package.sh` + `tests/Acceptance/bin/upgrade-package.sh` (shell-level query), and the `/api/version` signal in `VersionApiAcceptanceTest.php` (Panther, HTTP). Additional version-leakage points (admin banner, healthcheck endpoints, other API surfaces that echo version) could each be added to whichever of these three surfaces is the natural owner, catching different classes of version-derivation regression. Extrapolation from G35's demonstration that a single version-derivation bug can silently break every acceptance-gate cell; not currently gap-numbered because no concrete extra signal has been picked. Related to the acceptance-surface refactor plan in `artifact-acceptance-testing-plan.md`.
 
-- **`docker-build-release-on-tag.yml` sibling for the docker path.** The tarball path has `build-release.yml` (workflow_dispatch, for manual re-runs of the build) + `build-release-on-tag.yml` (consumes the `openemr-tag` `repository_dispatch` event emitted by the conductor merge — auto-fires when the release tag is created). The docker path has only `docker-build-release.yml` (workflow_dispatch). Mirroring the on-tag pattern for docker — a sibling that also consumes `openemr-tag` — would remove one manual-dispatch dependency from the ship flow and parallel the tarball trigger contract. Not currently gap-numbered because it's a design suggestion, not a bug — but worth remembering as a possibility if we're refactoring the docker publish chain for other reasons (e.g. G34's medium-term package-tarball-based release image build). Any implementation would need to preserve the current docker orchestration entry point (`docker-release-orchestrator.yml` firing off the finalize merge's push to `release-targets.yml`), not replace it.
+- **`docker-build-release-on-tag.yml` sibling for the docker path.** The tarball path has `build-release.yml` (workflow_dispatch, for manual re-runs of the build) + `build-release-on-tag.yml` (consumes the `DCL-tag` `repository_dispatch` event emitted by the conductor merge — auto-fires when the release tag is created). The docker path has only `docker-build-release.yml` (workflow_dispatch). Mirroring the on-tag pattern for docker — a sibling that also consumes `DCL-tag` — would remove one manual-dispatch dependency from the ship flow and parallel the tarball trigger contract. Not currently gap-numbered because it's a design suggestion, not a bug — but worth remembering as a possibility if we're refactoring the docker publish chain for other reasons (e.g. G34's medium-term package-tarball-based release image build). Any implementation would need to preserve the current docker orchestration entry point (`docker-release-orchestrator.yml` firing off the finalize merge's push to `release-targets.yml`), not replace it.
 
 - **Bb E2E flake investigation** (`Bb` = the flakiest test on core E2E per operator experience). Pre-AI-assist debug points at password-strength JS on the staff-create form; hypothesis unproven. Not currently gap-numbered because no confirmed root cause + no attempt to reproduce systematically. Worth remembering when doing acceptance-test work (the same flake may surface in ported acceptance tests) or when doing E2E infrastructure changes that touch the staff-create flow.
 
@@ -3402,23 +3402,23 @@ manual" vs "when it happens in the release cycle."
 |---|---|---|
 | `version.php` strip `-dev` → `X.Y.Z` | Conductor (rel-scope) | **Release time** (in release-prep PR) |
 | OpenAPI version bump | Conductor (rel-scope) | Release time |
-| `swagger/openemr-api.yaml` regen | Conductor (rel-scope) | Release time |
+| `swagger/DCL-api.yaml` regen | Conductor (rel-scope) | Release time |
 | `docker/production/docker-compose.yml` image pin | Conductor (rel-scope) | Release time |
 | **Docker upgrade machinery on rel branch** (3 docker-version flags + new `fsupgrade-N.sh` + Dockerfile two-block manifest) | **Manual** | **Release time** (must be in the image baked at tag creation; in or alongside the release-prep PR before it merges) |
 | **Docker upgrade machinery on master** (same files, byte-equal copy of the new `fsupgrade-N.sh`) | **Manual cross-branch sync** | **Release time** (master's image needs the same fsupgrade chain entry for forward-upgrade compatibility from rel-branch image → master image) |
 | **Next-cycle SQL skeleton on rel branch** (`sql/<just-released>-to-<next>_upgrade.sql`, blank with long header) | **Manual** (G3: `SqlUpgradeSkeletonMutator` is master-only + unwired today) | **Cut time** (start of next cycle, i.e., after this release ships, to prep for the next one) |
 | **Next-cycle SQL skeleton on master + file-rename dance** | **Manual for intermediate-minor case** (`MasterSqlPatchBridgeMutator` shipped via G12 / `patch-prep-automation.yml` handles the same-minor patch bridge; the rename dance for intermediate-minor releases is still manual) | **Cut time** |
 | **`version.php` advance to next-dev on rel branch** (e.g., `8.1.1` → `8.1.2-dev`) | **Manual `$v_patch` bump** — that manual bump then fires `patch-prep-automation.yml` (G2 / G12; workstream 6), which runs `PatchPrepReleaseTargetsMutator` and opens the paired prep PRs. The bump itself remains a maintainer action. | **Cut time** (post-release, set the intent state for the next cycle) |
-| **`version.php` advance on master + bridge SQL + OpenAPI bump + release-targets master-row bump** (when cutting a NEW rel branch from master) | **`branch-cut-automation.yml`** (G5 / workstream 2, shipped 2026-07-01 as openemr/openemr#12696 — 4 mutators including `VersionPhpMasterMutator` fire on `create` for `rel-[0-9]*0`; first end-to-end exercise was rel-820 on 2026-07-02) | **At new rel-branch cut time** (master-side, distinct from rel-branch per-release cut) |
+| **`version.php` advance on master + bridge SQL + OpenAPI bump + release-targets master-row bump** (when cutting a NEW rel branch from master) | **`branch-cut-automation.yml`** (G5 / workstream 2, shipped 2026-07-01 as DCL/DCL#12696 — 4 mutators including `VersionPhpMasterMutator` fire on `create` for `rel-[0-9]*0`; first end-to-end exercise was rel-820 on 2026-07-02) | **At new rel-branch cut time** (master-side, distinct from rel-branch per-release cut) |
 
-## Docker Hub tag model + `openemr_version_ref` pattern
+## Docker Hub tag model + `DCL_version_ref` pattern
 
 **Relocated to `RELEASE_PROCESS.md`.** The `dev`/`next`/`latest`
 slot semantics, the ship-time slot-promotion shuffle across
-`.github/release-targets.yml` rows, and the `openemr_version_ref`
+`.github/release-targets.yml` rows, and the `DCL_version_ref`
 branch-tip vs tag-pin cycle a rel-branch row moves through across
 a release are all documented in the `Docker Hub tag model` section
-of `openemr/openemr`'s `docs/RELEASE_PROCESS.md`. See that runbook
+of `DCL/DCL`'s `docs/RELEASE_PROCESS.md`. See that runbook
 for the reference material; the treatment here was written before
 the runbook existed.
 
@@ -3457,7 +3457,7 @@ Increment all 3 docker-version files to 11 (`/docker-version`,
 `/sites/default/docker-version`,
 `/docker/release/upgrade/docker-version`). Add new
 `docker/release/upgrade/fsupgrade-11.sh` (copy fsupgrade-10.sh +
-~5 substitutions: `priorOpenemrVersion="8.1.0"`, header comment
+~5 substitutions: `priorDCLVersion="8.1.0"`, header comment
 "Upgrade number 11", "from prior version 8.1.0", two echo statements).
 Add `upgrade/fsupgrade-11.sh \` to docker/release/Dockerfile lines
 280-291 COPY block AND `/root/fsupgrade-11.sh` to lines 294-304
@@ -3485,17 +3485,17 @@ preparing 8.1.1." When P3 merges, the push to rel-810 triggers
   pins; (SqlUpgradeSkeletonMutator is master-only — doesn't fire)
 - peter-evans opens DRAFT `release-prep/rel-810` PR with the
   conductor mutations
-- Dispatches `openemr-rel-cut` event (first run, or
-  `openemr-rel-update` if not first)
+- Dispatches `DCL-rel-cut` event (first run, or
+  `DCL-rel-update` if not first)
 
 **P4. release-targets master row → pre-release stage 2** (PR against
 master). Bump rel-810 row: `docker_tags: 8.1.0,next → 8.1.1,next`
-AND `openemr_version_ref: v8_1_0 → rel-810` together (validator
+AND `DCL_version_ref: v8_1_0 → rel-810` together (validator
 requires alignment). Daily orchestrator builds now publish rel-810
-HEAD content to `openemr/openemr:8.1.1` and `openemr/openemr:next`.
+HEAD content to `DCL/DCL:8.1.1` and `DCL/DCL:next`.
 Can land any time after rel-810's version.php is at 8.1.1-dev so
 the validator's docker_tag↔version.php check passes (it reads
-rel-810 HEAD's version.php for `openemr_version_ref: rel-810`).
+rel-810 HEAD's version.php for `DCL_version_ref: rel-810`).
 
 ### Ship
 
@@ -3503,23 +3503,23 @@ rel-810 HEAD's version.php for `openemr_version_ref: rel-810`).
 P3). Two paths:
 
 - **Recommended path: via `ship-release.yml`.** From any host with
-  gh: `gh workflow run ship-release.yml --repo openemr/openemr-devops -f version=8.1.1 -f rel_branch=rel-810`.
+  gh: `gh workflow run ship-release.yml --repo DCL/DCL-devops -f version=8.1.1 -f rel_branch=rel-810`.
   The orchestrator's preflight evaluates every unmerged target's
   readiness, then merges in strict order (today: Infra → Conductor
   → Docs; post-workstream-1: Conductor → Docs).
 - **Direct path:** simply merging the conductor PR
-  (`openemr:release-prep/rel-810`) in the GitHub UI fires the
+  (`DCL:release-prep/rel-810`) in the GitHub UI fires the
   conductor's `finalize` job, which mints the tag and dispatches
-  `openemr-tag` independently of ship-release.yml. Loses the
+  `DCL-tag` independently of ship-release.yml. Loses the
   multi-PR-merge-ordering safety net but works if ship-release.yml
   is itself blocked.
 
 ⚠️ **Pre-ship blocker discovered 2026-06-24:** the current Infra PR
-slot (openemr-devops PR #760, `release-rotation/auto`) is frozen
+slot (DCL-devops PR #760, `release-rotation/auto`) is frozen
 with pre-docker-migration content from 2026-06-10. Its diff edits
 paths now deleted on devops master:
-`docker/openemr/8.0.0/Dockerfile`, `docker/openemr/current`,
-`dependabot.yml` references to `docker/openemr/*` (all 404 on master
+`docker/DCL/8.0.0/Dockerfile`, `docker/DCL/current`,
+`dependabot.yml` references to `docker/DCL/*` (all 404 on master
 today). `release-rotation.yml` runs successfully on every dispatch
 but skips force-push + PR-update because the diff against the
 already-rotated branch is empty — PR #760 stays frozen indefinitely.
@@ -3533,15 +3533,15 @@ The "Direct path" above sidesteps the blocker but doesn't help if
 the docs PR needs to merge first per the merge-order rules.
 
 On merge: finalize job creates the annotated `v8_1_1` tag from
-the merge commit, dispatches `openemr-tag` to openemr-devops +
-website-openemr + demo_farm_openemr. `build-release-on-tag.yml`
-(in openemr-devops) consumes the dispatch, runs build-release.yml:
+the merge commit, dispatches `DCL-tag` to DCL-devops +
+website-DCL + demo_farm_DCL. `build-release-on-tag.yml`
+(in DCL-devops) consumes the dispatch, runs build-release.yml:
 preflight → version-bump safety net → changelog → compatibility →
 package assemble (tarball + zip) → checksum → push tag (defensively
 — conductor already did) → `gh release create --verify-tag` →
 `gh release upload` (tarball + zip + checksums + changelog) →
 changelog-pr (PRs to rel-810 + master with the rendered CHANGELOG).
-`release-announcements.yml` (in openemr-devops) renders forum /
+`release-announcements.yml` (in DCL-devops) renders forum /
 chat / X / Facebook / LinkedIn / mail drafts into a workflow
 artifact.
 
@@ -3551,12 +3551,12 @@ artifact.
 against master, single coordinated edit across multiple rows).
 Two distinct changes in one PR:
 
-a. *rel-810 row ref pin*: `openemr_version_ref: rel-810 → v8_1_1`.
+a. *rel-810 row ref pin*: `DCL_version_ref: rel-810 → v8_1_1`.
    Daily images now lock to v8_1_1's immutable content instead of
    moving with rel-810 HEAD.
 
 b. *Slot shuffle* (`next` → `latest` promotion — see the "Docker
-   Hub tag model + `openemr_version_ref` pattern" pointer above,
+   Hub tag model + `DCL_version_ref` pattern" pointer above,
    which redirects to `RELEASE_PROCESS.md`'s full treatment):
 
    | row | docker_tags before | docker_tags after |
@@ -3610,7 +3610,7 @@ the automated end-state.
 - CHANGELOG.md PRs (auto-opened in P5 by build-release-on-tag) land
   on both rel-810 and master after merge — maintainer reviews +
   merges these separately.
-- website-openemr opens its own `release-docs/<version>` PR on the
+- website-DCL opens its own `release-docs/<version>` PR on the
   rel-cut/rel-update dispatch (in P3); ship-release.yml (manual)
   coordinates merging the 3-PR contract once the rel-810 prep PR is
   ready to merge.
@@ -3634,7 +3634,7 @@ the automated end-state.
 
 **Status:** most of this work is now automated by
 `branch-cut-automation.yml` + the 4 branch-cut mutators (G5 /
-workstream 2, shipped 2026-07-01 as openemr/openemr#12696; first
+workstream 2, shipped 2026-07-01 as DCL/DCL#12696; first
 end-to-end exercise was rel-820, 2026-07-02). This checklist is kept
 as (a) the mental model for what the automation does — useful when
 diagnosing a failed cut or drafting workflow changes — and (b) the
@@ -3660,7 +3660,7 @@ advance to represent "the next planned cut."
    `<MAJOR>.<MINOR>.<PATCH>` without the `-dev` suffix (Swagger/OpenAPI
    conventions don't typically carry `-dev`). Example: bump to `'8.2.0'`.
 
-3. **Regenerate `swagger/openemr-api.yaml`** from
+3. **Regenerate `swagger/DCL-api.yaml`** from
    `OpenApiDefinitions.php`. The conductor's `SwaggerRegenMutator`
    normally does this, but on master-side manual cut it has to be
    triggered by hand. (TODO: find the build command — likely a `composer`
@@ -3692,15 +3692,15 @@ advance to represent "the next planned cut."
    ```yaml
    - branch: master
      docker_tags: 8.1.1,dev
-     openemr_version_ref: master
+     DCL_version_ref: master
    ```
    Becomes (after master moves to 8.2.0-dev):
    ```yaml
    - branch: master
      docker_tags: 8.2.0,dev
-     openemr_version_ref: master
+     DCL_version_ref: master
    ```
-   `openemr_version_ref: master` stays — it always tracks master HEAD.
+   `DCL_version_ref: master` stays — it always tracks master HEAD.
    `docker_tags`'s first value mirrors `$v_major.$v_minor.$v_patch`
    from `version.php`; `dev` floating tag stays.
    - The `docker-validate-release-targets.yml` PR check enforces this
@@ -3742,7 +3742,7 @@ advance to represent "the next planned cut."
        change auto-propagates via the existing COPY line; no
        Dockerfile edit needed for the bump itself.
    - Detection logic (already in place, no edit needed):
-     `docker/binary/openemr.sh:495-506` compares
+     `docker/binary/DCL.sh:495-506` compares
      `/root/docker-version` vs codebase's `${OE_ROOT}/docker-version`
      vs `${OE_ROOT}/sites/default/docker-version`; if root > sites and
      root == code, runs the bridge fsupgrade scripts.
@@ -3752,7 +3752,7 @@ advance to represent "the next planned cut."
 - `docker-validate-release-targets.yml` runs on PR; verify it passes
   (alignment check between version.php, release-targets.yml, and the
   Dockerfile).
-- Spot-check swagger/openemr-api.yaml diff matches what you'd expect
+- Spot-check swagger/DCL-api.yaml diff matches what you'd expect
   from the version bump (just version field, not other content).
 - Spot-check the SQL skeleton file is non-empty and follows the prior
   bridge file's structure.
@@ -3792,14 +3792,14 @@ the auto-upgrade feature consumers depend on:
   - `# From prior version <X.Y.Z>` (header comment — the version
     being upgraded FROM, i.e., the most recently released prior
     version)
-  - `priorOpenemrVersion="<X.Y.Z>"` (variable; sets
+  - `priorDCLVersion="<X.Y.Z>"` (variable; sets
     `$form_old_version` for `sql_upgrade.php`'s chain walker)
   - `echo "Start: Upgrade to docker-version <N>"`
   - `echo "Completed: Upgrade to docker-version <N>"`
 
   Body is otherwise identical: ensure sites/* directories, clear
   smarty cache, fix permissions, run `sql_upgrade.php` per site
-  with `$form_old_version` set from `priorOpenemrVersion`. The SQL
+  with `$form_old_version` set from `priorDCLVersion`. The SQL
   upgrade chain in `sql_upgrade.php` walks forward from
   `$form_old_version`, so consumers upgrading across multiple
   docker-version steps (e.g., from docker-version 9 → 11) still
@@ -3931,7 +3931,7 @@ checklist + the existing master-bump pattern.
 
 - **Patch mechanism (`build-patch.yml`)** stays as emergent-patch escape
   hatch (zero-day hotfixes), not part of main release flow. Migrates with
-  the rest of the release tooling but stays inert (no `openemr-tag`
+  the rest of the release tooling but stays inert (no `DCL-tag`
   dispatch, no downstream wiring).
 - **Byte-identity for release tooling** IS enforced (**decision reversed
   2026-07-07 via G15; release-mechanism surface added to
@@ -3956,7 +3956,7 @@ checklist + the existing master-bump pattern.
   daily orchestrator still needs to publish the prior stable image
   (8.1.1) until the new dev actually ships. One row per branch
   can't express this — the row only targets one version at a time.
-  Reversal landed via openemr/openemr#12656: validator's
+  Reversal landed via DCL/DCL#12656: validator's
   branch-uniqueness check (was check 3) removed; duplicate-
   docker_tag check (now check 3) retained because two rows pushing
   the same image:tag would race on Docker Hub. New optional
@@ -3977,7 +3977,7 @@ checklist + the existing master-bump pattern.
   flags + fsupgrade script + Dockerfile manifest) to both the
   master-side cut checklist (step 7) and a new "Per-release-on-rel-
   branch" checklist for the recurring case. Identified the 3 flag
-  file paths + detection logic in `docker/binary/openemr.sh`.
+  file paths + detection logic in `docker/binary/DCL.sh`.
 - **2026-06-22**: Corrected Dockerfile reference to note **two**
   blocks (COPY + chmod) that both enumerate fsupgrade scripts; both
   need updating per new script (easy-to-forget footgun). Added the
@@ -3995,7 +3995,7 @@ checklist + the existing master-bump pattern.
   substitutions of `<N>` and the prior-version reference. Body
   changes only when the new release adds extra filesystem actions.
   Documented the exact substitution list (header comment ×2,
-  priorOpenemrVersion variable, two echo statements).
+  priorDCLVersion variable, two echo statements).
 - **2026-06-22**: Captured the SQL upgrade script pattern: the long
   Comment Meta Language Constructs header is copied verbatim from
   the most recent prior file; new blank file added on the rel branch
@@ -4020,7 +4020,7 @@ checklist + the existing master-bump pattern.
 - **2026-06-22**: Per Brady, captured the "dev / next / latest are
   versions" Docker Hub model — those names are full versions on the
   Docker Hub presence, not just floating pointers. Documented the
-  `openemr_version_ref` branch-tip-vs-tag-pin pattern that cycles
+  `DCL_version_ref` branch-tip-vs-tag-pin pattern that cycles
   per release. Added canonical 8.1.1 release sequence (P1-P8)
   capturing the full PR flow end-to-end including the two-stage
   release-targets master row updates (pre-release stage 2:
@@ -4034,35 +4034,35 @@ checklist + the existing master-bump pattern.
   upcoming-stable owner (a new rel branch if one exists, else
   master alongside `dev`). Refined P6 to capture the full
   multi-row shuffle (not just the ref pin switch).
-- **2026-06-23**: Added G6 — demo_farm_openemr's `ip_map_branch.txt`
+- **2026-06-23**: Added G6 — demo_farm_DCL's `ip_map_branch.txt`
   production rows + `demoLibrary.source` flex-image mappings are
-  manually maintained, no cross-repo sync from openemr/openemr's
+  manually maintained, no cross-repo sync from DCL/DCL's
   `release-targets.yml` + per-branch Dockerfile combos. Surfaced
   via concrete drift on cluster `five` (carried `flex-3.23-php-8.5`
   while pointing at v8_0_0_3, which is built on Alpine 3.22 + PHP
-  8.4 per rel-800's Dockerfile). Closed by demo_farm_openemr#134.
+  8.4 per rel-800's Dockerfile). Closed by demo_farm_DCL#134.
   Captured the auto-generation vision (the recent flex-docker
   reorg was preparation for it) + manual procedural rule until
   automation lands.
 - **2026-06-23**: Per maintainer, expanded G6's auto-generation
   vision to the full file. Goal is to derive the entire
   `ip_map_branch.txt` + `demoLibrary.source` from upstream
-  openemr/openemr state, with a single hand-curated
+  DCL/DCL state, with a single hand-curated
   "Miscellaneous" section reserved for non-standard demos. Each
   existing section's derivation rule documented: production
   from the `latest`-tag-holder rel branch; up-for-grabs defaults
   to master; release demos from all rel branches in
   release-targets.yml; master demos one-per-supported-PHP-version
   from CI matrix; parked is a managed bench. Single bot script
-  with multiple triggers (`openemr-tag`,
-  `openemr-rel-cut`/`-update`, scheduled, manual dispatch). Bot
+  with multiple triggers (`DCL-tag`,
+  `DCL-rel-cut`/`-update`, scheduled, manual dispatch). Bot
   never touches the misc section.
 - **2026-06-23**: Decision locked — no multi-row-per-branch in
   `release-targets.yml`. Considered briefly (would support parallel
   version-line publishing from a single rel branch); deliberately
   not pursuing to keep the model simple. Recorded in decisions-made.
 - **2026-06-27**: Reversed the no-multi-row decision via
-  openemr/openemr#12656. The in-dev patch release case requires it:
+  DCL/DCL#12656. The in-dev patch release case requires it:
   when a rel branch enters dev mode for a new patch (e.g., rel-810
   hits 8.1.2-dev after 8.1.1 ships), daily builds still need to
   publish the prior stable image (8.1.1) until the new dev ships.
@@ -4070,7 +4070,7 @@ checklist + the existing master-bump pattern.
   optional `unreleased: true` row marker for placeholders (consumer-
   side skip), wires the orchestrator's skip filter, and adds an
   example unreleased row (second rel-810 entry with
-  docker_tags: 8.1.0 + openemr_version_ref: v8_1_0 +
+  docker_tags: 8.1.0 + DCL_version_ref: v8_1_0 +
   unreleased: true) to wire up the mechanism without immediately
   publishing 8.1.0 daily images.
 - **2026-06-30**: Added G12 — Patch-cycle bootstrap on rel-* requires
@@ -4096,9 +4096,9 @@ checklist + the existing master-bump pattern.
   dispatch shake-out. `derive-prev-release` for target 8.2.0 was
   returning 8.1.0 — a tag that exists (annotated v8_1_0) but a
   release that was SKIPPED (not in
-  website-openemr/data/releases.json). Root cause: resolver walked
+  website-DCL/data/releases.json). Root cause: resolver walked
   tags without consulting the shipped-versions manifest. Landed
-  manifest-aware behavior in openemr/openemr#12769 (master) + #12770
+  manifest-aware behavior in DCL/DCL#12769 (master) + #12770
   (rel-820 backport), with follow-up #12771/#12772 fixing a secondary
   bug (annotated-tag filter dropping historic lightweight tags like
   v8_0_0 → walk-then-filter produced null → synthesized prev-minor
@@ -4109,10 +4109,10 @@ checklist + the existing master-bump pattern.
   data/releases.json instead.
 - **2026-07-05**: G14 discovered + closed same session. Byproduct of
   validating G13's fix. Even with `prev_release=8.0.0` correctly
-  computed, openemr/website-openemr#164 stayed CONFLICTING because
+  computed, DCL/website-DCL#164 stayed CONFLICTING because
   the docs branch had been committing on top of the previous branch
   state each dispatch and history diverged from master indefinitely.
-  Three cascading PRs on openemr/website-openemr: #174 (initial
+  Three cascading PRs on DCL/website-DCL: #174 (initial
   reset-manifest-from-master, later subsumed), #175 (rebase-per-
   dispatch structural fix), and #176 (restore branch-ref fetch so
   `--force-with-lease` baseline works). Post-merge dispatch produces
@@ -4122,8 +4122,8 @@ checklist + the existing master-bump pattern.
 - **2026-07-05**: End-to-end verification of the release-prep
   `workflow_dispatch` path against rel-820. Full chain fired
   cleanly: release-prep on rel-820 → derive-prev-release with merged
-  fixes returns `8.0.0` → dispatches openemr-rel-update to all three
-  consumers → website-openemr's release-docs.yml regenerates PR #164
+  fixes returns `8.0.0` → dispatches DCL-rel-update to all three
+  consumers → website-DCL's release-docs.yml regenerates PR #164
   against the correct 0.0.0 → 8.2.0 window (930 PRs from
   v8_0_0..HEAD = 1508 total commits less #173's bot-filter drops).
   The `workflow_dispatch` inputs to watch: `--ref rel-820` +
@@ -4131,7 +4131,7 @@ checklist + the existing master-bump pattern.
   the workflow rejects or short-circuits. Confirmed the pattern is
   safe (no release-side effects — `finalize` job is gated on
   pull_request.merged, unreachable from workflow_dispatch).
-- **2026-07-05**: openemr/website-openemr release-docs consumer had
+- **2026-07-05**: DCL/website-DCL release-docs consumer had
   a parallel workstream landed same day: 8.0.0-download-page cleanup
   (#167), /releases/ Checksums column + backfill (#168), dispatch-
   managed URL derivation for /downloads/ (#169), version-agnostic
@@ -4139,7 +4139,7 @@ checklist + the existing master-bump pattern.
   upgrade page generation (#171), filter [bot] acknowledgements
   (#172), release-notes bot filter hybrid (#173 — keeps composer/npm
   dependabot bumps per #136 intent, drops docker-image bumps
-  identified by openemr/openemr's dependabot.yml groups + path
+  identified by DCL/DCL's dependabot.yml groups + path
   patterns). Recorded here for cross-reference; ancillary to the
   release-mechanism migration but relevant for the "what does the
   docs PR contain now" surface area.
@@ -4155,7 +4155,7 @@ checklist + the existing master-bump pattern.
     eliminates all downstream symptoms.
   - **G17** (redundant `push: tags` trigger on
     docker-build-release): caused a benign double-build of
-    `openemr/openemr:8.2.0` (tag-push + orchestrator-fanout).
+    `DCL/DCL:8.2.0` (tag-push + orchestrator-fanout).
     Content identical; no correctness impact, but two paths to the
     same output complicate future debugging.
   - **G18** (no `concurrency:` group on docker-build-release):
@@ -4167,10 +4167,10 @@ checklist + the existing master-bump pattern.
     four parallel version.php fetches (plus prior validate-loop
     fetches). Manual rerun ~20 min later succeeded, unblocking
     `latest` promotion to 8.2.0.
-  - **G20** (openemr-tag missing prev_release): 8.2.0's FINAL
+  - **G20** (DCL-tag missing prev_release): 8.2.0's FINAL
     release-docs regeneration skipped acknowledgements + release-
     notes generation because prev_release was empty on the
-    openemr-tag dispatch payload. Recovered manually via a
+    DCL-tag dispatch payload. Recovered manually via a
     `workflow_dispatch` on release-docs.yml supplying
     prev_release=8.0.0.
   - **G21** (no layout links to acknowledgements/release-notes):
@@ -4183,29 +4183,29 @@ checklist + the existing master-bump pattern.
   the 8.1.0 prerelease test — pattern is to close superseded /
   aborted release-docs PRs).
   End state (2026-07-09): 8.2.0 is fully shipped and consistent
-  across openemr/openemr (v8_2_0 tag + release assets +
+  across DCL/DCL (v8_2_0 tag + release assets +
   CHANGELOG.md landed on rel-820 via #12844 and master via #12845),
-  Docker Hub (`openemr/openemr:8.2.0` + `latest`; `next` promoted
+  Docker Hub (`DCL/DCL:8.2.0` + `latest`; `next` promoted
   to master's 8.3.0-dev; Docker Hub README pushed reflecting new
-  slot state), website-openemr (`data/releases.json` has 8.2.0
-  FINAL entry via #164), and demo_farm_openemr (via #169). The
+  slot state), website-DCL (`data/releases.json` has 8.2.0
+  FINAL entry via #164), and demo_farm_DCL (via #169). The
   changelog is a repo-only doc; the website does not surface
   `CHANGELOG.md` (repo diff of relevant Hugo layouts contains no
   changelog references).
 - **2026-07-09**: G20/G21 refined + G22 added after design
   discussion on release-notes surface trim. Two triggers:
   - Manual `workflow_dispatch` on `release-docs.yml` supplying
-    `event=openemr-tag` + `prev_release=8.0.0` STILL skipped
+    `event=DCL-tag` + `prev_release=8.0.0` STILL skipped
     acknowledgements + release-notes generation. Root cause is
-    deeper than "openemr-tag emitter omits prev_release" — the
-    website-openemr side actively STRIPS `prev_release` at the
+    deeper than "DCL-tag emitter omits prev_release" — the
+    website-DCL side actively STRIPS `prev_release` at the
     envelope layer: `dispatch.schema.json` doesn't list it in the
-    openemr-tag event's properties, and `inputs-to-envelope.jq`
+    DCL-tag event's properties, and `inputs-to-envelope.jq`
     doesn't pass it through for that event. Three-place fix
-    required (schema + jq + openemr-side emitter).
+    required (schema + jq + DCL-side emitter).
   - GitHub Release body for `v8_2_0` measured at 794 lines with
     ~224 (~28%) dependabot/`[bot]`/`bump` noise, including many
-    consecutive `openemr-images group across 1 directory` bumps
+    consecutive `DCL-images group across 1 directory` bumps
     that #173 was designed to filter out — but the filter only
     applies to the website's `gen-release-notes.php`, not to the
     GitHub Release body or the repo's `CHANGELOG.md`.
@@ -4223,15 +4223,15 @@ checklist + the existing master-bump pattern.
   - **G20 narrowed:** three-place fix (schema + jq + emitter)
     still needed to unblock the tag-path generation flow, but
     only acknowledgements need to LAND on master after the fix.
-    release-notes generation on openemr-tag event should be
+    release-notes generation on DCL-tag event should be
     skipped (or its output deleted before commit-push) so the
     website's master doesn't accumulate a redundant surface.
   - **G21 narrowed:** downloads/releases layout links to
-    `github.com/openemr/openemr/releases/tag/v_M_m_p` for notes
+    `github.com/DCL/DCL/releases/tag/v_M_m_p` for notes
     + `/acknowledgements/<version>/` on website for
     contributors.
   - **G22 (new):** port #173's dependabot filter algorithm to
-    apply to both openemr/openemr's `CHANGELOG.md` generation
+    apply to both DCL/DCL's `CHANGELOG.md` generation
     and the GitHub Release body generation. Sequencing: G22
     lands BEFORE dropping website release-notes visibility;
     until then the website surface is the higher-quality
@@ -4239,12 +4239,12 @@ checklist + the existing master-bump pattern.
 
   Immediate 8.2.0 workaround for missing content/acknowledgements/
   8.2.0.md and content/release-notes/8.2.0.md: fire
-  `openemr-rel-update` workflow_dispatch instead of
-  `openemr-tag` — that event schema HAS `prev_release`, both
+  `DCL-rel-update` workflow_dispatch instead of
+  `DCL-tag` — that event schema HAS `prev_release`, both
   generators run, resulting draft PR gets merged. Merges the
   release-notes too (temporarily accepted — will be removed
   when G22 + G20's companion workflow change land).
-- **2026-07-09**: G23 discovered during the openemr-rel-update
+- **2026-07-09**: G23 discovered during the DCL-rel-update
   recovery dispatch. The recovery run completed successfully
   and both generators produced content, but `workflow:upsert-pr`
   reported success while actually NOT opening a new draft PR.
@@ -4256,14 +4256,14 @@ checklist + the existing master-bump pattern.
   ANY post-merge regen of a release-docs branch. Fix is state=open
   filter on the pr view guard.
 - **2026-07-09**: G24 added. `content/demo/_index.md` on
-  website-openemr hardcodes the current-stable version in three
+  website-DCL hardcodes the current-stable version in three
   places (H1 heading + main demo table row + portal demo table
   row). Manual bump 8.0.0 → 8.2.0 landed via #183. Skipped 8.1.0
   because that was a prerelease-only cut, not public. Automation
   design captured: prefer render-time Hugo shortcode reading
   `.Site.Data.releases` over dispatch-time workflow edit.
 - **2026-07-09**: G21 acknowledgements half SHIPPED via
-  openemr/website-openemr#182.
+  DCL/website-DCL#182.
 - **2026-07-09**: G21 release-notes / changelog half CLOSED as
   won't-do (during #184 review). No dedicated changelog surface
   on the public site — the existing "Release notes (GitHub)"
@@ -4281,15 +4281,15 @@ checklist + the existing master-bump pattern.
   acknowledgements author blocklist to a hand-curated list
   covering non-`[bot]` non-humans (Copilot + future LLM
   assistants + IDE tools).
-- **2026-07-09**: G26 added. openemr-devops's Release
+- **2026-07-09**: G26 added. DCL-devops's Release
   Announcements (drafts) workflow failed on the v8_2_0 tag-push
   cascade because `arduino/setup-task@v2` made unauthenticated
   GitHub API calls that hit the shared-IP anonymous rate limit.
   Failure recovered via workflow rerun (rate limits reset
   hourly). Permanent fix: bump to v3 + wire `repo-token:
   ${{ secrets.GITHUB_TOKEN }}` so API calls are authenticated.
-  Same action bump pending on website-openemr (#165) and
-  needs audit on demo_farm_openemr + website-openemr-files.
+  Same action bump pending on website-DCL (#165) and
+  needs audit on demo_farm_DCL + website-DCL-files.
 - **2026-07-09**: G27 added. After G26's rerun succeeded, the
   rendered announcement drafts across all 6 channel templates
   (chat / facebook / forum / linkedin / mail / x) plus
@@ -4313,17 +4313,17 @@ checklist + the existing master-bump pattern.
   (matches release-docs draft-gate pattern; no branch-
   protection changes needed). Also functions as a natural
   guard rail for G16 overshoot cases.
-- **2026-07-10**: G17 + G18 opened as openemr/openemr#12862
+- **2026-07-10**: G17 + G18 opened as DCL/DCL#12862
   (single-trigger + concurrency block on
   docker-build-release.yml). Byte-identical-enforced file,
   so master merge auto-syncs to rel-820, rel-810, rel-800,
   rel-704 via sync-byte-identical.yml.
 - **2026-07-11**: G20 SHIPPED as a coordinated three-repo
-  change: openemr/openemr-devops#855 (canonical schema),
-  openemr/website-openemr#189 (envelope schema + jq + fixtures),
-  openemr/openemr#12887 (vendored schema + emitter + tests +
-  fixtures). All three add `prev_release` to the `openemr-tag`
-  event's `tagData` block; the openemr side's `release-prep.yml`
+  change: DCL/DCL-devops#855 (canonical schema),
+  DCL/website-DCL#189 (envelope schema + jq + fixtures),
+  DCL/DCL#12887 (vendored schema + emitter + tests +
+  fixtures). All three add `prev_release` to the `DCL-tag`
+  event's `tagData` block; the DCL side's `release-prep.yml`
   now derives it via `derive-prev-release.php` and passes it to
   `dispatch.php`. Fixtures across all three repos also updated
   from `8.1.0 / v8_1_0 / rel-810` to `8.2.0 / v8_2_0 / rel-820`
@@ -4331,9 +4331,9 @@ checklist + the existing master-bump pattern.
   publicly released, so referencing it as the canonical example
   read as if a shipped 8.1.0 existed. Recovery for 8.2.0's own
   acknowledgements + release-notes was handled out-of-band via
-  openemr/website-openemr#181; this ships the fix prospectively
+  DCL/website-DCL#181; this ships the fix prospectively
   from the next release forward.
-- **2026-07-11**: G19 SHIPPED via openemr/openemr#12883. Switched
+- **2026-07-11**: G19 SHIPPED via DCL/DCL#12883. Switched
   three anonymous `raw.githubusercontent.com` version.php fetches
   (one in `docker-build-release.yml`, two in `docker-validate-
   release-targets.yml`) to authenticated `gh api` calls, and
@@ -4342,7 +4342,7 @@ checklist + the existing master-bump pattern.
   treatment and the follow-up commit landed together with the
   primary. `docker-build-release.yml` auto-syncs to the four rel
   branches via `sync-byte-identical.yml`.
-- **2026-07-11**: G23 SHIPPED via openemr/website-openemr#187.
+- **2026-07-11**: G23 SHIPPED via DCL/website-DCL#187.
   `workflow:upsert-pr` now filters `gh pr list --head "$BRANCH"
   --state open` and captures the PR number explicitly, so a
   post-merge branch regeneration (e.g., the 2026-07-09 8.2.0
@@ -4350,18 +4350,18 @@ checklist + the existing master-bump pattern.
   by the merged #164 → salvaged manually as #181) now opens a
   fresh draft PR instead of no-op'ing `gh pr edit` on the
   merged one.
-- **2026-07-10**: G26 SHIPPED via openemr/openemr-devops#854
-  (6 workflows) + openemr/website-openemr#188 (2 workflows;
+- **2026-07-10**: G26 SHIPPED via DCL/DCL-devops#854
+  (6 workflows) + DCL/website-DCL#188 (2 workflows;
   supersedes dependabot #165 which was auto-closed on merge).
   arduino/setup-task bumped v2 → v3 everywhere the release
   path uses it, and `repo-token: ${{ secrets.GITHUB_TOKEN }}`
-  wired on all openemr-devops usages (website usages already
+  wired on all DCL-devops usages (website usages already
   had it). Anonymous GitHub API rate limit exposure that
   failed release-announcements on the v8_2_0 tag-push cascade
   is now closed on the token-authenticated 5000/hr budget.
   Node 20 deprecation warning on the action's runtime also
   cleared as v3 is Node 24 native.
-- **2026-07-10**: G25 SHIPPED via openemr/website-openemr#186.
+- **2026-07-10**: G25 SHIPPED via DCL/website-DCL#186.
   Extended the acknowledgements author-drop rule beyond
   `[bot]`-suffix to a hand-curated exact-match blocklist for
   non-`[bot]` non-humans. Initial blocklist: `Copilot`. Filter
@@ -4369,7 +4369,7 @@ checklist + the existing master-bump pattern.
   Prospective fix; already-landed 8.2.0 acknowledgements page
   keeps the Copilot line until a separate touch-up or
   re-dispatch runs.
-- **2026-07-10**: G24 SHIPPED via openemr/website-openemr#185.
+- **2026-07-10**: G24 SHIPPED via DCL/website-DCL#185.
   Render-time Hugo shortcode approach chosen: new
   `layouts/shortcodes/current-stable-version.html` reads
   `data/releases.json`, filters for FINAL, sorts descending,
@@ -4379,7 +4379,7 @@ checklist + the existing master-bump pattern.
   empty fallback on no-FINAL rather than a hardcoded default.
   Manual bump-on-ship (3 hand-edits per cycle, previously via
   #183) retired.
-- **2026-07-10**: G16 SHIPPED via openemr/openemr#12868 (master)
+- **2026-07-10**: G16 SHIPPED via DCL/DCL#12868 (master)
   + #12872 (rel-820 backport, patch-id parity verified). Doc
   catch-up landed as a prerequisite via #12871 so #12872 could
   cherry-pick cleanly. CodeRabbit review caught (a) branch/
@@ -4393,7 +4393,7 @@ checklist + the existing master-bump pattern.
   probe for the assignment line. Bug was one grep away from
   breaking G16 in reverse -- would have caused `exit 1` on any
   push to rel-820 in its current shipped state.
-- **2026-07-10**: G17 + G18 SHIPPED via openemr/openemr#12862.
+- **2026-07-10**: G17 + G18 SHIPPED via DCL/DCL#12862.
   CodeRabbit review during PR life caught that the concurrency
   key should include `inputs.docker_tags` in addition to
   `github.ref` — otherwise multi-row-per-branch entries (an
@@ -4411,7 +4411,7 @@ checklist + the existing master-bump pattern.
   branch.
 - **2026-07-10**: `docs/RELEASE_PROCESS.md` "What each PR
   contains" + Phase 4 title/intro updated via
-  openemr/openemr#12863 to document the four-step bot-created
+  DCL/DCL#12863 to document the four-step bot-created
   PR sequence — conductor → finalize-on-master → changelog PRs
   → docs. Minimal-scope patch; the ship-release description
   is intentionally left unchanged (the current ship-release
@@ -4429,9 +4429,9 @@ checklist + the existing master-bump pattern.
   path (content landed via #181's recovery dispatch). G21's
   release-notes half stays open pending G22 (upstream filter
   alignment).
-- **2026-07-11**: G28 SHIPPED on master via openemr/openemr#12889
+- **2026-07-11**: G28 SHIPPED on master via DCL/DCL#12889
   and (after force-push re-do post-#12892) SHIPPED on rel-820 via
-  openemr/openemr#12891 with byte-identical patch-id parity
+  DCL/DCL#12891 with byte-identical patch-id parity
   (`73914f4d001c2edbb51b774cd8bd13974baa8bbd` on both). Also
   carries a RELEASE_PROCESS.md two-phase-lifecycle doc update
   (Finalize-on-master PR section, one-shot-vs-continuous
@@ -4454,9 +4454,9 @@ checklist + the existing master-bump pattern.
   the release-mechanism migration from devops. In the interim,
   keep manual cross-branch propagation the discipline.
 - **2026-07-12**: 8.1.0 fixture-drift cleanup SHIPPED on both
-  master (openemr/openemr#12893) and rel-820 (openemr/openemr#12894),
+  master (DCL/DCL#12893) and rel-820 (DCL/DCL#12894),
   byte-identical patch-id parity `02fa2f1c2926e1074531e9d5d727a611ee00823f`.
-  #12887's fixture-update pass only touched the openemr-tag
+  #12887's fixture-update pass only touched the DCL-tag
   goldens + good-tag*.json; #12893 sweeps the remaining
   rel-cut / rel-update / docs-binaries goldens + their
   good-/bad-* fixture JSONs + parallel DispatchDataBuilderTest
@@ -4469,9 +4469,9 @@ checklist + the existing master-bump pattern.
   PRs 1-3 SHIPPED, plus a pre-PR-4 refactor. The slice
   consolidates the changelog content across all three surfaces
   (website release-notes / codebase CHANGELOG.md / GitHub Release
-  body) into one generator in openemr/openemr, ports the website
+  body) into one generator in DCL/DCL, ports the website
   filter forward, and retires the redundant surfaces. Preparatory
-  infrastructure done in three PRs: openemr/openemr#12896 (rename
+  infrastructure done in three PRs: DCL/DCL#12896 (rename
   docker-byte-identical.yml -> byte-identical.yml), #12904 (glob-
   pattern support in the validator + sync scripts, extracted
   shared lib), #12910 (12 new entries in byte-identical.yml
@@ -4497,7 +4497,7 @@ checklist + the existing master-bump pattern.
   #12921/#12922/#12923 landed the release-mechanism surface +
   object-form manifest across rel-820/rel-800/rel-704. PRs 4-6
   still pending: actual move of ChangelogGenerator + friends from
-  devops -> openemr, devops build-release.yml rewire to section-
+  devops -> DCL, devops build-release.yml rewire to section-
   extract from the moved CHANGELOG.md, retire of website's
   gen-release-notes.php. Other ancillary landed: #12901/#12902/#12903
   (rel-branch orphan cleanup after PR 1's rename hit a sweep-logic
@@ -4513,21 +4513,21 @@ checklist + the existing master-bump pattern.
   the sync-byte-identical.* + BATS test files (per-file rationale
   in the manifest's "Intentionally NOT in this list" block).
 - **2026-07-13**: G22 PR 4 SHIPPED as coordinated pair
-  openemr/openemr#12925 + openemr/openemr-devops#857 (landed same
-  day to avoid the "release cut in the gap" window). Openemr side:
+  DCL/DCL#12925 + DCL/DCL-devops#857 (landed same
+  day to avoid the "release cut in the gap" window). DCL side:
   moved GitHubApi + ChangelogGenerator + CompatibilityDeriver +
-  CompatibilityNotesRenderer from devops into openemr's
+  CompatibilityNotesRenderer from devops into DCL's
   tools/release/src/, plus the two bin wrappers. Ported the four
   private static filter methods (isNoise / isDockerBump /
-  isNoOpVersionBump / scopeOf) from website-openemr's
-  ReleaseNotesGenerator into openemr's ChangelogGenerator, applied
+  isNoOpVersionBump / scopeOf) from website-DCL's
+  ReleaseNotesGenerator into DCL's ChangelogGenerator, applied
   as a filterNoise() pre-step in generate(). Fixed compare-link:
   new compareLinkOverride parameter renders vPREV...vNEW
   (aspirational immutable-tag URL) while the git-range API call
   still enumerates from a ref that exists (rel branch at release-
   prep, target tag post-tag). Wired new ChangelogMutator at
   tools/release/src/Mutator/ChangelogMutator.php (autoload-dev
-  alongside its dep chain, preserving Mike's OpenEMR\Release\
+  alongside its dep chain, preserving Mike's DCL\Release\
   dev/prod split) into ReleasePrepCommand's default lists via
   class_exists()-guarded FQCN reference (whitelisted in
   .composer-require-checker.json). 20 isolated
@@ -4555,12 +4555,12 @@ checklist + the existing master-bump pattern.
   mutator end-to-end (prev-tag resolution, range-head fallback,
   aspirational URL, prepend behavior).
 - **2026-07-13** (later): G22 PR 8 SHIPPED as
-  openemr/openemr#12928 (master) + openemr/openemr#12933
+  DCL/DCL#12928 (master) + DCL/DCL#12933
   (coordinated rel-820 config-file ports for
   .composer-require-checker.json whitelist +
   .codespell-ignore-words.txt "deriver" entry -- neither file is
   in the byte-identical set, so #12928's auto-sync PR
-  openemr/openemr#12932 needed #12933 landed first to pass CI).
+  DCL/DCL#12932 needed #12933 landed first to pass CI).
   Resequenced 2026-07-13 to land BEFORE PR 5 (compat-gap window:
   PR 5's section-extract would have pulled CHANGELOG entries
   missing the Minimum-supported-versions block for 8.2.1+ if the
@@ -4590,13 +4590,13 @@ checklist + the existing master-bump pattern.
   With PR 8 landed the compat-gap window is closed and PR 5
   (devops section-extract) is unblocked.
 - **2026-07-13** (even later): G22 PR 5 SHIPPED as
-  openemr/openemr-devops#858. Deleted ChangelogGenerator +
+  DCL/DCL-devops#858. Deleted ChangelogGenerator +
   CompatibilityDeriver + CompatibilityNotesRenderer +
   changelog.php + derive-compatibility.php from devops; GitHubApi
   stays (preflight.php + PreflightChecker still consume it, will
   migrate in a future PR). New
   tools/release/bin/extract-changelog-section.php is a 60-line
-  Symfony Console CLI that reads openemr's CHANGELOG.md and
+  Symfony Console CLI that reads DCL's CHANGELOG.md and
   writes one version's `## [X.Y.Z]` section to
   release-output/changelog.md. Since ChangelogMutator +
   CompatibilityMutator (PR 4 + PR 8) both bake into that section
@@ -4606,7 +4606,7 @@ checklist + the existing master-bump pattern.
   build-release.yml: replaced the two steps (task
   release:changelog + task release:compatibility) with one
   extract step; no more GH_TOKEN or gh api calls in the changelog
-  path (everything reads from the local openemr checkout).
+  path (everything reads from the local DCL checkout).
   Cleaned up dead `base_ref` end-to-end: removed from
   build-release.yml's input declarations + build-release-on-tag.
   yml's "Derive base_ref from previous release" step. Byte-
@@ -4619,13 +4619,13 @@ checklist + the existing master-bump pattern.
   is the intended semantic improvement of the whole slice.
   CR round-1 fix (shell-metachar injection risk on
   VERSION='inputs.version') routed the value through an env var.
-  New PR 10 added to the slice plan: update openemr's
+  New PR 10 added to the slice plan: update DCL's
   docs/RELEASE_PROCESS.md to describe the new mutator-driven
   flow and drop references to the retired paths. Belongs after
   PR 7 so the doc doesn't describe paths that still technically
   exist somewhere in the tree.
 - **2026-07-14**: G22 PR 6 SHIPPED as
-  openemr/website-openemr#190. Retired website's release-notes
+  DCL/website-DCL#190. Retired website's release-notes
   generator (gen-release-notes.php + ReleaseNotesGenerator.php +
   tests + fixtures + Taskfile task). Workflow "Generate release
   notes" step replaced with a "Remove stale per-release
@@ -4633,16 +4633,16 @@ checklist + the existing master-bump pattern.
   for the retired install/upgrade pages -- targets
   $PUBLISH/content/release-notes/$VERSION.md for the current
   dispatch's version only, so 8.2.0's live page at
-  openemr.org/release-notes/8.2.0/ stays grandfathered.
+  dcl.org/release-notes/8.2.0/ stays grandfathered.
   AcknowledgementsGenerator + acknowledgements page untouched.
   Follow-up not in the PR: replace 8.2.0's static page with a
-  redirect to https://github.com/openemr/openemr/releases/tag/v8_2_0
+  redirect to https://github.com/DCL/DCL/releases/tag/v8_2_0
   for uniform user experience with 8.2.1+ (no per-version page).
   Slice now 7 of 10 SHIPPED; remaining: PR 7 (retire
   CreateReleaseChangelogCommand), PR 9 (fixture regression), PR 10
   (RELEASE_PROCESS.md rewrite, depends on PR 7).
 - **2026-07-14** (later): G22 PR 7 SHIPPED as
-  openemr/openemr#12964. Deleted CreateReleaseChangelogCommand
+  DCL/DCL#12964. Deleted CreateReleaseChangelogCommand
   (Stephen Nielson's 374-line Guzzle-based milestone helper;
   predates the migration, fully redundant with the
   ChangelogGenerator + ChangelogMutator flow). Also removed the
@@ -4651,41 +4651,41 @@ checklist + the existing master-bump pattern.
   block-filter), and lowered two fatal-baseline-caps
   (method.notFound 138->137, variable.undefined 509->508) in the
   same commit -- caps only go down per the caps contract. No live
-  callers of `openemr:create-release-changelog` grepped anywhere
+  callers of `DCL:create-release-changelog` grepped anywhere
   in the tree; no tests referenced the class. 19 files changed /
   706 deletions net. Sync workflow propagates the file deletion +
   manifest update to rel-820 (excluded from rel-800 + rel-704 per
   the object-form filter). Slice now 8 of 10 SHIPPED; remaining:
   PR 9 (fixture regression) and PR 10 (RELEASE_PROCESS.md rewrite,
   now unblocked).
-- **2026-07-22**: G29 SHIPPED as openemr/website-openemr#207.
-  release-docs.yml gained a `Flip docs PR out of draft (openemr-tag
+- **2026-07-22**: G29 SHIPPED as DCL/website-DCL#207.
+  release-docs.yml gained a `Flip docs PR out of draft (DCL-tag
   only)` step: locates the docs PR by branch, flips it via
   `gh pr ready`, posts a signal comment. Idempotent on re-fire
   (isDraft-guarded); skipped in test-mode dispatches. workflow:upsert-pr
-  task also drops the `(DRAFT)` title suffix on `openemr-tag`. Closes
+  task also drops the `(DRAFT)` title suffix on `DCL-tag`. Closes
   RELEASE_PROCESS.md automation gaps step 9 and completes Phase 3c of
   the release-mechanism migration (see migration doc phase table row
-  3 for the full Phase 3 shipping picture, and openemr/openemr#13108
+  3 for the full Phase 3 shipping picture, and DCL/DCL#13108
   for the RELEASE_PROCESS.md sweep closing the parallel table row).
-  The original design constraint noted at openemr-devops#761 ("must
-  fire BEFORE ship-release dispatch since `openemr-tag` is post-
+  The original design constraint noted at DCL-devops#761 ("must
+  fire BEFORE ship-release dispatch since `DCL-tag` is post-
   conductor-merge and too late for preflight") no longer applied
   post-Phase-3b — the wait moved from preflight to a post-conductor
-  readiness check, so on-`openemr-tag` was exactly the right unblock.
+  readiness check, so on-`DCL-tag` was exactly the right unblock.
 
 - **2026-07-22 → 2026-07-23**: Workstream 7 Phases 5 + 6 SHIPPED,
   closing the release-mechanism migration end-to-end. Phase 5.1
-  ([openemr/openemr#13110](https://github.com/openemr/openemr/pull/13110))
+  ([DCL/DCL#13110](https://github.com/DCL/DCL/pull/13110))
   inverted canonical/vendored for `dispatch.schema.json` +
-  `TagVerifier` + `TagVerificationResult` from openemr-devops → openemr
+  `TagVerifier` + `TagVerificationResult` from DCL-devops → DCL
   and imported `VendoredFileChecker` + the reusable
   `check-vendored-contracts.yml` workflow into this repo. Phase 5.2
-  ([openemr/website-openemr#210](https://github.com/openemr/website-openemr/pull/210))
+  ([DCL/website-DCL#210](https://github.com/DCL/website-DCL/pull/210))
   retired unused vendored TagVerifier/VerificationResult from
-  website-openemr as dead code + kept `dispatch.schema.json` as an
+  website-DCL as dead code + kept `dispatch.schema.json` as an
   intentional divergent re-implementation, repointing the
-  docblock/description to name openemr canonical. Phase 5.3 (relabel
+  docblock/description to name DCL canonical. Phase 5.3 (relabel
   devops consumers) was skipped by design since Phase 6 wholesale-deletes
   them. Phase 5.5 verification battery ran 4/4 green
   (release-permissions-check + release-mechanism-smoketest + build-release
@@ -4693,35 +4693,35 @@ checklist + the existing master-bump pattern.
   diagnostic). The battery surfaced **three latent Phase-2-port bugs**
   that shipped as parallel fix PRs — the class of "we never fully
   end-to-end-ran the ported code between Phase 2 landing and today":
-  openemr/openemr#13115 (`tools/release/.gitignore` + ship-release dry-run
-  `permissions: contents: read`), openemr/openemr#13126 (`summary.php`
+  DCL/DCL#13115 (`tools/release/.gitignore` + ship-release dry-run
+  `permissions: contents: read`), DCL/DCL#13126 (`summary.php`
   empty-milestone acceptance + missing checklist templates
   `full-checklist.md` + `patch-checklist.md` ported from devops), and
-  openemr/openemr#13132 (CLI test backfill for 7 bin scripts —
+  DCL/DCL#13132 (CLI test backfill for 7 bin scripts —
   dispatch.php, preflight.php, create-tag.php, verify-tag.php,
   ship-release.php, package-assemble.php, patch-assemble.php — plus a
   rabbit-fix pass rewriting them to a deterministic-local-error pattern).
-  Also landed alongside: openemr/openemr#13100 (sync-byte-identical
+  Also landed alongside: DCL/DCL#13100 (sync-byte-identical
   double-delete bug from Phase 3b's DocsRefreshResult→DownstreamRefreshResult
   rename), #13108 (RELEASE_PROCESS.md Phase-3c closure sweep),
   #13116 (rel-820 stale caller cleanup),
   #13113 / #13117 / #13128 (rel-820 refire sync fixes),
   #13120 (statuses:write probe on release-permissions-check).
   Phase 6 SHIPPED 2026-07-23 as
-  [openemr/openemr-devops#863](https://github.com/openemr/openemr-devops/pull/863):
+  [DCL/DCL-devops#863](https://github.com/DCL/DCL-devops/pull/863):
   wholesale delete of the devops release-mechanism surface — 98 files /
   ~13k lines removed (ship-release.yml, build-release*.yml, build-patch.yml,
   release-amendment.yml, release-announcements.yml, all of
   `tools/release/**`, `dispatch.schema.json`, `TagVerifier`,
   `TagVerificationResult`, checklist templates, announcement
   renderer/templates). Umbrella issues closed via the Phase 6 PR body:
-  openemr-devops#664 (workstream 7 umbrella), #706 (gap-closure
+  DCL-devops#664 (workstream 7 umbrella), #706 (gap-closure
   umbrella), #711 (announcement posting umbrella); sub-issue #761 had
-  already closed during Phase 3c via website-openemr#207. Post-Phase-6
-  state: `openemr/openemr` is the sole canonical home for release
+  already closed during Phase 3c via website-DCL#207. Post-Phase-6
+  state: `DCL/DCL` is the sole canonical home for release
   automation (conductor + build + ship-release + contracts + checklist
-  templates); `openemr/website-openemr` hosts docs + announcement
-  drafters; `openemr/openemr-devops` no longer carries any live
+  templates); `DCL/website-DCL` hosts docs + announcement
+  drafters; `DCL/DCL-devops` no longer carries any live
   release-mechanism code. Ship-release semi-auto / full-auto modes are
   production-ready; first real ship post-Phase-6 will use `semi-auto`
   as training wheels. Next real production event is the rel-830 branch
@@ -4735,7 +4735,7 @@ checklist + the existing master-bump pattern.
   in place of per-commit `/commits/{sha}/pulls`). Both compose;
   neither is scoped into #13141's retry PR.
 
-- **2026-07-23**: G30 SHIPPED as openemr/openemr#13146 (structural
+- **2026-07-23**: G30 SHIPPED as DCL/DCL#13146 (structural
   batching half — 25 SHAs per `gh pr list --search` query,
   ~200 API calls per changelog build → ~8, 96% reduction).
   Rate-limit-aware-backoff half explicitly skipped as obsoleted

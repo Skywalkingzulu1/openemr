@@ -7,9 +7,9 @@
  * level (`send_to_hie` or `admin/super`); this trait centralizes the
  * per-patient and per-document checks that must sit alongside that gate.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -17,9 +17,9 @@ declare(strict_types=1);
 namespace Carecoordination\Controller;
 
 use Document;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 trait CarecoordAuthzTrait
 {

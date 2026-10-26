@@ -1,21 +1,21 @@
 <?php
 
 /**
- * OpenEMR Module Member
+ * DCL Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\WenoModule\Services;
+namespace DCL\Modules\WenoModule\Services;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * Companion to event bootstrapping
@@ -242,7 +242,7 @@ class ModuleService
     }
 
     /**
-     * Active OpenEMR users eligible for Weno provider configuration.
+     * Active DCL users eligible for Weno provider configuration.
      * Excludes Greenway migration display-only staff (username gwstaff*, info GS:tag).
      *
      * @return list<array<mixed>>

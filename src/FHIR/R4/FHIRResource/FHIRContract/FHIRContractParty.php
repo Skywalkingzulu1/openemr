@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,13 +71,13 @@ class FHIRContractParty extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Participant in the offer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reference = [];
 
     /**
      * How the party participates in the offer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
@@ -88,7 +88,7 @@ class FHIRContractParty extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Participant in the offer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReference()
     {
@@ -97,7 +97,7 @@ class FHIRContractParty extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Participant in the offer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reference
      * @return $this
      */
     public function addReference($reference)
@@ -108,7 +108,7 @@ class FHIRContractParty extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How the party participates in the offer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -117,7 +117,7 @@ class FHIRContractParty extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How the party participates in the offer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)

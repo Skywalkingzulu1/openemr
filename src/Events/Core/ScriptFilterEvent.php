@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ScriptHeadFilterEvent class is fired from pages inside OpenEMR and is used to add / remove / filter scripts that are
+ * ScriptHeadFilterEvent class is fired from pages inside DCL and is used to add / remove / filter scripts that are
  * to be included inside a <script src=''> tag.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Core;
+namespace DCL\Events\Core;
 
-use OpenEMR\Core\ModulesApplication;
+use DCL\Core\ModulesApplication;
 
 class ScriptFilterEvent extends TemplatePageEvent
 {

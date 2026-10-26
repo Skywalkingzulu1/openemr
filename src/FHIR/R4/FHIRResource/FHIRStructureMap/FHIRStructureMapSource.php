@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -71,306 +71,306 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Type or variable this rule applies to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $context = null;
 
     /**
      * Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $min = null;
 
     /**
      * Specified maximum cardinality for the element - a number or a "*". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it's the default value).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $max = null;
 
     /**
      * Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $defaultValueBase64Binary = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $defaultValueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $defaultValueCanonical = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $defaultValueCode = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $defaultValueDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $defaultValueDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $defaultValueDecimal = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $defaultValueId = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $defaultValueInstant = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $defaultValueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $defaultValueMarkdown = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIROid
+     * @var \DCL\FHIR\R4\FHIRElement\FHIROid
      */
     public $defaultValueOid = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $defaultValuePositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $defaultValueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $defaultValueTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $defaultValueUnsignedInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $defaultValueUri = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $defaultValueUrl = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUuid
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUuid
      */
     public $defaultValueUuid = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public $defaultValueAddress = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $defaultValueAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation
      */
     public $defaultValueAnnotation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $defaultValueAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $defaultValueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $defaultValueCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint
      */
     public $defaultValueContactPoint = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
     public $defaultValueCount = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public $defaultValueDistance = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $defaultValueDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public $defaultValueHumanName = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $defaultValueIdentifier = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $defaultValueMoney = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $defaultValuePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $defaultValueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $defaultValueRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $defaultValueRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $defaultValueReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSampledData
      */
     public $defaultValueSampledData = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public $defaultValueSignature = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $defaultValueTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail
      */
     public $defaultValueContactDetail = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContributor
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContributor
      */
     public $defaultValueContributor = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public $defaultValueDataRequirement = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $defaultValueExpression = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRParameterDefinition
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRParameterDefinition
      */
     public $defaultValueParameterDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact
      */
     public $defaultValueRelatedArtifact = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition
      */
     public $defaultValueTriggerDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext
      */
     public $defaultValueUsageContext = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDosage
      */
     public $defaultValueDosage = null;
 
     /**
      * Optional field for this source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $element = null;
 
     /**
      * How to handle the list mode for this element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapSourceListMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureMapSourceListMode
      */
     public $listMode = null;
 
     /**
      * Named context for field, if a field is specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $variable = null;
 
     /**
      * FHIRPath expression  - must be true or the rule does not apply.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $condition = null;
 
     /**
      * FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $check = null;
 
     /**
      * A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $logMessage = null;
 
@@ -381,7 +381,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Type or variable this rule applies to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getContext()
     {
@@ -390,7 +390,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Type or variable this rule applies to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $context
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $context
      * @return $this
      */
     public function setContext($context)
@@ -401,7 +401,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getMin()
     {
@@ -410,7 +410,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $min
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $min
      * @return $this
      */
     public function setMin($min)
@@ -421,7 +421,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specified maximum cardinality for the element - a number or a "*". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it's the default value).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMax()
     {
@@ -430,7 +430,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specified maximum cardinality for the element - a number or a "*". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it's the default value).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $max
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $max
      * @return $this
      */
     public function setMax($max)
@@ -441,7 +441,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getType()
     {
@@ -450,7 +450,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $type
      * @return $this
      */
     public function setType($type)
@@ -460,7 +460,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getDefaultValueBase64Binary()
     {
@@ -468,7 +468,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
      * @return $this
      */
     public function setDefaultValueBase64Binary($defaultValueBase64Binary)
@@ -478,7 +478,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDefaultValueBoolean()
     {
@@ -486,7 +486,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $defaultValueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $defaultValueBoolean
      * @return $this
      */
     public function setDefaultValueBoolean($defaultValueBoolean)
@@ -496,7 +496,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefaultValueCanonical()
     {
@@ -504,7 +504,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $defaultValueCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $defaultValueCanonical
      * @return $this
      */
     public function setDefaultValueCanonical($defaultValueCanonical)
@@ -514,7 +514,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getDefaultValueCode()
     {
@@ -522,7 +522,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $defaultValueCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $defaultValueCode
      * @return $this
      */
     public function setDefaultValueCode($defaultValueCode)
@@ -532,7 +532,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getDefaultValueDate()
     {
@@ -540,7 +540,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $defaultValueDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $defaultValueDate
      * @return $this
      */
     public function setDefaultValueDate($defaultValueDate)
@@ -550,7 +550,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDefaultValueDateTime()
     {
@@ -558,7 +558,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $defaultValueDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $defaultValueDateTime
      * @return $this
      */
     public function setDefaultValueDateTime($defaultValueDateTime)
@@ -568,7 +568,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getDefaultValueDecimal()
     {
@@ -576,7 +576,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $defaultValueDecimal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $defaultValueDecimal
      * @return $this
      */
     public function setDefaultValueDecimal($defaultValueDecimal)
@@ -586,7 +586,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getDefaultValueId()
     {
@@ -594,7 +594,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $defaultValueId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $defaultValueId
      * @return $this
      */
     public function setDefaultValueId($defaultValueId)
@@ -604,7 +604,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getDefaultValueInstant()
     {
@@ -612,7 +612,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $defaultValueInstant
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $defaultValueInstant
      * @return $this
      */
     public function setDefaultValueInstant($defaultValueInstant)
@@ -622,7 +622,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getDefaultValueInteger()
     {
@@ -630,7 +630,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $defaultValueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $defaultValueInteger
      * @return $this
      */
     public function setDefaultValueInteger($defaultValueInteger)
@@ -640,7 +640,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDefaultValueMarkdown()
     {
@@ -648,7 +648,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $defaultValueMarkdown
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $defaultValueMarkdown
      * @return $this
      */
     public function setDefaultValueMarkdown($defaultValueMarkdown)
@@ -658,7 +658,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIROid
+     * @return \DCL\FHIR\R4\FHIRElement\FHIROid
      */
     public function getDefaultValueOid()
     {
@@ -666,7 +666,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIROid $defaultValueOid
+     * @param \DCL\FHIR\R4\FHIRElement\FHIROid $defaultValueOid
      * @return $this
      */
     public function setDefaultValueOid($defaultValueOid)
@@ -676,7 +676,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getDefaultValuePositiveInt()
     {
@@ -684,7 +684,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
      * @return $this
      */
     public function setDefaultValuePositiveInt($defaultValuePositiveInt)
@@ -694,7 +694,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDefaultValueString()
     {
@@ -702,7 +702,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $defaultValueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $defaultValueString
      * @return $this
      */
     public function setDefaultValueString($defaultValueString)
@@ -712,7 +712,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getDefaultValueTime()
     {
@@ -720,7 +720,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $defaultValueTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $defaultValueTime
      * @return $this
      */
     public function setDefaultValueTime($defaultValueTime)
@@ -730,7 +730,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getDefaultValueUnsignedInt()
     {
@@ -738,7 +738,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
      * @return $this
      */
     public function setDefaultValueUnsignedInt($defaultValueUnsignedInt)
@@ -748,7 +748,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getDefaultValueUri()
     {
@@ -756,7 +756,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $defaultValueUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $defaultValueUri
      * @return $this
      */
     public function setDefaultValueUri($defaultValueUri)
@@ -766,7 +766,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getDefaultValueUrl()
     {
@@ -774,7 +774,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $defaultValueUrl
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $defaultValueUrl
      * @return $this
      */
     public function setDefaultValueUrl($defaultValueUrl)
@@ -784,7 +784,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUuid
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUuid
      */
     public function getDefaultValueUuid()
     {
@@ -792,7 +792,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUuid $defaultValueUuid
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUuid $defaultValueUuid
      * @return $this
      */
     public function setDefaultValueUuid($defaultValueUuid)
@@ -802,7 +802,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public function getDefaultValueAddress()
     {
@@ -810,7 +810,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $defaultValueAddress
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $defaultValueAddress
      * @return $this
      */
     public function setDefaultValueAddress($defaultValueAddress)
@@ -820,7 +820,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDefaultValueAge()
     {
@@ -828,7 +828,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @return $this
      */
     public function setDefaultValueAge($defaultValueAge)
@@ -838,7 +838,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation
      */
     public function getDefaultValueAnnotation()
     {
@@ -846,7 +846,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $defaultValueAnnotation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @return $this
      */
     public function setDefaultValueAnnotation($defaultValueAnnotation)
@@ -856,7 +856,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getDefaultValueAttachment()
     {
@@ -864,7 +864,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $defaultValueAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $defaultValueAttachment
      * @return $this
      */
     public function setDefaultValueAttachment($defaultValueAttachment)
@@ -874,7 +874,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDefaultValueCodeableConcept()
     {
@@ -882,7 +882,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @return $this
      */
     public function setDefaultValueCodeableConcept($defaultValueCodeableConcept)
@@ -892,7 +892,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getDefaultValueCoding()
     {
@@ -900,7 +900,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $defaultValueCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $defaultValueCoding
      * @return $this
      */
     public function setDefaultValueCoding($defaultValueCoding)
@@ -910,7 +910,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint
      */
     public function getDefaultValueContactPoint()
     {
@@ -918,7 +918,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $defaultValueContactPoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @return $this
      */
     public function setDefaultValueContactPoint($defaultValueContactPoint)
@@ -928,7 +928,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
     public function getDefaultValueCount()
     {
@@ -936,7 +936,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
      * @return $this
      */
     public function setDefaultValueCount($defaultValueCount)
@@ -946,7 +946,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public function getDefaultValueDistance()
     {
@@ -954,7 +954,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
      * @return $this
      */
     public function setDefaultValueDistance($defaultValueDistance)
@@ -964,7 +964,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDefaultValueDuration()
     {
@@ -972,7 +972,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @return $this
      */
     public function setDefaultValueDuration($defaultValueDuration)
@@ -982,7 +982,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public function getDefaultValueHumanName()
     {
@@ -990,7 +990,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName $defaultValueHumanName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHumanName $defaultValueHumanName
      * @return $this
      */
     public function setDefaultValueHumanName($defaultValueHumanName)
@@ -1000,7 +1000,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getDefaultValueIdentifier()
     {
@@ -1008,7 +1008,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $defaultValueIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @return $this
      */
     public function setDefaultValueIdentifier($defaultValueIdentifier)
@@ -1018,7 +1018,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getDefaultValueMoney()
     {
@@ -1026,7 +1026,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $defaultValueMoney
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $defaultValueMoney
      * @return $this
      */
     public function setDefaultValueMoney($defaultValueMoney)
@@ -1036,7 +1036,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getDefaultValuePeriod()
     {
@@ -1044,7 +1044,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $defaultValuePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $defaultValuePeriod
      * @return $this
      */
     public function setDefaultValuePeriod($defaultValuePeriod)
@@ -1054,7 +1054,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDefaultValueQuantity()
     {
@@ -1062,7 +1062,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $defaultValueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return $this
      */
     public function setDefaultValueQuantity($defaultValueQuantity)
@@ -1072,7 +1072,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getDefaultValueRange()
     {
@@ -1080,7 +1080,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $defaultValueRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $defaultValueRange
      * @return $this
      */
     public function setDefaultValueRange($defaultValueRange)
@@ -1090,7 +1090,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getDefaultValueRatio()
     {
@@ -1098,7 +1098,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $defaultValueRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $defaultValueRatio
      * @return $this
      */
     public function setDefaultValueRatio($defaultValueRatio)
@@ -1108,7 +1108,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDefaultValueReference()
     {
@@ -1116,7 +1116,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $defaultValueReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $defaultValueReference
      * @return $this
      */
     public function setDefaultValueReference($defaultValueReference)
@@ -1126,7 +1126,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSampledData
      */
     public function getDefaultValueSampledData()
     {
@@ -1134,7 +1134,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData $defaultValueSampledData
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSampledData $defaultValueSampledData
      * @return $this
      */
     public function setDefaultValueSampledData($defaultValueSampledData)
@@ -1144,7 +1144,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public function getDefaultValueSignature()
     {
@@ -1152,7 +1152,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $defaultValueSignature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $defaultValueSignature
      * @return $this
      */
     public function setDefaultValueSignature($defaultValueSignature)
@@ -1162,7 +1162,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getDefaultValueTiming()
     {
@@ -1170,7 +1170,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $defaultValueTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $defaultValueTiming
      * @return $this
      */
     public function setDefaultValueTiming($defaultValueTiming)
@@ -1180,7 +1180,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail
      */
     public function getDefaultValueContactDetail()
     {
@@ -1188,7 +1188,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $defaultValueContactDetail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $defaultValueContactDetail
      * @return $this
      */
     public function setDefaultValueContactDetail($defaultValueContactDetail)
@@ -1198,7 +1198,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContributor
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContributor
      */
     public function getDefaultValueContributor()
     {
@@ -1206,7 +1206,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContributor $defaultValueContributor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContributor $defaultValueContributor
      * @return $this
      */
     public function setDefaultValueContributor($defaultValueContributor)
@@ -1216,7 +1216,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public function getDefaultValueDataRequirement()
     {
@@ -1224,7 +1224,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $defaultValueDataRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $defaultValueDataRequirement
      * @return $this
      */
     public function setDefaultValueDataRequirement($defaultValueDataRequirement)
@@ -1234,7 +1234,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getDefaultValueExpression()
     {
@@ -1242,7 +1242,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $defaultValueExpression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $defaultValueExpression
      * @return $this
      */
     public function setDefaultValueExpression($defaultValueExpression)
@@ -1252,7 +1252,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRParameterDefinition
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRParameterDefinition
      */
     public function getDefaultValueParameterDefinition()
     {
@@ -1260,7 +1260,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRParameterDefinition $defaultValueParameterDefinition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRParameterDefinition $defaultValueParameterDefinition
      * @return $this
      */
     public function setDefaultValueParameterDefinition($defaultValueParameterDefinition)
@@ -1270,7 +1270,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact
      */
     public function getDefaultValueRelatedArtifact()
     {
@@ -1278,7 +1278,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $defaultValueRelatedArtifact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $defaultValueRelatedArtifact
      * @return $this
      */
     public function setDefaultValueRelatedArtifact($defaultValueRelatedArtifact)
@@ -1288,7 +1288,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition
      */
     public function getDefaultValueTriggerDefinition()
     {
@@ -1296,7 +1296,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition $defaultValueTriggerDefinition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition $defaultValueTriggerDefinition
      * @return $this
      */
     public function setDefaultValueTriggerDefinition($defaultValueTriggerDefinition)
@@ -1306,7 +1306,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext
      */
     public function getDefaultValueUsageContext()
     {
@@ -1314,7 +1314,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $defaultValueUsageContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $defaultValueUsageContext
      * @return $this
      */
     public function setDefaultValueUsageContext($defaultValueUsageContext)
@@ -1324,7 +1324,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDosage
      */
     public function getDefaultValueDosage()
     {
@@ -1332,7 +1332,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage $defaultValueDosage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDosage $defaultValueDosage
      * @return $this
      */
     public function setDefaultValueDosage($defaultValueDosage)
@@ -1343,7 +1343,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Optional field for this source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getElement()
     {
@@ -1352,7 +1352,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Optional field for this source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $element
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $element
      * @return $this
      */
     public function setElement($element)
@@ -1363,7 +1363,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How to handle the list mode for this element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapSourceListMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureMapSourceListMode
      */
     public function getListMode()
     {
@@ -1372,7 +1372,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How to handle the list mode for this element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapSourceListMode $listMode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureMapSourceListMode $listMode
      * @return $this
      */
     public function setListMode($listMode)
@@ -1383,7 +1383,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Named context for field, if a field is specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getVariable()
     {
@@ -1392,7 +1392,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Named context for field, if a field is specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $variable
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $variable
      * @return $this
      */
     public function setVariable($variable)
@@ -1403,7 +1403,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * FHIRPath expression  - must be true or the rule does not apply.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCondition()
     {
@@ -1412,7 +1412,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * FHIRPath expression  - must be true or the rule does not apply.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $condition
      * @return $this
      */
     public function setCondition($condition)
@@ -1423,7 +1423,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCheck()
     {
@@ -1432,7 +1432,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $check
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $check
      * @return $this
      */
     public function setCheck($check)
@@ -1443,7 +1443,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLogMessage()
     {
@@ -1452,7 +1452,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $logMessage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $logMessage
      * @return $this
      */
     public function setLogMessage($logMessage)

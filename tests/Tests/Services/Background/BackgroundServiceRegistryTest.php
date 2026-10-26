@@ -6,21 +6,21 @@
  * These tests run against a live database and exercise the full
  * register/unregister/get/list/setActive/exists lifecycle.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @author    Aaron Marcelo <prot52486@gmail.com>
  * @copyright Copyright (c) 2026 Aaron Marcelo
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Background;
+namespace DCL\Tests\Services\Background;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Background\BackgroundServiceDefinition;
-use OpenEMR\Services\Background\BackgroundServiceRegistry;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Background\BackgroundServiceDefinition;
+use DCL\Services\Background\BackgroundServiceRegistry;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 

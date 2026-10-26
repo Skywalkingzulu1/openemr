@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRLocation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRLocation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRLocation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
@@ -71,25 +71,25 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
      */
     public $daysOfWeek = [];
 
     /**
      * The Location is open all day.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $allDay = null;
 
     /**
      * Time that the Location opens.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $openingTime = null;
 
     /**
      * Time that the Location closes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $closingTime = null;
 
@@ -100,7 +100,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
      */
     public function getDaysOfWeek()
     {
@@ -109,7 +109,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDaysOfWeek $daysOfWeek
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDaysOfWeek $daysOfWeek
      * @return $this
      */
     public function addDaysOfWeek($daysOfWeek)
@@ -120,7 +120,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The Location is open all day.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAllDay()
     {
@@ -129,7 +129,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The Location is open all day.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $allDay
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $allDay
      * @return $this
      */
     public function setAllDay($allDay)
@@ -140,7 +140,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Time that the Location opens.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getOpeningTime()
     {
@@ -149,7 +149,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Time that the Location opens.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $openingTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $openingTime
      * @return $this
      */
     public function setOpeningTime($openingTime)
@@ -160,7 +160,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Time that the Location closes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getClosingTime()
     {
@@ -169,7 +169,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Time that the Location closes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $closingTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $closingTime
      * @return $this
      */
     public function setClosingTime($closingTime)

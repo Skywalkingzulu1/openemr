@@ -3,41 +3,41 @@
 /**
  * Patient custom report.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ken Chapple <ken@mi-squared.com>
  * @author    Tony McCormick <tony@mi-squared.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
 require_once($srcdir . "/options.inc.php");
 require_once($srcdir . "/report.inc.php");
 require_once(__DIR__ . "/../../../custom/code_types.inc.php");
 require_once $srcdir . '/ESign/Api.php';
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->get("include_root") . "/orders/single_order_results.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->get("include_root") . "/orders/single_order_results.inc.php");
 require_once($srcdir . "/appointments.inc.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir() . "/controllers/C_Document.class.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getProjectDir() . "/controllers/C_Document.class.php");
 
 use ESign\Api;
 use Mpdf\Mpdf;
 use Mpdf\MpdfException;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Forms\FormReportRenderer;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\MedicalDevice\MedicalDevice;
-use OpenEMR\Pdf\Config_Mpdf;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Forms\FormReportRenderer;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\MedicalDevice\MedicalDevice;
+use DCL\Pdf\Config_Mpdf;
+use DCL\Services\FacilityService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -198,7 +198,7 @@ function getContent()
                 // Use logo if it exists as 'practice_logo.gif' in the site dir
                 // old code used the global custom dir which is no longer a valid
                 $practice_logo = "";
-                $plogo = glob(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('OE_SITE_DIR') . "/images/*");// let's give the user a little say in image format.
+                $plogo = glob(\DCL\Core\OEGlobalsBag::getInstance()->getString('OE_SITE_DIR') . "/images/*");// let's give the user a little say in image format.
                 $plogo = preg_grep('~practice_logo\.(gif|png|jpg|jpeg)$~i', $plogo);
                 if (!empty($plogo)) {
                     $k = array_key_first($plogo);

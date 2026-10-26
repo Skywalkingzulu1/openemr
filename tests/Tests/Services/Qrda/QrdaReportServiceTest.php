@@ -2,19 +2,19 @@
 
 /*
  * QrdaReportServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\Qrda;
+namespace DCL\Tests\Services\Qrda;
 
 use DOMDocument;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Qrda\QrdaReportService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Services\PatientService;
+use DCL\Services\Qrda\QrdaReportService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 
 class QrdaReportServiceTest extends TestCase {
@@ -33,10 +33,10 @@ class QrdaReportServiceTest extends TestCase {
 
     public function testGenerateCategoryIIIXml(): void
     {
-        $measureFolder = __DIR__ . '/../../../../vendor/openemr/oe-cqm-parsers/2024_reporting_period/json_measures/CMS122v12';
+        $measureFolder = __DIR__ . '/../../../../vendor/DCL/oe-cqm-parsers/2024_reporting_period/json_measures/CMS122v12';
         $measureFile = $measureFolder . '/CMS122v12.json';
         if (!file_exists($measureFile)) {
-            $this->fail("Measure file {$measureFile} does not exist. Make sure composer has installed openemr/oe-cqm-parsers.");
+            $this->fail("Measure file {$measureFile} does not exist. Make sure composer has installed DCL/oe-cqm-parsers.");
             return;
         }
 

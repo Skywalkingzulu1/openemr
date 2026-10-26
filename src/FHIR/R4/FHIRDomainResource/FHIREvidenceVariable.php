@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The EvidenceVariable resource describes a "PICO" element that knowledge (evidence, assertion, recommendation) is about.
@@ -72,163 +72,163 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * An absolute URI that is used to identify this evidence variable when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this evidence variable is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the evidence variable is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this evidence variable when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the evidence variable when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the evidence variable author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the evidence variable. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the evidence variable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $shortTitle = null;
 
     /**
      * An explanatory or alternate title for the EvidenceVariable giving additional information about its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $subtitle = null;
 
     /**
      * The status of this evidence variable. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * The date  (and optionally time) when the evidence variable was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the evidence variable changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the evidence variable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the evidence variable from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate evidence variable instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the evidence variable is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * A copyright statement relating to the evidence variable and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the evidence variable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
      * The period during which the evidence variable content was or is planned to be in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * Descriptive topics related to the content of the EvidenceVariable. Topics provide a high-level categorization grouping types of EvidenceVariables that can be useful for filtering and searching.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = [];
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $author = [];
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $editor = [];
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $reviewer = [];
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $endorser = [];
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $relatedArtifact = [];
 
     /**
      * The type of evidence element, a population, an exposure, or an outcome.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREvidenceVariableType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREvidenceVariableType
      */
     public $type = null;
 
     /**
      * A characteristic that defines the members of the evidence element. Multiple characteristics are applied with "and" semantics.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic[]
      */
     public $characteristic = [];
 
@@ -239,7 +239,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An absolute URI that is used to identify this evidence variable when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this evidence variable is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the evidence variable is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -248,7 +248,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An absolute URI that is used to identify this evidence variable when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this evidence variable is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the evidence variable is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -259,7 +259,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A formal identifier that is used to identify this evidence variable when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -268,7 +268,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A formal identifier that is used to identify this evidence variable when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -279,7 +279,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The identifier that is used to identify this version of the evidence variable when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the evidence variable author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -288,7 +288,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The identifier that is used to identify this version of the evidence variable when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the evidence variable author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -299,7 +299,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A natural language name identifying the evidence variable. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -308,7 +308,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A natural language name identifying the evidence variable. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -319,7 +319,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A short, descriptive, user-friendly title for the evidence variable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -328,7 +328,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A short, descriptive, user-friendly title for the evidence variable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -339,7 +339,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getShortTitle()
     {
@@ -348,7 +348,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $shortTitle
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $shortTitle
      * @return $this
      */
     public function setShortTitle($shortTitle)
@@ -359,7 +359,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An explanatory or alternate title for the EvidenceVariable giving additional information about its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSubtitle()
     {
@@ -368,7 +368,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An explanatory or alternate title for the EvidenceVariable giving additional information about its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $subtitle
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $subtitle
      * @return $this
      */
     public function setSubtitle($subtitle)
@@ -379,7 +379,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of this evidence variable. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -388,7 +388,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of this evidence variable. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -399,7 +399,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date  (and optionally time) when the evidence variable was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the evidence variable changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -408,7 +408,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date  (and optionally time) when the evidence variable was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the evidence variable changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -419,7 +419,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The name of the organization or individual that published the evidence variable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -428,7 +428,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The name of the organization or individual that published the evidence variable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -439,7 +439,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -448,7 +448,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -459,7 +459,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A free text natural language description of the evidence variable from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -468,7 +468,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A free text natural language description of the evidence variable from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -479,7 +479,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -488,7 +488,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -499,7 +499,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate evidence variable instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -508,7 +508,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate evidence variable instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -519,7 +519,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A legal or geographic region in which the evidence variable is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -528,7 +528,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A legal or geographic region in which the evidence variable is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -539,7 +539,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A copyright statement relating to the evidence variable and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the evidence variable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -548,7 +548,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A copyright statement relating to the evidence variable and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the evidence variable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -559,7 +559,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
     {
@@ -568,7 +568,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $approvalDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
     public function setApprovalDate($approvalDate)
@@ -579,7 +579,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
     {
@@ -588,7 +588,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
     public function setLastReviewDate($lastReviewDate)
@@ -599,7 +599,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The period during which the evidence variable content was or is planned to be in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -608,7 +608,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The period during which the evidence variable content was or is planned to be in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -619,7 +619,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Descriptive topics related to the content of the EvidenceVariable. Topics provide a high-level categorization grouping types of EvidenceVariables that can be useful for filtering and searching.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
     {
@@ -628,7 +628,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Descriptive topics related to the content of the EvidenceVariable. Topics provide a high-level categorization grouping types of EvidenceVariables that can be useful for filtering and searching.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
     public function addTopic($topic)
@@ -639,7 +639,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getAuthor()
     {
@@ -648,7 +648,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $author
      * @return $this
      */
     public function addAuthor($author)
@@ -659,7 +659,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEditor()
     {
@@ -668,7 +668,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $editor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $editor
      * @return $this
      */
     public function addEditor($editor)
@@ -679,7 +679,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getReviewer()
     {
@@ -688,7 +688,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
      * @return $this
      */
     public function addReviewer($reviewer)
@@ -699,7 +699,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEndorser()
     {
@@ -708,7 +708,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
      * @return $this
      */
     public function addEndorser($endorser)
@@ -719,7 +719,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
@@ -728,7 +728,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
     public function addRelatedArtifact($relatedArtifact)
@@ -739,7 +739,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The type of evidence element, a population, an exposure, or an outcome.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREvidenceVariableType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREvidenceVariableType
      */
     public function getType()
     {
@@ -748,7 +748,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The type of evidence element, a population, an exposure, or an outcome.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREvidenceVariableType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREvidenceVariableType $type
      * @return $this
      */
     public function setType($type)
@@ -759,7 +759,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A characteristic that defines the members of the evidence element. Multiple characteristics are applied with "and" semantics.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic[]
      */
     public function getCharacteristic()
     {
@@ -768,7 +768,7 @@ class FHIREvidenceVariable extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A characteristic that defines the members of the evidence element. Multiple characteristics are applied with "and" semantics.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $characteristic
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $characteristic
      * @return $this
      */
     public function addCharacteristic($characteristic)

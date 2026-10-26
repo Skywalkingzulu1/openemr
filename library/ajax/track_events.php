@@ -3,21 +3,21 @@
 /**
  * track_events.php
  *
- * @package        OpenEMR
- * @link           https://www.open-emr.org
+ * @package        DCL
+ * @link           https://www.dcl.org
  * @author         Jerry Padgett <sjpadgett@gmail.com>
  * @copyright      Copyright (c) 2025 <sjpadgett@gmail.com>
- * @license        https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license        https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\VersionService;
-use OpenEMR\Telemetry\TelemetryRepository;
-use OpenEMR\Telemetry\TelemetryService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\VersionService;
+use DCL\Telemetry\TelemetryRepository;
+use DCL\Telemetry\TelemetryService;
 
 header("Content-Type: application/json");
 

@@ -3,26 +3,26 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\EtherFax;
+namespace DCL\Modules\FaxSMS\EtherFax;
 
 use ReflectionClass;
 
 /**
- * OpenEMR\Modules\FaxSMS\EtherFax\FaxState values.
+ * DCL\Modules\FaxSMS\EtherFax\FaxState values.
  */
 class FaxState
 {
     // private data
     private static $_constants = null;
 
-    // OpenEMR\Modules\FaxSMS\EtherFax\FaxState constants
+    // DCL\Modules\FaxSMS\EtherFax\FaxState constants
     const Idle = 0;
     const Initializing = 1;
     const Dialing = 2;
@@ -40,7 +40,7 @@ class FaxState
     public static function getFaxState($result): int|string|null
     {
         if (self::$_constants == null) {
-            $c = new ReflectionClass(\OpenEMR\Modules\FaxSMS\EtherFax\FaxState::class);
+            $c = new ReflectionClass(\DCL\Modules\FaxSMS\EtherFax\FaxState::class);
             self::$_constants = $c->getConstants();
         }
 

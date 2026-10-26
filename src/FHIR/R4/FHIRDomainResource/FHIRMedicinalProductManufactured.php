@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The manufactured item as contained in the packaged medicinal product.
@@ -72,43 +72,43 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 {
     /**
      * Dose form as manufactured and before any transformation into the pharmaceutical product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $manufacturedDoseForm = null;
 
     /**
      * The “real world” units in which the quantity of the manufactured item is described.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unitOfPresentation = null;
 
     /**
      * The quantity or "count number" of the manufactured item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * Manufacturer of the item (Note that this should be named "manufacturer" but it currently causes technical issues).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $manufacturer = [];
 
     /**
      * Ingredient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $ingredient = [];
 
     /**
      * Dimensions, color etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProdCharacteristic
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProdCharacteristic
      */
     public $physicalCharacteristics = null;
 
     /**
      * Other codeable characteristics.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $otherCharacteristics = [];
 
@@ -119,7 +119,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Dose form as manufactured and before any transformation into the pharmaceutical product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getManufacturedDoseForm()
     {
@@ -128,7 +128,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Dose form as manufactured and before any transformation into the pharmaceutical product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $manufacturedDoseForm
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $manufacturedDoseForm
      * @return $this
      */
     public function setManufacturedDoseForm($manufacturedDoseForm)
@@ -139,7 +139,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * The “real world” units in which the quantity of the manufactured item is described.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfPresentation()
     {
@@ -148,7 +148,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * The “real world” units in which the quantity of the manufactured item is described.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfPresentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfPresentation
      * @return $this
      */
     public function setUnitOfPresentation($unitOfPresentation)
@@ -159,7 +159,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * The quantity or "count number" of the manufactured item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -168,7 +168,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * The quantity or "count number" of the manufactured item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -179,7 +179,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Manufacturer of the item (Note that this should be named "manufacturer" but it currently causes technical issues).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getManufacturer()
     {
@@ -188,7 +188,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Manufacturer of the item (Note that this should be named "manufacturer" but it currently causes technical issues).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function addManufacturer($manufacturer)
@@ -199,7 +199,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Ingredient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getIngredient()
     {
@@ -208,7 +208,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Ingredient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $ingredient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)
@@ -219,7 +219,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Dimensions, color etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProdCharacteristic
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProdCharacteristic
      */
     public function getPhysicalCharacteristics()
     {
@@ -228,7 +228,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Dimensions, color etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProdCharacteristic $physicalCharacteristics
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProdCharacteristic $physicalCharacteristics
      * @return $this
      */
     public function setPhysicalCharacteristics($physicalCharacteristics)
@@ -239,7 +239,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Other codeable characteristics.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getOtherCharacteristics()
     {
@@ -248,7 +248,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements \Js
 
     /**
      * Other codeable characteristics.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
      * @return $this
      */
     public function addOtherCharacteristics($otherCharacteristics)

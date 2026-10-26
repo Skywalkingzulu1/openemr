@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 ##
-# SMART-launch smoke orchestrator (openemr/openemr#14529).
+# SMART-launch smoke orchestrator (DCL/DCL#14529).
 #
-# Boots the ci/smart-launch compose stack, installs openemr via
+# Boots the ci/smart-launch compose stack, installs DCL via
 # install_configure (shared with inferno), stages upstream master of
-# openemr/oe-smart-questionnaire into the openemr container, enables
-# OpenEMR's REST + FHIR API globals, loads demo data (patients the
+# DCL/oe-smart-questionnaire into the DCL container, enables
+# DCL's REST + FHIR API globals, loads demo data (patients the
 # `launch/patient` scope requires), registers an OAuth client via the
 # app's own `bin/register.php`, enables that client, and runs the
 # smart-launch PHPUnit test which drives the SMART launch end-to-end
@@ -20,26 +20,26 @@
 #   the stack up for inspection.
 #
 # Local iteration: this orchestrator brings up its own dedicated compose
-# stack (openemr + mysql + selenium), so it doesn't share state with a
+# stack (DCL + mysql + selenium), so it doesn't share state with a
 # dev-easy worktree. For faster iteration on just the test file against
 # an already-up stack, drive phpunit directly inside the worktree's
-# openemr container — the stack needs selenium, so use
-# `openemr-cmd worktree add <branch> -b --start --env easy` (NOT
+# DCL container — the stack needs selenium, so use
+# `DCL-cmd worktree add <branch> -b --start --env easy` (NOT
 # easy-light, which drops Selenium/CouchDB/Mailpit and leaves this
 # smoke unable to reach the WebDriver endpoint it depends on).
 #
-# @package   OpenEMR
-# @link      https://www.open-emr.org
+# @package   DCL
+# @link      https://www.dcl.org
 # @author    Brady Miller <brady.g.miller@gmail.com>
 # @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
-# @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+# @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 
 set -xeuo pipefail
 
-initialize_openemr() {
-    echo 'Initializing OpenEMR'
+initialize_DCL() {
+    echo 'Initializing DCL'
     local -x DOCKER_DIR=smart-launch
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x DCL_DIR=/var/www/localhost/htdocs/DCL
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
     cd -P "${repo_root}"
@@ -54,9 +54,9 @@ initialize_openemr() {
     # launch/patient scope requires) via the flex image's demoData
     # function; its post-reseed re-apply of globals is still just
     # rest_api/rest_fhir_api/..., so site_addr_oath remains unset
-    # until enable_openemr_api runs below.
+    # until enable_DCL_api runs below.
     post_install_upgrade
-    echo 'OpenEMR initialized'
+    echo 'DCL initialized'
 }
 
 stage_smart_questionnaire_app() {
@@ -81,10 +81,10 @@ stage_smart_questionnaire_app() {
     #
     # GitHub's tarball endpoint returns the repo tarball at the ref.
     # The top-level directory inside the archive is
-    # openemr-oe-smart-questionnaire-<short-sha>/, which strip-components=1
+    # DCL-oe-smart-questionnaire-<short-sha>/, which strip-components=1
     # peels off, leaving public/, src/, bin/, etc. directly under appdir.
     curl -sSfL \
-        "https://api.github.com/repos/openemr/oe-smart-questionnaire/tarball/master" \
+        "https://api.github.com/repos/DCL/oe-smart-questionnaire/tarball/master" \
         -o "${tarball}"
     tar -xzf "${tarball}" --strip-components=1 -C "${appdir}"
     rm -f "${tarball}"
@@ -97,12 +97,12 @@ stage_smart_questionnaire_app() {
 }
 
 configure_smart_questionnaire_in_container() {
-    echo 'Configuring staged SMART app inside the openemr container'
+    echo 'Configuring staged SMART app inside the DCL container'
     # var/ must be writable by apache so bin/register.php can write
     # clients.json. Flex image's apache user has uid=1000 (= host CI
     # user), so files apache writes are host-readable without further
     # dance.
-    docker compose exec -T openemr sh -c '
+    docker compose exec -T DCL sh -c '
         chown -R apache:apache /opt/oe-smart-questionnaire/app/var
         chmod 0700 /opt/oe-smart-questionnaire/app/var
     '
@@ -111,14 +111,14 @@ configure_smart_questionnaire_in_container() {
     # /etc/apache2/conf.d by the compose bind mount. apachectl graceful
     # is the no-dropped-request reload; httpd -k graceful is the
     # fallback path (name differs across Apache builds).
-    docker compose exec -T openemr sh -c 'apachectl -k graceful 2>&1 || httpd -k graceful 2>&1'
+    docker compose exec -T DCL sh -c 'apachectl -k graceful 2>&1 || httpd -k graceful 2>&1'
 
     # Quick sanity: launch.php with no params should render (not 404 /
     # 500). Clients are not registered yet so it will show the "No FHIR
     # servers registered" notice; 200 proves the Alias + PHP both work.
     local probe_status
-    probe_status=$(docker compose exec -T openemr sh -c \
-        'curl -sSk -o /dev/null -w "%{http_code}" https://openemr/smart-questionnaire/launch.php')
+    probe_status=$(docker compose exec -T DCL sh -c \
+        'curl -sSk -o /dev/null -w "%{http_code}" https://DCL/smart-questionnaire/launch.php')
     if [[ "${probe_status}" != '200' ]]; then
         echo "ERROR: /smart-questionnaire/launch.php returned ${probe_status} after apache reload"
         return 1
@@ -134,7 +134,7 @@ set_smoke_globals() {
     # smoke needs:
     #   - site_addr_oath: the OAuth2 issuer URL. For this smoke it
     #     must match what both the browser (via selenium) and the SMART
-    #     app's server-side PHP use to reach OpenEMR — the compose-
+    #     app's server-side PHP use to reach DCL — the compose-
     #     network service alias.
     #   - smart_context_test_launches: toggles the "Test Launches" card
     #     on interface/patient_file/assessment/fhir_assessments.php
@@ -143,8 +143,8 @@ set_smoke_globals() {
     #     interface/smart/ehr-launch-client.php with the client_id +
     #     csrf_token + intent those buttons expose; off-by-default
     #     elsewhere so no production footprint from flipping it here.
-    docker compose exec -T mysql mariadb -u root --password=root openemr -e "
-        INSERT INTO globals (gl_name, gl_index, gl_value) VALUES ('site_addr_oath', 0, 'https://openemr')
+    docker compose exec -T mysql mariadb -u root --password=root DCL -e "
+        INSERT INTO globals (gl_name, gl_index, gl_value) VALUES ('site_addr_oath', 0, 'https://DCL')
           ON DUPLICATE KEY UPDATE gl_value=VALUES(gl_value);
         INSERT INTO globals (gl_name, gl_index, gl_value) VALUES ('smart_context_test_launches', 0, '1')
           ON DUPLICATE KEY UPDATE gl_value=VALUES(gl_value);
@@ -164,7 +164,7 @@ seed_smoke_questionnaire() {
     # questionnaire' so the test can match by stable identifier. UUID
     # is MySQL-generated per run (not written to the FHIR body
     # overrides — the service layer uses the row's binary uuid).
-    docker compose exec -T mysql mariadb -u root --password=root openemr -e "
+    docker compose exec -T mysql mariadb -u root --password=root DCL -e "
         INSERT INTO questionnaire_repository
           (uuid, questionnaire_id, name, version, type, active, status, questionnaire)
         VALUES (
@@ -182,26 +182,26 @@ seed_smoke_questionnaire() {
 
 register_smart_client() {
     echo 'Running oe-smart-questionnaire bin/register.php --all'
-    # DCR against the running OpenEMR via the app's own CLI entry point.
+    # DCR against the running DCL via the app's own CLI entry point.
     # Non-interactive; no admin password needed (bin/register.php never
     # consults admin.json — that gate is only for public/admin.php).
-    docker compose exec -T openemr sh -c '
+    docker compose exec -T DCL sh -c '
         cd /opt/oe-smart-questionnaire/app && php bin/register.php --all
         chown -R apache:apache var
     '
-    # OpenEMR registers all clients disabled. Flip is_enabled=1 so the
+    # DCL registers all clients disabled. Flip is_enabled=1 so the
     # SMART launch can actually use it. Match on client_name (the only
     # stable identifier we have — register.php chooses the client_id).
-    docker compose exec -T mysql mariadb -u root --password=root openemr -e "
+    docker compose exec -T mysql mariadb -u root --password=root DCL -e "
         UPDATE oauth_clients SET is_enabled=1
-         WHERE client_name LIKE 'OpenEMR SMART Questionnaire smoke%';
+         WHERE client_name LIKE 'DCL SMART Questionnaire smoke%';
     "
 }
 
 run_smart_launch_test() {
     echo 'Running SMART-launch acceptance smoke'
     local -x DOCKER_DIR=smart-launch
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x DCL_DIR=/var/www/localhost/htdocs/DCL
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
     local compose_file="${repo_root}/ci/smart-launch/compose.yml"
@@ -212,7 +212,7 @@ run_smart_launch_test() {
 
     phpunit --testsuite smart-launch \
             --log-junit junit-smart-launch.xml \
-            -c "${OPENEMR_DIR}/phpunit.xml"
+            -c "${DCL_DIR}/phpunit.xml"
 }
 
 main() {
@@ -237,7 +237,7 @@ main() {
     # subsequent runs. .gitkeep in stage/app/ keeps the dir around
     # across a fresh clone.
     stage_smart_questionnaire_app
-    initialize_openemr
+    initialize_DCL
     configure_smart_questionnaire_in_container
     set_smoke_globals
     seed_smoke_questionnaire

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCodeSystem;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -71,19 +71,19 @@ class FHIRCodeSystemDesignation extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * The language this designation is defined for.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $language = null;
 
     /**
      * A code that details how this designation would be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $use = null;
 
     /**
      * The text value for this designation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
@@ -94,7 +94,7 @@ class FHIRCodeSystemDesignation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The language this designation is defined for.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getLanguage()
     {
@@ -103,7 +103,7 @@ class FHIRCodeSystemDesignation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The language this designation is defined for.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $language
      * @return $this
      */
     public function setLanguage($language)
@@ -114,7 +114,7 @@ class FHIRCodeSystemDesignation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A code that details how this designation would be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getUse()
     {
@@ -123,7 +123,7 @@ class FHIRCodeSystemDesignation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A code that details how this designation would be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $use
      * @return $this
      */
     public function setUse($use)
@@ -134,7 +134,7 @@ class FHIRCodeSystemDesignation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The text value for this designation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -143,7 +143,7 @@ class FHIRCodeSystemDesignation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The text value for this designation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)

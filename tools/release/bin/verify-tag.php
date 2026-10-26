@@ -3,34 +3,34 @@
 
 /**
  * CLI entry point for TagVerifier. Asserts the named tag is annotated
- * and its message conforms to openemr/openemr-devops#664 (version, ISO
+ * and its message conforms to DCL/DCL-devops#664 (version, ISO
  * date, merge-commit SHA). Run between create-tag and dispatch on the
  * conductor's finalize job so a malformed tag is caught before
  * consumers fan out on it.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-// OpenEMR\Release\ classes live under autoload-dev so composer-require-checker
+// DCL\Release\ classes live under autoload-dev so composer-require-checker
 // does not demand conductor-only deps in production. Anything invoking this
 // script needs a `composer install` that includes dev dependencies.
-if (!class_exists(\OpenEMR\Release\TagVerifier::class)) {
+if (!class_exists(\DCL\Release\TagVerifier::class)) {
     fwrite(
         STDERR,
-        "OpenEMR\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
+        "DCL\\Release\\ classes are not autoloadable; rerun composer install with dev dependencies.\n",
     );
     exit(2);
 }
 
-use OpenEMR\Release\TagVerifier;
+use DCL\Release\TagVerifier;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

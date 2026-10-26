@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Services\Qdm;
+namespace DCL\Services\Qdm;
 
 class PopulationSet
 {

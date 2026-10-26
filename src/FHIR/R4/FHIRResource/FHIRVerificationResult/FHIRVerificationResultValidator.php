@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult;
+namespace DCL\FHIR\R4\FHIRResource\FHIRVerificationResult;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes validation requirements, source(s), status and dates for one or more elements.
@@ -71,19 +71,19 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement implements \Js
 {
     /**
      * Reference to the organization validating information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $organization = null;
 
     /**
      * A digital identity certificate associated with the validator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $identityCertificate = null;
 
     /**
      * Signed assertion by the validator that they have validated the information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public $attestationSignature = null;
 
@@ -94,7 +94,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement implements \Js
 
     /**
      * Reference to the organization validating information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOrganization()
     {
@@ -103,7 +103,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement implements \Js
 
     /**
      * Reference to the organization validating information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $organization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $organization
      * @return $this
      */
     public function setOrganization($organization)
@@ -114,7 +114,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement implements \Js
 
     /**
      * A digital identity certificate associated with the validator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getIdentityCertificate()
     {
@@ -123,7 +123,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement implements \Js
 
     /**
      * A digital identity certificate associated with the validator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $identityCertificate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $identityCertificate
      * @return $this
      */
     public function setIdentityCertificate($identityCertificate)
@@ -134,7 +134,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement implements \Js
 
     /**
      * Signed assertion by the validator that they have validated the information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public function getAttestationSignature()
     {
@@ -143,7 +143,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement implements \Js
 
     /**
      * Signed assertion by the validator that they have validated the information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $attestationSignature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $attestationSignature
      * @return $this
      */
     public function setAttestationSignature($attestationSignature)

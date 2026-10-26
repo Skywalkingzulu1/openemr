@@ -1,10 +1,10 @@
 # C-CDA / QRDA Schematron Validation
 
 Pure-PHP schematron validation for C-CDA and QRDA documents. Replaces the
-`oe-schematron-service` / `oe-cda-schematron` Node.js sidecar that OpenEMR
+`oe-schematron-service` / `oe-cda-schematron` Node.js sidecar that DCL
 previously started on port 6662 and called over HTTP.
 
-Entry point for callers is `OpenEMR\Services\Cda\CdaValidateDocuments`; nothing
+Entry point for callers is `DCL\Services\Cda\CdaValidateDocuments`; nothing
 outside that class should need to construct a validator directly.
 
 ## Why it changed
@@ -160,7 +160,7 @@ Ported deliberately from `oe-cda-schematron`; do not "fix" these:
 reads `voc.xml`. Rebuild it when the upstream IG revision changes:
 
 ```bash
-php bin/console openemr:regen-schematron-vocab /path/to/oe-schematron-service --skip-globals
+php bin/console DCL:regen-schematron-vocab /path/to/oe-schematron-service --skip-globals
 ```
 
 The source checkout must contain `schematron/<type>/{*.sch,voc.xml}` for all three

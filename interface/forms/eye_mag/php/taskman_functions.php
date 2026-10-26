@@ -5,22 +5,22 @@
  *
  * Function which extend taskman.php, current a email-to-fax gateway
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * Copyright (C) 2016 Raymond Magauran <rmagauran@gmail.com>
  * @author    Ray Magauran <rmagauran@gmail.com>
  *
  * @copyright Copyright (c) 2016 Raymond Magauran <rmagauran@gmail.com>
  * LICENSE: This program is free software: you can redistribute it and/or modify
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 use Mpdf\Mpdf;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Pdf\Config_Mpdf;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Pdf\Config_Mpdf;
+use DCL\Services\FacilityService;
 
 $facilityService = new FacilityService();
 
@@ -371,7 +371,7 @@ function make_document($task)
     ob_start();
     ?><html>
     <head>
-        <TITLE><?php echo xlt('Taskman: Documents in openEMR'); ?></TITLE>
+        <TITLE><?php echo xlt('Taskman: Documents in DCL'); ?></TITLE>
         <style>
             .wrapper {
                 margin:20px;
@@ -559,7 +559,7 @@ mpdf-->
     }
 </style>';
 
-    $stylesheet = file_get_contents('/var/www/localhost/htdocs/openemr/interface/forms/eye_mag/css/report.css');
+    $stylesheet = file_get_contents('/var/www/localhost/htdocs/DCL/interface/forms/eye_mag/css/report.css');
 
     //$pdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
     $pdf->WriteHTML($header);

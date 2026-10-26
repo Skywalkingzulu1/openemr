@@ -2,7 +2,7 @@
 
 /**
  * DateSearchField.php  Holds the DateSearchField class which represents a date/datetime search field on a piece of
- * data contained in the OpenEMR system.  The search field will take in an array of values that are in the ISO8601 format
+ * data contained in the DCL system.  The search field will take in an array of values that are in the ISO8601 format
  * and parse them.  Fuzzy matching is supporting from left to right matching (in order of specificity ie a fuzzy search on
  * month must be preceded by year).  If a time component is specified both hours and minutes are required with seconds
  * being optional.  A value with no timezone is read in the server's timezone.
@@ -10,16 +10,16 @@
  * In order to support fuzzy matching (equality, greater than, greater than or equal to, etc) each value being searched
  * on is converted into a DatePeriod with a start and end date component.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Search;
+namespace DCL\Services\Search;
 
-use OpenEMR\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchFieldType;
 
 class DateSearchField extends BasicSearchField
 {
@@ -72,7 +72,7 @@ class DateSearchField extends BasicSearchField
 
     /**
      * DateSearchField constructor.  Constructs the object and parses all values into valid SearchFieldComparableValue objects
-     * that can be used by OpenEMR services to perform searches.
+     * that can be used by DCL services to perform searches.
      * @param $field
      * @param $values
      * @param bool $isAnd

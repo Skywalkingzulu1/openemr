@@ -188,7 +188,7 @@ RUN set -eux; \
 		\
 # in PHP 7.4+, the pecl/pear installers are officially deprecated (requiring an explicit "--with-pear")
 		--with-pear \
-# ADDED by OpenEMR to fix a downstream bug when installing this via install-php-extensions command
+# ADDED by DCL to fix a downstream bug when installing this via install-php-extensions command
         --with-pdo-mysql \
 		\
 # bundled pcre does not support JIT on s390x

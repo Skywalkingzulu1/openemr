@@ -72,7 +72,7 @@ teardown() {
 
 @test "downloadCount-only change does NOT alter release hash (mutation-noise strip)" {
     # Baseline with 2 assets, downloadCount=0.
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"openemr-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:aaaa"},{"name":"SHA256SUMS","size":45,"downloadCount":0,"digest":"sha256:bbbb"}]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"DCL-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:aaaa"},{"name":"SHA256SUMS","size":45,"downloadCount":0,"digest":"sha256:bbbb"}]}'
     run bash "${RECOVERY_SMOKETEST_BASELINE_SCRIPT}"
     [[ ${status} -eq 0 ]]
     local first_hash
@@ -81,7 +81,7 @@ teardown() {
     # Same assets, downloadCount bumped (as would happen after a
     # smoketest downloaded the tarball). All other fields identical.
     : > "${GITHUB_ENV}"
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"openemr-8.4.0.tar.gz","size":123,"downloadCount":42,"digest":"sha256:aaaa"},{"name":"SHA256SUMS","size":45,"downloadCount":17,"digest":"sha256:bbbb"}]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"DCL-8.4.0.tar.gz","size":123,"downloadCount":42,"digest":"sha256:aaaa"},{"name":"SHA256SUMS","size":45,"downloadCount":17,"digest":"sha256:bbbb"}]}'
     run bash "${RECOVERY_SMOKETEST_BASELINE_SCRIPT}"
     [[ ${status} -eq 0 ]]
     local second_hash
@@ -93,7 +93,7 @@ teardown() {
 @test "asset digest change DOES alter release hash (real mutation still caught)" {
     # Sanity companion to the downloadCount test: the projection
     # strips ONLY downloadCount -- other asset fields still matter.
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"openemr-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:aaaa"}]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"DCL-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:aaaa"}]}'
     run bash "${RECOVERY_SMOKETEST_BASELINE_SCRIPT}"
     [[ ${status} -eq 0 ]]
     local first_hash
@@ -101,7 +101,7 @@ teardown() {
 
     # digest changed (simulates `gh release upload --clobber`).
     : > "${GITHUB_ENV}"
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"openemr-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:CCCC"}]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[{"name":"DCL-8.4.0.tar.gz","size":123,"downloadCount":0,"digest":"sha256:CCCC"}]}'
     run bash "${RECOVERY_SMOKETEST_BASELINE_SCRIPT}"
     [[ ${status} -eq 0 ]]
     local second_hash
@@ -133,7 +133,7 @@ teardown() {
     first_hash=$(grep 'BASELINE_RELEASE_HASH=' "${GITHUB_ENV}" | cut -d= -f2)
 
     # Change the Release payload (simulates gh release edit --title).
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0 (edited)","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0 (edited)","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
     : > "${GITHUB_ENV}"
     run bash "${RECOVERY_SMOKETEST_BASELINE_SCRIPT}"
     [[ ${status} -eq 0 ]]

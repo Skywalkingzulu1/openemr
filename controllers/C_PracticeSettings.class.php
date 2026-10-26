@@ -3,16 +3,16 @@
 /**
  * Practice Settings controller.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR contributors
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) OpenEMR contributors
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL contributors
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) DCL contributors
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class C_PracticeSettings extends Controller
 {

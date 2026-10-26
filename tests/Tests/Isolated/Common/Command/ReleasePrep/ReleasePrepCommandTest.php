@@ -1,30 +1,30 @@
 <?php
 
 /**
- * Tests the orchestration of openemr:release-prep: option parsing,
+ * Tests the orchestration of DCL:release-prep: option parsing,
  * scope dispatching, and the order in which mutators are invoked.
  * Mutators themselves are exercised by MutatorTest.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command\ReleasePrep;
+namespace DCL\Tests\Isolated\Common\Command\ReleasePrep;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\DockerComposeProductionMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\GlobalsIncMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\OpenApiVersionMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\SwaggerRegenMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\VersionPhpMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
-use OpenEMR\Common\Command\ReleasePrepCommand;
+use DCL\Common\Command\ReleasePrep\Mutator\DockerComposeProductionMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\GlobalsIncMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\OpenApiVersionMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\SwaggerRegenMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\VersionPhpMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrepCommand;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -147,7 +147,7 @@ final class ReleasePrepCommandTest extends TestCase
         $command = new ReleasePrepCommand($relMutators, $masterMutators);
         $app = new Application();
         $app->addCommand($command);
-        return new CommandTester($app->find('openemr:release-prep'));
+        return new CommandTester($app->find('DCL:release-prep'));
     }
 
     /**

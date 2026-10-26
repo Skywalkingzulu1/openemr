@@ -5,22 +5,22 @@
  *
  * Tests the database key generation portion of KeyV7Generator.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\BC\Crypto;
+namespace DCL\Tests\Isolated\BC\Crypto;
 
-use OpenEMR\BC\Crypto\KeyV7Generator;
-use OpenEMR\Encryption\Cipher\Aes256CbcHmacSha384;
-use OpenEMR\Encryption\Plaintext;
-use OpenEMR\Encryption\Storage\KeyMaterialId;
-use OpenEMR\Tests\Fixtures\InMemoryKeyStorage;
+use DCL\BC\Crypto\KeyV7Generator;
+use DCL\Encryption\Cipher\Aes256CbcHmacSha384;
+use DCL\Encryption\Plaintext;
+use DCL\Encryption\Storage\KeyMaterialId;
+use DCL\Tests\Fixtures\InMemoryKeyStorage;
 use PHPUnit\Framework\TestCase;
 
 final class KeyV7GeneratorTest extends TestCase

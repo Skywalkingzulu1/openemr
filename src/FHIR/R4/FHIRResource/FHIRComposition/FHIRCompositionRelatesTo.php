@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRComposition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRComposition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRComposition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical package that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
@@ -71,17 +71,17 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * The type of relationship that this composition has with anther composition or document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
      */
     public $code = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $targetIdentifier = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $targetReference = null;
 
@@ -92,7 +92,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The type of relationship that this composition has with anther composition or document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType
      */
     public function getCode()
     {
@@ -101,7 +101,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The type of relationship that this composition has with anther composition or document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDocumentRelationshipType $code
      * @return $this
      */
     public function setCode($code)
@@ -111,7 +111,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getTargetIdentifier()
     {
@@ -119,7 +119,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $targetIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $targetIdentifier
      * @return $this
      */
     public function setTargetIdentifier($targetIdentifier)
@@ -129,7 +129,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTargetReference()
     {
@@ -137,7 +137,7 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $targetReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $targetReference
      * @return $this
      */
     public function setTargetReference($targetReference)

@@ -3,8 +3,8 @@
 /**
  * This script assigns ACL 'Emergency login'.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Roberto Vasquez <robertogagliotta@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Daniel Pflieger <daniel@mi-squared.com> <daniel@growlingflea.com>
@@ -17,24 +17,24 @@
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2022-2023 Robert Down <robertdown@live.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\User\UserCreatedEvent;
-use OpenEMR\Events\User\UserUpdatedEvent;
-use OpenEMR\Services\UserService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\User\UserCreatedEvent;
+use DCL\Events\User\UserUpdatedEvent;
+use DCL\Services\UserService;
+use DCL\Services\Utils\DateFormatterUtils;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_REQUEST)) {
@@ -86,9 +86,9 @@ if (!empty($_POST['access_group']) && is_array($_POST['access_group'])) {
                 $uname = $row['username'];
                 $mail = new MyMailer();
                 $mail->From = OEGlobalsBag::getInstance()->getString("practice_return_email_path");
-                $mail->FromName = "Administrator OpenEMR";
+                $mail->FromName = "Administrator DCL";
                 $text_body = "Hello Security Admin,\n\n The Emergency Login user " . $uname .
-                    " was activated at " . date('l jS \of F Y h:i:s A') . " \n\nThanks,\nAdmin OpenEMR.";
+                    " was activated at " . date('l jS \of F Y h:i:s A') . " \n\nThanks,\nAdmin DCL.";
                 $mail->Body = $text_body;
                 $mail->Subject = "Emergency Login User Activated";
                 $mail->AddAddress($_POST['admin_id']);

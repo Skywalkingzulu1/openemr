@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical origins as well as the fraction of a material that can result in or can be modified to form a substance. This set of data elements shall be used to define polymer substances isolated from biological matrices. Taxonomic and anatomical origins shall be described using a controlled vocabulary as required. This information is captured for naturally derived polymers ( . starch) and structurally diverse substances. For Organisms belonging to the Kingdom Plantae the Substance level defines the fresh material of a single species or infraspecies, the Herbal Drug and the Herbal preparation. For Herbal preparations, the fraction information will be captured at the Substance information level and additional information for herbal extracts will be captured at the Specified Substance Group 1 information level. See for further explanation the Substance Class: Structurally Diverse and the herbal annex.
@@ -71,31 +71,31 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 {
     /**
      * The identifier of the maternal species constituting the hybrid organism shall be specified based on a controlled vocabulary. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $maternalOrganismId = null;
 
     /**
      * The name of the maternal species constituting the hybrid organism shall be specified. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $maternalOrganismName = null;
 
     /**
      * The identifier of the paternal species constituting the hybrid organism shall be specified based on a controlled vocabulary.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $paternalOrganismId = null;
 
     /**
      * The name of the paternal species constituting the hybrid organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $paternalOrganismName = null;
 
     /**
      * The hybrid type of an organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $hybridType = null;
 
@@ -106,7 +106,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The identifier of the maternal species constituting the hybrid organism shall be specified based on a controlled vocabulary. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMaternalOrganismId()
     {
@@ -115,7 +115,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The identifier of the maternal species constituting the hybrid organism shall be specified based on a controlled vocabulary. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $maternalOrganismId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $maternalOrganismId
      * @return $this
      */
     public function setMaternalOrganismId($maternalOrganismId)
@@ -126,7 +126,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The name of the maternal species constituting the hybrid organism shall be specified. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMaternalOrganismName()
     {
@@ -135,7 +135,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The name of the maternal species constituting the hybrid organism shall be specified. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $maternalOrganismName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $maternalOrganismName
      * @return $this
      */
     public function setMaternalOrganismName($maternalOrganismName)
@@ -146,7 +146,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The identifier of the paternal species constituting the hybrid organism shall be specified based on a controlled vocabulary.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPaternalOrganismId()
     {
@@ -155,7 +155,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The identifier of the paternal species constituting the hybrid organism shall be specified based on a controlled vocabulary.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $paternalOrganismId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $paternalOrganismId
      * @return $this
      */
     public function setPaternalOrganismId($paternalOrganismId)
@@ -166,7 +166,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The name of the paternal species constituting the hybrid organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPaternalOrganismName()
     {
@@ -175,7 +175,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The name of the paternal species constituting the hybrid organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $paternalOrganismName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $paternalOrganismName
      * @return $this
      */
     public function setPaternalOrganismName($paternalOrganismName)
@@ -186,7 +186,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The hybrid type of an organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getHybridType()
     {
@@ -195,7 +195,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement implements \
 
     /**
      * The hybrid type of an organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $hybridType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $hybridType
      * @return $this
      */
     public function setHybridType($hybridType)

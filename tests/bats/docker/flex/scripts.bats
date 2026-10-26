@@ -1,4 +1,4 @@
-# BATS tests for OpenEMR Docker flex bash scripts
+# BATS tests for DCL Docker flex bash scripts
 
 load '../helpers'
 
@@ -11,25 +11,25 @@ setup() {
     [[ -d "$SCRIPT_DIR" ]]
 }
 
-@test "flex: openemr.sh exists and has valid syntax" {
-    assert_script_syntax "${SCRIPT_DIR}/openemr.sh"
+@test "flex: DCL.sh exists and has valid syntax" {
+    assert_script_syntax "${SCRIPT_DIR}/DCL.sh"
 }
 
-@test "flex: openemr.sh is executable" {
-    # A functional test that invokes openemr.sh directly gets exit 126 and
+@test "flex: DCL.sh is executable" {
+    # A functional test that invokes DCL.sh directly gets exit 126 and
     # "Permission denied" without the mode bit, which is quiet enough to
     # satisfy a loose assertion and leave the test passing for the wrong
     # reason. Pin the bit so the next such test measures what it claims to.
-    [[ -x "${SCRIPT_DIR}/openemr.sh" ]]
+    [[ -x "${SCRIPT_DIR}/DCL.sh" ]]
 }
 
-@test "flex: openemr.sh uses bash and sources devtoolsLibrary" {
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'devtoolsLibrary.source'
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'set -euo pipefail'
+@test "flex: DCL.sh uses bash and sources devtoolsLibrary" {
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'devtoolsLibrary.source'
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'set -euo pipefail'
 }
 
-@test "flex: openemr.sh references FLEX_REPOSITORY" {
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'FLEX_REPOSITORY'
+@test "flex: DCL.sh references FLEX_REPOSITORY" {
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'FLEX_REPOSITORY'
 }
 
 @test "flex: ssl.sh exists and has valid syntax" {

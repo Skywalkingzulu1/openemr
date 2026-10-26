@@ -3,20 +3,20 @@
 /**
  * Tests for CORSListener.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Subscriber;
+namespace DCL\Tests\Isolated\RestControllers\Subscriber;
 
-use OpenEMR\Common\Auth\OpenIDConnect\CORSAllowedOriginRegistry;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\Subscriber\CORSListener;
+use DCL\Common\Auth\OpenIDConnect\CORSAllowedOriginRegistry;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\Subscriber\CORSListener;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;

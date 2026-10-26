@@ -12,9 +12,9 @@ version: '3'
 #
 #   cd tools/release
 #   task preflight MILESTONE=8.2.0
-#   task package:assemble VERSION=8.2.0 OPENEMR_DIR="$(pwd)/../.."
+#   task package:assemble VERSION=8.2.0 DCL_DIR="$(pwd)/../.."
 #
-# PHP dependencies come from the top-level openemr composer.json and
+# PHP dependencies come from the top-level DCL composer.json and
 # vendor/ (bin scripts load via `dirname(__DIR__, 3) . '/vendor/autoload.php'`).
 # Run `composer install` from the repo root once before invoking any task
 # locally; CI handles it via the setup-php-composer composite action
@@ -22,19 +22,19 @@ version: '3'
 
 vars:
   OUTPUT_DIR: '{{.OUTPUT_DIR | default "./release-output"}}'
-  REPO: '{{.REPO | default "openemr/openemr"}}'
+  REPO: '{{.REPO | default "DCL/DCL"}}'
 
 tasks:
   changelog:extract:
-    desc: Extract a single version's section from openemr's CHANGELOG.md
+    desc: Extract a single version's section from DCL's CHANGELOG.md
     requires:
-      vars: [VERSION, OPENEMR_DIR]
+      vars: [VERSION, DCL_DIR]
     cmds:
     - mkdir -p {{shellQuote .OUTPUT_DIR}}
     - >-
       php bin/extract-changelog-section.php
       --release-version={{shellQuote .VERSION}}
-      --changelog={{shellQuote .OPENEMR_DIR}}/CHANGELOG.md
+      --changelog={{shellQuote .DCL_DIR}}/CHANGELOG.md
       --output={{shellQuote .OUTPUT_DIR}}/changelog.md
 
   changelog:
@@ -65,7 +65,7 @@ tasks:
     requires:
       vars: [FILE]
     # Run from OUTPUT_DIR and checksum the basename FILE so the sidecar records
-    # `openemr-x.tar.gz`, not `release-output/openemr-x.tar.gz`. Otherwise
+    # `DCL-x.tar.gz`, not `release-output/DCL-x.tar.gz`. Otherwise
     # `sha256sum -c` fails once users download the assets into a flat directory
     # and the recorded path's `release-output/` prefix is absent.
     dir: '{{.OUTPUT_DIR}}'
@@ -77,25 +77,25 @@ tasks:
   package:assemble:
     desc: Build the full distribution tarball + zip for an official release
     requires:
-      vars: [VERSION, OPENEMR_DIR]
+      vars: [VERSION, DCL_DIR]
     cmds:
     - >-
       php bin/package-assemble.php
       --release-version={{shellQuote .VERSION}}
-      --openemr-dir={{shellQuote .OPENEMR_DIR}}
+      --DCL-dir={{shellQuote .DCL_DIR}}
       --output-dir={{shellQuote .OUTPUT_DIR}}
 
   patch:assemble:
     desc: Build cumulative patch zip from diff between tags
     requires:
-      vars: [START_TAG, BRANCH, FILENAME, OPENEMR_DIR]
+      vars: [START_TAG, BRANCH, FILENAME, DCL_DIR]
     cmds:
     - >-
       php bin/patch-assemble.php
       --start-tag={{shellQuote .START_TAG}}
       --branch={{shellQuote .BRANCH}}
       --filename={{shellQuote .FILENAME}}
-      --openemr-dir={{shellQuote .OPENEMR_DIR}}
+      --DCL-dir={{shellQuote .DCL_DIR}}
       --output-dir={{shellQuote .OUTPUT_DIR}}
       {{if .COPY_STYLES}}--copy-styles{{end}}
 

@@ -20,17 +20,17 @@
  * along with this program. If not, see
  * http://www.gnu.org/licenses/licenses.html#GPL .
  *
- * @package OpenEMR
+ * @package DCL
  * @license http://www.gnu.org/licenses/licenses.html#GPL GNU GPL V3+
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2013-2021 Rod Roark <rod@sunsetsystems.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 // Get a list item's title, translated if appropriate.
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 function getAdjustTitle($option)
 {

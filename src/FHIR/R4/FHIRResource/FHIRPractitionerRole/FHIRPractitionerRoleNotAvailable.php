@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPractitionerRole;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPractitionerRole;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.
@@ -71,13 +71,13 @@ class FHIRPractitionerRoleNotAvailable extends FHIRBackboneElement implements \J
 {
     /**
      * The reason that can be presented to the user as to why this time is not available.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Service is not available (seasonally or for a public holiday) from this date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $during = null;
 
@@ -88,7 +88,7 @@ class FHIRPractitionerRoleNotAvailable extends FHIRBackboneElement implements \J
 
     /**
      * The reason that can be presented to the user as to why this time is not available.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -97,7 +97,7 @@ class FHIRPractitionerRoleNotAvailable extends FHIRBackboneElement implements \J
 
     /**
      * The reason that can be presented to the user as to why this time is not available.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -108,7 +108,7 @@ class FHIRPractitionerRoleNotAvailable extends FHIRBackboneElement implements \J
 
     /**
      * Service is not available (seasonally or for a public holiday) from this date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getDuring()
     {
@@ -117,7 +117,7 @@ class FHIRPractitionerRoleNotAvailable extends FHIRBackboneElement implements \J
 
     /**
      * Service is not available (seasonally or for a public holiday) from this date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $during
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $during
      * @return $this
      */
     public function setDuring($during)

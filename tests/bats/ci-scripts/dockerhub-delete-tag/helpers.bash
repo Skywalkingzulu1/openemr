@@ -52,7 +52,7 @@ setup_test_dir() {
     export DOCKERHUB_USERNAME="test-user"
     export DOCKERHUB_TOKEN="test-token"
     export TAG="release-candidate-12345-1"
-    # REPO defaults to openemr/openemr in the script itself, so leave it
+    # REPO defaults to DCL/DCL in the script itself, so leave it
     # unset here to exercise that default path.
     unset REPO
 

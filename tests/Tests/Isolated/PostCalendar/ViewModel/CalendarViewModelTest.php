@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\PostCalendar\ViewModel;
+namespace DCL\Tests\Isolated\PostCalendar\ViewModel;
 
-use OpenEMR\PostCalendar\ViewModel\CalendarViewModel;
-use OpenEMR\PostCalendar\ViewModel\ViewType;
+use DCL\PostCalendar\ViewModel\CalendarViewModel;
+use DCL\PostCalendar\ViewModel\ViewType;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -1087,7 +1087,7 @@ final class CalendarViewModelTest extends TestCase
             'facility_row'           => ['name' => 'Main Clinic', 'id' => 1, 'color' => '#ffffff'],
         ];
 
-        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/openemr');
+        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/DCL');
 
         self::assertSame('12am&nbsp;VACATION', $result['content']);
         self::assertStringContainsString('Main Clinic', $result['tooltip']);
@@ -1115,7 +1115,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'      => "<a class='event_time'>9:30am</a>",
         ];
 
-        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 4, '/tpl/img', '/openemr');
+        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 4, '/tpl/img', '/DCL');
 
         // Patient link anchor with picture hover ShowImage(...)
         self::assertStringContainsString("data-pid='42'", $result['content']);
@@ -1147,7 +1147,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'         => "<a class='event_time'>2pm</a>",
         ];
 
-        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/openemr');
+        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/DCL');
 
         // Group session uses user-blue.gif and goGid()
         self::assertStringContainsString('user-blue.gif', $result['content']);
@@ -1176,7 +1176,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'         => "<a class='event_time'>12am</a>",
         ];
 
-        $result = $vm->buildMonthScreenEventContent($event, '2026-12-24', 1, '/tpl/img', '/openemr');
+        $result = $vm->buildMonthScreenEventContent($event, '2026-12-24', 1, '/tpl/img', '/DCL');
 
         // catid 7: content is xlt(event.title), NOT catname
         self::assertSame('Christmas Eve', $result['content']);
@@ -1199,7 +1199,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'         => "<a class='event_time'>9am</a>",
         ];
 
-        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/openemr');
+        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/DCL');
 
         // Fallback: text(xl_appt_category(catname)) appended to time anchor
         self::assertStringContainsString('Office Visit', $result['content']);
@@ -1227,7 +1227,7 @@ final class CalendarViewModelTest extends TestCase
         ];
 
         // Style 1 = lname only, so the strike wraps just "Doe".
-        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/openemr');
+        $result = $vm->buildMonthScreenEventContent($event, '2026-03-15', 1, '/tpl/img', '/DCL');
 
         self::assertStringContainsString('<s>Doe</s>', $result['content']);
     }
@@ -1248,7 +1248,7 @@ final class CalendarViewModelTest extends TestCase
             'facility_row' => ['name' => 'Main Clinic', 'id' => 1, 'color' => '#fff'],
         ];
 
-        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/openemr', true);
+        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/DCL', true);
 
         self::assertStringNotContainsString("<span class='appointment'>", $result['content']);
         self::assertStringStartsWith('VACATION', $result['content']);
@@ -1272,7 +1272,7 @@ final class CalendarViewModelTest extends TestCase
             'facility_row' => ['name' => '', 'id' => 0, 'color' => ''],
         ];
 
-        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/openemr', true);
+        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/DCL', true);
 
         self::assertStringContainsString("class='border-0'", $result['content']);
     }
@@ -1299,7 +1299,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'      => "<a class='event_time'>9:30</a>",
         ];
 
-        $result = $vm->buildDayScreenEventContent($event, 2, '/tpl/img', '/openemr', true);
+        $result = $vm->buildDayScreenEventContent($event, 2, '/tpl/img', '/DCL', true);
 
         self::assertStringContainsString("<i class='fas fa-user text-success'", $result['content']);
         self::assertStringNotContainsString('user-green.gif', $result['content']);
@@ -1331,7 +1331,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'         => "<a class='event_time'>2pm</a>",
         ];
 
-        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/openemr', true);
+        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/DCL', true);
 
         self::assertStringContainsString("<i class='fas fa-user text-primary'", $result['content']);
         self::assertStringContainsString('Group Therapy', $result['content']);
@@ -1359,7 +1359,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'         => "<a class='event_time'>12am</a>",
         ];
 
-        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/openemr', true);
+        $result = $vm->buildDayScreenEventContent($event, 1, '/tpl/img', '/DCL', true);
 
         self::assertStringContainsString('Christmas Day', $result['content']);
     }
@@ -1385,7 +1385,7 @@ final class CalendarViewModelTest extends TestCase
         ];
 
         // apptToggle="-toggled" → wrapper becomes <span class='appointment-toggled'>
-        $result = $vm->buildWeekScreenEventContent($event, 1, '/tpl/img', '/openemr', false, '-toggled');
+        $result = $vm->buildWeekScreenEventContent($event, 1, '/tpl/img', '/DCL', false, '-toggled');
 
         self::assertStringContainsString("<span class='appointment-toggled'>", $result['content']);
     }
@@ -1413,7 +1413,7 @@ final class CalendarViewModelTest extends TestCase
             'timeAnchorHtml'      => '',
         ];
 
-        $result = $vm->buildWeekScreenEventContent($event, 1, '/tpl/img', '/openemr');
+        $result = $vm->buildWeekScreenEventContent($event, 1, '/tpl/img', '/DCL');
 
         self::assertStringContainsString("<a class='show-appointment shown'></a>", $result['content']);
     }
@@ -1434,7 +1434,7 @@ final class CalendarViewModelTest extends TestCase
             'facility_row' => ['name' => '', 'id' => 0, 'color' => ''],
         ];
 
-        $result = $vm->buildWeekScreenEventContent($event, 1, '/tpl/img', '/openemr', false, '-anything');
+        $result = $vm->buildWeekScreenEventContent($event, 1, '/tpl/img', '/DCL', false, '-anything');
 
         self::assertStringNotContainsString("<span class='appointment", $result['content']);
         self::assertStringNotContainsString('show-appointment', $result['content']);

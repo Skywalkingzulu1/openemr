@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * This resource is primarily used for the identification and definition of a medication for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.
@@ -72,49 +72,49 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifier for this medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A code to indicate if the medication is in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
      */
     public $status = null;
 
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $manufacturer = null;
 
     /**
      * Describes the form of the item.  Powder; tablets; capsule.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $form = null;
 
     /**
      * Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $amount = null;
 
     /**
      * Identifies a particular constituent of interest in the product.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
      */
     public $ingredient = [];
 
     /**
      * Information that only applies to packages (not products).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch
      */
     public $batch = null;
 
@@ -125,7 +125,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifier for this medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifier for this medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -154,7 +154,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -165,7 +165,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate if the medication is in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
      */
     public function getStatus()
     {
@@ -174,7 +174,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate if the medication is in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -185,7 +185,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManufacturer()
     {
@@ -194,7 +194,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function setManufacturer($manufacturer)
@@ -205,7 +205,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the form of the item.  Powder; tablets; capsule.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getForm()
     {
@@ -214,7 +214,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the form of the item.  Powder; tablets; capsule.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $form
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $form
      * @return $this
      */
     public function setForm($form)
@@ -225,7 +225,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getAmount()
     {
@@ -234,7 +234,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -245,7 +245,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies a particular constituent of interest in the product.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
      */
     public function getIngredient()
     {
@@ -254,7 +254,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies a particular constituent of interest in the product.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationIngredient $ingredient
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationIngredient $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)
@@ -265,7 +265,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information that only applies to packages (not products).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch
      */
     public function getBatch()
     {
@@ -274,7 +274,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information that only applies to packages (not products).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch $batch
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch $batch
      * @return $this
      */
     public function setBatch($batch)

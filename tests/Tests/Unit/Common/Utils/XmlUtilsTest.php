@@ -1,23 +1,23 @@
 <?php
 
 /**
- * XmlUtilsTest - Unit tests for OpenEMR\Common\Utils\XmlUtils.
+ * XmlUtilsTest - Unit tests for DCL\Common\Utils\XmlUtils.
  *
  * AI-Generated Code Notice: This file contains code generated with
  * assistance from Claude Code (Anthropic). The code has been reviewed
  * and tested by the contributor.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Craig Allen <craigrallen@gmail.com>
  * @copyright Copyright (c) 2026 Craig Allen <craigrallen@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Utils;
+namespace DCL\Tests\Unit\Common\Utils;
 
-use OpenEMR\Common\Utils\XmlParseException;
-use OpenEMR\Common\Utils\XmlUtils;
+use DCL\Common\Utils\XmlParseException;
+use DCL\Common\Utils\XmlUtils;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

@@ -2,12 +2,12 @@
 
 $ignoreErrors = [];
 $ignoreErrors[] = [
-    'message' => '#^Result of method OpenEMR\\\\Billing\\\\MiscBillingOptions\\:\\:generateDateQualifierSelect\\(\\) \\(void\\) is used\\.$#',
+    'message' => '#^Result of method DCL\\\\Billing\\\\MiscBillingOptions\\:\\:generateDateQualifierSelect\\(\\) \\(void\\) is used\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/forms/misc_billing_options/new.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Result of method OpenEMR\\\\OeUI\\\\OemrUI\\:\\:oeBelowContainerDiv\\(\\) \\(void\\) is used\\.$#',
+    'message' => '#^Result of method DCL\\\\OeUI\\\\OemrUI\\:\\:oeBelowContainerDiv\\(\\) \\(void\\) is used\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/main/finder/dynamic_finder.php',
 ];
@@ -22,27 +22,27 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Controller/CarecoordinationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Result of method OpenEMR\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setPatientId\\(\\) \\(void\\) is used\\.$#',
+    'message' => '#^Result of method DCL\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setPatientId\\(\\) \\(void\\) is used\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../library/classes/Document.class.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Result of method OpenEMR\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setRemoteCategory\\(\\) \\(void\\) is used\\.$#',
+    'message' => '#^Result of method DCL\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setRemoteCategory\\(\\) \\(void\\) is used\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../library/classes/Document.class.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Result of method OpenEMR\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setRemoteFileName\\(\\) \\(void\\) is used\\.$#',
+    'message' => '#^Result of method DCL\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setRemoteFileName\\(\\) \\(void\\) is used\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../library/classes/Document.class.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Result of method OpenEMR\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setRemoteMimeType\\(\\) \\(void\\) is used\\.$#',
+    'message' => '#^Result of method DCL\\\\Events\\\\PatientDocuments\\\\PatientDocumentStoreOffsite\\:\\:setRemoteMimeType\\(\\) \\(void\\) is used\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../library/classes/Document.class.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Result of method OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\:\\:emailReminder\\(\\) \\(void\\) is used\\.$#',
+    'message' => '#^Result of method DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\:\\:emailReminder\\(\\) \\(void\\) is used\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/E2e/FaxSmsEmailTest.php',
 ];

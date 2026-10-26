@@ -6,18 +6,18 @@
  * relative paths and http/https URLs flow through unchanged and that
  * other URL schemes return an empty string.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\DocumentTemplates;
+namespace DCL\Tests\Services\DocumentTemplates;
 
-use OpenEMR\Services\DocumentTemplates\DocumentTemplateRender;
+use DCL\Services\DocumentTemplates\DocumentTemplateRender;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 

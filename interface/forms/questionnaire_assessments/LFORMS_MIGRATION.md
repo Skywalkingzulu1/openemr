@@ -1,7 +1,7 @@
 # LForms Migration: Native FHIR Questionnaire Runtime
 
 Status: the native FHIR Questionnaire runtime is the sole questionnaire
-renderer in OpenEMR. LForms has been removed, not deprecated — there is no
+renderer in DCL. LForms has been removed, not deprecated — there is no
 rollback path by design. Maintaining a second renderer would mean testing and
 securing two rendering stacks indefinitely; committing to one FHIR-native
 runtime keeps questionnaire storage, rendering, and the FHIR API on a single

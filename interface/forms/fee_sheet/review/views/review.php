@@ -3,23 +3,23 @@
 /**
  * knockoutjs template for rendering review of old fee sheets.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @link      https://www.open-emr.org/wiki/index.php/OEMR_wiki_page OEMR
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @link      https://www.dcl.org/wiki/index.php/OEMR_wiki_page OEMR
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 OEMR
  * @copyright Copyright (c) 2019 bradymiller <bradymiller@users.sourceforge.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
-$web_root = \OpenEMR\Core\OEGlobalsBag::getInstance()->getWebRoot();
+$web_root = \DCL\Core\OEGlobalsBag::getInstance()->getWebRoot();
 
 ?>
 <script type="text/html" id="review-display">
-    <link rel="stylesheet" href="<?php echo $web_root;?>/interface/forms/fee_sheet/review/views/review.css?v=<?php echo attr_url(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('v_js_includes')); ?>">
+    <link rel="stylesheet" href="<?php echo $web_root;?>/interface/forms/fee_sheet/review/views/review.css?v=<?php echo attr_url(\DCL\Core\OEGlobalsBag::getInstance()->getString('v_js_includes')); ?>">
     <div data-bind="visible: $data.show">
     <div data-bind="visible: encounters().length==0"><?php echo xlt("No prior encounters."); ?></div>
     <select data-bind="options:encounters, optionsText: 'date', value: selectedEncounter, event: {change: choose_encounter}, visible: encounters().length>0"></select>

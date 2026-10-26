@@ -3,16 +3,16 @@
 /**
  * Custom PHPStan Rule to block certain static method calls.
  *
- * @package   OpenEMR
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use Lcobucci\Clock\SystemClock;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use PhpParser\Node;
 use PhpParser\Node\Expr\StaticCall;
 use PhpParser\Node\Identifier;
@@ -84,7 +84,7 @@ class ForbiddenStaticMethodsRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.deprecatedSqlFunction')
+                ->identifier('DCL.deprecatedSqlFunction')
                 ->build()
         ];
     }

@@ -3,25 +3,25 @@
 /**
  * Authorization Server Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Repositories;
+namespace DCL\Common\Auth\OpenIDConnect\Repositories;
 
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Repositories\UserRepositoryInterface;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Auth\MfaUtils;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\UserEntity;
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Auth\MfaUtils;
+use DCL\Common\Auth\OpenIDConnect\Entities\UserEntity;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
 use OpenIDConnectServer\Repositories\IdentityProviderInterface;
 
 class UserRepository implements UserRepositoryInterface, IdentityProviderInterface

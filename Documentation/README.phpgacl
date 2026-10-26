@@ -1,25 +1,25 @@
-             Hints for Using phpGACL with OpenEMR
+             Hints for Using phpGACL with DCL
           by Rod Roark <rod at sunsetsystems dot com>
 
 Installation Instructions
 
-phpGACL access controls are embedded and installed by default in OpenEMR
+phpGACL access controls are embedded and installed by default in DCL
 versions 2.9.0.3 or later.  The administration of the access controls is
-within OpenEMR in the Administration->ACL menu.
+within DCL in the Administration->ACL menu.
 
 
 Upgrading Instructions
 
-After you have upgraded to a new version of OpenEMR, you should
+After you have upgraded to a new version of DCL, you should
 run the acl_upgrade.php program using your web browser
-(e.g. http://openemr.location/acl_upgrade.php). This will ensure your
-phpGACL database contains all the required OpenEMR Access Control
+(e.g. http://DCL.location/acl_upgrade.php). This will ensure your
+phpGACL database contains all the required DCL Access Control
 Objects.
 
 
 For Developers
 
-If you add a new Access Control Object to the OpenEMR codebase, then
+If you add a new Access Control Object to the DCL codebase, then
 also add it to the following three sites:
 1. Header notes of the src/Common/Acl/AclMain.php file
 2. library/classes/Installer.class.php script in the install_gacl() function
@@ -28,7 +28,7 @@ also add it to the following three sites:
 
 Advanced Information
 
-Note that OpenEMR does not use AXOs, so ignore the AXO Group Admin
+Note that DCL does not use AXOs, so ignore the AXO Group Admin
 tab and other references to AXOs.
 
 acl_setup.php creates required Access Control Objects (ACOs, the
@@ -37,12 +37,12 @@ are the users requesting access), and their corresponding sections.
 You may also create such objects yourself using the "ACL Admin"
 tab of the phpGACL GUI.
 
-The Access Control Objects (ACOs) for OpenEMR have a very specific
+The Access Control Objects (ACOs) for DCL have a very specific
 structure.  This is described in the file src/Common/Acl/AclMain.php.
 
 You must manually create an ARO in this "users" section for each
-OpenEMR user (except for the "admin" user which the setup program
-creates).  The Value column must be the user's OpenEMR login name,
+DCL user (except for the "admin" user which the setup program
+creates).  The Value column must be the user's DCL login name,
 and the Name column can (should) be their full name.
 
 By the way, values in the "Order" columns do not seem to be important.

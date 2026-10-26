@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command;
+namespace DCL\Tests\Isolated\Common\Command;
 
-use OpenEMR\Common\Command\BackgroundServicesCommand;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Background\BackgroundServiceDefinition;
-use OpenEMR\Services\Background\BackgroundServiceRunner;
+use DCL\Common\Command\BackgroundServicesCommand;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Background\BackgroundServiceDefinition;
+use DCL\Services\Background\BackgroundServiceRunner;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
@@ -304,7 +304,7 @@ class BackgroundServicesCommandTest extends TestCase
      * contract consumed by SymfonyBackgroundServiceSpawner in the
      * run-all-due orchestrator.
      *
-     * The JSON also reflects the per-invocation nonce from OPENEMR_BG_NONCE
+     * The JSON also reflects the per-invocation nonce from DCL_BG_NONCE
      * so the parent orchestrator can authenticate the status line against
      * forged lines printed by the service's own shutdown handlers (CWE-345).
      */
@@ -316,11 +316,11 @@ class BackgroundServicesCommandTest extends TestCase
         );
         $tester = $this->createTester($command);
 
-        putenv('OPENEMR_BG_NONCE=nonce-under-test');
+        putenv('DCL_BG_NONCE=nonce-under-test');
         try {
             $tester->execute(['action' => 'run', '--name' => 'phimail', '--json' => true]);
         } finally {
-            putenv('OPENEMR_BG_NONCE');
+            putenv('DCL_BG_NONCE');
         }
 
         $this->assertSame(Command::SUCCESS, $tester->getStatusCode());
@@ -611,7 +611,7 @@ class BackgroundServicesCommandStub extends BackgroundServicesCommand
         private readonly array $runnerResults = [],
     ) {
         parent::__construct();
-        $this->setGlobalsBag(new OEGlobalsBag(['fileroot' => '/var/www/openemr']));
+        $this->setGlobalsBag(new OEGlobalsBag(['fileroot' => '/var/www/DCL']));
     }
 
     protected function fetchServices(): array

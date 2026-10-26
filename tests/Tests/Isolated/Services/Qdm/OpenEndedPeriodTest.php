@@ -7,37 +7,37 @@
  * visit saved without an end time (the encounter form never sets one) ends when
  * it starts.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Qdm;
+namespace DCL\Tests\Isolated\Services\Qdm;
 
-use OpenEMR\Cqm\Qdm\Patient;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\Qdm\CqmCalculator;
-use OpenEMR\Services\Qdm\Interfaces\QdmServiceInterface;
-use OpenEMR\Services\Qdm\Measure;
-use OpenEMR\Services\Qdm\MeasureService;
-use OpenEMR\Services\Qdm\QdmRecord;
-use OpenEMR\Services\Qdm\QdmRequestSome;
-use OpenEMR\Services\Qdm\Services\AllergyIntoleranceService;
-use OpenEMR\Services\Qdm\Services\DiagnosisService;
-use OpenEMR\Services\Qdm\Services\EncounterService;
-use OpenEMR\Services\Qdm\Services\MedicationActiveService;
-use OpenEMR\Services\Qdm\Services\PhysicalExamService;
-use OpenEMR\Services\Qdm\Services\SymptomService;
+use DCL\Cqm\Qdm\Patient;
+use DCL\Services\CodeTypesService;
+use DCL\Services\Qdm\CqmCalculator;
+use DCL\Services\Qdm\Interfaces\QdmServiceInterface;
+use DCL\Services\Qdm\Measure;
+use DCL\Services\Qdm\MeasureService;
+use DCL\Services\Qdm\QdmRecord;
+use DCL\Services\Qdm\QdmRequestSome;
+use DCL\Services\Qdm\Services\AllergyIntoleranceService;
+use DCL\Services\Qdm\Services\DiagnosisService;
+use DCL\Services\Qdm\Services\EncounterService;
+use DCL\Services\Qdm\Services\MedicationActiveService;
+use DCL\Services\Qdm\Services\PhysicalExamService;
+use DCL\Services\Qdm\Services\SymptomService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class OpenEndedPeriodTest extends TestCase
 {
-    private const MEASURES = __DIR__ . '/../../../../../vendor/openemr/oe-cqm-parsers/2025_reporting_period/json_measures/';
+    private const MEASURES = __DIR__ . '/../../../../../vendor/DCL/oe-cqm-parsers/2025_reporting_period/json_measures/';
 
     private const SYSTEMS = [
         CodeTypesService::CODE_TYPE_CPT4 => '2.16.840.1.113883.6.12',
@@ -107,7 +107,7 @@ class OpenEndedPeriodTest extends TestCase
     }
 
     /**
-     * Controlling High Blood Pressure for a patient recorded as OpenEMR's screens
+     * Controlling High Blood Pressure for a patient recorded as DCL's screens
      * save it: a visit with no end time and a hypertension problem with no end
      * date. Before the fix the patient was in no population.
      */

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Support;
+namespace DCL\Tests\Acceptance\Support;
 
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\JavaScriptExecutor;
@@ -175,7 +175,7 @@ trait UiSeedingTrait
 
     /**
      * Rip every Bootstrap-modal-related DOM element out of the
-     * top-level document. Motivation: OpenEMR's dashboard opens
+     * top-level document. Motivation: DCL's dashboard opens
      * modals via dlgopen() from multiple triggers (dup-check
      * pop-up on patient add, clinical-reminders widget on
      * dashboard load, potentially birthday-popup depending on
@@ -1012,7 +1012,7 @@ trait UiSeedingTrait
     protected const PERSIST_APPT_TITLE = 'PersistCheckAppt';
     /** Office Visit category. Matches SEED_ENCOUNTER_CATEGORY_ID. */
     protected const PERSIST_APPT_CATEGORY_ID = '5';
-    /** In Office category (openemr_postcalendar_categories row 2). */
+    /** In Office category (DCL_postcalendar_categories row 2). */
     protected const PERSIST_INOFFICE_CATEGORY_ID = '2';
 
     /** Fixed-identity persist-through-upgrade fixture document. */
@@ -1569,7 +1569,7 @@ trait UiSeedingTrait
         );
         self::assertTrue($clicked === true, 'Failed to click persist doc link in tree');
         // Assertion (a) — user-visible render path: wait for the
-        // viewer's retrieve <iframe> to be present. OpenEMR's
+        // viewer's retrieve <iframe> to be present. DCL's
         // Documents viewer wires an <iframe src="/controller.php?
         // document&retrieve&...&as_file=false"> for the Contents
         // tab, and Chrome renders inline for image/* content-type.

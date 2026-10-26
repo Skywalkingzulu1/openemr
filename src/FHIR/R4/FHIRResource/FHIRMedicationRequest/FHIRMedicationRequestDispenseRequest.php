@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationRequest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationRequest" rather than "MedicationPrescription" or "MedicationOrder" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.
@@ -71,43 +71,43 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 {
     /**
      * Indicates the quantity or duration for the first dispense of the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestInitialFill
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestInitialFill
      */
     public $initialFill = null;
 
     /**
      * The minimum period of time that must occur between dispenses of the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $dispenseInterval = null;
 
     /**
      * This indicates the validity period of a prescription (stale dating the Prescription).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $validityPeriod = null;
 
     /**
      * An integer indicating the number of times, in addition to the original dispense, (aka refills or repeats) that the patient can receive the prescribed medication. Usage Notes: This integer does not include the original order dispense. This means that if an order indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.  A prescriber may explicitly say that zero refills are permitted after the initial dispense.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $numberOfRepeatsAllowed = null;
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $expectedSupplyDuration = null;
 
     /**
      * Indicates the intended dispensing Organization specified by the prescriber.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $performer = null;
 
@@ -118,7 +118,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * Indicates the quantity or duration for the first dispense of the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestInitialFill
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestInitialFill
      */
     public function getInitialFill()
     {
@@ -127,7 +127,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * Indicates the quantity or duration for the first dispense of the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestInitialFill $initialFill
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationRequest\FHIRMedicationRequestInitialFill $initialFill
      * @return $this
      */
     public function setInitialFill($initialFill)
@@ -138,7 +138,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * The minimum period of time that must occur between dispenses of the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDispenseInterval()
     {
@@ -147,7 +147,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * The minimum period of time that must occur between dispenses of the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
      * @return $this
      */
     public function setDispenseInterval($dispenseInterval)
@@ -158,7 +158,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * This indicates the validity period of a prescription (stale dating the Prescription).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod()
     {
@@ -167,7 +167,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * This indicates the validity period of a prescription (stale dating the Prescription).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
      * @return $this
      */
     public function setValidityPeriod($validityPeriod)
@@ -178,7 +178,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * An integer indicating the number of times, in addition to the original dispense, (aka refills or repeats) that the patient can receive the prescribed medication. Usage Notes: This integer does not include the original order dispense. This means that if an order indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.  A prescriber may explicitly say that zero refills are permitted after the initial dispense.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfRepeatsAllowed()
     {
@@ -187,7 +187,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * An integer indicating the number of times, in addition to the original dispense, (aka refills or repeats) that the patient can receive the prescribed medication. Usage Notes: This integer does not include the original order dispense. This means that if an order indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.  A prescriber may explicitly say that zero refills are permitted after the initial dispense.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfRepeatsAllowed
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfRepeatsAllowed
      * @return $this
      */
     public function setNumberOfRepeatsAllowed($numberOfRepeatsAllowed)
@@ -198,7 +198,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -207,7 +207,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -218,7 +218,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getExpectedSupplyDuration()
     {
@@ -227,7 +227,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @return $this
      */
     public function setExpectedSupplyDuration($expectedSupplyDuration)
@@ -238,7 +238,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * Indicates the intended dispensing Organization specified by the prescriber.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPerformer()
     {
@@ -247,7 +247,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement implement
 
     /**
      * Indicates the intended dispensing Organization specified by the prescriber.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function setPerformer($performer)

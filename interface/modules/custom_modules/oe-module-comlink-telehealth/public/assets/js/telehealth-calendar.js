@@ -1,11 +1,11 @@
 /**
- * Calendar TeleHealth javascript library for interacting with the OpenEMR calendar tab.
+ * Calendar TeleHealth javascript library for interacting with the DCL calendar tab.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 (function(window, comlink) {
 
@@ -91,7 +91,7 @@
             return setCurrentEncounterForAppointment(pid, pc_eid)
                 .then(encounterData => {
                     loadEncounterFromEncounterData(encounterData, pid, pc_eid);
-                    // the ChangeProviders function comes from the internal OpenEMR calendar view
+                    // the ChangeProviders function comes from the internal DCL calendar view
                     if (window.ChangeProviders && encounterData.user && encounterData.user.username)
                     {
                         // set our encounter

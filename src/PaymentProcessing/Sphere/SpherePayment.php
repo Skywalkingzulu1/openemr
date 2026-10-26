@@ -3,22 +3,22 @@
 /**
  * SpherePayment class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PaymentProcessing\Sphere;
+namespace DCL\PaymentProcessing\Sphere;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\UserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\UserService;
 
 class SpherePayment
 {
@@ -74,7 +74,7 @@ class SpherePayment
             throw new \RuntimeException('Failed to decrypt Sphere credentials');
         }
 
-        // Calculate the OpenEMR server
+        // Calculate the DCL server
         $this->serverSite = OEGlobalsBag::getInstance()->get('site_addr_oath') . OEGlobalsBag::getInstance()->getKernel()->getWebRoot();
 
         $session = SessionWrapperFactory::getInstance()->getActiveSession();

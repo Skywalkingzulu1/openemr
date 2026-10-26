@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
@@ -72,127 +72,127 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAppointmentStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAppointmentStatus
      */
     public $status = null;
 
     /**
      * The coded reason for the appointment being cancelled. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $cancelationReason = null;
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $serviceCategory = [];
 
     /**
      * The specific service that is to be performed during this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $serviceType = [];
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialty = [];
 
     /**
      * The style of appointment or patient that has been booked in the slot (not service type).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $appointmentType = null;
 
     /**
      * The coded reason that this appointment is being scheduled. This is more clinical than administrative.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * The priority of the appointment. Can be used to make informed decisions if needing to re-prioritize appointments. (The iCal Standard specifies 0 as undefined, 1 as highest, 9 as lowest priority).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $priority = null;
 
     /**
      * The brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Detailed or expanded information should be put in the comment field.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Additional information to support the appointment provided when making the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInformation = [];
 
     /**
      * Date/Time that the appointment is to take place.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $start = null;
 
     /**
      * Date/Time that the appointment is to conclude.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $end = null;
 
     /**
      * Number of minutes that the appointment is to take. This can be less than the duration between the start and end times.  For example, where the actual time of appointment is only an estimate or if a 30 minute appointment is being requested, but any time would work.  Also, if there is, for example, a planned 15 minute break in the middle of a long appointment, the duration may be 15 minutes less than the difference between the start and end.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $minutesDuration = null;
 
     /**
      * The slots from the participants' schedules that will be filled by the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $slot = [];
 
     /**
      * The date that this appointment was initially created. This could be different to the meta.lastModified value on the initial entry, as this could have been before the resource was created on the FHIR server, and should remain unchanged over the lifespan of the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * Additional comments about the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * While Appointment.comment contains information for internal use, Appointment.patientInstructions is used to capture patient facing information about the Appointment (e.g. please bring your referral or fast from 8pm night before).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $patientInstruction = null;
 
     /**
      * The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * List of participants involved in the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant[]
      */
     public $participant = [];
 
@@ -200,7 +200,7 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
      * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within.
 
 The duration (usually in minutes) could also be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time. However, in other situations the duration may be calculated by the scheduling system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod[]
      */
     public $requestedPeriod = [];
 
@@ -211,7 +211,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -220,7 +220,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -231,7 +231,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAppointmentStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAppointmentStatus
      */
     public function getStatus()
     {
@@ -240,7 +240,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAppointmentStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAppointmentStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -251,7 +251,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The coded reason for the appointment being cancelled. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCancelationReason()
     {
@@ -260,7 +260,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The coded reason for the appointment being cancelled. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $cancelationReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $cancelationReason
      * @return $this
      */
     public function setCancelationReason($cancelationReason)
@@ -271,7 +271,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceCategory()
     {
@@ -280,7 +280,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceCategory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceCategory
      * @return $this
      */
     public function addServiceCategory($serviceCategory)
@@ -291,7 +291,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The specific service that is to be performed during this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceType()
     {
@@ -300,7 +300,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The specific service that is to be performed during this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
      * @return $this
      */
     public function addServiceType($serviceType)
@@ -311,7 +311,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
@@ -320,7 +320,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -331,7 +331,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The style of appointment or patient that has been booked in the slot (not service type).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAppointmentType()
     {
@@ -340,7 +340,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The style of appointment or patient that has been booked in the slot (not service type).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $appointmentType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $appointmentType
      * @return $this
      */
     public function setAppointmentType($appointmentType)
@@ -351,7 +351,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The coded reason that this appointment is being scheduled. This is more clinical than administrative.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -360,7 +360,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The coded reason that this appointment is being scheduled. This is more clinical than administrative.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -371,7 +371,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -380,7 +380,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -391,7 +391,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The priority of the appointment. Can be used to make informed decisions if needing to re-prioritize appointments. (The iCal Standard specifies 0 as undefined, 1 as highest, 9 as lowest priority).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getPriority()
     {
@@ -400,7 +400,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The priority of the appointment. Can be used to make informed decisions if needing to re-prioritize appointments. (The iCal Standard specifies 0 as undefined, 1 as highest, 9 as lowest priority).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -411,7 +411,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Detailed or expanded information should be put in the comment field.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -420,7 +420,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Detailed or expanded information should be put in the comment field.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -431,7 +431,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Additional information to support the appointment provided when making the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInformation()
     {
@@ -440,7 +440,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Additional information to support the appointment provided when making the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInformation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInformation
      * @return $this
      */
     public function addSupportingInformation($supportingInformation)
@@ -451,7 +451,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Date/Time that the appointment is to take place.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getStart()
     {
@@ -460,7 +460,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Date/Time that the appointment is to take place.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $start
      * @return $this
      */
     public function setStart($start)
@@ -471,7 +471,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Date/Time that the appointment is to conclude.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getEnd()
     {
@@ -480,7 +480,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Date/Time that the appointment is to conclude.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $end
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $end
      * @return $this
      */
     public function setEnd($end)
@@ -491,7 +491,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Number of minutes that the appointment is to take. This can be less than the duration between the start and end times.  For example, where the actual time of appointment is only an estimate or if a 30 minute appointment is being requested, but any time would work.  Also, if there is, for example, a planned 15 minute break in the middle of a long appointment, the duration may be 15 minutes less than the difference between the start and end.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getMinutesDuration()
     {
@@ -500,7 +500,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Number of minutes that the appointment is to take. This can be less than the duration between the start and end times.  For example, where the actual time of appointment is only an estimate or if a 30 minute appointment is being requested, but any time would work.  Also, if there is, for example, a planned 15 minute break in the middle of a long appointment, the duration may be 15 minutes less than the difference between the start and end.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $minutesDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $minutesDuration
      * @return $this
      */
     public function setMinutesDuration($minutesDuration)
@@ -511,7 +511,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The slots from the participants' schedules that will be filled by the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSlot()
     {
@@ -520,7 +520,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The slots from the participants' schedules that will be filled by the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $slot
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $slot
      * @return $this
      */
     public function addSlot($slot)
@@ -531,7 +531,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The date that this appointment was initially created. This could be different to the meta.lastModified value on the initial entry, as this could have been before the resource was created on the FHIR server, and should remain unchanged over the lifespan of the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -540,7 +540,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The date that this appointment was initially created. This could be different to the meta.lastModified value on the initial entry, as this could have been before the resource was created on the FHIR server, and should remain unchanged over the lifespan of the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -551,7 +551,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Additional comments about the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -560,7 +560,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * Additional comments about the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -571,7 +571,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * While Appointment.comment contains information for internal use, Appointment.patientInstructions is used to capture patient facing information about the Appointment (e.g. please bring your referral or fast from 8pm night before).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPatientInstruction()
     {
@@ -580,7 +580,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * While Appointment.comment contains information for internal use, Appointment.patientInstructions is used to capture patient facing information about the Appointment (e.g. please bring your referral or fast from 8pm night before).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $patientInstruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $patientInstruction
      * @return $this
      */
     public function setPatientInstruction($patientInstruction)
@@ -591,7 +591,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -600,7 +600,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -611,7 +611,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * List of participants involved in the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant[]
      */
     public function getParticipant()
     {
@@ -620,7 +620,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
 
     /**
      * List of participants involved in the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant $participant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -633,7 +633,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
      * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within.
 
 The duration (usually in minutes) could also be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time. However, in other situations the duration may be calculated by the scheduling system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod[]
      */
     public function getRequestedPeriod()
     {
@@ -644,7 +644,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
      * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within.
 
 The duration (usually in minutes) could also be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time. However, in other situations the duration may be calculated by the scheduling system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $requestedPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $requestedPeriod
      * @return $this
      */
     public function addRequestedPeriod($requestedPeriod)

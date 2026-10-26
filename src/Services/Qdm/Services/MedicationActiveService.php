@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm\Services;
+namespace DCL\Services\Qdm\Services;
 
-use OpenEMR\Cqm\Qdm\MedicationActive;
-use OpenEMR\Services\Qdm\Interfaces\QdmServiceInterface;
+use DCL\Cqm\Qdm\MedicationActive;
+use DCL\Services\Qdm\Interfaces\QdmServiceInterface;
 
 class MedicationActiveService extends AbstractMedicationService implements QdmServiceInterface
 {

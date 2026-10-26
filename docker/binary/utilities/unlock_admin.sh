@@ -1,6 +1,6 @@
 #!/bin/sh
 # ============================================================================
-# OpenEMR Admin Unlock Wrapper Script
+# DCL Admin Unlock Wrapper Script
 # ============================================================================
 #
 # Purpose:
@@ -14,7 +14,7 @@
 #   ./unlock_admin.sh MyNewSecurePassword123
 #
 # Requirements:
-#   - Must be run from within the OpenEMR container
+#   - Must be run from within the DCL container
 #   - Requires unlock_admin.php to be present in /root/
 #
 # ============================================================================

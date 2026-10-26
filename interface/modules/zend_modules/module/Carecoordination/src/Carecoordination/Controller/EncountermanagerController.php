@@ -3,14 +3,14 @@
 /**
  * interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Controller/EncountermanagerController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Riju K P <rijukp@zhservices.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>_
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Controller;
@@ -24,18 +24,18 @@ use Laminas\Hydrator\Exception\RuntimeException;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Cqm\QrdaControllers\QrdaReportController;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\PractitionerService;
-use OpenEMR\Services\Qrda\QrdaReportService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\RequestTerminator;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Cqm\QrdaControllers\QrdaReportController;
+use DCL\Services\FacilityService;
+use DCL\Services\PractitionerService;
+use DCL\Services\Qrda\QrdaReportService;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\HttpFoundation\Response;
 use XSLTProcessor;
 

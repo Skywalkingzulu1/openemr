@@ -2,17 +2,17 @@
 
 /**
  * FhirSearchParameterDefinition represents a field in FHIR that searches can be conducted against.  It defines what fields
- * that FHIR search field maps onto, whether that is a single OpenEMR data field or many fields (composite field).  The
+ * that FHIR search field maps onto, whether that is a single DCL data field or many fields (composite field).  The
  * type of field is represented in the definition.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Search;
+namespace DCL\Services\Search;
 
 class FhirSearchParameterDefinition
 {

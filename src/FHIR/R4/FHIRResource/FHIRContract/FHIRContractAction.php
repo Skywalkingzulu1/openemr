@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,136 +71,136 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * True if the term prohibits the  action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $doNotPerform = null;
 
     /**
      * Activity or service obligation to be done or not done, performed or not performed, effectuated or not by this Contract term.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Entity of the action.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSubject[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSubject[]
      */
     public $subject = [];
 
     /**
      * Reason or purpose for the action stipulated by this Contract Provision.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $intent = null;
 
     /**
      * Id [identifier??] of the clause or question text related to this action in the referenced form or QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $linkId = [];
 
     /**
      * Current state of the term action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * Encounter or Episode with primary association to specified term activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $context = null;
 
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $contextLinkId = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $occurrenceTiming = null;
 
     /**
      * Who or what initiated the action and has responsibility for its activation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $requester = [];
 
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $requesterLinkId = [];
 
     /**
      * The type of individual that is desired or required to perform or not perform the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $performerType = [];
 
     /**
      * The type of role or competency of an individual desired or required to perform or not perform the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $performerRole = null;
 
     /**
      * Indicates who or what is being asked to perform (or not perform) the ction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $performer = null;
 
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $performerLinkId = [];
 
     /**
      * Rationale for the action to be performed or not performed. Describes why the action is permitted or prohibited.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates another resource whose existence justifies permitting or not permitting this action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Describes why the action is to be performed or not performed in textual form.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $reason = [];
 
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $reasonLinkId = [];
 
     /**
      * Comments made about the term action made by the requester, performer, subject or other participants.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Security labels that protects the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public $securityLabelNumber = [];
 
@@ -211,7 +211,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * True if the term prohibits the  action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDoNotPerform()
     {
@@ -220,7 +220,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * True if the term prohibits the  action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
      * @return $this
      */
     public function setDoNotPerform($doNotPerform)
@@ -231,7 +231,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Activity or service obligation to be done or not done, performed or not performed, effectuated or not by this Contract term.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -240,7 +240,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Activity or service obligation to be done or not done, performed or not performed, effectuated or not by this Contract term.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -251,7 +251,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Entity of the action.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSubject[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSubject[]
      */
     public function getSubject()
     {
@@ -260,7 +260,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Entity of the action.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSubject $subject
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSubject $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -271,7 +271,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reason or purpose for the action stipulated by this Contract Provision.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getIntent()
     {
@@ -280,7 +280,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reason or purpose for the action stipulated by this Contract Provision.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -291,7 +291,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to this action in the referenced form or QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getLinkId()
     {
@@ -300,7 +300,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to this action in the referenced form or QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $linkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $linkId
      * @return $this
      */
     public function addLinkId($linkId)
@@ -311,7 +311,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Current state of the term action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -320,7 +320,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Current state of the term action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -331,7 +331,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Encounter or Episode with primary association to specified term activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getContext()
     {
@@ -340,7 +340,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Encounter or Episode with primary association to specified term activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $context
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $context
      * @return $this
      */
     public function setContext($context)
@@ -351,7 +351,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getContextLinkId()
     {
@@ -360,7 +360,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $contextLinkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $contextLinkId
      * @return $this
      */
     public function addContextLinkId($contextLinkId)
@@ -370,7 +370,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -378,7 +378,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -388,7 +388,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
@@ -396,7 +396,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
     public function setOccurrencePeriod($occurrencePeriod)
@@ -406,7 +406,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
@@ -414,7 +414,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
      * @return $this
      */
     public function setOccurrenceTiming($occurrenceTiming)
@@ -425,7 +425,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Who or what initiated the action and has responsibility for its activation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRequester()
     {
@@ -434,7 +434,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Who or what initiated the action and has responsibility for its activation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requester
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requester
      * @return $this
      */
     public function addRequester($requester)
@@ -445,7 +445,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getRequesterLinkId()
     {
@@ -454,7 +454,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $requesterLinkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $requesterLinkId
      * @return $this
      */
     public function addRequesterLinkId($requesterLinkId)
@@ -465,7 +465,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The type of individual that is desired or required to perform or not perform the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPerformerType()
     {
@@ -474,7 +474,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The type of individual that is desired or required to perform or not perform the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
      * @return $this
      */
     public function addPerformerType($performerType)
@@ -485,7 +485,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The type of role or competency of an individual desired or required to perform or not perform the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPerformerRole()
     {
@@ -494,7 +494,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The type of role or competency of an individual desired or required to perform or not perform the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerRole
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerRole
      * @return $this
      */
     public function setPerformerRole($performerRole)
@@ -505,7 +505,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Indicates who or what is being asked to perform (or not perform) the ction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPerformer()
     {
@@ -514,7 +514,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Indicates who or what is being asked to perform (or not perform) the ction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function setPerformer($performer)
@@ -525,7 +525,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getPerformerLinkId()
     {
@@ -534,7 +534,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $performerLinkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $performerLinkId
      * @return $this
      */
     public function addPerformerLinkId($performerLinkId)
@@ -545,7 +545,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Rationale for the action to be performed or not performed. Describes why the action is permitted or prohibited.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -554,7 +554,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Rationale for the action to be performed or not performed. Describes why the action is permitted or prohibited.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -565,7 +565,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Indicates another resource whose existence justifies permitting or not permitting this action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -574,7 +574,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Indicates another resource whose existence justifies permitting or not permitting this action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -585,7 +585,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Describes why the action is to be performed or not performed in textual form.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getReason()
     {
@@ -594,7 +594,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Describes why the action is to be performed or not performed in textual form.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $reason
      * @return $this
      */
     public function addReason($reason)
@@ -605,7 +605,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getReasonLinkId()
     {
@@ -614,7 +614,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $reasonLinkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $reasonLinkId
      * @return $this
      */
     public function addReasonLinkId($reasonLinkId)
@@ -625,7 +625,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Comments made about the term action made by the requester, performer, subject or other participants.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -634,7 +634,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Comments made about the term action made by the requester, performer, subject or other participants.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -645,7 +645,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Security labels that protects the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public function getSecurityLabelNumber()
     {
@@ -654,7 +654,7 @@ class FHIRContractAction extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Security labels that protects the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
      * @return $this
      */
     public function addSecurityLabelNumber($securityLabelNumber)

@@ -3,18 +3,18 @@
 /**
  * Regenerate the committed schematron vocab.php files from source .sch + voc.xml.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Services\Cda\Schematron\VocabularyExtractor;
+use DCL\Services\Cda\Schematron\VocabularyExtractor;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -23,7 +23,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 #[AsCommand(
-    name: 'openemr:regen-schematron-vocab',
+    name: 'DCL:regen-schematron-vocab',
     description: 'Regenerate committed schematron vocab.php files from source .sch + voc.xml'
 )]
 class RegenSchematronVocabCommand extends Command
@@ -52,13 +52,13 @@ class RegenSchematronVocabCommand extends Command
             ->addArgument(
                 'source-root',
                 InputArgument::REQUIRED,
-                'Path to a checkout of openemr/oe-schematron-service containing schematron/<type>/{*.sch,voc.xml}'
+                'Path to a checkout of DCL/oe-schematron-service containing schematron/<type>/{*.sch,voc.xml}'
             )
             ->setHelp(<<<'HELP'
                 Regenerate committed schematron vocab.php files from source .sch + voc.xml.
 
                 The vocab files live at src/Services/Cda/Schematron/schemas/<type>/vocab.php
-                and are extracted from a fresh checkout of the openemr/oe-schematron-service
+                and are extracted from a fresh checkout of the DCL/oe-schematron-service
                 repo. Run this whenever the schematron IG revision bumps.
 
                 Expected source layout:

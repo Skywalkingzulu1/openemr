@@ -1,16 +1,16 @@
 <?php
 
-namespace OpenEMR\Modules\EhiExporter;
+namespace DCL\Modules\EhiExporter;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 require_once(__DIR__ . "/../../../../globals.php");
 
 /**
- * @global OpenEMR\Core\ModulesClassLoader $classLoader
+ * @global DCL\Core\ModulesClassLoader $classLoader
  */
 $bootstrap = Bootstrap::instantiate(OEGlobalsBag::getInstance()->getKernel()->getEventDispatcher(), OEGlobalsBag::getInstance()->getKernel());
 $exporter = $bootstrap->getExporter();

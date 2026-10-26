@@ -3,8 +3,8 @@
 /**
  * Care plan form new.php - thin entry point delegating to CarePlanController.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T Paul <jacob@zhservices.com>
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -14,19 +14,19 @@
  * @copyright Copyright (c) 2017-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (C) 2025 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Controllers\Interface\Forms\CarePlan\CarePlanController;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Forms\CarePlanFormService;
-use OpenEMR\Services\FormService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Controllers\Interface\Forms\CarePlan\CarePlanController;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Forms\CarePlanFormService;
+use DCL\Services\FormService;
 
 $globalsBag = OEGlobalsBag::getInstance();
 $srcdir = $globalsBag->getSrcDir();
@@ -35,7 +35,7 @@ require_once("$srcdir/options.inc.php");
 require_once($globalsBag->getProjectDir() . '/custom/code_types.inc.php');
 
 $formService = new FormService();
-// resolves to openemr/interface/ so that templates are found in /forms/care_plan/templates
+// resolves to DCL/interface/ so that templates are found in /forms/care_plan/templates
 $twigContainer = new TwigContainer(__DIR__ . '/../../', $globalsBag->getKernel());
 
 $controller = new CarePlanController(

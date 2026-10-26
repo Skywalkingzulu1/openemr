@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
+namespace DCL\FHIR\R4\FHIRResource\FHIRValueSet;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
@@ -71,19 +71,19 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * A code that identifies a property or a filter defined in the code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $property = null;
 
     /**
      * The kind of operation to perform as a part of the filter criteria.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFilterOperator
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFilterOperator
      */
     public $op = null;
 
     /**
      * The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value  (if the filter represents a property defined in CodeSystem) or of the system filter value (if the filter represents a filter defined in CodeSystem) when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
@@ -94,7 +94,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A code that identifies a property or a filter defined in the code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getProperty()
     {
@@ -103,7 +103,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A code that identifies a property or a filter defined in the code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $property
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $property
      * @return $this
      */
     public function setProperty($property)
@@ -114,7 +114,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The kind of operation to perform as a part of the filter criteria.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFilterOperator
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFilterOperator
      */
     public function getOp()
     {
@@ -123,7 +123,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The kind of operation to perform as a part of the filter criteria.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFilterOperator $op
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFilterOperator $op
      * @return $this
      */
     public function setOp($op)
@@ -134,7 +134,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value  (if the filter represents a property defined in CodeSystem) or of the system filter value (if the filter represents a filter defined in CodeSystem) when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -143,7 +143,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value  (if the filter represents a property defined in CodeSystem) or of the system filter value (if the filter represents a filter defined in CodeSystem) when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)

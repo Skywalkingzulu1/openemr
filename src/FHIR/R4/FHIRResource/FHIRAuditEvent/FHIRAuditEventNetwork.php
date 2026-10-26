@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAuditEvent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -71,13 +71,13 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * An identifier for the network access point of the user device for the audit event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $address = null;
 
     /**
      * An identifier for the type of network access point that originated the audit event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventAgentNetworkType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAuditEventAgentNetworkType
      */
     public $type = null;
 
@@ -88,7 +88,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier for the network access point of the user device for the audit event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAddress()
     {
@@ -97,7 +97,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier for the network access point of the user device for the audit event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $address
      * @return $this
      */
     public function setAddress($address)
@@ -108,7 +108,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier for the type of network access point that originated the audit event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventAgentNetworkType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAuditEventAgentNetworkType
      */
     public function getType()
     {
@@ -117,7 +117,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An identifier for the type of network access point that originated the audit event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventAgentNetworkType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAuditEventAgentNetworkType $type
      * @return $this
      */
     public function setType($type)

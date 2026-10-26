@@ -4,20 +4,20 @@
  * What a FHIR Task create or update may say: the code sets, the reference
  * types, the parent task, the statuses a task can't leave, and If-Match.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\RestControllers\FHIR\FhirTaskRestController;
-use OpenEMR\Services\FHIR\FhirTaskService;
-use OpenEMR\Services\FHIR\FhirTaskWriteRules;
+use DCL\RestControllers\FHIR\FhirTaskRestController;
+use DCL\Services\FHIR\FhirTaskService;
+use DCL\Services\FHIR\FhirTaskWriteRules;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\JsonResponse;

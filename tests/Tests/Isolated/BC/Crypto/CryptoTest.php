@@ -5,28 +5,28 @@
  *
  * Tests BC\Crypto\Crypto class methods using CryptoFixtureManager test vectors.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\BC\Crypto;
+namespace DCL\Tests\Isolated\BC\Crypto;
 
-use OpenEMR\BC\Crypto\Crypto;
-use OpenEMR\BC\Crypto\Key;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\KeySource;
-use OpenEMR\Common\Crypto\KeyVersion;
-use OpenEMR\Encryption\Cipher\Aes256CbcHmacSha256;
-use OpenEMR\Encryption\Cipher\Aes256CbcHmacSha384;
-use OpenEMR\Encryption\Cipher\Aes256CbcNoHmac;
-use OpenEMR\Encryption\Keys\Keychain;
-use OpenEMR\Encryption\Keys\KeyMaterial;
-use OpenEMR\Tests\Fixtures\CryptoFixtureManager;
+use DCL\BC\Crypto\Crypto;
+use DCL\BC\Crypto\Key;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\KeySource;
+use DCL\Common\Crypto\KeyVersion;
+use DCL\Encryption\Cipher\Aes256CbcHmacSha256;
+use DCL\Encryption\Cipher\Aes256CbcHmacSha384;
+use DCL\Encryption\Cipher\Aes256CbcNoHmac;
+use DCL\Encryption\Keys\Keychain;
+use DCL\Encryption\Keys\KeyMaterial;
+use DCL\Tests\Fixtures\CryptoFixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;

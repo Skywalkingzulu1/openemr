@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, Ineffective treatment frequency, Procedure-condition conflict, etc.
@@ -71,19 +71,19 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * Describes the action that was taken or the observation that was made that reduces/eliminates the risk associated with the identified issue.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $action = null;
 
     /**
      * Indicates when the mitigating action was documented.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Identifies the practitioner who determined the mitigation and takes responsibility for the mitigation step occurring.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
@@ -94,7 +94,7 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the action that was taken or the observation that was made that reduces/eliminates the risk associated with the identified issue.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAction()
     {
@@ -103,7 +103,7 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the action that was taken or the observation that was made that reduces/eliminates the risk associated with the identified issue.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $action
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $action
      * @return $this
      */
     public function setAction($action)
@@ -114,7 +114,7 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Indicates when the mitigating action was documented.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -123,7 +123,7 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Indicates when the mitigating action was documented.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -134,7 +134,7 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Identifies the practitioner who determined the mitigation and takes responsibility for the mitigation step occurring.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -143,7 +143,7 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Identifies the practitioner who determined the mitigation and takes responsibility for the mitigation step occurring.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)

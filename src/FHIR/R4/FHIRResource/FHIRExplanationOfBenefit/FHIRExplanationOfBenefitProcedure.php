@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -71,35 +71,35 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 {
     /**
      * A number to uniquely identify procedure entries.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
      * When the condition was observed or the relative ranking.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * Date and optionally time the procedure was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $procedureCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $procedureReference = null;
 
     /**
      * Unique Device Identifiers associated with this line item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $udi = [];
 
@@ -110,7 +110,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * A number to uniquely identify procedure entries.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -119,7 +119,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * A number to uniquely identify procedure entries.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -130,7 +130,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * When the condition was observed or the relative ranking.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -139,7 +139,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * When the condition was observed or the relative ranking.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -150,7 +150,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * Date and optionally time the procedure was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -159,7 +159,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * Date and optionally time the procedure was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -169,7 +169,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProcedureCodeableConcept()
     {
@@ -177,7 +177,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedureCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedureCodeableConcept
      * @return $this
      */
     public function setProcedureCodeableConcept($procedureCodeableConcept)
@@ -187,7 +187,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProcedureReference()
     {
@@ -195,7 +195,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $procedureReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $procedureReference
      * @return $this
      */
     public function setProcedureReference($procedureReference)
@@ -206,7 +206,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * Unique Device Identifiers associated with this line item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getUdi()
     {
@@ -215,7 +215,7 @@ class FHIRExplanationOfBenefitProcedure extends FHIRBackboneElement implements \
 
     /**
      * Unique Device Identifiers associated with this line item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $udi
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $udi
      * @return $this
      */
     public function addUdi($udi)

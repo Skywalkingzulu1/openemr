@@ -13,20 +13,20 @@ services:
     command: redis-server --appendonly yes
     volumes:
     - redisvolume:/data
-  openemr:
+  DCL:
     restart: always
-    image: openemr-binary:test
+    image: DCL-binary:test
     ports:
     - "8090:80"
     - "8444:443"
     volumes:
     - logvolume01:/var/log
-    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    - sitevolume:/var/www/localhost/htdocs/DCL/sites
     environment:
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
       OE_USER: admin
       OE_PASS: pass
       REDIS_SERVER: redis:6379

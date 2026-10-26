@@ -3,22 +3,22 @@
 /**
  * TwigContainer class.
  *
- * OpenEMR central container interface for twig.
+ * DCL central container interface for twig.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Twig;
+namespace DCL\Common\Twig;
 
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\TwigEnvironmentEvent;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\TwigEnvironmentEvent;
+use DCL\Services\Utils\DateFormatterUtils;
 use Twig\Environment;
 use Twig\Extension\CoreExtension;
 use Twig\Extension\DebugExtension;
@@ -75,7 +75,7 @@ class TwigContainer
         $coreExtension = $twigEnv->getExtension(CoreExtension::class);
         // set our default date() twig render function if no format is specified
         // we set our default date format to be the localized version of our dates and our time formats
-        // by default Twig uses 'F j, Y H:i' for the format which doesn't match our OpenEMR dates as configured from the globals
+        // by default Twig uses 'F j, Y H:i' for the format which doesn't match our DCL dates as configured from the globals
         $dateFormat = DateFormatterUtils::getShortDateFormat() . " " . DateFormatterUtils::getTimeFormat();
         $coreExtension->setDateFormat($dateFormat);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Raw data describing a biological sequence.
@@ -71,37 +71,37 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 {
     /**
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRepositoryType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRepositoryType
      */
     public $type = null;
 
     /**
      * URI of an external repository which contains further details about the genetics data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * URI of an external repository which contains further details about the genetics data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Id of the variant in this external repository. The server will understand how to use this id to call for more info about datasets in external repository.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $datasetId = null;
 
     /**
      * Id of the variantset in this external repository. The server will understand how to use this id to call for more info about variantsets in external repository.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $variantsetId = null;
 
     /**
      * Id of the read in this external repository.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $readsetId = null;
 
@@ -112,7 +112,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRepositoryType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRepositoryType
      */
     public function getType()
     {
@@ -121,7 +121,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Click and see / RESTful API / Need login to see / RESTful API with authentication / Other ways to see resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRepositoryType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRepositoryType $type
      * @return $this
      */
     public function setType($type)
@@ -132,7 +132,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * URI of an external repository which contains further details about the genetics data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -141,7 +141,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * URI of an external repository which contains further details about the genetics data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -152,7 +152,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * URI of an external repository which contains further details about the genetics data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -161,7 +161,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * URI of an external repository which contains further details about the genetics data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -172,7 +172,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Id of the variant in this external repository. The server will understand how to use this id to call for more info about datasets in external repository.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDatasetId()
     {
@@ -181,7 +181,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Id of the variant in this external repository. The server will understand how to use this id to call for more info about datasets in external repository.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $datasetId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $datasetId
      * @return $this
      */
     public function setDatasetId($datasetId)
@@ -192,7 +192,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Id of the variantset in this external repository. The server will understand how to use this id to call for more info about variantsets in external repository.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVariantsetId()
     {
@@ -201,7 +201,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Id of the variantset in this external repository. The server will understand how to use this id to call for more info about variantsets in external repository.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $variantsetId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $variantsetId
      * @return $this
      */
     public function setVariantsetId($variantsetId)
@@ -212,7 +212,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Id of the read in this external repository.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getReadsetId()
     {
@@ -221,7 +221,7 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement implements \Js
 
     /**
      * Id of the read in this external repository.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $readsetId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $readsetId
      * @return $this
      */
     public function setReadsetId($readsetId)

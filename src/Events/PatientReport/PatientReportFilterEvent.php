@@ -5,15 +5,15 @@
  *
  * The class hides the implementation details of the underlying data allowing the event to change implementations
  * as needed.
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (C) 2024 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\PatientReport;
+namespace DCL\Events\PatientReport;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

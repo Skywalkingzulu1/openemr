@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The Care Team includes all the people and organizations who plan to participate in the coordination and delivery of care for a patient.
@@ -72,79 +72,79 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this care team by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates the current state of the care team.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCareTeamStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCareTeamStatus
      */
     public $status = null;
 
     /**
      * Identifies what kind of team.  This is to support differentiation between multiple co-existing teams, such as care plan team, episode of care team, longitudinal care team.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * A label for human use intended to distinguish like teams.  E.g. the "red" vs. "green" trauma teams.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Identifies the patient or group whose intended care is handled by the team.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The Encounter during which this CareTeam was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * Indicates when the team did (or is intended to) come into effect and end.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care team.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant[]
      */
     public $participant = [];
 
     /**
      * Describes why the care team exists.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Condition(s) that this care team addresses.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * The organization responsible for the care team.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $managingOrganization = [];
 
     /**
      * A central contact detail for the care team (that applies to all members).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Comments made about the CareTeam.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -155,7 +155,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this care team by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -164,7 +164,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this care team by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -175,7 +175,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of the care team.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCareTeamStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCareTeamStatus
      */
     public function getStatus()
     {
@@ -184,7 +184,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of the care team.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCareTeamStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCareTeamStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -195,7 +195,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies what kind of team.  This is to support differentiation between multiple co-existing teams, such as care plan team, episode of care team, longitudinal care team.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -204,7 +204,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies what kind of team.  This is to support differentiation between multiple co-existing teams, such as care plan team, episode of care team, longitudinal care team.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -215,7 +215,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A label for human use intended to distinguish like teams.  E.g. the "red" vs. "green" trauma teams.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -224,7 +224,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A label for human use intended to distinguish like teams.  E.g. the "red" vs. "green" trauma teams.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -235,7 +235,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient or group whose intended care is handled by the team.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -244,7 +244,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient or group whose intended care is handled by the team.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -255,7 +255,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this CareTeam was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -264,7 +264,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this CareTeam was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -275,7 +275,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates when the team did (or is intended to) come into effect and end.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -284,7 +284,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates when the team did (or is intended to) come into effect and end.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -295,7 +295,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care team.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant[]
      */
     public function getParticipant()
     {
@@ -304,7 +304,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care team.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant $participant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -315,7 +315,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes why the care team exists.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -324,7 +324,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes why the care team exists.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -335,7 +335,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Condition(s) that this care team addresses.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -344,7 +344,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Condition(s) that this care team addresses.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -355,7 +355,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization responsible for the care team.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getManagingOrganization()
     {
@@ -364,7 +364,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization responsible for the care team.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
      * @return $this
      */
     public function addManagingOrganization($managingOrganization)
@@ -375,7 +375,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A central contact detail for the care team (that applies to all members).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -384,7 +384,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A central contact detail for the care team (that applies to all members).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -395,7 +395,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the CareTeam.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -404,7 +404,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the CareTeam.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

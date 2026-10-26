@@ -10,16 +10,16 @@
  * response body that jq errors out on with "unexpected end of JSON
  * input") shouldn't abort the whole release-prep dispatch.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 use Symfony\Component\Process\Exception\ProcessTimedOutException;
 use Symfony\Component\Process\Process;
@@ -35,7 +35,7 @@ class GitHubApi
     protected int $maxAttempts;
 
     public function __construct(
-        private readonly string $repo = 'openemr/openemr',
+        private readonly string $repo = 'DCL/DCL',
         int $maxAttempts = 3,
     ) {
         if ($maxAttempts < 1) {

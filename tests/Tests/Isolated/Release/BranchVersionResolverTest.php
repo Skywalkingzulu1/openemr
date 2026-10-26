@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\BranchVersionResolver;
+use DCL\Release\BranchVersionResolver;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
@@ -24,7 +24,7 @@ final class BranchVersionResolverTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-branch-version-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-branch-version-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -51,16 +51,16 @@ final class BranchVersionResolverTest extends TestCase
 
     public function testBranchToVersionCutsNextPatchAfterExistingRelease(): void
     {
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 released 2026-05-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 released 2026-05-01']);
         $resolver = new BranchVersionResolver($this->tmpDir);
         self::assertSame('8.1.1', $resolver->branchToVersion('rel-810'));
     }
 
     public function testBranchToVersionPicksHighestPatchOnMinorLine(): void
     {
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 released 2026-05-01']);
-        $this->git(['tag', '-a', 'v8_1_1', '-m', 'OpenEMR 8.1.1 released 2026-05-15']);
-        $this->git(['tag', '-a', 'v8_1_2', '-m', 'OpenEMR 8.1.2 released 2026-06-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 released 2026-05-01']);
+        $this->git(['tag', '-a', 'v8_1_1', '-m', 'DCL 8.1.1 released 2026-05-15']);
+        $this->git(['tag', '-a', 'v8_1_2', '-m', 'DCL 8.1.2 released 2026-06-01']);
         $resolver = new BranchVersionResolver($this->tmpDir);
         self::assertSame('8.1.3', $resolver->branchToVersion('rel-810'));
     }
@@ -69,8 +69,8 @@ final class BranchVersionResolverTest extends TestCase
     {
         // Tags on 8.0.x and 8.2.x must not influence the patch chosen
         // for the 8.1 line.
-        $this->git(['tag', '-a', 'v8_0_5', '-m', 'OpenEMR 8.0.5 released 2026-03-01']);
-        $this->git(['tag', '-a', 'v8_2_0', '-m', 'OpenEMR 8.2.0 released 2026-07-01']);
+        $this->git(['tag', '-a', 'v8_0_5', '-m', 'DCL 8.0.5 released 2026-03-01']);
+        $this->git(['tag', '-a', 'v8_2_0', '-m', 'DCL 8.2.0 released 2026-07-01']);
         $resolver = new BranchVersionResolver($this->tmpDir);
         self::assertSame('8.1.0', $resolver->branchToVersion('rel-810'));
     }
@@ -87,7 +87,7 @@ final class BranchVersionResolverTest extends TestCase
         // A lightweight tag whose name matches the release pattern must
         // not bump the patch: the spec requires annotated tags, so only
         // an annotated v8_1_0 below counts toward the next version.
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 released 2026-05-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 released 2026-05-01']);
         $this->git(['tag', 'v8_1_5']);
         $resolver = new BranchVersionResolver($this->tmpDir);
         self::assertSame('8.1.1', $resolver->branchToVersion('rel-810'));
@@ -108,8 +108,8 @@ final class BranchVersionResolverTest extends TestCase
 
     public function testPreviousReleaseReturnsLatestVersionTag(): void
     {
-        $this->git(['tag', '-a', 'v8_0_0', '-m', 'OpenEMR 8.0.0 released 2026-01-01']);
-        $this->git(['tag', '-a', 'v8_0_1', '-m', 'OpenEMR 8.0.1 released 2026-02-01']);
+        $this->git(['tag', '-a', 'v8_0_0', '-m', 'DCL 8.0.0 released 2026-01-01']);
+        $this->git(['tag', '-a', 'v8_0_1', '-m', 'DCL 8.0.1 released 2026-02-01']);
         $resolver = new BranchVersionResolver($this->tmpDir);
         self::assertSame('8.0.1', $resolver->previousRelease('8.1.0'));
     }
@@ -129,8 +129,8 @@ final class BranchVersionResolverTest extends TestCase
         // A future-version tag (e.g. someone pre-tagged 8.2.0 while
         // 8.1.0 is being cut) must not be returned as the previous
         // release of 8.1.0.
-        $this->git(['tag', '-a', 'v8_0_5', '-m', 'OpenEMR 8.0.5 released 2026-03-01']);
-        $this->git(['tag', '-a', 'v8_2_0', '-m', 'OpenEMR 8.2.0 released 2026-04-01']);
+        $this->git(['tag', '-a', 'v8_0_5', '-m', 'DCL 8.0.5 released 2026-03-01']);
+        $this->git(['tag', '-a', 'v8_2_0', '-m', 'DCL 8.2.0 released 2026-04-01']);
         $resolver = new BranchVersionResolver($this->tmpDir);
         self::assertSame('8.0.5', $resolver->previousRelease('8.1.0'));
     }
@@ -139,7 +139,7 @@ final class BranchVersionResolverTest extends TestCase
     {
         // No qualifying tag below the target -> synthesise one. Same
         // behaviour as a fresh repo with no tags at all.
-        $this->git(['tag', '-a', 'v8_2_0', '-m', 'OpenEMR 8.2.0 released 2026-04-01']);
+        $this->git(['tag', '-a', 'v8_2_0', '-m', 'DCL 8.2.0 released 2026-04-01']);
         $resolver = new BranchVersionResolver($this->tmpDir);
         self::assertSame('8.0.0', $resolver->previousRelease('8.1.0'));
     }
@@ -150,8 +150,8 @@ final class BranchVersionResolverTest extends TestCase
         // it's absent from data/releases.json. When computing prev_release
         // for 8.2.0, the resolver must skip 8.1.0 and fall through to
         // 8.0.0 (the last actually-shipped release).
-        $this->git(['tag', '-a', 'v8_0_0', '-m', 'OpenEMR 8.0.0 released 2026-01-01']);
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 cut but skipped']);
+        $this->git(['tag', '-a', 'v8_0_0', '-m', 'DCL 8.0.0 released 2026-01-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 cut but skipped']);
         $resolver = new BranchVersionResolver(
             $this->tmpDir,
             $this->manifestClient(['8.0.0' => 'FINAL']),
@@ -162,7 +162,7 @@ final class BranchVersionResolverTest extends TestCase
     public function testPreviousReleaseTrustsManifestOverAnnotatedTagFilter(): void
     {
         // Historic SourceForge-era v* tags are LIGHTWEIGHT, not annotated
-        // (openemr/openemr's real v8_0_0 predates the annotated-tag policy
+        // (DCL/DCL's real v8_0_0 predates the annotated-tag policy
         // TagVerifier enforces on new cuts). The manifest is the source
         // of truth for what shipped; the resolver must trust it and NOT
         // discard 8.0.0 just because its tag is lightweight.
@@ -188,8 +188,8 @@ final class BranchVersionResolverTest extends TestCase
         // Same tag set as above, but this time 8.1.0 shipped normally.
         // The manifest contains both entries; both are eligible; 8.1.0
         // wins as the newest below target 8.2.0.
-        $this->git(['tag', '-a', 'v8_0_0', '-m', 'OpenEMR 8.0.0 released 2026-01-01']);
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 released 2026-06-01']);
+        $this->git(['tag', '-a', 'v8_0_0', '-m', 'DCL 8.0.0 released 2026-01-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 released 2026-06-01']);
         $resolver = new BranchVersionResolver(
             $this->tmpDir,
             $this->manifestClient(['8.0.0' => 'FINAL', '8.1.0' => 'FINAL']),
@@ -204,8 +204,8 @@ final class BranchVersionResolverTest extends TestCase
         // the release-docs bot pre-populates a DRAFT entry for the next
         // release before it flips FINAL - that draft mustn't be used as
         // a prev_release for anything.
-        $this->git(['tag', '-a', 'v8_0_0', '-m', 'OpenEMR 8.0.0 released 2026-01-01']);
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 draft']);
+        $this->git(['tag', '-a', 'v8_0_0', '-m', 'DCL 8.0.0 released 2026-01-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 draft']);
         $resolver = new BranchVersionResolver(
             $this->tmpDir,
             $this->manifestClient(['8.0.0' => 'FINAL', '8.1.0' => 'DRAFT']),
@@ -222,8 +222,8 @@ final class BranchVersionResolverTest extends TestCase
         // prev, which is the pre-manifest behaviour. Preferable to a
         // hard failure that would block every release dispatch on any
         // parse hiccup.
-        $this->git(['tag', '-a', 'v8_0_0', '-m', 'OpenEMR 8.0.0 released 2026-01-01']);
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 cut but skipped']);
+        $this->git(['tag', '-a', 'v8_0_0', '-m', 'DCL 8.0.0 released 2026-01-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 cut but skipped']);
         $client = new MockHttpClient([new MockResponse('not json at all', ['http_code' => 200])]);
         $resolver = new BranchVersionResolver($this->tmpDir, $client);
         self::assertSame('8.1.0', $resolver->previousRelease('8.2.0'));
@@ -235,8 +235,8 @@ final class BranchVersionResolverTest extends TestCase
         // downtime, DNS blip). getContent() throws a ClientException /
         // ServerException (both extend HttpClientException); resolver's
         // try/catch on the HTTP call catches and falls back to tag-only.
-        $this->git(['tag', '-a', 'v8_0_0', '-m', 'OpenEMR 8.0.0 released 2026-01-01']);
-        $this->git(['tag', '-a', 'v8_1_0', '-m', 'OpenEMR 8.1.0 cut but skipped']);
+        $this->git(['tag', '-a', 'v8_0_0', '-m', 'DCL 8.0.0 released 2026-01-01']);
+        $this->git(['tag', '-a', 'v8_1_0', '-m', 'DCL 8.1.0 cut but skipped']);
         $client = new MockHttpClient([new MockResponse('server error', ['http_code' => 500])]);
         $resolver = new BranchVersionResolver($this->tmpDir, $client);
         self::assertSame('8.1.0', $resolver->previousRelease('8.2.0'));

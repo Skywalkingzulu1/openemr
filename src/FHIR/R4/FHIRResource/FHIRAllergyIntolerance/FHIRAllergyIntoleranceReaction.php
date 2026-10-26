@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAllergyIntolerance;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAllergyIntolerance;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAllergyIntolerance;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.
@@ -71,43 +71,43 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 {
     /**
      * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $substance = null;
 
     /**
      * Clinical symptoms and/or signs that are observed or associated with the adverse reaction event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $manifestation = [];
 
     /**
      * Text description about the reaction as a whole, including details of the manifestation if required.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Record of the date and/or time of the onset of the Reaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $onset = null;
 
     /**
      * Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceSeverity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceSeverity
      */
     public $severity = null;
 
     /**
      * Identification of the route by which the subject was exposed to the substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $exposureRoute = null;
 
     /**
      * Additional text about the adverse reaction event not captured in other fields.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -118,7 +118,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstance()
     {
@@ -127,7 +127,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $substance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $substance
      * @return $this
      */
     public function setSubstance($substance)
@@ -138,7 +138,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Clinical symptoms and/or signs that are observed or associated with the adverse reaction event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getManifestation()
     {
@@ -147,7 +147,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Clinical symptoms and/or signs that are observed or associated with the adverse reaction event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $manifestation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $manifestation
      * @return $this
      */
     public function addManifestation($manifestation)
@@ -158,7 +158,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Text description about the reaction as a whole, including details of the manifestation if required.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -167,7 +167,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Text description about the reaction as a whole, including details of the manifestation if required.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -178,7 +178,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Record of the date and/or time of the onset of the Reaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOnset()
     {
@@ -187,7 +187,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Record of the date and/or time of the onset of the Reaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $onset
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $onset
      * @return $this
      */
     public function setOnset($onset)
@@ -198,7 +198,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceSeverity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceSeverity
      */
     public function getSeverity()
     {
@@ -207,7 +207,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
      * @return $this
      */
     public function setSeverity($severity)
@@ -218,7 +218,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Identification of the route by which the subject was exposed to the substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getExposureRoute()
     {
@@ -227,7 +227,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Identification of the route by which the subject was exposed to the substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $exposureRoute
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $exposureRoute
      * @return $this
      */
     public function setExposureRoute($exposureRoute)
@@ -238,7 +238,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Additional text about the adverse reaction event not captured in other fields.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -247,7 +247,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
 
     /**
      * Additional text about the adverse reaction event not captured in other fields.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

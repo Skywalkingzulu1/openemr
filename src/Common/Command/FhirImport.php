@@ -5,25 +5,25 @@
  *
  * Walks Synthea FHIR R4 Bundle *.json files and POSTs each entry to the
  * per-resource FHIR write endpoints added in #13281. Driven by
- * openemr-cmd irp --format=fhir (from the openemr-devops repo) through
+ * DCL-cmd irp --format=fhir (from the DCL-devops repo) through
  * docker/flex/utilities/devtoolsLibrary.source::importRandomPatients.
  *
  * See src/Services/FHIR/Import/README.md for the full readiness checklist
  * of server-side bugs, strict validators, unimplemented resources, and
  * the peelable transforms that work around each.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Services\FHIR\Import\FhirBundleImporter;
+use DCL\Services\FHIR\Import\FhirBundleImporter;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -35,14 +35,14 @@ final class FhirImport extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:fhir-import')
+            ->setName('DCL:fhir-import')
             ->setDescription('Import Synthea FHIR R4 Bundle *.json files via the FHIR write endpoints')
             ->addUsage('--site=default --sourcePath=/tmp/synthea/output/fhir')
             ->setDefinition(
                 new InputDefinition([
                     new InputOption('sourcePath', null, InputOption::VALUE_REQUIRED, 'Directory of Synthea FHIR Bundle *.json files'),
-                    new InputOption('site', null, InputOption::VALUE_REQUIRED, 'OpenEMR site id', 'default'),
-                    new InputOption('openemrPath', null, InputOption::VALUE_REQUIRED, 'OpenEMR web root', '/var/www/localhost/htdocs/openemr'),
+                    new InputOption('site', null, InputOption::VALUE_REQUIRED, 'DCL site id', 'default'),
+                    new InputOption('DCLPath', null, InputOption::VALUE_REQUIRED, 'DCL web root', '/var/www/localhost/htdocs/DCL'),
                     new InputOption('baseUrl', null, InputOption::VALUE_REQUIRED, 'Base URL of the running stack', 'https://localhost'),
                     new InputOption('adminUser', null, InputOption::VALUE_REQUIRED, 'Admin username for password grant', 'admin'),
                     new InputOption('adminPass', null, InputOption::VALUE_REQUIRED, 'Admin password for password grant', 'pass'),
@@ -56,9 +56,9 @@ final class FhirImport extends Command
         // invocation on a non-dev stack where the password grant and the
         // oauth_clients UPDATE would be inappropriate. Require the exact
         // string "1" — `getenv() === false` would accept any truthy or
-        // falsy value including OPENEMR_ENABLE_FHIR_IMPORT=0.
-        if (getenv('OPENEMR_ENABLE_FHIR_IMPORT') !== '1') {
-            $output->writeln('Set OPENEMR_ENABLE_FHIR_IMPORT=1 environment variable to enable this command');
+        // falsy value including DCL_ENABLE_FHIR_IMPORT=0.
+        if (getenv('DCL_ENABLE_FHIR_IMPORT') !== '1') {
+            $output->writeln('Set DCL_ENABLE_FHIR_IMPORT=1 environment variable to enable this command');
             return 2;
         }
 
@@ -71,7 +71,7 @@ final class FhirImport extends Command
         $importer = new FhirBundleImporter(
             baseUrl: $this->requireString($input, 'baseUrl'),
             site: $this->requireString($input, 'site'),
-            openemrPath: $this->requireString($input, 'openemrPath'),
+            DCLPath: $this->requireString($input, 'DCLPath'),
             adminUser: $this->requireString($input, 'adminUser'),
             adminPass: $this->requireString($input, 'adminPass'),
         );

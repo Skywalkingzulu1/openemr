@@ -1,6 +1,6 @@
 #!/bin/sh
 # ============================================================================
-# OpenEMR Admin User Unlock and Password Reset - Shell Wrapper
+# DCL Admin User Unlock and Password Reset - Shell Wrapper
 # ============================================================================
 # This is a convenience wrapper script for unlock_admin.php.
 # It changes to the /root directory where unlock_admin.php is located
@@ -12,7 +12,7 @@
 # Example:
 #   ./unlock_admin.sh mynewpassword123
 #
-# This script is typically executed from within the OpenEMR container
+# This script is typically executed from within the DCL container
 # or via docker exec.
 # ============================================================================
 

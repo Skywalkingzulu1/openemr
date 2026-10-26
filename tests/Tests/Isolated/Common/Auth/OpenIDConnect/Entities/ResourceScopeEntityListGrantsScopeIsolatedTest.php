@@ -4,21 +4,21 @@
  * Isolated tests for ResourceScopeEntityList::grantsScope() -- union-of-permissions and
  * constraint-aware grant checks.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Auth\OpenIDConnect\Entities;
+namespace DCL\Tests\Isolated\Common\Auth\OpenIDConnect\Entities;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

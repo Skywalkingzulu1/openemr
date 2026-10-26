@@ -4,18 +4,18 @@
  * Handles the editing, updating, creating, and deleting of the telecom list datatype in LBF
  * Uses ContactService and ContactTelecomService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\ContactService;
-use OpenEMR\Services\ContactTelecomService;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\ContactService;
+use DCL\Services\ContactTelecomService;
 
 // Initialize services
 $contactService = new ContactService();

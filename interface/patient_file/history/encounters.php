@@ -5,36 +5,36 @@
  *  rm: print button to print page & generate pdf; include patients name, id and dob on the page. issue #7270
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Roberto Vasquez <robertogagliotta@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2015 Roberto Vasquez <robertogagliotta@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018-2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 require_once(__DIR__ . "/../../../custom/code_types.inc.php");
-if (\OpenEMR\Core\OEGlobalsBag::getInstance()->getBoolean('enable_group_therapy')) {
+if (\DCL\Core\OEGlobalsBag::getInstance()->getBoolean('enable_group_therapy')) {
     require_once($srcdir . "/group.inc.php");
 }
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Billing\InvoiceSummary;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\FormLocator;
-use OpenEMR\Common\Forms\FormReportRenderer;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Billing\BillingUtilities;
+use DCL\Billing\InvoiceSummary;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\FormLocator;
+use DCL\Common\Forms\FormReportRenderer;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
@@ -839,7 +839,7 @@ window.onload = function() {
 
                 $encounter_type = [];
                 if (OEGlobalsBag::getInstance()->getBoolean('enable_group_therapy') && !$billing_view && $therapy_group == 0) {
-                    $encounter_type = sqlQuery("SELECT pc_catname, pc_cattype FROM openemr_postcalendar_categories where pc_catid = ?", [$result4['pc_catid']]);
+                    $encounter_type = sqlQuery("SELECT pc_catname, pc_cattype FROM DCL_postcalendar_categories where pc_catid = ?", [$result4['pc_catid']]);
                     echo "<td>" . xlt($encounter_type['pc_catname']) . "</td>\n";
                 }
 

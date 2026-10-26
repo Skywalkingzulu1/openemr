@@ -24,30 +24,30 @@
  *                  to next-dev via VersionPhpMasterMutator) are a
  *                  workstream 2 concern (G4) and are NOT invoked from
  *                  this command. They are wired by the sibling
- *                  `openemr:branch-cut` command (see `BranchCutCommand`),
+ *                  `DCL:branch-cut` command (see `BranchCutCommand`),
  *                  driven by the branch-cut-automation workflow.
  *
- * See docs/release-automation-plan.md and openemr/openemr-devops#664
+ * See docs/release-automation-plan.md and DCL/DCL-devops#664
  * for the full design.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\DockerComposeProductionMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\OpenApiVersionMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\PostReleaseTargetsMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\SwaggerRegenMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\VersionPhpMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\Mutator\DockerComposeProductionMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\OpenApiVersionMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\PostReleaseTargetsMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\SwaggerRegenMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\VersionPhpMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -74,7 +74,7 @@ final class ReleasePrepCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:release-prep')
+            ->setName('DCL:release-prep')
             ->setDescription('Apply mechanical release-prep mutations for the conductor workflow')
             ->addOption(
                 'target-version',
@@ -189,7 +189,7 @@ final class ReleasePrepCommand extends Command
      * Branch-cut master mutators (SqlUpgradeSkeletonMutator,
      * VersionPhpMasterMutator, etc.) are intentionally NOT wired here —
      * they belong to the workstream 2 (G4) branch-cut lifecycle event
-     * and are wired by `openemr:branch-cut` (see `BranchCutCommand`)
+     * and are wired by `DCL:branch-cut` (see `BranchCutCommand`)
      * driven by the branch-cut-automation workflow.
      *
      * @return list<MutatorInterface>
@@ -207,11 +207,11 @@ final class ReleasePrepCommand extends Command
      * Late-bound wiring for mutators that live in `tools/release/src/`
      * (autoload-dev), keeping conductor-only classes out of the
      * production autoload map per the original release-mechanism
-     * boundary (see composer.json's split between `OpenEMR\` production
-     * autoload and `OpenEMR\Release\` autoload-dev). Present in every
+     * boundary (see composer.json's split between `DCL\` production
+     * autoload and `DCL\Release\` autoload-dev). Present in every
      * environment that installs dev dependencies (CI, release workflows);
      * silently absent from a production `composer install --no-dev`, which
-     * never invokes `openemr:release-prep` anyway.
+     * never invokes `DCL:release-prep` anyway.
      *
      * Class names are referenced as strings rather than `use`d so
      * composer-require-checker does not flag the cross-boundary
@@ -235,8 +235,8 @@ final class ReleasePrepCommand extends Command
         // literal) so an IDE can refactor the FQCN alongside the file if
         // it ever moves.
         $optionalMutators = [
-            \OpenEMR\Release\Mutator\ChangelogMutator::class,
-            \OpenEMR\Release\Mutator\CompatibilityMutator::class,
+            \DCL\Release\Mutator\ChangelogMutator::class,
+            \DCL\Release\Mutator\CompatibilityMutator::class,
         ];
         foreach ($optionalMutators as $mutator) {
             if (class_exists($mutator)) {

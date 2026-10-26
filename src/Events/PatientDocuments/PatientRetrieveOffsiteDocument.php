@@ -3,14 +3,14 @@
 /**
  * PatientRetrieveOffsiteDocument
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2024 Sherwin Gaddis <sherwingaddis@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\PatientDocuments;
+namespace DCL\Events\PatientDocuments;
 
 use Document;
 use Symfony\Contracts\EventDispatcher\Event;
@@ -24,15 +24,15 @@ class PatientRetrieveOffsiteDocument extends Event
     }
 
     /**
-     * Returns the OpenEMR document class that represents this document in the file system
+     * Returns the DCL document class that represents this document in the file system
      * @return Document|null
      */
-    public function getOpenEMRDocument(): ?Document
+    public function getDCLDocument(): ?Document
     {
         return $this->document;
     }
 
-    public function getOpenEMRDocumentUrl(): string
+    public function getDCLDocumentUrl(): string
     {
         return $this->url;
     }

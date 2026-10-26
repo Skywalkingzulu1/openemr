@@ -2,27 +2,27 @@
 
 /**
  * FhirDocumentReferenceController.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\SMART\ResourceConstraintFilterer;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirDocumentReferenceService;
-use OpenEMR\Services\FHIR\FhirResourcesService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\SMART\ResourceConstraintFilterer;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirDocumentReferenceService;
+use DCL\Services\FHIR\FhirResourcesService;
+use DCL\Validators\ProcessingResult;
 
 class FhirDocumentReferenceRestController
 {
@@ -102,9 +102,9 @@ class FhirDocumentReferenceRestController
                                 [
                                     'coding' => [
                                         [
-                                            'system' => 'https://localhost:9300/apis/default/fhir/ValueSet/openemr-document-types',
-                                            'code' => 'openemr-document',
-                                            'display' => 'OpenEMR Document',
+                                            'system' => 'https://localhost:9300/apis/default/fhir/ValueSet/DCL-document-types',
+                                            'code' => 'DCL-document',
+                                            'display' => 'DCL Document',
                                         ],
                                     ],
                                 ],
@@ -138,7 +138,7 @@ class FhirDocumentReferenceRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($fhirId, $puuidBind = null)
     {
@@ -233,7 +233,7 @@ class FhirDocumentReferenceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {

@@ -3,18 +3,18 @@
 /**
  * BaseTrait trait
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2024 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2025-2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025-2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e\Base;
+namespace DCL\Tests\E2e\Base;
 
 use Facebook\WebDriver\Exception\Internal\UnexpectedResponseException;
 use Facebook\WebDriver\Exception\NoAlertOpenException;
@@ -28,8 +28,8 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverElement;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstants;
+use DCL\Common\Database\QueryUtils;
+use DCL\Tests\E2e\Xpaths\XpathsConstants;
 use RuntimeException;
 use Symfony\Component\Panther\Client;
 use Symfony\Component\Panther\DomCrawler\Crawler;
@@ -52,7 +52,7 @@ trait BaseTrait
         if ($useGrid === "true") {
             // Use Selenium Grid (consistent testing environment with goal of stability)
             $seleniumHost = getenv("SELENIUM_HOST", true) ?: "selenium";
-            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://openemr";
+            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://DCL";
             $forceHeadless = getenv("SELENIUM_FORCE_HEADLESS", true) ?: "false";
             // Implicit wait must be 0 when using explicit waits (waitFor,
             // waitForVisibility, wait()->until()). A non-zero implicit wait
@@ -438,6 +438,6 @@ trait BaseTrait
         $this->goToUserMenuLink('fa-sign-out-alt');
         $this->client->waitFor('//input[@id="authUser"]');
         $title = $this->client->getTitle();
-        $this->assertSame('OpenEMR Login', $title, 'Logout FAILED');
+        $this->assertSame('DCL Login', $title, 'Logout FAILED');
     }
 }

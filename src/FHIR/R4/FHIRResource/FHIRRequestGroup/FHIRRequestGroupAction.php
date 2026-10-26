@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup;
+namespace DCL\FHIR\R4\FHIRResource\FHIRRequestGroup;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A group of related requests that can be used to capture intended activities that have inter-dependencies such as "give this medication after that one".
@@ -71,139 +71,139 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * A user-visible prefix for the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $prefix = null;
 
     /**
      * The title of the action displayed to a user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A short description of the action used to provide a summary to display to the user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $textEquivalent = null;
 
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $documentation = [];
 
     /**
      * An expression that describes applicability criteria, or start/stop conditions for the action.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupCondition[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupCondition[]
      */
     public $condition = [];
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
      */
     public $relatedAction = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $timingAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $timingDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $timingRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
      * The participant that should perform or be responsible for this action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $participant = [];
 
     /**
      * The type of action to perform (create, update, remove).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
      */
     public $groupingBehavior = null;
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
      */
     public $selectionBehavior = null;
 
     /**
      * Defines expectations around whether an action is required.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
      */
     public $requiredBehavior = null;
 
     /**
      * Defines whether the action should usually be preselected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
      */
     public $precheckBehavior = null;
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
      */
     public $cardinalityBehavior = null;
 
     /**
      * The resource that is the target of the action (e.g. CommunicationRequest).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $resource = null;
 
     /**
      * Sub actions.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     public $action = [];
 
@@ -214,7 +214,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A user-visible prefix for the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPrefix()
     {
@@ -223,7 +223,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A user-visible prefix for the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $prefix
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $prefix
      * @return $this
      */
     public function setPrefix($prefix)
@@ -234,7 +234,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The title of the action displayed to a user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -243,7 +243,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The title of the action displayed to a user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -254,7 +254,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A short description of the action used to provide a summary to display to the user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -263,7 +263,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A short description of the action used to provide a summary to display to the user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -274,7 +274,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTextEquivalent()
     {
@@ -283,7 +283,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $textEquivalent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $textEquivalent
      * @return $this
      */
     public function setTextEquivalent($textEquivalent)
@@ -294,7 +294,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -303,7 +303,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates how quickly the action should be addressed with respect to other actions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -314,7 +314,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -323,7 +323,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -334,7 +334,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getDocumentation()
     {
@@ -343,7 +343,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $documentation
      * @return $this
      */
     public function addDocumentation($documentation)
@@ -354,7 +354,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * An expression that describes applicability criteria, or start/stop conditions for the action.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupCondition[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupCondition[]
      */
     public function getCondition()
     {
@@ -363,7 +363,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * An expression that describes applicability criteria, or start/stop conditions for the action.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupCondition $condition
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupCondition $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -374,7 +374,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
      */
     public function getRelatedAction()
     {
@@ -383,7 +383,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A relationship to another action such as "before" or "30-60 minutes after start of".
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupRelatedAction $relatedAction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupRelatedAction $relatedAction
      * @return $this
      */
     public function addRelatedAction($relatedAction)
@@ -393,7 +393,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
     {
@@ -401,7 +401,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
     public function setTimingDateTime($timingDateTime)
@@ -411,7 +411,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getTimingAge()
     {
@@ -419,7 +419,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @return $this
      */
     public function setTimingAge($timingAge)
@@ -429,7 +429,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
     {
@@ -437,7 +437,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
     public function setTimingPeriod($timingPeriod)
@@ -447,7 +447,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getTimingDuration()
     {
@@ -455,7 +455,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return $this
      */
     public function setTimingDuration($timingDuration)
@@ -465,7 +465,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getTimingRange()
     {
@@ -473,7 +473,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $timingRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $timingRange
      * @return $this
      */
     public function setTimingRange($timingRange)
@@ -483,7 +483,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getTimingTiming()
     {
@@ -491,7 +491,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
      * @return $this
      */
     public function setTimingTiming($timingTiming)
@@ -502,7 +502,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The participant that should perform or be responsible for this action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getParticipant()
     {
@@ -511,7 +511,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The participant that should perform or be responsible for this action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $participant
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -522,7 +522,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The type of action to perform (create, update, remove).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -531,7 +531,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The type of action to perform (create, update, remove).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -542,7 +542,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior
      */
     public function getGroupingBehavior()
     {
@@ -551,7 +551,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
      * @return $this
      */
     public function setGroupingBehavior($groupingBehavior)
@@ -562,7 +562,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior
      */
     public function getSelectionBehavior()
     {
@@ -571,7 +571,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
      * @return $this
      */
     public function setSelectionBehavior($selectionBehavior)
@@ -582,7 +582,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines expectations around whether an action is required.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior
      */
     public function getRequiredBehavior()
     {
@@ -591,7 +591,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines expectations around whether an action is required.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
      * @return $this
      */
     public function setRequiredBehavior($requiredBehavior)
@@ -602,7 +602,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action should usually be preselected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior
      */
     public function getPrecheckBehavior()
     {
@@ -611,7 +611,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action should usually be preselected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
      * @return $this
      */
     public function setPrecheckBehavior($precheckBehavior)
@@ -622,7 +622,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior
      */
     public function getCardinalityBehavior()
     {
@@ -631,7 +631,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
      * @return $this
      */
     public function setCardinalityBehavior($cardinalityBehavior)
@@ -642,7 +642,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The resource that is the target of the action (e.g. CommunicationRequest).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResource()
     {
@@ -651,7 +651,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The resource that is the target of the action (e.g. CommunicationRequest).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $resource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $resource
      * @return $this
      */
     public function setResource($resource)
@@ -662,7 +662,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Sub actions.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     public function getAction()
     {
@@ -671,7 +671,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Sub actions.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction $action
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRequestGroup\FHIRRequestGroupAction $action
      * @return $this
      */
     public function addAction($action)

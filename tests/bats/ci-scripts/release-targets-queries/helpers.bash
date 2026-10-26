@@ -54,7 +54,7 @@ write_release_targets() {
         if [[ -n "${master_tags}" ]]; then
             echo "  docker_tags: ${master_tags}"
         else
-            echo "  openemr_version_ref: refs/heads/master"
+            echo "  DCL_version_ref: refs/heads/master"
         fi
         local idx=0
         for tags in "$@"; do

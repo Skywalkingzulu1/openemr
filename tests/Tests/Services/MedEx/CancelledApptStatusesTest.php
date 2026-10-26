@@ -3,20 +3,20 @@
 /**
  * Tests the MedEx cancelled appointment status setting and the SQL clause built from it.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\MedEx;
+namespace DCL\Tests\Services\MedEx;
 
 use MedExApi\Base;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -86,14 +86,14 @@ class CancelledApptStatusesTest extends TestCase
     {
         foreach (['-', 'x', '%', self::DOTTED_STATUS, self::QUOTED_STATUS] as $status) {
             QueryUtils::sqlInsert(
-                'INSERT INTO openemr_postcalendar_events (pc_pid, pc_apptstatus, pc_eventDate, pc_multiple) VALUES (?, ?, CURDATE(), 0)',
+                'INSERT INTO DCL_postcalendar_events (pc_pid, pc_apptstatus, pc_eventDate, pc_multiple) VALUES (?, ?, CURDATE(), 0)',
                 [self::TEST_PID, $status]
             );
         }
         $this->setGlobal(['%', 'x', self::DOTTED_STATUS]);
 
         $remaining = QueryUtils::fetchTableColumn(
-            'SELECT pc_apptstatus FROM openemr_postcalendar_events WHERE pc_pid = ?' . $this->clause() . ' ORDER BY pc_apptstatus',
+            'SELECT pc_apptstatus FROM DCL_postcalendar_events WHERE pc_pid = ?' . $this->clause() . ' ORDER BY pc_apptstatus',
             'pc_apptstatus',
             [self::TEST_PID]
         );
@@ -110,7 +110,7 @@ class CancelledApptStatusesTest extends TestCase
 
         $this->assertStringContainsString("'phpunit\\'q'", $clause);
         // the clause must still be valid SQL
-        QueryUtils::fetchRecords('SELECT pc_eid FROM openemr_postcalendar_events WHERE 1 = 1' . $clause . ' LIMIT 1');
+        QueryUtils::fetchRecords('SELECT pc_eid FROM DCL_postcalendar_events WHERE 1 = 1' . $clause . ' LIMIT 1');
     }
 
     #[Test]
@@ -172,7 +172,7 @@ class CancelledApptStatusesTest extends TestCase
             [self::DOTTED_STATUS, self::QUOTED_STATUS]
         );
         QueryUtils::sqlStatementThrowException(
-            'DELETE FROM openemr_postcalendar_events WHERE pc_pid = ?',
+            'DELETE FROM DCL_postcalendar_events WHERE pc_pid = ?',
             [self::TEST_PID]
         );
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A time period defined by a start and end date and optionally time.
@@ -72,13 +72,13 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
 {
     /**
      * The start of the period. The boundary is inclusive.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $start = null;
 
     /**
      * The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $end = null;
 
@@ -89,7 +89,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
 
     /**
      * The start of the period. The boundary is inclusive.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getStart()
     {
@@ -98,7 +98,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
 
     /**
      * The start of the period. The boundary is inclusive.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $start
      * @return $this
      */
     public function setStart($start)
@@ -109,7 +109,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
 
     /**
      * The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEnd()
     {
@@ -118,7 +118,7 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
 
     /**
      * The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $end
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $end
      * @return $this
      */
     public function setEnd($end)

@@ -3,20 +3,20 @@
 /**
  * physical_exam report.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2005 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
-use function OpenEMR\Forms\PhysicalExam\physical_exam_lines;
-use function OpenEMR\Forms\PhysicalExam\scalar_string;
+use function DCL\Forms\PhysicalExam\physical_exam_lines;
+use function DCL\Forms\PhysicalExam\scalar_string;
 
 require_once(__DIR__ . '/../../globals.php');
 require_once(__DIR__ . '/lines.php');

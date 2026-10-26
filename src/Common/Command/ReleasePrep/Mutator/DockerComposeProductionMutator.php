@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Pin docker/production/docker-compose.yml's openemr image from
+ * Pin docker/production/docker-compose.yml's DCL image from
  * `latest[@sha256:...]` to `<version>` (tag only, no digest).
  *
  * At release-prep time, the release-tagged image does not yet exist in
@@ -11,20 +11,20 @@
  * `--image-digest` pathway assumed an out-of-band digest lookup that
  * doesn't fit the actual sequencing; drop it and just swap the tag.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
@@ -34,7 +34,7 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
 
     public function name(): string
     {
-        return 'docker/production/docker-compose.yml (pin openemr image tag)';
+        return 'docker/production/docker-compose.yml (pin DCL image tag)';
     }
 
     public function apply(MutatorContext $context): MutatorResult
@@ -47,14 +47,14 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
 
         $version = $context->versionString();
 
-        // Pattern matches `image: openemr/openemr:<tag>` with an optional
+        // Pattern matches `image: DCL/DCL:<tag>` with an optional
         // `@sha256:<digest>` suffix. The tag may be `latest`, the target
         // version, or another version (idempotence + handles re-runs).
         // The digest is optional because rel-* branches that were cut
         // before the digest-pinning automation existed start with a bare
-        // tag (e.g. `openemr/openemr:8.1.0`). Whatever's after `:`, we
+        // tag (e.g. `DCL/DCL:8.1.0`). Whatever's after `:`, we
         // replace it with the target version and strip the digest entirely.
-        $pattern = '/(image:\s*openemr\/openemr:)([^@\s]+)(?:@sha256:[0-9a-f]{64})?/';
+        $pattern = '/(image:\s*DCL\/DCL:)([^@\s]+)(?:@sha256:[0-9a-f]{64})?/';
         $updated = preg_replace_callback(
             $pattern,
             static fn (array $match): string => $match[1] . $version,
@@ -67,7 +67,7 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
         }
         if ($count === 0) {
             throw new \RuntimeException(
-                'Expected an `image: openemr/openemr:<tag>` line in docker-compose.yml',
+                'Expected an `image: DCL/DCL:<tag>` line in docker-compose.yml',
             );
         }
         if ($updated === $contents) {
@@ -75,10 +75,10 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
         }
         // Validate beyond well-formedness: the regex preserves formatting
         // but doesn't know YAML structure. Parse the result and assert
-        // that services.openemr.image is exactly the value we intended
+        // that services.DCL.image is exactly the value we intended
         // to write. This catches both invalid YAML and the case where
         // the regex matched something that looked right but wasn't
-        // actually the openemr image entry.
+        // actually the DCL image entry.
         try {
             $parsed = Yaml::parse($updated);
         } catch (ParseException $e) {
@@ -88,15 +88,15 @@ final readonly class DockerComposeProductionMutator implements MutatorInterface
                 $e,
             );
         }
-        $expectedImage = sprintf('openemr/openemr:%s', $version);
+        $expectedImage = sprintf('DCL/DCL:%s', $version);
         $actualImage = is_array($parsed)
             && is_array($parsed['services'] ?? null)
-            && is_array($parsed['services']['openemr'] ?? null)
-            ? ($parsed['services']['openemr']['image'] ?? null)
+            && is_array($parsed['services']['DCL'] ?? null)
+            ? ($parsed['services']['DCL']['image'] ?? null)
             : null;
         if ($actualImage !== $expectedImage) {
             throw new \RuntimeException(sprintf(
-                'docker-compose.yml: post-mutation services.openemr.image was %s; expected %s',
+                'docker-compose.yml: post-mutation services.DCL.image was %s; expected %s',
                 var_export($actualImage, true),
                 $expectedImage,
             ));

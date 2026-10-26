@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Events\RestApiExtend;
+namespace DCL\Events\RestApiExtend;
 
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRequest;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class RestApiCreateEvent extends Event

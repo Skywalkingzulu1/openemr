@@ -5,21 +5,21 @@
  *
  * Handles administrative actions for the Dashboard Context Manager module.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\DashboardContext\Controller;
+namespace DCL\Modules\DashboardContext\Controller;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Modules\DashboardContext\Services\DashboardContextAdminService;
-use OpenEMR\Modules\DashboardContext\Services\DashboardContextService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Modules\DashboardContext\Services\DashboardContextAdminService;
+use DCL\Modules\DashboardContext\Services\DashboardContextService;
 
 class AdminController
 {

@@ -3,15 +3,15 @@
 /**
  * CDAPostParseEvent.php
  *
- * @package     OpenEMR
+ * @package     DCL
  * @subpackage  CareCoordination
  * @author      Robert Down <robertdown@live.com>
  * @copyright   2023 Robert Down <robertdown@live.com>
  * @copyright   2023 Providence Healthtech
- * @license     https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license     https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\CDA;
+namespace DCL\Events\CDA;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

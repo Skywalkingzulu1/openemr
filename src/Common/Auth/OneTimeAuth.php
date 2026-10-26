@@ -4,27 +4,27 @@
  * OneTimeAuth Class
  * Service for Onetime token creation, routing and auth
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 - 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth;
+namespace DCL\Common\Auth;
 
 use DateInterval;
 use DateTime;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\Exception\OneTimeAuthException;
-use OpenEMR\Common\Auth\Exception\OneTimeAuthExpiredException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\PatientPortalService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\UserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\Exception\OneTimeAuthException;
+use DCL\Common\Auth\Exception\OneTimeAuthExpiredException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\PatientPortalService;
+use DCL\Services\PatientService;
+use DCL\Services\UserService;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

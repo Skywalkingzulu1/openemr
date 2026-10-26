@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * This resource provides the details including amount of a payment and allocates the payment items being paid.
@@ -72,91 +72,91 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 {
     /**
      * A unique identifier assigned to this payment reconciliation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * The period of time for which payments have been gathered into this bulk payment for settlement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * The date when the resource was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * The party who generated the payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $paymentIssuer = null;
 
     /**
      * Original request resource reference.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $request = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requestor = null;
 
     /**
      * The outcome of a request for a reconciliation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
      */
     public $outcome = null;
 
     /**
      * A human readable description of the status of the request for the reconciliation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $disposition = null;
 
     /**
      * The date of payment as indicated on the financial instrument.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $paymentDate = null;
 
     /**
      * Total payment amount as indicated on the financial instrument.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $paymentAmount = null;
 
     /**
      * Issuer's unique identifier for the payment instrument.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $paymentIdentifier = null;
 
     /**
      * Distribution of the payment amount for a previously acknowledged payable.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
      */
     public $detail = [];
 
     /**
      * A code for the form to be used for printing the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $formCode = null;
 
     /**
      * A note that describes or explains the processing in a human readable form.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
      */
     public $processNote = [];
 
@@ -167,7 +167,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A unique identifier assigned to this payment reconciliation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -176,7 +176,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A unique identifier assigned to this payment reconciliation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -187,7 +187,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -196,7 +196,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -207,7 +207,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The period of time for which payments have been gathered into this bulk payment for settlement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -216,7 +216,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The period of time for which payments have been gathered into this bulk payment for settlement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -227,7 +227,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date when the resource was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -236,7 +236,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date when the resource was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -247,7 +247,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The party who generated the payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPaymentIssuer()
     {
@@ -256,7 +256,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The party who generated the payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $paymentIssuer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $paymentIssuer
      * @return $this
      */
     public function setPaymentIssuer($paymentIssuer)
@@ -267,7 +267,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Original request resource reference.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequest()
     {
@@ -276,7 +276,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Original request resource reference.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function setRequest($request)
@@ -287,7 +287,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequestor()
     {
@@ -296,7 +296,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requestor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requestor
      * @return $this
      */
     public function setRequestor($requestor)
@@ -307,7 +307,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The outcome of a request for a reconciliation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRemittanceOutcome
      */
     public function getOutcome()
     {
@@ -316,7 +316,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The outcome of a request for a reconciliation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRemittanceOutcome $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRemittanceOutcome $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -327,7 +327,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A human readable description of the status of the request for the reconciliation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisposition()
     {
@@ -336,7 +336,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A human readable description of the status of the request for the reconciliation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $disposition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $disposition
      * @return $this
      */
     public function setDisposition($disposition)
@@ -347,7 +347,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date of payment as indicated on the financial instrument.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getPaymentDate()
     {
@@ -356,7 +356,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date of payment as indicated on the financial instrument.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $paymentDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $paymentDate
      * @return $this
      */
     public function setPaymentDate($paymentDate)
@@ -367,7 +367,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Total payment amount as indicated on the financial instrument.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getPaymentAmount()
     {
@@ -376,7 +376,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Total payment amount as indicated on the financial instrument.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $paymentAmount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $paymentAmount
      * @return $this
      */
     public function setPaymentAmount($paymentAmount)
@@ -387,7 +387,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Issuer's unique identifier for the payment instrument.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getPaymentIdentifier()
     {
@@ -396,7 +396,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Issuer's unique identifier for the payment instrument.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $paymentIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $paymentIdentifier
      * @return $this
      */
     public function setPaymentIdentifier($paymentIdentifier)
@@ -407,7 +407,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Distribution of the payment amount for a previously acknowledged payable.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
      */
     public function getDetail()
     {
@@ -416,7 +416,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Distribution of the payment amount for a previously acknowledged payable.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $detail
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $detail
      * @return $this
      */
     public function addDetail($detail)
@@ -427,7 +427,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A code for the form to be used for printing the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFormCode()
     {
@@ -436,7 +436,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A code for the form to be used for printing the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $formCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $formCode
      * @return $this
      */
     public function setFormCode($formCode)
@@ -447,7 +447,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A note that describes or explains the processing in a human readable form.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
      */
     public function getProcessNote()
     {
@@ -456,7 +456,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A note that describes or explains the processing in a human readable form.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote $processNote
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote $processNote
      * @return $this
      */
     public function addProcessNote($processNote)

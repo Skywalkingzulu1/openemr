@@ -3,38 +3,38 @@
 /**
  * Compare a consumer repo's vendored copies of cross-repo contracts against
  * the canonical sources in this repo. Used by CI in consumer repos
- * (openemr/openemr-devops, openemr/website-openemr) to catch silent contract
+ * (DCL/DCL-devops, DCL/website-DCL) to catch silent contract
  * drift.
  *
  * Layout assumption: the consumer mirrors the canonical relative paths under
- * its vendored dir. A consumer that vendors to `vendored/openemr/` therefore
- * has `vendored/openemr/contracts/dispatch.schema.json` and
- * `vendored/openemr/src/TagVerifier.php`. A consumer that vendored into a
+ * its vendored dir. A consumer that vendors to `vendored/DCL/` therefore
+ * has `vendored/DCL/contracts/dispatch.schema.json` and
+ * `vendored/DCL/src/TagVerifier.php`. A consumer that vendored into a
  * different layout (e.g. `src/Release/TagVerifier.php`) can pass a
  * `$pathOverrides` map keyed by canonical path → consumer-relative path.
  *
- * Equivalence is per-file-type, per the openemr-devops#664 spec (issue lives
- * on openemr-devops for historical reasons; the mechanism now lives here):
+ * Equivalence is per-file-type, per the DCL-devops#664 spec (issue lives
+ * on DCL-devops for historical reasons; the mechanism now lives here):
  *
  *   - JSON: parse + canonical re-serialize (recursively sort object keys,
  *     preserve list order, normalize whitespace), then string-compare.
  *     A consumer can reformat or reorder object keys without tripping drift.
  *   - PHP: strip the `namespace` declaration line, then string-compare.
  *     A consumer can vendor under its own namespace (e.g.
- *     `OpenEMR\ReleaseDocs\Release`) so long as everything else — class
+ *     `DCL\ReleaseDocs\Release`) so long as everything else — class
  *     structure, method signatures, behavior — is identical.
  *   - Other: byte-for-byte sha256. Default for any file type added later.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 final readonly class VendoredFileChecker
 {

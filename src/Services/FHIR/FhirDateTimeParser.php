@@ -18,7 +18,7 @@
  *  3. A value carrying an offset (`2024-03-15T10:30:00+05:00`) was formatted
  *     with `->format('Y-m-d H:i:s')` while still in the *sender's* offset, so
  *     the wall-clock time written to the database did not agree with every
- *     other timestamp OpenEMR stores in server-local time.
+ *     other timestamp DCL stores in server-local time.
  *
  * This class validates against the FHIR R4 regexes, rejects impossible dates,
  * normalizes to the server timezone, and -- importantly -- *throws* rather than
@@ -30,16 +30,16 @@
  *
  * @see https://build.fhir.org/datatypes.html#dateTime
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 final class FhirDateTimeParser
 {
@@ -101,7 +101,7 @@ final class FhirDateTimeParser
     }
 
     /**
-     * Parses a FHIR date/dateTime into an OpenEMR `Y-m-d` string.
+     * Parses a FHIR date/dateTime into an DCL `Y-m-d` string.
      *
      * @param mixed  $value       The raw value taken from the FHIR JSON.
      * @param string $elementPath FHIR element path for diagnostics, e.g. "Condition.onsetDateTime".
@@ -117,7 +117,7 @@ final class FhirDateTimeParser
     }
 
     /**
-     * Parses a FHIR date/dateTime into an OpenEMR `Y-m-d H:i:s` string in the
+     * Parses a FHIR date/dateTime into an DCL `Y-m-d H:i:s` string in the
      * server's timezone.
      *
      * @throws \InvalidArgumentException When the value is present but unusable.
@@ -199,7 +199,7 @@ final class FhirDateTimeParser
 
         if ($precision === self::PRECISION_TIME) {
             // Convert the sender's offset to server-local wall clock so the
-            // stored value is comparable with every other OpenEMR timestamp.
+            // stored value is comparable with every other DCL timestamp.
             $parsed = $parsed->setTimezone(new \DateTimeZone(date_default_timezone_get()));
         }
 

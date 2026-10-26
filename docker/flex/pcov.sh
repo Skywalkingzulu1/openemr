@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR Flex PCOV Configuration Script
+# DCL Flex PCOV Configuration Script
 # ============================================================================
 # This script configures PCOV for PHP code coverage collection.
 # PCOV is a lightweight alternative to XDebug specifically designed for
@@ -15,7 +15,7 @@
 #   - PCOV works with opcache enabled (unlike XDebug in debug mode)
 #
 # Usage:
-#   Called automatically by openemr.sh when PCOV is enabled
+#   Called automatically by DCL.sh when PCOV is enabled
 # ============================================================================
 
 set -euo pipefail
@@ -25,7 +25,7 @@ set -euo pipefail
 # ============================================================================
 # Ensure PCOV is actually requested before proceeding.
 
-# PCOV_ON is normalized to "true"/"false" by openemr.sh before calling this script
+# PCOV_ON is normalized to "true"/"false" by DCL.sh before calling this script
 # shellcheck disable=SC2154
 if [[ "${PCOV_ON}" != true ]]; then
     echo "Error: PCOV script called but PCOV_ON is not enabled" >&2
@@ -58,8 +58,8 @@ if [[ ! -f /etc/php-pcov-configured ]]; then
         echo "pcov.enabled=1"
         echo ""
         echo "; Directory filter - only collect coverage for files under this path"
-        echo "; Default covers the OpenEMR installation directory"
-        echo "pcov.directory=/var/www/localhost/htdocs/openemr"
+        echo "; Default covers the DCL installation directory"
+        echo "pcov.directory=/var/www/localhost/htdocs/DCL"
         echo ""
         echo "; Exclude vendor and node_modules from coverage collection"
         echo "pcov.exclude=\"~/(vendor|node_modules)/~\""

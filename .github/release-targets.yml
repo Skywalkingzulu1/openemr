@@ -20,7 +20,7 @@
 # scheduled tick (or manual dispatch). The orchestrator reads this file,
 # applies its include/exclude filter, and fans out one
 # docker-build-release.yml dispatch per remaining row -- each one against
-# its own `branch`, with `docker_tags` and `openemr_version_ref` passed in
+# its own `branch`, with `docker_tags` and `DCL_version_ref` passed in
 # as workflow_dispatch inputs.
 #
 # Per-row fields:
@@ -29,7 +29,7 @@
 #     The rel-X.Y.Z (or master) ref the build runs against. The dispatched
 #     docker-build-release.yml workflow runs from this branch's checkout
 #     and uses this branch's docker/release/Dockerfile -- which is byte-
-#     identical across every branch because openemr_version_ref (below)
+#     identical across every branch because DCL_version_ref (below)
 #     gets passed in as a --build-arg instead of being baked into the
 #     Dockerfile.
 #
@@ -41,9 +41,9 @@
 #     The build workflow applies this dated-sibling rule, so the data
 #     here stays clean of date strings.
 #
-#   openemr_version_ref
+#   DCL_version_ref
 #     Git ref (branch name, tag, or SHA) to bake into the image as the
-#     OPENEMR_VERSION ARG. Decouples "what we're tagging" from "what
+#     DCL_VERSION ARG. Decouples "what we're tagging" from "what
 #     source we're shipping" so a rel branch can stage post-release
 #     patches without affecting the published image until you bump this
 #     field to a new tag like v8_1_0_1.
@@ -73,8 +73,8 @@
 #     simultaneously. When a rel branch increments its patch version
 #     into dev mode (e.g., rel-810 enters 8.1.2-dev), the existing
 #     rel-810 row retargets at the new dev (docker_tags: 8.1.2,next +
-#     openemr_version_ref: rel-810) and a SECOND row is added for the
-#     prior shipped version (docker_tags: 8.1.1 + openemr_version_ref:
+#     DCL_version_ref: rel-810) and a SECOND row is added for the
+#     prior shipped version (docker_tags: 8.1.1 + DCL_version_ref:
 #     v8_1_1) so daily builds keep republishing the stable image while
 #     the new dev iterates. When the new dev (8.1.2) ships, the prior-
 #     release row gets dropped entirely (back to one rel branch, one
@@ -92,7 +92,7 @@
 # * Branch-cut for rel-X.Y.Z: append a new row. No edit to the new
 #   branch's Dockerfile needed.
 # * Promote rel branch to a version tag: edit the row's
-#   openemr_version_ref (e.g., rel-810 -> v8_1_0).
+#   DCL_version_ref (e.g., rel-810 -> v8_1_0).
 # * Rotate `latest`: edit two rows' docker_tags (drop from the outgoing
 #   row, add to the incoming row).
 # * Enter dev for a new patch: add a second row for the prior shipped
@@ -112,28 +112,28 @@
   # The docker_tag <-> version.php alignment guard in
   # docker-validate-release-targets.yml catches drift on PRs.
   docker_tags: 8.5.0,dev,next
-  openemr_version_ref: master
+  DCL_version_ref: master
   gate_with_acceptance: true
 
 - branch: rel-840
   docker_tags: 8.4.1,latest
-  openemr_version_ref: v8_4_1
+  DCL_version_ref: v8_4_1
   gate_with_acceptance: true
 
 - branch: rel-830
   docker_tags: 8.3.0
-  openemr_version_ref: v8_3_0
+  DCL_version_ref: v8_3_0
   gate_with_acceptance: true
 
 - branch: rel-820
   docker_tags: 8.2.0
-  openemr_version_ref: v8_2_0
+  DCL_version_ref: v8_2_0
   gate_with_acceptance: true
 
 - branch: rel-800
   # 8.0.0 is the floating "current latest 8.0.0.x" pointer (always advances
-  # with openemr_version_ref); 8.0.0.3 is the specific-patch pointer (only
+  # with DCL_version_ref); 8.0.0.3 is the specific-patch pointer (only
   # advances when this row bumps to 8.0.0.4+). Both tags get an auto-appended
   # "<tag>-YYYY-MM-DD" sibling for immutable per-build pinning.
   docker_tags: 8.0.0,8.0.0.3
-  openemr_version_ref: v8_0_0_3
+  DCL_version_ref: v8_0_0_3

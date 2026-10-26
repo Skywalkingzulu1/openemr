@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure;
+namespace DCL\FHIR\R4\FHIRResource\FHIRProcedure;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.
@@ -71,13 +71,13 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * The kind of change that happened to the device during the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $action = null;
 
     /**
      * The device that was manipulated (changed) during the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $manipulated = null;
 
@@ -88,7 +88,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The kind of change that happened to the device during the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAction()
     {
@@ -97,7 +97,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The kind of change that happened to the device during the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $action
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $action
      * @return $this
      */
     public function setAction($action)
@@ -108,7 +108,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The device that was manipulated (changed) during the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManipulated()
     {
@@ -117,7 +117,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The device that was manipulated (changed) during the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manipulated
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manipulated
      * @return $this
      */
     public function setManipulated($manipulated)

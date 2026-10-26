@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Nucleic acids are defined by three distinct elements: the base, sugar and linkage. Individual substance/moiety IDs will be created for each of these elements. The nucleotide sequence will be always entered in the 5’-3’ direction.
@@ -71,25 +71,25 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 {
     /**
      * The entity that links the sugar residues together should also be captured for nearly all naturally occurring nucleic acid the linkage is a phosphate group. For many synthetic oligonucleotides phosphorothioate linkages are often seen. Linkage connectivity is assumed to be 3’-5’. If the linkage is either 3’-3’ or 5’-5’ this should be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $connectivity = null;
 
     /**
      * Each linkage will be registered as a fragment and have an ID.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Each linkage will be registered as a fragment and have at least one name. A single name shall be assigned to each linkage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Residues shall be captured as described in 5.3.6.8.3.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $residueSite = null;
 
@@ -100,7 +100,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * The entity that links the sugar residues together should also be captured for nearly all naturally occurring nucleic acid the linkage is a phosphate group. For many synthetic oligonucleotides phosphorothioate linkages are often seen. Linkage connectivity is assumed to be 3’-5’. If the linkage is either 3’-3’ or 5’-5’ this should be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getConnectivity()
     {
@@ -109,7 +109,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * The entity that links the sugar residues together should also be captured for nearly all naturally occurring nucleic acid the linkage is a phosphate group. For many synthetic oligonucleotides phosphorothioate linkages are often seen. Linkage connectivity is assumed to be 3’-5’. If the linkage is either 3’-3’ or 5’-5’ this should be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $connectivity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $connectivity
      * @return $this
      */
     public function setConnectivity($connectivity)
@@ -120,7 +120,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * Each linkage will be registered as a fragment and have an ID.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -129,7 +129,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * Each linkage will be registered as a fragment and have an ID.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -140,7 +140,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * Each linkage will be registered as a fragment and have at least one name. A single name shall be assigned to each linkage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -149,7 +149,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * Each linkage will be registered as a fragment and have at least one name. A single name shall be assigned to each linkage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -160,7 +160,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * Residues shall be captured as described in 5.3.6.8.3.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getResidueSite()
     {
@@ -169,7 +169,7 @@ class FHIRSubstanceNucleicAcidLinkage extends FHIRBackboneElement implements \Js
 
     /**
      * Residues shall be captured as described in 5.3.6.8.3.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $residueSite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $residueSite
      * @return $this
      */
     public function setResidueSite($residueSite)

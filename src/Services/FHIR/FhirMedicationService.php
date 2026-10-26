@@ -1,36 +1,36 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedication;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\DrugService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedication;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRMedication\FHIRMedicationBatch;
+use DCL\Services\CodeTypesService;
+use DCL\Services\DrugService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR Medication Service
  *
- * @package            OpenEMR
- * @link               https://www.open-emr.org
+ * @package            DCL
+ * @link               https://www.dcl.org
  * @author             Yash Bothra <yashrajbothra786gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright          Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGProfileService, INonPatientCompartmentResourceService
 {
@@ -51,7 +51,7 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
     }
 
     /**
-     * Returns an array mapping FHIR Medication Resource search parameters to OpenEMR Medication search parameters
+     * Returns an array mapping FHIR Medication Resource search parameters to DCL Medication search parameters
      *
      * @return array The search parameters
      */
@@ -69,13 +69,13 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
     }
 
     /**
-     * Parses an OpenEMR medication record, returning the equivalent FHIR Medication Resource
+     * Parses an DCL medication record, returning the equivalent FHIR Medication Resource
      *
-     * @param  array   $dataRecord The source OpenEMR data record
+     * @param  array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRMedication
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $medicationResource = new FHIRMedication();
 
@@ -156,7 +156,7 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
     }
 
     /**
-     * Parses a FHIR Medication resource into the OpenEMR drugs-table shape.
+     * Parses a FHIR Medication resource into the DCL drugs-table shape.
      *
      * Medication is master data — there are no references to resolve. Mapping:
      *  - status -> active (1|0)
@@ -194,7 +194,7 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
 
         // code.coding[] -> drug_code (prefer RxNorm) + name (display).
         //
-        // The value is stored in OpenEMR's typed `TYPE:CODE` form rather than as a bare code.
+        // The value is stored in DCL's typed `TYPE:CODE` form rather than as a bare code.
         // DrugService::createResultRecordFromDatabaseResult() reads drug_code back through
         // addCoding(), which derives the FHIR system from that prefix and treats an unprefixed
         // value as RxNorm -- so a bare SNOMED or NDC code would come back out claiming to be
@@ -219,11 +219,11 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
                 && $code !== null
                 && !isset($data['drug_code'])
             ) {
-                $data['drug_code'] = $codeTypesService->getOpenEMRCodeForSystemAndCode($system, $code);
+                $data['drug_code'] = $codeTypesService->getDCLCodeForSystemAndCode($system, $code);
             }
         }
-        // Fall back to the first coding whose system OpenEMR recognises. An unrecognised or
-        // absent system is skipped rather than stored: getOpenEMRCodeForSystemAndCode() answers
+        // Fall back to the first coding whose system DCL recognises. An unrecognised or
+        // absent system is skipped rather than stored: getDCLCodeForSystemAndCode() answers
         // the bare code in that case, and `drugs`.`drug_code` is read back through
         // CodeTypesService, which derives the system from the TYPE: prefix. A bare value has no
         // prefix, so the code would return under a system the caller never sent -- the server
@@ -251,7 +251,7 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
         // whose code was dropped tells the caller it was recorded. code.text alone is still
         // accepted -- that claims no code system, so there is nothing to misattribute.
         if ($sawCode && !isset($data['drug_code'])) {
-            $data['__validation_error__'] = 'Medication.code.coding carries no system OpenEMR '
+            $data['__validation_error__'] = 'Medication.code.coding carries no system DCL '
                 . 'recognises, so the code cannot be stored without misattributing it';
             $data['__validation_field__'] = 'code';
         }
@@ -262,7 +262,7 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
             $data['name'] = $codeText;
         }
 
-        // form.coding[0].code -> form (NCI -> integer reverse map mirroring parseOpenEMRRecord)
+        // form.coding[0].code -> form (NCI -> integer reverse map mirroring parseDCLRecord)
         $formCode = FhirPayloadReader::firstCodingCode($json['form'] ?? null);
         if ($formCode !== '') {
             $reverseFormMap = [
@@ -287,9 +287,9 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
     }
 
     /**
-     * The stored TYPE:CODE form, or null when the system is absent or unknown to OpenEMR.
+     * The stored TYPE:CODE form, or null when the system is absent or unknown to DCL.
      *
-     * getOpenEMRCodeForSystemAndCode() answers the bare code for an unrecognised system, which
+     * getDCLCodeForSystemAndCode() answers the bare code for an unrecognised system, which
      * is indistinguishable on read from a code whose type was simply never recorded. Callers use
      * null to mean "cannot be represented" rather than storing something the reader will
      * mislabel.
@@ -299,7 +299,7 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
         if ($system === null || $system === '') {
             return null;
         }
-        $stored = $codeTypesService->getOpenEMRCodeForSystemAndCode($system, $code);
+        $stored = $codeTypesService->getDCLCodeForSystemAndCode($system, $code);
 
         return str_contains($stored, ':') ? $stored : null;
     }
@@ -323,7 +323,7 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
     /**
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         $validationError = is_array($openEmrRecord) ? self::validationErrorFor($openEmrRecord) : null;
         if ($validationError !== null) {
@@ -335,30 +335,30 @@ class FhirMedicationService extends FhirServiceBase implements IResourceUSCIGPro
 
     /**
      * @param string $fhirResourceId
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        $validationError = self::validationErrorFor($updatedOpenEMRRecord);
+        $validationError = self::validationErrorFor($updatedDCLRecord);
         if ($validationError !== null) {
             return $validationError;
         }
 
         return $this->medicationService->update(
             $fhirResourceId,
-            FhirPayloadReader::stringKeyed($updatedOpenEMRRecord)
+            FhirPayloadReader::stringKeyed($updatedDCLRecord)
         );
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->medicationService->getAll($openEMRSearchParameters, true);
+        return $this->medicationService->getAll($DCLSearchParameters, true);
     }
 
     /**

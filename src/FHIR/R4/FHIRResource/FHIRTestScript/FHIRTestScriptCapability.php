@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,43 +71,43 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Whether or not the test execution will require the given capabilities of the server in order for this test script to execute.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $required = null;
 
     /**
      * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $validated = null;
 
     /**
      * Description of the capabilities that this test script is requiring the server to support.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Which origin server these requirements apply to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public $origin = [];
 
     /**
      * Which server these requirements apply to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $destination = null;
 
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $link = [];
 
     /**
      * Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $capabilities = null;
 
@@ -118,7 +118,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Whether or not the test execution will require the given capabilities of the server in order for this test script to execute.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getRequired()
     {
@@ -127,7 +127,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Whether or not the test execution will require the given capabilities of the server in order for this test script to execute.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $required
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $required
      * @return $this
      */
     public function setRequired($required)
@@ -138,7 +138,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValidated()
     {
@@ -147,7 +147,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $validated
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $validated
      * @return $this
      */
     public function setValidated($validated)
@@ -158,7 +158,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Description of the capabilities that this test script is requiring the server to support.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -167,7 +167,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Description of the capabilities that this test script is requiring the server to support.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -178,7 +178,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Which origin server these requirements apply to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public function getOrigin()
     {
@@ -187,7 +187,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Which origin server these requirements apply to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $origin
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $origin
      * @return $this
      */
     public function addOrigin($origin)
@@ -198,7 +198,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Which server these requirements apply to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getDestination()
     {
@@ -207,7 +207,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Which server these requirements apply to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $destination
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $destination
      * @return $this
      */
     public function setDestination($destination)
@@ -218,7 +218,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getLink()
     {
@@ -227,7 +227,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $link
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $link
      * @return $this
      */
     public function addLink($link)
@@ -238,7 +238,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getCapabilities()
     {
@@ -247,7 +247,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $capabilities
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $capabilities
      * @return $this
      */
     public function setCapabilities($capabilities)

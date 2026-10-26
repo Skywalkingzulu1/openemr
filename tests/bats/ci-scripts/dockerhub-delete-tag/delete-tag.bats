@@ -55,8 +55,8 @@ teardown() {
     run bash "${DOCKERHUB_DELETE_TAG_SCRIPT}"
     [[ ${status} -eq 0 ]]
     [[ "${output}" == *"POST https://hub.docker.com/v2/users/login/"* ]]
-    [[ "${output}" == *"DELETE https://hub.docker.com/v2/repositories/openemr/openemr/tags/release-candidate-12345-1/"* ]]
-    [[ "${output}" == *"cleanup OK: openemr/openemr:release-candidate-12345-1 deleted (HTTP 204)"* ]]
+    [[ "${output}" == *"DELETE https://hub.docker.com/v2/repositories/DCL/DCL/tags/release-candidate-12345-1/"* ]]
+    [[ "${output}" == *"cleanup OK: DCL/DCL:release-candidate-12345-1 deleted (HTTP 204)"* ]]
     [[ "${output}" != *"::error::"* ]]
 }
 
@@ -89,7 +89,7 @@ teardown() {
     export MOCK_DELETE_HTTP_CODE="404"
     run bash "${DOCKERHUB_DELETE_TAG_SCRIPT}"
     [[ ${status} -eq 0 ]]
-    [[ "${output}" == *"cleanup OK: openemr/openemr:release-candidate-12345-1 already gone (HTTP 404)"* ]]
+    [[ "${output}" == *"cleanup OK: DCL/DCL:release-candidate-12345-1 already gone (HTTP 404)"* ]]
     [[ "${output}" != *"::error::"* ]]
 }
 

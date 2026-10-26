@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance;
-use OpenEMR\Services\FHIR\FhirAllergyIntoleranceService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance;
+use DCL\Services\FHIR\FhirAllergyIntoleranceService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -15,11 +15,11 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR Allergy Intolerance Service Query Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 class FhirAllergyIntoleranceServiceQueryTest extends TestCase
@@ -43,7 +43,7 @@ class FhirAllergyIntoleranceServiceQueryTest extends TestCase
 
     private static function getFhirUrl(): string
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $fhirUrl =  $baseUrl . self::FHIR_BASE_URL;
         return $fhirUrl;
     }
@@ -70,7 +70,7 @@ class FhirAllergyIntoleranceServiceQueryTest extends TestCase
 
     /**
      * Executes assertions against a 'GetAll' AllergyIntolerance Search processing result
-     * @param $processingResult The OpenEMR Processing Result
+     * @param $processingResult The DCL Processing Result
      * @param $isExpectedToHaveAResult Indicates if the result is expected to have at least one search result
      */
     private function assertGetAllSearchResults($processingResult, $isExpectedToHaveAResult = true)

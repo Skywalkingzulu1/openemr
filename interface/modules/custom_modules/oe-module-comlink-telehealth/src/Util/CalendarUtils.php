@@ -3,17 +3,17 @@
 /**
  * Contains Helper methods for working with the calendar
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Comlink
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Util;
+namespace Comlink\DCL\Modules\TeleHealthModule\Util;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
 
 class CalendarUtils
 {
@@ -48,7 +48,7 @@ class CalendarUtils
         $sql = "select pc_catid,pc_constant_id,pc_catname,pc_catcolor,pc_catdesc,pc_recurrtype,pc_enddate,pc_recurrspec"
             . " ,pc_recurrfreq,pc_duration,pc_end_date_flag,pc_end_date_type,pc_end_all_day,pc_dailylimit,pc_cattype"
             . " ,pc_active,pc_seq,aco_spec"
-            . " from openemr_postcalendar_categories "
+            . " from DCL_postcalendar_categories "
             . " WHERE pc_catid = ? ";
         $records = QueryUtils::fetchRecords($sql, [$id]);
         if (!empty($records)) {

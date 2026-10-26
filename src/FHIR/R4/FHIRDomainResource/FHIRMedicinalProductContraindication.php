@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.
@@ -72,43 +72,43 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 {
     /**
      * The medication for which this is an indication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subject = [];
 
     /**
      * The disease, symptom or procedure for the contraindication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $disease = null;
 
     /**
      * The status of the disease or symptom for the contraindication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $diseaseStatus = null;
 
     /**
      * A comorbidity (concurrent condition) or coinfection.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $comorbidity = [];
 
     /**
      * Information about the use of the medicinal product in relation to other therapies as part of the indication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $therapeuticIndication = [];
 
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy[]
      */
     public $otherTherapy = [];
 
     /**
      * The population group to which this applies.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPopulation[]
      */
     public $population = [];
 
@@ -119,7 +119,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The medication for which this is an indication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubject()
     {
@@ -128,7 +128,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The medication for which this is an indication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -139,7 +139,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The disease, symptom or procedure for the contraindication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDisease()
     {
@@ -148,7 +148,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The disease, symptom or procedure for the contraindication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $disease
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $disease
      * @return $this
      */
     public function setDisease($disease)
@@ -159,7 +159,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The status of the disease or symptom for the contraindication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDiseaseStatus()
     {
@@ -168,7 +168,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The status of the disease or symptom for the contraindication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
      * @return $this
      */
     public function setDiseaseStatus($diseaseStatus)
@@ -179,7 +179,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * A comorbidity (concurrent condition) or coinfection.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getComorbidity()
     {
@@ -188,7 +188,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * A comorbidity (concurrent condition) or coinfection.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $comorbidity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $comorbidity
      * @return $this
      */
     public function addComorbidity($comorbidity)
@@ -199,7 +199,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * Information about the use of the medicinal product in relation to other therapies as part of the indication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getTherapeuticIndication()
     {
@@ -208,7 +208,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * Information about the use of the medicinal product in relation to other therapies as part of the indication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $therapeuticIndication
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $therapeuticIndication
      * @return $this
      */
     public function addTherapeuticIndication($therapeuticIndication)
@@ -219,7 +219,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy[]
      */
     public function getOtherTherapy()
     {
@@ -228,7 +228,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy $otherTherapy
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy $otherTherapy
      * @return $this
      */
     public function addOtherTherapy($otherTherapy)
@@ -239,7 +239,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The population group to which this applies.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPopulation[]
      */
     public function getPopulation()
     {
@@ -248,7 +248,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
 
     /**
      * The population group to which this applies.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPopulation $population
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPopulation $population
      * @return $this
      */
     public function addPopulation($population)

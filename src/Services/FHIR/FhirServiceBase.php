@@ -1,20 +1,20 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\Traits\ResourceServiceSearchTrait;
-use OpenEMR\Services\IGlobalsAware;
-use OpenEMR\Services\Search\FHIRSearchFieldFactory;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchQueryConfig;
-use OpenEMR\Services\SessionAwareInterface;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\Traits\ResourceServiceSearchTrait;
+use DCL\Services\IGlobalsAware;
+use DCL\Services\Search\FHIRSearchFieldFactory;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchQueryConfig;
+use DCL\Services\SessionAwareInterface;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
@@ -22,17 +22,17 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
  *
  * Implementations are required to override the following methods:
  * - loadSearchParameters
- * - parseOpenEMRRecord
+ * - parseDCLRecord
  * - parseFhirResource
- * - insertOpenEMRRecord
- * - updateOpenEMRRecord
+ * - insertDCLRecord
+ * - updateDCLRecord
  * - getOne
- * - searchForOpenEMRRecords
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * - searchForDCLRecords
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 abstract class FhirServiceBase implements
     IResourceSearchableService,
@@ -46,8 +46,8 @@ abstract class FhirServiceBase implements
     use SystemLoggerAwareTrait;
 
     /**
-     * Maps FHIR Resource search parameters to OpenEMR parameters
-     * @var array<string, FhirSearchParameterDefinition> Hashmap of FHIR Resource search parameters to OpenEMR search parameters
+     * Maps FHIR Resource search parameters to DCL parameters
+     * @var array<string, FhirSearchParameterDefinition> Hashmap of FHIR Resource search parameters to DCL search parameters
      */
     protected array $resourceSearchParameters = [];
 
@@ -118,8 +118,8 @@ abstract class FhirServiceBase implements
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
-     * @return array<string, FhirSearchParameterDefinition> Hashmap of FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
+     * @return array<string, FhirSearchParameterDefinition> Hashmap of FHIR Resource search parameters to DCL search parameters
      */
     abstract protected function loadSearchParameters();
 
@@ -149,26 +149,26 @@ abstract class FhirServiceBase implements
 
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR Resource
+     * Parses an DCL data record, returning the equivalent FHIR Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return FHIRDomainResource the FHIR Resource. Returned format is defined using $encode parameter.
      */
-    abstract public function parseOpenEMRRecord($dataRecord = [], $encode = false);
+    abstract public function parseDCLRecord($dataRecord = [], $encode = false);
 
     /**
-     * Parses a FHIR Resource, returning the equivalent OpenEMR record.
+     * Parses a FHIR Resource, returning the equivalent DCL record.
      *
      * @param FHIRDomainResource $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record (array)
+     * @return array a mapped DCL data record (array)
      */
     abstract public function parseFhirResource(FHIRDomainResource $fhirResource);
 
     /**
      * Inserts a FHIR resource into the system.
      * @param FHIRDomainResource $fhirResource The FHIR resource
-     * @return ProcessingResult The OpenEMR Service Result
+     * @return ProcessingResult The DCL Service Result
      */
     public function insert(FHIRDomainResource $fhirResource): ProcessingResult
     {
@@ -177,22 +177,22 @@ abstract class FhirServiceBase implements
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
-     * @return ProcessingResult The OpenEMR processing result.
+     * Inserts an DCL record into the system.
+     * @return ProcessingResult The DCL processing result.
      */
-    abstract protected function insertOpenEMRRecord($openEmrRecord);
+    abstract protected function insertDCLRecord($openEmrRecord);
 
     /**
      * Inserts a FHIR resource into the system.
-     * @param string $fhirResourceId The FHIR Resource ID used to lookup the existing FHIR resource/OpenEMR record
+     * @param string $fhirResourceId The FHIR Resource ID used to lookup the existing FHIR resource/DCL record
      * @param FHIRDomainResource $fhirResource The FHIR resource.
-     * @return ProcessingResult The OpenEMR Service Result
+     * @return ProcessingResult The DCL Service Result
      */
     public function update($fhirResourceId, FHIRDomainResource $fhirResource): ProcessingResult
     {
         $openEmrRecord = $this->parseFhirResource($fhirResource);
         $openEmrRecord['uuid'] = $fhirResourceId;
-        $processingResult =  $this->updateOpenEMRRecord($fhirResourceId, $openEmrRecord);
+        $processingResult =  $this->updateDCLRecord($fhirResourceId, $openEmrRecord);
 
         if ($processingResult->hasErrors()) {
             return $processingResult;
@@ -200,7 +200,7 @@ abstract class FhirServiceBase implements
 
         if (isset($processingResult->getData()[0])) {
             $openEmrRecord = $processingResult->getData()[0];
-            $fhirRecord = $this->parseOpenEMRRecord($openEmrRecord);
+            $fhirRecord = $this->parseDCLRecord($openEmrRecord);
 
             $processingResult->setData([]);
             $processingResult->addData($fhirRecord);
@@ -209,16 +209,16 @@ abstract class FhirServiceBase implements
     }
 
     /**
-     * Updates an existing OpenEMR record.
-     * @param string $fhirResourceId  The OpenEMR record's FHIR Resource ID.
-     * @param array $updatedOpenEMRRecord The "updated" OpenEMR record.
-     * @return mixed The OpenEMR Service Result
+     * Updates an existing DCL record.
+     * @param string $fhirResourceId  The DCL record's FHIR Resource ID.
+     * @param array $updatedDCLRecord The "updated" DCL record.
+     * @return mixed The DCL Service Result
      */
-    abstract protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord);
+    abstract protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord);
 
     /**
      * Performs a FHIR Resource lookup by FHIR Resource ID
-     * @param $fhirResourceId string The OpenEMR record's FHIR Resource ID.
+     * @param $fhirResourceId string The DCL record's FHIR Resource ID.
      * @param $puuidBind string|null Optional variable to only allow visibility of the patient with this puuid.
      */
     public function getOne($fhirResourceId, $puuidBind = null): ProcessingResult
@@ -313,7 +313,7 @@ abstract class FhirServiceBase implements
         $fhirSearchResult = new ProcessingResult();
 
         try {
-            $oeSearchParameters = $this->createOpenEMRSearchParameters($fhirSearchParameters, $puuidBind);
+            $oeSearchParameters = $this->createDCLSearchParameters($fhirSearchParameters, $puuidBind);
 
             $this->getSystemLogger()->debug("FhirServiceBase->getAll() Created search parameters ", ['searchParameters' => array_keys($oeSearchParameters)]);
             // gives a ton of information but this can be helpful in debugging this stuff.
@@ -325,9 +325,9 @@ abstract class FhirServiceBase implements
                 $searchConfig = SearchQueryConfig::createFhirConfigFromSearchParams($oeSearchParameters['_config']);
                 $fhirSearchResult->setPagination($searchConfig->getPagination());
                 unset($oeSearchParameters['_config']); // clear out the config so we don't break the search
-                $oeSearchResult = $this->searchForOpenEMRRecordsWithConfig($oeSearchParameters, $searchConfig);
+                $oeSearchResult = $this->searchForDCLRecordsWithConfig($oeSearchParameters, $searchConfig);
             } else {
-                $oeSearchResult = $this->searchForOpenEMRRecords($oeSearchParameters);
+                $oeSearchResult = $this->searchForDCLRecords($oeSearchParameters);
             }
 
             $fhirSearchResult->setInternalErrors($oeSearchResult->getInternalErrors());
@@ -335,7 +335,7 @@ abstract class FhirServiceBase implements
 
             if ($oeSearchResult->isValid()) {
                 foreach ($oeSearchResult->getData() as $oeRecord) {
-                    $fhirResource = $this->parseOpenEMRRecord($oeRecord);
+                    $fhirResource = $this->parseDCLRecord($oeRecord);
                     $fhirSearchResult->addData($fhirResource);
                     if ($provenanceRequest) {
                         $provenanceResource = $this->createProvenanceResource($fhirResource);
@@ -358,29 +358,29 @@ abstract class FhirServiceBase implements
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    abstract protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult;
+    abstract protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult;
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters and the search configuration.  We would make this
+     * Searches for DCL records using DCL search parameters and the search configuration.  We would make this
      * abstract but to preserve backwards compatibility with existing installations we leave it as is.  Services that
      * wish to leverage the search query config can implement this method.
-     * @param array $openEMRSearchParameters OpenEMR search fields
+     * @param array $DCLSearchParameters DCL search fields
      * @param SearchQueryConfig $searchConfig The search configuration (sort order, pagination, etc)
-     * @return ProcessingResult OpenEMR records
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecordsWithConfig(array $openEMRSearchParameters, SearchQueryConfig $searchConfig): ProcessingResult
+    protected function searchForDCLRecordsWithConfig(array $DCLSearchParameters, SearchQueryConfig $searchConfig): ProcessingResult
     {
-        return $this->searchForOpenEMRRecords($openEMRSearchParameters);
+        return $this->searchForDCLRecords($DCLSearchParameters);
     }
 
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param mixed $dataRecord The source OpenEMR data record
+     * @param mixed $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return FHIRProvenance|string|false|null the FHIR Resource (or its encoding, per $encode). A falsy
      *         return (false/null) indicates no Provenance could be constructed for the resource;
@@ -390,7 +390,7 @@ abstract class FhirServiceBase implements
 
     /*
     * public function to return search params
-    * @return array<string, FhirSearchParameterDefinition> Hashmap of FHIR Resource search parameters to OpenEMR search parameters
+    * @return array<string, FhirSearchParameterDefinition> Hashmap of FHIR Resource search parameters to DCL search parameters
     */
     public function getSearchParams()
     {

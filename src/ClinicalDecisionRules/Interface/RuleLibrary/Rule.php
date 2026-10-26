@@ -6,25 +6,25 @@
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleFilters;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleFilters;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleType;
 use RuleTargetActionGroups;
 
 /**
  * This is the primary domain object representing a rule in the rules engine.
  * Rules are composed of:
- * - one or more rule types (see OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleType enum)
- * - a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals object
- * - a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleFilters object
- * - a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets object
- * - a OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions object
+ * - one or more rule types (see DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleType enum)
+ * - a DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervals object
+ * - a DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleFilters object
+ * - a DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets object
+ * - a DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions object
  *
- * Rules are typically assembled by the OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager.
+ * Rules are typically assembled by the DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager.
  * @author aron
  */
 class Rule

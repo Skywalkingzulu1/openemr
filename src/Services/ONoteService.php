@@ -3,19 +3,19 @@
 /**
  * ONoteService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2017 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 class ONoteService
 {
@@ -31,7 +31,7 @@ class ONoteService
      *
      * @param  string $body The text of the office note.
      * @return int The id of the newly inserted office note.
-     * @throws \OpenEMR\Common\Database\SqlQueryException On database error from the underlying insert.
+     * @throws \DCL\Common\Database\SqlQueryException On database error from the underlying insert.
      */
     public function add($body)
     {
@@ -44,7 +44,7 @@ class ONoteService
      *
      * @param  int|string $id The office note id.
      * @return void
-     * @throws \OpenEMR\Common\Database\SqlQueryException On database error from the underlying update.
+     * @throws \DCL\Common\Database\SqlQueryException On database error from the underlying update.
      */
     public function enableNoteById($id)
     {
@@ -56,7 +56,7 @@ class ONoteService
      *
      * @param  int|string $id The office note id.
      * @return void
-     * @throws \OpenEMR\Common\Database\SqlQueryException On database error from the underlying update.
+     * @throws \DCL\Common\Database\SqlQueryException On database error from the underlying update.
      */
     public function disableNoteById($id)
     {

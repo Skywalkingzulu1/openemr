@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,19 +72,19 @@ class FHIRElementDefinitionBase extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * The Path that identifies the base element - this matches the ElementDefinition.path for that element. Across FHIR, there is only one base definition of any element - that is, an element definition on a [[[StructureDefinition]]] without a StructureDefinition.base.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * Minimum cardinality of the base element identified by the path.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $min = null;
 
     /**
      * Maximum cardinality of the base element identified by the path.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $max = null;
 
@@ -95,7 +95,7 @@ class FHIRElementDefinitionBase extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The Path that identifies the base element - this matches the ElementDefinition.path for that element. Across FHIR, there is only one base definition of any element - that is, an element definition on a [[[StructureDefinition]]] without a StructureDefinition.base.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -104,7 +104,7 @@ class FHIRElementDefinitionBase extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The Path that identifies the base element - this matches the ElementDefinition.path for that element. Across FHIR, there is only one base definition of any element - that is, an element definition on a [[[StructureDefinition]]] without a StructureDefinition.base.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -115,7 +115,7 @@ class FHIRElementDefinitionBase extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Minimum cardinality of the base element identified by the path.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getMin()
     {
@@ -124,7 +124,7 @@ class FHIRElementDefinitionBase extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Minimum cardinality of the base element identified by the path.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $min
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $min
      * @return $this
      */
     public function setMin($min)
@@ -135,7 +135,7 @@ class FHIRElementDefinitionBase extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Maximum cardinality of the base element identified by the path.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMax()
     {
@@ -144,7 +144,7 @@ class FHIRElementDefinitionBase extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Maximum cardinality of the base element identified by the path.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $max
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $max
      * @return $this
      */
     public function setMax($max)

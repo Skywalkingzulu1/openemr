@@ -2,34 +2,34 @@
 
 /**
  * FhirPatientDocumentReferenceService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\DocumentReference;
+namespace DCL\Services\FHIR\DocumentReference;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\DocumentReference\Enum\DocumentReferenceCategoryEnum;
-use OpenEMR\Services\FHIR\DocumentReference\Trait\FhirDocumentReferenceTrait;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\PatientAdvanceDirectiveService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\DocumentReference\Enum\DocumentReferenceCategoryEnum;
+use DCL\Services\FHIR\DocumentReference\Trait\FhirDocumentReferenceTrait;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\PatientAdvanceDirectiveService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class FhirDocumentReferenceAdvanceCareDirectiveService extends FhirServiceBase implements IPatientCompartmentResourceService
@@ -97,29 +97,29 @@ class FhirDocumentReferenceAdvanceCareDirectiveService extends FhirServiceBase i
     }
 
     /**
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (isset($openEMRSearchParameters['category'])) {
+        if (isset($DCLSearchParameters['category'])) {
             // we have nothing with this category so we are going to return nothing as we never should have gotten here
 
-            unset($openEMRSearchParameters['category']);
+            unset($DCLSearchParameters['category']);
         }
-        if (isset($openEMRSearchParameters['puuid'])) {
+        if (isset($DCLSearchParameters['puuid'])) {
             // make sure that no other modifier such as NOT_EQUALS, OR missing=true is sent which would let system file names be
             // leaked out in the API
-            $openEMRSearchParameters['puuid']->setModifier(SearchModifier::EXACT);
+            $DCLSearchParameters['puuid']->setModifier(SearchModifier::EXACT);
         } else {
             // make sure we only return documents that are tied to patients
-            $openEMRSearchParameters['puuid'] = new TokenSearchField('puuid', [new TokenSearchValue(false, null)]);
-            $openEMRSearchParameters['puuid']->setModifier(SearchModifier::MISSING);
+            $DCLSearchParameters['puuid'] = new TokenSearchField('puuid', [new TokenSearchValue(false, null)]);
+            $DCLSearchParameters['puuid']->setModifier(SearchModifier::MISSING);
         }
-        return $this->getADIService()->search($openEMRSearchParameters);
+        return $this->getADIService()->search($DCLSearchParameters);
     }
 
-    protected function parseOpenEMRRecordIntoFHIRDocumentReference($dataRecord = []): FHIRDocumentReference
+    protected function parseDCLRecordIntoFHIRDocumentReference($dataRecord = []): FHIRDocumentReference
     {
         $docReference = new FHIRDocumentReference();
         $this->populateMetaData($docReference, $dataRecord);

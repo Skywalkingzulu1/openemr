@@ -9,21 +9,21 @@
  *   - missing user_role at line 68 (invalidRequest)
  *   - wrong credentials at line 104 (invalidGrant Failed Authentication)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -41,10 +41,10 @@ class PasswordGrantAdditionalNegativesTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {

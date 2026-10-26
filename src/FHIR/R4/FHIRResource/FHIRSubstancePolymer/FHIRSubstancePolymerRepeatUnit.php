@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,31 +71,31 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $orientationOfPolymerisation = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $repeatUnit = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount
      */
     public $amount = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation[]
      */
     public $degreeOfPolymerisation = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation[]
      */
     public $structuralRepresentation = [];
 
@@ -106,7 +106,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOrientationOfPolymerisation()
     {
@@ -115,7 +115,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $orientationOfPolymerisation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $orientationOfPolymerisation
      * @return $this
      */
     public function setOrientationOfPolymerisation($orientationOfPolymerisation)
@@ -126,7 +126,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRepeatUnit()
     {
@@ -135,7 +135,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $repeatUnit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $repeatUnit
      * @return $this
      */
     public function setRepeatUnit($repeatUnit)
@@ -146,7 +146,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount
      */
     public function getAmount()
     {
@@ -155,7 +155,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount $amount
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -166,7 +166,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation[]
      */
     public function getDegreeOfPolymerisation()
     {
@@ -175,7 +175,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation $degreeOfPolymerisation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation $degreeOfPolymerisation
      * @return $this
      */
     public function addDegreeOfPolymerisation($degreeOfPolymerisation)
@@ -186,7 +186,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation[]
      */
     public function getStructuralRepresentation()
     {
@@ -195,7 +195,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement implements \Jso
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation $structuralRepresentation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation $structuralRepresentation
      * @return $this
      */
     public function addStructuralRepresentation($structuralRepresentation)

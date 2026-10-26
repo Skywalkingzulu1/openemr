@@ -3,21 +3,21 @@
 /**
  * interface/eRx_xml.php Functions for interacting with Ensora eRx communications.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Eldho Chacko <eldho@zhservices.com>
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011 ZMG LLC <sam@zhservices.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\VersionService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
+use DCL\Services\VersionService;
 
 function getErxPath(): string
 {
@@ -118,7 +118,7 @@ function credentials($doc, $r): void
     $b->appendChild($password);
     $productName = $doc->createElement("productName");
     $productName->appendChild(
-        $doc->createTextNode('OpenEMR')
+        $doc->createTextNode('DCL')
     );
     $b->appendChild($productName);
     $productVersion = $doc->createElement("productVersion");

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.
@@ -72,137 +72,137 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A procedure that is fulfilled in whole or in part by the creation of this media.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * The current state of the {{title}}.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREventStatus
      */
     public $status = null;
 
     /**
      * A code that classifies whether the media is an image, video or audio recording or some other media category.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $modality = null;
 
     /**
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $view = null;
 
     /**
      * Who/What this Media is a record of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The encounter that establishes the context for this media.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $createdDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $createdPeriod = null;
 
     /**
      * The date and time this version of the media was made available to providers, typically after having been reviewed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $issued = null;
 
     /**
      * The person who administered the collection of the image.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $operator = null;
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates the site on the subject's body where the observation was made (i.e. the target site).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $bodySite = null;
 
     /**
      * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $deviceName = null;
 
     /**
      * The device used to collect the media.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $device = null;
 
     /**
      * Height of the image in pixels (photo/video).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $height = null;
 
     /**
      * Width of the image in pixels (photo/video).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $width = null;
 
     /**
      * The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition context that takes multiple slices in a single image, or an animated gif. If there is more than one frame, this SHALL have a value in order to alert interface software that a multi-frame capable rendering widget is required.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $frames = null;
 
     /**
      * The duration of the recording in seconds - for audio and video.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $duration = null;
 
     /**
      * The actual content of the media - inline or by direct reference to the media source file.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $content = null;
 
     /**
      * Comments made about the media by the performer, subject or other participants.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -213,7 +213,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -222,7 +222,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -233,7 +233,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A procedure that is fulfilled in whole or in part by the creation of this media.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -242,7 +242,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A procedure that is fulfilled in whole or in part by the creation of this media.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -253,7 +253,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -262,7 +262,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -273,7 +273,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the {{title}}.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREventStatus
      */
     public function getStatus()
     {
@@ -282,7 +282,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the {{title}}.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREventStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -293,7 +293,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies whether the media is an image, video or audio recording or some other media category.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -302,7 +302,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies whether the media is an image, video or audio recording or some other media category.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -313,7 +313,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getModality()
     {
@@ -322,7 +322,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $modality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $modality
      * @return $this
      */
     public function setModality($modality)
@@ -333,7 +333,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getView()
     {
@@ -342,7 +342,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $view
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $view
      * @return $this
      */
     public function setView($view)
@@ -353,7 +353,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who/What this Media is a record of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -362,7 +362,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who/What this Media is a record of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -373,7 +373,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter that establishes the context for this media.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -382,7 +382,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter that establishes the context for this media.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -392,7 +392,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreatedDateTime()
     {
@@ -400,7 +400,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $createdDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $createdDateTime
      * @return $this
      */
     public function setCreatedDateTime($createdDateTime)
@@ -410,7 +410,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getCreatedPeriod()
     {
@@ -418,7 +418,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $createdPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $createdPeriod
      * @return $this
      */
     public function setCreatedPeriod($createdPeriod)
@@ -429,7 +429,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time this version of the media was made available to providers, typically after having been reviewed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getIssued()
     {
@@ -438,7 +438,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time this version of the media was made available to providers, typically after having been reviewed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $issued
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $issued
      * @return $this
      */
     public function setIssued($issued)
@@ -449,7 +449,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person who administered the collection of the image.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOperator()
     {
@@ -458,7 +458,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person who administered the collection of the image.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $operator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $operator
      * @return $this
      */
     public function setOperator($operator)
@@ -469,7 +469,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -478,7 +478,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -489,7 +489,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the site on the subject's body where the observation was made (i.e. the target site).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite()
     {
@@ -498,7 +498,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the site on the subject's body where the observation was made (i.e. the target site).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function setBodySite($bodySite)
@@ -509,7 +509,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDeviceName()
     {
@@ -518,7 +518,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $deviceName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $deviceName
      * @return $this
      */
     public function setDeviceName($deviceName)
@@ -529,7 +529,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device used to collect the media.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDevice()
     {
@@ -538,7 +538,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device used to collect the media.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $device
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function setDevice($device)
@@ -549,7 +549,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Height of the image in pixels (photo/video).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getHeight()
     {
@@ -558,7 +558,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Height of the image in pixels (photo/video).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $height
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $height
      * @return $this
      */
     public function setHeight($height)
@@ -569,7 +569,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Width of the image in pixels (photo/video).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getWidth()
     {
@@ -578,7 +578,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Width of the image in pixels (photo/video).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $width
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $width
      * @return $this
      */
     public function setWidth($width)
@@ -589,7 +589,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition context that takes multiple slices in a single image, or an animated gif. If there is more than one frame, this SHALL have a value in order to alert interface software that a multi-frame capable rendering widget is required.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getFrames()
     {
@@ -598,7 +598,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition context that takes multiple slices in a single image, or an animated gif. If there is more than one frame, this SHALL have a value in order to alert interface software that a multi-frame capable rendering widget is required.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $frames
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $frames
      * @return $this
      */
     public function setFrames($frames)
@@ -609,7 +609,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The duration of the recording in seconds - for audio and video.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getDuration()
     {
@@ -618,7 +618,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The duration of the recording in seconds - for audio and video.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $duration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $duration
      * @return $this
      */
     public function setDuration($duration)
@@ -629,7 +629,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual content of the media - inline or by direct reference to the media source file.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getContent()
     {
@@ -638,7 +638,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual content of the media - inline or by direct reference to the media source file.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $content
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $content
      * @return $this
      */
     public function setContent($content)
@@ -649,7 +649,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the media by the performer, subject or other participants.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -658,7 +658,7 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the media by the performer, subject or other participants.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

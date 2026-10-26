@@ -4,22 +4,22 @@
  * CarePlanFormService - Database and business logic for the Care Plan encounter form.
  *
  * This is the persistence layer for the `care_plan` encounter form directory. It is
- * deliberately distinct from {@see \OpenEMR\Services\CarePlanService}, which is the
+ * deliberately distinct from {@see \DCL\Services\CarePlanService}, which is the
  * FHIR/USCDI read model over the same table.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (C) 2025 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Forms;
+namespace DCL\Services\Forms;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\FormService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\FormService;
 
 class CarePlanFormService
 {

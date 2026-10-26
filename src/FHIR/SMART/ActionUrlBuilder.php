@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\FHIR\SMART;
+namespace DCL\FHIR\SMART;
 
-use OpenEMR\Common\Csrf\CsrfUtils;
+use DCL\Common\Csrf\CsrfUtils;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ActionUrlBuilder

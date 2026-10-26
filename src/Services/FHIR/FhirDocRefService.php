@@ -3,32 +3,32 @@
 /**
  * FhirDocRefService handles the creation / retrieve of Clinical Summary of Care (CCD) documents for a patient.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDocuments\PatientDocumentCreateCCDAEvent;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
-use OpenEMR\Services\FHIR\DocumentReference\FhirPatientDocumentReferenceService;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\ResourceServiceSearchTrait;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\FHIRSearchFieldFactory;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ReferenceSearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDocuments\PatientDocumentCreateCCDAEvent;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
+use DCL\Services\FHIR\DocumentReference\FhirPatientDocumentReferenceService;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\ResourceServiceSearchTrait;
+use DCL\Services\PatientService;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\FHIRSearchFieldFactory;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ReferenceSearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 // TODO: @adunsulag look at putting this into its own operations folder
 class FhirDocRefService
@@ -49,7 +49,7 @@ class FhirDocRefService
     }
 
     /**
-     * Returns an array mapping FHIR Coverage Resource search parameters to OpenEMR Condition search parameters
+     * Returns an array mapping FHIR Coverage Resource search parameters to DCL Condition search parameters
      *
      * @return array The search parameters
      */
@@ -74,7 +74,7 @@ class FhirDocRefService
     {
         $this->getSystemLogger()->debug("FhirDocRefService::getAll called", ['searchParams' => $searchParams]);
         $fhirSearchResult = new ProcessingResult();
-        $oeSearchParameters = $this->createOpenEMRSearchParameters($searchParams, $puuidBind);
+        $oeSearchParameters = $this->createDCLSearchParameters($searchParams, $puuidBind);
         $type = $oeSearchParameters['type'] ?? $this->createDefaultType();
         // if type != 'CCD LOINC' then return no data
         if ($this->isValidType($type)) {

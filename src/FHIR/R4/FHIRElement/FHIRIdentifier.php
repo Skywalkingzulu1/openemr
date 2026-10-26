@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.
@@ -72,37 +72,37 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 {
     /**
      * The purpose of this identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifierUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifierUse
      */
     public $use = null;
 
     /**
      * A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $system = null;
 
     /**
      * The portion of the identifier typically relevant to the user and which is unique within the context of the system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
     /**
      * Time period during which identifier is/was valid for use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Organization that issued/manages the identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $assigner = null;
 
@@ -113,7 +113,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * The purpose of this identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifierUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifierUse
      */
     public function getUse()
     {
@@ -122,7 +122,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * The purpose of this identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifierUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifierUse $use
      * @return $this
      */
     public function setUse($use)
@@ -133,7 +133,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -142,7 +142,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * A coded type for the identifier that can be used to determine which identifier to use for a specific purpose.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -153,7 +153,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSystem()
     {
@@ -162,7 +162,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * Establishes the namespace for the value - that is, a URL that describes a set values that are unique.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $system
      * @return $this
      */
     public function setSystem($system)
@@ -173,7 +173,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * The portion of the identifier typically relevant to the user and which is unique within the context of the system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -182,7 +182,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * The portion of the identifier typically relevant to the user and which is unique within the context of the system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)
@@ -193,7 +193,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * Time period during which identifier is/was valid for use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -202,7 +202,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * Time period during which identifier is/was valid for use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -213,7 +213,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * Organization that issued/manages the identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAssigner()
     {
@@ -222,7 +222,7 @@ class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 
     /**
      * Organization that issued/manages the identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $assigner
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $assigner
      * @return $this
      */
     public function setAssigner($assigner)

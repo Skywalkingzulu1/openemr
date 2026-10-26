@@ -1,6 +1,6 @@
 # Render docker/dockerhub-fpm/overview.md against the live weekly + nightly
 # fpm build workflows, then PATCH it to Docker Hub's repo description for
-# openemr/dev-php-fpm.
+# DCL/dev-php-fpm.
 #
 # Three trigger paths:
 #
@@ -114,10 +114,10 @@ jobs:
         fi
 
     - name: Push readme to Docker Hub
-      if: ${{ steps.decide.outputs.push == 'true' && github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' }}
+      if: ${{ steps.decide.outputs.push == 'true' && github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' }}
       uses: peter-evans/dockerhub-description@v5
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        repository: openemr/dev-php-fpm
+        repository: DCL/dev-php-fpm
         readme-filepath: ${{ runner.temp }}/rendered/dockerhub-readme.md

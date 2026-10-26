@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers\FHIR\Trait;
+namespace DCL\Tests\RestControllers\FHIR\Trait;
 
 use Symfony\Component\HttpFoundation\Response;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImmunization;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
@@ -71,13 +71,13 @@ class FHIRImmunizationPerformer extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Describes the type of performance (e.g. ordering provider, administering provider, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $function = null;
 
     /**
      * The practitioner or organization who performed the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
@@ -88,7 +88,7 @@ class FHIRImmunizationPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Describes the type of performance (e.g. ordering provider, administering provider, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFunction()
     {
@@ -97,7 +97,7 @@ class FHIRImmunizationPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Describes the type of performance (e.g. ordering provider, administering provider, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
      * @return $this
      */
     public function setFunction($function)
@@ -108,7 +108,7 @@ class FHIRImmunizationPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The practitioner or organization who performed the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -117,7 +117,7 @@ class FHIRImmunizationPerformer extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The practitioner or organization who performed the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)

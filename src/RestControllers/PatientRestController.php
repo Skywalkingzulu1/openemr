@@ -3,20 +3,20 @@
 /**
  * PatientRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\SearchQueryConfig;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\PatientService;
+use DCL\Services\Search\SearchQueryConfig;
 use Psr\Http\Message\ResponseInterface;
 
 #[OA\Schema(
@@ -220,7 +220,7 @@ class PatientRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post($data, HttpRestRequest $request): ResponseInterface
     {
@@ -265,7 +265,7 @@ class PatientRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put($puuidString, $data, HttpRestRequest $request)
     {
@@ -301,7 +301,7 @@ class PatientRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     #[OA\Get(
         path: '/portal/patient',
@@ -318,7 +318,7 @@ class PatientRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($puuidString, HttpRestRequest $request)
     {
@@ -475,7 +475,7 @@ class PatientRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll(HttpRestRequest $request, array $search, SearchQueryConfig $config)
     {

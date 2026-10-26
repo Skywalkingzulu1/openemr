@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Set of definitional characteristics for a kind of observation or measurement produced or consumed by an orderable health care service.
@@ -71,25 +71,25 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 {
     /**
      * Customary unit used to report quantitative results of observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $customaryUnit = null;
 
     /**
      * SI unit used to report quantitative results of observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unit = null;
 
     /**
      * Factor for converting value expressed with SI unit to value expressed with customary unit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $conversionFactor = null;
 
     /**
      * Number of digits after decimal separator when the results of such observations are of type Quantity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $decimalPrecision = null;
 
@@ -100,7 +100,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * Customary unit used to report quantitative results of observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCustomaryUnit()
     {
@@ -109,7 +109,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * Customary unit used to report quantitative results of observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $customaryUnit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $customaryUnit
      * @return $this
      */
     public function setCustomaryUnit($customaryUnit)
@@ -120,7 +120,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * SI unit used to report quantitative results of observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnit()
     {
@@ -129,7 +129,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * SI unit used to report quantitative results of observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
      * @return $this
      */
     public function setUnit($unit)
@@ -140,7 +140,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * Factor for converting value expressed with SI unit to value expressed with customary unit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getConversionFactor()
     {
@@ -149,7 +149,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * Factor for converting value expressed with SI unit to value expressed with customary unit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $conversionFactor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $conversionFactor
      * @return $this
      */
     public function setConversionFactor($conversionFactor)
@@ -160,7 +160,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * Number of digits after decimal separator when the results of such observations are of type Quantity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getDecimalPrecision()
     {
@@ -169,7 +169,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement i
 
     /**
      * Number of digits after decimal separator when the results of such observations are of type Quantity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $decimalPrecision
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $decimalPrecision
      * @return $this
      */
     public function setDecimalPrecision($decimalPrecision)

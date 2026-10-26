@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Specifies contact information for a person or organization.
@@ -72,13 +72,13 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
 {
     /**
      * The name of an individual to contact.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The contact details for the individual (if a name was provided) or the organization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
@@ -89,7 +89,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of an individual to contact.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -98,7 +98,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of an individual to contact.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -109,7 +109,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
 
     /**
      * The contact details for the individual (if a name was provided) or the organization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -118,7 +118,7 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
 
     /**
      * The contact details for the individual (if a name was provided) or the organization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)

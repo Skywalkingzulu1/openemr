@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
+ * @copyright Copyright (c) 2026 DCL <https://DCL.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cda;
+namespace DCL\Tests\Isolated\Cda;
 
 use DOMDocument;
 use DOMXPath;
-use OpenEMR\Cda\InternalToCdaConverter;
+use DCL\Cda\InternalToCdaConverter;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -1287,7 +1287,7 @@ class InternalToCdaConverterTest extends TestCase
      * Patient files exported with a C-CDA travel in a separate unstructured
      * document, as the Node service returned them: the main document's header
      * under the unstructured template, then one nonXMLBody component per file
-     * with the attributes the OpenEMR importer reads.
+     * with the attributes the DCL importer reads.
      */
     public function testExportedPatientFilesProduceAnUnstructuredDocument(): void
     {

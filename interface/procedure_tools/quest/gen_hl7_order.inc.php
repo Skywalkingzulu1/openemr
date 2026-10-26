@@ -3,13 +3,13 @@
 /**
  * Functions to support HL7 order generation
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2012-2013 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /*
@@ -29,10 +29,10 @@
 
 require_once("$webserver_root/custom/code_types.inc.php");
 
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Orders\Hl7OrderGenerationException;
-use OpenEMR\Common\Orders\Hl7OrderResult;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Orders\Hl7OrderGenerationException;
+use DCL\Common\Orders\Hl7OrderResult;
+use DCL\Common\Session\SessionWrapperFactory;
 
 /**
  * Get array of insurance payers for the specified patient as of the specified

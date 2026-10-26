@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\Services\FHIR\FhirCoverageService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\Services\FHIR\FhirCoverageService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -19,13 +19,13 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR Coverage Service CRUD Tests
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirCoverageServiceCrudTest extends TestCase
 {
@@ -200,7 +200,7 @@ class FhirCoverageServiceCrudTest extends TestCase
             "Update should succeed: " . json_encode($actualResult->getValidationMessages())
         );
         $this->assertNotEmpty($actualResult->getData());
-        // FhirServiceBase::update re-parses the updated row through parseOpenEMRRecord,
+        // FhirServiceBase::update re-parses the updated row through parseDCLRecord,
         // so getData()[0] is the FHIRCoverage object. subscriberId carries policy_number.
         $updatedData = $actualResult->getData();
         $this->assertIsArray($updatedData);
@@ -230,7 +230,7 @@ class FhirCoverageServiceCrudTest extends TestCase
         $this->fhirCoverageFixture->setId(new FHIRId());
         $payload = $this->fhirCoverageFixture->jsonSerialize();
         $payload['status'] = 'cancelled';
-        $fixture = new \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage($payload);
+        $fixture = new \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage($payload);
 
         $result = $this->fhirCoverageService->insert($fixture);
         $this->assertFalse($result->isValid());
@@ -245,7 +245,7 @@ class FhirCoverageServiceCrudTest extends TestCase
         $this->fhirCoverageFixture->setId(new FHIRId());
         $payload = $this->fhirCoverageFixture->jsonSerialize();
         $payload['status'] = 'entered-in-error';
-        $fixture = new \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage($payload);
+        $fixture = new \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage($payload);
 
         $result = $this->fhirCoverageService->insert($fixture);
         $this->assertFalse($result->isValid());

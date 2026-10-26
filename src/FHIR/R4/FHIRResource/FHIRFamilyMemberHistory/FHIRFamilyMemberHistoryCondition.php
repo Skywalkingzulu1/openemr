@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory;
+namespace DCL\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Significant health conditions for a person related to the patient relevant in the context of care for the patient.
@@ -71,45 +71,45 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 {
     /**
      * The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Indicates what happened following the condition.  If the condition resulted in death, deceased date is captured on the relation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $outcome = null;
 
     /**
      * This condition contributed to the cause of death of the related person. If contributedToDeath is not populated, then it is unknown.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $contributedToDeath = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $onsetAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $onsetRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $onsetPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $onsetString = null;
 
     /**
      * An area where general notes can be placed about this specific condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -120,7 +120,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -129,7 +129,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -140,7 +140,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * Indicates what happened following the condition.  If the condition resulted in death, deceased date is captured on the relation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome()
     {
@@ -149,7 +149,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * Indicates what happened following the condition.  If the condition resulted in death, deceased date is captured on the relation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -160,7 +160,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * This condition contributed to the cause of death of the related person. If contributedToDeath is not populated, then it is unknown.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getContributedToDeath()
     {
@@ -169,7 +169,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * This condition contributed to the cause of death of the related person. If contributedToDeath is not populated, then it is unknown.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $contributedToDeath
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $contributedToDeath
      * @return $this
      */
     public function setContributedToDeath($contributedToDeath)
@@ -179,7 +179,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge()
     {
@@ -187,7 +187,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return $this
      */
     public function setOnsetAge($onsetAge)
@@ -197,7 +197,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getOnsetRange()
     {
@@ -205,7 +205,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $onsetRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $onsetRange
      * @return $this
      */
     public function setOnsetRange($onsetRange)
@@ -215,7 +215,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod()
     {
@@ -223,7 +223,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $onsetPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $onsetPeriod
      * @return $this
      */
     public function setOnsetPeriod($onsetPeriod)
@@ -233,7 +233,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getOnsetString()
     {
@@ -241,7 +241,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $onsetString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $onsetString
      * @return $this
      */
     public function setOnsetString($onsetString)
@@ -252,7 +252,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * An area where general notes can be placed about this specific condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -261,7 +261,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * An area where general notes can be placed about this specific condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

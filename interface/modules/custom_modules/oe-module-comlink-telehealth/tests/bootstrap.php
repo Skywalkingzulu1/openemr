@@ -3,17 +3,17 @@
 /**
  * phpunit bootstrap file
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-use OpenEMR\BC\Deprecation;
-use OpenEMR\BC\DeprecationMode;
+use DCL\BC\Deprecation;
+use DCL\BC\DeprecationMode;
 
 // make sure this can only be run on the command line.
 if (php_sapi_name() !== 'cli') {

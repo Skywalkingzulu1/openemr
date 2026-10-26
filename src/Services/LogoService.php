@@ -5,19 +5,19 @@
  *
  * Business logic for the login page
  *
- * @package     OpenEMR
+ * @package     DCL
  * @subpackage  Login
  * @author      Robert Down <robertdown@live.com>
  * @copyright   Copyright (c) 2023 Robert Down
  * @copyright   Providence Healthtech
- * @license     https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license     https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Core\ModulesApplication;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Services\LogoFilterEvent;
+use DCL\Core\ModulesApplication;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Services\LogoFilterEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;

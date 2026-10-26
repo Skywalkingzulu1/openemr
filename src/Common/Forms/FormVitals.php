@@ -5,27 +5,27 @@
  * For backwards compatibility it extends ORDataObject (which implements the a form of the Active record data pattern),
  * but the preferred mechanism is to use this as a POPO (Plain old PHP object) and save / retrieve data using
  * the VitalsService class.
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
 /**
  * class FormVitals
  *
  */
 
-use OpenEMR\Common\Forms\BmiCategory;
-use OpenEMR\Common\ORDataObject\ORDataObject;
-use OpenEMR\Common\Utils\MeasurementUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Forms\BmiCategory;
+use DCL\Common\ORDataObject\ORDataObject;
+use DCL\Common\Utils\MeasurementUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
 
 class FormVitals extends ORDataObject
 {

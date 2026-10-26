@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConsent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConsent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
@@ -71,67 +71,67 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRConsentProvisionType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRConsentProvisionType
      */
     public $type = null;
 
     /**
      * The timeframe in this rule is valid.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Who or what is controlled by this rule. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentActor[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentActor[]
      */
     public $actor = [];
 
     /**
      * Actions controlled by this Rule.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $action = [];
 
     /**
      * A security label, comprised of 0..* security label fields (Privacy tags), which define which resources are controlled by this exception.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $securityLabel = [];
 
     /**
      * The context of the activities a user is taking - why the user is accessing the data - that are controlled by this rule.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $purpose = [];
 
     /**
      * The class of information covered by this rule. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $class = [];
 
     /**
      * If this code is found in an instance, then the rule applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * Clinical or Operational Relevant period of time that bounds the data controlled by this rule.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $dataPeriod = null;
 
     /**
      * The resources controlled by this rule if specific resources are referenced.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentData[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentData[]
      */
     public $data = [];
 
     /**
      * Rules which provide exceptions to the base rule or subrules.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision[]
      */
     public $provision = [];
 
@@ -142,7 +142,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRConsentProvisionType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRConsentProvisionType
      */
     public function getType()
     {
@@ -151,7 +151,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRConsentProvisionType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRConsentProvisionType $type
      * @return $this
      */
     public function setType($type)
@@ -162,7 +162,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The timeframe in this rule is valid.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -171,7 +171,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The timeframe in this rule is valid.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -182,7 +182,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Who or what is controlled by this rule. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentActor[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentActor[]
      */
     public function getActor()
     {
@@ -191,7 +191,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Who or what is controlled by this rule. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentActor $actor
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentActor $actor
      * @return $this
      */
     public function addActor($actor)
@@ -202,7 +202,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Actions controlled by this Rule.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAction()
     {
@@ -211,7 +211,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Actions controlled by this Rule.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $action
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $action
      * @return $this
      */
     public function addAction($action)
@@ -222,7 +222,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A security label, comprised of 0..* security label fields (Privacy tags), which define which resources are controlled by this exception.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getSecurityLabel()
     {
@@ -231,7 +231,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A security label, comprised of 0..* security label fields (Privacy tags), which define which resources are controlled by this exception.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $securityLabel
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $securityLabel
      * @return $this
      */
     public function addSecurityLabel($securityLabel)
@@ -242,7 +242,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The context of the activities a user is taking - why the user is accessing the data - that are controlled by this rule.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getPurpose()
     {
@@ -251,7 +251,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The context of the activities a user is taking - why the user is accessing the data - that are controlled by this rule.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $purpose
      * @return $this
      */
     public function addPurpose($purpose)
@@ -262,7 +262,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The class of information covered by this rule. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getClass()
     {
@@ -271,7 +271,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The class of information covered by this rule. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $class
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $class
      * @return $this
      */
     public function addClass($class)
@@ -282,7 +282,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * If this code is found in an instance, then the rule applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -291,7 +291,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * If this code is found in an instance, then the rule applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -302,7 +302,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Clinical or Operational Relevant period of time that bounds the data controlled by this rule.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getDataPeriod()
     {
@@ -311,7 +311,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Clinical or Operational Relevant period of time that bounds the data controlled by this rule.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $dataPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $dataPeriod
      * @return $this
      */
     public function setDataPeriod($dataPeriod)
@@ -322,7 +322,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The resources controlled by this rule if specific resources are referenced.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentData[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentData[]
      */
     public function getData()
     {
@@ -331,7 +331,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The resources controlled by this rule if specific resources are referenced.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentData $data
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentData $data
      * @return $this
      */
     public function addData($data)
@@ -342,7 +342,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Rules which provide exceptions to the base rule or subrules.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision[]
      */
     public function getProvision()
     {
@@ -351,7 +351,7 @@ class FHIRConsentProvision extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Rules which provide exceptions to the base rule or subrules.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision $provision
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConsent\FHIRConsentProvision $provision
      * @return $this
      */
     public function addProvision($provision)

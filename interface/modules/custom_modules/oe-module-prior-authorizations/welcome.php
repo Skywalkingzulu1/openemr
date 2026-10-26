@@ -1,16 +1,16 @@
 <?php
 
 /*
- *  package OpenEMR
- *  link    https://www.open-emr.org
+ *  package DCL
+ *  link    https://www.dcl.org
  *  author  Sherwin Gaddis <sherwingaddis@gmail.com>
  *  Copyright (c) 2022.
  *  All rights reserved
  */
 
-use Juggernaut\OpenEMR\Modules\PriorAuthModule\Controller\AuthorizationService;
-use Juggernaut\OpenEMR\Modules\PriorAuthModule\Controller\ListAuthorizations;
-use OpenEMR\Core\Header;
+use Juggernaut\DCL\Modules\PriorAuthModule\Controller\AuthorizationService;
+use Juggernaut\DCL\Modules\PriorAuthModule\Controller\ListAuthorizations;
+use DCL\Core\Header;
 
 require_once dirname(__FILE__, 4) . "/globals.php";
 

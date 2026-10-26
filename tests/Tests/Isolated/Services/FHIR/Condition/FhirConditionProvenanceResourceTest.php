@@ -5,27 +5,27 @@ declare(strict_types=1);
 /*
  * FhirConditionProvenanceResourceTest.php
  *
- * Regression tests for https://github.com/openemr/openemr/issues/13054
+ * Regression tests for https://github.com/DCL/DCL/issues/13054
  * createProvenanceResource() fataled with a TypeError when
  * FhirProvenanceService::createProvenanceForDomainResource() returned null
  * (e.g. no resolvable author/organization reference), which shunted Condition
  * resources into the bulk $export manifest error file.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR\Condition;
+namespace DCL\Tests\Isolated\Services\FHIR\Condition;
 
 use BadMethodCallException;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
-use OpenEMR\Services\FHIR\Condition\FhirConditionHealthConcernService;
-use OpenEMR\Services\FHIR\Condition\FhirConditionProblemListItemService;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
+use DCL\Services\FHIR\Condition\FhirConditionHealthConcernService;
+use DCL\Services\FHIR\Condition\FhirConditionProblemListItemService;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A kind of specimen with associated set of requirements.
@@ -71,49 +71,49 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 {
     /**
      * Primary of secondary specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $isDerived = null;
 
     /**
      * The kind of specimen conditioned for testing expected by lab.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The preference for this type of conditioned specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSpecimenContainedPreference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSpecimenContainedPreference
      */
     public $preference = null;
 
     /**
      * The specimen's container.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      */
     public $container = null;
 
     /**
      * Requirements for delivery and special handling of this kind of conditioned specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $requirement = null;
 
     /**
      * The usual time that a specimen of this kind is retained after the ordered tests are completed, for the purpose of additional testing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $retentionTime = null;
 
     /**
      * Criterion for rejection of the specimen in its container by the laboratory.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $rejectionCriterion = [];
 
     /**
      * Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[]
      */
     public $handling = [];
 
@@ -124,7 +124,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Primary of secondary specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getIsDerived()
     {
@@ -133,7 +133,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Primary of secondary specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $isDerived
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $isDerived
      * @return $this
      */
     public function setIsDerived($isDerived)
@@ -144,7 +144,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The kind of specimen conditioned for testing expected by lab.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -153,7 +153,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The kind of specimen conditioned for testing expected by lab.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -164,7 +164,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The preference for this type of conditioned specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSpecimenContainedPreference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSpecimenContainedPreference
      */
     public function getPreference()
     {
@@ -173,7 +173,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The preference for this type of conditioned specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSpecimenContainedPreference $preference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSpecimenContainedPreference $preference
      * @return $this
      */
     public function setPreference($preference)
@@ -184,7 +184,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The specimen's container.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      */
     public function getContainer()
     {
@@ -193,7 +193,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The specimen's container.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $container
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $container
      * @return $this
      */
     public function setContainer($container)
@@ -204,7 +204,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Requirements for delivery and special handling of this kind of conditioned specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRequirement()
     {
@@ -213,7 +213,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Requirements for delivery and special handling of this kind of conditioned specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $requirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $requirement
      * @return $this
      */
     public function setRequirement($requirement)
@@ -224,7 +224,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The usual time that a specimen of this kind is retained after the ordered tests are completed, for the purpose of additional testing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getRetentionTime()
     {
@@ -233,7 +233,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * The usual time that a specimen of this kind is retained after the ordered tests are completed, for the purpose of additional testing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
      * @return $this
      */
     public function setRetentionTime($retentionTime)
@@ -244,7 +244,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Criterion for rejection of the specimen in its container by the laboratory.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRejectionCriterion()
     {
@@ -253,7 +253,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Criterion for rejection of the specimen in its container by the laboratory.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $rejectionCriterion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $rejectionCriterion
      * @return $this
      */
     public function addRejectionCriterion($rejectionCriterion)
@@ -264,7 +264,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[]
      */
     public function getHandling()
     {
@@ -273,7 +273,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement implements \J
 
     /**
      * Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $handling
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling $handling
      * @return $this
      */
     public function addHandling($handling)

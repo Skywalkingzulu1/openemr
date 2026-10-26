@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\RestControllers\Authorization;
+namespace DCL\RestControllers\Authorization;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 

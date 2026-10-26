@@ -8,8 +8,8 @@
 // of the License, or (at your option) any later version.
 //
 
-use OpenEMR\Common\Utils\XmlUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Utils\XmlUtils;
+use DCL\Core\OEGlobalsBag;
 
 if (!extension_loaded("curl")) {
     die("Curl extension is required");

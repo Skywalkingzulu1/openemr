@@ -3,24 +3,24 @@
 /**
  * Config Module.
  *
- * @package   OpenEMR Module
- * @link      https://www.open-emr.org
+ * @package   DCL Module
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../../../globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\WenoModule\Services\ModuleService;
-use OpenEMR\Modules\WenoModule\Services\WenoLogService;
-use OpenEMR\Modules\WenoModule\Services\WenoValidate;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\WenoModule\Services\ModuleService;
+use DCL\Modules\WenoModule\Services\WenoLogService;
+use DCL\Modules\WenoModule\Services\WenoValidate;
 
 if (!AclMain::aclCheckCore('admin', 'super')) {
     // renders in MM iFrame
@@ -205,7 +205,7 @@ $vendors = $boot->getVendorGlobals();
                 echo "<div>" .
                     nl2br(text(" * Sign up for EZ Integration at ") .
                     "<a class='btn text-primary btn-link m-0 p-0 pb-1' href='https://online.wenoexchange.com/' target='_blank' rel='noopener noreferrer'>" . text(" online.wenoexchange.com") .     "</a>" .
-                        text(" & Developer's page has the OpenEMR Set Up Steps to go live.\n* Find prices & demo on Weno's website: ") .
+                        text(" & Developer's page has the DCL Set Up Steps to go live.\n* Find prices & demo on Weno's website: ") .
                     "<a class='btn text-primary btn-link m-0 p-0 pb-1' href='https://wenoexchange.com/' target='_blank' rel='noopener noreferrer'>" . text(" wenoexchange.com") . "</a>" .
                         text("->Services->Integrations->for EHRs ->EZ Integration.\n* To contact WENO or set up a meeting go to their website: ")) .
                     "<a class='btn text-primary btn-link m-0 p-0 pb-1' href='https://wenoexchange.com/' target='_blank' rel='noopener noreferrer'>" . text(" wenoexchange.com") .
@@ -217,12 +217,12 @@ $vendors = $boot->getVendorGlobals();
 - If the encryption key is deemed invalid then an alert will show and the Encryption Reset button is enabled. First try re-entering the key but if that doesn't work then clicking the Reset button will create a new key. This change will also be reflected in the Admins main Weno account and no other actions are required by the user. You may look on the key as an API token which may be a more familiar term to the reader.
 - The optional User Setting Credentials Subsection is a short cut to save time by entering the Weno User credentials for the user. This is the same as the Weno User ID in the Config Users Settings.\n
 *** The Map Weno User Id`s (Required)  Section.
-- This section presents a table of all authorised users showing their default facility if assigned and an input field to enter their Weno user id Uxxxx. This value is important in order to form a relationship between Weno and the OpenEMR user for tracking prescriptions.
+- This section presents a table of all authorised users showing their default facility if assigned and an input field to enter their Weno user id Uxxxx. This value is important in order to form a relationship between Weno and the DCL user for tracking prescriptions.
 - All values are automatically saved for the user whenever the Weno User ID is entered or changed.
 - As a convenience, an edit button is supplied to present a dialog containing the Users settings in edit mode. From here user may edit any setting such as assigning a default facility. This would be the same as accessing Users from top menu Admin->Users selected Weno Prescriber.\n
 *** The Map Weno Facility Id`s (Required)  Section.
 - This section is pretty self explanatory with perhaps noting this same data may be accessed from top menu Admin->Weno eRx Tools->Weno eRx Service.
-- It is important to note that the prescribing user should have their default facility set in their User settings. This is the same as the Weno User ID section in that it is required to form a relationship between Weno and the OpenEMR facility for tracking prescriptions.
+- It is important to note that the prescribing user should have their default facility set in their User settings. This is the same as the Weno User ID section in that it is required to form a relationship between Weno and the DCL facility for tracking prescriptions.
 - This section also auto saves for convenience."));
                 ?>
             </div>
@@ -282,7 +282,7 @@ $vendors = $boot->getVendorGlobals();
                         <div class="col-12 m-0 m-0 form-group">
                             <button type="button" class="btn btn-sm btn-outline-danger btn-refresh float-left" id="app_refresh_top" onclick="top.location.reload()"
                                 title="<?php echo xla("Same as a browser refresh. Click to implement any new menus and Configuration items."); ?>">
-                                <?php echo xlt("Restart OpenEMR"); ?>
+                                <?php echo xlt("Restart DCL"); ?>
                             </button>
                             <button type="submit" id="form_save" name="form_save" class="btn btn-success btn-sm btn-save float-right" value="Save">
                                 <?php echo xlt("Validate Primary Admin"); ?>

@@ -3,19 +3,19 @@
 /*
  * The functions of this class support the billing process like the script billing_process.php.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2011-2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2019-2022 Stephen Waite <stephen.waite@cmsvt.com>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 class BillingUtilities
 {
@@ -1490,7 +1490,7 @@ class BillingUtilities
     }
 
     // This function supports the Billing page (billing_process.php),
-    // and initiation of secondary processing (\OpenEMR\Billing\SLEOB.php).
+    // and initiation of secondary processing (\DCL\Billing\SLEOB.php).
     // It is called in the following situations:
     //
     // * billing_process.php sets bill_time, bill_process, payer and target on

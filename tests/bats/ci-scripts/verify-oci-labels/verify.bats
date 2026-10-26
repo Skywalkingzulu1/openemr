@@ -40,9 +40,9 @@ teardown() {
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 0 ]]
     [[ "${output}" == *"✓ revision=master version=8.2.0 created=2026-01-15"* ]]
-    [[ "${output}" == *"✓ title=OpenEMR"* ]]
-    [[ "${output}" == *"✓ source=https://github.com/openemr/openemr"* ]]
-    [[ "${output}" == *"✓ url=https://www.open-emr.org"* ]]
+    [[ "${output}" == *"✓ title=DCL"* ]]
+    [[ "${output}" == *"✓ source=https://github.com/DCL/DCL"* ]]
+    [[ "${output}" == *"✓ url=https://www.dcl.org"* ]]
     [[ "${output}" == *"✓ licenses=GPL-3.0-or-later"* ]]
     # No error output on the happy path.
     [[ "${output}" != *"::error::"* ]]
@@ -50,16 +50,16 @@ teardown() {
 
 # --- value-check failures (with Dockerfile-context hints) ---
 
-@test "revision mismatch -> exit 1 with OPENEMR_VERSION hint" {
+@test "revision mismatch -> exit 1 with DCL_VERSION hint" {
     write_labels \
         revision=wrong-branch \
         version=8.2.0 \
         created=2026-01-15 \
-        title=OpenEMR source=x url=y licenses=z
+        title=DCL source=x url=y licenses=z
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 1 ]]
     [[ "${output}" == *"::error::revision label 'wrong-branch' doesn't match expected 'master'"* ]]
-    [[ "${output}" == *"dropped the OPENEMR_VERSION ARG or hardcoded the LABEL value"* ]]
+    [[ "${output}" == *"dropped the DCL_VERSION ARG or hardcoded the LABEL value"* ]]
 }
 
 @test "version mismatch -> exit 1 with IMAGE_VERSION hint" {
@@ -67,10 +67,10 @@ teardown() {
         revision=master \
         version=7.0.0 \
         created=2026-01-15 \
-        title=OpenEMR source=x url=y licenses=z
+        title=DCL source=x url=y licenses=z
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 1 ]]
-    [[ "${output}" == *"::error::version label '7.0.0' doesn't match expected '8.2.0' (parsed from openemr@master/version.php)"* ]]
+    [[ "${output}" == *"::error::version label '7.0.0' doesn't match expected '8.2.0' (parsed from DCL@master/version.php)"* ]]
     [[ "${output}" == *"dropped the IMAGE_VERSION ARG or hardcoded the LABEL value"* ]]
 }
 
@@ -79,7 +79,7 @@ teardown() {
         revision=master \
         version=8.2.0 \
         created=1999-12-31 \
-        title=OpenEMR source=x url=y licenses=z
+        title=DCL source=x url=y licenses=z
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 1 ]]
     [[ "${output}" == *"::error::created label '1999-12-31' doesn't match expected '2026-01-15'"* ]]
@@ -101,7 +101,7 @@ teardown() {
 @test "missing source label -> exit 1" {
     write_labels \
         revision=master version=8.2.0 created=2026-01-15 \
-        title=OpenEMR source=ABSENT url=y licenses=z
+        title=DCL source=ABSENT url=y licenses=z
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 1 ]]
     [[ "${output}" == *"::error::Image is missing org.opencontainers.image.source label entirely"* ]]
@@ -110,7 +110,7 @@ teardown() {
 @test "missing url label -> exit 1" {
     write_labels \
         revision=master version=8.2.0 created=2026-01-15 \
-        title=OpenEMR source=x url=ABSENT licenses=z
+        title=DCL source=x url=ABSENT licenses=z
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 1 ]]
     [[ "${output}" == *"::error::Image is missing org.opencontainers.image.url label entirely"* ]]
@@ -119,7 +119,7 @@ teardown() {
 @test "missing licenses label -> exit 1" {
     write_labels \
         revision=master version=8.2.0 created=2026-01-15 \
-        title=OpenEMR source=x url=y licenses=ABSENT
+        title=DCL source=x url=y licenses=ABSENT
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 1 ]]
     [[ "${output}" == *"::error::Image is missing org.opencontainers.image.licenses label entirely"* ]]
@@ -134,7 +134,7 @@ teardown() {
     # some other "<no value>" string.
     write_labels \
         version=8.2.0 created=2026-01-15 \
-        title=OpenEMR source=x url=y licenses=z
+        title=DCL source=x url=y licenses=z
     run bash "${VERIFY_OCI_LABELS_SCRIPT}"
     [[ ${status} -eq 1 ]]
     # The mismatch line shows an empty string, not "<no value>".

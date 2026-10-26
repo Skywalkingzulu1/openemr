@@ -3,21 +3,21 @@
 /**
  * ADODB custom wrapper class to support auditing engine in main.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Core\OEGlobalsBag;
 
 class ADODB_mysqli_log extends ADODB_mysqli
 {
     /**
-     * ADODB Execute function wrapper to ensure proper auditing in OpenEMR.
+     * ADODB Execute function wrapper to ensure proper auditing in DCL.
      *
      * @param  string  $sql         query
      * @param  array|bool $inputarr    binded variables array (optional)
@@ -53,9 +53,9 @@ class ADODB_mysqli_log extends ADODB_mysqli
     }
 
     /**
-     * ADODB Execute function wrapper to skip auditing in OpenEMR.
+     * ADODB Execute function wrapper to skip auditing in DCL.
      *
-     * Bypasses the OpenEMR auditing engine.
+     * Bypasses the DCL auditing engine.
      *
      * @param string $sql query
      * @param array|bool $inputarr binded variables array (optional)

@@ -1,15 +1,15 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\FHIR\SMART\ExternalClinicalDecisionSupport;
+namespace DCL\Tests\Unit\FHIR\SMART\ExternalClinicalDecisionSupport;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\SystemLogger;
-use OpenEMR\FHIR\SMART\ActionUrlBuilder;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\PredictiveDSIServiceEntity;
-use OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport\RouteController;
-use OpenEMR\Services\DecisionSupportInterventionService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\SystemLogger;
+use DCL\FHIR\SMART\ActionUrlBuilder;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\PredictiveDSIServiceEntity;
+use DCL\FHIR\SMART\ExternalClinicalDecisionSupport\RouteController;
+use DCL\Services\DecisionSupportInterventionService;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -111,7 +111,7 @@ class RouteControllerTest extends TestCase
         $this->setupDSIServiceForClientEntity($id, "Test Client");
         $this->session->set('authUserID', 1);
         $request = new Request(['action' => 'external-cdr/save/' . $id]);
-        $request->request->set("predictive_details_developer", "OpenEMR");
+        $request->request->set("predictive_details_developer", "DCL");
         $request->request->set("predictive_details_funding", "Donations");
         $request->request->set('_token', CsrfUtils::collectCsrfToken($this->session));
 

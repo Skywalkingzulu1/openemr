@@ -3,8 +3,8 @@
 /**
  * CAMOS view.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Mark Leeds <drleeds@gmail.com>
  * @author    fndtn357 <fndtn357@gmail.com>
  * @author    cornfeed <jdough823@gmail.com>
@@ -12,7 +12,7 @@
  * @author    Wakie87 <scott@npclinics.com.au>
  * @author    Robert Down <robertdown@live.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2008 cfapress <cfapress>
  * @copyright Copyright (c) 2006-2009 Mark Mark Leeds <drleeds@gmail.com>
  * @copyright Copyright (c) 2011 cornfeed <jdough823@gmail.com>
@@ -20,17 +20,17 @@
  * @copyright Copyright (c) 2016 Wakie87 <scott@npclinics.com.au>
  * @copyright Copyright (c) 2016-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2023 Robert Down <robertdown@live.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 formHeader("Form: CAMOS");
 $textarea_rows = 22;

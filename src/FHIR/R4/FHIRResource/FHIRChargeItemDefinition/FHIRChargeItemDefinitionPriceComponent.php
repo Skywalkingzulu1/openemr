@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The ChargeItemDefinition resource provides the properties that apply to the (billing) codes necessary to calculate costs and prices. The properties may differ largely depending on type and realm, therefore this resource gives only a rough structure and requires profiling for each type of billing code system.
@@ -71,25 +71,25 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 {
     /**
      * This code identifies the type of the component.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInvoicePriceComponentType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInvoicePriceComponentType
      */
     public $type = null;
 
     /**
      * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The factor that has been applied on the base price for calculating this component.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $factor = null;
 
     /**
      * The amount calculated for this component.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $amount = null;
 
@@ -100,7 +100,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * This code identifies the type of the component.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInvoicePriceComponentType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInvoicePriceComponentType
      */
     public function getType()
     {
@@ -109,7 +109,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * This code identifies the type of the component.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInvoicePriceComponentType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInvoicePriceComponentType $type
      * @return $this
      */
     public function setType($type)
@@ -120,7 +120,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -129,7 +129,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -140,7 +140,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * The factor that has been applied on the base price for calculating this component.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFactor()
     {
@@ -149,7 +149,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * The factor that has been applied on the base price for calculating this component.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $factor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $factor
      * @return $this
      */
     public function setFactor($factor)
@@ -160,7 +160,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * The amount calculated for this component.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getAmount()
     {
@@ -169,7 +169,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement impleme
 
     /**
      * The amount calculated for this component.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $amount
      * @return $this
      */
     public function setAmount($amount)

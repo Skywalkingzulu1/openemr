@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMessageDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Defines the characteristics of a message that can be shared between systems, including the type of event that initiates the message, the content to be transmitted and what response(s), if any, are permitted.
@@ -71,25 +71,25 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * The kind of resource that must be the focus for this message.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * A profile that reflects constraints for the focal resource (and potentially for related resources).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
     /**
      * Identifies the minimum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $min = null;
 
     /**
      * Identifies the maximum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $max = null;
 
@@ -100,7 +100,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The kind of resource that must be the focus for this message.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The kind of resource that must be the focus for this message.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A profile that reflects constraints for the focal resource (and potentially for related resources).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -129,7 +129,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A profile that reflects constraints for the focal resource (and potentially for related resources).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)
@@ -140,7 +140,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Identifies the minimum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getMin()
     {
@@ -149,7 +149,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Identifies the minimum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $min
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $min
      * @return $this
      */
     public function setMin($min)
@@ -160,7 +160,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Identifies the maximum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMax()
     {
@@ -169,7 +169,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Identifies the maximum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $max
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $max
      * @return $this
      */
     public function setMax($max)

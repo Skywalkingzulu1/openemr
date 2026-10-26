@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use OpenEMR\Rector\Rules\GlobalsToOEGlobalsBagRector;
+use DCL\Rector\Rules\GlobalsToOEGlobalsBagRector;
 use Rector\Config\RectorConfig;
 use Rector\ValueObject\PhpVersion;
 

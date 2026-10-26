@@ -5,32 +5,32 @@
  * TODO: Note that this file can be refactored to reuse shared code with the portal_patient_report.php file
  * that file has been refactored to use twig templates and this file could be reworked to reuse much of that code
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2019 Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$rootdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getString('rootdir');
-$webserver_root = \OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$rootdir = \DCL\Core\OEGlobalsBag::getInstance()->getString('rootdir');
+$webserver_root = \DCL\Core\OEGlobalsBag::getInstance()->getProjectDir();
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientReport\PatientReportEvent;
-use OpenEMR\Menu\PatientMenuRole;
-use OpenEMR\OeUI\OemrUI;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientReport\PatientReportEvent;
+use DCL\Menu\PatientMenuRole;
+use DCL\OeUI\OemrUI;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
 $ISSUE_TYPES = IssueTypeRegistry::issueTypes();

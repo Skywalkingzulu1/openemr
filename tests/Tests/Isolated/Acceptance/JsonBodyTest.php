@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  *
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Acceptance;
+namespace DCL\Tests\Isolated\Acceptance;
 
-use OpenEMR\Tests\Acceptance\Support\JsonBody;
+use DCL\Tests\Acceptance\Support\JsonBody;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\BrowserKit\Response;
@@ -24,7 +24,7 @@ use Symfony\Component\BrowserKit\Response;
  * job ends, so whatever a failure message does not carry is gone. These tests
  * pin the two properties that make the message worth reading: the raw bytes
  * survive into it, and a body too large to quote whole is still quoted at both
- * ends -- openemr#13905 was a valid JSON document with a second one appended,
+ * ends -- DCL#13905 was a valid JSON document with a second one appended,
  * which only the tail reveals.
  */
 #[Group('isolated')]
@@ -60,7 +60,7 @@ final class JsonBodyTest extends TestCase
 
     public function testDescribeQuotesBothEndsOfALongBody(): void
     {
-        // The openemr#13905 shape: a complete document with a second one
+        // The DCL#13905 shape: a complete document with a second one
         // appended by a post-response failure. The head alone looks correct, so
         // a message that elides the tail cannot explain the decode failure.
         $body = '{"resourceType":"CapabilityStatement","filler":"' . str_repeat('x', 2000) . '"}'

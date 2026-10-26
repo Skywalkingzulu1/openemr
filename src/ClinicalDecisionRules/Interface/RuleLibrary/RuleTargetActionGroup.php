@@ -6,10 +6,10 @@
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleActions;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleTargets;
 
 /**
  * Description of RuleGroup

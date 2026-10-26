@@ -2,23 +2,23 @@
 
 /**
  * FhirPatientSerializer.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Serialization;
+namespace DCL\Services\FHIR\Serialization;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAddress;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPatient;
+use DCL\FHIR\R4\FHIRElement\FHIRAddress;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRContactPoint;
+use DCL\FHIR\R4\FHIRElement\FHIRHumanName;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
 
 class FhirPatientSerializer
 {

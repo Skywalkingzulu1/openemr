@@ -5,16 +5,16 @@
  * envelope against the vendored dispatch.schema.json before any HTTP
  * call so a malformed payload fails fast with a clear error.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 use JsonSchema\Validator;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -23,9 +23,9 @@ final readonly class Dispatcher
 {
     /** @var list<string> Default consumer repos when --target-repos is not supplied. */
     public const DEFAULT_TARGET_REPOS = [
-        'openemr/openemr-devops',
-        'openemr/website-openemr',
-        'openemr/demo_farm_openemr',
+        'DCL/DCL-devops',
+        'DCL/website-DCL',
+        'DCL/demo_farm_DCL',
     ];
 
     public function __construct(

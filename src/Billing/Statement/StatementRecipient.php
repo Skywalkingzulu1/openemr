@@ -4,16 +4,16 @@
  * Who a patient statement is addressed to, and where: the guardian (guarantor) when one
  * is on the patient's demographics, otherwise the patient.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Billing\Statement;
+namespace DCL\Billing\Statement;
 
 final class StatementRecipient
 {

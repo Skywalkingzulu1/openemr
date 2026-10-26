@@ -3,25 +3,25 @@
 /**
  * PrescriptionRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @author    Ivan Googla <ivan.jo.dev@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2024 Ivan Googla
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\PrescriptionService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\PrescriptionService;
+use DCL\Validators\ProcessingResult;
 use Psr\Http\Message\ResponseInterface;
 
 class PrescriptionRestController
@@ -115,7 +115,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post(array $data, HttpRestRequest $request): ResponseInterface
     {
@@ -155,7 +155,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function delete(string $uuid, HttpRestRequest $request): ResponseInterface
     {
@@ -206,7 +206,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne(string $uuid, HttpRestRequest $request): ResponseInterface
     {
@@ -253,7 +253,7 @@ class PrescriptionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll(HttpRestRequest $request): ResponseInterface
     {

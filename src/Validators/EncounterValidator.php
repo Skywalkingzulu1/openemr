@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
 use Particle\Validator\Chain;
 use Particle\Validator\Validator;

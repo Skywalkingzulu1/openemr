@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Set of definitional characteristics for a kind of observation or measurement produced or consumed by an orderable health care service.
@@ -72,79 +72,79 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 {
     /**
      * A code that classifies the general type of observation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Describes what will be observed. Sometimes this is called the observation "name".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A unique identifier assigned to this ObservationDefinition artifact.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationDataType[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRObservationDataType[]
      */
     public $permittedDataType = [];
 
     /**
      * Multiple results allowed for observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $multipleResultsAllowed = null;
 
     /**
      * The method or technique used to perform the observation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * The preferred name to be used when reporting the results of observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $preferredReportName = null;
 
     /**
      * Characteristics for quantitative results of this observation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      */
     public $quantitativeDetails = null;
 
     /**
      * Multiple  ranges of results qualified by different contexts for ordinal or continuous observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval[]
      */
     public $qualifiedInterval = [];
 
     /**
      * The set of valid coded results for the observations  conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $validCodedValueSet = null;
 
     /**
      * The set of normal coded results for the observations conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $normalCodedValueSet = null;
 
     /**
      * The set of abnormal coded results for the observation conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $abnormalCodedValueSet = null;
 
     /**
      * The set of critical coded results for the observation conforming to this ObservationDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $criticalCodedValueSet = null;
 
@@ -155,7 +155,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A code that classifies the general type of observation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -164,7 +164,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A code that classifies the general type of observation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -175,7 +175,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Describes what will be observed. Sometimes this is called the observation "name".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -184,7 +184,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Describes what will be observed. Sometimes this is called the observation "name".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -195,7 +195,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A unique identifier assigned to this ObservationDefinition artifact.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -204,7 +204,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A unique identifier assigned to this ObservationDefinition artifact.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -215,7 +215,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationDataType[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRObservationDataType[]
      */
     public function getPermittedDataType()
     {
@@ -224,7 +224,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationDataType $permittedDataType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRObservationDataType $permittedDataType
      * @return $this
      */
     public function addPermittedDataType($permittedDataType)
@@ -235,7 +235,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Multiple results allowed for observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getMultipleResultsAllowed()
     {
@@ -244,7 +244,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Multiple results allowed for observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $multipleResultsAllowed
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $multipleResultsAllowed
      * @return $this
      */
     public function setMultipleResultsAllowed($multipleResultsAllowed)
@@ -255,7 +255,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The method or technique used to perform the observation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -264,7 +264,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The method or technique used to perform the observation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -275,7 +275,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The preferred name to be used when reporting the results of observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPreferredReportName()
     {
@@ -284,7 +284,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The preferred name to be used when reporting the results of observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $preferredReportName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $preferredReportName
      * @return $this
      */
     public function setPreferredReportName($preferredReportName)
@@ -295,7 +295,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Characteristics for quantitative results of this observation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      */
     public function getQuantitativeDetails()
     {
@@ -304,7 +304,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Characteristics for quantitative results of this observation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $quantitativeDetails
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $quantitativeDetails
      * @return $this
      */
     public function setQuantitativeDetails($quantitativeDetails)
@@ -315,7 +315,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Multiple  ranges of results qualified by different contexts for ordinal or continuous observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval[]
      */
     public function getQualifiedInterval()
     {
@@ -324,7 +324,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Multiple  ranges of results qualified by different contexts for ordinal or continuous observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval $qualifiedInterval
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval $qualifiedInterval
      * @return $this
      */
     public function addQualifiedInterval($qualifiedInterval)
@@ -335,7 +335,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of valid coded results for the observations  conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getValidCodedValueSet()
     {
@@ -344,7 +344,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of valid coded results for the observations  conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $validCodedValueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $validCodedValueSet
      * @return $this
      */
     public function setValidCodedValueSet($validCodedValueSet)
@@ -355,7 +355,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of normal coded results for the observations conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getNormalCodedValueSet()
     {
@@ -364,7 +364,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of normal coded results for the observations conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $normalCodedValueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $normalCodedValueSet
      * @return $this
      */
     public function setNormalCodedValueSet($normalCodedValueSet)
@@ -375,7 +375,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of abnormal coded results for the observation conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAbnormalCodedValueSet()
     {
@@ -384,7 +384,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of abnormal coded results for the observation conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $abnormalCodedValueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $abnormalCodedValueSet
      * @return $this
      */
     public function setAbnormalCodedValueSet($abnormalCodedValueSet)
@@ -395,7 +395,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of critical coded results for the observation conforming to this ObservationDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCriticalCodedValueSet()
     {
@@ -404,7 +404,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The set of critical coded results for the observation conforming to this ObservationDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $criticalCodedValueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $criticalCodedValueSet
      * @return $this
      */
     public function setCriticalCodedValueSet($criticalCodedValueSet)

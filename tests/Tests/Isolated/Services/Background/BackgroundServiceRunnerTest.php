@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Background;
+namespace DCL\Tests\Isolated\Services\Background;
 
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Database\TableTypes;
-use OpenEMR\Services\Background\BackgroundServiceProcessSpawner;
-use OpenEMR\Services\Background\BackgroundServiceRunner;
-use OpenEMR\Services\Background\SymfonyBackgroundServiceSpawner;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Database\TableTypes;
+use DCL\Services\Background\BackgroundServiceProcessSpawner;
+use DCL\Services\Background\BackgroundServiceRunner;
+use DCL\Services\Background\SymfonyBackgroundServiceSpawner;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\AbstractLogger;
@@ -396,7 +396,7 @@ class BackgroundServiceRunnerTest extends TestCase
         $priorSiteDir = $GLOBALS['OE_SITE_DIR'] ?? null;
         $GLOBALS['fileroot'] = sys_get_temp_dir();
         try {
-            $GLOBALS['OE_SITE_DIR'] = '/var/www/openemr/sites/clinic2';
+            $GLOBALS['OE_SITE_DIR'] = '/var/www/DCL/sites/clinic2';
             $this->assertSame('clinic2', $this->defaultSpawnerSite());
 
             unset($GLOBALS['OE_SITE_DIR']);

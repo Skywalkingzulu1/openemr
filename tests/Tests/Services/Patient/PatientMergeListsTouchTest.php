@@ -9,24 +9,24 @@
  * so any second type was never compared and fell through to the bulk repoint at the end -- which
  * collides with the target's own row on the primary key.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Patient;
+namespace DCL\Tests\Services\Patient;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Patient\DuplicatePatientService;
-use OpenEMR\Services\Patient\PatientMergeRequest;
-use OpenEMR\Services\Patient\PatientMergeService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Patient\DuplicatePatientService;
+use DCL\Services\Patient\PatientMergeRequest;
+use DCL\Services\Patient\PatientMergeService;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
@@ -175,7 +175,7 @@ class PatientMergeListsTouchTest extends TestCase
             new Session(new MockArraySessionStorage()),
             new NullLogger(),
             new DuplicatePatientService(ServiceContainer::getClock()),
-            sys_get_temp_dir() . '/openemr-merge-test-documents',
+            sys_get_temp_dir() . '/DCL-merge-test-documents',
         );
     }
 

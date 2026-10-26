@@ -33,7 +33,7 @@ setup_test_dir() {
     FAKE_REMOTE_DIR="${CWD}/.fake-remote"
     mkdir -p "${FAKE_REMOTE_DIR}"
 
-    export RAW_FETCH_BASE_URL="https://fake-host.test/openemr"
+    export RAW_FETCH_BASE_URL="https://fake-host.test/DCL"
     export FAKE_REMOTE_DIR
 
     # Install the curl mock at the front of PATH. The mock script picks

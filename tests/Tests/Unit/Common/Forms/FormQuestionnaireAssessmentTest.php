@@ -5,19 +5,19 @@
  * FormService::saveEncounterForm() relies on when persisting a questionnaire
  * encounter assessment: the form-table column map and the forms-registry row map.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\Common\Forms;
+namespace DCL\Tests\Unit\Common\Forms;
 
-use OpenEMR\Common\Forms\FormQuestionnaireAssessment;
-use OpenEMR\Common\Session\SessionUtil;
+use DCL\Common\Forms\FormQuestionnaireAssessment;
+use DCL\Common\Session\SessionUtil;
 use PHPUnit\Framework\TestCase;
 
 class FormQuestionnaireAssessmentTest extends TestCase

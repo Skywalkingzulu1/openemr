@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCommunication;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCommunication;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCommunication;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An occurrence of information being transmitted; e.g. an alert that was sent to a responsible provider, a public health agency that was notified about a reportable condition.
@@ -70,17 +70,17 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $contentString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $contentAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $contentReference = null;
 
@@ -90,7 +90,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     private $_fhirElementName = 'Communication.Payload';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getContentString()
     {
@@ -98,7 +98,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $contentString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $contentString
      * @return $this
      */
     public function setContentString($contentString)
@@ -108,7 +108,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getContentAttachment()
     {
@@ -116,7 +116,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $contentAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $contentAttachment
      * @return $this
      */
     public function setContentAttachment($contentAttachment)
@@ -126,7 +126,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getContentReference()
     {
@@ -134,7 +134,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $contentReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $contentReference
      * @return $this
      */
     public function setContentReference($contentReference)

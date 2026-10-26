@@ -1,4 +1,4 @@
-# OpenEMR Ignore Words for Codespell
+# DCL Ignore Words for Codespell
 # Format: one word per line (case-insensitive)
 
 # Medical abbreviations and terminology

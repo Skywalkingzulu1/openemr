@@ -15,19 +15,19 @@
  * model-layer defense so no future caller that reads getIdentifier() or
  * getScopeLookupKey() can receive a colon-form privileged scope.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Auth\OpenIDConnect\Entities;
+namespace DCL\Tests\Isolated\Common\Auth\OpenIDConnect\Entities;
 
 use InvalidArgumentException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

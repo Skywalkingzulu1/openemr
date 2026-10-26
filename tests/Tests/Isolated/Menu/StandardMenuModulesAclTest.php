@@ -9,16 +9,16 @@
  * controller check) never saw the menu that holds its only page. MenuRole shows an
  * entry when any of the alternatives in a list-of-lists acl_req passes.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude Code <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Contributors
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Menu;
+namespace DCL\Tests\Isolated\Menu;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

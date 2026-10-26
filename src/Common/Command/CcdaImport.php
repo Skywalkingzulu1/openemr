@@ -3,18 +3,18 @@
 /**
  * CcdaImport class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use Carecoordination\Model\CarecoordinationTable;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionUtil;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -27,7 +27,7 @@ class CcdaImport extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:ccda-import')
+            ->setName('DCL:ccda-import')
             ->setDescription('Import ccda into ccda table from a document id')
             ->addUsage('--site=default --document_id=5')
             ->setDefinition(

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInvoice;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Invoice containing collected ChargeItems from an Account with calculated individual and total price for Billing purpose.
@@ -71,13 +71,13 @@ class FHIRInvoiceParticipant extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Describes the type of involvement (e.g. transcriptionist, creator etc.). If the invoice has been created automatically, the Participant may be a billing engine or another kind of device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
     /**
      * The device, practitioner, etc. who performed or participated in the service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
@@ -88,7 +88,7 @@ class FHIRInvoiceParticipant extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Describes the type of involvement (e.g. transcriptionist, creator etc.). If the invoice has been created automatically, the Participant may be a billing engine or another kind of device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -97,7 +97,7 @@ class FHIRInvoiceParticipant extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Describes the type of involvement (e.g. transcriptionist, creator etc.). If the invoice has been created automatically, the Participant may be a billing engine or another kind of device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)
@@ -108,7 +108,7 @@ class FHIRInvoiceParticipant extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The device, practitioner, etc. who performed or participated in the service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -117,7 +117,7 @@ class FHIRInvoiceParticipant extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The device, practitioner, etc. who performed or participated in the service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)

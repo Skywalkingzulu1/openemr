@@ -3,19 +3,19 @@
 /**
  * FacilityRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FacilityService;
 use Psr\Http\Message\ResponseInterface;
 
 class FacilityRestController
@@ -75,7 +75,7 @@ class FacilityRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($uuid, HttpRestRequest $request): ResponseInterface
     {
@@ -237,7 +237,7 @@ class FacilityRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll(HttpRestRequest $request, $search = []): ResponseInterface
     {
@@ -309,7 +309,7 @@ class FacilityRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post($data, HttpRestRequest $request): ResponseInterface
     {
@@ -389,7 +389,7 @@ class FacilityRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function patch($uuid, $data, HttpRestRequest $request): ResponseInterface
     {

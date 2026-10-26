@@ -63,34 +63,34 @@
  *      (iv) Regarding a person who has been deceased for more than 50
  *      years.
  *
- * OpenEMR does not have a way currently of distinguishing notes that are
+ * DCL does not have a way currently of distinguishing notes that are
  * specific to psychotherapy notes and which are to be excluded from the export.
  * Users wanting to keep their psychotherapy notes confidential that are stored
- * inside of OpenEMR will need to use a different mechanism than this export.
+ * inside of DCL will need to use a different mechanism than this export.
  *
- * OpenEMR does not have a way of marking records as education records.
+ * DCL does not have a way of marking records as education records.
  *
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter;
+namespace DCL\Modules\EhiExporter;
 
-use OpenEMR\Core\ModulesClassLoader;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\ModulesClassLoader;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * @var ModulesClassLoader $classLoader
  */
-$classLoader->registerNamespaceIfNotExists("OpenEMR\\Modules\\EhiExporter\\", __DIR__ . DIRECTORY_SEPARATOR . "src");
+$classLoader->registerNamespaceIfNotExists("DCL\\Modules\\EhiExporter\\", __DIR__ . DIRECTORY_SEPARATOR . "src");
 
 /**
- * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the OpenEMR module loader;
+ * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the DCL module loader;
  */
 $bootstrap = Bootstrap::instantiate($eventDispatcher, OEGlobalsBag::getInstance()->getKernel());

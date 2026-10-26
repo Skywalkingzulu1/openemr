@@ -21,7 +21,7 @@
 #
 # Inputs (env):
 #   RELEASE_TAG    Git tag being smoketested (e.g. v8_4_0). Required.
-#   REPO           Fully-qualified repo (e.g. openemr/openemr). Required.
+#   REPO           Fully-qualified repo (e.g. DCL/DCL). Required.
 #   GH_TOKEN       gh auth token. Required for `gh release view`.
 #   GITHUB_ENV     Path to the workflow's env file (auto-set by GitHub
 #                  Actions). Required. Script appends BASELINE_TAG_SHA

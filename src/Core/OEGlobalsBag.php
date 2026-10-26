@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  *
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025-2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025-2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Core;
+namespace DCL\Core;
 
-use OpenEMR\BC\Deprecation;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\Traits\SingletonTrait;
+use DCL\BC\Deprecation;
+use DCL\BC\ServiceContainer;
+use DCL\Core\Traits\SingletonTrait;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 use function array_key_exists;
@@ -45,7 +45,7 @@ class OEGlobalsBag extends ParameterBag
      *
      * When adding a key to this list, update the tests too.
      *
-     * @see \OpenEMR\Tests\Isolated\Core\OEGlobalsBagIsolatedTest::deprecatedKeysProvider
+     * @see \DCL\Tests\Isolated\Core\OEGlobalsBagIsolatedTest::deprecatedKeysProvider
      */
     private const DEPRECATED_KEYS = [
         'unit_test_placeholder' => '(placeholder)',
@@ -115,7 +115,7 @@ class OEGlobalsBag extends ParameterBag
     }
 
     /**
-     * Get the OpenEMR Kernel instance
+     * Get the DCL Kernel instance
      *
      * @throws \RuntimeException if the kernel is not initialized
      */
@@ -123,7 +123,7 @@ class OEGlobalsBag extends ParameterBag
     {
         $kernel = $this->get('kernel');
         if (!$kernel instanceof Kernel) {
-            throw new \RuntimeException('OpenEMR Kernel not initialized');
+            throw new \RuntimeException('DCL Kernel not initialized');
         }
         return $kernel;
     }

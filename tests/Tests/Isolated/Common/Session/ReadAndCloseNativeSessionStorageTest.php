@@ -10,17 +10,17 @@
  *  - Reopens for writing and transitions to writable mode
  *  - Reports correct state via isClosedByReadAndClose()
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Milan Zivkovic <zivkovic.milan@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Common\Session;
+namespace DCL\Tests\Isolated\Common\Session;
 
-use OpenEMR\Common\Session\SessionConfiguration;
-use OpenEMR\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
+use DCL\Common\Session\SessionConfiguration;
+use DCL\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
 use Symfony\Component\HttpFoundation\Session\Session;

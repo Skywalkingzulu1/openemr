@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4;
+namespace DCL\FHIR\R4;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -70,7 +70,7 @@ class FHIRElement implements \JsonSerializable, \Stringable
 {
     /**
      * May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExtension[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExtension[]
      */
     public $extension = [];
 
@@ -86,7 +86,7 @@ class FHIRElement implements \JsonSerializable, \Stringable
 
     /**
      * May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExtension[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExtension[]
      */
     public function getExtension()
     {
@@ -95,7 +95,7 @@ class FHIRElement implements \JsonSerializable, \Stringable
 
     /**
      * May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExtension $extension
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExtension $extension
      * @return $this
      */
     public function addExtension($extension)

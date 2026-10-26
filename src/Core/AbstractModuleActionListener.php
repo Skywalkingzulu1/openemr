@@ -11,22 +11,22 @@
  * Catch any exceptions because chances are they will be overlooked in Laminas module.
  * Report them in the return value.
  *
- * @package   OpenEMR Modules
- * @link      https://www.open-emr.org
+ * @package   DCL Modules
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /*
  * Do not declare a namespace in class extending this abstract class.
  * If you want Laminas manager to set namespace, set it in getModuleNamespace
  * otherwise use below at top of class to register namespace.
- * $classLoader = new \OpenEMR\Core\ModulesClassLoader(OEGlobalsBag::getInstance()->getProjectDir());
- * $classLoader->registerNamespaceIfNotExists("OpenEMR\\Modules\\PortalPlugins\\", __DIR__ . DIRECTORY_SEPARATOR . 'src');
+ * $classLoader = new \DCL\Core\ModulesClassLoader(OEGlobalsBag::getInstance()->getProjectDir());
+ * $classLoader->registerNamespaceIfNotExists("DCL\\Modules\\PortalPlugins\\", __DIR__ . DIRECTORY_SEPARATOR . 'src');
  * */
 
-namespace OpenEMR\Core;
+namespace DCL\Core;
 
 /**
  *

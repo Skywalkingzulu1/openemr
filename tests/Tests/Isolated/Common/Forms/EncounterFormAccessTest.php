@@ -2,23 +2,23 @@
 
 /**
  * Isolated tests for the pure ownership-comparison logic in
- * `OpenEMR\Common\Forms\EncounterFormAccess::isFormOwnedBySession()`.
+ * `DCL\Common\Forms\EncounterFormAccess::isFormOwnedBySession()`.
  *
  * The security-relevant decision — "does this form's owner permit access
  * from this session?" — lives entirely in `isFormOwnedBySession()`. The
  * `assertFormBelongsToSessionPatient()` wrapper composes it with a DB
  * fetch and a `deny()` call; the pure function is the trust boundary.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Forms;
+namespace DCL\Tests\Isolated\Common\Forms;
 
-use OpenEMR\Common\Forms\EncounterFormAccess;
+use DCL\Common\Forms\EncounterFormAccess;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

@@ -27,11 +27,11 @@ setup_test_dir() {
     export MOCK_LS_REMOTE_STDOUT=$'abc123def456\trefs/tags/v8_4_0'
     export MOCK_LS_REMOTE_EXIT="0"
     export MOCK_LS_REMOTE_STDERR=""
-    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"OpenEMR 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
+    export MOCK_GH_RELEASE_VIEW_JSON='{"body":"","name":"DCL 8.4.0","isDraft":false,"isPrerelease":false,"targetCommitish":"rel-840","publishedAt":"2026-09-10T00:00:00Z","createdAt":"2026-09-10T00:00:00Z","assets":[]}'
     export MOCK_GH_RELEASE_VIEW_EXIT="0"
 
     export RELEASE_TAG="v8_4_0"
-    export REPO="openemr/openemr"
+    export REPO="DCL/DCL"
     export GH_TOKEN="mock-token"
 }
 

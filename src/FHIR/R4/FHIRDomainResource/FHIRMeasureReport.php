@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
@@ -72,67 +72,67 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A formal identifier that is used to identify this MeasureReport when it is represented in other formats or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The MeasureReport status. No data will be available until the MeasureReport status is complete.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMeasureReportStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMeasureReportStatus
      */
     public $status = null;
 
     /**
      * The type of measure report. This may be an individual report, which provides the score for the measure for an individual member of the population; a subject-listing, which returns the list of members that meet the various criteria in the measure; a summary report, which returns a population count for each of the criteria in the measure; or a data-collection, which enables the MeasureReport to be used to exchange the data-of-interest for a quality measure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMeasureReportType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMeasureReportType
      */
     public $type = null;
 
     /**
      * A reference to the Measure that was calculated to produce this report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $measure = null;
 
     /**
      * Optional subject identifying the individual or individuals the report is for.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The date this measure report was generated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The individual, location, or organization that is reporting the data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $reporter = null;
 
     /**
      * The reporting period for which the report was calculated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Whether improvement in the measure is noted by an increase or decrease in the measure score.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $improvementNotation = null;
 
     /**
      * The results of the calculation, one for each population group in the measure.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup[]
      */
     public $group = [];
 
     /**
      * A reference to a Bundle containing the Resources that were used in the calculation of this measure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $evaluatedResource = [];
 
@@ -143,7 +143,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this MeasureReport when it is represented in other formats or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -152,7 +152,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this MeasureReport when it is represented in other formats or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -163,7 +163,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The MeasureReport status. No data will be available until the MeasureReport status is complete.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMeasureReportStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMeasureReportStatus
      */
     public function getStatus()
     {
@@ -172,7 +172,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The MeasureReport status. No data will be available until the MeasureReport status is complete.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMeasureReportStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMeasureReportStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -183,7 +183,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of measure report. This may be an individual report, which provides the score for the measure for an individual member of the population; a subject-listing, which returns the list of members that meet the various criteria in the measure; a summary report, which returns a population count for each of the criteria in the measure; or a data-collection, which enables the MeasureReport to be used to exchange the data-of-interest for a quality measure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMeasureReportType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMeasureReportType
      */
     public function getType()
     {
@@ -192,7 +192,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of measure report. This may be an individual report, which provides the score for the measure for an individual member of the population; a subject-listing, which returns the list of members that meet the various criteria in the measure; a summary report, which returns a population count for each of the criteria in the measure; or a data-collection, which enables the MeasureReport to be used to exchange the data-of-interest for a quality measure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMeasureReportType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMeasureReportType $type
      * @return $this
      */
     public function setType($type)
@@ -203,7 +203,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the Measure that was calculated to produce this report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getMeasure()
     {
@@ -212,7 +212,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the Measure that was calculated to produce this report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $measure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $measure
      * @return $this
      */
     public function setMeasure($measure)
@@ -223,7 +223,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Optional subject identifying the individual or individuals the report is for.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -232,7 +232,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Optional subject identifying the individual or individuals the report is for.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -243,7 +243,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date this measure report was generated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -252,7 +252,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date this measure report was generated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -263,7 +263,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual, location, or organization that is reporting the data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReporter()
     {
@@ -272,7 +272,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual, location, or organization that is reporting the data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reporter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reporter
      * @return $this
      */
     public function setReporter($reporter)
@@ -283,7 +283,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reporting period for which the report was calculated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -292,7 +292,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reporting period for which the report was calculated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -303,7 +303,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether improvement in the measure is noted by an increase or decrease in the measure score.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getImprovementNotation()
     {
@@ -312,7 +312,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether improvement in the measure is noted by an increase or decrease in the measure score.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $improvementNotation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $improvementNotation
      * @return $this
      */
     public function setImprovementNotation($improvementNotation)
@@ -323,7 +323,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The results of the calculation, one for each population group in the measure.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup[]
      */
     public function getGroup()
     {
@@ -332,7 +332,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The results of the calculation, one for each population group in the measure.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup $group
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup $group
      * @return $this
      */
     public function addGroup($group)
@@ -343,7 +343,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a Bundle containing the Resources that were used in the calculation of this measure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEvaluatedResource()
     {
@@ -352,7 +352,7 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a Bundle containing the Resources that were used in the calculation of this measure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $evaluatedResource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $evaluatedResource
      * @return $this
      */
     public function addEvaluatedResource($evaluatedResource)

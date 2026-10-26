@@ -4,26 +4,26 @@
  * library of functions useful for searching and updating fee sheet related
  * information
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @link      https://www.open-emr.org/wiki/index.php/OEMR_wiki_page OEMR
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @link      https://www.dcl.org/wiki/index.php/OEMR_wiki_page OEMR
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 OEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 
 require_once("$srcdir/../custom/code_types.inc.php");
 require_once("code_check.php");
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Forms\FeeSheet\Review\CodeInfo;
-use OpenEMR\Forms\FeeSheet\Review\EncounterInfo;
-use OpenEMR\Forms\FeeSheet\Review\Procedure;
-use OpenEMR\Services\PatientIssuesService;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Forms\FeeSheet\Review\CodeInfo;
+use DCL\Forms\FeeSheet\Review\EncounterInfo;
+use DCL\Forms\FeeSheet\Review\Procedure;
+use DCL\Services\PatientIssuesService;
 
 /**
  * update issues from list of diagnosis

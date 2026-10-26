@@ -2,7 +2,7 @@
 
 `library/allow_cronjobs.php` and the two legacy scripts it bootstrapped have been removed. The same functionality is now provided by Symfony console commands dispatched through `bin/console`.
 
-This guide is for operators who schedule OpenEMR cron jobs, and for developers with custom integrations that invoked the old scripts.
+This guide is for operators who schedule DCL cron jobs, and for developers with custom integrations that invoked the old scripts.
 
 ## Why Migrate?
 
@@ -25,15 +25,15 @@ Both commands accept the standard `--site=<site>` option (defaults to `default`)
 ### Before
 
 ```cron
-0 * * * *  /usr/bin/php -f /var/www/html/openemr/interface/batchcom/batch_phone_notification.php site=default
-30 * * * * /usr/bin/php -f /var/www/html/openemr/custom/zutil.cli.doc_import.php site=default
+0 * * * *  /usr/bin/php -f /var/www/html/DCL/interface/batchcom/batch_phone_notification.php site=default
+30 * * * * /usr/bin/php -f /var/www/html/DCL/custom/zutil.cli.doc_import.php site=default
 ```
 
 ### After
 
 ```cron
-0 * * * *  /usr/bin/php /var/www/html/openemr/bin/console --site=default notifications:phone
-30 * * * * /usr/bin/php /var/www/html/openemr/bin/console --site=default documents:import
+0 * * * *  /usr/bin/php /var/www/html/DCL/bin/console --site=default notifications:phone
+30 * * * * /usr/bin/php /var/www/html/DCL/bin/console --site=default documents:import
 ```
 
 Notes:
@@ -110,5 +110,5 @@ For in-process invocation (e.g., from a test or another command), resolve the co
 
 ## References
 
-- PR: [openemr/openemr#11707](https://github.com/openemr/openemr/pull/11707)
-- Tracking issue: [openemr/openemr#11668](https://github.com/openemr/openemr/issues/11668)
+- PR: [DCL/DCL#11707](https://github.com/DCL/DCL/pull/11707)
+- Tracking issue: [DCL/DCL#11668](https://github.com/DCL/DCL/issues/11668)

@@ -4,16 +4,16 @@
  * Cross-repo PR operations the ship-release orchestrator needs. Kept narrow on
  * purpose so tests can substitute a fake without standing up the full gh CLI.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 interface PullRequestApi
 {
@@ -50,7 +50,7 @@ interface PullRequestApi
      * PRs must be non-draft at preflight -- they're the meaningful human-
      * review artifact). Docs + Finalize PRs pass false: those are auto-
      * drafted by their generator workflows and only auto-flipped by post-
-     * tag workflows (docs on `openemr-tag`; finalize by the finalize job),
+     * tag workflows (docs on `DCL-tag`; finalize by the finalize job),
      * so they're structurally draft at preflight time. Blocking on that
      * would deadlock -- no way for downstream to un-draft before conductor
      * merges. Full-auto re-checks readiness after auto-flip via

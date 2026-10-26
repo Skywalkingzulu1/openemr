@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRActivityDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource allows for the definition of some activity to be performed, independent of a particular patient, practitioner, or other performance context.
@@ -71,13 +71,13 @@ class FHIRActivityDefinitionParticipant extends FHIRBackboneElement implements \
 {
     /**
      * The type of participant in the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionParticipantType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionParticipantType
      */
     public $type = null;
 
     /**
      * The role the participant should play in performing the described action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
@@ -88,7 +88,7 @@ class FHIRActivityDefinitionParticipant extends FHIRBackboneElement implements \
 
     /**
      * The type of participant in the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionParticipantType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionParticipantType
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRActivityDefinitionParticipant extends FHIRBackboneElement implements \
 
     /**
      * The type of participant in the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionParticipantType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionParticipantType $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRActivityDefinitionParticipant extends FHIRBackboneElement implements \
 
     /**
      * The role the participant should play in performing the described action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -117,7 +117,7 @@ class FHIRActivityDefinitionParticipant extends FHIRBackboneElement implements \
 
     /**
      * The role the participant should play in performing the described action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)

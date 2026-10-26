@@ -4,20 +4,20 @@
  * JsonWebKeySet represents a signing key used for JWT signature verification.  It can take a JSON Web Key Set (JWKS)
  * as a string or as a URI.  If a URI is provided it will retrieve the JWKS and store them internally.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\JWT;
+namespace DCL\Common\Auth\OpenIDConnect\JWT;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use Lcobucci\JWT\Signer\Key;
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 use Psr\Http\Client\ClientInterface;
 use Psr\Log\LoggerInterface;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,47 +71,47 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 {
     /**
      * Role that the moiety is playing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
     /**
      * Identifier by which this moiety substance is known.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Textual name for this moiety substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Stereochemistry type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $stereochemistry = null;
 
     /**
      * Optical activity type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $opticalActivity = null;
 
     /**
      * Molecular formula.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $molecularFormula = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amountQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $amountString = null;
 
@@ -122,7 +122,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Role that the moiety is playing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -131,7 +131,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Role that the moiety is playing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)
@@ -142,7 +142,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Identifier by which this moiety substance is known.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -151,7 +151,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Identifier by which this moiety substance is known.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -162,7 +162,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Textual name for this moiety substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -171,7 +171,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Textual name for this moiety substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -182,7 +182,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Stereochemistry type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStereochemistry()
     {
@@ -191,7 +191,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Stereochemistry type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $stereochemistry
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $stereochemistry
      * @return $this
      */
     public function setStereochemistry($stereochemistry)
@@ -202,7 +202,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Optical activity type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOpticalActivity()
     {
@@ -211,7 +211,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Optical activity type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $opticalActivity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $opticalActivity
      * @return $this
      */
     public function setOpticalActivity($opticalActivity)
@@ -222,7 +222,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Molecular formula.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMolecularFormula()
     {
@@ -231,7 +231,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
 
     /**
      * Molecular formula.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $molecularFormula
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $molecularFormula
      * @return $this
      */
     public function setMolecularFormula($molecularFormula)
@@ -241,7 +241,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity()
     {
@@ -249,7 +249,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return $this
      */
     public function setAmountQuantity($amountQuantity)
@@ -259,7 +259,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAmountString()
     {
@@ -267,7 +267,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $amountString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $amountString
      * @return $this
      */
     public function setAmountString($amountString)

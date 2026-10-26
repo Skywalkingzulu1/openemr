@@ -1,26 +1,26 @@
 <?php
 
 /**
- * ValidationUtils is intended for validation methods that are used in OpenEMR.
+ * ValidationUtils is intended for validation methods that are used in DCL.
  *
- * @package    OpenEMR
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @author     Cassian LUP <cassi.lup@gmail.com>
  * @author     Stephen Nielson <snielson@discoverandchange.com>
- * @author     Michael A. Smith <michael@opencoreemr.com>
+ * @author     Michael A. Smith <michael@DCL.com>
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2011 Cassian LUP <cassi.lup@gmail.com>
  * @copyright  Copyright (c) 2022 Discover and Change, Inc <snielson@discoverandchange.com>
- * @copyright  Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @copyright  Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @copyright  Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Utils;
+namespace DCL\Common\Utils;
 
 use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberUtil;
-use OpenEMR\Common\Uuid\UuidRegistry;
+use DCL\Common\Uuid\UuidRegistry;
 
 class ValidationUtils
 {

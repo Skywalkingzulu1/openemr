@@ -8,23 +8,23 @@
  * JSON string instead of an array), which the strict generated FHIR model
  * classes reject at read time.
  *
- * Usage (from the openemr root):
+ * Usage (from the DCL root):
  *   php contrib/util/repair_questionnaire_json.php [--site=default] [--id=50 --id=56] [--fix]
  *
  * Without --fix the script is a dry run: it reports what it would change and
  * touches nothing. With --fix it writes a backup of each original row to a
  * .json file next to this script before updating the database.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Contrib\Util;
+namespace DCL\Contrib\Util;
 
 use mysqli;
 use mysqli_result;
@@ -119,7 +119,7 @@ class QuestionnaireJsonRepair
 
         $sqlconf = __DIR__ . '/../../sites/' . $site . '/sqlconf.php';
         if (!file_exists($sqlconf)) {
-            fwrite(STDERR, "Cannot find $sqlconf - run from the openemr root or pass --site\n");
+            fwrite(STDERR, "Cannot find $sqlconf - run from the DCL root or pass --site\n");
             return 1;
         }
         $conf = (static function (string $file): array {

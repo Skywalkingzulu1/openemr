@@ -4,19 +4,19 @@
  * SchematronValidator isolated test - end-to-end validation semantics on a
  * small hand-crafted schematron + XML pair.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cda\Schematron;
+namespace DCL\Tests\Isolated\Cda\Schematron;
 
-use OpenEMR\Services\Cda\Schematron\ArrayVocabularyLookup;
-use OpenEMR\Services\Cda\Schematron\SchematronValidator;
+use DCL\Services\Cda\Schematron\ArrayVocabularyLookup;
+use DCL\Services\Cda\Schematron\SchematronValidator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
@@ -510,7 +510,7 @@ XML;
         return $decoded;
     }
 
-    private function validate(string $xml): \OpenEMR\Services\Cda\Schematron\ValidationResult
+    private function validate(string $xml): \DCL\Services\Cda\Schematron\ValidationResult
     {
         $validator = new SchematronValidator(new ArrayVocabularyLookup(self::NAMESPACES));
         return $validator->validate($xml, self::SCHEMATRON);

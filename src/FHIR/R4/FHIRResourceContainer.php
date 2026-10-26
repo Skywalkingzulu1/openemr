@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4;
+namespace DCL\FHIR\R4;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -65,732 +65,732 @@ namespace OpenEMR\FHIR\R4;
 class FHIRResourceContainer implements \JsonSerializable, \Stringable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAccount
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRAccount
      */
     public $Account = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRActivityDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRActivityDefinition
      */
     public $ActivityDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAdverseEvent
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRAdverseEvent
      */
     public $AdverseEvent = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance
      */
     public $AllergyIntolerance = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointment
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRAppointment
      */
     public $Appointment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointmentResponse
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRAppointmentResponse
      */
     public $AppointmentResponse = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAuditEvent
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRAuditEvent
      */
     public $AuditEvent = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBasic
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRBasic
      */
     public $Basic = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBinary
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBinary
      */
     public $Binary = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRBiologicallyDerivedProduct
      */
     public $BiologicallyDerivedProduct = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBodyStructure
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRBodyStructure
      */
     public $BodyStructure = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRBundle
      */
     public $Bundle = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement
      */
     public $CapabilityStatement = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCarePlan
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCarePlan
      */
     public $CarePlan = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCareTeam
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCareTeam
      */
     public $CareTeam = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCatalogEntry
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCatalogEntry
      */
     public $CatalogEntry = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRChargeItem
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRChargeItem
      */
     public $ChargeItem = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRChargeItemDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRChargeItemDefinition
      */
     public $ChargeItemDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClaim
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRClaim
      */
     public $Claim = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClaimResponse
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRClaimResponse
      */
     public $ClaimResponse = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClinicalImpression
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRClinicalImpression
      */
     public $ClinicalImpression = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCodeSystem
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCodeSystem
      */
     public $CodeSystem = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCommunication
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCommunication
      */
     public $Communication = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCommunicationRequest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCommunicationRequest
      */
     public $CommunicationRequest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCompartmentDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCompartmentDefinition
      */
     public $CompartmentDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRComposition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRComposition
      */
     public $Composition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRConceptMap
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRConceptMap
      */
     public $ConceptMap = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCondition
      */
     public $Condition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRConsent
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRConsent
      */
     public $Consent = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRContract
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRContract
      */
     public $Contract = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage
      */
     public $Coverage = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityRequest
      */
     public $CoverageEligibilityRequest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityResponse
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityResponse
      */
     public $CoverageEligibilityResponse = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDetectedIssue
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDetectedIssue
      */
     public $DetectedIssue = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDevice
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDevice
      */
     public $Device = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceDefinition
      */
     public $DeviceDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceMetric
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceMetric
      */
     public $DeviceMetric = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceRequest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceRequest
      */
     public $DeviceRequest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceUseStatement
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceUseStatement
      */
     public $DeviceUseStatement = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport
      */
     public $DiagnosticReport = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentManifest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentManifest
      */
     public $DocumentManifest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference
      */
     public $DocumentReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREffectEvidenceSynthesis
      */
     public $EffectEvidenceSynthesis = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREncounter
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREncounter
      */
     public $Encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREndpoint
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREndpoint
      */
     public $Endpoint = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREnrollmentRequest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREnrollmentRequest
      */
     public $EnrollmentRequest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREnrollmentResponse
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREnrollmentResponse
      */
     public $EnrollmentResponse = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREpisodeOfCare
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREpisodeOfCare
      */
     public $EpisodeOfCare = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREventDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREventDefinition
      */
     public $EventDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREvidence
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREvidence
      */
     public $Evidence = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREvidenceVariable
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIREvidenceVariable
      */
     public $EvidenceVariable = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRExampleScenario
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRExampleScenario
      */
     public $ExampleScenario = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRExplanationOfBenefit
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRExplanationOfBenefit
      */
     public $ExplanationOfBenefit = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRFamilyMemberHistory
      */
     public $FamilyMemberHistory = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRFlag
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRFlag
      */
     public $Flag = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGoal
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRGoal
      */
     public $Goal = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGraphDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRGraphDefinition
      */
     public $GraphDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGroup
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRGroup
      */
     public $Group = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGuidanceResponse
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRGuidanceResponse
      */
     public $GuidanceResponse = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRHealthcareService
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRHealthcareService
      */
     public $HealthcareService = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImagingStudy
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRImagingStudy
      */
     public $ImagingStudy = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunization
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunization
      */
     public $Immunization = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunizationEvaluation
      */
     public $ImmunizationEvaluation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunizationRecommendation
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunizationRecommendation
      */
     public $ImmunizationRecommendation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImplementationGuide
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRImplementationGuide
      */
     public $ImplementationGuide = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRInsurancePlan
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRInsurancePlan
      */
     public $InsurancePlan = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRInvoice
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRInvoice
      */
     public $Invoice = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLibrary
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRLibrary
      */
     public $Library = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLinkage
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRLinkage
      */
     public $Linkage = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRList
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRList
      */
     public $List = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLocation
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRLocation
      */
     public $Location = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMeasure
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMeasure
      */
     public $Measure = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMeasureReport
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMeasureReport
      */
     public $MeasureReport = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedia
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedia
      */
     public $Media = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedication
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedication
      */
     public $Medication = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationAdministration
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationAdministration
      */
     public $MedicationAdministration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense
      */
     public $MedicationDispense = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationKnowledge
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationKnowledge
      */
     public $MedicationKnowledge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest
      */
     public $MedicationRequest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationStatement
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationStatement
      */
     public $MedicationStatement = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProduct
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProduct
      */
     public $MedicinalProduct = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductAuthorization
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductAuthorization
      */
     public $MedicinalProductAuthorization = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductContraindication
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductContraindication
      */
     public $MedicinalProductContraindication = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIndication
      */
     public $MedicinalProductIndication = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIngredient
      */
     public $MedicinalProductIngredient = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductInteraction
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductInteraction
      */
     public $MedicinalProductInteraction = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductManufactured
      */
     public $MedicinalProductManufactured = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPackaged
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPackaged
      */
     public $MedicinalProductPackaged = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
      */
     public $MedicinalProductPharmaceutical = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
      */
     public $MedicinalProductUndesirableEffect = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMessageDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMessageDefinition
      */
     public $MessageDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMessageHeader
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMessageHeader
      */
     public $MessageHeader = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMolecularSequence
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMolecularSequence
      */
     public $MolecularSequence = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRNamingSystem
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRNamingSystem
      */
     public $NamingSystem = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRNutritionOrder
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRNutritionOrder
      */
     public $NutritionOrder = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRObservation
      */
     public $Observation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservationDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRObservationDefinition
      */
     public $ObservationDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIROperationDefinition
      */
     public $OperationDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationOutcome
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIROperationOutcome
      */
     public $OperationOutcome = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIROrganization
      */
     public $Organization = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganizationAffiliation
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIROrganizationAffiliation
      */
     public $OrganizationAffiliation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRPatient
      */
     public $Patient = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPaymentNotice
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRPaymentNotice
      */
     public $PaymentNotice = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPaymentReconciliation
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRPaymentReconciliation
      */
     public $PaymentReconciliation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPerson
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRPerson
      */
     public $Person = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPlanDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRPlanDefinition
      */
     public $PlanDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner
      */
     public $Practitioner = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole
      */
     public $PractitionerRole = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProcedure
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRProcedure
      */
     public $Procedure = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance
      */
     public $Provenance = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire
      */
     public $Questionnaire = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse
      */
     public $QuestionnaireResponse = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson
      */
     public $RelatedPerson = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRequestGroup
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRRequestGroup
      */
     public $RequestGroup = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchDefinition
      */
     public $ResearchDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchElementDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchElementDefinition
      */
     public $ResearchElementDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchStudy
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchStudy
      */
     public $ResearchStudy = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchSubject
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchSubject
      */
     public $ResearchSubject = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRiskAssessment
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRRiskAssessment
      */
     public $RiskAssessment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRiskEvidenceSynthesis
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRRiskEvidenceSynthesis
      */
     public $RiskEvidenceSynthesis = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSchedule
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSchedule
      */
     public $Schedule = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSearchParameter
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSearchParameter
      */
     public $SearchParameter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRServiceRequest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRServiceRequest
      */
     public $ServiceRequest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSlot
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSlot
      */
     public $Slot = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSpecimen
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSpecimen
      */
     public $Specimen = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSpecimenDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSpecimenDefinition
      */
     public $SpecimenDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRStructureDefinition
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRStructureDefinition
      */
     public $StructureDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRStructureMap
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRStructureMap
      */
     public $StructureMap = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubscription
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubscription
      */
     public $Subscription = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstance
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstance
      */
     public $Substance = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceNucleicAcid
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceNucleicAcid
      */
     public $SubstanceNucleicAcid = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstancePolymer
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstancePolymer
      */
     public $SubstancePolymer = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceProtein
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceProtein
      */
     public $SubstanceProtein = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceReferenceInformation
      */
     public $SubstanceReferenceInformation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceSourceMaterial
      */
     public $SubstanceSourceMaterial = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceSpecification
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceSpecification
      */
     public $SubstanceSpecification = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSupplyDelivery
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSupplyDelivery
      */
     public $SupplyDelivery = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSupplyRequest
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRSupplyRequest
      */
     public $SupplyRequest = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTask
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRTask
      */
     public $Task = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTerminologyCapabilities
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRTerminologyCapabilities
      */
     public $TerminologyCapabilities = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTestReport
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRTestReport
      */
     public $TestReport = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTestScript
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRTestScript
      */
     public $TestScript = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRValueSet
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRValueSet
      */
     public $ValueSet = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRVerificationResult
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRVerificationResult
      */
     public $VerificationResult = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRVisionPrescription
+     * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRVisionPrescription
      */
     public $VisionPrescription = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRParameters
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRParameters
      */
     public $Parameters = null;
 
@@ -800,7 +800,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     private $_fhirElementName = 'ResourceContainer';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAccount
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRAccount
      */
     public function getAccount()
     {
@@ -808,7 +808,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAccount $Account
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRAccount $Account
      * @return $this
      */
     public function setAccount($Account)
@@ -818,7 +818,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRActivityDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRActivityDefinition
      */
     public function getActivityDefinition()
     {
@@ -826,7 +826,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRActivityDefinition $ActivityDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRActivityDefinition $ActivityDefinition
      * @return $this
      */
     public function setActivityDefinition($ActivityDefinition)
@@ -836,7 +836,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAdverseEvent
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRAdverseEvent
      */
     public function getAdverseEvent()
     {
@@ -844,7 +844,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAdverseEvent $AdverseEvent
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRAdverseEvent $AdverseEvent
      * @return $this
      */
     public function setAdverseEvent($AdverseEvent)
@@ -854,7 +854,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance
      */
     public function getAllergyIntolerance()
     {
@@ -862,7 +862,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance $AllergyIntolerance
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance $AllergyIntolerance
      * @return $this
      */
     public function setAllergyIntolerance($AllergyIntolerance)
@@ -872,7 +872,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointment
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRAppointment
      */
     public function getAppointment()
     {
@@ -880,7 +880,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointment $Appointment
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRAppointment $Appointment
      * @return $this
      */
     public function setAppointment($Appointment)
@@ -890,7 +890,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointmentResponse
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRAppointmentResponse
      */
     public function getAppointmentResponse()
     {
@@ -898,7 +898,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointmentResponse $AppointmentResponse
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRAppointmentResponse $AppointmentResponse
      * @return $this
      */
     public function setAppointmentResponse($AppointmentResponse)
@@ -908,7 +908,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAuditEvent
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRAuditEvent
      */
     public function getAuditEvent()
     {
@@ -916,7 +916,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAuditEvent $AuditEvent
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRAuditEvent $AuditEvent
      * @return $this
      */
     public function setAuditEvent($AuditEvent)
@@ -926,7 +926,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBasic
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRBasic
      */
     public function getBasic()
     {
@@ -934,7 +934,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBasic $Basic
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRBasic $Basic
      * @return $this
      */
     public function setBasic($Basic)
@@ -944,7 +944,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBinary
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBinary
      */
     public function getBinary()
     {
@@ -952,7 +952,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBinary $Binary
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBinary $Binary
      * @return $this
      */
     public function setBinary($Binary)
@@ -962,7 +962,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBiologicallyDerivedProduct
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRBiologicallyDerivedProduct
      */
     public function getBiologicallyDerivedProduct()
     {
@@ -970,7 +970,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBiologicallyDerivedProduct $BiologicallyDerivedProduct
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRBiologicallyDerivedProduct $BiologicallyDerivedProduct
      * @return $this
      */
     public function setBiologicallyDerivedProduct($BiologicallyDerivedProduct)
@@ -980,7 +980,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBodyStructure
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRBodyStructure
      */
     public function getBodyStructure()
     {
@@ -988,7 +988,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRBodyStructure $BodyStructure
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRBodyStructure $BodyStructure
      * @return $this
      */
     public function setBodyStructure($BodyStructure)
@@ -998,7 +998,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRBundle
      */
     public function getBundle()
     {
@@ -1006,7 +1006,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRBundle $Bundle
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRBundle $Bundle
      * @return $this
      */
     public function setBundle($Bundle)
@@ -1016,7 +1016,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement
      */
     public function getCapabilityStatement()
     {
@@ -1024,7 +1024,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement $CapabilityStatement
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement $CapabilityStatement
      * @return $this
      */
     public function setCapabilityStatement($CapabilityStatement)
@@ -1034,7 +1034,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCarePlan
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCarePlan
      */
     public function getCarePlan()
     {
@@ -1042,7 +1042,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCarePlan $CarePlan
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCarePlan $CarePlan
      * @return $this
      */
     public function setCarePlan($CarePlan)
@@ -1052,7 +1052,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCareTeam
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCareTeam
      */
     public function getCareTeam()
     {
@@ -1060,7 +1060,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCareTeam $CareTeam
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCareTeam $CareTeam
      * @return $this
      */
     public function setCareTeam($CareTeam)
@@ -1070,7 +1070,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCatalogEntry
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCatalogEntry
      */
     public function getCatalogEntry()
     {
@@ -1078,7 +1078,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCatalogEntry $CatalogEntry
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCatalogEntry $CatalogEntry
      * @return $this
      */
     public function setCatalogEntry($CatalogEntry)
@@ -1088,7 +1088,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRChargeItem
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRChargeItem
      */
     public function getChargeItem()
     {
@@ -1096,7 +1096,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRChargeItem $ChargeItem
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRChargeItem $ChargeItem
      * @return $this
      */
     public function setChargeItem($ChargeItem)
@@ -1106,7 +1106,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRChargeItemDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRChargeItemDefinition
      */
     public function getChargeItemDefinition()
     {
@@ -1114,7 +1114,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRChargeItemDefinition $ChargeItemDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRChargeItemDefinition $ChargeItemDefinition
      * @return $this
      */
     public function setChargeItemDefinition($ChargeItemDefinition)
@@ -1124,7 +1124,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClaim
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRClaim
      */
     public function getClaim()
     {
@@ -1132,7 +1132,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClaim $Claim
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRClaim $Claim
      * @return $this
      */
     public function setClaim($Claim)
@@ -1142,7 +1142,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClaimResponse
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRClaimResponse
      */
     public function getClaimResponse()
     {
@@ -1150,7 +1150,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClaimResponse $ClaimResponse
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRClaimResponse $ClaimResponse
      * @return $this
      */
     public function setClaimResponse($ClaimResponse)
@@ -1160,7 +1160,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClinicalImpression
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRClinicalImpression
      */
     public function getClinicalImpression()
     {
@@ -1168,7 +1168,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRClinicalImpression $ClinicalImpression
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRClinicalImpression $ClinicalImpression
      * @return $this
      */
     public function setClinicalImpression($ClinicalImpression)
@@ -1178,7 +1178,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCodeSystem
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCodeSystem
      */
     public function getCodeSystem()
     {
@@ -1186,7 +1186,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCodeSystem $CodeSystem
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCodeSystem $CodeSystem
      * @return $this
      */
     public function setCodeSystem($CodeSystem)
@@ -1196,7 +1196,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCommunication
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCommunication
      */
     public function getCommunication()
     {
@@ -1204,7 +1204,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCommunication $Communication
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCommunication $Communication
      * @return $this
      */
     public function setCommunication($Communication)
@@ -1214,7 +1214,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCommunicationRequest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCommunicationRequest
      */
     public function getCommunicationRequest()
     {
@@ -1222,7 +1222,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCommunicationRequest $CommunicationRequest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCommunicationRequest $CommunicationRequest
      * @return $this
      */
     public function setCommunicationRequest($CommunicationRequest)
@@ -1232,7 +1232,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCompartmentDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCompartmentDefinition
      */
     public function getCompartmentDefinition()
     {
@@ -1240,7 +1240,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCompartmentDefinition $CompartmentDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCompartmentDefinition $CompartmentDefinition
      * @return $this
      */
     public function setCompartmentDefinition($CompartmentDefinition)
@@ -1250,7 +1250,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRComposition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRComposition
      */
     public function getComposition()
     {
@@ -1258,7 +1258,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRComposition $Composition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRComposition $Composition
      * @return $this
      */
     public function setComposition($Composition)
@@ -1268,7 +1268,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRConceptMap
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRConceptMap
      */
     public function getConceptMap()
     {
@@ -1276,7 +1276,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRConceptMap $ConceptMap
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRConceptMap $ConceptMap
      * @return $this
      */
     public function setConceptMap($ConceptMap)
@@ -1286,7 +1286,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCondition
      */
     public function getCondition()
     {
@@ -1294,7 +1294,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition $Condition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCondition $Condition
      * @return $this
      */
     public function setCondition($Condition)
@@ -1304,7 +1304,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRConsent
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRConsent
      */
     public function getConsent()
     {
@@ -1312,7 +1312,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRConsent $Consent
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRConsent $Consent
      * @return $this
      */
     public function setConsent($Consent)
@@ -1322,7 +1322,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRContract
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRContract
      */
     public function getContract()
     {
@@ -1330,7 +1330,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRContract $Contract
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRContract $Contract
      * @return $this
      */
     public function setContract($Contract)
@@ -1340,7 +1340,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage
      */
     public function getCoverage()
     {
@@ -1348,7 +1348,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverage $Coverage
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverage $Coverage
      * @return $this
      */
     public function setCoverage($Coverage)
@@ -1358,7 +1358,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityRequest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityRequest
      */
     public function getCoverageEligibilityRequest()
     {
@@ -1366,7 +1366,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityRequest $CoverageEligibilityRequest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityRequest $CoverageEligibilityRequest
      * @return $this
      */
     public function setCoverageEligibilityRequest($CoverageEligibilityRequest)
@@ -1376,7 +1376,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityResponse
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityResponse
      */
     public function getCoverageEligibilityResponse()
     {
@@ -1384,7 +1384,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityResponse $CoverageEligibilityResponse
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRCoverageEligibilityResponse $CoverageEligibilityResponse
      * @return $this
      */
     public function setCoverageEligibilityResponse($CoverageEligibilityResponse)
@@ -1394,7 +1394,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDetectedIssue
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDetectedIssue
      */
     public function getDetectedIssue()
     {
@@ -1402,7 +1402,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDetectedIssue $DetectedIssue
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDetectedIssue $DetectedIssue
      * @return $this
      */
     public function setDetectedIssue($DetectedIssue)
@@ -1412,7 +1412,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDevice
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDevice
      */
     public function getDevice()
     {
@@ -1420,7 +1420,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDevice $Device
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDevice $Device
      * @return $this
      */
     public function setDevice($Device)
@@ -1430,7 +1430,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceDefinition
      */
     public function getDeviceDefinition()
     {
@@ -1438,7 +1438,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceDefinition $DeviceDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceDefinition $DeviceDefinition
      * @return $this
      */
     public function setDeviceDefinition($DeviceDefinition)
@@ -1448,7 +1448,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceMetric
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceMetric
      */
     public function getDeviceMetric()
     {
@@ -1456,7 +1456,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceMetric $DeviceMetric
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceMetric $DeviceMetric
      * @return $this
      */
     public function setDeviceMetric($DeviceMetric)
@@ -1466,7 +1466,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceRequest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceRequest
      */
     public function getDeviceRequest()
     {
@@ -1474,7 +1474,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceRequest $DeviceRequest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceRequest $DeviceRequest
      * @return $this
      */
     public function setDeviceRequest($DeviceRequest)
@@ -1484,7 +1484,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceUseStatement
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceUseStatement
      */
     public function getDeviceUseStatement()
     {
@@ -1492,7 +1492,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDeviceUseStatement $DeviceUseStatement
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDeviceUseStatement $DeviceUseStatement
      * @return $this
      */
     public function setDeviceUseStatement($DeviceUseStatement)
@@ -1502,7 +1502,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport
      */
     public function getDiagnosticReport()
     {
@@ -1510,7 +1510,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport $DiagnosticReport
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport $DiagnosticReport
      * @return $this
      */
     public function setDiagnosticReport($DiagnosticReport)
@@ -1520,7 +1520,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentManifest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentManifest
      */
     public function getDocumentManifest()
     {
@@ -1528,7 +1528,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentManifest $DocumentManifest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentManifest $DocumentManifest
      * @return $this
      */
     public function setDocumentManifest($DocumentManifest)
@@ -1538,7 +1538,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference
      */
     public function getDocumentReference()
     {
@@ -1546,7 +1546,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference $DocumentReference
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference $DocumentReference
      * @return $this
      */
     public function setDocumentReference($DocumentReference)
@@ -1556,7 +1556,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREffectEvidenceSynthesis
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREffectEvidenceSynthesis
      */
     public function getEffectEvidenceSynthesis()
     {
@@ -1564,7 +1564,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREffectEvidenceSynthesis $EffectEvidenceSynthesis
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREffectEvidenceSynthesis $EffectEvidenceSynthesis
      * @return $this
      */
     public function setEffectEvidenceSynthesis($EffectEvidenceSynthesis)
@@ -1574,7 +1574,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREncounter
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREncounter
      */
     public function getEncounter()
     {
@@ -1582,7 +1582,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREncounter $Encounter
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREncounter $Encounter
      * @return $this
      */
     public function setEncounter($Encounter)
@@ -1592,7 +1592,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREndpoint
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREndpoint
      */
     public function getEndpoint()
     {
@@ -1600,7 +1600,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREndpoint $Endpoint
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREndpoint $Endpoint
      * @return $this
      */
     public function setEndpoint($Endpoint)
@@ -1610,7 +1610,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREnrollmentRequest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREnrollmentRequest
      */
     public function getEnrollmentRequest()
     {
@@ -1618,7 +1618,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREnrollmentRequest $EnrollmentRequest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREnrollmentRequest $EnrollmentRequest
      * @return $this
      */
     public function setEnrollmentRequest($EnrollmentRequest)
@@ -1628,7 +1628,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREnrollmentResponse
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREnrollmentResponse
      */
     public function getEnrollmentResponse()
     {
@@ -1636,7 +1636,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREnrollmentResponse $EnrollmentResponse
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREnrollmentResponse $EnrollmentResponse
      * @return $this
      */
     public function setEnrollmentResponse($EnrollmentResponse)
@@ -1646,7 +1646,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREpisodeOfCare
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREpisodeOfCare
      */
     public function getEpisodeOfCare()
     {
@@ -1654,7 +1654,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREpisodeOfCare $EpisodeOfCare
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREpisodeOfCare $EpisodeOfCare
      * @return $this
      */
     public function setEpisodeOfCare($EpisodeOfCare)
@@ -1664,7 +1664,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREventDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREventDefinition
      */
     public function getEventDefinition()
     {
@@ -1672,7 +1672,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREventDefinition $EventDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREventDefinition $EventDefinition
      * @return $this
      */
     public function setEventDefinition($EventDefinition)
@@ -1682,7 +1682,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREvidence
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREvidence
      */
     public function getEvidence()
     {
@@ -1690,7 +1690,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREvidence $Evidence
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREvidence $Evidence
      * @return $this
      */
     public function setEvidence($Evidence)
@@ -1700,7 +1700,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREvidenceVariable
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIREvidenceVariable
      */
     public function getEvidenceVariable()
     {
@@ -1708,7 +1708,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIREvidenceVariable $EvidenceVariable
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIREvidenceVariable $EvidenceVariable
      * @return $this
      */
     public function setEvidenceVariable($EvidenceVariable)
@@ -1718,7 +1718,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRExampleScenario
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRExampleScenario
      */
     public function getExampleScenario()
     {
@@ -1726,7 +1726,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRExampleScenario $ExampleScenario
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRExampleScenario $ExampleScenario
      * @return $this
      */
     public function setExampleScenario($ExampleScenario)
@@ -1736,7 +1736,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRExplanationOfBenefit
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRExplanationOfBenefit
      */
     public function getExplanationOfBenefit()
     {
@@ -1744,7 +1744,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRExplanationOfBenefit $ExplanationOfBenefit
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRExplanationOfBenefit $ExplanationOfBenefit
      * @return $this
      */
     public function setExplanationOfBenefit($ExplanationOfBenefit)
@@ -1754,7 +1754,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRFamilyMemberHistory
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRFamilyMemberHistory
      */
     public function getFamilyMemberHistory()
     {
@@ -1762,7 +1762,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRFamilyMemberHistory $FamilyMemberHistory
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRFamilyMemberHistory $FamilyMemberHistory
      * @return $this
      */
     public function setFamilyMemberHistory($FamilyMemberHistory)
@@ -1772,7 +1772,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRFlag
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRFlag
      */
     public function getFlag()
     {
@@ -1780,7 +1780,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRFlag $Flag
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRFlag $Flag
      * @return $this
      */
     public function setFlag($Flag)
@@ -1790,7 +1790,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGoal
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRGoal
      */
     public function getGoal()
     {
@@ -1798,7 +1798,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGoal $Goal
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRGoal $Goal
      * @return $this
      */
     public function setGoal($Goal)
@@ -1808,7 +1808,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGraphDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRGraphDefinition
      */
     public function getGraphDefinition()
     {
@@ -1816,7 +1816,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGraphDefinition $GraphDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRGraphDefinition $GraphDefinition
      * @return $this
      */
     public function setGraphDefinition($GraphDefinition)
@@ -1826,7 +1826,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGroup
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRGroup
      */
     public function getGroup()
     {
@@ -1834,7 +1834,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGroup $Group
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRGroup $Group
      * @return $this
      */
     public function setGroup($Group)
@@ -1844,7 +1844,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGuidanceResponse
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRGuidanceResponse
      */
     public function getGuidanceResponse()
     {
@@ -1852,7 +1852,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGuidanceResponse $GuidanceResponse
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRGuidanceResponse $GuidanceResponse
      * @return $this
      */
     public function setGuidanceResponse($GuidanceResponse)
@@ -1862,7 +1862,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRHealthcareService
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRHealthcareService
      */
     public function getHealthcareService()
     {
@@ -1870,7 +1870,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRHealthcareService $HealthcareService
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRHealthcareService $HealthcareService
      * @return $this
      */
     public function setHealthcareService($HealthcareService)
@@ -1880,7 +1880,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImagingStudy
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRImagingStudy
      */
     public function getImagingStudy()
     {
@@ -1888,7 +1888,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImagingStudy $ImagingStudy
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRImagingStudy $ImagingStudy
      * @return $this
      */
     public function setImagingStudy($ImagingStudy)
@@ -1898,7 +1898,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunization
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunization
      */
     public function getImmunization()
     {
@@ -1906,7 +1906,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunization $Immunization
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunization $Immunization
      * @return $this
      */
     public function setImmunization($Immunization)
@@ -1916,7 +1916,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunizationEvaluation
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunizationEvaluation
      */
     public function getImmunizationEvaluation()
     {
@@ -1924,7 +1924,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunizationEvaluation $ImmunizationEvaluation
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunizationEvaluation $ImmunizationEvaluation
      * @return $this
      */
     public function setImmunizationEvaluation($ImmunizationEvaluation)
@@ -1934,7 +1934,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunizationRecommendation
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunizationRecommendation
      */
     public function getImmunizationRecommendation()
     {
@@ -1942,7 +1942,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunizationRecommendation $ImmunizationRecommendation
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRImmunizationRecommendation $ImmunizationRecommendation
      * @return $this
      */
     public function setImmunizationRecommendation($ImmunizationRecommendation)
@@ -1952,7 +1952,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImplementationGuide
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRImplementationGuide
      */
     public function getImplementationGuide()
     {
@@ -1960,7 +1960,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImplementationGuide $ImplementationGuide
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRImplementationGuide $ImplementationGuide
      * @return $this
      */
     public function setImplementationGuide($ImplementationGuide)
@@ -1970,7 +1970,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRInsurancePlan
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRInsurancePlan
      */
     public function getInsurancePlan()
     {
@@ -1978,7 +1978,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRInsurancePlan $InsurancePlan
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRInsurancePlan $InsurancePlan
      * @return $this
      */
     public function setInsurancePlan($InsurancePlan)
@@ -1988,7 +1988,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRInvoice
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRInvoice
      */
     public function getInvoice()
     {
@@ -1996,7 +1996,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRInvoice $Invoice
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRInvoice $Invoice
      * @return $this
      */
     public function setInvoice($Invoice)
@@ -2006,7 +2006,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLibrary
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRLibrary
      */
     public function getLibrary()
     {
@@ -2014,7 +2014,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLibrary $Library
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRLibrary $Library
      * @return $this
      */
     public function setLibrary($Library)
@@ -2024,7 +2024,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLinkage
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRLinkage
      */
     public function getLinkage()
     {
@@ -2032,7 +2032,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLinkage $Linkage
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRLinkage $Linkage
      * @return $this
      */
     public function setLinkage($Linkage)
@@ -2042,7 +2042,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRList
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRList
      */
     public function getList()
     {
@@ -2050,7 +2050,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRList $List
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRList $List
      * @return $this
      */
     public function setList($List)
@@ -2060,7 +2060,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLocation
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRLocation
      */
     public function getLocation()
     {
@@ -2068,7 +2068,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLocation $Location
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRLocation $Location
      * @return $this
      */
     public function setLocation($Location)
@@ -2078,7 +2078,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMeasure
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMeasure
      */
     public function getMeasure()
     {
@@ -2086,7 +2086,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMeasure $Measure
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMeasure $Measure
      * @return $this
      */
     public function setMeasure($Measure)
@@ -2096,7 +2096,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMeasureReport
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMeasureReport
      */
     public function getMeasureReport()
     {
@@ -2104,7 +2104,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMeasureReport $MeasureReport
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMeasureReport $MeasureReport
      * @return $this
      */
     public function setMeasureReport($MeasureReport)
@@ -2114,7 +2114,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedia
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedia
      */
     public function getMedia()
     {
@@ -2122,7 +2122,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedia $Media
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedia $Media
      * @return $this
      */
     public function setMedia($Media)
@@ -2132,7 +2132,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedication
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedication
      */
     public function getMedication()
     {
@@ -2140,7 +2140,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedication $Medication
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedication $Medication
      * @return $this
      */
     public function setMedication($Medication)
@@ -2150,7 +2150,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationAdministration
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationAdministration
      */
     public function getMedicationAdministration()
     {
@@ -2158,7 +2158,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationAdministration $MedicationAdministration
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationAdministration $MedicationAdministration
      * @return $this
      */
     public function setMedicationAdministration($MedicationAdministration)
@@ -2168,7 +2168,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense
      */
     public function getMedicationDispense()
     {
@@ -2176,7 +2176,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense $MedicationDispense
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense $MedicationDispense
      * @return $this
      */
     public function setMedicationDispense($MedicationDispense)
@@ -2186,7 +2186,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationKnowledge
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationKnowledge
      */
     public function getMedicationKnowledge()
     {
@@ -2194,7 +2194,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationKnowledge $MedicationKnowledge
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationKnowledge $MedicationKnowledge
      * @return $this
      */
     public function setMedicationKnowledge($MedicationKnowledge)
@@ -2204,7 +2204,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest
      */
     public function getMedicationRequest()
     {
@@ -2212,7 +2212,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest $MedicationRequest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest $MedicationRequest
      * @return $this
      */
     public function setMedicationRequest($MedicationRequest)
@@ -2222,7 +2222,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationStatement
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationStatement
      */
     public function getMedicationStatement()
     {
@@ -2230,7 +2230,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationStatement $MedicationStatement
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationStatement $MedicationStatement
      * @return $this
      */
     public function setMedicationStatement($MedicationStatement)
@@ -2240,7 +2240,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProduct
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProduct
      */
     public function getMedicinalProduct()
     {
@@ -2248,7 +2248,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProduct $MedicinalProduct
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProduct $MedicinalProduct
      * @return $this
      */
     public function setMedicinalProduct($MedicinalProduct)
@@ -2258,7 +2258,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductAuthorization
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductAuthorization
      */
     public function getMedicinalProductAuthorization()
     {
@@ -2266,7 +2266,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductAuthorization $MedicinalProductAuthorization
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductAuthorization $MedicinalProductAuthorization
      * @return $this
      */
     public function setMedicinalProductAuthorization($MedicinalProductAuthorization)
@@ -2276,7 +2276,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductContraindication
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductContraindication
      */
     public function getMedicinalProductContraindication()
     {
@@ -2284,7 +2284,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductContraindication $MedicinalProductContraindication
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductContraindication $MedicinalProductContraindication
      * @return $this
      */
     public function setMedicinalProductContraindication($MedicinalProductContraindication)
@@ -2294,7 +2294,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIndication
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIndication
      */
     public function getMedicinalProductIndication()
     {
@@ -2302,7 +2302,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIndication $MedicinalProductIndication
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIndication $MedicinalProductIndication
      * @return $this
      */
     public function setMedicinalProductIndication($MedicinalProductIndication)
@@ -2312,7 +2312,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIngredient
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIngredient
      */
     public function getMedicinalProductIngredient()
     {
@@ -2320,7 +2320,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIngredient $MedicinalProductIngredient
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductIngredient $MedicinalProductIngredient
      * @return $this
      */
     public function setMedicinalProductIngredient($MedicinalProductIngredient)
@@ -2330,7 +2330,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductInteraction
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductInteraction
      */
     public function getMedicinalProductInteraction()
     {
@@ -2338,7 +2338,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductInteraction $MedicinalProductInteraction
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductInteraction $MedicinalProductInteraction
      * @return $this
      */
     public function setMedicinalProductInteraction($MedicinalProductInteraction)
@@ -2348,7 +2348,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductManufactured
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductManufactured
      */
     public function getMedicinalProductManufactured()
     {
@@ -2356,7 +2356,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductManufactured $MedicinalProductManufactured
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductManufactured $MedicinalProductManufactured
      * @return $this
      */
     public function setMedicinalProductManufactured($MedicinalProductManufactured)
@@ -2366,7 +2366,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPackaged
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPackaged
      */
     public function getMedicinalProductPackaged()
     {
@@ -2374,7 +2374,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPackaged $MedicinalProductPackaged
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPackaged $MedicinalProductPackaged
      * @return $this
      */
     public function setMedicinalProductPackaged($MedicinalProductPackaged)
@@ -2384,7 +2384,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPharmaceutical
      */
     public function getMedicinalProductPharmaceutical()
     {
@@ -2392,7 +2392,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPharmaceutical $MedicinalProductPharmaceutical
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductPharmaceutical $MedicinalProductPharmaceutical
      * @return $this
      */
     public function setMedicinalProductPharmaceutical($MedicinalProductPharmaceutical)
@@ -2402,7 +2402,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect
      */
     public function getMedicinalProductUndesirableEffect()
     {
@@ -2410,7 +2410,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect $MedicinalProductUndesirableEffect
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicinalProductUndesirableEffect $MedicinalProductUndesirableEffect
      * @return $this
      */
     public function setMedicinalProductUndesirableEffect($MedicinalProductUndesirableEffect)
@@ -2420,7 +2420,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMessageDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMessageDefinition
      */
     public function getMessageDefinition()
     {
@@ -2428,7 +2428,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMessageDefinition $MessageDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMessageDefinition $MessageDefinition
      * @return $this
      */
     public function setMessageDefinition($MessageDefinition)
@@ -2438,7 +2438,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMessageHeader
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMessageHeader
      */
     public function getMessageHeader()
     {
@@ -2446,7 +2446,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMessageHeader $MessageHeader
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMessageHeader $MessageHeader
      * @return $this
      */
     public function setMessageHeader($MessageHeader)
@@ -2456,7 +2456,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMolecularSequence
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRMolecularSequence
      */
     public function getMolecularSequence()
     {
@@ -2464,7 +2464,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMolecularSequence $MolecularSequence
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRMolecularSequence $MolecularSequence
      * @return $this
      */
     public function setMolecularSequence($MolecularSequence)
@@ -2474,7 +2474,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRNamingSystem
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRNamingSystem
      */
     public function getNamingSystem()
     {
@@ -2482,7 +2482,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRNamingSystem $NamingSystem
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRNamingSystem $NamingSystem
      * @return $this
      */
     public function setNamingSystem($NamingSystem)
@@ -2492,7 +2492,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRNutritionOrder
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRNutritionOrder
      */
     public function getNutritionOrder()
     {
@@ -2500,7 +2500,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRNutritionOrder $NutritionOrder
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRNutritionOrder $NutritionOrder
      * @return $this
      */
     public function setNutritionOrder($NutritionOrder)
@@ -2510,7 +2510,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRObservation
      */
     public function getObservation()
     {
@@ -2518,7 +2518,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation $Observation
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRObservation $Observation
      * @return $this
      */
     public function setObservation($Observation)
@@ -2528,7 +2528,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservationDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRObservationDefinition
      */
     public function getObservationDefinition()
     {
@@ -2536,7 +2536,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservationDefinition $ObservationDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRObservationDefinition $ObservationDefinition
      * @return $this
      */
     public function setObservationDefinition($ObservationDefinition)
@@ -2546,7 +2546,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIROperationDefinition
      */
     public function getOperationDefinition()
     {
@@ -2554,7 +2554,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationDefinition $OperationDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIROperationDefinition $OperationDefinition
      * @return $this
      */
     public function setOperationDefinition($OperationDefinition)
@@ -2564,7 +2564,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationOutcome
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIROperationOutcome
      */
     public function getOperationOutcome()
     {
@@ -2572,7 +2572,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationOutcome $OperationOutcome
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIROperationOutcome $OperationOutcome
      * @return $this
      */
     public function setOperationOutcome($OperationOutcome)
@@ -2582,7 +2582,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIROrganization
      */
     public function getOrganization()
     {
@@ -2590,7 +2590,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization $Organization
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIROrganization $Organization
      * @return $this
      */
     public function setOrganization($Organization)
@@ -2600,7 +2600,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganizationAffiliation
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIROrganizationAffiliation
      */
     public function getOrganizationAffiliation()
     {
@@ -2608,7 +2608,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganizationAffiliation $OrganizationAffiliation
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIROrganizationAffiliation $OrganizationAffiliation
      * @return $this
      */
     public function setOrganizationAffiliation($OrganizationAffiliation)
@@ -2618,7 +2618,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRPatient
      */
     public function getPatient()
     {
@@ -2626,7 +2626,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient $Patient
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRPatient $Patient
      * @return $this
      */
     public function setPatient($Patient)
@@ -2636,7 +2636,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPaymentNotice
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRPaymentNotice
      */
     public function getPaymentNotice()
     {
@@ -2644,7 +2644,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPaymentNotice $PaymentNotice
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRPaymentNotice $PaymentNotice
      * @return $this
      */
     public function setPaymentNotice($PaymentNotice)
@@ -2654,7 +2654,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPaymentReconciliation
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRPaymentReconciliation
      */
     public function getPaymentReconciliation()
     {
@@ -2662,7 +2662,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPaymentReconciliation $PaymentReconciliation
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRPaymentReconciliation $PaymentReconciliation
      * @return $this
      */
     public function setPaymentReconciliation($PaymentReconciliation)
@@ -2672,7 +2672,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPerson
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRPerson
      */
     public function getPerson()
     {
@@ -2680,7 +2680,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPerson $Person
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRPerson $Person
      * @return $this
      */
     public function setPerson($Person)
@@ -2690,7 +2690,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPlanDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRPlanDefinition
      */
     public function getPlanDefinition()
     {
@@ -2698,7 +2698,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPlanDefinition $PlanDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRPlanDefinition $PlanDefinition
      * @return $this
      */
     public function setPlanDefinition($PlanDefinition)
@@ -2708,7 +2708,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner
      */
     public function getPractitioner()
     {
@@ -2716,7 +2716,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner $Practitioner
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner $Practitioner
      * @return $this
      */
     public function setPractitioner($Practitioner)
@@ -2726,7 +2726,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole
      */
     public function getPractitionerRole()
     {
@@ -2734,7 +2734,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole $PractitionerRole
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole $PractitionerRole
      * @return $this
      */
     public function setPractitionerRole($PractitionerRole)
@@ -2744,7 +2744,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProcedure
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRProcedure
      */
     public function getProcedure()
     {
@@ -2752,7 +2752,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProcedure $Procedure
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRProcedure $Procedure
      * @return $this
      */
     public function setProcedure($Procedure)
@@ -2762,7 +2762,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance
      */
     public function getProvenance()
     {
@@ -2770,7 +2770,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance $Provenance
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance $Provenance
      * @return $this
      */
     public function setProvenance($Provenance)
@@ -2780,7 +2780,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire
      */
     public function getQuestionnaire()
     {
@@ -2788,7 +2788,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire $Questionnaire
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire $Questionnaire
      * @return $this
      */
     public function setQuestionnaire($Questionnaire)
@@ -2798,7 +2798,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse
      */
     public function getQuestionnaireResponse()
     {
@@ -2806,7 +2806,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse $QuestionnaireResponse
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse $QuestionnaireResponse
      * @return $this
      */
     public function setQuestionnaireResponse($QuestionnaireResponse)
@@ -2816,7 +2816,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson
      */
     public function getRelatedPerson()
     {
@@ -2824,7 +2824,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson $RelatedPerson
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRRelatedPerson $RelatedPerson
      * @return $this
      */
     public function setRelatedPerson($RelatedPerson)
@@ -2834,7 +2834,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRequestGroup
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRRequestGroup
      */
     public function getRequestGroup()
     {
@@ -2842,7 +2842,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRequestGroup $RequestGroup
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRRequestGroup $RequestGroup
      * @return $this
      */
     public function setRequestGroup($RequestGroup)
@@ -2852,7 +2852,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchDefinition
      */
     public function getResearchDefinition()
     {
@@ -2860,7 +2860,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchDefinition $ResearchDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchDefinition $ResearchDefinition
      * @return $this
      */
     public function setResearchDefinition($ResearchDefinition)
@@ -2870,7 +2870,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchElementDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchElementDefinition
      */
     public function getResearchElementDefinition()
     {
@@ -2878,7 +2878,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchElementDefinition $ResearchElementDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchElementDefinition $ResearchElementDefinition
      * @return $this
      */
     public function setResearchElementDefinition($ResearchElementDefinition)
@@ -2888,7 +2888,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchStudy
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchStudy
      */
     public function getResearchStudy()
     {
@@ -2896,7 +2896,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchStudy $ResearchStudy
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchStudy $ResearchStudy
      * @return $this
      */
     public function setResearchStudy($ResearchStudy)
@@ -2906,7 +2906,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchSubject
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchSubject
      */
     public function getResearchSubject()
     {
@@ -2914,7 +2914,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRResearchSubject $ResearchSubject
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRResearchSubject $ResearchSubject
      * @return $this
      */
     public function setResearchSubject($ResearchSubject)
@@ -2924,7 +2924,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRiskAssessment
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRRiskAssessment
      */
     public function getRiskAssessment()
     {
@@ -2932,7 +2932,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRiskAssessment $RiskAssessment
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRRiskAssessment $RiskAssessment
      * @return $this
      */
     public function setRiskAssessment($RiskAssessment)
@@ -2942,7 +2942,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRiskEvidenceSynthesis
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRRiskEvidenceSynthesis
      */
     public function getRiskEvidenceSynthesis()
     {
@@ -2950,7 +2950,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRRiskEvidenceSynthesis $RiskEvidenceSynthesis
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRRiskEvidenceSynthesis $RiskEvidenceSynthesis
      * @return $this
      */
     public function setRiskEvidenceSynthesis($RiskEvidenceSynthesis)
@@ -2960,7 +2960,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSchedule
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSchedule
      */
     public function getSchedule()
     {
@@ -2968,7 +2968,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSchedule $Schedule
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSchedule $Schedule
      * @return $this
      */
     public function setSchedule($Schedule)
@@ -2978,7 +2978,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSearchParameter
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSearchParameter
      */
     public function getSearchParameter()
     {
@@ -2986,7 +2986,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSearchParameter $SearchParameter
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSearchParameter $SearchParameter
      * @return $this
      */
     public function setSearchParameter($SearchParameter)
@@ -2996,7 +2996,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRServiceRequest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRServiceRequest
      */
     public function getServiceRequest()
     {
@@ -3004,7 +3004,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRServiceRequest $ServiceRequest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRServiceRequest $ServiceRequest
      * @return $this
      */
     public function setServiceRequest($ServiceRequest)
@@ -3014,7 +3014,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSlot
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSlot
      */
     public function getSlot()
     {
@@ -3022,7 +3022,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSlot $Slot
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSlot $Slot
      * @return $this
      */
     public function setSlot($Slot)
@@ -3032,7 +3032,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSpecimen
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSpecimen
      */
     public function getSpecimen()
     {
@@ -3040,7 +3040,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSpecimen $Specimen
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSpecimen $Specimen
      * @return $this
      */
     public function setSpecimen($Specimen)
@@ -3050,7 +3050,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSpecimenDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSpecimenDefinition
      */
     public function getSpecimenDefinition()
     {
@@ -3058,7 +3058,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSpecimenDefinition $SpecimenDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSpecimenDefinition $SpecimenDefinition
      * @return $this
      */
     public function setSpecimenDefinition($SpecimenDefinition)
@@ -3068,7 +3068,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRStructureDefinition
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRStructureDefinition
      */
     public function getStructureDefinition()
     {
@@ -3076,7 +3076,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRStructureDefinition $StructureDefinition
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRStructureDefinition $StructureDefinition
      * @return $this
      */
     public function setStructureDefinition($StructureDefinition)
@@ -3086,7 +3086,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRStructureMap
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRStructureMap
      */
     public function getStructureMap()
     {
@@ -3094,7 +3094,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRStructureMap $StructureMap
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRStructureMap $StructureMap
      * @return $this
      */
     public function setStructureMap($StructureMap)
@@ -3104,7 +3104,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubscription
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubscription
      */
     public function getSubscription()
     {
@@ -3112,7 +3112,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubscription $Subscription
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubscription $Subscription
      * @return $this
      */
     public function setSubscription($Subscription)
@@ -3122,7 +3122,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstance
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstance
      */
     public function getSubstance()
     {
@@ -3130,7 +3130,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstance $Substance
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstance $Substance
      * @return $this
      */
     public function setSubstance($Substance)
@@ -3140,7 +3140,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceNucleicAcid
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceNucleicAcid
      */
     public function getSubstanceNucleicAcid()
     {
@@ -3148,7 +3148,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceNucleicAcid $SubstanceNucleicAcid
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceNucleicAcid $SubstanceNucleicAcid
      * @return $this
      */
     public function setSubstanceNucleicAcid($SubstanceNucleicAcid)
@@ -3158,7 +3158,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstancePolymer
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstancePolymer
      */
     public function getSubstancePolymer()
     {
@@ -3166,7 +3166,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstancePolymer $SubstancePolymer
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstancePolymer $SubstancePolymer
      * @return $this
      */
     public function setSubstancePolymer($SubstancePolymer)
@@ -3176,7 +3176,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceProtein
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceProtein
      */
     public function getSubstanceProtein()
     {
@@ -3184,7 +3184,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceProtein $SubstanceProtein
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceProtein $SubstanceProtein
      * @return $this
      */
     public function setSubstanceProtein($SubstanceProtein)
@@ -3194,7 +3194,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceReferenceInformation
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceReferenceInformation
      */
     public function getSubstanceReferenceInformation()
     {
@@ -3202,7 +3202,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceReferenceInformation $SubstanceReferenceInformation
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceReferenceInformation $SubstanceReferenceInformation
      * @return $this
      */
     public function setSubstanceReferenceInformation($SubstanceReferenceInformation)
@@ -3212,7 +3212,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceSourceMaterial
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceSourceMaterial
      */
     public function getSubstanceSourceMaterial()
     {
@@ -3220,7 +3220,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceSourceMaterial $SubstanceSourceMaterial
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceSourceMaterial $SubstanceSourceMaterial
      * @return $this
      */
     public function setSubstanceSourceMaterial($SubstanceSourceMaterial)
@@ -3230,7 +3230,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceSpecification
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceSpecification
      */
     public function getSubstanceSpecification()
     {
@@ -3238,7 +3238,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSubstanceSpecification $SubstanceSpecification
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSubstanceSpecification $SubstanceSpecification
      * @return $this
      */
     public function setSubstanceSpecification($SubstanceSpecification)
@@ -3248,7 +3248,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSupplyDelivery
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSupplyDelivery
      */
     public function getSupplyDelivery()
     {
@@ -3256,7 +3256,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSupplyDelivery $SupplyDelivery
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSupplyDelivery $SupplyDelivery
      * @return $this
      */
     public function setSupplyDelivery($SupplyDelivery)
@@ -3266,7 +3266,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSupplyRequest
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRSupplyRequest
      */
     public function getSupplyRequest()
     {
@@ -3274,7 +3274,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRSupplyRequest $SupplyRequest
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRSupplyRequest $SupplyRequest
      * @return $this
      */
     public function setSupplyRequest($SupplyRequest)
@@ -3284,7 +3284,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTask
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRTask
      */
     public function getTask()
     {
@@ -3292,7 +3292,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTask $Task
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRTask $Task
      * @return $this
      */
     public function setTask($Task)
@@ -3302,7 +3302,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTerminologyCapabilities
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRTerminologyCapabilities
      */
     public function getTerminologyCapabilities()
     {
@@ -3310,7 +3310,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTerminologyCapabilities $TerminologyCapabilities
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRTerminologyCapabilities $TerminologyCapabilities
      * @return $this
      */
     public function setTerminologyCapabilities($TerminologyCapabilities)
@@ -3320,7 +3320,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTestReport
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRTestReport
      */
     public function getTestReport()
     {
@@ -3328,7 +3328,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTestReport $TestReport
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRTestReport $TestReport
      * @return $this
      */
     public function setTestReport($TestReport)
@@ -3338,7 +3338,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTestScript
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRTestScript
      */
     public function getTestScript()
     {
@@ -3346,7 +3346,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTestScript $TestScript
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRTestScript $TestScript
      * @return $this
      */
     public function setTestScript($TestScript)
@@ -3356,7 +3356,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRValueSet
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRValueSet
      */
     public function getValueSet()
     {
@@ -3364,7 +3364,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRValueSet $ValueSet
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRValueSet $ValueSet
      * @return $this
      */
     public function setValueSet($ValueSet)
@@ -3374,7 +3374,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRVerificationResult
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRVerificationResult
      */
     public function getVerificationResult()
     {
@@ -3382,7 +3382,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRVerificationResult $VerificationResult
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRVerificationResult $VerificationResult
      * @return $this
      */
     public function setVerificationResult($VerificationResult)
@@ -3392,7 +3392,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRVisionPrescription
+     * @return \DCL\FHIR\R4\FHIRDomainResource\FHIRVisionPrescription
      */
     public function getVisionPrescription()
     {
@@ -3400,7 +3400,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRVisionPrescription $VisionPrescription
+     * @param \DCL\FHIR\R4\FHIRDomainResource\FHIRVisionPrescription $VisionPrescription
      * @return $this
      */
     public function setVisionPrescription($VisionPrescription)
@@ -3410,7 +3410,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRParameters
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRParameters
      */
     public function getParameters()
     {
@@ -3418,7 +3418,7 @@ class FHIRResourceContainer implements \JsonSerializable, \Stringable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRParameters $Parameters
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRParameters $Parameters
      * @return $this
      */
     public function setParameters($Parameters)

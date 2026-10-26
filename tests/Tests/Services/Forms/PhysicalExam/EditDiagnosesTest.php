@@ -3,20 +3,20 @@
 /**
  * Regression tests for the physical exam diagnosis editor.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR Contributors
- * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL Contributors
+ * @copyright Copyright (c) 2026 DCL Contributors
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Forms\PhysicalExam;
+namespace DCL\Tests\Services\Forms\PhysicalExam;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Forms\PhysicalExam\DiagnosisHelper;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Forms\PhysicalExam\DiagnosisHelper;
 use PHPUnit\Framework\TestCase;
 
 class EditDiagnosesTest extends TestCase

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCarePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.
@@ -71,116 +71,116 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanActivityKind
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCarePlanActivityKind
      */
     public $kind = null;
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Provides the rationale that drove the inclusion of this particular activity as part of the plan or the reason why the activity was prohibited.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates another resource, such as the health condition(s), whose existence justifies this request and drove the inclusion of this particular activity as part of the plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $goal = [];
 
     /**
      * Identifies what progress is being made for the specific activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanActivityStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCarePlanActivityStatus
      */
     public $status = null;
 
     /**
      * Provides reason why the activity isn't yet started, is on hold, was cancelled, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $statusReason = null;
 
     /**
      * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, or missing, indicates that the described activity is one that should be engaged in when following the plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $doNotPerform = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $scheduledTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $scheduledPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $scheduledString = null;
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * Identifies who's expected to be involved in the activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $performer = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $productReference = null;
 
     /**
      * Identifies the quantity expected to be consumed in a given day.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $dailyAmount = null;
 
     /**
      * Identifies the quantity expected to be supplied, administered or consumed by the subject.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
@@ -191,7 +191,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanActivityKind
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCarePlanActivityKind
      */
     public function getKind()
     {
@@ -200,7 +200,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A description of the kind of resource the in-line definition of a care plan activity is representing.  The CarePlan.activity.detail is an in-line definition when a resource is not referenced using CarePlan.activity.reference.  For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanActivityKind $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCarePlanActivityKind $kind
      * @return $this
      */
     public function setKind($kind)
@@ -211,7 +211,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -220,7 +220,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -231,7 +231,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -240,7 +240,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -251,7 +251,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -260,7 +260,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -271,7 +271,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Provides the rationale that drove the inclusion of this particular activity as part of the plan or the reason why the activity was prohibited.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -280,7 +280,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Provides the rationale that drove the inclusion of this particular activity as part of the plan or the reason why the activity was prohibited.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -291,7 +291,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Indicates another resource, such as the health condition(s), whose existence justifies this request and drove the inclusion of this particular activity as part of the plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -300,7 +300,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Indicates another resource, such as the health condition(s), whose existence justifies this request and drove the inclusion of this particular activity as part of the plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -311,7 +311,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getGoal()
     {
@@ -320,7 +320,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $goal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $goal
      * @return $this
      */
     public function addGoal($goal)
@@ -331,7 +331,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies what progress is being made for the specific activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanActivityStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCarePlanActivityStatus
      */
     public function getStatus()
     {
@@ -340,7 +340,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies what progress is being made for the specific activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanActivityStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCarePlanActivityStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -351,7 +351,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Provides reason why the activity isn't yet started, is on hold, was cancelled, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatusReason()
     {
@@ -360,7 +360,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Provides reason why the activity isn't yet started, is on hold, was cancelled, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function setStatusReason($statusReason)
@@ -371,7 +371,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, or missing, indicates that the described activity is one that should be engaged in when following the plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDoNotPerform()
     {
@@ -380,7 +380,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * If true, indicates that the described activity is one that must NOT be engaged in when following the plan.  If false, or missing, indicates that the described activity is one that should be engaged in when following the plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
      * @return $this
      */
     public function setDoNotPerform($doNotPerform)
@@ -390,7 +390,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getScheduledTiming()
     {
@@ -398,7 +398,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $scheduledTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $scheduledTiming
      * @return $this
      */
     public function setScheduledTiming($scheduledTiming)
@@ -408,7 +408,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getScheduledPeriod()
     {
@@ -416,7 +416,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $scheduledPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $scheduledPeriod
      * @return $this
      */
     public function setScheduledPeriod($scheduledPeriod)
@@ -426,7 +426,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getScheduledString()
     {
@@ -434,7 +434,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $scheduledString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $scheduledString
      * @return $this
      */
     public function setScheduledString($scheduledString)
@@ -445,7 +445,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -454,7 +454,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -465,7 +465,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies who's expected to be involved in the activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPerformer()
     {
@@ -474,7 +474,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies who's expected to be involved in the activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -484,7 +484,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCodeableConcept()
     {
@@ -492,7 +492,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return $this
      */
     public function setProductCodeableConcept($productCodeableConcept)
@@ -502,7 +502,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProductReference()
     {
@@ -510,7 +510,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $productReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $productReference
      * @return $this
      */
     public function setProductReference($productReference)
@@ -521,7 +521,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies the quantity expected to be consumed in a given day.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDailyAmount()
     {
@@ -530,7 +530,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies the quantity expected to be consumed in a given day.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $dailyAmount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $dailyAmount
      * @return $this
      */
     public function setDailyAmount($dailyAmount)
@@ -541,7 +541,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies the quantity expected to be supplied, administered or consumed by the subject.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -550,7 +550,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Identifies the quantity expected to be supplied, administered or consumed by the subject.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -561,7 +561,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -570,7 +570,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)

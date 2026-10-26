@@ -3,8 +3,8 @@
 /**
  * FacilityService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
@@ -12,23 +12,23 @@
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Facility\FacilityCreatedEvent;
-use OpenEMR\Events\Facility\FacilityUpdatedEvent;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\FacilityValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Facility\FacilityCreatedEvent;
+use DCL\Events\Facility\FacilityUpdatedEvent;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\FacilityValidator;
+use DCL\Validators\ProcessingResult;
 use Particle\Validator\Validator;
 
 class FacilityService extends BaseService

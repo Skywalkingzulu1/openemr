@@ -9,38 +9,38 @@
  * updates, so an update can ask that nobody changed the task since it was read
  * (If-Match).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRTask;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRTaskIntent;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRTaskStatus;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchQueryConfig;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\TaskService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRTask;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRElement\FHIRRequestPriority;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRElement\FHIRTaskIntent;
+use DCL\FHIR\R4\FHIRElement\FHIRTaskStatus;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchQueryConfig;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\TaskService;
+use DCL\Validators\ProcessingResult;
 
 class FhirTaskService extends FhirServiceBase implements IPatientCompartmentResourceService
 {
@@ -104,31 +104,31 @@ class FhirTaskService extends FhirServiceBase implements IPatientCompartmentReso
     }
 
     /**
-     * @param array<mixed> $openEMRSearchParameters
+     * @param array<mixed> $DCLSearchParameters
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->getTaskService()->search(self::searchFields($openEMRSearchParameters));
+        return $this->getTaskService()->search(self::searchFields($DCLSearchParameters));
     }
 
     /**
      * With _count, _offset or both, the page is read in the query rather than trimmed afterwards.
      *
-     * @param array<mixed> $openEMRSearchParameters
+     * @param array<mixed> $DCLSearchParameters
      */
-    protected function searchForOpenEMRRecordsWithConfig(array $openEMRSearchParameters, SearchQueryConfig $searchConfig): ProcessingResult
+    protected function searchForDCLRecordsWithConfig(array $DCLSearchParameters, SearchQueryConfig $searchConfig): ProcessingResult
     {
-        return $this->getTaskService()->search(self::searchFields($openEMRSearchParameters), true, $searchConfig);
+        return $this->getTaskService()->search(self::searchFields($DCLSearchParameters), true, $searchConfig);
     }
 
     /**
-     * @param array<mixed> $openEMRSearchParameters
+     * @param array<mixed> $DCLSearchParameters
      * @return array<string, ISearchField>
      */
-    private static function searchFields(array $openEMRSearchParameters): array
+    private static function searchFields(array $DCLSearchParameters): array
     {
         $search = [];
-        foreach ($openEMRSearchParameters as $name => $field) {
+        foreach ($DCLSearchParameters as $name => $field) {
             if (is_string($name) && $field instanceof ISearchField) {
                 $search[$name] = $field;
             }
@@ -143,7 +143,7 @@ class FhirTaskService extends FhirServiceBase implements IPatientCompartmentReso
      * @param array<mixed> $dataRecord
      * @param bool $encode
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRTask
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRTask
     {
         $task = new FHIRTask();
         $lastModified = self::text($dataRecord, 'last_modified');
@@ -245,7 +245,7 @@ class FhirTaskService extends FhirServiceBase implements IPatientCompartmentReso
     /**
      * @param mixed $openEmrRecord what parseFhirResource() returned
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         [$fields, $puuid, $errors] = self::unpack($openEmrRecord);
         $pid = $puuid === null ? null : self::patientId($puuid);
@@ -264,18 +264,18 @@ class FhirTaskService extends FhirServiceBase implements IPatientCompartmentReso
         $result = new ProcessingResult();
         $record = $this->getTaskService()->getOne($uuid);
         if ($record !== null) {
-            $result->addData($this->parseOpenEMRRecord($record));
+            $result->addData($this->parseDCLRecord($record));
         }
         return $result;
     }
 
     /**
      * @param string $fhirResourceId
-     * @param array<mixed> $updatedOpenEMRRecord what parseFhirResource() returned, with the uuid
+     * @param array<mixed> $updatedDCLRecord what parseFhirResource() returned, with the uuid
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        [$fields, $puuid, $errors] = self::unpack($updatedOpenEMRRecord);
+        [$fields, $puuid, $errors] = self::unpack($updatedDCLRecord);
         $this->versionConflict = false;
         // authoredOn is when the task was made: an update keeps the stored one, so a bad one in the body doesn't matter.
         unset($errors['authoredOn']);

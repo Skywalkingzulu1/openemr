@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Cqm;
+namespace DCL\Cqm;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\AbstractType;
+use DCL\Cqm\Qdm\BaseTypes\AbstractType;
 
 class Results extends AbstractType
 {

@@ -22,22 +22,22 @@
  *  portions of the Software.
  *   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <magauran@MedFetch.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2016 Raymond Magauran <magauran@MedFetch.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
 require_once(__DIR__ . "/../../../controllers/C_Document.class.php");
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
@@ -90,7 +90,7 @@ function eye_mag_report($pid, $encounter, $cols, $id, $formname = 'eye_mag'): vo
     global $form_id;
 
   /**
-   * openEMR note:  eye_mag Index is id,
+   * DCL note:  eye_mag Index is id,
    * linked to encounter in form_encounter
    * whose encounter is linked to id in forms.
    * Note that without encounter in each table,
@@ -2484,7 +2484,7 @@ function narrative($pid, $encounter, $cols, $form_id, $choice = 'full'): void
 
                 if ($PDF_OUTPUT) {
                     //display a stored optional electronic sig for this providerID, ie the patient's Doc not the tech
-                    //Isn't there a place in sites/..default../images for a jpg signature file for Rx printing or some other openEMR task?
+                    //Isn't there a place in sites/..default../images for a jpg signature file for Rx printing or some other DCL task?
                     $from_file = OEGlobalsBag::getInstance()->get("webserver_root") . "/interface/forms/" . $form_folder . "/images/sign_" . $providerID . ".jpg";
                     if (file_exists($from_file)) {
                         echo "<img style='width:50mm;' src='$from_file'><hr style='width:40mm;' />";

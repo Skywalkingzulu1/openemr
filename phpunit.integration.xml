@@ -19,7 +19,7 @@
     failOnPhpunitWarning="true"
     testdox="false">
   <extensions>
-    <bootstrap class="OpenEMR\PHPUnit\Extension" />
+    <bootstrap class="DCL\PHPUnit\Extension" />
   </extensions>
   <php>
     <env name="ENV" value="test" />

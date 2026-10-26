@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -70,12 +70,12 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $contentAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $contentReference = null;
 
@@ -85,7 +85,7 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     private $_fhirElementName = 'Contract.Friendly';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getContentAttachment()
     {
@@ -93,7 +93,7 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $contentAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $contentAttachment
      * @return $this
      */
     public function setContentAttachment($contentAttachment)
@@ -103,7 +103,7 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getContentReference()
     {
@@ -111,7 +111,7 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $contentReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $contentReference
      * @return $this
      */
     public function setContentReference($contentReference)

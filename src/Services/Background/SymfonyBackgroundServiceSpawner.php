@@ -6,19 +6,19 @@
  * --json [--site=<site>]` using symfony/process and parses a single JSON
  * result line from the child's stdout.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Background;
+namespace DCL\Services\Background;
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Process\Exception\ProcessTimedOutException;
 use Symfony\Component\Process\PhpExecutableFinder;
@@ -77,14 +77,14 @@ final readonly class SymfonyBackgroundServiceSpawner implements BackgroundServic
      * without the nonce check the reverse-scanning parser would find
      * the forged line first (CWE-345).
      */
-    private const NONCE_ENV_VAR = 'OPENEMR_BG_NONCE';
+    private const NONCE_ENV_VAR = 'DCL_BG_NONCE';
 
     private LoggerInterface $logger;
 
     private string $phpBinary;
 
     /**
-     * @param string      $projectDir Absolute path to the OpenEMR project
+     * @param string      $projectDir Absolute path to the DCL project
      *                                root (used to locate bin/console).
      * @param string|null $phpBinary  Absolute path to the PHP CLI binary
      *                                the child should run under. When

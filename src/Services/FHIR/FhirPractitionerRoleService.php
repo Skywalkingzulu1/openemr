@@ -1,36 +1,36 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\PractitionerRoleService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\PractitionerRoleService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR PractitionerRole Service
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirPractitionerRoleService extends FhirServiceBase implements IResourceUSCIGProfileService, INonPatientCompartmentResourceService
 {
@@ -51,7 +51,7 @@ class FhirPractitionerRoleService extends FhirServiceBase implements IResourceUS
     }
 
     /**
-     * Returns an array mapping FHIR PractitionerRole Resource search parameters to OpenEMR PractitionerRole search parameters
+     * Returns an array mapping FHIR PractitionerRole Resource search parameters to DCL PractitionerRole search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -75,13 +75,13 @@ class FhirPractitionerRoleService extends FhirServiceBase implements IResourceUS
     }
 
     /**
-     * Parses an OpenEMR practitionerRole record, returning the equivalent FHIR PractitionerRole Resource
+     * Parses an DCL practitionerRole record, returning the equivalent FHIR PractitionerRole Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRPractitionerRole
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $practitionerRoleResource = new FHIRPractitionerRole();
 
@@ -150,20 +150,20 @@ class FhirPractitionerRoleService extends FhirServiceBase implements IResourceUS
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->practitionerRoleService->search($openEMRSearchParameters);
+        return $this->practitionerRoleService->search($DCLSearchParameters);
     }
 
     /**
      * Parses a FHIR PractitionerRole resource. Practitioner and Organization references
-     * are required (resolved to numeric ids in insertOpenEMRRecord). For code/specialty,
-     * we look for the first coding whose `code` exists in OpenEMR's list_options under
+     * are required (resolved to numeric ids in insertDCLRecord). For code/specialty,
+     * we look for the first coding whose `code` exists in DCL's list_options under
      * `us-core-provider-role` / `us-core-provider-specialty` respectively; without a
      * direct match, the raw code string is passed through and the validator will reject
      * it at insert time.
@@ -227,10 +227,10 @@ class FhirPractitionerRoleService extends FhirServiceBase implements IResourceUS
     /**
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR PractitionerRole record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL PractitionerRole record array');
         }
 
         $practitionerUuid = $openEmrRecord['provider_uuid'] ?? null;
@@ -276,16 +276,16 @@ class FhirPractitionerRoleService extends FhirServiceBase implements IResourceUS
 
     /**
      * @param string $fhirResourceId
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         // FHIR PUT cannot rebind the practitioner or organization; drop those uuids from
         // the update payload to keep PractitionerRoleService::update focused on role/specialty.
-        unset($updatedOpenEMRRecord['provider_uuid'], $updatedOpenEMRRecord['facility_uuid']);
+        unset($updatedDCLRecord['provider_uuid'], $updatedDCLRecord['facility_uuid']);
         $result = $this->practitionerRoleService->update(
             $fhirResourceId,
-            FhirPayloadReader::stringKeyed($updatedOpenEMRRecord)
+            FhirPayloadReader::stringKeyed($updatedDCLRecord)
         );
         if ($result->hasErrors() || !$result->hasData()) {
             return $result;
@@ -293,13 +293,13 @@ class FhirPractitionerRoleService extends FhirServiceBase implements IResourceUS
 
         // Read the role back through the search path rather than returning what update() built.
         // It answers with a bare ['uuid' => ...] row, and FhirServiceBase::update() feeds that
-        // straight into parseOpenEMRRecord(), which reads role_code, specialty_code,
+        // straight into parseDCLRecord(), which reads role_code, specialty_code,
         // provider_uuid and facility_uuid -- so a successful PUT came back as a PractitionerRole
         // carrying nothing but its id and meta.
         // Keyed on providers.facility_role_uuid, the same field the _id search parameter above
         // resolves to -- so this is the identical lookup a GET performs. The outer select only
         // exposes it as the alias `uuid`, which MySQL will not accept in a WHERE clause.
-        return $this->searchForOpenEMRRecords([
+        return $this->searchForDCLRecords([
             'providers.facility_role_uuid' => new TokenSearchField(
                 'providers.facility_role_uuid',
                 [new TokenSearchValue($fhirResourceId, null, true)]

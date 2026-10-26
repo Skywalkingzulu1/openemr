@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A homogeneous material with a definite composition.
@@ -72,43 +72,43 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique identifier for the substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A code to indicate if the substance is actively used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRSubstanceStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFHIRSubstanceStatus
      */
     public $status = null;
 
     /**
      * A code that classifies the general type of substance.  This is used  for searching, sorting and display purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * A code (or set of codes) that identify this substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A description of the substance - its appearance, handling requirements, and other usage notes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceInstance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceInstance[]
      */
     public $instance = [];
 
     /**
      * A substance can be composed of other substances.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient[]
      */
     public $ingredient = [];
 
@@ -119,7 +119,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier for the substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -128,7 +128,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier for the substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -139,7 +139,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate if the substance is actively used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRSubstanceStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFHIRSubstanceStatus
      */
     public function getStatus()
     {
@@ -148,7 +148,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate if the substance is actively used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRSubstanceStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFHIRSubstanceStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -159,7 +159,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the general type of substance.  This is used  for searching, sorting and display purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -168,7 +168,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the general type of substance.  This is used  for searching, sorting and display purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -179,7 +179,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code (or set of codes) that identify this substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -188,7 +188,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code (or set of codes) that identify this substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -199,7 +199,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of the substance - its appearance, handling requirements, and other usage notes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -208,7 +208,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of the substance - its appearance, handling requirements, and other usage notes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -219,7 +219,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceInstance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceInstance[]
      */
     public function getInstance()
     {
@@ -228,7 +228,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceInstance $instance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceInstance $instance
      * @return $this
      */
     public function addInstance($instance)
@@ -239,7 +239,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A substance can be composed of other substances.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient[]
      */
     public function getIngredient()
     {
@@ -248,7 +248,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A substance can be composed of other substances.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient $ingredient
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)

@@ -1,49 +1,49 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifierUse;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRUri;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchQueryConfig;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPatient;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
+use DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRHumanName;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifierUse;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRElement\FHIRUri;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\ListService;
+use DCL\Services\PatientService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchQueryConfig;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR Patient Service
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 class FhirPatientService extends FhirServiceBase implements IFhirExportableResourceService, IResourceUSCIGProfileService, IPatientCompartmentResourceService
@@ -117,7 +117,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Returns an array mapping FHIR Patient Resource search parameters to OpenEMR Patient search parameters
+     * Returns an array mapping FHIR Patient Resource search parameters to DCL Patient search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -185,13 +185,13 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Parses an OpenEMR patient record, returning the equivalent FHIR Patient Resource
+     * Parses an DCL patient record, returning the equivalent FHIR Patient Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRPatient
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $patientResource = new FHIRPatient();
 
@@ -212,36 +212,36 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         $id->setValue($dataRecord['uuid']);
         $patientResource->setId($id);
 
-        $this->parseOpenEMRPatientSummaryText($patientResource, $dataRecord);
-        $this->parseOpenEMRPatientName($patientResource, $dataRecord);
-        $this->parseOpenEMRPatientAddress($patientResource, $dataRecord);
-        $this->parseOpenEMRPatientTelecom($patientResource, $dataRecord);
+        $this->parseDCLPatientSummaryText($patientResource, $dataRecord);
+        $this->parseDCLPatientName($patientResource, $dataRecord);
+        $this->parseDCLPatientAddress($patientResource, $dataRecord);
+        $this->parseDCLPatientTelecom($patientResource, $dataRecord);
 
-        $this->parseOpenEMRDateOfBirth($patientResource, $dataRecord['DOB'] ?? null);
-        $this->parseOpenEMRGenderAndBirthSex($patientResource, $dataRecord['sex'] ?? 'Unknown');
-        $this->parseOpenEMRRaceRecord($patientResource, $dataRecord['race'] ?? '');
-        $this->parseOpenEMREthnicityRecord($patientResource, $dataRecord['ethnicity'] ?? '');
-        $this->parseOpenEMRSocialSecurityRecord($patientResource, $dataRecord['ss'] ?? null);
-        $this->parseOpenEMRPublicPatientIdentifier($patientResource, $dataRecord['pubpid'] ?? null);
-        $this->parseOpenEMRCommunicationRecord($patientResource, $dataRecord['language'] ?? null);
-        $this->parseOpenEMRGeneralPractitioner($patientResource, $dataRecord);
+        $this->parseDCLDateOfBirth($patientResource, $dataRecord['DOB'] ?? null);
+        $this->parseDCLGenderAndBirthSex($patientResource, $dataRecord['sex'] ?? 'Unknown');
+        $this->parseDCLRaceRecord($patientResource, $dataRecord['race'] ?? '');
+        $this->parseDCLEthnicityRecord($patientResource, $dataRecord['ethnicity'] ?? '');
+        $this->parseDCLSocialSecurityRecord($patientResource, $dataRecord['ss'] ?? null);
+        $this->parseDCLPublicPatientIdentifier($patientResource, $dataRecord['pubpid'] ?? null);
+        $this->parseDCLCommunicationRecord($patientResource, $dataRecord['language'] ?? null);
+        $this->parseDCLGeneralPractitioner($patientResource, $dataRecord);
 
         // US Core 6.1.1 Extensions
         // us-core-race -> race, us-core-ethnicity -> ethnicity, tribalAffiliation, us-core-birthsex -> birthsex, sex, genderIdentity
-        // birthsex and genderIdentity are handled already in parseOpenEMRGenderAndBirthSex
-        $this->parseOpenEMRGenderIdentity($patientResource, $dataRecord);
-        $this->parseOpenEMRPatientSexExtension($patientResource, $dataRecord);
-        $this->parseOpenEMRPatientTribalAffiliationExtension($patientResource, $dataRecord);
+        // birthsex and genderIdentity are handled already in parseDCLGenderAndBirthSex
+        $this->parseDCLGenderIdentity($patientResource, $dataRecord);
+        $this->parseDCLPatientSexExtension($patientResource, $dataRecord);
+        $this->parseDCLPatientTribalAffiliationExtension($patientResource, $dataRecord);
 
         // US Core 7.0.0 Extensions
         // nothing added here
 
         // US Core 8.0.0 Extensions
         // drops genderIdentity,birthSex, adds interpreterRequired
-        $this->parseOpenEMRPatientInterpreterNeededExtension($patientResource, $dataRecord);
+        $this->parseDCLPatientInterpreterNeededExtension($patientResource, $dataRecord);
 
         // Deceased date
-        $this->parseOpenEMRPatientDeceasedDateTime($patientResource, $dataRecord);
+        $this->parseDCLPatientDeceasedDateTime($patientResource, $dataRecord);
 
         if ($encode) {
             return json_encode($patientResource);
@@ -250,7 +250,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRPatientSummaryText(FHIRPatient $patientResource, $dataRecord)
+    private function parseDCLPatientSummaryText(FHIRPatient $patientResource, $dataRecord)
     {
 
         $narrativeText = '';
@@ -269,14 +269,14 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRDateOfBirth(FHIRPatient $patientResource, $dateOfBirth)
+    private function parseDCLDateOfBirth(FHIRPatient $patientResource, $dateOfBirth)
     {
         if (isset($dateOfBirth)) {
             $patientResource->setBirthDate($dateOfBirth);
         }
     }
 
-    private function parseOpenEMRPatientName(FHIRPatient $patientResource, $dataRecord)
+    private function parseDCLPatientName(FHIRPatient $patientResource, $dataRecord)
     {
 
         $name = new FHIRHumanName();
@@ -332,7 +332,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRPatientAddress(FHIRPatient $patientResource, $dataRecord)
+    private function parseDCLPatientAddress(FHIRPatient $patientResource, $dataRecord)
     {
         if (!empty($dataRecord['addresses'])) {
             foreach ($dataRecord['addresses'] as $address) {
@@ -344,7 +344,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRPatientTelecom(FHIRPatient $patientResource, $dataRecord)
+    private function parseDCLPatientTelecom(FHIRPatient $patientResource, $dataRecord)
     {
 
         if (!empty($dataRecord['phone_home'])) {
@@ -371,7 +371,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRGenderAndBirthSex(FHIRPatient $patientResource, $sex)
+    private function parseDCLGenderAndBirthSex(FHIRPatient $patientResource, $sex)
     {
         $genderValue = strtolower((string) $sex) ?? 'unknown';
         // @see https://www.hl7.org/fhir/us/core/ValueSet-birthsex.html
@@ -415,7 +415,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         $patientResource->addExtension($birthSexExtension);
         $patientResource->setGender($gender);
     }
-    private function parseOpenEMRRaceRecord(FHIRPatient $patientResource, $race)
+    private function parseDCLRaceRecord(FHIRPatient $patientResource, $race)
     {
         $code = 'UNK';
         $display = xl("Unknown");
@@ -455,7 +455,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         $patientResource->addExtension($raceExtension);
     }
 
-    private function parseOpenEMREthnicityRecord(FHIRPatient $patientResource, $ethnicity)
+    private function parseDCLEthnicityRecord(FHIRPatient $patientResource, $ethnicity)
     {
         // TODO: this is a required field, so not sure what we want to do if this is missing?
         if (!empty($ethnicity)) {
@@ -488,7 +488,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRSocialSecurityRecord(FHIRPatient $patientResource, $ssn)
+    private function parseDCLSocialSecurityRecord(FHIRPatient $patientResource, $ssn)
     {
         // Not sure what to do here but this is on the 2021 HL7 US Core page about SSN
         // * The Patient’s Social Security Numbers SHOULD NOT be used as a patient identifier in Patient.identifier.value.
@@ -545,7 +545,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         return $this->cachedListOptions[$list_id][$option_id] ?? null;
     }
 
-    private function parseOpenEMRPublicPatientIdentifier(FHIRPatient $patientResource, $pubpid)
+    private function parseDCLPublicPatientIdentifier(FHIRPatient $patientResource, $pubpid)
     {
         if (!empty($pubpid)) {
             $patientResource->addIdentifier(
@@ -561,7 +561,7 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRCommunicationRecord(FHIRPatient $patientResource, $language)
+    private function parseDCLCommunicationRecord(FHIRPatient $patientResource, $language)
     {
         $record = $this->getCachedListOption('language', $language);
         if (empty($language) || empty($record)) {
@@ -585,14 +585,14 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
         }
     }
 
-    private function parseOpenEMRGeneralPractitioner(FHIRPatient $patientResource, array $dataRecord)
+    private function parseDCLGeneralPractitioner(FHIRPatient $patientResource, array $dataRecord)
     {
         if (!empty($dataRecord['provider_uuid'])) {
             $patientResource->addGeneralPractitioner(UtilsService::createRelativeReference('Practitioner', $dataRecord['provider_uuid']));
         }
     }
 
-    protected function parseOpenEMRGenderIdentity(FHIRPatient $patientResource, array $dataRecord): void
+    protected function parseDCLGenderIdentity(FHIRPatient $patientResource, array $dataRecord): void
     {
         if (!empty($dataRecord['gender_identity'])) {
             $genderIdentityExtension = new FHIRExtension();
@@ -636,9 +636,9 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Parses OpenEMR administrative sex data into US Core sex extension
+     * Parses DCL administrative sex data into US Core sex extension
      */
-    protected function parseOpenEMRPatientSexExtension(FHIRPatient $patientResource, array $dataRecord)
+    protected function parseDCLPatientSexExtension(FHIRPatient $patientResource, array $dataRecord)
     {
         // we have two different implementations based upon the highest US Core version we are supporting.
         // US Core 8.0.0 implemented a breaking change by switching from using a Code datatype to a Coding datatype.
@@ -670,9 +670,9 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Parses OpenEMR tribal affiliation data into US Core tribal-affiliation extension
+     * Parses DCL tribal affiliation data into US Core tribal-affiliation extension
      */
-    protected function parseOpenEMRPatientTribalAffiliationExtension(FHIRPatient $patientResource, array $dataRecord): void
+    protected function parseDCLPatientTribalAffiliationExtension(FHIRPatient $patientResource, array $dataRecord): void
     {
         if (!empty($dataRecord['tribal_affiliations'])) {
             // for now we just handle a single tribal affiliation
@@ -704,9 +704,9 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Parses OpenEMR interpreter needed data into US Core interpreter-needed extension
+     * Parses DCL interpreter needed data into US Core interpreter-needed extension
      */
-    protected function parseOpenEMRPatientInterpreterNeededExtension(FHIRPatient $patientResource, array $dataRecord)
+    protected function parseDCLPatientInterpreterNeededExtension(FHIRPatient $patientResource, array $dataRecord)
     {
         $interpreterExtension = new FHIRExtension();
         $interpreterExtension->setUrl('http://hl7.org/fhir/us/core/StructureDefinition/us-core-interpreter-needed');
@@ -730,11 +730,11 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Parses OpenEMR deceased date into FHIR deceasedDateTime
+     * Parses DCL deceased date into FHIR deceasedDateTime
      * @param FHIRPatient $patientResource
      * @param array $dataRecord
      */
-    protected function parseOpenEMRPatientDeceasedDateTime(FHIRPatient $patientResource, array $dataRecord): void
+    protected function parseDCLPatientDeceasedDateTime(FHIRPatient $patientResource, array $dataRecord): void
     {
         // note this is a 0..1 field so we either have a date or we explicitly state false
         if (!empty($dataRecord['deceased_date'])) {
@@ -765,10 +765,10 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Parses a FHIR Patient Resource, returning the equivalent OpenEMR patient record.
+     * Parses a FHIR Patient Resource, returning the equivalent DCL patient record.
      *
      * @param array $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record (array)
+     * @return array a mapped DCL data record (array)
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -893,38 +893,38 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      *
-     * @param array $openEmrRecord OpenEMR patient record
+     * @param array $openEmrRecord DCL patient record
      * @return ProcessingResult
      */
-    public function insertOpenEMRRecord($openEmrRecord)
+    public function insertDCLRecord($openEmrRecord)
     {
         return $this->patientService->insert($openEmrRecord);
     }
 
 
     /**
-     * Updates an existing OpenEMR record.
+     * Updates an existing DCL record.
      *
-     * @param $fhirResourceId //The OpenEMR record's FHIR Resource ID.
-     * @param $updatedOpenEMRRecord //The "updated" OpenEMR record.
+     * @param $fhirResourceId //The DCL record's FHIR Resource ID.
+     * @param $updatedDCLRecord //The "updated" DCL record.
      * @return ProcessingResult
      */
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
-        $processingResult = $this->patientService->update($fhirResourceId, $updatedOpenEMRRecord);
+        $processingResult = $this->patientService->update($fhirResourceId, $updatedDCLRecord);
         return $processingResult;
     }
 
-    protected function searchForOpenEMRRecordsWithConfig($openEMRSearchParameters, SearchQueryConfig $config): ProcessingResult
+    protected function searchForDCLRecordsWithConfig($DCLSearchParameters, SearchQueryConfig $config): ProcessingResult
     {
         // do any conversions on the data that we need here
 
         // we need to process our gender values here.
-        if (isset($openEMRSearchParameters[self::FIELD_NAME_GENDER])) {
+        if (isset($DCLSearchParameters[self::FIELD_NAME_GENDER])) {
             /** @var TokenSearchField $field */
-            $field = $openEMRSearchParameters[self::FIELD_NAME_GENDER];
+            $field = $DCLSearchParameters[self::FIELD_NAME_GENDER];
 
             $upperCaseCode = function (TokenSearchValue $tokenSearchValue) {
                 $tokenSearchValue->setCode(ucfirst($tokenSearchValue->getCode()));
@@ -935,18 +935,18 @@ class FhirPatientService extends FhirServiceBase implements IFhirExportableResou
             $field->setValues(array_map($upperCaseCode, $field->getValues()));
         }
 
-        return $this->patientService->search($openEMRSearchParameters, true, $config);
+        return $this->patientService->search($DCLSearchParameters, true, $config);
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->searchForOpenEMRRecordsWithConfig($openEMRSearchParameters, new SearchQueryConfig());
+        return $this->searchForDCLRecordsWithConfig($DCLSearchParameters, new SearchQueryConfig());
     }
 
     public function createProvenanceResource($dataRecord, $encode = false)

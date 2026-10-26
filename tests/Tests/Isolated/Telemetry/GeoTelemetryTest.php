@@ -6,16 +6,16 @@
  * Tests GeoTelemetry functionality without external network dependencies.
  * Uses PHPUnit mocks to test business logic in isolation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Telemetry;
+namespace DCL\Tests\Isolated\Telemetry;
 
-use OpenEMR\Telemetry\GeoTelemetry;
+use DCL\Telemetry\GeoTelemetry;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -36,11 +36,11 @@ class GeoTelemetryTest extends TestCase
     }
 
     /**
-     * Clean cache file - use OpenEMR temp directory from globals
+     * Clean cache file - use DCL temp directory from globals
      */
     private function cleanCache(): void
     {
-        $cacheFile = sys_get_temp_dir() . '/cache/openemr_geo_cache.json';
+        $cacheFile = sys_get_temp_dir() . '/cache/DCL_geo_cache.json';
         if (file_exists($cacheFile)) {
             @chmod($cacheFile, 0666);
             @unlink($cacheFile);

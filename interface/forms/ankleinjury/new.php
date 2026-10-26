@@ -3,8 +3,8 @@
 /**
  * ankleinjury new.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Nikolai Vitsyn
  * @author    cfapress <cfapress>
  * @author    Robert Down <robertdown@live.com>
@@ -13,16 +13,16 @@
  * @copyright Copyright (c) 2008 cfapress <cfapress>
  * @copyright Copyright (c) 2017-2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
 $srcdir = OEGlobalsBag::getInstance()->getSrcDir();
@@ -124,13 +124,13 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
  <!--
  function doCPT(select) {
     var numchecked = 0;
-    for (i=0; i<document.my_form.openemr_net_cptcode.length; i++) {
-        if (document.my_form.openemr_net_cptcode[i].checked == true) {
+    for (i=0; i<document.my_form.DCL_net_cptcode.length; i++) {
+        if (document.my_form.DCL_net_cptcode[i].checked == true) {
             numchecked++;
         }
     }
     if (numchecked == 0) {
-        document.my_form.openemr_net_cptcode[1].checked = true;
+        document.my_form.DCL_net_cptcode[1].checked = true;
     }
  }
  -->
@@ -166,9 +166,9 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
 <tr>
     <td></td>
     <td colspan="2">
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="openemr_net_cptcode" value=""><?php echo xlt('none{{Code}}'); ?><br />
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="openemr_net_cptcode" value="99212 Established - Uncomplicated"><?php echo xlt('99212 Established - Uncomplicated'); ?><br />
-        &nbsp;&nbsp;&nbsp;<input type="radio" name="openemr_net_cptcode" value="99213 Established - Low Complexity"><?php echo xlt('99213 Established - Low Complexity'); ?><br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="DCL_net_cptcode" value=""><?php echo xlt('none{{Code}}'); ?><br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="DCL_net_cptcode" value="99212 Established - Uncomplicated"><?php echo xlt('99212 Established - Uncomplicated'); ?><br />
+        &nbsp;&nbsp;&nbsp;<input type="radio" name="DCL_net_cptcode" value="99213 Established - Low Complexity"><?php echo xlt('99213 Established - Low Complexity'); ?><br />
     </td>
 </tr>
 </table>

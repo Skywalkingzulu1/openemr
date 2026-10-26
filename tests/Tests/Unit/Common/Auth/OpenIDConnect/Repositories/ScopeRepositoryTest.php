@@ -2,20 +2,20 @@
 
 /**
  * ScopeRepositoryTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Auth\OpenIDConnect\Repositories;
+namespace DCL\Tests\Unit\Common\Auth\OpenIDConnect\Repositories;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\FHIR\Config\ServerConfig;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\FHIR\Config\ServerConfig;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -48,7 +48,7 @@ class ScopeRepositoryTest extends TestCase
             }
         }
         $diff = array_diff($expectedScopes, $scopes);
-        $this->assertEquals([], $diff, "OpenEMR api scope of 'api:oemr api:port api:fhir' should return all scopes");
+        $this->assertEquals([], $diff, "DCL api scope of 'api:oemr api:port api:fhir' should return all scopes");
     }
 
     public function testBuildScopeValidatorArrayMultipleOperations(): void

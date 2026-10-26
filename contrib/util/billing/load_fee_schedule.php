@@ -3,16 +3,16 @@
 /**
  * Load a fee schedule from a payer
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    stephen waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2023 stephen waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
 // Enable this script via environment variable
-if (!getenv('OPENEMR_ENABLE_LOAD_FEE_SCHEDULE')) {
-    die('Set OPENEMR_ENABLE_LOAD_FEE_SCHEDULE=1 environment variable to enable this script');
+if (!getenv('DCL_ENABLE_LOAD_FEE_SCHEDULE')) {
+    die('Set DCL_ENABLE_LOAD_FEE_SCHEDULE=1 environment variable to enable this script');
 }
 
 if (php_sapi_name() !== 'cli') {
@@ -30,7 +30,7 @@ $ignoreAuth = true;
 require_once __DIR__ . "/../../../interface/globals.php";
 
 use League\Csv\Reader;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 // setup a csv file with a header consisting of type, code and modifier
 // at the specified location

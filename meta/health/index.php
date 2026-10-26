@@ -6,18 +6,18 @@
  * Provides liveness and readiness probe endpoints for Kubernetes and Docker.
  * Access restriction should be configured at the infrastructure level.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Load autoloader
 require_once __DIR__ . "/../../vendor/autoload.php";
 
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Health\HealthChecker;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Health\HealthChecker;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -45,13 +45,13 @@ try {
             require_once $sqlconfPath;
         }
 
-        // Check if OpenEMR is installed ($config is set in sqlconf.php)
+        // Check if DCL is installed ($config is set in sqlconf.php)
         global $config;
         $isInstalled = isset($config) && $config === 1;
 
         if ($isInstalled) {
-            // Bootstrap OpenEMR globals (this sets up database connection)
-            // NOTE: This loads the full OpenEMR framework on each probe request.
+            // Bootstrap DCL globals (this sets up database connection)
+            // NOTE: This loads the full DCL framework on each probe request.
             // For high-frequency probes, a lighter bootstrap path that only
             // initializes the database connection could improve performance.
             //

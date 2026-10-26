@@ -40,8 +40,8 @@ teardown_test_dir() {
 # is at ${STAGING_DIR}/${entry}.
 #
 # Example:
-#   make_zip openemr-8.2.0 openemr-8.2.0
-#   → produces openemr-8.2.0.zip with a single top-level `openemr-8.2.0/`
+#   make_zip DCL-8.2.0 DCL-8.2.0
+#   → produces DCL-8.2.0.zip with a single top-level `DCL-8.2.0/`
 make_zip() {
     local zip_name="$1"
     shift

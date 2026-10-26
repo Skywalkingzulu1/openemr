@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare;
+namespace DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.
@@ -71,13 +71,13 @@ class FHIREpisodeOfCareStatusHistory extends FHIRBackboneElement implements \Jso
 {
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
      */
     public $status = null;
 
     /**
      * The period during this EpisodeOfCare that the specific status applied.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -88,7 +88,7 @@ class FHIREpisodeOfCareStatusHistory extends FHIRBackboneElement implements \Jso
 
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
      */
     public function getStatus()
     {
@@ -97,7 +97,7 @@ class FHIREpisodeOfCareStatusHistory extends FHIRBackboneElement implements \Jso
 
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -108,7 +108,7 @@ class FHIREpisodeOfCareStatusHistory extends FHIRBackboneElement implements \Jso
 
     /**
      * The period during this EpisodeOfCare that the specific status applied.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -117,7 +117,7 @@ class FHIREpisodeOfCareStatusHistory extends FHIRBackboneElement implements \Jso
 
     /**
      * The period during this EpisodeOfCare that the specific status applied.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

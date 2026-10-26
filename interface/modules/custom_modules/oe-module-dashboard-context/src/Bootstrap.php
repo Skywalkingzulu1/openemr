@@ -3,22 +3,22 @@
 /**
  * Dashboard Context Manager Module Bootstrap Class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\DashboardContext;
+namespace DCL\Modules\DashboardContext;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDemographics\RenderEvent;
-use OpenEMR\Events\PatientDemographics\RenderEvent as pRenderEvent;
-use OpenEMR\Events\UserInterface\PageHeadingRenderEvent;
-use OpenEMR\Menu\MenuEvent;
-use OpenEMR\Modules\DashboardContext\Controller\ContextWidgetController;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDemographics\RenderEvent;
+use DCL\Events\PatientDemographics\RenderEvent as pRenderEvent;
+use DCL\Events\UserInterface\PageHeadingRenderEvent;
+use DCL\Menu\MenuEvent;
+use DCL\Modules\DashboardContext\Controller\ContextWidgetController;
 use stdClass;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

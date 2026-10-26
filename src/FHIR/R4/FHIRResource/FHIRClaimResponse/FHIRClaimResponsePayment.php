@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaimResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -71,37 +71,37 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Whether this represents partial or complete payment of the benefits payable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Total amount of all adjustments to this payment included in this transaction which are not related to this claim's adjudication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $adjustment = null;
 
     /**
      * Reason for the payment adjustment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $adjustmentReason = null;
 
     /**
      * Estimated date the payment will be issued or the actual issue date of payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $date = null;
 
     /**
      * Benefits payable less any payment adjustment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $amount = null;
 
     /**
      * Issuer's unique identifier for the payment instrument.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
@@ -112,7 +112,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Whether this represents partial or complete payment of the benefits payable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -121,7 +121,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Whether this represents partial or complete payment of the benefits payable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -132,7 +132,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Total amount of all adjustments to this payment included in this transaction which are not related to this claim's adjudication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getAdjustment()
     {
@@ -141,7 +141,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Total amount of all adjustments to this payment included in this transaction which are not related to this claim's adjudication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $adjustment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $adjustment
      * @return $this
      */
     public function setAdjustment($adjustment)
@@ -152,7 +152,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Reason for the payment adjustment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAdjustmentReason()
     {
@@ -161,7 +161,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Reason for the payment adjustment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $adjustmentReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $adjustmentReason
      * @return $this
      */
     public function setAdjustmentReason($adjustmentReason)
@@ -172,7 +172,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Estimated date the payment will be issued or the actual issue date of payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getDate()
     {
@@ -181,7 +181,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Estimated date the payment will be issued or the actual issue date of payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $date
      * @return $this
      */
     public function setDate($date)
@@ -192,7 +192,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Benefits payable less any payment adjustment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getAmount()
     {
@@ -201,7 +201,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Benefits payable less any payment adjustment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -212,7 +212,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Issuer's unique identifier for the payment instrument.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -221,7 +221,7 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Issuer's unique identifier for the payment instrument.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)

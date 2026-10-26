@@ -40,7 +40,7 @@ jobs:
       if: github.event_name != 'pull_request'
       # Exclude the default echoed-request and printed-request rules from p/php
       # and use our custom versions in semgrep.yaml instead. Our custom rules add
-      # OpenEMR's sanitization functions (attr, text, xlt, etc.) to prevent false
+      # DCL's sanitization functions (attr, text, xlt, etc.) to prevent false
       # positives while still detecting real XSS vulnerabilities.
       # Exclude Documentation/ (generated SchemaSpy HTML, not application code)
       # and *.mustache (QRDA/CDA XML templates, not browser-rendered HTML).
@@ -69,7 +69,7 @@ jobs:
         BASE_SHA: ${{ github.event.pull_request.base.sha }}
       # Exclude the default echoed-request and printed-request rules from p/php
       # and use our custom versions in semgrep.yaml instead. Our custom rules add
-      # OpenEMR's sanitization functions (attr, text, xlt, etc.) to prevent false
+      # DCL's sanitization functions (attr, text, xlt, etc.) to prevent false
       # positives while still detecting real XSS vulnerabilities.
       # Exclude Documentation/ (generated SchemaSpy HTML, not application code)
       # and *.mustache (QRDA/CDA XML templates, not browser-rendered HTML).

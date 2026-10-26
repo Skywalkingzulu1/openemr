@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A container for slots of time that may be available for booking appointments.
@@ -72,49 +72,49 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * External Ids for this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Whether this schedule record is in active use or should not be used (such as was entered in error).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $serviceCategory = [];
 
     /**
      * The specific service that is to be performed during this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $serviceType = [];
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialty = [];
 
     /**
      * Slots that reference this schedule resource provide the availability details to these referenced resource(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $actor = [];
 
     /**
      * The period of time that the slots that reference this Schedule resource cover (even if none exist). These  cover the amount of time that an organization's planning horizon; the interval for which they are currently accepting appointments. This does not define a "template" for planning outside these dates.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $planningHorizon = null;
 
     /**
      * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
@@ -125,7 +125,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * External Ids for this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * External Ids for this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether this schedule record is in active use or should not be used (such as was entered in error).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -154,7 +154,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether this schedule record is in active use or should not be used (such as was entered in error).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -165,7 +165,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceCategory()
     {
@@ -174,7 +174,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceCategory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceCategory
      * @return $this
      */
     public function addServiceCategory($serviceCategory)
@@ -185,7 +185,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specific service that is to be performed during this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceType()
     {
@@ -194,7 +194,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specific service that is to be performed during this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
      * @return $this
      */
     public function addServiceType($serviceType)
@@ -205,7 +205,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
@@ -214,7 +214,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -225,7 +225,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Slots that reference this schedule resource provide the availability details to these referenced resource(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getActor()
     {
@@ -234,7 +234,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Slots that reference this schedule resource provide the availability details to these referenced resource(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function addActor($actor)
@@ -245,7 +245,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time that the slots that reference this Schedule resource cover (even if none exist). These  cover the amount of time that an organization's planning horizon; the interval for which they are currently accepting appointments. This does not define a "template" for planning outside these dates.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPlanningHorizon()
     {
@@ -254,7 +254,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time that the slots that reference this Schedule resource cover (even if none exist). These  cover the amount of time that an organization's planning horizon; the interval for which they are currently accepting appointments. This does not define a "template" for planning outside these dates.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $planningHorizon
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $planningHorizon
      * @return $this
      */
     public function setPlanningHorizon($planningHorizon)
@@ -265,7 +265,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -274,7 +274,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)

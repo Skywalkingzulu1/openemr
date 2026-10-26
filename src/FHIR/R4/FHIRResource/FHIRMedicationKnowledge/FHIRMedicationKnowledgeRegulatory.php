@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,25 +71,25 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 {
     /**
      * The authority that is specifying the regulations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $regulatoryAuthority = null;
 
     /**
      * Specifies if changes are allowed when dispensing a medication from a regulatory perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
      */
     public $substitution = [];
 
     /**
      * Specifies the schedule of a medication in jurisdiction.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
      */
     public $schedule = [];
 
     /**
      * The maximum number of units of the medication that can be dispensed in a period.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
      */
     public $maxDispense = null;
 
@@ -100,7 +100,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * The authority that is specifying the regulations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRegulatoryAuthority()
     {
@@ -109,7 +109,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * The authority that is specifying the regulations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $regulatoryAuthority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $regulatoryAuthority
      * @return $this
      */
     public function setRegulatoryAuthority($regulatoryAuthority)
@@ -120,7 +120,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * Specifies if changes are allowed when dispensing a medication from a regulatory perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
      */
     public function getSubstitution()
     {
@@ -129,7 +129,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * Specifies if changes are allowed when dispensing a medication from a regulatory perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution $substitution
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution $substitution
      * @return $this
      */
     public function addSubstitution($substitution)
@@ -140,7 +140,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * Specifies the schedule of a medication in jurisdiction.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
      */
     public function getSchedule()
     {
@@ -149,7 +149,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * Specifies the schedule of a medication in jurisdiction.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule $schedule
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule $schedule
      * @return $this
      */
     public function addSchedule($schedule)
@@ -160,7 +160,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * The maximum number of units of the medication that can be dispensed in a period.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
      */
     public function getMaxDispense()
     {
@@ -169,7 +169,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement implements \
 
     /**
      * The maximum number of units of the medication that can be dispensed in a period.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense $maxDispense
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense $maxDispense
      * @return $this
      */
     public function setMaxDispense($maxDispense)

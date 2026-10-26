@@ -2,11 +2,11 @@
 
 require_once(dirname(__DIR__, 5) . "/interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Modules\WenoModule\Services\PharmacyService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Modules\WenoModule\Services\PharmacyService;
 
 if (!AclMain::aclCheckCore('patients', 'rx')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/rx: Update Pharmacy", xl("Update Pharmacy"));

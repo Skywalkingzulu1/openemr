@@ -2,14 +2,14 @@
  * Insurance Policy Service - This is the service that handles the communication with the server
  * for the retrieval and saving of insurance policies for the patient.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 // note we do not use import statements here as we need to be able to dynamically load the classes as needed for cache
-// busting using the openemr asset version.  Another option would be to use a bundler but we don't have a consistent
+// busting using the DCL asset version.  Another option would be to use a bundler but we don't have a consistent
 // bundler in place yet so this is the best option for now.
 let {InsurancePolicyModel} = await import("./InsurancePolicyModel.js?v=" + window.top.jsGlobals.assetVersion);
 let {ValidationFieldError, ValidationError} = await import("../Error/ValidationError.js?v=" + window.top.jsGlobals.assetVersion);

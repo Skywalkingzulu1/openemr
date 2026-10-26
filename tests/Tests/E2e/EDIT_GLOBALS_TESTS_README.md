@@ -73,7 +73,7 @@ cd ci/apache_84_123  # or your preferred environment
 docker-compose --profile selenium up -d
 
 # Run tests inside the container
-docker-compose exec openemr bash
+docker-compose exec DCL bash
 SELENIUM_USE_GRID=true SELENIUM_HOST=selenium vendor/bin/phpunit tests/Tests/E2e/KkEditGlobalsTest.php
 ```
 
@@ -86,7 +86,7 @@ These tests respect the following environment variables (configured in `BaseTrai
 
 - `SELENIUM_USE_GRID`: Set to `"true"` to use Selenium Grid instead of local ChromeDriver
 - `SELENIUM_HOST`: Hostname of Selenium Grid (default: `"selenium"`)
-- `SELENIUM_BASE_URL`: Base URL of OpenEMR instance (default: `"http://openemr"`)
+- `SELENIUM_BASE_URL`: Base URL of DCL instance (default: `"http://DCL"`)
 - `SELENIUM_FORCE_HEADLESS`: Set to `"true"` to force headless mode (disables VNC viewing)
 
 ## Test Data Cleanup
@@ -119,7 +119,7 @@ vendor/bin/phpunit tests/Tests/E2e/KkEditGlobalsTest.php -v
 If tests fail, check:
 1. Browser console errors (visible in VNC viewer)
 2. PHPUnit error output
-3. OpenEMR logs in `sites/default/documents/logs_and_misc/`
+3. DCL logs in `sites/default/documents/logs_and_misc/`
 
 ## What Database Interactions Are Tested
 
@@ -166,7 +166,7 @@ To add these tests to your GitHub Actions workflow, ensure your workflow file in
 - name: Run E2E Tests
   run: |
     docker-compose --profile selenium up -d
-    docker-compose exec -T openemr bash -c "SELENIUM_USE_GRID=true vendor/bin/phpunit --testsuite e2e"
+    docker-compose exec -T DCL bash -c "SELENIUM_USE_GRID=true vendor/bin/phpunit --testsuite e2e"
 ```
 
 ## Known Limitations

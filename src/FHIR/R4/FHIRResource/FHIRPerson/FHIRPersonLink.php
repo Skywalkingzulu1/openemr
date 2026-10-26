@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPerson;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPerson;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPerson;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Demographics and administrative information about a person independent of a specific health-related context.
@@ -71,13 +71,13 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The resource to which this actual person is associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $target = null;
 
     /**
      * Level of assurance that this link is associated with the target resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentityAssuranceLevel
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentityAssuranceLevel
      */
     public $assurance = null;
 
@@ -88,7 +88,7 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The resource to which this actual person is associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTarget()
     {
@@ -97,7 +97,7 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The resource to which this actual person is associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $target
      * @return $this
      */
     public function setTarget($target)
@@ -108,7 +108,7 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Level of assurance that this link is associated with the target resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentityAssuranceLevel
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentityAssuranceLevel
      */
     public function getAssurance()
     {
@@ -117,7 +117,7 @@ class FHIRPersonLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Level of assurance that this link is associated with the target resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentityAssuranceLevel $assurance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentityAssuranceLevel $assurance
      * @return $this
      */
     public function setAssurance($assurance)

@@ -8,17 +8,17 @@
  * {@see self::addSupportedCodeType()} for each code type it can import, otherwise the type is
  * never offered to the user.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (C) 2026 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Events\Codes;
+namespace DCL\Events\Codes;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

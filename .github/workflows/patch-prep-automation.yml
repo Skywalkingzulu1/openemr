@@ -44,7 +44,7 @@ jobs:
   patch-prep:
     name: Open rel-side + master-side patch-prep PRs
     if: |
-      github.repository == 'openemr/openemr'
+      github.repository == 'DCL/DCL'
       && (
         (github.event_name == 'push'
          && startsWith(github.ref, 'refs/heads/rel-'))
@@ -87,7 +87,7 @@ jobs:
         # consumers (downstream rel-update dispatch fires on the
         # release-prep PR cycle for the new patch instead).
         owner: ${{ github.repository_owner }}
-        repositories: openemr
+        repositories: DCL
 
     - name: Resolve rel-branch + target-version + prev-version
       id: resolve
@@ -288,7 +288,7 @@ jobs:
         REL_BRANCH: ${{ steps.resolve.outputs.rel-branch }}
         PREV_VERSION: ${{ steps.resolve.outputs.prev-version }}
       run: |
-        php bin/console openemr:patch-prep \
+        php bin/console DCL:patch-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -324,8 +324,8 @@ jobs:
         title: 'chore(release): patch-prep ${{ steps.resolve.outputs.rel-branch }} ${{ steps.resolve.outputs.target-version }} (rel-side)'
         body: ${{ steps.rel-pr-body.outputs.body }}
         commit-message: 'chore(release): patch-prep ${{ steps.resolve.outputs.rel-branch }} ${{ steps.resolve.outputs.target-version }} (rel-side)'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         draft: false
         delete-branch: false
 
@@ -353,7 +353,7 @@ jobs:
         REL_BRANCH: ${{ steps.resolve.outputs.rel-branch }}
         PREV_VERSION: ${{ steps.resolve.outputs.prev-version }}
       run: |
-        php bin/console openemr:patch-prep \
+        php bin/console DCL:patch-prep \
           --skip-globals \
           --target-version="${VERSION}" \
           --rel-branch="${REL_BRANCH}" \
@@ -389,7 +389,7 @@ jobs:
         title: 'chore(release): patch-prep ${{ steps.resolve.outputs.rel-branch }} ${{ steps.resolve.outputs.target-version }} (master-side)'
         body: ${{ steps.master-pr-body.outputs.body }}
         commit-message: 'chore(release): patch-prep ${{ steps.resolve.outputs.rel-branch }} ${{ steps.resolve.outputs.target-version }} (master-side)'
-        author: 'openemr-release-bot <release-bot@openemr.invalid>'
-        committer: 'openemr-release-bot <release-bot@openemr.invalid>'
+        author: 'DCL-release-bot <release-bot@DCL.invalid>'
+        committer: 'DCL-release-bot <release-bot@DCL.invalid>'
         draft: false
         delete-branch: false

@@ -25,7 +25,7 @@
  * Initial import.
  *
  * Revision 1.1.1.1  2005/03/09 19:59:43  wpennington
- * First import of OpenEMR
+ * First import of DCL
  *
  * Revision 1.2  2002/08/06 13:49:08  rufustfirefly
  * updated rxlist class for changes in RxList.com
@@ -33,8 +33,8 @@
  * Revision 1.1  2002/07/08 14:42:25  rufustfirefly
  * RxList.com prescription "module" for formulary
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    rufustfirefly
  * @author    wpennington
  * @author    drbowen
@@ -55,12 +55,12 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2021 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Rx;
+namespace DCL\Rx;
 
-use OpenEMR\Common\Http\oeHttp;
+use DCL\Common\Http\oeHttp;
 
 class RxList
 {

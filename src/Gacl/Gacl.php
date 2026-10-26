@@ -10,8 +10,8 @@
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Mike Benoit <ipso@snappymail.ca>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2002-2003 Mike Benoit <ipso@snappymail.ca>
@@ -19,13 +19,13 @@
  * @license   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html GNU Lesser General Public License 2.1
  */
 
-namespace OpenEMR\Gacl;
+namespace DCL\Gacl;
 
-use OpenEMR\BC\{
+use DCL\BC\{
     DatabaseConnectionFactory,
     DatabaseConnectionOptions,
 };
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 /*
  * Path to ADODB.
@@ -255,7 +255,7 @@ class Gacl {
     * @param string $root_aro_group The value of the ARO group (optional)
     * @param string $root_axo_group The value of the AXO group (optional)
     * @param bool $debug Debug the operation if true (optional)
-        * @param bool $return_all Option to return all applicable ACL's rather than just one. (optional) (Added by OpenEMR)
+        * @param bool $return_all Option to return all applicable ACL's rather than just one. (optional) (Added by DCL)
     * @return array Returns as much information as possible about the ACL so other functions can trim it down and omit unwanted data.
     */
     public function acl_query($aco_section_value, $aco_value, $aro_section_value, $aro_value, $axo_section_value=NULL, $axo_value=NULL, $root_aro_group=NULL, $root_axo_group=NULL, $debug=NULL, $return_all=FALSE) {
@@ -284,7 +284,7 @@ class Gacl {
              * The ordering is very important here, as well very tricky to get correct.
              * Currently there can be  duplicate ACLs, or ones that step on each other toes. In this case, the ACL that was last updated/created
              * is used; unless the $return_all parameter is set to TRUE, then will return the entire array of applicable ACL information (this
-                         * option was added by OpenEMR)
+                         * option was added by DCL)
              *
              * This is probably where the most optimizations can be made.
              */
@@ -400,7 +400,7 @@ class Gacl {
              * Order (ar.value IS NOT NULL) DESC should put ACLs given to specific AROs
              * ahead of any ACLs given to groups. This works well for exceptions to groups.
                          * If the $return_all parameter is set to TRUE, then will return the entire
-                         * array of applicable ACL information (this option was added by OpenEMR)
+                         * array of applicable ACL information (this option was added by DCL)
              */
 
             $order_by[] = 'a.updated_date DESC';

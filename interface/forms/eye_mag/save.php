@@ -17,11 +17,11 @@
  *    Ideally this concept when it comes to fruition will serve as a basis for any specialty image form
  *    to be used.  Upload image, drop widget and save it...
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <rmagauran@gmail.com>
  * @copyright Copyright (c) 2016- Raymond Magauran <rmagauran@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $table_name = "form_eye_mag";
@@ -32,25 +32,25 @@ $form_folder = "eye_mag";
 require_once(__DIR__ . "/../../globals.php");
 
 use Mpdf\Mpdf;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\BC\Utilities;
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Billing\FeeSheetChargeLookup;
-use OpenEMR\Billing\HcpcsDrugDefaults;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Forms\EyeMag\CopyMode;
-use OpenEMR\Forms\EyeMag\FamilyHistory;
-use OpenEMR\Forms\EyeMag\FeeSheetLine;
-use OpenEMR\Forms\EyeMag\PmsfhPanel;
-use OpenEMR\Forms\EyeMag\SqlFragment;
-use OpenEMR\Forms\EyeMag\Zone;
-use OpenEMR\Pdf\Config_Mpdf;
-use OpenEMR\Services\PatientIssuesService;
+use DCL\BC\ServiceContainer;
+use DCL\BC\Utilities;
+use DCL\Billing\BillingUtilities;
+use DCL\Billing\FeeSheetChargeLookup;
+use DCL\Billing\HcpcsDrugDefaults;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Forms\EyeMag\CopyMode;
+use DCL\Forms\EyeMag\FamilyHistory;
+use DCL\Forms\EyeMag\FeeSheetLine;
+use DCL\Forms\EyeMag\PmsfhPanel;
+use DCL\Forms\EyeMag\SqlFragment;
+use DCL\Forms\EyeMag\Zone;
+use DCL\Pdf\Config_Mpdf;
+use DCL\Services\PatientIssuesService;
 use Symfony\Component\HttpFoundation\Request;
 
 $srcdir = OEGlobalsBag::getInstance()->getSrcDir();
@@ -615,10 +615,10 @@ if (($_REQUEST["mode"]  ?? '') == "new") {
                         $newdata[$field_id] = get_layout_form_value($frow);
                     }
                 }
-                //have to figure where to put comments in this next line for the rest of openemr
+                //have to figure where to put comments in this next line for the rest of DCL
                 updateHistoryData($pid, $newdata);
                 if ($_REQUEST['marital_status'] > '') {
-                    // have to match input with list_option for marital to not break openEMR
+                    // have to match input with list_option for marital to not break DCL
                     $query = "select * from list_options where list_id='marital'";
                     $fres = sqlStatement($query);
                     while ($frow = sqlFetchArray($fres)) {
@@ -924,10 +924,10 @@ if (($_REQUEST["mode"]  ?? '') == "new") {
                         "(`pt_tracker_id`, `start_datetime`, `user`, `status`, `room`, `seq`) " .
                         "VALUES (?,NOW(),?,?,?,?)";
                     QueryUtils::sqlStatementThrowException($sql, [$tracker['id'], $userauthorized, $_POST['new_status'], ' ', ($tracker['lastseq'] + 1)]);
-                    $sql = "UPDATE `openemr_postcalendar_events` SET `pc_apptstatus` = ?, pc_room='' WHERE `pc_eid` = ?";
+                    $sql = "UPDATE `DCL_postcalendar_events` SET `pc_apptstatus` = ?, pc_room='' WHERE `pc_eid` = ?";
                     QueryUtils::sqlStatementThrowException($sql, [$_POST['new_status'], $tracker['eid']]);
                 }
-            } catch (\OpenEMR\Common\Database\SqlQueryException $e) {
+            } catch (\DCL\Common\Database\SqlQueryException $e) {
                 ServiceContainer::getLogger()->error(
                     'eye_mag save: patient_tracker update failed',
                     ['exception' => $e]

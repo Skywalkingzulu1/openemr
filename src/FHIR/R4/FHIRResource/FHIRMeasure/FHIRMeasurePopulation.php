@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasure;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The Measure resource provides the definition of a quality measure.
@@ -71,19 +71,19 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * The type of population criteria.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The human readable description of this population criteria.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * An expression that specifies the criteria for the population, typically the name of an expression in a library.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $criteria = null;
 
@@ -94,7 +94,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The type of population criteria.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -103,7 +103,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The type of population criteria.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -114,7 +114,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The human readable description of this population criteria.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -123,7 +123,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The human readable description of this population criteria.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -134,7 +134,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An expression that specifies the criteria for the population, typically the name of an expression in a library.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getCriteria()
     {
@@ -143,7 +143,7 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An expression that specifies the criteria for the population, typically the name of an expression in a library.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $criteria
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $criteria
      * @return $this
      */
     public function setCriteria($criteria)

@@ -1,17 +1,17 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
 // TODO: Would it be better to call these route guards?
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\RestControllers\Authorization\OAuth2DiscoveryController;
-use OpenEMR\RestControllers\Authorization\OAuth2PublicJsonWebKeyController;
-use OpenEMR\RestControllers\AuthorizationController;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClaimRepository;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEHttpKernel;
+use DCL\RestControllers\Authorization\OAuth2DiscoveryController;
+use DCL\RestControllers\Authorization\OAuth2PublicJsonWebKeyController;
+use DCL\RestControllers\AuthorizationController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
@@ -93,7 +93,7 @@ class OAuth2AuthorizationListener implements EventSubscriberInterface
         $globalsBag = $kernel->getGlobalsBag();
         $logger = $this->getLogger();
         if (!($request instanceof HttpRestRequest)) {
-            throw new HttpException(500, "OpenEMR Error: OAuth2AuthorizationStrategy requires HttpRestRequest");
+            throw new HttpException(500, "DCL Error: OAuth2AuthorizationStrategy requires HttpRestRequest");
         }
         $session = $request->getSession();
         // exit if api is not turned on
@@ -103,7 +103,7 @@ class OAuth2AuthorizationListener implements EventSubscriberInterface
         ) {
             $logger->debug("api disabled exiting call");
             $session->invalidate();
-            throw new NotFoundHttpException("OpenEMR Error: API is disabled");
+            throw new NotFoundHttpException("DCL Error: API is disabled");
         }
         // site is already valid from previous listener
 

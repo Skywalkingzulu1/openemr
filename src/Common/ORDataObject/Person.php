@@ -1,22 +1,22 @@
 <?php
 
 /**
- * Person Entity - Represents a person in OpenEMR
+ * Person Entity - Represents a person in DCL
  * Follows Active Record pattern for database persistence
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\ORDataObject;
+namespace DCL\Common\ORDataObject;
 
 use DateTime;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
 
 class Person extends ORDataObject implements \JsonSerializable, \Stringable
 {

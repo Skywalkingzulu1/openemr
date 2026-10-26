@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.
@@ -72,13 +72,13 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
 {
     /**
      * A reference to a code defined by a terminology system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $coding = [];
 
     /**
      * A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
@@ -89,7 +89,7 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
 
     /**
      * A reference to a code defined by a terminology system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getCoding()
     {
@@ -98,7 +98,7 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
 
     /**
      * A reference to a code defined by a terminology system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $coding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $coding
      * @return $this
      */
     public function addCoding($coding)
@@ -109,7 +109,7 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
 
     /**
      * A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -118,7 +118,7 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
 
     /**
      * A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)

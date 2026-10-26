@@ -3,32 +3,32 @@
 /**
  * TwigExtension class.
  *
- * OpenEMR central extension interface for twig.
+ * DCL central extension interface for twig.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Twig;
+namespace DCL\Common\Twig;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\Types\EncounterListOptionType;
-use OpenEMR\Common\Layouts\LayoutsUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\CacheUtils;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\OeUI\OemrUI;
-use OpenEMR\Services\LogoService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\Types\EncounterListOptionType;
+use DCL\Common\Layouts\LayoutsUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\CacheUtils;
+use DCL\Core\Header;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\OeUI\OemrUI;
+use DCL\Services\LogoService;
+use DCL\Services\Utils\DateFormatterUtils;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;

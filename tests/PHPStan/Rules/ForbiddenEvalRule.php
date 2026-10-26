@@ -6,16 +6,16 @@
  * Prevents use of PHP's eval() language construct, which executes arbitrary
  * PHP code from a string.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\Eval_;
@@ -43,7 +43,7 @@ class ForbiddenEvalRule implements Rule
             RuleErrorBuilder::message(
                 'eval() is forbidden. It executes arbitrary PHP code and is a critical security risk.'
             )
-                ->identifier('openemr.forbiddenEval')
+                ->identifier('DCL.forbiddenEval')
                 ->tip('Refactor to avoid dynamic code execution entirely')
                 ->build()
         ];

@@ -37,17 +37,17 @@
  *
  * Returns a count of due messages for current user.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    EMR Direct <https://www.emrdirect.com/>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2013 EMR Direct <https://www.emrdirect.com/>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Services\Background\BackgroundServiceRunner;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Services\Background\BackgroundServiceRunner;
 
 //ajax param should be set by calling ajax scripts
 $isAjaxCall = filter_has_var(INPUT_POST, 'ajax');

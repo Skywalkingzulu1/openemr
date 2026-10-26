@@ -119,7 +119,7 @@ files:
 #
 # docker-build-release.yml carries an `if:`-gated
 # `uses: ./.github/workflows/acceptance-docker.yml` reference (Phase 7c-
-# docker-latest-gate, openemr/openemr#13239). GitHub Actions parses the
+# docker-latest-gate, DCL/DCL#13239). GitHub Actions parses the
 # reusable-workflow reference at workflow-dispatch time, BEFORE
 # evaluating the `if:` guard. So on rel-800 (which doesn't
 # carry acceptance-docker.yml — see the exclude-branches on that entry
@@ -138,21 +138,21 @@ files:
 # above for the load-time reusable-workflow-reference constraint).
 - path: .github/scripts/verify-oci-labels.sh
   exclude-branches: [rel-800]
-# Phase 10c (openemr/openemr#TBD, 2026-07-30): expand-docker-tags.sh is
+# Phase 10c (DCL/DCL#TBD, 2026-07-30): expand-docker-tags.sh is
 # called from docker-build-release.yml's `expand_docker_tags` step;
 # same rel-800 exclusion applies (that branch doesn't carry
 # the caller workflow — see the docker-build-release.yml entry above
 # for the load-time reusable-workflow-reference constraint).
 - path: .github/scripts/expand-docker-tags.sh
   exclude-branches: [rel-800]
-# Phase 10c (openemr/openemr#TBD, 2026-07-30): reusable-docker-publish.yml
+# Phase 10c (DCL/DCL#TBD, 2026-07-30): reusable-docker-publish.yml
 # is called via `uses: ./.github/workflows/reusable-docker-publish.yml`
 # from docker-build-release.yml (gated path) — same reusable-workflow-
 # reference load-time constraint as docker-build-release.yml itself.
 # Same rel-800 exclusion applies.
 - path: .github/workflows/reusable-docker-publish.yml
   exclude-branches: [rel-800]
-# Phase 10e-3 (openemr/openemr#TBD, 2026-07-30): dockerhub-delete-tag.sh
+# Phase 10e-3 (DCL/DCL#TBD, 2026-07-30): dockerhub-delete-tag.sh
 # is called from reusable-docker-publish.yml's cleanup-candidate job.
 # The reusable's `run: .github/scripts/dockerhub-delete-tag.sh` resolves
 # at runtime against the branch's own checkout, so every branch that
@@ -185,7 +185,7 @@ files:
 #
 # All entries in this block exclude rel-800: that branch
 # predates the release mechanism entirely. It lacks the composer
-# autoload for OpenEMR\Release\* / OpenEMR\Common\Command\ReleasePrep\*
+# autoload for DCL\Release\* / DCL\Common\Command\ReleasePrep\*
 # and the Symfony Console classes the release-prep code depends on.
 # Syncing the code there would fail phpstan + isolated tests +
 # composer-require-checker on that branch (see #12912/#12913 for
@@ -206,13 +206,13 @@ files:
 - path: .github/workflows/build-release.yml
   # rel-820 exclusion dropped 2026-07-28: rel-820 now has
   # acceptance-package.yml too (see the acceptance-surface block
-  # below) — openemr/openemr#13227 backported symfony/mime +
+  # below) — DCL/DCL#13227 backported symfony/mime +
   # autoload + acceptance script to rel-820, and the acceptance-
   # surface block below no longer excludes rel-820, so Phase 7c's
   # `uses: ./.github/workflows/acceptance-package.yml` reference
   # from build-release.yml resolves cleanly on rel-820.
   exclude-branches: [rel-800]
-# Phase 10c (openemr/openemr#TBD, 2026-07-30): reusable-publish-release.yml
+# Phase 10c (DCL/DCL#TBD, 2026-07-30): reusable-publish-release.yml
 # is called via `uses: ./.github/workflows/reusable-publish-release.yml`
 # from build-release.yml — GitHub Actions parses reusable-workflow
 # references at workflow-dispatch time against the target branch's
@@ -221,7 +221,7 @@ files:
 # reason (that branch predates the release-mechanism entirely).
 - path: .github/workflows/reusable-publish-release.yml
   exclude-branches: [rel-800]
-# Phase 10e-5 (openemr/openemr#TBD, 2026-07-30): create-release-tag.sh
+# Phase 10e-5 (DCL/DCL#TBD, 2026-07-30): create-release-tag.sh
 # is called from reusable-publish-release.yml's "Create annotated tag
 # and GitHub release" step. The reusable's
 # `run: .github/scripts/create-release-tag.sh` resolves at runtime
@@ -230,7 +230,7 @@ files:
 # applies (that branch doesn't carry the reusable).
 - path: .github/scripts/create-release-tag.sh
   exclude-branches: [rel-800]
-# G45 (openemr/openemr#TBD, 2026-09-20): assert-inputs-nonempty.sh is
+# G45 (DCL/DCL#TBD, 2026-09-20): assert-inputs-nonempty.sh is
 # called from reusable-publish-release.yml's Preflight step (added by
 # G37, #14050). Same runtime-resolves-against-branch-checkout reason
 # as create-release-tag.sh above -- must be present on every branch
@@ -244,7 +244,7 @@ files:
   exclude-branches: [rel-800]
 - path: .github/actions/setup-php-composer/action.yml
   exclude-branches: [rel-800]
-# Phase 10b (openemr/openemr#TBD, 2026-07-30): generate-app-token
+# Phase 10b (DCL/DCL#TBD, 2026-07-30): generate-app-token
 # is called via `uses: ./.github/actions/generate-app-token` from a
 # spread of release-mechanism workflows (build-release, release-prep,
 # build-patch, patch-prep-automation, branch-cut-automation,
@@ -264,9 +264,9 @@ files:
 # kept present solely so POST cleanup can resolve action.yml.
 # Operational cost: none (dormant file on 1 rel branch).
 - path: .github/actions/generate-app-token/**
-# G47 (openemr/openemr#TBD, 2026-09-22): run-acceptance-group and
+# G47 (DCL/DCL#TBD, 2026-09-22): run-acceptance-group and
 # api-enable-artifact composite actions (Item 3 of the post-8.4.0
-# acceptance-surface refactor, openemr/openemr#14168) are referenced
+# acceptance-surface refactor, DCL/DCL#14168) are referenced
 # by acceptance-package.yml + acceptance-docker.yml -- both of which
 # are already in this manifest and sync to rel branches. Composites
 # themselves also need to sync so the referencing workflows can
@@ -302,7 +302,7 @@ files:
 # byte-identical propagation of a mutator change (e.g. #13496 adding
 # gate_with_acceptance: true) doesn't strand rel branches with a
 # stale expected-output fixture — that shape broke rel-820's sync PR
-# (openemr/openemr#13498) when the mutator PHP synced without its
+# (DCL/DCL#13498) when the mutator PHP synced without its
 # fixture/test file.
 - path: tests/Tests/Isolated/Common/Command/ReleasePrep/**
   exclude-branches: [rel-800]
@@ -318,11 +318,11 @@ files:
 #
 # rel-820 exclusion dropped 2026-07-28: rel-820 originally had to
 # be excluded because it was cut BEFORE Phase 1
-# (openemr/openemr#13149, landed 2026-07-24) added `symfony/mime`
+# (DCL/DCL#13149, landed 2026-07-24) added `symfony/mime`
 # to require-dev — syncing tests/Acceptance/** onto rel-820 would
 # have produced a branch where the acceptance suite couldn't run
-# (login-form POST throws LogicException). openemr/openemr#13227
-# backported symfony/mime + the OpenEMR\Tests\Acceptance autoload-
+# (login-form POST throws LogicException). DCL/DCL#13227
+# backported symfony/mime + the DCL\Tests\Acceptance autoload-
 # dev entry + the `acceptance` composer script to rel-820, so the
 # suite runs there now. Backporting was worth it because rel-820
 # owns the `latest` docker tag and the nightly orchestrator
@@ -335,7 +335,7 @@ files:
   exclude-branches: [rel-800]
 - path: .github/workflows/acceptance-package.yml
   exclude-branches: [rel-800]
-# Phase 10e-4 (openemr/openemr#TBD, 2026-07-30): detect-acceptance-mode.sh
+# Phase 10e-4 (DCL/DCL#TBD, 2026-07-30): detect-acceptance-mode.sh
 # is called from acceptance-package.yml's detect-mode job. The workflow's
 # `run: .github/scripts/detect-acceptance-mode.sh` resolves at runtime
 # against the branch's own checkout, so every branch that carries the
@@ -343,7 +343,7 @@ files:
 # applies (that branch doesn't carry acceptance-package.yml).
 - path: .github/scripts/detect-acceptance-mode.sh
   exclude-branches: [rel-800]
-# Item 4 followup (openemr/openemr#TBD, 2026-09-22): three scripts
+# Item 4 followup (DCL/DCL#TBD, 2026-09-22): three scripts
 # extracted from acceptance-docker.yml's inline shell/php-r logic so
 # they can be unit-tested (BATS + PHPUnit-isolated). Each is invoked
 # from acceptance-docker.yml at run-time against the branch's own

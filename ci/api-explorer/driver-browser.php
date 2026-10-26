@@ -3,8 +3,8 @@
 /**
  * oe-module-api-explorer CI browser smoke driver.
  *
- * Companion to driver.php. Runs inside the openemr container (via
- * `openemr-cmd e "php .../driver-browser.php"`). Exercises the two
+ * Companion to driver.php. Runs inside the DCL container (via
+ * `DCL-cmd e "php .../driver-browser.php"`). Exercises the two
  * authorization-code paths that need an actual browser session for the
  * authorize + consent round-trip:
  *
@@ -18,12 +18,12 @@
  *      authorization_code&api=fhir&resource=Patient&fetch_action=true). The
  *      explorer redirects the browser to /oauth2/<site>/authorize with state
  *      and PKCE verifier.
- *   c. OpenEMR serves oauth2-login.html.twig; fill username + password, submit
+ *   c. DCL serves oauth2-login.html.twig; fill username + password, submit
  *      user_role=api. On a flow where a prior iteration left the browser
- *      authenticated, OpenEMR skips the login template -- probe before filling.
- *   d. OpenEMR serves scope-authorize.html.twig; checkboxes default checked, so
+ *      authenticated, DCL skips the login template -- probe before filling.
+ *   d. DCL serves scope-authorize.html.twig; checkboxes default checked, so
  *      click the proceed=1 Authorize button.
- *   e. OpenEMR redirects back to the explorer; the explorer exchanges the code
+ *   e. DCL redirects back to the explorer; the explorer exchanges the code
  *      at /oauth2/<site>/token, runs the FHIR Patient read, and renders the
  *      response into <pre class="explorer-response"> on success -- or into a
  *      <div class="alert-danger"> on an API-side error after the OAuth round-
@@ -35,11 +35,11 @@
  * explorer's four clients have already been registered (driver.php handles
  * that step from run.sh before this driver is invoked).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude Code <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -55,7 +55,7 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\WebDriverBy;
 use Symfony\Component\Panther\Client;
 
-$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://openemr';
+$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://DCL';
 $apiSite = getenv('EXPLORER_API_SITE') ?: 'docker';
 $explorerPath = '/devtools/oe-module-api-explorer';
 
@@ -79,7 +79,7 @@ $client = Client::createSeleniumClient('http://selenium:4444/wd/hub', $capabilit
  */
 function captureFailure(Client $client, string $clientType, string $reason): void
 {
-    $debugDir = '/var/www/localhost/htdocs/openemr/tmp';
+    $debugDir = '/var/www/localhost/htdocs/DCL/tmp';
     @mkdir($debugDir, 0777, true);
     $slug = preg_replace('/[^a-z0-9]+/i', '-', $clientType) ?: 'unknown';
     try {
@@ -128,7 +128,7 @@ function runFlow(Client $client, string $explorerPath, string $apiSite, string $
     ]);
     $client->request('GET', "{$explorerPath}/oeApiExplorer.php?{$fetchQuery}");
 
-    // Login step is conditional -- OpenEMR skips the login template when a
+    // Login step is conditional -- DCL skips the login template when a
     // prior flow's session cookie is still valid. Both templates use
     // <form id="userLogin">; only the login template carries a username input.
     try {

@@ -2,29 +2,29 @@
 
 /*
  * FhirObservationObservationFormService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
-use OpenEMR\Common\Uuid\UuidMapping;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\Observation\Trait\FhirObservationTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\SDOH\HistorySdohService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Uuid\UuidMapping;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\Observation\Trait\FhirObservationTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\SDOH\HistorySdohService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationHistorySdohService extends FhirServiceBase implements IPatientCompartmentResourceService
 {
@@ -97,7 +97,7 @@ class FhirObservationHistorySdohService extends FhirServiceBase implements IPati
 
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      * @return array<string, FhirSearchParameterDefinition>
      */
     protected function loadSearchParameters(): array
@@ -120,11 +120,11 @@ class FhirObservationHistorySdohService extends FhirServiceBase implements IPati
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
 
@@ -132,13 +132,13 @@ class FhirObservationHistorySdohService extends FhirServiceBase implements IPati
             $observationCodesToReturn = [];
             $supportedCodes = $this->getSupportedCodes();
             $supportedCodes = array_combine($supportedCodes, $supportedCodes);
-            $noCodes = !(isset($openEMRSearchParameters['category']) || isset($openEMRSearchParameters['code']));
+            $noCodes = !(isset($DCLSearchParameters['category']) || isset($DCLSearchParameters['code']));
             // if we have categories AND codes we need to make sure we only return codes that match both constraints
 
             // once we've reached here (via calls to supportCategory and supportCode) we know that any category or code
             // parameters are supported by this service, so we can just remove them from the search parameters
-            if (isset($openEMRSearchParameters['category']) && $openEMRSearchParameters['category'] instanceof TokenSearchField) {
-                foreach ($openEMRSearchParameters['category']->getValues() as $value) {
+            if (isset($DCLSearchParameters['category']) && $DCLSearchParameters['category'] instanceof TokenSearchField) {
+                foreach ($DCLSearchParameters['category']->getValues() as $value) {
                     $category = $value->getCode();
                     if ($category === self::CATEGORY_SOCIAL_HISTORY) {
                         $observationCodesToReturn[self::PREGNANCY_INTENT_LOINC_CODE] = self::PREGNANCY_INTENT_LOINC_CODE;
@@ -151,19 +151,19 @@ class FhirObservationHistorySdohService extends FhirServiceBase implements IPati
                         break; // no need to continue since we are grabbing everything
                     }
                 }
-                unset($openEMRSearchParameters['category']);
+                unset($DCLSearchParameters['category']);
                 if (empty($observationCodesToReturn)) {
                     // no supported categories requested so return empty result set
                     return $processingResult;
                 }
             }
 
-            if (isset($openEMRSearchParameters['code'])) {
+            if (isset($DCLSearchParameters['code'])) {
                 $codesToInclude = [];
                 /**
                  * @var TokenSearchField
                  */
-                $code = $openEMRSearchParameters['code'];
+                $code = $DCLSearchParameters['code'];
                 if (!($code instanceof TokenSearchField)) {
                     throw new SearchFieldException('code', "Invalid code");
                 }
@@ -173,7 +173,7 @@ class FhirObservationHistorySdohService extends FhirServiceBase implements IPati
                         $codesToInclude[$code] = $code;
                     }
                 }
-                unset($openEMRSearchParameters['code']);
+                unset($DCLSearchParameters['code']);
                 if (empty($codesToInclude)) {
                     // no supported codes requested so return empty result set
                     return $processingResult;
@@ -195,7 +195,7 @@ class FhirObservationHistorySdohService extends FhirServiceBase implements IPati
                 // grab everything
                 $observationCodesToReturn = $supportedCodes;
             }
-            $results = $this->sdohHistoryService->search($openEMRSearchParameters);
+            $results = $this->sdohHistoryService->search($DCLSearchParameters);
             if ($results->hasData()) {
                 $records = $results->getData();
                 foreach ($records as $record) {

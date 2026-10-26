@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\ClinicalDecisionRules;
+namespace DCL\Tests\Unit\ClinicalDecisionRules;
 
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\Common;
 use PHPUnit\Framework\TestCase;
 
 class CommonTest extends TestCase

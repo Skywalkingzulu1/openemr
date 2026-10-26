@@ -3,10 +3,10 @@
 //First make sure user has access
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_POST)) {
@@ -20,7 +20,7 @@ if (!AclMain::aclCheckCore('admin', 'acl')) {
 
 require_once('gacl_admin.inc.php');
 
-/** @var \OpenEMR\Gacl\GaclAdminApi $gacl_api */
+/** @var \DCL\Gacl\GaclAdminApi $gacl_api */
 /** @var \ADOConnection $db */
 /** @var \Smarty $smarty */
 

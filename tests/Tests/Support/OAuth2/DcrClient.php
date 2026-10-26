@@ -13,20 +13,20 @@
  * no DB access). The api-tier variant has DB access, so grant_types +
  * is_enabled are set directly for predictable, fast setup.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Support\OAuth2;
+namespace DCL\Tests\Support\OAuth2;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\Assert;
 
 class DcrClient
@@ -78,7 +78,7 @@ class DcrClient
      * Register a public client (no client_secret, PKCE required) with
      * the given scope list, then enable it for the named grant.
      *
-     * OpenEMR DCR restricts token_endpoint_auth_method to
+     * DCL DCR restricts token_endpoint_auth_method to
      * client_secret_basic | client_secret_post | private_key_jwt
      * (AuthorizationController::registerClient allowed list — "none"
      * is rejected with invalid_client_metadata). The flip to a public

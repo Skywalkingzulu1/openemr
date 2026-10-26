@@ -3,16 +3,16 @@
 /**
  * Rector rule to gather scattered use statements into a single block
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Rector\Rules;
+namespace DCL\Rector\Rules;
 
 use PhpParser\Comment\Doc;
 use PhpParser\Node;
@@ -44,7 +44,7 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  * That shape is actively dangerous, not merely untidy: the phpcbf fixer for
  * SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses rewrites the whole
  * span from the first `use` to the last and silently deletes every statement in
- * between. On openemr/openemr that destroyed 26 files in one pass, including the
+ * between. On DCL/DCL that destroyed 26 files in one pass, including the
  * X-Frame-Options and CSP frame-ancestors headers in interface/login/login.php.
  * phpcs does not report the two-region shape, so nothing catches it.
  *
@@ -62,12 +62,12 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  * only one that breaks at runtime rather than in a linter. PHP applies an
  * import to the code that follows it, not to the whole file, so shortening a
  * fully-qualified name above the `use` block -- exactly what name importing
- * does -- turns `\OpenEMR\Core\OEGlobalsBag::getInstance()` in a leading
+ * does -- turns `\DCL\Core\OEGlobalsBag::getInstance()` in a leading
  * `require_once` into an unresolvable `OEGlobalsBag` and the file fatals on
  * load. Moving the block to the top is always safe: imports are resolved at
  * compile time and have no runtime effect of their own.
  *
- * @see \OpenEMR\Rector\Rules\ConsolidateImportsRectorTest
+ * @see \DCL\Rector\Rules\ConsolidateImportsRectorTest
  */
 class ConsolidateImportsRector extends AbstractRector
 {

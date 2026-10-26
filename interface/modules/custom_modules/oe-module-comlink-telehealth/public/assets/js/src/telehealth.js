@@ -4,13 +4,13 @@ import {PatientConferenceRoom} from "./patient-conference-room.js";
 
 
 /**
- * Core TeleHealth javascript library for communicating with OpenEMR to start and stop TeleHealth sessions.
+ * Core TeleHealth javascript library for communicating with DCL to start and stop TeleHealth sessions.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 (function(window, comlink, bootstrap, jQuery) {
@@ -109,7 +109,7 @@ import {PatientConferenceRoom} from "./patient-conference-room.js";
             let telehealthSessionData = {
                 pc_eid: appointmentEventId
             };
-        // we don't let patients use the local OpenEMR api so this value is empty
+        // we don't let patients use the local DCL api so this value is empty
         // if we at some point allow the api to be used by patients we would need to populate this.
         let csrfToken = comlink.settings.apiCSRFToken;
         conferenceRoom = new PatientConferenceRoom(csrfToken, comlink.settings.features,

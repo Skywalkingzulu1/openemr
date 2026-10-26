@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).
@@ -71,19 +71,19 @@ class FHIRMedicinalProductName extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * The full product name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $productName = null;
 
     /**
      * Coding words or phrases of the name.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductNamePart[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductNamePart[]
      */
     public $namePart = [];
 
     /**
      * Country where the name applies.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage[]
      */
     public $countryLanguage = [];
 
@@ -94,7 +94,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The full product name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getProductName()
     {
@@ -103,7 +103,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The full product name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $productName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $productName
      * @return $this
      */
     public function setProductName($productName)
@@ -114,7 +114,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Coding words or phrases of the name.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductNamePart[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductNamePart[]
      */
     public function getNamePart()
     {
@@ -123,7 +123,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Coding words or phrases of the name.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductNamePart $namePart
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductNamePart $namePart
      * @return $this
      */
     public function addNamePart($namePart)
@@ -134,7 +134,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Country where the name applies.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage[]
      */
     public function getCountryLanguage()
     {
@@ -143,7 +143,7 @@ class FHIRMedicinalProductName extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Country where the name applies.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage $countryLanguage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage $countryLanguage
      * @return $this
      */
     public function addCountryLanguage($countryLanguage)

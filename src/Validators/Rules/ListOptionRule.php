@@ -2,18 +2,18 @@
 
 /**
  * ListOptionRule - Validates that a list option exists in the list_options table.
- * This class validates that a list option exists in the list_options table.  It is used by the OpenEMRParticleValidator class.
+ * This class validates that a list option exists in the list_options table.  It is used by the DCLParticleValidator class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Validators\Rules;
+namespace DCL\Validators\Rules;
 
-use OpenEMR\Services\ListService;
+use DCL\Services\ListService;
 use Particle\Validator\Rule;
 
 class ListOptionRule extends Rule

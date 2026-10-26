@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Common\Database {
+namespace DCL\Common\Database {
     trait DatabaseQueryTrait
     {
         /**
@@ -16,7 +16,7 @@ namespace OpenEMR\Common\Database {
 
 namespace {
 
-    use OpenEMR\Common\Database\DatabaseQueryTrait;
+    use DCL\Common\Database\DatabaseQueryTrait;
 
     // Anonymous class to avoid PHPStan class-discovery requirements in the
     // RuleTestCase environment.

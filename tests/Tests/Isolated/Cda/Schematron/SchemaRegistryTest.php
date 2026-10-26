@@ -3,19 +3,19 @@
 /**
  * SchemaRegistry isolated test.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cda\Schematron;
+namespace DCL\Tests\Isolated\Cda\Schematron;
 
 use InvalidArgumentException;
-use OpenEMR\Services\Cda\Schematron\SchemaRegistry;
+use DCL\Services\Cda\Schematron\SchemaRegistry;
 use PHPUnit\Framework\TestCase;
 
 final class SchemaRegistryTest extends TestCase

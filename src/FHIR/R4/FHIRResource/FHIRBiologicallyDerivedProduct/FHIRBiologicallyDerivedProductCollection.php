@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBiologicallyDerivedProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A material substance originating from a biological entity intended to be transplanted or infused
@@ -72,23 +72,23 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
 {
     /**
      * Healthcare professional who is performing the collection.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $collector = null;
 
     /**
      * The patient or entity, such as a hospital or vendor in the case of a processed/manipulated/manufactured product, providing the product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $source = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $collectedDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $collectedPeriod = null;
 
@@ -99,7 +99,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
 
     /**
      * Healthcare professional who is performing the collection.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCollector()
     {
@@ -108,7 +108,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
 
     /**
      * Healthcare professional who is performing the collection.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $collector
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $collector
      * @return $this
      */
     public function setCollector($collector)
@@ -119,7 +119,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
 
     /**
      * The patient or entity, such as a hospital or vendor in the case of a processed/manipulated/manufactured product, providing the product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSource()
     {
@@ -128,7 +128,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
 
     /**
      * The patient or entity, such as a hospital or vendor in the case of a processed/manipulated/manufactured product, providing the product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function setSource($source)
@@ -138,7 +138,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCollectedDateTime()
     {
@@ -146,7 +146,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $collectedDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $collectedDateTime
      * @return $this
      */
     public function setCollectedDateTime($collectedDateTime)
@@ -156,7 +156,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getCollectedPeriod()
     {
@@ -164,7 +164,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement imple
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $collectedPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $collectedPeriod
      * @return $this
      */
     public function setCollectedPeriod($collectedPeriod)

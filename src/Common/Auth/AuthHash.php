@@ -11,18 +11,18 @@
  *         to verify the hash to allow fine tuning of chosen algorithm and algorithm options.
  *     3. The algorithms and algorithm options can be found in the Administration->Globals->Security settings.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth;
+namespace DCL\Common\Auth;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Core\OEGlobalsBag;
 
 class AuthHash
 {

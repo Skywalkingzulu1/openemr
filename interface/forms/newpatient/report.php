@@ -3,27 +3,27 @@
 /**
  * Encounter form report function.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Robert Down <robertdown@live.com
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2023 Robert Down <robertdown@live.com
  * @copyright Copyright (c) 2023 Providence Healthtech
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\FHIR\MedicationDispense\FhirMedicationDispenseLocalDispensaryService;
-use OpenEMR\Services\Globals\GlobalFeaturesEnum;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\AppointmentService;
+use DCL\Services\FHIR\MedicationDispense\FhirMedicationDispenseLocalDispensaryService;
+use DCL\Services\Globals\GlobalFeaturesEnum;
+use DCL\Services\PatientService;
+use DCL\Services\UserService;
 
 function newpatient_report($pid, $encounter, $cols, $id): void
 {

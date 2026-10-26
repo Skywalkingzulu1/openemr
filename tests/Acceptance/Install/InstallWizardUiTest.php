@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Install;
+namespace DCL\Tests\Acceptance\Install;
 
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\WebDriverBy;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\BrowserSession;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Panther\Client;
@@ -100,7 +100,7 @@ final class InstallWizardUiTest extends TestCase
         $this->assertCurrentHeadingContains(
             $client,
             'Step 2',
-            'After POST state=2, the response should show "Step 2 - Database and OpenEMR Initial User Setup Details"',
+            'After POST state=2, the response should show "Step 2 - Database and DCL Initial User Setup Details"',
         );
 
         // State 2 → 3: fill the DB + admin-user form. Values match
@@ -109,7 +109,7 @@ final class InstallWizardUiTest extends TestCase
         // Phase 3 uses.
         //
         // loginhost=% (wildcard) — same fix as install-helper.php's
-        // loginhost setting: openemr container talks to mysql from a
+        // loginhost setting: DCL container talks to mysql from a
         // container-network IP, not 'localhost' from mysql's
         // perspective, so the DB user needs '%' host to match.
         // Fill the form via findElement + sendKeys, then click submit
@@ -122,7 +122,7 @@ final class InstallWizardUiTest extends TestCase
         // Field values match install-helper.php's Installer::quick_install()
         // call so the wizard-driven install has identical shape to the
         // CLI one Phase 3 uses. loginhost=% (wildcard) — same fix as
-        // install-helper.php's loginhost setting: openemr container
+        // install-helper.php's loginhost setting: DCL container
         // talks to mysql from a container-network IP, not 'localhost'
         // from mysql's perspective, so the DB user needs '%' host to
         // match.
@@ -134,13 +134,13 @@ final class InstallWizardUiTest extends TestCase
         //     username; force to "admin" to match the CLI-install
         //     credentials Phase 1's tests already assert against
         // Fields with sensible template defaults left untouched:
-        //   * port (3306), dbname (openemr), login (openemr),
+        //   * port (3306), dbname (DCL), login (DCL),
         //     root (root), collate, iuname (Administrator),
         //     iufname (Administrator), igroup (Default)
         $fields = [
             'server' => 'mysql',
             'loginhost' => '%',
-            'pass' => 'openemr',
+            'pass' => 'DCL',
             'rootpass' => 'root',
             'iuser' => 'admin',
             'iuserpass' => 'pass',
@@ -184,7 +184,7 @@ final class InstallWizardUiTest extends TestCase
         // the install didn't actually take effect — this catches that.
         $client->request('GET', '/');
         // Assert BOTH the current URL redirected away from `/` to the
-        // login route AND the page title matches "OpenEMR Login". Title
+        // login route AND the page title matches "DCL Login". Title
         // alone would pass if a root handler ever rendered a login-page
         // template inline at `/` without redirecting; asserting the URL
         // change is the "redirect actually happened" proof.
@@ -194,9 +194,9 @@ final class InstallWizardUiTest extends TestCase
             'GET / after wizard install should redirect to /interface/login/login.php — staying at / means the install did not actually take effect (sqlconf.php $config still 0)',
         );
         self::assertStringContainsString(
-            'OpenEMR Login',
+            'DCL Login',
             $client->getTitle(),
-            'Post-redirect page title should be "OpenEMR Login" — a different title after the redirect target check passes means the login route rendered something unexpected',
+            'Post-redirect page title should be "DCL Login" — a different title after the redirect target check passes means the login route rendered something unexpected',
         );
     }
 
@@ -204,7 +204,7 @@ final class InstallWizardUiTest extends TestCase
      * Wait for the current page's first h3 to render, then assert its
      * text contains the expected fragment. Every wizard state's page
      * starts with an <h3> that names the step (e.g. "Step 2 - Database
-     * and OpenEMR Initial User Setup Details"), so a settled h3 is the
+     * and DCL Initial User Setup Details"), so a settled h3 is the
      * "wizard advanced to expected state" signal.
      *
      * Panther's post-submit crawler snapshot can race the actual page

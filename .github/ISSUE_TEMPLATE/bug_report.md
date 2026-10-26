@@ -25,8 +25,8 @@ Steps to reproduce the behavior:
 ### Client configuration
 
 - Browser:
-- OpenEMR version:
+- DCL version:
 - Operating system:
 
-<!-- Love openemr? Please consider supporting our project:
-👉  https://github.com/sponsors/openemr -->
+<!-- Love DCL? Please consider supporting our project:
+👉  https://github.com/sponsors/DCL -->

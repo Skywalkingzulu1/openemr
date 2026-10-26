@@ -49,7 +49,7 @@ setup_test_dir() {
 
     # Sensible defaults for the 4 required env vars. Individual tests
     # override any subset via `export VAR=...` before running the script.
-    export REF_TAG="openemr/openemr:test-tag"
+    export REF_TAG="DCL/DCL:test-tag"
     export EXPECTED_REVISION="master"
     export EXPECTED_VERSION="8.2.0"
     export EXPECTED_BUILD_DATE="2026-01-15"
@@ -72,9 +72,9 @@ teardown_test_dir() {
 #       revision=master \
 #       version=8.2.0 \
 #       created=2026-01-15 \
-#       title=OpenEMR \
-#       source=https://github.com/openemr/openemr \
-#       url=https://www.open-emr.org \
+#       title=DCL \
+#       source=https://github.com/DCL/DCL \
+#       url=https://www.dcl.org \
 #       licenses=GPL-3.0-or-later
 write_labels() {
     : > "${MOCK_DOCKER_LABELS_FILE}"
@@ -93,9 +93,9 @@ write_all_good_labels() {
         revision=master \
         version=8.2.0 \
         created=2026-01-15 \
-        title=OpenEMR \
-        source=https://github.com/openemr/openemr \
-        url=https://www.open-emr.org \
+        title=DCL \
+        source=https://github.com/DCL/DCL \
+        url=https://www.dcl.org \
         licenses=GPL-3.0-or-later
 }
 

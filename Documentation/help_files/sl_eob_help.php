@@ -3,16 +3,16 @@
 /**
  * Access Control List Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ranganath Pathak <pathak01@hotmail.com>
   * @version 1.0.0
  * @copyright Copyright (c) 2017 Ranganath Pathak <pathak01@hotmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
@@ -157,7 +157,7 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
                 <p><?php echo xlt("If you have entered a Pay Date in the search page, this will override the posting date of payments and adjustments that are otherwise taken from the X12 file. This may be useful for reporting purposes, if you want your receipts reporting to use your posting date rather than the insurance company\'s processing date. Note that this will also affect dates of prior payments and adjustments that are put into secondary claims."); ?></p>
 
-                <p><?php echo xlt("The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main OpenEMR installation directory. You will want to refer to these archives from time to time."); ?>
+                <p><?php echo xlt("The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main DCL installation directory. You will want to refer to these archives from time to time."); ?>
                     <span><strong>
                     <?php
                     $url = (!empty($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on')) ? 'https' : 'http';

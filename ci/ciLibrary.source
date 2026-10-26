@@ -7,7 +7,7 @@
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
-# Bash library for openemr ci
+# Bash library for DCL ci
 #
 
 set -xeuo pipefail
@@ -91,7 +91,7 @@ with_retry() {
 # rely on `dc up --quiet-pull` to fetch anything still missing (e.g. a
 # profile-gated image the first pull's COMPOSE_PROFILES did not include).
 pull_images() {
-    local marker="${RUNNER_TEMP:-/tmp}/openemr-ci-images-pulled"
+    local marker="${RUNNER_TEMP:-/tmp}/DCL-ci-images-pulled"
     if [[ -f "${marker}" ]]; then
         echo 'Images already pulled this job; skipping pull (up will fetch anything missing).'
         return 0
@@ -105,19 +105,19 @@ _exec() {
         # Set XDEBUG_MODE env var for xdebug coverage (ignored if using pcov).
         # NOTE: This env var is ignored when xdebug.mode is set in php.ini.
         # PHPUnit invocations also pass -d xdebug.mode=coverage for reliability.
-        dc exec --env XDEBUG_MODE=coverage --workdir "${OPENEMR_DIR?}" openemr "$@"
+        dc exec --env XDEBUG_MODE=coverage --workdir "${DCL_DIR?}" DCL "$@"
     else
-        dc exec --workdir "${OPENEMR_DIR?}" openemr "$@"
+        dc exec --workdir "${DCL_DIR?}" DCL "$@"
     fi
 }
 
 ##
-# Echo the first existing web-server user inside the openemr container.
-# OpenEMR ships two web stacks: the apache image uses `apache`, the
+# Echo the first existing web-server user inside the DCL container.
+# DCL ships two web stacks: the apache image uses `apache`, the
 # nginx + php-fpm image uses `www-data`. Probe both so the same wrap
 # pattern works across the full CI matrix without needing per-stack
 # branching at every su call site.
-web_user_in_openemr() {
+web_user_in_DCL() {
     # shellcheck disable=SC2016  # $u is the inner for-loop variable, intentionally evaluated inside the container's shell.
     _exec sh -c 'for u in apache www-data; do if id "$u" >/dev/null 2>&1; then echo "$u"; exit 0; fi; done; exit 1'
 }
@@ -241,36 +241,36 @@ install_configure() {
     _exec cp docker/flex/auto_configure.php /root/auto_configure.php
     # InstallerAuto goes through the Installer class, which RootCliGuard
     # refuses to run as root (PR #12267, def8758). Drop to the web user
-    # for the subprocess — same approach as the upgradeOpenEMR override
-    # below. The openemr-devops devtools change will eventually carry the
+    # for the subprocess — same approach as the upgradeDCL override
+    # below. The DCL-devops devtools change will eventually carry the
     # same privilege drop; until that lands, the ci library wraps locally.
     # Web user differs between stacks (apache image: apache, nginx image:
-    # www-data); web_user_in_openemr probes both.
+    # www-data); web_user_in_DCL probes both.
     local web_user
-    web_user=$(web_user_in_openemr)
-    _exec sh -c "OPENEMR_ENABLE_INSTALLER_AUTO=1 su -p -s /bin/sh ${web_user} -c 'php -f ./contrib/util/installScripts/InstallerAuto.php rootpass=root server=mysql loginhost=%'"
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' openemr
+    web_user=$(web_user_in_DCL)
+    _exec sh -c "DCL_ENABLE_INSTALLER_AUTO=1 su -p -s /bin/sh ${web_user} -c 'php -f ./contrib/util/installScripts/InstallerAuto.php rootpass=root server=mysql loginhost=%'"
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' DCL
 }
 
 ##
 # Reseed the database from the flex image's 5.0.0 demo dump and run the
 # upgrade chain to current — the same flow developers hit locally via
-# `openemr-cmd drid` (dev-reset-install-demodata). install_configure must
+# `DCL-cmd drid` (dev-reset-install-demodata). install_configure must
 # have completed first so sqlconf.php exists for sql_upgrade.php to find
 # the database.
 post_install_upgrade() {
-    # Run only the demoData portion of openemr-cmd drid: drop the fresh
+    # Run only the demoData portion of DCL-cmd drid: drop the fresh
     # install's tables, reseed from /root/demo_5_0_0_5.sql, run
     # sql_upgrade.php --from=5.0.0 through every sql/*upgrade.sql file
     # to current, and re-encode to utf8mb4. The full drid sequence
-    # (dev-reset-install-demodata) also runs resetOpenemr + installOpenemr
-    # first, but resetOpenemr rsyncs from /openemr/sites which only exists
+    # (dev-reset-install-demodata) also runs resetDCL + installDCL
+    # first, but resetDCL rsyncs from /DCL/sites which only exists
     # in the dev compose (read-only second bind mount) — the CI compose
     # has no such mount, so the rsync silently fails and leaves
     # sites/default/config.php missing, which then crashes sql_upgrade.php
@@ -280,7 +280,7 @@ post_install_upgrade() {
     # devtoolsLibrary.source uses bash-style [[ ]]; the container's
     # /bin/sh is busybox ash which supports it. prepareVariables() reads
     # MYSQL_HOST and MYSQL_ROOT_PASS from the env (the dev compose sets
-    # these on the openemr service; the CI compose does not). Export
+    # these on the DCL service; the CI compose does not). Export
     # rather than the `VAR=val cmd` form — demoData also references
     # $MYSQL_HOST / $MYSQL_ROOT_PASS directly, and the inline form would
     # scope them only to the prepareVariables call.
@@ -289,13 +289,13 @@ post_install_upgrade() {
     # demoData drops all tables and reseeds from the 5.0.0 dump (which
     # has its own globals values), so the CI-specific globals that
     # install_configure set originally are gone. Re-apply.
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' openemr
-    _exec mysql -u openemr --password=openemr --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' openemr
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'INSERT INTO product_registration (opt_out) VALUES (1)' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_fhir_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_portal_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "oauth_password_grant"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 1 WHERE gl_name = "rest_system_scopes_api"' DCL
+    _exec mysql -u DCL --password=DCL --ssl=false -h mysql -e 'UPDATE globals SET gl_value = 3 WHERE gl_name = "ccda_alt_service_enable"' DCL
 }
 
 ##
@@ -307,8 +307,8 @@ setup_e2e_bookends() {
     local webserver="${1:-apache}"
     local php_scan_dir
     local prepend_file='ci/auto_prepend.php'
-    local prepend_marker='openemr-autoprepend-PREPEND_EXECUTED'
-    local shutdown_marker='openemr-autoprepend-SHUTDOWN_EXECUTED'
+    local prepend_marker='DCL-autoprepend-PREPEND_EXECUTED'
+    local shutdown_marker='DCL-autoprepend-SHUTDOWN_EXECUTED'
     local webserver_host
 
     # Map webserver types to their hostnames
@@ -332,8 +332,8 @@ setup_e2e_bookends() {
 
     echo 'Confirming prepend file is present'
     _exec sh -xc "
-        if [[ ! -f ${OPENEMR_DIR}/${prepend_file} ]]; then
-            echo '${OPENEMR_DIR}/${prepend_file} is missing'
+        if [[ ! -f ${DCL_DIR}/${prepend_file} ]]; then
+            echo '${DCL_DIR}/${prepend_file} is missing'
             exit 1
         fi
     "
@@ -341,21 +341,21 @@ setup_e2e_bookends() {
     echo 'Configuring PHP to use auto_prepend'
     local prepend_ini_file="${RUNNER_TEMP:-/tmp}/php_prepend.ini"
     {
-        echo "auto_prepend_file=${OPENEMR_DIR}/${prepend_file}"
+        echo "auto_prepend_file=${DCL_DIR}/${prepend_file}"
         # pcov only records files below pcov.directory, which defaults to the
-        # process working directory. CLI PHPUnit runs from the OpenEMR tree and
+        # process working directory. CLI PHPUnit runs from the DCL tree and
         # resolves it correctly, but the web SAPI starts in the image WORKDIR,
         # so web request coverage silently comes back empty. The flex image
         # pins this in docker/flex/pcov.sh; dev-php-fpm bakes in pcov without
         # it, and the image cannot know the path anyway since it differs per
         # webserver. pcov.directory is PHP_INI_SYSTEM, so ci/auto_prepend.php
         # cannot set it. Harmless when pcov is not the driver.
-        echo "pcov.directory=${OPENEMR_DIR}"
+        echo "pcov.directory=${DCL_DIR}"
     } > "${prepend_ini_file}"
-    dc cp "${prepend_ini_file}" "openemr:${php_scan_dir}/php_prepend.ini"
+    dc cp "${prepend_ini_file}" "DCL:${php_scan_dir}/php_prepend.ini"
 
     echo 'Restarting services to pick up the new PHP configuration'
-    dc restart openemr
+    dc restart DCL
     dockers_env_start
 
     echo 'Testing prepend/shutdown behavior…'
@@ -364,12 +364,12 @@ setup_e2e_bookends() {
     echo "Verifying auto prepend configuration via web server (${webserver} at ${webserver_host})…"
     _exec sh -c "curl -fsSL http://${webserver_host}/ci/phpinfo.php | grep -E auto_prepend_file"
 
-    # A pcov.directory that does not cover the OpenEMR tree collects nothing,
+    # A pcov.directory that does not cover the DCL tree collects nothing,
     # and that only surfaces much later as a missing raw coverage directory.
     # Assert it here, against the SAPI that actually serves the tests.
     # shellcheck disable=SC2310  # Intentionally checking exit code in condition
     if _exec php -r 'exit(function_exists("pcov\\start") ? 0 : 1);'; then
-        echo 'Verifying pcov.directory covers the OpenEMR tree…'
+        echo 'Verifying pcov.directory covers the DCL tree…'
         # Capture the response before matching it. Piping curl into grep inside
         # `_exec sh -c` would report only grep's status, because that nested
         # shell does not inherit pipefail: a failed request would then be
@@ -380,8 +380,8 @@ setup_e2e_bookends() {
             echo "Error: could not fetch /ci/phpinfo.php from ${webserver_host}"
             return 1
         fi
-        if ! grep -qE "pcov.directory.*${OPENEMR_DIR}" <<< "${phpinfo}"; then
-            echo "Error: pcov is the coverage driver but pcov.directory does not cover ${OPENEMR_DIR}"
+        if ! grep -qE "pcov.directory.*${DCL_DIR}" <<< "${phpinfo}"; then
+            echo "Error: pcov is the coverage driver but pcov.directory does not cover ${DCL_DIR}"
             echo 'Web request coverage would be empty. Check php_prepend.ini.'
             return 1
         fi
@@ -389,7 +389,7 @@ setup_e2e_bookends() {
 
     sleep 1  # Give filesystem time to flush
 
-    _exec sh -c 'ls /tmp/openemr-autoprepend-*_EXECUTED'
+    _exec sh -c 'ls /tmp/DCL-autoprepend-*_EXECUTED'
 
     echo 'Checking prepend marker file after web request:'
     _exec sh -c "cat '/tmp/${prepend_marker}'"
@@ -528,7 +528,7 @@ chapter_e2e_video() {
 }
 
 ##
-# Verify that OpenEMR is healthy after a Redis master failover.
+# Verify that DCL is healthy after a Redis master failover.
 #
 # Steps:
 #  1. Confirm the app is healthy before touching Redis
@@ -543,15 +543,15 @@ build_test_redis_failover() {
     local poll_interval=3
 
     # Detect TLS mode so redis-cli commands use the right flags.
-    # The openemr container carries the authoritative env vars.
+    # The DCL container carries the authoritative env vars.
     local -a redis_cli_tls_args=()
     local tls_label=""
     local _tls _x509
-    _tls=$(docker compose exec -T openemr printenv REDIS_TLS 2>/dev/null) || _tls=""
+    _tls=$(docker compose exec -T DCL printenv REDIS_TLS 2>/dev/null) || _tls=""
     if [[ "${_tls}" == "yes" ]]; then
         redis_cli_tls_args=(--tls --cacert /certs/ca.crt)
         tls_label=" (TLS)"
-        _x509=$(docker compose exec -T openemr printenv REDIS_X509 2>/dev/null) || _x509=""
+        _x509=$(docker compose exec -T DCL printenv REDIS_X509 2>/dev/null) || _x509=""
         if [[ "${_x509}" == "yes" ]]; then
             redis_cli_tls_args+=(--cert /certs/client.crt --key /certs/client.key)
             tls_label=" (mTLS)"
@@ -575,7 +575,7 @@ build_test_redis_failover() {
     echo ""
 
     # Step 1: health check before failover
-    echo "Step 1: Verifying OpenEMR health before failover..."
+    echo "Step 1: Verifying DCL health before failover..."
     _exec curl -fsSL --insecure --max-time 15 https://localhost/meta/health/readyz
     echo ""
 
@@ -585,8 +585,8 @@ build_test_redis_failover() {
     echo "Step 1.5: Writing pre-failover test value to Redis..."
     # shellcheck disable=SC2016
     _exec php -r '
-        require "/var/www/localhost/htdocs/openemr/vendor/autoload.php";
-        $r = (new \OpenEMR\Common\Session\Predis\SentinelUtil())->configureClient();
+        require "/var/www/localhost/htdocs/DCL/vendor/autoload.php";
+        $r = (new \DCL\Common\Session\Predis\SentinelUtil())->configureClient();
         $r->set("oe:failover-test", "pre-failover-data");
         echo "Written: " . $r->get("oe:failover-test") . "\n";
     '
@@ -636,23 +636,23 @@ build_test_redis_failover() {
     # Step 4: verify the app recovers — retry for up to 60 s because Predis
     # creates a fresh client per request, so the first request after failover
     # may still hit a brief connection window before the new master is stable
-    echo "Step 4: Verifying OpenEMR health after failover (up to 60s)..."
+    echo "Step 4: Verifying DCL health after failover (up to 60s)..."
     local retry=0
     while true; do
         # Use docker compose exec directly (not _exec wrapper) so SC2310 is not
         # triggered by a bash function appearing in a || condition.
         local health_status=0
         local health_body=""
-        health_body=$(docker compose exec -T openemr curl -fsSL --insecure --max-time 15 https://localhost/meta/health/readyz 2>/dev/null) || health_status=$?
+        health_body=$(docker compose exec -T DCL curl -fsSL --insecure --max-time 15 https://localhost/meta/health/readyz 2>/dev/null) || health_status=$?
         # readyz returns HTTP 200 even for errors; check the body for "error" status
         if [[ "${health_status}" -eq 0 && "${health_body}" != *'"status":"error"'* ]]; then
             echo "  ${health_body}"
-            echo "  OpenEMR is healthy after failover."
+            echo "  DCL is healthy after failover."
             break
         fi
         (( retry++ )) || true
         if (( retry >= 12 )); then
-            echo "ERROR: OpenEMR did not recover within 60s after sentinel failover"
+            echo "ERROR: DCL did not recover within 60s after sentinel failover"
             return 1
         fi
         echo "  Health check attempt ${retry}/12 failed, retrying in 5s..."
@@ -663,8 +663,8 @@ build_test_redis_failover() {
     echo "Step 4.5: Verifying pre-failover data survived on new master..."
     # shellcheck disable=SC2016
     _exec php -r '
-        require "/var/www/localhost/htdocs/openemr/vendor/autoload.php";
-        $r = (new \OpenEMR\Common\Session\Predis\SentinelUtil())->configureClient();
+        require "/var/www/localhost/htdocs/DCL/vendor/autoload.php";
+        $r = (new \DCL\Common\Session\Predis\SentinelUtil())->configureClient();
         $v = $r->get("oe:failover-test");
         if ($v !== "pre-failover-data") {
             fwrite(STDERR, "FAIL: expected \"pre-failover-data\", got \"" . ($v ?? "null") . "\"\n");
@@ -710,17 +710,17 @@ dump_error_log() {
 # was never involved at all.
 
 ##
-# Print redis-cli TLS arguments (one per line) derived from the openemr
+# Print redis-cli TLS arguments (one per line) derived from the DCL
 # container's REDIS_TLS/REDIS_X509 env — the same detection used in
 # build_test_redis_failover. Prints nothing on non-TLS configs. Callers read
 # with mapfile so multi-word paths would survive, and an empty result yields
 # an empty array.
 redis_cli_detect_tls_args() {
     local _tls _x509
-    _tls=$(docker compose exec -T openemr printenv REDIS_TLS 2>/dev/null) || _tls=""
+    _tls=$(docker compose exec -T DCL printenv REDIS_TLS 2>/dev/null) || _tls=""
     if [[ "${_tls}" == "yes" ]]; then
         printf '%s\n' --tls --cacert /certs/ca.crt
-        _x509=$(docker compose exec -T openemr printenv REDIS_X509 2>/dev/null) || _x509=""
+        _x509=$(docker compose exec -T DCL printenv REDIS_X509 2>/dev/null) || _x509=""
         if [[ "${_x509}" == "yes" ]]; then
             printf '%s\n' --cert /certs/client.crt --key /certs/client.key
         fi
@@ -750,7 +750,7 @@ redis_master_cli() {
 }
 
 ##
-# Path (relative to the openemr webroot) of the OPcache probe installed by
+# Path (relative to the DCL webroot) of the OPcache probe installed by
 # redis_monitor_start and removed by redis_monitor_stop. It must run inside an
 # Apache worker: CLI `php -r 'opcache_get_status()'` reads the CLI's own SHM
 # segment, not the one the workers share — and the workers' segment holds the
@@ -773,7 +773,7 @@ redis_monitor_start() {
     # exists only for the lifetime of the CI job and is removed in
     # redis_monitor_stop. It reports only aggregate memory/restart counters —
     # no keys, no source, nothing sensitive for a public artifact.
-    docker compose exec -T openemr sh -c "cat > '${OPENEMR_DIR}/${OPCACHE_PROBE}'" <<'PHP' || true
+    docker compose exec -T DCL sh -c "cat > '${DCL_DIR}/${OPCACHE_PROBE}'" <<'PHP' || true
 <?php
 // CI-only probe; written by ci/ciLibrary.source redis_monitor_start.
 header('Content-Type: application/json');
@@ -789,7 +789,7 @@ echo json_encode([
     'hash_restarts' => $s['opcache_statistics']['hash_restarts'] ?? null,
     'manual_restarts' => $s['opcache_statistics']['manual_restarts'] ?? null,
     'num_cached_scripts' => $s['opcache_statistics']['num_cached_scripts'] ?? null,
-    // Worker-truth for the JIT config: the image entrypoint (openemr.sh)
+    // Worker-truth for the JIT config: the image entrypoint (DCL.sh)
     // enables JIT at first boot, so CLI probes and the static image lie.
     'jit' => ini_get('opcache.jit'),
     'jit_buffer_size' => ini_get('opcache.jit_buffer_size'),
@@ -813,7 +813,7 @@ PHP
                 # incrementing right before a segfault avalanche is the
                 # smoking gun for the SHM-corruption theory (#12438).
                 printf 'opcache: '
-                docker compose exec -T openemr \
+                docker compose exec -T DCL \
                     curl -sf "http://localhost/${OPCACHE_PROBE}" 2>&1
                 echo
             } >> "${outfile}" 2>&1
@@ -830,7 +830,7 @@ redis_monitor_stop() {
     local monitor_pid
     # Remove the OPcache probe from the bind-mounted webroot. Best-effort:
     # the container may already be gone at cleanup time.
-    docker compose exec -T openemr rm -f "${OPENEMR_DIR}/${OPCACHE_PROBE}" 2>/dev/null || true
+    docker compose exec -T DCL rm -f "${DCL_DIR}/${OPCACHE_PROBE}" 2>/dev/null || true
     if [[ -f "${outfile}.pid" ]]; then
         monitor_pid=$(cat "${outfile}.pid") || monitor_pid=""
         if [[ -n "${monitor_pid}" ]]; then
@@ -888,7 +888,7 @@ redis_diagnostics() {
 }
 
 ##
-# Directory inside the openemr container where coredumps are collected. The
+# Directory inside the DCL container where coredumps are collected. The
 # kernel core_pattern (set by enable_coredumps) is interpreted within the
 # crashing process's mount namespace, so this is a container path. It is not
 # on the bind mount; cores are streamed out with `dc exec` in
@@ -924,7 +924,7 @@ _await_core_for_pid() {
     local pid=$1
     local _attempt
     for _attempt in $(seq 1 20); do
-        if docker compose exec -T openemr sh -c "ls '${COREDUMP_DIR}'/core.*.${pid}.* >/dev/null 2>&1"; then
+        if docker compose exec -T DCL sh -c "ls '${COREDUMP_DIR}'/core.*.${pid}.* >/dev/null 2>&1"; then
             return 0
         fi
         sleep 0.5
@@ -942,7 +942,7 @@ _remove_core_for_pid() {
     local leftover
     # One container round trip: remove, then list whatever survived.
     # shellcheck disable=SC2310  # an unmatched glob makes ls fail; that is the clean case, not an error
-    leftover=$(dc exec -T openemr sh -c "rm -f '${COREDUMP_DIR}'/core.*.${pid}.*; ls -1 '${COREDUMP_DIR}'/core.*.${pid}.* 2>/dev/null") || leftover=''
+    leftover=$(dc exec -T DCL sh -c "rm -f '${COREDUMP_DIR}'/core.*.${pid}.*; ls -1 '${COREDUMP_DIR}'/core.*.${pid}.* 2>/dev/null") || leftover=''
     leftover=${leftover//[$'\r\n']/ }
     if [[ -n "${leftover}" ]]; then
         echo "::warning::${label} coredump canary cleanup failed: ${leftover} survived removal and capture_coredumps will report it as a crash"
@@ -953,7 +953,7 @@ enable_coredumps() {
     # Create the in-container target up front so the kernel has somewhere to
     # write the core. World-writable + sticky: Apache workers run as the
     # unprivileged web user once privileges are dropped.
-    dc exec -T openemr sh -c "mkdir -p '${COREDUMP_DIR}' && chmod 1777 '${COREDUMP_DIR}'"
+    dc exec -T DCL sh -c "mkdir -p '${COREDUMP_DIR}' && chmod 1777 '${COREDUMP_DIR}'"
     sudo sysctl -w "kernel.core_pattern=${COREDUMP_DIR}/core.%e.%p.%t"
     sudo sysctl -w 'fs.suid_dumpable=2'
     # Make the kernel actually LOG segfaults ("segfault at ... ip ... in
@@ -970,7 +970,7 @@ enable_coredumps() {
     # dumped fine (execve of a non-setuid binary RESETS dumpable to 1). The
     # graceful restart below both loads this directive and re-forks the
     # workers under it.
-    dc exec -T openemr sh -c "printf 'CoreDumpDirectory %s\n' '${COREDUMP_DIR}' > /etc/apache2/conf.d/zz-ci-coredump.conf"
+    dc exec -T DCL sh -c "printf 'CoreDumpDirectory %s\n' '${COREDUMP_DIR}' > /etc/apache2/conf.d/zz-ci-coredump.conf"
     # The two sysctls above are checked at the moment a process changes UID.
     # Apache started earlier in the compose `up` and its prefork workers
     # already dropped root -> apache before we ran these sysctls, so those
@@ -984,7 +984,7 @@ enable_coredumps() {
     # forks fresh workers, and those inherit dumpable=1 under
     # fs.suid_dumpable=2, so subsequent segfaults leave usable cores.
     # shellcheck disable=SC2310  # graceful restart failure is diagnostic, not fatal
-    dc exec -T openemr sh -c 'httpd -k graceful' \
+    dc exec -T DCL sh -c 'httpd -k graceful' \
         || echo 'enable_coredumps: graceful restart failed; existing workers keep dumpable=0'
 
     # Canary: prove the whole coredump pipeline works in THIS job before
@@ -1010,11 +1010,11 @@ enable_coredumps() {
     # shellcheck disable=SC2016  # $argv[1] is PHP's argv, evaluated by php inside the container, not a shell variable
     local canary_php='file_put_contents($argv[1], posix_getpid()); posix_kill(posix_getpid(), 11);'
     # shellcheck disable=SC2310  # the canary dies by SIGSEGV, so a nonzero exit is the expected outcome
-    dc exec -T openemr \
+    dc exec -T DCL \
         su -s /bin/sh apache -c "php -d display_startup_errors=0 -r '${canary_php}' '${canary_pid_file}'" \
         >/dev/null 2>&1 || true
     # shellcheck disable=SC2310  # a missing pid file selects the inconclusive message below; never fatal
-    canary_pid=$(dc exec -T openemr sh -c "cat '${canary_pid_file}' && rm -f '${canary_pid_file}'" 2>/dev/null) || canary_pid=''
+    canary_pid=$(dc exec -T DCL sh -c "cat '${canary_pid_file}' && rm -f '${canary_pid_file}'" 2>/dev/null) || canary_pid=''
     canary_pid=${canary_pid//[!0-9]/}
     if [[ -n "${canary_pid}" ]]; then
         # shellcheck disable=SC2310  # poll outcome selects the message; never fatal
@@ -1039,13 +1039,13 @@ enable_coredumps() {
     # one AH00051 line in the error log (AH00051, not AH00052, because
     # CoreDumpDirectory is set); the parent forks a replacement immediately.
     local worker_pid
-    worker_pid=$(docker compose exec -T openemr sh -c 'pgrep -u apache httpd | head -1') || worker_pid=""
+    worker_pid=$(docker compose exec -T DCL sh -c 'pgrep -u apache httpd | head -1') || worker_pid=""
     worker_pid=${worker_pid//[!0-9]/}
     if [[ -z "${worker_pid}" ]]; then
         echo "worker coredump canary skipped: no apache worker process found"
         return 0
     fi
-    docker compose exec -T openemr kill -SEGV "${worker_pid}" 2>/dev/null || true
+    docker compose exec -T DCL kill -SEGV "${worker_pid}" 2>/dev/null || true
     local worker_core_ok=0
     # shellcheck disable=SC2310  # poll outcome selects the message; never fatal
     if _await_core_for_pid "${worker_pid}"; then
@@ -1060,19 +1060,19 @@ enable_coredumps() {
 }
 
 ##
-# Resolve an executable inside the openemr container for gdb: run the probe
+# Resolve an executable inside the DCL container for gdb: run the probe
 # command $1 in the container's shell and print its first output line, or
 # nothing when no candidate resolves (gdb then runs core-only).
 _container_exe() {
     local exe
     # shellcheck disable=SC2310  # missing binary is tolerated; gdb runs core-only as last resort
-    exe=$(dc exec -T openemr sh -c "$1") || exe=''
+    exe=$(dc exec -T DCL sh -c "$1") || exe=''
     exe=${exe%$'\r'}
     printf '%s' "${exe%%$'\n'*}"
 }
 
 ##
-# Backtrace every coredump collected in the openemr container and write the
+# Backtrace every coredump collected in the DCL container and write the
 # results into the diagnostics directory passed as $1 (a host path). For each
 # core we always write a gdb text backtrace (naming the faulting shared
 # object — the whole point of #12439). The raw core is NOT uploaded by
@@ -1091,12 +1091,12 @@ capture_coredumps() {
     # itself (truncated cores, ENOSPC, RLIMIT_CORE, or crashes that never
     # dumped).
     # shellcheck disable=SC2310  # best-effort inventory; a dead container must not abort diagnostics
-    dc exec -T openemr sh -c "ls -la '${COREDUMP_DIR}' 2>&1; echo; df -h / '${COREDUMP_DIR}' 2>&1" \
+    dc exec -T DCL sh -c "ls -la '${COREDUMP_DIR}' 2>&1; echo; df -h / '${COREDUMP_DIR}' 2>&1" \
         > "${dest_dir}/coredumps.inventory.txt" 2>&1 || true
 
     local cores
     # shellcheck disable=SC2310  # missing-core is expected; || true drives the no-op branch
-    cores=$(dc exec -T openemr sh -c "ls -1 '${COREDUMP_DIR}'/core.* 2>/dev/null") || true
+    cores=$(dc exec -T DCL sh -c "ls -1 '${COREDUMP_DIR}'/core.* 2>/dev/null") || true
     if [[ -z "${cores}" ]]; then
         echo "No coredumps found in ${COREDUMP_DIR}." > "${dest_dir}/coredumps.none.txt"
         return 0
@@ -1105,7 +1105,7 @@ capture_coredumps() {
     # gdb gives us `bt` and `info sharedlibrary`. Install inside the container
     # so symbol resolution uses the container's own libraries.
     # shellcheck disable=SC2310  # install failure is non-fatal; backtrace is just skipped
-    dc exec -T openemr sh -c \
+    dc exec -T DCL sh -c \
         'command -v gdb >/dev/null 2>&1 || { (apk add --no-cache gdb 2>/dev/null) || { apt-get update -qq && apt-get install -y -qq gdb; }; }' \
         || echo 'WARNING: gdb install failed; no backtrace will be produced. The raw core is retained in the container; set COREDUMP_MAX_MB > 0 to upload it for offline analysis.' >&2
 
@@ -1164,7 +1164,7 @@ capture_coredumps() {
         # function arguments, which can hold request data / credentials. This
         # keeps the backtrace safe to publish in a public artifact.
         local -a gdb_args=(
-            exec -T openemr gdb --batch --nx
+            exec -T DCL gdb --batch --nx
             -ex 'set pagination off'
             -ex 'thread apply all bt'
             -ex 'info sharedlibrary'
@@ -1195,7 +1195,7 @@ capture_coredumps() {
         # risk streaming an oversized core past the cap; backtrace is retained.
         local size_mb=''
         # shellcheck disable=SC2310  # du failure handled explicitly below
-        size_mb=$(dc exec -T openemr sh -c "du -m '${core}' | cut -f1" < /dev/null) || size_mb=''
+        size_mb=$(dc exec -T DCL sh -c "du -m '${core}' | cut -f1" < /dev/null) || size_mb=''
         size_mb=${size_mb%$'\r'}
         if [[ -z "${size_mb}" ]]; then
             echo "Could not determine size of ${base}; raw core omitted (cap cannot be enforced), backtrace retained." \
@@ -1211,7 +1211,7 @@ capture_coredumps() {
         # gzip, permissions, disk) must not abort the loop and skip the
         # remaining cores' backtraces.
         # shellcheck disable=SC2310  # gzip failure is logged, not fatal — keep processing cores
-        if ! dc exec -T openemr gzip -c "${core}" < /dev/null > "${dest_dir}/${base}.gz"; then
+        if ! dc exec -T DCL gzip -c "${core}" < /dev/null > "${dest_dir}/${base}.gz"; then
             rm -f "${dest_dir}/${base}.gz"
             echo "gzip stream failed for ${base}; raw core omitted, backtrace retained." \
                 > "${dest_dir}/${base}.gz.skipped.txt"

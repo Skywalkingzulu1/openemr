@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,31 +71,31 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * The diagram title of the group of operations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A longer description of the group of operations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * Description of initial status before the process starts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $preConditions = null;
 
     /**
      * Description of final status after the process ends.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $postConditions = null;
 
     /**
      * Each step of the process.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
      */
     public $step = [];
 
@@ -106,7 +106,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The diagram title of the group of operations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -115,7 +115,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The diagram title of the group of operations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -126,7 +126,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A longer description of the group of operations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -135,7 +135,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A longer description of the group of operations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -146,7 +146,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Description of initial status before the process starts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPreConditions()
     {
@@ -155,7 +155,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Description of initial status before the process starts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $preConditions
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $preConditions
      * @return $this
      */
     public function setPreConditions($preConditions)
@@ -166,7 +166,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Description of final status after the process ends.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPostConditions()
     {
@@ -175,7 +175,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Description of final status after the process ends.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $postConditions
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $postConditions
      * @return $this
      */
     public function setPostConditions($postConditions)
@@ -186,7 +186,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Each step of the process.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
      */
     public function getStep()
     {
@@ -195,7 +195,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Each step of the process.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep $step
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep $step
      * @return $this
      */
     public function addStep($step)

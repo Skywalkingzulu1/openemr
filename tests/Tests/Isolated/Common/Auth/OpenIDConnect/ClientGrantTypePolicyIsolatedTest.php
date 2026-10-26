@@ -3,20 +3,20 @@
 /**
  * Isolated tests for ClientGrantTypePolicy: which grants a client may register for and use.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Auth\OpenIDConnect;
+namespace DCL\Tests\Isolated\Common\Auth\OpenIDConnect;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

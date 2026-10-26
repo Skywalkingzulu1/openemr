@@ -193,7 +193,7 @@ class smtp_class
             || !extension_loaded("openssl"))
                 return("establishing SSL connections requires the OpenSSL extension enabled");
         }
-        if (\OpenEMR\Common\Utils\ValidationUtils::isValidIpAddress((string) $domain, FILTER_FLAG_IPV4)) {
+        if (\DCL\Common\Utils\ValidationUtils::isValidIpAddress((string) $domain, FILTER_FLAG_IPV4)) {
             $ip = $domain;
         } else {
             if ($this->debug)

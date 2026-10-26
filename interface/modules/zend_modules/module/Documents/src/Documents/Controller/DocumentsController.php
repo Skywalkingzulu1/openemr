@@ -3,13 +3,13 @@
 /**
  * interface/modules/zend_modules/module/Documents/src/Documents/Controller/DocumentsController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Basil PT <basil@zhservices.com>
  * @author    Chandni Babu <chandnib@zhservices.com>
  * @author    Riju KP <rijukp@zhservices.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Documents\Controller;
@@ -19,10 +19,10 @@ use Document;
 use Documents\Model\DocumentsTable;
 use DOMDocument;
 use Laminas\Mvc\Controller\AbstractActionController;
-use OpenEMR\Common\Crypto\KeyVersion;
-use OpenEMR\Common\Crypto\PasswordBasedCrypto;
-use OpenEMR\Common\Utils\XmlUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Crypto\KeyVersion;
+use DCL\Common\Crypto\PasswordBasedCrypto;
+use DCL\Common\Utils\XmlUtils;
+use DCL\Core\OEGlobalsBag;
 use XSLTProcessor;
 
 class DocumentsController extends AbstractActionController
@@ -111,8 +111,8 @@ class DocumentsController extends AbstractActionController
                     $passwordCrypto = new PasswordBasedCrypto(KeyVersion::CURRENT);
                     try {
                         $plaintext = $passwordCrypto->decrypt((string) $filetext, (string) $encryption_key);
-                    } catch (\OpenEMR\Common\Crypto\CryptoGenException) {
-                        error_log("OpenEMR Error: Unable to decrypt a document since decryption failed.");
+                    } catch (\DCL\Common\Crypto\CryptoGenException) {
+                        error_log("DCL Error: Unable to decrypt a document since decryption failed.");
                         $plaintext = "";
                     }
                     fclose($tmpfile);

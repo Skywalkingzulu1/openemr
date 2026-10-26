@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Demographics and other administrative information about an individual or animal receiving care or other health-related services.
@@ -72,7 +72,7 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An identifier for this patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
@@ -83,99 +83,99 @@ Many systems use this property to mark as non-current patients, such as those th
 It is often used to filter patient lists to exclude inactive patients
 
 Deceased patients may also be marked as inactive for the same reasons, but may be active for some time after death.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * A name associated with the individual.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHumanName[]
      */
     public $name = [];
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public $gender = null;
 
     /**
      * The date of birth for the individual.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $birthDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $deceasedBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $deceasedDateTime = null;
 
     /**
      * An address for the individual.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public $address = [];
 
     /**
      * This field contains a patient's most recent marital (civil) status.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $maritalStatus = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $multipleBirthBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $multipleBirthInteger = null;
 
     /**
      * Image of the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public $photo = [];
 
     /**
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientContact[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientContact[]
      */
     public $contact = [];
 
     /**
      * A language which may be used to communicate with the patient about his or her health.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication[]
      */
     public $communication = [];
 
     /**
      * Patient's nominated care provider.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $generalPractitioner = [];
 
     /**
      * Organization that is the custodian of the patient record.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $managingOrganization = null;
 
     /**
      * Link to another patient resource that concerns the same actual patient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientLink[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientLink[]
      */
     public $link = [];
 
@@ -186,7 +186,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * An identifier for this patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -195,7 +195,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * An identifier for this patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -211,7 +211,7 @@ Many systems use this property to mark as non-current patients, such as those th
 It is often used to filter patient lists to exclude inactive patients
 
 Deceased patients may also be marked as inactive for the same reasons, but may be active for some time after death.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -225,7 +225,7 @@ Many systems use this property to mark as non-current patients, such as those th
 It is often used to filter patient lists to exclude inactive patients
 
 Deceased patients may also be marked as inactive for the same reasons, but may be active for some time after death.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -236,7 +236,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A name associated with the individual.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHumanName[]
      */
     public function getName()
     {
@@ -245,7 +245,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A name associated with the individual.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHumanName $name
      * @return $this
      */
     public function addName($name)
@@ -256,7 +256,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -265,7 +265,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -276,7 +276,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender()
     {
@@ -285,7 +285,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
     public function setGender($gender)
@@ -296,7 +296,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * The date of birth for the individual.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getBirthDate()
     {
@@ -305,7 +305,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * The date of birth for the individual.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $birthDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $birthDate
      * @return $this
      */
     public function setBirthDate($birthDate)
@@ -315,7 +315,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDeceasedBoolean()
     {
@@ -323,7 +323,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $deceasedBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $deceasedBoolean
      * @return $this
      */
     public function setDeceasedBoolean($deceasedBoolean)
@@ -333,7 +333,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDeceasedDateTime()
     {
@@ -341,7 +341,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $deceasedDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $deceasedDateTime
      * @return $this
      */
     public function setDeceasedDateTime($deceasedDateTime)
@@ -352,7 +352,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * An address for the individual.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
     {
@@ -361,7 +361,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * An address for the individual.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function addAddress($address)
@@ -372,7 +372,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * This field contains a patient's most recent marital (civil) status.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMaritalStatus()
     {
@@ -381,7 +381,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * This field contains a patient's most recent marital (civil) status.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $maritalStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $maritalStatus
      * @return $this
      */
     public function setMaritalStatus($maritalStatus)
@@ -391,7 +391,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getMultipleBirthBoolean()
     {
@@ -399,7 +399,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $multipleBirthBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $multipleBirthBoolean
      * @return $this
      */
     public function setMultipleBirthBoolean($multipleBirthBoolean)
@@ -409,7 +409,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getMultipleBirthInteger()
     {
@@ -417,7 +417,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $multipleBirthInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $multipleBirthInteger
      * @return $this
      */
     public function setMultipleBirthInteger($multipleBirthInteger)
@@ -428,7 +428,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Image of the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public function getPhoto()
     {
@@ -437,7 +437,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Image of the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $photo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function addPhoto($photo)
@@ -448,7 +448,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientContact[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientContact[]
      */
     public function getContact()
     {
@@ -457,7 +457,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientContact $contact
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -468,7 +468,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A language which may be used to communicate with the patient about his or her health.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication[]
      */
     public function getCommunication()
     {
@@ -477,7 +477,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * A language which may be used to communicate with the patient about his or her health.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication $communication
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientCommunication $communication
      * @return $this
      */
     public function addCommunication($communication)
@@ -488,7 +488,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Patient's nominated care provider.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getGeneralPractitioner()
     {
@@ -497,7 +497,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Patient's nominated care provider.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $generalPractitioner
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $generalPractitioner
      * @return $this
      */
     public function addGeneralPractitioner($generalPractitioner)
@@ -508,7 +508,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Organization that is the custodian of the patient record.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManagingOrganization()
     {
@@ -517,7 +517,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Organization that is the custodian of the patient record.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
      * @return $this
      */
     public function setManagingOrganization($managingOrganization)
@@ -528,7 +528,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Link to another patient resource that concerns the same actual patient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientLink[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientLink[]
      */
     public function getLink()
     {
@@ -537,7 +537,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 
     /**
      * Link to another patient resource that concerns the same actual patient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientLink $link
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPatient\FHIRPatientLink $link
      * @return $this
      */
     public function addLink($link)

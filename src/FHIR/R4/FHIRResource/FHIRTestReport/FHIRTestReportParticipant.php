@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -71,19 +71,19 @@ class FHIRTestReportParticipant extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * The type of participant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportParticipantType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTestReportParticipantType
      */
     public $type = null;
 
     /**
      * The uri of the participant. An absolute URL is preferred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $uri = null;
 
     /**
      * The display name of the participant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
@@ -94,7 +94,7 @@ class FHIRTestReportParticipant extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The type of participant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportParticipantType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTestReportParticipantType
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRTestReportParticipant extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The type of participant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportParticipantType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTestReportParticipantType $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRTestReportParticipant extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The uri of the participant. An absolute URL is preferred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUri()
     {
@@ -123,7 +123,7 @@ class FHIRTestReportParticipant extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The uri of the participant. An absolute URL is preferred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $uri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $uri
      * @return $this
      */
     public function setUri($uri)
@@ -134,7 +134,7 @@ class FHIRTestReportParticipant extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The display name of the participant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -143,7 +143,7 @@ class FHIRTestReportParticipant extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The display name of the participant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)

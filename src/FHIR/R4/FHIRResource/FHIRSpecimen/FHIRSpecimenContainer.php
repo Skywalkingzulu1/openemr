@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSpecimen;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A sample to be used for analysis.
@@ -71,41 +71,41 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Textual description of the container.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The capacity (volume or other measure) the container may contain.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $capacity = null;
 
     /**
      * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $specimenQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $additiveCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $additiveReference = null;
 
@@ -116,7 +116,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -125,7 +125,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -136,7 +136,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Textual description of the container.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -145,7 +145,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Textual description of the container.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -156,7 +156,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -165,7 +165,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -176,7 +176,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The capacity (volume or other measure) the container may contain.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getCapacity()
     {
@@ -185,7 +185,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The capacity (volume or other measure) the container may contain.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $capacity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $capacity
      * @return $this
      */
     public function setCapacity($capacity)
@@ -196,7 +196,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getSpecimenQuantity()
     {
@@ -205,7 +205,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $specimenQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $specimenQuantity
      * @return $this
      */
     public function setSpecimenQuantity($specimenQuantity)
@@ -215,7 +215,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAdditiveCodeableConcept()
     {
@@ -223,7 +223,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
      * @return $this
      */
     public function setAdditiveCodeableConcept($additiveCodeableConcept)
@@ -233,7 +233,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAdditiveReference()
     {
@@ -241,7 +241,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $additiveReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $additiveReference
      * @return $this
      */
     public function setAdditiveReference($additiveReference)

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2005-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2021 Stephen Waite <stephen.waite@cmsvt.com>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // This returns an associative array keyed on procedure code, representing
@@ -32,11 +32,11 @@
 //  plv - provided for "integrated A/R" only: 0=pt, 1=Ins1, etc.
 //  dsc - for tax charges, a description of the tax
 //  arseq - ar_activity.sequence_no when it applies.
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
 require_once(__DIR__ . "/../../custom/code_types.inc.php");
 
-use OpenEMR\Billing\SLEOB;
+use DCL\Billing\SLEOB;
 
 // for Integrated A/R.
 //

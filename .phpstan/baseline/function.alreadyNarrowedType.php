@@ -62,7 +62,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Controller/AppDispatch.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function is_object\\(\\) with OpenEMR\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\FaxStatus will always evaluate to true\\.$#',
+    'message' => '#^Call to function is_object\\(\\) with DCL\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\FaxStatus will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Controller/EtherFaxActions.php',
 ];
@@ -72,7 +72,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Controller/EtherFaxActions.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function property_exists\\(\\) with OpenEMR\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\FaxStatus and \'FaxResult\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function property_exists\\(\\) with DCL\\\\Modules\\\\FaxSMS\\\\EtherFax\\\\FaxStatus and \'FaxResult\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Controller/EtherFaxActions.php',
 ];
@@ -297,7 +297,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/CodeTypesService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function is_array\\(\\) with array\\<string, OpenEMR\\\\Services\\\\Search\\\\ISearchField\\> will always evaluate to true\\.$#',
+    'message' => '#^Call to function is_array\\(\\) with array\\<string, DCL\\\\Services\\\\Search\\\\ISearchField\\> will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/DeviceService.php',
 ];
@@ -312,17 +312,17 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirExportJobService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function is_array\\(\\) with array\\<string, OpenEMR\\\\Services\\\\Search\\\\FhirSearchParameterDefinition\\> will always evaluate to true\\.$#',
+    'message' => '#^Call to function is_array\\(\\) with array\\<string, DCL\\\\Services\\\\Search\\\\FhirSearchParameterDefinition\\> will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirServiceBase.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function is_object\\(\\) with OpenEMR\\\\Services\\\\FHIR\\\\Observation\\\\ISearchField will always evaluate to true\\.$#',
+    'message' => '#^Call to function is_object\\(\\) with DCL\\\\Services\\\\FHIR\\\\Observation\\\\ISearchField will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationAdvanceDirectiveService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function is_array\\(\\) with array\\<string, OpenEMR\\\\Services\\\\Search\\\\ISearchField\\> will always evaluate to true\\.$#',
+    'message' => '#^Call to function is_array\\(\\) with array\\<string, DCL\\\\Services\\\\Search\\\\ISearchField\\> will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Procedure/FhirProcedureOEProcedureService.php',
 ];
@@ -347,7 +347,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/Qdm/Measure.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function property_exists\\(\\) with OpenEMR\\\\Services\\\\Qdm\\\\PopulationSet and \'stratifications\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function property_exists\\(\\) with DCL\\\\Services\\\\Qdm\\\\PopulationSet and \'stratifications\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/Qdm/Measure.php',
 ];
@@ -402,27 +402,27 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Validators/BaseValidator.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Tests\\\\Isolated\\\\Validators\\\\Rules\\\\ListOptionRuleStub and \'getMessageParameters\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Tests\\\\Isolated\\\\Validators\\\\Rules\\\\ListOptionRuleStub and \'getMessageParameters\' will always evaluate to true\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Rules/ListOptionRuleTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Tests\\\\Isolated\\\\Validators\\\\Rules\\\\ListOptionRuleStub and \'validate\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Tests\\\\Isolated\\\\Validators\\\\Rules\\\\ListOptionRuleStub and \'validate\' will always evaluate to true\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Rules/ListOptionRuleTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Telemetry\\\\GeoTelemetry and \'anonymizeIp\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Telemetry\\\\GeoTelemetry and \'anonymizeIp\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/GeoTelemetryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Telemetry\\\\GeoTelemetry and \'getGeoData\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Telemetry\\\\GeoTelemetry and \'getGeoData\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/GeoTelemetryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Telemetry\\\\GeoTelemetry and \'getServerGeoData\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Telemetry\\\\GeoTelemetry and \'getServerGeoData\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/GeoTelemetryTest.php',
 ];
@@ -437,42 +437,42 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/TelemetryRepositoryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Telemetry\\\\TelemetryRepository and \'clearTelemetryData\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Telemetry\\\\TelemetryRepository and \'clearTelemetryData\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/TelemetryRepositoryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Telemetry\\\\TelemetryRepository and \'fetchUsageRecords\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Telemetry\\\\TelemetryRepository and \'fetchUsageRecords\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/TelemetryRepositoryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Telemetry\\\\TelemetryRepository and \'saveTelemetryEvent\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Telemetry\\\\TelemetryRepository and \'saveTelemetryEvent\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/TelemetryRepositoryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Telemetry\\\\TelemetryService and \'trackApiRequestEvent\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Telemetry\\\\TelemetryService and \'trackApiRequestEvent\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/TelemetryServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Tests\\\\Isolated\\\\Validators\\\\ImmunizationValidatorStub and \'configureValidator\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Tests\\\\Isolated\\\\Validators\\\\ImmunizationValidatorStub and \'configureValidator\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Validators/ImmunizationValidatorTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Validators\\\\OpenEMRChain and \'listOption\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Validators\\\\DCLChain and \'listOption\' will always evaluate to true\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/Tests/Isolated/Validators/OpenEMRChainTest.php',
+    'path' => __DIR__ . '/../../tests/Tests/Isolated/Validators/DCLChainTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Validators\\\\OpenEMRParticleValidator and \'buildChain\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Validators\\\\DCLParticleValidator and \'buildChain\' will always evaluate to true\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../tests/Tests/Isolated/Validators/OpenEMRParticleValidatorTest.php',
+    'path' => __DIR__ . '/../../tests/Tests/Isolated/Validators/DCLParticleValidatorTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with OpenEMR\\\\Tests\\\\Isolated\\\\Validators\\\\PatientValidatorStub and \'isExistingUuid\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with DCL\\\\Tests\\\\Isolated\\\\Validators\\\\PatientValidatorStub and \'isExistingUuid\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Validators/PatientValidatorTest.php',
 ];
@@ -487,12 +487,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Services/Billing/InvoiceSummaryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with \'OpenEMR\\\\\\\\Billing\\\\\\\\InvoiceSummary\' and \'arGetInvoiceSummary\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with \'DCL\\\\\\\\Billing\\\\\\\\InvoiceSummary\' and \'arGetInvoiceSummary\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/Billing/InvoiceSummaryTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to function method_exists\\(\\) with \'OpenEMR\\\\\\\\Billing\\\\\\\\InvoiceSummary\' and \'arResponsibleParty\' will always evaluate to true\\.$#',
+    'message' => '#^Call to function method_exists\\(\\) with \'DCL\\\\\\\\Billing\\\\\\\\InvoiceSummary\' and \'arResponsibleParty\' will always evaluate to true\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/Billing/InvoiceSummaryTest.php',
 ];

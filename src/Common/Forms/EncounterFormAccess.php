@@ -20,18 +20,18 @@
  * the pure check with a DB fetch and terminates the request on mismatch
  * via `AccessDeniedHelper::deny()`.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\PatientSessionUtil;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\PatientSessionUtil;
 use Symfony\Component\HttpFoundation\Response;
 
 final class EncounterFormAccess

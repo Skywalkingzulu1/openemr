@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Isolated tests for OpenEMR\Release\ChangelogGenerator.
+ * Isolated tests for DCL\Release\ChangelogGenerator.
  *
  * Focus areas: the ported noise filter (isNoise/isDockerBump/
  * isNoOpVersionBump), section ordering, area sub-grouping,
@@ -13,22 +13,22 @@
  * ChangelogGeneratorFixtureTest — this file covers filter branches
  * discretely so a regression on any one is localized to a single test.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use DateTimeImmutable;
 use DateTimeZone;
 use Lcobucci\Clock\FrozenClock;
-use OpenEMR\Release\ChangelogGenerator;
-use OpenEMR\Release\GitHubApi;
+use DCL\Release\ChangelogGenerator;
+use DCL\Release\GitHubApi;
 use PHPUnit\Framework\TestCase;
 
 final class ChangelogGeneratorTest extends TestCase
@@ -64,7 +64,7 @@ final class ChangelogGeneratorTest extends TestCase
             'number' => $number,
             'title' => $title,
             'labels' => array_map(static fn (string $l): array => ['name' => $l], $labels),
-            'url' => sprintf('https://github.com/openemr/openemr/pull/%d', $number),
+            'url' => sprintf('https://github.com/DCL/DCL/pull/%d', $number),
             'author' => $author,
         ];
     }
@@ -73,7 +73,7 @@ final class ChangelogGeneratorTest extends TestCase
     {
         $out = $this->generate([
             $this->pr(1, 'feat: real change'),
-            $this->pr(2, 'chore: bump version', author: 'openemr-release-bot[bot]'),
+            $this->pr(2, 'chore: bump version', author: 'DCL-release-bot[bot]'),
         ]);
         self::assertStringContainsString('#1', $out);
         self::assertStringNotContainsString('#2', $out);
@@ -94,7 +94,7 @@ final class ChangelogGeneratorTest extends TestCase
         // Backports on a rel branch ARE the PRs that shipped in that
         // release. The earlier filter (ported from website's stricter
         // rules) dropped them, but that swallowed user-visible fixes
-        // like openemr/openemr#12827 / #12832 from the 8.2.0 CHANGELOG.
+        // like DCL/DCL#12827 / #12832 from the 8.2.0 CHANGELOG.
         // Now kept.
         $out = $this->generate([
             $this->pr(1, 'feat: real change'),
@@ -168,7 +168,7 @@ final class ChangelogGeneratorTest extends TestCase
     {
         $out = $this->generate([
             $this->pr(1, 'feat: real change'),
-            $this->pr(2, 'chore(deps): bump openemr/openemr from flex-3.17 to flex-3.18 in /docker/development-insane', author: 'dependabot[bot]'),
+            $this->pr(2, 'chore(deps): bump DCL/DCL from flex-3.17 to flex-3.18 in /docker/development-insane', author: 'dependabot[bot]'),
             $this->pr(3, 'chore(deps): bump mariadb from 10.6.0 to 10.6.1 in /ci/php82_mariadb1011', author: 'dependabot[bot]'),
         ]);
         self::assertStringContainsString('#1', $out);
@@ -180,7 +180,7 @@ final class ChangelogGeneratorTest extends TestCase
     {
         $out = $this->generate([
             $this->pr(1, 'feat: real change'),
-            $this->pr(2, 'bump the openemr-images group across 1 directory with 2 updates', author: 'dependabot[bot]'),
+            $this->pr(2, 'bump the DCL-images group across 1 directory with 2 updates', author: 'dependabot[bot]'),
             $this->pr(3, 'bump the mariadb group across 3 directories', author: 'dependabot[bot]'),
         ]);
         self::assertStringContainsString('#1', $out);
@@ -241,8 +241,8 @@ final class ChangelogGeneratorTest extends TestCase
             $this->pr(2, 'feat: internal refactor', labels: ['developers']),
         ]);
 
-        self::assertStringContainsString('### OpenEMR Developer Changes', $out);
-        $devPos = strpos($out, '### OpenEMR Developer Changes');
+        self::assertStringContainsString('### DCL Developer Changes', $out);
+        $devPos = strpos($out, '### DCL Developer Changes');
         $userPos = strpos($out, '#1');
         self::assertIsInt($devPos);
         self::assertIsInt($userPos);
@@ -268,7 +268,7 @@ final class ChangelogGeneratorTest extends TestCase
         );
 
         self::assertStringContainsString(
-            'https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1',
+            'https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1',
             $out,
         );
         self::assertStringNotContainsString('compare/v8_2_0...rel-820', $out);
@@ -284,7 +284,7 @@ final class ChangelogGeneratorTest extends TestCase
         );
 
         self::assertStringContainsString(
-            'https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1',
+            'https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1',
             $out,
         );
     }
@@ -316,7 +316,7 @@ final class ChangelogGeneratorTest extends TestCase
         self::assertStringNotContainsString('#### [EVIL](https://x)', $out);
     }
 
-    public function testPrUrlOutsideOpenemrOrgReplacedWithSafePlaceholder(): void
+    public function testPrUrlOutsideDCLOrgReplacedWithSafePlaceholder(): void
     {
         $prs = [[
             'number' => 1,
@@ -331,11 +331,11 @@ final class ChangelogGeneratorTest extends TestCase
 
         self::assertStringNotContainsString('attacker.example.com', $out);
         // Target the PR bullet line specifically -- the release heading
-        // trivially contains `https://github.com/openemr/openemr` (compare
+        // trivially contains `https://github.com/DCL/DCL` (compare
         // URL), so a broader assertion would pass even if the PR-line
         // sanitizer regressed. Match on the `[#1](...)` shape which only
         // renders for the PR entry.
-        self::assertStringContainsString('([#1](https://github.com/openemr/openemr)', $out);
+        self::assertStringContainsString('([#1](https://github.com/DCL/DCL)', $out);
     }
 
     public function testAdvisorySummaryAndUrlSanitized(): void
@@ -347,7 +347,7 @@ final class ChangelogGeneratorTest extends TestCase
             'severity' => 'high',
             'summary' => 'nasty [phish](https://evil.example.com)',
             'html_url' => 'https://attacker.example.com/advisory/1',
-            'references' => [['url' => 'https://github.com/openemr/openemr/pull/1']],
+            'references' => [['url' => 'https://github.com/DCL/DCL/pull/1']],
         ]];
         $api = new FakeGitHubApi(shas: $shas, prs: $prs, advisories: $advisories);
         $out = (new ChangelogGenerator($api))->generate('v8_2_0', 'rel-820', '8.2.1', includeGhsa: true);
@@ -362,14 +362,14 @@ final class ChangelogGeneratorTest extends TestCase
         $prs = [$this->pr(1, 'feat: baseline PR')];
         $shas = ['0000000000000000000000000000000000000001'];
         // No references linking commits/PRs; the only match signal is
-        // the exact patched_versions string. This mirrors how openemr
+        // the exact patched_versions string. This mirrors how DCL
         // GHSAs are published in practice (References field left empty,
         // Patched versions set to the exact release string).
         $advisories = [[
             'ghsa_id' => 'GHSA-vv5j-6gjw-ffx9',
             'severity' => 'high',
             'summary' => 'staging of decrypted patient documents in webroot',
-            'html_url' => 'https://github.com/openemr/openemr/security/advisories/GHSA-vv5j-6gjw-ffx9',
+            'html_url' => 'https://github.com/DCL/DCL/security/advisories/GHSA-vv5j-6gjw-ffx9',
             'references' => [],
             'vulnerabilities' => [['patched_versions' => '8.2.1']],
         ]];
@@ -390,7 +390,7 @@ final class ChangelogGeneratorTest extends TestCase
             'ghsa_id' => 'GHSA-aaaa-bbbb-cccc',
             'severity' => 'high',
             'summary' => 'landed on a different release',
-            'html_url' => 'https://github.com/openemr/openemr/security/advisories/GHSA-aaaa-bbbb-cccc',
+            'html_url' => 'https://github.com/DCL/DCL/security/advisories/GHSA-aaaa-bbbb-cccc',
             'references' => [],
             'vulnerabilities' => [['patched_versions' => '8.1.0']],
         ]];
@@ -408,14 +408,14 @@ final class ChangelogGeneratorTest extends TestCase
         $api = new FakeGitHubApi(shas: $shas, prs: $prs, advisories: []);
         $frozen = new FrozenClock(new DateTimeImmutable('2026-01-15T00:00:00Z', new DateTimeZone('UTC')));
 
-        $out = (new ChangelogGenerator($api, 'openemr/openemr', $frozen))->generate(
+        $out = (new ChangelogGenerator($api, 'DCL/DCL', $frozen))->generate(
             'v8_2_0',
             'rel-820',
             '8.2.1',
             includeGhsa: false,
         );
 
-        self::assertStringContainsString('## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...rel-820) - 2026-01-15', $out);
+        self::assertStringContainsString('## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...rel-820) - 2026-01-15', $out);
     }
 }
 
@@ -436,7 +436,7 @@ final class FakeGitHubApi extends GitHubApi
         private readonly array $prs,
         private readonly array $advisories,
     ) {
-        parent::__construct('openemr/openemr');
+        parent::__construct('DCL/DCL');
     }
 
     /**

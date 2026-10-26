@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasure;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The Measure resource provides the definition of a quality measure.
@@ -71,25 +71,25 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Indicates a meaning for the group. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing groups to be correlated across measures.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The human readable description of this population group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * A population criteria for the measure.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasurePopulation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasurePopulation[]
      */
     public $population = [];
 
     /**
      * The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureStratifier[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureStratifier[]
      */
     public $stratifier = [];
 
@@ -100,7 +100,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates a meaning for the group. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing groups to be correlated across measures.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates a meaning for the group. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing groups to be correlated across measures.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The human readable description of this population group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -129,7 +129,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The human readable description of this population group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -140,7 +140,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A population criteria for the measure.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasurePopulation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasurePopulation[]
      */
     public function getPopulation()
     {
@@ -149,7 +149,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A population criteria for the measure.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasurePopulation $population
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasurePopulation $population
      * @return $this
      */
     public function addPopulation($population)
@@ -160,7 +160,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureStratifier[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureStratifier[]
      */
     public function getStratifier()
     {
@@ -169,7 +169,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureStratifier $stratifier
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureStratifier $stratifier
      * @return $this
      */
     public function addStratifier($stratifier)

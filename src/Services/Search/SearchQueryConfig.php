@@ -3,16 +3,16 @@
 /**
  * SearchQueryConfig represents a configuration for a search query.  It handles both the pagination and the search field order
  * for a given search query request.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Search;
+namespace DCL\Services\Search;
 
-use OpenEMR\Common\Database\QueryPagination;
+use DCL\Common\Database\QueryPagination;
 
 class SearchQueryConfig
 {

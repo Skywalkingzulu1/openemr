@@ -5,19 +5,19 @@
  * fsupgrade stub creation + Dockerfile manifest update used by branch-cut
  * automation (and shared between rel-side and master-side).
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\DockerUpgradeScaffoldMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\Mutator\DockerUpgradeScaffoldMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -31,7 +31,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-dus-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-dus-' . bin2hex(random_bytes(8));
         $this->setupCleanTree(11);
     }
 
@@ -87,7 +87,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
             }
         }
         // Exactly five lines changed: header comment, from-prior-version
-        // comment, priorOpenemrVersion="…", Start: echo, Completed: echo.
+        // comment, priorDCLVersion="…", Start: echo, Completed: echo.
         self::assertCount(
             5,
             $changedIndexes,
@@ -139,7 +139,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
     {
         file_put_contents(
             $this->tmpDir . '/docker/release/Dockerfile',
-            "ARG OPENEMR_VERSION=master\n# no COPY block here\n",
+            "ARG DCL_VERSION=master\n# no COPY block here\n",
         );
 
         $this->expectException(\RuntimeException::class);
@@ -147,16 +147,16 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         (new DockerUpgradeScaffoldMutator())->apply($this->context());
     }
 
-    public function testPriorOpenemrVersionDerivedFromSqlBridgeLeft(): void
+    public function testPriorDCLVersionDerivedFromSqlBridgeLeft(): void
     {
         // Happy-path branch-cut derivation: fsupgrade-12.sh's
-        // priorOpenemrVersion is read from the highest LEFT version
+        // priorDCLVersion is read from the highest LEFT version
         // among sql/*_upgrade.sql bridges — that's the last shipped
         // version. Seed a rel-850 cut fixture: `8_4_1-to-8_5_0_upgrade.sql`
-        // is the latest bridge, so priorOpenemrVersion must resolve to
+        // is the latest bridge, so priorDCLVersion must resolve to
         // "8.4.1".
         //
-        // Prior fsupgrade file's own priorOpenemrVersion marker (the
+        // Prior fsupgrade file's own priorDCLVersion marker (the
         // search anchor for the substitution) is whatever the prior
         // cycle wrote; here we set it to "8.4.0" (rel-840's shipped
         // version). The scaffold reads the marker from the file, so the
@@ -164,8 +164,8 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         // provided the load-bearing schema (all five anchor patterns)
         // is intact.
         $priorAt840 = str_replace(
-            ['priorOpenemrVersion="8.1.0"', 'From prior version 8.1.0'],
-            ['priorOpenemrVersion="8.4.0"', 'From prior version 8.4.0'],
+            ['priorDCLVersion="8.1.0"', 'From prior version 8.1.0'],
+            ['priorDCLVersion="8.4.0"', 'From prior version 8.4.0'],
             $this->fixture('fsupgrade-11.sh'),
         );
         file_put_contents(
@@ -186,8 +186,8 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         );
         $next = file_get_contents($this->tmpDir . '/docker/release/upgrade/fsupgrade-12.sh');
         self::assertIsString($next);
-        self::assertStringContainsString('priorOpenemrVersion="8.4.1"', $next);
-        self::assertStringNotContainsString('priorOpenemrVersion="8.5.0"', $next);
+        self::assertStringContainsString('priorDCLVersion="8.4.1"', $next);
+        self::assertStringNotContainsString('priorDCLVersion="8.5.0"', $next);
         self::assertStringContainsString('#  From prior version 8.4.1 ', $next);
     }
 
@@ -219,7 +219,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         );
         $next = file_get_contents($this->tmpDir . '/docker/release/upgrade/fsupgrade-12.sh');
         self::assertIsString($next);
-        self::assertStringContainsString('priorOpenemrVersion="8.1.1"', $next);
+        self::assertStringContainsString('priorDCLVersion="8.1.1"', $next);
         self::assertStringContainsString('#  From prior version 8.1.1 ', $next);
     }
 
@@ -240,7 +240,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
 
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessageMatches(
-            '/priorOpenemrVersion 8\.2\.0 must be strictly less than target 8\.2\.0.*SqlUpgradeSkeletonMutator ran before DockerUpgradeScaffoldMutator/s',
+            '/priorDCLVersion 8\.2\.0 must be strictly less than target 8\.2\.0.*SqlUpgradeSkeletonMutator ran before DockerUpgradeScaffoldMutator/s',
         );
         (new DockerUpgradeScaffoldMutator())->apply($this->context());
     }
@@ -259,7 +259,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
 
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessageMatches(
-            '/priorOpenemrVersion 9\.0\.0 must be strictly less than target 8\.2\.0/',
+            '/priorDCLVersion 9\.0\.0 must be strictly less than target 8\.2\.0/',
         );
         (new DockerUpgradeScaffoldMutator())->apply($this->context());
     }
@@ -275,20 +275,20 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
 
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessageMatches(
-            '/Cannot derive priorOpenemrVersion.*no sql\/.*_upgrade\.sql files/',
+            '/Cannot derive priorDCLVersion.*no sql\/.*_upgrade\.sql files/',
         );
         (new DockerUpgradeScaffoldMutator())->apply($this->context());
     }
 
-    public function testThrowsWhenPriorFsupgradeLacksPriorOpenemrVersionAnchor(): void
+    public function testThrowsWhenPriorFsupgradeLacksPriorDCLVersionAnchor(): void
     {
-        // The prior fsupgrade file must carry a `priorOpenemrVersion="X.Y.Z"`
+        // The prior fsupgrade file must carry a `priorDCLVersion="X.Y.Z"`
         // marker — that's what the scaffold uses as the substitution
         // anchor to derive the new file's marker. Strip it and expect
         // a clear error rather than a silently corrupt output.
         $malformed = str_replace(
-            'priorOpenemrVersion="8.1.0"',
-            '# priorOpenemrVersion removed',
+            'priorDCLVersion="8.1.0"',
+            '# priorDCLVersion removed',
             $this->fixture('fsupgrade-11.sh'),
         );
         file_put_contents(
@@ -297,7 +297,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         );
 
         $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessageMatches('/cannot find priorOpenemrVersion/');
+        $this->expectExceptionMessageMatches('/cannot find priorDCLVersion/');
         (new DockerUpgradeScaffoldMutator())->apply($this->context());
     }
 
@@ -307,7 +307,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         // "Upgrade number N" header and expect the substitution loop
         // to fail with a clear error.
         $malformed = str_replace(
-            '# Upgrade number 11 for OpenEMR docker',
+            '# Upgrade number 11 for DCL docker',
             '# header stripped',
             $this->fixture('fsupgrade-11.sh'),
         );
@@ -324,7 +324,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
     public function testNoopMasterSidePostScaffoldWithSqlSiblingOutputPresent(): void
     {
         // Master-side post-scaffold state: docker-version bumped to 12,
-        // fsupgrade-12.sh exists carrying priorOpenemrVersion="8.1.1",
+        // fsupgrade-12.sh exists carrying priorDCLVersion="8.1.1",
         // AND the sibling SqlUpgradeSkeletonMutator has run —
         // sql/8_2_0-to-8_3_0_upgrade.sql is present alongside the
         // pre-existing 8_1_1-to-8_2_0 bridge from setup. Idempotency
@@ -338,8 +338,8 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         file_put_contents($this->tmpDir . '/sites/default/docker-version', "12\n");
         file_put_contents(
             $this->tmpDir . '/docker/release/upgrade/fsupgrade-12.sh',
-            "#!/bin/bash\n# Upgrade number 12 for OpenEMR docker\n"
-            . 'priorOpenemrVersion="8.1.1"' . "\n"
+            "#!/bin/bash\n# Upgrade number 12 for DCL docker\n"
+            . 'priorDCLVersion="8.1.1"' . "\n"
             . "# body preserved from prior file\n",
         );
         // SqlUpgradeSkeletonMutator's output on master-side.
@@ -360,17 +360,17 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         // bridge signal to key off (SqlUpgradeSkeletonMutator doesn't
         // run on rel-side branch-cut). Instead, idempotency detects OUR
         // work by matching fsupgrade-(current).sh's markers against
-        // what derivePriorOpenemrVersion produces RIGHT NOW: docker-version
+        // what derivePriorDCLVersion produces RIGHT NOW: docker-version
         // is bumped to 12, fsupgrade-12.sh has Upgrade number 12 and
-        // priorOpenemrVersion="8.1.1" (matches sql-scan of the setup
+        // priorDCLVersion="8.1.1" (matches sql-scan of the setup
         // fixture's 8_1_1-to-8_2_0 bridge).
         file_put_contents($this->tmpDir . '/docker-version', "12\n");
         file_put_contents($this->tmpDir . '/docker/release/upgrade/docker-version', "12\n");
         file_put_contents($this->tmpDir . '/sites/default/docker-version', "12\n");
         file_put_contents(
             $this->tmpDir . '/docker/release/upgrade/fsupgrade-12.sh',
-            "#!/bin/bash\n# Upgrade number 12 for OpenEMR docker\n"
-            . 'priorOpenemrVersion="8.1.1"' . "\n"
+            "#!/bin/bash\n# Upgrade number 12 for DCL docker\n"
+            . 'priorDCLVersion="8.1.1"' . "\n"
             . "# body preserved from prior file\n",
         );
 
@@ -382,7 +382,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
     {
         // If a partial state exists (docker-version bumped to 12 but
         // fsupgrade-12.sh lacks our cut's last-shipped marker — e.g.,
-        // somebody manually edited the priorOpenemrVersion value), the
+        // somebody manually edited the priorDCLVersion value), the
         // mutator should NOT no-op; it should attempt the work and let
         // the downstream anchor mismatch surface as a clear error
         // rather than silently passing through. The prior-file anchor
@@ -393,8 +393,8 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
         file_put_contents($this->tmpDir . '/sites/default/docker-version', "12\n");
         file_put_contents(
             $this->tmpDir . '/docker/release/upgrade/fsupgrade-12.sh',
-            "#!/bin/bash\n# Upgrade number 12 for OpenEMR docker\n"
-            . 'priorOpenemrVersion="8.0.5"' . "\n"
+            "#!/bin/bash\n# Upgrade number 12 for DCL docker\n"
+            . 'priorDCLVersion="8.0.5"' . "\n"
             . "echo doing real work\n",
         );
 
@@ -430,7 +430,7 @@ final class DockerUpgradeScaffoldMutatorTest extends TestCase
             $this->fixture('Dockerfile.input'),
         );
         // Seed sql/ with an 8_1_1-to-8_2_0_upgrade.sql bridge so the
-        // mutator's sql-scan derivation resolves priorOpenemrVersion to
+        // mutator's sql-scan derivation resolves priorDCLVersion to
         // "8.1.1" (the last shipped version before the rel-820 cut).
         file_put_contents(
             $this->tmpDir . '/sql/8_1_1-to-8_2_0_upgrade.sql',

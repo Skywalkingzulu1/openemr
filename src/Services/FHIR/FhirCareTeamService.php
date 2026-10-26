@@ -3,40 +3,40 @@
 /**
  * FhirCareTeamService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2025-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCareTeam;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\CareTeamService;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCareTeam;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\BaseService;
+use DCL\Services\CareTeamService;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService
     , IPatientCompartmentResourceService
@@ -80,7 +80,7 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Returns an array mapping FHIR CareTeam Resource search parameters to OpenEMR CareTeam search parameters
+     * Returns an array mapping FHIR CareTeam Resource search parameters to DCL CareTeam search parameters
      *
      * @return array The search parameters
      */
@@ -100,14 +100,14 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Parses an OpenEMR careTeam record, returning the equivalent FHIR CareTeam Resource
+     * Parses an DCL careTeam record, returning the equivalent FHIR CareTeam Resource
      * Compliant with US Core 8.0 and USCDI v5 requirements
      *
-     * @param  array   $dataRecord The source OpenEMR data record
+     * @param  array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRCareTeam|string|false
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $careTeamResource = new FHIRCareTeam();
 
@@ -282,9 +282,9 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param  array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param  array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
     /**
@@ -295,7 +295,7 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
      * with a CareTeam.participant.role[].coding[0].code gets that as the entry's role.
      * Other participant types (Organization, RelatedPerson) are not supported on write
      * in this implementation — the FHIR resource still parses, but only Practitioner
-     * members are written. This matches the typical OpenEMR care-team data model.
+     * members are written. This matches the typical DCL care-team data model.
      *
      * @param FHIRDomainResource $fhirResource
      * @return array<string, mixed>
@@ -332,7 +332,7 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
         $data['team_name'] = is_string($json['name'] ?? null) ? $json['name'] : '';
 
         // participants[].member (Practitioner) -> {user_id, role}
-        // user_id resolution happens in insertOpenEMRRecord.
+        // user_id resolution happens in insertDCLRecord.
         $members = [];
         $participants = $json['participant'] ?? null;
         foreach (is_array($participants) ? $participants : [] as $participant) {
@@ -346,7 +346,7 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
             $memberUuid = UtilsService::parseReferenceString($memberRef, 'Practitioner')['uuid'] ?? null;
             if (!is_string($memberUuid) || $memberUuid === '' || !UuidRegistry::isValidStringUUID($memberUuid)) {
                 // Rejected rather than skipped. Only Practitioner members are writable here, but
-                // parseOpenEMRRecord() emits Organization and RelatedPerson participants too
+                // parseDCLRecord() emits Organization and RelatedPerson participants too
                 // (populateFacilityTeamMembers / populateRelatedPersonTeamMembers). Dropping them
                 // silently is destructive on PUT: saveCareTeam() reconciles the full member set
                 // and calls markMemberAsInactive() on every stored row missing from the submitted
@@ -375,10 +375,10 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
     /**
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR CareTeam record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL CareTeam record array');
         }
 
         return $this->saveCareTeamRecord($openEmrRecord, null);
@@ -386,9 +386,9 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
 
     /**
      * @param string $fhirResourceId
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         if (!UuidRegistry::isValidStringUUID($fhirResourceId)) {
             $result = new ProcessingResult();
@@ -412,7 +412,7 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
         // rather than quietly written against the stored one -- answering 200 for a subject the
         // server ignored tells the caller their change was accepted. FhirCoverageService and
         // FhirCarePlanService already reject the same mismatch on their own update paths.
-        $puuid = $updatedOpenEMRRecord['puuid'] ?? null;
+        $puuid = $updatedDCLRecord['puuid'] ?? null;
         if (is_string($puuid) && $puuid !== '') {
             $bodyPid = BaseService::getIdByUuid(UuidRegistry::uuidToBytes($puuid), 'patient_data', 'pid');
             if (!is_numeric($bodyPid) || (int) $bodyPid !== $teamPid) {
@@ -425,7 +425,7 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
         }
 
         return $this->saveCareTeamRecord(
-            $updatedOpenEMRRecord,
+            $updatedDCLRecord,
             is_numeric($teamIdRaw) ? (int) $teamIdRaw : 0,
             $teamPid
         );
@@ -527,7 +527,7 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
         }
 
         // Read the team back through the search path. FhirServiceBase::update() feeds this
-        // result into parseOpenEMRRecord(), which reads care_team_status and puuid unguarded
+        // result into parseDCLRecord(), which reads care_team_status and puuid unguarded
         // -- neither of which a hand-built ['uuid', 'pid'] row carries.
         return $this->careTeamService->getAll(
             ['uuid' => new TokenSearchField('uuid', UuidRegistry::uuidToString($uuid), true)],
@@ -536,17 +536,17 @@ class FhirCareTeamService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<array-key, mixed> $openEMRSearchParameters OpenEMR search fields
+     * @param array<array-key, mixed> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         // FhirServiceBase declares the parameter as a bare array; CareTeamService::getAll
         // accepts only search fields, so anything else is dropped rather than forwarded.
         $search = [];
-        foreach ($openEMRSearchParameters as $key => $value) {
+        foreach ($DCLSearchParameters as $key => $value) {
             if ($value instanceof ISearchField || is_string($value)) {
                 $search[(string) $key] = $value;
             }

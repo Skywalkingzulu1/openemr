@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\Cqm;
+namespace DCL\Cqm;
 
 use Laminas\Code\Generator\ClassGenerator;
 use Laminas\Code\Generator\DocBlock\Tag\PropertyTag;
 use Laminas\Code\Generator\DocBlockGenerator;
 use Laminas\Code\Generator\FileGenerator;
 use Laminas\Code\Generator\PropertyGenerator;
-use OpenEMR\Common\Utils\XmlUtils;
+use DCL\Common\Utils\XmlUtils;
 
 class Generator
 {
@@ -188,7 +188,7 @@ class Generator
         }
 
         // Generate PHP models
-        $base_module = "OpenEMR\\Cqm\\Qdm";
+        $base_module = "DCL\\Cqm\\Qdm";
         foreach ($datatypes as $datatype => $attributes) {
             $class = new ClassGenerator();
             $docblock = DocBlockGenerator::fromArray([
@@ -205,7 +205,7 @@ class Generator
                     ],
                     [
                         'name'        => 'license',
-                        'description' => 'https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3',
+                        'description' => 'https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3',
                     ],
                 ],
             ]);
@@ -247,7 +247,7 @@ class Generator
             }
 
             if ($datatype == 'QDMBaseType') {
-                $class->setExtendedClass(\OpenEMR\Cqm\Qdm\BaseTypes\DataElement::class);
+                $class->setExtendedClass(\DCL\Cqm\Qdm\BaseTypes\DataElement::class);
             }
 
             $file = FileGenerator::fromArray([

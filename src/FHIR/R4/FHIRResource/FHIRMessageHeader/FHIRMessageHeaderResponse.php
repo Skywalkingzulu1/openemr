@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMessageHeader;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
@@ -71,19 +71,19 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * The MessageHeader.id of the message to which this message is a response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $identifier = null;
 
     /**
      * Code that identifies the type of response to the message - whether it was successful or not, and whether it should be resent or not.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRResponseType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRResponseType
      */
     public $code = null;
 
     /**
      * Full details of any issues found in the message.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $details = null;
 
@@ -94,7 +94,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The MessageHeader.id of the message to which this message is a response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getIdentifier()
     {
@@ -103,7 +103,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The MessageHeader.id of the message to which this message is a response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -114,7 +114,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Code that identifies the type of response to the message - whether it was successful or not, and whether it should be resent or not.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRResponseType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRResponseType
      */
     public function getCode()
     {
@@ -123,7 +123,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Code that identifies the type of response to the message - whether it was successful or not, and whether it should be resent or not.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRResponseType $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRResponseType $code
      * @return $this
      */
     public function setCode($code)
@@ -134,7 +134,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Full details of any issues found in the message.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDetails()
     {
@@ -143,7 +143,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Full details of any issues found in the message.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $details
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $details
      * @return $this
      */
     public function setDetails($details)

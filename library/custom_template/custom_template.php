@@ -17,7 +17,7 @@
 //
 //
 // A copy of the GNU General Public License is included along with this program:
-// openemr/interface/login/GnuGPL.html
+// DCL/interface/login/GnuGPL.html
 // For more information write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
@@ -29,11 +29,11 @@
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $ISSUE_TYPES = IssueTypeRegistry::issueTypes();

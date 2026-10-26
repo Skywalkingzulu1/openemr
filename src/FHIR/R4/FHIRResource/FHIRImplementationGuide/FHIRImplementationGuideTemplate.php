@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,19 +71,19 @@ class FHIRImplementationGuideTemplate extends FHIRBackboneElement implements \Js
 {
     /**
      * Type of template specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The source location for the template.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $source = null;
 
     /**
      * The scope in which the template applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $scope = null;
 
@@ -94,7 +94,7 @@ class FHIRImplementationGuideTemplate extends FHIRBackboneElement implements \Js
 
     /**
      * Type of template specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -103,7 +103,7 @@ class FHIRImplementationGuideTemplate extends FHIRBackboneElement implements \Js
 
     /**
      * Type of template specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -114,7 +114,7 @@ class FHIRImplementationGuideTemplate extends FHIRBackboneElement implements \Js
 
     /**
      * The source location for the template.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSource()
     {
@@ -123,7 +123,7 @@ class FHIRImplementationGuideTemplate extends FHIRBackboneElement implements \Js
 
     /**
      * The source location for the template.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $source
      * @return $this
      */
     public function setSource($source)
@@ -134,7 +134,7 @@ class FHIRImplementationGuideTemplate extends FHIRBackboneElement implements \Js
 
     /**
      * The scope in which the template applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getScope()
     {
@@ -143,7 +143,7 @@ class FHIRImplementationGuideTemplate extends FHIRBackboneElement implements \Js
 
     /**
      * The scope in which the template applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $scope
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $scope
      * @return $this
      */
     public function setScope($scope)

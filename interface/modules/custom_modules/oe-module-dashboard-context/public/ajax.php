@@ -3,17 +3,17 @@
 /**
  * Dashboard Context Module - User AJAX Handler
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Adjust path based on module location
 require_once(__DIR__ . "/../../../../globals.php");
 
-use OpenEMR\Modules\DashboardContext\Controller\UserContextController;
+use DCL\Modules\DashboardContext\Controller\UserContextController;
 
 $controller = new UserContextController();
 $controller->handleRequest();

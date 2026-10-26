@@ -34,32 +34,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Brady Miller <brady.g.miller@gmail.com>
  * @author Jerry Padgett <sjpadgett@gmail.com>
- * @link https://www.open-emr.org
+ * @link https://www.dcl.org
  */
 
 require_once(__DIR__ . '/../../globals.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/options.inc.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/encounter_events.inc.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/patient_tracker.inc.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/group.inc.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/options.inc.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/encounter_events.inc.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/patient_tracker.inc.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/group.inc.php');
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Calendar\DayOfWeek;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Appointments\AppointmentDialogCloseEvent;
-use OpenEMR\Events\Appointments\AppointmentRenderEvent;
-use OpenEMR\Events\Appointments\AppointmentSetEvent;
-use OpenEMR\Services\HolidayService;
+use DCL\BC\ServiceContainer;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Calendar\DayOfWeek;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Appointments\AppointmentDialogCloseEvent;
+use DCL\Events\Appointments\AppointmentRenderEvent;
+use DCL\Events\Appointments\AppointmentSetEvent;
+use DCL\Services\HolidayService;
 
  //Check access control
 if (!AclMain::aclCheckCore('patients', 'appt', '', ['write','wsome'])) {
@@ -171,7 +171,7 @@ function InsertEventFull()
     // =======================================
     if (is_array($_POST['form_provider'])) {
         // obtain the next available unique key to group multiple providers around some event
-        $q = sqlStatement("SELECT MAX(pc_multiple) as max FROM openemr_postcalendar_events");
+        $q = sqlStatement("SELECT MAX(pc_multiple) as max FROM DCL_postcalendar_events");
         $max = sqlFetchArray($q);
         $new_multiple_value = $max['max'] + 1;
 
@@ -305,8 +305,8 @@ function setEventDate($start_date, $recurrence)
 if ($eid) {
     $selfacil = '';
     $facility = sqlQuery("SELECT pc_facility, pc_multiple, pc_aid, facility.name
-                            FROM openemr_postcalendar_events
-                              LEFT JOIN facility ON (openemr_postcalendar_events.pc_facility = facility.id)
+                            FROM DCL_postcalendar_events
+                              LEFT JOIN facility ON (DCL_postcalendar_events.pc_facility = facility.id)
                               WHERE pc_eid = ?", [$eid]);
         // if ( !$facility['pc_facility'] ) {
     if (is_array($facility) && !$facility['pc_facility']) {
@@ -317,12 +317,12 @@ if ($eid) {
         // multiple providers case
         if (OEGlobalsBag::getInstance()->getBoolean('select_multi_providers')) {
             $mul  = $facility['pc_multiple'];
-            QueryUtils::sqlStatementThrowException("UPDATE openemr_postcalendar_events SET pc_facility = ? WHERE pc_multiple = ?", [$min, $mul]);
+            QueryUtils::sqlStatementThrowException("UPDATE DCL_postcalendar_events SET pc_facility = ? WHERE pc_multiple = ?", [$min, $mul]);
         }
 
         // EOS multiple
 
-        QueryUtils::sqlStatementThrowException("UPDATE openemr_postcalendar_events SET pc_facility = ? WHERE pc_eid = ?", [$min, $eid]);
+        QueryUtils::sqlStatementThrowException("UPDATE DCL_postcalendar_events SET pc_facility = ? WHERE pc_eid = ?", [$min, $eid]);
         $e2f = $min;
         $e2f_name = $min_name;
     } else {
@@ -398,7 +398,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "duplicate" || $_
         $my_repeat_type = 6; // Keep this as 6. It signifies days of the week recurrence.
         $event_date = setEventDate($_POST['form_date'], $my_repeat_freq);
     } elseif (!empty($_POST['form_repeat'])) {
-        $spec = \OpenEMR\Common\Calendar\RecurrenceSpecBuilder::fromRepeatForm(
+        $spec = \DCL\Common\Calendar\RecurrenceSpecBuilder::fromRepeatForm(
             (string) $event_date,
             $my_repeat_type,
             $my_repeat_freq,
@@ -468,14 +468,14 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
      * =====================================================*/
     if ($eid) {
         // what is multiple key around this $eid?
-        $row = sqlQuery("SELECT pc_multiple FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+        $row = sqlQuery("SELECT pc_multiple FROM DCL_postcalendar_events WHERE pc_eid = ?", [$eid]);
 
         // ====================================
         // multiple providers
         // ====================================
         if (OEGlobalsBag::getInstance()->getBoolean('select_multi_providers') && $row['pc_multiple']) {
             // obtain current list of providers regarding the multiple key
-            $up = sqlStatement("SELECT pc_aid FROM openemr_postcalendar_events WHERE pc_multiple=?", [$row['pc_multiple']]);
+            $up = sqlStatement("SELECT pc_aid FROM DCL_postcalendar_events WHERE pc_multiple=?", [$row['pc_multiple']]);
             while ($current = sqlFetchArray($up)) {
                 $providers_current[] = $current['pc_aid'];
             }
@@ -489,7 +489,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
                 foreach ($providers_current as $provider) {
                     // update the provider's original event
                     // get the original event's repeat specs
-                    $origEvent = sqlQuery("SELECT pc_recurrspec FROM openemr_postcalendar_events " .
+                    $origEvent = sqlQuery("SELECT pc_recurrspec FROM DCL_postcalendar_events " .
                     " WHERE pc_aid = ? AND pc_multiple=?", [$provider,$row['pc_multiple']]);
                     $oldRecurrspec = unserialize($origEvent['pc_recurrspec'], ['allowed_classes' => false]);
                     $selected_date = date("Ymd", strtotime((string) $_POST['selected_date']));
@@ -501,13 +501,13 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
 
                     // mod original event recur specs to exclude this date
                         QueryUtils::sqlStatementThrowException(
-                            "UPDATE openemr_postcalendar_events SET pc_recurrspec = ? WHERE pc_aid = ? AND pc_multiple = ?",
+                            "UPDATE DCL_postcalendar_events SET pc_recurrspec = ? WHERE pc_aid = ? AND pc_multiple = ?",
                             [serialize($oldRecurrspec), $provider, $row['pc_multiple']]
                         );
                 }
 
                 // obtain the next available unique key to group multiple providers around some event
-                $q = sqlStatement("SELECT MAX(pc_multiple) as max FROM openemr_postcalendar_events");
+                $q = sqlStatement("SELECT MAX(pc_multiple) as max FROM DCL_postcalendar_events");
                 $max = sqlFetchArray($q);
                 $new_multiple_value = $max['max'] + 1;
 
@@ -539,19 +539,19 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
                     if (strcmp((string) $_POST['event_start_date'], (string) $_POST['selected_date']) != 0) {
                         // mod original event recur specs to end on this date
                         QueryUtils::sqlStatementThrowException(
-                            "UPDATE openemr_postcalendar_events SET pc_enddate = ? WHERE pc_aid = ? AND pc_multiple = ?",
+                            "UPDATE DCL_postcalendar_events SET pc_enddate = ? WHERE pc_aid = ? AND pc_multiple = ?",
                             [$selected_date, $provider, $row['pc_multiple']]
                         );
                     } else { // In case of a change in the event head
                         QueryUtils::sqlStatementThrowException(
-                            "DELETE FROM openemr_postcalendar_events WHERE pc_aid = ? AND pc_multiple = ?",
+                            "DELETE FROM DCL_postcalendar_events WHERE pc_aid = ? AND pc_multiple = ?",
                             [$provider, $row['pc_multiple']]
                         );
                     }
                 }
 
                 // obtain the next available unique key to group multiple providers around some event
-                $q = sqlStatement("SELECT MAX(pc_multiple) as max FROM openemr_postcalendar_events");
+                $q = sqlStatement("SELECT MAX(pc_multiple) as max FROM DCL_postcalendar_events");
                 $max = sqlFetchArray($q);
                 $new_multiple_value = $max['max'] + 1;
 
@@ -582,9 +582,9 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
                 if (count($r1)) {
                     foreach ($r1 as $to_be_removed) {
                         if (!empty($_POST['form_gid'])) {
-                            $old_eid =  sqlQuery("SELECT pc_eid FROM openemr_postcalendar_events WHERE pc_aid=? AND pc_multiple=?", [$to_be_removed,$row['pc_multiple']]);
+                            $old_eid =  sqlQuery("SELECT pc_eid FROM DCL_postcalendar_events WHERE pc_aid=? AND pc_multiple=?", [$to_be_removed,$row['pc_multiple']]);
                         }
-                        sqlQuery("DELETE FROM openemr_postcalendar_events WHERE pc_aid=? AND pc_multiple=?", [$to_be_removed,$row['pc_multiple']]);
+                        sqlQuery("DELETE FROM DCL_postcalendar_events WHERE pc_aid=? AND pc_multiple=?", [$to_be_removed,$row['pc_multiple']]);
                     }
                 }
 
@@ -627,7 +627,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
                 // those who are intersected in $providers_current and $providers_new
                 foreach ($_POST['form_provider'] as $provider) {
                     QueryUtils::sqlStatementThrowException(
-                        "UPDATE openemr_postcalendar_events SET
+                        "UPDATE DCL_postcalendar_events SET
                         pc_catid = ?,
                         pc_pid = ?,
                         pc_title = ?,
@@ -687,7 +687,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
 
             if ($_POST['recurr_affect'] == 'current') {
                 // get the original event's repeat specs
-                $origEvent = sqlQuery("SELECT pc_recurrspec FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+                $origEvent = sqlQuery("SELECT pc_recurrspec FROM DCL_postcalendar_events WHERE pc_eid = ?", [$eid]);
                 $oldRecurrspec = unserialize($origEvent['pc_recurrspec'], ['allowed_classes' => false]);
                 $selected_date = date("Ymd", strtotime((string) $_POST['selected_date']));
                 if ($oldRecurrspec['exdate'] != "") {
@@ -698,7 +698,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
 
                 // mod original event recur specs to exclude this date
                     QueryUtils::sqlStatementThrowException(
-                        "UPDATE openemr_postcalendar_events SET pc_recurrspec = ? WHERE pc_eid = ?",
+                        "UPDATE DCL_postcalendar_events SET pc_recurrspec = ? WHERE pc_eid = ?",
                         [serialize($oldRecurrspec), $eid]
                     );
 
@@ -720,7 +720,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
                 // mod original event to stop recurring on this date-1
                 $selected_date = date("Ymd", (strtotime((string) $_POST['selected_date']) - 24 * 60 * 60));
                 QueryUtils::sqlStatementThrowException(
-                    "UPDATE openemr_postcalendar_events SET pc_enddate = ? WHERE pc_eid = ?",
+                    "UPDATE DCL_postcalendar_events SET pc_enddate = ? WHERE pc_eid = ?",
                     [$selected_date, $eid]
                 );
 
@@ -748,7 +748,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
                 // mod the SINGLE event or ALL EVENTS in a repeating series
                 // simple provider case
                 QueryUtils::sqlStatementThrowException(
-                    "UPDATE openemr_postcalendar_events SET
+                    "UPDATE DCL_postcalendar_events SET
                     pc_catid = ?,
                     pc_aid = ?,
                     pc_pid = ?,
@@ -822,7 +822,7 @@ if (!empty($_POST['form_action']) && ($_POST['form_action'] == "save")) {
 
         DOBandEncounter($eid ?? null);
 } elseif (!empty($_POST['form_action']) && ($_POST['form_action'] == "delete")) { //    DELETE EVENT(s)
-    $appointmentService = new \OpenEMR\Services\AppointmentService();
+    $appointmentService = new \DCL\Services\AppointmentService();
     $appointmentService->deleteAppointment($eid, $_POST['recurr_affect'], $_POST['selected_date']);
 }
 
@@ -898,10 +898,10 @@ if (!empty($_REQUEST['groupid'])) {
 
  // If we are editing an existing event, then get its data.
 if ($eid) {
-    // $row = sqlQuery("SELECT * FROM openemr_postcalendar_events WHERE pc_eid = $eid");
+    // $row = sqlQuery("SELECT * FROM DCL_postcalendar_events WHERE pc_eid = $eid");
 
     $row = sqlQuery("SELECT e.*, u.fname, u.mname, u.lname " .
-      "FROM openemr_postcalendar_events AS e " .
+      "FROM DCL_postcalendar_events AS e " .
       "LEFT OUTER JOIN users AS u ON u.id = e.pc_informant " .
       "WHERE pc_eid = ?", [$eid]);
     $informant = $row['fname'] . ' ' . $row['mname'] . ' ' . $row['lname'];
@@ -1002,7 +1002,7 @@ if ($groupid) {
 
  // Get event categories.
     $cres = sqlStatement("SELECT pc_catid, pc_catname, pc_recurrtype, pc_duration, pc_end_all_day " .
-    "FROM openemr_postcalendar_categories where pc_active = 1 ORDER BY pc_seq");
+    "FROM DCL_postcalendar_categories where pc_active = 1 ORDER BY pc_seq");
 
  // Fix up the time format for AM/PM.
     $startampm = '1';
@@ -1028,7 +1028,7 @@ if ($_GET['group'] == true) {
 
 $cres = sqlStatement("SELECT pc_catid, pc_cattype, pc_catname, " .
 "pc_recurrtype, pc_duration, pc_end_all_day " .
-"FROM openemr_postcalendar_categories where pc_active = 1 ORDER BY pc_seq");
+"FROM DCL_postcalendar_categories where pc_active = 1 ORDER BY pc_seq");
 $catoptions = "";
 $prefcat_options = "    <option value='0'>-- " . xlt("None{{Category}}") . " --</option>\n";
 $thisduration = 0;
@@ -1345,12 +1345,12 @@ if ($_GET['group'] === true && $have_group_global_enabled) { ?>
         if ($eid) {
             if ($multiple_value) {
                 // find all the providers around multiple key
-                $qall = sqlStatement("SELECT pc_aid AS providers FROM openemr_postcalendar_events WHERE pc_multiple = ?", [$multiple_value]);
+                $qall = sqlStatement("SELECT pc_aid AS providers FROM DCL_postcalendar_events WHERE pc_multiple = ?", [$multiple_value]);
                 while ($r = sqlFetchArray($qall)) {
                     $providers_array[] = $r['providers'];
                 }
             } else {
-                $qall = sqlStatement("SELECT pc_aid AS providers FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+                $qall = sqlStatement("SELECT pc_aid AS providers FROM DCL_postcalendar_events WHERE pc_eid = ?", [$eid]);
                 $providers_array = sqlFetchArray($qall);
             }
         }
@@ -1378,7 +1378,7 @@ if ($_GET['group'] === true && $have_group_global_enabled) { ?>
     } else {
         if ($eid) {
             // get provider from existing event
-            $qprov = sqlStatement("SELECT pc_aid FROM openemr_postcalendar_events WHERE pc_eid = ?", [$eid]);
+            $qprov = sqlStatement("SELECT pc_aid FROM DCL_postcalendar_events WHERE pc_eid = ?", [$eid]);
             $provider = sqlFetchArray($qprov);
             $defaultProvider = $provider['pc_aid'];
         } else {

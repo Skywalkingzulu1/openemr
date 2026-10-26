@@ -3,17 +3,17 @@
 /**
  * Procedure - extension of CodeInfo for procedure billing entries
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kevin Yeh <kevin.y@integralemr.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
- * @copyright Copyright (c) 2013 OEMR <https://www.open-emr.org/wiki/index.php/OEMR_wiki_page>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2013 OEMR <https://www.dcl.org/wiki/index.php/OEMR_wiki_page>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Forms\FeeSheet\Review;
+namespace DCL\Forms\FeeSheet\Review;
 
 /**
  * This is an extension of CodeInfo which supports the additional information

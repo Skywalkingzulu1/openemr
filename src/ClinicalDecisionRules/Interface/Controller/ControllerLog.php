@@ -1,19 +1,19 @@
 <?php
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\Controller;
+namespace DCL\ClinicalDecisionRules\Interface\Controller;
 
 use League\Csv\CannotInsertRecord;
 use League\Csv\EscapeFormula;
 use League\Csv\Writer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\ClinicalDecisionRules\Interface\BaseController;
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\ClinicalDecisionRules\Interface\BaseController;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\Utils\DateFormatterUtils;
 use Symfony\Component\HttpFoundation\Response;
 
 class ControllerLog extends BaseController

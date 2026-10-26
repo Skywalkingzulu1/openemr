@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource;
+use DCL\FHIR\R4\FHIRResource;
 
 /**
  * This resource is a non-persisted resource used to pass information into and back from an [operation](operations.html). It has no other use, and there is no RESTful endpoint associated with it.
@@ -72,7 +72,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
 {
     /**
      * A parameter passed to or received from the operation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRParameters\FHIRParametersParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRParameters\FHIRParametersParameter[]
      */
     public $parameter = [];
 
@@ -83,7 +83,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
 
     /**
      * A parameter passed to or received from the operation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRParameters\FHIRParametersParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRParameters\FHIRParametersParameter[]
      */
     public function getParameter()
     {
@@ -92,7 +92,7 @@ class FHIRParameters extends FHIRResource implements \JsonSerializable
 
     /**
      * A parameter passed to or received from the operation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRParameters\FHIRParametersParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRParameters\FHIRParametersParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)

@@ -4,28 +4,28 @@
  * This will print a blank form, and if "patientid" is specified then
  * any existing data for the specified patient is included.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2009-2015 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$webserver_root = \OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir();
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$webserver_root = \DCL\Core\OEGlobalsBag::getInstance()->getProjectDir();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
 
 // Option to substitute a custom version of this script.
 $customDemographicsPrint = $webserver_root . '/custom/demographics_print.php';
 if (
-    !empty(\OpenEMR\Core\OEGlobalsBag::getInstance()->get('gbl_rapid_workflow')) &&
-    \OpenEMR\Core\OEGlobalsBag::getInstance()->get('gbl_rapid_workflow') == 'LBFmsivd' &&
+    !empty(\DCL\Core\OEGlobalsBag::getInstance()->get('gbl_rapid_workflow')) &&
+    \DCL\Core\OEGlobalsBag::getInstance()->get('gbl_rapid_workflow') == 'LBFmsivd' &&
     file_exists($customDemographicsPrint)
 ) {
     include($customDemographicsPrint);
@@ -35,9 +35,9 @@ if (
 require_once($srcdir . "/options.inc.php");
 
 use Mpdf\Mpdf;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Pdf\Config_Mpdf;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Pdf\Config_Mpdf;
 
 
 $patientid = empty($_REQUEST['patientid']) ? 0 : 0 + $_REQUEST['patientid'];
@@ -197,7 +197,7 @@ td.dcols3 { width: 80%; }
 $logo = '';
 $ma_logo_path = "sites/" . $session->get('site_id') . "/images/ma_logo.png";
 if (is_file($webserver_root . "/$ma_logo_path")) {
-    $logo = \OpenEMR\Core\OEGlobalsBag::getInstance()->getWebRoot() . "/$ma_logo_path";
+    $logo = \DCL\Core\OEGlobalsBag::getInstance()->getWebRoot() . "/$ma_logo_path";
 }
 
 echo genFacilityTitle(xl('Registration Form'), -1, $logo);

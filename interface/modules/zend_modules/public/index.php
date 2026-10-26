@@ -1,14 +1,14 @@
 <?php
 
 /**
- * openemr/interface/modules/zend_modules/public/index.php
+ * DCL/interface/modules/zend_modules/public/index.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T.Paul <jacob@zhservices.com>
  * @author    Shalini Balakrishnan <shalini@zhservices.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -16,13 +16,13 @@
  * to the application root now.
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Core\ModulesApplication;
-use OpenEMR\Core\OEEnvBag;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\Routing\ZendModuleApplication;
-use OpenEMR\Core\Routing\ZendModuleRouteLoader;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Core\ModulesApplication;
+use DCL\Core\OEEnvBag;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\Routing\ZendModuleApplication;
+use DCL\Core\Routing\ZendModuleRouteLoader;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 require_once(__DIR__ . "/../../../globals.php");
@@ -49,7 +49,7 @@ if (!$modulesApplication instanceof ModulesApplication) {
 // dispatch is treated as non-fatal: log it and fall through to the legacy
 // runtime rather than aborting the request. handle() builds the full Response
 // before sending, so a throw cannot leave a partially-sent response behind.
-if (OEEnvBag::getInstance()->getBoolean('OPENEMR__ZEND_SYMFONY_SEAM')) {
+if (OEEnvBag::getInstance()->getBoolean('DCL__ZEND_SYMFONY_SEAM')) {
     try {
         $eventDispatcher = $modulesApplication->getServiceManager()->get(EventDispatcherInterface::class);
         if (!$eventDispatcher instanceof EventDispatcherInterface) {

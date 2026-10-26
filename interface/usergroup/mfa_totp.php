@@ -3,28 +3,28 @@
 /**
  * App Based TOTP Support
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Anthony Zullo <anthonykzullo@gmail.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Anthony Zullo <anthonykzullo@gmail.com>
  * @copyright Copyright (c) 2018 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE CNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE CNU General Public License 3
  */
 
 // Set $sessionAllowWrite to true to prevent session concurrency issues during authorization related code
 $sessionAllowWrite = true;
 require_once('../globals.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\OeUI\OemrUI;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\OeUI\OemrUI;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $userid = $session->get('authUserID');
@@ -118,7 +118,7 @@ $user_full_name = $user_name['fname'] . " " . $user_name['lname'];
                                                     <?php echo xlt('Invalid password'); ?>
                                                 </div>
                                             <?php } ?>
-                                            <p><?php echo xlt('In order to register your device, please provide your OpenEMR login password'); ?></p>
+                                            <p><?php echo xlt('In order to register your device, please provide your DCL login password'); ?></p>
                                             <div class="col-sm-4 offset-sm-4">
                                                 <input type="password" class="form-control" id="clearPass" name="clearPass" placeholder="<?php echo xla('Password'); ?>:" >
                                             </div>

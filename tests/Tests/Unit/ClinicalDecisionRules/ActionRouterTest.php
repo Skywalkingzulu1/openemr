@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\ClinicalDecisionRules;
+namespace DCL\Tests\Unit\ClinicalDecisionRules;
 
-use OpenEMR\ClinicalDecisionRules\Interface\ActionRouter;
-use OpenEMR\ClinicalDecisionRules\Interface\BaseController;
+use DCL\ClinicalDecisionRules\Interface\ActionRouter;
+use DCL\ClinicalDecisionRules\Interface\BaseController;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,7 +12,7 @@ class ActionRouterTest extends TestCase
 {
     public function testRouteWithBrowseListAction(): void
     {
-        // Mock the controller that OpenEMR\ClinicalDecisionRules\Interface\ActionRouter expects
+        // Mock the controller that DCL\ClinicalDecisionRules\Interface\ActionRouter expects
         $mockController = new class extends BaseController {
             public function __construct()
             {

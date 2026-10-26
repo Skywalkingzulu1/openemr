@@ -3,23 +3,23 @@
 /**
  * EmailTestData class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e\Email;
+namespace DCL\Tests\E2e\Email;
 
 class EmailTestData
 {
     // Test email addresses
     public const TEST_RECIPIENT = 'patient@example.com';
     public const TEST_RECIPIENT_2 = 'doctor@example.com';
-    public const TEST_SENDER = 'noreply@openemr.local';
+    public const TEST_SENDER = 'noreply@DCL.local';
 
     // Test subjects
     public const TEST_SUBJECT_BASIC = 'Test Email Subject';

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Identifies two or more records (resource instances) that refer to the same real-world "occurrence".
@@ -72,19 +72,19 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Indicates whether the asserted set of linkages are considered to be "in effect".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * Identifies the user or organization responsible for asserting the linkages as well as the user or organization who establishes the context in which the nature of each linkage is evaluated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * Identifies which record considered as the reference to the same real-world occurrence as well as how the items should be evaluated within the collection of linked items.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRLinkage\FHIRLinkageItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRLinkage\FHIRLinkageItem[]
      */
     public $item = [];
 
@@ -95,7 +95,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the asserted set of linkages are considered to be "in effect".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -104,7 +104,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the asserted set of linkages are considered to be "in effect".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -115,7 +115,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the user or organization responsible for asserting the linkages as well as the user or organization who establishes the context in which the nature of each linkage is evaluated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -124,7 +124,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the user or organization responsible for asserting the linkages as well as the user or organization who establishes the context in which the nature of each linkage is evaluated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -135,7 +135,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies which record considered as the reference to the same real-world occurrence as well as how the items should be evaluated within the collection of linked items.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRLinkage\FHIRLinkageItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRLinkage\FHIRLinkageItem[]
      */
     public function getItem()
     {
@@ -144,7 +144,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies which record considered as the reference to the same real-world occurrence as well as how the items should be evaluated within the collection of linked items.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRLinkage\FHIRLinkageItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRLinkage\FHIRLinkageItem $item
      * @return $this
      */
     public function addItem($item)

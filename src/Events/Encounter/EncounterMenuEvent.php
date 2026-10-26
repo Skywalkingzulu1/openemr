@@ -5,15 +5,15 @@
  *
  * This event is used to hook into the encounter menu (in forms.php).
  *
- * @package    OpenEMR
+ * @package    DCL
  * @subpackage Events
- * @link       https://www.open-emr.org
+ * @link       https://www.dcl.org
  * @author     Robert Down <robertdown@live.com>
  * @copyright  Copyright (c) 2021-2023 Robert Down <robertdown@live.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Encounter;
+namespace DCL\Events\Encounter;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

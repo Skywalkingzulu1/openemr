@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMessageHeader;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
@@ -71,31 +71,31 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * Human-readable name for the source system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * May include configuration or other information useful in debugging.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $software = null;
 
     /**
      * Can convey versions of multiple systems in situations where a message passes through multiple hands.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * An e-mail, phone, website or other contact point to use to resolve issues with message communications.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint
      */
     public $contact = null;
 
     /**
      * Identifies the routing target to send acknowledgements to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $endpoint = null;
 
@@ -106,7 +106,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Human-readable name for the source system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -115,7 +115,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Human-readable name for the source system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -126,7 +126,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * May include configuration or other information useful in debugging.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSoftware()
     {
@@ -135,7 +135,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * May include configuration or other information useful in debugging.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $software
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $software
      * @return $this
      */
     public function setSoftware($software)
@@ -146,7 +146,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Can convey versions of multiple systems in situations where a message passes through multiple hands.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -155,7 +155,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Can convey versions of multiple systems in situations where a message passes through multiple hands.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -166,7 +166,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * An e-mail, phone, website or other contact point to use to resolve issues with message communications.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint
      */
     public function getContact()
     {
@@ -175,7 +175,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * An e-mail, phone, website or other contact point to use to resolve issues with message communications.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $contact
      * @return $this
      */
     public function setContact($contact)
@@ -186,7 +186,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Identifies the routing target to send acknowledgements to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getEndpoint()
     {
@@ -195,7 +195,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Identifies the routing target to send acknowledgements to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $endpoint
      * @return $this
      */
     public function setEndpoint($endpoint)

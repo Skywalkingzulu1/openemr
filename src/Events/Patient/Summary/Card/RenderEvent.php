@@ -1,18 +1,18 @@
 <?php
 
 /**
- * This file is part of OpenEMR.
+ * This file is part of DCL.
  *
- * @link      https://github.com/openemr/openemr/tree/master
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- * @package   OpenEMR\Events\Patient\Summary\Card
+ * @link      https://github.com/DCL/DCL/tree/master
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL\Events\Patient\Summary\Card
  * @author    Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2022-2023 Robert Down <robertdown@live.com>
  */
 
-namespace OpenEMR\Events\Patient\Summary\Card;
+namespace DCL\Events\Patient\Summary\Card;
 
-use OpenEMR\Events\Patient\Summary\Card\RenderInterface;
+use DCL\Events\Patient\Summary\Card\RenderInterface;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class RenderEvent extends Event

@@ -7,16 +7,16 @@
  * binary image builds today, so the bump tooling reads them rather than
  * carrying a second copy in an updatecli manifest that could drift.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 final readonly class BinaryForgePinReader
 {
@@ -35,7 +35,7 @@ final readonly class BinaryForgePinReader
         }
 
         return new BinaryForgePin(
-            $this->arg($contents, 'OPENEMR_VERSION'),
+            $this->arg($contents, 'DCL_VERSION'),
             $this->arg($contents, 'BINARY_RELEASE_DATE'),
             $this->arg($contents, 'PHP_VERSION'),
         );

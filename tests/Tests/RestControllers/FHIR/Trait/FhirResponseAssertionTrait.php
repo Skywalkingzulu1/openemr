@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers\FHIR\Trait;
+namespace DCL\Tests\RestControllers\FHIR\Trait;
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle;
 use Symfony\Component\HttpFoundation\Response;
 
 trait FhirResponseAssertionTrait

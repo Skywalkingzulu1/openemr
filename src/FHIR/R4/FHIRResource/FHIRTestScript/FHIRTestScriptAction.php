@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,13 +71,13 @@ class FHIRTestScriptAction extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * The operation to perform.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOperation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOperation
      */
     public $operation = null;
 
     /**
      * Evaluates the results of previous operations to determine if the server under test behaves appropriately.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptAssert
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptAssert
      */
     public $assert = null;
 
@@ -88,7 +88,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The operation to perform.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOperation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOperation
      */
     public function getOperation()
     {
@@ -97,7 +97,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The operation to perform.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOperation $operation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptOperation $operation
      * @return $this
      */
     public function setOperation($operation)
@@ -108,7 +108,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Evaluates the results of previous operations to determine if the server under test behaves appropriately.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptAssert
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptAssert
      */
     public function getAssert()
     {
@@ -117,7 +117,7 @@ class FHIRTestScriptAction extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Evaluates the results of previous operations to determine if the server under test behaves appropriately.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptAssert $assert
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestScript\FHIRTestScriptAssert $assert
      * @return $this
      */
     public function setAssert($assert)

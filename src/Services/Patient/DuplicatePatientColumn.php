@@ -5,7 +5,7 @@
  *
  * The same column list drives the HTML table and the CSV export, so the two views cannot drift.
  * Modules add, remove and reorder columns by listening for
- * {@see \OpenEMR\Events\Patient\DuplicatePatientReportColumnsEvent}.
+ * {@see \DCL\Events\Patient\DuplicatePatientReportColumnsEvent}.
  *
  * Two rules bind anyone defining a column:
  *
@@ -19,17 +19,17 @@
  * row on the report at once, before any rendering, which is the difference between one query and
  * one query per patient.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Patient;
+namespace DCL\Services\Patient;
 
 use Closure;
 

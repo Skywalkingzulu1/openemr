@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A guidance response is the formal response to a guidance request, including any output parameters returned by the evaluation, as well as the description of any proposed actions to be taken.
@@ -72,100 +72,100 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * The identifier of the request associated with this response. If an identifier was given as part of the request, it will be reproduced here to enable the requester to more easily identify the response in a multi-request scenario.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $requestIdentifier = null;
 
     /**
      * Allows a service to provide  unique, business identifiers for the response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $moduleUri = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $moduleCanonical = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $moduleCodeableConcept = null;
 
     /**
      * The status of the response. If the evaluation is completed successfully, the status will indicate success. However, in order to complete the evaluation, the engine may require more information. In this case, the status will be data-required, and the response will contain a description of the additional required information. If the evaluation completed successfully, but the engine determines that a potentially more accurate response could be provided if more data was available, the status will be data-requested, and the response will contain a description of the additional requested information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGuidanceResponseStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGuidanceResponseStatus
      */
     public $status = null;
 
     /**
      * The patient for which the request was processed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The encounter during which this response was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * Indicates when the guidance response was processed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
      * Provides a reference to the device that performed the guidance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $performer = null;
 
     /**
      * Describes the reason for the guidance response in coded or textual form.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Messages resulting from the evaluation of the artifact or artifacts. As part of evaluating the request, the engine may produce informational or warning messages. These messages will be provided by this element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $evaluationMessage = [];
 
     /**
      * The output parameters of the evaluation, if any. Many modules will result in the return of specific resources such as procedure or communication requests that are returned as part of the operation result. However, modules may define specific outputs that would be returned as the result of the evaluation, and these would be returned in this element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $outputParameters = null;
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $result = null;
 
     /**
      * If the evaluation could not be completed due to lack of information, or additional information would potentially result in a more accurate response, this element will a description of the data required in order to proceed with the evaluation. A subsequent request to the service should include this data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public $dataRequirement = [];
 
@@ -176,7 +176,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The identifier of the request associated with this response. If an identifier was given as part of the request, it will be reproduced here to enable the requester to more easily identify the response in a multi-request scenario.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getRequestIdentifier()
     {
@@ -185,7 +185,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The identifier of the request associated with this response. If an identifier was given as part of the request, it will be reproduced here to enable the requester to more easily identify the response in a multi-request scenario.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $requestIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $requestIdentifier
      * @return $this
      */
     public function setRequestIdentifier($requestIdentifier)
@@ -196,7 +196,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Allows a service to provide  unique, business identifiers for the response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -205,7 +205,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Allows a service to provide  unique, business identifiers for the response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -215,7 +215,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getModuleUri()
     {
@@ -223,7 +223,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $moduleUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $moduleUri
      * @return $this
      */
     public function setModuleUri($moduleUri)
@@ -233,7 +233,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getModuleCanonical()
     {
@@ -241,7 +241,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $moduleCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $moduleCanonical
      * @return $this
      */
     public function setModuleCanonical($moduleCanonical)
@@ -251,7 +251,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getModuleCodeableConcept()
     {
@@ -259,7 +259,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $moduleCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $moduleCodeableConcept
      * @return $this
      */
     public function setModuleCodeableConcept($moduleCodeableConcept)
@@ -270,7 +270,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of the response. If the evaluation is completed successfully, the status will indicate success. However, in order to complete the evaluation, the engine may require more information. In this case, the status will be data-required, and the response will contain a description of the additional required information. If the evaluation completed successfully, but the engine determines that a potentially more accurate response could be provided if more data was available, the status will be data-requested, and the response will contain a description of the additional requested information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGuidanceResponseStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGuidanceResponseStatus
      */
     public function getStatus()
     {
@@ -279,7 +279,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of the response. If the evaluation is completed successfully, the status will indicate success. However, in order to complete the evaluation, the engine may require more information. In this case, the status will be data-required, and the response will contain a description of the additional required information. If the evaluation completed successfully, but the engine determines that a potentially more accurate response could be provided if more data was available, the status will be data-requested, and the response will contain a description of the additional requested information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGuidanceResponseStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGuidanceResponseStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -290,7 +290,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The patient for which the request was processed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -299,7 +299,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The patient for which the request was processed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -310,7 +310,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The encounter during which this response was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -319,7 +319,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The encounter during which this response was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -330,7 +330,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Indicates when the guidance response was processed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -339,7 +339,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Indicates when the guidance response was processed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -350,7 +350,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Provides a reference to the device that performed the guidance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPerformer()
     {
@@ -359,7 +359,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Provides a reference to the device that performed the guidance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function setPerformer($performer)
@@ -370,7 +370,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Describes the reason for the guidance response in coded or textual form.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -379,7 +379,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Describes the reason for the guidance response in coded or textual form.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -390,7 +390,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -399,7 +399,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -410,7 +410,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -419,7 +419,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Provides a mechanism to communicate additional information about the response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -430,7 +430,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Messages resulting from the evaluation of the artifact or artifacts. As part of evaluating the request, the engine may produce informational or warning messages. These messages will be provided by this element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEvaluationMessage()
     {
@@ -439,7 +439,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Messages resulting from the evaluation of the artifact or artifacts. As part of evaluating the request, the engine may produce informational or warning messages. These messages will be provided by this element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $evaluationMessage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $evaluationMessage
      * @return $this
      */
     public function addEvaluationMessage($evaluationMessage)
@@ -450,7 +450,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The output parameters of the evaluation, if any. Many modules will result in the return of specific resources such as procedure or communication requests that are returned as part of the operation result. However, modules may define specific outputs that would be returned as the result of the evaluation, and these would be returned in this element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOutputParameters()
     {
@@ -459,7 +459,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The output parameters of the evaluation, if any. Many modules will result in the return of specific resources such as procedure or communication requests that are returned as part of the operation result. However, modules may define specific outputs that would be returned as the result of the evaluation, and these would be returned in this element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $outputParameters
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $outputParameters
      * @return $this
      */
     public function setOutputParameters($outputParameters)
@@ -470,7 +470,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResult()
     {
@@ -479,7 +479,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The actions, if any, produced by the evaluation of the artifact.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $result
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $result
      * @return $this
      */
     public function setResult($result)
@@ -490,7 +490,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * If the evaluation could not be completed due to lack of information, or additional information would potentially result in a more accurate response, this element will a description of the data required in order to proceed with the evaluation. A subsequent request to the service should include this data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement[]
      */
     public function getDataRequirement()
     {
@@ -499,7 +499,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * If the evaluation could not be completed due to lack of information, or additional information would potentially result in a more accurate response, this element will a description of the data required in order to proceed with the evaluation. A subsequent request to the service should include this data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $dataRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $dataRequirement
      * @return $this
      */
     public function addDataRequirement($dataRequirement)

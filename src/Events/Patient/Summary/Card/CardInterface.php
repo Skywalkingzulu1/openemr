@@ -3,14 +3,14 @@
 /**
  * Patient Summary Card Interface
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2022 Robert Down <robertdown@live.com
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Patient\Summary\Card;
+namespace DCL\Events\Patient\Summary\Card;
 
 /**
  * Define the required components of a Patient Summary Card to be used by modules

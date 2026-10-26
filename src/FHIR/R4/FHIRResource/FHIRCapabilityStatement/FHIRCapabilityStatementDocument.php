@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,19 +71,19 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 {
     /**
      * Mode of this document declaration - whether an application is a producer or consumer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDocumentMode
      */
     public $mode = null;
 
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $documentation = null;
 
     /**
      * A profile on the document Bundle that constrains which resources are present, and their contents.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
@@ -94,7 +94,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * Mode of this document declaration - whether an application is a producer or consumer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDocumentMode
      */
     public function getMode()
     {
@@ -103,7 +103,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * Mode of this document declaration - whether an application is a producer or consumer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDocumentMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -114,7 +114,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation()
     {
@@ -123,7 +123,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -134,7 +134,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * A profile on the document Bundle that constrains which resources are present, and their contents.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -143,7 +143,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
 
     /**
      * A profile on the document Bundle that constrains which resources are present, and their contents.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)

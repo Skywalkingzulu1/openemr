@@ -1,5 +1,5 @@
 /**
- * Tests for jsPDF integration in OpenEMR
+ * Tests for jsPDF integration in DCL
  *
  * These tests verify the PDF generation functionality used by the Fax/SMS module.
  * Run with: npm run test:js
@@ -28,7 +28,7 @@ describe('jsPDF Integration', () => {
         mockDoc = createMockDoc();
         mockJsPDF = createMockJsPDF(mockDoc);
 
-        // Setup window.jspdf mock as used in OpenEMR
+        // Setup window.jspdf mock as used in DCL
         global.window = {
             jspdf: {
                 jsPDF: mockJsPDF
@@ -189,7 +189,7 @@ describe('jsPDF Integration', () => {
 
 describe('jsPDF Version Upgrade Compatibility', () => {
     /**
-     * These tests document the jsPDF APIs used by OpenEMR.
+     * These tests document the jsPDF APIs used by DCL.
      * If a jsPDF upgrade breaks these tests, check the migration guide.
      *
      * Current usage (jsPDF 3.0.4 -> 4.0.0):
@@ -201,7 +201,7 @@ describe('jsPDF Version Upgrade Compatibility', () => {
      * - doc.output('datauristring')
      */
 
-    test('documents required jsPDF APIs for OpenEMR', () => {
+    test('documents required jsPDF APIs for DCL', () => {
         const requiredAPIs = [
             'constructor: new jsPDF()',
             'property: doc.internal.pageSize.height',

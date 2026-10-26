@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The characteristics, operational status and capabilities of a medical-related component of a medical device.
@@ -71,19 +71,19 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement implem
 {
     /**
      * The identifier that is to be associated with every Device that references this DeviceDefinition for the issuer and jurisdiction provided in the DeviceDefinition.udiDeviceIdentifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $deviceIdentifier = null;
 
     /**
      * The organization that assigns the identifier algorithm.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $issuer = null;
 
     /**
      * The jurisdiction to which the deviceIdentifier applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $jurisdiction = null;
 
@@ -94,7 +94,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement implem
 
     /**
      * The identifier that is to be associated with every Device that references this DeviceDefinition for the issuer and jurisdiction provided in the DeviceDefinition.udiDeviceIdentifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDeviceIdentifier()
     {
@@ -103,7 +103,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement implem
 
     /**
      * The identifier that is to be associated with every Device that references this DeviceDefinition for the issuer and jurisdiction provided in the DeviceDefinition.udiDeviceIdentifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $deviceIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $deviceIdentifier
      * @return $this
      */
     public function setDeviceIdentifier($deviceIdentifier)
@@ -114,7 +114,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement implem
 
     /**
      * The organization that assigns the identifier algorithm.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getIssuer()
     {
@@ -123,7 +123,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement implem
 
     /**
      * The organization that assigns the identifier algorithm.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $issuer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $issuer
      * @return $this
      */
     public function setIssuer($issuer)
@@ -134,7 +134,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement implem
 
     /**
      * The jurisdiction to which the deviceIdentifier applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getJurisdiction()
     {
@@ -143,7 +143,7 @@ class FHIRDeviceDefinitionUdiDeviceIdentifier extends FHIRBackboneElement implem
 
     /**
      * The jurisdiction to which the deviceIdentifier applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $jurisdiction
      * @return $this
      */
     public function setJurisdiction($jurisdiction)

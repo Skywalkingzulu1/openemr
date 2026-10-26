@@ -1,35 +1,35 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\FHIR\Organization\FhirOrganizationFacilityService;
-use OpenEMR\Services\FHIR\Organization\FhirOrganizationInsuranceService;
-use OpenEMR\Services\FHIR\Organization\FhirOrganizationProcedureProviderService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROrganization;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\FHIR\Organization\FhirOrganizationFacilityService;
+use DCL\Services\FHIR\Organization\FhirOrganizationInsuranceService;
+use DCL\Services\FHIR\Organization\FhirOrganizationProcedureProviderService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\MappedServiceTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 use Psr\Log\LoggerInterface;
 
 /**
  * FHIR Organization Service
  *
- * @package            OpenEMR
- * @link               https://www.open-emr.org
+ * @package            DCL
+ * @link               https://www.dcl.org
  * @author             Yash Bothra <yashrajbothra786@gmail.com>
  * @author             Stephen Nielson <stephen@nielson.org>
  * @copyright          Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright          Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirOrganizationService implements IResourceSearchableService, IResourceReadableService, IResourceUpdateableService, IResourceCreatableService, IFhirExportableResourceService, IResourceUSCIGProfileService
 {
@@ -78,7 +78,7 @@ class FhirOrganizationService implements IResourceSearchableService, IResourceRe
     }
 
     /**
-     * Returns an array mapping FHIR Organization Resource search parameters to OpenEMR Organization search parameters
+     * Returns an array mapping FHIR Organization Resource search parameters to DCL Organization search parameters
      *
      * @return array The search parameters
      */

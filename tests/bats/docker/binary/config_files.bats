@@ -22,7 +22,7 @@ setup() {
 }
 
 # GitHub source tarballs honor export-ignore. tests/ is marked that way, so
-# archive/refs/tags/.../openemr-X/tests never exists on current tags.
+# archive/refs/tags/.../DCL-X/tests never exists on current tags.
 @test "binary Dockerfile: does not fetch export-ignored tests from GitHub archives" {
     local root gitattributes
     root="$(get_repo_root)"
@@ -41,13 +41,13 @@ setup() {
 @test "binary Dockerfile: forge URLs derive php selector from PHP_VERSION_ABBR" {
     local dockerfile="${SCRIPT_DIR}/Dockerfile"
     local php_version
-    local openemr_version
+    local DCL_version
     local binary_release_date
     local alpine_version
     local php_version_abbr
     local probe
     php_version=$(sed -n 's/^ARG PHP_VERSION=//p' "$dockerfile" | head -1)
-    openemr_version=$(sed -n 's/^ARG OPENEMR_VERSION=//p' "$dockerfile" | head -1)
+    DCL_version=$(sed -n 's/^ARG DCL_VERSION=//p' "$dockerfile" | head -1)
     binary_release_date=$(sed -n 's/^ARG BINARY_RELEASE_DATE=//p' "$dockerfile" | head -1)
     alpine_version=$(sed -n 's/^ARG ALPINE_VERSION=//p' "$dockerfile" | head -1)
     # Shape, not value. These four ARGs are bot-maintained by
@@ -56,14 +56,14 @@ setup() {
     # this file. What the derivation actually needs is that each ARG is
     # present and well-formed.
     [[ "$php_version" =~ ^[0-9]+\.[0-9]+$ ]]
-    [[ "$openemr_version" =~ ^[0-9]+(_[0-9]+)+$ ]]
+    [[ "$DCL_version" =~ ^[0-9]+(_[0-9]+)+$ ]]
     [[ "$binary_release_date" =~ ^[0-9]{8}$ ]]
     [[ "$alpine_version" =~ ^3\.[0-9]+$ ]]
     php_version_abbr=$(sed -n 's/^ARG PHP_VERSION_ABBR=//p' "$dockerfile" | head -1)
     [[ "$php_version_abbr" == '${PHP_VERSION//./}' ]]
-    assert_file_contains "$dockerfile" 'php\${PHP_VERSION_ABBR}-openemr-v\${OPENEMR_VERSION}-.*-\${BINARY_RELEASE_DATE}/php-fpm-v\${OPENEMR_VERSION}'
-    assert_file_contains "$dockerfile" 'php\${PHP_VERSION_ABBR}-openemr-v\${OPENEMR_VERSION}-.*-\${BINARY_RELEASE_DATE}/php-cli-v\${OPENEMR_VERSION}'
-    assert_file_contains "$dockerfile" 'php\${PHP_VERSION_ABBR}-openemr-v\${OPENEMR_VERSION}-.*-\${BINARY_RELEASE_DATE}/openemr.phar'
+    assert_file_contains "$dockerfile" 'php\${PHP_VERSION_ABBR}-DCL-v\${DCL_VERSION}-.*-\${BINARY_RELEASE_DATE}/php-fpm-v\${DCL_VERSION}'
+    assert_file_contains "$dockerfile" 'php\${PHP_VERSION_ABBR}-DCL-v\${DCL_VERSION}-.*-\${BINARY_RELEASE_DATE}/php-cli-v\${DCL_VERSION}'
+    assert_file_contains "$dockerfile" 'php\${PHP_VERSION_ABBR}-DCL-v\${DCL_VERSION}-.*-\${BINARY_RELEASE_DATE}/DCL.phar'
 
     if ! command -v docker >/dev/null 2>&1; then
         echo "docker not available; skipping bounded PHP_VERSION_ABBR build probe" >&3
@@ -97,8 +97,8 @@ EOF
     assert_file_exists "${SCRIPT_DIR}/php-fpm.d/www.conf"
 }
 
-@test "binary openemr.conf: exists" {
-    assert_file_exists "${SCRIPT_DIR}/openemr.conf"
+@test "binary DCL.conf: exists" {
+    assert_file_exists "${SCRIPT_DIR}/DCL.conf"
 }
 
 @test "binary php.ini: exists" {

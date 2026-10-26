@@ -7,14 +7,14 @@
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
-# php-fpm Dockerfile build for openemr development docker environment
-# This docker is hosted here: https://hub.docker.com/r/openemr/dev-php-fpm/ <tag is 7.2>
+# php-fpm Dockerfile build for DCL development docker environment
+# This docker is hosted here: https://hub.docker.com/r/DCL/dev-php-fpm/ <tag is 7.2>
 #
 FROM php:8.3.36-fpm
 
-# Add mariadb-client package that is needed in the OpenEMR Backup gui, which does direct command mysql commands
-# Add imagemagick that is needed for some image processing in OpenEMR
-# Note this basically add 160MB of space to the docker, so would be nice for OpenEMR to not require this stuff
+# Add mariadb-client package that is needed in the DCL Backup gui, which does direct command mysql commands
+# Add imagemagick that is needed for some image processing in DCL
+# Note this basically add 160MB of space to the docker, so would be nice for DCL to not require this stuff
 #  and instead rely on php scripts, if possible.
 RUN apt-get update \
  && apt-get install -y curl \
@@ -50,7 +50,7 @@ RUN chmod uga+x /usr/local/bin/install-php-extensions \
                            xsl \
                            zip
 
-# Needed to ensure permissions work across shared volumes with openemr, nginx, and php-fpm dockers
+# Needed to ensure permissions work across shared volumes with DCL, nginx, and php-fpm dockers
 RUN usermod -u 1000 www-data
 
 # Copy over the php.ini conf (default: plain; insane bind-mounts php-ini/redis/php.ini
@@ -59,6 +59,6 @@ COPY php-ini/php.ini /usr/local/etc/php/php.ini
 
 # Copy xdebug installation script for CI coverage support
 # Script is placed at /usr/share/nginx/html/xdebug.sh so CI can call ../xdebug.sh
-# from the OpenEMR directory at /usr/share/nginx/html/openemr
+# from the DCL directory at /usr/share/nginx/html/DCL
 COPY xdebug.sh /usr/share/nginx/html/xdebug.sh
 RUN chmod +x /usr/share/nginx/html/xdebug.sh

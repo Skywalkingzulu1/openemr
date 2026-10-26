@@ -20,13 +20,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Jan Jajalla <jajalla23@gmail.com>
  * @author  Roberto Vasquez <roberto.gagliotta@gmail.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-namespace OpenEMR\ClinicalDecisionRules\Interface;
+namespace DCL\ClinicalDecisionRules\Interface;
 
 class RulesPlanMappingEventHandlers
 {

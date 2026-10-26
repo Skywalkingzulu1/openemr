@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The ResearchDefinition resource describes the conditional state (population and any exposures being compared within the population) and outcome (if specified) that the knowledge (evidence, assertion, recommendation) is about.
@@ -72,209 +72,209 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * An absolute URI that is used to identify this research definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this research definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the research definition is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this research definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the research definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the research definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the research definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the research definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $shortTitle = null;
 
     /**
      * An explanatory or alternate title for the ResearchDefinition giving additional information about its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $subtitle = null;
 
     /**
      * The status of this research definition. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this research definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subjectCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subjectReference = null;
 
     /**
      * The date  (and optionally time) when the research definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the research definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the research definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the research definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $comment = [];
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate research definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the research definition is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this research definition is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A detailed description, from a clinical perspective, of how the ResearchDefinition is used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $usage = null;
 
     /**
      * A copyright statement relating to the research definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the research definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
      * The period during which the research definition content was or is planned to be in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * Descriptive topics related to the content of the ResearchDefinition. Topics provide a high-level categorization grouping types of ResearchDefinitions that can be useful for filtering and searching.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = [];
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $author = [];
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $editor = [];
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $reviewer = [];
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $endorser = [];
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $relatedArtifact = [];
 
     /**
      * A reference to a Library resource containing the formal logic used by the ResearchDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $library = [];
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the population for the research.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $population = null;
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the exposure for the research.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $exposure = null;
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the exposureAlternative for the research.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $exposureAlternative = null;
 
     /**
      * A reference to a ResearchElementDefinition resomece that defines the outcome for the research.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $outcome = null;
 
@@ -285,7 +285,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An absolute URI that is used to identify this research definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this research definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the research definition is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -294,7 +294,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An absolute URI that is used to identify this research definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this research definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the research definition is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -305,7 +305,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A formal identifier that is used to identify this research definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -314,7 +314,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A formal identifier that is used to identify this research definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -325,7 +325,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The identifier that is used to identify this version of the research definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the research definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -334,7 +334,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The identifier that is used to identify this version of the research definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the research definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -345,7 +345,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A natural language name identifying the research definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -354,7 +354,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A natural language name identifying the research definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -365,7 +365,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A short, descriptive, user-friendly title for the research definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -374,7 +374,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A short, descriptive, user-friendly title for the research definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -385,7 +385,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getShortTitle()
     {
@@ -394,7 +394,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $shortTitle
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $shortTitle
      * @return $this
      */
     public function setShortTitle($shortTitle)
@@ -405,7 +405,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An explanatory or alternate title for the ResearchDefinition giving additional information about its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSubtitle()
     {
@@ -414,7 +414,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An explanatory or alternate title for the ResearchDefinition giving additional information about its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $subtitle
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $subtitle
      * @return $this
      */
     public function setSubtitle($subtitle)
@@ -425,7 +425,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of this research definition. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -434,7 +434,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of this research definition. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -445,7 +445,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A Boolean value to indicate that this research definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -454,7 +454,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A Boolean value to indicate that this research definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -464,7 +464,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubjectCodeableConcept()
     {
@@ -472,7 +472,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return $this
      */
     public function setSubjectCodeableConcept($subjectCodeableConcept)
@@ -482,7 +482,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubjectReference()
     {
@@ -490,7 +490,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subjectReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subjectReference
      * @return $this
      */
     public function setSubjectReference($subjectReference)
@@ -501,7 +501,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date  (and optionally time) when the research definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the research definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -510,7 +510,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date  (and optionally time) when the research definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the research definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -521,7 +521,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The name of the organization or individual that published the research definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -530,7 +530,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The name of the organization or individual that published the research definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -541,7 +541,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -550,7 +550,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -561,7 +561,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A free text natural language description of the research definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -570,7 +570,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A free text natural language description of the research definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -581,7 +581,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getComment()
     {
@@ -590,7 +590,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function addComment($comment)
@@ -601,7 +601,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate research definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -610,7 +610,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate research definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -621,7 +621,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A legal or geographic region in which the research definition is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -630,7 +630,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A legal or geographic region in which the research definition is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -641,7 +641,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Explanation of why this research definition is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -650,7 +650,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Explanation of why this research definition is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -661,7 +661,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A detailed description, from a clinical perspective, of how the ResearchDefinition is used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getUsage()
     {
@@ -670,7 +670,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A detailed description, from a clinical perspective, of how the ResearchDefinition is used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $usage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $usage
      * @return $this
      */
     public function setUsage($usage)
@@ -681,7 +681,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A copyright statement relating to the research definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the research definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -690,7 +690,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A copyright statement relating to the research definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the research definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -701,7 +701,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
     {
@@ -710,7 +710,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $approvalDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
     public function setApprovalDate($approvalDate)
@@ -721,7 +721,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
     {
@@ -730,7 +730,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
     public function setLastReviewDate($lastReviewDate)
@@ -741,7 +741,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The period during which the research definition content was or is planned to be in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -750,7 +750,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The period during which the research definition content was or is planned to be in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -761,7 +761,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Descriptive topics related to the content of the ResearchDefinition. Topics provide a high-level categorization grouping types of ResearchDefinitions that can be useful for filtering and searching.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
     {
@@ -770,7 +770,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Descriptive topics related to the content of the ResearchDefinition. Topics provide a high-level categorization grouping types of ResearchDefinitions that can be useful for filtering and searching.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
     public function addTopic($topic)
@@ -781,7 +781,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getAuthor()
     {
@@ -790,7 +790,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $author
      * @return $this
      */
     public function addAuthor($author)
@@ -801,7 +801,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEditor()
     {
@@ -810,7 +810,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $editor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $editor
      * @return $this
      */
     public function addEditor($editor)
@@ -821,7 +821,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getReviewer()
     {
@@ -830,7 +830,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
      * @return $this
      */
     public function addReviewer($reviewer)
@@ -841,7 +841,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEndorser()
     {
@@ -850,7 +850,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
      * @return $this
      */
     public function addEndorser($endorser)
@@ -861,7 +861,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
@@ -870,7 +870,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
     public function addRelatedArtifact($relatedArtifact)
@@ -881,7 +881,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a Library resource containing the formal logic used by the ResearchDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getLibrary()
     {
@@ -890,7 +890,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a Library resource containing the formal logic used by the ResearchDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $library
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $library
      * @return $this
      */
     public function addLibrary($library)
@@ -901,7 +901,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the population for the research.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPopulation()
     {
@@ -910,7 +910,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the population for the research.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $population
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $population
      * @return $this
      */
     public function setPopulation($population)
@@ -921,7 +921,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the exposure for the research.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getExposure()
     {
@@ -930,7 +930,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the exposure for the research.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $exposure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $exposure
      * @return $this
      */
     public function setExposure($exposure)
@@ -941,7 +941,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the exposureAlternative for the research.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getExposureAlternative()
     {
@@ -950,7 +950,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resource that defines the exposureAlternative for the research.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $exposureAlternative
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $exposureAlternative
      * @return $this
      */
     public function setExposureAlternative($exposureAlternative)
@@ -961,7 +961,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resomece that defines the outcome for the research.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOutcome()
     {
@@ -970,7 +970,7 @@ class FHIRResearchDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a ResearchElementDefinition resomece that defines the outcome for the research.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $outcome
      * @return $this
      */
     public function setOutcome($outcome)

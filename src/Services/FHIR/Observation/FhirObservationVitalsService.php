@@ -2,54 +2,54 @@
 
 /**
  * FhirObservationVitalsService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
 use BadMethodCallException;
 use InvalidArgumentException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Utils\MeasurementUtils;
-use OpenEMR\Common\Uuid\UuidMapping;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRUri;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirDateTimeParser;
-use OpenEMR\Services\FHIR\FhirPayloadReader;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\VitalsCalculatedService;
-use OpenEMR\Services\VitalsService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Utils\MeasurementUtils;
+use DCL\Common\Uuid\UuidMapping;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRElement\FHIRQuantity;
+use DCL\FHIR\R4\FHIRElement\FHIRUri;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent;
+use DCL\Services\EncounterService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirDateTimeParser;
+use DCL\Services\FHIR\FhirPayloadReader;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\VitalsCalculatedService;
+use DCL\Services\VitalsService;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationVitalsService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
 {
@@ -374,7 +374,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
         return $this->calculatedService;
     }
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -394,27 +394,27 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, \OpenEMR\Services\Search\ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, \DCL\Services\Search\ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
 
         try {
             $observationCodesToReturn = [];
 
-            if (isset($openEMRSearchParameters['category']) && $openEMRSearchParameters['category'] instanceof TokenSearchField) {
-                if (!$openEMRSearchParameters['category']->hasCodeValue(self::CATEGORY)) {
+            if (isset($DCLSearchParameters['category']) && $DCLSearchParameters['category'] instanceof TokenSearchField) {
+                if (!$DCLSearchParameters['category']->hasCodeValue(self::CATEGORY)) {
                     throw new SearchFieldException("category", "invalid value");
                 }
                 // we only support one category and then we remove it.
-                unset($openEMRSearchParameters['category']);
+                unset($DCLSearchParameters['category']);
             }
 
-            if (isset($openEMRSearchParameters['code'])) {
-                $code = $openEMRSearchParameters['code'];
+            if (isset($DCLSearchParameters['code'])) {
+                $code = $DCLSearchParameters['code'];
                 if (!($code instanceof TokenSearchField)) {
                     throw new SearchFieldException('code', "Invalid code");
                 }
@@ -426,7 +426,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
                         $observationCodesToReturn[$code] = $code;
                     }
                 }
-                unset($openEMRSearchParameters['code']);
+                unset($DCLSearchParameters['code']);
                 if (empty($observationCodesToReturn)) {
                     return $processingResult; // nothing to return if we don't support any of the codes
                 }
@@ -441,7 +441,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
 
             // convert vital sign records from 1:many
 
-            $result = $this->service->search($openEMRSearchParameters);
+            $result = $this->service->search($DCLSearchParameters);
             if (!$result->isValid()) {
                 return $result;
             }
@@ -457,11 +457,11 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
             // TODO: @adunsulag should the calculated vitals be pulled into a separate service class, its starting to behave
             // different enough that it might make sense.
             if (!empty($observationCodesToReturn[self::AVERAGE_BLOOD_PRESSURE_LOINC_CODE])) {
-                if (isset($openEMRSearchParameters['date'])) {
-                    $openEMRSearchParameters['date_start'] = new DateSearchField('date_start', $openEMRSearchParameters['date']->getValues());
-                    unset($openEMRSearchParameters['date']);
+                if (isset($DCLSearchParameters['date'])) {
+                    $DCLSearchParameters['date_start'] = new DateSearchField('date_start', $DCLSearchParameters['date']->getValues());
+                    unset($DCLSearchParameters['date']);
                 }
-                $calculatedVitalsResult = $this->searchCalculatedVitals($openEMRSearchParameters);
+                $calculatedVitalsResult = $this->searchCalculatedVitals($DCLSearchParameters);
                 if (!$calculatedVitalsResult->isValid()) {
                     return $calculatedVitalsResult;
                 }
@@ -474,11 +474,11 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
         return $processingResult;
     }
 
-    private function searchCalculatedVitals($openEMRSearchParameters): ProcessingResult
+    private function searchCalculatedVitals($DCLSearchParameters): ProcessingResult
     {
         // Search calculated vitals using the VitalsCalculatedService
         $calculatedService = $this->getVitalsCalculatedService();
-        $result = $calculatedService->search($openEMRSearchParameters);
+        $result = $calculatedService->search($DCLSearchParameters);
         // Transform calculated records for FHIR compatibility
         $transformedResult = new ProcessingResult();
         foreach ($result->getData() as $record) {
@@ -527,7 +527,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
     private function parseVitalsIntoObservationRecords(ProcessingResult $processingResult, $record, $observationCodesToReturn): void
     {
         $uuidMappings = $this->getVitalSignsUuidMappings(UuidRegistry::uuidToBytes($record['uuid']));
-        // convert each record into it's own openEMR record array
+        // convert each record into it's own DCL record array
 
         if (!empty($observationCodesToReturn[self::VITALS_PANEL_LOINC_CODE])) {
             if (!empty($uuidMappings[self::VITALS_PANEL_LOINC_CODE])) {
@@ -618,13 +618,13 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
     }
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR Resource
+     * Parses an DCL data record, returning the equivalent FHIR Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return FHIRDomainResource|string the FHIR Resource. Returned format is defined using $encode parameter.
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
     {
         if (empty($dataRecord)) {
             throw new InvalidArgumentException("Data record cannot be empty");
@@ -935,7 +935,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param array|FHIRObservation $dataRecord The source OpenEMR data record
+     * @param array|FHIRObservation $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return FHIRProvenance|string the FHIR Resource. Returned format is defined using $encode parameter.
      */
@@ -1288,7 +1288,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
         if (!isset(self::VITALS_WRITE_COLUMNS[$code])) {
             return self::vitalsValidationError(
                 'code',
-                'Observation.code "' . $code . '" is not a vital sign OpenEMR can store'
+                'Observation.code "' . $code . '" is not a vital sign DCL can store'
             );
         }
 
@@ -1425,7 +1425,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
         if ($columns === []) {
             return self::vitalsValidationError(
                 'value',
-                'Observation for code "' . $code . '" carries no value OpenEMR can store; '
+                'Observation for code "' . $code . '" carries no value DCL can store; '
                 . 'expected valueQuantity or a recognized component'
             );
         }
@@ -1437,10 +1437,10 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
     /**
      * @param mixed $openEmrRecord
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new InvalidArgumentException('Expected a parsed OpenEMR vitals record array');
+            throw new InvalidArgumentException('Expected a parsed DCL vitals record array');
         }
         $validationResult = $this->vitalsValidationResult($openEmrRecord);
         if ($validationResult !== null) {
@@ -1557,14 +1557,14 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
 
     /**
      * @param string $fhirResourceId
-     * @param mixed $updatedOpenEMRRecord
+     * @param mixed $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        if (!is_array($updatedOpenEMRRecord)) {
-            throw new InvalidArgumentException('Expected a parsed OpenEMR vitals record array');
+        if (!is_array($updatedDCLRecord)) {
+            throw new InvalidArgumentException('Expected a parsed DCL vitals record array');
         }
-        $validationResult = $this->vitalsValidationResult($updatedOpenEMRRecord);
+        $validationResult = $this->vitalsValidationResult($updatedDCLRecord);
         if ($validationResult !== null) {
             return $validationResult;
         }
@@ -1589,7 +1589,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
         // move the value into a different column while keeping the same id, so the codes
         // have to agree.
         $mappedCode = $this->getCodeFromResourcePath($mapping['resource_path'] ?? null);
-        $requestedCode = $updatedOpenEMRRecord['code'] ?? null;
+        $requestedCode = $updatedDCLRecord['code'] ?? null;
         if (!is_string($requestedCode) || $mappedCode !== $requestedCode) {
             $result = new ProcessingResult();
             $result->setValidationMessages([
@@ -1600,7 +1600,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
             return $result;
         }
 
-        $context = $this->resolveVitalsWriteContext($updatedOpenEMRRecord);
+        $context = $this->resolveVitalsWriteContext($updatedDCLRecord);
         if ($context instanceof ProcessingResult) {
             return $context;
         }
@@ -1649,12 +1649,12 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
             return $result;
         }
 
-        $date = $updatedOpenEMRRecord['date'] ?? null;
+        $date = $updatedDCLRecord['date'] ?? null;
         if (!is_string($date)) {
             throw new InvalidArgumentException('Parsed vitals record is missing its date');
         }
 
-        // The date is half the identity insertOpenEMRRecord() coalesces on. Writing the
+        // The date is half the identity insertDCLRecord() coalesces on. Writing the
         // payload's date onto the row would move every sibling vital to the new time and
         // leave a later POST for the original time creating a second Vitals form, so a
         // changed effectiveDateTime is refused rather than applied.
@@ -1668,7 +1668,7 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
             return $result;
         }
 
-        $vitalsData = FhirPayloadReader::stringKeyed($updatedOpenEMRRecord['columns'] ?? null);
+        $vitalsData = FhirPayloadReader::stringKeyed($updatedDCLRecord['columns'] ?? null);
         $vitalsData['id'] = (int) $rowId;
         $vitalsData['uuid'] = $rowUuid;
         $vitalsData['pid'] = $context['pid'];
@@ -1679,10 +1679,10 @@ class FhirObservationVitalsService extends FhirServiceBase implements IPatientCo
         $this->service->saveVitalsArray($vitalsData);
 
         // FhirServiceBase::update() runs this result's first row back through
-        // parseOpenEMRRecord() to build the response body, so it has to be the full
+        // parseDCLRecord() to build the response body, so it has to be the full
         // observation record the read path produces -- a bare ['uuid' => ...] would
         // serialize into an Observation with no code, subject or value.
-        $readResult = $this->searchForOpenEMRRecords([
+        $readResult = $this->searchForDCLRecords([
             'uuid' => new TokenSearchField('uuid', [$rowUuid], true),
             'code' => new TokenSearchField('code', [$requestedCode]),
         ]);

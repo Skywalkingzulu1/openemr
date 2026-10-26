@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization;
-use OpenEMR\Services\FHIR\FhirOrganizationService;
-use OpenEMR\Services\FHIR\Serialization\FhirOrganizationSerializer;
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROrganization;
+use DCL\Services\FHIR\FhirOrganizationService;
+use DCL\Services\FHIR\Serialization\FhirOrganizationSerializer;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -14,11 +14,11 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR Organization Service Crud Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 class FhirOrganizationServiceCrudTest extends TestCase

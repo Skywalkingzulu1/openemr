@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationDispense;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationDispense;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationDispense;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Indicates that a medication product is to be or has been dispensed for a named person/patient.  This includes a description of the medication product (supply) provided and the instructions for administering the medication.  The medication dispense is the result of a pharmacy system responding to a medication order.
@@ -71,13 +71,13 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement implements \Js
 {
     /**
      * Distinguishes the type of performer in the dispense.  For example, date enterer, packager, final checker.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $function = null;
 
     /**
      * The device, practitioner, etc. who performed the action.  It should be assumed that the actor is the dispenser of the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement implements \Js
 
     /**
      * Distinguishes the type of performer in the dispense.  For example, date enterer, packager, final checker.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFunction()
     {
@@ -97,7 +97,7 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement implements \Js
 
     /**
      * Distinguishes the type of performer in the dispense.  For example, date enterer, packager, final checker.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
      * @return $this
      */
     public function setFunction($function)
@@ -108,7 +108,7 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement implements \Js
 
     /**
      * The device, practitioner, etc. who performed the action.  It should be assumed that the actor is the dispenser of the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationDispensePerformer extends FHIRBackboneElement implements \Js
 
     /**
      * The device, practitioner, etc. who performed the action.  It should be assumed that the actor is the dispenser of the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)

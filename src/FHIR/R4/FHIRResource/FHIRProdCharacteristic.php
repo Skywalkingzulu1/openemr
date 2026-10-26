@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available.
@@ -72,67 +72,67 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Where applicable, the height can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $height = null;
 
     /**
      * Where applicable, the width can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $width = null;
 
     /**
      * Where applicable, the depth can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $depth = null;
 
     /**
      * Where applicable, the weight can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $weight = null;
 
     /**
      * Where applicable, the nominal volume can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $nominalVolume = null;
 
     /**
      * Where applicable, the external diameter can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $externalDiameter = null;
 
     /**
      * Where applicable, the shape can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $shape = null;
 
     /**
      * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $color = [];
 
     /**
      * Where applicable, the imprint can be specified as text.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $imprint = [];
 
     /**
      * Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public $image = [];
 
     /**
      * Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $scoring = null;
 
@@ -143,7 +143,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the height can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getHeight()
     {
@@ -152,7 +152,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the height can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $height
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $height
      * @return $this
      */
     public function setHeight($height)
@@ -163,7 +163,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the width can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getWidth()
     {
@@ -172,7 +172,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the width can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $width
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $width
      * @return $this
      */
     public function setWidth($width)
@@ -183,7 +183,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the depth can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDepth()
     {
@@ -192,7 +192,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the depth can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $depth
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $depth
      * @return $this
      */
     public function setDepth($depth)
@@ -203,7 +203,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the weight can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getWeight()
     {
@@ -212,7 +212,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the weight can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $weight
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $weight
      * @return $this
      */
     public function setWeight($weight)
@@ -223,7 +223,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the nominal volume can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getNominalVolume()
     {
@@ -232,7 +232,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the nominal volume can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $nominalVolume
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $nominalVolume
      * @return $this
      */
     public function setNominalVolume($nominalVolume)
@@ -243,7 +243,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the external diameter can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getExternalDiameter()
     {
@@ -252,7 +252,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the external diameter can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $externalDiameter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $externalDiameter
      * @return $this
      */
     public function setExternalDiameter($externalDiameter)
@@ -263,7 +263,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the shape can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getShape()
     {
@@ -272,7 +272,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the shape can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $shape
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $shape
      * @return $this
      */
     public function setShape($shape)
@@ -283,7 +283,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getColor()
     {
@@ -292,7 +292,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $color
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $color
      * @return $this
      */
     public function addColor($color)
@@ -303,7 +303,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the imprint can be specified as text.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getImprint()
     {
@@ -312,7 +312,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the imprint can be specified as text.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $imprint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $imprint
      * @return $this
      */
     public function addImprint($imprint)
@@ -323,7 +323,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public function getImage()
     {
@@ -332,7 +332,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $image
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $image
      * @return $this
      */
     public function addImage($image)
@@ -343,7 +343,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getScoring()
     {
@@ -352,7 +352,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $scoring
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $scoring
      * @return $this
      */
     public function setScoring($scoring)

@@ -2,21 +2,21 @@
 
 /**
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Brad Sharp <brad.sharp@claimrev.com>
  * @copyright Copyright (c) 2022 Brad Sharp <brad.sharp@claimrev.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once "../../../../globals.php";
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\Dorn\ConnectorApi;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\Dorn\ConnectorApi;
 
 //this is needed along with setupHeader() to get the pop up to appear
 
@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'delete') {
                                             <td scope="row"><?php echo text($data->status) ?></td>
                                             <td scope="row">
                                                 <?php
-                                                // Convert to OpenEMR’s short date format
+                                                // Convert to DCL’s short date format
                                                 $created = oeFormatShortDate(date('Y-m-d', strtotime((string) $data->createdDateTimeUtc)));
                                                 echo text($created);
                                                 ?>

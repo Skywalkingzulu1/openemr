@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\OAuth;
+namespace DCL\Tests\Acceptance\OAuth;
 
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\ResponseHeaders;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\ResponseHeaders;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -75,7 +75,7 @@ final class OAuth2ApiEnabledTest extends TestCase
 
         // The four mandatory OIDC provider-metadata fields per
         // https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata,
-        // plus registration_endpoint (optional per spec, but openemr
+        // plus registration_endpoint (optional per spec, but DCL
         // ships DCR and downstream tests rely on it being advertised).
         foreach (
             ['issuer', 'authorization_endpoint', 'token_endpoint', 'jwks_uri', 'registration_endpoint'] as $key
@@ -109,7 +109,7 @@ final class OAuth2ApiEnabledTest extends TestCase
         // clients using client_secret_* auth methods). Client name
         // is randomized so parallel test runs don't clash.
         $clientName = 'AcceptanceApiEnabled-' . bin2hex(random_bytes(4));
-        // application_type: 'private' is openemr's non-spec extension
+        // application_type: 'private' is DCL's non-spec extension
         // that signals a confidential-client registration (returns
         // client_secret). OIDC Dynamic Registration spec only defines
         // 'web' / 'native' — those get public clients (PKCE-only, no
@@ -122,7 +122,7 @@ final class OAuth2ApiEnabledTest extends TestCase
             'redirect_uris' => ['https://acceptance-harness.example/callback'],
             'client_name' => $clientName,
             'token_endpoint_auth_method' => 'client_secret_post',
-            'contacts' => ['acceptance-harness@openemr.example'],
+            'contacts' => ['acceptance-harness@DCL.example'],
             'scope' => 'openid fhirUser',
         ];
 

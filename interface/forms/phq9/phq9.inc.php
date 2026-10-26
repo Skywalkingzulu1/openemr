@@ -4,15 +4,15 @@
  * phq-9.inc - common includes and constants for the gad-7 form
  * version 1.0.0  July 2020
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ruth Moulton <moulton ruth@muswell.me.uk>
  * @copyright Copyright (c) 2021 ruth moulton <ruth@muswell.me.uk>
  *
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-if (!defined('OPENEMR_GLOBALS_LOADED')) {
+if (!defined('DCL_GLOBALS_LOADED')) {
     http_response_code(404);
     exit();
 }

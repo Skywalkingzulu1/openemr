@@ -1,10 +1,10 @@
-# Example front controller infrastructure for OpenEMR.
+# Example front controller infrastructure for DCL.
 #
 # This file sets up routing through `public/index.php` and `FallbackRouter`.
 # Paths are migrated incrementally - add RewriteRules here as corresponding
 # subdirectory .htaccess files are decommissioned.
 #
-# See `OpenEMR\BC\FallbackRouter` for the PHP-side routing logic.
+# See `DCL\BC\FallbackRouter` for the PHP-side routing logic.
 #
 # EXAMPLE ONLY - if you move this file from `.htaccess.example` to `.htaccess`
 # AND delete the other `.htaccess` files throughout, you'll use the front

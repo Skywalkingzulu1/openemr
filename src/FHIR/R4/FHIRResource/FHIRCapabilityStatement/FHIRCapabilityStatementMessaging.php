@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,25 +71,25 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 {
     /**
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
      */
     public $endpoint = [];
 
     /**
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or how long the cache length on the receiver should be (if a sender).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $reliableCache = null;
 
     /**
      * Documentation about the system's messaging capabilities for this endpoint not otherwise documented by the capability statement.  For example, the process for becoming an authorized messaging exchange partner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $documentation = null;
 
     /**
      * References to message definitions for messages this system can send or receive.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
      */
     public $supportedMessage = [];
 
@@ -100,7 +100,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
      */
     public function getEndpoint()
     {
@@ -109,7 +109,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint $endpoint
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)
@@ -120,7 +120,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or how long the cache length on the receiver should be (if a sender).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getReliableCache()
     {
@@ -129,7 +129,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or how long the cache length on the receiver should be (if a sender).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $reliableCache
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $reliableCache
      * @return $this
      */
     public function setReliableCache($reliableCache)
@@ -140,7 +140,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * Documentation about the system's messaging capabilities for this endpoint not otherwise documented by the capability statement.  For example, the process for becoming an authorized messaging exchange partner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation()
     {
@@ -149,7 +149,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * Documentation about the system's messaging capabilities for this endpoint not otherwise documented by the capability statement.  For example, the process for becoming an authorized messaging exchange partner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -160,7 +160,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * References to message definitions for messages this system can send or receive.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
      */
     public function getSupportedMessage()
     {
@@ -169,7 +169,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
 
     /**
      * References to message definitions for messages this system can send or receive.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage $supportedMessage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage $supportedMessage
      * @return $this
      */
     public function addSupportedMessage($supportedMessage)

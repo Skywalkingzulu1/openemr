@@ -2,15 +2,15 @@
 /**
  * interface/modules/zend_modules/module/Carecoordination/view/carecoordination/setup/index.phtml
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Control access
-if (!OpenEMR\Common\Acl\AclMain::aclCheckCore('admin', 'manage_modules')) {
+if (!DCL\Common\Acl\AclMain::aclCheckCore('admin', 'manage_modules')) {
     echo xlt('Not Authorized');
     exit;
 }
@@ -246,5 +246,5 @@ $(function () {
         <input style="position: absolute;top: 480px;" type="submit" name="save" value="<?php echo $this->listenerObject->z_xla("Save");?>">
     </div>
     <input type="hidden" id="tosave" name="tosave" value="">
-    <input type="hidden" name="csrf_token_form" value="<?php echo \OpenEMR\Common\Csrf\CsrfUtils::collectCsrfToken(\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()); ?>" />
+    <input type="hidden" name="csrf_token_form" value="<?php echo \DCL\Common\Csrf\CsrfUtils::collectCsrfToken(\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()); ?>" />
 </form>

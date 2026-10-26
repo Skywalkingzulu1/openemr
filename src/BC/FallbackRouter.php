@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   openemr
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\BC;
+namespace DCL\BC;
 
 use OutOfRangeException;
 use Psr\Http\Message\{
@@ -173,10 +173,10 @@ readonly class FallbackRouter
         $fileDirectory = pathinfo($targetFile, PATHINFO_DIRNAME);
         chdir($fileDirectory);
 
-        // @phpstan-ignore openemr.forbiddenRequestGlobals
+        // @phpstan-ignore DCL.forbiddenRequestGlobals
         $_SERVER['SCRIPT_FILENAME'] = $targetFile;
 
-        // @phpstan-ignore openemr.forbiddenRequestGlobals, openemr.forbiddenRequestGlobals
+        // @phpstan-ignore DCL.forbiddenRequestGlobals, DCL.forbiddenRequestGlobals
         $_SERVER['SCRIPT_NAME'] = $_SERVER['PHP_SELF'] = substr($targetFile, strlen($this->installRoot));
     }
 

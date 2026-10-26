@@ -3,18 +3,18 @@
 /**
  * Tests for RootCliGuard.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command;
+namespace DCL\Tests\Isolated\Common\Command;
 
-use OpenEMR\Common\Command\RootCliGuard;
+use DCL\Common\Command\RootCliGuard;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use Symfony\Component\Process\Exception\ExceptionInterface as ProcessExceptionInterface;
@@ -71,7 +71,7 @@ final class RootCliGuardTest extends TestCase
         self::assertNotFalse($autoload, 'vendor/autoload.php must exist for the subprocess');
 
         $php = '<?php require ' . var_export($autoload, true) . ';'
-            . ' \\OpenEMR\\Common\\Command\\RootCliGuard::assertNotRoot();'
+            . ' \\DCL\\Common\\Command\\RootCliGuard::assertNotRoot();'
             . ' echo "OK";';
         $tmpScript = tempnam(sys_get_temp_dir(), 'rootcliguard-');
         self::assertNotFalse($tmpScript);

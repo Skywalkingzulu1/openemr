@@ -1,8 +1,8 @@
 {
-  "event": "openemr-tag",
-  "repo": "openemr/openemr",
+  "event": "DCL-tag",
+  "repo": "DCL/DCL",
   "sha": "abcdef0123456789abcdef0123456789abcdef01",
-  "actor": "openemr-release-bot",
+  "actor": "DCL-release-bot",
   "dispatched_at": "2026-04-29T12:30:00Z",
   "data": {
     "tag": "v8_2_0-test.abcdef0",

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   openemr
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\BC;
+namespace DCL\BC;
 
 use GuzzleHttp\{
     Client,
@@ -25,16 +25,16 @@ use Psr\Log\{
     LoggerInterface,
     NullLogger,
 };
-use OpenEMR\Common\Crypto;
-use OpenEMR\Common\Logging;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Storage\Location;
-use OpenEMR\Services\Storage\Manager;
-use OpenEMR\Services\Storage\ManagerInterface;
+use DCL\Common\Crypto;
+use DCL\Common\Logging;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Storage\Location;
+use DCL\Services\Storage\Manager;
+use DCL\Services\Storage\ManagerInterface;
 use Twig\Environment as TwigEnvironment;
 use Lcobucci\Clock\SystemClock;
-use OpenEMR\Common\Http\Psr17Factory;
+use DCL\Common\Http\Psr17Factory;
 use Psr\Clock\ClockInterface;
 use Psr\Http\Message\{
     RequestFactoryInterface,
@@ -128,7 +128,7 @@ class ServiceContainer
     {
         return self::resolveOrCreate(
             ClockInterface::class,
-            // @phpstan-ignore openemr.deprecatedSqlFunction
+            // @phpstan-ignore DCL.deprecatedSqlFunction
             static fn(): SystemClock => SystemClock::fromSystemTimezone(),
         );
     }

@@ -6,19 +6,19 @@
  * Tests AddressService methods against a live database using the
  * AddressData and AddressRecord DTOs.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Address\AddressData;
-use OpenEMR\Services\Address\AddressRecord;
-use OpenEMR\Services\AddressService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Address\AddressData;
+use DCL\Services\Address\AddressRecord;
+use DCL\Services\AddressService;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

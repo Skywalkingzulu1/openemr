@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
+namespace DCL\FHIR\R4\FHIRResource\FHIREncounter;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -71,55 +71,55 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Pre-admission identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $preAdmissionIdentifier = null;
 
     /**
      * The location/organization from which the patient came before admission.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $origin = null;
 
     /**
      * From where patient was admitted (physician referral, transfer).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $admitSource = null;
 
     /**
      * Whether this hospitalization is a readmission and why if known.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $reAdmission = null;
 
     /**
      * Diet preferences reported by the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $dietPreference = [];
 
     /**
      * Special courtesies (VIP, board member).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialCourtesy = [];
 
     /**
      * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialArrangement = [];
 
     /**
      * Location/organization to which the patient is discharged.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $destination = null;
 
     /**
      * Category or kind of location after discharge.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $dischargeDisposition = null;
 
@@ -130,7 +130,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Pre-admission identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getPreAdmissionIdentifier()
     {
@@ -139,7 +139,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Pre-admission identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
      * @return $this
      */
     public function setPreAdmissionIdentifier($preAdmissionIdentifier)
@@ -150,7 +150,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * The location/organization from which the patient came before admission.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOrigin()
     {
@@ -159,7 +159,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * The location/organization from which the patient came before admission.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $origin
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $origin
      * @return $this
      */
     public function setOrigin($origin)
@@ -170,7 +170,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * From where patient was admitted (physician referral, transfer).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAdmitSource()
     {
@@ -179,7 +179,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * From where patient was admitted (physician referral, transfer).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $admitSource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $admitSource
      * @return $this
      */
     public function setAdmitSource($admitSource)
@@ -190,7 +190,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether this hospitalization is a readmission and why if known.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReAdmission()
     {
@@ -199,7 +199,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether this hospitalization is a readmission and why if known.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reAdmission
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reAdmission
      * @return $this
      */
     public function setReAdmission($reAdmission)
@@ -210,7 +210,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Diet preferences reported by the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getDietPreference()
     {
@@ -219,7 +219,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Diet preferences reported by the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $dietPreference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $dietPreference
      * @return $this
      */
     public function addDietPreference($dietPreference)
@@ -230,7 +230,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Special courtesies (VIP, board member).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialCourtesy()
     {
@@ -239,7 +239,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Special courtesies (VIP, board member).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialCourtesy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialCourtesy
      * @return $this
      */
     public function addSpecialCourtesy($specialCourtesy)
@@ -250,7 +250,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialArrangement()
     {
@@ -259,7 +259,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialArrangement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialArrangement
      * @return $this
      */
     public function addSpecialArrangement($specialArrangement)
@@ -270,7 +270,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Location/organization to which the patient is discharged.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDestination()
     {
@@ -279,7 +279,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Location/organization to which the patient is discharged.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $destination
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $destination
      * @return $this
      */
     public function setDestination($destination)
@@ -290,7 +290,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Category or kind of location after discharge.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDischargeDisposition()
     {
@@ -299,7 +299,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
 
     /**
      * Category or kind of location after discharge.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $dischargeDisposition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $dischargeDisposition
      * @return $this
      */
     public function setDischargeDisposition($dischargeDisposition)

@@ -3,8 +3,8 @@
 /**
  * interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/EncounterccdadispatchTable.php
  *
- * @package    OpenEMR
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @author     Vinish K <vinish@zhservices.com>
  * @author     Riju K P <rijukp@zhservices.com>
  * @author     Stephen Nielson <snielson@discoverandchange.com>
@@ -12,7 +12,7 @@
  * @copyright  Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright  Copyright (c) 2017-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Model;
@@ -21,31 +21,31 @@ use Application\Listener\Listener;
 use Application\Model\SendtoTable;
 use Carecoordination\Model\CarecoordinationTable;
 use Documents\Plugin\Documents;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Filesystem\SafeIncludeResolver;
-use OpenEMR\Common\ORDataObject\ContactAddress;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\CareTeamService;
-use OpenEMR\Services\Cda\VitalSignConversion;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\ContactAddressService;
-use OpenEMR\Services\ContactRelationService;
-use OpenEMR\Services\ContactService;
-use OpenEMR\Services\ContactTelecomService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\PatientAdvanceDirectiveService;
-use OpenEMR\Services\PatientNameHistoryService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\PersonService;
-use OpenEMR\Services\SDOH\HistorySdohService;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\SearchComparator;
-use OpenEMR\Services\Search\SearchFieldStatementResolver;
-use OpenEMR\Services\Search\SearchQueryFragment;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Filesystem\SafeIncludeResolver;
+use DCL\Common\ORDataObject\ContactAddress;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\CareTeamService;
+use DCL\Services\Cda\VitalSignConversion;
+use DCL\Services\CodeTypesService;
+use DCL\Services\ContactAddressService;
+use DCL\Services\ContactRelationService;
+use DCL\Services\ContactService;
+use DCL\Services\ContactTelecomService;
+use DCL\Services\EncounterService;
+use DCL\Services\PatientAdvanceDirectiveService;
+use DCL\Services\PatientNameHistoryService;
+use DCL\Services\PatientService;
+use DCL\Services\PersonService;
+use DCL\Services\SDOH\HistorySdohService;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\SearchComparator;
+use DCL\Services\Search\SearchFieldStatementResolver;
+use DCL\Services\Search\SearchQueryFragment;
+use DCL\Validators\ProcessingResult;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -1451,7 +1451,7 @@ class EncounterccdadispatchTable
             }
         } catch (\Throwable) {
             // If service fails, we gracefully fall back to empty team (primary provider fallback below still works)
-            // You may want to log $e->getMessage() via OpenEMR Logger here.
+            // You may want to log $e->getMessage() via DCL Logger here.
         }
 
         $team_count = $teamData['member_count'] ?? 0;
@@ -2236,7 +2236,7 @@ class EncounterccdadispatchTable
         FROM form_encounter AS fe
         LEFT JOIN facility AS f ON f.id=fe.facility_id
         LEFT JOIN users AS u ON u.id=fe.provider_id
-        LEFT JOIN openemr_postcalendar_categories AS cat ON cat.pc_catid=fe.pc_catid
+        LEFT JOIN DCL_postcalendar_categories AS cat ON cat.pc_catid=fe.pc_catid
         LEFT JOIN list_options AS lo ON lo.list_id = 'physician_type' AND lo.option_id = u.physician_type
         WHERE $wherCon fe.pid = ? ORDER BY fe.date";
         array_push($sqlBindArray, $pid);
@@ -3159,7 +3159,7 @@ class EncounterccdadispatchTable
     }
 
     /**
-     * Borrowed from OpenEMR\Services\VitalsCalculatedService.
+     * Borrowed from DCL\Services\VitalsCalculatedService.
      * TODO sjp need to refactor out to use the services
      *
      * @param array $ids
@@ -3314,7 +3314,7 @@ class EncounterccdadispatchTable
      * document by the C-CDA generator.
      * BTW HL7 spec doesn't allow but one component per unstructured document so
      * this will break spec. However, we'll keep it our little secret as this is off by default.
-     * User can turn on during exports for OpenEMR to OpenEMR transfer of patients.
+     * User can turn on during exports for DCL to DCL transfer of patients.
      *
      * @param $pid
      * @return string

@@ -3,16 +3,16 @@
 /**
  * Isolated tests for ZipExtractionGuard.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Zip;
+namespace DCL\Tests\Isolated\Common\Zip;
 
-use OpenEMR\Common\Zip\ZipExtractionGuard;
+use DCL\Common\Zip\ZipExtractionGuard;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use ZipArchive;
@@ -24,7 +24,7 @@ class ZipExtractionGuardTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'openemr-zguard-' . uniqid('', true);
+        $this->tmpDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'DCL-zguard-' . uniqid('', true);
         mkdir($this->tmpDir);
     }
 

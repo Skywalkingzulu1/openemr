@@ -42,23 +42,23 @@
  * rerun expected.md generation via the accompanying fixture test's
  * update-mode.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-if (!class_exists(\OpenEMR\Release\GitHubApi::class)) {
-    fwrite(STDERR, "OpenEMR\\Release\\ classes not autoloadable; rerun composer install with dev dependencies.\n");
+if (!class_exists(\DCL\Release\GitHubApi::class)) {
+    fwrite(STDERR, "DCL\\Release\\ classes not autoloadable; rerun composer install with dev dependencies.\n");
     exit(2);
 }
 
-use OpenEMR\Release\GitHubApi;
+use DCL\Release\GitHubApi;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -70,7 +70,7 @@ use Symfony\Component\Console\SingleCommandApplication;
     ->addOption('base', 'b', InputOption::VALUE_REQUIRED, 'Base ref (previous tag, e.g. v8_1_0)')
     ->addOption('head', null, InputOption::VALUE_REQUIRED, 'Head ref (rel branch or tag, e.g. rel-820)')
     ->addOption('target-version', 't', InputOption::VALUE_REQUIRED, 'Release version string (e.g. 8.2.0); matched against GHSA patched_versions')
-    ->addOption('repo', 'r', InputOption::VALUE_REQUIRED, 'GitHub repo (owner/name)', 'openemr/openemr')
+    ->addOption('repo', 'r', InputOption::VALUE_REQUIRED, 'GitHub repo (owner/name)', 'DCL/DCL')
     ->addOption('fixture-dir', 'f', InputOption::VALUE_REQUIRED, 'Fixture output directory')
     ->setCode(function (InputInterface $input, OutputInterface $output): int {
         $base = $input->getOption('base');
@@ -191,7 +191,7 @@ use Symfony\Component\Console\SingleCommandApplication;
         );
 
         // JSON_PRETTY_PRINT keeps diffs readable when regenerated;
-        // JSON_UNESCAPED_SLASHES matches openemr's ksort-and-pretty
+        // JSON_UNESCAPED_SLASHES matches DCL's ksort-and-pretty
         // conventions elsewhere in tools/release.
         $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES;
         file_put_contents($fixtureDir . '/commits.json', json_encode($shas, $flags) . "\n");

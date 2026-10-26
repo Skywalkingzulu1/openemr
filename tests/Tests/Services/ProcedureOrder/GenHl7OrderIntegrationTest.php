@@ -3,23 +3,23 @@
 /**
  * Integration tests for the four vendor-specific HL7 order generators.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\ProcedureOrder;
+namespace DCL\Tests\Services\ProcedureOrder;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Orders\Hl7OrderGenerationException;
-use OpenEMR\Common\Orders\Hl7OrderResult;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Fixtures\ProcedureOrderFixtureManager;
-use OpenEMR\Tests\Fixtures\ProcedureProviderFixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Orders\Hl7OrderGenerationException;
+use DCL\Common\Orders\Hl7OrderResult;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Fixtures\ProcedureOrderFixtureManager;
+use DCL\Tests\Fixtures\ProcedureProviderFixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

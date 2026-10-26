@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols.
@@ -71,28 +71,28 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $measure = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $detailQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $detailRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $detailCodeableConcept = null;
 
     /**
      * Indicates the timeframe after the start of the goal in which the goal should be met.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $due = null;
 
@@ -103,7 +103,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMeasure()
     {
@@ -112,7 +112,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $measure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $measure
      * @return $this
      */
     public function setMeasure($measure)
@@ -122,7 +122,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDetailQuantity()
     {
@@ -130,7 +130,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $detailQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $detailQuantity
      * @return $this
      */
     public function setDetailQuantity($detailQuantity)
@@ -140,7 +140,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getDetailRange()
     {
@@ -148,7 +148,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $detailRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $detailRange
      * @return $this
      */
     public function setDetailRange($detailRange)
@@ -158,7 +158,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDetailCodeableConcept()
     {
@@ -166,7 +166,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
      * @return $this
      */
     public function setDetailCodeableConcept($detailCodeableConcept)
@@ -177,7 +177,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates the timeframe after the start of the goal in which the goal should be met.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDue()
     {
@@ -186,7 +186,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates the timeframe after the start of the goal in which the goal should be met.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $due
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $due
      * @return $this
      */
     public function setDue($due)

@@ -9,8 +9,8 @@
  * listener claims it ({@see CodeImportEvent}). Core's own importers are registered last, at
  * {@see CodeImportEvent::PRIORITY_CORE_FALLBACK}, so a module can preempt them.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -18,21 +18,21 @@
  * @copyright Copyright (c) 2014 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (C) 2026 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Controllers\Interface\Super;
+namespace DCL\Controllers\Interface\Super;
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Events\Codes\CodeImportEvent;
-use OpenEMR\Events\Codes\CodeImportSupportedTypeFilterEvent;
-use OpenEMR\Services\CodeTypes\CodeImportException;
-use OpenEMR\Services\CodeTypes\Importer\BaseCodeTypeImporter;
-use OpenEMR\Services\CodeTypes\Importer\RXCUIImportService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Events\Codes\CodeImportEvent;
+use DCL\Events\Codes\CodeImportSupportedTypeFilterEvent;
+use DCL\Services\CodeTypes\CodeImportException;
+use DCL\Services\CodeTypes\Importer\BaseCodeTypeImporter;
+use DCL\Services\CodeTypes\Importer\RXCUIImportService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -49,7 +49,7 @@ class LoadCodesController
     private const MAX_FILE_SIZE = 350000000;
 
     /**
-     * The importers OpenEMR itself ships, keyed by the code type each one handles.
+     * The importers DCL itself ships, keyed by the code type each one handles.
      *
      * @var array<string, BaseCodeTypeImporter>
      */

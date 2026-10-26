@@ -1,11 +1,11 @@
 # syntax=docker/dockerfile:1
 # ============================================================================
-# OpenEMR Dockerfile for Binary Static Build
+# DCL Dockerfile for Binary Static Build
 # ============================================================================
-# This Dockerfile builds a production-ready OpenEMR container image using:
-#   - Apache web server for serving OpenEMR
-#   - Static PHP binaries (php-fpm, php-cli) from openemr-static-binary-forge
-#   - OpenEMR application code from PHAR/binary package
+# This Dockerfile builds a production-ready DCL container image using:
+#   - Apache web server for serving DCL
+#   - Static PHP binaries (php-fpm, php-cli) from DCL-static-binary-forge
+#   - DCL application code from PHAR/binary package
 #   - Automated setup and configuration scripts
 #   - Support for SSL/TLS certificates
 #
@@ -21,14 +21,14 @@
 ARG ALPINE_VERSION=3.24
 FROM alpine:${ALPINE_VERSION} AS base
 
-# OpenEMR version and binary release information
-ARG OPENEMR_VERSION=8_4_1
+# DCL version and binary release information
+ARG DCL_VERSION=8_4_1
 ARG BINARY_RELEASE_DATE=10212026
 ARG PHP_VERSION=8.5
 # Forge tags use an abbreviated PHP version (e.g. "8.5" -> "php85"). Derived
 # once here rather than per-RUN, the same way docker/flex/Dockerfile does it.
 ARG PHP_VERSION_ABBR=${PHP_VERSION//./}
-ENV OPENEMR_VERSION=${OPENEMR_VERSION}
+ENV DCL_VERSION=${DCL_VERSION}
 ENV PHP_VERSION=${PHP_VERSION}
 ENV PHP_VERSION_ABBR=${PHP_VERSION_ABBR}
 
@@ -43,7 +43,7 @@ ARG TARGETARCH
 # Update Alpine packages to latest versions for security patches
 RUN apk --no-cache upgrade
 
-# Install system packages required for OpenEMR and Apache
+# Install system packages required for DCL and Apache
 # Note: PHP packages are NOT installed - we use static binaries instead
 # Packages: apache2 (HTTP server), apache2-proxy (proxy module), apache2-ssl (SSL/TLS),
 # apache2-utils (utilities), bash (shell), certbot (Let's Encrypt), curl (HTTP client),
@@ -51,7 +51,7 @@ RUN apk --no-cache upgrade
 # mariadb-client (database client), mariadb-connector-c (DB connector), ncurses (terminal),
 # openssl/openssl-dev (cryptography), perl (interpreter),
 # rsync (file sync), shadow (user management), su-exec (lightweight privilege-drop
-# tool used by run_php_as_apache to invoke OpenEMR CLI scripts as the apache user
+# tool used by run_php_as_apache to invoke DCL CLI scripts as the apache user
 # without an intermediate shell — busybox `su` rescans options across the whole
 # arg list, which breaks argv-passthrough), tar (archives)
 RUN apk add --no-cache \
@@ -86,23 +86,23 @@ RUN sed -i 's/^Listen 80$/Listen 0.0.0.0:80/' /etc/apache2/httpd.conf
 # USER AND PERMISSIONS CONFIGURATION
 # ============================================================================
 # Set Apache user UID to 1000 to ensure consistent permissions across
-# shared volumes when using multiple containers (OpenEMR, nginx, php-fpm)
+# shared volumes when using multiple containers (DCL, nginx, php-fpm)
 # This prevents permission conflicts in multi-container deployments
 RUN usermod -u 1000 apache
 
 # ============================================================================
 # STATIC PHP BINARIES INSTALLATION
 # ============================================================================
-# Download and install static PHP binaries from openemr-static-binary-forge
+# Download and install static PHP binaries from DCL-static-binary-forge
 # These binaries are statically compiled and include all necessary extensions
 # We need php-fpm (for FastCGI) and php-cli (for command-line scripts like auto_configure.php)
 # Architecture naming: amd64 and arm64 are used directly in release URLs and filenames
 RUN ARCH_SUFFIX="${TARGETARCH}" \
     && cd /tmp \
-    && curl -fSL "https://github.com/Jmevorach/openemr-static-binary-forge/releases/download/linux_${ARCH_SUFFIX}-php${PHP_VERSION_ABBR}-openemr-v${OPENEMR_VERSION}-${ARCH_SUFFIX}-${BINARY_RELEASE_DATE}/php-fpm-v${OPENEMR_VERSION}-linux-${ARCH_SUFFIX}" -o php-fpm \
+    && curl -fSL "https://github.com/Jmevorach/DCL-static-binary-forge/releases/download/linux_${ARCH_SUFFIX}-php${PHP_VERSION_ABBR}-DCL-v${DCL_VERSION}-${ARCH_SUFFIX}-${BINARY_RELEASE_DATE}/php-fpm-v${DCL_VERSION}-linux-${ARCH_SUFFIX}" -o php-fpm \
     && test -s php-fpm || (echo "ERROR: php-fpm download failed - file is empty or missing" && exit 1) \
     && test "$(stat -f%z php-fpm 2>/dev/null || stat -c%s php-fpm 2>/dev/null || echo 0)" -gt 1000000 || (echo "ERROR: php-fpm download appears invalid (file too small)" && exit 1) \
-    && curl -fSL "https://github.com/Jmevorach/openemr-static-binary-forge/releases/download/linux_${ARCH_SUFFIX}-php${PHP_VERSION_ABBR}-openemr-v${OPENEMR_VERSION}-${ARCH_SUFFIX}-${BINARY_RELEASE_DATE}/php-cli-v${OPENEMR_VERSION}-linux-${ARCH_SUFFIX}" -o php-cli \
+    && curl -fSL "https://github.com/Jmevorach/DCL-static-binary-forge/releases/download/linux_${ARCH_SUFFIX}-php${PHP_VERSION_ABBR}-DCL-v${DCL_VERSION}-${ARCH_SUFFIX}-${BINARY_RELEASE_DATE}/php-cli-v${DCL_VERSION}-linux-${ARCH_SUFFIX}" -o php-cli \
     && test -s php-cli || (echo "ERROR: php-cli download failed - file is empty or missing" && exit 1) \
     && test "$(stat -f%z php-cli 2>/dev/null || stat -c%s php-cli 2>/dev/null || echo 0)" -gt 1000000 || (echo "ERROR: php-cli download appears invalid (file too small)" && exit 1) \
     && chmod +x php-fpm php-cli \
@@ -110,29 +110,29 @@ RUN ARCH_SUFFIX="${TARGETARCH}" \
     && mv php-cli /usr/local/bin/php \
     && ln -sf /usr/local/bin/php /usr/local/bin/php-cli
 
-# Install Composer (PHP dependency manager) for OpenEMR package installation
+# Install Composer (PHP dependency manager) for DCL package installation
 # Required by the CI/CD test suite
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 # ============================================================================
-# OPENEMR PHAR INSTALLATION
+# DCL PHAR INSTALLATION
 # ============================================================================
-# Download and extract OpenEMR from the PHAR file
-# Use the separate openemr.phar file which is a standard PHAR archive
+# Download and extract DCL from the PHAR file
+# Use the separate DCL.phar file which is a standard PHAR archive
 # Note: This is a BUILD-TIME operation extracting to a clean /tmp location.
 # User data paths (sites/*/documents, sites/*/sqlconf.php, etc.) are preserved
 # via volumes at runtime and never overwritten by this build-time extraction.
 # Architecture naming: amd64 and arm64 are used directly in release URLs
 RUN ARCH_SUFFIX="${TARGETARCH}" \
     && cd /tmp \
-    && curl -fSL "https://github.com/Jmevorach/openemr-static-binary-forge/releases/download/linux_${ARCH_SUFFIX}-php${PHP_VERSION_ABBR}-openemr-v${OPENEMR_VERSION}-${ARCH_SUFFIX}-${BINARY_RELEASE_DATE}/openemr.phar" -o openemr.phar \
-    && test -s openemr.phar || (echo "ERROR: openemr.phar download failed - file is empty or missing" && exit 1) \
-    && test "$(stat -f%z openemr.phar 2>/dev/null || stat -c%s openemr.phar 2>/dev/null || echo 0)" -gt 10000000 || (echo "ERROR: openemr.phar download appears invalid (file too small, expected >10MB)" && exit 1) \
-    && mkdir -p /tmp/openemr \
-    && /usr/local/bin/php -d memory_limit=512M -r "try { \$phar = new Phar('openemr.phar'); \$phar->extractTo('/tmp/openemr'); } catch (Exception \$e) { echo 'Error: ' . \$e->getMessage() . PHP_EOL; exit(1); }" \
-    && rm openemr.phar
+    && curl -fSL "https://github.com/Jmevorach/DCL-static-binary-forge/releases/download/linux_${ARCH_SUFFIX}-php${PHP_VERSION_ABBR}-DCL-v${DCL_VERSION}-${ARCH_SUFFIX}-${BINARY_RELEASE_DATE}/DCL.phar" -o DCL.phar \
+    && test -s DCL.phar || (echo "ERROR: DCL.phar download failed - file is empty or missing" && exit 1) \
+    && test "$(stat -f%z DCL.phar 2>/dev/null || stat -c%s DCL.phar 2>/dev/null || echo 0)" -gt 10000000 || (echo "ERROR: DCL.phar download appears invalid (file too small, expected >10MB)" && exit 1) \
+    && mkdir -p /tmp/DCL \
+    && /usr/local/bin/php -d memory_limit=512M -r "try { \$phar = new Phar('DCL.phar'); \$phar->extractTo('/tmp/DCL'); } catch (Exception \$e) { echo 'Error: ' . \$e->getMessage() . PHP_EOL; exit(1); }" \
+    && rm DCL.phar
 
-# Overlay the test harness from the matching OpenEMR tag.
+# Overlay the test harness from the matching DCL tag.
 # Use git clone, not the GitHub source archive: .gitattributes marks
 # tests/ as export-ignore, so tag tarballs omit it (same reason
 # docker/release/ clones instead of downloading the archive).
@@ -144,27 +144,27 @@ RUN ARCH_SUFFIX="${TARGETARCH}" \
 # and exits 1 -- which is how this surfaced, as a container-functionality
 # failure rather than a build failure.
 RUN apk add --no-cache --virtual .fetch-tests git \
-    && git clone --depth 1 --branch "v${OPENEMR_VERSION}" \
-        https://github.com/openemr/openemr.git /tmp/openemr-src \
-    && if [ ! -d /tmp/openemr-src/tests ]; then \
-        echo "ERROR: tests directory not found in cloned v${OPENEMR_VERSION}"; \
+    && git clone --depth 1 --branch "v${DCL_VERSION}" \
+        https://github.com/DCL/DCL.git /tmp/DCL-src \
+    && if [ ! -d /tmp/DCL-src/tests ]; then \
+        echo "ERROR: tests directory not found in cloned v${DCL_VERSION}"; \
         echo "Top-level entries:"; \
-        ls -la /tmp/openemr-src; \
+        ls -la /tmp/DCL-src; \
         exit 1; \
     fi \
-    && mv /tmp/openemr-src/tests /tmp/openemr/tests \
+    && mv /tmp/DCL-src/tests /tmp/DCL/tests \
     && for cfg in phpunit.xml phpunit-isolated.xml phpunit.integration.xml; do \
-        if [ ! -f "/tmp/openemr-src/${cfg}" ]; then \
-            echo "ERROR: ${cfg} not found in cloned v${OPENEMR_VERSION}"; \
+        if [ ! -f "/tmp/DCL-src/${cfg}" ]; then \
+            echo "ERROR: ${cfg} not found in cloned v${DCL_VERSION}"; \
             exit 1; \
         fi; \
-        mv "/tmp/openemr-src/${cfg}" "/tmp/openemr/${cfg}"; \
+        mv "/tmp/DCL-src/${cfg}" "/tmp/DCL/${cfg}"; \
     done \
-    && rm -rf /tmp/openemr-src \
+    && rm -rf /tmp/DCL-src \
     && apk del .fetch-tests
 
 # ============================================================================
-# OPENEMR SETUP AND PERMISSIONS
+# DCL SETUP AND PERMISSIONS
 # ============================================================================
 RUN cd /tmp \
     # =========================================================================
@@ -172,21 +172,21 @@ RUN cd /tmp \
     # =========================================================================
     # Set secure permissions now so runtime only needs to handle exceptions
     # Directories: 500 (read + execute for owner)
-    && find openemr -type d -exec chmod 500 {} + \
+    && find DCL -type d -exec chmod 500 {} + \
     # Files: 400 (read-only for owner)
-    && find openemr -type f -exec chmod 400 {} + \
+    && find DCL -type f -exec chmod 400 {} + \
     # Exceptions that need to be writable during setup:
     # - sqlconf.php: Written during auto-configuration
-    && chmod 666 openemr/sites/default/sqlconf.php \
+    && chmod 666 DCL/sites/default/sqlconf.php \
     # - sites/default directory: Needs write access for setup
-    && chmod 700 openemr/sites/default \
+    && chmod 700 DCL/sites/default \
     # - documents directory: Needs write access for uploads
-    && find openemr/sites/default/documents -type d -exec chmod 700 {} + 2>/dev/null || true \
-    && find openemr/sites/default/documents -type f -exec chmod 600 {} + 2>/dev/null || true \
+    && find DCL/sites/default/documents -type d -exec chmod 700 {} + 2>/dev/null || true \
+    && find DCL/sites/default/documents -type f -exec chmod 600 {} + 2>/dev/null || true \
     # Set ownership to apache user for proper file access
-    && chown -R apache:apache openemr/ \
-    # Move OpenEMR to web root directory
-    && mv openemr /var/www/localhost/htdocs/ \
+    && chown -R apache:apache DCL/ \
+    # Move DCL to web root directory
+    && mv DCL /var/www/localhost/htdocs/ \
     # Create SSL certificate directories
     && mkdir -p /etc/ssl/certs /etc/ssl/private \
     # Create PHP-FPM runtime and log directories
@@ -200,8 +200,8 @@ RUN cd /tmp \
 # ============================================================================
 # WORKING DIRECTORY AND VOLUMES
 # ============================================================================
-# Set working directory to OpenEMR installation
-WORKDIR /var/www/localhost/htdocs/openemr
+# Set working directory to DCL installation
+WORKDIR /var/www/localhost/htdocs/DCL
 
 # Define volumes for SSL certificates and Let's Encrypt certificates
 # These volumes persist certificates across container restarts
@@ -213,25 +213,25 @@ VOLUME [ "/etc/letsencrypt/", "/etc/ssl" ]
 # Set Apache log directory environment variable
 ENV APACHE_LOG_DIR=/var/log/apache2
 
-# Copy Apache virtual host configuration for OpenEMR
-COPY openemr.conf /etc/apache2/conf.d/
+# Copy Apache virtual host configuration for DCL
+COPY DCL.conf /etc/apache2/conf.d/
 
 # Copy PHP-FPM configuration files
 COPY php-fpm.conf /usr/local/etc/php-fpm.conf
 RUN mkdir -p /usr/local/etc/php-fpm.d
 COPY php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
 
-# Copy PHP configuration file with OpenEMR-optimized settings
+# Copy PHP configuration file with DCL-optimized settings
 COPY php.ini /usr/local/etc/php/php.ini
 
 # ============================================================================
-# OPENEMR SCRIPTS AND UTILITIES
+# DCL SCRIPTS AND UTILITIES
 # ============================================================================
 # Copy main startup and configuration scripts
-# - openemr.sh: Main container startup script (handles setup, upgrades, PHP-FPM, Apache)
+# - DCL.sh: Main container startup script (handles setup, upgrades, PHP-FPM, Apache)
 # - ssl.sh: SSL/TLS certificate management script
-# - auto_configure.php: Automated OpenEMR installation script
-COPY openemr.sh ssl.sh auto_configure.php /var/www/localhost/htdocs/openemr/
+# - auto_configure.php: Automated DCL installation script
+COPY DCL.sh ssl.sh auto_configure.php /var/www/localhost/htdocs/DCL/
 
 # Copy admin unlock utilities (for password recovery)
 COPY utilities/unlock_admin.php utilities/unlock_admin.sh /root/
@@ -239,14 +239,14 @@ COPY utilities/unlock_admin.php utilities/unlock_admin.sh /root/
 # Set script permissions:
 # - Executable scripts: 500 (read and execute for owner only)
 # - PHP scripts: 000 (no access) - prevents accidental execution until enabled
-RUN chmod 500 openemr.sh ssl.sh /root/unlock_admin.sh \
+RUN chmod 500 DCL.sh ssl.sh /root/unlock_admin.sh \
     && chmod 000 auto_configure.php /root/unlock_admin.php
 
 # ============================================================================
 # UPGRADE SYSTEM
 # ============================================================================
 # Copy upgrade scripts and version tracking file
-# These scripts handle filesystem upgrades when moving between OpenEMR versions
+# These scripts handle filesystem upgrades when moving between DCL versions
 # The docker-version file tracks the installed version for upgrade detection
 COPY upgrade/docker-version \
      upgrade/fsupgrade-1.sh \
@@ -294,7 +294,7 @@ RUN mkdir -p /run/apache2
 # ============================================================================
 # DEVELOPMENT TOOLS LIBRARY
 # ============================================================================
-# Copy shared library of utility functions used by OpenEMR scripts
+# Copy shared library of utility functions used by DCL scripts
 # This library provides database operations, configuration helpers, etc.
 COPY utilities/devtoolsLibrary.source /root/
 
@@ -306,14 +306,14 @@ COPY utilities/devtoolsLibrary.source /root/
 # with empty volumes, enabling multi-container deployments
 RUN mkdir /swarm-pieces \
     && rsync --owner --group --perms --delete --recursive --links /etc/ssl /swarm-pieces/ \
-    && rsync --owner --group --perms --delete --recursive --links /var/www/localhost/htdocs/openemr/sites /swarm-pieces/
+    && rsync --owner --group --perms --delete --recursive --links /var/www/localhost/htdocs/DCL/sites /swarm-pieces/
 
 # ============================================================================
 # CONTAINER STARTUP
 # ============================================================================
-# Set default command to run OpenEMR startup script
+# Set default command to run DCL startup script
 # This script handles database setup, configuration, PHP-FPM, and Apache startup
-CMD [ "./openemr.sh" ]
+CMD [ "./DCL.sh" ]
 
 # Expose HTTP and HTTPS ports
 EXPOSE 80 443

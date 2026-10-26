@@ -7,9 +7,9 @@ setup() {
     [[ -n "$SCRIPT_DIR" ]] && [[ -d "$SCRIPT_DIR" ]]
 }
 
-@test "flex kcov-wrapper.sh: kcov and openemr.sh" {
+@test "flex kcov-wrapper.sh: kcov and DCL.sh" {
     assert_script_contains "${SCRIPT_DIR}/kcov-wrapper.sh" 'kcov'
-    assert_script_contains "${SCRIPT_DIR}/kcov-wrapper.sh" 'openemr.sh'
+    assert_script_contains "${SCRIPT_DIR}/kcov-wrapper.sh" 'DCL.sh'
 }
 
 @test "flex kcov-wrapper.sh: httpd FOREGROUND" {

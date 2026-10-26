@@ -5,17 +5,17 @@
  *
  * Tests ImmunizationValidator validation logic without database dependencies.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators;
+namespace DCL\Tests\Isolated\Validators;
 
-use OpenEMR\Validators\BaseValidator;
-use OpenEMR\Validators\ImmunizationValidator;
+use DCL\Validators\BaseValidator;
+use DCL\Validators\ImmunizationValidator;
 use PHPUnit\Framework\TestCase;
 
 class ImmunizationValidatorTest extends TestCase

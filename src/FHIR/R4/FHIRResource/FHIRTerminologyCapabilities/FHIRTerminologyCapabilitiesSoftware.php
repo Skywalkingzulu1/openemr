@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,13 +71,13 @@ class FHIRTerminologyCapabilitiesSoftware extends FHIRBackboneElement implements
 {
     /**
      * Name the software is known by.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The version identifier for the software covered by this statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
@@ -88,7 +88,7 @@ class FHIRTerminologyCapabilitiesSoftware extends FHIRBackboneElement implements
 
     /**
      * Name the software is known by.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -97,7 +97,7 @@ class FHIRTerminologyCapabilitiesSoftware extends FHIRBackboneElement implements
 
     /**
      * Name the software is known by.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -108,7 +108,7 @@ class FHIRTerminologyCapabilitiesSoftware extends FHIRBackboneElement implements
 
     /**
      * The version identifier for the software covered by this statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -117,7 +117,7 @@ class FHIRTerminologyCapabilitiesSoftware extends FHIRBackboneElement implements
 
     /**
      * The version identifier for the software covered by this statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)

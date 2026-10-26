@@ -3,20 +3,20 @@
 /**
  * CodeTypeEventsSubscriber  Handles the mapping of code systems to our list options.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\CodeTypes\Subscriber;
+namespace DCL\Services\CodeTypes\Subscriber;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Events\Codes\CodeTypeInstalledEvent;
-use OpenEMR\Events\Core\SQLUpgradeEvent;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Events\Codes\CodeTypeInstalledEvent;
+use DCL\Events\Core\SQLUpgradeEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class CodeTypeEventsSubscriber implements EventSubscriberInterface

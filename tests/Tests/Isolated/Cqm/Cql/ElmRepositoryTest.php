@@ -8,19 +8,19 @@
  * which is the set the interpreter must implement; a measure update that
  * brings a new one fails here first.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cqm\Cql;
+namespace DCL\Tests\Isolated\Cqm\Cql;
 
-use OpenEMR\Cqm\Cql\Elm\ElmLibrary;
-use OpenEMR\Cqm\Cql\Elm\ElmRepository;
+use DCL\Cqm\Cql\Elm\ElmLibrary;
+use DCL\Cqm\Cql\Elm\ElmRepository;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -206,6 +206,6 @@ class ElmRepositoryTest extends TestCase
 
     private static function measuresDir(): string
     {
-        return dirname(__DIR__, 5) . '/vendor/openemr/oe-cqm-parsers/2025_reporting_period/json_measures';
+        return dirname(__DIR__, 5) . '/vendor/DCL/oe-cqm-parsers/2025_reporting_period/json_measures';
     }
 }

@@ -3,24 +3,24 @@
 /**
  * Contains all of the TeleHealth global settings and configuration
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule;
+namespace Comlink\DCL\Modules\TeleHealthModule;
 
 use MyMailer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Common\Uuid\UniqueInstallationUuid;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Globals\GlobalSetting;
-use OpenEMR\Services\Globals\GlobalsService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Common\Uuid\UniqueInstallationUuid;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Globals\GlobalSetting;
+use DCL\Services\Globals\GlobalsService;
 use Twig\Environment;
 
 class TelehealthGlobalConfig
@@ -36,7 +36,7 @@ class TelehealthGlobalConfig
     public const COMLINK_AUTO_PROVISION_PROVIDER = 'comlink_autoprovision_provider';
     public const COMLINK_ENABLE_THIRDPARTY_INVITATIONS = "comlink_telehealth_thirdparty_enabled";
     public const UNIQUE_INSTALLATION_ID = "unique_installation_id";
-    public const INSTALLATION_NAME = "openemr_name";
+    public const INSTALLATION_NAME = "DCL_name";
     public const DEBUG_MODE_FLAG = "comlink_telehealth_debug";
 
     public const COMLINK_MINIMIZED_SESSION_POSITION_DEFAULT = "comlink_telehealth_minimized_position_default";
@@ -85,9 +85,9 @@ class TelehealthGlobalConfig
         return $this->getGlobalSetting('portal_timeout') ?? 1800; // timeout is in seconds
     }
 
-    public function getOpenEMRName()
+    public function getDCLName()
     {
-        return $this->getGlobalSetting('openemr_name');
+        return $this->getGlobalSetting('DCL_name');
     }
 
     public function getPatientReminderName()
@@ -224,7 +224,7 @@ class TelehealthGlobalConfig
             // check to make sure the portal url is not the default
             $defaultValue = $this->getGlobalSetting('portal_onsite_two_address');
             // TODO: @adunsulag can we pull the default onsite configuration pulled out into a constant somewhere?
-            if ($defaultValue == 'https://your_web_site.com/openemr/portal') {
+            if ($defaultValue == 'https://your_web_site.com/DCL/portal') {
                 ServiceContainer::getLogger()->debug("Telehealth is using unconfigured portal_onsite_two_address");
                 return false;
             }
@@ -301,7 +301,7 @@ class TelehealthGlobalConfig
 
     public function getGlobalSetting($settingKey)
     {
-        // don't like this as php 8.1 requires this but OpenEMR works with globals and this is annoying.
+        // don't like this as php 8.1 requires this but DCL works with globals and this is annoying.
         return OEGlobalsBag::getInstance()->get($settingKey) ?? '';
     }
 

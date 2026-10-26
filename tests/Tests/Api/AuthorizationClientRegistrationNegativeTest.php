@@ -15,16 +15,16 @@
  *
  * Modeled on AuthorizationGrantFlowTest (same namespace, kernel/session setup).
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Jerry Padgett <sjpadgett@gmail.com>
  */
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\RestControllers\AuthorizationController;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\Kernel;
+use DCL\Core\OEHttpKernel;
+use DCL\RestControllers\AuthorizationController;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -119,7 +119,7 @@ class AuthorizationClientRegistrationNegativeTest extends TestCase
             "redirect_uris" => ["http://localhost:8080/oauth2/callback"],
             "client_name" => "No JWKS Client",
             "token_endpoint_auth_method" => "client_secret_post",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "scope" => "system/Patient.read",
             // deliberately no 'jwks' and no 'jwks_uri'
         ]);
@@ -137,7 +137,7 @@ class AuthorizationClientRegistrationNegativeTest extends TestCase
             "redirect_uris" => ["http://localhost:8080/oauth2/callback"],
             "client_name" => "Bad JWKS Client",
             "token_endpoint_auth_method" => "client_secret_post",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "scope" => "system/Patient.read",
             // jwks must be an object with a "keys" array; a bare list is invalid
             "jwks" => ["not", "a", "keys", "object"],
@@ -156,7 +156,7 @@ class AuthorizationClientRegistrationNegativeTest extends TestCase
             "redirect_uris" => ["http://localhost:8080/oauth2/callback"],
             "client_name" => "Public System Client",
             "token_endpoint_auth_method" => "none",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "scope" => "user/Patient.read",
         ]);
         $this->assertRejected($status, $body, "public client requesting user/system scope");
@@ -211,7 +211,7 @@ class AuthorizationClientRegistrationNegativeTest extends TestCase
             "redirect_uris" => ["http://localhost:8080/oauth2/callback"],
             "client_name" => "Outbound URL Rejection Test",
             "token_endpoint_auth_method" => "private_key_jwt",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "scope" => "openid",
             "jwks_uri" => $jwksUri,
         ]);
@@ -237,7 +237,7 @@ class AuthorizationClientRegistrationNegativeTest extends TestCase
             "redirect_uris" => ["http://localhost:8080/oauth2/callback"],
             "client_name" => "Colon System Client",
             "token_endpoint_auth_method" => "private_key_jwt",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "jwks" => ["keys" => [[
                 "kty" => "RSA",
                 "n" => "sXchDaQebHnPiGvyDOAT4saGEUetSyo9MKLOoWFsueri23bOdgWp4Dy1WlUzewbgBHod5pcM9H95GQRV3JDXboIRROSBigeC5yjU1hGzHHyXss8UDprecbAYxknTcQkhslANGRUZmdTOQ5ZTsSt1RwbGSKcNIGVpxKn5Fz-3wZ_wMg-BiTL7uKb1YnLBLK6zTOevD5rG-oJ2Xh0Rj_5Fk-oxaGdD1CInGGm4L5rNe6ULiNyk3z8hE0PBBJnpP4-VfXlOFA3zJPBSjA3W9CXCTn5H6DVoI9FUeS29H0Kzu9jGXm2y7pMBpUvL15pw",
@@ -258,7 +258,7 @@ class AuthorizationClientRegistrationNegativeTest extends TestCase
             "redirect_uris" => ["http://localhost:8080/oauth2/callback"],
             "client_name" => "Colon User Client",
             "token_endpoint_auth_method" => "client_secret_basic",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "scope" => "openid user:Patient.read",
         ]);
         $this->assertRejected($status, $body, "colon-form user: scope");
@@ -271,7 +271,7 @@ class AuthorizationClientRegistrationNegativeTest extends TestCase
             "redirect_uris" => ["http://localhost:8080/oauth2/callback"],
             "client_name" => "Colon Patient Client",
             "token_endpoint_auth_method" => "client_secret_basic",
-            "contacts" => ["test@open-emr.org"],
+            "contacts" => ["test@dcl.org"],
             "scope" => "openid patient:Patient.read",
         ]);
         $this->assertRejected($status, $body, "colon-form patient: scope");

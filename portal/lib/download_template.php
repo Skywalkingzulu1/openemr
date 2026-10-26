@@ -3,17 +3,17 @@
 /**
  * Document Template Rendering front end.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Jerry Padgett <sjpadgett@gmail.com>
  * Copyright (C) 2023-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\DocumentTemplates\DocumentTemplateRender;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\DocumentTemplates\DocumentTemplateRender;
 
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../../vendor/autoload.php");

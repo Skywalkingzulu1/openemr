@@ -1,4 +1,4 @@
-# BATS tests for OpenEMR Docker binary bash scripts
+# BATS tests for DCL Docker binary bash scripts
 
 load '../helpers'
 
@@ -11,18 +11,18 @@ setup() {
     [[ -d "$SCRIPT_DIR" ]]
 }
 
-@test "binary: openemr.sh exists and has valid syntax" {
-    assert_script_syntax "${SCRIPT_DIR}/openemr.sh"
+@test "binary: DCL.sh exists and has valid syntax" {
+    assert_script_syntax "${SCRIPT_DIR}/DCL.sh"
 }
 
-@test "binary: openemr.sh uses bash and sources devtoolsLibrary" {
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'devtoolsLibrary.source'
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'set -euo pipefail'
+@test "binary: DCL.sh uses bash and sources devtoolsLibrary" {
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'devtoolsLibrary.source'
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'set -euo pipefail'
 }
 
-@test "binary: openemr.sh defines OE_ROOT and AUTO_CONFIG" {
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'OE_ROOT='
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'AUTO_CONFIG='
+@test "binary: DCL.sh defines OE_ROOT and AUTO_CONFIG" {
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'OE_ROOT='
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'AUTO_CONFIG='
 }
 
 @test "binary: ssl.sh exists and has valid syntax" {

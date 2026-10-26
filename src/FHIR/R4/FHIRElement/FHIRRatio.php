@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A relationship of two Quantity values - expressed as a numerator and a denominator.
@@ -72,13 +72,13 @@ class FHIRRatio extends FHIRElement implements \JsonSerializable
 {
     /**
      * The value of the numerator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $numerator = null;
 
     /**
      * The value of the denominator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $denominator = null;
 
@@ -89,7 +89,7 @@ class FHIRRatio extends FHIRElement implements \JsonSerializable
 
     /**
      * The value of the numerator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getNumerator()
     {
@@ -98,7 +98,7 @@ class FHIRRatio extends FHIRElement implements \JsonSerializable
 
     /**
      * The value of the numerator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $numerator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $numerator
      * @return $this
      */
     public function setNumerator($numerator)
@@ -109,7 +109,7 @@ class FHIRRatio extends FHIRElement implements \JsonSerializable
 
     /**
      * The value of the denominator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDenominator()
     {
@@ -118,7 +118,7 @@ class FHIRRatio extends FHIRElement implements \JsonSerializable
 
     /**
      * The value of the denominator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $denominator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $denominator
      * @return $this
      */
     public function setDenominator($denominator)

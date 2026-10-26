@@ -3,11 +3,11 @@
 /**
  * interface/modules/zend_modules/module/Immunization/src/Immunization/Controller/ImmunizationController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Bindia Nandakumar <bindia@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Immunization\Controller;
@@ -18,9 +18,9 @@ use Immunization\Model\ImmunizationTable;
 use Immunization\Model\PatientSelectionMarker;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\PhoneNumberService;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\PhoneNumberService;
 
 class ImmunizationController extends AbstractActionController
 {
@@ -317,8 +317,8 @@ class ImmunizationController extends AbstractActionController
                     $guardiansname = '';
 
                     if ($r['patientid'] != $patient_id) {
-                        $content .= "MSH|^~\&|OPENEMR|" . $r['facility_code'] . "||NIST Test Iz Reg|$nowdate||" .
-                            "VXU^V04^VXU_V04|OPENEMR-110316102457117|P|2.5.1|||AL|ER" .
+                        $content .= "MSH|^~\&|DCL|" . $r['facility_code'] . "||NIST Test Iz Reg|$nowdate||" .
+                            "VXU^V04^VXU_V04|DCL-110316102457117|P|2.5.1|||AL|ER" .
                             "$D";
                         $race_code = $this->getImmunizationTable()->getNotes($r['race'], 'race');
                         $race_title = $this->CommonPlugin()->getListtitle('race', $r['race']);

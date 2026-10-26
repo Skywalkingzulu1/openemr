@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Tests\Isolated\Common\Uuid;
+namespace DCL\Tests\Isolated\Common\Uuid;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
+use DCL\Common\Uuid\UuidRegistry;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\UuidFactory;
@@ -10,11 +10,11 @@ use Ramsey\Uuid\UuidFactory;
 /**
  * Uuid Registry Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class UuidRegistryTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
 /*
- *  package OpenEMR
- *  link    https://www.open-emr.org
+ *  package DCL
+ *  link    https://www.dcl.org
  *  author  Sherwin Gaddis <sherwingaddis@gmail.com>
  *  Copyright (c) 2022.
  *  All Rights Reserved
@@ -10,12 +10,12 @@
 
 require_once dirname(__FILE__, 6) . "/globals.php";
 
-use Juggernaut\OpenEMR\Modules\PriorAuthModule\Controller\AuthorizationService;
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use Juggernaut\DCL\Modules\PriorAuthModule\Controller\AuthorizationService;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 if (!AclMain::aclCheckCore('patients', 'docs')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/docs: Prior Auths Report", xl("Prior Auths Report"));

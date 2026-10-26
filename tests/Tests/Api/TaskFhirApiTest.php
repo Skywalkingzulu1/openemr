@@ -3,20 +3,20 @@
 /**
  * FHIR Task API tests: read, search, create and update.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Tests\Fixtures\ConditionFixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Tests\Fixtures\ConditionFixtureManager;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -49,9 +49,9 @@ class TaskFhirApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtures = new ConditionFixtureManager();
         $this->patient = self::patientOf($this->fixtures->createTestPatient());
@@ -350,8 +350,8 @@ class TaskFhirApiTest extends TestCase
         $id = self::text(self::at($task, 'id'));
         $this->assertNotSame('chosen-by-client', $id, 'the server picks the id');
         $this->assertSame('1', self::at($task, 'meta', 'versionId'));
-        // The ETag header carries the same version, but OpenEMR's Docker image removes ETag
-        // headers ("Header unset ETag" in openemr.conf), so the body's versionId is what a client reads.
+        // The ETag header carries the same version, but DCL's Docker image removes ETag
+        // headers ("Header unset ETag" in DCL.conf), so the body's versionId is what a client reads.
         $this->assertContains($etag, ['W/"1"', ''], 'when present, the version');
         $this->assertSame('requested', self::at($task, 'status'));
         $this->assertSame('Patient/' . $this->patient['uuid'], self::at($task, 'for', 'reference'));

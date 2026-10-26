@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
+namespace DCL\FHIR\R4\FHIRResource\FHIREncounter;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -71,13 +71,13 @@ class FHIREncounterClassHistory extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * inpatient | outpatient | ambulatory | emergency +.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $class = null;
 
     /**
      * The time that the episode was in the specified class.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -88,7 +88,7 @@ class FHIREncounterClassHistory extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * inpatient | outpatient | ambulatory | emergency +.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getClass()
     {
@@ -97,7 +97,7 @@ class FHIREncounterClassHistory extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * inpatient | outpatient | ambulatory | emergency +.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $class
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $class
      * @return $this
      */
     public function setClass($class)
@@ -108,7 +108,7 @@ class FHIREncounterClassHistory extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The time that the episode was in the specified class.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -117,7 +117,7 @@ class FHIREncounterClassHistory extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The time that the episode was in the specified class.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

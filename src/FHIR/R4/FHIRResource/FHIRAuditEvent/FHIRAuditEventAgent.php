@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAuditEvent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -71,67 +71,67 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * Specification of the participation type the user plays when performing the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The security role that the user was acting under, that come from local codes defined by the access control security system (e.g. RBAC, ABAC) used in the local context.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $role = [];
 
     /**
      * Reference to who this agent is that was involved in the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $who = null;
 
     /**
      * Alternative agent Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g. single sign-on), if available.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $altId = null;
 
     /**
      * Human-meaningful name for the agent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Indicator that the user is or is not the requestor, or initiator, for the event being audited.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $requestor = null;
 
     /**
      * Where the event occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * The policy or plan that authorized the activity being recorded. Typically, a single activity may have multiple applicable policies, such as patient consent, guarantor funding, etc. The policy would also indicate the security token used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $policy = [];
 
     /**
      * Type of media involved. Used when the event is about exporting/importing onto media.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $media = null;
 
     /**
      * Logical network location for application activity, if the activity has a network location.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventNetwork
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventNetwork
      */
     public $network = null;
 
     /**
      * The reason (purpose of use), specific to this agent, that was used during the event being recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $purposeOfUse = [];
 
@@ -142,7 +142,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Specification of the participation type the user plays when performing the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -151,7 +151,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Specification of the participation type the user plays when performing the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -162,7 +162,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The security role that the user was acting under, that come from local codes defined by the access control security system (e.g. RBAC, ABAC) used in the local context.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRole()
     {
@@ -171,7 +171,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The security role that the user was acting under, that come from local codes defined by the access control security system (e.g. RBAC, ABAC) used in the local context.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function addRole($role)
@@ -182,7 +182,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Reference to who this agent is that was involved in the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getWho()
     {
@@ -191,7 +191,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Reference to who this agent is that was involved in the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $who
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $who
      * @return $this
      */
     public function setWho($who)
@@ -202,7 +202,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Alternative agent Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g. single sign-on), if available.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAltId()
     {
@@ -211,7 +211,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Alternative agent Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g. single sign-on), if available.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $altId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $altId
      * @return $this
      */
     public function setAltId($altId)
@@ -222,7 +222,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Human-meaningful name for the agent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -231,7 +231,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Human-meaningful name for the agent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -242,7 +242,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Indicator that the user is or is not the requestor, or initiator, for the event being audited.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getRequestor()
     {
@@ -251,7 +251,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Indicator that the user is or is not the requestor, or initiator, for the event being audited.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $requestor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $requestor
      * @return $this
      */
     public function setRequestor($requestor)
@@ -262,7 +262,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Where the event occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -271,7 +271,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Where the event occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -282,7 +282,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The policy or plan that authorized the activity being recorded. Typically, a single activity may have multiple applicable policies, such as patient consent, guarantor funding, etc. The policy would also indicate the security token used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getPolicy()
     {
@@ -291,7 +291,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The policy or plan that authorized the activity being recorded. Typically, a single activity may have multiple applicable policies, such as patient consent, guarantor funding, etc. The policy would also indicate the security token used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $policy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $policy
      * @return $this
      */
     public function addPolicy($policy)
@@ -302,7 +302,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Type of media involved. Used when the event is about exporting/importing onto media.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getMedia()
     {
@@ -311,7 +311,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Type of media involved. Used when the event is about exporting/importing onto media.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $media
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $media
      * @return $this
      */
     public function setMedia($media)
@@ -322,7 +322,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Logical network location for application activity, if the activity has a network location.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventNetwork
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventNetwork
      */
     public function getNetwork()
     {
@@ -331,7 +331,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Logical network location for application activity, if the activity has a network location.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventNetwork $network
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventNetwork $network
      * @return $this
      */
     public function setNetwork($network)
@@ -342,7 +342,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The reason (purpose of use), specific to this agent, that was used during the event being recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPurposeOfUse()
     {
@@ -351,7 +351,7 @@ class FHIRAuditEventAgent extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The reason (purpose of use), specific to this agent, that was used during the event being recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $purposeOfUse
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $purposeOfUse
      * @return $this
      */
     public function addPurposeOfUse($purposeOfUse)

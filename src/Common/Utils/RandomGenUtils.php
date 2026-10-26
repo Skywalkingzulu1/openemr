@@ -3,14 +3,14 @@
 /**
  * RandomGenUtils class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Utils;
+namespace DCL\Common\Utils;
 
 class RandomGenUtils
 {
@@ -76,7 +76,7 @@ class RandomGenUtils
             }
         }
         // Something is seriously wrong since 1000 tries have not created a valid password
-        $error_message = "OpenEMR Error: OpenEMR is not working because unable to create a valid password in $max_tries attempts.";
+        $error_message = "DCL Error: DCL is not working because unable to create a valid password in $max_tries attempts.";
         error_log($error_message);
         throw new \RuntimeException($error_message);
     }

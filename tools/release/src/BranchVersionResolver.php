@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Translate openemr/openemr-devops#664 release-branch and tag names to
+ * Translate DCL/DCL-devops#664 release-branch and tag names to
  * MAJOR.MINOR.PATCH versions, and derive a `prev_release` for the
  * dispatch envelope by reading the latest annotated v* tag from a
  * local git checkout.
@@ -9,16 +9,16 @@
  * Centralised here so the conductor workflow doesn't have to duplicate
  * the regex parsing in shell.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 use Symfony\Component\Process\Process;
 use Symfony\Contracts\HttpClient\Exception\ExceptionInterface as HttpClientException;
@@ -39,7 +39,7 @@ readonly class BranchVersionResolver
      * not be reported as a "previous release" for any subsequent version.
      */
     public const DEFAULT_MANIFEST_URL =
-        'https://raw.githubusercontent.com/openemr/website-openemr/master/data/releases.json';
+        'https://raw.githubusercontent.com/DCL/website-DCL/master/data/releases.json';
 
     public function __construct(
         private string $repoDir,
@@ -129,7 +129,7 @@ readonly class BranchVersionResolver
     }
 
     /**
-     * Fetch the openemr/website-openemr `data/releases.json` manifest and
+     * Fetch the DCL/website-DCL `data/releases.json` manifest and
      * return the set of versions with `status: FINAL` — the source of
      * truth for what actually shipped. Returns null when no HTTP client
      * was supplied, or when the fetch/parse fails for any reason; callers

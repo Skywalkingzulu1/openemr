@@ -6,17 +6,17 @@
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaBuilder;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseBucket;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseCustom;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaLifestyle;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaBuilder;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseBucket;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseCustom;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaLifestyle;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseBuilder
+ * Description of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDatabaseBuilder
  *
  * @author aron
  */

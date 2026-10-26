@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
@@ -23,7 +23,7 @@ final class SummaryCliTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-summary-cli-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-summary-cli-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -41,7 +41,7 @@ final class SummaryCliTest extends TestCase
         // optional), and summary.php previously rejected the empty value
         // as `--milestone is required`. That aborted the workflow before
         // the artifact-upload step, so operators couldn't inspect the
-        // dry-run's produced tarball/zip. See openemr/openemr#13115's
+        // dry-run's produced tarball/zip. See DCL/DCL#13115's
         // Phase 5.5 findings for the surrounding context.
         $outputPath = $this->tmpDir . '/summary.md';
 
@@ -129,8 +129,8 @@ final class SummaryCliTest extends TestCase
         // Populate the output dir with the sidecar files summary.php picks
         // up via glob (matches build-release.yml's on-disk layout after
         // package:assemble + checksum tasks run).
-        file_put_contents($this->tmpDir . '/openemr-8.2.0.tar.gz.sha256', "abc123  openemr-8.2.0.tar.gz\n");
-        file_put_contents($this->tmpDir . '/openemr-8.2.0.zip.sha256', "def456  openemr-8.2.0.zip\n");
+        file_put_contents($this->tmpDir . '/DCL-8.2.0.tar.gz.sha256', "abc123  DCL-8.2.0.tar.gz\n");
+        file_put_contents($this->tmpDir . '/DCL-8.2.0.zip.sha256', "def456  DCL-8.2.0.zip\n");
         file_put_contents($this->tmpDir . '/changelog.md', "## [8.2.0] - 2026-07-08\n\n### Fixed\n\n- a bug\n");
 
         $outputPath = $this->tmpDir . '/summary.md';

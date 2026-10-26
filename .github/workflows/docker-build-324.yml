@@ -1,10 +1,10 @@
 name: Flex 3.24 Dockers Build
 
-# This workflow builds the OpenEMR Flex Docker images with Alpine 3.24 and PHP versions 8.3, 8.4, and 8.5.
+# This workflow builds the DCL Flex Docker images with Alpine 3.24 and PHP versions 8.3, 8.4, and 8.5.
 # And in this configuration will create following dockers (and tags):
-#    PHP 8.3: openemr/openemr:flex-3.24-php-8.3
-#    PHP 8.4: openemr/openemr:flex-3.24-php-8.4
-#    PHP 8.5: openemr/openemr:flex-3.24-php-8.5, openemr/openemr:flex-3.24, openemr/openemr:flex
+#    PHP 8.3: DCL/DCL:flex-3.24-php-8.3
+#    PHP 8.4: DCL/DCL:flex-3.24-php-8.4
+#    PHP 8.5: DCL/DCL:flex-3.24-php-8.5, DCL/DCL:flex-3.24, DCL/DCL:flex
 #
 # php_versions is a JSON array of PHP versions to build.
 #
@@ -12,7 +12,7 @@ name: Flex 3.24 Dockers Build
 #
 # The is_default_flex environment variable is used to determine if this is the default flex image.
 #
-# THIS ALPINE 3.24 VERSION IS TAGGED AS openemr/openemr:flex (THE DEFAULT FLEX IMAGE SINCE is_default_flex IS TRUE)
+# THIS ALPINE 3.24 VERSION IS TAGGED AS DCL/DCL:flex (THE DEFAULT FLEX IMAGE SINCE is_default_flex IS TRUE)
 # (ENSURE TO MAKE THIS (is_default_flex) FALSE WHEN A NEW ALPINE VERSION TAKES OVER AS THE DEFAULT!)
 
 on:

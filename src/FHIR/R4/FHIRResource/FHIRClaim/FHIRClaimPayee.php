@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaim;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaim;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.
@@ -71,13 +71,13 @@ class FHIRClaimPayee extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Type of Party to be reimbursed: subscriber, provider, other.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Reference to the individual or organization to whom any payment will be made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $party = null;
 
@@ -88,7 +88,7 @@ class FHIRClaimPayee extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of Party to be reimbursed: subscriber, provider, other.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRClaimPayee extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of Party to be reimbursed: subscriber, provider, other.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRClaimPayee extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Reference to the individual or organization to whom any payment will be made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParty()
     {
@@ -117,7 +117,7 @@ class FHIRClaimPayee extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Reference to the individual or organization to whom any payment will be made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $party
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $party
      * @return $this
      */
     public function setParty($party)

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * IOpenEMRCommand is the interface that all OpenEMR cli commands must implement in order to be executed by the OpenEMR
+ * IDCLCommand is the interface that all DCL cli commands must implement in order to be executed by the DCL
  * command line runner.  Commands that implement this interface MUST have the 'Command' suffix.
  *
  * Commands are executed by the following command-runner call
@@ -9,18 +9,18 @@
  *
  * @see /bin/command-runner
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Common\Command\Runner\CommandContext;
+use DCL\Common\Command\Runner\CommandContext;
 
-interface IOpenEMRCommand
+interface IDCLCommand
 {
     /**
      * Prints the instructions on how to use this command

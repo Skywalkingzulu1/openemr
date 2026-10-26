@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource;
+use DCL\FHIR\R4\FHIRResource;
 
 /**
  * A resource that represents the data of a single raw artifact as digital content accessible in its native format.  A Binary resource can contain any content, whether text, image, pdf, zip archive, etc.
@@ -72,19 +72,19 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
 {
     /**
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $contentType = null;
 
     /**
      * This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $securityContext = null;
 
     /**
      * The actual content, base64 encoded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $data = null;
 
@@ -95,7 +95,7 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
 
     /**
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getContentType()
     {
@@ -104,7 +104,7 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
 
     /**
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $contentType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $contentType
      * @return $this
      */
     public function setContentType($contentType)
@@ -115,7 +115,7 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
 
     /**
      * This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSecurityContext()
     {
@@ -124,7 +124,7 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
 
     /**
      * This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $securityContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $securityContext
      * @return $this
      */
     public function setSecurityContext($securityContext)
@@ -135,7 +135,7 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
 
     /**
      * The actual content, base64 encoded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getData()
     {
@@ -144,7 +144,7 @@ class FHIRBinary extends FHIRResource implements \JsonSerializable
 
     /**
      * The actual content, base64 encoded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $data
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $data
      * @return $this
      */
     public function setData($data)

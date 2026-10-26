@@ -3,14 +3,14 @@
 /**
  * ReasonStatusCodes represents the statii that an observation,procedure, and other ccda/cql reportable item's reason code
  * can be.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
 class ReasonStatusCodes
 {

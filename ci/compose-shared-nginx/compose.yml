@@ -1,29 +1,29 @@
 services:
-  openemr:
+  DCL:
     environment:
-      OPENEMR_BASE_URL_API: "https://nginx"
-      OPENEMR_DEPRECATION_MODE: "error"
-      OPENEMR_ENABLE_CI_PHP: "1"
+      DCL_BASE_URL_API: "https://nginx"
+      DCL_DEPRECATION_MODE: "error"
+      DCL_ENABLE_CI_PHP: "1"
       ENABLE_COVERAGE: "${ENABLE_COVERAGE:-false}"
       SELENIUM_BASE_URL: "http://nginx"
       # Disable the patient birthday-alert modal so e2e tests don't get blocked
       # on the seed patient's birthday (DOB 1958-05-02). See issue #11980.
-      OPENEMR_SETTING_patient_birthday_alert: "0"
+      DCL_SETTING_patient_birthday_alert: "0"
     volumes:
-    - ../:/usr/share/nginx/html/openemr
+    - ../:/usr/share/nginx/html/DCL
     - ./nginx/php.ini:/usr/local/etc/php/php.ini:ro
   nginx:
-    image: openemr/dev-nginx:latest@sha256:cd70ec94ddce2956b6acbc5f873c6bbfffda5129cc5fbf6f3f76979ae7afdb80
+    image: DCL/dev-nginx:latest@sha256:cd70ec94ddce2956b6acbc5f873c6bbfffda5129cc5fbf6f3f76979ae7afdb80
     ports:
     - 80:80
     - 443:443
     volumes:
-    - ../:/usr/share/nginx/html/openemr
+    - ../:/usr/share/nginx/html/DCL
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     - ./nginx/dummy-cert:/etc/nginx/dummy-cert:ro
     - ./nginx/dummy-key:/etc/nginx/dummy-key:ro
     depends_on:
-    - openemr
+    - DCL
     healthcheck:
       test:
       - CMD

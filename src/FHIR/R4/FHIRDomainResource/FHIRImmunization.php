@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
@@ -72,173 +72,173 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this immunization record.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates the current status of the immunization event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes
      */
     public $status = null;
 
     /**
      * Indicates the reason the immunization event was not performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $statusReason = null;
 
     /**
      * Vaccine that was administered or was to be administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $vaccineCode = null;
 
     /**
      * The patient who either received or did not receive the immunization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The visit or admission or other contact between patient and health care provider the immunization was performed as part of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $occurrenceString = null;
 
     /**
      * The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $recorded = null;
 
     /**
      * An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $primarySource = null;
 
     /**
      * The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $reportOrigin = null;
 
     /**
      * The service delivery location where the vaccine administration occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * Name of vaccine manufacturer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $manufacturer = null;
 
     /**
      * Lot number of the  vaccine product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $lotNumber = null;
 
     /**
      * Date vaccine batch expires.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $expirationDate = null;
 
     /**
      * Body site where vaccine was administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $site = null;
 
     /**
      * The path by which the vaccine product is taken into the body.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $route = null;
 
     /**
      * The quantity of vaccine product that was administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $doseQuantity = null;
 
     /**
      * Indicates who performed the immunization event.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer[]
      */
     public $performer = [];
 
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Reasons why the vaccine was administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $isSubpotent = null;
 
     /**
      * Reason why a dose is considered to be subpotent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $subpotentReason = [];
 
     /**
      * Educational material presented to the patient (or guardian) at the time of vaccine administration.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationEducation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationEducation[]
      */
     public $education = [];
 
     /**
      * Indicates a patient's eligibility for a funding program.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $programEligibility = [];
 
     /**
      * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publicly purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $fundingSource = null;
 
     /**
      * Categorical data indicating that an adverse event is associated in time to an immunization.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationReaction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationReaction[]
      */
     public $reaction = [];
 
     /**
      * The protocol (set of recommendations) being followed by the provider who administered the dose.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationProtocolApplied[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationProtocolApplied[]
      */
     public $protocolApplied = [];
 
@@ -249,7 +249,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this immunization record.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -258,7 +258,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this immunization record.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -269,7 +269,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current status of the immunization event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes
      */
     public function getStatus()
     {
@@ -278,7 +278,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current status of the immunization event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -289,7 +289,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the reason the immunization event was not performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatusReason()
     {
@@ -298,7 +298,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the reason the immunization event was not performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function setStatusReason($statusReason)
@@ -309,7 +309,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Vaccine that was administered or was to be administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getVaccineCode()
     {
@@ -318,7 +318,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Vaccine that was administered or was to be administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $vaccineCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $vaccineCode
      * @return $this
      */
     public function setVaccineCode($vaccineCode)
@@ -329,7 +329,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient who either received or did not receive the immunization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -338,7 +338,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient who either received or did not receive the immunization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -349,7 +349,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The visit or admission or other contact between patient and health care provider the immunization was performed as part of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -358,7 +358,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The visit or admission or other contact between patient and health care provider the immunization was performed as part of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -368,7 +368,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -376,7 +376,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -386,7 +386,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getOccurrenceString()
     {
@@ -394,7 +394,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $occurrenceString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $occurrenceString
      * @return $this
      */
     public function setOccurrenceString($occurrenceString)
@@ -405,7 +405,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getRecorded()
     {
@@ -414,7 +414,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $recorded
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $recorded
      * @return $this
      */
     public function setRecorded($recorded)
@@ -425,7 +425,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getPrimarySource()
     {
@@ -434,7 +434,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $primarySource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $primarySource
      * @return $this
      */
     public function setPrimarySource($primarySource)
@@ -445,7 +445,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReportOrigin()
     {
@@ -454,7 +454,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reportOrigin
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reportOrigin
      * @return $this
      */
     public function setReportOrigin($reportOrigin)
@@ -465,7 +465,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The service delivery location where the vaccine administration occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -474,7 +474,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The service delivery location where the vaccine administration occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -485,7 +485,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name of vaccine manufacturer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManufacturer()
     {
@@ -494,7 +494,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name of vaccine manufacturer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function setManufacturer($manufacturer)
@@ -505,7 +505,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Lot number of the  vaccine product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLotNumber()
     {
@@ -514,7 +514,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Lot number of the  vaccine product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $lotNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $lotNumber
      * @return $this
      */
     public function setLotNumber($lotNumber)
@@ -525,7 +525,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date vaccine batch expires.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getExpirationDate()
     {
@@ -534,7 +534,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date vaccine batch expires.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $expirationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $expirationDate
      * @return $this
      */
     public function setExpirationDate($expirationDate)
@@ -545,7 +545,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Body site where vaccine was administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSite()
     {
@@ -554,7 +554,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Body site where vaccine was administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $site
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $site
      * @return $this
      */
     public function setSite($site)
@@ -565,7 +565,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The path by which the vaccine product is taken into the body.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRoute()
     {
@@ -574,7 +574,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The path by which the vaccine product is taken into the body.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $route
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $route
      * @return $this
      */
     public function setRoute($route)
@@ -585,7 +585,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The quantity of vaccine product that was administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDoseQuantity()
     {
@@ -594,7 +594,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The quantity of vaccine product that was administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $doseQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $doseQuantity
      * @return $this
      */
     public function setDoseQuantity($doseQuantity)
@@ -605,7 +605,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who performed the immunization event.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer[]
      */
     public function getPerformer()
     {
@@ -614,7 +614,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who performed the immunization event.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer $performer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -625,7 +625,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -634,7 +634,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -645,7 +645,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reasons why the vaccine was administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -654,7 +654,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reasons why the vaccine was administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -665,7 +665,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -674,7 +674,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -685,7 +685,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getIsSubpotent()
     {
@@ -694,7 +694,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $isSubpotent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $isSubpotent
      * @return $this
      */
     public function setIsSubpotent($isSubpotent)
@@ -705,7 +705,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason why a dose is considered to be subpotent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSubpotentReason()
     {
@@ -714,7 +714,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason why a dose is considered to be subpotent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subpotentReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subpotentReason
      * @return $this
      */
     public function addSubpotentReason($subpotentReason)
@@ -725,7 +725,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Educational material presented to the patient (or guardian) at the time of vaccine administration.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationEducation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationEducation[]
      */
     public function getEducation()
     {
@@ -734,7 +734,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Educational material presented to the patient (or guardian) at the time of vaccine administration.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationEducation $education
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationEducation $education
      * @return $this
      */
     public function addEducation($education)
@@ -745,7 +745,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates a patient's eligibility for a funding program.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getProgramEligibility()
     {
@@ -754,7 +754,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates a patient's eligibility for a funding program.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $programEligibility
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $programEligibility
      * @return $this
      */
     public function addProgramEligibility($programEligibility)
@@ -765,7 +765,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publicly purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFundingSource()
     {
@@ -774,7 +774,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publicly purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $fundingSource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $fundingSource
      * @return $this
      */
     public function setFundingSource($fundingSource)
@@ -785,7 +785,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorical data indicating that an adverse event is associated in time to an immunization.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationReaction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationReaction[]
      */
     public function getReaction()
     {
@@ -794,7 +794,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorical data indicating that an adverse event is associated in time to an immunization.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationReaction $reaction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationReaction $reaction
      * @return $this
      */
     public function addReaction($reaction)
@@ -805,7 +805,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The protocol (set of recommendations) being followed by the provider who administered the dose.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationProtocolApplied[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationProtocolApplied[]
      */
     public function getProtocolApplied()
     {
@@ -814,7 +814,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The protocol (set of recommendations) being followed by the provider who administered the dose.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationProtocolApplied $protocolApplied
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationProtocolApplied $protocolApplied
      * @return $this
      */
     public function addProtocolApplied($protocolApplied)

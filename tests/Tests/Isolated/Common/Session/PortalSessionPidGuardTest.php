@@ -2,25 +2,25 @@
 
 /**
  * Isolated unit tests for the pure predicates of
- * `OpenEMR\Common\Session\PortalSessionPidGuard`.
+ * `DCL\Common\Session\PortalSessionPidGuard`.
  *
  * The predicates isMatchingPid() and scanRequestSourceForMismatch() carry
  * the full decision; the assert-* wrappers only compose the predicate result
  * with AccessDeniedHelper::deny() (which calls exit(), so the wrappers are
  * exercised in the integration-testing layer).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Session;
+namespace DCL\Tests\Isolated\Common\Session;
 
-use OpenEMR\Common\Session\PortalSessionPidGuard;
+use DCL\Common\Session\PortalSessionPidGuard;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

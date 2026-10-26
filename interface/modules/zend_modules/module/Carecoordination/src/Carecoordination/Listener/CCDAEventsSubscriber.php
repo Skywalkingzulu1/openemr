@@ -3,11 +3,11 @@
 /**
  * CCDAEventsSubscriber.php  Listens to events to retrieve, generate, manipulate CCD-A documents.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Listener;
@@ -16,20 +16,20 @@ use Carecoordination\Model\CcdaGenerator;
 use Carecoordination\Model\CcdaGlobalsConfiguration;
 use Carecoordination\Model\CcdaUserPreferencesTransformer;
 use DOMDocument;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Globals\GlobalsInitializedEvent;
-use OpenEMR\Events\PatientDocuments\PatientDocumentCreateCCDAEvent;
-use OpenEMR\Events\PatientDocuments\PatientDocumentTreeViewFilterEvent;
-use OpenEMR\Events\PatientDocuments\PatientDocumentViewCCDAEvent;
-use OpenEMR\Services\CDADocumentService;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Globals\GlobalsInitializedEvent;
+use DCL\Events\PatientDocuments\PatientDocumentCreateCCDAEvent;
+use DCL\Events\PatientDocuments\PatientDocumentTreeViewFilterEvent;
+use DCL\Events\PatientDocuments\PatientDocumentViewCCDAEvent;
+use DCL\Services\CDADocumentService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use XSLTProcessor;
 
 class CCDAEventsSubscriber implements EventSubscriberInterface
 {
     /**
-     * @var string The url that users will be sent to inside OpenEMR to view a CCDA
+     * @var string The url that users will be sent to inside DCL to view a CCDA
      */
     private $viewCcdaUrl;
 

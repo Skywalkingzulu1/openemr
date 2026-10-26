@@ -2,16 +2,16 @@
 
 /**
  * ExportJobTest tests that the ExportJob class is functioning properly.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\FHIR\Export;
+namespace DCL\Tests\Isolated\FHIR\Export;
 
-use OpenEMR\FHIR\Export\ExportJob;
+use DCL\FHIR\Export\ExportJob;
 use PHPUnit\Framework\TestCase;
 
 class ExportJobTest extends TestCase

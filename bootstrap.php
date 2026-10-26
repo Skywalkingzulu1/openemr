@@ -23,7 +23,7 @@ declare(strict_types=1);
 
 use Dotenv\Dotenv;
 use Firehed\Container\AutoDetect;
-use OpenEMR\Core\ErrorHandler;
+use DCL\Core\ErrorHandler;
 
 chdir(__DIR__);
 

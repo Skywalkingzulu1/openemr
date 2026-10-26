@@ -2,16 +2,16 @@
 /**
  * interface/modules/zend_modules/module/Carecoordination/view/carecoordination/carecoordination/upload.phtml
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Chandni Babu <chandnib@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Control access
-if (!OpenEMR\Common\Acl\AclMain::aclCheckCore('admin', 'super')) {
+if (!DCL\Common\Acl\AclMain::aclCheckCore('admin', 'super')) {
     echo xlt('Not Authorized');
     exit;
 }
@@ -170,7 +170,7 @@ echo $this->headScript()->prependFile($this->basePath() . '/js/autosuggest/autos
         let url = "<?php echo $this->basePath();?>/carecoordination/deleteAudit";
         let fd = new FormData();
         fd.append('am_id', amid);
-        fd.append('csrf_token_form', <?php echo js_escape(\OpenEMR\Common\Csrf\CsrfUtils::collectCsrfToken(\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession())); ?>);
+        fd.append('csrf_token_form', <?php echo js_escape(\DCL\Common\Csrf\CsrfUtils::collectCsrfToken(\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession())); ?>);
         fetch(url, {
             method: "POST",
             body: fd

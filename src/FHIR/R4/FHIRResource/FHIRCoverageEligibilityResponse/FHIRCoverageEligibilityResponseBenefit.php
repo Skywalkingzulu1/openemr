@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides eligibility and plan details from the processing of an CoverageEligibilityRequest resource.
@@ -71,37 +71,37 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
 {
     /**
      * Classification of benefit being provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $allowedUnsignedInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $allowedString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $allowedMoney = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $usedUnsignedInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $usedString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $usedMoney = null;
 
@@ -112,7 +112,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
 
     /**
      * Classification of benefit being provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -121,7 +121,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
 
     /**
      * Classification of benefit being provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -131,7 +131,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getAllowedUnsignedInt()
     {
@@ -139,7 +139,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
      * @return $this
      */
     public function setAllowedUnsignedInt($allowedUnsignedInt)
@@ -149,7 +149,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAllowedString()
     {
@@ -157,7 +157,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $allowedString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $allowedString
      * @return $this
      */
     public function setAllowedString($allowedString)
@@ -167,7 +167,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getAllowedMoney()
     {
@@ -175,7 +175,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $allowedMoney
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $allowedMoney
      * @return $this
      */
     public function setAllowedMoney($allowedMoney)
@@ -185,7 +185,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getUsedUnsignedInt()
     {
@@ -193,7 +193,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
      * @return $this
      */
     public function setUsedUnsignedInt($usedUnsignedInt)
@@ -203,7 +203,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getUsedString()
     {
@@ -211,7 +211,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $usedString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $usedString
      * @return $this
      */
     public function setUsedString($usedString)
@@ -221,7 +221,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getUsedMoney()
     {
@@ -229,7 +229,7 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $usedMoney
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $usedMoney
      * @return $this
      */
     public function setUsedMoney($usedMoney)

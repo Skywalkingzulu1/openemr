@@ -6,15 +6,15 @@
  * This event handles the filtering of forms that are loaded for an encounter.  This event is triggered
  * in the view_form.php, load_form.php, and forms.php files for encounter forms.
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Sophisticated Acquisitions <sophisticated.acquisitions@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Encounter;
+namespace DCL\Events\Encounter;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class LoadEncounterFormFilterEvent extends Event
@@ -107,7 +107,7 @@ class LoadEncounterFormFilterEvent extends Event
     }
 
     /**
-     * @param string $dir  The directory as a string (note the path will be concatenated to \OpenEMR\Core\OEGlobalsBag::getInstance()->getKernel()->getProjectDir()
+     * @param string $dir  The directory as a string (note the path will be concatenated to \DCL\Core\OEGlobalsBag::getInstance()->getKernel()->getProjectDir()
      * @throws \InvalidArgumentException if the path is invalid or does not exist.  Paths must currently be within the /interface/forms/ directory or the /interface/modules/ directory
      */
     public function setDir(string $dir): void

@@ -1,23 +1,23 @@
 <?php
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Validators\ProcessingResult;
 use Particle\Validator\Validator;
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
 
 /**
- * Base class for OpenEMR object validation.
+ * Base class for DCL object validation.
  * Validation processes are implemented using Particle (https://github.com/particle-php/Validator)
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 abstract class BaseValidator
 {

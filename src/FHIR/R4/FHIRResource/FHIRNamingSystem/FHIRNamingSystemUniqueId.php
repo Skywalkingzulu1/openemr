@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNamingSystem;
+namespace DCL\FHIR\R4\FHIRResource\FHIRNamingSystem;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNamingSystem;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a "System" used within the Identifier and Coding data types.
@@ -71,31 +71,31 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Identifies the unique identifier scheme used for this particular identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRNamingSystemIdentifierType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRNamingSystemIdentifierType
      */
     public $type = null;
 
     /**
      * The string that should be sent over the wire to identify the code system or identifier system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
     /**
      * Indicates whether this identifier is the "preferred" identifier of this type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $preferred = null;
 
     /**
      * Notes about the past or intended usage of this identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -106,7 +106,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Identifies the unique identifier scheme used for this particular identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRNamingSystemIdentifierType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRNamingSystemIdentifierType
      */
     public function getType()
     {
@@ -115,7 +115,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Identifies the unique identifier scheme used for this particular identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRNamingSystemIdentifierType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRNamingSystemIdentifierType $type
      * @return $this
      */
     public function setType($type)
@@ -126,7 +126,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The string that should be sent over the wire to identify the code system or identifier system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -135,7 +135,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The string that should be sent over the wire to identify the code system or identifier system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)
@@ -146,7 +146,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates whether this identifier is the "preferred" identifier of this type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getPreferred()
     {
@@ -155,7 +155,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indicates whether this identifier is the "preferred" identifier of this type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $preferred
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $preferred
      * @return $this
      */
     public function setPreferred($preferred)
@@ -166,7 +166,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Notes about the past or intended usage of this identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -175,7 +175,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Notes about the past or intended usage of this identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -186,7 +186,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -195,7 +195,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

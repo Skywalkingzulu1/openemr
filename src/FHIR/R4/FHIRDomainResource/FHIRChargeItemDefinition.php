@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The ChargeItemDefinition resource provides the properties that apply to the (billing) codes necessary to calculate costs and prices. The properties may differ largely depending on type and realm, therefore this resource gives only a rough structure and requires profiling for each type of billing code system.
@@ -72,139 +72,139 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 {
     /**
      * An absolute URI that is used to identify this charge item definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this charge item definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the charge item definition is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this charge item definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the charge item definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the charge item definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A short, descriptive, user-friendly title for the charge item definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The URL pointing to an externally-defined charge item definition that is adhered to in whole or in part by this definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $derivedFromUri = [];
 
     /**
      * A larger definition of which this particular definition is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $partOf = [];
 
     /**
      * As new versions of a protocol or guideline are defined, allows identification of what versions are replaced by a new instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $replaces = [];
 
     /**
      * The current state of the ChargeItemDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this charge item definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the charge item definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the charge item definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the charge item definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the charge item definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate charge item definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the charge item definition is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * A copyright statement relating to the charge item definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the charge item definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
      * The period during which the charge item definition content was or is planned to be in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * The defined billing details in this resource pertain to the given billing code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The defined billing details in this resource pertain to the given product instance(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $instance = [];
 
     /**
      * Expressions that describe applicability criteria for the billing code.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
      */
     public $applicability = [];
 
     /**
      * Group of properties which are applicable under the same conditions. If no applicability rules are established for the group, then all properties always apply.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup[]
      */
     public $propertyGroup = [];
 
@@ -215,7 +215,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * An absolute URI that is used to identify this charge item definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this charge item definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the charge item definition is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -224,7 +224,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * An absolute URI that is used to identify this charge item definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this charge item definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the charge item definition is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -235,7 +235,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A formal identifier that is used to identify this charge item definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -244,7 +244,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A formal identifier that is used to identify this charge item definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -255,7 +255,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The identifier that is used to identify this version of the charge item definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the charge item definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -264,7 +264,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The identifier that is used to identify this version of the charge item definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the charge item definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -275,7 +275,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A short, descriptive, user-friendly title for the charge item definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -284,7 +284,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A short, descriptive, user-friendly title for the charge item definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -295,7 +295,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The URL pointing to an externally-defined charge item definition that is adhered to in whole or in part by this definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getDerivedFromUri()
     {
@@ -304,7 +304,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The URL pointing to an externally-defined charge item definition that is adhered to in whole or in part by this definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $derivedFromUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $derivedFromUri
      * @return $this
      */
     public function addDerivedFromUri($derivedFromUri)
@@ -315,7 +315,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A larger definition of which this particular definition is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getPartOf()
     {
@@ -324,7 +324,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A larger definition of which this particular definition is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -335,7 +335,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * As new versions of a protocol or guideline are defined, allows identification of what versions are replaced by a new instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getReplaces()
     {
@@ -344,7 +344,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * As new versions of a protocol or guideline are defined, allows identification of what versions are replaced by a new instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $replaces
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $replaces
      * @return $this
      */
     public function addReplaces($replaces)
@@ -355,7 +355,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The current state of the ChargeItemDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -364,7 +364,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The current state of the ChargeItemDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -375,7 +375,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A Boolean value to indicate that this charge item definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -384,7 +384,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A Boolean value to indicate that this charge item definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -395,7 +395,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The date  (and optionally time) when the charge item definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the charge item definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -404,7 +404,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The date  (and optionally time) when the charge item definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the charge item definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -415,7 +415,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The name of the organization or individual that published the charge item definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -424,7 +424,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The name of the organization or individual that published the charge item definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -435,7 +435,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -444,7 +444,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -455,7 +455,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A free text natural language description of the charge item definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -464,7 +464,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A free text natural language description of the charge item definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -475,7 +475,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate charge item definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -484,7 +484,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate charge item definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -495,7 +495,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A legal or geographic region in which the charge item definition is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -504,7 +504,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A legal or geographic region in which the charge item definition is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -515,7 +515,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A copyright statement relating to the charge item definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the charge item definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -524,7 +524,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * A copyright statement relating to the charge item definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the charge item definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -535,7 +535,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
     {
@@ -544,7 +544,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $approvalDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
     public function setApprovalDate($approvalDate)
@@ -555,7 +555,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
     {
@@ -564,7 +564,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
     public function setLastReviewDate($lastReviewDate)
@@ -575,7 +575,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The period during which the charge item definition content was or is planned to be in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -584,7 +584,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The period during which the charge item definition content was or is planned to be in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -595,7 +595,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The defined billing details in this resource pertain to the given billing code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -604,7 +604,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The defined billing details in this resource pertain to the given billing code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -615,7 +615,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The defined billing details in this resource pertain to the given product instance(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getInstance()
     {
@@ -624,7 +624,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * The defined billing details in this resource pertain to the given product instance(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $instance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $instance
      * @return $this
      */
     public function addInstance($instance)
@@ -635,7 +635,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Expressions that describe applicability criteria for the billing code.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
      */
     public function getApplicability()
     {
@@ -644,7 +644,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Expressions that describe applicability criteria for the billing code.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $applicability
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $applicability
      * @return $this
      */
     public function addApplicability($applicability)
@@ -655,7 +655,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Group of properties which are applicable under the same conditions. If no applicability rules are established for the group, then all properties always apply.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup[]
      */
     public function getPropertyGroup()
     {
@@ -664,7 +664,7 @@ class FHIRChargeItemDefinition extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Group of properties which are applicable under the same conditions. If no applicability rules are established for the group, then all properties always apply.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup $propertyGroup
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup $propertyGroup
      * @return $this
      */
     public function addPropertyGroup($propertyGroup)

@@ -3,25 +3,25 @@
 /**
  * Rest Dispatch
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // below brings in autoloader
 require_once "../vendor/autoload.php";
 
-use OpenEMR\BC\FallbackRouter;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\RestControllers\ApiApplication;
+use DCL\BC\FallbackRouter;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\RequestTerminator;
+use DCL\RestControllers\ApiApplication;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -48,7 +48,7 @@ try {
     // kernel.terminate listener, a broken output filter -- is a log-only event.
     if (!headers_sent()) {
         // The message stays out of the body. Exception text here is whatever
-        // failed deepest in the stack -- openemr#13905 put a SQLSTATE naming a
+        // failed deepest in the stack -- DCL#13905 put a SQLSTATE naming a
         // missing column into this field, readable by any anonymous caller of
         // /apis/default/fhir/metadata. It is already in the error log above,
         // where it is useful and not disclosed.

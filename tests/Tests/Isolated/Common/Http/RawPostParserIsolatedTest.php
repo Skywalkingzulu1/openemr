@@ -7,20 +7,20 @@
  * multipart bodies, caches results, and produces the same array shape PHP's
  * own POST parser would have produced for the same input.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Andrew Alanis <progradedteam@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Http;
+namespace DCL\Tests\Isolated\Common\Http;
 
-use OpenEMR\Common\Http\RawPostParser;
-use OpenEMR\Common\Http\RawPostParserException;
-use OpenEMR\Common\Http\RawRequestBodyReader;
+use DCL\Common\Http\RawPostParser;
+use DCL\Common\Http\RawPostParserException;
+use DCL\Common\Http\RawRequestBodyReader;
 use PHPUnit\Framework\TestCase;
 
 class RawPostParserIsolatedTest extends TestCase

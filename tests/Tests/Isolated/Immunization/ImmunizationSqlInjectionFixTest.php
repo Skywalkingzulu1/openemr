@@ -6,13 +6,13 @@
  * Simple isolated test to verify SQL injection fix without requiring database.
  * Tests the code logic: input validation and parameterized query construction.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @copyright Copyright (c) 2025 OpenEMR <info@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @copyright Copyright (c) 2025 DCL <info@dcl.org>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Immunization;
+namespace DCL\Tests\Isolated\Immunization;
 
 use PHPUnit\Framework\TestCase;
 

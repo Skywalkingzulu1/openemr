@@ -3,13 +3,13 @@
 /**
  * Admin API for the calendar
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @copyright Copyright (c) 2002 The PostCalendar Team
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
  * @author    The PostCalendar Team
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
 //=========================================================================

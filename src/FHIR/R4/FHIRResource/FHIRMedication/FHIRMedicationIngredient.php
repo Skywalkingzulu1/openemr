@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedication;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedication;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedication;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource is primarily used for the identification and definition of a medication for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.
@@ -70,24 +70,24 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $itemCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $itemReference = null;
 
     /**
      * Indication of whether this ingredient affects the therapeutic action of the drug.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $isActive = null;
 
     /**
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $strength = null;
 
@@ -97,7 +97,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     private $_fhirElementName = 'Medication.Ingredient';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
     {
@@ -105,7 +105,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
     public function setItemCodeableConcept($itemCodeableConcept)
@@ -115,7 +115,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getItemReference()
     {
@@ -123,7 +123,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $itemReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $itemReference
      * @return $this
      */
     public function setItemReference($itemReference)
@@ -134,7 +134,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indication of whether this ingredient affects the therapeutic action of the drug.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getIsActive()
     {
@@ -143,7 +143,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Indication of whether this ingredient affects the therapeutic action of the drug.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $isActive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $isActive
      * @return $this
      */
     public function setIsActive($isActive)
@@ -154,7 +154,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getStrength()
     {
@@ -163,7 +163,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $strength
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $strength
      * @return $this
      */
     public function setStrength($strength)

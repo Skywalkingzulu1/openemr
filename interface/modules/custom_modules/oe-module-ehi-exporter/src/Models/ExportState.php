@@ -5,33 +5,33 @@
  * to process the export.  Including the current queue of table definitions to export, the xml meta table
  * information as well as the xml concrete table information.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter\Models;
+namespace DCL\Modules\EhiExporter\Models;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Modules\EhiExporter\Models;
-use OpenEMR\Modules\EhiExporter\Models\EhiExportJobTask;
-use OpenEMR\Modules\EhiExporter\Models\ExportKeyDefinition;
-use OpenEMR\Modules\EhiExporter\Models\ExportTableResult;
-use OpenEMR\Modules\EhiExporter\Services\ExportKeyDefinitionFilterer;
-use OpenEMR\Modules\EhiExporter\Services\ExportTableDataFilterer;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportClinicalNotesFormTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportContactTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportEsignatureTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportFormsGroupsEncounterTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportOnsiteMailTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportOnsiteMessagesTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportOpenEmrPostCalendarEventsTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportPersonTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTrackAnythingFormTableDefinition;
+use DCL\Common\Database\QueryUtils;
+use DCL\Modules\EhiExporter\Models;
+use DCL\Modules\EhiExporter\Models\EhiExportJobTask;
+use DCL\Modules\EhiExporter\Models\ExportKeyDefinition;
+use DCL\Modules\EhiExporter\Models\ExportTableResult;
+use DCL\Modules\EhiExporter\Services\ExportKeyDefinitionFilterer;
+use DCL\Modules\EhiExporter\Services\ExportTableDataFilterer;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportClinicalNotesFormTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportContactTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportEsignatureTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportFormsGroupsEncounterTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportOnsiteMailTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportOnsiteMessagesTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportOpenEmrPostCalendarEventsTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportPersonTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportTrackAnythingFormTableDefinition;
 use Psr\Log\LoggerInterface;
 
 class ExportState
@@ -132,7 +132,7 @@ class ExportState
         return !$this->queue->isEmpty();
     }
 
-    public function addTableDefinition(\OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTableDefinition $tableDefinition)
+    public function addTableDefinition(\DCL\Modules\EhiExporter\TableDefinitions\ExportTableDefinition $tableDefinition)
     {
         $this->tableDefinitionsMap[$tableDefinition->table] ??= $tableDefinition;
         if (!isset($this->inQueueList[$tableDefinition->table])) {
@@ -207,14 +207,14 @@ class ExportState
         return $keyData;
     }
 
-    private function hasDenormalizedKeys(\OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTableDefinition $tableDefinition)
+    private function hasDenormalizedKeys(\DCL\Modules\EhiExporter\TableDefinitions\ExportTableDefinition $tableDefinition)
     {
         if ($tableDefinition->table === 'patient_data' || $tableDefinition->table === 'patient_history') {
             return true;
         }
     }
 
-    private function getDenormalizedKeys(\OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTableDefinition $tableDefinition): array
+    private function getDenormalizedKeys(\DCL\Modules\EhiExporter\TableDefinitions\ExportTableDefinition $tableDefinition): array
     {
         // these columns are denormalized data and have the ids separated by a pipe (|)
         if ($tableDefinition->table === 'patient_data' || $tableDefinition->table == 'patient_history') {

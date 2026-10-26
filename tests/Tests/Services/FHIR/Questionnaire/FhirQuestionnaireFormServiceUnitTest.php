@@ -2,16 +2,16 @@
 
 /*
  * FhirQuestionnaireFormServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\Questionnaire;
+namespace DCL\Tests\Services\FHIR\Questionnaire;
 
-use OpenEMR\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
+use DCL\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -31,7 +31,7 @@ class FhirQuestionnaireFormServiceUnitTest extends TestCase
         }
     }
 
-    public function testParseOpenEMRRecord(): void
+    public function testParseDCLRecord(): void
     {
         $service = new FhirQuestionnaireFormService();
         $service->setSystemLogger($this->createMock(LoggerInterface::class));
@@ -41,7 +41,7 @@ class FhirQuestionnaireFormServiceUnitTest extends TestCase
             , 'source_url' => 'http://example.com/source'
             , 'uuid' => 'questionnaire-uuid-123'
         ];
-        $parsedQuestionnaire = $service->parseOpenEMRRecord($dataToParse);
+        $parsedQuestionnaire = $service->parseDCLRecord($dataToParse);
         $this->assertEquals($dataToParse['uuid'], $parsedQuestionnaire->getId()->getValue());
         $this->assertEquals('4.0.0', $parsedQuestionnaire->getVersion());
         $this->assertEquals($dataToParse['source_url'], $parsedQuestionnaire->getUrl());

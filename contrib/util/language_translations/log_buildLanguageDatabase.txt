@@ -238,8 +238,8 @@ Following constant not same:
 	original- val:Filename must end with ".pdf"
 	spreadsheet- ID:4296 val:Filename must end with \".pdf\"
 Following constant not same:
-	original- val:Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in openEMR
-	spreadsheet- ID:4306 val:Fill in any missing details or edit existing information. This will be saved in the patient\'s demographics page in openEMR
+	original- val:Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in DCL
+	spreadsheet- ID:4306 val:Fill in any missing details or edit existing information. This will be saved in the patient\'s demographics page in DCL
 Following constant not same:
 	original- val:For detailed instructions close the 'Enter Details' pop-up and click on the Help icon on the main form.
 	spreadsheet- ID:4442 val:For detailed instructions close the \'Enter Details\' pop-up and click on the Help icon on the main form.
@@ -307,8 +307,8 @@ Following constant not same:
 	original- val:In the 'Post Item' section that is displayed at the top you may enter a source (e.g. check number), pay date and check amount. The reason for the source and pay date is so that you don\'t have to enter them over and over again for each claim. The amount that you enter will be decreased for each invoice that is given part of the payment, and hopefully will end at zero when you are done.
 	spreadsheet- ID:5304 val:In the \'Post Item\' section that is displayed at the top you may enter a source (e.g. check number), pay date and check amount. The reason for the source and pay date is so that you don\'t have to enter them over and over again for each claim. The amount that you enter will be decreased for each invoice that is given part of the payment, and hopefully will end at zero when you are done.
 Following constant not same:
-	original- val:Integrating lab results into a patient's chart in openEMR can be done manually i.e. both ordering tests and uploading the received results or electronically
-	spreadsheet- ID:5506 val:Integrating lab results into a patient\'s chart in openEMR can be done manually i.e. both ordering tests and uploading the received results or electronically
+	original- val:Integrating lab results into a patient's chart in DCL can be done manually i.e. both ordering tests and uploading the received results or electronically
+	spreadsheet- ID:5506 val:Integrating lab results into a patient\'s chart in DCL can be done manually i.e. both ordering tests and uploading the received results or electronically
 Following constant not same:
 	original- val:Internal error: encounter '
 	spreadsheet- ID:5526 val:Internal error: encounter \'
@@ -352,8 +352,8 @@ Following constant not same:
 	original- val:NPI - Enter the Provider's unique 10-digit National Provider Identifier or NPI identification number
 	spreadsheet- ID:7312 val:NPI - Enter the Provider\'s unique 10-digit National Provider Identifier or NPI identification number
 Following constant not same:
-	original- val:Once this is done the shared secret key that is unique for each user should only exist in OpenEMR and on the user's authenticator app
-	spreadsheet- ID:7460 val:Once this is done the shared secret key that is unique for each user should only exist in OpenEMR and on the user\'s authenticator app
+	original- val:Once this is done the shared secret key that is unique for each user should only exist in DCL and on the user's authenticator app
+	spreadsheet- ID:7460 val:Once this is done the shared secret key that is unique for each user should only exist in DCL and on the user\'s authenticator app
 Following constant not same:
 	original- val:Participant's name
 	spreadsheet- ID:7787 val:Participant\'s name
@@ -478,11 +478,11 @@ Following constant not same:
 	original- val:The user's actual privileges are determined by the access to the parts of the program i.e. (ACO) that each group (ARO) has.
 	spreadsheet- ID:11294 val:The user\'s actual privileges are determined by the access to the parts of the program i.e. (ACO) that each group (ARO) has.
 Following constant not same:
-	original- val:The X12 files as well as the resulting HTML output reports are archived in the "era" subdirectory of the main OpenEMR installation directory.  You will want to refer to these archives from time to time.  The URL is
-	spreadsheet- ID:11304 val:The X12 files as well as the resulting HTML output reports are archived in the \"era\" subdirectory of the main OpenEMR installation directory.  You will want to refer to these archives from time to time.  The URL is
+	original- val:The X12 files as well as the resulting HTML output reports are archived in the "era" subdirectory of the main DCL installation directory.  You will want to refer to these archives from time to time.  The URL is
+	spreadsheet- ID:11304 val:The X12 files as well as the resulting HTML output reports are archived in the \"era\" subdirectory of the main DCL installation directory.  You will want to refer to these archives from time to time.  The URL is
 Following constant not same:
-	original- val:The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main OpenEMR installation directory. You will want to refer to these archives from time to time.
-	spreadsheet- ID:11305 val:The X12 files as well as the resulting HTML output reports are archived in the \'era\' subdirectory of the main OpenEMR installation directory. You will want to refer to these archives from time to time.
+	original- val:The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main DCL installation directory. You will want to refer to these archives from time to time.
+	spreadsheet- ID:11305 val:The X12 files as well as the resulting HTML output reports are archived in the \'era\' subdirectory of the main DCL installation directory. You will want to refer to these archives from time to time.
 Following constant not same:
 	original- val:Then pass it's name as a value to the element
 	spreadsheet- ID:11310 val:Then pass it\'s name as a value to the element
@@ -815,8 +815,8 @@ Following constant not same:
 	original- val:Filename must end with ".pdf"
 	spreadsheet- ID:4296 val:Filename must end with \".pdf\"
 Following constant not same:
-	original- val:Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in openEMR
-	spreadsheet- ID:4306 val:Fill in any missing details or edit existing information. This will be saved in the patient\'s demographics page in openEMR
+	original- val:Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in DCL
+	spreadsheet- ID:4306 val:Fill in any missing details or edit existing information. This will be saved in the patient\'s demographics page in DCL
 Following constant not same:
 	original- val:For detailed instructions close the 'Enter Details' pop-up and click on the Help icon on the main form.
 	spreadsheet- ID:4442 val:For detailed instructions close the \'Enter Details\' pop-up and click on the Help icon on the main form.
@@ -884,8 +884,8 @@ Following constant not same:
 	original- val:In the 'Post Item' section that is displayed at the top you may enter a source (e.g. check number), pay date and check amount. The reason for the source and pay date is so that you don\'t have to enter them over and over again for each claim. The amount that you enter will be decreased for each invoice that is given part of the payment, and hopefully will end at zero when you are done.
 	spreadsheet- ID:5304 val:In the \'Post Item\' section that is displayed at the top you may enter a source (e.g. check number), pay date and check amount. The reason for the source and pay date is so that you don\'t have to enter them over and over again for each claim. The amount that you enter will be decreased for each invoice that is given part of the payment, and hopefully will end at zero when you are done.
 Following constant not same:
-	original- val:Integrating lab results into a patient's chart in openEMR can be done manually i.e. both ordering tests and uploading the received results or electronically
-	spreadsheet- ID:5506 val:Integrating lab results into a patient\'s chart in openEMR can be done manually i.e. both ordering tests and uploading the received results or electronically
+	original- val:Integrating lab results into a patient's chart in DCL can be done manually i.e. both ordering tests and uploading the received results or electronically
+	spreadsheet- ID:5506 val:Integrating lab results into a patient\'s chart in DCL can be done manually i.e. both ordering tests and uploading the received results or electronically
 Following constant not same:
 	original- val:Internal error: encounter '
 	spreadsheet- ID:5526 val:Internal error: encounter \'
@@ -929,8 +929,8 @@ Following constant not same:
 	original- val:NPI - Enter the Provider's unique 10-digit National Provider Identifier or NPI identification number
 	spreadsheet- ID:7312 val:NPI - Enter the Provider\'s unique 10-digit National Provider Identifier or NPI identification number
 Following constant not same:
-	original- val:Once this is done the shared secret key that is unique for each user should only exist in OpenEMR and on the user's authenticator app
-	spreadsheet- ID:7460 val:Once this is done the shared secret key that is unique for each user should only exist in OpenEMR and on the user\'s authenticator app
+	original- val:Once this is done the shared secret key that is unique for each user should only exist in DCL and on the user's authenticator app
+	spreadsheet- ID:7460 val:Once this is done the shared secret key that is unique for each user should only exist in DCL and on the user\'s authenticator app
 Following constant not same:
 	original- val:Participant's name
 	spreadsheet- ID:7787 val:Participant\'s name
@@ -1055,11 +1055,11 @@ Following constant not same:
 	original- val:The user's actual privileges are determined by the access to the parts of the program i.e. (ACO) that each group (ARO) has.
 	spreadsheet- ID:11294 val:The user\'s actual privileges are determined by the access to the parts of the program i.e. (ACO) that each group (ARO) has.
 Following constant not same:
-	original- val:The X12 files as well as the resulting HTML output reports are archived in the "era" subdirectory of the main OpenEMR installation directory.  You will want to refer to these archives from time to time.  The URL is
-	spreadsheet- ID:11304 val:The X12 files as well as the resulting HTML output reports are archived in the \"era\" subdirectory of the main OpenEMR installation directory.  You will want to refer to these archives from time to time.  The URL is
+	original- val:The X12 files as well as the resulting HTML output reports are archived in the "era" subdirectory of the main DCL installation directory.  You will want to refer to these archives from time to time.  The URL is
+	spreadsheet- ID:11304 val:The X12 files as well as the resulting HTML output reports are archived in the \"era\" subdirectory of the main DCL installation directory.  You will want to refer to these archives from time to time.  The URL is
 Following constant not same:
-	original- val:The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main OpenEMR installation directory. You will want to refer to these archives from time to time.
-	spreadsheet- ID:11305 val:The X12 files as well as the resulting HTML output reports are archived in the \'era\' subdirectory of the main OpenEMR installation directory. You will want to refer to these archives from time to time.
+	original- val:The X12 files as well as the resulting HTML output reports are archived in the 'era' subdirectory of the main DCL installation directory. You will want to refer to these archives from time to time.
+	spreadsheet- ID:11305 val:The X12 files as well as the resulting HTML output reports are archived in the \'era\' subdirectory of the main DCL installation directory. You will want to refer to these archives from time to time.
 Following constant not same:
 	original- val:Then pass it's name as a value to the element
 	spreadsheet- ID:11310 val:Then pass it\'s name as a value to the element

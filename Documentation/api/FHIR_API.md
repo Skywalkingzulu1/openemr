@@ -1,6 +1,6 @@
 # FHIR API
 
-Complete guide to OpenEMR's FHIR R4 API implementation.
+Complete guide to DCL's FHIR R4 API implementation.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -31,7 +31,7 @@ Complete guide to OpenEMR's FHIR R4 API implementation.
 
 ## Overview
 
-OpenEMR provides a comprehensive **FHIR R4** implementation compliant with:
+DCL provides a comprehensive **FHIR R4** implementation compliant with:
 - ✅ **FHIR R4 Specification** - HL7 FHIR Release 4
 - ✅ **US Core 8.0 Implementation Guide** - US healthcare requirements
 - ✅ **SMART on FHIR v2.2.0** - App launch and authorization
@@ -61,7 +61,7 @@ OpenEMR provides a comprehensive **FHIR R4** implementation compliant with:
 
 Navigate to: **Administration → Config → Connectors**
 
-Enable: **☑ Enable OpenEMR Standard FHIR REST API**
+Enable: **☑ Enable DCL Standard FHIR REST API**
 
 ### 2. Configure SSL/TLS
 
@@ -69,9 +69,9 @@ Enable: **☑ Enable OpenEMR Standard FHIR REST API**
 
 Set base URL: **Administration → Config → Connectors → Site Address (required for OAuth2 and FHIR)**
 
-Example: `https://your-openemr.example.com` or `https://localhost:9300` for local testing.  If installed in a subdirectory, include it (e.g. `https://your-openemr.example.com/openemr`).
+Example: `https://your-DCL.example.com` or `https://localhost:9300` for local testing.  If installed in a subdirectory, include it (e.g. `https://your-DCL.example.com/DCL`).
 
-Note that several curl examples are given in this guide.  If your OpenEMR instance is using a self-signed certificate you will need to pass -k to curl to disable certificate verification for testing purposes.
+Note that several curl examples are given in this guide.  If your DCL instance is using a self-signed certificate you will need to pass -k to curl to disable certificate verification for testing purposes.
 
 ### 3. Register API Client
 
@@ -90,7 +90,7 @@ See [Authorization Guide](AUTHORIZATION.md#fhir-api-scopes-apifhir) for complete
 
 FHIR endpoints use the following base URL pattern:
 ```
-https://{your-openemr-host}/apis/{site}/fhir
+https://{your-DCL-host}/apis/{site}/fhir
 ```
 
 ### Default Site
@@ -133,7 +133,7 @@ curl -X GET 'https://localhost:9300/apis/default/fhir/Patient' \
 See [Authentication Guide](AUTHENTICATION.md) for complete OAuth2 flows:
 - [Authorization Code Grant](AUTHENTICATION.md#authorization-code-grant) (Frontend apps with user interaction)
 - [Client Credentials Grant](AUTHENTICATION.md#client-credentials-grant) (Backend or Frontend services - client apps that can manage and sign assertions with asymmetric keys)
-- [EHR Launch Flow](AUTHENTICATION.md#ehr-launch-flow) (SMART apps launched from within OpenEMR)
+- [EHR Launch Flow](AUTHENTICATION.md#ehr-launch-flow) (SMART apps launched from within DCL)
 
 ### Token in Request Header
 ```http
@@ -184,11 +184,11 @@ curl -X GET 'https://localhost:9300/apis/default/fhir/metadata' \
         "http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"
     ],
     "software": {
-        "name": "OpenEMR",
+        "name": "DCL",
         "version": "7.0.4"
     },
     "implementation": {
-        "description": "OpenEMR FHIR API",
+        "description": "DCL FHIR API",
         "url": "https://localhost:9300/apis/default/fhir"
     },
     "fhirVersion": "4.0.1",
@@ -388,40 +388,40 @@ The capability statement reveals:
 
 ## Supported Resources
 
-OpenEMR supports **30 FHIR R4 resources** across all contexts (patient, user, system).
+DCL supports **30 FHIR R4 resources** across all contexts (patient, user, system).
 
-The resources that OpenEMR supports is documented via Swagger. You can see this documentation (and can test it) by going to the swagger directory in your OpenEMR installation. The FHIR API is documented there in the fhir section. Can also see (and test) this in the online demos at https://www.open-emr.org/wiki/index.php/Development_Demo#Daily_Build_Development_Demos (clicking on the API (Swagger) User Interface link for the demo will take you there).
+The resources that DCL supports is documented via Swagger. You can see this documentation (and can test it) by going to the swagger directory in your DCL installation. The FHIR API is documented there in the fhir section. Can also see (and test) this in the online demos at https://www.dcl.org/wiki/index.php/Development_Demo#Daily_Build_Development_Demos (clicking on the API (Swagger) User Interface link for the demo will take you there).
 
 ### Administration Resources
-- Patient ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Patient))
-- Practitioner ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Practitioner))
-- PractitionerRole ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_PractitionerRole))
-- CareTeam ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_CareTeam))
-- Device ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Device))
-- Organization ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Organization))
-- Location ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Location))
-- Person ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Person))
-- RelatedPerson ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_RelatedPerson))
-- Group ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Group))
-- Encounter ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Encounter))
-- Appointment ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Appointment))
+- Patient ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Patient))
+- Practitioner ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Practitioner))
+- PractitionerRole ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_PractitionerRole))
+- CareTeam ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_CareTeam))
+- Device ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Device))
+- Organization ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Organization))
+- Location ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Location))
+- Person ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Person))
+- RelatedPerson ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_RelatedPerson))
+- Group ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Group))
+- Encounter ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Encounter))
+- Appointment ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Appointment))
 
 
 ### Clinical Resources
-- AllergyIntolerance ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_AllergyIntolerance))
-- Condition ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Condition))
+- AllergyIntolerance ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_AllergyIntolerance))
+- Condition ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Condition))
 - - Problem List
 - - Health Concerns
 - - Diagnoses
-- Procedure ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Procedure))
-- CarePlan ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_CarePlan))
-- Goal ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Goal))
-- CareTeam ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_CareTeam))
-- DiagnosticReport for Clinical Notes ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_DiagnosticReport))
-- Task, read, search, create and update ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Task))
+- Procedure ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Procedure))
+- CarePlan ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_CarePlan))
+- Goal ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Goal))
+- CareTeam ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_CareTeam))
+- DiagnosticReport for Clinical Notes ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_DiagnosticReport))
+- Task, read, search, create and update ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Task))
 
 ### Diagnostic Resources
-- Observation ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Observation))
+- Observation ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Observation))
 - - Laboratory
 - - Vital Signs
 - - Social History
@@ -435,33 +435,33 @@ The resources that OpenEMR supports is documented via Swagger. You can see this 
 - - Pregnancy Intent
 - - Sexual Orientation
 - - Uncategorized Observations
-- DiagnosticReport for Laboratory Results ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_DiagnosticReport))
-- ServiceRequest([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_ServiceCategory))
-- Media ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Media))
-- Specimen ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Specimen))
+- DiagnosticReport for Laboratory Results ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_DiagnosticReport))
+- ServiceRequest([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_ServiceCategory))
+- Media ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Media))
+- Specimen ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Specimen))
 
 ### Medication Resources
-- MedicationRequest ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_MedicationRequest))
-- Medication ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Medication))
-- MedicationDispense ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_MedicationDispense))
-- Immunization ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Immunization))
+- MedicationRequest ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_MedicationRequest))
+- Medication ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Medication))
+- MedicationDispense ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_MedicationDispense))
+- Immunization ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Immunization))
 
 ### Document Resources
-- DocumentReference ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_DocumentReference))
-- Binary ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Binary))
+- DocumentReference ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_DocumentReference))
+- Binary ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Binary))
 
 ### Financial Resources
-- Coverage ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Coverage))
+- Coverage ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Coverage))
 
 ### Security and Privacy
-- Provenance ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_Provenance))
+- Provenance ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_Provenance))
 
 ### Terminology
-- ValueSet ([swagger](https://demo.openemr.io/openemr/swagger/#/fhir/get_fhir_ValueSet))
+- ValueSet ([swagger](https://demo.DCL.io/DCL/swagger/#/fhir/get_fhir_ValueSet))
 
 ## Bulk FHIR Exports
 
-OpenEMR implements the **[FHIR Bulk Data Export specification](https://hl7.org/fhir/uv/bulkdata/STU2/)** for large-scale data access.
+DCL implements the **[FHIR Bulk Data Export specification](https://hl7.org/fhir/uv/bulkdata/STU2/)** for large-scale data access.
 
 ### Overview
 
@@ -550,7 +550,7 @@ Includes all resources in the [Patient Compartment](https://hl7.org/fhir/R4/comp
 
 ### Group Export
 
-Export data for **a specific group** of patients.  In OpenEMR a Group is automatically created for every practitioner containing their assigned patients.  Patients are included based on their primary care provider
+Export data for **a specific group** of patients.  In DCL a Group is automatically created for every practitioner containing their assigned patients.  Patients are included based on their primary care provider
 
 #### Required Scopes
 ```
@@ -569,8 +569,8 @@ curl -X GET 'https://localhost:9300/apis/default/fhir/Group/1/$export' \
 
 #### Group Definition
 
-OpenEMR automatically creates groups:
-- **By Practitioner:** Patients with practitioner as primary care provider as specified in the `patient_data.providerID` field in the OpenEMR system.
+DCL automatically creates groups:
+- **By Practitioner:** Patients with practitioner as primary care provider as specified in the `patient_data.providerID` field in the DCL system.
 - Group ID is the `uuid` column from the `uuid_mapping` table where the `resource_type` is `Group` and the `target_uuid` is the practitioner's ID converted to binary.
 
 **Example:** Group 5 contains all patients with Practitioner 5 as PCP.
@@ -878,14 +878,14 @@ GET /interface/modules/zend_modules/public/xsl/cda.xsl
 
 Place in same directory as CCD XML for browser rendering.
 
-**Option 2: Upload to OpenEMR**
+**Option 2: Upload to DCL**
 
 Upload XML to patient documents under "CCDA" category for human-readable view.
 
 ### Tutorial
 
 Complete tutorial with screenshots:
-https://github.com/openemr/openemr/issues/5284#issuecomment-1155678620
+https://github.com/DCL/DCL/issues/5284#issuecomment-1155678620
 
 ## Error Handling
 
@@ -1043,13 +1043,13 @@ curl -X GET 'https://localhost:9300/apis/default/fhir/Specimen?patient=123' \
 
 **Swagger UI:** Interactive API testing at `/swagger/`
 
-**Online Demos:** https://www.open-emr.org/wiki/index.php/Development_Demo
+**Online Demos:** https://www.dcl.org/wiki/index.php/Development_Demo
 
 ## Backwards Compatibility
 
 The FHIR API is designed to maintain backwards compatibility for existing integrations. New resources and operations are added in a way that does not break existing functionality.
 
-US Core 3.1, 7.0, and 8.0 has profiles that in some resources conflict with each other.  If your specific OpenEMR implementation requires strict adherence to a specific US Core IG version, you can set the Maximum US Core IG version you support in the OpenEMR Admin->Config->Connectors->Maximum supported version for US Core FHIR Implementation Guide to be 3.1, 7.0, or 8.0.  This will ensure that the FHIR API only advertises and supports profiles up to that version.
+US Core 3.1, 7.0, and 8.0 has profiles that in some resources conflict with each other.  If your specific DCL implementation requires strict adherence to a specific US Core IG version, you can set the Maximum US Core IG version you support in the DCL Admin->Config->Connectors->Maximum supported version for US Core FHIR Implementation Guide to be 3.1, 7.0, or 8.0.  This will ensure that the FHIR API only advertises and supports profiles up to that version.
 
 ---
 
@@ -1060,21 +1060,21 @@ US Core 3.1, 7.0, and 8.0 has profiles that in some resources conflict with each
 - Check [Developer Guide](DEVELOPER_GUIDE.md) for advanced topics
 
 **Support:**
-- Community Forum: https://community.open-emr.org/
+- Community Forum: https://community.dcl.org/
 - FHIR Specification: https://hl7.org/fhir/R4/
 - US Core 8.0 IG: https://hl7.org/fhir/us/core/STU8/
 
 **Swagger Documentation:**
-- Production: `https://your-openemr-install/swagger/`
-- Online Demo: https://www.open-emr.org/wiki/index.php/Development_Demo
+- Production: `https://your-DCL-install/swagger/`
+- Online Demo: https://www.dcl.org/wiki/index.php/Development_Demo
 
 ---
 ## Documentation Attribution
 
 ### Authorship
-This documentation represents the collective knowledge and contributions of the OpenEMR open-source community. The content is based on:
-- Original documentation by OpenEMR developers and contributors
-- Technical specifications from the OpenEMR codebase
+This documentation represents the collective knowledge and contributions of the DCL open-source community. The content is based on:
+- Original documentation by DCL developers and contributors
+- Technical specifications from the DCL codebase
 - Community feedback and real-world implementation experience
 
 ### AI Assistance
@@ -1087,10 +1087,10 @@ The organization, structure, and presentation of this documentation was enhanced
 All technical accuracy is maintained from the original community-authored documentation.
 
 ### Contributing
-OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
-- **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+DCL is an open-source project. To contribute to this documentation:
+- **Report Issues:** [GitHub Issues](https://github.com/DCL/DCL/issues)
+- **Discuss:** [Community Forum](https://community.dcl.org/)
+- **Submit Changes:** [Pull Requests](https://github.com/DCL/DCL/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

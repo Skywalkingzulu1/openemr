@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Raw data describing a biological sequence.
@@ -72,97 +72,97 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 {
     /**
      * A unique identifier for this particular sequence instance. This is a FHIR-defined id.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSequenceType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSequenceType
      */
     public $type = null;
 
     /**
      * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $coordinateSystem = null;
 
     /**
      * The patient whose sequencing results are described by this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * Specimen used for sequencing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $specimen = null;
 
     /**
      * The method for sequencing, for example, chip information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $device = null;
 
     /**
      * The organization or lab that should be responsible for this result.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $performer = null;
 
     /**
      * The number of copies of the sequence of interest. (RNASeq).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * A sequence that is used as a reference to describe variants that are present in a sequence analyzed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
      */
     public $referenceSeq = null;
 
     /**
      * The definition of variant here originates from Sequence ontology ([variant_of](http://www.sequenceontology.org/browser/current_svn/term/variant_of)). This element can represent amino acid or nucleic sequence change(including insertion,deletion,SNP,etc.)  It can represent some complex mutation or segment variation with the assist of CIGAR string.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceVariant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceVariant[]
      */
     public $variant = [];
 
     /**
      * Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall start from referenceSeq.windowStart and end by referenceSeq.windowEnd.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $observedSeq = null;
 
     /**
      * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceQuality[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceQuality[]
      */
     public $quality = [];
 
     /**
      * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $readCoverage = null;
 
     /**
      * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRepository[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRepository[]
      */
     public $repository = [];
 
     /**
      * Pointer to next atomic sequence which at most contains one variant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $pointer = [];
 
     /**
      * Information about chromosome structure variation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant[]
      */
     public $structureVariant = [];
 
@@ -173,7 +173,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A unique identifier for this particular sequence instance. This is a FHIR-defined id.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -182,7 +182,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A unique identifier for this particular sequence instance. This is a FHIR-defined id.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -193,7 +193,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSequenceType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSequenceType
      */
     public function getType()
     {
@@ -202,7 +202,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSequenceType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSequenceType $type
      * @return $this
      */
     public function setType($type)
@@ -213,7 +213,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getCoordinateSystem()
     {
@@ -222,7 +222,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $coordinateSystem
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $coordinateSystem
      * @return $this
      */
     public function setCoordinateSystem($coordinateSystem)
@@ -233,7 +233,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The patient whose sequencing results are described by this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -242,7 +242,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The patient whose sequencing results are described by this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -253,7 +253,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Specimen used for sequencing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSpecimen()
     {
@@ -262,7 +262,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Specimen used for sequencing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $specimen
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $specimen
      * @return $this
      */
     public function setSpecimen($specimen)
@@ -273,7 +273,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The method for sequencing, for example, chip information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDevice()
     {
@@ -282,7 +282,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The method for sequencing, for example, chip information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $device
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function setDevice($device)
@@ -293,7 +293,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The organization or lab that should be responsible for this result.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPerformer()
     {
@@ -302,7 +302,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The organization or lab that should be responsible for this result.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function setPerformer($performer)
@@ -313,7 +313,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The number of copies of the sequence of interest. (RNASeq).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -322,7 +322,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The number of copies of the sequence of interest. (RNASeq).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -333,7 +333,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A sequence that is used as a reference to describe variants that are present in a sequence analyzed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
      */
     public function getReferenceSeq()
     {
@@ -342,7 +342,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A sequence that is used as a reference to describe variants that are present in a sequence analyzed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq $referenceSeq
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq $referenceSeq
      * @return $this
      */
     public function setReferenceSeq($referenceSeq)
@@ -353,7 +353,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The definition of variant here originates from Sequence ontology ([variant_of](http://www.sequenceontology.org/browser/current_svn/term/variant_of)). This element can represent amino acid or nucleic sequence change(including insertion,deletion,SNP,etc.)  It can represent some complex mutation or segment variation with the assist of CIGAR string.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceVariant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceVariant[]
      */
     public function getVariant()
     {
@@ -362,7 +362,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The definition of variant here originates from Sequence ontology ([variant_of](http://www.sequenceontology.org/browser/current_svn/term/variant_of)). This element can represent amino acid or nucleic sequence change(including insertion,deletion,SNP,etc.)  It can represent some complex mutation or segment variation with the assist of CIGAR string.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceVariant $variant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceVariant $variant
      * @return $this
      */
     public function addVariant($variant)
@@ -373,7 +373,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall start from referenceSeq.windowStart and end by referenceSeq.windowEnd.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getObservedSeq()
     {
@@ -382,7 +382,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall start from referenceSeq.windowStart and end by referenceSeq.windowEnd.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $observedSeq
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $observedSeq
      * @return $this
      */
     public function setObservedSeq($observedSeq)
@@ -393,7 +393,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceQuality[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceQuality[]
      */
     public function getQuality()
     {
@@ -402,7 +402,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceQuality $quality
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceQuality $quality
      * @return $this
      */
     public function addQuality($quality)
@@ -413,7 +413,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getReadCoverage()
     {
@@ -422,7 +422,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $readCoverage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $readCoverage
      * @return $this
      */
     public function setReadCoverage($readCoverage)
@@ -433,7 +433,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRepository[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRepository[]
      */
     public function getRepository()
     {
@@ -442,7 +442,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRepository $repository
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRepository $repository
      * @return $this
      */
     public function addRepository($repository)
@@ -453,7 +453,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Pointer to next atomic sequence which at most contains one variant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPointer()
     {
@@ -462,7 +462,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Pointer to next atomic sequence which at most contains one variant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $pointer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $pointer
      * @return $this
      */
     public function addPointer($pointer)
@@ -473,7 +473,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Information about chromosome structure variation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant[]
      */
     public function getStructureVariant()
     {
@@ -482,7 +482,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Information about chromosome structure variation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant $structureVariant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant $structureVariant
      * @return $this
      */
     public function addStructureVariant($structureVariant)

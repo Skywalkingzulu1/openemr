@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,19 +71,19 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
 {
     /**
      * Server adds CORS headers when responding to requests - this enables Javascript applications to use the server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $cors = null;
 
     /**
      * Types of security services that are supported/required by the system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $service = [];
 
     /**
      * General description of how security works.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
@@ -94,7 +94,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
 
     /**
      * Server adds CORS headers when responding to requests - this enables Javascript applications to use the server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getCors()
     {
@@ -103,7 +103,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
 
     /**
      * Server adds CORS headers when responding to requests - this enables Javascript applications to use the server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $cors
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $cors
      * @return $this
      */
     public function setCors($cors)
@@ -114,7 +114,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
 
     /**
      * Types of security services that are supported/required by the system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getService()
     {
@@ -123,7 +123,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
 
     /**
      * Types of security services that are supported/required by the system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $service
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $service
      * @return $this
      */
     public function addService($service)
@@ -134,7 +134,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
 
     /**
      * General description of how security works.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -143,7 +143,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
 
     /**
      * General description of how security works.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)

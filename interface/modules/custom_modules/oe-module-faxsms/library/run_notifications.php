@@ -10,7 +10,7 @@
  * background jobs by symbolic function name from the
  * `background_services` table, so the two task entry points must live
  * in the global namespace. Everything past CLI-to-legacy translation
- * lives in `OpenEMR\Modules\FaxSMS\Notification\BackgroundReminderTask`.
+ * lives in `DCL\Modules\FaxSMS\Notification\BackgroundReminderTask`.
  *
  * Both task functions populate `$_GET['site']` / `$_GET['type']` for
  * legacy code paths (AppDispatch and the procedural helpers) that
@@ -37,14 +37,14 @@
  * The procedural helpers (SQL, dedup, log insert) live in
  * `rc_sms_notification_helpers.php`.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2018-2024 Jerry Padgett
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * @codeCoverageIgnore CLI-bootstrap shim that exists solely to bridge the
  *     global-namespace function dispatch in `BackgroundServiceRunner` to
@@ -56,9 +56,9 @@
  *     file is tracked in #11848.
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
-use OpenEMR\Modules\FaxSMS\Notification\BackgroundReminderTask;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Modules\FaxSMS\Enums\NotificationChannel;
+use DCL\Modules\FaxSMS\Notification\BackgroundReminderTask;
 
 require_once(__DIR__ . '/rc_sms_notification_helpers.php');
 

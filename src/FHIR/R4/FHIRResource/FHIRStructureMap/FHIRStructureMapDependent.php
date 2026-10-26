@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -71,13 +71,13 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Name of a rule or group to apply.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $name = null;
 
     /**
      * Variable to pass to the rule or group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $variable = [];
 
@@ -88,7 +88,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Name of a rule or group to apply.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getName()
     {
@@ -97,7 +97,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Name of a rule or group to apply.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $name
      * @return $this
      */
     public function setName($name)
@@ -108,7 +108,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Variable to pass to the rule or group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getVariable()
     {
@@ -117,7 +117,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Variable to pass to the rule or group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $variable
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $variable
      * @return $this
      */
     public function addVariable($variable)

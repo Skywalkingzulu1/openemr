@@ -3,10 +3,10 @@
 //First make sure user has access
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_POST)) {
@@ -21,7 +21,7 @@ if (!AclMain::aclCheckCore('admin', 'acl')) {
 require_once('gacl_admin.inc.php');
 
 // Variables defined in gacl_admin.inc.php
-/** @var \OpenEMR\Gacl\GaclAdminApi $gacl_api Defined in gacl_admin.inc.php line 53 */
+/** @var \DCL\Gacl\GaclAdminApi $gacl_api Defined in gacl_admin.inc.php line 53 */
 /** @var \ADOConnection $db Database connection reference from $gacl_api->db, defined in gacl_admin.inc.php line 57 */
 /** @var \Smarty $smarty Smarty template engine, defined in gacl_admin.inc.php line 59 */
 

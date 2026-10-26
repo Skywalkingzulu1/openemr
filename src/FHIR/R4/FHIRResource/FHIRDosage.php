@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Indicates how the medication is/was taken or should be taken by the patient.
@@ -72,83 +72,83 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Indicates the order in which the dosage instructions should be applied or interpreted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $sequence = null;
 
     /**
      * Free text dosage instructions e.g. SIG.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * Supplemental instructions to the patient on how to take the medication  (e.g. "with meals" or"take half to one hour before food") or warnings for the patient about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to direct sunlight or sunlamps").
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $additionalInstruction = [];
 
     /**
      * Instructions in terms that are understood by the patient or consumer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $patientInstruction = null;
 
     /**
      * When medication should be administered.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $timing = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $asNeededBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $asNeededCodeableConcept = null;
 
     /**
      * Body site to administer to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $site = null;
 
     /**
      * How drug should enter body.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $route = null;
 
     /**
      * Technique for administering medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * The amount of medication administered.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate[]
      */
     public $doseAndRate = [];
 
     /**
      * Upper limit on medication per unit of time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $maxDosePerPeriod = null;
 
     /**
      * Upper limit on medication per administration.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $maxDosePerAdministration = null;
 
     /**
      * Upper limit on medication per lifetime of the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $maxDosePerLifetime = null;
 
@@ -159,7 +159,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates the order in which the dosage instructions should be applied or interpreted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getSequence()
     {
@@ -168,7 +168,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Indicates the order in which the dosage instructions should be applied or interpreted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -179,7 +179,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Free text dosage instructions e.g. SIG.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -188,7 +188,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Free text dosage instructions e.g. SIG.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -199,7 +199,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Supplemental instructions to the patient on how to take the medication  (e.g. "with meals" or"take half to one hour before food") or warnings for the patient about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to direct sunlight or sunlamps").
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAdditionalInstruction()
     {
@@ -208,7 +208,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Supplemental instructions to the patient on how to take the medication  (e.g. "with meals" or"take half to one hour before food") or warnings for the patient about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to direct sunlight or sunlamps").
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalInstruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $additionalInstruction
      * @return $this
      */
     public function addAdditionalInstruction($additionalInstruction)
@@ -219,7 +219,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Instructions in terms that are understood by the patient or consumer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPatientInstruction()
     {
@@ -228,7 +228,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Instructions in terms that are understood by the patient or consumer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $patientInstruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $patientInstruction
      * @return $this
      */
     public function setPatientInstruction($patientInstruction)
@@ -239,7 +239,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When medication should be administered.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getTiming()
     {
@@ -248,7 +248,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When medication should be administered.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $timing
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $timing
      * @return $this
      */
     public function setTiming($timing)
@@ -258,7 +258,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean()
     {
@@ -266,7 +266,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $asNeededBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return $this
      */
     public function setAsNeededBoolean($asNeededBoolean)
@@ -276,7 +276,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept()
     {
@@ -284,7 +284,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return $this
      */
     public function setAsNeededCodeableConcept($asNeededCodeableConcept)
@@ -295,7 +295,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Body site to administer to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSite()
     {
@@ -304,7 +304,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Body site to administer to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $site
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $site
      * @return $this
      */
     public function setSite($site)
@@ -315,7 +315,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How drug should enter body.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRoute()
     {
@@ -324,7 +324,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How drug should enter body.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $route
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $route
      * @return $this
      */
     public function setRoute($route)
@@ -335,7 +335,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Technique for administering medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -344,7 +344,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Technique for administering medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -355,7 +355,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The amount of medication administered.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate[]
      */
     public function getDoseAndRate()
     {
@@ -364,7 +364,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The amount of medication administered.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate $doseAndRate
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate $doseAndRate
      * @return $this
      */
     public function addDoseAndRate($doseAndRate)
@@ -375,7 +375,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Upper limit on medication per unit of time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getMaxDosePerPeriod()
     {
@@ -384,7 +384,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Upper limit on medication per unit of time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $maxDosePerPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $maxDosePerPeriod
      * @return $this
      */
     public function setMaxDosePerPeriod($maxDosePerPeriod)
@@ -395,7 +395,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Upper limit on medication per administration.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMaxDosePerAdministration()
     {
@@ -404,7 +404,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Upper limit on medication per administration.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $maxDosePerAdministration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $maxDosePerAdministration
      * @return $this
      */
     public function setMaxDosePerAdministration($maxDosePerAdministration)
@@ -415,7 +415,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Upper limit on medication per lifetime of the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMaxDosePerLifetime()
     {
@@ -424,7 +424,7 @@ class FHIRDosage extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Upper limit on medication per lifetime of the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $maxDosePerLifetime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $maxDosePerLifetime
      * @return $this
      */
     public function setMaxDosePerLifetime($maxDosePerLifetime)

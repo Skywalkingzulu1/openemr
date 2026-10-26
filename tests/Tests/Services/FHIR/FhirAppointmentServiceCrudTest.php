@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAppointment;
-use OpenEMR\Services\FHIR\FhirAppointmentService;
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRAppointment;
+use DCL\Services\FHIR\FhirAppointmentService;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -17,13 +17,13 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR Appointment Service CRUD Tests
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirAppointmentServiceCrudTest extends TestCase
 {
@@ -50,7 +50,7 @@ class FhirAppointmentServiceCrudTest extends TestCase
             [$patientFixture['pubpid']]
         );
         $this->assertIsArray($patientRecord);
-        $this->patientUuid = \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($patientRecord['uuid']);
+        $this->patientUuid = \DCL\Common\Uuid\UuidRegistry::uuidToString($patientRecord['uuid']);
 
         // Install a facility — FhirAppointmentService now requires an explicit
         // Location reference rather than silently defaulting to the first row.
@@ -60,7 +60,7 @@ class FhirAppointmentServiceCrudTest extends TestCase
             []
         );
         $this->assertIsArray($facilityRow);
-        $this->facilityUuid = \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($facilityRow['uuid']);
+        $this->facilityUuid = \DCL\Common\Uuid\UuidRegistry::uuidToString($facilityRow['uuid']);
 
         // Load FHIR fixture and set patient + facility references
         $fixture = (array) $this->fixtureManager->getSingleFhirAppointmentFixture();
@@ -88,7 +88,7 @@ class FhirAppointmentServiceCrudTest extends TestCase
     {
         // Clean up any appointment fixtures we created
         QueryUtils::sqlStatementThrowException(
-            "DELETE FROM openemr_postcalendar_events WHERE pc_hometext LIKE 'test-fixture%'"
+            "DELETE FROM DCL_postcalendar_events WHERE pc_hometext LIKE 'test-fixture%'"
         );
         $this->fixtureManager->removePatientFixtures();
         $this->facilityFixtureManager->removeInstalledFixtures();

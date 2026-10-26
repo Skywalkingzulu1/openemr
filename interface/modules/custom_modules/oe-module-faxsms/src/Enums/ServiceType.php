@@ -4,14 +4,14 @@
  * Service Type Enum
  * Maps service type IDs to their display names and identifiers
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2025
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Enums;
+namespace DCL\Modules\FaxSMS\Enums;
 
 enum ServiceType: int
 {
@@ -24,7 +24,7 @@ enum ServiceType: int
     case SIGNALWIRE = 6;
     /**
      * In-browser RingCentral softphone. Unlike the other cases, voice does
-     * NOT run server-side — see {@see \OpenEMR\Modules\FaxSMS\Controller\VoiceClient}
+     * NOT run server-side — see {@see \DCL\Modules\FaxSMS\Controller\VoiceClient}
      * for the full architecture. Removing this case breaks the sponsored
      * voice integration; see #12230 before touching.
      */

@@ -3,8 +3,8 @@
 /**
  * Portal API Routes
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -15,13 +15,13 @@
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Yash Raj Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\AppointmentRestController;
-use OpenEMR\RestControllers\EncounterRestController;
-use OpenEMR\RestControllers\PatientRestController;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\AppointmentRestController;
+use DCL\RestControllers\EncounterRestController;
+use DCL\RestControllers\PatientRestController;
 
 // Note that the portal (api) route is only for patient role
 //  (there is a mechanism in place to ensure only patient role can access the portal (api) route)

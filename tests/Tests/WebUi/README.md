@@ -1,6 +1,6 @@
 # WebUi Test Suite
 
-In-container HTTP integration tests that drive OpenEMR's web UI form
+In-container HTTP integration tests that drive DCL's web UI form
 endpoints (`/interface/*`, `/portal/*`) via a real HTTP client
 (Guzzle) + DOM crawler (Symfony DomCrawler), running against a
 container built from PR source in CI.
@@ -13,7 +13,7 @@ action, XSS/CSRF regression, etc. — that:
 
 - exercises PHP code under `interface/` or `portal/` (procedural page
   entry points, not Symfony-routed controllers),
-- needs the OpenEMR container to actually be running (session state,
+- needs the DCL container to actually be running (session state,
   redirects, cookie handling), and
 - asserts on HTTP response codes / body content or DOM structure.
 
@@ -58,9 +58,9 @@ via the enrollment session — instead of `INSERT INTO login_mfa_registrations`.
 - **HTTP client:** `GuzzleHttp\Client` with `CookieJar` for session
   persistence and configurable `allow_redirects`.
 - **HTML parsing:** `Symfony\Component\DomCrawler\Crawler`.
-- **Base URL:** `getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost'`.
+- **Base URL:** `getenv('DCL_BASE_URL_API', true) ?: 'https://localhost'`.
 - **Server probe pattern:** check the `Server` header in `setUp`
-  and either skip or hard-fail per the `OPENEMR_ALLOW_OAUTH_HTTPS_SKIP`
+  and either skip or hard-fail per the `DCL_ALLOW_OAUTH_HTTPS_SKIP`
   contract (see `AuthorizationLogoutFullFlowTest` for the reference
   implementation).
 

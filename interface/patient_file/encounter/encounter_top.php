@@ -3,15 +3,15 @@
 /**
  * This contains the tab set for encounter forms.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2017 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // globals.php decides read-only vs writable session before it hands control
@@ -19,10 +19,10 @@
 // itself, so this is the same instance, not a second one.
 require_once dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Tabs\TabsWrapper;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Tabs\TabsWrapper;
 
 // When invoked with set_encounter this script writes pid/encounter to the
 // session, so declare the write intent up front and take the session lock once.
@@ -34,11 +34,11 @@ use OpenEMR\Tabs\TabsWrapper;
 $sessionAllowWrite = CurrentRequest::get()->query->has('set_encounter');
 
 require_once(__DIR__ . '/../../globals.php');
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $encounter = $session->get('encounter', 0);
-$rootdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getString('rootdir');
+$rootdir = \DCL\Core\OEGlobalsBag::getInstance()->getString('rootdir');
 
 if (isset($_GET["set_encounter"])) {
     // The billing page might also be setting a new pid.

@@ -22,28 +22,28 @@
  * - Overrides populateAuthenticator() and populateAuthenticationTime() for ADI-specific logic
  * - Calls PatientAdvanceDirectiveService for data retrieval
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @copyright Elements marked with AI GENERATED CODE - are in the public domain
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\DocumentReference;
+namespace DCL\Tests\Services\FHIR\DocumentReference;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\FHIR\DocumentReference\Enum\DocumentReferenceAdvancedDirectiveCodeEnum;
-use OpenEMR\Services\FHIR\DocumentReference\Enum\DocumentReferenceCategoryEnum;
-use OpenEMR\Services\FHIR\DocumentReference\FhirDocumentReferenceAdvanceCareDirectiveService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\FHIR\DocumentReference\Enum\DocumentReferenceAdvancedDirectiveCodeEnum;
+use DCL\Services\FHIR\DocumentReference\Enum\DocumentReferenceCategoryEnum;
+use DCL\Services\FHIR\DocumentReference\FhirDocumentReferenceAdvanceCareDirectiveService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -256,7 +256,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testUSCore8ProfileMetadata(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Test DocumentReference is created
         $this->assertInstanceOf(FHIRDocumentReference::class, $docReference);
@@ -282,7 +282,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testRequiredElementStatus(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Status is required (min=1, max=1)
         $statusValue = $docReference->getStatus();
@@ -298,7 +298,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testRequiredElementType(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Type is required (min=1, max=1) and must-support
         $type = $docReference->getType();
@@ -378,7 +378,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testRequiredElementCategory(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Category is required (min=1, max=*) and must-support
         $categories = $docReference->getCategory();
@@ -429,7 +429,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
             // NOTE: No category_codes provided in data
         ];
 
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($minimalData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($minimalData);
 
         // Even without category data, the service MUST add the mandatory ADI category
         $categories = $docReference->getCategory();
@@ -456,7 +456,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testRequiredElementSubject(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Subject is required (min=1, max=1) and must-support
         $subject = $docReference->getSubject();
@@ -482,7 +482,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testRequiredElementContent(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Content is required (min=1, max=*) and must-support
         $contents = $docReference->getContent();
@@ -510,7 +510,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportElementIdentifier(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Identifier is must-support (min=0, max=*)
         // If present, should be properly formatted
@@ -539,7 +539,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportElementDate(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Date is must-support (min=0, max=1)
         $date = $docReference->getDate();
@@ -555,7 +555,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportElementAuthor(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Author is must-support (min=0, max=*)
         $authors = $docReference->getAuthor();
@@ -597,7 +597,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportElementAuthenticator(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Authenticator is must-support (min=0, max=1)
         $authenticator = $docReference->getAuthenticator();
@@ -634,7 +634,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportExtensionAuthenticationTime(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // authenticationTime extension is must-support (min=0, max=1)
         $authTimeExtension = $this->findExtensionByUrl(
@@ -667,7 +667,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportContentAttachmentContentType(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         $contents = $docReference->getContent();
         $this->assertNotEmpty($contents, 'DocumentReference must have content');
@@ -704,7 +704,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportContentAttachmentUrl(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         $contents = $docReference->getContent();
         $this->assertNotEmpty($contents, 'DocumentReference must have content');
@@ -729,7 +729,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[Test]
     public function testMustSupportContentFormat(): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         $contents = $docReference->getContent();
         $this->assertNotEmpty($contents, 'DocumentReference must have content');
@@ -753,7 +753,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     public function testContextElementFromTrait(): void
     {
         // Test with encounter data (should have context)
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantLivingWillData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantLivingWillData);
 
         // Context element is populated by FhirDocumentReferenceTrait when euuid is present
         $context = $docReference->getContext();
@@ -808,7 +808,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     public function testContextAbsentWhenNoEncounter(): void
     {
         // Test with data that has no encounter
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantPowerOfAttorneyData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantPowerOfAttorneyData);
 
         // Context should be null/absent when no euuid is present
         $context = $docReference->getContext();
@@ -846,7 +846,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     #[DataProvider('advanceDirectiveDataProvider')]
     public function testMultipleAdvanceDirectiveTypes(array $adiData, string $expectedCode): void
     {
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($adiData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($adiData);
 
         // Verify DocumentReference is created
         $this->assertInstanceOf(FHIRDocumentReference::class, $docReference);
@@ -959,7 +959,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
             'mimetype' => 'application/pdf',
         ];
 
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($minimalData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($minimalData);
 
         // Should still create valid DocumentReference with mandatory elements
         $this->assertInstanceOf(FHIRDocumentReference::class, $docReference);
@@ -974,7 +974,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
     public function testDocumentReferenceWithoutAuthenticator(): void
     {
         // Test that documents without authenticator still validate
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($this->compliantPowerOfAttorneyData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($this->compliantPowerOfAttorneyData);
 
         $this->assertInstanceOf(FHIRDocumentReference::class, $docReference);
 
@@ -996,7 +996,7 @@ class FhirDocumentReferenceAdvanceCareDirectiveServiceUSCore8Test extends TestCa
         $deletedData = $this->compliantLivingWillData;
         $deletedData['deleted'] = 1;
 
-        $docReference = $this->fhirAdiDocService->parseOpenEMRRecord($deletedData);
+        $docReference = $this->fhirAdiDocService->parseDCLRecord($deletedData);
 
         $status = $docReference->getStatus();
         $this->assertNotNull($status);

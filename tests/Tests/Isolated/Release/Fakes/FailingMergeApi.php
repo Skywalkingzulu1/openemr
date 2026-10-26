@@ -4,16 +4,16 @@
  * FakePullRequestApi variant that throws on squashMerge for one specific PR.
  * Used to verify the orchestrator catches gh failures per-step.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release\Fakes;
+namespace DCL\Tests\Isolated\Release\Fakes;
 
 final class FailingMergeApi extends FakePullRequestApi
 {

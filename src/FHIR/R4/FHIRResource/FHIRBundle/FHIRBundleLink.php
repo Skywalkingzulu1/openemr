@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBundle;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A container for a collection of resources.
@@ -71,13 +71,13 @@ class FHIRBundleLink extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $relation = null;
 
     /**
      * The reference details for the link.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
@@ -88,7 +88,7 @@ class FHIRBundleLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRelation()
     {
@@ -97,7 +97,7 @@ class FHIRBundleLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A name which details the functional use for this link - see [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $relation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $relation
      * @return $this
      */
     public function setRelation($relation)
@@ -108,7 +108,7 @@ class FHIRBundleLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The reference details for the link.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -117,7 +117,7 @@ class FHIRBundleLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The reference details for the link.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)

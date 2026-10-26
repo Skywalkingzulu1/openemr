@@ -2,8 +2,8 @@
 
 /** @package    verysimple::HTTP */
 
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
 
 /**
  * Context Persistence Storage

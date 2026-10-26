@@ -3,17 +3,17 @@
 /**
  * Tests for BC\Utilities helper methods.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\BC;
+namespace DCL\Tests\Isolated\BC;
 
 use DateTimeImmutable;
-use OpenEMR\BC\Utilities;
+use DCL\BC\Utilities;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

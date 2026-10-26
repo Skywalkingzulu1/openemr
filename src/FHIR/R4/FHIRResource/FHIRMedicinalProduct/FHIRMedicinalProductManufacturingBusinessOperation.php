@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).
@@ -71,37 +71,37 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 {
     /**
      * The type of manufacturing operation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $operationType = null;
 
     /**
      * Regulatory authorization reference number.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $authorisationReferenceNumber = null;
 
     /**
      * Regulatory authorization date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $effectiveDate = null;
 
     /**
      * To indicate if this process is commercially confidential.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $confidentialityIndicator = null;
 
     /**
      * The manufacturer or establishment associated with the process.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $manufacturer = [];
 
     /**
      * A regulator which oversees the operation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $regulator = null;
 
@@ -112,7 +112,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * The type of manufacturing operation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOperationType()
     {
@@ -121,7 +121,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * The type of manufacturing operation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $operationType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $operationType
      * @return $this
      */
     public function setOperationType($operationType)
@@ -132,7 +132,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * Regulatory authorization reference number.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getAuthorisationReferenceNumber()
     {
@@ -141,7 +141,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * Regulatory authorization reference number.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
      * @return $this
      */
     public function setAuthorisationReferenceNumber($authorisationReferenceNumber)
@@ -152,7 +152,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * Regulatory authorization date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDate()
     {
@@ -161,7 +161,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * Regulatory authorization date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDate
      * @return $this
      */
     public function setEffectiveDate($effectiveDate)
@@ -172,7 +172,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * To indicate if this process is commercially confidential.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getConfidentialityIndicator()
     {
@@ -181,7 +181,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * To indicate if this process is commercially confidential.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
      * @return $this
      */
     public function setConfidentialityIndicator($confidentialityIndicator)
@@ -192,7 +192,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * The manufacturer or establishment associated with the process.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getManufacturer()
     {
@@ -201,7 +201,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * The manufacturer or establishment associated with the process.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function addManufacturer($manufacturer)
@@ -212,7 +212,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * A regulator which oversees the operation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRegulator()
     {
@@ -221,7 +221,7 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
 
     /**
      * A regulator which oversees the operation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $regulator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $regulator
      * @return $this
      */
     public function setRegulator($regulator)

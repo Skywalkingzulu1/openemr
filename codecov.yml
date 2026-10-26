@@ -13,14 +13,14 @@ ignore:
 - tests/Rector/                        # Rector rules — run outside PHPUnit coverage
 - tests/eventdispatcher/               # Example modules for documentation
 - portal/messaging/messages.php        # Entry-point script (bootstrap + render) — exercised by manual QA, not unit tests
-- portal/messaging/handle_note.php     # Entry-point script (CSRF, ACL, sendMail) — testable logic extracted to OpenEMR\Services\PortalMessagingSender
+- portal/messaging/handle_note.php     # Entry-point script (CSRF, ACL, sendMail) — testable logic extracted to DCL\Services\PortalMessagingSender
 
 # Strip environment-specific path prefixes from coverage reports so Codecov
 # can match them to repository files. See https://docs.codecov.com/docs/fixing-paths
 fixes:
-- '/var/www/localhost/htdocs/openemr/::'     # Apache Docker container
-- '/usr/share/nginx/html/openemr/::'         # nginx Docker container
-- '/home/runner/work/openemr/openemr/::'     # GitHub Actions runner (isolated tests)
+- '/var/www/localhost/htdocs/DCL/::'     # Apache Docker container
+- '/usr/share/nginx/html/DCL/::'         # nginx Docker container
+- '/home/runner/work/DCL/DCL/::'     # GitHub Actions runner (isolated tests)
 
 coverage:
   status:

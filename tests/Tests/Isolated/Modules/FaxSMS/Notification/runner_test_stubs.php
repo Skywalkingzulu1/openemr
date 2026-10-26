@@ -6,7 +6,7 @@
  * The runner calls three procedural helpers at top of namespace
  * (`text`, `cron_InsertNotificationLogEntryFaxsms`,
  * `rc_sms_notification_cron_update_entry`). PHP resolves unqualified
- * function calls inside `OpenEMR\Modules\FaxSMS\Notification` first
+ * function calls inside `DCL\Modules\FaxSMS\Notification` first
  * to that namespace and then to global, so the stubs are declared
  * here in the runner's own namespace to short-circuit the lookup
  * with no DB dependency. The shared spy state lives in the global
@@ -15,12 +15,12 @@
  * Bracketed namespace syntax is required so this file can declare
  * symbols in two namespaces at once.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -43,11 +43,11 @@ namespace {
     }
 }
 
-namespace OpenEMR\Modules\FaxSMS\Notification {
+namespace DCL\Modules\FaxSMS\Notification {
     use AppointmentNotificationRunnerTestSpy;
-    use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
+    use DCL\Modules\FaxSMS\Enums\NotificationChannel;
 
-    if (!function_exists('OpenEMR\\Modules\\FaxSMS\\Notification\\text')) {
+    if (!function_exists('DCL\\Modules\\FaxSMS\\Notification\\text')) {
         function text(mixed $value): string
         {
             if ($value === null) {
@@ -63,7 +63,7 @@ namespace OpenEMR\Modules\FaxSMS\Notification {
         }
     }
 
-    if (!function_exists('OpenEMR\\Modules\\FaxSMS\\Notification\\cron_InsertNotificationLogEntryFaxsms')) {
+    if (!function_exists('DCL\\Modules\\FaxSMS\\Notification\\cron_InsertNotificationLogEntryFaxsms')) {
         /**
          * Production helper signature is fully untyped; mirror that with
          * `array<mixed>` so the runner's loosely-shaped legacy arrays
@@ -83,7 +83,7 @@ namespace OpenEMR\Modules\FaxSMS\Notification {
         }
     }
 
-    if (!function_exists('OpenEMR\\Modules\\FaxSMS\\Notification\\rc_sms_notification_cron_update_entry')) {
+    if (!function_exists('DCL\\Modules\\FaxSMS\\Notification\\rc_sms_notification_cron_update_entry')) {
         function rc_sms_notification_cron_update_entry(
             NotificationChannel $channel,
             int $pid,

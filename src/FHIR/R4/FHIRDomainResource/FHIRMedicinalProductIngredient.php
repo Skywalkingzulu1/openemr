@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
@@ -72,37 +72,37 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 {
     /**
      * The identifier(s) of this Ingredient that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Ingredient role e.g. Active ingredient, excipient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
     /**
      * If the ingredient is a known or suspected allergen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $allergenicIndicator = null;
 
     /**
      * Manufacturer of this Ingredient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $manufacturer = [];
 
     /**
      * A specified substance that comprises this ingredient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
      */
     public $specifiedSubstance = [];
 
     /**
      * The ingredient substance.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
     public $substance = null;
 
@@ -113,7 +113,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * The identifier(s) of this Ingredient that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -122,7 +122,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * The identifier(s) of this Ingredient that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -133,7 +133,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * Ingredient role e.g. Active ingredient, excipient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRole()
     {
@@ -142,7 +142,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * Ingredient role e.g. Active ingredient, excipient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function setRole($role)
@@ -153,7 +153,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * If the ingredient is a known or suspected allergen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAllergenicIndicator()
     {
@@ -162,7 +162,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * If the ingredient is a known or suspected allergen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $allergenicIndicator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $allergenicIndicator
      * @return $this
      */
     public function setAllergenicIndicator($allergenicIndicator)
@@ -173,7 +173,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * Manufacturer of this Ingredient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getManufacturer()
     {
@@ -182,7 +182,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * Manufacturer of this Ingredient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function addManufacturer($manufacturer)
@@ -193,7 +193,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * A specified substance that comprises this ingredient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
      */
     public function getSpecifiedSubstance()
     {
@@ -202,7 +202,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * A specified substance that comprises this ingredient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance
      * @return $this
      */
     public function addSpecifiedSubstance($specifiedSubstance)
@@ -213,7 +213,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * The ingredient substance.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
     public function getSubstance()
     {
@@ -222,7 +222,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements \Json
 
     /**
      * The ingredient substance.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance $substance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance $substance
      * @return $this
      */
     public function setSubstance($substance)

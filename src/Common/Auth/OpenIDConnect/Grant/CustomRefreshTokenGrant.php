@@ -4,14 +4,14 @@
  * CustomRefreshTokenGrant Handles the custom nature of some of our scope api requests to differentiate between the
  * standard api and the regular api.  Since we don't have access to the old refresh token scopes when we are creating
  * our scope repository, we initialize them here so we can use them in our scope repo.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Grant;
+namespace DCL\Common\Auth\OpenIDConnect\Grant;
 
 use DateInterval;
 use League\OAuth2\Server\Entities\ScopeEntityInterface;
@@ -19,11 +19,11 @@ use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Grant\RefreshTokenGrant;
 use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
 use League\OAuth2\Server\ResponseTypes\ResponseTypeInterface;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\IdTokenSMARTResponse;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Services\JWTClientAuthenticationService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\IdTokenSMARTResponse;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Services\JWTClientAuthenticationService;
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -95,7 +95,7 @@ class CustomRefreshTokenGrant extends RefreshTokenGrant
                         $responseType->setContextForNewTokens($decodedContext);
                     }
                 } catch (\JsonException $exception) {
-                    $this->getSystemLogger()->error("OpenEMR Error: failed to decode token context json", ['exception' => $exception, 'tokenId' => $oldRefreshToken['access_token_id']]);
+                    $this->getSystemLogger()->error("DCL Error: failed to decode token context json", ['exception' => $exception, 'tokenId' => $oldRefreshToken['access_token_id']]);
                 }
             }
         }

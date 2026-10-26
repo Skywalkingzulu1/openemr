@@ -5,28 +5,28 @@
  *
  * Combines the responsibilities of the legacy Holidays_Controller and
  * Holidays_Storage classes: uploaded-CSV handling, the calendar_external
- * staging table, and synchronization into openemr_postcalendar_events.
+ * staging table, and synchronization into DCL_postcalendar_events.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    sharonco <sharonco@matrix.co.il>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2016 Sharon Cohen <sharonco@matrix.co.il>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 use DateTimeImmutable;
 use DateTimeZone;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception as DbalException;
 use Lcobucci\Clock\SystemClock;
-use OpenEMR\BC\Database;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\Database;
+use DCL\Core\OEGlobalsBag;
 use Psr\Clock\ClockInterface;
 use RuntimeException;
 use SplFileInfo;
@@ -97,7 +97,7 @@ final class HolidayService implements HolidayServiceInterface
      */
     public static function createForLegacyContext(): self
     {
-        // OpenEMR has not yet exposed a non-deprecated way to obtain a shared
+        // DCL has not yet exposed a non-deprecated way to obtain a shared
         // Doctrine\DBAL\Connection from a service. Until the BC layer settles,
         // this factory is the single place that reaches into it.
         // @phpstan-ignore method.deprecated
@@ -214,7 +214,7 @@ final class HolidayService implements HolidayServiceInterface
      * called inside a transaction so the read and the delete+insert see a
      * consistent snapshot of calendar_external.
      *
-     * Holidays are inserted with `pc_facility = 0`, the OpenEMR sentinel
+     * Holidays are inserted with `pc_facility = 0`, the DCL sentinel
      * for "all facilities", so a clinician viewing any facility (or "All
      * Facilities") in the calendar sees them. The category-scoped DELETE
      * is symmetric — it removes every previous holiday event regardless
@@ -233,7 +233,7 @@ final class HolidayService implements HolidayServiceInterface
 
         $this->connection->executeStatement(
             <<<'SQL'
-            DELETE FROM openemr_postcalendar_events WHERE pc_catid = ?
+            DELETE FROM DCL_postcalendar_events WHERE pc_catid = ?
             SQL,
             [self::CATEGORY_HOLIDAY]
         );
@@ -246,7 +246,7 @@ final class HolidayService implements HolidayServiceInterface
             }
             $this->connection->executeStatement(
                 <<<'SQL'
-                INSERT INTO openemr_postcalendar_events (
+                INSERT INTO DCL_postcalendar_events (
                     pc_catid, pc_aid, pc_pid, pc_title, pc_time,
                     pc_eventDate, pc_duration, pc_recurrspec, pc_alldayevent,
                     pc_eventstatus, pc_facility, pc_sharing
@@ -287,7 +287,7 @@ final class HolidayService implements HolidayServiceInterface
         try {
             $rows = $this->connection->fetchAllAssociative(
                 <<<'SQL'
-                SELECT pc_eventDate FROM openemr_postcalendar_events
+                SELECT pc_eventDate FROM DCL_postcalendar_events
                 WHERE (pc_catid = ? OR pc_catid = ?)
                   AND pc_eventDate >= ? AND pc_eventDate <= ?
                 SQL,
@@ -314,7 +314,7 @@ final class HolidayService implements HolidayServiceInterface
             try {
                 $rows = $this->connection->fetchAllAssociative(
                     <<<'SQL'
-                    SELECT pc_eventDate FROM openemr_postcalendar_events
+                    SELECT pc_eventDate FROM DCL_postcalendar_events
                     WHERE pc_catid = ? OR pc_catid = ?
                     SQL,
                     [self::CATEGORY_HOLIDAY, self::CATEGORY_CLOSED]

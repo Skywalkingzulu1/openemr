@@ -13,16 +13,16 @@
  * Nothing here touches the browser: annotating the recording costs the test
  * suite no wall-clock time at all.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPUnit\Timeline;
+namespace DCL\PHPUnit\Timeline;
 
 use PHPUnit\Event\Code\Test;
 use PHPUnit\Event\Code\TestMethod;
@@ -35,7 +35,7 @@ final class TimelineRecorder
      * container captures, and a timeline file for the unit suite would be
      * noise.
      */
-    public const E2E_NAMESPACE_PREFIX = 'OpenEMR\\Tests\\E2e\\';
+    public const E2E_NAMESPACE_PREFIX = 'DCL\\Tests\\E2e\\';
 
     public const DEFAULT_OUTPUT_FILE = 'e2e-timeline.jsonl';
 

@@ -6,21 +6,21 @@
  * Tests TelemetryService functionality without database dependencies.
  * Uses stubs and mocks to test business logic in isolation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Telemetry;
+namespace DCL\Tests\Isolated\Telemetry;
 
-use OpenEMR\Core\Kernel;
-use OpenEMR\Services\SoftwareVersion;
-use OpenEMR\Services\VersionServiceInterface;
-use OpenEMR\Telemetry\GeoTelemetryInterface;
-use OpenEMR\Telemetry\TelemetryRepository;
-use OpenEMR\Telemetry\TelemetryService;
+use DCL\Core\Kernel;
+use DCL\Services\SoftwareVersion;
+use DCL\Services\VersionServiceInterface;
+use DCL\Telemetry\GeoTelemetryInterface;
+use DCL\Telemetry\TelemetryRepository;
+use DCL\Telemetry\TelemetryService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -274,12 +274,12 @@ class TelemetryServiceTest extends TestCase
         $telemetryService = new TelemetryService($mockRepository, $mockVersionService, $mockLogger);
 
         // Set up a Kernel with webroot to test URL normalization
-        $GLOBALS['kernel'] = new Kernel('/var/www/openemr', '/openemr');
+        $GLOBALS['kernel'] = new Kernel('/var/www/DCL', '/DCL');
 
         $data = [
             'eventType' => 'click',
             'eventLabel' => 'test-label',
-            'eventUrl' => 'http://example.com/openemr/interface/test#section?param=value',
+            'eventUrl' => 'http://example.com/DCL/interface/test#section?param=value',
             'eventTarget' => 'button'
         ];
 
@@ -419,7 +419,7 @@ class TelemetryServiceTest extends TestCase
         $telemetryService->expects($this->once())
             ->method('executeCurlRequest')
             ->with(
-                $this->stringContains('https://reg.open-emr.org/api/usage?SiteID=test-uuid-123'),
+                $this->stringContains('https://reg.dcl.org/api/usage?SiteID=test-uuid-123'),
                 $this->isType('string')
             )
             ->willReturn([
@@ -687,7 +687,7 @@ class TelemetryServiceTest extends TestCase
         $telemetryService = new TelemetryService($mockRepository, $mockVersionService, $mockLogger);
 
         // Set up a Kernel with empty webroot to test the fallback behavior
-        $GLOBALS['kernel'] = new Kernel('/var/www/openemr', '');
+        $GLOBALS['kernel'] = new Kernel('/var/www/DCL', '');
 
         $data = [
             'eventType' => 'click',
@@ -715,7 +715,7 @@ class TelemetryServiceTest extends TestCase
 
     public function testReportClickEventNormalizesUrlWithFragmentOnly(): void
     {
-        $GLOBALS['kernel'] = new Kernel('/var/www/openemr', '/openemr');
+        $GLOBALS['kernel'] = new Kernel('/var/www/DCL', '/DCL');
 
         $mockRepository = $this->createMock(TelemetryRepository::class);
         $mockVersionService = $this->createMock(VersionServiceInterface::class);

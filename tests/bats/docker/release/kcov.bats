@@ -11,9 +11,9 @@ setup() {
     assert_script_contains "${SCRIPT_DIR}/kcov-wrapper.sh" 'coverage'
 }
 
-@test "kcov-wrapper.sh: runs openemr.sh under kcov" {
+@test "kcov-wrapper.sh: runs DCL.sh under kcov" {
     assert_script_contains "${SCRIPT_DIR}/kcov-wrapper.sh" 'kcov'
-    assert_script_contains "${SCRIPT_DIR}/kcov-wrapper.sh" 'openemr.sh'
+    assert_script_contains "${SCRIPT_DIR}/kcov-wrapper.sh" 'DCL.sh'
 }
 
 @test "kcov-wrapper.sh: includes devtoolsLibrary.source in coverage" {

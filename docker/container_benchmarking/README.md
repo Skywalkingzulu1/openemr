@@ -2,17 +2,17 @@
 
 ## Overview
 
-This directory contains two complementary tools for OpenEMR container validation:
+This directory contains two complementary tools for DCL container validation:
 
 1. **Performance Benchmarking** (`benchmark.sh`) - Compares performance metrics between container images
 2. **Functional Test Suite** (`test_suite.sh`) - Validates all container functionality and deployment scenarios
 
 ### Performance Benchmarking
 
-This benchmarking utility provides a simple, clean way to compare performance between two OpenEMR container images:
+This benchmarking utility provides a simple, clean way to compare performance between two DCL container images:
 
-- **Image A**: A local build from your repository (default: `./docker/openemr/8.1.0/`)
-- **Image B**: A public Docker Hub image (default: `openemr/openemr:8.1.0`)
+- **Image A**: A local build from your repository (default: `./docker/DCL/8.1.0/`)
+- **Image B**: A public Docker Hub image (default: `DCL/DCL:8.1.0`)
 
 The benchmark measures:
 1. **Startup Time** - How long each container takes to become healthy
@@ -58,17 +58,17 @@ Edit the configuration variables at the top of `benchmark.sh`:
 
 ```bash
 # Image A: Local build context (relative to benchmark.sh)
-IMAGE_A_CONTEXT="${IMAGE_A_CONTEXT:-../../docker/openemr/8.1.0}"
+IMAGE_A_CONTEXT="${IMAGE_A_CONTEXT:-../../docker/DCL/8.1.0}"
 
 # Image B: Docker Hub image name and tag
-IMAGE_B_IMAGE="${IMAGE_B_IMAGE:-openemr/openemr:8.1.0}"
+IMAGE_B_IMAGE="${IMAGE_B_IMAGE:-DCL/DCL:8.1.0}"
 ```
 
 Or set environment variables before running:
 
 ```bash
-export IMAGE_A_CONTEXT="../../docker/openemr/7.0.4"
-export IMAGE_B_IMAGE="openemr/openemr:7.0.4"
+export IMAGE_A_CONTEXT="../../docker/DCL/7.0.4"
+export IMAGE_B_IMAGE="DCL/DCL:7.0.4"
 ./benchmark.sh
 ```
 
@@ -114,7 +114,7 @@ The optimized image achieves these improvements through **build-time file permis
 
 3. **Performance**: Both images perform identically under load since the optimizations only affect startup, not runtime execution.
 
-For technical details, see the [OpenEMR 8.1.0 README](../../docker/openemr/8.1.0/README.md#performance-optimizations).
+For technical details, see the [DCL 8.1.0 README](../../docker/DCL/8.1.0/README.md#performance-optimizations).
 
 ## Understanding Results
 
@@ -135,7 +135,7 @@ The benchmark generates several files in the `results/` directory:
 
 #### Startup Time
 - **Lower is better**: Time in seconds for container to reach "healthy" status
-- Includes database connection, OpenEMR initialization, and health check passing
+- Includes database connection, DCL initialization, and health check passing
 
 #### Performance Metrics
 - **Requests per second**: Higher is better - throughput under load
@@ -187,7 +187,7 @@ The benchmark uses Docker Compose to orchestrate:
 ### Load Testing
 
 The load test uses Apache Bench (`ab`) to simulate concurrent users:
-- Sends requests to the OpenEMR login page
+- Sends requests to the DCL login page
 - Measures response times and throughput
 - Reports success/failure rates
 
@@ -236,7 +236,7 @@ ERROR: mariadbd: Error writing file './ddl_recovery.log' (Errcode: 28 "No space 
 - Check logs: `docker compose -p container-benchmark logs <service-name>`
 - Verify environment variables are set correctly
 - Check for port conflicts
-- Ensure MySQL is healthy before starting OpenEMR containers
+- Ensure MySQL is healthy before starting DCL containers
 
 ### Port Conflicts
 
@@ -261,7 +261,7 @@ ERROR: mariadbd: Error writing file './ddl_recovery.log' (Errcode: 28 "No space 
 
 **Solutions**:
 - Check internet connectivity
-- Verify Docker Hub access: `docker pull openemr/openemr:8.1.0`
+- Verify Docker Hub access: `docker pull DCL/DCL:8.1.0`
 - Use a different registry or local image for Image B
 
 ## Analysis Tools
@@ -321,7 +321,7 @@ Create a wrapper script to test multiple versions:
 ```bash
 #!/bin/bash
 for version in 7.0.4 8.0.0 8.1.0; do
-    IMAGE_B_IMAGE="openemr/openemr:${version}" RESULTS_DIR="./results/${version}" ./benchmark.sh
+    IMAGE_B_IMAGE="DCL/DCL:${version}" RESULTS_DIR="./results/${version}" ./benchmark.sh
 done
 ```
 
@@ -343,8 +343,8 @@ Integrate into CI/CD:
     cd docker/container_benchmarking
     ./benchmark.sh
   env:
-    IMAGE_A_CONTEXT: ./docker/openemr/8.1.0
-    IMAGE_B_IMAGE: openemr/openemr:8.1.0
+    IMAGE_A_CONTEXT: ./docker/DCL/8.1.0
+    IMAGE_B_IMAGE: DCL/DCL:8.1.0
 ```
 
 ## Limitations
@@ -373,11 +373,11 @@ This runs `test_suite.sh` with the correct `DOCKERFILE_CONTEXT` and `IMAGE_TAG` 
 
 ## Functional Test Suite
 
-In addition to performance benchmarking, this directory includes a comprehensive functional test suite (`test_suite.sh`) that validates all OpenEMR container functionality.
+In addition to performance benchmarking, this directory includes a comprehensive functional test suite (`test_suite.sh`) that validates all DCL container functionality.
 
 ### Overview
 
-The test suite verifies that all OpenEMR container features work correctly, including:
+The test suite verifies that all DCL container features work correctly, including:
 
 - ✅ **Fresh Installation (Auto-Configure)** - Automated setup and configuration
 - ✅ **Manual Setup Mode** - Manual installation workflow
@@ -428,7 +428,7 @@ Each test creates isolated Docker Compose environments and cleans up automatical
 
 | Test Name | Description | Key Validations |
 |-----------|-------------|-----------------|
-| `fresh_installation` | Automated OpenEMR setup | Configuration completes, login page accessible |
+| `fresh_installation` | Automated DCL setup | Configuration completes, login page accessible |
 | `manual_setup` | Manual installation mode | Auto-configure script preserved, not configured |
 | `ssl_configuration` | SSL/TLS certificate setup | Certificates mounted, HTTPS accessible |
 | `redis_sessions` | Redis session storage | Redis handler configured, marker file exists |
@@ -443,11 +443,11 @@ Each test creates isolated Docker Compose environments and cleans up automatical
 Configure tests via environment variables:
 
 ```bash
-# Docker build context (default: ../../docker/openemr/8.1.0)
-export DOCKER_CONTEXT="../../docker/openemr/8.0.0"
+# Docker build context (default: ../../docker/DCL/8.1.0)
+export DOCKER_CONTEXT="../../docker/DCL/8.0.0"
 
-# Image tag for built containers (default: openemr:8.1.0-test)
-export IMAGE_TAG="openemr:8.0.0-test"
+# Image tag for built containers (default: DCL:8.1.0-test)
+export IMAGE_TAG="DCL:8.0.0-test"
 
 # Results directory (default: ./test_results)
 export RESULTS_DIR="./custom_results"
@@ -464,16 +464,16 @@ The test suite is designed for CI/CD integration:
     cd docker/container_benchmarking
     ./test_suite.sh
   env:
-    DOCKER_CONTEXT: ./docker/openemr/8.1.0
-    IMAGE_TAG: openemr:8.1.0-test
+    DOCKER_CONTEXT: ./docker/DCL/8.1.0
+    IMAGE_TAG: DCL:8.1.0-test
 ```
 
 ### Troubleshooting Tests
 
 **Test fails with "Container did not become healthy"**:
-- Check Docker logs: `docker compose -p openemr-test-* logs`
+- Check Docker logs: `docker compose -p DCL-test-* logs`
 - Increase health check timeout in test function
-- Verify MySQL is healthy before OpenEMR starts
+- Verify MySQL is healthy before DCL starts
 
 **Port conflicts**:
 - Tests use ports 8080-8087
@@ -486,8 +486,8 @@ The test suite is designed for CI/CD integration:
 
 **Need to debug a failing test**:
 - Use `--keep-containers` to preserve containers after test
-- Inspect containers: `docker compose -p openemr-test-* ps`
-- Check logs: `docker compose -p openemr-test-* logs <service>`
+- Inspect containers: `docker compose -p DCL-test-* ps`
+- Check logs: `docker compose -p DCL-test-* logs <service>`
 - Shell into container: `docker exec -it <container-name> /bin/bash`
 
 ### Adding New Tests
@@ -534,6 +534,6 @@ To improve the benchmarking utility:
 
 ## See Also
 
-- [OpenEMR Docker Documentation](../../docker/openemr/README.md)
+- [DCL Docker Documentation](../../docker/DCL/README.md)
 - [Docker Compose Documentation](https://docs.docker.com/compose/)
 - [Apache Bench Documentation](https://httpd.apache.org/docs/2.4/programs/ab.html)

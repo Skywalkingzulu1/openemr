@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPatient;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPatient;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPatient;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Demographics and other administrative information about an individual or animal receiving care or other health-related services.
@@ -71,13 +71,13 @@ class FHIRPatientLink extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The other patient resource that the link refers to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $other = null;
 
     /**
      * The type of link between this patient resource and another patient resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRLinkType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRLinkType
      */
     public $type = null;
 
@@ -88,7 +88,7 @@ class FHIRPatientLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The other patient resource that the link refers to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOther()
     {
@@ -97,7 +97,7 @@ class FHIRPatientLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The other patient resource that the link refers to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $other
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $other
      * @return $this
      */
     public function setOther($other)
@@ -108,7 +108,7 @@ class FHIRPatientLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The type of link between this patient resource and another patient resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRLinkType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRLinkType
      */
     public function getType()
     {
@@ -117,7 +117,7 @@ class FHIRPatientLink extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The type of link between this patient resource and another patient resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRLinkType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRLinkType $type
      * @return $this
      */
     public function setType($type)

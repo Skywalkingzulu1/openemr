@@ -3,18 +3,18 @@
 /**
  * Clinical Notes change detection and unchanged-save regression tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services;
+namespace DCL\Tests\Isolated\Services;
 
-use OpenEMR\Services\ClinicalNotesService;
+use DCL\Services\ClinicalNotesService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -24,8 +24,8 @@ class ClinicalNotesServiceTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
-        if (!defined('OPENEMR_STATIC_ANALYSIS')) {
-            define('OPENEMR_STATIC_ANALYSIS', true);
+        if (!defined('DCL_STATIC_ANALYSIS')) {
+            define('DCL_STATIC_ANALYSIS', true);
         }
     }
 

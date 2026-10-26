@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A patient's point-in-time set of recommendations (i.e. forecasting) according to a published schedule with optional supporting justification.
@@ -72,31 +72,31 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 {
     /**
      * A unique identifier assigned to this particular recommendation record.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The patient the recommendation(s) are for.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The date the immunization recommendation(s) were created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $authority = null;
 
     /**
      * Vaccine administration recommendations.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation[]
      */
     public $recommendation = [];
 
@@ -107,7 +107,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * A unique identifier assigned to this particular recommendation record.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -116,7 +116,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * A unique identifier assigned to this particular recommendation record.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -127,7 +127,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * The patient the recommendation(s) are for.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -136,7 +136,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * The patient the recommendation(s) are for.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -147,7 +147,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * The date the immunization recommendation(s) were created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -156,7 +156,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * The date the immunization recommendation(s) were created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -167,7 +167,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthority()
     {
@@ -176,7 +176,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $authority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $authority
      * @return $this
      */
     public function setAuthority($authority)
@@ -187,7 +187,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * Vaccine administration recommendations.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation[]
      */
     public function getRecommendation()
     {
@@ -196,7 +196,7 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements \Json
 
     /**
      * Vaccine administration recommendations.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $recommendation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $recommendation
      * @return $this
      */
     public function addRecommendation($recommendation)

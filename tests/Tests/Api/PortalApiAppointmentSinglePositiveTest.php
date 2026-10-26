@@ -18,26 +18,26 @@
  * 200 was explicitly deferred there pending FhirSearchWhereClauseBuilder
  * investigation — resolved here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Fixtures\PortalPatientFixtureManager;
-use OpenEMR\Tests\Support\OAuth2\DcrClient;
-use OpenEMR\Tests\Support\OAuth2\PasswordGrant;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Fixtures\PortalPatientFixtureManager;
+use DCL\Tests\Support\OAuth2\DcrClient;
+use DCL\Tests\Support\OAuth2\PasswordGrant;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -72,10 +72,10 @@ class PortalApiAppointmentSinglePositiveTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -158,7 +158,7 @@ class PortalApiAppointmentSinglePositiveTest extends TestCase
         $this->safeRun(function (): void {
             if ($this->appointmentEventId > 0) {
                 QueryUtils::sqlStatementThrowException(
-                    'DELETE FROM openemr_postcalendar_events WHERE pc_eid = ?',
+                    'DELETE FROM DCL_postcalendar_events WHERE pc_eid = ?',
                     [$this->appointmentEventId]
                 );
             }
@@ -166,7 +166,7 @@ class PortalApiAppointmentSinglePositiveTest extends TestCase
         $this->safeRun(function (): void {
             if ($this->appointmentUuid !== null) {
                 QueryUtils::sqlStatementThrowException(
-                    "DELETE FROM uuid_registry WHERE table_name = 'openemr_postcalendar_events' AND uuid = ?",
+                    "DELETE FROM uuid_registry WHERE table_name = 'DCL_postcalendar_events' AND uuid = ?",
                     [UuidRegistry::uuidToBytes($this->appointmentUuid)]
                 );
             }
@@ -272,7 +272,7 @@ class PortalApiAppointmentSinglePositiveTest extends TestCase
 
     private function installAppointmentFixture(int $pid): string
     {
-        $registry = new UuidRegistry(['table_name' => 'openemr_postcalendar_events']);
+        $registry = new UuidRegistry(['table_name' => 'DCL_postcalendar_events']);
         $uuidBytes = $registry->createUuid();
         $uuidString = UuidRegistry::uuidToString($uuidBytes);
         $this->appointmentUuid = $uuidString;
@@ -280,7 +280,7 @@ class PortalApiAppointmentSinglePositiveTest extends TestCase
         $title = self::APPT_TITLE_PREFIX . bin2hex(random_bytes(4));
 
         $this->appointmentEventId = QueryUtils::sqlInsert(
-            'INSERT INTO openemr_postcalendar_events '
+            'INSERT INTO DCL_postcalendar_events '
                 . '(pc_pid, uuid, pc_title, pc_eventDate, pc_startTime, pc_duration, pc_catid, pc_eventstatus, pc_apptstatus, pc_facility, pc_billing_location) '
                 . "VALUES (?, ?, ?, DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY), '10:00:00', 900, 5, 1, '-', 0, 0)",
             [$pid, $uuidBytes, $title]

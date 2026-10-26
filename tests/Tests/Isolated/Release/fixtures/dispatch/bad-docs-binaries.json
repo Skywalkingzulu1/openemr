@@ -1,8 +1,8 @@
 {
-  "event": "openemr-docs-binaries",
-  "repo": "openemr/website-openemr",
+  "event": "DCL-docs-binaries",
+  "repo": "DCL/website-DCL",
   "sha": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
-  "actor": "openemr-release-bot",
+  "actor": "DCL-release-bot",
   "dispatched_at": "2026-04-29T13:00:00Z",
   "data": {
     "version": "8.2.0",

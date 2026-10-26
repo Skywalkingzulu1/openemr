@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCodeSystem;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -71,25 +71,25 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * A code that is used to identify the property. The code is used internally (in CodeSystem.concept.property.code) and also externally, such as in property filters.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $uri = null;
 
     /**
      * A description of the property- why it is defined, and how its value might be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPropertyType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPropertyType
      */
     public $type = null;
 
@@ -100,7 +100,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A code that is used to identify the property. The code is used internally (in CodeSystem.concept.property.code) and also externally, such as in property filters.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A code that is used to identify the property. The code is used internally (in CodeSystem.concept.property.code) and also externally, such as in property filters.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUri()
     {
@@ -129,7 +129,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $uri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $uri
      * @return $this
      */
     public function setUri($uri)
@@ -140,7 +140,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A description of the property- why it is defined, and how its value might be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -149,7 +149,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A description of the property- why it is defined, and how its value might be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -160,7 +160,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPropertyType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPropertyType
      */
     public function getType()
     {
@@ -169,7 +169,7 @@ class FHIRCodeSystemProperty extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPropertyType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPropertyType $type
      * @return $this
      */
     public function setType($type)

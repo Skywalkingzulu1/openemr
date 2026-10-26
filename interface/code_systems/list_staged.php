@@ -7,7 +7,7 @@
  * The logic will also render the appropriate action button which
  * can be one of the following:
  *      INSTALL - this is rendered when the external database has
- *                not been installed in this openEMR instance
+ *                not been installed in this DCL instance
  *      UPGRADE - this is rendered when the external database has
  *                been installed and the staged files are more recent
  *                than the instance installed
@@ -15,8 +15,8 @@
  * an appropriate message is rendered
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    (Mac) Kevin McAloon <mcaloon@patienthealthcareanalytics.com>
  * @author    Rohit Kumar <pandit.rohit@netsity.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -24,13 +24,13 @@
  * @copyright Copyright (c) 2011 Phyaura, LLC <info@phyaura.com>
  * @copyright Copyright (c) 2012 Patient Healthcare Analytics, Inc.
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\OEGlobalsBag;
 
 // Ensure script doesn't time out and has enough memory
 set_time_limit(0);
@@ -230,7 +230,7 @@ if (is_dir($mainPATH)) {
             } elseif (is_numeric(strpos((string) $db, "ICD"))) {
                 $qry_str = "SELECT `load_checksum`,`load_source`,`load_release_date` FROM `supported_external_dataloads` WHERE `load_type` = ? and `load_filename` = ? and `load_checksum` = ? ORDER BY `load_release_date` DESC";
 
-                // this query determines whether you can load the data into openEMR. you must have the correct
+                // this query determines whether you can load the data into DCL. you must have the correct
                 // filename and checksum for each file that are part of the same release.
                 //
                 // IMPORTANT: Releases that contain multiple zip file (e.g. ICD10) are grouped together based

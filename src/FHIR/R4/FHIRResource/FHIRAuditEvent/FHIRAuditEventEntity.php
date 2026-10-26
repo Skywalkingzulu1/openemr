@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAuditEvent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -71,55 +71,55 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Identifies a specific instance of the entity. The reference should be version specific.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $what = null;
 
     /**
      * The type of the object that was involved in this audit event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $type = null;
 
     /**
      * Code representing the role the entity played in the event being audited.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $role = null;
 
     /**
      * Identifier for the data life-cycle stage for the entity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $lifecycle = null;
 
     /**
      * Security labels for the identified entity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $securityLabel = [];
 
     /**
      * A name of the entity in the audit event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Text that describes the entity in more detail.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The query parameters for a query-type entities.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $query = null;
 
     /**
      * Tagged value pairs for conveying additional information about the entity.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     public $detail = [];
 
@@ -130,7 +130,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifies a specific instance of the entity. The reference should be version specific.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getWhat()
     {
@@ -139,7 +139,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifies a specific instance of the entity. The reference should be version specific.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $what
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $what
      * @return $this
      */
     public function setWhat($what)
@@ -150,7 +150,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the object that was involved in this audit event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getType()
     {
@@ -159,7 +159,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the object that was involved in this audit event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function setType($type)
@@ -170,7 +170,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Code representing the role the entity played in the event being audited.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getRole()
     {
@@ -179,7 +179,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Code representing the role the entity played in the event being audited.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $role
      * @return $this
      */
     public function setRole($role)
@@ -190,7 +190,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifier for the data life-cycle stage for the entity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getLifecycle()
     {
@@ -199,7 +199,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identifier for the data life-cycle stage for the entity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $lifecycle
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $lifecycle
      * @return $this
      */
     public function setLifecycle($lifecycle)
@@ -210,7 +210,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Security labels for the identified entity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getSecurityLabel()
     {
@@ -219,7 +219,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Security labels for the identified entity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $securityLabel
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $securityLabel
      * @return $this
      */
     public function addSecurityLabel($securityLabel)
@@ -230,7 +230,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A name of the entity in the audit event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -239,7 +239,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A name of the entity in the audit event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -250,7 +250,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Text that describes the entity in more detail.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -259,7 +259,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Text that describes the entity in more detail.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -270,7 +270,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The query parameters for a query-type entities.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getQuery()
     {
@@ -279,7 +279,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The query parameters for a query-type entities.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $query
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $query
      * @return $this
      */
     public function setQuery($query)
@@ -290,7 +290,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Tagged value pairs for conveying additional information about the entity.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     public function getDetail()
     {
@@ -299,7 +299,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Tagged value pairs for conveying additional information about the entity.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail $detail
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail $detail
      * @return $this
      */
     public function addDetail($detail)

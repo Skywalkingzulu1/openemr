@@ -25,23 +25,23 @@
  * token-mint response's own `scope` field is inspected to confirm the
  * V2 identifiers survived finalizeScopes() verbatim.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Fixtures\AppointmentFixtureManager;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Fixtures\AppointmentFixtureManager;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -64,10 +64,10 @@ class ApiScopeSchemeV2EquivalenceTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildHttpClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -658,7 +658,7 @@ class ApiScopeSchemeV2EquivalenceTest extends TestCase
     private function seedPatient(): string
     {
         $adminClient = new ApiTestClient($this->baseUrl, false);
-        $adminClient->setAuthTokenOrFail(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $adminClient->setAuthTokenOrFail(ApiTestClient::DCL_AUTH_ENDPOINT);
         $this->registeredClientIds[] = (string) $adminClient->getClientId();
 
         $fixture = $this->getFixtureManager()->getSinglePatientFixture();
@@ -673,7 +673,7 @@ class ApiScopeSchemeV2EquivalenceTest extends TestCase
     private function seedPatientWithAllergy(string $title): string
     {
         $adminClient = new ApiTestClient($this->baseUrl, false);
-        $adminClient->setAuthTokenOrFail(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $adminClient->setAuthTokenOrFail(ApiTestClient::DCL_AUTH_ENDPOINT);
         $this->registeredClientIds[] = (string) $adminClient->getClientId();
 
         $fixture = $this->getFixtureManager()->getSinglePatientFixture();
@@ -717,7 +717,7 @@ class ApiScopeSchemeV2EquivalenceTest extends TestCase
             [FixtureManager::PATIENT_FIXTURE_PUBPID_PREFIX . '%']
         );
         $this->assertIsString($puuidBytes);
-        $patientUuid = \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($puuidBytes);
+        $patientUuid = \DCL\Common\Uuid\UuidRegistry::uuidToString($puuidBytes);
 
         $insurerId = QueryUtils::fetchSingleValue(
             'SELECT id FROM insurance_companies WHERE name = ? ORDER BY id DESC LIMIT 1',
@@ -727,7 +727,7 @@ class ApiScopeSchemeV2EquivalenceTest extends TestCase
         $this->assertIsNumeric($insurerId);
 
         $adminClient = new ApiTestClient($this->baseUrl, false);
-        $adminClient->setAuthTokenOrFail(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $adminClient->setAuthTokenOrFail(ApiTestClient::DCL_AUTH_ENDPOINT);
         $this->registeredClientIds[] = (string) $adminClient->getClientId();
 
         $policyResp = $adminClient->post(

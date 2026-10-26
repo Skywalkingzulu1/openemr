@@ -3,31 +3,31 @@
 /**
  * CarePlanService.php
  *
- * @package    openemr
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @author     Stephen Nielson <stephen@nielson.org>
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright  Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\ReferenceSearchField;
-use OpenEMR\Services\Search\ReferenceSearchValue;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\BaseValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\ReferenceSearchField;
+use DCL\Services\Search\ReferenceSearchValue;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\BaseValidator;
+use DCL\Validators\ProcessingResult;
 
 class CarePlanService extends BaseService
 {
@@ -35,7 +35,7 @@ class CarePlanService extends BaseService
     // Ids can be up to 64 characters long, and contain any combination of upper and lowercase ASCII letters,
     // numerals, "-" and ".".  Logical ids are opaque to the resource server and should NOT be changed once they've
     // been issued by the resource server
-    // Up to OpenEMR 6.1.0 patch 0 we used underscores as our separator
+    // Up to DCL 6.1.0 patch 0 we used underscores as our separator
     const SURROGATE_KEY_SEPARATOR_V1 = "_";
     // use the abbreviation SK for Surrogate key and hyphens.  Since Logical ids are opaque we can do this as long as
     // our UUID NEVER generates a two digit hyphenated id which none of the standards currently do.
@@ -373,7 +373,7 @@ class CarePlanService extends BaseService
      *
      * Wrapped in a transaction so a row-insert failure rolls back the form registry entry.
      *
-     * @param int $pid OpenEMR internal patient id.
+     * @param int $pid DCL internal patient id.
      * @param int $encounterId form_encounter.encounter (NOT uuid; resolved upstream).
      * @param array<int, array<string, mixed>> $items Each item supplies code/codetext/description/
      *        date/date_end/proposed_date/plan_status/note_related_to/reason_* columns.
@@ -702,7 +702,7 @@ class CarePlanService extends BaseService
                 $separator = self::SURROGATE_KEY_SEPARATOR_V1;
             }
 
-            // euuid is already a string (converted by OpenEMR's UuidRegistry in parent method)
+            // euuid is already a string (converted by DCL's UuidRegistry in parent method)
             $euuidString = $record['euuid'];
 
             foreach ($goalIds as $carePlanId) {

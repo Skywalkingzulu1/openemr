@@ -6,28 +6,28 @@
  * Replaces the legacy interface/batchcom/batch_phone_notification.php script
  * that was invoked via library/allow_cronjobs.php.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2010 Maviq
  * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2017 Jason 'Toolbox' Oettinger <jason@oettinger.email>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use MaviqClient;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\IGlobalsAware;
-use OpenEMR\Services\Trait\GlobalInterfaceTrait;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
+use DCL\Services\IGlobalsAware;
+use DCL\Services\Trait\GlobalInterfaceTrait;
 use RestResponse;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -119,7 +119,7 @@ class PhoneNotificationCommand extends Command implements IGlobalsAware
      * with a no-op instead of loading files that assume a live runtime.
      *
      * @codeCoverageIgnore Overridden in tests; the real implementation can't
-     *     run outside a full OpenEMR bootstrap.
+     *     run outside a full DCL bootstrap.
      */
     protected function loadHelpers(): void
     {

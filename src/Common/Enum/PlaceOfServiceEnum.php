@@ -2,17 +2,17 @@
 
 /*
  * PlaceOfServiceEnum.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright (C) 2016 Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
  * @copyright AI Generated content is in the public domain
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Enum;
+namespace DCL\Common\Enum;
 
 // This class was AI Generated from the original POSRef class
 enum PlaceOfServiceEnum: string

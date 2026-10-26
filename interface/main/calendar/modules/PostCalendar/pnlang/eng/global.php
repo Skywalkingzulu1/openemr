@@ -26,8 +26,8 @@
  *
  */
 
-use OpenEMR\Common\Calendar\DayOfWeek;
-use OpenEMR\Common\Calendar\Month;
+use DCL\Common\Calendar\DayOfWeek;
+use DCL\Common\Calendar\Month;
 
 //=========================================================================
 //  The following define is necessary for the date and time functions

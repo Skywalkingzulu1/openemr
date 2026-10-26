@@ -3,16 +3,16 @@
 /**
  * interface/modules/zend_modules/module/Syndromicsurveillance/src/Syndromicsurveillance/Model/SyndromicsurveillanceTable.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Syndromicsurveillance\Model;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class SyndromicsurveillanceTable
 {
@@ -264,7 +264,7 @@ class SyndromicsurveillanceTable
             $race_code      = $this->getCodes($r['race'], 'race');
             $ethnicity_code = $this->getCodes($r['ethnicity'], 'ethnicity');
             $county_code    = $this->getCodes($r['county'], 'county');
-            $content .= "MSH|^~\&|OPENEMR|" . $fac_name . "^" . $r['facility_npi'] . "^NPI|||" . $nowdate . "||" .
+            $content .= "MSH|^~\&|DCL|" . $fac_name . "^" . $r['facility_npi'] . "^NPI|||" . $nowdate . "||" .
             "ADT^A04^ADT_A01|NIST-SS-TC-XXX.XX|P^T|2.5.1|||||||||PH_SS-NoAck^SS Sender^2.16.840.1.114222.4.10.3^ISO$D";
             $content .= "EVN|" . // [[ 3.69 ]]
             "|" . // 1.B Event Type Code

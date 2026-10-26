@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,13 +71,13 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 {
     /**
      * The type of resource that all instances must conform to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $type = null;
 
     /**
      * A reference to the profile that all instances must conform to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
@@ -88,7 +88,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 
     /**
      * The type of resource that all instances must conform to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 
     /**
      * The type of resource that all instances must conform to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 
     /**
      * A reference to the profile that all instances must conform to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -117,7 +117,7 @@ class FHIRImplementationGuideGlobal extends FHIRBackboneElement implements \Json
 
     /**
      * A reference to the profile that all instances must conform to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)

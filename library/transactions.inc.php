@@ -1,6 +1,6 @@
 <?php
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 function getTransById($id, $cols = "*")
 {

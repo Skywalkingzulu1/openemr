@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService;
+namespace DCL\FHIR\R4\FHIRResource\FHIRHealthcareService;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The details of a healthcare service available at a location.
@@ -71,25 +71,25 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 {
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
      */
     public $daysOfWeek = [];
 
     /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $allDay = null;
 
     /**
      * The opening time of day. Note: If the AllDay flag is set, then this time is ignored.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $availableStartTime = null;
 
     /**
      * The closing time of day. Note: If the AllDay flag is set, then this time is ignored.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $availableEndTime = null;
 
@@ -100,7 +100,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDaysOfWeek[]
      */
     public function getDaysOfWeek()
     {
@@ -109,7 +109,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDaysOfWeek $daysOfWeek
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDaysOfWeek $daysOfWeek
      * @return $this
      */
     public function addDaysOfWeek($daysOfWeek)
@@ -120,7 +120,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAllDay()
     {
@@ -129,7 +129,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $allDay
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $allDay
      * @return $this
      */
     public function setAllDay($allDay)
@@ -140,7 +140,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * The opening time of day. Note: If the AllDay flag is set, then this time is ignored.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getAvailableStartTime()
     {
@@ -149,7 +149,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * The opening time of day. Note: If the AllDay flag is set, then this time is ignored.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $availableStartTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $availableStartTime
      * @return $this
      */
     public function setAvailableStartTime($availableStartTime)
@@ -160,7 +160,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * The closing time of day. Note: If the AllDay flag is set, then this time is ignored.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getAvailableEndTime()
     {
@@ -169,7 +169,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * The closing time of day. Note: If the AllDay flag is set, then this time is ignored.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $availableEndTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $availableEndTime
      * @return $this
      */
     public function setAvailableEndTime($availableEndTime)

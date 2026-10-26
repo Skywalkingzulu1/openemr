@@ -3,14 +3,14 @@
 /**
  * Issues Dashboard Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -54,7 +54,7 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("You can enter data into all 5 categories from this page");?>.</p>
 
-                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To use the help page as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR ");?>.</p>
+                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To use the help page as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL ");?>.</p>
 
                 </div>
             </div>
@@ -272,7 +272,7 @@ require_once("../../interface/globals.php");
                     </p>
 
                     <p><?php echo xlt("More information about Issues can be found here");?>.
-                        <a href="https://www.open-emr.org/wiki/index.php/Issues_&_Immunizations" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/Issues_&_Immunizations" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     </p>
                 </div>
             </div>

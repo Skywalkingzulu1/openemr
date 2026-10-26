@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4;
+namespace DCL\FHIR\R4;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -69,25 +69,25 @@ class FHIRResource implements \JsonSerializable, \Stringable
 {
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $id = null;
 
     /**
      * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMeta
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMeta
      */
     public $meta = null;
 
     /**
      * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $implicitRules = null;
 
     /**
      * The base language in which the resource is written.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $language = null;
 
@@ -98,7 +98,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getId()
     {
@@ -107,7 +107,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $id
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $id
      * @return $this
      */
     public function setId($id)
@@ -118,7 +118,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMeta
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMeta
      */
     public function getMeta()
     {
@@ -127,7 +127,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMeta $meta
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMeta $meta
      * @return $this
      */
     public function setMeta($meta)
@@ -138,7 +138,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getImplicitRules()
     {
@@ -147,7 +147,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $implicitRules
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $implicitRules
      * @return $this
      */
     public function setImplicitRules($implicitRules)
@@ -158,7 +158,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * The base language in which the resource is written.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getLanguage()
     {
@@ -167,7 +167,7 @@ class FHIRResource implements \JsonSerializable, \Stringable
 
     /**
      * The base language in which the resource is written.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $language
      * @return $this
      */
     public function setLanguage($language)

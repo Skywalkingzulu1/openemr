@@ -3,14 +3,14 @@
 /**
  * Medical Dashboard Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -29,7 +29,7 @@ require_once("../../interface/globals.php");
                 <div class="col-sm-12">
                     <p><?php echo xlt("The dashboard is the central location for convenient access the patient's medical record");?>.</p>
 
-                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To help familiarize you with the various components of the Dashboard page it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR");?>.</p>
+                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To help familiarize you with the various components of the Dashboard page it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL");?>.</p>
 
                     <p><?php echo xlt("The Dashboard page is divided into three sections");?>:</p>
 
@@ -60,24 +60,24 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("The rest of the boxes related to the Ensora eRx service can be left at default values");?>.</p>
 
-                    <p><?php echo xlt("This module is well integrated with openEMR, there are however two non-subscription based alternatives, Weno and Allscripts that can be used instead");?>.</p>
+                    <p><?php echo xlt("This module is well integrated with DCL, there are however two non-subscription based alternatives, Weno and Allscripts that can be used instead");?>.</p>
 
-                    <p><?php echo xlt("The Weno Exchange is well integrated with openEMR and is not subscription based");?>.</p>
+                    <p><?php echo xlt("The Weno Exchange is well integrated with DCL and is not subscription based");?>.</p>
 
-                    <p><?php echo xlt("The Allscripts solution integrates the Allscripts ePrescribe web site with openEMR");?>.</p>
+                    <p><?php echo xlt("The Allscripts solution integrates the Allscripts ePrescribe web site with DCL");?>.</p>
 
                     <p><?php echo xlt("Further information regarding using the e-prescribing modules can be found by clicking this link");?>
-                        <a href="https://www.open-emr.org/wiki/index.php/OpenEMR_ePrescribe" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/DCL_ePrescribe" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
 
-                    <p><?php echo xlt("At present e-prescribing from openEMR is possible only in the United States");?>.</p>
+                    <p><?php echo xlt("At present e-prescribing from DCL is possible only in the United States");?>.</p>
 
                     <p><strong><?php echo xlt("PATIENT PORTAL"); ?> :</strong></p>
 
                     <p><?php echo xlt("Information regarding the Patient Portal is also shown in the header section");?>.</p>
 
                     <p><?php echo xlt("There are multiple options regarding patient portals and information on how to setup the patient portal is available here");?>
-                        <a href="https://www.open-emr.org/wiki/index.php/Patient_Portal" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/Patient_Portal" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
 
                     <p><?php echo xlt("To enable Patient Portal go to Administration > Portal > Enable Version 2 Onsite Patient Portal, Enable Offsite Patient Portal or Enable CMS Portal");?>.</p>
@@ -173,15 +173,15 @@ require_once("../../interface/globals.php");
                     <p><?php echo xlt("Demographics - patient demographics and insurance information");?>.</p>
 
                     <p><?php echo xlt("Patient Reminders - a list reminders for preventive or follow-up care according to patient preferences based on demographic data, specific conditions, and/or medication list as well as the status of the notification");?>
-                        <a href="https://www.open-emr.org/wiki/index.php/Patient_Reminders" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/Patient_Reminders" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
 
                     <p><?php echo xlt("Disclosures - Record disclosures made for treatment, payment, and health care operations with date, time, patient identification (name or number), user identification (name or number), and a description of the disclosure");?>
-                        <a href="https://www.open-emr.org/wiki/index.php/7._Recording_Disclosure" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/7._Recording_Disclosure" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
 
                     <p><?php echo xlt("Amendments - Enable a user to electronically select the record affected by a patient’s request for amendment and either append the amendment to the affected record or include a link that indicates the amendment’s location");?>
-                        <a href="https://www.open-emr.org/wiki/index.php/Amendments_(MU2)" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/Amendments_(MU2)" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
 
                     <p><?php echo xlt("ID Card/Photos - will display any ID Card or patient photo that has been uploaded to Documents > Patient Information > Patient ID Card and Patient Photograph folders");?>.</p>
@@ -193,7 +193,7 @@ require_once("../../interface/globals.php");
                     <p><?php echo xlt("A Clinical Decision Rule is patient specific information that is filtered and presented at appropriate times to enhance health and health care");?>.</p>
 
                     <p><?php echo xlt("A detailed guide on how to enable and setup a Clinical Decision rule is found here");?>
-                        <a href="https://open-emr.org/wiki/images/c/ca/Clinical_Decision_Rules_Manual.pdf" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://dcl.org/wiki/images/c/ca/Clinical_Decision_Rules_Manual.pdf" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
 
                     <p><?php echo xlt("Once a rule is setup it can be enabled for a particular patient");?>.</p>
@@ -206,7 +206,7 @@ require_once("../../interface/globals.php");
                          </ul>
 
                     <p><?php echo xlt("More information about Clinical Decision Rule can be found here");?>
-                        <a href="https://www.open-emr.org/wiki/index.php/CDR_User_Manual" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/CDR_User_Manual" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
 
                     <p><?php echo xlt("Appointments - shows all future appointments as well as Recalls");?>.</p>
@@ -226,7 +226,7 @@ require_once("../../interface/globals.php");
                     <p><?php echo xlt("Prescription - lists the prescriptions of the current patient");?>.</p>
 
                     <p><?php echo xlt("Tracks - if the Track Anything feature is enabled it will display a list of values that can be tracked and graphed");?>
-                        <a href="https://www.open-emr.org/wiki/index.php/Track_Anything_Form" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/Track_Anything_Form" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     .</p>
                 </div>
             </div>

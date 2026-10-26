@@ -2,22 +2,22 @@
 
 /**
  *
- *  package   OpenEMR
- *  link      http://www.open-emr.org
+ *  package   DCL
+ *  link      http://www.dcl.org
  *  author    Sherwin Gaddis <sherwingaddis@gmail.com>
  *  author    Jerry Padgett <sjpadgett@gmail.com>
  *  copyright Copyright (c )2021. Sherwin Gaddis <sherwingaddis@gmail.com>
  *  copyright Copyright (c) 2023 Jerry Padgett <sjpadgett@gmail.com>
- *  license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ *  license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 
 require_once dirname(__FILE__, 4) . '/globals.php';
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 $module_config = 1;
 

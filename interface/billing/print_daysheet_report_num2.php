@@ -6,11 +6,11 @@
  * Program for Generating an End of Day report
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2014 Terry Hill <terry@lillysystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /* TODO: Code Cleanup */
@@ -18,11 +18,11 @@
 
 require_once("../globals.php");
 
-use OpenEMR\Billing\BillingReport;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Billing\BillingReport;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 
 //ensure user has proper access

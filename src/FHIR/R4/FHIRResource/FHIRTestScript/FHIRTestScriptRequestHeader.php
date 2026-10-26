@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,13 +71,13 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * The HTTP header field e.g. "Accept".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $field = null;
 
     /**
      * The value of the header e.g. "application/fhir+xml".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
@@ -88,7 +88,7 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The HTTP header field e.g. "Accept".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getField()
     {
@@ -97,7 +97,7 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The HTTP header field e.g. "Accept".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $field
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $field
      * @return $this
      */
     public function setField($field)
@@ -108,7 +108,7 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The value of the header e.g. "application/fhir+xml".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -117,7 +117,7 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The value of the header e.g. "application/fhir+xml".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)

@@ -3,13 +3,13 @@
 /**
  * edih_csv_inc.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kevin McCormick Longview, Texas
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2012 Kevin McCormick Longview, Texas
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -53,7 +53,7 @@
  * </pre>
  *
  *  Key usability issue is the "new" files are in the users home directory -- downloaded there
- *   while the OpenEMR is on the server -- so there is a basic issue of access to the files
+ *   while the DCL is on the server -- so there is a basic issue of access to the files
  *
  *  The ibr_uploads.php script handles uploads of zip archives or multiple file uploads
  *
@@ -66,7 +66,7 @@
  * TO_DO functions to zip old files, put them aside, and remove them from csv tables
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * Constant that is checked in included files to prevent direct access.
@@ -328,13 +328,13 @@ function csv_notes_file($content = '', $open = true): string
  */
 function csv_edih_basedir()
 {
-    // should be something like /var/www/htdocs/openemr/sites/default
+    // should be something like /var/www/htdocs/DCL/sites/default
     if (OEGlobalsBag::getInstance()->has('OE_SITE_DIR')) {
         // debug
         //echo 'csv_edih_basedir OE_SITE_DIR '.$GLOBALS['OE_SITE_DIR'].'<br />'.PHP_EOL;
         return OEGlobalsBag::getInstance()->get('OE_SITE_DIR') . DS . 'documents' . DS . 'edi' . DS . 'history';
     } else {
-        csv_edihist_log('csv_edih_basedir: failed to obtain OpenEMR Site directory');
+        csv_edihist_log('csv_edih_basedir: failed to obtain DCL Site directory');
         return false;
     }
 }
@@ -384,7 +384,7 @@ function csv_setup()
     $isOK = false;
     $out_str = '';
     $chr = 0;
-    // $GLOBALS['OE_SITE_DIR'] should be like /var/www/htdocs/openemr/sites/default
+    // $GLOBALS['OE_SITE_DIR'] should be like /var/www/htdocs/DCL/sites/default
     $sitedir = OEGlobalsBag::getInstance()->get('OE_SITE_DIR');
     //$sitedir = csv_edih_basedir();
     //
@@ -396,8 +396,8 @@ function csv_setup()
         $log_dir = $edihist_dir . DS . 'log';
         $tmp_dir = $edihist_dir . DS . 'tmp';
     } else {
-       //csv_edihist_log('setup: failed to obtain OpenEMR Site directory');
-        echo 'setup: failed to obtain OpenEMR Site directory<br />' . PHP_EOL;
+       //csv_edihist_log('setup: failed to obtain DCL Site directory');
+        echo 'setup: failed to obtain DCL Site directory<br />' . PHP_EOL;
         return false;
     }
 
@@ -717,7 +717,7 @@ function csv_file_type(string $type, bool $gs_code = false): string
 function csv_parameters($type = 'ALL'): array
 {
     //
-    // This will need the OpenEMR 'oe_site_dir' to replace global
+    // This will need the DCL 'oe_site_dir' to replace global
     //
     $p_ar = [];
 
@@ -730,8 +730,8 @@ function csv_parameters($type = 'ALL'): array
     //$edihist_dir = $GLOBALS['OE_SITE_DIR'].'/documents/edi/history';
     $edihist_dir = csv_edih_basedir();
     //
-    // the batch file directory is a special case - decide whether to use OpenEMR batch files or make our own copies
-    // OpenEMR copies each batch file to sites/default/documents/edi and this project never writes to that directory
+    // the batch file directory is a special case - decide whether to use DCL batch files or make our own copies
+    // DCL copies each batch file to sites/default/documents/edi and this project never writes to that directory
     // batch reg ex -- '/20[01][0-9]-[01][0-9]-[0-3][0-9]-[0-9]{4}-batch*\.txt/' '/\d{4}-\d{2}-\d{2}-batch*\.txt$/'
     //
     $p_ar['f837'] = ['type' => 'f837', 'directory' => OEGlobalsBag::getInstance()->get('OE_SITE_DIR') . DS . 'documents' . DS . 'edi', 'claims_csv' => $edihist_dir . DS . 'csv' . DS . 'claims_f837.csv',
@@ -751,7 +751,7 @@ function csv_parameters($type = 'ALL'): array
                         'files_csv' => $edihist_dir . DS . 'csv' . DS . 'files_f271.csv', 'filedate' => 'Date', 'claimdate' => 'RspDate', 'regex' => '/\.271([ei]br)?$/i'];
     $p_ar['f278'] = ['type' => 'f278', 'directory' => $edihist_dir . DS . 'f278', 'claims_csv' => $edihist_dir . DS . 'csv' . DS . 'claims_f278.csv',
                         'files_csv' => $edihist_dir . DS . 'csv' . DS . 'files_f278.csv', 'filedate' => 'Date', 'claimdate' => 'FileDate', 'regex' => '/\.278/'];
-    // OpenEMR stores era files, but the naming scheme is confusing, so we will just use our own directory for them
+    // DCL stores era files, but the naming scheme is confusing, so we will just use our own directory for them
     $p_ar['f835'] = ['type' => 'f835', 'directory' => $edihist_dir . DS . 'f835', 'claims_csv' => $edihist_dir . DS . 'csv' . DS . 'claims_f835.csv',
                         'files_csv' => $edihist_dir . DS . 'csv' . DS . 'files_f835.csv', 'filedate' => 'Date', 'claimdate' => 'SvcDate', 'regex' => '/835[0-9]{5}\.835*|\.(era|ERA|835)$/i'];
     //
@@ -1069,8 +1069,8 @@ function edih_format_telephone($str_val)
 function edih_format_date($str_val, $pref = "Y-m-d"): string
 {
     // Backfill: the canonical implementation lives in the autoloadable
-    // OpenEMR\Billing\EdiHistory\EdiFormat so namespaced code can reuse it.
-    return \OpenEMR\Billing\EdiHistory\EdiFormat::date((string) $str_val, (string) $pref);
+    // DCL\Billing\EdiHistory\EdiFormat so namespaced code can reuse it.
+    return \DCL\Billing\EdiHistory\EdiFormat::date((string) $str_val, (string) $pref);
 }
 
 /**
@@ -1083,8 +1083,8 @@ function edih_format_date($str_val, $pref = "Y-m-d"): string
 function edih_format_money($str_val): string
 {
     // Backfill: the canonical implementation lives in the autoloadable
-    // OpenEMR\Billing\EdiHistory\EdiFormat so namespaced code can reuse it.
-    return \OpenEMR\Billing\EdiHistory\EdiFormat::money((string) $str_val);
+    // DCL\Billing\EdiHistory\EdiFormat so namespaced code can reuse it.
+    return \DCL\Billing\EdiHistory\EdiFormat::money((string) $str_val);
 }
 
 /**
@@ -1097,8 +1097,8 @@ function edih_format_money($str_val): string
 function edih_format_percent($str_val): string
 {
     // Backfill: the canonical implementation lives in the autoloadable
-    // OpenEMR\Billing\EdiHistory\EdiFormat so namespaced code can reuse it.
-    return \OpenEMR\Billing\EdiHistory\EdiFormat::percent((string) $str_val);
+    // DCL\Billing\EdiHistory\EdiFormat so namespaced code can reuse it.
+    return \DCL\Billing\EdiHistory\EdiFormat::percent((string) $str_val);
 }
 
 /**
@@ -1593,7 +1593,7 @@ function csv_file_by_enctr($clm01, $filetype = 'f837')
         return 'unable to determine encounter value ' . text($clm01) . '<br />' . PHP_EOL;
     }
 
-    // OpenEMR creates CLM01 as nnn-nnn in genX12 batch
+    // DCL creates CLM01 as nnn-nnn in genX12 batch
     //$pm = preg_match('/\D/', $enctr, $match2, PREG_OFFSET_CAPTURE);
     $val = [];
     //array_combine ( array $keys , array $values )
@@ -1847,7 +1847,7 @@ function csv_denied_by_file($filetype, $filename, $trace = ''): array
 /**
 * A function to try and assure the pid-encounter is correctly parsed
 *
-* assume a format of pid-encounter, since that is sent in the OpenEMR x12 837
+* assume a format of pid-encounter, since that is sent in the DCL x12 837
 *
 * @param string $pid_enctr   the value from element CLM01
 * return array               array('pid' => $pid, 'enctr' => $enc)

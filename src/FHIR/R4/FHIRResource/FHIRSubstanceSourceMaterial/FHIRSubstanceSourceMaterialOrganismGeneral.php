@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical origins as well as the fraction of a material that can result in or can be modified to form a substance. This set of data elements shall be used to define polymer substances isolated from biological matrices. Taxonomic and anatomical origins shall be described using a controlled vocabulary as required. This information is captured for naturally derived polymers ( . starch) and structurally diverse substances. For Organisms belonging to the Kingdom Plantae the Substance level defines the fresh material of a single species or infraspecies, the Herbal Drug and the Herbal preparation. For Herbal preparations, the fraction information will be captured at the Substance information level and additional information for herbal extracts will be captured at the Specified Substance Group 1 information level. See for further explanation the Substance Class: Structurally Diverse and the herbal annex.
@@ -71,25 +71,25 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 {
     /**
      * The kingdom of an organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $kingdom = null;
 
     /**
      * The phylum of an organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $phylum = null;
 
     /**
      * The class of an organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $class = null;
 
     /**
      * The order of an organism shall be specified,.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $order = null;
 
@@ -100,7 +100,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The kingdom of an organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getKingdom()
     {
@@ -109,7 +109,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The kingdom of an organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $kingdom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $kingdom
      * @return $this
      */
     public function setKingdom($kingdom)
@@ -120,7 +120,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The phylum of an organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPhylum()
     {
@@ -129,7 +129,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The phylum of an organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $phylum
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $phylum
      * @return $this
      */
     public function setPhylum($phylum)
@@ -140,7 +140,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The class of an organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getClass()
     {
@@ -149,7 +149,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The class of an organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $class
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $class
      * @return $this
      */
     public function setClass($class)
@@ -160,7 +160,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The order of an organism shall be specified,.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOrder()
     {
@@ -169,7 +169,7 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement imp
 
     /**
      * The order of an organism shall be specified,.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $order
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $order
      * @return $this
      */
     public function setOrder($order)

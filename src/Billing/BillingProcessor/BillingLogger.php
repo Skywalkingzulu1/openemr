@@ -13,8 +13,8 @@
  * At the end of the billing process, the BillingLogger instance is
  * returned to billing_process.php to write any log messages to the screen.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ken Chapple <ken@mi-squared.com>
  * @author    Daniel Pflieger <daniel@growlingflea.com>
@@ -27,17 +27,17 @@
  * @copyright Copyright (c) 2016 Terry Hill <terry@lillysystems.com>
  * @copyright Copyright (c) 2017-2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018-2020 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing\BillingProcessor;
+namespace DCL\Billing\BillingProcessor;
 
 use League\Flysystem\FilesystemOperator;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Storage\Location;
-use OpenEMR\Services\Storage\ManagerInterface;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Storage\Location;
+use DCL\Services\Storage\ManagerInterface;
 
 class BillingLogger
 {

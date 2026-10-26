@@ -1,8 +1,8 @@
 <?php
 
-use OpenEMR\Common\Calendar\DayOfWeek;
-use OpenEMR\Common\Calendar\Month;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Calendar\DayOfWeek;
+use DCL\Common\Calendar\Month;
+use DCL\Common\Session\SessionWrapperFactory;
 
 /**
  * Format a date string according to the user's language preference.

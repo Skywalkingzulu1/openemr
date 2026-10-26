@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,37 +71,37 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 {
     /**
      * For version-less code systems, there should be a single version with no identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $code = null;
 
     /**
      * If this is the default version for this code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $isDefault = null;
 
     /**
      * If the compositional grammar defined by the code system is supported.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $compositional = null;
 
     /**
      * Language Displays supported.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $language = [];
 
     /**
      * Filter Properties supported.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter[]
      */
     public $filter = [];
 
     /**
      * Properties supported for $lookup.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $property = [];
 
@@ -112,7 +112,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * For version-less code systems, there should be a single version with no identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCode()
     {
@@ -121,7 +121,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * For version-less code systems, there should be a single version with no identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $code
      * @return $this
      */
     public function setCode($code)
@@ -132,7 +132,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * If this is the default version for this code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getIsDefault()
     {
@@ -141,7 +141,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * If this is the default version for this code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $isDefault
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $isDefault
      * @return $this
      */
     public function setIsDefault($isDefault)
@@ -152,7 +152,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * If the compositional grammar defined by the code system is supported.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getCompositional()
     {
@@ -161,7 +161,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * If the compositional grammar defined by the code system is supported.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $compositional
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $compositional
      * @return $this
      */
     public function setCompositional($compositional)
@@ -172,7 +172,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * Language Displays supported.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getLanguage()
     {
@@ -181,7 +181,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * Language Displays supported.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $language
      * @return $this
      */
     public function addLanguage($language)
@@ -192,7 +192,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * Filter Properties supported.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter[]
      */
     public function getFilter()
     {
@@ -201,7 +201,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * Filter Properties supported.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter $filter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter $filter
      * @return $this
      */
     public function addFilter($filter)
@@ -212,7 +212,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * Properties supported for $lookup.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getProperty()
     {
@@ -221,7 +221,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement implements 
 
     /**
      * Properties supported for $lookup.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $property
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $property
      * @return $this
      */
     public function addProperty($property)

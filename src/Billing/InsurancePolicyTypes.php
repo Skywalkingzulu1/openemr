@@ -1,18 +1,18 @@
 <?php
 
 /**
- * OpenEMR Insurance Policy Types - OpenEMR specific insurance policy types.
+ * DCL Insurance Policy Types - DCL specific insurance policy types.
  * This class provides a list of insurance policy types that are used in the 837p standard.
  * The list is hard-coded because its values and meanings are fixed by the 837p standard and we don't want people messing with them.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
 class InsurancePolicyTypes
 {

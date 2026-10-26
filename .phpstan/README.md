@@ -1,6 +1,6 @@
-# PHPStan Custom Rules for OpenEMR
+# PHPStan Custom Rules for DCL
 
-This directory contains custom PHPStan rules to enforce modern coding patterns in OpenEMR.
+This directory contains custom PHPStan rules to enforce modern coding patterns in DCL.
 
 ## Rules
 
@@ -32,13 +32,13 @@ $value = $GLOBALS['some_setting'];
 
 **After (✅ Recommended):**
 ```php
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 $globals = OEGlobalsBag::getInstance();
 $value = $globals->get('some_setting');
 
 // Note: For encrypted values, you still need CryptoGen:
-use OpenEMR\Common\Crypto\CryptoGen;
+use DCL\Common\Crypto\CryptoGen;
 
 $cryptoGen = new CryptoGen();
 $apiKey = $cryptoGen->decryptStandard($globals->get('gateway_api_key'));
@@ -49,7 +49,7 @@ $apiKey = $cryptoGen->decryptStandard($globals->get('gateway_api_key'));
 **Purpose:** Prevents use of legacy functions:
 - Legacy `sql.inc.php` functions in the `src/` directory
 - `call_user_func()` and `call_user_func_array()` functions (use modern PHP syntax instead)
-- `error_log()` function (use `Psr\Log\LoggerInterface` instead, through OpenEMR\BC\ServiceContainer::getLogger() if needed)
+- `error_log()` function (use `Psr\Log\LoggerInterface` instead, through DCL\BC\ServiceContainer::getLogger() if needed)
 
 **Rationale for SQL functions:** Contributors should use `QueryUtils` or `DatabaseQueryTrait` instead for modern database patterns.
 
@@ -104,7 +104,7 @@ error_log("User {$userId} logged in");
 
 **After (✅ Recommended):**
 ```php
-use OpenEMR\BC\ServiceContainer();
+use DCL\BC\ServiceContainer();
 
 $logger = ServiceContainer::getLogger();
 $logger->error("Something went wrong", ['error' => $error]);
@@ -128,13 +128,13 @@ $logger->info("User logged in", ['userId' => $userId]);
 use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
- * @covers \OpenEMR\Services\SomeService
+ * @covers \DCL\Services\SomeService
  */
 #[CoversClass(SomeService::class)]
 class SomeServiceTest extends TestCase
 {
     /**
-     * @covers \OpenEMR\Services\SomeService::someMethod
+     * @covers \DCL\Services\SomeService::someMethod
      */
     public function testSomeMethod(): void
     {
@@ -253,9 +253,9 @@ try {
 }
 ```
 
-**Or using OpenEMR's oeHttp wrapper:**
+**Or using DCL's oeHttp wrapper:**
 ```php
-use OpenEMR\Common\Http\oeHttp;
+use DCL\Common\Http\oeHttp;
 
 $response = oeHttp::get('https://api.example.com/data', [
     'headers' => [
@@ -305,7 +305,7 @@ If you regenerate the baseline and a count changes:
 - **Count went down** — lower the cap in `fatal-baseline-caps.php` to match.
 - **Count went up** — fix the underlying code instead of raising the cap. Each entry resolves to one of four fixes: delete dead code, wrap optional code in `class_exists()` / `function_exists()` / `defined()`, add a PHPStan stub, or install the missing dependency.
 
-See openemr/openemr#11792 for the plan to drive every cap to zero.
+See DCL/DCL#11792 for the plan to drive every cap to zero.
 
 ## Running PHPStan
 

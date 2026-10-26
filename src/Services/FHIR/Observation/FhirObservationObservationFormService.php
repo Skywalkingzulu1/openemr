@@ -2,31 +2,31 @@
 
 /*
  * FhirObservationObservationFormService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Observation\Trait\FhirObservationTrait;
-use OpenEMR\Services\ObservationService;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Observation\Trait\FhirObservationTrait;
+use DCL\Services\ObservationService;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationObservationFormService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
 {
@@ -56,7 +56,7 @@ class FhirObservationObservationFormService extends FhirServiceBase implements I
 
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      * @return array<string, FhirSearchParameterDefinition>
      */
     protected function loadSearchParameters(): array
@@ -102,19 +102,19 @@ class FhirObservationObservationFormService extends FhirServiceBase implements I
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (isset($openEMRSearchParameters['ob_code'])) {
+        if (isset($DCLSearchParameters['ob_code'])) {
             // need to loop through and grab all of our systems that we support for observation codes
             // if there is a SNOMED system then we need to handle that differently since we store the system separately
             /**
              * @var TokenSearchField $codeSearchField
              */
-            $codeSearchField = $openEMRSearchParameters['ob_code'];
+            $codeSearchField = $DCLSearchParameters['ob_code'];
             // this isn't ideal, but we have much more complex logic here since observation codes can come from multiple code systems
             // we need to break them down by system and then build a compound search field that includes code + code type for each system
             $compoundObCode = new CompositeSearchField('ob_code', [], false);
@@ -138,17 +138,17 @@ class FhirObservationObservationFormService extends FhirServiceBase implements I
                     $compoundObCode->addChild(new TokenSearchField('ob_code', [$codeSearchFieldValue->getCode()]));
                 }
             }
-            $openEMRSearchParameters['ob_code'] = $compoundObCode;
+            $DCLSearchParameters['ob_code'] = $compoundObCode;
         }
         // we grab the records and grab any children records and populate them if we have them.
-        return $this->observationService->searchAndPopulateChildObservations($openEMRSearchParameters);
+        return $this->observationService->searchAndPopulateChildObservations($DCLSearchParameters);
     }
 
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
     {
         // convert fields in the data array to the format that FhirObservationTrait expects
         $dataRecord['last_updated_time'] = $dataRecord['date'];
-        return $this->parseObservationOpenEMRRecord($dataRecord, $encode);
+        return $this->parseObservationDCLRecord($dataRecord, $encode);
     }
 
     /**

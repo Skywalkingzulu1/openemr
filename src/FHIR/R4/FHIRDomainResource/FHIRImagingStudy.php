@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
@@ -72,121 +72,121 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession Number.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The current state of the ImagingStudy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRImagingStudyStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRImagingStudyStatus
      */
     public $status = null;
 
     /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $modality = [];
 
     /**
      * The subject, typically a patient, of the imaging study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The healthcare event (e.g. a patient and healthcare provider interaction) during which this ImagingStudy is made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * Date and time the study started.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $started = null;
 
     /**
      * A list of the diagnostic requests that resulted in this imaging study being performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * The requesting/referring physician.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $referrer = null;
 
     /**
      * Who read the study and interpreted the images or other content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $interpreter = [];
 
     /**
      * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.connectionType.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
     /**
      * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $numberOfSeries = null;
 
     /**
      * Number of SOP Instances in Study. This value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $numberOfInstances = null;
 
     /**
      * The procedure which this ImagingStudy was part of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $procedureReference = null;
 
     /**
      * The code for the performed procedure type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $procedureCode = [];
 
     /**
      * The principal physical location where the ImagingStudy was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * Description of clinical condition indicating why the ImagingStudy was requested.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates another resource whose existence justifies this Study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Each study has one or more series of images or other content.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries[]
      */
     public $series = [];
 
@@ -197,7 +197,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession Number.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -206,7 +206,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID, and Accession Number.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -217,7 +217,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the ImagingStudy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRImagingStudyStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRImagingStudyStatus
      */
     public function getStatus()
     {
@@ -226,7 +226,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the ImagingStudy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRImagingStudyStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRImagingStudyStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -237,7 +237,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getModality()
     {
@@ -246,7 +246,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $modality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $modality
      * @return $this
      */
     public function addModality($modality)
@@ -257,7 +257,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The subject, typically a patient, of the imaging study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -266,7 +266,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The subject, typically a patient, of the imaging study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -277,7 +277,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The healthcare event (e.g. a patient and healthcare provider interaction) during which this ImagingStudy is made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -286,7 +286,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The healthcare event (e.g. a patient and healthcare provider interaction) during which this ImagingStudy is made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -297,7 +297,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date and time the study started.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getStarted()
     {
@@ -306,7 +306,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date and time the study started.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $started
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $started
      * @return $this
      */
     public function setStarted($started)
@@ -317,7 +317,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of the diagnostic requests that resulted in this imaging study being performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -326,7 +326,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of the diagnostic requests that resulted in this imaging study being performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -337,7 +337,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The requesting/referring physician.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReferrer()
     {
@@ -346,7 +346,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The requesting/referring physician.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $referrer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $referrer
      * @return $this
      */
     public function setReferrer($referrer)
@@ -357,7 +357,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who read the study and interpreted the images or other content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getInterpreter()
     {
@@ -366,7 +366,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who read the study and interpreted the images or other content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $interpreter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $interpreter
      * @return $this
      */
     public function addInterpreter($interpreter)
@@ -377,7 +377,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.connectionType.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -386,7 +386,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The network service providing access (e.g., query, view, or retrieval) for the study. See implementation notes for information about using DICOM endpoints. A study-level endpoint applies to each series in the study, unless overridden by a series-level endpoint with the same Endpoint.connectionType.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)
@@ -397,7 +397,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfSeries()
     {
@@ -406,7 +406,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfSeries
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfSeries
      * @return $this
      */
     public function setNumberOfSeries($numberOfSeries)
@@ -417,7 +417,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Number of SOP Instances in Study. This value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfInstances()
     {
@@ -426,7 +426,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Number of SOP Instances in Study. This value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfInstances
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $numberOfInstances
      * @return $this
      */
     public function setNumberOfInstances($numberOfInstances)
@@ -437,7 +437,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The procedure which this ImagingStudy was part of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProcedureReference()
     {
@@ -446,7 +446,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The procedure which this ImagingStudy was part of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $procedureReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $procedureReference
      * @return $this
      */
     public function setProcedureReference($procedureReference)
@@ -457,7 +457,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The code for the performed procedure type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getProcedureCode()
     {
@@ -466,7 +466,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The code for the performed procedure type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedureCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $procedureCode
      * @return $this
      */
     public function addProcedureCode($procedureCode)
@@ -477,7 +477,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The principal physical location where the ImagingStudy was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -486,7 +486,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The principal physical location where the ImagingStudy was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -497,7 +497,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Description of clinical condition indicating why the ImagingStudy was requested.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -506,7 +506,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Description of clinical condition indicating why the ImagingStudy was requested.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -517,7 +517,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource whose existence justifies this Study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -526,7 +526,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource whose existence justifies this Study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -537,7 +537,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -546,7 +546,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -557,7 +557,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -566,7 +566,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -577,7 +577,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Each study has one or more series of images or other content.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries[]
      */
     public function getSeries()
     {
@@ -586,7 +586,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Each study has one or more series of images or other content.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries $series
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries $series
      * @return $this
      */
     public function addSeries($series)

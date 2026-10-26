@@ -4,11 +4,11 @@
  * This file contains functions that manage custom user
  * settings
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2010-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../interface/globals.php");
@@ -16,8 +16,8 @@ require_once(__DIR__ . "/../../interface/globals.php");
 // auto-included by interface/globals.php, so pull it in explicitly here.
 require_once(__DIR__ . "/../globals.inc.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 use Symfony\Component\HttpFoundation\Response;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();

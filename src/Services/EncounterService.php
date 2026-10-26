@@ -3,38 +3,38 @@
 /**
  * EncounterService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2018 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\{
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\{
     DateSearchField,
     FhirSearchWhereClauseBuilder,
     SearchFieldException,
     TokenSearchField,
     TokenSearchValue
 };
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\Traits\ServiceEventTrait;
-use OpenEMR\Validators\EncounterValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\Traits\ServiceEventTrait;
+use DCL\Validators\EncounterValidator;
+use DCL\Validators\ProcessingResult;
 use Particle\Validator\Validator;
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 
 class EncounterService extends BaseService
 {
@@ -294,7 +294,7 @@ class EncounterService extends BaseService
                                last_update
                            FROM form_encounter
                        ) fe
-                       LEFT JOIN openemr_postcalendar_categories as opc
+                       LEFT JOIN DCL_postcalendar_categories as opc
                        ON opc.pc_catid = fe.pc_catid
                        LEFT JOIN list_options as class ON class.option_id = fe.class_code
                        LEFT JOIN (

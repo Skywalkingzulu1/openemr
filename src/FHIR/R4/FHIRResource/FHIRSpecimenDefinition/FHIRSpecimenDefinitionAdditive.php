@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A kind of specimen with associated set of requirements.
@@ -70,12 +70,12 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $additiveCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $additiveReference = null;
 
@@ -85,7 +85,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement implements \Jso
     private $_fhirElementName = 'SpecimenDefinition.Additive';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAdditiveCodeableConcept()
     {
@@ -93,7 +93,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $additiveCodeableConcept
      * @return $this
      */
     public function setAdditiveCodeableConcept($additiveCodeableConcept)
@@ -103,7 +103,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAdditiveReference()
     {
@@ -111,7 +111,7 @@ class FHIRSpecimenDefinitionAdditive extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $additiveReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $additiveReference
      * @return $this
      */
     public function setAdditiveReference($additiveReference)

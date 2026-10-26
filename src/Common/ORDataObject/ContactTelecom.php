@@ -3,19 +3,19 @@
 /**
  * ContactTelecom Data Object
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\ORDataObject;
+namespace DCL\Common\ORDataObject;
 
 use DateTime;
-use OpenEMR\Common\ORDataObject\Contact;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\ORDataObject\Contact;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\Utils\DateFormatterUtils;
 
 class ContactTelecom extends ORDataObject implements \JsonSerializable
 {

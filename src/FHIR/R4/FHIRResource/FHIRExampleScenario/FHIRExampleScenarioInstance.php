@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,37 +71,37 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * The id of the resource for referencing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $resourceId = null;
 
     /**
      * The type of the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRResourceType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRResourceType
      */
     public $resourceType = null;
 
     /**
      * A short name for the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Human-friendly description of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * A specific version of the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioVersion[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioVersion[]
      */
     public $version = [];
 
     /**
      * Resources contained in the instance (e.g. the observations contained in a bundle).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance[]
      */
     public $containedInstance = [];
 
@@ -112,7 +112,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The id of the resource for referencing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getResourceId()
     {
@@ -121,7 +121,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The id of the resource for referencing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $resourceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $resourceId
      * @return $this
      */
     public function setResourceId($resourceId)
@@ -132,7 +132,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The type of the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRResourceType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRResourceType
      */
     public function getResourceType()
     {
@@ -141,7 +141,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The type of the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRResourceType $resourceType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRResourceType $resourceType
      * @return $this
      */
     public function setResourceType($resourceType)
@@ -152,7 +152,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A short name for the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -161,7 +161,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A short name for the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -172,7 +172,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Human-friendly description of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -181,7 +181,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Human-friendly description of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -192,7 +192,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A specific version of the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioVersion[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioVersion[]
      */
     public function getVersion()
     {
@@ -201,7 +201,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A specific version of the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioVersion $version
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioVersion $version
      * @return $this
      */
     public function addVersion($version)
@@ -212,7 +212,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Resources contained in the instance (e.g. the observations contained in a bundle).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance[]
      */
     public function getContainedInstance()
     {
@@ -221,7 +221,7 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Resources contained in the instance (e.g. the observations contained in a bundle).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $containedInstance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $containedInstance
      * @return $this
      */
     public function addContainedInstance($containedInstance)

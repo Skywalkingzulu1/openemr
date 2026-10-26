@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,13 +71,13 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement implem
 {
     /**
      * The mode of this event declaration - whether application is sender or receiver.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREventCapabilityMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREventCapabilityMode
      */
     public $mode = null;
 
     /**
      * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $definition = null;
 
@@ -88,7 +88,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement implem
 
     /**
      * The mode of this event declaration - whether application is sender or receiver.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREventCapabilityMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREventCapabilityMode
      */
     public function getMode()
     {
@@ -97,7 +97,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement implem
 
     /**
      * The mode of this event declaration - whether application is sender or receiver.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREventCapabilityMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREventCapabilityMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -108,7 +108,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement implem
 
     /**
      * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefinition()
     {
@@ -117,7 +117,7 @@ class FHIRCapabilityStatementSupportedMessage extends FHIRBackboneElement implem
 
     /**
      * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definition
      * @return $this
      */
     public function setDefinition($definition)

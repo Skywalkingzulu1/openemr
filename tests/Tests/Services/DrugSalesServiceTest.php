@@ -9,17 +9,17 @@
  * These tests prove the value is now bound as a parameter and can no longer
  * break out of the SQL statement.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\DrugSalesService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\DrugSalesService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

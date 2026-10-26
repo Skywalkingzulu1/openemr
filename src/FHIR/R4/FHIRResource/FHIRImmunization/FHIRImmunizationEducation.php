@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImmunization;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
@@ -71,25 +71,25 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Identifier of the material presented to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentType = null;
 
     /**
      * Reference pointer to the educational material given to the patient if the information was on line.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $reference = null;
 
     /**
      * Date the educational material was published.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $publicationDate = null;
 
     /**
      * Date the educational material was given to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $presentationDate = null;
 
@@ -100,7 +100,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Identifier of the material presented to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentType()
     {
@@ -109,7 +109,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Identifier of the material presented to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentType
      * @return $this
      */
     public function setDocumentType($documentType)
@@ -120,7 +120,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Reference pointer to the educational material given to the patient if the information was on line.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getReference()
     {
@@ -129,7 +129,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Reference pointer to the educational material given to the patient if the information was on line.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $reference
      * @return $this
      */
     public function setReference($reference)
@@ -140,7 +140,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Date the educational material was published.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getPublicationDate()
     {
@@ -149,7 +149,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Date the educational material was published.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $publicationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $publicationDate
      * @return $this
      */
     public function setPublicationDate($publicationDate)
@@ -160,7 +160,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Date the educational material was given to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getPresentationDate()
     {
@@ -169,7 +169,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Date the educational material was given to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $presentationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $presentationDate
      * @return $this
      */
     public function setPresentationDate($presentationDate)

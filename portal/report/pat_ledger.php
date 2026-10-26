@@ -4,8 +4,8 @@
  * This is a report to create a Patient Billing Summary of charges with payments
  * applied.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    WMT
  * @author    Terry Hill <terry@lillysystems.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -13,11 +13,11 @@
  * @copyright Copyright (c) 2015 Rich Genandt <rgenandt@gmail.com>
  * @copyright Copyright (C) 2016-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 require_once("./../verify_session.php");
 $ignoreAuth_onsite_portal = true;

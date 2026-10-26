@@ -19,18 +19,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  EMR Direct <https://www.emrdirect.com/>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 require_once(__DIR__ . "/documents.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\Sanitize\IsAcceptedFileFilterEvent;
-use OpenEMR\Services\VersionService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\Sanitize\IsAcceptedFileFilterEvent;
+use DCL\Services\VersionService;
 
 /**
  * Connect to a phiMail Direct Messaging server
@@ -639,7 +639,7 @@ function phimail_store($name, $mime_type, $fn)
         }
     } catch (\Throwable $exception) {
         ServiceContainer::getLogger()->error($exception->getMessage(), ['exception' => $exception, 'name' => $name, 'mime_type' => $mime_type, 'fn' => $fn]);
-        phimail_logit(0, "problem storing attachment in OpenEMR");
+        phimail_logit(0, "problem storing attachment in DCL");
         $return = false;
     } finally {
         $phimail_direct_message_check_allowed_mimetype = null;

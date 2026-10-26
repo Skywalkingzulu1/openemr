@@ -23,18 +23,18 @@
  * - Setting cache-disable headers when the result says to.
  * - Sending the HTTP redirect.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Controllers\Portal;
+namespace DCL\Controllers\Portal;
 
-use OpenEMR\Common\Auth\AuthHash;
-use OpenEMR\Core\ModulesApplication;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Auth\AuthHash;
+use DCL\Core\ModulesApplication;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * @phpstan-import-type PatientAccessOnsiteRow from PortalLoginCredentialsRepository
@@ -63,7 +63,7 @@ class PatientPortalLoginController
      * @param array<string, mixed>  $post        The raw `$_POST` superglobal contents.
      * @param array<string, mixed>  $request     The raw `$_REQUEST` superglobal contents.
      * @param PortalSessionAccessor $session     Read/write accessor for the portal session.
-     * @param OEGlobalsBag          $globalsBag  Access to OpenEMR globals (e.g. enforce_signin_email).
+     * @param OEGlobalsBag          $globalsBag  Access to DCL globals (e.g. enforce_signin_email).
      */
     public function login(
         string $siteIdHint,
@@ -170,7 +170,7 @@ class PatientPortalLoginController
             if ($codeNew !== null && $codeNewConfirm !== null && hash_equals($codeNewConfirm, $codeNew)) {
                 $newHash = $this->passwordHasher->hash($codeNew);
                 if ($newHash === false || $newHash === '') {
-                    throw new \RuntimeException('OpenEMR is not working because unable to create a hash.');
+                    throw new \RuntimeException('DCL is not working because unable to create a hash.');
                 }
                 // The legacy script reads $_POST['login_uname'] without an empty() check,
                 // so '0' is a valid login username here. Narrow with is_string only — no
@@ -318,7 +318,7 @@ class PatientPortalLoginController
         if ($authHashPortal->passwordNeedsRehash($auth['portal_pwd'])) {
             $reHash = $this->passwordHasher->hash($plain);
             if ($reHash === false || $reHash === '') {
-                throw new \RuntimeException('OpenEMR is not working because unable to create a hash.');
+                throw new \RuntimeException('DCL is not working because unable to create a hash.');
             }
             $this->repository->updatePasswordHash($auth['id'], $reHash);
         }

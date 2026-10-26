@@ -1,4 +1,4 @@
-# BATS tests for OpenEMR Docker release bash scripts
+# BATS tests for DCL Docker release bash scripts
 
 load '../helpers'
 
@@ -11,26 +11,26 @@ setup() {
     [[ -d "$SCRIPT_DIR" ]]
 }
 
-@test "openemr.sh exists and has valid syntax" {
-    assert_script_syntax "${SCRIPT_DIR}/openemr.sh"
+@test "DCL.sh exists and has valid syntax" {
+    assert_script_syntax "${SCRIPT_DIR}/DCL.sh"
 }
 
-@test "openemr.sh is executable" {
-    # Without the mode bit, tests that invoke openemr.sh directly get exit 126
+@test "DCL.sh is executable" {
+    # Without the mode bit, tests that invoke DCL.sh directly get exit 126
     # and "Permission denied" instead of running it -- which passes a loose
-    # assertion for entirely the wrong reason. openemr_functional.bats depends
+    # assertion for entirely the wrong reason. DCL_functional.bats depends
     # on this.
-    [[ -x "${SCRIPT_DIR}/openemr.sh" ]]
+    [[ -x "${SCRIPT_DIR}/DCL.sh" ]]
 }
 
-@test "openemr.sh uses bash and sources devtoolsLibrary" {
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'devtoolsLibrary.source'
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'set -euo pipefail'
+@test "DCL.sh uses bash and sources devtoolsLibrary" {
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'devtoolsLibrary.source'
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'set -euo pipefail'
 }
 
-@test "openemr.sh defines OE_ROOT and AUTO_CONFIG" {
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'OE_ROOT='
-    assert_script_contains "${SCRIPT_DIR}/openemr.sh" 'AUTO_CONFIG='
+@test "DCL.sh defines OE_ROOT and AUTO_CONFIG" {
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'OE_ROOT='
+    assert_script_contains "${SCRIPT_DIR}/DCL.sh" 'AUTO_CONFIG='
 }
 
 @test "ssl.sh exists and has valid syntax" {
@@ -68,10 +68,10 @@ setup() {
     done
 }
 
-@test "upgrade scripts have priorOpenemrVersion or echo Start" {
+@test "upgrade scripts have priorDCLVersion or echo Start" {
     # At least one upgrade script should indicate version upgrade
     local found
-    found=$(grep -l 'priorOpenemrVersion\|echo "Start: Upgrade' "${SCRIPT_DIR}"/upgrade/fsupgrade-*.sh 2>/dev/null | head -1)
+    found=$(grep -l 'priorDCLVersion\|echo "Start: Upgrade' "${SCRIPT_DIR}"/upgrade/fsupgrade-*.sh 2>/dev/null | head -1)
     [[ -n "$found" ]]
 }
 

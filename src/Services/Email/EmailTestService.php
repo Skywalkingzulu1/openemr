@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Send test emails via each of OpenEMR's email code paths
+ * Send test emails via each of DCL's email code paths
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Email;
+namespace DCL\Services\Email;
 
 use MyMailer;
 use Psr\Log\LoggerInterface;
@@ -55,7 +55,7 @@ class EmailTestService
             $mailer->setFrom($sender);
             $mailer->addReplyTo($sender);
             $mailer->addAddress($recipient);
-            $mailer->Subject = 'OpenEMR Email Test — Direct Send';
+            $mailer->Subject = 'DCL Email Test — Direct Send';
             $mailer->Body = 'This is a test email sent directly via MyMailer::send().';
             $mailer->isHTML(false);
 
@@ -82,7 +82,7 @@ class EmailTestService
             $queued = MyMailer::emailServiceQueue(
                 $sender,
                 $recipient,
-                'OpenEMR Email Test — Queue',
+                'DCL Email Test — Queue',
                 'This is a test email queued via MyMailer::emailServiceQueue().',
             );
         } catch (\Throwable $e) {
@@ -104,7 +104,7 @@ class EmailTestService
             $queued = MyMailer::emailServiceQueueTemplatedEmail(
                 $sender,
                 $recipient,
-                'OpenEMR Email Test — Queue Templated',
+                'DCL Email Test — Queue Templated',
                 self::QUEUE_TEMPLATE,
                 ['message' => 'This is a test email queued via MyMailer::emailServiceQueueTemplatedEmail().'],
             );

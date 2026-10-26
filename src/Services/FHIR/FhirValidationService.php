@@ -3,17 +3,17 @@
 /**
  * FhirValidationService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 class FhirValidationService
 {
@@ -23,7 +23,7 @@ class FhirValidationService
      * Previously this method built a class name directly from untrusted
      * `$data['resourceType']` and instantiated it — an unsafe-reflection
      * gadget that let a caller force the server to autoload and instantiate
-     * any class matching `OpenEMR\FHIR\R4\FHIRDomainResource\FHIR{type}`,
+     * any class matching `DCL\FHIR\R4\FHIRDomainResource\FHIR{type}`,
      * regardless of which endpoint the request hit. Now:
      *
      *  1. resourceType must match the canonical FHIR token shape
@@ -61,7 +61,7 @@ class FhirValidationService
         if (preg_match('/^[A-Z][A-Za-z0-9]*$/', $resourceType) !== 1) {
             return $this->operationOutcomeResourceService('error', 'invalid', 'Invalid resourceType');
         }
-        $class = 'OpenEMR\\FHIR\\R4\\FHIRDomainResource\\FHIR' . $resourceType;
+        $class = 'DCL\\FHIR\\R4\\FHIRDomainResource\\FHIR' . $resourceType;
         // Do NOT autoload from untrusted input — class must already be loaded.
         if (!class_exists($class, false) && !class_exists($class, true)) {
             // class_exists with autoload re-enabled here is safe because we

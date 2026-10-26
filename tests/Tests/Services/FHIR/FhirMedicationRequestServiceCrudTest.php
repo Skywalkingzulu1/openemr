@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\Services\FHIR\FhirMedicationRequestService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\Services\FHIR\FhirMedicationRequestService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -20,13 +20,13 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR MedicationRequest Service CRUD Tests
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirMedicationRequestServiceCrudTest extends TestCase
 {
@@ -38,7 +38,7 @@ class FhirMedicationRequestServiceCrudTest extends TestCase
 
     protected function setUp(): void
     {
-        // PrescriptionService::insert() applies OpenEMR's per-patient ACL policy, which reads
+        // PrescriptionService::insert() applies DCL's per-patient ACL policy, which reads
         // the caller from the active session. tests/bootstrap.php runs interface/globals.php
         // with $ignoreAuth = true, so no user is authenticated and
         // AclMain::aclCheckCore('patients', 'demo') denies -- the insert then fails with
@@ -172,7 +172,7 @@ class FhirMedicationRequestServiceCrudTest extends TestCase
             "Update should succeed: " . json_encode($actualResult->getValidationMessages())
         );
         $this->assertNotEmpty($actualResult->getData());
-        // FhirServiceBase::update re-parses the updated row through parseOpenEMRRecord,
+        // FhirServiceBase::update re-parses the updated row through parseDCLRecord,
         // so getData()[0] is the FHIRMedicationRequest object (not the column array).
         // populateNote stores the note as a raw string on FHIRAnnotation.text (it doesn't
         // wrap in FHIRMarkdown), so we compare the string directly.

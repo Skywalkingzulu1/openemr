@@ -3,28 +3,28 @@
 /**
  * Log Viewer.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2017-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\KeyVersion;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\KeyVersion;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\DateFormatterUtils;
 
 if (!AclMain::aclCheckCore('admin', 'users')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for admin/users: Logs Viewer", xl("Logs Viewer"));
@@ -182,7 +182,7 @@ if (!empty($_GET)) {
                                         <select name='form_client_id' id='form_client_id' class='form-control'>
                                             <?php
                                             echo " <option value=''>" . xlt('All') . "</option>\n";
-                                            $clientRows = \OpenEMR\Common\Database\QueryUtils::fetchRecords("SELECT `client_id`, `client_name` FROM `oauth_clients` ORDER BY `client_name` ASC");
+                                            $clientRows = \DCL\Common\Database\QueryUtils::fetchRecords("SELECT `client_id`, `client_name` FROM `oauth_clients` ORDER BY `client_name` ASC");
                                             $clientOptionFound = false;
                                             foreach ($clientRows as $clientRow) {
                                                 $optionClientId = is_string($clientRow['client_id'] ?? null) ? $clientRow['client_id'] : '';
@@ -379,7 +379,7 @@ if (!empty($_GET)) {
                                                     }
                                                 } else {
                                                     // base64 decode if applicable (note the $encryptVersion is a misnomer here, we have added in base64 encoding
-                                                    //  of comments in OpenEMR 6.0.0 and greater when the comments are not encrypted since they hold binary (uuid) elements)
+                                                    //  of comments in DCL 6.0.0 and greater when the comments are not encrypted since they hold binary (uuid) elements)
                                                     if ($encryptVersion >= 4) {
                                                         $iter["comments"] = base64_decode(is_string($iter["comments"]) ? $iter["comments"] : '');
                                                     }

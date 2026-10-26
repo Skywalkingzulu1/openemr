@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A collection of documents compiled for a purpose together with metadata that applies to the collection.
@@ -72,73 +72,73 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * A single identifier that uniquely identifies this manifest. Principally used to refer to the manifest in non-FHIR contexts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $masterIdentifier = null;
 
     /**
      * Other identifiers associated with the document manifest, including version independent  identifiers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of this document manifest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
      */
     public $status = null;
 
     /**
      * The code specifying the type of clinical activity that resulted in placing the associated content into the DocumentManifest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * When the document manifest was created for submission to the server (not necessarily the same thing as the actual resource last modified time, since it may be modified, replicated, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * Identifies who is the author of the manifest. Manifest author is not necessarily the author of the references included.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $author = [];
 
     /**
      * A patient, practitioner, or organization for which this set of documents is intended.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $recipient = [];
 
     /**
      * Identifies the source system, application, or software that produced the document manifest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $source = null;
 
     /**
      * Human-readable description of the source document. This is sometimes known as the "title".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The list of Resources that consist of the parts of this manifest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $content = [];
 
     /**
      * Related identifiers or resources associated with the DocumentManifest.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated[]
      */
     public $related = [];
 
@@ -149,7 +149,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A single identifier that uniquely identifies this manifest. Principally used to refer to the manifest in non-FHIR contexts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getMasterIdentifier()
     {
@@ -158,7 +158,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A single identifier that uniquely identifies this manifest. Principally used to refer to the manifest in non-FHIR contexts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $masterIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $masterIdentifier
      * @return $this
      */
     public function setMasterIdentifier($masterIdentifier)
@@ -169,7 +169,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Other identifiers associated with the document manifest, including version independent  identifiers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -178,7 +178,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Other identifiers associated with the document manifest, including version independent  identifiers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -189,7 +189,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of this document manifest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
      */
     public function getStatus()
     {
@@ -198,7 +198,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of this document manifest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -209,7 +209,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The code specifying the type of clinical activity that resulted in placing the associated content into the DocumentManifest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -218,7 +218,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The code specifying the type of clinical activity that resulted in placing the associated content into the DocumentManifest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -229,7 +229,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -238,7 +238,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -249,7 +249,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * When the document manifest was created for submission to the server (not necessarily the same thing as the actual resource last modified time, since it may be modified, replicated, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -258,7 +258,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * When the document manifest was created for submission to the server (not necessarily the same thing as the actual resource last modified time, since it may be modified, replicated, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -269,7 +269,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Identifies who is the author of the manifest. Manifest author is not necessarily the author of the references included.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAuthor()
     {
@@ -278,7 +278,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Identifies who is the author of the manifest. Manifest author is not necessarily the author of the references included.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function addAuthor($author)
@@ -289,7 +289,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A patient, practitioner, or organization for which this set of documents is intended.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRecipient()
     {
@@ -298,7 +298,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A patient, practitioner, or organization for which this set of documents is intended.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recipient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function addRecipient($recipient)
@@ -309,7 +309,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Identifies the source system, application, or software that produced the document manifest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSource()
     {
@@ -318,7 +318,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Identifies the source system, application, or software that produced the document manifest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $source
      * @return $this
      */
     public function setSource($source)
@@ -329,7 +329,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Human-readable description of the source document. This is sometimes known as the "title".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -338,7 +338,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Human-readable description of the source document. This is sometimes known as the "title".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -349,7 +349,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The list of Resources that consist of the parts of this manifest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getContent()
     {
@@ -358,7 +358,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The list of Resources that consist of the parts of this manifest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $content
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $content
      * @return $this
      */
     public function addContent($content)
@@ -369,7 +369,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Related identifiers or resources associated with the DocumentManifest.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated[]
      */
     public function getRelated()
     {
@@ -378,7 +378,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Related identifiers or resources associated with the DocumentManifest.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated $related
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated $related
      * @return $this
      */
     public function addRelated($related)

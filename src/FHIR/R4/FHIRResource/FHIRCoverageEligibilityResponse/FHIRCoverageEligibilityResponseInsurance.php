@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides eligibility and plan details from the processing of an CoverageEligibilityRequest resource.
@@ -71,25 +71,25 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 {
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $coverage = null;
 
     /**
      * Flag indicating if the coverage provided is inforce currently if no service date(s) specified or for the whole duration of the service dates.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $inforce = null;
 
     /**
      * The term of the benefits documented in this response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $benefitPeriod = null;
 
     /**
      * Benefits and optionally current balances, and authorization details by category or service.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[]
      */
     public $item = [];
 
@@ -100,7 +100,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCoverage()
     {
@@ -109,7 +109,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverage
      * @return $this
      */
     public function setCoverage($coverage)
@@ -120,7 +120,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * Flag indicating if the coverage provided is inforce currently if no service date(s) specified or for the whole duration of the service dates.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getInforce()
     {
@@ -129,7 +129,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * Flag indicating if the coverage provided is inforce currently if no service date(s) specified or for the whole duration of the service dates.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $inforce
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $inforce
      * @return $this
      */
     public function setInforce($inforce)
@@ -140,7 +140,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * The term of the benefits documented in this response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getBenefitPeriod()
     {
@@ -149,7 +149,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * The term of the benefits documented in this response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $benefitPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $benefitPeriod
      * @return $this
      */
     public function setBenefitPeriod($benefitPeriod)
@@ -160,7 +160,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * Benefits and optionally current balances, and authorization details by category or service.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[]
      */
     public function getItem()
     {
@@ -169,7 +169,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement imple
 
     /**
      * Benefits and optionally current balances, and authorization details by category or service.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem $item
      * @return $this
      */
     public function addItem($item)

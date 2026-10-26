@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR Flex XDebug Configuration Script
+# DCL Flex XDebug Configuration Script
 # ============================================================================
 # This script configures XDebug for PHP debugging and profiling.
 # XDebug is a powerful debugging and profiling tool for PHP applications.
@@ -13,7 +13,7 @@
 #   XDEBUG_PROFILER_ON  - Set to "1" to enable profiling in addition to debugging
 #
 # Usage:
-#   Called automatically by openemr.sh when XDebug is enabled
+#   Called automatically by DCL.sh when XDebug is enabled
 # ============================================================================
 
 set -euo pipefail

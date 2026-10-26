@@ -5,16 +5,16 @@
  * field.  The class is hierarchical in that it has a one to many child relationship that can represent multiple complex
  * search operations up to 10 levels deep of unions or intersections.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Search;
+namespace DCL\Services\Search;
 
-use OpenEMR\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchFieldType;
 
 class CompositeSearchField implements ISearchField, \Stringable
 {

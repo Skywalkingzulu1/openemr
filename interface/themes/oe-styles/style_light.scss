@@ -1,6 +1,6 @@
 /*
 *
-*   Light Theme for OpenEMR
+*   Light Theme for DCL
 *   Based on original Light Theme
 *   @author Tyler Wrenn
 *   @author Jerry Padgett
@@ -55,7 +55,7 @@ $fa-font-path: "../assets/@fortawesome/fontawesome-free/webfonts";
 @import "../../../public/assets/@fortawesome/fontawesome-free/scss/regular";
 @import "../../../public/assets/@fortawesome/fontawesome-free/scss/solid";
 
-/* Core OpenEMR imports (includes Select2 BS4 theme etc.) */
+/* Core DCL imports (includes Select2 BS4 theme etc.) */
 @import "../core";
 
 /* Core defaults for themes */
@@ -251,6 +251,6 @@ input.list-group-item {
   color: $black;
 }
 
-/* Last: BS4/OpenEMR helper overrides */
+/* Last: BS4/DCL helper overrides */
 /* search any */
 @import "../oe-bootstrap";

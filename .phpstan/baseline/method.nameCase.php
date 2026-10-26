@@ -142,12 +142,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/forms/eye_mag/save.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to method Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Events\\\\TelehealthNotificationSendEvent\\:\\:getHtmlBody\\(\\) with incorrect case\\: getHTMLBody$#',
+    'message' => '#^Call to method Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Events\\\\TelehealthNotificationSendEvent\\:\\:getHtmlBody\\(\\) with incorrect case\\: getHTMLBody$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Services/TeleHealthParticipantInvitationMailerService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to method Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\Events\\\\TelehealthNotificationSendEvent\\:\\:setHtmlBody\\(\\) with incorrect case\\: setHTMLBody$#',
+    'message' => '#^Call to method Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\Events\\\\TelehealthNotificationSendEvent\\:\\:setHtmlBody\\(\\) with incorrect case\\: setHTMLBody$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Services/TeleHealthParticipantInvitationMailerService.php',
 ];
@@ -202,7 +202,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/src/Events/NotificationEventListener.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to method OpenEMR\\\\Modules\\\\WenoModule\\\\Services\\\\TransmitProperties\\:\\:getWenoProviderId\\(\\) with incorrect case\\: getWenoProviderID$#',
+    'message' => '#^Call to method DCL\\\\Modules\\\\WenoModule\\\\Services\\\\TransmitProperties\\:\\:getWenoProviderId\\(\\) with incorrect case\\: getWenoProviderID$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-weno/src/Services/TransmitProperties.php',
 ];
@@ -412,12 +412,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Pdf/PatientPortalPDFDocumentCreator.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to method OpenEMR\\\\Reminder\\\\BirthdayReminder\\:\\:isBirthdayAlertOff\\(\\) with incorrect case\\: isbirthdayAlertOff$#',
+    'message' => '#^Call to method DCL\\\\Reminder\\\\BirthdayReminder\\:\\:isBirthdayAlertOff\\(\\) with incorrect case\\: isbirthdayAlertOff$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Reminder/BirthdayReminder.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to method OpenEMR\\\\RestControllers\\\\SMART\\\\SMARTAuthorizationController\\:\\:needSMARTAuthorization\\(\\) with incorrect case\\: needSmartAuthorization$#',
+    'message' => '#^Call to method DCL\\\\RestControllers\\\\SMART\\\\SMARTAuthorizationController\\:\\:needSMARTAuthorization\\(\\) with incorrect case\\: needSmartAuthorization$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/AuthorizationController.php',
 ];
@@ -447,7 +447,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/DrugSalesService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:insertOpenEMRRecord\\(\\) with incorrect case\\: insertOpenEmrRecord$#',
+    'message' => '#^Call to method DCL\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:insertDCLRecord\\(\\) with incorrect case\\: insertOpenEmrRecord$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirServiceBase.php',
 ];
@@ -482,7 +482,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/PatientAccessOnsiteService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to method OpenEMR\\\\Services\\\\Search\\\\FHIRSearchFieldFactory\\:\\:buildFHIRCompositeField\\(\\) with incorrect case\\: buildFhirCompositeField$#',
+    'message' => '#^Call to method DCL\\\\Services\\\\Search\\\\FHIRSearchFieldFactory\\:\\:buildFHIRCompositeField\\(\\) with incorrect case\\: buildFhirCompositeField$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/Search/FHIRSearchFieldFactory.php',
 ];

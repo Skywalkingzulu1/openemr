@@ -3,8 +3,8 @@
 /**
  * Easipro class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Cassian LUP <cassi.lup@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Shiqiang Tao <StrongTSQ@gmail.com>
@@ -13,12 +13,12 @@
  * @copyright Copyright (c) 2016-2017 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018 Shiqiang Tao <StrongTSQ@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("verify_session.php");
 
-use OpenEMR\Easipro\Easipro;
+use DCL\Easipro\Easipro;
 
 $records = Easipro::assessmentsForPatient($pid);
 

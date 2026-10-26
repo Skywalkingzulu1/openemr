@@ -8,11 +8,11 @@
  * Highlights wrap each match in `<mark class="hilite">...</mark>` (or any
  * configured tag/class), matching the existing CSS selectors.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Andrew Alanis <progradedteam@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 /* This module is pure vanilla JavaScript — no jQuery dependency. */
 
@@ -243,7 +243,7 @@
 
     // Expose as a global namespace, matching the project's existing pattern
     // for library/js/*.js utility modules.
-    window.OpenEMRSearchHighlight = {
+    window.DCLSearchHighlight = {
         search: search,
         highlight: highlight,
         unhighlight: unhighlight,

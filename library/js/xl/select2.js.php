@@ -2,7 +2,7 @@
 
 /**
  *
- * This is to allow internationalization by OpenEMR of the select2 asset.
+ * This is to allow internationalization by DCL of the select2 asset.
  *
  * Example code in script:
  *    $translationsSelect2Override = array('searching'=>(xla('Search') . ':')) (optional php command)
@@ -12,16 +12,16 @@
  *  $translationsSelect2Override array.
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Amiel Elboim <amielel@matrix.co.il>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 require_once __DIR__ . '/../../../vendor/autoload.php';
 $session = SessionWrapperFactory::getInstance()->getActiveSession();

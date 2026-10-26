@@ -5,20 +5,20 @@
  *
  * This is the therapy group's participants detail screen for the chosen group.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Shachar Zilbershlag <shaharzi@matrix.co.il>
  * @author    Amiel Elboim <amielel@matrix.co.il>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2016 Shachar Zilbershlag <shaharzi@matrix.co.il>.
  * @copyright Copyright (c) 2016 Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\OEGlobalsBag;
 
 /** @var int|string $groupId */
 /** @var string $groupName */
@@ -274,8 +274,8 @@ use OpenEMR\Core\OEGlobalsBag;
    // parent.left_nav.setTherapyGroup(<?php echo attr_js($group_id);?>,<?php echo attr_js('test'); ?>);
     /* show the encounters menu in the title menu (code like interface/forms/newGroupEncounter/save.php) */
     <?php
-    $result4 = sqlStatement("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_groups_encounter AS fe " .
-        " left join openemr_postcalendar_categories on fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.group_id = ? order by fe.date desc", [$groupId]);
+    $result4 = sqlStatement("SELECT fe.encounter,fe.date,DCL_postcalendar_categories.pc_catname FROM form_groups_encounter AS fe " .
+        " left join DCL_postcalendar_categories on fe.pc_catid=DCL_postcalendar_categories.pc_catid  WHERE fe.group_id = ? order by fe.date desc", [$groupId]);
     ?>
 
     EncounterDateArray=new Array;

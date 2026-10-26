@@ -5,18 +5,18 @@
  *
  * Tests OAuth2 scope permission parsing and management.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Auth\OpenIDConnect\Entities;
+namespace DCL\Tests\Isolated\Common\Auth\OpenIDConnect\Entities;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopePermissionObject;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopePermissionObject;
 use PHPUnit\Framework\TestCase;
 
 class ScopePermissionObjectTest extends TestCase

@@ -4,20 +4,20 @@
  *
  * This program creates the HCFA 1500 claim form.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2011 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (C) 2018 Stephen Waite <stephen.waite@cmsvt.com>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
-use OpenEMR\Billing\Claim;
-use OpenEMR\Billing\HCFAInfo;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Billing\Claim;
+use DCL\Billing\HCFAInfo;
+use DCL\Core\OEGlobalsBag;
 
 class Hcfa1500
 {
@@ -102,7 +102,7 @@ class Hcfa1500
             $diag_count++;
         }
         // Sort the entries to put them in the page base sequence.
-        usort($hcfa_entries, [\OpenEMR\Billing\HCFAInfo::class, 'cmpHcfaInfo']);
+        usort($hcfa_entries, [\DCL\Billing\HCFAInfo::class, 'cmpHcfaInfo']);
 
         foreach ($hcfa_entries as $hcfa_entry) {
             $this->putHcfa(

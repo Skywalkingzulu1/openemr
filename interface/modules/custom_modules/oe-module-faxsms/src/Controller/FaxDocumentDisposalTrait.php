@@ -12,21 +12,21 @@
  * implementation means a new vendor cannot reintroduce the authenticated
  * arbitrary file read/write that the divergent copies had drifted into.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2018-2026 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
 
 /**
  * @internal Used by AppDispatch subclasses that expose $baseDir, $crypto and

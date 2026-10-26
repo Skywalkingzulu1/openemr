@@ -4,22 +4,22 @@
  * Comprehensive unit tests for the EventAuditLogger class
  *
  * @category  Test
- * @package   OpenEMR\Tests\Unit\Common\Logging
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @package   DCL\Tests\Unit\Common\Logging
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
  * @license   GNU General Public License 3
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\Common\Logging;
+namespace DCL\Tests\Unit\Common\Logging;
 
 use Lcobucci\Clock\FrozenClock;
-use OpenEMR\Common\Logging\Audit\SinkInterface;
-use OpenEMR\Common\Logging\AuditConfig;
-use OpenEMR\Common\Logging\BreakglassCheckerInterface;
-use OpenEMR\Common\Logging\EventAuditLogger;
+use DCL\Common\Logging\Audit\SinkInterface;
+use DCL\Common\Logging\AuditConfig;
+use DCL\Common\Logging\BreakglassCheckerInterface;
+use DCL\Common\Logging\EventAuditLogger;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -174,7 +174,7 @@ final class EventAuditLoggerTest extends TestCase
 
         // Setup default $_SERVER values
         $_SERVER = [
-            'SERVER_NAME' => 'test.openemr.local',
+            'SERVER_NAME' => 'test.DCL.local',
             'SERVER_ADDR' => '127.0.0.1',
             'REQUEST_METHOD' => 'GET',
             'SCRIPT_NAME' => '/test/script.php',
@@ -285,9 +285,9 @@ final class EventAuditLoggerTest extends TestCase
      */
     private function mockGlobalSqlFunctions(): void
     {
-        // The SQL functions should be available from OpenEMR's bootstrap
+        // The SQL functions should be available from DCL's bootstrap
         // If they're not available, the test environment isn't properly set up
-        // We'll rely on the existing OpenEMR test infrastructure
+        // We'll rely on the existing DCL test infrastructure
     }
 
     /**
@@ -706,7 +706,7 @@ final class EventAuditLoggerTest extends TestCase
         $this->assertEquals('Vitals', $reflectionMethod->invoke($this->eventAuditLogger, 'INSERT INTO form_vitals', 'patient-record', 'form_vitals'));
         $this->assertEquals('Patient Demographics', $reflectionMethod->invoke($this->eventAuditLogger, 'UPDATE patient_data', 'patient-record', 'patient_data'));
         $this->assertEquals('Billing', $reflectionMethod->invoke($this->eventAuditLogger, 'INSERT INTO billing', 'patient-record', 'billing'));
-        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'UPDATE openemr_postcalendar_events', 'scheduling', 'openemr_postcalendar_events'));
+        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'UPDATE DCL_postcalendar_events', 'scheduling', 'DCL_postcalendar_events'));
     }
 
     /**
@@ -1546,7 +1546,7 @@ final class EventAuditLoggerTest extends TestCase
         $this->assertEquals('Clinical Mail', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM pnotes', 'select', 'pnotes'));
         $this->assertEquals('Medication', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM prescriptions', 'select', 'prescriptions'));
         $this->assertEquals('Amendments', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM amendments', 'select', 'amendments'));
-        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM openemr_postcalendar_events', 'select', 'openemr_postcalendar_events'));
+        $this->assertEquals('Scheduling', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM DCL_postcalendar_events', 'select', 'DCL_postcalendar_events'));
         $this->assertEquals('Lab Order', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM procedure_order', 'select', 'procedure_order'));
         $this->assertEquals('Lab Result', $reflectionMethod->invoke($this->eventAuditLogger, 'SELECT * FROM procedure_result', 'select', 'procedure_result'));
     }

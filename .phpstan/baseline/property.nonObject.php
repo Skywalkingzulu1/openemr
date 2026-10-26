@@ -927,7 +927,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-ehi-exporter/src/Bootstrap.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access property \\$downloadLink on OpenEMR\\\\Modules\\\\EhiExporter\\\\Models\\\\ExportResult\\|null\\.$#',
+    'message' => '#^Cannot access property \\$downloadLink on DCL\\\\Modules\\\\EhiExporter\\\\Models\\\\ExportResult\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-ehi-exporter/src/Models/EhiExportJobTask.php',
 ];
@@ -947,7 +947,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-ehi-exporter/src/Services/EhiExporter.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access property \\$include_patient_documents on OpenEMR\\\\Modules\\\\EhiExporter\\\\Models\\\\EhiExportJob\\|null\\.$#',
+    'message' => '#^Cannot access property \\$include_patient_documents on DCL\\\\Modules\\\\EhiExporter\\\\Models\\\\EhiExportJob\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-ehi-exporter/src/Services/EhiExporter.php',
 ];
@@ -959,12 +959,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$children on mixed\\.$#',
     'count' => 4,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$menu_id on mixed\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$AnalyzeFormResult on mixed\\.$#',
@@ -1194,17 +1194,17 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$children on mixed\\.$#',
     'count' => 2,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$label on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$menu_id on mixed\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Cannot access property \\$children on mixed\\.$#',
@@ -2572,7 +2572,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/ClinicalDecisionRules/Interface/Controller/ControllerEdit.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot access property \\$groupId on OpenEMR\\\\ClinicalDecisionRules\\\\Interface\\\\RuleLibrary\\\\RuleCriteria\\|null\\.$#',
+    'message' => '#^Cannot access property \\$groupId on DCL\\\\ClinicalDecisionRules\\\\Interface\\\\RuleLibrary\\\\RuleCriteria\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/ClinicalDecisionRules/Interface/Controller/ControllerEdit.php',
 ];

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
@@ -23,7 +23,7 @@ final class ExtractChangelogSectionCliTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-extract-cli-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-extract-cli-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -39,23 +39,23 @@ final class ExtractChangelogSectionCliTest extends TestCase
         $changelog = <<<'MD'
 # CHANGELOG.md
 
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Minimum supported versions
 
 - **PHP** 8.2+
 
-See the [tested CI matrix](https://github.com/openemr/openemr/tree/rel-820/ci) for all tested version combinations.
+See the [tested CI matrix](https://github.com/DCL/DCL/tree/rel-820/ci) for all tested version combinations.
 
 ### Fixed
 
-  - one bug ([#100](https://github.com/openemr/openemr/pull/100))
+  - one bug ([#100](https://github.com/DCL/DCL/pull/100))
 
-## [8.2.0](https://github.com/openemr/openemr/compare/v8_1_0...v8_2_0) - 2026-07-08
+## [8.2.0](https://github.com/DCL/DCL/compare/v8_1_0...v8_2_0) - 2026-07-08
 
 ### Fixed
 
-  - an earlier release's bug ([#1](https://github.com/openemr/openemr/pull/1))
+  - an earlier release's bug ([#1](https://github.com/DCL/DCL/pull/1))
 
 MD;
         $changelogPath = $this->tmpDir . '/CHANGELOG.md';
@@ -83,17 +83,17 @@ MD;
         $changelog = <<<'MD'
 # CHANGELOG.md
 
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Fixed
 
-  - new bug ([#200](https://github.com/openemr/openemr/pull/200))
+  - new bug ([#200](https://github.com/DCL/DCL/pull/200))
 
-## [8.2.0](https://github.com/openemr/openemr/compare/v8_1_0...v8_2_0) - 2026-07-08
+## [8.2.0](https://github.com/DCL/DCL/compare/v8_1_0...v8_2_0) - 2026-07-08
 
 ### Fixed
 
-  - old bug ([#1](https://github.com/openemr/openemr/pull/1))
+  - old bug ([#1](https://github.com/DCL/DCL/pull/1))
 
 MD;
         $changelogPath = $this->tmpDir . '/CHANGELOG.md';

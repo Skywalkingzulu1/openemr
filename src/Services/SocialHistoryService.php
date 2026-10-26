@@ -3,25 +3,25 @@
 /**
  * SocialHistoryService.php
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Forms\Types\SmokingStatusType;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Traits\ServiceEventTrait;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Forms\Types\SmokingStatusType;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Traits\ServiceEventTrait;
+use DCL\Validators\ProcessingResult;
 
 class SocialHistoryService extends BaseService
 {
@@ -200,7 +200,7 @@ class SocialHistoryService extends BaseService
             try {
                 escape_sql_column_name($key, [self::TABLE_NAME], false, true);
             } catch (SqlQueryException) {
-                \OpenEMR\BC\ServiceContainer::getLogger()->warning(
+                \DCL\BC\ServiceContainer::getLogger()->warning(
                     'SocialHistoryService::insertRecord: skipped unknown history_data column',
                     ['column' => $key]
                 );

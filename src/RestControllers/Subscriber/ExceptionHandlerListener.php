@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Core\OEHttpKernel;
+use DCL\Core\OEHttpKernel;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;

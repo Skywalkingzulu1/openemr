@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Tools\Coverage;
+namespace DCL\Tools\Coverage;
 
 use PHPUnit\Framework\Attributes\Test;
 use ReflectionMethod;
@@ -15,10 +15,10 @@ use function register_shutdown_function;
 
 /**
  * Code Coverage Helper responsible for managing php code coverage for the code base.
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 class CoverageHelper
@@ -69,7 +69,7 @@ class CoverageHelper
 
     // TODO: @adunsulag I don't like using the filesystem to store the current coverage id as we lose
     // any kind of test parallelization.  Until we can figure out a way to pass the coverage to
-    // the chain of calls from test runner to inferno to openemr, we will use the filesystem and
+    // the chain of calls from test runner to inferno to DCL, we will use the filesystem and
     // the long running tests will need to be run serially.
     public static function setCurrentCoverageId(string $className)
     {

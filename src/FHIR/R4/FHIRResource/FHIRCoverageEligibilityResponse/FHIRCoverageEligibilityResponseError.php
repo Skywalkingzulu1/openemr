@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides eligibility and plan details from the processing of an CoverageEligibilityRequest resource.
@@ -71,7 +71,7 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement implement
 {
     /**
      * An error code,from a specified code system, which details why the eligibility check could not be performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
@@ -82,7 +82,7 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement implement
 
     /**
      * An error code,from a specified code system, which details why the eligibility check could not be performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -91,7 +91,7 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement implement
 
     /**
      * An error code,from a specified code system, which details why the eligibility check could not be performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)

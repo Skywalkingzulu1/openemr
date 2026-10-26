@@ -3,20 +3,20 @@
 /**
  * SchematronParser isolated test.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cda\Schematron;
+namespace DCL\Tests\Isolated\Cda\Schematron;
 
-use OpenEMR\Services\Cda\Schematron\ParsedAssertion;
-use OpenEMR\Services\Cda\Schematron\ParsedExtension;
-use OpenEMR\Services\Cda\Schematron\SchematronParser;
+use DCL\Services\Cda\Schematron\ParsedAssertion;
+use DCL\Services\Cda\Schematron\ParsedExtension;
+use DCL\Services\Cda\Schematron\SchematronParser;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 

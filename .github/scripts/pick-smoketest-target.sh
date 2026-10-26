@@ -6,7 +6,7 @@
 # shipped release by definition (docker-release-orchestrator.yml uses
 # this same file to decide which image to tag as "latest", so if a row
 # is marked latest it IS the current shipped release). Read `branch`
-# for the rel branch and `openemr_version_ref` for the exact git tag.
+# for the rel branch and `DCL_version_ref` for the exact git tag.
 #
 # Emits to stdout on success:
 #   <branch> <version_ref>
@@ -61,7 +61,7 @@ result=$(awk '
         next
     }
     /^  docker_tags:/ { docker_tags=$2; next }
-    /^  openemr_version_ref:/ { version_ref=$2; next }
+    /^  DCL_version_ref:/ { version_ref=$2; next }
     END {
         emit_current()
     }
@@ -76,15 +76,15 @@ branch=$(echo "${result}" | awk '{print $1}')
 version_ref=$(echo "${result}" | awk '{print $2}')
 
 if [[ -z "${branch}" || -z "${version_ref}" ]]; then
-    echo "::error::Latest-marked row is missing branch or openemr_version_ref (branch='${branch}' version_ref='${version_ref}')" >&2
+    echo "::error::Latest-marked row is missing branch or DCL_version_ref (branch='${branch}' version_ref='${version_ref}')" >&2
     exit 1
 fi
 
-# openemr_version_ref is expected to be a git tag of shape
+# DCL_version_ref is expected to be a git tag of shape
 # v<major>_<minor>_<patch>. Validate before emitting so the caller
 # can trust the shape when parsing version components.
 if [[ ! "${version_ref}" =~ ^v[0-9]+_[0-9]+_[0-9]+$ ]]; then
-    echo "::error::openemr_version_ref '${version_ref}' does not match expected v<major>_<minor>_<patch> shape" >&2
+    echo "::error::DCL_version_ref '${version_ref}' does not match expected v<major>_<minor>_<patch> shape" >&2
     exit 1
 fi
 

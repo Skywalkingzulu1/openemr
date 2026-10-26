@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Classifier for AST nodes that represent OpenEMR SQL execution entry points.
+ * Classifier for AST nodes that represent DCL SQL execution entry points.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPStan\Rules\Sql;
+namespace DCL\PHPStan\Rules\Sql;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\FuncCall;
@@ -24,7 +24,7 @@ use PhpParser\Node\Name;
  * Returns true when an AST call node corresponds to a known SQL execution
  * function or method whose first argument is a SQL string.
  *
- * Maintained as a closed list: when OpenEMR introduces a new SQL entry point
+ * Maintained as a closed list: when DCL introduces a new SQL entry point
  * (e.g. a new helper on QueryUtils), add it here so the rule analyzes it.
  */
 final readonly class SqlSinkResolver
@@ -59,14 +59,14 @@ final readonly class SqlSinkResolver
      * @var array<string, true>
      */
     private const STATIC_METHODS = [
-        'OpenEMR\Common\Database\QueryUtils::fetchRecords' => true,
-        'OpenEMR\Common\Database\QueryUtils::fetchRecordsNoLog' => true,
-        'OpenEMR\Common\Database\QueryUtils::fetchSingleValue' => true,
-        'OpenEMR\Common\Database\QueryUtils::fetchTableColumn' => true,
-        'OpenEMR\Common\Database\QueryUtils::fetchTableColumnAssoc' => true,
-        'OpenEMR\Common\Database\QueryUtils::querySingleRow' => true,
-        'OpenEMR\Common\Database\QueryUtils::sqlInsert' => true,
-        'OpenEMR\Common\Database\QueryUtils::sqlStatementThrowException' => true,
+        'DCL\Common\Database\QueryUtils::fetchRecords' => true,
+        'DCL\Common\Database\QueryUtils::fetchRecordsNoLog' => true,
+        'DCL\Common\Database\QueryUtils::fetchSingleValue' => true,
+        'DCL\Common\Database\QueryUtils::fetchTableColumn' => true,
+        'DCL\Common\Database\QueryUtils::fetchTableColumnAssoc' => true,
+        'DCL\Common\Database\QueryUtils::querySingleRow' => true,
+        'DCL\Common\Database\QueryUtils::sqlInsert' => true,
+        'DCL\Common\Database\QueryUtils::sqlStatementThrowException' => true,
     ];
 
     /**

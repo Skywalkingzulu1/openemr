@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
+namespace DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -71,13 +71,13 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * The nutrient that is being modified such as carbohydrate or sodium.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $modifier = null;
 
     /**
      * The quantity of the specified nutrient to include in diet.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amount = null;
 
@@ -88,7 +88,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The nutrient that is being modified such as carbohydrate or sodium.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getModifier()
     {
@@ -97,7 +97,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The nutrient that is being modified such as carbohydrate or sodium.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
     public function setModifier($modifier)
@@ -108,7 +108,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The quantity of the specified nutrient to include in diet.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmount()
     {
@@ -117,7 +117,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The quantity of the specified nutrient to include in diet.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amount
      * @return $this
      */
     public function setAmount($amount)

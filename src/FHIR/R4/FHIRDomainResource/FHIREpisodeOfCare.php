@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.
@@ -72,73 +72,73 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
      */
     public $status = null;
 
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[]
      */
     public $statusHistory = [];
 
     /**
      * A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * The list of diagnosis relevant to this episode of care.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
      */
     public $diagnosis = [];
 
     /**
      * The patient who is the focus of this episode of care.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The organization that has assumed the specific responsibilities for the specified duration.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $managingOrganization = null;
 
     /**
      * The interval during which the managing organization assumes the defined responsibility.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $referralRequest = [];
 
     /**
      * The practitioner that is the care manager/care coordinator for this patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $careManager = null;
 
     /**
      * The list of practitioners that may be facilitating this episode of care for specific purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $team = [];
 
     /**
      * The set of accounts that may be used for billing for this EpisodeOfCare.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $account = [];
 
@@ -149,7 +149,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -158,7 +158,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -169,7 +169,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus
      */
     public function getStatus()
     {
@@ -178,7 +178,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * planned | waitlist | active | onhold | finished | cancelled.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREpisodeOfCareStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -189,7 +189,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[]
      */
     public function getStatusHistory()
     {
@@ -198,7 +198,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory $statusHistory
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory $statusHistory
      * @return $this
      */
     public function addStatusHistory($statusHistory)
@@ -209,7 +209,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -218,7 +218,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A classification of the type of episode of care; e.g. specialist referral, disease management, type of funded care.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -229,7 +229,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of diagnosis relevant to this episode of care.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
      */
     public function getDiagnosis()
     {
@@ -238,7 +238,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of diagnosis relevant to this episode of care.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $diagnosis
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $diagnosis
      * @return $this
      */
     public function addDiagnosis($diagnosis)
@@ -249,7 +249,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient who is the focus of this episode of care.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -258,7 +258,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient who is the focus of this episode of care.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -269,7 +269,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that has assumed the specific responsibilities for the specified duration.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManagingOrganization()
     {
@@ -278,7 +278,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization that has assumed the specific responsibilities for the specified duration.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
      * @return $this
      */
     public function setManagingOrganization($managingOrganization)
@@ -289,7 +289,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The interval during which the managing organization assumes the defined responsibility.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -298,7 +298,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The interval during which the managing organization assumes the defined responsibility.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -309,7 +309,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReferralRequest()
     {
@@ -318,7 +318,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $referralRequest
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $referralRequest
      * @return $this
      */
     public function addReferralRequest($referralRequest)
@@ -329,7 +329,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The practitioner that is the care manager/care coordinator for this patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCareManager()
     {
@@ -338,7 +338,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The practitioner that is the care manager/care coordinator for this patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $careManager
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $careManager
      * @return $this
      */
     public function setCareManager($careManager)
@@ -349,7 +349,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of practitioners that may be facilitating this episode of care for specific purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getTeam()
     {
@@ -358,7 +358,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The list of practitioners that may be facilitating this episode of care for specific purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $team
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $team
      * @return $this
      */
     public function addTeam($team)
@@ -369,7 +369,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The set of accounts that may be used for billing for this EpisodeOfCare.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAccount()
     {
@@ -378,7 +378,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The set of accounts that may be used for billing for this EpisodeOfCare.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $account
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $account
      * @return $this
      */
     public function addAccount($account)

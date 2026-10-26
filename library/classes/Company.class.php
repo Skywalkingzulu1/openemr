@@ -9,9 +9,9 @@ This file was generated on %date% at %time%
 The original location of this file is /home/duhlman/uml-generated-code/prescription.php
 **************************************************************************/
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\ORDataObject\Address;
-use OpenEMR\Common\ORDataObject\ORDataObject;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\ORDataObject\Address;
+use DCL\Common\ORDataObject\ORDataObject;
 
 /**
  * class Address

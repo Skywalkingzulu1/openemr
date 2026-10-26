@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical origins as well as the fraction of a material that can result in or can be modified to form a substance. This set of data elements shall be used to define polymer substances isolated from biological matrices. Taxonomic and anatomical origins shall be described using a controlled vocabulary as required. This information is captured for naturally derived polymers ( . starch) and structurally diverse substances. For Organisms belonging to the Kingdom Plantae the Substance level defines the fresh material of a single species or infraspecies, the Herbal Drug and the Herbal preparation. For Herbal preparations, the fraction information will be captured at the Substance information level and additional information for herbal extracts will be captured at the Specified Substance Group 1 information level. See for further explanation the Substance Class: Structurally Diverse and the herbal annex.
@@ -72,79 +72,79 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 {
     /**
      * General high level classification of the source material specific to the origin of the material.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $sourceMaterialClass = null;
 
     /**
      * The type of the source material shall be specified based on a controlled vocabulary. For vaccines, this subclause refers to the class of infectious agent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $sourceMaterialType = null;
 
     /**
      * The state of the source material when extracted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $sourceMaterialState = null;
 
     /**
      * The unique identifier associated with the source material parent organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $organismId = null;
 
     /**
      * The organism accepted Scientific name shall be provided based on the organism taxonomy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $organismName = null;
 
     /**
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $parentSubstanceId = [];
 
     /**
      * The parent substance of the Herbal Drug, or Herbal preparation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $parentSubstanceName = [];
 
     /**
      * The country where the plant material is harvested or the countries where the plasma is sourced from as laid down in accordance with the Plasma Master File. For “Plasma-derived substances” the attribute country of origin provides information about the countries used for the manufacturing of the Cryopoor plama or Crioprecipitate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $countryOfOrigin = [];
 
     /**
      * The place/region where the plant is harvested or the places/regions where the animal source material has its habitat.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $geographicalLocation = [];
 
     /**
      * Stage of life for animals, plants, insects and microorganisms. This information shall be provided only when the substance is significantly different in these stages (e.g. foetal bovine serum).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $developmentStage = null;
 
     /**
      * Many complex materials are fractions of parts of plants, animals, or minerals. Fraction elements are often necessary to define both Substances and Specified Group 1 Substances. For substances derived from Plants, fraction information will be captured at the Substance information level ( . Oils, Juices and Exudates). Additional information for Extracts, such as extraction solvent composition, will be captured at the Specified Substance Group 1 information level. For plasma-derived products fraction information will be captured at the Substance and the Specified Substance Group 1 levels.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
      */
     public $fractionDescription = [];
 
     /**
      * This subclause describes the organism which the substance is derived from. For vaccines, the parent organism shall be specified based on these subclause elements. As an example, full taxonomy will be described for the Substance Name: ., Leaf.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      */
     public $organism = null;
 
     /**
      * To do.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[]
      */
     public $partDescription = [];
 
@@ -155,7 +155,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * General high level classification of the source material specific to the origin of the material.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSourceMaterialClass()
     {
@@ -164,7 +164,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * General high level classification of the source material specific to the origin of the material.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialClass
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialClass
      * @return $this
      */
     public function setSourceMaterialClass($sourceMaterialClass)
@@ -175,7 +175,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The type of the source material shall be specified based on a controlled vocabulary. For vaccines, this subclause refers to the class of infectious agent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSourceMaterialType()
     {
@@ -184,7 +184,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The type of the source material shall be specified based on a controlled vocabulary. For vaccines, this subclause refers to the class of infectious agent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialType
      * @return $this
      */
     public function setSourceMaterialType($sourceMaterialType)
@@ -195,7 +195,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The state of the source material when extracted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSourceMaterialState()
     {
@@ -204,7 +204,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The state of the source material when extracted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialState
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialState
      * @return $this
      */
     public function setSourceMaterialState($sourceMaterialState)
@@ -215,7 +215,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The unique identifier associated with the source material parent organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getOrganismId()
     {
@@ -224,7 +224,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The unique identifier associated with the source material parent organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $organismId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $organismId
      * @return $this
      */
     public function setOrganismId($organismId)
@@ -235,7 +235,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The organism accepted Scientific name shall be provided based on the organism taxonomy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getOrganismName()
     {
@@ -244,7 +244,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The organism accepted Scientific name shall be provided based on the organism taxonomy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $organismName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $organismName
      * @return $this
      */
     public function setOrganismName($organismName)
@@ -255,7 +255,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getParentSubstanceId()
     {
@@ -264,7 +264,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $parentSubstanceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $parentSubstanceId
      * @return $this
      */
     public function addParentSubstanceId($parentSubstanceId)
@@ -275,7 +275,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The parent substance of the Herbal Drug, or Herbal preparation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getParentSubstanceName()
     {
@@ -284,7 +284,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The parent substance of the Herbal Drug, or Herbal preparation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $parentSubstanceName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $parentSubstanceName
      * @return $this
      */
     public function addParentSubstanceName($parentSubstanceName)
@@ -295,7 +295,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The country where the plant material is harvested or the countries where the plasma is sourced from as laid down in accordance with the Plasma Master File. For “Plasma-derived substances” the attribute country of origin provides information about the countries used for the manufacturing of the Cryopoor plama or Crioprecipitate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCountryOfOrigin()
     {
@@ -304,7 +304,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The country where the plant material is harvested or the countries where the plasma is sourced from as laid down in accordance with the Plasma Master File. For “Plasma-derived substances” the attribute country of origin provides information about the countries used for the manufacturing of the Cryopoor plama or Crioprecipitate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $countryOfOrigin
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $countryOfOrigin
      * @return $this
      */
     public function addCountryOfOrigin($countryOfOrigin)
@@ -315,7 +315,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The place/region where the plant is harvested or the places/regions where the animal source material has its habitat.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getGeographicalLocation()
     {
@@ -324,7 +324,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * The place/region where the plant is harvested or the places/regions where the animal source material has its habitat.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $geographicalLocation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $geographicalLocation
      * @return $this
      */
     public function addGeographicalLocation($geographicalLocation)
@@ -335,7 +335,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * Stage of life for animals, plants, insects and microorganisms. This information shall be provided only when the substance is significantly different in these stages (e.g. foetal bovine serum).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDevelopmentStage()
     {
@@ -344,7 +344,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * Stage of life for animals, plants, insects and microorganisms. This information shall be provided only when the substance is significantly different in these stages (e.g. foetal bovine serum).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $developmentStage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $developmentStage
      * @return $this
      */
     public function setDevelopmentStage($developmentStage)
@@ -355,7 +355,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * Many complex materials are fractions of parts of plants, animals, or minerals. Fraction elements are often necessary to define both Substances and Specified Group 1 Substances. For substances derived from Plants, fraction information will be captured at the Substance information level ( . Oils, Juices and Exudates). Additional information for Extracts, such as extraction solvent composition, will be captured at the Specified Substance Group 1 information level. For plasma-derived products fraction information will be captured at the Substance and the Specified Substance Group 1 levels.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
      */
     public function getFractionDescription()
     {
@@ -364,7 +364,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * Many complex materials are fractions of parts of plants, animals, or minerals. Fraction elements are often necessary to define both Substances and Specified Group 1 Substances. For substances derived from Plants, fraction information will be captured at the Substance information level ( . Oils, Juices and Exudates). Additional information for Extracts, such as extraction solvent composition, will be captured at the Specified Substance Group 1 information level. For plasma-derived products fraction information will be captured at the Substance and the Specified Substance Group 1 levels.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription $fractionDescription
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription $fractionDescription
      * @return $this
      */
     public function addFractionDescription($fractionDescription)
@@ -375,7 +375,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * This subclause describes the organism which the substance is derived from. For vaccines, the parent organism shall be specified based on these subclause elements. As an example, full taxonomy will be described for the Substance Name: ., Leaf.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      */
     public function getOrganism()
     {
@@ -384,7 +384,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * This subclause describes the organism which the substance is derived from. For vaccines, the parent organism shall be specified based on these subclause elements. As an example, full taxonomy will be described for the Substance Name: ., Leaf.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $organism
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism $organism
      * @return $this
      */
     public function setOrganism($organism)
@@ -395,7 +395,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * To do.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[]
      */
     public function getPartDescription()
     {
@@ -404,7 +404,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements \JsonSer
 
     /**
      * To do.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription $partDescription
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription $partDescription
      * @return $this
      */
     public function addPartDescription($partDescription)

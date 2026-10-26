@@ -5,8 +5,8 @@
  * Ensoftek: Jul-2015: Modified HL7 generation to 2.5.1 spec and MU2 compliant.
  * This implementation is only for the A01 profile which will suffice for MU2 certification.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Tomasz Wyderka <wyderkat@cofoh.com>
  * @author    Ensoftek <rammohan@ensoftek.com>
@@ -15,18 +15,18 @@
  * @copyright Copyright (c) 2010 Tomasz Wyderka <wyderkat@cofoh.com>
  * @copyright Copyright (c) 2015 Ensoftek <rammohan@ensoftek.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 require_once("../../custom/code_types.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 if (!AclMain::aclCheckCore('patients', 'med')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/med: Syndromic Surveillance - Non Reported Issues", xl("Syndromic Surveillance - Non Reported Issues"));
@@ -158,7 +158,7 @@ if (!empty($_POST['form_get_hl7']) && ($_POST['form_get_hl7'] === 'true')) {
 
     while ($r = sqlFetchArray($res)) {
         // MSH
-        $content .= "MSH|^~\&|" . strtoupper(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('openemr_name')) .
+        $content .= "MSH|^~\&|" . strtoupper(\DCL\Core\OEGlobalsBag::getInstance()->getString('DCL_name')) .
         "|" . $facility_info['name'] . "^" . $facility_info['facility_npi'] . "^NPI" .
         "|||$now||" .
         "ADT^A01^ADT_A01" . // Hard-code to A01: Patient visits provider/facility

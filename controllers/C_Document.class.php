@@ -3,35 +3,35 @@
 /**
  * C_Document.class.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2024 Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Crypto\KeyVersion;
-use OpenEMR\Common\Crypto\PasswordBasedCrypto;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDocuments\PatientDocumentTreeViewFilterEvent;
-use OpenEMR\Events\PatientDocuments\PatientRetrieveOffsiteDocument;
-use OpenEMR\Services\DocumentTemplates\DocumentTemplateService;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\PatientService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Crypto\KeyVersion;
+use DCL\Common\Crypto\PasswordBasedCrypto;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\RequestTerminator;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDocuments\PatientDocumentTreeViewFilterEvent;
+use DCL\Events\PatientDocuments\PatientRetrieveOffsiteDocument;
+use DCL\Services\DocumentTemplates\DocumentTemplateService;
+use DCL\Services\FacilityService;
+use DCL\Services\PatientService;
 
 class C_Document extends Controller
 {
@@ -288,8 +288,8 @@ class C_Document extends Controller
                         $passwordCrypto = new PasswordBasedCrypto(KeyVersion::CURRENT);
                         try {
                             $filetext = $passwordCrypto->decrypt((string) $filetext, (string) $passphrase);
-                        } catch (\OpenEMR\Common\Crypto\CryptoGenException) {
-                            error_log("OpenEMR Error: Unable to decrypt a document since decryption failed.");
+                        } catch (\DCL\Common\Crypto\CryptoGenException) {
+                            error_log("DCL Error: Unable to decrypt a document since decryption failed.");
                             $filetext = "";
                         }
                     }
@@ -521,8 +521,8 @@ class C_Document extends Controller
         // Populate the dropdown with patient's encounter list
         $this->assign("TAG_ACTION", $this->_link("tag") . "document_id=" . urlencode((string) $d->get_id()) . "&process=true");
         $encOptions = "<option value='0'>-- " . xlt('Select Encounter') . " --</option>";
-        $result_docs = sqlStatement("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-            "LEFT JOIN openemr_postcalendar_categories ON fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date desc", [$patient_id]);
+        $result_docs = sqlStatement("SELECT fe.encounter,fe.date,DCL_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+            "LEFT JOIN DCL_postcalendar_categories ON fe.pc_catid=DCL_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date desc", [$patient_id]);
         if (sqlNumRows($result_docs) > 0) {
             while ($row_result_docs = sqlFetchArray($result_docs)) {
                 $sel_enc = ($row_result_docs['encounter'] == $d->get_encounter_id()) ? ' selected' : '';
@@ -540,7 +540,7 @@ class C_Document extends Controller
 
         //Populate the dropdown with category list
         $visit_category_list = "<option value='0'>-- " . xlt('Select One') . " --</option>";
-        $cres = sqlStatement("SELECT pc_catid, pc_catname FROM openemr_postcalendar_categories ORDER BY pc_catname");
+        $cres = sqlStatement("SELECT pc_catid, pc_catname FROM DCL_postcalendar_categories ORDER BY pc_catname");
         while ($crow = sqlFetchArray($cres)) {
             $catid = $crow['pc_catid'];
             if ($catid < 9 && $catid != 5) {
@@ -752,7 +752,7 @@ class C_Document extends Controller
             exit; // exits only if file download from CouchDB is successful.
         }
         if ($couch_docid && $couch_revid) {
-            //special case when retrieving a document from couchdb that has been converted to a jpg and not directly referenced in openemr documents table
+            //special case when retrieving a document from couchdb that has been converted to a jpg and not directly referenced in DCL documents table
             //try to convert it if it has not yet been converted
             //first, see if the converted jpg already exists
             $couch = new CouchDB();
@@ -1200,7 +1200,7 @@ class C_Document extends Controller
         }
 
         if (!empty($d->get_hash()) && (strlen((string) $d->get_hash()) < 50)) {
-            // backward compatibility for documents that were hashed prior to OpenEMR 6.0.0
+            // backward compatibility for documents that were hashed prior to DCL 6.0.0
             $current_hash = sha1($content);
         } else {
             $current_hash = hash('sha3-512', $content);

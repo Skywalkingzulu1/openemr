@@ -5,19 +5,19 @@
  * the form cqm-execution receives them; cql-execution's CodeService with
  * cqm-execution's valueSetsForCodeService.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Cqm\Cql\Engine;
+namespace DCL\Cqm\Cql\Engine;
 
-use OpenEMR\Cqm\Cql\Types\Code;
-use OpenEMR\Cqm\Cql\Types\ValueSet;
+use DCL\Cqm\Cql\Types\Code;
+use DCL\Cqm\Cql\Types\ValueSet;
 
 final class CodeService
 {

@@ -3,23 +3,23 @@
 /**
  * PatientAdvanceDirectiveService.php
  *
- * @package    OpenEMR
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @author   Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class PatientAdvanceDirectiveService extends BaseService
 {
@@ -103,19 +103,19 @@ class PatientAdvanceDirectiveService extends BaseService
     }
 
     /**
-     * @param $openEMRSearchParameters
+     * @param $DCLSearchParameters
      * @param $isAndCondition
      * @return ProcessingResult
      */
-    public function search($openEMRSearchParameters, $isAndCondition = true): ProcessingResult
+    public function search($DCLSearchParameters, $isAndCondition = true): ProcessingResult
     {
-        $openEMRSearchParameters['deleted'] = new TokenSearchField('deleted', [new TokenSearchValue("0")]);
+        $DCLSearchParameters['deleted'] = new TokenSearchField('deleted', [new TokenSearchValue("0")]);
         // ONLY advance directives
-        $openEMRSearchParameters['category_codes'] = new TokenSearchField('category_codes', $this->getAdvancedDirectiveCodes());
+        $DCLSearchParameters['category_codes'] = new TokenSearchField('category_codes', $this->getAdvancedDirectiveCodes());
         // we have to manually filter by document type since it's not a direct field
-        $docTypes = $openEMRSearchParameters['document_type'] ?? new TokenSearchField('document_types', []);
+        $docTypes = $DCLSearchParameters['document_type'] ?? new TokenSearchField('document_types', []);
         $documentTypes = array_map(fn(TokenSearchValue $value) => $value->getCode(), $docTypes->getValues());
-        unset($openEMRSearchParameters['document_type']);
+        unset($DCLSearchParameters['document_type']);
 
         $sql = "SELECT d.id, d.uuid, d.name, d.docdate, d.date, d.mimetype, d.url, d.hash,
                        d.owner, d.revision, d.encounter_id, d.foreign_reference_id,
@@ -165,7 +165,7 @@ class PatientAdvanceDirectiveService extends BaseService
                 ) u_authenticator ON p.advance_directive_user_authenticator = u_authenticator.authenticator_user_id AND u_authenticator.npi != '' AND u_authenticator.npi IS NOT NULL";
 
         $additionalWhere = "";
-        $whereClause = FhirSearchWhereClauseBuilder::build($openEMRSearchParameters, $isAndCondition);
+        $whereClause = FhirSearchWhereClauseBuilder::build($DCLSearchParameters, $isAndCondition);
         $sql .= $whereClause->getFragment() . " ORDER BY d.docdate DESC, d.date DESC";
         $resultSet = QueryUtils::sqlStatementThrowException($sql, $whereClause->getBoundValues());
         $processingResult = new ProcessingResult();

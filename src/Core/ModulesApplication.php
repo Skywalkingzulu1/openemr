@@ -3,24 +3,24 @@
 /**
  * ModulesApplication class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Core;
+namespace DCL\Core;
 
 use Laminas\Mvc\Application;
 use Laminas\Mvc\Service\ServiceManagerConfig;
 use Laminas\ServiceManager\ServiceManager;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\ModuleLoadEvents;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\ModuleLoadEvents;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class ModulesApplication
@@ -36,7 +36,7 @@ class ModulesApplication
      */
     private $application;
 
-    const CUSTOM_MODULE_BOOSTRAP_NAME = 'openemr.bootstrap.php';
+    const CUSTOM_MODULE_BOOSTRAP_NAME = 'DCL.bootstrap.php';
 
     public function __construct(Kernel $kernel, string $webRootPath, string $modulePath, string $zendModulePath)
     {
@@ -79,7 +79,7 @@ class ModulesApplication
      * checks against both laminas and custom modules. If the script is not allowed it throws an AccessDeniedException
      *
      * @param self::MODULE_TYPE_* $modType     The type of module this is (laminas or custom)
-     * @param string $webRootPath The root filepath for the directory where OpenEMR is installed
+     * @param string $webRootPath The root filepath for the directory where DCL is installed
      * @param string $modulePath  The path for the module folder location (laminas or custom)
      * @throws AccessDeniedException Thrown if this is a file in a module script directory and the module is not enabled.
      */

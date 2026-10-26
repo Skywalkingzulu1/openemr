@@ -7,11 +7,11 @@
  * It uses an email fax gateway that is behind the corporate
  * firewall, thus it is HIPPA compliant (at least TO the fax machine)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <rmagauran@gmail.com>
  * @copyright Copyright (c) 2016 Raymond Magauran <rmagauran@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $form_name = "eye_mag";
@@ -37,7 +37,7 @@ if (php_sapi_name() === 'cli') {
 }
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 $srcdir = OEGlobalsBag::getInstance()->getSrcDir();
 require_once("php/" . $form_name . "_functions.php");
@@ -59,12 +59,12 @@ require_once("report.php");
  *
  *  We will need these as variables then:
  *      From, To, Object(s) to send
- *      These values are already in the openEMR DB, we just have to put them together correctly.
+ *      These values are already in the DCL DB, we just have to put them together correctly.
  *
  *  The first use case scenario is to fax the report of today's visit to a PCP/Referring doctor.
  *  The second scenario is the creation (or re-creation) of a Report of the encounter.
  *  To lighten loads, consider breaking these tasks up into separate tasks via cron or even using a different server
- *  to process these tasks, if in a multi-server environment.  Or run this file with openEMR's "background_services".
+ *  to process these tasks, if in a multi-server environment.  Or run this file with DCL's "background_services".
  *  Use a new table (form_taskman) to delineate this process.
  *      1.  Create the Task to be performed: send it to DB table from the browser.
  *      2.  Cron job to scour this table, performing tasks as loads allow (check server load? <-- not implemented)

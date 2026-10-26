@@ -36,7 +36,7 @@ jobs:
     # (b) Dependabot bumps of any hook rev in .pre-commit-config.yaml
     #     (pre-commit-hooks, language-formatters-pre-commit-hooks,
     #     codespell, actionlint, hadolint-py).
-    # Local hooks (PHP/composer) are skipped here -- they need the openemr
+    # Local hooks (PHP/composer) are skipped here -- they need the DCL
     # container's toolchain and have their own CI workflows (phpstan.yml,
     # phpcs.yml, etc.). Conventional Commits is commit-msg stage only.
     - uses: j178/prek-action@v2

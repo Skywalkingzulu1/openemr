@@ -6,7 +6,7 @@
  * The score is a measure of the likelihood that the patient is a duplicate of
  * some patient created before it. Optional arguments specifying values are:
  *
- * --webdir   The full path to the OpenEMR web directory. Defaults to the directory
+ * --webdir   The full path to the DCL web directory. Defaults to the directory
  *            two levels above that of this script.
  * --site     The site ID. Defaults to "default".
  * --maxmins  The maximum number of minutes to run. Defaults to 60. Use 0 for no limit.
@@ -23,16 +23,16 @@
  * where it left off.
  *
  * A common usage is:
- * php /var/www/html/openemr/contrib/util/dupscore.cli.php --maxmins=240
+ * php /var/www/html/DCL/contrib/util/dupscore.cli.php --maxmins=240
  *
  * Here is a sample crontab entry to automatically run up to 2 hours nightly:
- * 3 1 * * * root php /var/www/html/openemr/contrib/util/dupscore.cli.php -q --maxmins=120
+ * 3 1 * * * root php /var/www/html/DCL/contrib/util/dupscore.cli.php -q --maxmins=120
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // The number of scores to compute between tests for time expiration.
@@ -59,7 +59,7 @@ $_GET['site'] = $args['site'];
 $ignoreAuth = 1;
 require_once($args['webdir'] . "/interface/globals.php");
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 $endtime = time() + 365 * 24 * 60 * 60; // a year from now
 if (!empty($args['maxmins'])) {

@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPUnit;
+namespace DCL\PHPUnit;
 
-use OpenEMR\BC\Deprecation;
-use OpenEMR\BC\DeprecationMode;
-use OpenEMR\PHPUnit\Timeline\TestErroredSubscriber;
-use OpenEMR\PHPUnit\Timeline\TestFailedSubscriber;
-use OpenEMR\PHPUnit\Timeline\TestFinishedSubscriber;
-use OpenEMR\PHPUnit\Timeline\TestPreparedSubscriber;
-use OpenEMR\PHPUnit\Timeline\TestSkippedSubscriber;
-use OpenEMR\PHPUnit\Timeline\TimelineRecorder;
+use DCL\BC\Deprecation;
+use DCL\BC\DeprecationMode;
+use DCL\PHPUnit\Timeline\TestErroredSubscriber;
+use DCL\PHPUnit\Timeline\TestFailedSubscriber;
+use DCL\PHPUnit\Timeline\TestFinishedSubscriber;
+use DCL\PHPUnit\Timeline\TestPreparedSubscriber;
+use DCL\PHPUnit\Timeline\TestSkippedSubscriber;
+use DCL\PHPUnit\Timeline\TimelineRecorder;
 use PHPUnit\Runner\Extension\Extension as PHPUnitExtension;
 use PHPUnit\Runner\Extension\Facade;
 use PHPUnit\Runner\Extension\ParameterCollection;

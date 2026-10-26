@@ -3,32 +3,32 @@
 /**
  * UserAddTrait
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Bartosz Spyrko-Smietanko
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2020 Bartosz Spyrko-Smietanko
  * @copyright Copyright (c) 2024 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e\User;
+namespace DCL\Tests\E2e\User;
 
 use Facebook\WebDriver\Exception\NoSuchElementException;
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\Exception\WebDriverException;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\Tests\E2e\Base\BaseTrait;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
-use OpenEMR\Tests\E2e\Login\LoginTrait;
-use OpenEMR\Tests\E2e\User\UserTestData;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstants;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstantsUserAddTrait;
+use DCL\Tests\E2e\Base\BaseTrait;
+use DCL\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Login\LoginTrait;
+use DCL\Tests\E2e\User\UserTestData;
+use DCL\Tests\E2e\Xpaths\XpathsConstants;
+use DCL\Tests\E2e\Xpaths\XpathsConstantsUserAddTrait;
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Test;

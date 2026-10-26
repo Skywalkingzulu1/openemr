@@ -1,18 +1,18 @@
 name: Build Release on Tag
 
-# Consumer of the intra-repo `openemr-tag` repository_dispatch. When a
+# Consumer of the intra-repo `DCL-tag` repository_dispatch. When a
 # release-prep PR merges, the conductor in release-prep.yml's `finalize`
 # job mints an annotated tag on the rel branch and fans out
-# `openemr-tag` to owner repos including this one. This workflow derives
+# `DCL-tag` to owner repos including this one. This workflow derives
 # the build inputs from the dispatch payload and calls the reusable
 # build-release.yml to produce the distribution packages and GitHub
 # Release that the manual workflow_dispatch path already produces.
 #
-# Migrated from openemr/openemr-devops in workstream 7 Phase 2 (PR 2b).
+# Migrated from DCL/DCL-devops in workstream 7 Phase 2 (PR 2b).
 # Under the pre-migration shape the dispatch crossed the
-# openemr/openemr → openemr/openemr-devops boundary; the post-migration
+# DCL/DCL → DCL/DCL-devops boundary; the post-migration
 # shape keeps the dispatch (release-prep.yml on merge still sends
-# `openemr-tag`) but targets openemr/openemr, so it fires here. The
+# `DCL-tag`) but targets DCL/DCL, so it fires here. The
 # dispatch shape and consumer semantics are unchanged — the release-me
 # PR's mutator content (CHANGELOG etc.) still lands *before* the tag
 # exists, which is why the dispatch invariant is preserved rather than
@@ -20,14 +20,14 @@ name: Build Release on Tag
 
 on:
   repository_dispatch:
-    types: [openemr-tag]
+    types: [DCL-tag]
 
 permissions:
   contents: read
 
 concurrency:
   # Distinct from the reusable build-release.yml group on purpose. This
-  # only collapses duplicate openemr-tag dispatches for the same tag.
+  # only collapses duplicate DCL-tag dispatches for the same tag.
   # Serializing the actual build against a manual build-release.yml run
   # is build-release.yml's own concurrency group's job — both entry
   # paths run through it. Sharing its group here would deadlock: this

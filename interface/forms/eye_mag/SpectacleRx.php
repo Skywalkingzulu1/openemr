@@ -5,30 +5,30 @@
  *
  * Functions for printing a glasses prescription
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <magauran@MedFetch.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2016 Raymond Magauran <magauran@MedFetch.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Forms\EyeMag\RefType;
-use OpenEMR\Forms\EyeMag\RxType;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\RequestTerminator;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Forms\EyeMag\RefType;
+use DCL\Forms\EyeMag\RxType;
+use DCL\Services\FacilityService;
 use Symfony\Component\HttpFoundation\Response;
 
 $srcdir = OEGlobalsBag::getInstance()->getSrcDir();
@@ -194,7 +194,7 @@ if (($_REQUEST['mode'] ?? '') == "update") {  //store any changed fields in disp
     exit;
 }
 
-    formHeader("OpenEMR Eye: " . text($prov_data['facility']));
+    formHeader("DCL Eye: " . text($prov_data['facility']));
 
 // Pre-initialize variables that the REFTYPE branches below populate selectively.
 // Each REFTYPE (W / AR / MR / CR / CTL) sets a different subset, but the form

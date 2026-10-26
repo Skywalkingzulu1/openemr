@@ -19,16 +19,16 @@
  * value for the shape rather than throwing -- callers decide whether a missing
  * element is a validation error.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 final class FhirPayloadReader
 {
@@ -150,7 +150,7 @@ final class FhirPayloadReader
     }
 
     /**
-     * Re-keys a payload fragment as the string-keyed array the OpenEMR services declare.
+     * Re-keys a payload fragment as the string-keyed array the DCL services declare.
      *
      * @return array<string, mixed>
      */
@@ -168,7 +168,7 @@ final class FhirPayloadReader
     }
 
     /**
-     * Normalizes a repeating payload fragment into the row list the OpenEMR services declare.
+     * Normalizes a repeating payload fragment into the row list the DCL services declare.
      *
      * @return list<array<string, mixed>>
      */

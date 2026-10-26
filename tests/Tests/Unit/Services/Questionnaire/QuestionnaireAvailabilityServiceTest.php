@@ -20,24 +20,24 @@
  * not have, so going through getAvailableIds() would assert on permissions rather than on
  * the query.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\Services\Questionnaire;
+namespace DCL\Tests\Unit\Services\Questionnaire;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\Questionnaire\AssignmentRecord;
-use OpenEMR\Services\Questionnaire\AvailabilityContext;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\Questionnaire\AssignmentRecord;
+use DCL\Services\Questionnaire\AvailabilityContext;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 
@@ -95,7 +95,7 @@ class QuestionnaireAvailabilityServiceTest extends TestCase
         if (!self::tableExists('content_assignments')) {
             $this->markTestSkipped(
                 'content_assignments is missing from this database; run sql_upgrade '
-                . '(openemr-cmd sql-upgrade) or rebuild the stack, then re-run'
+                . '(DCL-cmd sql-upgrade) or rebuild the stack, then re-run'
             );
         }
 

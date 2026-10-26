@@ -6,19 +6,19 @@
  * docker_tags (minor++ + drop `next` + keep `dev`), and removes all
  * `unreleased: true` rows uniformly (covers normal-cut + skip-line-cut).
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\BranchCutReleaseTargetsMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\Mutator\BranchCutReleaseTargetsMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
@@ -34,7 +34,7 @@ final class BranchCutReleaseTargetsMutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-bct-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-bct-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir . '/.github', 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir');
         }
@@ -98,22 +98,22 @@ final class BranchCutReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev,next
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,next
-          openemr_version_ref: rel-810
+          DCL_version_ref: rel-810
           unreleased: true
 
         # Second rel-810 row, also skipped.
         - branch: rel-810
           docker_tags: 8.1.0
-          openemr_version_ref: v8_1_0
+          DCL_version_ref: v8_1_0
           unreleased: true
 
         - branch: rel-800
           docker_tags: 8.0.0,latest
-          openemr_version_ref: v8_0_0
+          DCL_version_ref: v8_0_0
         YAML;
         $this->writeTarget($input);
         (new BranchCutReleaseTargetsMutator())->apply(
@@ -141,11 +141,11 @@ final class BranchCutReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev,next
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
         YAML;
         $this->writeTarget($input);
         (new BranchCutReleaseTargetsMutator())->apply(
@@ -164,12 +164,12 @@ final class BranchCutReleaseTargetsMutatorTest extends TestCase
         }
         self::assertSame('8.3.0,dev', $byBranch['master']['docker_tags']);
         self::assertSame('8.2.0,next', $byBranch['rel-820']['docker_tags']);
-        self::assertSame('rel-820', $byBranch['rel-820']['openemr_version_ref']);
+        self::assertSame('rel-820', $byBranch['rel-820']['DCL_version_ref']);
         self::assertSame('8.1.1,latest', $byBranch['rel-810']['docker_tags']);
         // Every freshly-cut rel branch carries the acceptance surface
         // (Phase 12 / #13332). Mutator must set gate_with_acceptance
         // on the new row — omitted in the initial mutator shipped
-        // pre-Phase-12, back-patched after openemr/openemr#13484 caught
+        // pre-Phase-12, back-patched after DCL/DCL#13484 caught
         // the drop on rel-830's cut.
         self::assertTrue($byBranch['rel-820']['gate_with_acceptance']);
     }
@@ -182,11 +182,11 @@ final class BranchCutReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.2.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-810
           docker_tags: 8.1.1,next
-          openemr_version_ref: rel-810
+          DCL_version_ref: rel-810
         YAML;
         $this->writeTarget($input);
         (new BranchCutReleaseTargetsMutator())->apply(
@@ -255,15 +255,15 @@ final class BranchCutReleaseTargetsMutatorTest extends TestCase
         $input = <<<'YAML'
         - branch: master
           docker_tags: 8.3.0,dev
-          openemr_version_ref: master
+          DCL_version_ref: master
 
         - branch: rel-820
           docker_tags: 8.2.0,next
-          openemr_version_ref: rel-820
+          DCL_version_ref: rel-820
 
         - branch: rel-810
           docker_tags: 8.1.1,latest
-          openemr_version_ref: v8_1_1
+          DCL_version_ref: v8_1_1
         YAML;
         $this->writeTarget($input);
         $result = (new BranchCutReleaseTargetsMutator())->apply(

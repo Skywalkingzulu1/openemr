@@ -7,18 +7,18 @@
  * and does not inflate results when the codes table contains multiple rows
  * for the same code value (different modifiers or code types).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\Reports;
+namespace DCL\Tests\Services\Reports;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Reports\FinancialSummaryReportService;
-use OpenEMR\Services\Reports\ServiceCodeSummary;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Reports\FinancialSummaryReportService;
+use DCL\Services\Reports\ServiceCodeSummary;
 use PHPUnit\Framework\TestCase;
 
 class FinancialSummaryReportServiceTest extends TestCase

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols.
@@ -71,13 +71,13 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
 {
     /**
      * The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression. The specified path SHALL be a FHIRPath resolveable on the specified target type of the ActivityDefinition, and SHALL consist only of identifiers, constant indexers, and a restricted subset of functions. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * An expression specifying the value of the customized element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $expression = null;
 
@@ -88,7 +88,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
 
     /**
      * The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression. The specified path SHALL be a FHIRPath resolveable on the specified target type of the ActivityDefinition, and SHALL consist only of identifiers, constant indexers, and a restricted subset of functions. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -97,7 +97,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
 
     /**
      * The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression. The specified path SHALL be a FHIRPath resolveable on the specified target type of the ActivityDefinition, and SHALL consist only of identifiers, constant indexers, and a restricted subset of functions. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -108,7 +108,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
 
     /**
      * An expression specifying the value of the customized element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getExpression()
     {
@@ -117,7 +117,7 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement implements \Jso
 
     /**
      * An expression specifying the value of the customized element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $expression
      * @return $this
      */
     public function setExpression($expression)

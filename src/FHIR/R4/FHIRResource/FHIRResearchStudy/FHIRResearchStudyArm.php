@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy;
+namespace DCL\FHIR\R4\FHIRResource\FHIRResearchStudy;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  A ResearchStudy involves the gathering of information about human or animal subjects.
@@ -71,19 +71,19 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Unique, human-readable label for this arm of the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Categorization of study arm, e.g. experimental, active comparator, placebo comparator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A succinct description of the path through the study that would be followed by a subject adhering to this arm.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
@@ -94,7 +94,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Unique, human-readable label for this arm of the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -103,7 +103,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Unique, human-readable label for this arm of the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -114,7 +114,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Categorization of study arm, e.g. experimental, active comparator, placebo comparator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -123,7 +123,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Categorization of study arm, e.g. experimental, active comparator, placebo comparator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -134,7 +134,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A succinct description of the path through the study that would be followed by a subject adhering to this arm.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -143,7 +143,7 @@ class FHIRResearchStudyArm extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A succinct description of the path through the study that would be followed by a subject adhering to this arm.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)

@@ -46,7 +46,7 @@
 
 set -euo pipefail
 
-RAW_FETCH_BASE_URL="${RAW_FETCH_BASE_URL:-https://raw.githubusercontent.com/openemr/openemr}"
+RAW_FETCH_BASE_URL="${RAW_FETCH_BASE_URL:-https://raw.githubusercontent.com/DCL/DCL}"
 
 emit_error() {
   local msg="$1"

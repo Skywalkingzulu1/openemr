@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.
@@ -72,121 +72,121 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAdverseEventActuality
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAdverseEventActuality
      */
     public $actuality = null;
 
     /**
      * The overall type of event, intended for search and filtering purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * This element defines the specific type of event that occurred or that was prevented from occurring.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $event = null;
 
     /**
      * This subject or group impacted by the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The Encounter during which AdverseEvent was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The date (and perhaps time) when the adverse event occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $detected = null;
 
     /**
      * The date on which the existence of the AdverseEvent was first recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $recordedDate = null;
 
     /**
      * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $resultingCondition = [];
 
     /**
      * The information about where the adverse event occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * Assessment whether this event was of real importance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $seriousness = null;
 
     /**
      * Describes the severity of the adverse event, in relation to the subject. Contrast to AdverseEvent.seriousness - a severe rash might not be serious, but a mild heart problem is.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $severity = null;
 
     /**
      * Describes the type of outcome from the adverse event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $outcome = null;
 
     /**
      * Information on who recorded the adverse event.  May be the patient or a practitioner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $recorder = null;
 
     /**
      * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $contributor = [];
 
     /**
      * Describes the entity that is suspected to have caused the adverse event.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity[]
      */
     public $suspectEntity = [];
 
     /**
      * AdverseEvent.subjectMedicalHistory.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subjectMedicalHistory = [];
 
     /**
      * AdverseEvent.referenceDocument.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $referenceDocument = [];
 
     /**
      * AdverseEvent.study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $study = [];
 
@@ -197,7 +197,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -206,7 +206,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -217,7 +217,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAdverseEventActuality
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAdverseEventActuality
      */
     public function getActuality()
     {
@@ -226,7 +226,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAdverseEventActuality $actuality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAdverseEventActuality $actuality
      * @return $this
      */
     public function setActuality($actuality)
@@ -237,7 +237,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The overall type of event, intended for search and filtering purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -246,7 +246,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The overall type of event, intended for search and filtering purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -257,7 +257,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This element defines the specific type of event that occurred or that was prevented from occurring.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getEvent()
     {
@@ -266,7 +266,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This element defines the specific type of event that occurred or that was prevented from occurring.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $event
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $event
      * @return $this
      */
     public function setEvent($event)
@@ -277,7 +277,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This subject or group impacted by the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -286,7 +286,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This subject or group impacted by the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -297,7 +297,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which AdverseEvent was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -306,7 +306,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which AdverseEvent was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -317,7 +317,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date (and perhaps time) when the adverse event occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -326,7 +326,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date (and perhaps time) when the adverse event occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -337,7 +337,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDetected()
     {
@@ -346,7 +346,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $detected
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $detected
      * @return $this
      */
     public function setDetected($detected)
@@ -357,7 +357,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date on which the existence of the AdverseEvent was first recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getRecordedDate()
     {
@@ -366,7 +366,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date on which the existence of the AdverseEvent was first recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $recordedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $recordedDate
      * @return $this
      */
     public function setRecordedDate($recordedDate)
@@ -377,7 +377,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getResultingCondition()
     {
@@ -386,7 +386,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $resultingCondition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $resultingCondition
      * @return $this
      */
     public function addResultingCondition($resultingCondition)
@@ -397,7 +397,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The information about where the adverse event occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -406,7 +406,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The information about where the adverse event occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -417,7 +417,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Assessment whether this event was of real importance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSeriousness()
     {
@@ -426,7 +426,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Assessment whether this event was of real importance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $seriousness
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $seriousness
      * @return $this
      */
     public function setSeriousness($seriousness)
@@ -437,7 +437,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the severity of the adverse event, in relation to the subject. Contrast to AdverseEvent.seriousness - a severe rash might not be serious, but a mild heart problem is.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSeverity()
     {
@@ -446,7 +446,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the severity of the adverse event, in relation to the subject. Contrast to AdverseEvent.seriousness - a severe rash might not be serious, but a mild heart problem is.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $severity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $severity
      * @return $this
      */
     public function setSeverity($severity)
@@ -457,7 +457,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the type of outcome from the adverse event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome()
     {
@@ -466,7 +466,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the type of outcome from the adverse event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -477,7 +477,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information on who recorded the adverse event.  May be the patient or a practitioner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRecorder()
     {
@@ -486,7 +486,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information on who recorded the adverse event.  May be the patient or a practitioner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recorder
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recorder
      * @return $this
      */
     public function setRecorder($recorder)
@@ -497,7 +497,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getContributor()
     {
@@ -506,7 +506,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $contributor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $contributor
      * @return $this
      */
     public function addContributor($contributor)
@@ -517,7 +517,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the entity that is suspected to have caused the adverse event.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity[]
      */
     public function getSuspectEntity()
     {
@@ -526,7 +526,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the entity that is suspected to have caused the adverse event.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $suspectEntity
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $suspectEntity
      * @return $this
      */
     public function addSuspectEntity($suspectEntity)
@@ -537,7 +537,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * AdverseEvent.subjectMedicalHistory.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubjectMedicalHistory()
     {
@@ -546,7 +546,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * AdverseEvent.subjectMedicalHistory.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subjectMedicalHistory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subjectMedicalHistory
      * @return $this
      */
     public function addSubjectMedicalHistory($subjectMedicalHistory)
@@ -557,7 +557,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * AdverseEvent.referenceDocument.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReferenceDocument()
     {
@@ -566,7 +566,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * AdverseEvent.referenceDocument.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $referenceDocument
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $referenceDocument
      * @return $this
      */
     public function addReferenceDocument($referenceDocument)
@@ -577,7 +577,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * AdverseEvent.study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getStudy()
     {
@@ -586,7 +586,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * AdverseEvent.study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $study
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $study
      * @return $this
      */
     public function addStudy($study)

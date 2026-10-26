@@ -3,16 +3,16 @@
 /**
  * Isolated tests for EraFilenameValidator.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Billing;
+namespace DCL\Tests\Isolated\Billing;
 
-use OpenEMR\Billing\EraFilenameValidator;
+use DCL\Billing\EraFilenameValidator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -127,7 +127,7 @@ class EraFilenameValidatorTest extends TestCase
 
     private static function makeTempDir(): string
     {
-        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'openemr-era-' . uniqid('', true);
+        $tmp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'DCL-era-' . uniqid('', true);
         if (!mkdir($tmp)) {
             throw new \RuntimeException('Failed to create temp dir');
         }

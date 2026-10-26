@@ -10,22 +10,22 @@
  * Supports both pcov and xdebug coverage drivers.
  * pcov is faster, but xdebug supports path coverage.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-if (!getenv('OPENEMR_ENABLE_CI_PHP')) {
-    error_log('Tried to run ci/auto_prepend without setting OPENEMR_ENABLE_CI_PHP in the environment.');
+if (!getenv('DCL_ENABLE_CI_PHP')) {
+    error_log('Tried to run ci/auto_prepend without setting DCL_ENABLE_CI_PHP in the environment.');
     return;
 }
 
-const PREPEND_MARKER = '/tmp/openemr-autoprepend-PREPEND_EXECUTED';
-const SHUTDOWN_MARKER = '/tmp/openemr-autoprepend-SHUTDOWN_EXECUTED';
+const PREPEND_MARKER = '/tmp/DCL-autoprepend-PREPEND_EXECUTED';
+const SHUTDOWN_MARKER = '/tmp/DCL-autoprepend-SHUTDOWN_EXECUTED';
 
-const COVERAGE_DIR = '/tmp/openemr-coverage';
+const COVERAGE_DIR = '/tmp/DCL-coverage';
 
 // Detect test type based on the request URI or environment
 // Priority order: inferno > api > e2e
@@ -64,7 +64,7 @@ if (COVERAGE_ENABLED) {
         'pcov' => \pcov\start(),
         'xdebug' => xdebug_start_code_coverage(XDEBUG_CC_UNUSED | XDEBUG_CC_DEAD_CODE),
 
-        // No PSR-3 logger is available before the OpenEMR bootstrap,
+        // No PSR-3 logger is available before the DCL bootstrap,
         // so error_log is necessary here.
         default => error_log("Prepend: Coverage is enabled, but no coverage driver (pcov or xdebug) is available"),
     };
@@ -74,8 +74,8 @@ if (COVERAGE_ENABLED) {
 
 function coverage_shutdown_handler(): void
 {
-    if (!getenv('OPENEMR_ENABLE_CI_PHP')) {
-        error_log('Tried to run shutdown handler without setting OPENEMR_ENABLE_CI_PHP in the environment.');
+    if (!getenv('DCL_ENABLE_CI_PHP')) {
+        error_log('Tried to run shutdown handler without setting DCL_ENABLE_CI_PHP in the environment.');
         return;
     }
     if (!file_exists(SHUTDOWN_MARKER)) {

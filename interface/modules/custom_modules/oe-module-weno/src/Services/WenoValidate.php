@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Modules\WenoModule\Services;
+namespace DCL\Modules\WenoModule\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use OpenEMR\Common\Utils\XmlUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Utils\XmlUtils;
+use DCL\Core\OEGlobalsBag;
 
 class WenoValidate extends ModuleService
 {
@@ -77,7 +77,7 @@ class WenoValidate extends ModuleService
                 </AdminUser>
                 <SenderSoftware>
                     <SenderSoftwareDeveloper>Administrator</SenderSoftwareDeveloper>
-                    <SenderSoftwareProduct>OpenEMR Weno EZ eRx</SenderSoftwareProduct>
+                    <SenderSoftwareProduct>DCL Weno EZ eRx</SenderSoftwareProduct>
                     <SenderSoftwareVersionRelease>7.0.2(1)</SenderSoftwareVersionRelease>
                 </SenderSoftware>
             </Header>
@@ -104,7 +104,7 @@ class WenoValidate extends ModuleService
                 </AdminUser>
                 <SenderSoftware>
                     <SenderSoftwareDeveloper>Administrator</SenderSoftwareDeveloper>
-                    <SenderSoftwareProduct>OpenEMR Weno EZ eRx</SenderSoftwareProduct>
+                    <SenderSoftwareProduct>DCL Weno EZ eRx</SenderSoftwareProduct>
                     <SenderSoftwareVersionRelease>7.0.2(1)</SenderSoftwareVersionRelease>
                 </SenderSoftware>
             </Header>

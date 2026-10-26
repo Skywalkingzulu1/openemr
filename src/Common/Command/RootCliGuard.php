@@ -1,25 +1,25 @@
 <?php
 
 /**
- * Guard against running OpenEMR CLI scripts as root.
+ * Guard against running DCL CLI scripts as root.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use RuntimeException;
 use Symfony\Component\Process\Exception\ExceptionInterface as ProcessExceptionInterface;
 use Symfony\Component\Process\Process;
 
 /**
- * Refuses to let an OpenEMR CLI process start when invoked as root.
+ * Refuses to let an DCL CLI process start when invoked as root.
  *
  * Running PHP as root from the command line produces files (cache
  * directories, generated keys, Smarty compile output, etc.) owned by
@@ -29,7 +29,7 @@ use Symfony\Component\Process\Process;
  * `PHP Fatal error: ... unable to write to compile_dir` deep in
  * template rendering, or `Key path … is not readable` in OAuth.
  *
- * No OpenEMR CLI script needs root. Sites that run their web server
+ * No DCL CLI script needs root. Sites that run their web server
  * as root have a configuration problem of their own — accommodating
  * them here would only hide it.
  *
@@ -64,7 +64,7 @@ final class RootCliGuard
         }
 
         throw new RuntimeException(
-            "OpenEMR CLI scripts must not be run as root (UID 0). Doing "
+            "DCL CLI scripts must not be run as root (UID 0). Doing "
             . "so creates files the web server cannot read, leading to "
             . "opaque fatal errors later (unable to write to compile_dir, "
             . "key path not readable, etc). Re-run as the web user "
@@ -76,7 +76,7 @@ final class RootCliGuard
     /**
      * Resolve the current process's effective UID by running `id -u`
      * via Symfony Process. The `posix` PHP extension would give the
-     * same result via a direct syscall, but the openemr docker images
+     * same result via a direct syscall, but the DCL docker images
      * don't ship it, so the entire production path goes through
      * Symfony Process — keeping a single tested path here is simpler
      * than carrying a posix branch that real environments never run.

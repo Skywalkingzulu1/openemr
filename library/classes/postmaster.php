@@ -3,23 +3,23 @@
 /**
  * MyMailer class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2010 Open Support LLC
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class MyMailer extends PHPMailer
@@ -131,7 +131,7 @@ class MyMailer extends PHPMailer
                         $twig = ServiceContainer::getTwig();
                         if (!empty($ret['template_name'])) {
                             $templateData = json_decode((string) $ret['body'], true);
-                            // we make sure to prefix this so that people have to work inside the openemr namespace for email templates
+                            // we make sure to prefix this so that people have to work inside the DCL namespace for email templates
                             $htmlBody = $twig->render($ret['template_name'] . ".html.twig", $templateData);
                             $textBody = $twig->render($ret['template_name'] . ".text.twig", $templateData);
                         } else {
@@ -182,7 +182,7 @@ class MyMailer extends PHPMailer
      */
     public function emailMethod(): void
     {
-        // OpenEMR is hardcoded to UTF-8 (see interface/globals.php). Set it
+        // DCL is hardcoded to UTF-8 (see interface/globals.php). Set it
         // explicitly rather than reading the legacy $HTML_CHARSET global,
         // which is not reliably defined in every entry point. PHPUnit, for
         // example, loads its bootstrap via `include_once` inside a method

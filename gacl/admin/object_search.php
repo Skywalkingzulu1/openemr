@@ -3,8 +3,8 @@
 //First make sure user has access
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
 
 //ensure user has proper access
 if (!AclMain::aclCheckCore('admin', 'acl')) {
@@ -13,7 +13,7 @@ if (!AclMain::aclCheckCore('admin', 'acl')) {
 
 require_once('gacl_admin.inc.php');
 
-/** @var \OpenEMR\Gacl\GaclAdminApi $gacl_api */
+/** @var \DCL\Gacl\GaclAdminApi $gacl_api */
 /** @var \ADOConnection $db */
 /** @var \Smarty $smarty */
 

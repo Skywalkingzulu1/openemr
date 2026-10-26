@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4;
+namespace DCL\FHIR\R4;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Juggernaut Systems Express, <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2023 Juggernaut Systems Express, <sherwingaddis@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Services;
+namespace DCL\Events\Services;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

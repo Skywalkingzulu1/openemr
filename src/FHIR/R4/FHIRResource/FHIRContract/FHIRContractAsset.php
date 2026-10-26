@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,91 +71,91 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Differentiates the kind of the asset .
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $scope = null;
 
     /**
      * Target entity type about which the term may be concerned.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * Associated entities.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $typeReference = [];
 
     /**
      * May be a subtype or part of an offered asset.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $subtype = [];
 
     /**
      * Specifies the applicability of the term to an asset resource instance, and instances it refers to orinstances that refer to it, and/or are owned by the offeree.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $relationship = null;
 
     /**
      * Circumstance of the asset.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContext[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContext[]
      */
     public $context = [];
 
     /**
      * Description of the quality and completeness of the asset that imay be a factor in its valuation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $condition = null;
 
     /**
      * Type of Asset availability for use or ownership.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $periodType = [];
 
     /**
      * Asset relevant contractual time period.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod[]
      */
     public $period = [];
 
     /**
      * Time period of asset use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod[]
      */
     public $usePeriod = [];
 
     /**
      * Clause or question text (Prose Object) concerning the asset in a linked form, such as a QuestionnaireResponse used in the formation of the contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $linkId = [];
 
     /**
      * Response to assets.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
      */
     public $answer = [];
 
     /**
      * Security labels that protects the asset.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public $securityLabelNumber = [];
 
     /**
      * Contract Valued Item List.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractValuedItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractValuedItem[]
      */
     public $valuedItem = [];
 
@@ -166,7 +166,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Differentiates the kind of the asset .
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getScope()
     {
@@ -175,7 +175,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Differentiates the kind of the asset .
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $scope
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $scope
      * @return $this
      */
     public function setScope($scope)
@@ -186,7 +186,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Target entity type about which the term may be concerned.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -195,7 +195,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Target entity type about which the term may be concerned.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -206,7 +206,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Associated entities.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getTypeReference()
     {
@@ -215,7 +215,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Associated entities.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $typeReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $typeReference
      * @return $this
      */
     public function addTypeReference($typeReference)
@@ -226,7 +226,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * May be a subtype or part of an offered asset.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSubtype()
     {
@@ -235,7 +235,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * May be a subtype or part of an offered asset.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subtype
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subtype
      * @return $this
      */
     public function addSubtype($subtype)
@@ -246,7 +246,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Specifies the applicability of the term to an asset resource instance, and instances it refers to orinstances that refer to it, and/or are owned by the offeree.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getRelationship()
     {
@@ -255,7 +255,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Specifies the applicability of the term to an asset resource instance, and instances it refers to orinstances that refer to it, and/or are owned by the offeree.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $relationship
      * @return $this
      */
     public function setRelationship($relationship)
@@ -266,7 +266,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Circumstance of the asset.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContext[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContext[]
      */
     public function getContext()
     {
@@ -275,7 +275,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Circumstance of the asset.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContext $context
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContext $context
      * @return $this
      */
     public function addContext($context)
@@ -286,7 +286,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Description of the quality and completeness of the asset that imay be a factor in its valuation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCondition()
     {
@@ -295,7 +295,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Description of the quality and completeness of the asset that imay be a factor in its valuation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $condition
      * @return $this
      */
     public function setCondition($condition)
@@ -306,7 +306,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of Asset availability for use or ownership.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPeriodType()
     {
@@ -315,7 +315,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of Asset availability for use or ownership.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $periodType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $periodType
      * @return $this
      */
     public function addPeriodType($periodType)
@@ -326,7 +326,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Asset relevant contractual time period.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod[]
      */
     public function getPeriod()
     {
@@ -335,7 +335,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Asset relevant contractual time period.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function addPeriod($period)
@@ -346,7 +346,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Time period of asset use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod[]
      */
     public function getUsePeriod()
     {
@@ -355,7 +355,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Time period of asset use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $usePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $usePeriod
      * @return $this
      */
     public function addUsePeriod($usePeriod)
@@ -366,7 +366,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Clause or question text (Prose Object) concerning the asset in a linked form, such as a QuestionnaireResponse used in the formation of the contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -375,7 +375,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Clause or question text (Prose Object) concerning the asset in a linked form, such as a QuestionnaireResponse used in the formation of the contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -386,7 +386,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getLinkId()
     {
@@ -395,7 +395,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $linkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $linkId
      * @return $this
      */
     public function addLinkId($linkId)
@@ -406,7 +406,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Response to assets.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
      */
     public function getAnswer()
     {
@@ -415,7 +415,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Response to assets.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer $answer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer $answer
      * @return $this
      */
     public function addAnswer($answer)
@@ -426,7 +426,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Security labels that protects the asset.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public function getSecurityLabelNumber()
     {
@@ -435,7 +435,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Security labels that protects the asset.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
      * @return $this
      */
     public function addSecurityLabelNumber($securityLabelNumber)
@@ -446,7 +446,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Contract Valued Item List.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractValuedItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractValuedItem[]
      */
     public function getValuedItem()
     {
@@ -455,7 +455,7 @@ class FHIRContractAsset extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Contract Valued Item List.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractValuedItem $valuedItem
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractValuedItem $valuedItem
      * @return $this
      */
     public function addValuedItem($valuedItem)

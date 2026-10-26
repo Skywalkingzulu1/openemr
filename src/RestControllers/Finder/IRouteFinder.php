@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\RestControllers\Finder;
+namespace DCL\RestControllers\Finder;
 
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRequest;
 
 interface IRouteFinder
 {

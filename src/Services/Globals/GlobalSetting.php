@@ -1,18 +1,18 @@
 <?php
 
 /**
- * This file is part of OpenEMR.
+ * This file is part of DCL.
  *
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Globals;
+namespace DCL\Services\Globals;
 
 /**
  * Represents a global setting
  *
- * @package OpenEMR\Services
+ * @package DCL\Services
  * @subpackage Globals
  * @author Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2019 Ken Chapple <ken@mi-squared.com>
@@ -45,7 +45,7 @@ class GlobalSetting
     // multiple select dashboard cards
     const DATA_TYPE_MULTI_DASHBOARD_CARDS = "m_dashboard_cards";
 
-    // list of default visits in OpenEMR
+    // list of default visits in DCL
     const DATA_TYPE_DEFAULT_VISIT_CATEGORY = "default_visit_category";
     // CSS Theme selector
     const DATA_TYPE_CSS = "css";

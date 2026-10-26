@@ -3,11 +3,11 @@
 /**
  * Generalized service configuration
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -30,12 +30,12 @@ use Monolog\{
     Logger,
     Processor\PsrLogMessageProcessor,
 };
-use OpenEMR\BC\FallbackRouter;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Installer\InstallerInterface;
-use OpenEMR\Core\ErrorHandler;
-use OpenEMR\Services;
-use OpenEMR\Services\Storage\{
+use DCL\BC\FallbackRouter;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Installer\InstallerInterface;
+use DCL\Core\ErrorHandler;
+use DCL\Services;
+use DCL\Services\Storage\{
     Location,
     Manager,
     ManagerInterface,
@@ -59,7 +59,7 @@ return [
     // Filesystem abstraction
     ManagerInterface::class => Manager::class,
     Manager::class => function (TC $c): Manager {
-        $siteDir = sprintf('%s/sites/%s', $c->getString('installRoot'), $c->getString('OPENEMR_SITE'));
+        $siteDir = sprintf('%s/sites/%s', $c->getString('installRoot'), $c->getString('DCL_SITE'));
         $m = new Manager();
         // For now, use the default paths on the local FS. Eventually this will
         // support more customization.
@@ -82,7 +82,7 @@ return [
     Level::class => fn (TC $c): Level => Level::fromName($c->get('LOG_LEVEL')),
     Logger::class => function (TC $c) {
         // Duplicated from setup in SystemLogger (for now)
-        $logger = new Logger('OpenEMR');
+        $logger = new Logger('DCL');
         $handler = new ErrorLogHandler(ErrorLogHandler::OPERATING_SYSTEM, $c->get(Level::class));
         $formatter = new LineFormatter("%channel%.%level_name%: %message% %context% %extra%");
         $formatter->includeStacktraces(true);

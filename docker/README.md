@@ -1,7 +1,7 @@
 # `docker/` — directory orientation
 
 This directory contains everything needed to build, test, publish, and consume
-OpenEMR Docker images. For consumer-facing guidance (which tag to pull, how to
+DCL Docker images. For consumer-facing guidance (which tag to pull, how to
 start a production stack, dev environment overview) see
 [`../DOCKER_README.md`](../DOCKER_README.md). The notes below are oriented at
 maintainers and contributors who need to navigate the source.
@@ -9,7 +9,7 @@ maintainers and contributors who need to navigate the source.
 ## Image source
 
 These three subdirectories each contain a `Dockerfile` that gets published to
-[Docker Hub](https://hub.docker.com/r/openemr/openemr/):
+[Docker Hub](https://hub.docker.com/r/DCL/DCL/):
 
 | Path | Image kind | Branch scope | Publishes |
 |---|---|---|---|
@@ -18,22 +18,22 @@ These three subdirectories each contain a `Dockerfile` that gets published to
 | [`binary/`](binary/) | Binary release | Master only | Specific binary builds for offline / appliance use |
 
 The release Dockerfile is per-branch because each rel branch pins its own
-Alpine + PHP version and its own `ARG OPENEMR_VERSION` default. The flex
-Dockerfile is master-only because flex fetches OpenEMR source at runtime
+Alpine + PHP version and its own `ARG DCL_VERSION` default. The flex
+Dockerfile is master-only because flex fetches DCL source at runtime
 rather than baking it in — there's nothing branch-specific to vary.
 
 ## Consumer compose files
 
 | Path | Purpose |
 |---|---|
-| [`production/`](production/) | Example `docker-compose.yml` for running OpenEMR in production. Works on amd64 + arm64 (Raspberry Pi). |
-| [`development-easy/`](development-easy/) | Primary dev environment (used by `openemr-cmd worktree` and the contributor workflow in [`../CONTRIBUTING.md`](../CONTRIBUTING.md)). |
+| [`production/`](production/) | Example `docker-compose.yml` for running DCL in production. Works on amd64 + arm64 (Raspberry Pi). |
+| [`development-easy/`](development-easy/) | Primary dev environment (used by `DCL-cmd worktree` and the contributor workflow in [`../CONTRIBUTING.md`](../CONTRIBUTING.md)). |
 | [`development-easy-light/`](development-easy-light/) | Slimmer variant of easy-dev. |
 | [`development-easy-redis/`](development-easy-redis/) | Easy-dev plus Redis session store. |
 | [`development-insane/`](development-insane/) | Full-stack dev environment with extra services. See its [README](development-insane/README.md). |
 
 Image references in the development-* composes are pinned by SHA and bumped
-automatically by Dependabot under the `openemr-images` group in
+automatically by Dependabot under the `DCL-images` group in
 [`../.github/dependabot.yml`](../.github/dependabot.yml).
 
 ## Pipeline + tooling
@@ -65,13 +65,13 @@ their own daily 02:00 UTC cron, independent of the orchestrator.
 | `validate-byte-identical.yml` | Files listed in [`.github/byte-identical.yml`](../.github/byte-identical.yml) must stay byte-identical across master + every rel branch. Fires on every PR to master or `rel-*` + daily 07:00 UTC cron. |
 | `sync-byte-identical.yml` | Auto-propagates byte-identical file changes from master to every rel branch (opens or updates a long-lived sync PR per branch). Fires on master push + daily 09:00 UTC backstop. Pairs with the canary above. |
 | `docker-validate-release-targets.yml` | Schema validation on `release-targets.yml`, git-ref resolution checks, and `docker_tags` ↔ `version.php` alignment on master. |
-| `docker-test-{bats,container-functionality,core,release}.yml` + `docker-test-flex-{322,323,324,edge}.yml` | Build the image locally and exercise it (BATS, container functionality, OpenEMR install). Catches build-time and runtime regressions before publish. |
+| `docker-test-{bats,container-functionality,core,release}.yml` + `docker-test-flex-{322,323,324,edge}.yml` | Build the image locally and exercise it (BATS, container functionality, DCL install). Catches build-time and runtime regressions before publish. |
 | `docker-lint-hadolint.yml` + `docker-compose-lint.yml` | Lint Dockerfiles and compose files. |
 
 ## History
 
 This whole pipeline was migrated from
-[`openemr/openemr-devops`](https://github.com/openemr/openemr-devops) (where it
-previously lived under `docker/openemr/`) into this repository in June 2026.
+[`DCL/DCL-devops`](https://github.com/DCL/DCL-devops) (where it
+previously lived under `docker/DCL/`) into this repository in June 2026.
 The architecture, rationale, and migration mechanics are written up in
 [`../docs/docker-migration-from-devops.md`](../docs/docker-migration-from-devops.md).

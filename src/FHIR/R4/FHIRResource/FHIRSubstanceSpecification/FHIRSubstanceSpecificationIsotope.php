@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,31 +71,31 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 {
     /**
      * Substance identifier for each non-natural or radioisotope.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Substance name for each non-natural or radioisotope.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $name = null;
 
     /**
      * The type of isotopic substitution present in a single substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $substitution = null;
 
     /**
      * Half life - for a non-natural nuclide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $halfLife = null;
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      */
     public $molecularWeight = null;
 
@@ -106,7 +106,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * Substance identifier for each non-natural or radioisotope.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -115,7 +115,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * Substance identifier for each non-natural or radioisotope.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -126,7 +126,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * Substance name for each non-natural or radioisotope.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getName()
     {
@@ -135,7 +135,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * Substance name for each non-natural or radioisotope.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $name
      * @return $this
      */
     public function setName($name)
@@ -146,7 +146,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * The type of isotopic substitution present in a single substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstitution()
     {
@@ -155,7 +155,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * The type of isotopic substitution present in a single substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $substitution
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $substitution
      * @return $this
      */
     public function setSubstitution($substitution)
@@ -166,7 +166,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * Half life - for a non-natural nuclide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getHalfLife()
     {
@@ -175,7 +175,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * Half life - for a non-natural nuclide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $halfLife
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $halfLife
      * @return $this
      */
     public function setHalfLife($halfLife)
@@ -186,7 +186,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      */
     public function getMolecularWeight()
     {
@@ -195,7 +195,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement implements \
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
      * @return $this
      */
     public function setMolecularWeight($molecularWeight)

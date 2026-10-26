@@ -11,11 +11,11 @@
  * along with this program. If not, see
  * http://www.gnu.org/licenses/licenses.html#GPL .
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Sharon Cohen <sharonco@matrix.co.il>
  * @author  Amiel Elboim <amielel@matrix.co.il>
  * @author  Eyal Wolanowski <eyalvo@matrix.co.il>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 // Extend for date roll from  https://validatejs.org/#validators-datetime

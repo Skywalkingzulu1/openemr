@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm;
+namespace DCL\Services\Qdm;
 
-use OpenEMR\Cqm\PhpCqmCalculation;
-use OpenEMR\Cqm\Qdm\BaseTypes\Code;
-use OpenEMR\Cqm\Qdm\MedicationOrder;
-use OpenEMR\Cqm\Qdm\SubstanceOrder;
-use OpenEMR\Services\Qdm\Interfaces\QdmRequestInterface;
-use OpenEMR\Services\Qrda\Util\DateHelper;
+use DCL\Cqm\PhpCqmCalculation;
+use DCL\Cqm\Qdm\BaseTypes\Code;
+use DCL\Cqm\Qdm\MedicationOrder;
+use DCL\Cqm\Qdm\SubstanceOrder;
+use DCL\Services\Qdm\Interfaces\QdmRequestInterface;
+use DCL\Services\Qrda\Util\DateHelper;
 
 class CqmCalculator
 {

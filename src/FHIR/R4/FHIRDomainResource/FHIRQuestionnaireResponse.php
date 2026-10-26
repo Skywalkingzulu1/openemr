@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.
@@ -72,67 +72,67 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 {
     /**
      * A business identifier assigned to a particular completed (or partially completed) questionnaire.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * The Questionnaire that defines and organizes the questions for which answers are being provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $questionnaire = null;
 
     /**
      * The position of the questionnaire response within its overall lifecycle.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     public $status = null;
 
     /**
      * The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The Encounter during which this questionnaire response was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The date and/or time that this set of answers were last changed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $authored = null;
 
     /**
      * Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * The person who answered the questions about the subject.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $source = null;
 
     /**
      * A group or question item from the original questionnaire for which answers are provided.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public $item = [];
 
@@ -143,7 +143,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A business identifier assigned to a particular completed (or partially completed) questionnaire.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -152,7 +152,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A business identifier assigned to a particular completed (or partially completed) questionnaire.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -163,7 +163,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -172,7 +172,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -183,7 +183,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -192,7 +192,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -203,7 +203,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The Questionnaire that defines and organizes the questions for which answers are being provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getQuestionnaire()
     {
@@ -212,7 +212,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The Questionnaire that defines and organizes the questions for which answers are being provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $questionnaire
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $questionnaire
      * @return $this
      */
     public function setQuestionnaire($questionnaire)
@@ -223,7 +223,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The position of the questionnaire response within its overall lifecycle.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     public function getStatus()
     {
@@ -232,7 +232,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The position of the questionnaire response within its overall lifecycle.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -243,7 +243,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -252,7 +252,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The subject of the questionnaire response.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -263,7 +263,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The Encounter during which this questionnaire response was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -272,7 +272,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The Encounter during which this questionnaire response was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -283,7 +283,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date and/or time that this set of answers were last changed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAuthored()
     {
@@ -292,7 +292,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The date and/or time that this set of answers were last changed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $authored
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $authored
      * @return $this
      */
     public function setAuthored($authored)
@@ -303,7 +303,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -312,7 +312,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -323,7 +323,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The person who answered the questions about the subject.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSource()
     {
@@ -332,7 +332,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The person who answered the questions about the subject.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function setSource($source)
@@ -343,7 +343,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A group or question item from the original questionnaire for which answers are provided.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public function getItem()
     {
@@ -352,7 +352,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
 
     /**
      * A group or question item from the original questionnaire for which answers are provided.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
      * @return $this
      */
     public function addItem($item)

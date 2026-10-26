@@ -2,7 +2,7 @@
 
 This README ensures the directory path exists for branding the login page.
 
-To change the standard "OpenEMR" logo on the login page, place an image file
+To change the standard "DCL" logo on the login page, place an image file
 in this folder named "logo". File type can be PNG, JPG, SVG, or any other
 file type that can be rendered using the `<img>` tag's `src` property.
 

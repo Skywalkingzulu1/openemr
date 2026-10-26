@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,13 +72,13 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement implements 
 {
     /**
      * How the element value is interpreted when discrimination is evaluated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDiscriminatorType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDiscriminatorType
      */
     public $type = null;
 
     /**
      * A FHIRPath expression, using [the simple subset of FHIRPath](fhirpath.html#simple), that is used to identify the element on which discrimination is based.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
@@ -89,7 +89,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement implements 
 
     /**
      * How the element value is interpreted when discrimination is evaluated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDiscriminatorType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDiscriminatorType
      */
     public function getType()
     {
@@ -98,7 +98,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement implements 
 
     /**
      * How the element value is interpreted when discrimination is evaluated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDiscriminatorType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDiscriminatorType $type
      * @return $this
      */
     public function setType($type)
@@ -109,7 +109,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement implements 
 
     /**
      * A FHIRPath expression, using [the simple subset of FHIRPath](fhirpath.html#simple), that is used to identify the element on which discrimination is based.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -118,7 +118,7 @@ class FHIRElementDefinitionDiscriminator extends FHIRBackboneElement implements 
 
     /**
      * A FHIRPath expression, using [the simple subset of FHIRPath](fhirpath.html#simple), that is used to identify the element on which discrimination is based.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)

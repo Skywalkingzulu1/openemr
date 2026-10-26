@@ -32,7 +32,7 @@
 #                    used for the anchor slug.
 #   CHANGELOG_URL    Base URL to the live CHANGELOG.md this pointer
 #                    body should link to (e.g.
-#                    `https://github.com/openemr/openemr/blob/rel-820/CHANGELOG.md`).
+#                    `https://github.com/DCL/DCL/blob/rel-820/CHANGELOG.md`).
 #                    Required only when truncation triggers — a short
 #                    section that fits in the body doesn't need it.
 #   REL_BRANCH       Optional. Only used for the pointer-body prose

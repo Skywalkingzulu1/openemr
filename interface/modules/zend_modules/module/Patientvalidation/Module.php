@@ -20,7 +20,7 @@
 namespace Patientvalidation;
 
 use Laminas\ModuleManager\ModuleManager;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 class Module
 {

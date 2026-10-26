@@ -2,32 +2,32 @@
 
 /*
  * FhirObservationEmploymentService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
-use OpenEMR\Services\EmployerService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Observation\Trait\FhirObservationTrait;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Services\EmployerService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Observation\Trait\FhirObservationTrait;
+use DCL\Services\ListService;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationEmployerService extends FhirServiceBase implements IPatientCompartmentResourceService, IResourceUSCIGProfileService
 {
@@ -81,7 +81,7 @@ class FhirObservationEmployerService extends FhirServiceBase implements IPatient
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      * @return array<string, FhirSearchParameterDefinition>
      */
     protected function loadSearchParameters(): array
@@ -186,10 +186,10 @@ class FhirObservationEmployerService extends FhirServiceBase implements IPatient
     // sexual_orientation
 
     /**
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
 
@@ -197,19 +197,19 @@ class FhirObservationEmployerService extends FhirServiceBase implements IPatient
             $observationCodesToReturn = [];
 
             // we check to make sure we only have our category
-            if (isset($openEMRSearchParameters['category']) && $openEMRSearchParameters['category'] instanceof TokenSearchField) {
-                if (!$openEMRSearchParameters['category']->hasCodeValue(self::CATEGORY_SOCIAL_HISTORY)) {
+            if (isset($DCLSearchParameters['category']) && $DCLSearchParameters['category'] instanceof TokenSearchField) {
+                if (!$DCLSearchParameters['category']->hasCodeValue(self::CATEGORY_SOCIAL_HISTORY)) {
                     throw new SearchFieldException("category", "invalid value");
                 }
                 // we only support one category and then we remove it.
-                unset($openEMRSearchParameters['category']);
+                unset($DCLSearchParameters['category']);
             }
 
-            if (isset($openEMRSearchParameters['code'])) {
+            if (isset($DCLSearchParameters['code'])) {
                 /**
                  * @var TokenSearchField
                  */
-                $code = $openEMRSearchParameters['code'];
+                $code = $DCLSearchParameters['code'];
                 if (!($code instanceof TokenSearchField)) {
                     throw new SearchFieldException('code', "Invalid code");
                 }
@@ -217,7 +217,7 @@ class FhirObservationEmployerService extends FhirServiceBase implements IPatient
                     $code = $value->getCode();
                     $observationCodesToReturn[$code] = $code;
                 }
-                unset($openEMRSearchParameters['code']);
+                unset($DCLSearchParameters['code']);
             }
 
             if (empty($observationCodesToReturn)) {
@@ -234,13 +234,13 @@ class FhirObservationEmployerService extends FhirServiceBase implements IPatient
             $industryField = new TokenSearchField('industry', [new TokenSearchValue(false)]);
             $industryField->setModifier(SearchModifier::MISSING);
             $occupationIndustry->addChild($industryField);
-            $openEMRSearchParameters[$occupationIndustry->getName()] = $occupationIndustry;
+            $DCLSearchParameters[$occupationIndustry->getName()] = $occupationIndustry;
 
             // generally this will return one record (patient reference), but if there is no patient reference
             // it will return ALL patient records in order to grab the specific observations that are mapped in
             // the patient_data table
             $service = $this->getEmployerService();
-            $result = $service->search($openEMRSearchParameters);
+            $result = $service->search($DCLSearchParameters);
             $data = $result->getData() ?? [];
 
             // need to transform these into something we can consume
@@ -257,7 +257,7 @@ class FhirObservationEmployerService extends FhirServiceBase implements IPatient
 
     private function parseEmployerDataIntoObservationRecords(ProcessingResult $processingResult, array $record, array $observationCodesToReturn): void
     {
-        // convert each record into it's own openEMR record array
+        // convert each record into it's own DCL record array
         foreach ($observationCodesToReturn as $code) {
             $mapping = self::COLUMN_MAPPINGS[$code] ?? null;
             if (!isset($mapping)) {

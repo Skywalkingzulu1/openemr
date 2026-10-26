@@ -21,7 +21,7 @@
  *
  * Type:     function<br />
  * Name:     xlt<br />
- * Purpose:  translate in OpenEMR - Smarty templates<br />
+ * Purpose:  translate in DCL - Smarty templates<br />
  *
  * Examples:
  *

@@ -5,14 +5,14 @@
  * The SMART extension capabilities that our system supports
  * @see http://hl7.org/fhir/smart-app-launch/conformance/index.html
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\FHIR\SMART;
+namespace DCL\FHIR\SMART;
 
 class Capability
 {

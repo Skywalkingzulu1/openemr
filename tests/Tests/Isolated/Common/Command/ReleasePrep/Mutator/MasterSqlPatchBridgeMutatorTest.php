@@ -4,19 +4,19 @@
  * Tests for MasterSqlPatchBridgeMutator: renames the long-lived bridge
  * upgrade file so its "from" anchor reflects the just-shipped patch.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Tests\Isolated\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\MasterSqlPatchBridgeMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\Mutator\MasterSqlPatchBridgeMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -28,7 +28,7 @@ final class MasterSqlPatchBridgeMutatorTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-mspbm-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-mspbm-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir . '/sql', 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir');
         }

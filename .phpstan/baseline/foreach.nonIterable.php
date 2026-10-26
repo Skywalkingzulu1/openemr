@@ -649,7 +649,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-prior-authorizations/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Argument of an invalid type array\\|false supplied for foreach, only iterables are supported\\.$#',
@@ -1859,7 +1859,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\\.$#',
     'count' => 3,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\\.$#',
@@ -2267,7 +2267,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirDiagnosticReportService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Argument of an invalid type array\\<OpenEMR\\\\Services\\\\Search\\\\ServiceField\\>\\|string supplied for foreach, only iterables are supported\\.$#',
+    'message' => '#^Argument of an invalid type array\\<DCL\\\\Services\\\\Search\\\\ServiceField\\>\\|string supplied for foreach, only iterables are supported\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirDocRefService.php',
 ];
@@ -2382,7 +2382,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirResourcesService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Argument of an invalid type array\\<OpenEMR\\\\Services\\\\Search\\\\ServiceField\\>\\|string supplied for foreach, only iterables are supported\\.$#',
+    'message' => '#^Argument of an invalid type array\\<DCL\\\\Services\\\\Search\\\\ServiceField\\>\\|string supplied for foreach, only iterables are supported\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirServiceBase.php',
 ];
@@ -2562,7 +2562,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/Qdm/IndividualResult.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Argument of an invalid type array\\<OpenEMR\\\\Services\\\\Qdm\\\\PopulationSet\\>\\|null supplied for foreach, only iterables are supported\\.$#',
+    'message' => '#^Argument of an invalid type array\\<DCL\\\\Services\\\\Qdm\\\\PopulationSet\\>\\|null supplied for foreach, only iterables are supported\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/Services/Qdm/Measure.php',
 ];
@@ -2642,7 +2642,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/Search/BasicSearchField.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Argument of an invalid type array\\<OpenEMR\\\\Services\\\\Search\\\\ServiceField\\>\\|string supplied for foreach, only iterables are supported\\.$#',
+    'message' => '#^Argument of an invalid type array\\<DCL\\\\Services\\\\Search\\\\ServiceField\\>\\|string supplied for foreach, only iterables are supported\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../src/Services/Search/FHIRSearchFieldFactory.php',
 ];

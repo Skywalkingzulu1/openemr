@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A person who is directly or indirectly involved in the provisioning of healthcare.
@@ -72,62 +72,62 @@ class FHIRPractitioner extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An identifier that applies to this person in this role.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Whether this practitioner's record is in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * The name(s) associated with the practitioner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHumanName[]
      */
     public $name = [];
 
     /**
      * A contact detail for the practitioner, e.g. a telephone number or an email address.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Address(es) of the practitioner that are not role specific (typically home address).
 Work addresses are not typically entered in this property as they are usually role dependent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public $address = [];
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public $gender = null;
 
     /**
      * The date of birth for the practitioner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $birthDate = null;
 
     /**
      * Image of the person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public $photo = [];
 
     /**
      * The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certain locality.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification[]
      */
     public $qualification = [];
 
     /**
      * A language the practitioner can use in patient communication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $communication = [];
 
@@ -138,7 +138,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * An identifier that applies to this person in this role.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -147,7 +147,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * An identifier that applies to this person in this role.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -158,7 +158,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * Whether this practitioner's record is in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -167,7 +167,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * Whether this practitioner's record is in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -178,7 +178,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * The name(s) associated with the practitioner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHumanName[]
      */
     public function getName()
     {
@@ -187,7 +187,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * The name(s) associated with the practitioner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHumanName $name
      * @return $this
      */
     public function addName($name)
@@ -198,7 +198,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * A contact detail for the practitioner, e.g. a telephone number or an email address.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -207,7 +207,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * A contact detail for the practitioner, e.g. a telephone number or an email address.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -219,7 +219,7 @@ Work addresses are not typically entered in this property as they are usually ro
     /**
      * Address(es) of the practitioner that are not role specific (typically home address).
 Work addresses are not typically entered in this property as they are usually role dependent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
     {
@@ -229,7 +229,7 @@ Work addresses are not typically entered in this property as they are usually ro
     /**
      * Address(es) of the practitioner that are not role specific (typically home address).
 Work addresses are not typically entered in this property as they are usually role dependent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function addAddress($address)
@@ -240,7 +240,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender()
     {
@@ -249,7 +249,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
     public function setGender($gender)
@@ -260,7 +260,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * The date of birth for the practitioner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getBirthDate()
     {
@@ -269,7 +269,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * The date of birth for the practitioner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $birthDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $birthDate
      * @return $this
      */
     public function setBirthDate($birthDate)
@@ -280,7 +280,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * Image of the person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public function getPhoto()
     {
@@ -289,7 +289,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * Image of the person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $photo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function addPhoto($photo)
@@ -300,7 +300,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certain locality.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification[]
      */
     public function getQualification()
     {
@@ -309,7 +309,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certain locality.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification $qualification
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification $qualification
      * @return $this
      */
     public function addQualification($qualification)
@@ -320,7 +320,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * A language the practitioner can use in patient communication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCommunication()
     {
@@ -329,7 +329,7 @@ Work addresses are not typically entered in this property as they are usually ro
 
     /**
      * A language the practitioner can use in patient communication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $communication
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $communication
      * @return $this
      */
     public function addCommunication($communication)

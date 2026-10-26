@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical origins as well as the fraction of a material that can result in or can be modified to form a substance. This set of data elements shall be used to define polymer substances isolated from biological matrices. Taxonomic and anatomical origins shall be described using a controlled vocabulary as required. This information is captured for naturally derived polymers ( . starch) and structurally diverse substances. For Organisms belonging to the Kingdom Plantae the Substance level defines the fresh material of a single species or infraspecies, the Herbal Drug and the Herbal preparation. For Herbal preparations, the fraction information will be captured at the Substance information level and additional information for herbal extracts will be captured at the Specified Substance Group 1 information level. See for further explanation the Substance Class: Structurally Diverse and the herbal annex.
@@ -71,13 +71,13 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement implements \
 {
     /**
      * The type of author of an organism species shall be specified. The parenthetical author of an organism species refers to the first author who published the plant/animal name (of any rank). The primary author of an organism species refers to the first author(s), who validly published the plant/animal name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $authorType = null;
 
     /**
      * The author of an organism species shall be specified. The author year of an organism shall also be specified when applicable; refers to the year in which the first author(s) published the infraspecific plant/animal name (of any rank).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $authorDescription = null;
 
@@ -88,7 +88,7 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement implements \
 
     /**
      * The type of author of an organism species shall be specified. The parenthetical author of an organism species refers to the first author who published the plant/animal name (of any rank). The primary author of an organism species refers to the first author(s), who validly published the plant/animal name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAuthorType()
     {
@@ -97,7 +97,7 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement implements \
 
     /**
      * The type of author of an organism species shall be specified. The parenthetical author of an organism species refers to the first author who published the plant/animal name (of any rank). The primary author of an organism species refers to the first author(s), who validly published the plant/animal name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $authorType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $authorType
      * @return $this
      */
     public function setAuthorType($authorType)
@@ -108,7 +108,7 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement implements \
 
     /**
      * The author of an organism species shall be specified. The author year of an organism shall also be specified when applicable; refers to the year in which the first author(s) published the infraspecific plant/animal name (of any rank).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAuthorDescription()
     {
@@ -117,7 +117,7 @@ class FHIRSubstanceSourceMaterialAuthor extends FHIRBackboneElement implements \
 
     /**
      * The author of an organism species shall be specified. The author year of an organism shall also be specified when applicable; refers to the year in which the first author(s) published the infraspecific plant/animal name (of any rank).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $authorDescription
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $authorDescription
      * @return $this
      */
     public function setAuthorDescription($authorDescription)

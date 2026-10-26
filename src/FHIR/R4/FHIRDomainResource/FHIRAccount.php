@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centers, etc.
@@ -72,67 +72,67 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates whether the account is presently used/usable or not.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAccountStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAccountStatus
      */
     public $status = null;
 
     /**
      * Categorizes the account for reporting and searching purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Name used for the account when displaying it to humans in reports, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Identifies the entity which incurs the expenses. While the immediate recipients of services or goods might be entities related to the subject, the expenses were ultimately incurred by the subject of the Account.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subject = [];
 
     /**
      * The date range of services associated with this account.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $servicePeriod = null;
 
     /**
      * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountCoverage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountCoverage[]
      */
     public $coverage = [];
 
     /**
      * Indicates the service area, hospital, department, etc. with responsibility for managing the Account.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $owner = null;
 
     /**
      * Provides additional information about what the account tracks and how it is used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The parties responsible for balancing the account if other payment options fall short.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountGuarantor[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountGuarantor[]
      */
     public $guarantor = [];
 
     /**
      * Reference to a parent Account.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $partOf = null;
 
@@ -143,7 +143,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -152,7 +152,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -163,7 +163,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the account is presently used/usable or not.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAccountStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAccountStatus
      */
     public function getStatus()
     {
@@ -172,7 +172,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the account is presently used/usable or not.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAccountStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAccountStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -183,7 +183,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorizes the account for reporting and searching purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -192,7 +192,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorizes the account for reporting and searching purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -203,7 +203,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name used for the account when displaying it to humans in reports, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -212,7 +212,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name used for the account when displaying it to humans in reports, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -223,7 +223,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the entity which incurs the expenses. While the immediate recipients of services or goods might be entities related to the subject, the expenses were ultimately incurred by the subject of the Account.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubject()
     {
@@ -232,7 +232,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the entity which incurs the expenses. While the immediate recipients of services or goods might be entities related to the subject, the expenses were ultimately incurred by the subject of the Account.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -243,7 +243,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date range of services associated with this account.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getServicePeriod()
     {
@@ -252,7 +252,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date range of services associated with this account.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $servicePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $servicePeriod
      * @return $this
      */
     public function setServicePeriod($servicePeriod)
@@ -263,7 +263,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountCoverage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountCoverage[]
      */
     public function getCoverage()
     {
@@ -272,7 +272,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountCoverage $coverage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountCoverage $coverage
      * @return $this
      */
     public function addCoverage($coverage)
@@ -283,7 +283,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the service area, hospital, department, etc. with responsibility for managing the Account.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOwner()
     {
@@ -292,7 +292,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the service area, hospital, department, etc. with responsibility for managing the Account.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $owner
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $owner
      * @return $this
      */
     public function setOwner($owner)
@@ -303,7 +303,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides additional information about what the account tracks and how it is used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -312,7 +312,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides additional information about what the account tracks and how it is used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -323,7 +323,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The parties responsible for balancing the account if other payment options fall short.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountGuarantor[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountGuarantor[]
      */
     public function getGuarantor()
     {
@@ -332,7 +332,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The parties responsible for balancing the account if other payment options fall short.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountGuarantor $guarantor
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAccount\FHIRAccountGuarantor $guarantor
      * @return $this
      */
     public function addGuarantor($guarantor)
@@ -343,7 +343,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to a parent Account.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPartOf()
     {
@@ -352,7 +352,7 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to a parent Account.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function setPartOf($partOf)

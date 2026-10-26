@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\TagVerifier;
+use DCL\Release\TagVerifier;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
@@ -22,7 +22,7 @@ final class TagVerifierTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-tag-verifier-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-tag-verifier-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -39,7 +39,7 @@ final class TagVerifierTest extends TestCase
     {
         $sha = $this->git(['rev-parse', 'HEAD']);
         $message = sprintf(
-            "OpenEMR 8.1.0 released 2026-04-29\n\nConductor PR: https://example.test/pr/1\nMerge commit: %s",
+            "DCL 8.1.0 released 2026-04-29\n\nConductor PR: https://example.test/pr/1\nMerge commit: %s",
             $sha,
         );
         $this->git(['tag', '-a', 'v8_1_0', '-m', $message]);
@@ -81,7 +81,7 @@ final class TagVerifierTest extends TestCase
     public function testMissingDateFails(): void
     {
         $sha = $this->git(['rev-parse', 'HEAD']);
-        $message = sprintf("OpenEMR 8.1.0 released\n\nMerge commit: %s", $sha);
+        $message = sprintf("DCL 8.1.0 released\n\nMerge commit: %s", $sha);
         $this->git(['tag', '-a', 'v8_1_0', '-m', $message]);
 
         $result = (new TagVerifier($this->tmpDir))->verify('v8_1_0');
@@ -93,7 +93,7 @@ final class TagVerifierTest extends TestCase
 
     public function testMissingMergeShaFails(): void
     {
-        $message = "OpenEMR 8.1.0 released 2026-04-29\n\nNo merge SHA here";
+        $message = "DCL 8.1.0 released 2026-04-29\n\nNo merge SHA here";
         $this->git(['tag', '-a', 'v8_1_0', '-m', $message]);
 
         $result = (new TagVerifier($this->tmpDir))->verify('v8_1_0');

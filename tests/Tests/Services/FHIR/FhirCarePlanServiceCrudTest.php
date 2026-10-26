@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCarePlan;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIREncounter;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\FHIR\FhirCarePlanService;
-use OpenEMR\Services\FHIR\FhirEncounterService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCarePlan;
+use DCL\FHIR\R4\FHIRDomainResource\FHIREncounter;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\FHIR\FhirCarePlanService;
+use DCL\Services\FHIR\FhirEncounterService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -24,13 +24,13 @@ use Psr\Log\LoggerInterface;
  * Each FHIR CarePlan = one care_plan form on an encounter, aggregating N form_care_plan rows.
  * Tests require an existing encounter, which we build via FhirEncounterService in setUp.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirCarePlanServiceCrudTest extends TestCase
 {
@@ -159,7 +159,7 @@ class FhirCarePlanServiceCrudTest extends TestCase
     #[Test]
     public function testInsertWithUnknownActivityCodeSystemIsRejected(): void
     {
-        // As in Medication: an activity detail code whose system OpenEMR cannot map has no
+        // As in Medication: an activity detail code whose system DCL cannot map has no
         // TYPE: prefix to store it under, so it would read back under a system the caller
         // never sent. The whole write is refused rather than the activity silently dropped --
         // dropping one would let a create store fewer activities than were sent and still
@@ -178,7 +178,7 @@ class FhirCarePlanServiceCrudTest extends TestCase
         $this->assertIsArray($coding);
         $this->assertArrayHasKey(0, $coding);
         $this->assertIsArray($coding[0]);
-        $coding[0]['system'] = 'http://example.org/not-a-code-system-openemr-knows';
+        $coding[0]['system'] = 'http://example.org/not-a-code-system-DCL-knows';
         $code['coding'] = $coding;
         $detail['code'] = $code;
         $activities[0]['detail'] = $detail;

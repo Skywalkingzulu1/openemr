@@ -1,28 +1,28 @@
 <?php
 
 /**
- * Oauth2KeyConfig is responsible for configuring, generating, and returning oauth2 keys that are used by the OpenEMR system.
+ * Oauth2KeyConfig is responsible for configuring, generating, and returning oauth2 keys that are used by the DCL system.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020-2025 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth;
+namespace DCL\Common\Auth;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Core\OEGlobalsBag;
 
 class OAuth2KeyConfig
 {
@@ -96,7 +96,7 @@ class OAuth2KeyConfig
     }
 
     /**
-     * Configures and verifies the encryption key, passphrase, public key and private key for OpenEMR OAuth2.
+     * Configures and verifies the encryption key, passphrase, public key and private key for DCL OAuth2.
      *  (note the existence of all these needed pieces have already been verified in the constructor, however
      *   to be safe will also check this here)
      *

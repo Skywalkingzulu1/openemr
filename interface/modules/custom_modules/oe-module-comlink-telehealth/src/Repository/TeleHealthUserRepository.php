@@ -3,23 +3,23 @@
 /**
  * Saves and retrieves from the database TeleHealth user objects.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Repository;
+namespace Comlink\DCL\Modules\TeleHealthModule\Repository;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthUser;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\BaseService;
+use Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthUser;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\BaseService;
 use Psr\Log\LoggerInterface;
 use Ramsey\Uuid\UuidFactory;
 
-if (!defined('OPENEMR_GLOBALS_LOADED')) {
+if (!defined('DCL_GLOBALS_LOADED')) {
     http_response_code(404);
     exit();
 }
@@ -132,8 +132,8 @@ class TeleHealthUserRepository extends BaseService
      * Since users can't see this password and they can't change this password w/o system user intervention we are just
      * going to generate a random uuid for the password for the user.  The algorithm can be changed in the future in
      * the event there is a compromise and we can use the registration API to change it.  Originally we wanted to use
-     * the user's password, however, we have no easy way that OpenEMR gives us access to the password and talking with
-     * the OpenEMR Administrators the hashing algorithm can be changed on the fly w/ OpenEMR so using the hash is not a
+     * the user's password, however, we have no easy way that DCL gives us access to the password and talking with
+     * the DCL Administrators the hashing algorithm can be changed on the fly w/ DCL so using the hash is not a
      * good idea either.  Since the business requirement is that users can't see their password we will generate the
      * password and use our standard encrypt method just in case the DB is taken.
      */

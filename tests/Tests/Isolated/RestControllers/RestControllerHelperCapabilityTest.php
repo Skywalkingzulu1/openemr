@@ -8,19 +8,19 @@
  * only to return a 405 OperationOutcome must therefore be excluded, or
  * /fhir/metadata advertises capabilities the server cannot honour.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers;
+namespace DCL\Tests\Isolated\RestControllers;
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource;
-use OpenEMR\RestControllers\RestControllerHelper;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource;
+use DCL\RestControllers\RestControllerHelper;
 use PHPUnit\Framework\TestCase;
 
 class RestControllerHelperCapabilityTest extends TestCase

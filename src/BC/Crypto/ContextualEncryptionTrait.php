@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\BC\Crypto;
+namespace DCL\BC\Crypto;
 
-use OpenEMR\Common\Crypto\{
+use DCL\Common\Crypto\{
     CryptoGenException,
     KeySource,
     KeyVersion,
@@ -91,7 +91,7 @@ trait ContextualEncryptionTrait
             $version = KeyVersion::fromPrefix($value);
             // Value IS encrypted
             return $this->shouldEncryptForDatabase && $version === KeyVersion::CURRENT;
-        } catch (ValueError) { // @phpstan-ignore openemr.forbiddenCatchType
+        } catch (ValueError) { // @phpstan-ignore DCL.forbiddenCatchType
             // Value is NOT encrypted.
             return !$this->shouldEncryptForDatabase;
         }
@@ -110,7 +110,7 @@ trait ContextualEncryptionTrait
             $version = KeyVersion::fromPrefix($value);
             // Value IS encrypted
             return $this->shouldEncryptForFilesystem && $version === KeyVersion::CURRENT;
-        } catch (ValueError) { // @phpstan-ignore openemr.forbiddenCatchType
+        } catch (ValueError) { // @phpstan-ignore DCL.forbiddenCatchType
             // Value is NOT encrypted.
             return !$this->shouldEncryptForFilesystem;
         }

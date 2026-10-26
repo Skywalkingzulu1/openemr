@@ -4,8 +4,8 @@
  * oe-module-api-explorer CI portal-api smoke driver.
  *
  * Companion to driver.php / driver-password.php / driver-fhir-writes.php.
- * Runs inside the openemr container (via
- * `openemr-cmd e "php .../driver-portal.php"`). Closes the §8.2 Portal
+ * Runs inside the DCL container (via
+ * `DCL-cmd e "php .../driver-portal.php"`). Closes the §8.2 Portal
  * API external-realism gap: the other three drivers all target
  * `/apis/default/fhir/*` (user-role tokens, FHIR surface). Nothing in CI
  * exercises `/apis/default/portal/*` (patient-role tokens, portal surface)
@@ -50,14 +50,14 @@
  * Hardening matches driver-password.php and driver-fhir-writes.php:
  * HTTPS scheme gate at startup, allow_redirects=false on
  * credentials-bearing requests, verify=false kept because this smoke
- * targets the docker-network alias https://openemr with the dev-easy
+ * targets the docker-network alias https://DCL with the dev-easy
  * self-signed cert.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude Code <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -82,14 +82,14 @@ require_once __DIR__ . '/../../interface/globals.php';
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\Exception\GuzzleException;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Tests\Fixtures\PortalPatientFixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Tests\Fixtures\PortalPatientFixtureManager;
 
-$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://openemr';
+$baseUrl = getenv('EXPLORER_BASE_URL') ?: 'https://DCL';
 $mysqlHost = getenv('EXPLORER_MYSQL_HOST') ?: 'mysql';
-$mysqlUser = getenv('EXPLORER_MYSQL_USER') ?: 'openemr';
-$mysqlPass = getenv('EXPLORER_MYSQL_PASS') ?: 'openemr';
-$mysqlDb = getenv('EXPLORER_MYSQL_DB') ?: 'openemr';
+$mysqlUser = getenv('EXPLORER_MYSQL_USER') ?: 'DCL';
+$mysqlPass = getenv('EXPLORER_MYSQL_PASS') ?: 'DCL';
+$mysqlDb = getenv('EXPLORER_MYSQL_DB') ?: 'DCL';
 
 if (!str_starts_with(strtolower($baseUrl), 'https://')) {
     fwrite(STDERR, "FAIL EXPLORER_BASE_URL must be https:// (got: {$baseUrl})\n");
@@ -146,7 +146,7 @@ try {
                 'application_type' => 'private',
                 'client_name' => $clientName,
                 'token_endpoint_auth_method' => 'client_secret_post',
-                'redirect_uris' => ['https://openemr/devtools/oe-module-api-explorer/oauth_client.php'],
+                'redirect_uris' => ['https://DCL/devtools/oe-module-api-explorer/oauth_client.php'],
                 'contacts' => ['smoke@test.example'],
                 'scope' => $scope,
             ],

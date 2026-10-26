@@ -3,18 +3,18 @@
 /**
  * Patient Portal Signer Modal Dynamic Template
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2019 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
-// this script is used by both the patient portal and main openemr; below does authorization.
+// this script is used by both the patient portal and main DCL; below does authorization.
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../../../vendor/autoload.php");
 $globalsBag = OEGlobalsBag::getInstance();

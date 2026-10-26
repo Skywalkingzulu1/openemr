@@ -5,11 +5,11 @@
  *
  * Proxies requests to NPPES API to avoid CORS issues
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2025 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
@@ -17,12 +17,12 @@ require_once("../globals.php");
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AccessDeniedResponseFormat;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AccessDeniedResponseFormat;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 // Check authorization
 if (!AclMain::aclCheckCore('admin', 'practice')) {
@@ -99,7 +99,7 @@ try {
     $response = $client->request('GET', $apiUrl, [
         'headers' => [
             'Accept' => 'application/json',
-            'User-Agent' => 'OpenEMR/NPI-Lookup',
+            'User-Agent' => 'DCL/NPI-Lookup',
         ],
         'query' => $queryParams, // Guzzle handles query string building
     ]);

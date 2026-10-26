@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,103 +71,103 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 {
     /**
      * A type of resource exposed via the restful interface.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $type = null;
 
     /**
      * A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles](profiling.html#profile-uses).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
     /**
      * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $supportedProfile = [];
 
     /**
      * Additional information about the resource type used by the system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $documentation = null;
 
     /**
      * Identifies a restful operation supported by the solution.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
      */
     public $interaction = [];
 
     /**
      * This field is set to no-version to specify that the system does not support (server) or use (client) versioning for this resource type. If this has some other value, the server must at least correctly track and populate the versionId meta-property on resources. If the value is 'versioned-update', then the server supports all the versioning features, including using e-tags for version integrity in the API.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRResourceVersionPolicy
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRResourceVersionPolicy
      */
     public $versioning = null;
 
     /**
      * A flag for whether the server is able to return past versions as part of the vRead operation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $readHistory = null;
 
     /**
      * A flag to indicate that the server allows or needs to allow the client to create new identities on the server (that is, the client PUTs to a location where there is no existing resource). Allowing this operation means that the server allows the client to create new identities on the server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $updateCreate = null;
 
     /**
      * A flag that indicates that the server supports conditional create.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $conditionalCreate = null;
 
     /**
      * A code that indicates how the server supports conditional read.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRConditionalReadStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRConditionalReadStatus
      */
     public $conditionalRead = null;
 
     /**
      * A flag that indicates that the server supports conditional update.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $conditionalUpdate = null;
 
     /**
      * A code that indicates how the server supports conditional delete.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRConditionalDeleteStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRConditionalDeleteStatus
      */
     public $conditionalDelete = null;
 
     /**
      * A set of flags that defines how references are supported.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReferenceHandlingPolicy[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReferenceHandlingPolicy[]
      */
     public $referencePolicy = [];
 
     /**
      * A list of _include values supported by the server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $searchInclude = [];
 
     /**
      * A list of _revinclude (reverse include) values supported by the server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $searchRevInclude = [];
 
     /**
      * Search parameters for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     public $searchParam = [];
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the operation, and the parameters.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     public $operation = [];
 
@@ -178,7 +178,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A type of resource exposed via the restful interface.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getType()
     {
@@ -187,7 +187,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A type of resource exposed via the restful interface.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $type
      * @return $this
      */
     public function setType($type)
@@ -198,7 +198,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles](profiling.html#profile-uses).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -207,7 +207,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles](profiling.html#profile-uses).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)
@@ -218,7 +218,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getSupportedProfile()
     {
@@ -227,7 +227,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $supportedProfile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $supportedProfile
      * @return $this
      */
     public function addSupportedProfile($supportedProfile)
@@ -238,7 +238,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Additional information about the resource type used by the system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation()
     {
@@ -247,7 +247,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Additional information about the resource type used by the system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -258,7 +258,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Identifies a restful operation supported by the solution.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
      */
     public function getInteraction()
     {
@@ -267,7 +267,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Identifies a restful operation supported by the solution.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction $interaction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction $interaction
      * @return $this
      */
     public function addInteraction($interaction)
@@ -278,7 +278,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * This field is set to no-version to specify that the system does not support (server) or use (client) versioning for this resource type. If this has some other value, the server must at least correctly track and populate the versionId meta-property on resources. If the value is 'versioned-update', then the server supports all the versioning features, including using e-tags for version integrity in the API.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRResourceVersionPolicy
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRResourceVersionPolicy
      */
     public function getVersioning()
     {
@@ -287,7 +287,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * This field is set to no-version to specify that the system does not support (server) or use (client) versioning for this resource type. If this has some other value, the server must at least correctly track and populate the versionId meta-property on resources. If the value is 'versioned-update', then the server supports all the versioning features, including using e-tags for version integrity in the API.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRResourceVersionPolicy $versioning
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRResourceVersionPolicy $versioning
      * @return $this
      */
     public function setVersioning($versioning)
@@ -298,7 +298,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag for whether the server is able to return past versions as part of the vRead operation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getReadHistory()
     {
@@ -307,7 +307,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag for whether the server is able to return past versions as part of the vRead operation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $readHistory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $readHistory
      * @return $this
      */
     public function setReadHistory($readHistory)
@@ -318,7 +318,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag to indicate that the server allows or needs to allow the client to create new identities on the server (that is, the client PUTs to a location where there is no existing resource). Allowing this operation means that the server allows the client to create new identities on the server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getUpdateCreate()
     {
@@ -327,7 +327,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag to indicate that the server allows or needs to allow the client to create new identities on the server (that is, the client PUTs to a location where there is no existing resource). Allowing this operation means that the server allows the client to create new identities on the server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $updateCreate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $updateCreate
      * @return $this
      */
     public function setUpdateCreate($updateCreate)
@@ -338,7 +338,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag that indicates that the server supports conditional create.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getConditionalCreate()
     {
@@ -347,7 +347,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag that indicates that the server supports conditional create.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $conditionalCreate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $conditionalCreate
      * @return $this
      */
     public function setConditionalCreate($conditionalCreate)
@@ -358,7 +358,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A code that indicates how the server supports conditional read.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRConditionalReadStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRConditionalReadStatus
      */
     public function getConditionalRead()
     {
@@ -367,7 +367,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A code that indicates how the server supports conditional read.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRConditionalReadStatus $conditionalRead
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRConditionalReadStatus $conditionalRead
      * @return $this
      */
     public function setConditionalRead($conditionalRead)
@@ -378,7 +378,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag that indicates that the server supports conditional update.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getConditionalUpdate()
     {
@@ -387,7 +387,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A flag that indicates that the server supports conditional update.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $conditionalUpdate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $conditionalUpdate
      * @return $this
      */
     public function setConditionalUpdate($conditionalUpdate)
@@ -398,7 +398,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A code that indicates how the server supports conditional delete.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRConditionalDeleteStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRConditionalDeleteStatus
      */
     public function getConditionalDelete()
     {
@@ -407,7 +407,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A code that indicates how the server supports conditional delete.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
      * @return $this
      */
     public function setConditionalDelete($conditionalDelete)
@@ -418,7 +418,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A set of flags that defines how references are supported.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReferenceHandlingPolicy[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReferenceHandlingPolicy[]
      */
     public function getReferencePolicy()
     {
@@ -427,7 +427,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A set of flags that defines how references are supported.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReferenceHandlingPolicy $referencePolicy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReferenceHandlingPolicy $referencePolicy
      * @return $this
      */
     public function addReferencePolicy($referencePolicy)
@@ -438,7 +438,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A list of _include values supported by the server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getSearchInclude()
     {
@@ -447,7 +447,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A list of _include values supported by the server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $searchInclude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $searchInclude
      * @return $this
      */
     public function addSearchInclude($searchInclude)
@@ -458,7 +458,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A list of _revinclude (reverse include) values supported by the server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getSearchRevInclude()
     {
@@ -467,7 +467,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * A list of _revinclude (reverse include) values supported by the server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $searchRevInclude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $searchRevInclude
      * @return $this
      */
     public function addSearchRevInclude($searchRevInclude)
@@ -478,7 +478,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Search parameters for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     public function getSearchParam()
     {
@@ -487,7 +487,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Search parameters for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
      * @return $this
      */
     public function addSearchParam($searchParam)
@@ -498,7 +498,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the operation, and the parameters.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     public function getOperation()
     {
@@ -507,7 +507,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the operation, and the parameters.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
      * @return $this
      */
     public function addOperation($operation)

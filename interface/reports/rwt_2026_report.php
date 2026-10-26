@@ -4,21 +4,21 @@
  * Real world testing report for 2026.
  *  Dates are hard-coded from 2026-04-01 to 2026-09-30
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Reports\RealWorldTesting;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Reports\RealWorldTesting;
 
 if (!AclMain::aclCheckCore('admin', 'super')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for admin/super: 2026 Real World Testing Report", xl('2026 Real World Testing Report'));
@@ -58,7 +58,7 @@ $end_date = '2026-09-30';
 
 <?php if (empty($_POST['start_button'])) { ?>
     <div class='mt-2 alert alert-primary' role='alert'>
-        <?php echo xlt("This report is required for OpenEMR instances in the United States that utilize ONC certification. This reports collects metrics that are used in Real World Testing that are required for the OpenEMR Foundation to maintain the ONC certification. This report calculates metrics from April 1, 2026 to September 30, 2026. Please run this report sometime in October or November of 2026 and then print it to a pdf and email the pdf to the OpenEMR Foundation at hello@open-emr.org. In the email, please confirm your practice is in the United States and state the clinical setting of your practice (this can be 'Primary/Specialty Care' setting, 'Behavioral Health Care' setting, or any other setting).") ?>
+        <?php echo xlt("This report is required for DCL instances in the United States that utilize ONC certification. This reports collects metrics that are used in Real World Testing that are required for the DCL Foundation to maintain the ONC certification. This report calculates metrics from April 1, 2026 to September 30, 2026. Please run this report sometime in October or November of 2026 and then print it to a pdf and email the pdf to the DCL Foundation at hello@dcl.org. In the email, please confirm your practice is in the United States and state the clinical setting of your practice (this can be 'Primary/Specialty Care' setting, 'Behavioral Health Care' setting, or any other setting).") ?>
     </div>
     <form method='post' name='theform' id='theform' action='rwt_2026_report.php' onsubmit='return top.restoreSession()'>
         <input type='hidden' name='csrf_token_form' value='<?php echo CsrfUtils::collectCsrfToken($session, 'rwt_2026_report'); ?>' />
@@ -71,7 +71,7 @@ $end_date = '2026-09-30';
 <?php } else { ?>
     <div id='no_print_area' >
         <div class='mt-2 alert alert-primary' role='alert'>
-            <?php echo xlt("Please print this report to a pdf and email the pdf to the OpenEMR Foundation at hello@open-emr.org. In the email, please confirm your practice is in the United States and state the clinical setting of your practice (this can be 'Primary/Specialty Care' setting, 'Behavioral Health Care' setting, or any other setting).") ?>
+            <?php echo xlt("Please print this report to a pdf and email the pdf to the DCL Foundation at hello@dcl.org. In the email, please confirm your practice is in the United States and state the clinical setting of your practice (this can be 'Primary/Specialty Care' setting, 'Behavioral Health Care' setting, or any other setting).") ?>
         </div>
         <div class='mt-4'>
             <button type='button' class='btn btn-primary' onclick='window.print()'>

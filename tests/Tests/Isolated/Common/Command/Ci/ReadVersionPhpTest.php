@@ -3,22 +3,22 @@
 /**
  * Isolated tests for .github/scripts/read-version-php.php.
  *
- * The script runs inside the acceptance-docker workflow's openemr
+ * The script runs inside the acceptance-docker workflow's DCL
  * container to extract $v_major/$v_minor/$v_patch from an installed
  * version.php. These tests exercise the parse/validate/emit logic
  * end-to-end via subprocess against synthetic fixture files, matching
  * the pattern from PortalPatientAccessGuardExitTest.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Command\Ci;
+namespace DCL\Tests\Isolated\Common\Command\Ci;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;

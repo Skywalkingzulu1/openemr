@@ -16,16 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Jerry Padgett <sjpadgett@gmail.com>
  * @author  Tyler Wrenn <tyler@tylerwrenn.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  *
  */
 
 //namespace OnsitePortal;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../vendor/autoload.php");

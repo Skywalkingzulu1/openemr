@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\RestControllers\Authorization;
+namespace DCL\RestControllers\Authorization;
 
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Services\UserService;
 
 class SkipAuthorizationStrategy implements IAuthorizationStrategy
 {

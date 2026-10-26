@@ -14,16 +14,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Amiel Elboim <amielel@matrix.co.il>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 namespace PrescriptionTemplates\Controller;
 
 use Interop\Container\ContainerInterface;
 use Mpdf\Mpdf;
-use OpenEMR\Services\Storage\CacheDirectory;
+use DCL\Services\Storage\CacheDirectory;
 
 /**
  * Class PdfTemplatesController
@@ -53,7 +53,7 @@ class PdfTemplatesController extends PrescriptionTemplatesController
         $htmlView = $this->renderer->render($defaultHtml);
 
         /* create pdf */
-        $mpdf = new Mpdf(['tempDir' => (new CacheDirectory())->for('openemr-mpdf')]);
+        $mpdf = new Mpdf(['tempDir' => (new CacheDirectory())->for('DCL-mpdf')]);
         $mpdf->autoLangToFont = true;
         $mpdf->WriteHTML($htmlView);
         $mpdf->Output();

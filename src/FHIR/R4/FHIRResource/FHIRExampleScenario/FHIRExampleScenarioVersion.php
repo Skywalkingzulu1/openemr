@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,13 +71,13 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * The identifier of a specific version of a resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $versionId = null;
 
     /**
      * The description of the resource version.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
@@ -88,7 +88,7 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The identifier of a specific version of a resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersionId()
     {
@@ -97,7 +97,7 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The identifier of a specific version of a resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $versionId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $versionId
      * @return $this
      */
     public function setVersionId($versionId)
@@ -108,7 +108,7 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The description of the resource version.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -117,7 +117,7 @@ class FHIRExampleScenarioVersion extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The description of the resource version.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)

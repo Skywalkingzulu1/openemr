@@ -24,34 +24,34 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  DCL:
     restart: always
-    image: openemr/openemr:flex@sha256:b24b6eb7de71289d65e29aad20b10a47df01dad0f28bf9cfd40da1d2c15bb863
+    image: dcl/dcl:flex@sha256:b24b6eb7de71289d65e29aad20b10a47df01dad0f28bf9cfd40da1d2c15bb863
     ports:
     - "${WT_HTTP_PORT:-8300}:80"
     - "${WT_HTTPS_PORT:-9300}:443"
     volumes:
-    - ${OPENEMR_DIR:-../..}:/openemr:ro
-    - ${OPENEMR_DIR:-../..}:/var/www/localhost/htdocs/openemr:rw
-    - assetvolume:/var/www/localhost/htdocs/openemr/public/assets:rw
-    - themevolume:/var/www/localhost/htdocs/openemr/public/themes:rw
-    - sitesvolume:/var/www/localhost/htdocs/openemr/sites:rw
-    - nodemodules:/var/www/localhost/htdocs/openemr/node_modules:rw
-    - vendordir:/var/www/localhost/htdocs/openemr/vendor:rw
-    - phpstanvolume:/var/www/localhost/htdocs/openemr/tmp-phpstan:rw
-    - webpackcachevolume:/var/www/localhost/htdocs/openemr/.webpack-cache:rw
+    - ${DCL_DIR:-../..}:/DCL:ro
+    - ${DCL_DIR:-../..}:/var/www/localhost/htdocs/DCL:rw
+    - assetvolume:/var/www/localhost/htdocs/dcl/public/assets:rw
+    - themevolume:/var/www/localhost/htdocs/dcl/public/themes:rw
+    - sitesvolume:/var/www/localhost/htdocs/dcl/sites:rw
+    - nodemodules:/var/www/localhost/htdocs/dcl/node_modules:rw
+    - vendordir:/var/www/localhost/htdocs/dcl/vendor:rw
+    - phpstanvolume:/var/www/localhost/htdocs/dcl/tmp-phpstan:rw
+    - webpackcachevolume:/var/www/localhost/htdocs/dcl/.webpack-cache:rw
     - logvolume:/var/log
     - couchdbvolume:/couchdb/data
     environment:
       # HOST_UID/HOST_GID let the entrypoint adopt the host user's uid for
-      # apache (see docker/flex/openemr.sh — adoption is a no-op when these
+      # apache (see docker/flex/DCL.sh — adoption is a no-op when these
       # default to 1000). Without override, behavior matches the original
       # Dockerfile-baked uid=1000. Override (e.g. `HOST_UID=$(id -u)
       # docker compose up`) so apache writes bind-mount files as your host
       # user — eliminates the uid-mismatch class of bugs for any host whose
       # uid != 1000 (CI runners, multi-user dev boxes, distros that start
       # uids at 1001+, macOS via Docker Desktop). Always exported by
-      # openemr-cmd, optional everywhere else.
+      # DCL-cmd, optional everywhere else.
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: "true"
@@ -59,8 +59,8 @@ services:
       COLORTERM: truecolor
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
       OE_USER: admin
       OE_PASS: pass
       EASY_DEV_MODE: "yes"
@@ -76,35 +76,35 @@ services:
       SELENIUM_USE_GRID: "true"
       SELENIUM_HOST: selenium
       SELENIUM_FORCE_HEADLESS: "false"
-      SELENIUM_BASE_URL: "http://openemr"
-      OPENEMR_DOCKER_ENV_TAG: easy-dev-docker
+      SELENIUM_BASE_URL: "http://DCL"
+      DCL_DOCKER_ENV_TAG: easy-dev-docker
       # for v_js_includes in version.php
-      OPENEMR__ENVIRONMENT: "dev"
-      OPENEMR_SETTING_site_addr_oath: 'https://localhost:${WT_HTTPS_PORT:-9300}'
-      OPENEMR_SETTING_oauth_password_grant: 3
-      OPENEMR_SETTING_rest_system_scopes_api: 1
-      OPENEMR_SETTING_rest_api: 1
-      OPENEMR_SETTING_rest_fhir_api: 1
-      OPENEMR_SETTING_rest_portal_api: 1
-      OPENEMR_SETTING_portal_onsite_two_enable: 1
-      OPENEMR_SETTING_ccda_alt_service_enable: 3
-      OPENEMR_SETTING_couchdb_host: couchdb
-      OPENEMR_SETTING_couchdb_port: 6984
-      OPENEMR_SETTING_couchdb_user: admin
-      OPENEMR_SETTING_couchdb_pass: password
-      OPENEMR_SETTING_couchdb_dbase: example
-      OPENEMR_SETTING_couchdb_ssl_allow_selfsigned: 1
-      OPENEMR_SETTING_gbl_ldap_host: 'ldap://openldap:389'
-      OPENEMR_SETTING_gbl_ldap_dn: 'cn={login},dc=example,dc=org'
-      OPENEMR_SETTING_EMAIL_METHOD: SMTP
-      OPENEMR_SETTING_SMTP_HOST: mailpit
-      OPENEMR_SETTING_SMTP_PORT: 1025
-      OPENEMR_SETTING_SMTP_USER: openemr
-      OPENEMR_SETTING_SMTP_PASS: openemr
-      OPENEMR_SETTING_SMTP_SECURE: ''
-      OPENEMR_SETTING_SMTP_Auth: 'TRUE'
-      OPENEMR_SETTING_practice_return_email_path: 'noreply@openemr.local'
-      OPENEMR_SETTING_Patient_Reminder_Sender_Name: 'OpenEMR Reminders'
+      DCL__ENVIRONMENT: "dev"
+      DCL_SETTING_site_addr_oath: 'https://localhost:${WT_HTTPS_PORT:-9300}'
+      DCL_SETTING_oauth_password_grant: 3
+      DCL_SETTING_rest_system_scopes_api: 1
+      DCL_SETTING_rest_api: 1
+      DCL_SETTING_rest_fhir_api: 1
+      DCL_SETTING_rest_portal_api: 1
+      DCL_SETTING_portal_onsite_two_enable: 1
+      DCL_SETTING_ccda_alt_service_enable: 3
+      DCL_SETTING_couchdb_host: couchdb
+      DCL_SETTING_couchdb_port: 6984
+      DCL_SETTING_couchdb_user: admin
+      DCL_SETTING_couchdb_pass: password
+      DCL_SETTING_couchdb_dbase: example
+      DCL_SETTING_couchdb_ssl_allow_selfsigned: 1
+      DCL_SETTING_gbl_ldap_host: 'ldap://openldap:389'
+      DCL_SETTING_gbl_ldap_dn: 'cn={login},dc=example,dc=org'
+      DCL_SETTING_EMAIL_METHOD: SMTP
+      DCL_SETTING_SMTP_HOST: mailpit
+      DCL_SETTING_SMTP_PORT: 1025
+      DCL_SETTING_SMTP_USER: DCL
+      DCL_SETTING_SMTP_PASS: DCL
+      DCL_SETTING_SMTP_SECURE: ''
+      DCL_SETTING_SMTP_Auth: 'TRUE'
+      DCL_SETTING_practice_return_email_path: 'noreply@DCL.local'
+      DCL_SETTING_Patient_Reminder_Sender_Name: 'DCL Reminders'
     depends_on:
       mysql:
         condition: service_healthy
@@ -130,7 +130,7 @@ services:
     - "${WT_SELENIUM_PORT:-4444}:4444"
     - "${WT_VNC_PORT:-7900}:7900"
     environment:
-      SE_VNC_PASSWORD: openemr123
+      SE_VNC_PASSWORD: DCL123
       SE_SCREEN_WIDTH: 1920
       SE_SCREEN_HEIGHT: 1080
       SE_SCREEN_DEPTH: 24
@@ -170,7 +170,7 @@ services:
       COUCHDB_PASSWORD: password
   openldap:
     restart: always
-    image: openemr/dev-ldap:easy@sha256:b1dbb4b1f1074b6a298dabd256b80d766bccbfca99aa89d023cf894d6f4c57aa
+    image: dcl/dev-ldap:easy@sha256:b1dbb4b1f1074b6a298dabd256b80d766bccbfca99aa89d023cf894d6f4c57aa
     environment:
       LDAP_TLS_VERIFY_CLIENT: try
       LDAP_TLS_CA_CRT_FILENAME: ca.pem

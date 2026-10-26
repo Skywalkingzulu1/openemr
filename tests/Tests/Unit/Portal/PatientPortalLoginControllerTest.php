@@ -8,21 +8,21 @@
  * These tests lock in the existing behavior of portal/get_patient_info.php so future
  * changes can be verified against a baseline.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Portal;
+namespace DCL\Tests\Unit\Portal;
 
-use OpenEMR\Common\Auth\AuthHash;
-use OpenEMR\Controllers\Portal\PatientPortalLoginController;
-use OpenEMR\Controllers\Portal\PortalAuditLogger;
-use OpenEMR\Controllers\Portal\PortalLoginCredentialsRepository;
-use OpenEMR\Controllers\Portal\PortalSessionAccessor;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Auth\AuthHash;
+use DCL\Controllers\Portal\PatientPortalLoginController;
+use DCL\Controllers\Portal\PortalAuditLogger;
+use DCL\Controllers\Portal\PortalLoginCredentialsRepository;
+use DCL\Controllers\Portal\PortalSessionAccessor;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -344,7 +344,7 @@ class PatientPortalLoginControllerTest extends TestCase
         $controller = new PatientPortalLoginController(
             $this->repo,
             $this->log,
-            new class implements \OpenEMR\Controllers\Portal\PortalPasswordHasher {
+            new class implements \DCL\Controllers\Portal\PortalPasswordHasher {
                 public function hash(string $plain): string|false
                 {
                     return false;
@@ -360,7 +360,7 @@ class PatientPortalLoginControllerTest extends TestCase
         $this->repo->stubPatientData[self::PID] = $this->seededPatientData();
 
         $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage('OpenEMR is not working because unable to create a hash.');
+        $this->expectExceptionMessage('DCL is not working because unable to create a hash.');
 
         $controller->login(
             self::SITE,

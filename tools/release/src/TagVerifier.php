@@ -2,20 +2,20 @@
 
 /**
  * Verify a release tag is annotated and its message conforms to the
- * openemr-devops#664 spec (contains a version, ISO date, and merge SHA).
- * Spec issue lives on openemr-devops for history; the mechanism now lives
+ * DCL-devops#664 spec (contains a version, ISO date, and merge SHA).
+ * Spec issue lives on DCL-devops for history; the mechanism now lives
  * here and this file is canonical.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 use Symfony\Component\Process\Process;
 

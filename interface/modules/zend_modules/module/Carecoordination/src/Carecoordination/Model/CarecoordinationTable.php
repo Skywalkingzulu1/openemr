@@ -3,13 +3,13 @@
 /**
  * interface/modules/zend_modules/module/Carecoordination/src/Carecoordination/Model/CarecoordinationTable.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Chandni Babu <chandnib@zhservices.com>
  * @author    Riju KP <rijukp@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Model;
@@ -20,16 +20,16 @@ use Documents\Model\DocumentsTable;
 use Documents\Plugin\Documents;
 use DOMDocument;
 use Exception;
-use OpenEMR\Common\Command\Trait\CommandLineDebugStylerTrait;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Cda\CdaComponentParseHelpers;
-use OpenEMR\Services\Cda\CdaTemplateImportDispose;
-use OpenEMR\Services\Cda\CdaTemplateParse;
-use OpenEMR\Services\Cda\CdaValidateDocuments;
-use OpenEMR\Services\Cda\XmlExtended;
-use OpenEMR\Services\CodeTypesService;
+use DCL\Common\Command\Trait\CommandLineDebugStylerTrait;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Cda\CdaComponentParseHelpers;
+use DCL\Services\Cda\CdaTemplateImportDispose;
+use DCL\Services\Cda\CdaTemplateParse;
+use DCL\Services\Cda\CdaValidateDocuments;
+use DCL\Services\Cda\XmlExtended;
+use DCL\Services\CodeTypesService;
 
 class CarecoordinationTable
 {
@@ -177,7 +177,7 @@ class CarecoordinationTable
     public function importNewPatient($document): void
     {
         if (!file_exists($document)) {
-            error_log("OpenEMR CCDA import error: following file does not exist: " . $document);
+            error_log("DCL CCDA import error: following file does not exist: " . $document);
             exit;
         }
         $xml_content = file_get_contents($document);

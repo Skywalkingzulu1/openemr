@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -72,73 +72,73 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for the TestScript assigned for external purposes outside the context of FHIR.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * A free text natural language name identifying the executed TestScript.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The current state of this test report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTestReportStatus
      */
     public $status = null;
 
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $testScript = null;
 
     /**
      * The overall result from the execution of the TestScript.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportResult
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTestReportResult
      */
     public $result = null;
 
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $score = null;
 
     /**
      * Name of the tester producing this report (Organization or individual).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $tester = null;
 
     /**
      * When the TestScript was executed and this TestReport was generated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $issued = null;
 
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportParticipant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportParticipant[]
      */
     public $participant = [];
 
     /**
      * The results of the series of required setup operations before the tests were executed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportSetup
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportSetup
      */
     public $setup = null;
 
     /**
      * A test executed from the test script.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTest[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTest[]
      */
     public $test = [];
 
     /**
      * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTeardown
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTeardown
      */
     public $teardown = null;
 
@@ -149,7 +149,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the TestScript assigned for external purposes outside the context of FHIR.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -158,7 +158,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the TestScript assigned for external purposes outside the context of FHIR.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -169,7 +169,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language name identifying the executed TestScript.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -178,7 +178,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language name identifying the executed TestScript.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -189,7 +189,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of this test report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTestReportStatus
      */
     public function getStatus()
     {
@@ -198,7 +198,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of this test report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTestReportStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -209,7 +209,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTestScript()
     {
@@ -218,7 +218,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $testScript
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $testScript
      * @return $this
      */
     public function setTestScript($testScript)
@@ -229,7 +229,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The overall result from the execution of the TestScript.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportResult
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTestReportResult
      */
     public function getResult()
     {
@@ -238,7 +238,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The overall result from the execution of the TestScript.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportResult $result
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTestReportResult $result
      * @return $this
      */
     public function setResult($result)
@@ -249,7 +249,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getScore()
     {
@@ -258,7 +258,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $score
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $score
      * @return $this
      */
     public function setScore($score)
@@ -269,7 +269,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name of the tester producing this report (Organization or individual).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTester()
     {
@@ -278,7 +278,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name of the tester producing this report (Organization or individual).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $tester
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $tester
      * @return $this
      */
     public function setTester($tester)
@@ -289,7 +289,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the TestScript was executed and this TestReport was generated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getIssued()
     {
@@ -298,7 +298,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the TestScript was executed and this TestReport was generated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $issued
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $issued
      * @return $this
      */
     public function setIssued($issued)
@@ -309,7 +309,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportParticipant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportParticipant[]
      */
     public function getParticipant()
     {
@@ -318,7 +318,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportParticipant $participant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -329,7 +329,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The results of the series of required setup operations before the tests were executed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportSetup
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportSetup
      */
     public function getSetup()
     {
@@ -338,7 +338,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The results of the series of required setup operations before the tests were executed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportSetup $setup
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportSetup $setup
      * @return $this
      */
     public function setSetup($setup)
@@ -349,7 +349,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A test executed from the test script.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTest[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTest[]
      */
     public function getTest()
     {
@@ -358,7 +358,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A test executed from the test script.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTest $test
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTest $test
      * @return $this
      */
     public function addTest($test)
@@ -369,7 +369,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTeardown
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTeardown
      */
     public function getTeardown()
     {
@@ -378,7 +378,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTeardown $teardown
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportTeardown $teardown
      * @return $this
      */
     public function setTeardown($teardown)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,19 +71,19 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * The category of the cost information.  For example, manufacturers' cost, patient cost, claim reimbursement cost, actual acquisition cost.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The source or owner that assigns the price to the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $source = null;
 
     /**
      * The price of the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $cost = null;
 
@@ -94,7 +94,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The category of the cost information.  For example, manufacturers' cost, patient cost, claim reimbursement cost, actual acquisition cost.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The category of the cost information.  For example, manufacturers' cost, patient cost, claim reimbursement cost, actual acquisition cost.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The source or owner that assigns the price to the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSource()
     {
@@ -123,7 +123,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The source or owner that assigns the price to the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $source
      * @return $this
      */
     public function setSource($source)
@@ -134,7 +134,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The price of the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getCost()
     {
@@ -143,7 +143,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The price of the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $cost
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $cost
      * @return $this
      */
     public function setCost($cost)

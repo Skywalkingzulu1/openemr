@@ -4,33 +4,33 @@
  * FhirMetaDataRestController
  * TODO: @adunsulag we should probably rename this to be FhirCapabilityStatementRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRUri;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRUrl;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware;
-use OpenEMR\FHIR\SMART\Capability;
-use OpenEMR\RestControllers\RestControllerHelper;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCapabilityStatement;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion;
+use DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRElement\FHIRUri;
+use DCL\FHIR\R4\FHIRElement\FHIRUrl;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware;
+use DCL\FHIR\SMART\Capability;
+use DCL\RestControllers\RestControllerHelper;
 
 /**
  * Supports REST interactions with the FHIR METADATA
@@ -76,7 +76,7 @@ class FhirMetaDataRestController
         $resturl->setValue($this->config->getFhirUrl());
         $implementation = new FHIRCapabilityStatementImplementation();
         $implementation->setUrl($resturl);
-        $implementation->setDescription(new FHIRString("OpenEMR FHIR API"));
+        $implementation->setDescription(new FHIRString("DCL FHIR API"));
         $capabilityStatement->setImplementation($implementation);
         $dateTime = new FHIRDateTime();
         $dateTime->setValue(date("Y-m-d", time()));
@@ -90,7 +90,7 @@ class FhirMetaDataRestController
         $composerStr = file_get_contents($this->config->getWebServerRoot() . "/composer.json");
         $composerObj = json_decode($composerStr, true);
         $software = new FHIRCapabilityStatementSoftware();
-        $software->setName(new FHIRString("OpenEMR"));
+        $software->setName(new FHIRString("DCL"));
         $software->setVersion($composerObj["version"]);
         $capabilityStatement->setSoftware($software);
 

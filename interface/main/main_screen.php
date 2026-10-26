@@ -1,37 +1,37 @@
 <?php
 
 /**
- * The outside frame that holds all of the OpenEMR User Interface.
+ * The outside frame that holds all of the DCL User Interface.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ranganath Pathak <pathak@scrs1.org>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2018 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Set $sessionAllowWrite to true to prevent session concurrency issues during authorization and app setup related code
 $sessionAllowWrite = true;
 require_once('../globals.php');
 
-use OpenEMR\Common\Auth\AuthEvent;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Auth\MfaUtils;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionTracker;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\ListService;
+use DCL\Common\Auth\AuthEvent;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Auth\MfaUtils;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionTracker;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
+use DCL\Services\ListService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
@@ -364,11 +364,11 @@ if (isset($_POST['new_login_session_management'])) {
 
 
     // Creates a new session id when load this outer frame
-    // (allows creations of separate OpenEMR frames to view patients concurrently
+    // (allows creations of separate DCL frames to view patients concurrently
     //  on different browser frame/windows)
     // This session id is used below in the restoreSession.php include to create a
-    // session cookie for this specific OpenEMR instance that is then maintained
-    // within the OpenEMR instance by calling top.restoreSession() whenever
+    // session cookie for this specific DCL instance that is then maintained
+    // within the DCL instance by calling top.restoreSession() whenever
     // refreshing or starting a new script.
 
     // This is a new login, so create a new session id and remove the old session
@@ -419,7 +419,7 @@ if ((!AuthUtils::useActiveDirectory()) && (OEGlobalsBag::getInstance()->getInt('
     if (!empty($result['last_update_password'])) {
         $pwd_last_update = $result['last_update_password'];
     } else {
-        error_log("OpenEMR ERROR: there is a problem with recording of last_update_password entry in users_secure table");
+        error_log("DCL ERROR: there is a problem with recording of last_update_password entry in users_secure table");
         $pwd_last_update = $current_date;
     }
 
@@ -427,7 +427,7 @@ if ((!AuthUtils::useActiveDirectory()) && (OEGlobalsBag::getInstance()->getInt('
     $pwd_alert_date = date('Y-m-d', strtotime($pwd_last_update . '+' . OEGlobalsBag::getInstance()->getInt('password_expiration_days') . ' days'));
 
     if (empty(strtotime($pwd_alert_date))) {
-        error_log("OpenEMR ERROR: there is a problem when trying to check if user's password is expired");
+        error_log("DCL ERROR: there is a problem when trying to check if user's password is expired");
     } elseif (strtotime($current_date) >= strtotime($pwd_alert_date)) {
         $is_expired = true;
     }
@@ -470,7 +470,7 @@ if ($is_expired) {
 // Will set Session variables to communicate settings to tab layout
 $session->set('default_open_tabs', $_tabs);
 // mdsupport - Apps processing invoked for valid app selections from list
-if ((isset($_POST['appChoice'])) && ($_POST['appChoice'] !== '*OpenEMR')) {
+if ((isset($_POST['appChoice'])) && ($_POST['appChoice'] !== '*DCL')) {
     $session->set('app1', $_POST['appChoice']);
 }
 

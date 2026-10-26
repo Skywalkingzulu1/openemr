@@ -7,20 +7,20 @@ isolated suite, so the normal loop is fast.
 
 ```bash
 # whole isolated suite (in container)
-openemr-cmd phpunit-isolated                       # alias: pit
+DCL-cmd phpunit-isolated                       # alias: pit
 
 # just this area - `e` does not start in the app root, so cd first
-openemr-cmd e 'cd /var/www/localhost/htdocs/openemr && \
+DCL-cmd e 'cd /var/www/localhost/htdocs/DCL && \
   vendor/bin/phpunit -c phpunit-isolated.xml --filter "Schematron|XPathVariable"'
 
 # the one DB-backed test (CdaValidateDocumentsTest)
-openemr-cmd services-test                          # alias: st
+DCL-cmd services-test                          # alias: st
 
 # on the host, if you keep a full PHP/Composer toolchain
 composer phpunit-isolated
 ```
 
-There is no bare `openemr-cmd phpunit` subcommand.
+There is no bare `DCL-cmd phpunit` subcommand.
 
 ## What is covered
 
@@ -99,7 +99,7 @@ Only after you understand why the output moved. There is no maintenance command
 — run the validator and write the JSON:
 
 ```php
-$reg = new OpenEMR\Services\Cda\Schematron\SchemaRegistry();
+$reg = new DCL\Services\Cda\Schematron\SchemaRegistry();
 $out = $reg->loadValidator('ccda')->validate(
     file_get_contents("$fixtures/ccda-example-response1.xml"),
     file_get_contents($reg->schematronPath('ccda'))
@@ -182,6 +182,6 @@ it is worth reading your own diff for these first:
   literal array offset in a test gets flagged as dead code.
 
 ```bash
-openemr-cmd phpstan            # alias: pst
-openemr-cmd prek run phpstan   # same config, via the pre-commit hook
+DCL-cmd phpstan            # alias: pst
+DCL-cmd prek run phpstan   # same config, via the pre-commit hook
 ```

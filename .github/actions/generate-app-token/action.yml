@@ -22,7 +22,7 @@ inputs:
       Owner to scope the installation token to. Defaults to unset,
       which lets create-github-app-token@v3 pick the current repo's
       owner. Set explicitly when scoping to sibling repositories
-      (e.g. dispatch targets like website-openemr, demo_farm_openemr).
+      (e.g. dispatch targets like website-DCL, demo_farm_DCL).
     required: false
     default: ''
   repositories:

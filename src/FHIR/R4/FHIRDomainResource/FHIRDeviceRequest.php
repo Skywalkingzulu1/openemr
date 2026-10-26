@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Represents a request for a patient to employ a medical device. The device may be an implantable device, or an external assistive device, such as a walker.
@@ -72,158 +72,158 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers assigned to this order by the orderer or by the receiver.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $priorRequest = [];
 
     /**
      * Composite request this is part of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $groupIdentifier = null;
 
     /**
      * The status of the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public $status = null;
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public $intent = null;
 
     /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $codeReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $codeCodeableConcept = null;
 
     /**
      * Specific parameters for the ordered item.  For example, the prism value for lenses.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter[]
      */
     public $parameter = [];
 
     /**
      * The patient who will use the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * An encounter that provides additional context in which this request is made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $occurrenceTiming = null;
 
     /**
      * When the request transitioned to being actionable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $authoredOn = null;
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requester = null;
 
     /**
      * Desired type of performer for doing the diagnostic testing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $performerType = null;
 
     /**
      * The desired performer for doing the diagnostic testing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $performer = null;
 
     /**
      * Reason or justification for the use of this device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Reason or justification for the use of this device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $insurance = [];
 
     /**
      * Additional clinical information about the patient that may influence the request fulfillment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInfo = [];
 
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Key events in the history of the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $relevantHistory = [];
 
@@ -234,7 +234,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this order by the orderer or by the receiver.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -243,7 +243,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this order by the orderer or by the receiver.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -254,7 +254,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -263,7 +263,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -274,7 +274,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -283,7 +283,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this DeviceRequest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -294,7 +294,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -303,7 +303,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -314,7 +314,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPriorRequest()
     {
@@ -323,7 +323,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $priorRequest
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $priorRequest
      * @return $this
      */
     public function addPriorRequest($priorRequest)
@@ -334,7 +334,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Composite request this is part of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getGroupIdentifier()
     {
@@ -343,7 +343,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Composite request this is part of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $groupIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $groupIdentifier
      * @return $this
      */
     public function setGroupIdentifier($groupIdentifier)
@@ -354,7 +354,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public function getStatus()
     {
@@ -363,7 +363,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -374,7 +374,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public function getIntent()
     {
@@ -383,7 +383,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -394,7 +394,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -403,7 +403,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -413,7 +413,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCodeReference()
     {
@@ -421,7 +421,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $codeReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $codeReference
      * @return $this
      */
     public function setCodeReference($codeReference)
@@ -431,7 +431,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCodeCodeableConcept()
     {
@@ -439,7 +439,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $codeCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $codeCodeableConcept
      * @return $this
      */
     public function setCodeCodeableConcept($codeCodeableConcept)
@@ -450,7 +450,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific parameters for the ordered item.  For example, the prism value for lenses.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter[]
      */
     public function getParameter()
     {
@@ -459,7 +459,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific parameters for the ordered item.  For example, the prism value for lenses.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -470,7 +470,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient who will use the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -479,7 +479,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient who will use the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -490,7 +490,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An encounter that provides additional context in which this request is made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -499,7 +499,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An encounter that provides additional context in which this request is made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -509,7 +509,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -517,7 +517,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -527,7 +527,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
@@ -535,7 +535,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
     public function setOccurrencePeriod($occurrencePeriod)
@@ -545,7 +545,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
@@ -553,7 +553,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
      * @return $this
      */
     public function setOccurrenceTiming($occurrenceTiming)
@@ -564,7 +564,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the request transitioned to being actionable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn()
     {
@@ -573,7 +573,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the request transitioned to being actionable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
     public function setAuthoredOn($authoredOn)
@@ -584,7 +584,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequester()
     {
@@ -593,7 +593,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requester
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requester
      * @return $this
      */
     public function setRequester($requester)
@@ -604,7 +604,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Desired type of performer for doing the diagnostic testing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPerformerType()
     {
@@ -613,7 +613,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Desired type of performer for doing the diagnostic testing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
      * @return $this
      */
     public function setPerformerType($performerType)
@@ -624,7 +624,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The desired performer for doing the diagnostic testing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPerformer()
     {
@@ -633,7 +633,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The desired performer for doing the diagnostic testing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function setPerformer($performer)
@@ -644,7 +644,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason or justification for the use of this device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -653,7 +653,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason or justification for the use of this device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -664,7 +664,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason or justification for the use of this device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -673,7 +673,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reason or justification for the use of this device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -684,7 +684,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getInsurance()
     {
@@ -693,7 +693,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $insurance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $insurance
      * @return $this
      */
     public function addInsurance($insurance)
@@ -704,7 +704,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional clinical information about the patient that may influence the request fulfillment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInfo()
     {
@@ -713,7 +713,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional clinical information about the patient that may influence the request fulfillment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
     public function addSupportingInfo($supportingInfo)
@@ -724,7 +724,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -733,7 +733,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -744,7 +744,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Key events in the history of the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRelevantHistory()
     {
@@ -753,7 +753,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Key events in the history of the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
      * @return $this
      */
     public function addRelevantHistory($relevantHistory)

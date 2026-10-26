@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Database;
+namespace DCL\Tests\Isolated\Common\Database;
 
 use Doctrine\DBAL\Connection;
 use InvalidArgumentException;
-use OpenEMR\Common\Database\ConnectionManager;
-use OpenEMR\Common\Database\ConnectionType;
+use DCL\Common\Database\ConnectionManager;
+use DCL\Common\Database\ConnectionType;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 

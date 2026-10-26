@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPaymentReconciliation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPaymentReconciliation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the details including amount of a payment and allocates the payment items being paid.
@@ -71,61 +71,61 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 {
     /**
      * Unique identifier for the current payment item for the referenced payable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Unique identifier for the prior payment item for the referenced payable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $predecessor = null;
 
     /**
      * Code to indicate the nature of the payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A resource, such as a Claim, the evaluation of which could lead to payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $request = null;
 
     /**
      * The party which submitted the claim or financial transaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $submitter = null;
 
     /**
      * A resource, such as a ClaimResponse, which contains a commitment to payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $response = null;
 
     /**
      * The date from the response resource containing a commitment to pay.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $date = null;
 
     /**
      * A reference to the individual who is responsible for inquiries regarding the response and its payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $responsible = null;
 
     /**
      * The party which is receiving the payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $payee = null;
 
     /**
      * The monetary amount allocated from the total payment to the payable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $amount = null;
 
@@ -136,7 +136,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Unique identifier for the current payment item for the referenced payable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -145,7 +145,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Unique identifier for the current payment item for the referenced payable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -156,7 +156,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Unique identifier for the prior payment item for the referenced payable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getPredecessor()
     {
@@ -165,7 +165,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Unique identifier for the prior payment item for the referenced payable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $predecessor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $predecessor
      * @return $this
      */
     public function setPredecessor($predecessor)
@@ -176,7 +176,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Code to indicate the nature of the payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -185,7 +185,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * Code to indicate the nature of the payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -196,7 +196,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * A resource, such as a Claim, the evaluation of which could lead to payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequest()
     {
@@ -205,7 +205,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * A resource, such as a Claim, the evaluation of which could lead to payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function setRequest($request)
@@ -216,7 +216,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The party which submitted the claim or financial transaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubmitter()
     {
@@ -225,7 +225,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The party which submitted the claim or financial transaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $submitter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $submitter
      * @return $this
      */
     public function setSubmitter($submitter)
@@ -236,7 +236,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * A resource, such as a ClaimResponse, which contains a commitment to payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResponse()
     {
@@ -245,7 +245,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * A resource, such as a ClaimResponse, which contains a commitment to payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $response
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $response
      * @return $this
      */
     public function setResponse($response)
@@ -256,7 +256,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The date from the response resource containing a commitment to pay.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getDate()
     {
@@ -265,7 +265,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The date from the response resource containing a commitment to pay.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $date
      * @return $this
      */
     public function setDate($date)
@@ -276,7 +276,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * A reference to the individual who is responsible for inquiries regarding the response and its payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResponsible()
     {
@@ -285,7 +285,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * A reference to the individual who is responsible for inquiries regarding the response and its payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $responsible
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $responsible
      * @return $this
      */
     public function setResponsible($responsible)
@@ -296,7 +296,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The party which is receiving the payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPayee()
     {
@@ -305,7 +305,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The party which is receiving the payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $payee
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $payee
      * @return $this
      */
     public function setPayee($payee)
@@ -316,7 +316,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The monetary amount allocated from the total payment to the payable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getAmount()
     {
@@ -325,7 +325,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
 
     /**
      * The monetary amount allocated from the total payment to the payable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $amount
      * @return $this
      */
     public function setAmount($amount)

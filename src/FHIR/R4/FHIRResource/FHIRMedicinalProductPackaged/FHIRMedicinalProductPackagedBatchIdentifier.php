@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A medicinal product in a container or package.
@@ -71,13 +71,13 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement im
 {
     /**
      * A number appearing on the outer packaging of a specific batch.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $outerPackaging = null;
 
     /**
      * A number appearing on the immediate packaging (and not the outer packaging).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $immediatePackaging = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement im
 
     /**
      * A number appearing on the outer packaging of a specific batch.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getOuterPackaging()
     {
@@ -97,7 +97,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement im
 
     /**
      * A number appearing on the outer packaging of a specific batch.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $outerPackaging
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $outerPackaging
      * @return $this
      */
     public function setOuterPackaging($outerPackaging)
@@ -108,7 +108,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement im
 
     /**
      * A number appearing on the immediate packaging (and not the outer packaging).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getImmediatePackaging()
     {
@@ -117,7 +117,7 @@ class FHIRMedicinalProductPackagedBatchIdentifier extends FHIRBackboneElement im
 
     /**
      * A number appearing on the immediate packaging (and not the outer packaging).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $immediatePackaging
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $immediatePackaging
      * @return $this
      */
     public function setImmediatePackaging($immediatePackaging)

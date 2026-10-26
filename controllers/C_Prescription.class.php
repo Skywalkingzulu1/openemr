@@ -3,31 +3,31 @@
 /**
  * C_Prescription class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Roberto Vasquez <robertogagliotta@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2015 Roberto Vasquez <robertogagliotta@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Sherwin Gaddis <sherwingaddis@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->get('fileroot') . "/library/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->get('fileroot') . "/library/options.inc.php");
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Common\Http\oeHttp;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Rx\RxList;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\DrugSalesService;
-use OpenEMR\Services\PatientIssuesService;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Common\Http\oeHttp;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Rx\RxList;
+use DCL\Services\CodeTypesService;
+use DCL\Services\DrugSalesService;
+use DCL\Services\PatientIssuesService;
 
 class C_Prescription extends Controller
 {
@@ -1011,7 +1011,7 @@ class C_Prescription extends Controller
         $this->multiprintplain_footer();
         $data = ob_get_clean();
         $result = [
-            'subject' => OEGlobalsBag::getInstance()->getString('openemr_name') . " " . xl(" Prescription ")
+            'subject' => OEGlobalsBag::getInstance()->getString('DCL_name') . " " . xl(" Prescription ")
             ,'message' => $data
         ];
         http_response_code(200);
@@ -1117,7 +1117,7 @@ class C_Prescription extends Controller
         if ($sendAsPdf) {
             [$pdf, $patient] = $this->generatePdfObjectForPrescriptionIds($id);
             $pdfAsString = $pdf->output();
-            $mailBody = OEGlobalsBag::getInstance()->getString('openemr_name') . " " . xl("Prescription attached to this email.") . " " . xl("Patient") . " " . $patient->get_name_display();
+            $mailBody = OEGlobalsBag::getInstance()->getString('DCL_name') . " " . xl("Prescription attached to this email.") . " " . xl("Patient") . " " . $patient->get_name_display();
         } else {
             [$mailBody, $patient] = $this->generateHtmlObjectForPrescriptionIds($id);
             $mail->isHTML(true);
@@ -1127,7 +1127,7 @@ class C_Prescription extends Controller
 //        $mail->FromName = $p->provider->get_name_display();
 //        $text_body  = $p->get_prescription_display();
         $mail->Body = $mailBody;
-        $mail->Subject = OEGlobalsBag::getInstance()->getString('openemr_name') . " " . xl("Prescription");
+        $mail->Subject = OEGlobalsBag::getInstance()->getString('DCL_name') . " " . xl("Prescription");
         $mail->AddAddress($email);
         if ($sendAsPdf) {
             $mail->addStringAttachment($pdfAsString, 'Prescription-' . date("Y-m-d_H_i_s") . ".pdf");

@@ -3,20 +3,20 @@
 /**
  * active reminder popup gui
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2011-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/clinical_rules.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/clinical_rules.php");
 
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 
 ?>

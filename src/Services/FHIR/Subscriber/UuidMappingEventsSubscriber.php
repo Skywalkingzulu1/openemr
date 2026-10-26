@@ -6,26 +6,26 @@
  * done on each save.  If for some reason an event isn't fired or is dropped before the subscribe receives it, a CRON
  * job goes through every 6 hours and populates the uuids so nothing is missed.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Subscriber;
+namespace DCL\Services\FHIR\Subscriber;
 
-use OpenEMR\Common\Uuid\UuidMapping;
-use OpenEMR\Events\Patient\PatientCreatedEvent;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\FHIR\Observation\FhirObservationHistorySdohService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationPatientService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationSocialHistoryService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationVitalsService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\SDOH\HistorySdohService;
-use OpenEMR\Services\SocialHistoryService;
-use OpenEMR\Services\VitalsService;
+use DCL\Common\Uuid\UuidMapping;
+use DCL\Events\Patient\PatientCreatedEvent;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\FHIR\Observation\FhirObservationHistorySdohService;
+use DCL\Services\FHIR\Observation\FhirObservationPatientService;
+use DCL\Services\FHIR\Observation\FhirObservationSocialHistoryService;
+use DCL\Services\FHIR\Observation\FhirObservationVitalsService;
+use DCL\Services\PatientService;
+use DCL\Services\SDOH\HistorySdohService;
+use DCL\Services\SocialHistoryService;
+use DCL\Services\VitalsService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class UuidMappingEventsSubscriber implements EventSubscriberInterface
@@ -83,7 +83,7 @@ class UuidMappingEventsSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Receives all of the save events from the OpenEMR services (that support the event) and populates any mapping uuids
+     * Receives all of the save events from the DCL services (that support the event) and populates any mapping uuids
      * that are needed.
      * @param ServiceSaveEvent $event
      */

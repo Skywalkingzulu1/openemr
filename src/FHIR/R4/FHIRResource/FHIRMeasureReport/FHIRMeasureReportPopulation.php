@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasureReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
@@ -71,19 +71,19 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * The type of the population.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The number of members of the population.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $count = null;
 
     /**
      * This element refers to a List of subject level MeasureReport resources, one for each subject in this population.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subjectResults = null;
 
@@ -94,7 +94,7 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The type of the population.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -103,7 +103,7 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The type of the population.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -114,7 +114,7 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The number of members of the population.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getCount()
     {
@@ -123,7 +123,7 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The number of members of the population.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $count
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $count
      * @return $this
      */
     public function setCount($count)
@@ -134,7 +134,7 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * This element refers to a List of subject level MeasureReport resources, one for each subject in this population.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubjectResults()
     {
@@ -143,7 +143,7 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement implements \JsonSe
 
     /**
      * This element refers to a List of subject level MeasureReport resources, one for each subject in this population.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subjectResults
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subjectResults
      * @return $this
      */
     public function setSubjectResults($subjectResults)

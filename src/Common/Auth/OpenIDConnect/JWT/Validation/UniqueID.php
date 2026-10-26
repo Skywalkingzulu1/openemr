@@ -2,20 +2,20 @@
 
 /**
  * UniqueID.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\JWT\Validation;
+namespace DCL\Common\Auth\OpenIDConnect\JWT\Validation;
 
 use Lcobucci\JWT\Token;
 use Lcobucci\JWT\Validation\Constraint;
 use Lcobucci\JWT\Validation\ConstraintViolation;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OpenIDConnect\Repositories\JWTRepository;
 
 class UniqueID implements Constraint
 {

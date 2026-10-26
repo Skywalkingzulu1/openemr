@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.
@@ -72,146 +72,146 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this care plan by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * Completed or terminated care plan whose function is taken by this new care plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $replaces = [];
 
     /**
      * A larger care plan of which this particular care plan is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public $status = null;
 
     /**
      * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanIntent
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCarePlanIntent
      */
     public $intent = null;
 
     /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Human-friendly name for the care plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A description of the scope and nature of the plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Identifies the patient or group whose intended care is described by the plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The Encounter during which this CarePlan was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * Indicates when the plan did (or is intended to) come into effect and end.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * When populated, the author is responsible for the care plan.  The care plan is attributed to the author.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * Identifies the individual(s) or organization who provided the contents of the care plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $contributor = [];
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $careTeam = [];
 
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $addresses = [];
 
     /**
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include comorbidities, recent procedures, limitations, recent assessments, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInfo = [];
 
     /**
      * Describes the intended objective(s) of carrying out the care plan.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $goal = [];
 
     /**
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity[]
      */
     public $activity = [];
 
     /**
      * General notes about the care plan not covered elsewhere.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Describes the reason for the care plan being created or for the activities included.
      * Supports US Core 8.0 and USCDI v5 requirements for documenting health concerns.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
@@ -222,7 +222,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this care plan by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -231,7 +231,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this care plan by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -242,7 +242,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -251,7 +251,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -262,7 +262,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -271,7 +271,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -282,7 +282,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -291,7 +291,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -302,7 +302,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Completed or terminated care plan whose function is taken by this new care plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReplaces()
     {
@@ -311,7 +311,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Completed or terminated care plan whose function is taken by this new care plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $replaces
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $replaces
      * @return $this
      */
     public function addReplaces($replaces)
@@ -322,7 +322,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger care plan of which this particular care plan is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -331,7 +331,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger care plan of which this particular care plan is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -342,7 +342,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public function getStatus()
     {
@@ -351,7 +351,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -362,7 +362,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanIntent
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCarePlanIntent
      */
     public function getIntent()
     {
@@ -371,7 +371,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCarePlanIntent $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCarePlanIntent $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -382,7 +382,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -391,7 +391,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -402,7 +402,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Human-friendly name for the care plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -411,7 +411,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Human-friendly name for the care plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -422,7 +422,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of the scope and nature of the plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -431,7 +431,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of the scope and nature of the plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -442,7 +442,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient or group whose intended care is described by the plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -451,7 +451,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient or group whose intended care is described by the plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -462,7 +462,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this CarePlan was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -471,7 +471,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this CarePlan was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -482,7 +482,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates when the plan did (or is intended to) come into effect and end.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -491,7 +491,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates when the plan did (or is intended to) come into effect and end.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -502,7 +502,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -511,7 +511,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -522,7 +522,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When populated, the author is responsible for the care plan.  The care plan is attributed to the author.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -531,7 +531,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When populated, the author is responsible for the care plan.  The care plan is attributed to the author.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -542,7 +542,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the individual(s) or organization who provided the contents of the care plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getContributor()
     {
@@ -551,7 +551,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the individual(s) or organization who provided the contents of the care plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $contributor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $contributor
      * @return $this
      */
     public function addContributor($contributor)
@@ -562,7 +562,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getCareTeam()
     {
@@ -571,7 +571,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $careTeam
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $careTeam
      * @return $this
      */
     public function addCareTeam($careTeam)
@@ -582,7 +582,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAddresses()
     {
@@ -591,7 +591,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $addresses
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $addresses
      * @return $this
      */
     public function addAddresses($addresses)
@@ -602,7 +602,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include comorbidities, recent procedures, limitations, recent assessments, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInfo()
     {
@@ -611,7 +611,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include comorbidities, recent procedures, limitations, recent assessments, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
     public function addSupportingInfo($supportingInfo)
@@ -622,7 +622,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the intended objective(s) of carrying out the care plan.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getGoal()
     {
@@ -631,7 +631,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the intended objective(s) of carrying out the care plan.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $goal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $goal
      * @return $this
      */
     public function addGoal($goal)
@@ -642,7 +642,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity[]
      */
     public function getActivity()
     {
@@ -651,7 +651,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity $activity
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity $activity
      * @return $this
      */
     public function addActivity($activity)
@@ -662,7 +662,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * General notes about the care plan not covered elsewhere.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -671,7 +671,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the reason for the care plan being created or for the activities included.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -680,7 +680,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the reason for the care plan being created or for the activities included.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -691,7 +691,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * General notes about the care plan not covered elsewhere.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

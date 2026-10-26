@@ -2,33 +2,33 @@
 
 /**
  * FHIR Person Service.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPerson;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\PractitionerService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Services\UserService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPerson;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\PractitionerService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Services\UserService;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FhirPersonService is backed by the `users` table (staff records only —
@@ -73,7 +73,7 @@ class FhirPersonService extends FhirServiceBase implements IFhirExportableResour
     }
 
     /**
-     * Returns an array mapping FHIR Practitioner Resource search parameters to OpenEMR Practitioner search parameters
+     * Returns an array mapping FHIR Practitioner Resource search parameters to DCL Practitioner search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -106,13 +106,13 @@ class FhirPersonService extends FhirServiceBase implements IFhirExportableResour
 
 
     /**
-     * Parses an OpenEMR user record, returning the equivalent FHIR Person Resource
+     * Parses an DCL user record, returning the equivalent FHIR Person Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRPractitioner
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $person = new FHIRPerson();
 
@@ -187,14 +187,14 @@ class FhirPersonService extends FhirServiceBase implements IFhirExportableResour
     }
 
     /**
-     * Parses a FHIR Person resource into the OpenEMR users-table shape consumed by
+     * Parses a FHIR Person resource into the DCL users-table shape consumed by
      * PractitionerService::insert/update.
      *
-     * FHIR Person reads (FhirPersonService::searchForOpenEMRRecords) come from `users`,
+     * FHIR Person reads (FhirPersonService::searchForDCLRecords) come from `users`,
      * and FhirPractitionerService already writes to the same table — so Person writes
      * delegate to PractitionerService for consistency. PractitionerValidator requires
      * an NPI; we extract it from a FHIR `identifier` with system US_NPI_SYSTEM. Without
-     * one, insertOpenEMRRecord returns a 422-style ProcessingResult.
+     * one, insertDCLRecord returns a 422-style ProcessingResult.
      *
      * @param FHIRDomainResource $fhirResource
      * @return array<string, mixed>
@@ -271,10 +271,10 @@ class FhirPersonService extends FhirServiceBase implements IFhirExportableResour
             if (is_string($line) && $line !== '') {
                 $data['street'] = $line;
             }
-            foreach (['city' => 'city', 'state' => 'state', 'postalCode' => 'zip'] as $fhirKey => $openemrKey) {
+            foreach (['city' => 'city', 'state' => 'state', 'postalCode' => 'zip'] as $fhirKey => $DCLKey) {
                 $val = $address[$fhirKey] ?? null;
                 if (is_string($val) && $val !== '') {
-                    $data[$openemrKey] = $val;
+                    $data[$DCLKey] = $val;
                 }
             }
         }
@@ -317,10 +317,10 @@ class FhirPersonService extends FhirServiceBase implements IFhirExportableResour
      *
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Person record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Person record array');
         }
 
         $npi = $openEmrRecord['npi'] ?? null;
@@ -343,7 +343,7 @@ class FhirPersonService extends FhirServiceBase implements IFhirExportableResour
      * which only returns `users` rows carrying an NPI *and* either a username or one of the
      * address-book types. A Person written through this service has the NPI but neither of
      * the others, so the read-back came back empty and a successful update answered 404 with
-     * an empty body. Person reads come from UserService (see searchForOpenEMRRecords), so the
+     * an empty body. Person reads come from UserService (see searchForDCLRecords), so the
      * read-back does too. A genuinely missing uuid still yields no data here, which is the
      * 404 the caller should get.
      *
@@ -356,29 +356,29 @@ class FhirPersonService extends FhirServiceBase implements IFhirExportableResour
      * than an omission the next reviewer has to re-derive.
      *
      * @param string $fhirResourceId The users.uuid string
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        $processingResult = $this->practitionerService->update($fhirResourceId, $updatedOpenEMRRecord);
+        $processingResult = $this->practitionerService->update($fhirResourceId, $updatedDCLRecord);
         if ($processingResult->hasErrors() || $processingResult->hasData()) {
             return $processingResult;
         }
 
-        return $this->searchForOpenEMRRecords([
+        return $this->searchForDCLRecords([
             'uuid' => new TokenSearchField('uuid', [new TokenSearchValue($fhirResourceId, null, true)]),
         ]);
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->userService->search($openEMRSearchParameters);
+        return $this->userService->search($DCLSearchParameters);
     }
     public function createProvenanceResource($dataRecord = [], $encode = false): never
     {

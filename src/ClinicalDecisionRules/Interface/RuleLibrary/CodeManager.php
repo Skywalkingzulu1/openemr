@@ -7,12 +7,12 @@
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\Code;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\Code;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager
+ * Description of DCL\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager
  *
  * @author aron
  */

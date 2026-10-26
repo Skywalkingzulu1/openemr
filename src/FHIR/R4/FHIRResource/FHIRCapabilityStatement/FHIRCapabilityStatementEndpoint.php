@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,13 +71,13 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
 {
     /**
      * A list of the messaging transport protocol(s) identifiers, supported by this endpoint.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $protocol = null;
 
     /**
      * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $address = null;
 
@@ -88,7 +88,7 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
 
     /**
      * A list of the messaging transport protocol(s) identifiers, supported by this endpoint.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getProtocol()
     {
@@ -97,7 +97,7 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
 
     /**
      * A list of the messaging transport protocol(s) identifiers, supported by this endpoint.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $protocol
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $protocol
      * @return $this
      */
     public function setProtocol($protocol)
@@ -108,7 +108,7 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
 
     /**
      * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getAddress()
     {
@@ -117,7 +117,7 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement implements \Js
 
     /**
      * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $address
      * @return $this
      */
     public function setAddress($address)

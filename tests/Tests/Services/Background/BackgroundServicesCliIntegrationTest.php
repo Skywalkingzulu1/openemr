@@ -15,33 +15,33 @@
  * a child process, and asserts both that the probe ran and that the
  * exit status reflects the outcome the way a supervisor would see it.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Background;
+namespace DCL\Tests\Services\Background;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Background\BackgroundServiceDefinition;
-use OpenEMR\Services\Background\BackgroundServiceRegistry;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Background\BackgroundServiceDefinition;
+use DCL\Services\Background\BackgroundServiceRegistry;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Exception\ExceptionInterface as ProcessExceptionInterface;
 use Symfony\Component\Process\Process;
 
-use function OpenEMR\Tests\Services\Background\Probe\cliProbeSentinelPath;
+use function DCL\Tests\Services\Background\Probe\cliProbeSentinelPath;
 
 #[Group('background-services')]
 class BackgroundServicesCliIntegrationTest extends TestCase
 {
     private const PROBE_NAME = '_e2e_cli_probe';
-    private const PROBE_FUNCTION = 'OpenEMR\\Tests\\Services\\Background\\Probe\\markCliProbeSentinel';
+    private const PROBE_FUNCTION = 'DCL\\Tests\\Services\\Background\\Probe\\markCliProbeSentinel';
     /**
      * Path is project-relative because the runner resolves it through
      * `SafeIncludeResolver` against the project directory.
@@ -214,7 +214,7 @@ class BackgroundServicesCliIntegrationTest extends TestCase
      * Return the first username in `$candidates` that exists on this
      * system, or null if none do. Existence is probed via `id <name>`
      * (Symfony Process) — the same single-path approach RootCliGuard
-     * uses, since the openemr docker images don't ship the posix
+     * uses, since the DCL docker images don't ship the posix
      * extension.
      *
      * @param list<string> $candidates
@@ -243,7 +243,7 @@ class BackgroundServicesCliIntegrationTest extends TestCase
     /**
      * Resolve the current process's effective UID via `id -u` (Symfony
      * Process). Mirrors RootCliGuard's resolver, which uses the same
-     * single-path approach since posix isn't loaded in the openemr
+     * single-path approach since posix isn't loaded in the DCL
      * docker images.
      */
     private static function currentEffectiveUid(): ?int

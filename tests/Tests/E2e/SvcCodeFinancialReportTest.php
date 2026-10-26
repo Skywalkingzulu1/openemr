@@ -6,21 +6,21 @@
  * Verifies the report renders correctly, displays expected data from
  * fixture billing records, and applies the Important Codes filter.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e;
+namespace DCL\Tests\E2e;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Tests\E2e\Base\BaseTrait;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
-use OpenEMR\Tests\E2e\Login\LoginTrait;
+use DCL\Common\Database\QueryUtils;
+use DCL\Tests\E2e\Base\BaseTrait;
+use DCL\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Login\LoginTrait;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Panther\PantherTestCase;

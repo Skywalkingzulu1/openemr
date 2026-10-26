@@ -1,25 +1,25 @@
 <?php
 
 /**
- * Isolated tests for OpenEMR\Release\CompatibilityNotesRenderer,
+ * Isolated tests for DCL\Release\CompatibilityNotesRenderer,
  * focused on the inject() idempotence fix introduced alongside
  * CompatibilityMutator (PR 8). CompatibilityMutator is the first live
  * consumer of inject(); a rerun with the same section must be a
  * no-op rather than duplicating the "### Minimum supported versions"
  * block.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\CompatibilityNotesRenderer;
+use DCL\Release\CompatibilityNotesRenderer;
 use PHPUnit\Framework\TestCase;
 
 final class CompatibilityNotesRendererTest extends TestCase
@@ -35,7 +35,7 @@ final class CompatibilityNotesRendererTest extends TestCase
     {
         $out = $this->renderer->render(
             ['php' => '8.2', 'mariadb' => '10.6', 'mysql' => '5.7'],
-            'https://github.com/openemr/openemr/tree/rel-820/ci',
+            'https://github.com/DCL/DCL/tree/rel-820/ci',
         );
 
         self::assertStringStartsWith("### Minimum supported versions\n", $out);
@@ -43,7 +43,7 @@ final class CompatibilityNotesRendererTest extends TestCase
         self::assertStringContainsString('- **MariaDB** 10.6+', $out);
         self::assertStringContainsString('- **MySQL** 5.7+', $out);
         self::assertStringContainsString(
-            '[tested CI matrix](https://github.com/openemr/openemr/tree/rel-820/ci)',
+            '[tested CI matrix](https://github.com/DCL/DCL/tree/rel-820/ci)',
             $out,
         );
     }
@@ -51,16 +51,16 @@ final class CompatibilityNotesRendererTest extends TestCase
     public function testInjectAfterFirstVersionHeadingPreservesTrailingSections(): void
     {
         $notes = <<<'MD'
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Fixed
 
-  - some bugfix ([#123](https://github.com/openemr/openemr/pull/123))
+  - some bugfix ([#123](https://github.com/DCL/DCL/pull/123))
 
 MD;
         $section = $this->renderer->render(
             ['php' => '8.2'],
-            'https://github.com/openemr/openemr/tree/rel-820/ci',
+            'https://github.com/DCL/DCL/tree/rel-820/ci',
         );
 
         $out = $this->renderer->inject($notes, $section);
@@ -81,7 +81,7 @@ MD;
         $notes = "just body content\n\nno heading\n";
         $section = $this->renderer->render(
             ['php' => '8.2'],
-            'https://github.com/openemr/openemr/tree/rel-820/ci',
+            'https://github.com/DCL/DCL/tree/rel-820/ci',
         );
 
         $out = $this->renderer->inject($notes, $section);
@@ -91,22 +91,22 @@ MD;
     public function testInjectIsIdempotentWhenSectionAlreadyPresent(): void
     {
         $notes = <<<'MD'
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Minimum supported versions
 
 - **PHP** 8.2+
 
-See the [tested CI matrix](https://github.com/openemr/openemr/tree/rel-820/ci) for all tested version combinations.
+See the [tested CI matrix](https://github.com/DCL/DCL/tree/rel-820/ci) for all tested version combinations.
 
 ### Fixed
 
-  - some bugfix ([#123](https://github.com/openemr/openemr/pull/123))
+  - some bugfix ([#123](https://github.com/DCL/DCL/pull/123))
 
 MD;
         $section = $this->renderer->render(
             ['php' => '8.2'],
-            'https://github.com/openemr/openemr/tree/rel-820/ci',
+            'https://github.com/DCL/DCL/tree/rel-820/ci',
         );
 
         $out = $this->renderer->inject($notes, $section);
@@ -129,29 +129,29 @@ MD;
         // the NEW top section, the older release's compat block must be
         // preserved.
         $notes = <<<'MD'
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Fixed
 
-  - new bugfix ([#200](https://github.com/openemr/openemr/pull/200))
+  - new bugfix ([#200](https://github.com/DCL/DCL/pull/200))
 
-## [8.2.0](https://github.com/openemr/openemr/compare/v8_1_0...v8_2_0) - 2026-07-08
+## [8.2.0](https://github.com/DCL/DCL/compare/v8_1_0...v8_2_0) - 2026-07-08
 
 ### Minimum supported versions
 
 - **PHP** 8.2+
 - **MariaDB** 10.6+
 
-See the [tested CI matrix](https://github.com/openemr/openemr/tree/rel-820/ci) for all tested version combinations.
+See the [tested CI matrix](https://github.com/DCL/DCL/tree/rel-820/ci) for all tested version combinations.
 
 ### Fixed
 
-  - old bugfix ([#100](https://github.com/openemr/openemr/pull/100))
+  - old bugfix ([#100](https://github.com/DCL/DCL/pull/100))
 
 MD;
         $section = $this->renderer->render(
             ['php' => '8.3', 'mariadb' => '11.4'],
-            'https://github.com/openemr/openemr/tree/rel-821/ci',
+            'https://github.com/DCL/DCL/tree/rel-821/ci',
         );
 
         $out = $this->renderer->inject($notes, $section);
@@ -172,23 +172,23 @@ MD;
     public function testInjectReplacesStaleSectionWithNewValues(): void
     {
         $notes = <<<'MD'
-## [8.2.1](https://github.com/openemr/openemr/compare/v8_2_0...v8_2_1) - 2026-08-01
+## [8.2.1](https://github.com/DCL/DCL/compare/v8_2_0...v8_2_1) - 2026-08-01
 
 ### Minimum supported versions
 
 - **PHP** 7.4+
 
-See the [tested CI matrix](https://github.com/openemr/openemr/tree/rel-820/ci) for all tested version combinations.
+See the [tested CI matrix](https://github.com/DCL/DCL/tree/rel-820/ci) for all tested version combinations.
 
 ### Fixed
 
-  - a bug ([#1](https://github.com/openemr/openemr/pull/1))
+  - a bug ([#1](https://github.com/DCL/DCL/pull/1))
 
 MD;
         // Rerender with updated minimums
         $section = $this->renderer->render(
             ['php' => '8.2', 'mariadb' => '10.6'],
-            'https://github.com/openemr/openemr/tree/rel-820/ci',
+            'https://github.com/DCL/DCL/tree/rel-820/ci',
         );
 
         $out = $this->renderer->inject($notes, $section);

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,13 +71,13 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement imp
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $degree = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount
      */
     public $amount = null;
 
@@ -88,7 +88,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement imp
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDegree()
     {
@@ -97,7 +97,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement imp
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $degree
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $degree
      * @return $this
      */
     public function setDegree($degree)
@@ -108,7 +108,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement imp
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount
      */
     public function getAmount()
     {
@@ -117,7 +117,7 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement imp
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount $amount
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount $amount
      * @return $this
      */
     public function setAmount($amount)

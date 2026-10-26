@@ -1,6 +1,6 @@
 # SMART on FHIR
 
-Complete guide to integrating SMART on FHIR applications with OpenEMR.
+Complete guide to integrating SMART on FHIR applications with DCL.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -40,11 +40,11 @@ SMART on FHIR enables:
 - ✅ **Standardized authorization** with granular scopes
 - ✅ **User-friendly integration** without custom EHR modifications
 
-### OpenEMR Support
+### DCL Support
 
-OpenEMR fully supports:
+DCL fully supports:
 - **SMART on FHIR v2.2.0** - Latest specification
-- **EHR Launch** - Apps launched from within OpenEMR
+- **EHR Launch** - Apps launched from within DCL
 - **Standalone Launch** - Apps launched independently
 - **Native Apps** - Mobile and desktop applications
 - **Patient Standalone Apps** - Patient-facing applications
@@ -62,7 +62,7 @@ OpenEMR fully supports:
 
 ## SMART v2.2.0 Features
 
-OpenEMR implements **SMART on FHIR v2.2.0** with the following enhancements:
+DCL implements **SMART on FHIR v2.2.0** with the following enhancements:
 
 ### New Features
 
@@ -119,7 +119,7 @@ See [Authentication Guide](AUTHENTICATION.md#token-introspection) for details.
 
 ## App Registration
 
-SMART apps must be registered before use. OpenEMR provides two registration methods.
+SMART apps must be registered before use. DCL provides two registration methods.
 
 ### Web-Based Registration
 
@@ -129,7 +129,7 @@ SMART apps must be registered before use. OpenEMR provides two registration meth
 
 1. **Navigate to registration page:**
 ```
-   https://your-openemr.example.com/interface/smart/register-app.php
+   https://your-DCL.example.com/interface/smart/register-app.php
 ```
 
 2. **Fill in app details:**
@@ -255,17 +255,17 @@ SMART supports two launch patterns: **Standalone** and **EHR Launch**.
 sequenceDiagram
     participant User
     participant App as SMART App
-    participant OpenEMR
+    participant DCL
 
     User->>App: 1. Launch app
-    App->>OpenEMR: 2. Authorization request
-    OpenEMR->>User: 3. Login prompt
-    User->>OpenEMR: 4. Enter credentials
-    OpenEMR->>User: 5. Consent screen
-    User->>OpenEMR: 6. Approve access
-    OpenEMR->>App: 7. Authorization code
-    App->>OpenEMR: 8. Exchange for token
-    OpenEMR->>App: 9. Access token + context
+    App->>DCL: 2. Authorization request
+    DCL->>User: 3. Login prompt
+    User->>DCL: 4. Enter credentials
+    DCL->>User: 5. Consent screen
+    User->>DCL: 6. Approve access
+    DCL->>App: 7. Authorization code
+    App->>DCL: 8. Exchange for token
+    DCL->>App: 9. Access token + context
     App->>User: 10. Display data
 ```
 
@@ -311,7 +311,7 @@ window.location.href = authUrl.toString();
 
 **Step 2: Handle callback**
 
-After user approval, OpenEMR redirects to `redirect_uri`:
+After user approval, DCL redirects to `redirect_uri`:
 ```
 https://app.example.com/callback?code=AUTHORIZATION_CODE&state=STATE
 ```
@@ -339,10 +339,10 @@ const response = await fetch('https://localhost:9300/apis/default/fhir/Patient/1
 
 ### EHR Launch
 
-**EHR-initiated** - App launched from within OpenEMR with pre-established context.
+**EHR-initiated** - App launched from within DCL with pre-established context.
 
 #### Characteristics
-- ✅ Launched from OpenEMR UI
+- ✅ Launched from DCL UI
 - ✅ Patient context preselected
 - ✅ Encounter context available (SMART v2.2.0)
 - ✅ User already authenticated
@@ -353,18 +353,18 @@ const response = await fetch('https://localhost:9300/apis/default/fhir/Patient/1
 ```mermaid
 sequenceDiagram
     participant User as Clinician
-    participant OpenEMR
+    participant DCL
     participant App as SMART App
 
-    User->>OpenEMR: 1. View patient chart
-    User->>OpenEMR: 2. Open Patient Summary and click the app under "SMART Enabled Apps"
-    OpenEMR->>App: 3. Redirect to launch URL (iss + launch)
-    App->>OpenEMR: 4. Authorization request (with launch)
-    OpenEMR->>User: 5. Consent screen (if needed)
-    User->>OpenEMR: 6. Approve
-    OpenEMR->>App: 7. Authorization code
-    App->>OpenEMR: 8. Exchange for token
-    OpenEMR->>App: 9. Token + patient + encounter
+    User->>DCL: 1. View patient chart
+    User->>DCL: 2. Open Patient Summary and click the app under "SMART Enabled Apps"
+    DCL->>App: 3. Redirect to launch URL (iss + launch)
+    App->>DCL: 4. Authorization request (with launch)
+    DCL->>User: 5. Consent screen (if needed)
+    User->>DCL: 6. Approve
+    DCL->>App: 7. Authorization code
+    App->>DCL: 8. Exchange for token
+    DCL->>App: 9. Token + patient + encounter
     App->>User: 10. Display patient data
 ```
 
@@ -393,9 +393,9 @@ user/Observation.rs
 
 #### Implementation
 
-**Step 1: OpenEMR redirects to launch URL**
+**Step 1: DCL redirects to launch URL**
 
-OpenEMR initiates launch with:
+DCL initiates launch with:
 ```
 https://app.example.com/launch?
   iss=https://localhost:9300/apis/default/fhir&
@@ -479,7 +479,7 @@ if (encounterId) {
 }
 ```
 
-#### Launching an EHR SMART App from OpenEMR
+#### Launching an EHR SMART App from DCL
 
 After registering and approving an EHR-launch SMART application, clinicians launch it from the patient Summary or Demographics screen.
 
@@ -513,7 +513,7 @@ Provider applications requesting `user/*` scopes may require administrator appro
 
 The SMART application launcher is a patient-summary dashboard card. It is not a main-menu item or global toolbar button.
 
-OpenEMR redirects to the application's registered launch URI with the SMART EHR launch parameters:
+DCL redirects to the application's registered launch URI with the SMART EHR launch parameters:
 
 ```text
 iss=<FHIR base URL>
@@ -526,7 +526,7 @@ The application then starts the OAuth authorization-code flow, includes the supp
 
 The card is displayed only when all of the following are true:
 
-- the OpenEMR FHIR API is enabled
+- the DCL FHIR API is enabled
 - at least one SMART client is enabled
 - the client includes the exact `launch` scope
 - the clinician is viewing a patient Summary or Demographics screen
@@ -541,7 +541,7 @@ The card may also be collapsed based on the user's saved dashboard preferences.
 
 If the card is missing:
 
-1. Confirm that FHIR is enabled under the OpenEMR API configuration
+1. Confirm that FHIR is enabled under the DCL API configuration
 2. Confirm that the application is enabled under **Administration → System → API Clients**
 3. Confirm that the registered scope contains `launch` as a separate scope
 4. Confirm that the application has a valid launch URI
@@ -1240,7 +1240,7 @@ Native apps must follow [RFC 8252: OAuth 2.0 for Native Apps](https://tools.ietf
 
 ## App Management
 
-Administrators manage SMART apps through the OpenEMR interface.
+Administrators manage SMART apps through the DCL interface.
 
 ### Enabling Apps
 
@@ -1335,7 +1335,7 @@ See [Authorization Guide - Revoking Access](AUTHORIZATION.md#revoking-access) fo
 ✅ **Revoke suspicious apps** - Act on security incidents
 ✅ **Educate users** - About app permissions
 ✅ **Maintain audit logs** - Track API access
-✅ **Update OpenEMR** - Apply security patches
+✅ **Update DCL** - Apply security patches
 
 ❌ **Don't auto-approve system apps** - Review carefully
 ❌ **Don't ignore security alerts** - Investigate promptly
@@ -1423,7 +1423,7 @@ See [Authorization Guide - Revoking Access](AUTHORIZATION.md#revoking-access) fo
 - The dashboard card is collapsed
 
 **Solutions:**
-- ✅ Enable FHIR in the OpenEMR API configuration
+- ✅ Enable FHIR in the DCL API configuration
 - ✅ Enable the app in Administration → System → API Clients
 - ✅ Complete administrator approval when required
 - ✅ Confirm the registered scopes include `launch`
@@ -1482,20 +1482,20 @@ See [Authorization Guide - Revoking Access](AUTHORIZATION.md#revoking-access) fo
 **Resources:**
 - SMART App Launch IG: http://hl7.org/fhir/smart-app-launch/
 - SMART on FHIR: https://smarthealthit.org/
-- Community Forum: https://community.open-emr.org/
+- Community Forum: https://community.dcl.org/
 - Example Apps: https://github.com/smart-on-fhir/
 
 **Support:**
-- Community Forum: https://community.open-emr.org/
-- GitHub Issues: https://github.com/openemr/openemr/issues
+- Community Forum: https://community.dcl.org/
+- GitHub Issues: https://github.com/DCL/DCL/issues
 
 ---
 ## Documentation Attribution
 
 ### Authorship
-This documentation represents the collective knowledge and contributions of the OpenEMR open-source community. The content is based on:
-- Original documentation by OpenEMR developers and contributors
-- Technical specifications from the OpenEMR codebase
+This documentation represents the collective knowledge and contributions of the DCL open-source community. The content is based on:
+- Original documentation by DCL developers and contributors
+- Technical specifications from the DCL codebase
 - Community feedback and real-world implementation experience
 
 ### AI Assistance
@@ -1508,10 +1508,10 @@ The organization, structure, and presentation of this documentation was enhanced
 All technical accuracy is maintained from the original community-authored documentation.
 
 ### Contributing
-OpenEMR is an open-source project. To contribute to this documentation:
-- **Report Issues:** [GitHub Issues](https://github.com/openemr/openemr/issues)
-- **Discuss:** [Community Forum](https://community.open-emr.org/)
-- **Submit Changes:** [Pull Requests](https://github.com/openemr/openemr/pulls)
+DCL is an open-source project. To contribute to this documentation:
+- **Report Issues:** [GitHub Issues](https://github.com/DCL/DCL/issues)
+- **Discuss:** [Community Forum](https://community.dcl.org/)
+- **Submit Changes:** [Pull Requests](https://github.com/DCL/DCL/pulls)
 
 **Last Updated:** November 2025
 **License:** GPL v3

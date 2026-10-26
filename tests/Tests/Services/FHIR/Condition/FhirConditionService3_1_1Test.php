@@ -4,22 +4,22 @@
  * FhirConditionService3_1_1Test.php
  * Unit tests for US Core 3.1.1 Condition Profile compliance
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Public Domain for most of this file marked as AI Generated which were created with the assistance of Claude.AI and Microsoft Copilot
  *            Minor additions were made by Stephen Nielson
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\Services\FHIR\Condition\FhirConditionProblemListItemService;
-use OpenEMR\Services\FHIR\FhirConditionService;
-use OpenEMR\Tests\Fixtures\ConditionFixtureManager;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\Services\FHIR\Condition\FhirConditionProblemListItemService;
+use DCL\Services\FHIR\FhirConditionService;
+use DCL\Tests\Fixtures\ConditionFixtureManager;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -66,7 +66,7 @@ class FhirConditionService3_1_1Test extends TestCase
         $conditionData = $this->createValidConditionRecord();
 
         // Act
-        $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
         // Assert - Verify all Must Support elements are present
         $this->assertInstanceOf(FHIRCondition::class, $fhirCondition);
@@ -104,7 +104,7 @@ class FhirConditionService3_1_1Test extends TestCase
             $conditionData = $this->createConditionWithClinicalStatus($status);
 
             // Act
-            $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+            $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
             // Assert
             $clinicalStatus = $fhirCondition->getClinicalStatus();
@@ -132,7 +132,7 @@ class FhirConditionService3_1_1Test extends TestCase
             $conditionData = $this->createConditionWithVerificationStatus($status);
 
             // Act
-            $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+            $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
             // Assert
             $verificationStatus = $fhirCondition->getVerificationStatus();
@@ -160,7 +160,7 @@ class FhirConditionService3_1_1Test extends TestCase
             $conditionData = $this->createConditionWithCategory($category);
 
             // Act
-            $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+            $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
             // Assert
             $categories = $fhirCondition->getCategory();
@@ -186,7 +186,7 @@ class FhirConditionService3_1_1Test extends TestCase
         $conditionData = $this->createConditionWithCode('I25.10', 'Atherosclerotic heart disease', 'http://hl7.org/fhir/sid/icd-10-cm');
 
         // Act
-        $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
         // Assert
         $code = $fhirCondition->getCode();
@@ -207,7 +207,7 @@ class FhirConditionService3_1_1Test extends TestCase
         $conditionData = $this->createValidConditionRecord();
 
         // Act
-        $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
         // Assert
         $subject = $fhirCondition->getSubject();
@@ -222,12 +222,12 @@ class FhirConditionService3_1_1Test extends TestCase
     }
 
     /**
-     * Test clinical status mapping from OpenEMR data
+     * Test clinical status mapping from DCL data
      */
     public function testClinicalStatusMapping(): void
     {
         $testCases = [
-            // [OpenEMR data, expected FHIR clinical status]
+            // [DCL data, expected FHIR clinical status]
             ['occurrence' => 0, 'outcome' => 0, 'enddate' => null, 'expected' => 'active'],
             ['occurrence' => 1, 'outcome' => 0, 'enddate' => null, 'expected' => 'resolved'],
             ['occurrence' => 0, 'outcome' => 1, 'enddate' => null, 'expected' => 'resolved'],
@@ -243,7 +243,7 @@ class FhirConditionService3_1_1Test extends TestCase
             $conditionData['enddate'] = $case['enddate'];
 
             // Act
-            $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+            $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
             // Assert
             $clinicalStatus = $fhirCondition->getClinicalStatus();
@@ -264,7 +264,7 @@ class FhirConditionService3_1_1Test extends TestCase
         $conditionData = $this->createValidConditionRecord();
 
         // Act
-        $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
         // Assert
         $meta = $fhirCondition->getMeta();
@@ -288,7 +288,7 @@ class FhirConditionService3_1_1Test extends TestCase
         $conditionData = $this->createValidConditionRecord();
 
         // Act
-        $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
         // Assert
         $id = $fhirCondition->getId();
@@ -307,7 +307,7 @@ class FhirConditionService3_1_1Test extends TestCase
         $conditionData['last_updated_time'] = '2023-01-15 10:30:00';
 
         // Act
-        $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
 
         // Assert
         $meta = $fhirCondition->getMeta();
@@ -346,7 +346,7 @@ class FhirConditionService3_1_1Test extends TestCase
         // original implementation only supported problem-list-item even though the value set had encounter-diagnosis and health-concern
         // Act & Assert - Should not throw exception
         $conditionData = $this->createConditionWithCategory('problem-list-item');
-        $fhirCondition = $this->fhirConditionService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->fhirConditionService->parseDCLRecord($conditionData);
         $this->assertNotNull($fhirCondition);
 
         $categories = $fhirCondition->getCategory();

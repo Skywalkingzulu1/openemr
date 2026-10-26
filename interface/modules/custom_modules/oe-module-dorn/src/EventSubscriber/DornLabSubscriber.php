@@ -2,17 +2,17 @@
 
 /**
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\Dorn\EventSubscriber;
+namespace DCL\Modules\Dorn\EventSubscriber;
 
-use OpenEMR\Events\Services\DornLabEvent;
-use OpenEMR\Modules\Dorn\DornGenHl7Order;
+use DCL\Events\Services\DornLabEvent;
+use DCL\Modules\Dorn\DornGenHl7Order;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class DornLabSubscriber implements EventSubscriberInterface

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any serialized object with a mime-type, so includes formal patient centric documents (CDA), clinical notes, scanned paper, and non-patient specific documents like policy text.
@@ -72,97 +72,97 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 {
     /**
      * Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $masterIdentifier = null;
 
     /**
      * Other identifiers associated with the document, including version independent identifiers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of this document reference.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
      */
     public $status = null;
 
     /**
      * The status of the underlying document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCompositionStatus
      */
     public $docStatus = null;
 
     /**
      * Specifies the particular kind of document referenced  (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the document referenced.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A categorization for the type of document referenced - helps for indexing and searching. This may be implied by or derived from the code specified in the DocumentReference.type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * When the document reference was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $date = null;
 
     /**
      * Identifies who is responsible for adding the information to the document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $author = [];
 
     /**
      * Which person or organization authenticates that this document is valid.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $authenticator = null;
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $custodian = null;
 
     /**
      * Relationships that this document has with other document references that already exist.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
     public $relatesTo = [];
 
     /**
      * Human-readable description of the source document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security contains the security labels of the "reference" to the document, while DocumentReference.securityLabel contains a snapshot of the security labels on the document the reference refers to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $securityLabel = [];
 
     /**
      * The document and format referenced. There may be multiple content element repetitions, each with a different format.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent[]
      */
     public $content = [];
 
     /**
      * The clinical context in which the document was prepared.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
     public $context = null;
 
@@ -173,7 +173,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getMasterIdentifier()
     {
@@ -182,7 +182,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $masterIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $masterIdentifier
      * @return $this
      */
     public function setMasterIdentifier($masterIdentifier)
@@ -193,7 +193,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Other identifiers associated with the document, including version independent identifiers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -202,7 +202,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Other identifiers associated with the document, including version independent identifiers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -213,7 +213,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of this document reference.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus
      */
     public function getStatus()
     {
@@ -222,7 +222,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of this document reference.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDocumentReferenceStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -233,7 +233,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of the underlying document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCompositionStatus
      */
     public function getDocStatus()
     {
@@ -242,7 +242,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of the underlying document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionStatus $docStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCompositionStatus $docStatus
      * @return $this
      */
     public function setDocStatus($docStatus)
@@ -253,7 +253,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Specifies the particular kind of document referenced  (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the document referenced.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -262,7 +262,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Specifies the particular kind of document referenced  (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the document referenced.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -273,7 +273,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A categorization for the type of document referenced - helps for indexing and searching. This may be implied by or derived from the code specified in the DocumentReference.type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -282,7 +282,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A categorization for the type of document referenced - helps for indexing and searching. This may be implied by or derived from the code specified in the DocumentReference.type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -293,7 +293,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -302,7 +302,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -313,7 +313,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * When the document reference was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getDate()
     {
@@ -322,7 +322,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * When the document reference was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $date
      * @return $this
      */
     public function setDate($date)
@@ -333,7 +333,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies who is responsible for adding the information to the document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAuthor()
     {
@@ -342,7 +342,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies who is responsible for adding the information to the document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function addAuthor($author)
@@ -353,7 +353,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Which person or organization authenticates that this document is valid.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthenticator()
     {
@@ -362,7 +362,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Which person or organization authenticates that this document is valid.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $authenticator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $authenticator
      * @return $this
      */
     public function setAuthenticator($authenticator)
@@ -373,7 +373,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCustodian()
     {
@@ -382,7 +382,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $custodian
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $custodian
      * @return $this
      */
     public function setCustodian($custodian)
@@ -393,7 +393,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Relationships that this document has with other document references that already exist.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
     public function getRelatesTo()
     {
@@ -402,7 +402,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Relationships that this document has with other document references that already exist.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo $relatesTo
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo $relatesTo
      * @return $this
      */
     public function addRelatesTo($relatesTo)
@@ -413,7 +413,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Human-readable description of the source document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -422,7 +422,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Human-readable description of the source document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -433,7 +433,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security contains the security labels of the "reference" to the document, while DocumentReference.securityLabel contains a snapshot of the security labels on the document the reference refers to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSecurityLabel()
     {
@@ -442,7 +442,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A set of Security-Tag codes specifying the level of privacy/security of the Document. Note that DocumentReference.meta.security contains the security labels of the "reference" to the document, while DocumentReference.securityLabel contains a snapshot of the security labels on the document the reference refers to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $securityLabel
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $securityLabel
      * @return $this
      */
     public function addSecurityLabel($securityLabel)
@@ -453,7 +453,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The document and format referenced. There may be multiple content element repetitions, each with a different format.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent[]
      */
     public function getContent()
     {
@@ -462,7 +462,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The document and format referenced. There may be multiple content element repetitions, each with a different format.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent $content
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent $content
      * @return $this
      */
     public function addContent($content)
@@ -473,7 +473,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The clinical context in which the document was prepared.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
     public function getContext()
     {
@@ -482,7 +482,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The clinical context in which the document was prepared.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext $context
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext $context
      * @return $this
      */
     public function setContext($context)

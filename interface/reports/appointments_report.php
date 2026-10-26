@@ -8,8 +8,8 @@
  * RM optionally display patients' address
  * RM choose a selection of providers from the drop down menu
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ron Pulcer <rspulcer_2k@yahoo.com>
@@ -18,7 +18,7 @@
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ron Pulcer <rspulcer_2k@yahoo.com>
  * @copyright Copyright (c) 2019-2022 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Set $sessionAllowWrite to true since there are session writes here after html has already been outputted
@@ -29,12 +29,12 @@ require_once("../globals.php");
 /**
  * @global $srcdir
  */
-$srcDir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcDir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 require_once $srcDir . '/options.inc.php';
 require_once $srcDir . '/appointments.inc.php';
 require_once $srcDir . '/clinical_rules.php';
 
-use OpenEMR\Common\{
+use DCL\Common\{
     Acl\AccessDeniedHelper,
     Acl\AclMain,
     Csrf\CsrfUtils,
@@ -42,10 +42,10 @@ use OpenEMR\Common\{
     Session\SessionUtil,
     Session\SessionWrapperFactory,
 };
-use OpenEMR\Core\Header;
-use OpenEMR\Services\SpreadSheetService;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\BC\ServiceContainer;
+use DCL\Core\Header;
+use DCL\Services\SpreadSheetService;
+use DCL\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_POST)) {

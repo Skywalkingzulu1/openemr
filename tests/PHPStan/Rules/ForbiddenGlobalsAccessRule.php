@@ -7,13 +7,13 @@
  * OEGlobalsBag provides better testability, type safety, and enables future integration
  * with external secrets providers.
  *
- * @package   OpenEMR
+ * @package   DCL
  * @author    GitHub Copilot // AI-generated
- * @copyright Copyright (c) 2025 OpenEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\ArrayDimFetch;
@@ -54,7 +54,7 @@ class ForbiddenGlobalsAccessRule implements Rule
         }
 
         // Allow $GLOBALS access in the OEGlobalsBag class itself
-        if ($scope->isInClass() && $scope->getClassReflection()->getName() === \OpenEMR\Core\OEGlobalsBag::class) {
+        if ($scope->isInClass() && $scope->getClassReflection()->getName() === \DCL\Core\OEGlobalsBag::class) {
             return [];
         }
 
@@ -78,7 +78,7 @@ class ForbiddenGlobalsAccessRule implements Rule
 
         return [
             RuleErrorBuilder::message($message)
-                ->identifier('openemr.forbiddenGlobalsAccess')
+                ->identifier('DCL.forbiddenGlobalsAccess')
                 ->tip('For encrypted values, OEGlobalsBag handles decryption automatically. See src/Core/OEGlobalsBag.php')
                 ->build()
         ];

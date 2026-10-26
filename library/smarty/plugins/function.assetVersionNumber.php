@@ -14,7 +14,7 @@
  * of the License, or (at your option) any later version.
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * Smarty {assetVersionNumber} function plugin.

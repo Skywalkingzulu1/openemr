@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Tests\Fixtures\AppointmentFixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Tests\Fixtures\AppointmentFixtureManager;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -20,11 +20,11 @@ use PHPUnit\Framework\TestCase;
  *   POST   /api/patient/:pid/appointment       – create (exercised via setUp)
  *   DELETE /api/patient/:pid/appointment/:eid  – delete
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Miguel Montano <miiguel2m@gmail.com>
  * @copyright Copyright (c) 2026 Miguel Montano
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class AppointmentApiTest extends TestCase
 {
@@ -37,9 +37,9 @@ class AppointmentApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new AppointmentFixtureManager();
         $dependencies = $this->fixtureManager->installDependencies();

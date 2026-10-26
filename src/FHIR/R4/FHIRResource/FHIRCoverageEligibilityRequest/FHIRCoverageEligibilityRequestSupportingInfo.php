@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
@@ -71,19 +71,19 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement i
 {
     /**
      * A number to uniquely identify supporting information entries.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
      * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $information = null;
 
     /**
      * The supporting materials are applicable for all detail items, product/service categories and specific billing codes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $appliesToAll = null;
 
@@ -94,7 +94,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement i
 
     /**
      * A number to uniquely identify supporting information entries.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -103,7 +103,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement i
 
     /**
      * A number to uniquely identify supporting information entries.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -114,7 +114,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement i
 
     /**
      * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInformation()
     {
@@ -123,7 +123,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement i
 
     /**
      * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $information
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $information
      * @return $this
      */
     public function setInformation($information)
@@ -134,7 +134,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement i
 
     /**
      * The supporting materials are applicable for all detail items, product/service categories and specific billing codes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAppliesToAll()
     {
@@ -143,7 +143,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement i
 
     /**
      * The supporting materials are applicable for all detail items, product/service categories and specific billing codes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $appliesToAll
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $appliesToAll
      * @return $this
      */
     public function setAppliesToAll($appliesToAll)

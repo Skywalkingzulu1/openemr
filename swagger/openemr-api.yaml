@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: 'OpenEMR API'
+  title: 'DCL API'
   version: 8.5.0
 servers:
   -
@@ -63,7 +63,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/allergy/{auuid}':
     get:
       tags:
@@ -86,7 +86,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/appointment:
     get:
       tags:
@@ -101,7 +101,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/appointment/{eid}':
     get:
       tags:
@@ -124,7 +124,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/background_service:
     get:
       tags:
@@ -157,7 +157,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/background_service/$run:
     post:
       tags:
@@ -203,7 +203,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/background_service/{name}':
     get:
       tags:
@@ -261,7 +261,7 @@ paths:
                 type: object
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/background_service/{name}/$run':
     post:
       tags:
@@ -375,7 +375,7 @@ paths:
                 status: error
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/drug:
     get:
       tags:
@@ -390,7 +390,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/drug/{uuid}':
     get:
       tags:
@@ -415,7 +415,7 @@ paths:
           $ref: '#/components/responses/standard'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/facility:
     get:
       tags:
@@ -564,7 +564,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -665,7 +665,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/facility/{fuuid}':
     get:
       tags:
@@ -688,7 +688,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -794,7 +794,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/immunization:
     get:
       tags:
@@ -1006,7 +1006,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/immunization/{uuid}':
     get:
       tags:
@@ -1031,7 +1031,7 @@ paths:
           $ref: '#/components/responses/standard'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/insurance_company:
     get:
       tags:
@@ -1092,7 +1092,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -1112,7 +1112,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/insurance_company/{iid}':
     get:
       tags:
@@ -1135,7 +1135,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -1163,7 +1163,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/insurance_type:
     get:
       tags:
@@ -1178,7 +1178,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/list/{list_name}':
     get:
       tags:
@@ -1201,7 +1201,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/medical_problem:
     get:
       tags:
@@ -1259,7 +1259,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/medical_problem/{muuid}':
     get:
       tags:
@@ -1282,7 +1282,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/patient:
     get:
       tags:
@@ -1428,7 +1428,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -1475,7 +1475,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/appointment':
     get:
       tags:
@@ -1498,7 +1498,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -1578,7 +1578,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/appointment/{eid}':
     delete:
       tags:
@@ -1610,7 +1610,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - standard
@@ -1641,7 +1641,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/dental_issue':
     get:
       tags:
@@ -1664,7 +1664,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -1692,7 +1692,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/dental_issue/{did}':
     delete:
       tags:
@@ -1722,7 +1722,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - standard
@@ -1751,7 +1751,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -1788,7 +1788,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/document':
     get:
       tags:
@@ -1825,7 +1825,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -1865,7 +1865,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/document/{did}':
     get:
       tags:
@@ -1895,7 +1895,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/soap_note':
     get:
       tags:
@@ -1925,7 +1925,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -1960,7 +1960,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/soap_note/{sid}':
     get:
       tags:
@@ -1997,7 +1997,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -2041,7 +2041,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/vital':
     get:
       tags:
@@ -2071,7 +2071,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -2106,7 +2106,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/encounter/{eid}/vital/{vid}':
     get:
       tags:
@@ -2143,7 +2143,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -2185,7 +2185,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/medication':
     get:
       tags:
@@ -2208,7 +2208,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -2236,7 +2236,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/medication/{mid}':
     delete:
       tags:
@@ -2266,7 +2266,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - standard
@@ -2295,7 +2295,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -2332,7 +2332,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/message':
     post:
       tags:
@@ -2361,7 +2361,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/message/{mid}':
     delete:
       tags:
@@ -2391,7 +2391,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -2426,7 +2426,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/surgery':
     get:
       tags:
@@ -2449,7 +2449,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -2477,7 +2477,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/surgery/{sid}':
     delete:
       tags:
@@ -2507,7 +2507,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - standard
@@ -2536,7 +2536,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -2573,7 +2573,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{pid}/transaction':
     get:
       tags:
@@ -2596,7 +2596,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -2624,7 +2624,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}':
     get:
       tags:
@@ -2649,7 +2649,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -2679,7 +2679,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/allergy':
     get:
       tags:
@@ -2702,7 +2702,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -2730,7 +2730,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/allergy/{auuid}':
     delete:
       tags:
@@ -2760,7 +2760,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - standard
@@ -2789,7 +2789,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -2824,7 +2824,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/employer':
     get:
       tags:
@@ -2882,7 +2882,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth:
+          DCL_auth:
             - user/employer.read
             - patient/employer.read
   '/api/patient/{puuid}/encounter':
@@ -2907,7 +2907,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -2966,7 +2966,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/encounter/{euuid}':
     get:
       tags:
@@ -2998,7 +2998,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -3035,7 +3035,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/insurance':
     get:
       tags:
@@ -3111,7 +3111,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -3139,7 +3139,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/insurance/$swap-insurance':
     get:
       tags:
@@ -3156,7 +3156,7 @@ paths:
         -
           name: type
           in: query
-          description: "The type or category of OpenEMR insurance policy, 'primary', 'secondary', or 'tertiary'."
+          description: "The type or category of DCL insurance policy, 'primary', 'secondary', or 'tertiary'."
           required: true
           schema:
             type: string
@@ -3176,7 +3176,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/insurance/{insuranceUuid}':
     put:
       tags:
@@ -3212,7 +3212,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/insurance/{uuid}':
     get:
       tags:
@@ -3235,7 +3235,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/medical_problem':
     get:
       tags:
@@ -3258,7 +3258,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -3286,7 +3286,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/patient/{puuid}/medical_problem/{muuid}':
     delete:
       tags:
@@ -3316,7 +3316,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - standard
@@ -3345,7 +3345,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -3380,7 +3380,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/practitioner:
     get:
       tags:
@@ -3599,7 +3599,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -3769,7 +3769,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/practitioner/{pruuid}':
     get:
       tags:
@@ -3792,7 +3792,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - standard
@@ -4074,7 +4074,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/prescription:
     get:
       tags:
@@ -4097,7 +4097,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - standard
@@ -4133,7 +4133,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/prescription/{uuid}':
     delete:
       tags:
@@ -4163,7 +4163,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - standard
@@ -4185,7 +4185,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/procedure:
     get:
       tags:
@@ -4200,7 +4200,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/procedure/{uuid}':
     get:
       tags:
@@ -4223,12 +4223,12 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/product:
     get:
       tags:
         - standard
-      description: 'Retrieves the OpenEMR product registration information'
+      description: 'Retrieves the DCL product registration information'
       responses:
         200:
           $ref: '#/components/responses/standard'
@@ -4238,7 +4238,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/transaction/{tid}':
     put:
       tags:
@@ -4267,7 +4267,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/user:
     get:
       tags:
@@ -4493,7 +4493,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/api/user/{uuid}':
     get:
       tags:
@@ -4516,12 +4516,12 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /api/version:
     get:
       tags:
         - standard
-      description: 'Retrieves the OpenEMR version information'
+      description: 'Retrieves the DCL version information'
       responses:
         200:
           $ref: '#/components/responses/standard'
@@ -4531,51 +4531,51 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/$bulkdata-status:
     delete:
       tags:
         - fhir
-      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       responses:
         200:
-          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
         400:
           $ref: '#/components/responses/badrequest'
         401:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     get:
       tags:
         - fhir
-      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       responses:
         200:
-          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
         400:
           $ref: '#/components/responses/badrequest'
         401:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/$export:
     get:
       tags:
         - fhir
-      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       responses:
         200:
-          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
         400:
           $ref: '#/components/responses/badrequest'
         401:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/.well-known/smart-configuration:
     get:
       tags:
@@ -4638,7 +4638,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -4660,7 +4660,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/AllergyIntolerance/{uuid}':
     get:
       tags:
@@ -4735,7 +4735,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -4765,7 +4765,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Appointment:
     get:
       tags:
@@ -4820,7 +4820,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -4842,7 +4842,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Appointment/{uuid}':
     get:
       tags:
@@ -4876,12 +4876,12 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Binary/{id}':
     get:
       tags:
         - fhir
-      description: "Used for downloading binary documents generated either with BULK FHIR Export or with the $docref CCD export operation.  Documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "Used for downloading binary documents generated either with BULK FHIR Export or with the $docref CCD export operation.  Documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       parameters:
         -
           name: id
@@ -4892,14 +4892,14 @@ paths:
             type: string
       responses:
         200:
-          description: "The documentation for working with BULK FHIR or $docref document exports can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+          description: "The documentation for working with BULK FHIR or $docref document exports can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
         400:
           $ref: '#/components/responses/badrequest'
         401:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/CarePlan:
     get:
       tags:
@@ -4961,11 +4961,11 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
-      description: "Creates a new CarePlan resource. The CarePlan must reference an existing encounter; one CarePlan corresponds to one care_plan form on that encounter, with each FHIR activity.detail becoming a form_care_plan row. Note: FHIR R4 marks `intent` as required (1..1) but OpenEMR's form_care_plan schema has no column for it; the read side hardcodes intent='plan', so any other intent value is rejected rather than stored and silently downgraded. `activity.reference` is likewise rejected: form_care_plan rows are built from `activity.detail`."
+      description: "Creates a new CarePlan resource. The CarePlan must reference an existing encounter; one CarePlan corresponds to one care_plan form on that encounter, with each FHIR activity.detail becoming a form_care_plan row. Note: FHIR R4 marks `intent` as required (1..1) but DCL's form_care_plan schema has no column for it; the read side hardcodes intent='plan', so any other intent value is rejected rather than stored and silently downgraded. `activity.reference` is likewise rejected: form_care_plan rows are built from `activity.detail`."
       requestBody:
         required: true
         content:
@@ -4983,7 +4983,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/CarePlan/{uuid}':
     get:
       tags:
@@ -5037,7 +5037,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -5067,7 +5067,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/CareTeam:
     get:
       tags:
@@ -5129,7 +5129,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -5151,7 +5151,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/CareTeam/{uuid}':
     get:
       tags:
@@ -5227,7 +5227,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -5257,7 +5257,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Condition:
     get:
       tags:
@@ -5312,7 +5312,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -5334,7 +5334,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Condition/{uuid}':
     get:
       tags:
@@ -5400,7 +5400,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -5430,7 +5430,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Coverage:
     get:
       tags:
@@ -5492,11 +5492,11 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
-      description: 'Creates a new Coverage resource. Note: FHIR R4 allows the `payor` reference to target Organization, Patient, or RelatedPerson; OpenEMR only resolves Organization (the `insurance_companies` table). Patient/RelatedPerson payor references in the payload are rejected with a 400 since they cannot be persisted to `insurance_data.provider`.'
+      description: 'Creates a new Coverage resource. Note: FHIR R4 allows the `payor` reference to target Organization, Patient, or RelatedPerson; DCL only resolves Organization (the `insurance_companies` table). Patient/RelatedPerson payor references in the payload are rejected with a 400 since they cannot be persisted to `insurance_data.provider`.'
       requestBody:
         required: true
         content:
@@ -5514,7 +5514,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Coverage/{uuid}':
     get:
       tags:
@@ -5561,7 +5561,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -5591,7 +5591,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Device:
     get:
       tags:
@@ -5646,7 +5646,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -5668,7 +5668,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Device/{uuid}':
     get:
       tags:
@@ -5724,7 +5724,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -5754,7 +5754,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/DiagnosticReport:
     get:
       tags:
@@ -5830,7 +5830,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/DiagnosticReport/{uuid}':
     get:
       tags:
@@ -5899,7 +5899,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/DocumentReference:
     get:
       tags:
@@ -5975,7 +5975,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/DocumentReference/$docref:
     post:
       tags:
@@ -5983,7 +5983,7 @@ paths:
       description: "The $docref operation is used to request the server generates a document based on the specified parameters. If no additional parameters are specified then a DocumentReference to the patient's most current Clinical Summary of Care Document (CCD) is returned. The document itself is retrieved using the DocumentReference.content.attachment.url element.  See <a href='http://hl7.org/fhir/us/core/OperationDefinition-docref.html' target='_blank' rel='noopener'>http://hl7.org/fhir/us/core/OperationDefinition-docref.html</a> for more details."
       externalDocs:
         description: 'Detailed documentation on this operation'
-        url: 'https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API'
+        url: 'https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API'
       parameters:
         -
           name: patient
@@ -6022,7 +6022,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/DocumentReference/{uuid}':
     get:
       tags:
@@ -6067,9 +6067,9 @@ paths:
                     -
                       coding:
                         -
-                          system: 'https://localhost:9300/apis/default/fhir/ValueSet/openemr-document-types'
-                          code: openemr-document
-                          display: 'OpenEMR Document'
+                          system: 'https://localhost:9300/apis/default/fhir/ValueSet/DCL-document-types'
+                          code: DCL-document
+                          display: 'DCL Document'
                   subject:
                     reference: Patient/946da619-c631-431a-a282-487cd6fb7802
                     type: Patient
@@ -6093,7 +6093,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Encounter:
     get:
       tags:
@@ -6155,7 +6155,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -6177,7 +6177,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Encounter/{uuid}':
     get:
       tags:
@@ -6251,7 +6251,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -6281,7 +6281,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Goal:
     get:
       tags:
@@ -6336,7 +6336,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -6358,7 +6358,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Goal/{uuid}':
     get:
       tags:
@@ -6412,7 +6412,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -6442,12 +6442,12 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Group:
     get:
       tags:
         - fhir
-      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       parameters:
         -
           name: _id
@@ -6497,12 +6497,12 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Group/{id}/$export':
     get:
       tags:
         - fhir
-      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       parameters:
         -
           name: id
@@ -6513,19 +6513,19 @@ paths:
             type: string
       responses:
         200:
-          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
         400:
           $ref: '#/components/responses/badrequest'
         401:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Group/{uuid}':
     get:
       tags:
         - fhir
-      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       parameters:
         -
           name: uuid
@@ -6536,7 +6536,7 @@ paths:
             type: string
       responses:
         200:
-          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
         400:
           $ref: '#/components/responses/badrequest'
         401:
@@ -6545,7 +6545,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Immunization:
     get:
       tags:
@@ -6607,7 +6607,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -6629,7 +6629,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Immunization/{uuid}':
     get:
       tags:
@@ -6680,7 +6680,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -6710,7 +6710,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Location:
     get:
       tags:
@@ -6758,7 +6758,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Location/{uuid}':
     get:
       tags:
@@ -6806,7 +6806,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Media:
     get:
       tags:
@@ -6868,7 +6868,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Media/{uuid}':
     get:
       tags:
@@ -6922,7 +6922,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Medication:
     get:
       tags:
@@ -6970,7 +6970,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -6992,7 +6992,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Medication/{uuid}':
     get:
       tags:
@@ -7040,7 +7040,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -7070,7 +7070,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/MedicationDispense:
     get:
       tags:
@@ -7139,7 +7139,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/MedicationDispense/{uuid}':
     get:
       tags:
@@ -7205,7 +7205,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/MedicationRequest:
     get:
       tags:
@@ -7274,11 +7274,11 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
-      description: 'Creates a new MedicationRequest resource. Note: FHIR R4 allows medication via either `medicationCodeableConcept` (inline coding) or `medicationReference` (link to a Medication resource). OpenEMR only handles the `medicationCodeableConcept` path; a `medicationReference` is rejected rather than dropped. Use medicationCodeableConcept with an RxNorm coding for round-trip compatibility.'
+      description: 'Creates a new MedicationRequest resource. Note: FHIR R4 allows medication via either `medicationCodeableConcept` (inline coding) or `medicationReference` (link to a Medication resource). DCL only handles the `medicationCodeableConcept` path; a `medicationReference` is rejected rather than dropped. Use medicationCodeableConcept with an RxNorm coding for round-trip compatibility.'
       requestBody:
         required: true
         content:
@@ -7296,7 +7296,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/MedicationRequest/{uuid}':
     get:
       tags:
@@ -7358,7 +7358,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -7388,7 +7388,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Observation:
     get:
       tags:
@@ -7465,11 +7465,11 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
-      description: 'Creates a new Observation resource. Only vital sign Observations are writable; Observations whose code belongs to a category OpenEMR derives from other records (social history, SDOH, patient and employer demographics) are rejected rather than dropped.'
+      description: 'Creates a new Observation resource. Only vital sign Observations are writable; Observations whose code belongs to a category DCL derives from other records (social history, SDOH, patient and employer demographics) are rejected rather than dropped.'
       requestBody:
         required: true
         content:
@@ -7487,7 +7487,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Observation/{uuid}':
     get:
       tags:
@@ -7568,7 +7568,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -7598,12 +7598,12 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/OperationDefinition:
     get:
       tags:
         - fhir
-      description: 'Returns a list of the OperationDefinition resources that are specific to this OpenEMR installation'
+      description: 'Returns a list of the OperationDefinition resources that are specific to this DCL installation'
       responses:
         200:
           description: 'Return list of OperationDefinition resources'
@@ -7611,7 +7611,7 @@ paths:
     get:
       tags:
         - fhir
-      description: 'Returns a single OperationDefinition resource that is specific to this OpenEMR installation'
+      description: 'Returns a single OperationDefinition resource that is specific to this DCL installation'
       parameters:
         -
           name: operation
@@ -7753,7 +7753,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -7848,7 +7848,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Organization/{uuid}':
     get:
       tags:
@@ -7914,7 +7914,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -7982,7 +7982,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Patient:
     get:
       tags:
@@ -8123,7 +8123,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -8256,22 +8256,22 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Patient/$export:
     get:
       tags:
         - fhir
-      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+      description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
       responses:
         200:
-          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+          description: "The BULK FHIR Exports documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
         400:
           $ref: '#/components/responses/badrequest'
         401:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Patient/{uuid}':
     get:
       tags:
@@ -8371,7 +8371,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -8458,7 +8458,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Person:
     get:
       tags:
@@ -8583,7 +8583,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -8605,7 +8605,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Person/{uuid}':
     get:
       tags:
@@ -8680,7 +8680,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -8710,7 +8710,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Practitioner:
     get:
       tags:
@@ -8835,7 +8835,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -8904,7 +8904,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Practitioner/{uuid}':
     get:
       tags:
@@ -8957,7 +8957,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -9012,7 +9012,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/PractitionerRole:
     get:
       tags:
@@ -9074,7 +9074,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -9096,7 +9096,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/PractitionerRole/{uuid}':
     get:
       tags:
@@ -9150,7 +9150,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -9180,7 +9180,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Procedure:
     get:
       tags:
@@ -9242,7 +9242,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Procedure/{uuid}':
     get:
       tags:
@@ -9285,7 +9285,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Provenance:
     get:
       tags:
@@ -9326,7 +9326,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Provenance/{uuid}':
     get:
       tags:
@@ -9394,7 +9394,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Questionnaire:
     get:
       tags:
@@ -9435,7 +9435,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -9457,7 +9457,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Questionnaire/{uuid}':
     get:
       tags:
@@ -9497,7 +9497,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -9527,7 +9527,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/QuestionnaireResponse:
     get:
       tags:
@@ -9568,7 +9568,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -9590,7 +9590,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/QuestionnaireResponse/{uuid}':
     get:
       tags:
@@ -9631,7 +9631,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -9661,7 +9661,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/RelatedPerson:
     get:
       tags:
@@ -9716,11 +9716,11 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
-      description: "Creates a new RelatedPerson (patient's family/caregiver). The patient reference is required. OpenEMR also requires a relationship.coding entry under HL7 v3 RoleCode (or its FhirCodeSystemConstants::HL7_ROLE_CODE alias) — this is an OpenEMR deviation from R4 (which makes relationship 0..*) because the read JOIN binds into list_options on a non-null relationship."
+      description: "Creates a new RelatedPerson (patient's family/caregiver). The patient reference is required. DCL also requires a relationship.coding entry under HL7 v3 RoleCode (or its FhirCodeSystemConstants::HL7_ROLE_CODE alias) — this is an DCL deviation from R4 (which makes relationship 0..*) because the read JOIN binds into list_options on a non-null relationship."
       requestBody:
         required: true
         content:
@@ -9738,7 +9738,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/RelatedPerson/{uuid}':
     get:
       tags:
@@ -9801,7 +9801,7 @@ paths:
                       use: home
                     -
                       system: email
-                      value: example@open-emr.org
+                      value: example@dcl.org
                       use: home
                   address:
                     -
@@ -9819,7 +9819,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -9849,7 +9849,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/ServiceRequest:
     get:
       tags:
@@ -9932,11 +9932,11 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
-      description: 'Creates a new ServiceRequest (procedure / lab / imaging order). Each FHIR code.coding entry becomes one procedure_order_code row. The FHIR R4 1..1 `intent` field is persisted to procedure_order.order_intent; OpenEMR supports the values order/plan/directive/proposal/option; the other R4 intents (original-order, reflex-order, filler-order, instance-order) are rejected with a 400 (a validationErrors body) because no column preserves their meaning. The status is 400 rather than 422 because RestControllerHelper::handleFhirProcessingResult() answers every FHIR validation failure with HTTP_BAD_REQUEST.'
+      description: 'Creates a new ServiceRequest (procedure / lab / imaging order). Each FHIR code.coding entry becomes one procedure_order_code row. The FHIR R4 1..1 `intent` field is persisted to procedure_order.order_intent; DCL supports the values order/plan/directive/proposal/option; the other R4 intents (original-order, reflex-order, filler-order, instance-order) are rejected with a 400 (a validationErrors body) because no column preserves their meaning. The status is 400 rather than 422 because RestControllerHelper::handleFhirProcessingResult() answers every FHIR validation failure with HTTP_BAD_REQUEST.'
       requestBody:
         required: true
         content:
@@ -9954,7 +9954,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/ServiceRequest/{uuid}':
     get:
       tags:
@@ -10012,7 +10012,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -10042,7 +10042,7 @@ paths:
           $ref: '#/components/responses/forbidden'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Specimen:
     get:
       tags:
@@ -10118,7 +10118,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Specimen/{uuid}':
     get:
       tags:
@@ -10196,7 +10196,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/Task:
     get:
       tags:
@@ -10300,7 +10300,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     post:
       tags:
         - fhir
@@ -10334,7 +10334,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/Task/{uuid}':
     get:
       tags:
@@ -10395,7 +10395,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
     put:
       tags:
         - fhir
@@ -10444,7 +10444,7 @@ paths:
           description: 'If-Match named a version the task no longer has.'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/ValueSet:
     get:
       tags:
@@ -10492,7 +10492,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/fhir/ValueSet/{uuid}':
     get:
       tags:
@@ -10553,7 +10553,7 @@ paths:
           $ref: '#/components/responses/uuidnotfound'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /fhir/metadata:
     get:
       tags:
@@ -10578,7 +10578,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /portal/patient/appointment:
     get:
       tags:
@@ -10593,7 +10593,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/portal/patient/appointment/{auuid}':
     get:
       tags:
@@ -10616,7 +10616,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   /portal/patient/encounter:
     get:
       tags:
@@ -10631,7 +10631,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
   '/portal/patient/encounter/{euuid}':
     get:
       tags:
@@ -10654,7 +10654,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
       security:
         -
-          openemr_auth: {  }
+          DCL_auth: {  }
 components:
   parameters:
     _lastUpdated:
@@ -11164,7 +11164,7 @@ components:
           description: 'The 837p list of policy types for an insurance.  See src/Billing/InsurancePolicyType.php for the list of valid values.'
           type: string
         type:
-          description: "The type or category of OpenEMR insurance policy, 'primary', 'secondary', or 'tertiary'. If this field is missing it will default to 'primary'."
+          description: "The type or category of DCL insurance policy, 'primary', 'secondary', or 'tertiary'. If this field is missing it will default to 'primary'."
           type: string
       type: object
       example:
@@ -11639,7 +11639,7 @@ components:
       description: 'Enter a previously generated Bearer token here to authenticate'
       bearerFormat: JWT
       scheme: bearer
-    openemr_auth:
+    DCL_auth:
       type: oauth2
       flows:
         authorizationCode:
@@ -11649,7 +11649,7 @@ components:
           scopes:
             openid: 'Generic mandatory scope'
             offline_access: 'Will signal server to provide a refresh token'
-            launch/patient: 'Will provide a patient selector when logging in as an OpenEMR user (required for testing patient/* scopes in swagger if not logging in as a patient)'
+            launch/patient: 'Will provide a patient selector when logging in as an DCL user (required for testing patient/* scopes in swagger if not logging in as a patient)'
             'api:fhir': 'FHIR R4 API'
             patient/AllergyIntolerance.rs: 'Read,Search allergy intolerance resources for the current patient (api:fhir)'
             patient/Appointment.rs: 'Read,Search appointment resources for the current patient (api:fhir)'
@@ -11746,7 +11746,7 @@ components:
             user/RelatedPerson.rs: 'Read,Search all related person resources the user has access to (api:fhir)'
             user/ServiceRequest.rs: 'Read,Search all the service request resources the user has access to (api:fhir)'
             user/Specimen.rs: 'Read,Search all specimen resources the user has access to (api:fhir)'
-            'api:oemr': 'Standard OpenEMR API'
+            'api:oemr': 'Standard DCL API'
             user/allergy.cruds: 'Create,Read,Update,Delete,Search allergies the user has access to (api:oemr)'
             user/appointment.cruds: 'Create,Read,Update,Delete,Search appointments the user has access to (api:oemr)'
             user/dental_issue.cruds: 'Create,Read,Update,Delete,Search dental issues the user has access to (api:oemr)'
@@ -11767,14 +11767,14 @@ components:
             user/practitioner.crus: 'Create,Read,Update,Search practitioners the user has access to (api:oemr)'
             user/prescription.rs: 'Read,Search prescriptions the user has access to (api:oemr)'
             user/procedure.rs: 'Read,Search procedures the user has access to (api:oemr)'
-            user/product.s: 'Search the email registration status of OpenEMR (api:oemr)'
+            user/product.s: 'Search the email registration status of DCL (api:oemr)'
             user/soap_note.crus: 'Create,Read,Update,Search soap notes the user has access to (api:oemr)'
             user/surgery.cruds: 'Create,Read,Update,Delete,Search surgeries the user has access to (api:oemr)'
             user/transaction.cuds: 'Create,Update,Delete,Search transactions the user has access to (api:oemr)'
             user/user.rs: 'Read,Search users the current user has access to (api:oemr)'
             user/version.s: 'Search the software version information the user has access to (api:oemr)'
             user/vital.crus: 'Create,Read,Update,Search vitals the user has access to (api:oemr)'
-            'api:port': 'Standard Patient Portal OpenEMR API'
+            'api:port': 'Standard Patient Portal DCL API'
             patient/encounter.read: 'Read encounters the patient has access to (api:port)'
             patient/patient.read: 'Read patient data the patient has access to (api:port)'
             patient/appointment.read: 'Read appointments the patient has access to (api:port)'
@@ -11784,7 +11784,7 @@ tags:
     description: 'FHIR R4 API'
   -
     name: standard
-    description: 'Standard OpenEMR API'
+    description: 'Standard DCL API'
   -
     name: standard-patient
-    description: 'Standard Patient Portal OpenEMR API'
+    description: 'Standard Patient Portal DCL API'

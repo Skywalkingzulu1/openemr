@@ -8,11 +8,11 @@
  * install. It can't delete files (but can empty them like setup.php) and always
  * includes version.php and sql_patch.php.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -31,7 +31,7 @@ use Symfony\Component\Process\Process;
     ->addOption('start-tag', null, InputOption::VALUE_REQUIRED, 'Base tag for diff (e.g., v8_0_0)')
     ->addOption('branch', null, InputOption::VALUE_REQUIRED, 'Release branch (e.g., rel-800)')
     ->addOption('filename', null, InputOption::VALUE_REQUIRED, 'Output zip filename')
-    ->addOption('openemr-dir', null, InputOption::VALUE_REQUIRED, 'Path to openemr checkout')
+    ->addOption('DCL-dir', null, InputOption::VALUE_REQUIRED, 'Path to DCL checkout')
     ->addOption('output-dir', null, InputOption::VALUE_REQUIRED, 'Output directory', './release-output')
     ->addOption('copy-styles', null, InputOption::VALUE_NONE, 'Include compiled theme styles')
     ->setCode(function (InputInterface $input, OutputInterface $output): int {
@@ -39,7 +39,7 @@ use Symfony\Component\Process\Process;
         // rather than @var-casting downstream; PHPStan trusts the runtime
         // check, and downstream code no longer needs re-validation.
         $required = [];
-        foreach (['start-tag', 'branch', 'filename', 'openemr-dir'] as $name) {
+        foreach (['start-tag', 'branch', 'filename', 'DCL-dir'] as $name) {
             $value = $input->getOption($name);
             if (!is_string($value) || $value === '') {
                 $output->writeln("<error>--{$name} is required</error>");
@@ -50,7 +50,7 @@ use Symfony\Component\Process\Process;
         $startTag = $required['start-tag'];
         $branch = $required['branch'];
         $filename = $required['filename'];
-        $openemrDir = $required['openemr-dir'];
+        $DCLDir = $required['DCL-dir'];
 
         $outputDirOption = $input->getOption('output-dir');
         if (!is_string($outputDirOption) || $outputDirOption === '') {
@@ -72,8 +72,8 @@ use Symfony\Component\Process\Process;
         }
         $outputDir = $resolved;
 
-        if (!is_dir($openemrDir)) {
-            $output->writeln("<error>OpenEMR directory not found: {$openemrDir}</error>");
+        if (!is_dir($DCLDir)) {
+            $output->writeln("<error>DCL directory not found: {$DCLDir}</error>");
             return 1;
         }
 
@@ -143,7 +143,7 @@ use Symfony\Component\Process\Process;
         // otherwise renders them C-style-quoted, which `copy()` can't open).
         $diff = new Process(
             ['git', 'diff', '-z', '--name-only', '--diff-filter=d', "{$startTag}..{$branch}", '--', '.', ...$excludes],
-            $openemrDir,
+            $DCLDir,
         );
         $diff->mustRun();
 
@@ -160,25 +160,25 @@ use Symfony\Component\Process\Process;
             if (!is_dir($targetDir)) {
                 mkdir($targetDir, 0755, true);
             }
-            copy("{$openemrDir}/{$filepath}", "{$patchDir}/{$filepath}");
+            copy("{$DCLDir}/{$filepath}", "{$patchDir}/{$filepath}");
         }
 
         // Copy compiled theme styles if requested
         $copyStyles = (bool) $input->getOption('copy-styles');
-        if ($copyStyles && is_dir("{$openemrDir}/public/themes")) {
+        if ($copyStyles && is_dir("{$DCLDir}/public/themes")) {
             $themesDir = "{$patchDir}/public/themes";
             if (!is_dir($themesDir)) {
                 mkdir($themesDir, 0755, true);
             }
-            (new Process(['cp', '-R', "{$openemrDir}/public/themes/.", $themesDir]))->mustRun();
+            (new Process(['cp', '-R', "{$DCLDir}/public/themes/.", $themesDir]))->mustRun();
         }
 
         // Blank out setup.php so patch doesn't re-run setup
         file_put_contents("{$patchDir}/setup.php", '');
 
         // Always include version.php and sql_patch.php
-        copy("{$openemrDir}/version.php", "{$patchDir}/version.php");
-        copy("{$openemrDir}/sql_patch.php", "{$patchDir}/sql_patch.php");
+        copy("{$DCLDir}/version.php", "{$patchDir}/version.php");
+        copy("{$DCLDir}/sql_patch.php", "{$patchDir}/sql_patch.php");
 
         // Standardize permissions
         (new Process(['find', $patchDir, '-type', 'f', '-exec', 'chmod', '0644', '{}', '+']))->mustRun();

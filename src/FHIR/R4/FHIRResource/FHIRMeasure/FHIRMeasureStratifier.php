@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasure;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The Measure resource provides the definition of a quality measure.
@@ -71,25 +71,25 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Indicates a meaning for the stratifier. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The human readable description of this stratifier criteria.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $criteria = null;
 
     /**
      * A component of the stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureComponent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureComponent[]
      */
     public $component = [];
 
@@ -100,7 +100,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Indicates a meaning for the stratifier. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Indicates a meaning for the stratifier. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing stratifiers to be correlated across measures.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The human readable description of this stratifier criteria.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -129,7 +129,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The human readable description of this stratifier criteria.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -140,7 +140,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getCriteria()
     {
@@ -149,7 +149,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $criteria
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $criteria
      * @return $this
      */
     public function setCriteria($criteria)
@@ -160,7 +160,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A component of the stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureComponent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureComponent[]
      */
     public function getComponent()
     {
@@ -169,7 +169,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A component of the stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureComponent $component
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasure\FHIRMeasureComponent $component
      * @return $this
      */
     public function addComponent($component)

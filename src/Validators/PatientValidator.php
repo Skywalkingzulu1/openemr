@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Common\Uuid\UuidRegistry;
 use Particle\Validator\Exception\InvalidValueException;
 use Particle\Validator\Validator;
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
@@ -11,12 +11,12 @@ use Ramsey\Uuid\Exception\InvalidUuidStringException;
 /**
  * Supports Patient Record Validation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class PatientValidator extends BaseValidator
 {
@@ -63,7 +63,7 @@ class PatientValidator extends BaseValidator
                 ->string()
                 ->callback(function (string $value) {
                     // Validator->email() does not cover unicode characters in the local part so we use
-                    // the OpenEMR email validator for this.
+                    // the DCL email validator for this.
                     if (!ValidationUtils::isValidEmail($value)) {
                         throw new InvalidValueException("Email is not a valid email", "email");
                     }

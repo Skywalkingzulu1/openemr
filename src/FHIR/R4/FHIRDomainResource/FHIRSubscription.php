@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system can take an appropriate action.
@@ -72,43 +72,43 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The status of the subscription, which marks the server state for managing the subscription.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSubscriptionStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSubscriptionStatus
      */
     public $status = null;
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $contact = [];
 
     /**
      * The time for the server to turn the subscription off.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $end = null;
 
     /**
      * A description of why this subscription is defined.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $reason = null;
 
     /**
      * The rules that the server should use to determine when to generate notifications for this subscription.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $criteria = null;
 
     /**
      * A record of the last error that occurred when the server processed a notification.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $error = null;
 
     /**
      * Details where to send notifications when resources are received that meet the criteria.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubscription\FHIRSubscriptionChannel
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubscription\FHIRSubscriptionChannel
      */
     public $channel = null;
 
@@ -119,7 +119,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the subscription, which marks the server state for managing the subscription.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSubscriptionStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSubscriptionStatus
      */
     public function getStatus()
     {
@@ -128,7 +128,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the subscription, which marks the server state for managing the subscription.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSubscriptionStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSubscriptionStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -139,7 +139,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getContact()
     {
@@ -148,7 +148,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $contact
      * @return $this
      */
     public function addContact($contact)
@@ -159,7 +159,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time for the server to turn the subscription off.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getEnd()
     {
@@ -168,7 +168,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time for the server to turn the subscription off.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $end
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $end
      * @return $this
      */
     public function setEnd($end)
@@ -179,7 +179,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of why this subscription is defined.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getReason()
     {
@@ -188,7 +188,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of why this subscription is defined.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $reason
      * @return $this
      */
     public function setReason($reason)
@@ -199,7 +199,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The rules that the server should use to determine when to generate notifications for this subscription.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCriteria()
     {
@@ -208,7 +208,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The rules that the server should use to determine when to generate notifications for this subscription.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $criteria
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $criteria
      * @return $this
      */
     public function setCriteria($criteria)
@@ -219,7 +219,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A record of the last error that occurred when the server processed a notification.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getError()
     {
@@ -228,7 +228,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A record of the last error that occurred when the server processed a notification.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $error
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $error
      * @return $this
      */
     public function setError($error)
@@ -239,7 +239,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details where to send notifications when resources are received that meet the criteria.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubscription\FHIRSubscriptionChannel
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubscription\FHIRSubscriptionChannel
      */
     public function getChannel()
     {
@@ -248,7 +248,7 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details where to send notifications when resources are received that meet the criteria.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubscription\FHIRSubscriptionChannel $channel
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubscription\FHIRSubscriptionChannel $channel
      * @return $this
      */
     public function setChannel($channel)

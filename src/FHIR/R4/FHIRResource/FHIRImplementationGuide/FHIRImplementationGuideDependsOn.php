@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,19 +71,19 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement implements \J
 {
     /**
      * A canonical reference to the Implementation guide for the dependency.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $uri = null;
 
     /**
      * The NPM package name for the Implementation Guide that this IG depends on.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $packageId = null;
 
     /**
      * The version of the IG that is depended on, when the correct version is required to understand the IG correctly.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
@@ -94,7 +94,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement implements \J
 
     /**
      * A canonical reference to the Implementation guide for the dependency.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getUri()
     {
@@ -103,7 +103,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement implements \J
 
     /**
      * A canonical reference to the Implementation guide for the dependency.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $uri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $uri
      * @return $this
      */
     public function setUri($uri)
@@ -114,7 +114,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement implements \J
 
     /**
      * The NPM package name for the Implementation Guide that this IG depends on.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getPackageId()
     {
@@ -123,7 +123,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement implements \J
 
     /**
      * The NPM package name for the Implementation Guide that this IG depends on.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $packageId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $packageId
      * @return $this
      */
     public function setPackageId($packageId)
@@ -134,7 +134,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement implements \J
 
     /**
      * The version of the IG that is depended on, when the correct version is required to understand the IG correctly.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -143,7 +143,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement implements \J
 
     /**
      * The version of the IG that is depended on, when the correct version is required to understand the IG correctly.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)

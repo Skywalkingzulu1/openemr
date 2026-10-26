@@ -42,12 +42,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Bootstrap.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Events\\\\User\\\\UserUpdatedEvent\\:\\:getUsername\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Events\\\\User\\\\UserUpdatedEvent\\:\\:getUsername\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Controller/TeleHealthVideoRegistrationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Modules\\\\DashboardContext\\\\Services\\\\DashboardContextAdminService\\:\\:removeUserAssignment\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Modules\\\\DashboardContext\\\\Services\\\\DashboardContextAdminService\\:\\:removeUserAssignment\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-dashboard-context/src/Controller/AdminController.php',
 ];
@@ -59,17 +59,17 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\EventDispatcherInterface\\:\\:addListener\\(\\)\\.$#',
     'count' => 7,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\Event\\:\\:getPid\\(\\)\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\Event\\:\\:getRecipientPhone\\(\\)\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/openemr.bootstrap.php',
+    'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/DCL.bootstrap.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^Call to an undefined method Symfony\\\\Contracts\\\\EventDispatcher\\\\EventDispatcherInterface\\:\\:addListener\\(\\)\\.$#',
@@ -337,12 +337,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Common/Http/oeHttpResponse.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Common\\\\ORDataObject\\\\ORDataObject\\:\\:get_id\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Common\\\\ORDataObject\\\\ORDataObject\\:\\:get_id\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Common/ORDataObject/ORDataObject.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\FHIR\\\\IFhirExportableResourceService\\:\\:setServiceLocator\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\FHIR\\\\IFhirExportableResourceService\\:\\:setServiceLocator\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/RestControllers/FHIR/Operations/FhirOperationExportRestController.php',
 ];
@@ -367,72 +367,72 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/Cda/ClinicalNoteParser.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Validators\\\\ProcessingResult\\:\\:addValidationError\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Validators\\\\ProcessingResult\\:\\:addValidationError\\(\\)\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/Services/ContactRelationService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Common\\\\ORDataObject\\\\Contact\\:\\:toArray\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Common\\\\ORDataObject\\\\Contact\\:\\:toArray\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/ContactService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Validators\\\\ProcessingResult\\:\\:addProcessingError\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Validators\\\\ProcessingResult\\:\\:addProcessingError\\(\\)\\.$#',
     'count' => 9,
     'path' => __DIR__ . '/../../src/Services/ContactService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDiagnosticReport\\:\\:setDate\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRDiagnosticReport\\:\\:setDate\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/DiagnosticReport/FhirDiagnosticReportClinicalNotesService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\Search\\\\ISearchField\\:\\:setModifier\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\Search\\\\ISearchField\\:\\:setModifier\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/DocumentReference/FhirDocumentReferenceAdvanceCareDirectiveService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\Search\\\\ISearchField\\:\\:setModifier\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\Search\\\\ISearchField\\:\\:setModifier\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/DocumentReference/FhirPatientDocumentReferenceService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirConditionService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirDiagnosticReportService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirDocumentReferenceService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirMedicationDispenseService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirObservationService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\FHIR\\\\FhirServiceBase\\:\\:supportsCode\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirQuestionnaireService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\Search\\\\ISearchField\\:\\:hasCodeValue\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\Search\\\\ISearchField\\:\\:hasCodeValue\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/FhirValueSetService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Validators\\\\ProcessingResult\\:\\:addProcessingError\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Validators\\\\ProcessingResult\\:\\:addProcessingError\\(\\)\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../src/Services/InsuranceService.php',
 ];
@@ -442,7 +442,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/JWTClientAuthenticationService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\Search\\\\ISearchField\\:\\:getModifier\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\Search\\\\ISearchField\\:\\:getModifier\\(\\)\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../src/Services/PractitionerService.php',
 ];
@@ -487,22 +487,22 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Validators/CoverageValidator.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Validators\\\\ProcessingResult\\:\\:getMessages\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Validators\\\\ProcessingResult\\:\\:getMessages\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Fixtures/MedicationDispenseFixtureManager.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\SpreadSheetService\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\:\\:buildSpreadsheet\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\SpreadSheetService\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\:\\:buildSpreadsheet\\(\\)\\.$#',
     'count' => 4,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/SpreadSheetServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\SpreadSheetService\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\:\\:downloadSpreadsheet\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\SpreadSheetService\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\:\\:downloadSpreadsheet\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/SpreadSheetServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\SpreadSheetService\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\:\\:expects\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\SpreadSheetService\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\:\\:expects\\(\\)\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Services/SpreadSheetServiceTest.php',
 ];
@@ -632,37 +632,37 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Isolated/library/classes/InstallerTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getCategory\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getCategory\\(\\)\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService3_1_1Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getClinicalStatus\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getClinicalStatus\\(\\)\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService3_1_1Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getCode\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getCode\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService3_1_1Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getSubject\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getSubject\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService3_1_1Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getVerificationStatus\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\FHIR\\\\R4\\\\FHIRResource\\\\FHIRDomainResource\\:\\:getVerificationStatus\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/Condition/FhirConditionService3_1_1Test.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\Services\\\\Search\\\\ISearchField\\:\\:getChildren\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\Services\\\\Search\\\\ISearchField\\:\\:getChildren\\(\\)\\.$#',
     'count' => 2,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirLocationServiceTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to an undefined method OpenEMR\\\\FHIR\\\\SMART\\\\ExternalClinicalDecisionSupport\\\\DecisionSupportInterventionEntity\\:\\:populateServiceWithFhirQuestionnaire\\(\\)\\.$#',
+    'message' => '#^Call to an undefined method DCL\\\\FHIR\\\\SMART\\\\ExternalClinicalDecisionSupport\\\\DecisionSupportInterventionEntity\\:\\:populateServiceWithFhirQuestionnaire\\(\\)\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Unit/FHIR/SMART/ExternalClinicalDecisionSupport/PredictiveDSIServiceEntityTest.php',
 ];

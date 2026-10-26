@@ -3,19 +3,19 @@
 /**
  * Isolated MissingSiteIdException Test
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\System;
+namespace DCL\Tests\Isolated\Common\System;
 
-use OpenEMR\Common\System\MissingSiteException;
-use OpenEMR\Common\System\MissingSiteIdException;
+use DCL\Common\System\MissingSiteException;
+use DCL\Common\System\MissingSiteIdException;
 use PHPUnit\Framework\TestCase;
 
 class MissingSiteIdExceptionTest extends TestCase

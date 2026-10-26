@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A reference to a code defined by a terminology system.
@@ -72,31 +72,31 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 {
     /**
      * The identification of the code system that defines the meaning of the symbol in the code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $system = null;
 
     /**
      * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * A representation of the meaning of the code in the system, following the rules of the system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $userSelected = null;
 
@@ -107,7 +107,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * The identification of the code system that defines the meaning of the symbol in the code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSystem()
     {
@@ -116,7 +116,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * The identification of the code system that defines the meaning of the symbol in the code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $system
      * @return $this
      */
     public function setSystem($system)
@@ -127,7 +127,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -136,7 +136,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -147,7 +147,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -156,7 +156,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -167,7 +167,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * A representation of the meaning of the code in the system, following the rules of the system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -176,7 +176,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * A representation of the meaning of the code in the system, following the rules of the system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -187,7 +187,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getUserSelected()
     {
@@ -196,7 +196,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
 
     /**
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $userSelected
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $userSelected
      * @return $this
      */
     public function setUserSelected($userSelected)

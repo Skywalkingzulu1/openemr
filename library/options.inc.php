@@ -3,25 +3,25 @@
 /**
  * Functions for managing the lists and layouts
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Andrew Moore <amoore@cpan.org>
  * @author    Boyd Stephen Smith Jr. <bss@iguanasuicide.net>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Robert Down <robertdown@live.com>
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
- * @author    Stephen Waite <stephen.waite@open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Stephen Waite <stephen.waite@dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2007-2021 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2010 Andrew Moore <amoore@cpan.org>
  * @copyright Copyright (c) 2010 Boyd Stephen Smith Jr. <bss@iguanasuicide.net>
  * @copyright Copyright (c) 2017-2021 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
- * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@open-emr.org>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@dcl.org>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * Note: there are translation wrappers for the lists and layout labels
  * at library/translation.inc.php. The functions are titled xl_list_label()
@@ -59,21 +59,21 @@
 
 require_once(dirname(__DIR__) . "/custom/code_types.inc.php");
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Forms\Types\BillingCodeType;
-use OpenEMR\Common\Forms\Types\LocalProviderListType;
-use OpenEMR\Common\Forms\Types\SmokingStatusType;
-use OpenEMR\Common\Layouts\LayoutsUtils;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDemographics\RenderPharmacySectionEvent;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\PatientNameHistoryService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Forms\Types\BillingCodeType;
+use DCL\Common\Forms\Types\LocalProviderListType;
+use DCL\Common\Forms\Types\SmokingStatusType;
+use DCL\Common\Layouts\LayoutsUtils;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDemographics\RenderPharmacySectionEvent;
+use DCL\Services\EncounterService;
+use DCL\Services\FacilityService;
+use DCL\Services\PatientNameHistoryService;
+use DCL\Services\Utils\DateFormatterUtils;
 
 $date_init = "";
 $membership_group_number = 0;
@@ -1017,7 +1017,7 @@ function generate_form_field($frow, $currvalue): void
         }
     } elseif ($data_type == 18) { // Visit categories.
         $cres = sqlStatement("SELECT pc_catid, pc_catname " .
-        "FROM openemr_postcalendar_categories ORDER BY pc_catname");
+        "FROM DCL_postcalendar_categories ORDER BY pc_catname");
         echo "<select name='form_$field_id_esc' id='form_$field_id_esc' class='form-control$smallform' title='$description'" . " $lbfonchange $disabled>";
         // @phpstan-ignore argument.type (legacy on-the-fly translation of dynamic value; migration tracked in #11498)
         echo "<option value=''>" . xlt($empty_title) . "</option>";
@@ -1924,7 +1924,7 @@ function generate_print_field($frow, $currvalue, $value_allowed = true): void
         if ($currvalue) {
             $crow = sqlQuery(
                 "SELECT pc_catid, pc_catname " .
-                "FROM openemr_postcalendar_categories WHERE pc_catid = ?",
+                "FROM DCL_postcalendar_categories WHERE pc_catid = ?",
                 [$currvalue]
             );
             $tmp = xl_appt_category($crow['pc_catname']);
@@ -2493,7 +2493,7 @@ function generate_display_field($frow, $currvalue): string
     } elseif ($data_type == 18) { // visit category
         $crow = sqlQuery(
             "SELECT pc_catid, pc_catname " .
-            "FROM openemr_postcalendar_categories WHERE pc_catid = ?",
+            "FROM DCL_postcalendar_categories WHERE pc_catid = ?",
             [$currvalue]
         );
         $s = htmlspecialchars((string) $crow['pc_catname'], ENT_NOQUOTES);
@@ -2961,7 +2961,7 @@ function generate_plaintext_field($frow, $currvalue)
     } elseif ($data_type == 18) { // visit category
         $crow = sqlQuery(
             "SELECT pc_catid, pc_catname " .
-            "FROM openemr_postcalendar_categories WHERE pc_catid = ?",
+            "FROM DCL_postcalendar_categories WHERE pc_catid = ?",
             [$currvalue]
         );
         $s = $crow['pc_catname'];

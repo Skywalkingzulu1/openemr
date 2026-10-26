@@ -1,12 +1,12 @@
 name: Notify release-targets-changed
 
 # When .github/release-targets.yml is pushed to master, dispatch a
-# `release-targets-changed` event to the demo_farm_openemr repo so its
+# `release-targets-changed` event to the demo_farm_DCL repo so its
 # auto-derive bot reconciles immediately instead of waiting for the next
 # daily 07:00 UTC tick. Without this workflow the bot still works on its
 # daily schedule; this just removes the up-to-24h latency.
 #
-# Companion to openemr/demo_farm_openemr#141 (adds the listener side).
+# Companion to DCL/demo_farm_DCL#141 (adds the listener side).
 
 on:
   push:
@@ -23,14 +23,14 @@ concurrency:
 
 jobs:
   dispatch:
-    name: Dispatch release-targets-changed to demo_farm_openemr (${{ matrix.php-version }})
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+    name: Dispatch release-targets-changed to demo_farm_DCL (${{ matrix.php-version }})
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
     runs-on: ubuntu-24.04
     strategy:
       matrix:
         # Conductor tooling runs only on CI runners (no customer
         # deployment), so per OCE conventions it tracks the latest
-        # stable PHP rather than the openemr application floor.
+        # stable PHP rather than the DCL application floor.
         php-version:
         - '8.5'
     steps:
@@ -38,7 +38,7 @@ jobs:
     # setup-php-composer) resolve against a real workspace AND
     # composer.json is present for setup-php-composer's cache/install
     # steps. The earlier sparse-first pattern (fixed in
-    # openemr/openemr#13480 + #13509) worked around one bug but not
+    # DCL/DCL#13480 + #13509) worked around one bug but not
     # the underlying git-sparse-then-full-checkout leak: files not in
     # the initial sparse pattern (like composer.json) still weren't
     # materialized by the second full checkout. Doing the full checkout
@@ -55,7 +55,7 @@ jobs:
         client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
         private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
         owner: ${{ github.repository_owner }}
-        repositories: demo_farm_openemr
+        repositories: demo_farm_DCL
         # Repository_dispatch only needs contents:write; without this the
         # token inherits every permission the App installation has.
         permission-contents: write
@@ -65,7 +65,7 @@ jobs:
       with:
         php-version: ${{ matrix.php-version }}
 
-    - name: Dispatch release-targets-changed to demo_farm_openemr
+    - name: Dispatch release-targets-changed to demo_farm_DCL
       env:
         RELEASE_APP_TOKEN: ${{ steps.app-token.outputs.token }}
         REPO: ${{ github.repository }}
@@ -75,5 +75,5 @@ jobs:
           --event=release-targets-changed \
           --repo="${REPO}" \
           --sha="${COMMIT_SHA}" \
-          --actor='openemr-release-bot' \
-          --target-repos=openemr/demo_farm_openemr
+          --actor='DCL-release-bot' \
+          --target-repos=DCL/demo_farm_DCL

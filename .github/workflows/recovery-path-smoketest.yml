@@ -60,7 +60,7 @@
 #      of skip_acceptance_gate's value.
 #   2. no_publish=true on both dispatched acceptance-only.yml runs
 #      -- gates publish job at the recovery-workflow layer (from
-#      openemr/openemr#13985).
+#      DCL/DCL#13985).
 #   3. Precondition gate: the release tag MUST already exist on
 #      origin before dispatch. If tag exists, any accidental
 #      `git push tag <existing>` fails at git level (refusing to
@@ -75,7 +75,7 @@
 # The smoketest aborts BEFORE any dispatch if either gate fails,
 # so no runs get created against an un-shipped version.
 #
-# Workflow-run artifacts (openemr-release-candidate) are still
+# Workflow-run artifacts (DCL-release-candidate) are still
 # uploaded but are scoped to the smoketest's run_id -- no name
 # collision with real Release assets (which live under a separate
 # URL space).
@@ -156,7 +156,7 @@ jobs:
     # workflows themselves are master-only anyway per their own if
     # guards). Belt-and-suspenders here.
     if: >-
-      github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+      github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
       && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     # Serial run of: build-release dry-run (~10-15 min) +
@@ -170,7 +170,7 @@ jobs:
         persist-credentials: false
 
     # GITHUB_TOKEN cannot dispatch other workflows (loop-guard;
-    # documented gotcha in the openemr codebase memory). Use the
+    # documented gotcha in the DCL codebase memory). Use the
     # release App token instead -- same App the release-prep.yml
     # conductor uses to dispatch acceptance-package + acceptance-
     # docker. Scoped to this repo only; the smoketest never touches
@@ -182,7 +182,7 @@ jobs:
         client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
         private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
         owner: ${{ github.repository_owner }}
-        repositories: openemr
+        repositories: DCL
 
     # Pick the smoketest target from .github/release-targets.yml:
     # the row whose docker_tags contains "latest" identifies the
@@ -190,7 +190,7 @@ jobs:
     # this SAME file to decide which image to tag as "latest", so by
     # definition the row with "latest" IS the current shipped
     # release). Read `branch` for the rel branch and
-    # `openemr_version_ref` for the exact git tag.
+    # `DCL_version_ref` for the exact git tag.
     #
     # This handles both edge cases where the naive "read the newest
     # rel branch's version.php" approach would leave the smoketest
@@ -205,7 +205,7 @@ jobs:
     #
     #   (b) Post-release version bump on the rel branch -- e.g.
     #       rel-840 bumped to 8.4.1-dev after 8.4.0 shipped.
-    #       release-targets.yml doesn't move openemr_version_ref
+    #       release-targets.yml doesn't move DCL_version_ref
     #       until 8.4.1 actually ships, so the picker still returns
     #       v8_4_0.
     #
@@ -432,7 +432,7 @@ jobs:
     # before we invest ~30-40 min in the full-matrix variant B.
     #
     # Both variants pin no_publish=true (the recovery-workflow-side
-    # publish-blocker landed in openemr/openemr#13985); variant A
+    # publish-blocker landed in DCL/DCL#13985); variant A
     # additionally pins skip_acceptance=true (with a required
     # audit-trail reason).
     - name: Dispatch acceptance-only.yml (variant A - skip_acceptance + no_publish)
@@ -725,7 +725,7 @@ jobs:
   # and don't clutter user-facing tag listings.
   smoketest-docker:
     if: >-
-      github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+      github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
       && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     # Serial run of: docker-build-release dry-run (~20-30 min for
@@ -746,7 +746,7 @@ jobs:
         client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
         private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
         owner: ${{ github.repository_owner }}
-        repositories: openemr
+        repositories: DCL
 
     - name: Pick smoketest target (from release-targets.yml "latest" row)
       run: |
@@ -852,7 +852,7 @@ jobs:
               --repo "${{ github.repository }}" \
               --ref master \
               -f docker_tags="${CANARY_TAG}" \
-              -f openemr_version_ref="${RELEASE_TAG}" \
+              -f DCL_version_ref="${RELEASE_TAG}" \
               -f gate_with_acceptance=true \
               -f dry_run=true; then
             exit 0
@@ -1101,7 +1101,7 @@ jobs:
         # 404 = tag doesn't exist = gate held. 200 = tag exists =
         # publish leaked. Anything else = flake, fail closed.
         CANARY_STATUS=$(curl -s -o /dev/null -w '%{http_code}' \
-          "https://hub.docker.com/v2/repositories/openemr/openemr/tags/${CANARY_TAG}/")
+          "https://hub.docker.com/v2/repositories/DCL/DCL/tags/${CANARY_TAG}/")
         if [[ "${CANARY_STATUS}" == "404" ]]; then
           echo "==> Canary tag ${CANARY_TAG} absent from Docker Hub (as expected -- publish gate held)"
         elif [[ "${CANARY_STATUS}" == "200" ]]; then

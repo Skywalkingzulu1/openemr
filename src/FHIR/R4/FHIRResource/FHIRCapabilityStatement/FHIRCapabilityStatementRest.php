@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,49 +71,49 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode
      */
     public $mode = null;
 
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $documentation = null;
 
     /**
      * Information about security implementation from an interface perspective - what a client needs to know.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
     public $security = null;
 
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
     public $resource = [];
 
     /**
      * A specification of restful operations supported by the system.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
     public $interaction = [];
 
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     public $searchParam = [];
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     public $operation = [];
 
     /**
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $compartment = [];
 
@@ -124,7 +124,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode
      */
     public function getMode()
     {
@@ -133,7 +133,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -144,7 +144,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation()
     {
@@ -153,7 +153,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -164,7 +164,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Information about security implementation from an interface perspective - what a client needs to know.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
     public function getSecurity()
     {
@@ -173,7 +173,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Information about security implementation from an interface perspective - what a client needs to know.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $security
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $security
      * @return $this
      */
     public function setSecurity($security)
@@ -184,7 +184,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
     public function getResource()
     {
@@ -193,7 +193,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource $resource
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource $resource
      * @return $this
      */
     public function addResource($resource)
@@ -204,7 +204,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A specification of restful operations supported by the system.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
     public function getInteraction()
     {
@@ -213,7 +213,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * A specification of restful operations supported by the system.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 $interaction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 $interaction
      * @return $this
      */
     public function addInteraction($interaction)
@@ -224,7 +224,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     public function getSearchParam()
     {
@@ -233,7 +233,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
      * @return $this
      */
     public function addSearchParam($searchParam)
@@ -244,7 +244,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     public function getOperation()
     {
@@ -253,7 +253,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
      * @return $this
      */
     public function addOperation($operation)
@@ -264,7 +264,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getCompartment()
     {
@@ -273,7 +273,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $compartment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $compartment
      * @return $this
      */
     public function addCompartment($compartment)

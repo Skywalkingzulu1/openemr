@@ -7,20 +7,20 @@
  * For details on format refer to:n
  * <http://www.nucc.org/index.php?option=com_content&view=article&id=186&Itemid=138>
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @link      https://www.open-emr.org/wiki/index.php/OEMR_wiki_page OEMR
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @link      https://www.dcl.org/wiki/index.php/OEMR_wiki_page OEMR
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (C) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (C) 2013 OEMR
  * @copyright Copyright (C) 2017-2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 class MiscBillingOptions
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -71,13 +71,13 @@ class FHIRExplanationOfBenefitTotal extends FHIRBackboneElement implements \Json
 {
     /**
      * A code to indicate the information type of this adjudication record. Information types may include: the value submitted, maximum values or percentages allowed or payable under the plan, amounts that the patient is responsible for in aggregate or pertaining to this item, amounts paid by other coverages, and the benefit payable for this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * Monetary total amount associated with the category.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $amount = null;
 
@@ -88,7 +88,7 @@ class FHIRExplanationOfBenefitTotal extends FHIRBackboneElement implements \Json
 
     /**
      * A code to indicate the information type of this adjudication record. Information types may include: the value submitted, maximum values or percentages allowed or payable under the plan, amounts that the patient is responsible for in aggregate or pertaining to this item, amounts paid by other coverages, and the benefit payable for this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -97,7 +97,7 @@ class FHIRExplanationOfBenefitTotal extends FHIRBackboneElement implements \Json
 
     /**
      * A code to indicate the information type of this adjudication record. Information types may include: the value submitted, maximum values or percentages allowed or payable under the plan, amounts that the patient is responsible for in aggregate or pertaining to this item, amounts paid by other coverages, and the benefit payable for this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -108,7 +108,7 @@ class FHIRExplanationOfBenefitTotal extends FHIRBackboneElement implements \Json
 
     /**
      * Monetary total amount associated with the category.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getAmount()
     {
@@ -117,7 +117,7 @@ class FHIRExplanationOfBenefitTotal extends FHIRBackboneElement implements \Json
 
     /**
      * Monetary total amount associated with the category.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $amount
      * @return $this
      */
     public function setAmount($amount)

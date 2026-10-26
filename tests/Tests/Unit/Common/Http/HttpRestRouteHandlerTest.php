@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\Common\Http;
+namespace DCL\Tests\Unit\Common\Http;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\HttpRestRouteHandler;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\RestApiExtend\RestApiSecurityCheckEvent;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRouteHandler;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\RestApiExtend\RestApiSecurityCheckEvent;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

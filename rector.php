@@ -4,9 +4,9 @@
 
 declare(strict_types=1);
 
-use OpenEMR\Rector\Rules\CatchExceptionToThrowableRector;
-use OpenEMR\Rector\Rules\ConsolidateImportsRector;
-use OpenEMR\Rector\Rules\OEGlobalsBagTypedGettersRector;
+use DCL\Rector\Rules\CatchExceptionToThrowableRector;
+use DCL\Rector\Rules\ConsolidateImportsRector;
+use DCL\Rector\Rules\OEGlobalsBagTypedGettersRector;
 use Rector\Caching\ValueObject\Storage\FileCacheStorage;
 use Rector\CodeQuality\Rector\If_\SimplifyIfElseToTernaryRector;
 use Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector;

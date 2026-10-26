@@ -29,23 +29,23 @@
  *      `id_token_signing_alg_values_supported` from the
  *      `/.well-known/openid-configuration` discovery document.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Tests\Support\OAuth2\AuthCodeFlow;
-use OpenEMR\Tests\Support\OAuth2\DcrClient;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Tests\Support\OAuth2\AuthCodeFlow;
+use DCL\Tests\Support\OAuth2\DcrClient;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -64,10 +64,10 @@ class OidcIdTokenClaimsApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -168,7 +168,7 @@ class OidcIdTokenClaimsApiTest extends TestCase
         // Bind sub to the seeded admin's uuid, not just "any non-empty
         // string". A refactor that returned a client_id or empty string
         // under some code path would still have passed the loose check.
-        $adminUser = (new \OpenEMR\Services\UserService())->getUserByUsername('admin');
+        $adminUser = (new \DCL\Services\UserService())->getUserByUsername('admin');
         $this->assertIsArray($adminUser, 'Seeded admin user must exist');
         $this->assertIsString($adminUser['uuid'] ?? null);
         $this->assertSame(
@@ -203,7 +203,7 @@ class OidcIdTokenClaimsApiTest extends TestCase
     #[Test]
     public function testIdTokenHeaderAlgMatchesDiscoveryAdvertisement(): void
     {
-        // OpenEMR advertises `RS256` as the sole id_token signing
+        // DCL advertises `RS256` as the sole id_token signing
         // algorithm via /.well-known/openid-configuration (per
         // OAuth2DiscoveryController). If the issuer silently switched
         // to another alg (e.g. HS256), OIDC clients would start
@@ -239,11 +239,11 @@ class OidcIdTokenClaimsApiTest extends TestCase
         // silently flipped to the same non-RS256 value (e.g. HS256,
         // which would make the public JWKS useless for verification).
         // OIDC Core defaults to RS256 but does not mandate it; this
-        // explicit pin reflects OpenEMR's declared contract.
+        // explicit pin reflects DCL's declared contract.
         $this->assertSame(
             'RS256',
             $header['alg'],
-            'id_token must be signed with RS256 (OpenEMR\'s declared signing algorithm)'
+            'id_token must be signed with RS256 (DCL\'s declared signing algorithm)'
         );
         $this->assertContains(
             $header['alg'],
@@ -304,7 +304,7 @@ class OidcIdTokenClaimsApiTest extends TestCase
     {
         // OIDC §5.4: the `profile` scope requests the standard profile
         // claims (`name`, `given_name`, `family_name`, `preferred_username`,
-        // etc). OpenEMR populates these in UserEntity::getClaims from
+        // etc). DCL populates these in UserEntity::getClaims from
         // the users row. The ClaimExtractor filters them by granted
         // scope — without `profile` they are stripped before signing.
         //
@@ -371,10 +371,10 @@ class OidcIdTokenClaimsApiTest extends TestCase
             )
         );
         // Bind the fhirUser URL's uuid to the seeded admin, not just
-        // "any FHIR URL shape". OpenEMR's admin seed resolves to a
+        // "any FHIR URL shape". DCL's admin seed resolves to a
         // Person resource (not a Practitioner — admin does not have
         // an npi/users_facility row by default).
-        $adminUser = (new \OpenEMR\Services\UserService())->getUserByUsername('admin');
+        $adminUser = (new \DCL\Services\UserService())->getUserByUsername('admin');
         $this->assertIsArray($adminUser);
         $this->assertIsString($adminUser['uuid'] ?? null);
         $this->assertStringEndsWith(

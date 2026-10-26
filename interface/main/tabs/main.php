@@ -3,44 +3,44 @@
 /**
  * main.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ranganath Pathak <pathak@scrs1.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2016 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2016-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $sessionAllowWrite = true;
 require_once(__DIR__ . '/../../globals.php');
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Api.php';
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/ESign/Api.php';
 
 use ESign\Api;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEEnvBag;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Main\Tabs\RenderEvent;
-use OpenEMR\Menu\MainMenuData;
-use OpenEMR\Services\LogoService;
-use OpenEMR\Services\ProductRegistrationService;
-use OpenEMR\Services\VersionService;
-use OpenEMR\Tabs\DefaultTabsFilter;
-use OpenEMR\Telemetry\TelemetryService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEEnvBag;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Main\Tabs\RenderEvent;
+use DCL\Menu\MainMenuData;
+use DCL\Services\LogoService;
+use DCL\Services\ProductRegistrationService;
+use DCL\Services\VersionService;
+use DCL\Tabs\DefaultTabsFilter;
+use DCL\Telemetry\TelemetryService;
 
-const ENV_DISABLE_TELEMETRY = 'OPENEMR_DISABLE_TELEMETRY';
+const ENV_DISABLE_TELEMETRY = 'DCL_DISABLE_TELEMETRY';
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
@@ -58,7 +58,7 @@ $allowEmail = $product_row['allowEmail'] ?? null; // for dialog
 // Check if telemetry is disabled via environment variable
 $disableTelemetry = OEEnvBag::getInstance()->getBoolean(ENV_DISABLE_TELEMETRY);
 // Check if background service piggybacking is disabled via environment variable
-$noBackgroundTasks = OEEnvBag::getInstance()->getBoolean('OPENEMR__NO_BACKGROUND_TASKS');
+$noBackgroundTasks = OEEnvBag::getInstance()->getBoolean('DCL__NO_BACKGROUND_TASKS');
 if ($disableTelemetry) {
     $allowRegisterDialog = false;
     $allowTelemetry = false;
@@ -99,10 +99,10 @@ $twig = ServiceContainer::getTwig();
 <html>
 
 <head>
-    <title><?php echo text(OEGlobalsBag::getInstance()->getString('openemr_name')); ?></title>
+    <title><?php echo text(OEGlobalsBag::getInstance()->getString('DCL_name')); ?></title>
 
     <script>
-        // This is to prevent users from losing data by refreshing or backing out of OpenEMR.
+        // This is to prevent users from losing data by refreshing or backing out of DCL.
         //  (default behavior, however, this behavior can be turned off in the prevent_browser_refresh global)
         <?php if (OEGlobalsBag::getInstance()->get('prevent_browser_refresh') > 0) { ?>
         window.addEventListener('beforeunload', (event) => {
@@ -151,7 +151,7 @@ $twig = ServiceContainer::getTwig();
         jsGlobals.timezone = <?php echo js_escape(OEGlobalsBag::getInstance()->get('gbl_time_zone') ?? ''); ?>;
         jsGlobals.assetVersion = <?php echo js_escape(OEGlobalsBag::getInstance()->get('v_js_includes')); ?>;
         var WindowTitleAddPatient = <?php echo(OEGlobalsBag::getInstance()->getBoolean('window_title_add_patient_name') ? 'true' : 'false'); ?>;
-        var WindowTitleBase = <?php echo js_escape(OEGlobalsBag::getInstance()->getString('openemr_name')); ?>;
+        var WindowTitleBase = <?php echo js_escape(OEGlobalsBag::getInstance()->getString('DCL_name')); ?>;
         const isSms = "<?php echo !empty(OEGlobalsBag::getInstance()->get('oefax_enable_sms') ?? null); ?>";
         const isFax = "<?php echo !empty(OEGlobalsBag::getInstance()->get('oefax_enable_fax')) ?? null?>";
         const isServicesOther = (isSms || isFax);
@@ -193,10 +193,10 @@ $twig = ServiceContainer::getTwig();
 
         function goRepeaterServices() {
             // Ensure send the skip_timeout_reset parameter to not count this as a manual entry in the
-            // timing out mechanism in OpenEMR.
+            // timing out mechanism in DCL.
 
             // Send the skip_timeout_reset parameter to not count this as a manual entry in the
-            // timing out mechanism in OpenEMR. Notify App for various portal and reminder alerts.
+            // timing out mechanism in DCL. Notify App for various portal and reminder alerts.
             // Combined portal and reminders ajax to fetch sjp 06-07-2020.
             // Incorporated timeout mechanism in 2021
             restoreSession();
@@ -401,7 +401,7 @@ $twig = ServiceContainer::getTwig();
     <?php
     echo $twig->render("interface/main/tabs/therapy_group_template.html.twig", []);
     echo $twig->render("interface/main/tabs/user_data_template.html.twig", [
-        'openemr_name' => OEGlobalsBag::getInstance()->getString('openemr_name')
+        'DCL_name' => OEGlobalsBag::getInstance()->getString('DCL_name')
     ]);
     // Collect the menu then build it (menu_json.php returns the same for top.refreshMainMenu())
     $menu_restrictions = MainMenuData::forUser(OEGlobalsBag::getInstance()->getKernel()->getEventDispatcher(), $session);
@@ -485,8 +485,8 @@ $twig = ServiceContainer::getTwig();
         <nav class="navbar navbar-expand-xl navbar-light bg-light py-0">
             <?php if (OEGlobalsBag::getInstance()->getBoolean('display_main_menu_logo')) {
                 $bag = OEGlobalsBag::getInstance();
-                $logoLinkDefault = 'https://www.open-emr.org/';
-                $logoTitleDefault = xl('OpenEMR Website');
+                $logoLinkDefault = 'https://www.dcl.org/';
+                $logoTitleDefault = xl('DCL Website');
                 $logoLink = trim($bag->getString('main_menu_logo_link', $logoLinkDefault));
                 $logoTitle = trim($bag->getString('main_menu_logo_title', $logoTitleDefault));
                 $logoImg = '<img src="' . attr($menuLogo) . '" class="d-inline-block align-middle" height="16" alt="' . xla('Main Menu Logo') . '">';

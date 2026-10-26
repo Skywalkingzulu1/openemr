@@ -6,22 +6,22 @@
  * Covers the pure surface: ACL defaults per surface, context immutability, and the scope
  * narrowing rules. Anything that reads content_assignments belongs in an integration test.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Questionnaire;
+namespace DCL\Tests\Isolated\Services\Questionnaire;
 
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Services\Questionnaire\AssignmentRecord;
-use OpenEMR\Services\Questionnaire\AvailabilityContext;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Services\Questionnaire\AssignmentRecord;
+use DCL\Services\Questionnaire\AvailabilityContext;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
@@ -276,7 +276,7 @@ class QuestionnaireAvailabilityIsolatedTest extends TestCase
     }
 
     /**
-     * The registry is shared by every encounter form in OpenEMR. Rows this service does
+     * The registry is shared by every encounter form in DCL. Rows this service does
      * not speak for must survive untouched, and must not trigger an availability lookup
      * at all — an install with no questionnaires registered should pay nothing for this.
      */

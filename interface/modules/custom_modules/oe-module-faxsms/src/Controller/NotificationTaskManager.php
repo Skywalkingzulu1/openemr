@@ -2,20 +2,20 @@
 
 /**
  *
- * @package        OpenEMR
- * @link           https://www.open-emr.org
+ * @package        DCL
+ * @link           https://www.dcl.org
  * @author         Jerry Padgett <sjpadgett@gmail.com>
- * @author         Michael A. Smith <michael@opencoreemr.com>
+ * @author         Michael A. Smith <michael@DCL.com>
  * @copyright      Copyright (c) 2025 <sjpadgett@gmail.com>
- * @copyright      Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license        https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright      Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license        https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Background\BackgroundServiceDefinition;
-use OpenEMR\Services\Background\BackgroundServiceRegistry;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Background\BackgroundServiceDefinition;
+use DCL\Services\Background\BackgroundServiceRegistry;
 
 /**
  * Manages background task operations for Notifications.

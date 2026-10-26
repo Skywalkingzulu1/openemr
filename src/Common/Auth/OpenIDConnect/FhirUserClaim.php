@@ -2,21 +2,21 @@
 
 /*
  * FhirUserClaim.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect;
+namespace DCL\Common\Auth\OpenIDConnect;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Services\PractitionerService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Services\PractitionerService;
 
 class FhirUserClaim {
     use SystemLoggerAwareTrait;

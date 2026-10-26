@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPatient;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPatient;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPatient;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Demographics and other administrative information about an individual or animal receiving care or other health-related services.
@@ -71,43 +71,43 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * The nature of the relationship between the patient and the contact person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $relationship = [];
 
     /**
      * A name associated with the contact person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public $name = null;
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Address for the contact person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public $address = null;
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public $gender = null;
 
     /**
      * Organization on behalf of which the contact is acting or for which the contact is working.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $organization = null;
 
     /**
      * The period during which this contact person or organization is valid to be contacted relating to this patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -118,7 +118,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The nature of the relationship between the patient and the contact person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRelationship()
     {
@@ -127,7 +127,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The nature of the relationship between the patient and the contact person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
     public function addRelationship($relationship)
@@ -138,7 +138,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A name associated with the contact person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public function getName()
     {
@@ -147,7 +147,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A name associated with the contact person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHumanName $name
      * @return $this
      */
     public function setName($name)
@@ -158,7 +158,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -167,7 +167,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -178,7 +178,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Address for the contact person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public function getAddress()
     {
@@ -187,7 +187,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Address for the contact person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function setAddress($address)
@@ -198,7 +198,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender()
     {
@@ -207,7 +207,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
     public function setGender($gender)
@@ -218,7 +218,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Organization on behalf of which the contact is acting or for which the contact is working.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOrganization()
     {
@@ -227,7 +227,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Organization on behalf of which the contact is acting or for which the contact is working.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $organization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $organization
      * @return $this
      */
     public function setOrganization($organization)
@@ -238,7 +238,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The period during which this contact person or organization is valid to be contacted relating to this patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -247,7 +247,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The period during which this contact person or organization is valid to be contacted relating to this patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

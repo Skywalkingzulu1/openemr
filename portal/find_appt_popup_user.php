@@ -4,8 +4,8 @@
  *
  * Modified from main codebase for the patient portal.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -14,7 +14,7 @@
  * @copyright Copyright (C) 2016-2017 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (C) 2019 Ian Jardine ( github.com/epsdky )
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Note from Rod 2013-01-22:
@@ -25,14 +25,14 @@
 // Rod mentioned in the previous comment that the code "does not support exception dates for repeating events".
 // This issue no longer exists - epsdky 2019
 
-use OpenEMR\Common\Calendar\ConfiguredScheduleHours;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Calendar\ConfiguredScheduleHours;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\DateFormatterUtils;
 
 //continue session
-// Will start the (patient) portal OpenEMR session/cookie.
+// Will start the (patient) portal DCL session/cookie.
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../vendor/autoload.php");
 $globalsBag = OEGlobalsBag::getInstance();
@@ -131,7 +131,7 @@ $slotsecs = $globalsBag->getInt('calendar_interval') * 60;
 
 $catslots = 1;
 if ($input_catid) {
-    $srow = sqlQuery("SELECT pc_duration FROM openemr_postcalendar_categories WHERE pc_catid = ?", [$input_catid]);
+    $srow = sqlQuery("SELECT pc_duration FROM DCL_postcalendar_categories WHERE pc_catid = ?", [$input_catid]);
     if (isset($srow['pc_duration']) && is_numeric($srow['pc_duration']) && (float) $srow['pc_duration'] > 0) {
         $catslots = (int) ceil((float) $srow['pc_duration'] / $slotsecs);
     }
@@ -187,7 +187,7 @@ if ($providerid) {
     //  echo $sdate." -- ".$edate;
     $query = "SELECT pc_eventDate, pc_endDate, pc_startTime, pc_duration, " .
         "pc_recurrtype, pc_recurrspec, pc_alldayevent, pc_catid, pc_prefcatid, pc_title " .
-        "FROM openemr_postcalendar_events " .
+        "FROM DCL_postcalendar_events " .
         "WHERE pc_aid = ? AND " .
         "((pc_endDate >= ? AND pc_eventDate < ?) OR " .
         "(pc_endDate IS NULL AND pc_eventDate >= ? AND pc_eventDate < ?))";

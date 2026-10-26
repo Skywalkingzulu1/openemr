@@ -3,24 +3,24 @@
 /**
  * Bootstrap custom module for the Comlink Telehealth module.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule;
+namespace Comlink\DCL\Modules\TeleHealthModule;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 /**
- * @var \OpenEMR\Core\ModulesClassLoader $classLoader
+ * @var \DCL\Core\ModulesClassLoader $classLoader
  */
-$classLoader->registerNamespaceIfNotExists('Comlink\\OpenEMR\\Modules\\TeleHealthModule\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
+$classLoader->registerNamespaceIfNotExists('Comlink\\DCL\\Modules\\TeleHealthModule\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
 
 /**
- * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the OpenEMR module loader;
+ * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the DCL module loader;
  */
 
 $bootstrap = new Bootstrap($eventDispatcher, OEGlobalsBag::getInstance()->getKernel());

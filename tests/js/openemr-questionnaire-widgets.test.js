@@ -3,7 +3,7 @@
  */
 
 /**
- * Widget rendering and answer round-trip tests for the OpenEMR FHIR
+ * Widget rendering and answer round-trip tests for the DCL FHIR
  * Questionnaire Runtime.
  *
  * One battery per item type: choice in its radio, checkbox, and drop-down
@@ -12,11 +12,11 @@
  * quantity, readOnly propagation, unsupported-type fallback, and answer
  * restoration from an existing QuestionnaireResponse.
  *
- * Run with: npm run test:js -- tests/js/openemr-questionnaire-widgets.test.js
+ * Run with: npm run test:js -- tests/js/DCL-questionnaire-widgets.test.js
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 const fs = require('fs');
@@ -26,7 +26,7 @@ function loadRuntime() {
     const source = fs.readFileSync(
         path.resolve(
             __dirname,
-            '../../interface/forms/questionnaire_assessments/native/openemr_questionnaire.js'
+            '../../interface/forms/questionnaire_assessments/native/DCL_questionnaire.js'
         ),
         'utf8'
     );
@@ -49,7 +49,7 @@ function loadRuntime() {
 
 loadRuntime();
 
-const runtimeApi = global.window.OpenEMRQuestionnaire;
+const runtimeApi = global.window.DCLQuestionnaire;
 
 function createContainer() {
     const container = document.createElement('div');

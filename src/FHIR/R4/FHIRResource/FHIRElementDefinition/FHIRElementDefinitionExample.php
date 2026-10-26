@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,252 +72,252 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Describes the purpose of this example among the set of examples.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $label = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $valueBase64Binary = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $valueCanonical = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $valueCode = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $valueDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $valueDecimal = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $valueId = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $valueInstant = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $valueMarkdown = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIROid
+     * @var \DCL\FHIR\R4\FHIRElement\FHIROid
      */
     public $valueOid = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $valuePositiveInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $valueUnsignedInt = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $valueUri = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $valueUrl = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUuid
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUuid
      */
     public $valueUuid = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public $valueAddress = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $valueAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation
      */
     public $valueAnnotation = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint
      */
     public $valueContactPoint = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
     public $valueCount = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public $valueDistance = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $valueDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public $valueHumanName = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $valueIdentifier = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $valueMoney = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $valuePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $valueRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $valueReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSampledData
      */
     public $valueSampledData = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public $valueSignature = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $valueTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail
      */
     public $valueContactDetail = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContributor
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContributor
      */
     public $valueContributor = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public $valueDataRequirement = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $valueExpression = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRParameterDefinition
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRParameterDefinition
      */
     public $valueParameterDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact
      */
     public $valueRelatedArtifact = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition
      */
     public $valueTriggerDefinition = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext
      */
     public $valueUsageContext = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDosage
      */
     public $valueDosage = null;
 
@@ -328,7 +328,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
 
     /**
      * Describes the purpose of this example among the set of examples.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLabel()
     {
@@ -337,7 +337,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
 
     /**
      * Describes the purpose of this example among the set of examples.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $label
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $label
      * @return $this
      */
     public function setLabel($label)
@@ -347,7 +347,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getValueBase64Binary()
     {
@@ -355,7 +355,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @return $this
      */
     public function setValueBase64Binary($valueBase64Binary)
@@ -365,7 +365,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
     {
@@ -373,7 +373,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -383,7 +383,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getValueCanonical()
     {
@@ -391,7 +391,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $valueCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $valueCanonical
      * @return $this
      */
     public function setValueCanonical($valueCanonical)
@@ -401,7 +401,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getValueCode()
     {
@@ -409,7 +409,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $valueCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $valueCode
      * @return $this
      */
     public function setValueCode($valueCode)
@@ -419,7 +419,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getValueDate()
     {
@@ -427,7 +427,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $valueDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $valueDate
      * @return $this
      */
     public function setValueDate($valueDate)
@@ -437,7 +437,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
     {
@@ -445,7 +445,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
     public function setValueDateTime($valueDateTime)
@@ -455,7 +455,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
     {
@@ -463,7 +463,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $valueDecimal
      * @return $this
      */
     public function setValueDecimal($valueDecimal)
@@ -473,7 +473,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getValueId()
     {
@@ -481,7 +481,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $valueId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $valueId
      * @return $this
      */
     public function setValueId($valueId)
@@ -491,7 +491,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getValueInstant()
     {
@@ -499,7 +499,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $valueInstant
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $valueInstant
      * @return $this
      */
     public function setValueInstant($valueInstant)
@@ -509,7 +509,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
     {
@@ -517,7 +517,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
     public function setValueInteger($valueInteger)
@@ -527,7 +527,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getValueMarkdown()
     {
@@ -535,7 +535,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $valueMarkdown
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $valueMarkdown
      * @return $this
      */
     public function setValueMarkdown($valueMarkdown)
@@ -545,7 +545,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIROid
+     * @return \DCL\FHIR\R4\FHIRElement\FHIROid
      */
     public function getValueOid()
     {
@@ -553,7 +553,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIROid $valueOid
+     * @param \DCL\FHIR\R4\FHIRElement\FHIROid $valueOid
      * @return $this
      */
     public function setValueOid($valueOid)
@@ -563,7 +563,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getValuePositiveInt()
     {
@@ -571,7 +571,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $valuePositiveInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $valuePositiveInt
      * @return $this
      */
     public function setValuePositiveInt($valuePositiveInt)
@@ -581,7 +581,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -589,7 +589,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -599,7 +599,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getValueTime()
     {
@@ -607,7 +607,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $valueTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
     public function setValueTime($valueTime)
@@ -617,7 +617,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getValueUnsignedInt()
     {
@@ -625,7 +625,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
      * @return $this
      */
     public function setValueUnsignedInt($valueUnsignedInt)
@@ -635,7 +635,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getValueUri()
     {
@@ -643,7 +643,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $valueUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $valueUri
      * @return $this
      */
     public function setValueUri($valueUri)
@@ -653,7 +653,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getValueUrl()
     {
@@ -661,7 +661,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $valueUrl
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $valueUrl
      * @return $this
      */
     public function setValueUrl($valueUrl)
@@ -671,7 +671,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUuid
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUuid
      */
     public function getValueUuid()
     {
@@ -679,7 +679,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUuid $valueUuid
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUuid $valueUuid
      * @return $this
      */
     public function setValueUuid($valueUuid)
@@ -689,7 +689,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public function getValueAddress()
     {
@@ -697,7 +697,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $valueAddress
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $valueAddress
      * @return $this
      */
     public function setValueAddress($valueAddress)
@@ -707,7 +707,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getValueAge()
     {
@@ -715,7 +715,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $valueAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $valueAge
      * @return $this
      */
     public function setValueAge($valueAge)
@@ -725,7 +725,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation
      */
     public function getValueAnnotation()
     {
@@ -733,7 +733,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $valueAnnotation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $valueAnnotation
      * @return $this
      */
     public function setValueAnnotation($valueAnnotation)
@@ -743,7 +743,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
     {
@@ -751,7 +751,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $valueAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
     public function setValueAttachment($valueAttachment)
@@ -761,7 +761,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
     {
@@ -769,7 +769,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
     public function setValueCodeableConcept($valueCodeableConcept)
@@ -779,7 +779,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
     {
@@ -787,7 +787,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
     public function setValueCoding($valueCoding)
@@ -797,7 +797,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint
      */
     public function getValueContactPoint()
     {
@@ -805,7 +805,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $valueContactPoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $valueContactPoint
      * @return $this
      */
     public function setValueContactPoint($valueContactPoint)
@@ -815,7 +815,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
     public function getValueCount()
     {
@@ -823,7 +823,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount $valueCount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRCount $valueCount
      * @return $this
      */
     public function setValueCount($valueCount)
@@ -833,7 +833,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public function getValueDistance()
     {
@@ -841,7 +841,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDistance $valueDistance
      * @return $this
      */
     public function setValueDistance($valueDistance)
@@ -851,7 +851,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getValueDuration()
     {
@@ -859,7 +859,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @return $this
      */
     public function setValueDuration($valueDuration)
@@ -869,7 +869,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRHumanName
      */
     public function getValueHumanName()
     {
@@ -877,7 +877,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName $valueHumanName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRHumanName $valueHumanName
      * @return $this
      */
     public function setValueHumanName($valueHumanName)
@@ -887,7 +887,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getValueIdentifier()
     {
@@ -895,7 +895,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $valueIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $valueIdentifier
      * @return $this
      */
     public function setValueIdentifier($valueIdentifier)
@@ -905,7 +905,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getValueMoney()
     {
@@ -913,7 +913,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $valueMoney
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $valueMoney
      * @return $this
      */
     public function setValueMoney($valueMoney)
@@ -923,7 +923,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
     {
@@ -931,7 +931,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $valuePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $valuePeriod
      * @return $this
      */
     public function setValuePeriod($valuePeriod)
@@ -941,7 +941,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -949,7 +949,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -959,7 +959,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getValueRange()
     {
@@ -967,7 +967,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $valueRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
     public function setValueRange($valueRange)
@@ -977,7 +977,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getValueRatio()
     {
@@ -985,7 +985,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $valueRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $valueRatio
      * @return $this
      */
     public function setValueRatio($valueRatio)
@@ -995,7 +995,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getValueReference()
     {
@@ -1003,7 +1003,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $valueReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
     public function setValueReference($valueReference)
@@ -1013,7 +1013,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData()
     {
@@ -1021,7 +1021,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData $valueSampledData
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSampledData $valueSampledData
      * @return $this
      */
     public function setValueSampledData($valueSampledData)
@@ -1031,7 +1031,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature
      */
     public function getValueSignature()
     {
@@ -1039,7 +1039,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $valueSignature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $valueSignature
      * @return $this
      */
     public function setValueSignature($valueSignature)
@@ -1049,7 +1049,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getValueTiming()
     {
@@ -1057,7 +1057,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $valueTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $valueTiming
      * @return $this
      */
     public function setValueTiming($valueTiming)
@@ -1067,7 +1067,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail
      */
     public function getValueContactDetail()
     {
@@ -1075,7 +1075,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $valueContactDetail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $valueContactDetail
      * @return $this
      */
     public function setValueContactDetail($valueContactDetail)
@@ -1085,7 +1085,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContributor
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContributor
      */
     public function getValueContributor()
     {
@@ -1093,7 +1093,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContributor $valueContributor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContributor $valueContributor
      * @return $this
      */
     public function setValueContributor($valueContributor)
@@ -1103,7 +1103,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public function getValueDataRequirement()
     {
@@ -1111,7 +1111,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $valueDataRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $valueDataRequirement
      * @return $this
      */
     public function setValueDataRequirement($valueDataRequirement)
@@ -1121,7 +1121,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getValueExpression()
     {
@@ -1129,7 +1129,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $valueExpression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $valueExpression
      * @return $this
      */
     public function setValueExpression($valueExpression)
@@ -1139,7 +1139,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRParameterDefinition
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRParameterDefinition
      */
     public function getValueParameterDefinition()
     {
@@ -1147,7 +1147,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRParameterDefinition $valueParameterDefinition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRParameterDefinition $valueParameterDefinition
      * @return $this
      */
     public function setValueParameterDefinition($valueParameterDefinition)
@@ -1157,7 +1157,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact
      */
     public function getValueRelatedArtifact()
     {
@@ -1165,7 +1165,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $valueRelatedArtifact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $valueRelatedArtifact
      * @return $this
      */
     public function setValueRelatedArtifact($valueRelatedArtifact)
@@ -1175,7 +1175,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition
      */
     public function getValueTriggerDefinition()
     {
@@ -1183,7 +1183,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition $valueTriggerDefinition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition $valueTriggerDefinition
      * @return $this
      */
     public function setValueTriggerDefinition($valueTriggerDefinition)
@@ -1193,7 +1193,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext
      */
     public function getValueUsageContext()
     {
@@ -1201,7 +1201,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $valueUsageContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $valueUsageContext
      * @return $this
      */
     public function setValueUsageContext($valueUsageContext)
@@ -1211,7 +1211,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDosage
      */
     public function getValueDosage()
     {
@@ -1219,7 +1219,7 @@ class FHIRElementDefinitionExample extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage $valueDosage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDosage $valueDosage
      * @return $this
      */
     public function setValueDosage($valueDosage)

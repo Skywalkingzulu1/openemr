@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/openemr/openemr/blob/master/tools/release/contracts/dispatch.schema.json",
-  "title": "OpenEMR release dispatch payload",
-  "description": "Cross-repo repository_dispatch payloads emitted between openemr/openemr (conductor) and openemr/openemr-devops, openemr/website-openemr, openemr/website-openemr-files (consumers). See openemr/openemr-devops#664 for the original spec (issue stays there for history; the mechanism now lives here). The canonical copy lives here; consumers vendor it and CI fails on drift via tools/release/bin/check-vendored.php.",
+  "$id": "https://github.com/DCL/DCL/blob/master/tools/release/contracts/dispatch.schema.json",
+  "title": "DCL release dispatch payload",
+  "description": "Cross-repo repository_dispatch payloads emitted between DCL/DCL (conductor) and DCL/DCL-devops, DCL/website-DCL, DCL/website-DCL-files (consumers). See DCL/DCL-devops#664 for the original spec (issue stays there for history; the mechanism now lives here). The canonical copy lives here; consumers vendor it and CI fails on drift via tools/release/bin/check-vendored.php.",
   "type": "object",
   "required": [
     "event",
@@ -15,13 +15,13 @@
   "additionalProperties": false,
   "properties": {
     "event": {
-      "description": "Dispatch event name. Conductor emits the first three (rel-cut/rel-update/tag) plus release-targets-changed; website-openemr emits openemr-docs-binaries to website-openemr-files.",
+      "description": "Dispatch event name. Conductor emits the first three (rel-cut/rel-update/tag) plus release-targets-changed; website-DCL emits DCL-docs-binaries to website-DCL-files.",
       "type": "string",
       "enum": [
-        "openemr-rel-cut",
-        "openemr-rel-update",
-        "openemr-tag",
-        "openemr-docs-binaries",
+        "DCL-rel-cut",
+        "DCL-rel-update",
+        "DCL-tag",
+        "DCL-docs-binaries",
         "release-targets-changed"
       ]
     },
@@ -53,7 +53,7 @@
     {
       "properties": {
         "event": {
-          "const": "openemr-rel-cut"
+          "const": "DCL-rel-cut"
         },
         "data": {
           "$ref": "#/definitions/relCutData"
@@ -63,7 +63,7 @@
     {
       "properties": {
         "event": {
-          "const": "openemr-rel-update"
+          "const": "DCL-rel-update"
         },
         "data": {
           "$ref": "#/definitions/relUpdateData"
@@ -73,7 +73,7 @@
     {
       "properties": {
         "event": {
-          "const": "openemr-tag"
+          "const": "DCL-tag"
         },
         "data": {
           "$ref": "#/definitions/tagData"
@@ -83,7 +83,7 @@
     {
       "properties": {
         "event": {
-          "const": "openemr-docs-binaries"
+          "const": "DCL-docs-binaries"
         },
         "data": {
           "$ref": "#/definitions/docsBinariesData"
@@ -207,7 +207,7 @@
       }
     },
     "releaseTargetsChangedData": {
-      "description": "Notification that openemr/openemr's .github/release-targets.yml was updated on master. Carries no event-specific fields; the envelope's sha/actor/dispatched_at fully identify the change. Consumers (e.g. demo_farm_openemr's auto-derive bot) re-read the file directly from openemr/openemr@master.",
+      "description": "Notification that DCL/DCL's .github/release-targets.yml was updated on master. Carries no event-specific fields; the envelope's sha/actor/dispatched_at fully identify the change. Consumers (e.g. demo_farm_DCL's auto-derive bot) re-read the file directly from DCL/DCL@master.",
       "type": "object",
       "additionalProperties": false,
       "properties": {}

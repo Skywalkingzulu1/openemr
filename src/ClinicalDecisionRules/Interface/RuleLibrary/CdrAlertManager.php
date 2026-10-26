@@ -13,20 +13,20 @@
 // GNU General Public License for more details.
 //
 // A copy of the GNU General Public License is included along with this program:
-// openemr/interface/login/GnuGPL.html
+// DCL/interface/login/GnuGPL.html
 // For more information write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\CdrResults;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\CdrResults;
+use DCL\Core\OEGlobalsBag;
 
 require_once(OEGlobalsBag::getInstance()->getKernel()->getProjectDir() . "/library/clinical_rules.php");
 
 /**
- * class OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\CdrAlertManager
+ * class DCL\ClinicalDecisionRules\Interface\RuleLibrary\CdrAlertManager
  *
  */
 class CdrAlertManager
@@ -69,4 +69,4 @@ class CdrAlertManager
             $cdra->update_table();
         }
     }
-} // end of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\CdrAlertManager
+} // end of DCL\ClinicalDecisionRules\Interface\RuleLibrary\CdrAlertManager

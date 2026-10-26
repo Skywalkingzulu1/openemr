@@ -19,27 +19,27 @@
  *      so callers on TOTP-failure paths engage the existing lockout on
  *      the next login attempt.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\UserEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\UserRepository;
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Fixtures\PortalPatientFixtureManager;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Auth\OpenIDConnect\Entities\UserEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\UserRepository;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Fixtures\PortalPatientFixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
@@ -1736,7 +1736,7 @@ class PasswordGrantHardeningTest extends TestCase
     private function insertConfidentialClientFixture(string $clientSecret): array
     {
         $clientId = 'test-client-' . Uuid::uuid4()->toString();
-        $encryptedSecret = (\OpenEMR\BC\ServiceContainer::getCrypto())->encryptForDatabase($clientSecret);
+        $encryptedSecret = (\DCL\BC\ServiceContainer::getCrypto())->encryptForDatabase($clientSecret);
         QueryUtils::sqlStatementThrowException(
             "INSERT INTO oauth_clients (client_id, client_secret, is_confidential, is_enabled, client_role) "
                 . "VALUES (?, ?, 1, 1, 'users')",
@@ -1765,7 +1765,7 @@ class PasswordGrantHardeningTest extends TestCase
     {
         // getAccountByPassword needs a base FHIR URL for user-entity creation
         // on the success path — value is arbitrary for these unit-style tests.
-        return new UserRepository('http://openemr/apis/default/fhir');
+        return new UserRepository('http://DCL/apis/default/fhir');
     }
 
     private function invokeGetAccountByPassword(

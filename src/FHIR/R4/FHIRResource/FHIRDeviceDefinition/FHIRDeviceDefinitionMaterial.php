@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The characteristics, operational status and capabilities of a medical-related component of a medical device.
@@ -71,19 +71,19 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement implements \JsonS
 {
     /**
      * The substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $substance = null;
 
     /**
      * Indicates an alternative material of the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $alternate = null;
 
     /**
      * Whether the substance is a known or suspected allergen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $allergenicIndicator = null;
 
@@ -94,7 +94,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement implements \JsonS
 
     /**
      * The substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstance()
     {
@@ -103,7 +103,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement implements \JsonS
 
     /**
      * The substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $substance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $substance
      * @return $this
      */
     public function setSubstance($substance)
@@ -114,7 +114,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates an alternative material of the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAlternate()
     {
@@ -123,7 +123,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates an alternative material of the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $alternate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $alternate
      * @return $this
      */
     public function setAlternate($alternate)
@@ -134,7 +134,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether the substance is a known or suspected allergen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAllergenicIndicator()
     {
@@ -143,7 +143,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether the substance is a known or suspected allergen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $allergenicIndicator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $allergenicIndicator
      * @return $this
      */
     public function setAllergenicIndicator($allergenicIndicator)

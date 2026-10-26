@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -72,85 +72,85 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this health insurance product which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The current state of the health insurance product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * The kind of health insurance product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * Official name of the health insurance product as designated by the owner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A list of alternate names that the product is known as, or was known as in the past.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $alias = [];
 
     /**
      * The period of time that the health insurance product is available.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * The entity that is providing  the health insurance product and underwriting the risk.  This is typically an insurance carriers, other third-party payers, or health plan sponsors commonly referred to as 'payers'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $ownedBy = null;
 
     /**
      * An organization which administer other services such as underwriting, customer service and/or claims processing on behalf of the health insurance product owner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $administeredBy = null;
 
     /**
      * The geographic region in which a health insurance product's benefits apply.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $coverageArea = [];
 
     /**
      * The contact for the health insurance product for a certain purpose.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanContact[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanContact[]
      */
     public $contact = [];
 
     /**
      * The technical endpoints providing access to services operated for the health insurance product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
     /**
      * Reference to the network included in the health insurance product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $network = [];
 
     /**
      * Details about the coverage offered by the insurance product.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCoverage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCoverage[]
      */
     public $coverage = [];
 
     /**
      * Details about an insurance plan.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanPlan[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanPlan[]
      */
     public $plan = [];
 
@@ -161,7 +161,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this health insurance product which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -170,7 +170,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this health insurance product which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -181,7 +181,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the health insurance product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -190,7 +190,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the health insurance product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -201,7 +201,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of health insurance product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -210,7 +210,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of health insurance product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -221,7 +221,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Official name of the health insurance product as designated by the owner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -230,7 +230,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Official name of the health insurance product as designated by the owner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -241,7 +241,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of alternate names that the product is known as, or was known as in the past.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getAlias()
     {
@@ -250,7 +250,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of alternate names that the product is known as, or was known as in the past.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $alias
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $alias
      * @return $this
      */
     public function addAlias($alias)
@@ -261,7 +261,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time that the health insurance product is available.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -270,7 +270,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period of time that the health insurance product is available.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -281,7 +281,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity that is providing  the health insurance product and underwriting the risk.  This is typically an insurance carriers, other third-party payers, or health plan sponsors commonly referred to as 'payers'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOwnedBy()
     {
@@ -290,7 +290,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity that is providing  the health insurance product and underwriting the risk.  This is typically an insurance carriers, other third-party payers, or health plan sponsors commonly referred to as 'payers'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $ownedBy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $ownedBy
      * @return $this
      */
     public function setOwnedBy($ownedBy)
@@ -301,7 +301,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An organization which administer other services such as underwriting, customer service and/or claims processing on behalf of the health insurance product owner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAdministeredBy()
     {
@@ -310,7 +310,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An organization which administer other services such as underwriting, customer service and/or claims processing on behalf of the health insurance product owner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $administeredBy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $administeredBy
      * @return $this
      */
     public function setAdministeredBy($administeredBy)
@@ -321,7 +321,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The geographic region in which a health insurance product's benefits apply.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getCoverageArea()
     {
@@ -330,7 +330,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The geographic region in which a health insurance product's benefits apply.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverageArea
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverageArea
      * @return $this
      */
     public function addCoverageArea($coverageArea)
@@ -341,7 +341,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The contact for the health insurance product for a certain purpose.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanContact[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanContact[]
      */
     public function getContact()
     {
@@ -350,7 +350,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The contact for the health insurance product for a certain purpose.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanContact $contact
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -361,7 +361,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The technical endpoints providing access to services operated for the health insurance product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -370,7 +370,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The technical endpoints providing access to services operated for the health insurance product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)
@@ -381,7 +381,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to the network included in the health insurance product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getNetwork()
     {
@@ -390,7 +390,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to the network included in the health insurance product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $network
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $network
      * @return $this
      */
     public function addNetwork($network)
@@ -401,7 +401,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about the coverage offered by the insurance product.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCoverage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCoverage[]
      */
     public function getCoverage()
     {
@@ -410,7 +410,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about the coverage offered by the insurance product.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCoverage $coverage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanCoverage $coverage
      * @return $this
      */
     public function addCoverage($coverage)
@@ -421,7 +421,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about an insurance plan.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanPlan[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanPlan[]
      */
     public function getPlan()
     {
@@ -430,7 +430,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details about an insurance plan.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanPlan $plan
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanPlan $plan
      * @return $this
      */
     public function addPlan($plan)

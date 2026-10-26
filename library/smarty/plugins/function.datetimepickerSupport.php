@@ -23,13 +23,13 @@
  *
  * Type:     function<br />
  * Name:     datetimepickerSupport<br />
- * Purpose:  datetimepickerSupport in OpenEMR - Smarty templates<br />
+ * Purpose:  datetimepickerSupport in DCL - Smarty templates<br />
  *
  * @param array $params
  * @param Smarty $smarty
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 function smarty_function_datetimepickerSupport($params, &$smarty): void
 {

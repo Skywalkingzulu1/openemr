@@ -8,22 +8,22 @@
  *   Note that it stores a static GaclApi object to improve performance (this avoids doing
  *    separate database connection for every call to GaclApi)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Rod Roark <rod@sunsetsystems.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Acl;
+namespace DCL\Common\Acl;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Gacl\GaclApi;
-use OpenEMR\Services\UserService;
-use OpenEMR\Services\VersionService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Gacl\GaclApi;
+use DCL\Services\UserService;
+use DCL\Services\VersionService;
 
 class AclExtended
 {
@@ -956,7 +956,7 @@ class AclExtended
      * @param  string  $section_title  Title of section
      * @param  string  $object_name    Identifier of object
      * @param  string  $object_title   Title of object
-     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in openemr
+     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in DCL
      */
     public static function addObjectAclWithOrder($section_name, $section_title, $object_name, $object_title, $order_number)
     {
@@ -983,7 +983,7 @@ class AclExtended
      * @param  string  $section_title  Title of section
      * @param  string  $object_name    Identifier of object
      * @param  string  $object_title   Title of object
-     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in openemr
+     * @param  string  $order_number   number to determine order in list. used in sensitivities to order the choices in DCL
      */
     public static function editObjectAcl($section_name, $section_title, $object_name, $object_title, $order_number)
     {

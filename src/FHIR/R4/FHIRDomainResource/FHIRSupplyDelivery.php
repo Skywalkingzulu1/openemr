@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Record of delivery of what is supplied.
@@ -72,76 +72,76 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for the supply delivery event that is used to identify it across multiple disparate systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * A code specifying the state of the dispense event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSupplyDeliveryStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSupplyDeliveryStatus
      */
     public $status = null;
 
     /**
      * A link to a resource representing the person whom the delivered item is for.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The item that is being delivered or has been supplied.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
      */
     public $suppliedItem = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $occurrenceTiming = null;
 
     /**
      * The individual responsible for dispensing the medication, supplier or device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $supplier = null;
 
     /**
      * Identification of the facility/location where the Supply was shipped to, as part of the dispense event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $destination = null;
 
     /**
      * Identifies the person who picked up the Supply.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $receiver = [];
 
@@ -152,7 +152,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the supply delivery event that is used to identify it across multiple disparate systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -161,7 +161,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the supply delivery event that is used to identify it across multiple disparate systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -172,7 +172,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -181,7 +181,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -192,7 +192,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -201,7 +201,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -212,7 +212,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code specifying the state of the dispense event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSupplyDeliveryStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSupplyDeliveryStatus
      */
     public function getStatus()
     {
@@ -221,7 +221,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code specifying the state of the dispense event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSupplyDeliveryStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSupplyDeliveryStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -232,7 +232,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A link to a resource representing the person whom the delivered item is for.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -241,7 +241,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A link to a resource representing the person whom the delivered item is for.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -252,7 +252,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -261,7 +261,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -272,7 +272,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The item that is being delivered or has been supplied.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
      */
     public function getSuppliedItem()
     {
@@ -281,7 +281,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The item that is being delivered or has been supplied.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem $suppliedItem
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem $suppliedItem
      * @return $this
      */
     public function setSuppliedItem($suppliedItem)
@@ -291,7 +291,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -299,7 +299,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -309,7 +309,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
@@ -317,7 +317,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
     public function setOccurrencePeriod($occurrencePeriod)
@@ -327,7 +327,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
@@ -335,7 +335,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
      * @return $this
      */
     public function setOccurrenceTiming($occurrenceTiming)
@@ -346,7 +346,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual responsible for dispensing the medication, supplier or device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSupplier()
     {
@@ -355,7 +355,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual responsible for dispensing the medication, supplier or device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supplier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supplier
      * @return $this
      */
     public function setSupplier($supplier)
@@ -366,7 +366,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identification of the facility/location where the Supply was shipped to, as part of the dispense event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDestination()
     {
@@ -375,7 +375,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identification of the facility/location where the Supply was shipped to, as part of the dispense event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $destination
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $destination
      * @return $this
      */
     public function setDestination($destination)
@@ -386,7 +386,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the person who picked up the Supply.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReceiver()
     {
@@ -395,7 +395,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the person who picked up the Supply.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $receiver
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $receiver
      * @return $this
      */
     public function addReceiver($receiver)

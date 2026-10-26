@@ -4,25 +4,25 @@
  * Isolated tests for BearerTokenAuthorizationStrategy::checkUserHasAccessToPatient().
  *
  * Coverage for the SMART launch-context patient binding. The check must return
- * false on any missing / malformed input and honour OpenEMR's core UI
+ * false on any missing / malformed input and honour DCL's core UI
  * enforcement model (base `patients/demo` ACL plus optional per-patient
  * `squad` ACL).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\RestControllers\Authorization\BearerTokenAuthorizationStrategy;
-use OpenEMR\Services\UserService;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Core\OEGlobalsBag;
+use DCL\RestControllers\Authorization\BearerTokenAuthorizationStrategy;
+use DCL\Services\UserService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;

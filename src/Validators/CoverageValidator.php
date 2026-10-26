@@ -1,30 +1,30 @@
 <?php
 
-namespace OpenEMR\Validators;
+namespace DCL\Validators;
 
-use OpenEMR\Billing\InsurancePolicyTypes;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
+use DCL\Billing\InsurancePolicyTypes;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\PatientService;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
 use Particle\Validator\Exception\InvalidValueException;
 use Particle\Validator\Validator;
 
 /**
  * Supports Insurance Coverage Record Validation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vishnu Yarmaneni <vardhanvishnu@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2021 Vishnu Yarmaneni <vardhanvishnu@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class CoverageValidator extends BaseValidator
 {
@@ -33,7 +33,7 @@ class CoverageValidator extends BaseValidator
 
     protected function getInnerValidator(): Validator
     {
-        return new OpenEMRParticleValidator();
+        return new DCLParticleValidator();
     }
 
     /**
@@ -51,8 +51,8 @@ class CoverageValidator extends BaseValidator
         $this->validator->context(
             self::DATABASE_INSERT_CONTEXT,
             function (Validator $context): void {
-                if (!$context instanceof OpenEMRParticleValidator) {
-                    throw new \RuntimeException("CoverageValidator requires an instance of OpenEMRParticleValidator");
+                if (!$context instanceof DCLParticleValidator) {
+                    throw new \RuntimeException("CoverageValidator requires an instance of DCLParticleValidator");
                 }
                 $context->required('pid')->numeric();
                 $context->required('type')->inArray(['primary', 'secondary', 'tertiary'])

@@ -24,21 +24,21 @@
  * timestamp column is nulled. tearDown restores prior state so shared
  * rows (e.g. admin, 127.0.0.1) are not left mutated.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Fixtures\PortalPatientFixtureManager;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Fixtures\PortalPatientFixtureManager;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 

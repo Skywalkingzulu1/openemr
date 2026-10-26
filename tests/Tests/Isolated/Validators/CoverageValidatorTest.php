@@ -7,18 +7,18 @@
  * CoverageValidator handles insurance coverage record validation with
  * complex business logic for subscriber relationships and policy conflicts.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators;
+namespace DCL\Tests\Isolated\Validators;
 
-use OpenEMR\Validators\BaseValidator;
-use OpenEMR\Validators\CoverageValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Validators\BaseValidator;
+use DCL\Validators\CoverageValidator;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\TestCase;
 
 class CoverageValidatorTest extends TestCase
@@ -59,10 +59,10 @@ class CoverageValidatorTest extends TestCase
         $this->assertEquals('database-swap', CoverageValidator::DATABASE_SWAP_CONTEXT);
     }
 
-    public function testGetInnerValidatorReturnsOpenEMRParticleValidator(): void
+    public function testGetInnerValidatorReturnsDCLParticleValidator(): void
     {
         $innerValidator = $this->validator->getInnerValidatorPublic();
-        $this->assertInstanceOf(\OpenEMR\Validators\OpenEMRParticleValidator::class, $innerValidator);
+        $this->assertInstanceOf(\DCL\Validators\DCLParticleValidator::class, $innerValidator);
     }
 
     public function testInsertValidationWithValidData(): void

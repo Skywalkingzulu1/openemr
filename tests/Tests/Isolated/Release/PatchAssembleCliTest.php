@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -19,12 +19,12 @@ use Symfony\Component\Process\Process;
 /**
  * Arg-shell tests for tools/release/bin/patch-assemble.php.
  *
- * patch-assemble.php shells out to git + zip against a real openemr
+ * patch-assemble.php shells out to git + zip against a real DCL
  * checkout to build the cumulative overlay patch. The happy path
- * requires a full openemr working tree with the requested start-tag
+ * requires a full DCL working tree with the requested start-tag
  * present in history; both are out of scope for an isolated test.
  * These tests cover only the CLI's validation gates: required-flag
- * rejection and openemr-dir existence check.
+ * rejection and DCL-dir existence check.
  */
 final class PatchAssembleCliTest extends TestCase
 {
@@ -34,7 +34,7 @@ final class PatchAssembleCliTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-patch-assemble-cli-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-patch-assemble-cli-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -52,7 +52,7 @@ final class PatchAssembleCliTest extends TestCase
     public function testMissingRequiredFlagRejected(string $missing, array $args): void
     {
         // The CLI iterates the 4-required-flag list in order
-        // (start-tag, branch, filename, openemr-dir) and errors on the
+        // (start-tag, branch, filename, DCL-dir) and errors on the
         // first missing one. Each provider case omits exactly one flag
         // to confirm the specific error message fires.
         $processArgs = ['php', self::BIN];
@@ -73,31 +73,31 @@ final class PatchAssembleCliTest extends TestCase
      */
     public static function missingRequiredFlagProvider(): array
     {
-        // openemr-dir is set to a real path in these cases so the
+        // DCL-dir is set to a real path in these cases so the
         // missing-flag check under test isn't shadowed by the later
-        // openemr-dir existence check.
+        // DCL-dir existence check.
         $existing = sys_get_temp_dir();
         return [
             'missing start-tag' => [
                 'start-tag',
-                ['branch' => 'rel-810', 'filename' => 'patch.zip', 'openemr-dir' => $existing],
+                ['branch' => 'rel-810', 'filename' => 'patch.zip', 'DCL-dir' => $existing],
             ],
             'missing branch' => [
                 'branch',
-                ['start-tag' => 'v8_0_0', 'filename' => 'patch.zip', 'openemr-dir' => $existing],
+                ['start-tag' => 'v8_0_0', 'filename' => 'patch.zip', 'DCL-dir' => $existing],
             ],
             'missing filename' => [
                 'filename',
-                ['start-tag' => 'v8_0_0', 'branch' => 'rel-810', 'openemr-dir' => $existing],
+                ['start-tag' => 'v8_0_0', 'branch' => 'rel-810', 'DCL-dir' => $existing],
             ],
-            'missing openemr-dir' => [
-                'openemr-dir',
+            'missing DCL-dir' => [
+                'DCL-dir',
                 ['start-tag' => 'v8_0_0', 'branch' => 'rel-810', 'filename' => 'patch.zip'],
             ],
         ];
     }
 
-    public function testNonexistentOpenemrDirRejected(): void
+    public function testNonexistentDCLDirRejected(): void
     {
         $missing = $this->tmpDir . '/does-not-exist';
         $process = new Process([
@@ -106,23 +106,23 @@ final class PatchAssembleCliTest extends TestCase
             '--start-tag=v8_0_0',
             '--branch=rel-810',
             '--filename=patch.zip',
-            '--openemr-dir=' . $missing,
+            '--DCL-dir=' . $missing,
             '--output-dir=' . $this->tmpDir . '/out',
         ]);
         $process->run();
 
         self::assertFalse($process->isSuccessful());
-        self::assertStringContainsString('OpenEMR directory not found', $process->getOutput());
+        self::assertStringContainsString('DCL directory not found', $process->getOutput());
     }
 
-    public function testCopyStylesFlagAcceptedWithNonexistentOpenemrDir(): void
+    public function testCopyStylesFlagAcceptedWithNonexistentDCLDir(): void
     {
         // Prove --copy-styles parses at the option layer by combining it
-        // with a nonexistent --openemr-dir. If --copy-styles were
+        // with a nonexistent --DCL-dir. If --copy-styles were
         // unregistered, Symfony Console would abort at parse time with
         // "does not exist"; if it parses correctly, the CLI's
-        // --openemr-dir existence check trips next with the deterministic
-        // "OpenEMR directory not found" error. No git / zip subprocess
+        // --DCL-dir existence check trips next with the deterministic
+        // "DCL directory not found" error. No git / zip subprocess
         // ever runs; failure is local + fast.
         $nonexistentDir = $this->tmpDir . '/does-not-exist-' . bin2hex(random_bytes(4));
         $process = new Process([
@@ -131,14 +131,14 @@ final class PatchAssembleCliTest extends TestCase
             '--start-tag=v8_0_0',
             '--branch=rel-810',
             '--filename=patch.zip',
-            '--openemr-dir=' . $nonexistentDir,
+            '--DCL-dir=' . $nonexistentDir,
             '--output-dir=' . $this->tmpDir . '/out',
             '--copy-styles',
         ]);
         $process->run();
 
         self::assertFalse($process->isSuccessful());
-        self::assertStringContainsString('OpenEMR directory not found', $process->getOutput());
+        self::assertStringContainsString('DCL directory not found', $process->getOutput());
         $combined = $process->getOutput() . $process->getErrorOutput();
         self::assertStringNotContainsString('does not exist', $combined);
     }

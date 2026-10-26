@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @author    Eric Stern <erics@opencoreemr.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- * @link      https://www.open-emr.org
- * @package   OpenEMR
+ * @author    Eric Stern <erics@DCL.com>
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @package   DCL
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PaymentProcessing\Rainforest;
+namespace DCL\PaymentProcessing\Rainforest;
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 use GuzzleHttp\{Client, ClientInterface};
 use InvalidArgumentException;
 use Money\Money;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use Psr\Http\Message\ResponseInterface;
 use Ramsey\Uuid\Uuid;
 use SensitiveParameter;

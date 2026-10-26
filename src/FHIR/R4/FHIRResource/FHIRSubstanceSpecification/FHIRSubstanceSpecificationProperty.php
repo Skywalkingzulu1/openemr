@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,39 +71,39 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
 {
     /**
      * A category for this property, e.g. Physical, Chemical, Enzymatic.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * Property type e.g. viscosity, pH, isoelectric point.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Parameters that were used in the measurement of a property (e.g. for viscosity: measured at 20C with a pH of 7.1).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $parameters = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $definingSubstanceReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $definingSubstanceCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amountQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $amountString = null;
 
@@ -114,7 +114,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
 
     /**
      * A category for this property, e.g. Physical, Chemical, Enzymatic.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -123,7 +123,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
 
     /**
      * A category for this property, e.g. Physical, Chemical, Enzymatic.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -134,7 +134,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
 
     /**
      * Property type e.g. viscosity, pH, isoelectric point.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
 
     /**
      * Property type e.g. viscosity, pH, isoelectric point.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -154,7 +154,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
 
     /**
      * Parameters that were used in the measurement of a property (e.g. for viscosity: measured at 20C with a pH of 7.1).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getParameters()
     {
@@ -163,7 +163,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
 
     /**
      * Parameters that were used in the measurement of a property (e.g. for viscosity: measured at 20C with a pH of 7.1).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $parameters
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $parameters
      * @return $this
      */
     public function setParameters($parameters)
@@ -173,7 +173,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDefiningSubstanceReference()
     {
@@ -181,7 +181,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $definingSubstanceReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $definingSubstanceReference
      * @return $this
      */
     public function setDefiningSubstanceReference($definingSubstanceReference)
@@ -191,7 +191,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDefiningSubstanceCodeableConcept()
     {
@@ -199,7 +199,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $definingSubstanceCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $definingSubstanceCodeableConcept
      * @return $this
      */
     public function setDefiningSubstanceCodeableConcept($definingSubstanceCodeableConcept)
@@ -209,7 +209,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity()
     {
@@ -217,7 +217,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return $this
      */
     public function setAmountQuantity($amountQuantity)
@@ -227,7 +227,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAmountString()
     {
@@ -235,7 +235,7 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $amountString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $amountString
      * @return $this
      */
     public function setAmountString($amountString)

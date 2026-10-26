@@ -5,7 +5,7 @@
  * rel-NNN0 cut requires, on either the rel-side or the master-side of
  * the cut.
  *
- * This is a SIBLING command to `openemr:release-prep`, not an extension
+ * This is a SIBLING command to `DCL:release-prep`, not an extension
  * of it. Phase A of workstream 3 (PR #12662) established
  * `--scope=master` on release-prep as RELEASE-TIME only (master-side
  * release-finalize PR for post-release release-targets.yml updates).
@@ -30,28 +30,28 @@
  * docs/release-mechanism-migration-from-devops.md (workstream 2 detail)
  * for the full design.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Common\Command\ReleasePrep\Mutator\BranchCutReleaseTargetsMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\DockerfileOpenemrVersionMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\DockerUpgradeScaffoldMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\GlobalsIncMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\OpenApiVersionMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\SqlUpgradeSkeletonMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\SwaggerRegenMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\TranslationFileCopyFromPriorRelMutator;
-use OpenEMR\Common\Command\ReleasePrep\Mutator\VersionPhpMasterMutator;
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\Mutator\BranchCutReleaseTargetsMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\DockerfileDCLVersionMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\DockerUpgradeScaffoldMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\GlobalsIncMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\OpenApiVersionMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\SqlUpgradeSkeletonMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\SwaggerRegenMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\TranslationFileCopyFromPriorRelMutator;
+use DCL\Common\Command\ReleasePrep\Mutator\VersionPhpMasterMutator;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -80,8 +80,8 @@ final class BranchCutCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:branch-cut')
-            ->setDescription('Apply mechanical branch-cut mutations for a new rel-NNN0 cut (sibling to openemr:release-prep)')
+            ->setName('DCL:branch-cut')
+            ->setDescription('Apply mechanical branch-cut mutations for a new rel-NNN0 cut (sibling to DCL:release-prep)')
             ->addOption(
                 'target-version',
                 null,
@@ -220,7 +220,7 @@ final class BranchCutCommand extends Command
     {
         return [
             new DockerUpgradeScaffoldMutator(),
-            new DockerfileOpenemrVersionMutator(),
+            new DockerfileDCLVersionMutator(),
             new TranslationFileCopyFromPriorRelMutator(),
             new GlobalsIncMutator(),
         ];

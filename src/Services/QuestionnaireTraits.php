@@ -1,14 +1,14 @@
 <?php
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 use Exception;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\PHPFHIRResponseParser;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\PHPFHIRResponseParser;
 
 trait QuestionnaireTraits
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\FHIR\SMART\ExternalClinicalDecisionSupport;
+namespace DCL\FHIR\SMART\ExternalClinicalDecisionSupport;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
 
 class PredictiveDSIServiceEntity extends DecisionSupportInterventionEntity
 {

@@ -16,10 +16,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Cassian LUP <cassi.lup@gmail.com>
  * @author  Jerry Padgett <sjpadgett@gmail.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  *
  */
 

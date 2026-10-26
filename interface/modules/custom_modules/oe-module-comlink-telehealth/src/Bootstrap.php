@@ -1,44 +1,44 @@
 <?php
 
 /**
- * This bootstrap file connects the module to the OpenEMR system hooking to the API, api scopes, and event notifications
+ * This bootstrap file connects the module to the DCL system hooking to the API, api scopes, and event notifications
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule;
+namespace Comlink\DCL\Modules\TeleHealthModule;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\Admin\TeleHealthPatientAdminController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\Admin\TeleHealthUserAdminController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleconferenceRoomController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleHealthCalendarController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleHealthFrontendSettingsController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleHealthPatientPortalController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleHealthVideoRegistrationController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\CalendarEventCategoryRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthPersonSettingsRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthProviderRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthSessionRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\ParticipantListService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthParticipantInvitationMailerService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthProvisioningService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TelehealthRegistrationCodeService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthRemoteRegistrationService;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Common\Utils\CacheUtils;
-use OpenEMR\Core\Kernel;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Appointments\AppointmentSetEvent;
-use OpenEMR\Events\Core\TwigEnvironmentEvent;
-use OpenEMR\Events\Globals\GlobalsInitializedEvent;
-use OpenEMR\Events\Main\Tabs\RenderEvent;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\Admin\TeleHealthPatientAdminController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\Admin\TeleHealthUserAdminController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleconferenceRoomController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleHealthCalendarController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleHealthFrontendSettingsController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleHealthPatientPortalController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleHealthVideoRegistrationController;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\CalendarEventCategoryRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthPersonSettingsRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthProviderRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthSessionRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Services\ParticipantListService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthParticipantInvitationMailerService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthProvisioningService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TelehealthRegistrationCodeService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthRemoteRegistrationService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Common\Utils\CacheUtils;
+use DCL\Core\Kernel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Appointments\AppointmentSetEvent;
+use DCL\Events\Core\TwigEnvironmentEvent;
+use DCL\Events\Globals\GlobalsInitializedEvent;
+use DCL\Events\Main\Tabs\RenderEvent;
 use Psr\Log\LoggerInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
@@ -46,7 +46,7 @@ use Twig\Loader\FilesystemLoader;
 
 class Bootstrap
 {
-    const OPENEMR_GLOBALS_LOCATION = "../../../../globals.php";
+    const DCL_GLOBALS_LOCATION = "../../../../globals.php";
     const MODULE_INSTALLATION_PATH = "/interface/modules/custom_modules/";
     const MODULE_NAME = "";
     const MODULE_MENU_NAME = "TeleHealth";
@@ -54,7 +54,7 @@ class Bootstrap
     private $moduleDirectoryName;
 
     /**
-     * The OpenEMR Twig Environment
+     * The DCL Twig Environment
      * @var Environment
      */
     private $twig;
@@ -109,7 +109,7 @@ class Bootstrap
     private $serviceRegistry = [];
 
     /**
-     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the OpenEMR system
+     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the DCL system
      * @param ?Kernel $kernel
      */
     public function __construct(

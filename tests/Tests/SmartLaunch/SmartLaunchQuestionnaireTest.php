@@ -1,22 +1,22 @@
 <?php
 
 /**
- * SMART launch end-to-end smoke against openemr/oe-smart-questionnaire.
+ * SMART launch end-to-end smoke against DCL/oe-smart-questionnaire.
  *
- * See openemr/openemr#14529 for the shape and ci/smart-launch/run.sh for
+ * See DCL/DCL#14529 for the shape and ci/smart-launch/run.sh for
  * the orchestration (compose boot, app install, DCR, client enable) that
  * must run before this test.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\SmartLaunch;
+namespace DCL\Tests\SmartLaunch;
 
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Exception\WebDriverException;
@@ -24,7 +24,7 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\WebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
+use DCL\FHIR\SMART\SMARTLaunchToken;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Panther\Client;
 use Symfony\Component\Panther\PantherTestCase;
@@ -32,8 +32,8 @@ use Symfony\Component\Panther\PantherTestCase;
 final class SmartLaunchQuestionnaireTest extends PantherTestCase
 {
     /**
-     * The internal openemr service alias is reachable from both the
-     * openemr container's own PHP (so the SMART app's server-side
+     * The internal DCL service alias is reachable from both the
+     * DCL container's own PHP (so the SMART app's server-side
      * token exchange works) and the selenium container's Chromium
      * (so the browser-side authorize/consent navigation works). Using
      * one hostname for both sides is the key design choice this smoke
@@ -41,9 +41,9 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
      * was rejected over the equivalent host/container URL-alignment
      * problem.
      */
-    private const OPENEMR_BASE = 'https://openemr';
-    private const APP_BASE = 'https://openemr/smart-questionnaire';
-    private const FHIR_BASE = 'https://openemr/apis/default/fhir';
+    private const DCL_BASE = 'https://DCL';
+    private const APP_BASE = 'https://DCL/smart-questionnaire';
+    private const FHIR_BASE = 'https://DCL/apis/default/fhir';
 
     /**
      * Title of the fixture Questionnaire run.sh's seed_smoke_questionnaire
@@ -62,7 +62,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         // Chrome via selenium:4444. acceptInsecureCerts +
         // --ignore-certificate-errors because the flex image serves
         // HTTPS with a self-signed dev cert. HTTPS (rather than
-        // plain HTTP) is required: OpenEMR's authserverOpenEMR
+        // plain HTTP) is required: DCL's authserverDCL
         // session cookie is Secure+SameSite=None, which Chromium
         // only sends over HTTPS.
         $chromeOptions = new ChromeOptions();
@@ -83,7 +83,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         $this->panther = Client::createSeleniumClient(
             "http://{$seleniumHost}:4444/wd/hub",
             $capabilities,
-            self::OPENEMR_BASE,
+            self::DCL_BASE,
         );
     }
 
@@ -107,11 +107,11 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
      *
      *   1. GET /smart-questionnaire/launch.php?iss=<fhir base>
      *      — the app's PHP creates a per-launch state (PKCE verifier +
-     *        state) and 302s to OpenEMR's /oauth2/default/authorize.
-     *   2. OpenEMR renders the login form; test posts admin/pass.
-     *   3. OpenEMR's SMART patient-select screen (triggered by the
+     *        state) and 302s to DCL's /oauth2/default/authorize.
+     *   2. DCL renders the login form; test posts admin/pass.
+     *   3. DCL's SMART patient-select screen (triggered by the
      *      launch/patient scope); test picks the first demo patient.
-     *   4. OpenEMR's consent screen; every scope checkbox is pre-checked
+     *   4. DCL's consent screen; every scope checkbox is pre-checked
      *      by default — test clicks `proceed`.
      *   5. Browser is redirected back to <app>/callback.php?code=...;
      *      the app exchanges the code for a bearer token server-side
@@ -126,7 +126,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
      * resource-level grants for Patient, Questionnaire, and
      * QuestionnaireResponse. Don't "fix" a future regression by flipping
      * the app's config to v2 (.rs + .cu); v2 fails by design against
-     * current OpenEMR per the upstream README.
+     * current DCL per the upstream README.
      */
     #[Test]
     public function testStandaloneLaunchReachesAppWithPatientContext(): void
@@ -216,7 +216,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
     /**
      * launch.php with no params renders a picker of registered servers
      * for standalone launch. ci/smart-launch/run.sh registers one client
-     * against the compose-internal openemr issuer, so the picker should
+     * against the compose-internal DCL issuer, so the picker should
      * list exactly that issuer as a clickable link.
      *
      * This exercises the "clients registered" branch of launch.php's
@@ -248,7 +248,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
      * pick the seeded Questionnaire → Start new → fill the required
      * item → Complete. The app's api.php?action=save endpoint runs
      * server-side with the bearer token minted during the OAuth
-     * exchange and POSTs a `QuestionnaireResponse` to OpenEMR's FHIR
+     * exchange and POSTs a `QuestionnaireResponse` to DCL's FHIR
      * API, so a successful save proves the bearer-token FHIR WRITE
      * path works end-to-end (the standalone-launch test only exercises
      * reads).
@@ -278,7 +278,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
 
         // Start a new response (switches the form from read-only to
         // editable state; required inputs are rendered live by the
-        // bundled openemr_questionnaire.js runtime).
+        // bundled DCL_questionnaire.js runtime).
         $this->panther->waitFor('button#sq-new', 15);
         $this->panther->findElement(WebDriverBy::id('sq-new'))->click();
         $this->panther->waitFor('input.form-control', 10);
@@ -298,7 +298,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         );
 
         // Click Complete — fires POST api.php?action=save which the
-        // app's PHP forwards to OpenEMR's FHIR API as a POST
+        // app's PHP forwards to DCL's FHIR API as a POST
         // QuestionnaireResponse with the bearer token minted earlier.
         $this->panther->findElement(WebDriverBy::id('sq-complete'))->click();
 
@@ -327,10 +327,10 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
 
     /**
      * EHR-launch variant: instead of the browser hitting launch.php
-     * cold with an iss, the user is already signed into OpenEMR with
+     * cold with an iss, the user is already signed into DCL with
      * a patient open, clicks a "Launch App" button from
      * `interface/patient_file/assessment/fhir_assessments.php`, and
-     * OpenEMR mints a `launch=<opaque>` token encoding the patient
+     * DCL mints a `launch=<opaque>` token encoding the patient
      * context. The SMART app's launch.php sees `launch=` set and
      * threads that through authorize/token so the token response
      * includes a `patient` field — meaning the SMART app skips its
@@ -354,8 +354,8 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
     #[Test]
     public function testEhrLaunchSkipsPatientSelectAndLandsOnApp(): void
     {
-        // Sign into OpenEMR as admin.
-        $this->panther->request('GET', self::OPENEMR_BASE . '/interface/login/login.php?site=default');
+        // Sign into DCL as admin.
+        $this->panther->request('GET', self::DCL_BASE . '/interface/login/login.php?site=default');
         $this->panther->waitFor('form', 10);
         $this->panther->findElement(WebDriverBy::name('authUser'))->sendKeys('admin');
         $this->panther->findElement(WebDriverBy::name('clearPass'))->sendKeys('pass');
@@ -369,7 +369,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         // the first demo patient the installer seeds via demoData.
         $this->panther->request(
             'GET',
-            self::OPENEMR_BASE . '/interface/patient_file/summary/demographics.php?set_pid=1',
+            self::DCL_BASE . '/interface/patient_file/summary/demographics.php?set_pid=1',
         );
         $this->panther->waitFor('body', 10);
 
@@ -379,7 +379,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         // patient-intent button.
         $this->panther->request(
             'GET',
-            self::OPENEMR_BASE . '/interface/patient_file/assessment/fhir_assessments.php',
+            self::DCL_BASE . '/interface/patient_file/assessment/fhir_assessments.php',
         );
         $this->panther->waitFor('.smart-context-launch', 10);
         $launchBtn = $this->panther->findElement(WebDriverBy::cssSelector('.smart-context-launch'));
@@ -408,14 +408,14 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         // ?iss=&launch=; the SMART app threads the launch through
         // authorize/token so patient context is already set when the
         // browser lands on index.php.
-        $this->panther->request('GET', self::OPENEMR_BASE . '/interface/smart/ehr-launch-client.php?' . http_build_query([
+        $this->panther->request('GET', self::DCL_BASE . '/interface/smart/ehr-launch-client.php?' . http_build_query([
             'client_id' => $clientId,
             'csrf_token' => $csrf,
             'intent' => $intent,
         ]));
 
         // Authorize endpoint reauth: even though we're already signed
-        // in as admin, OpenEMR re-prompts for the api user role.
+        // in as admin, DCL re-prompts for the api user role.
         $this->panther->waitFor('form#userLogin', 15);
         $this->panther->findElement(WebDriverBy::name('username'))->sendKeys('admin');
         $this->panther->findElement(WebDriverBy::name('password'))->sendKeys('pass');
@@ -427,7 +427,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         $this->panther->wait(15)->until(WebDriverExpectedCondition::stalenessOf($loginForm));
 
         // Core EHR-launch assertion: patient-select never renders
-        // because OpenEMR mints the launch token with patient already
+        // because DCL mints the launch token with patient already
         // set, so the token response includes `patient` and the SMART
         // app's standalone-launch picker is bypassed. The next page
         // after login should be scope-authorize-confirm, not
@@ -495,7 +495,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         // the csrf check (client-id check happens before csrf check
         // in redirectAndLaunchSmartApp — a bogus client_id would short-
         // circuit via a different error path).
-        $this->panther->request('GET', self::OPENEMR_BASE . '/interface/login/login.php?site=default');
+        $this->panther->request('GET', self::DCL_BASE . '/interface/login/login.php?site=default');
         $this->panther->waitFor('form', 10);
         $this->panther->findElement(WebDriverBy::name('authUser'))->sendKeys('admin');
         $this->panther->findElement(WebDriverBy::name('clearPass'))->sendKeys('pass');
@@ -505,12 +505,12 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         );
         $this->panther->request(
             'GET',
-            self::OPENEMR_BASE . '/interface/patient_file/summary/demographics.php?set_pid=1',
+            self::DCL_BASE . '/interface/patient_file/summary/demographics.php?set_pid=1',
         );
         $this->panther->waitFor('body', 10);
         $this->panther->request(
             'GET',
-            self::OPENEMR_BASE . '/interface/patient_file/assessment/fhir_assessments.php',
+            self::DCL_BASE . '/interface/patient_file/assessment/fhir_assessments.php',
         );
         $this->panther->waitFor('.smart-context-launch', 10);
         $launchBtn = $this->panther->findElement(WebDriverBy::cssSelector('.smart-context-launch'));
@@ -521,7 +521,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         // Fire ehr-launch-client with a bogus csrf_token. The request
         // reaches redirectAndLaunchSmartApp, passes the client-id
         // lookup, then fails verifyCsrfToken.
-        $this->panther->request('GET', self::OPENEMR_BASE . '/interface/smart/ehr-launch-client.php?' . http_build_query([
+        $this->panther->request('GET', self::DCL_BASE . '/interface/smart/ehr-launch-client.php?' . http_build_query([
             'client_id' => $clientId,
             'csrf_token' => 'bogus-csrf-token-not-session-bound',
             'intent' => $intent,
@@ -572,7 +572,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
     #[Test]
     public function testEhrLaunchRejectsUnknownClientId(): void
     {
-        $this->panther->request('GET', self::OPENEMR_BASE . '/interface/login/login.php?site=default');
+        $this->panther->request('GET', self::DCL_BASE . '/interface/login/login.php?site=default');
         $this->panther->waitFor('form', 10);
         $this->panther->findElement(WebDriverBy::name('authUser'))->sendKeys('admin');
         $this->panther->findElement(WebDriverBy::name('clearPass'))->sendKeys('pass');
@@ -582,11 +582,11 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         );
         $this->panther->request(
             'GET',
-            self::OPENEMR_BASE . '/interface/patient_file/summary/demographics.php?set_pid=1',
+            self::DCL_BASE . '/interface/patient_file/summary/demographics.php?set_pid=1',
         );
         $this->panther->waitFor('body', 10);
 
-        $this->panther->request('GET', self::OPENEMR_BASE . '/interface/smart/ehr-launch-client.php?' . http_build_query([
+        $this->panther->request('GET', self::DCL_BASE . '/interface/smart/ehr-launch-client.php?' . http_build_query([
             'client_id' => 'nonexistent-client-id-smoke-test',
             // csrf_token irrelevant here — the client lookup fails first.
             'csrf_token' => 'does-not-matter',
@@ -693,7 +693,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         $payload[$ciphertextOffset] = chr(ord($payload[$ciphertextOffset]) ^ 0x01);
         $tamperedLaunch = base64_encode($versionPrefix . base64_encode($payload));
 
-        $authorizeUrl = self::OPENEMR_BASE . '/oauth2/default/authorize?' . http_build_query([
+        $authorizeUrl = self::DCL_BASE . '/oauth2/default/authorize?' . http_build_query([
             'response_type' => 'code',
             'client_id' => $client['client_id'],
             'redirect_uri' => $client['redirect_uri'],
@@ -747,7 +747,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
     /**
      * Redirect-URI mismatch error-path gate: when the authorize request
      * names a `redirect_uri` that is not among the client's registered
-     * redirect URIs, OpenEMR must reject before login so the attacker
+     * redirect URIs, DCL must reject before login so the attacker
      * never gets the chance to steer a legitimate code to an
      * uncontrolled callback. The guard lives in the league/oauth2
      * `RedirectUriValidator` and surfaces as a `401 invalid_client`
@@ -775,7 +775,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
             $evilRedirect,
             'test precondition: evil redirect must not accidentally equal the real registered one',
         );
-        $authorizeUrl = self::OPENEMR_BASE . '/oauth2/default/authorize?' . http_build_query([
+        $authorizeUrl = self::DCL_BASE . '/oauth2/default/authorize?' . http_build_query([
             'response_type' => 'code',
             'client_id' => $client['client_id'],
             'redirect_uri' => $evilRedirect,
@@ -802,7 +802,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
             'redirect_uri mismatch should surface as invalid_client — if this flips to invalid_request the redirect validator was bypassed',
         );
         // No 302 to the attacker-chosen redirect: the browser must
-        // terminate on the openemr origin, not evil.example. parse_url
+        // terminate on the DCL origin, not evil.example. parse_url
         // the current location rather than substring-matching the
         // whole URL — "evil.example" legitimately appears in the
         // request's query string as the rejected redirect_uri, so a
@@ -812,9 +812,9 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         $currentUrl = $this->panther->getCurrentURL();
         $landedHost = parse_url($currentUrl, PHP_URL_HOST);
         $this->assertSame(
-            'openemr',
+            'DCL',
             $landedHost,
-            'authorize must NOT follow the attacker-chosen redirect_uri — current host should still be openemr, not evil.example (open-redirect regression hallmark). Landed at: ' . $currentUrl,
+            'authorize must NOT follow the attacker-chosen redirect_uri — current host should still be DCL, not evil.example (open-redirect regression hallmark). Landed at: ' . $currentUrl,
         );
         $this->assertStringContainsString(
             '/oauth2/default/authorize',
@@ -827,7 +827,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
      * Reads the oe-smart-questionnaire app's registered-clients file
      * (populated by `bin/register.php` during stack setup) to extract
      * the `client_id` + `redirect_uri` the SMART app registered with
-     * OpenEMR. This mirrors how the app's own launch.php reads
+     * DCL. This mirrors how the app's own launch.php reads
      * clients.json for its server-side DCR state — using the same
      * source of truth avoids baking a stale client_id into the test.
      *
@@ -869,7 +869,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
 
     /**
      * Shared launch flow for the standalone tests: GET launch.php →
-     * follow OpenEMR authorize → login as admin → pick the first demo
+     * follow DCL authorize → login as admin → pick the first demo
      * patient → approve the pre-checked consent → wait for
      * `index.php?lid=…` to render. Returns the picked patient's
      * display name so callers can assert the context survived.
@@ -885,7 +885,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         $this->assertStringContainsString(
             '/oauth2/default/provider/login',
             $this->panther->getCurrentURL(),
-            'launch.php should redirect through /oauth2/default/authorize to the OpenEMR login page',
+            'launch.php should redirect through /oauth2/default/authorize to the DCL login page',
         );
 
         // Stage 2 — POST login. requestSubmit (rather than button->click
@@ -932,7 +932,7 @@ final class SmartLaunchQuestionnaireTest extends PantherTestCase
         $this->assertNotCount(
             0,
             $proceed,
-            'consent screen must expose a proceed control — missing means the page is not the OpenEMR consent screen',
+            'consent screen must expose a proceed control — missing means the page is not the DCL consent screen',
         );
         $proceed[0]->click();
         $this->panther->wait(20)->until(

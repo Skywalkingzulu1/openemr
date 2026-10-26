@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGoal;
+namespace DCL\FHIR\R4\FHIRResource\FHIRGoal;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGoal;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the intended objective(s) for a patient, group or organization care, for example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
@@ -71,52 +71,52 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $measure = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $detailQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $detailRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $detailCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $detailString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $detailBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $detailInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $detailRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $dueDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $dueDuration = null;
 
@@ -127,7 +127,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMeasure()
     {
@@ -136,7 +136,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $measure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $measure
      * @return $this
      */
     public function setMeasure($measure)
@@ -146,7 +146,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDetailQuantity()
     {
@@ -154,7 +154,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $detailQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $detailQuantity
      * @return $this
      */
     public function setDetailQuantity($detailQuantity)
@@ -164,7 +164,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getDetailRange()
     {
@@ -172,7 +172,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $detailRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $detailRange
      * @return $this
      */
     public function setDetailRange($detailRange)
@@ -182,7 +182,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDetailCodeableConcept()
     {
@@ -190,7 +190,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
      * @return $this
      */
     public function setDetailCodeableConcept($detailCodeableConcept)
@@ -200,7 +200,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDetailString()
     {
@@ -208,7 +208,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $detailString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $detailString
      * @return $this
      */
     public function setDetailString($detailString)
@@ -218,7 +218,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDetailBoolean()
     {
@@ -226,7 +226,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $detailBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $detailBoolean
      * @return $this
      */
     public function setDetailBoolean($detailBoolean)
@@ -236,7 +236,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getDetailInteger()
     {
@@ -244,7 +244,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $detailInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $detailInteger
      * @return $this
      */
     public function setDetailInteger($detailInteger)
@@ -254,7 +254,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getDetailRatio()
     {
@@ -262,7 +262,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $detailRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $detailRatio
      * @return $this
      */
     public function setDetailRatio($detailRatio)
@@ -272,7 +272,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getDueDate()
     {
@@ -280,7 +280,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $dueDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $dueDate
      * @return $this
      */
     public function setDueDate($dueDate)
@@ -290,7 +290,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDueDuration()
     {
@@ -298,7 +298,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
      * @return $this
      */
     public function setDueDuration($dueDuration)

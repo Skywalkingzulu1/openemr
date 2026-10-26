@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Upgrade an already-installed openemr tarball to a newer version.
+# Upgrade an already-installed DCL tarball to a newer version.
 #
 # Prerequisite: tests/Acceptance/bin/boot-package.sh <from-version> was
 # run first (so <from> is installed with data). This script:
@@ -9,8 +9,8 @@
 #   2. Extracts it into a scratch dir
 #   3. Copies the <from> install's sites/ dir into the <to> extraction
 #      (preserves DB config + any installed modules — matches the wiki
-#      "Move openemr/ to openemr_bk/, extract new, copy sites/" flow)
-#   4. Swaps the compose bind mount from <from> to <to> (stops openemr
+#      "Move DCL/ to DCL_bk/, extract new, copy sites/" flow)
+#   4. Swaps the compose bind mount from <from> to <to> (stops DCL
 #      container, restarts with new TARBALL_DIR — mysql/volumes preserved)
 #   5. Runs sql_upgrade.php in CLI mode via `docker compose exec`,
 #      passing --from=<from> so the upgrade script knows which schema
@@ -52,8 +52,8 @@
 #     would delete the installed source, and downgrade isn't supported).
 #
 # After successful upgrade (default mode):
-#   Same URL:      http://localhost:8680  (openemr now serving <to>)
-#   Scratch dir:   /tmp/openemr-acceptance-<to>/  (bind-mount source)
+#   Same URL:      http://localhost:8680  (DCL now serving <to>)
+#   Scratch dir:   /tmp/DCL-acceptance-<to>/  (bind-mount source)
 
 set -euo pipefail
 
@@ -90,8 +90,8 @@ if [[ $# -ne 2 ]]; then
     echo "Usage: $0 [--skip-sql-upgrade] [--to-local-tarball=<path> | --to-local-zip=<path>] <from-version> <to-version>" >&2
     echo "  e.g.: $0 8.2.0 8.3.0" >&2
     echo "        $0 --skip-sql-upgrade 8.2.0 8.3.0" >&2
-    echo "        $0 --to-local-tarball=/tmp/openemr-8.3.0.tar.gz 8.2.0 8.3.0" >&2
-    echo "        $0 --to-local-zip=/tmp/openemr-8.3.0.zip 8.2.0 8.3.0" >&2
+    echo "        $0 --to-local-tarball=/tmp/DCL-8.3.0.tar.gz 8.2.0 8.3.0" >&2
+    echo "        $0 --to-local-zip=/tmp/DCL-8.3.0.zip 8.2.0 8.3.0" >&2
     exit 2
 fi
 
@@ -120,11 +120,11 @@ if [[ "${SMALLER}" != "${FROM_VERSION}" ]]; then
     exit 2
 fi
 
-FROM_TARBALL_DIR="/tmp/openemr-acceptance-${FROM_VERSION}"
-TO_TARBALL_DIR="/tmp/openemr-acceptance-${TO_VERSION}"
+FROM_TARBALL_DIR="/tmp/DCL-acceptance-${FROM_VERSION}"
+TO_TARBALL_DIR="/tmp/DCL-acceptance-${TO_VERSION}"
 
 TO_TAG_NAME="v${TO_VERSION//./_}"
-TO_TARBALL_URL="https://github.com/openemr/openemr/releases/download/${TO_TAG_NAME}/openemr-${TO_VERSION}.tar.gz"
+TO_TARBALL_URL="https://github.com/DCL/DCL/releases/download/${TO_TAG_NAME}/DCL-${TO_VERSION}.tar.gz"
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../../.." &>/dev/null && pwd)"
@@ -134,7 +134,7 @@ source "${SCRIPT_DIR}/lib/extract-zip.sh"
 
 export HELPER_PATH="${SCRIPT_DIR}/install-helper.php"
 export COMPOSE_FILE="${REPO_ROOT}/.github/docker/acceptance-package-compose.yml"
-export COMPOSE_PROJECT_NAME="openemr-acceptance-package"
+export COMPOSE_PROJECT_NAME="DCL-acceptance-package"
 
 if [[ -n "${to_local_tarball}" ]]; then
     # Local-tarball mode: caller-supplied file, no network fetch.
@@ -159,7 +159,7 @@ elif [[ -n "${to_local_zip}" ]]; then
     # No trap cleanup — the caller owns this file.
 else
     # mktemp for the download path (same rationale as boot-package.sh).
-    ARTIFACT_PATH="$(mktemp -t "openemr-acceptance-upgrade-tarball.XXXXXX.tar.gz")"
+    ARTIFACT_PATH="$(mktemp -t "DCL-acceptance-upgrade-tarball.XXXXXX.tar.gz")"
     ARTIFACT_FORMAT="tar"
     trap 'rm -f "${ARTIFACT_PATH}"' EXIT
 fi
@@ -193,7 +193,7 @@ export TARBALL_DIR="${FROM_TARBALL_DIR}"
 # substitution's non-zero exit is masked by the outer chown.
 RUNNER_UID="$(id -u)"
 RUNNER_GID="$(id -g)"
-docker compose exec -T openemr chown -R "${RUNNER_UID}:${RUNNER_GID}" /var/www/localhost/htdocs/openemr/sites
+docker compose exec -T DCL chown -R "${RUNNER_UID}:${RUNNER_GID}" /var/www/localhost/htdocs/DCL/sites
 
 echo "==> Preparing scratch dir at ${TO_TARBALL_DIR}"
 rm -rf "${TO_TARBALL_DIR}"
@@ -223,7 +223,7 @@ case "${ARTIFACT_FORMAT}" in
         extract_zip_flattening_single_top_level_dir \
             "${ARTIFACT_PATH}" \
             "${TO_TARBALL_DIR}" \
-            "openemr-acceptance-upgrade-zip.XXXXXX" \
+            "DCL-acceptance-upgrade-zip.XXXXXX" \
             "--to-local-zip / zip extraction"
         ;;
     *)
@@ -233,24 +233,24 @@ case "${ARTIFACT_FORMAT}" in
 esac
 
 echo "==> Overlaying ${FROM_VERSION}'s sites/ dir onto ${TO_VERSION} extraction"
-# Matches the wiki "Copy the old OpenEMR sites/ to the new OpenEMR at
-# openemr/sites/" step — preserves site config + document paths + any
+# Matches the wiki "Copy the old DCL sites/ to the new DCL at
+# DCL/sites/" step — preserves site config + document paths + any
 # per-site customization the from-install accumulated.
 rm -rf "${TO_TARBALL_DIR}/sites"
 cp -a "${FROM_TARBALL_DIR}/sites" "${TO_TARBALL_DIR}/sites"
 
-echo "==> Stopping openemr container (mysql + volumes preserved)"
+echo "==> Stopping DCL container (mysql + volumes preserved)"
 export TARBALL_DIR="${FROM_TARBALL_DIR}"
-docker compose stop openemr
+docker compose stop DCL
 
-echo "==> Re-creating openemr container with ${TO_VERSION} bind mount"
+echo "==> Re-creating DCL container with ${TO_VERSION} bind mount"
 export TARBALL_DIR="${TO_TARBALL_DIR}"
-docker compose up --detach --force-recreate --no-deps openemr
+docker compose up --detach --force-recreate --no-deps DCL
 
 if [[ "${skip_sql_upgrade}" == "true" ]]; then
     echo "==> Skipping sql_upgrade.php CLI (--skip-sql-upgrade set)"
     echo "==> Waiting for apache to serve /sql_upgrade.php (proxy for 'container up')"
-    # No healthcheck wait: the compose openemr healthcheck asserts the
+    # No healthcheck wait: the compose DCL healthcheck asserts the
     # post-install login-page redirect target, which the pre-upgrade
     # state still meets (sqlconf.php $config=1 from the from-version
     # install), but the DB schema hasn't migrated. Instead poll
@@ -287,25 +287,25 @@ echo "==> Running sql_upgrade.php CLI mode (--from=${FROM_VERSION})"
 # with --from=<version> passed on the argv, bypassing the HTTP form.
 # Runs as apache (RootCliGuard rejects UID 0). --from value already
 # validated at script entry — safe to interpolate into the su command.
-docker compose exec -T openemr \
+docker compose exec -T DCL \
     su -s /bin/sh apache -c \
-    "php /var/www/localhost/htdocs/openemr/sql_upgrade.php --from=${FROM_VERSION}"
+    "php /var/www/localhost/htdocs/DCL/sql_upgrade.php --from=${FROM_VERSION}"
 
-echo "==> Waiting for openemr container to become healthy post-upgrade"
+echo "==> Waiting for DCL container to become healthy post-upgrade"
 for attempt in $(seq 1 60); do
-    HEALTH="$(docker compose ps openemr --format '{{.Health}}' 2>/dev/null || echo unknown)"
+    HEALTH="$(docker compose ps DCL --format '{{.Health}}' 2>/dev/null || echo unknown)"
     if [[ "${HEALTH}" == "healthy" ]]; then
-        echo "    openemr healthy"
+        echo "    DCL healthy"
         break
     fi
     if [[ "${attempt}" -eq 60 ]]; then
-        echo "::error::openemr did not become healthy post-upgrade within 300s (last status: ${HEALTH})" >&2
+        echo "::error::DCL did not become healthy post-upgrade within 300s (last status: ${HEALTH})" >&2
         exit 1
     fi
     sleep 5
 done
 
-# Post-upgrade DB version assertion (openemr/openemr#13634).
+# Post-upgrade DB version assertion (DCL/DCL#13634).
 # sql_upgrade.php bumps the `version` row as its final step, so a
 # successful upgrade leaves DB matching the to-side tarball's
 # version.php. Catches the exact bug class fixed in #13586/#13587
@@ -324,23 +324,23 @@ done
 # (99.99.99 default). TO_VERSION as fallback keeps this script usable
 # standalone (dev-time upgrade without the workflow's env-plumbing)
 # and on the shipped-tarball path where label == actual anyway. See
-# openemr/openemr#13753 for the full failure trace when the two
+# DCL/DCL#13753 for the full failure trace when the two
 # diverged.
 # `mariadb` (not `mysql`) — the mariadb 11.8 image ships only the
 # `mariadb` client binary; `mysql` is not on $PATH.
 EXPECTED="${ACCEPTANCE_EXPECTED_VERSION:-${TO_VERSION}}"
 echo "==> Asserting DB version matches ${EXPECTED}"
 DB_VERSION="$(docker compose exec -T mysql \
-    mariadb -uroot -proot openemr -sN \
+    mariadb -uroot -proot DCL -sN \
     -e "SELECT CONCAT(v_major,'.',v_minor,'.',v_patch) FROM version" \
     2>/dev/null || echo "query-failed")"
 if [[ "${DB_VERSION}" != "${EXPECTED}" ]]; then
-    echo "::error::post-upgrade DB version '${DB_VERSION}' does not match expected '${EXPECTED}' (see openemr/openemr#13634)" >&2
+    echo "::error::post-upgrade DB version '${DB_VERSION}' does not match expected '${EXPECTED}' (see DCL/DCL#13634)" >&2
     exit 1
 fi
 echo "    DB version=${DB_VERSION}"
 
-# Post-upgrade ACL assertion (openemr/openemr#14706). Installs from 8.2.0
+# Post-upgrade ACL assertion (DCL/DCL#14706). Installs from 8.2.0
 # on hold two Clinicians 'write' ACLs, and the ACL admin screens edit only
 # the first, so acl_upgrade.php merges them. Exactly one must remain, and
 # it must keep patients/med and patients/appt, which came from different
@@ -349,8 +349,8 @@ echo "    DB version=${DB_VERSION}"
 assert_single_clinicians_write_acl() {
     local sql row acl_count med appt
     echo '==> Asserting Clinicians hold one write ACL with both merged halves'
-    if ! docker compose exec -T openemr \
-        test -f /var/www/localhost/htdocs/openemr/src/Common/Acl/DuplicateAclMerger.php; then
+    if ! docker compose exec -T DCL \
+        test -f /var/www/localhost/htdocs/DCL/src/Common/Acl/DuplicateAclMerger.php; then
         echo '    Skipped: target package predates the Clinicians ACL merge'
         return 0
     fi
@@ -367,11 +367,11 @@ WHERE g.name = 'Clinicians' AND a.return_value = 'write'
 SQL
 )"
     row="$(docker compose exec -T mysql \
-        mariadb -uroot -proot openemr -sN -e "${sql}" \
+        mariadb -uroot -proot DCL -sN -e "${sql}" \
         2>/dev/null || echo 'query-failed')"
     read -r acl_count med appt <<< "${row}"
     if [[ "${acl_count}" != 1 || "${med}" != 1 || "${appt}" != 1 ]]; then
-        printf '::error::expected one Clinicians write ACL holding patients/med and patients/appt; got ACLs=%s med=%s appt=%s (see openemr/openemr#14706)\n' \
+        printf '::error::expected one Clinicians write ACL holding patients/med and patients/appt; got ACLs=%s med=%s appt=%s (see DCL/DCL#14706)\n' \
             "${acl_count}" "${med:-}" "${appt:-}" >&2
         exit 1
     fi

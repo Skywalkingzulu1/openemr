@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -70,18 +70,18 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $characteristicCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $characteristicQuantity = null;
 
     /**
      * The specific characteristic (e.g. height, weight, gender, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $value = [];
 
@@ -91,7 +91,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
     private $_fhirElementName = 'MedicationKnowledge.PatientCharacteristics';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCharacteristicCodeableConcept()
     {
@@ -99,7 +99,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $characteristicCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $characteristicCodeableConcept
      * @return $this
      */
     public function setCharacteristicCodeableConcept($characteristicCodeableConcept)
@@ -109,7 +109,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getCharacteristicQuantity()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $characteristicQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $characteristicQuantity
      * @return $this
      */
     public function setCharacteristicQuantity($characteristicQuantity)
@@ -128,7 +128,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
 
     /**
      * The specific characteristic (e.g. height, weight, gender, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getValue()
     {
@@ -137,7 +137,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement 
 
     /**
      * The specific characteristic (e.g. height, weight, gender, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function addValue($value)

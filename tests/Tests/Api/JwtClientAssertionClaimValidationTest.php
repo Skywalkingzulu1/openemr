@@ -13,16 +13,16 @@
  * off the JWT sub claim, so sub and clientId are equal by
  * construction by the time performAdditionalValidations runs.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use DateTimeImmutable;
 use GuzzleHttp\Client;
@@ -31,7 +31,7 @@ use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Key;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa\Sha384;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
@@ -49,10 +49,10 @@ class JwtClientAssertionClaimValidationTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -267,8 +267,8 @@ class JwtClientAssertionClaimValidationTest extends TestCase
         $http = $this->buildClient();
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
         $jwks = json_decode((string) file_get_contents($keyLocation . 'jwk-public-valid.json'));
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
 
         $reg = $http->post($this->baseUrl . '/oauth2/default/registration', [
             'headers' => ['Content-Type' => 'application/json'],

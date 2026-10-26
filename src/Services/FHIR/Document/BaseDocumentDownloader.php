@@ -3,18 +3,18 @@
 /**
  * BaseDocumentDownloader implements the IDocumentDownloader interface to download a Document object into an HTTP Response
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Document;
+namespace DCL\Services\FHIR\Document;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Http\StatusCode;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Http\StatusCode;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 

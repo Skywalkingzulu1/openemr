@@ -3,8 +3,8 @@
 /**
  * Standard API Routes
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -15,37 +15,37 @@
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Yash Raj Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\RestControllers\AllergyIntoleranceRestController;
-use OpenEMR\RestControllers\AppointmentRestController;
-use OpenEMR\RestControllers\BackgroundServiceRestController;
-use OpenEMR\RestControllers\ConditionRestController;
-// TODO: Remove this import when the OpenEMR\RestControllers\Config\RestConfig is no longer needed
-use OpenEMR\RestControllers\Config\RestConfig;
-use OpenEMR\RestControllers\DocumentRestController;
-use OpenEMR\RestControllers\DrugRestController;
-use OpenEMR\RestControllers\EmployerRestController;
-use OpenEMR\RestControllers\EncounterRestController;
-use OpenEMR\RestControllers\FacilityRestController;
-use OpenEMR\RestControllers\ImmunizationRestController;
-use OpenEMR\RestControllers\InsuranceCompanyRestController;
-use OpenEMR\RestControllers\InsuranceRestController;
-use OpenEMR\RestControllers\ListRestController;
-use OpenEMR\RestControllers\MessageRestController;
-use OpenEMR\RestControllers\PatientRestController;
-use OpenEMR\RestControllers\PractitionerRestController;
-use OpenEMR\RestControllers\PrescriptionRestController;
-use OpenEMR\RestControllers\ProcedureRestController;
-use OpenEMR\RestControllers\ProductRegistrationRestController;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\RestControllers\TransactionRestController;
-use OpenEMR\RestControllers\UserRestController;
-use OpenEMR\RestControllers\VersionRestController;
-use OpenEMR\Services\Search\SearchQueryConfig;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\RestControllers\AllergyIntoleranceRestController;
+use DCL\RestControllers\AppointmentRestController;
+use DCL\RestControllers\BackgroundServiceRestController;
+use DCL\RestControllers\ConditionRestController;
+// TODO: Remove this import when the DCL\RestControllers\Config\RestConfig is no longer needed
+use DCL\RestControllers\Config\RestConfig;
+use DCL\RestControllers\DocumentRestController;
+use DCL\RestControllers\DrugRestController;
+use DCL\RestControllers\EmployerRestController;
+use DCL\RestControllers\EncounterRestController;
+use DCL\RestControllers\FacilityRestController;
+use DCL\RestControllers\ImmunizationRestController;
+use DCL\RestControllers\InsuranceCompanyRestController;
+use DCL\RestControllers\InsuranceRestController;
+use DCL\RestControllers\ListRestController;
+use DCL\RestControllers\MessageRestController;
+use DCL\RestControllers\PatientRestController;
+use DCL\RestControllers\PractitionerRestController;
+use DCL\RestControllers\PrescriptionRestController;
+use DCL\RestControllers\ProcedureRestController;
+use DCL\RestControllers\ProductRegistrationRestController;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\RestControllers\TransactionRestController;
+use DCL\RestControllers\UserRestController;
+use DCL\RestControllers\VersionRestController;
+use DCL\Services\Search\SearchQueryConfig;
 
 return [
     "GET /api/facility" => function (HttpRestRequest $request) {

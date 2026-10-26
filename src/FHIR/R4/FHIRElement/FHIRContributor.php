@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A contributor to the content of a knowledge asset, including authors, editors, reviewers, and endorsers.
@@ -72,19 +72,19 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
 {
     /**
      * The type of contributor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContributorType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContributorType
      */
     public $type = null;
 
     /**
      * The name of the individual or organization responsible for the contribution.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the contributor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
@@ -95,7 +95,7 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of contributor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContributorType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContributorType
      */
     public function getType()
     {
@@ -104,7 +104,7 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of contributor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContributorType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContributorType $type
      * @return $this
      */
     public function setType($type)
@@ -115,7 +115,7 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the individual or organization responsible for the contribution.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -124,7 +124,7 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the individual or organization responsible for the contribution.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -135,7 +135,7 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the contributor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -144,7 +144,7 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the contributor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)

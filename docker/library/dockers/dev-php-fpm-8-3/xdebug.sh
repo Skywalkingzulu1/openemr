@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR dev-php-fpm XDebug Configuration Script
+# DCL dev-php-fpm XDebug Configuration Script
 # ============================================================================
 # This script configures XDebug for PHP debugging, profiling, and coverage.
 # Compatible with Debian-based php-fpm images using install-php-extensions.

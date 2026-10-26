@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
+namespace DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -71,55 +71,55 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 {
     /**
      * The type of enteral or infant formula such as an adult standard formula with fiber or a soy-based infant formula.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $baseFormulaType = null;
 
     /**
      * The product or brand name of the enteral or infant formula product such as "ACME Adult Standard Formula".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $baseFormulaProductName = null;
 
     /**
      * Indicates the type of modular component such as protein, carbohydrate, fat or fiber to be provided in addition to or mixed with the base formula.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $additiveType = null;
 
     /**
      * The product or brand name of the type of modular component to be added to the formula.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $additiveProductName = null;
 
     /**
      * The amount of energy (calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 calories per fluid ounce or an adult may require an enteral formula that provides 1.5 calorie/mL.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $caloricDensity = null;
 
     /**
      * The route or physiological path of administration into the patient's gastrointestinal  tract for purposes of providing the formula feeding, e.g. nasogastric tube.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $routeofAdministration = null;
 
     /**
      * Formula administration instructions as structured data.  This repeating structure allows for changing the administration rate or volume over time for both bolus and continuous feeding.  An example of this would be an instruction to increase the rate of continuous feeding every 2 hours.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
      */
     public $administration = [];
 
     /**
      * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $maxVolumeToDeliver = null;
 
     /**
      * Free text formula administration, feeding instructions or additional instructions or information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $administrationInstruction = null;
 
@@ -130,7 +130,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The type of enteral or infant formula such as an adult standard formula with fiber or a soy-based infant formula.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getBaseFormulaType()
     {
@@ -139,7 +139,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The type of enteral or infant formula such as an adult standard formula with fiber or a soy-based infant formula.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $baseFormulaType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $baseFormulaType
      * @return $this
      */
     public function setBaseFormulaType($baseFormulaType)
@@ -150,7 +150,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The product or brand name of the enteral or infant formula product such as "ACME Adult Standard Formula".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getBaseFormulaProductName()
     {
@@ -159,7 +159,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The product or brand name of the enteral or infant formula product such as "ACME Adult Standard Formula".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $baseFormulaProductName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $baseFormulaProductName
      * @return $this
      */
     public function setBaseFormulaProductName($baseFormulaProductName)
@@ -170,7 +170,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * Indicates the type of modular component such as protein, carbohydrate, fat or fiber to be provided in addition to or mixed with the base formula.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAdditiveType()
     {
@@ -179,7 +179,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * Indicates the type of modular component such as protein, carbohydrate, fat or fiber to be provided in addition to or mixed with the base formula.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $additiveType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $additiveType
      * @return $this
      */
     public function setAdditiveType($additiveType)
@@ -190,7 +190,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The product or brand name of the type of modular component to be added to the formula.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAdditiveProductName()
     {
@@ -199,7 +199,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The product or brand name of the type of modular component to be added to the formula.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $additiveProductName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $additiveProductName
      * @return $this
      */
     public function setAdditiveProductName($additiveProductName)
@@ -210,7 +210,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The amount of energy (calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 calories per fluid ounce or an adult may require an enteral formula that provides 1.5 calorie/mL.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getCaloricDensity()
     {
@@ -219,7 +219,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The amount of energy (calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 calories per fluid ounce or an adult may require an enteral formula that provides 1.5 calorie/mL.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $caloricDensity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $caloricDensity
      * @return $this
      */
     public function setCaloricDensity($caloricDensity)
@@ -230,7 +230,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The route or physiological path of administration into the patient's gastrointestinal  tract for purposes of providing the formula feeding, e.g. nasogastric tube.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRouteofAdministration()
     {
@@ -239,7 +239,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The route or physiological path of administration into the patient's gastrointestinal  tract for purposes of providing the formula feeding, e.g. nasogastric tube.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $routeofAdministration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $routeofAdministration
      * @return $this
      */
     public function setRouteofAdministration($routeofAdministration)
@@ -250,7 +250,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * Formula administration instructions as structured data.  This repeating structure allows for changing the administration rate or volume over time for both bolus and continuous feeding.  An example of this would be an instruction to increase the rate of continuous feeding every 2 hours.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
      */
     public function getAdministration()
     {
@@ -259,7 +259,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * Formula administration instructions as structured data.  This repeating structure allows for changing the administration rate or volume over time for both bolus and continuous feeding.  An example of this would be an instruction to increase the rate of continuous feeding every 2 hours.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration $administration
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration $administration
      * @return $this
      */
     public function addAdministration($administration)
@@ -270,7 +270,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMaxVolumeToDeliver()
     {
@@ -279,7 +279,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $maxVolumeToDeliver
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $maxVolumeToDeliver
      * @return $this
      */
     public function setMaxVolumeToDeliver($maxVolumeToDeliver)
@@ -290,7 +290,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * Free text formula administration, feeding instructions or additional instructions or information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAdministrationInstruction()
     {
@@ -299,7 +299,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
 
     /**
      * Free text formula administration, feeding instructions or additional instructions or information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $administrationInstruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $administrationInstruction
      * @return $this
      */
     public function setAdministrationInstruction($administrationInstruction)

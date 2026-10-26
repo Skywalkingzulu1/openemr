@@ -1,7 +1,7 @@
 {
-  "name": "openemr-interface",
+  "name": "DCL-interface",
   "version": "0.2.0",
-  "description": "UI toolkit, theme and component library for OpenEMR",
+  "description": "UI toolkit, theme and component library for DCL",
   "main": "index.js",
   "scripts": {
     "postinstall": "napa && node scripts/install-assets.js",
@@ -21,7 +21,7 @@
     "stylelint-fix": "npm run stylelint -- --fix"
   },
   "keywords": [
-    "openemr"
+    "DCL"
   ],
   "author": "d3sandoval",
   "license": "GNU GPL",

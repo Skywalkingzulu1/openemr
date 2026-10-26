@@ -1,19 +1,19 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Tests\Api\ApiTestClient;
-use OpenEMR\Tests\Fixtures\PractitionerFixtureManager;
+use DCL\Tests\Api\ApiTestClient;
+use DCL\Tests\Fixtures\PractitionerFixtureManager;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Practitioner API Endpoint Test Cases.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class PractitionerApiTest extends TestCase
 {
@@ -26,9 +26,9 @@ class PractitionerApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-            $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+            $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new PractitionerFixtureManager();
         /** @var array<string, mixed> $fixture */

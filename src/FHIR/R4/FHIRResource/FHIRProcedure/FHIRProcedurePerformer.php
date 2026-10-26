@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure;
+namespace DCL\FHIR\R4\FHIRResource\FHIRProcedure;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.
@@ -71,19 +71,19 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Distinguishes the type of involvement of the performer in the procedure. For example, surgeon, anaesthetist, endoscopist.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $function = null;
 
     /**
      * The practitioner who was involved in the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
     /**
      * The organization the device or practitioner was acting on behalf of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $onBehalfOf = null;
 
@@ -94,7 +94,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Distinguishes the type of involvement of the performer in the procedure. For example, surgeon, anaesthetist, endoscopist.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFunction()
     {
@@ -103,7 +103,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Distinguishes the type of involvement of the performer in the procedure. For example, surgeon, anaesthetist, endoscopist.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
      * @return $this
      */
     public function setFunction($function)
@@ -114,7 +114,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The practitioner who was involved in the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -123,7 +123,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The practitioner who was involved in the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)
@@ -134,7 +134,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The organization the device or practitioner was acting on behalf of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf()
     {
@@ -143,7 +143,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The organization the device or practitioner was acting on behalf of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
      * @return $this
      */
     public function setOnBehalfOf($onBehalfOf)

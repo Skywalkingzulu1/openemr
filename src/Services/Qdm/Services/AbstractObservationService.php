@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2022 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm\Services;
+namespace DCL\Services\Qdm\Services;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\{
+use DCL\Cqm\Qdm\BaseTypes\{
     DateTime,
     Interval
 };
-use OpenEMR\Services\Qdm\Interfaces\QdmServiceInterface;
-use OpenEMR\Services\Qdm\QdmRecord;
+use DCL\Services\Qdm\Interfaces\QdmServiceInterface;
+use DCL\Services\Qdm\QdmRecord;
 
 abstract class AbstractObservationService extends AbstractQdmService implements QdmServiceInterface
 {
@@ -33,7 +33,7 @@ abstract class AbstractObservationService extends AbstractQdmService implements 
     abstract public function getModelClass();
 
     /**
-     * Return the SQL query string that will retrieve these record types from the OpenEMR database
+     * Return the SQL query string that will retrieve these record types from the DCL database
      *
      * @return string
      */
@@ -82,7 +82,7 @@ abstract class AbstractObservationService extends AbstractQdmService implements 
      * @return mixed
      * @throws \Exception
      *
-     * Map an OpenEMR record into a QDM model
+     * Map an DCL record into a QDM model
      */
     public function makeQdmModel(QdmRecord $recordObj)
     {

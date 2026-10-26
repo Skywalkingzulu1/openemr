@@ -8,18 +8,18 @@
  * the 400 responses for unsupported parameters and invalid values that the
  * controller allowlists and the hardened SearchFieldStatementResolver provide.
  *
- * Runs in the api test suite (requires a running OpenEMR instance; set
- * OPENEMR_BASE_URL_API when the instance is not at https://localhost).
+ * Runs in the api test suite (requires a running DCL instance; set
+ * DCL_BASE_URL_API when the instance is not at https://localhost).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\InsuranceCompanyService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\InsuranceCompanyService;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -37,9 +37,9 @@ class InsuranceEmployerSearchApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->client = new ApiTestClient($baseUrl, false);
-        $this->client->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->client->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
         $this->companyService = new InsuranceCompanyService();
         // unique per run so searches only match rows this test created
         $this->namePrefix = "test-fixture-ApiSearch-" . uniqid();

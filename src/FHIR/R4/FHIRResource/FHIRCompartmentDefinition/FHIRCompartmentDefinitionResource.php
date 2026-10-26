@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCompartmentDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCompartmentDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCompartmentDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A compartment definition that defines how resources are accessed on a server.
@@ -71,19 +71,19 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 {
     /**
      * The name of a resource supported by the server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $param = [];
 
     /**
      * Additional documentation about the resource and compartment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentation = null;
 
@@ -94,7 +94,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a resource supported by the server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -103,7 +103,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a resource supported by the server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -114,7 +114,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getParam()
     {
@@ -123,7 +123,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $param
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $param
      * @return $this
      */
     public function addParam($param)
@@ -134,7 +134,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * Additional documentation about the resource and compartment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
@@ -143,7 +143,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * Additional documentation about the resource and compartment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentation
      * @return $this
      */
     public function setDocumentation($documentation)

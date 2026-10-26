@@ -3,15 +3,15 @@
 /**
  * PortalPatientController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2022 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\PortalPatientAccessGuard;
-use OpenEMR\Common\Session\PortalSessionPidGuard;
+use DCL\Common\Session\PortalPatientAccessGuard;
+use DCL\Common\Session\PortalSessionPidGuard;
 
 /**
  * PatientController is the controller class for the Patient object.

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,19 +71,19 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 {
     /**
      * Information about the specific installation that this capability statement relates to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $url = null;
 
     /**
      * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $custodian = null;
 
@@ -94,7 +94,7 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 
     /**
      * Information about the specific installation that this capability statement relates to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -103,7 +103,7 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 
     /**
      * Information about the specific installation that this capability statement relates to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -114,7 +114,7 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 
     /**
      * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getUrl()
     {
@@ -123,7 +123,7 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 
     /**
      * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $url
      * @return $this
      */
     public function setUrl($url)
@@ -134,7 +134,7 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 
     /**
      * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCustodian()
     {
@@ -143,7 +143,7 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement implemen
 
     /**
      * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $custodian
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $custodian
      * @return $this
      */
     public function setCustodian($custodian)

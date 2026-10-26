@@ -23,22 +23,22 @@
  * compared, not timestamps, because
  * the import's revise-and-approve path writes the date in another form.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    anun333 <anun333@posteo.net>
  * @copyright Copyright (c) 2026 anun333 <anun333@posteo.net>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Qdm\Services;
+namespace DCL\Services\Qdm\Services;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\DateTime;
-use OpenEMR\Cqm\Qdm\BaseTypes\Quantity;
-use OpenEMR\Cqm\Qdm\PhysicalExamPerformed;
-use OpenEMR\Services\Qdm\Interfaces\QdmServiceInterface;
-use OpenEMR\Services\Qdm\QdmRecord;
+use DCL\Cqm\Qdm\BaseTypes\DateTime;
+use DCL\Cqm\Qdm\BaseTypes\Quantity;
+use DCL\Cqm\Qdm\PhysicalExamPerformed;
+use DCL\Services\Qdm\Interfaces\QdmServiceInterface;
+use DCL\Services\Qdm\QdmRecord;
 
 class VitalSignsService extends AbstractQdmService implements QdmServiceInterface
 {

@@ -1,5 +1,5 @@
 --
--- Database: `openemr`
+-- Database: `DCL`
 --
 -- Keep v_database in sync with $v_database in version.php.
 -- CI will fail if they don't match.
@@ -171,9 +171,9 @@ CREATE TABLE `audit_master` (
 DROP TABLE IF EXISTS `audit_details`;
 CREATE TABLE `audit_details` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-  `table_name` VARCHAR(100) NOT NULL COMMENT 'openemr table name',
-  `field_name` VARCHAR(100) NOT NULL COMMENT 'openemr table''s field name',
-  `field_value` LONGTEXT COMMENT 'openemr table''s field value',
+  `table_name` VARCHAR(100) NOT NULL COMMENT 'DCL table name',
+  `field_name` VARCHAR(100) NOT NULL COMMENT 'DCL table''s field name',
+  `field_value` LONGTEXT COMMENT 'DCL table''s field value',
   `audit_master_id` BIGINT(20) NOT NULL COMMENT 'Id of the audit_master table',
   `entry_identification` VARCHAR(255) NOT NULL DEFAULT '1' COMMENT 'Used when multiple entry occurs from the same table.1 means no multiple entry',
   PRIMARY KEY (`id`),
@@ -197,7 +197,7 @@ CREATE TABLE `background_services` (
   `function` varchar(127) NOT NULL COMMENT 'name of background service function',
   `require_once` varchar(255) default NULL COMMENT 'include file (if necessary)',
   `sort_order` int(11) NOT NULL default '100' COMMENT 'lower numbers will be run first',
-  `lock_expires_at` datetime DEFAULT NULL COMMENT 'Lease expiration. Compared with NOW() on acquire, so the stored value uses whatever session timezone is in effect (OpenEMR syncs it to gbl_time_zone). Set on acquire, cleared on release. Expired leases are automatically stolen by the next worker.',
+  `lock_expires_at` datetime DEFAULT NULL COMMENT 'Lease expiration. Compared with NOW() on acquire, so the stored value uses whatever session timezone is in effect (DCL syncs it to gbl_time_zone). Set on acquire, cleared on release. Expired leases are automatically stolen by the next worker.',
   PRIMARY KEY  (`name`)
 ) ENGINE=InnoDB;
 
@@ -1719,13 +1719,13 @@ CREATE TABLE `employer_data` (
 -- Table structure for table `enc_category_map`
 --
 --   Mapping of rule encounter categories to category ids
---   from the event category in openemr_postcalendar_categories
+--   from the event category in DCL_postcalendar_categories
 --
 
 DROP TABLE IF EXISTS `enc_category_map`;
 CREATE TABLE `enc_category_map` (
   `rule_enc_id` varchar(31) NOT NULL DEFAULT '' COMMENT 'encounter id from rule_enc_types list in list_options',
-  `main_cat_id` int(11) NOT NULL DEFAULT 0 COMMENT 'category id from event category in openemr_postcalendar_categories',
+  `main_cat_id` int(11) NOT NULL DEFAULT 0 COMMENT 'category id from event category in DCL_postcalendar_categories',
   KEY  (`rule_enc_id`,`main_cat_id`)
 ) ENGINE=InnoDB;
 
@@ -2035,7 +2035,7 @@ CREATE TABLE `form_encounter` (
   `onset_date` datetime default NULL,
   `sensitivity` varchar(30) default NULL,
   `billing_note` text,
-  `pc_catid` int(11) NOT NULL default '5' COMMENT 'event category from openemr_postcalendar_categories',
+  `pc_catid` int(11) NOT NULL default '5' COMMENT 'event category from DCL_postcalendar_categories',
   `last_level_billed` int  NOT NULL DEFAULT 0 COMMENT '0=none, 1=ins1, 2=ins2, etc',
   `last_level_closed` int  NOT NULL DEFAULT 0 COMMENT '0=none, 1=ins1, 2=ins2, etc',
   `last_stmt_date`    date DEFAULT NULL,
@@ -5757,7 +5757,7 @@ INSERT INTO list_options (`list_id`, `option_id`, `title`, `activity`)  VALUES (
 -- Sample Apps (Disabled)
 
 INSERT INTO list_options (list_id,option_id,title) VALUES ('lists','apps','Apps');
-INSERT INTO list_options (list_id,option_id,title,seq,is_default,activity) VALUES ('apps','*OpenEMR','main/main_screen.php',10,1,0);
+INSERT INTO list_options (list_id,option_id,title,seq,is_default,activity) VALUES ('apps','*DCL','main/main_screen.php',10,1,0);
 INSERT INTO list_options (list_id,option_id,title,seq,is_default,activity) VALUES ('apps','Calendar','main/calendar/index.php',20,0,0);
 INSERT INTO list_options (list_id,option_id,title,seq,is_default,activity) VALUES ('apps','oeSignerRemote','./../portal/sign/assets/signit.php',30,0,0);
 
@@ -7713,7 +7713,7 @@ CREATE TABLE `lists` (
   `reaction` varchar(255) NOT NULL DEFAULT '',
   `verification` VARCHAR(36) NOT NULL DEFAULT '' COMMENT 'Reference to list_options option_id = allergyintolerance-verification',
   `external_allergyid` INT(11) DEFAULT NULL,
-  `erx_source` ENUM('0','1') DEFAULT '0' NOT NULL  COMMENT '0-OpenEMR 1-External',
+  `erx_source` ENUM('0','1') DEFAULT '0' NOT NULL  COMMENT '0-DCL 1-External',
   `erx_uploaded` ENUM('0','1') DEFAULT '0' NOT NULL  COMMENT '0-Pending NewCrop upload 1-Uploaded TO NewCrop',
   `modifydate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `severity_al` VARCHAR( 50 ) DEFAULT NULL,
@@ -8130,11 +8130,11 @@ CREATE TABLE `onsite_signatures` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `openemr_module_vars`
+-- Table structure for table `DCL_module_vars`
 --
 
-DROP TABLE IF EXISTS `openemr_module_vars`;
-CREATE TABLE `openemr_module_vars` (
+DROP TABLE IF EXISTS `DCL_module_vars`;
+CREATE TABLE `DCL_module_vars` (
   `pn_id` int(11) unsigned NOT NULL auto_increment,
   `pn_modname` varchar(64) default NULL,
   `pn_name` varchar(64) default NULL,
@@ -8145,37 +8145,37 @@ CREATE TABLE `openemr_module_vars` (
 ) ENGINE=InnoDB AUTO_INCREMENT=235;
 
 --
--- Inserting data for table `openemr_module_vars`
+-- Inserting data for table `DCL_module_vars`
 --
 
-INSERT INTO `openemr_module_vars` VALUES (234, 'PostCalendar', 'pcNotifyEmail', '');
-INSERT INTO `openemr_module_vars` VALUES (233, 'PostCalendar', 'pcNotifyAdmin', '0');
-INSERT INTO `openemr_module_vars` VALUES (232, 'PostCalendar', 'pcCacheLifetime', '3600');
-INSERT INTO `openemr_module_vars` VALUES (231, 'PostCalendar', 'pcUseCache', '0');
-INSERT INTO `openemr_module_vars` VALUES (230, 'PostCalendar', 'pcDefaultView', 'day');
-INSERT INTO `openemr_module_vars` VALUES (229, 'PostCalendar', 'pcTimeIncrement', '5');
-INSERT INTO `openemr_module_vars` VALUES (228, 'PostCalendar', 'pcAllowUserCalendar', '1');
-INSERT INTO `openemr_module_vars` VALUES (227, 'PostCalendar', 'pcAllowSiteWide', '1');
-INSERT INTO `openemr_module_vars` VALUES (226, 'PostCalendar', 'pcTemplate', 'default');
-INSERT INTO `openemr_module_vars` VALUES (225, 'PostCalendar', 'pcEventDateFormat', '%Y-%m-%d');
-INSERT INTO `openemr_module_vars` VALUES (224, 'PostCalendar', 'pcDisplayTopics', '0');
-INSERT INTO `openemr_module_vars` VALUES (223, 'PostCalendar', 'pcListHowManyEvents', '15');
-INSERT INTO `openemr_module_vars` VALUES (222, 'PostCalendar', 'pcAllowDirectSubmit', '1');
-INSERT INTO `openemr_module_vars` VALUES (221, 'PostCalendar', 'pcUsePopups', '0');
-INSERT INTO `openemr_module_vars` VALUES (220, 'PostCalendar', 'pcDayHighlightColor', '#EEEEEE');
-INSERT INTO `openemr_module_vars` VALUES (219, 'PostCalendar', 'pcFirstDayOfWeek', '1');
-INSERT INTO `openemr_module_vars` VALUES (218, 'PostCalendar', 'pcUseInternationalDates', '0');
-INSERT INTO `openemr_module_vars` VALUES (217, 'PostCalendar', 'pcEventsOpenInNewWindow', '0');
-INSERT INTO `openemr_module_vars` VALUES (216, 'PostCalendar', 'pcTime24Hours', '0');
+INSERT INTO `DCL_module_vars` VALUES (234, 'PostCalendar', 'pcNotifyEmail', '');
+INSERT INTO `DCL_module_vars` VALUES (233, 'PostCalendar', 'pcNotifyAdmin', '0');
+INSERT INTO `DCL_module_vars` VALUES (232, 'PostCalendar', 'pcCacheLifetime', '3600');
+INSERT INTO `DCL_module_vars` VALUES (231, 'PostCalendar', 'pcUseCache', '0');
+INSERT INTO `DCL_module_vars` VALUES (230, 'PostCalendar', 'pcDefaultView', 'day');
+INSERT INTO `DCL_module_vars` VALUES (229, 'PostCalendar', 'pcTimeIncrement', '5');
+INSERT INTO `DCL_module_vars` VALUES (228, 'PostCalendar', 'pcAllowUserCalendar', '1');
+INSERT INTO `DCL_module_vars` VALUES (227, 'PostCalendar', 'pcAllowSiteWide', '1');
+INSERT INTO `DCL_module_vars` VALUES (226, 'PostCalendar', 'pcTemplate', 'default');
+INSERT INTO `DCL_module_vars` VALUES (225, 'PostCalendar', 'pcEventDateFormat', '%Y-%m-%d');
+INSERT INTO `DCL_module_vars` VALUES (224, 'PostCalendar', 'pcDisplayTopics', '0');
+INSERT INTO `DCL_module_vars` VALUES (223, 'PostCalendar', 'pcListHowManyEvents', '15');
+INSERT INTO `DCL_module_vars` VALUES (222, 'PostCalendar', 'pcAllowDirectSubmit', '1');
+INSERT INTO `DCL_module_vars` VALUES (221, 'PostCalendar', 'pcUsePopups', '0');
+INSERT INTO `DCL_module_vars` VALUES (220, 'PostCalendar', 'pcDayHighlightColor', '#EEEEEE');
+INSERT INTO `DCL_module_vars` VALUES (219, 'PostCalendar', 'pcFirstDayOfWeek', '1');
+INSERT INTO `DCL_module_vars` VALUES (218, 'PostCalendar', 'pcUseInternationalDates', '0');
+INSERT INTO `DCL_module_vars` VALUES (217, 'PostCalendar', 'pcEventsOpenInNewWindow', '0');
+INSERT INTO `DCL_module_vars` VALUES (216, 'PostCalendar', 'pcTime24Hours', '0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `openemr_modules`
+-- Table structure for table `DCL_modules`
 --
 
-DROP TABLE IF EXISTS `openemr_modules`;
-CREATE TABLE `openemr_modules` (
+DROP TABLE IF EXISTS `DCL_modules`;
+CREATE TABLE `DCL_modules` (
   `pn_id` int(11) unsigned NOT NULL auto_increment,
   `pn_name` varchar(64) default NULL,
   `pn_type` int(6) NOT NULL default '0',
@@ -8191,19 +8191,19 @@ CREATE TABLE `openemr_modules` (
 ) ENGINE=InnoDB AUTO_INCREMENT=47;
 
 --
--- Inserting data for table `openemr_modules`
+-- Inserting data for table `DCL_modules`
 --
 
-INSERT INTO `openemr_modules` VALUES (46, 'PostCalendar', 2, 'PostCalendar', 'PostNuke Calendar Module', 0, 'PostCalendar', '4.0.0', 1, 1, 3);
+INSERT INTO `DCL_modules` VALUES (46, 'PostCalendar', 2, 'PostCalendar', 'PostNuke Calendar Module', 0, 'PostCalendar', '4.0.0', 1, 1, 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `openemr_postcalendar_categories`
+-- Table structure for table `DCL_postcalendar_categories`
 --
 
-DROP TABLE IF EXISTS `openemr_postcalendar_categories`;
-CREATE TABLE `openemr_postcalendar_categories` (
+DROP TABLE IF EXISTS `DCL_postcalendar_categories`;
+CREATE TABLE `DCL_postcalendar_categories` (
   `pc_catid` int(11) unsigned NOT NULL auto_increment,
   `pc_constant_id` VARCHAR (255) default NULL,
   `pc_catname` varchar(100) default NULL,
@@ -8230,49 +8230,49 @@ CREATE TABLE `openemr_postcalendar_categories` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11;
 
 --
--- Inserting data for table `openemr_postcalendar_categories`
+-- Inserting data for table `DCL_postcalendar_categories`
 --
 
 
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (1,'no_show', 'No Show', '#dee2e6', 'Reserved to define when an event did not occur as specified.', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 0, 0, 0, 0, 0, 0, 0,1,1,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (2,'in_office', 'In Office', '#cce5ff', 'Reserved todefine when a provider may haveavailable appointments after.', 1, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"1";s:22:"event_repeat_freq_type";s:1:"4";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 0, 1, 3, 2, 0, 0, 1,1,2,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (3,'out_of_office', 'Out Of Office', '#fdb172', 'Reserved to define when a provider may not have available appointments after.', 1, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"1";s:22:"event_repeat_freq_type";s:1:"4";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 0, 1, 3, 2, 0, 0, 1,1,3,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (4,'vacation', 'Vacation', '#e9ecef', 'Reserved for use to define Scheduled Vacation Time', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 0, 0, 0, 0, 1, 0, 1,1,4,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (5,'office_visit', 'Office Visit', '#ffecb4', 'Normal Office Visit', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 900, 0, 0, 0, 0, 0,0,1,5,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (6,'holidays','Holidays','#8663ba','Clinic holiday',0,NULL,'a:5:{s:17:"event_repeat_freq";s:1:"1";s:22:"event_repeat_freq_type";s:1:"4";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}',0,86400,1,3,2,0,0,2,1,6,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (7,'closed','Closed','#2374ab','Clinic closed',0,NULL,'a:5:{s:17:"event_repeat_freq";s:1:"1";s:22:"event_repeat_freq_type";s:1:"4";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}',0,86400,1,3,2,0,0,2,1,7,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (8,'lunch', 'Lunch', '#ffd351', 'Lunch', 1, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"1";s:22:"event_repeat_freq_type";s:1:"4";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 3600, 0, 3, 2, 0, 0, 1,1,8,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (9,'established_patient', 'Established Patient', '#93d3a2', '', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 900, 0, 0, 0, 0, 0, 0,1,9,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (10,'new_patient','New Patient', '#a2d9e2', '', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 1800, 0, 0, 0, 0, 0, 0,1,10,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (11,'reserved','Reserved','#b02a37','Reserved',1,NULL,'a:5:{s:17:\"event_repeat_freq\";s:1:\"1\";s:22:\"event_repeat_freq_type\";s:1:\"4\";s:19:\"event_repeat_on_num\";s:1:\"1\";s:19:\"event_repeat_on_day\";s:1:\"0\";s:20:\"event_repeat_on_freq\";s:1:\"0\";}',0,900,0,3,2,0,0, 1,1,11,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (12,'health_and_behavioral_assessment', 'Health and Behavioral Assessment', '#ced4da', 'Health and Behavioral Assessment', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 900, 0, 0, 0, 0, 0,0,1,12,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (13,'preventive_care_services', 'Preventive Care Services', '#d3c6ec', 'Preventive Care Services', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 900, 0, 0, 0, 0, 0,0,1,13,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (14,'ophthalmological_services', 'Ophthalmological Services', '#febe89', 'Ophthalmological Services', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 900, 0, 0, 0, 0, 0,0,1,14,'encounters|notes');
-INSERT INTO `openemr_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
+INSERT INTO `DCL_postcalendar_categories`(`pc_catid`, `pc_constant_id`, `pc_catname`, `pc_catcolor`, `pc_catdesc`, `pc_recurrtype`, `pc_enddate`, `pc_recurrspec`, `pc_recurrfreq`, `pc_duration`, `pc_end_date_flag`, `pc_end_date_type`, `pc_end_date_freq`, `pc_end_all_day`, `pc_dailylimit`, `pc_cattype`, `pc_active`, `pc_seq`, `aco_spec`)
   VALUES (15,'group_therapy', 'Group Therapy' , '#adb5bd' , 'Group Therapy', 0, NULL, 'a:5:{s:17:"event_repeat_freq";s:1:"0";s:22:"event_repeat_freq_type";s:1:"0";s:19:"event_repeat_on_num";s:1:"1";s:19:"event_repeat_on_day";s:1:"0";s:20:"event_repeat_on_freq";s:1:"0";}', 0, 3600, 0, 0, 0, 0, 0, 3, 1, 15,'encounters|notes');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `openemr_postcalendar_events`
+-- Table structure for table `DCL_postcalendar_events`
 --
 
-DROP TABLE IF EXISTS `openemr_postcalendar_events`;
-CREATE TABLE `openemr_postcalendar_events` (
+DROP TABLE IF EXISTS `DCL_postcalendar_events`;
+CREATE TABLE `DCL_postcalendar_events` (
   `pc_eid` int(11) unsigned NOT NULL auto_increment,
   `pc_catid` int(11) NOT NULL default '0',
   `pc_multiple` int(10) unsigned NOT NULL,
@@ -8743,7 +8743,7 @@ CREATE TABLE `prescriptions` (
   `user` VARCHAR(50) DEFAULT NULL,
   `site` VARCHAR(50) DEFAULT NULL,
   `prescriptionguid` VARCHAR(50) DEFAULT NULL,
-  `erx_source` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '0-OpenEMR 1-External',
+  `erx_source` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '0-DCL 1-External',
   `erx_uploaded` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '0-Pending NewCrop upload 1-Uploaded to NewCrop',
   `drug_info_erx` TEXT,
   `external_id` VARCHAR(20) DEFAULT NULL,
@@ -13376,7 +13376,7 @@ CREATE TABLE `form_groups_encounter` (
   `onset_date` datetime default NULL,
   `sensitivity` varchar(30) default NULL,
   `billing_note` text,
-  `pc_catid` int(11) NOT NULL default '5' COMMENT 'event category from openemr_postcalendar_categories',
+  `pc_catid` int(11) NOT NULL default '5' COMMENT 'event category from DCL_postcalendar_categories',
   `last_level_billed` int  NOT NULL DEFAULT 0 COMMENT '0=none, 1=ins1, 2=ins2, etc',
   `last_level_closed` int  NOT NULL DEFAULT 0 COMMENT '0=none, 1=ins1, 2=ins2, etc',
   `last_stmt_date`    date DEFAULT NULL,
@@ -14470,7 +14470,7 @@ CREATE TABLE `content_assignments` (
   `category` varchar(64) DEFAULT NULL COMMENT 'with resource_id set, unused; with resource_id NULL, assigns every resource whose own category matches',
   `facility` int(11) DEFAULT NULL COMMENT 'fk to facility.id; NULL means any',
   `provider` int(11) UNSIGNED DEFAULT NULL COMMENT 'fk to users.id; NULL means any',
-  `visit_category_id` int(11) DEFAULT NULL COMMENT 'fk to openemr_postcalendar_categories.pc_catid, as form_encounter.pc_catid carries it; NULL means any',
+  `visit_category_id` int(11) DEFAULT NULL COMMENT 'fk to DCL_postcalendar_categories.pc_catid, as form_encounter.pc_catid carries it; NULL means any',
   `client_id` varchar(255) DEFAULT NULL COMMENT 'oauth client for surface=smart; NULL means any',
   `acl_section` varchar(64) DEFAULT NULL COMMENT 'ACL section required; set with acl_level or leave both NULL to use the surface default',
   `acl_level` varchar(31) DEFAULT NULL COMMENT 'ACL level required; set with acl_section or leave both NULL to use the surface default',
@@ -15340,7 +15340,7 @@ CREATE TABLE `clinical_notes_procedure_results` (
 ) ENGINE=InnoDB COMMENT='Links clinical notes to procedure results/lab values';
 
 -- Patient Preferences Database Schema
--- Uses OpenEMR's list_options table for LOINC codes
+-- Uses DCL's list_options table for LOINC codes
 -- Table for storing patient treatment intervention preferences
 DROP TABLE IF EXISTS `patient_treatment_intervention_preferences`;
 CREATE TABLE `patient_treatment_intervention_preferences` (

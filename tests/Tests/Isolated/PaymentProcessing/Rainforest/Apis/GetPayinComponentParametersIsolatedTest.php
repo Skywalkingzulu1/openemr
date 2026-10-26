@@ -12,18 +12,18 @@
  * caller-supplied id wins over the body's claim, and if neither is present
  * the call is rejected before any network traffic to the gateway.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\PaymentProcessing\Rainforest\Apis;
+namespace DCL\Tests\Isolated\PaymentProcessing\Rainforest\Apis;
 
-use OpenEMR\PaymentProcessing\Rainforest\Apis\GetPayinComponentParameters;
+use DCL\PaymentProcessing\Rainforest\Apis\GetPayinComponentParameters;
 use PHPUnit\Framework\TestCase;
 use UnexpectedValueException;
 

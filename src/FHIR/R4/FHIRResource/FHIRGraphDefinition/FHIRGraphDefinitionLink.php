@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.
@@ -71,37 +71,37 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * A FHIR expression that identifies one of FHIR References to other resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * Which slice (if profiled).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $sliceName = null;
 
     /**
      * Minimum occurrences for this link.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $min = null;
 
     /**
      * Maximum occurrences for this link.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $max = null;
 
     /**
      * Information about why this link is of interest in this graph definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Potential target for the link.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
      */
     public $target = [];
 
@@ -112,7 +112,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A FHIR expression that identifies one of FHIR References to other resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -121,7 +121,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A FHIR expression that identifies one of FHIR References to other resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -132,7 +132,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Which slice (if profiled).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSliceName()
     {
@@ -141,7 +141,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Which slice (if profiled).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $sliceName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $sliceName
      * @return $this
      */
     public function setSliceName($sliceName)
@@ -152,7 +152,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Minimum occurrences for this link.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getMin()
     {
@@ -161,7 +161,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Minimum occurrences for this link.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $min
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $min
      * @return $this
      */
     public function setMin($min)
@@ -172,7 +172,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Maximum occurrences for this link.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMax()
     {
@@ -181,7 +181,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Maximum occurrences for this link.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $max
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $max
      * @return $this
      */
     public function setMax($max)
@@ -192,7 +192,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Information about why this link is of interest in this graph definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -201,7 +201,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Information about why this link is of interest in this graph definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -212,7 +212,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Potential target for the link.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
      */
     public function getTarget()
     {
@@ -221,7 +221,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Potential target for the link.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget $target
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget $target
      * @return $this
      */
     public function addTarget($target)

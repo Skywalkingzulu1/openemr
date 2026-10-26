@@ -6,7 +6,7 @@
 #   - unexpected HTTP status (exit 1 with response-body dump)
 #   - curl-level failure (exit 1 with connection-error message)
 #   - required env-var guard (TAG unset)
-#   - default REPO applied (openemr/openemr) + REPO override respected
+#   - default REPO applied (DCL/DCL) + REPO override respected
 #   - URL construction: TAG appears in the printed GET line
 
 load 'helpers'
@@ -23,7 +23,7 @@ teardown() {
     MOCK_CURL_HTTP_CODE="200" \
         run bash "${VERIFY_DOCKERHUB_TAG_EXISTS_SCRIPT}"
     [[ ${status} -eq 0 ]]
-    [[ "${output}" == *"openemr/openemr:release-candidate-12345-1 exists on Docker Hub"* ]]
+    [[ "${output}" == *"DCL/DCL:release-candidate-12345-1 exists on Docker Hub"* ]]
     [[ "${output}" != *"::error::"* ]]
 }
 
@@ -32,7 +32,7 @@ teardown() {
     MOCK_CURL_BODY='{"message":"tag not found"}' \
         run bash "${VERIFY_DOCKERHUB_TAG_EXISTS_SCRIPT}"
     [[ ${status} -eq 1 ]]
-    [[ "${output}" == *"::error::Tag openemr/openemr:release-candidate-12345-1 not found on Docker Hub (HTTP 404)"* ]]
+    [[ "${output}" == *"::error::Tag DCL/DCL:release-candidate-12345-1 not found on Docker Hub (HTTP 404)"* ]]
     [[ "${output}" == *"::error::"*"cleaned up"* ]]
     [[ "${output}" == *"::error::Recovery paths"* ]]
 }
@@ -87,9 +87,9 @@ teardown() {
     [[ "${output}" == *"hub.docker.com/v2/repositories/someorg/somerepo/tags/v1.2.3/"* ]]
 }
 
-@test "default REPO is openemr/openemr" {
+@test "default REPO is DCL/DCL" {
     MOCK_CURL_HTTP_CODE="200" \
         run bash "${VERIFY_DOCKERHUB_TAG_EXISTS_SCRIPT}"
     [[ ${status} -eq 0 ]]
-    [[ "${output}" == *"hub.docker.com/v2/repositories/openemr/openemr/tags/"* ]]
+    [[ "${output}" == *"hub.docker.com/v2/repositories/DCL/DCL/tags/"* ]]
 }

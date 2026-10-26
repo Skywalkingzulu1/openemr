@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,58 +71,58 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $target = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $interaction = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $organism = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $organismType = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amountQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $amountRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $amountString = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $amountType = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
@@ -133,7 +133,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getTarget()
     {
@@ -142,7 +142,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $target
      * @return $this
      */
     public function setTarget($target)
@@ -153,7 +153,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -162,7 +162,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -173,7 +173,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getInteraction()
     {
@@ -182,7 +182,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $interaction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $interaction
      * @return $this
      */
     public function setInteraction($interaction)
@@ -193,7 +193,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOrganism()
     {
@@ -202,7 +202,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $organism
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $organism
      * @return $this
      */
     public function setOrganism($organism)
@@ -213,7 +213,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOrganismType()
     {
@@ -222,7 +222,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $organismType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $organismType
      * @return $this
      */
     public function setOrganismType($organismType)
@@ -232,7 +232,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity()
     {
@@ -240,7 +240,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return $this
      */
     public function setAmountQuantity($amountQuantity)
@@ -250,7 +250,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAmountRange()
     {
@@ -258,7 +258,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $amountRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $amountRange
      * @return $this
      */
     public function setAmountRange($amountRange)
@@ -268,7 +268,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAmountString()
     {
@@ -276,7 +276,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $amountString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $amountString
      * @return $this
      */
     public function setAmountString($amountString)
@@ -287,7 +287,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAmountType()
     {
@@ -296,7 +296,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $amountType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $amountType
      * @return $this
      */
     public function setAmountType($amountType)
@@ -307,7 +307,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -316,7 +316,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement implem
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)

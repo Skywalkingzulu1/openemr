@@ -2,24 +2,24 @@
 
 /**
  * DB-backed tests for the fetchFormOwner() lookup in
- * `OpenEMR\Common\Forms\EncounterFormAccess`.
+ * `DCL\Common\Forms\EncounterFormAccess`.
  *
  * The pure comparison in `isFormOwnedBySession()` is covered in isolation at
  * `tests/Tests/Isolated/Common/Forms/EncounterFormAccessTest.php`. This suite
  * exercises the DB-touching primitive so a schema drift or query regression
  * surfaces in CI.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Common\Forms;
+namespace DCL\Tests\Services\Common\Forms;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Forms\EncounterFormAccess;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Forms\EncounterFormAccess;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

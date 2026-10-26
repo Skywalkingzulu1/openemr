@@ -3,14 +3,14 @@
 /**
  * On master, paired with a rel-branch release-prep PR: applies the three
  * coordinated edits to .github/release-targets.yml that a rel-branch ship
- * requires. (1) Pin the rel branch's openemr_version_ref to the new tag
+ * requires. (1) Pin the rel branch's DCL_version_ref to the new tag
  * (e.g. rel-810 -> v8_1_1) so daily docker builds stop tracking the
  * branch tip. (2) Slot-shuffle docker_tags across rows: promote `next`
  * to `latest` on the just-shipped rel branch, drop `latest` from the
  * prior holder, and move `next` to the next upcoming-stable owner
  * (next-cut rel branch if one exists, else master). (3) Drop the
  * unreleased placeholder row for the same rel branch if present (the
- * multi-row mechanism from openemr/openemr#12656). All three transforms
+ * multi-row mechanism from DCL/DCL#12656). All three transforms
  * are idempotent — re-running on already-mutated input yields no diff.
  *
  * Implementation note: uses line-based surgical edits rather than parsing
@@ -19,20 +19,20 @@
  * end as a sanity check that the surgical edits did not produce
  * structurally invalid YAML.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
@@ -42,8 +42,8 @@ use Symfony\Component\Yaml\Yaml;
  *   startLine: int,
  *   dockerTags: ?string,
  *   dockerTagsLine: ?int,
- *   openemrVersionRef: ?string,
- *   openemrVersionRefLine: ?int,
+ *   DCLVersionRef: ?string,
+ *   DCLVersionRefLine: ?int,
  *   unreleased: ?string,
  * }
  */
@@ -158,8 +158,8 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
                     'startLine' => $i,
                     'dockerTags' => null,
                     'dockerTagsLine' => null,
-                    'openemrVersionRef' => null,
-                    'openemrVersionRefLine' => null,
+                    'DCLVersionRef' => null,
+                    'DCLVersionRefLine' => null,
                     'unreleased' => null,
                 ];
                 continue;
@@ -172,9 +172,9 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
                 $current['dockerTagsLine'] = $i;
                 continue;
             }
-            if (preg_match('/^  openemr_version_ref:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
-                $current['openemrVersionRef'] = trim($m[1]);
-                $current['openemrVersionRefLine'] = $i;
+            if (preg_match('/^  DCL_version_ref:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
+                $current['DCLVersionRef'] = trim($m[1]);
+                $current['DCLVersionRefLine'] = $i;
                 continue;
             }
             if (preg_match('/^  unreleased:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
@@ -251,9 +251,9 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
     }
 
     /**
-     * Pin the rel branch row's openemr_version_ref to the new tag, but
+     * Pin the rel branch row's DCL_version_ref to the new tag, but
      * only the row that is currently still tracking the branch tip
-     * (openemr_version_ref == relBranch). The multi-row dev pattern can
+     * (DCL_version_ref == relBranch). The multi-row dev pattern can
      * leave secondary rel-branch rows pinned to historical tags
      * (e.g. v8_1_0) which must stay untouched.
      */
@@ -265,21 +265,21 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
         foreach ($rows as $row) {
             if (
                 $row['branch'] === $relBranch
-                && $row['openemrVersionRef'] === $relBranch
+                && $row['DCLVersionRef'] === $relBranch
             ) {
                 $target = $row;
                 break;
             }
         }
-        if ($target === null || $target['openemrVersionRefLine'] === null) {
+        if ($target === null || $target['DCLVersionRefLine'] === null) {
             // Already pinned, or no row matches; no-op.
             return $text;
         }
 
         $lines = explode("\n", $text);
-        $lineIndex = $target['openemrVersionRefLine'];
+        $lineIndex = $target['DCLVersionRefLine'];
         $replaced = preg_replace(
-            '/^(  openemr_version_ref:\s*)[^#\s]+(\s*(?:#.*)?)$/',
+            '/^(  DCL_version_ref:\s*)[^#\s]+(\s*(?:#.*)?)$/',
             '${1}' . $tagName . '${2}',
             $lines[$lineIndex],
             1,
@@ -309,8 +309,8 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
             if (
                 $row['branch'] === $relBranch
                 && (
-                    $row['openemrVersionRef'] === $relBranch
-                    || $this->isVersionTagFor($row['openemrVersionRef'] ?? '', $relBranch)
+                    $row['DCLVersionRef'] === $relBranch
+                    || $this->isVersionTagFor($row['DCLVersionRef'] ?? '', $relBranch)
                 )
             ) {
                 $relRow = $row;
@@ -322,14 +322,14 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
         // just-shipped row ($relRow).
         //
         // Skip only the JUST-SHIPPED row ($relRow), not every row with
-        // branch === $relBranch. The multi-row pattern (openemr/openemr
+        // branch === $relBranch. The multi-row pattern (DCL/DCL
         // #12656) can leave a prior-patch row on the same rel branch
         // carrying `latest` (e.g. rel-840 with `8.4.0,latest` still
         // present when 8.4.1 ships). Original skip condition used
         // `$row['branch'] === $relBranch` which incorrectly protected
         // the prior-patch row too, leaving both rows claiming `latest`
         // -- see G41 for the trigger event (release-finalize PR
-        // openemr/openemr#14069 for 8.4.1 on rel-840, 2026-09-18).
+        // DCL/DCL#14069 for 8.4.1 on rel-840, 2026-09-18).
         //
         // Idempotency: the inner `if (!in_array('latest', $tags))`
         // check makes any second pass a no-op on rows already stripped,
@@ -447,7 +447,7 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
             if ($row['branch'] !== $relBranch) {
                 continue;
             }
-            $ref = $row['openemrVersionRef'] ?? '';
+            $ref = $row['DCLVersionRef'] ?? '';
             if (!$this->isVersionTagFor($ref, $relBranch)) {
                 continue;
             }
@@ -462,7 +462,7 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
         if ($shippedRow === null || $shippedRowOrdinal === null) {
             return $text;
         }
-        if ($shippedRow['openemrVersionRefLine'] === null) {
+        if ($shippedRow['DCLVersionRefLine'] === null) {
             return $text;
         }
 
@@ -484,10 +484,10 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
             }
         }
 
-        // Insert after openemr_version_ref line. Row block ordering
+        // Insert after DCL_version_ref line. Row block ordering
         // matches the branch-cut + patch-prep templates
-        // (docker_tags -> openemr_version_ref -> gate_with_acceptance).
-        $insertAt = $shippedRow['openemrVersionRefLine'] + 1;
+        // (docker_tags -> DCL_version_ref -> gate_with_acceptance).
+        $insertAt = $shippedRow['DCLVersionRefLine'] + 1;
         array_splice($lines, $insertAt, 0, ['  gate_with_acceptance: true']);
         return implode("\n", $lines);
     }
@@ -504,7 +504,7 @@ final readonly class PostReleaseTargetsMutator implements MutatorInterface
     private function isVersionTagFor(string $versionRef, string $relBranch): bool
     {
         // Accept any rel-<digits>; parse first digit as MAJOR and second
-        // as MINOR. (Two-digit majors don't yet exist in the openemr
+        // as MINOR. (Two-digit majors don't yet exist in the DCL
         // version space; revisit if/when they do.)
         if (preg_match('/^rel-(\d)(\d)\d*$/', $relBranch, $bm) !== 1) {
             return false;

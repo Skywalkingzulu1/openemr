@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.
@@ -71,31 +71,31 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Type of resource this link refers to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $type = null;
 
     /**
      * A set of parameters to look up.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $params = null;
 
     /**
      * Profile for the target resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
     /**
      * Compartment Consistency Rules.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionCompartment[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionCompartment[]
      */
     public $compartment = [];
 
     /**
      * Additional links from target resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
     public $link = [];
 
@@ -106,7 +106,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Type of resource this link refers to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getType()
     {
@@ -115,7 +115,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Type of resource this link refers to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $type
      * @return $this
      */
     public function setType($type)
@@ -126,7 +126,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A set of parameters to look up.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getParams()
     {
@@ -135,7 +135,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A set of parameters to look up.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $params
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $params
      * @return $this
      */
     public function setParams($params)
@@ -146,7 +146,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Profile for the target resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -155,7 +155,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Profile for the target resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)
@@ -166,7 +166,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Compartment Consistency Rules.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionCompartment[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionCompartment[]
      */
     public function getCompartment()
     {
@@ -175,7 +175,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Compartment Consistency Rules.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionCompartment $compartment
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionCompartment $compartment
      * @return $this
      */
     public function addCompartment($compartment)
@@ -186,7 +186,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Additional links from target resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
     public function getLink()
     {
@@ -195,7 +195,7 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Additional links from target resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink $link
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink $link
      * @return $this
      */
     public function addLink($link)

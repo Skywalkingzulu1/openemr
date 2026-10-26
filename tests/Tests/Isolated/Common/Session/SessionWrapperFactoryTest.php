@@ -6,20 +6,20 @@
  * Tests that the SessionWrapperFactory correctly creates and manages
  * Symfony Session instances for both core and portal application contexts.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @author    Eric Stern <eric@ericstern.com>
  * @author    Milan Zivkovic <zivkovic.milan@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Common\Session;
+namespace DCL\Tests\Isolated\Common\Session;
 
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -832,7 +832,7 @@ class SessionWrapperFactoryTest extends TestCase
     /**
      * Test: Core cookie present, but API listener already injected an API session
      *
-     * Scenario: User has core OpenEMR open, API request comes in from same browser.
+     * Scenario: User has core DCL open, API request comes in from same browser.
      */
     public function testCoreCookieWithInjectedApiSessionReturnsApiSession(): void
     {

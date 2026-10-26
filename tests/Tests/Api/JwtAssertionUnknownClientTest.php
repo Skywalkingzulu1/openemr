@@ -10,16 +10,16 @@
  * signature is never verified because the client entity lookup fails
  * first — no JWKS to verify against anyway.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use DateTimeImmutable;
 use GuzzleHttp\Client;
@@ -37,10 +37,10 @@ class JwtAssertionUnknownClientTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -57,8 +57,8 @@ class JwtAssertionUnknownClientTest extends TestCase
     {
         $http = $this->buildClient();
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
 
         // Non-existent client id — no oauth_clients row has this value.
         $unknownClientId = 'no-such-client-' . Uuid::uuid4()->toString();

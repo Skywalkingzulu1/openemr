@@ -3,11 +3,11 @@
 /**
  * SDOH (USCDI v3) history_sdoh service class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
@@ -18,17 +18,17 @@
  * All generated code has been reviewed and tested for compliance with project standards.
  */
 
-namespace OpenEMR\Services\SDOH;
+namespace DCL\Services\SDOH;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\BaseService;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Validators\ProcessingResult;
 
 class HistorySdohService extends BaseService
 {
@@ -1439,11 +1439,11 @@ class HistorySdohService extends BaseService
     }
 
     /**
-     * @param ISearchField[]|string[] $openEMRSearchParameters
+     * @param ISearchField[]|string[] $DCLSearchParameters
      * @param bool $andCondition
      * @return ProcessingResult
      */
-    public function search($openEMRSearchParameters = [], $isAndCondition = true): ProcessingResult
+    public function search($DCLSearchParameters = [], $isAndCondition = true): ProcessingResult
     {
         try {
             $selectColumns = "SELECT o.*
@@ -1488,7 +1488,7 @@ class HistorySdohService extends BaseService
                         FROM list_options
                     ) lo_{$col} ON (o.{$col} = lo_{$col}.option_id AND lo_{$col}.list_id = '{$listId}') ";
             }
-            $whereClause = FhirSearchWhereClauseBuilder::build($openEMRSearchParameters, $isAndCondition);
+            $whereClause = FhirSearchWhereClauseBuilder::build($DCLSearchParameters, $isAndCondition);
             $sql = $selectColumns . $join . $whereClause->getFragment();
             $results = QueryUtils::fetchRecords($sql, $whereClause->getBoundValues());
             $processingResult = new ProcessingResult();

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A SubstanceProtein is defined as a single unit of a linear amino acid sequence, or a combination of subunits that are either covalently linked or have a defined invariant stoichiometric relationship. This includes all synthetic, recombinant and purified SubstanceProteins of defined sequence, whether the use is therapeutic or prophylactic. This set of elements will be used to describe albumins, coagulation factors, cytokines, growth factors, peptide/SubstanceProtein hormones, enzymes, toxins, toxoids, recombinant vaccines, and immunomodulators.
@@ -72,25 +72,25 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * The SubstanceProtein descriptive elements will only be used when a complete or partial amino acid sequence is available or derivable from a nucleic acid sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $sequenceType = null;
 
     /**
      * Number of linear sequences of amino acids linked through peptide bonds. The number of subunits constituting the SubstanceProtein shall be described. It is possible that the number of subunits can be variable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $numberOfSubunits = null;
 
     /**
      * The disulphide bond between two cysteine residues either on the same subunit or on two different subunits shall be described. The position of the disulfide bonds in the SubstanceProtein shall be listed in increasing order of subunit number and position within subunit followed by the abbreviation of the amino acids involved. The disulfide linkage positions shall actually contain the amino acid Cysteine at the respective positions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $disulfideLinkage = [];
 
     /**
      * This subclause refers to the description of each subunit constituting the SubstanceProtein. A subunit is a linear sequence of amino acids linked through peptide bonds. The Subunit information shall be provided when the finished SubstanceProtein is a complex of multiple sequences; subunits are not used to delineate domains within a single sequence. Subunits are listed in order of decreasing length; sequences of the same length will be ordered by decreasing molecular weight; subunits that have identical sequences will be repeated multiple times.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit[]
      */
     public $subunit = [];
 
@@ -101,7 +101,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The SubstanceProtein descriptive elements will only be used when a complete or partial amino acid sequence is available or derivable from a nucleic acid sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSequenceType()
     {
@@ -110,7 +110,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The SubstanceProtein descriptive elements will only be used when a complete or partial amino acid sequence is available or derivable from a nucleic acid sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $sequenceType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $sequenceType
      * @return $this
      */
     public function setSequenceType($sequenceType)
@@ -121,7 +121,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Number of linear sequences of amino acids linked through peptide bonds. The number of subunits constituting the SubstanceProtein shall be described. It is possible that the number of subunits can be variable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getNumberOfSubunits()
     {
@@ -130,7 +130,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Number of linear sequences of amino acids linked through peptide bonds. The number of subunits constituting the SubstanceProtein shall be described. It is possible that the number of subunits can be variable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numberOfSubunits
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numberOfSubunits
      * @return $this
      */
     public function setNumberOfSubunits($numberOfSubunits)
@@ -141,7 +141,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The disulphide bond between two cysteine residues either on the same subunit or on two different subunits shall be described. The position of the disulfide bonds in the SubstanceProtein shall be listed in increasing order of subunit number and position within subunit followed by the abbreviation of the amino acids involved. The disulfide linkage positions shall actually contain the amino acid Cysteine at the respective positions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getDisulfideLinkage()
     {
@@ -150,7 +150,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The disulphide bond between two cysteine residues either on the same subunit or on two different subunits shall be described. The position of the disulfide bonds in the SubstanceProtein shall be listed in increasing order of subunit number and position within subunit followed by the abbreviation of the amino acids involved. The disulfide linkage positions shall actually contain the amino acid Cysteine at the respective positions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $disulfideLinkage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $disulfideLinkage
      * @return $this
      */
     public function addDisulfideLinkage($disulfideLinkage)
@@ -161,7 +161,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * This subclause refers to the description of each subunit constituting the SubstanceProtein. A subunit is a linear sequence of amino acids linked through peptide bonds. The Subunit information shall be provided when the finished SubstanceProtein is a complex of multiple sequences; subunits are not used to delineate domains within a single sequence. Subunits are listed in order of decreasing length; sequences of the same length will be ordered by decreasing molecular weight; subunits that have identical sequences will be repeated multiple times.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit[]
      */
     public function getSubunit()
     {
@@ -170,7 +170,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * This subclause refers to the description of each subunit constituting the SubstanceProtein. A subunit is a linear sequence of amino acids linked through peptide bonds. The Subunit information shall be provided when the finished SubstanceProtein is a complex of multiple sequences; subunits are not used to delineate domains within a single sequence. Subunits are listed in order of decreasing length; sequences of the same length will be ordered by decreasing molecular weight; subunits that have identical sequences will be repeated multiple times.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit $subunit
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit $subunit
      * @return $this
      */
     public function addSubunit($subunit)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,25 +72,25 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 {
     /**
      * An internal reference to the definition of a mapping.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $identity = null;
 
     /**
      * Identifies the computable language in which mapping.map is expressed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $language = null;
 
     /**
      * Expresses what part of the target specification corresponds to this element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $map = null;
 
     /**
      * Comments that provide information about the mapping or its use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
@@ -101,7 +101,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * An internal reference to the definition of a mapping.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getIdentity()
     {
@@ -110,7 +110,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * An internal reference to the definition of a mapping.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $identity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $identity
      * @return $this
      */
     public function setIdentity($identity)
@@ -121,7 +121,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * Identifies the computable language in which mapping.map is expressed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getLanguage()
     {
@@ -130,7 +130,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * Identifies the computable language in which mapping.map is expressed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $language
      * @return $this
      */
     public function setLanguage($language)
@@ -141,7 +141,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * Expresses what part of the target specification corresponds to this element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMap()
     {
@@ -150,7 +150,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * Expresses what part of the target specification corresponds to this element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $map
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $map
      * @return $this
      */
     public function setMap($map)
@@ -161,7 +161,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * Comments that provide information about the mapping or its use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -170,7 +170,7 @@ class FHIRElementDefinitionMapping extends FHIRBackboneElement implements \JsonS
 
     /**
      * Comments that provide information about the mapping or its use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,19 +71,19 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement impl
 {
     /**
      * The method by which the molecular weight was determined.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * Type of molecular weight such as exact, average (also known as. number average), weight average.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Used to capture quantitative values for a variety of elements. If only limits are given, the arithmetic mean would be the average. If only a single definite value for a given element is given, it would be captured in this field.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amount = null;
 
@@ -94,7 +94,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement impl
 
     /**
      * The method by which the molecular weight was determined.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -103,7 +103,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement impl
 
     /**
      * The method by which the molecular weight was determined.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -114,7 +114,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement impl
 
     /**
      * Type of molecular weight such as exact, average (also known as. number average), weight average.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -123,7 +123,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement impl
 
     /**
      * Type of molecular weight such as exact, average (also known as. number average), weight average.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -134,7 +134,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement impl
 
     /**
      * Used to capture quantitative values for a variety of elements. If only limits are given, the arithmetic mean would be the average. If only a single definite value for a given element is given, it would be captured in this field.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmount()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceSpecificationMolecularWeight extends FHIRBackboneElement impl
 
     /**
      * Used to capture quantitative values for a variety of elements. If only limits are given, the arithmetic mean would be the average. If only a single definite value for a given element is given, it would be captured in this field.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amount
      * @return $this
      */
     public function setAmount($amount)

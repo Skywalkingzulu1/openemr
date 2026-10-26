@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -72,157 +72,157 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in [Coding](datatypes.html#Coding).system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding](datatypes.html#Coding).version.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The date (and optionally time) when the code system resource was created or revised.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the code system from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate code system instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the code system is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this code system is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * If code comparison is case sensitive when codes within this system are compared to each other.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $caseSensitive = null;
 
     /**
      * Canonical reference to the value set that contains the entire code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $valueSet = null;
 
     /**
      * The meaning of the hierarchy of concepts as represented in this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSystemHierarchyMeaning
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
     public $hierarchyMeaning = null;
 
     /**
      * The code system defines a compositional (post-coordination) grammar.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $compositional = null;
 
     /**
      * This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $versionNeeded = null;
 
     /**
      * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSystemContentMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeSystemContentMode
      */
     public $content = null;
 
     /**
      * The canonical URL of the code system that this code system supplement is adding designations and properties to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $supplements = null;
 
     /**
      * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $count = null;
 
     /**
      * A filter that can be used in a value set compose statement when selecting concepts using a filter.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemFilter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemFilter[]
      */
     public $filter = [];
 
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty[]
      */
     public $property = [];
 
     /**
      * Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meanings of the hierarchical relationships are.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     public $concept = [];
 
@@ -233,7 +233,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in [Coding](datatypes.html#Coding).system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -242,7 +242,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this code system is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the code system is stored on different servers. This is used in [Coding](datatypes.html#Coding).system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -253,7 +253,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -262,7 +262,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -273,7 +273,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding](datatypes.html#Coding).version.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -282,7 +282,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding](datatypes.html#Coding).version.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -293,7 +293,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -302,7 +302,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the code system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -313,7 +313,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for the code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -322,7 +322,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for the code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -333,7 +333,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date (and optionally time) when the code system resource was created or revised.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -342,7 +342,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date (and optionally time) when the code system resource was created or revised.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -353,7 +353,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -362,7 +362,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -373,7 +373,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -382,7 +382,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -393,7 +393,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -402,7 +402,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -413,7 +413,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -422,7 +422,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -433,7 +433,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the code system from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -442,7 +442,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the code system from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -453,7 +453,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate code system instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -462,7 +462,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate code system instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -473,7 +473,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the code system is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -482,7 +482,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the code system is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -493,7 +493,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Explanation of why this code system is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -502,7 +502,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Explanation of why this code system is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -513,7 +513,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -522,7 +522,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A copyright statement relating to the code system and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -533,7 +533,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If code comparison is case sensitive when codes within this system are compared to each other.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getCaseSensitive()
     {
@@ -542,7 +542,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If code comparison is case sensitive when codes within this system are compared to each other.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $caseSensitive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $caseSensitive
      * @return $this
      */
     public function setCaseSensitive($caseSensitive)
@@ -553,7 +553,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Canonical reference to the value set that contains the entire code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getValueSet()
     {
@@ -562,7 +562,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Canonical reference to the value set that contains the entire code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $valueSet
      * @return $this
      */
     public function setValueSet($valueSet)
@@ -573,7 +573,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The meaning of the hierarchy of concepts as represented in this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSystemHierarchyMeaning
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
     public function getHierarchyMeaning()
     {
@@ -582,7 +582,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The meaning of the hierarchy of concepts as represented in this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSystemHierarchyMeaning $hierarchyMeaning
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeSystemHierarchyMeaning $hierarchyMeaning
      * @return $this
      */
     public function setHierarchyMeaning($hierarchyMeaning)
@@ -593,7 +593,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The code system defines a compositional (post-coordination) grammar.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getCompositional()
     {
@@ -602,7 +602,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The code system defines a compositional (post-coordination) grammar.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $compositional
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $compositional
      * @return $this
      */
     public function setCompositional($compositional)
@@ -613,7 +613,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getVersionNeeded()
     {
@@ -622,7 +622,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This flag is used to signify that the code system does not commit to concept permanence across versions. If true, a version must be specified when referencing this code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $versionNeeded
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $versionNeeded
      * @return $this
      */
     public function setVersionNeeded($versionNeeded)
@@ -633,7 +633,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSystemContentMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeSystemContentMode
      */
     public function getContent()
     {
@@ -642,7 +642,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSystemContentMode $content
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeSystemContentMode $content
      * @return $this
      */
     public function setContent($content)
@@ -653,7 +653,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The canonical URL of the code system that this code system supplement is adding designations and properties to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getSupplements()
     {
@@ -662,7 +662,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The canonical URL of the code system that this code system supplement is adding designations and properties to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $supplements
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $supplements
      * @return $this
      */
     public function setSupplements($supplements)
@@ -673,7 +673,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getCount()
     {
@@ -682,7 +682,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The total number of concepts defined by the code system. Where the code system has a compositional grammar, the basis of this count is defined by the system steward.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $count
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $count
      * @return $this
      */
     public function setCount($count)
@@ -693,7 +693,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A filter that can be used in a value set compose statement when selecting concepts using a filter.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemFilter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemFilter[]
      */
     public function getFilter()
     {
@@ -702,7 +702,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A filter that can be used in a value set compose statement when selecting concepts using a filter.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemFilter $filter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemFilter $filter
      * @return $this
      */
     public function addFilter($filter)
@@ -713,7 +713,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty[]
      */
     public function getProperty()
     {
@@ -722,7 +722,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty $property
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemProperty $property
      * @return $this
      */
     public function addProperty($property)
@@ -733,7 +733,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meanings of the hierarchical relationships are.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     public function getConcept()
     {
@@ -742,7 +742,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meanings of the hierarchical relationships are.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept $concept
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCodeSystem\FHIRCodeSystemConcept $concept
      * @return $this
      */
     public function addConcept($concept)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * An amount of economic utility in some recognized currency.
@@ -72,13 +72,13 @@ class FHIRMoney extends FHIRElement implements \JsonSerializable
 {
     /**
      * Numerical value (with implicit precision).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $value = null;
 
     /**
      * ISO 4217 Currency Code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $currency = null;
 
@@ -89,7 +89,7 @@ class FHIRMoney extends FHIRElement implements \JsonSerializable
 
     /**
      * Numerical value (with implicit precision).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValue()
     {
@@ -98,7 +98,7 @@ class FHIRMoney extends FHIRElement implements \JsonSerializable
 
     /**
      * Numerical value (with implicit precision).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $value
      * @return $this
      */
     public function setValue($value)
@@ -109,7 +109,7 @@ class FHIRMoney extends FHIRElement implements \JsonSerializable
 
     /**
      * ISO 4217 Currency Code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCurrency()
     {
@@ -118,7 +118,7 @@ class FHIRMoney extends FHIRElement implements \JsonSerializable
 
     /**
      * ISO 4217 Currency Code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $currency
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $currency
      * @return $this
      */
     public function setCurrency($currency)

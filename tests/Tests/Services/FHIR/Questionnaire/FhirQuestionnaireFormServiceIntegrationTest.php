@@ -4,22 +4,22 @@
  * FhirQuestionnaireFormServiceTest.php
  * TODO: @adunsulag when we have a place to put integration tests, we should move this class.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\Questionnaire;
+namespace DCL\Tests\Services\FHIR\Questionnaire;
 
 use Exception;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
-use OpenEMR\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
-use OpenEMR\Services\QuestionnaireService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
+use DCL\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
+use DCL\Services\QuestionnaireService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

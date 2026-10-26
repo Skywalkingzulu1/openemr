@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Significant health conditions for a person related to the patient relevant in the context of care for the patient.
@@ -72,146 +72,146 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * Business identifiers assigned to this family member history by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * A code specifying the status of the record of the family history of a specific family member.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFamilyHistoryStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFamilyHistoryStatus
      */
     public $status = null;
 
     /**
      * Describes why the family member's history is not available.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $dataAbsentReason = null;
 
     /**
      * The person who this history concerns.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The date (and possibly time) when the family member history was recorded or last updated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with the red hair".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The type of relationship this person has to the patient (father, mother, brother etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $relationship = null;
 
     /**
      * The birth sex of the family member.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $sex = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $bornPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $bornDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $bornString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $ageAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $ageRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $ageString = null;
 
     /**
      * If true, indicates that the age value specified is an estimated value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $estimatedAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $deceasedBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $deceasedAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $deceasedRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $deceasedDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $deceasedString = null;
 
     /**
      * Describes why the family member history occurred in coded or textual form.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
      */
     public $condition = [];
 
@@ -222,7 +222,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Business identifiers assigned to this family member history by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -231,7 +231,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Business identifiers assigned to this family member history by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -242,7 +242,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -251,7 +251,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -262,7 +262,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -271,7 +271,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -282,7 +282,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code specifying the status of the record of the family history of a specific family member.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFamilyHistoryStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFamilyHistoryStatus
      */
     public function getStatus()
     {
@@ -291,7 +291,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code specifying the status of the record of the family history of a specific family member.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFamilyHistoryStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFamilyHistoryStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -302,7 +302,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes why the family member's history is not available.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDataAbsentReason()
     {
@@ -311,7 +311,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes why the family member's history is not available.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $dataAbsentReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $dataAbsentReason
      * @return $this
      */
     public function setDataAbsentReason($dataAbsentReason)
@@ -322,7 +322,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The person who this history concerns.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -331,7 +331,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The person who this history concerns.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -342,7 +342,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date (and possibly time) when the family member history was recorded or last updated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -351,7 +351,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date (and possibly time) when the family member history was recorded or last updated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -362,7 +362,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with the red hair".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -371,7 +371,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with the red hair".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -382,7 +382,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The type of relationship this person has to the patient (father, mother, brother etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship()
     {
@@ -391,7 +391,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The type of relationship this person has to the patient (father, mother, brother etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
     public function setRelationship($relationship)
@@ -402,7 +402,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The birth sex of the family member.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSex()
     {
@@ -411,7 +411,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The birth sex of the family member.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $sex
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $sex
      * @return $this
      */
     public function setSex($sex)
@@ -421,7 +421,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getBornPeriod()
     {
@@ -429,7 +429,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $bornPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $bornPeriod
      * @return $this
      */
     public function setBornPeriod($bornPeriod)
@@ -439,7 +439,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getBornDate()
     {
@@ -447,7 +447,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $bornDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $bornDate
      * @return $this
      */
     public function setBornDate($bornDate)
@@ -457,7 +457,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getBornString()
     {
@@ -465,7 +465,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $bornString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $bornString
      * @return $this
      */
     public function setBornString($bornString)
@@ -475,7 +475,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAgeAge()
     {
@@ -483,7 +483,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $ageAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $ageAge
      * @return $this
      */
     public function setAgeAge($ageAge)
@@ -493,7 +493,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAgeRange()
     {
@@ -501,7 +501,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $ageRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $ageRange
      * @return $this
      */
     public function setAgeRange($ageRange)
@@ -511,7 +511,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAgeString()
     {
@@ -519,7 +519,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $ageString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $ageString
      * @return $this
      */
     public function setAgeString($ageString)
@@ -530,7 +530,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * If true, indicates that the age value specified is an estimated value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getEstimatedAge()
     {
@@ -539,7 +539,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * If true, indicates that the age value specified is an estimated value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $estimatedAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $estimatedAge
      * @return $this
      */
     public function setEstimatedAge($estimatedAge)
@@ -549,7 +549,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDeceasedBoolean()
     {
@@ -557,7 +557,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $deceasedBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $deceasedBoolean
      * @return $this
      */
     public function setDeceasedBoolean($deceasedBoolean)
@@ -567,7 +567,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDeceasedAge()
     {
@@ -575,7 +575,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @return $this
      */
     public function setDeceasedAge($deceasedAge)
@@ -585,7 +585,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getDeceasedRange()
     {
@@ -593,7 +593,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $deceasedRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $deceasedRange
      * @return $this
      */
     public function setDeceasedRange($deceasedRange)
@@ -603,7 +603,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getDeceasedDate()
     {
@@ -611,7 +611,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $deceasedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $deceasedDate
      * @return $this
      */
     public function setDeceasedDate($deceasedDate)
@@ -621,7 +621,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDeceasedString()
     {
@@ -629,7 +629,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $deceasedString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $deceasedString
      * @return $this
      */
     public function setDeceasedString($deceasedString)
@@ -640,7 +640,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes why the family member history occurred in coded or textual form.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -649,7 +649,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Describes why the family member history occurred in coded or textual form.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -660,7 +660,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -669,7 +669,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -680,7 +680,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -689,7 +689,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -700,7 +700,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
      */
     public function getCondition()
     {
@@ -709,7 +709,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition $condition
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition $condition
      * @return $this
      */
     public function addCondition($condition)

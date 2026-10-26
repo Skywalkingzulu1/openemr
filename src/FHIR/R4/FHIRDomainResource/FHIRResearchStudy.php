@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  A ResearchStudy involves the gathering of information about human or animal subjects.
@@ -72,145 +72,145 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers assigned to this research study by the sponsor or other systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A short, descriptive user-friendly label for the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The set of steps expected to be performed as part of the execution of the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $protocol = [];
 
     /**
      * A larger research study of which this particular study is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * The current state of the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRResearchStudyStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRResearchStudyStatus
      */
     public $status = null;
 
     /**
      * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $primaryPurposeType = null;
 
     /**
      * The stage in the progression of a therapy from initial experimental use in humans in clinical trials to post-market evaluation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $phase = null;
 
     /**
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $focus = [];
 
     /**
      * The condition that is the focus of the study.  For example, In a study to examine risk factors for Lupus, might have as an inclusion criterion "healthy volunteer", but the target condition code would be a Lupus SNOMED code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $condition = [];
 
     /**
      * Contact details to assist a user in learning more about or engaging with the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * Citations, references and other related documents.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $relatedArtifact = [];
 
     /**
      * Key terms to aid in searching for or filtering the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $keyword = [];
 
     /**
      * Indicates a country, state or other region where the study is taking place.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $location = [];
 
     /**
      * A full description of how the study is being conducted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $enrollment = [];
 
     /**
      * Identifies the start date and the expected (or actual, depending on status) end date for the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * An organization that initiates the investigation and is legally responsible for the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $sponsor = null;
 
     /**
      * A researcher in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $principalInvestigator = null;
 
     /**
      * A facility in which study activities are conducted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $site = [];
 
     /**
      * A description and/or code explaining the premature termination of the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $reasonStopped = null;
 
     /**
      * Comments made about the study by the performer, subject or other participants.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm[]
      */
     public $arm = [];
 
     /**
      * A goal that the study is aiming to achieve in terms of a scientific question to be answered by the analysis of data collected during the study.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyObjective[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyObjective[]
      */
     public $objective = [];
 
@@ -221,7 +221,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this research study by the sponsor or other systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -230,7 +230,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this research study by the sponsor or other systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -241,7 +241,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive user-friendly label for the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -250,7 +250,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive user-friendly label for the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -261,7 +261,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The set of steps expected to be performed as part of the execution of the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getProtocol()
     {
@@ -270,7 +270,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The set of steps expected to be performed as part of the execution of the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $protocol
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $protocol
      * @return $this
      */
     public function addProtocol($protocol)
@@ -281,7 +281,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger research study of which this particular study is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -290,7 +290,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger research study of which this particular study is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -301,7 +301,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRResearchStudyStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRResearchStudyStatus
      */
     public function getStatus()
     {
@@ -310,7 +310,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRResearchStudyStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRResearchStudyStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -321,7 +321,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPrimaryPurposeType()
     {
@@ -330,7 +330,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $primaryPurposeType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $primaryPurposeType
      * @return $this
      */
     public function setPrimaryPurposeType($primaryPurposeType)
@@ -341,7 +341,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The stage in the progression of a therapy from initial experimental use in humans in clinical trials to post-market evaluation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPhase()
     {
@@ -350,7 +350,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The stage in the progression of a therapy from initial experimental use in humans in clinical trials to post-market evaluation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $phase
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $phase
      * @return $this
      */
     public function setPhase($phase)
@@ -361,7 +361,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -370,7 +370,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -381,7 +381,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getFocus()
     {
@@ -390,7 +390,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $focus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $focus
      * @return $this
      */
     public function addFocus($focus)
@@ -401,7 +401,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The condition that is the focus of the study.  For example, In a study to examine risk factors for Lupus, might have as an inclusion criterion "healthy volunteer", but the target condition code would be a Lupus SNOMED code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCondition()
     {
@@ -410,7 +410,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The condition that is the focus of the study.  For example, In a study to examine risk factors for Lupus, might have as an inclusion criterion "healthy volunteer", but the target condition code would be a Lupus SNOMED code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -421,7 +421,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in learning more about or engaging with the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -430,7 +430,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in learning more about or engaging with the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -441,7 +441,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Citations, references and other related documents.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
@@ -450,7 +450,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Citations, references and other related documents.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
     public function addRelatedArtifact($relatedArtifact)
@@ -461,7 +461,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Key terms to aid in searching for or filtering the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getKeyword()
     {
@@ -470,7 +470,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Key terms to aid in searching for or filtering the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $keyword
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $keyword
      * @return $this
      */
     public function addKeyword($keyword)
@@ -481,7 +481,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates a country, state or other region where the study is taking place.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getLocation()
     {
@@ -490,7 +490,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates a country, state or other region where the study is taking place.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $location
      * @return $this
      */
     public function addLocation($location)
@@ -501,7 +501,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A full description of how the study is being conducted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -510,7 +510,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A full description of how the study is being conducted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -521,7 +521,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEnrollment()
     {
@@ -530,7 +530,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to a Group that defines the criteria for and quantity of subjects participating in the study.  E.g. " 200 female Europeans between the ages of 20 and 45 with early onset diabetes".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $enrollment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $enrollment
      * @return $this
      */
     public function addEnrollment($enrollment)
@@ -541,7 +541,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the start date and the expected (or actual, depending on status) end date for the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -550,7 +550,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the start date and the expected (or actual, depending on status) end date for the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -561,7 +561,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An organization that initiates the investigation and is legally responsible for the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSponsor()
     {
@@ -570,7 +570,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An organization that initiates the investigation and is legally responsible for the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $sponsor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $sponsor
      * @return $this
      */
     public function setSponsor($sponsor)
@@ -581,7 +581,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A researcher in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPrincipalInvestigator()
     {
@@ -590,7 +590,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A researcher in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $principalInvestigator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $principalInvestigator
      * @return $this
      */
     public function setPrincipalInvestigator($principalInvestigator)
@@ -601,7 +601,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A facility in which study activities are conducted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSite()
     {
@@ -610,7 +610,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A facility in which study activities are conducted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $site
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $site
      * @return $this
      */
     public function addSite($site)
@@ -621,7 +621,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description and/or code explaining the premature termination of the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonStopped()
     {
@@ -630,7 +630,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description and/or code explaining the premature termination of the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonStopped
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonStopped
      * @return $this
      */
     public function setReasonStopped($reasonStopped)
@@ -641,7 +641,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the study by the performer, subject or other participants.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -650,7 +650,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the study by the performer, subject or other participants.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -661,7 +661,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm[]
      */
     public function getArm()
     {
@@ -670,7 +670,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm $arm
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyArm $arm
      * @return $this
      */
     public function addArm($arm)
@@ -681,7 +681,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A goal that the study is aiming to achieve in terms of a scientific question to be answered by the analysis of data collected during the study.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyObjective[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyObjective[]
      */
     public function getObjective()
     {
@@ -690,7 +690,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A goal that the study is aiming to achieve in terms of a scientific question to be answered by the analysis of data collected during the study.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyObjective $objective
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRResearchStudy\FHIRResearchStudyObjective $objective
      * @return $this
      */
     public function addObjective($objective)

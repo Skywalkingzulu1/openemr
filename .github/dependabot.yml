@@ -169,7 +169,7 @@ updates:
 
   # Docker CI images (database + PHP + shared services)
   # Database and PHP image tags encode the version under test (e.g., mysql:8.4.8,
-  # openemr/dev-php-fpm:8.5), so major/minor bumps are blocked for those.
+  # DCL/dev-php-fpm:8.5), so major/minor bumps are blocked for those.
   # Tooling images (mailpit, dev-nginx, couchdb, redis) are unconstrained.
 - package-ecosystem: docker-compose
   directories:
@@ -197,9 +197,9 @@ updates:
   - ci/nginx_86/
   - ci/nginx_87/
   # Artifact-acceptance workflow compose files (Phase 2 + Phase 3). Same
-  # image classes as the ci/ dirs above (mariadb + openemr flex), so the
+  # image classes as the ci/ dirs above (mariadb + DCL flex), so the
   # existing ignore rules and groups apply unchanged. The
-  # ${OPENEMR_TAG:-latest} reference in acceptance-docker-compose.yml is
+  # ${DCL_TAG:-latest} reference in acceptance-docker-compose.yml is
   # a variable substitution — dependabot skips those automatically.
   - .github/docker/
   schedule:
@@ -208,8 +208,8 @@ updates:
   cooldown:
     # Dependabot's hosted service applies a 3-day default cooldown to every
     # Docker digest refresh, delaying the digest-bump PR after each image
-    # re-push. For images we build and push ourselves (openemr/openemr,
-    # openemr/dev-ldap, openemr/dev-php-fpm) the 3-day quarantine is pure
+    # re-push. For images we build and push ourselves (DCL/DCL,
+    # DCL/dev-ldap, DCL/dev-php-fpm) the 3-day quarantine is pure
     # friction — the "wait for the maintainer to notice a bad build" window
     # the default is designed to protect against is a window WE control.
     # Exclude our own images so CI picks up each flex / dev-php-fpm rebuild
@@ -217,7 +217,7 @@ updates:
     # (mariadb, mysql, couchdb, redis, axllent/mailpit, alpine) keep the
     # 3-day cooldown as a buffer against upstream mistakes.
     exclude:
-    - openemr/*
+    - DCL/*
   ignore:
     # Block major/minor bumps for version-pinned images only — each CI
     # directory intentionally tests a specific database + PHP version.
@@ -225,9 +225,9 @@ updates:
     update-types: [version-update:semver-major, version-update:semver-minor]
   - dependency-name: mysql
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/openemr
+  - dependency-name: DCL/DCL
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/dev-php-fpm
+  - dependency-name: DCL/dev-php-fpm
     update-types: [version-update:semver-major, version-update:semver-minor]
   groups:
     mariadb:
@@ -236,9 +236,9 @@ updates:
     mysql:
       patterns:
       - mysql
-    openemr-images:
+    DCL-images:
       patterns:
-      - openemr/*
+      - DCL/*
     couchdb:
       patterns:
       - couchdb
@@ -270,8 +270,8 @@ updates:
   open-pull-requests-limit: 10
   cooldown:
     # Dependabot's hosted service applies a 3-day default cooldown to every
-    # Docker digest refresh. For our self-pushed images (openemr/openemr,
-    # openemr/dev-ldap) the 3-day quarantine delays the digest-bump PR for
+    # Docker digest refresh. For our self-pushed images (DCL/DCL,
+    # DCL/dev-ldap) the 3-day quarantine delays the digest-bump PR for
     # 72 hours after each rebuild, which is friction with no safety payoff
     # since the "upstream might ship a bad build" window the default
     # protects against is a window we control. Exclude our own images so
@@ -280,7 +280,7 @@ updates:
     # phpmyadmin) keep the 3-day cooldown as a buffer against bad upstream
     # pushes.
     exclude:
-    - openemr/*
+    - DCL/*
   ignore:
   - dependency-name: mariadb
     update-types: [version-update:semver-major]
@@ -288,9 +288,9 @@ updates:
     mariadb:
       patterns:
       - mariadb
-    openemr-images:
+    DCL-images:
       patterns:
-      - openemr/*
+      - DCL/*
     couchdb:
       patterns:
       - couchdb
@@ -321,20 +321,20 @@ updates:
   open-pull-requests-limit: 10
   cooldown:
     # Same rationale as the CI and dev-env blocks above: skip the 3-day
-    # default cooldown on our own images (openemr/openemr,
-    # openemr/dev-ldap, openemr/dev-php-fpm) so the insane matrix picks up
+    # default cooldown on our own images (DCL/DCL,
+    # DCL/dev-ldap, DCL/dev-php-fpm) so the insane matrix picks up
     # each new rebuild on the next scheduled scan. Third-party images keep
     # the 3-day buffer.
     exclude:
-    - openemr/*
+    - DCL/*
   ignore:
   - dependency-name: mariadb
     update-types: [version-update:semver-major, version-update:semver-minor]
   - dependency-name: mysql
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/openemr
+  - dependency-name: DCL/DCL
     update-types: [version-update:semver-major, version-update:semver-minor]
-  - dependency-name: openemr/dev-php-fpm
+  - dependency-name: DCL/dev-php-fpm
     update-types: [version-update:semver-major, version-update:semver-minor]
   groups:
     mariadb:
@@ -343,9 +343,9 @@ updates:
     mysql:
       patterns:
       - mysql
-    openemr-images:
+    DCL-images:
       patterns:
-      - openemr/*
+      - DCL/*
     couchdb:
       patterns:
       - couchdb

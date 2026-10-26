@@ -3,44 +3,44 @@
 /**
  * FhirDiagnosticReportLaboratoryService.php
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\DiagnosticReport;
+namespace DCL\Services\FHIR\DiagnosticReport;
 
 use BadMethodCallException;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRInstant;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirOrganizationService;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\ProcedureService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRInstant;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirOrganizationService;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\ProcedureService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class FhirDiagnosticReportLaboratoryService extends FhirServiceBase implements IResourceUSCIGProfileService, IPatientCompartmentResourceService
 {
@@ -69,7 +69,7 @@ class FhirDiagnosticReportLaboratoryService extends FhirServiceBase implements I
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -103,7 +103,7 @@ class FhirDiagnosticReportLaboratoryService extends FhirServiceBase implements I
         return true;
     }
 
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDiagnosticReport
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDiagnosticReport
     {
         $report = new FHIRDiagnosticReport();
         $dataRecordReport = array_pop($dataRecord['reports']);
@@ -195,27 +195,27 @@ class FhirDiagnosticReportLaboratoryService extends FhirServiceBase implements I
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         // this service ignores category_code
-        if (isset($openEMRSearchParameters['category'])) {
-            unset($openEMRSearchParameters['category']);
+        if (isset($DCLSearchParameters['category'])) {
+            unset($DCLSearchParameters['category']);
         }
         // procedure service can return procedures that have no attached report to them.  Because of this situation
         // we have to make sure we exclude any procedures where the report_uuid is empty
-        if (empty($openEMRSearchParameters['_id'])) {
-            $openEMRSearchParameters['_id'] = new TokenSearchField('report_uuid', [new TokenSearchValue(false)]);
-            $openEMRSearchParameters['_id']->setModifier(SearchModifier::MISSING);
+        if (empty($DCLSearchParameters['_id'])) {
+            $DCLSearchParameters['_id'] = new TokenSearchField('report_uuid', [new TokenSearchValue(false)]);
+            $DCLSearchParameters['_id']->setModifier(SearchModifier::MISSING);
         }
 
-        if (isset($openEMRSearchParameters['standard_code']) && $openEMRSearchParameters['standard_code'] instanceof TokenSearchField) {
+        if (isset($DCLSearchParameters['standard_code']) && $DCLSearchParameters['standard_code'] instanceof TokenSearchField) {
             $values = [];
             $modifier = null;
-            foreach ($openEMRSearchParameters['standard_code']->getValues() as $value) {
+            foreach ($DCLSearchParameters['standard_code']->getValues() as $value) {
                 // TODO: @adunsulag do we need to handle unknowable codes across all FHIR code systems?
                 if ($value->getCode() == UtilsService::UNKNOWNABLE_CODE_DATA_ABSENT) {
                     $values = [new TokenSearchValue(true)];
@@ -228,19 +228,19 @@ class FhirDiagnosticReportLaboratoryService extends FhirServiceBase implements I
                     $values[] = $value;
                 }
             }
-            $openEMRSearchParameters['standard_code'] = new TokenSearchField('standard_code', $values);
+            $DCLSearchParameters['standard_code'] = new TokenSearchField('standard_code', $values);
             if (!empty($modifier)) {
-                $openEMRSearchParameters['standard_code']->setModifier($modifier);
+                $DCLSearchParameters['standard_code']->setModifier($modifier);
             }
         }
-        $openEMRSearchParameters['procedure_type'] = new TokenSearchField('procedure_type', [new TokenSearchValue(self::PROCEDURE_ORDER_TEST_TYPE)]);
-        return $this->service->search($openEMRSearchParameters);
+        $DCLSearchParameters['procedure_type'] = new TokenSearchField('procedure_type', [new TokenSearchValue(self::PROCEDURE_ORDER_TEST_TYPE)]);
+        return $this->service->search($DCLSearchParameters);
     }
 
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param FHIRDiagnosticReport $dataRecord The source OpenEMR data record
+     * @param FHIRDiagnosticReport $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return FHIRProvenance|string|false the FHIR Resource. Returned format is defined using $encode parameter.
      */

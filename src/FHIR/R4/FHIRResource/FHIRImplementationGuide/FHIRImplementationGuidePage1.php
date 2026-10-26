@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,19 +71,19 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Relative path to the page.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Label for the page intended for human display.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The name of an anchor available on the page.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $anchor = [];
 
@@ -94,7 +94,7 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement implements \JsonS
 
     /**
      * Relative path to the page.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -103,7 +103,7 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement implements \JsonS
 
     /**
      * Relative path to the page.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -114,7 +114,7 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement implements \JsonS
 
     /**
      * Label for the page intended for human display.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -123,7 +123,7 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement implements \JsonS
 
     /**
      * Label for the page intended for human display.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -134,7 +134,7 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement implements \JsonS
 
     /**
      * The name of an anchor available on the page.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getAnchor()
     {
@@ -143,7 +143,7 @@ class FHIRImplementationGuidePage1 extends FHIRBackboneElement implements \JsonS
 
     /**
      * The name of an anchor available on the page.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $anchor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $anchor
      * @return $this
      */
     public function addAnchor($anchor)

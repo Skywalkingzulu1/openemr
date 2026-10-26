@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCareTeam;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCareTeam;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCareTeam;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The Care Team includes all the people and organizations who plan to participate in the coordination and delivery of care for a patient.
@@ -71,25 +71,25 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * Indicates specific responsibility of an individual within the care team, such as "Primary care physician", "Trained social worker counselor", "Caregiver", etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $role = [];
 
     /**
      * The specific person or organization who is participating/expected to participate in the care team.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $member = null;
 
     /**
      * The organization of the practitioner.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $onBehalfOf = null;
 
     /**
      * Indicates when the specific member or organization did (or is intended to) come into effect and end.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -100,7 +100,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Indicates specific responsibility of an individual within the care team, such as "Primary care physician", "Trained social worker counselor", "Caregiver", etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRole()
     {
@@ -109,7 +109,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Indicates specific responsibility of an individual within the care team, such as "Primary care physician", "Trained social worker counselor", "Caregiver", etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function addRole($role)
@@ -120,7 +120,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The specific person or organization who is participating/expected to participate in the care team.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getMember()
     {
@@ -129,7 +129,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The specific person or organization who is participating/expected to participate in the care team.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $member
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $member
      * @return $this
      */
     public function setMember($member)
@@ -140,7 +140,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The organization of the practitioner.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOnBehalfOf()
     {
@@ -149,7 +149,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The organization of the practitioner.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $onBehalfOf
      * @return $this
      */
     public function setOnBehalfOf($onBehalfOf)
@@ -160,7 +160,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Indicates when the specific member or organization did (or is intended to) come into effect and end.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -169,7 +169,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Indicates when the specific member or organization did (or is intended to) come into effect and end.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

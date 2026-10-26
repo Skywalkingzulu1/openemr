@@ -3,21 +3,21 @@
 /**
  * ConditionRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\ConditionService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\ConditionService;
+use DCL\Services\PatientService;
+use DCL\Validators\ProcessingResult;
 
 #[OA\Schema(
     schema: 'api_medical_problem_request',
@@ -72,7 +72,7 @@ class ConditionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($uuid)
     {
@@ -141,7 +141,7 @@ class ConditionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     #[OA\Get(
         path: '/api/patient/{puuid}/medical_problem',
@@ -161,7 +161,7 @@ class ConditionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     #[OA\Get(
         path: '/api/patient/{puuid}/medical_problem/{muuid}',
@@ -188,7 +188,7 @@ class ConditionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($search = [])
     {
@@ -223,7 +223,7 @@ class ConditionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post($puuid, $data)
     {
@@ -267,7 +267,7 @@ class ConditionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put($puuid, $uuid, $data)
     {
@@ -324,7 +324,7 @@ class ConditionRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function delete($puuid, $uuid)
     {

@@ -9,25 +9,25 @@
  * value its type rejects is left out, as a failed mongoose cast leaves the
  * attribute unset.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Cqm\Cql\Qdm;
+namespace DCL\Cqm\Cql\Qdm;
 
-use OpenEMR\Cqm\Cql\Types\Code;
-use OpenEMR\Cqm\Cql\Types\CqlDate;
-use OpenEMR\Cqm\Cql\Types\CqlDateTime;
-use OpenEMR\Cqm\Cql\Types\Interval;
-use OpenEMR\Cqm\Cql\Types\Quantity;
-use OpenEMR\Cqm\Cql\Types\Ratio;
-use OpenEMR\Cqm\Cql\Types\Tuple;
-use OpenEMR\Cqm\Cql\Util\JavaScript;
+use DCL\Cqm\Cql\Types\Code;
+use DCL\Cqm\Cql\Types\CqlDate;
+use DCL\Cqm\Cql\Types\CqlDateTime;
+use DCL\Cqm\Cql\Types\Interval;
+use DCL\Cqm\Cql\Types\Quantity;
+use DCL\Cqm\Cql\Types\Ratio;
+use DCL\Cqm\Cql\Types\Tuple;
+use DCL\Cqm\Cql\Util\JavaScript;
 
 final class QdmPatient
 {

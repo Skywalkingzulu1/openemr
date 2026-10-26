@@ -3,16 +3,16 @@
 /**
  * PHPStan rule: forbid unbacktick'd reserved-word column references in SQL.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPStan\Rules\Sql;
+namespace DCL\PHPStan\Rules\Sql;
 
 use PhpMyAdmin\SqlParser\Components\Condition;
 use PhpMyAdmin\SqlParser\Components\Expression;
@@ -35,7 +35,7 @@ use PHPStan\Rules\RuleErrorBuilder;
 
 /**
  * Flags bare identifiers in SQL string literals that match a MySQL 8+ or
- * MariaDB reserved word AND a known OpenEMR schema identifier.
+ * MariaDB reserved word AND a known DCL schema identifier.
  *
  * Rationale: an identifier reserved by either supported engine must be
  * backticked or the query fails to parse on that engine. MariaDB has a
@@ -51,7 +51,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  * parser exposes IntoKeyword::$columns with backticks already stripped.)
  *
  * The intersection with `SchemaColumnRegistry` eliminates false positives:
- * a word like `over_field` shares no name with a real OpenEMR identifier,
+ * a word like `over_field` shares no name with a real DCL identifier,
  * so even though `over` is reserved it never fires. Function calls
  * (DATE_ADD, NOW, etc.) are correctly distinguished from identifier
  * references by the parser's grammar awareness.
@@ -112,7 +112,7 @@ final readonly class SqlReservedWordRule implements Rule
                     $offender,
                     $offender,
                 ))
-                    ->identifier('openemr.sqlReservedWord')
+                    ->identifier('DCL.sqlReservedWord')
                     ->build();
             }
         }
@@ -123,7 +123,7 @@ final readonly class SqlReservedWordRule implements Rule
     /**
      * Upper bound on the SQL string length we'll feed to the parser, to
      * cap the rule's worst-case time on a hostile or accidentally-huge
-     * literal. Realistic OpenEMR SQL strings are well under 10 KB; the
+     * literal. Realistic DCL SQL strings are well under 10 KB; the
      * 100 KB cap is comfortable headroom and skips analysis entirely
      * past that, since exceeding it is far more likely to indicate
      * embedded data than a column reference worth flagging.
@@ -331,7 +331,7 @@ final readonly class SqlReservedWordRule implements Rule
      * currently treats the first parens after the table as the column
      * list, so PARTITION'd inserts would have their partition names
      * walked instead. The (reserved ∩ schema-identifier) gate filters
-     * most spurious flags. No known OpenEMR call sites use this.
+     * most spurious flags. No known DCL call sites use this.
      *
      * @return iterable<string>
      */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Sql functions/classes for OpenEMR.
+ * Sql functions/classes for DCL.
  *
  * Things related to layout based forms in general.
  *
@@ -20,8 +20,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://opensource.org/licenses/gpl-license.php>.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  */
 
 // array of the data_types of the fields

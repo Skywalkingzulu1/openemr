@@ -3,7 +3,7 @@
 /**
  * CsrfUtils class.
  *
- *   OpenEMR CSRF prevention strategy:
+ *   DCL CSRF prevention strategy:
  *    1. A secret key is created upon login that is stored in session.
  *    2. This key is used to build CSRF tokens via hash_hmac().
  *    3. This mechanism allows creation of infinite CSRF tokens from 1 secret key.
@@ -12,18 +12,18 @@
  *       the full 64 of a sha256 hash) so as not to break character limits when
  *       CSRF tokens are used in GET requests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Csrf;
+namespace DCL\Common\Csrf;
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -37,7 +37,7 @@ class CsrfUtils
         $privateKey = random_bytes(32);
         $session->set('csrf_private_key', $privateKey);
         if (empty($session->get('csrf_private_key', null))) {
-            error_log("OpenEMR Error : OpenEMR is potentially not secure because unable to create the CSRF key.");
+            error_log("DCL Error : DCL is potentially not secure because unable to create the CSRF key.");
         }
     }
 
@@ -50,7 +50,7 @@ class CsrfUtils
     {
         $privateKey = $session->get('csrf_private_key', null);
         if ($privateKey === null || $privateKey === '') {
-            throw new RuntimeException("OpenEMR is potentially not secure because CSRF key is empty.");
+            throw new RuntimeException("DCL is potentially not secure because CSRF key is empty.");
         }
         return substr(hash_hmac('sha256', $subject, (string) $privateKey), 0, 40);
     }
@@ -109,7 +109,7 @@ class CsrfUtils
             echo xlt('Authentication Error');
         }
         if ($toLog) {
-            error_log("OpenEMR CSRF token authentication error");
+            error_log("DCL CSRF token authentication error");
         }
     }
 

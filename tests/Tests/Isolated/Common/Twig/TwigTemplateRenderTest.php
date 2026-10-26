@@ -10,26 +10,26 @@
  * an expected file, catching structural bugs like wrong attributes, missing
  * prefixes, or broken escaping.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Common\Twig;
+namespace DCL\Tests\Isolated\Common\Twig;
 
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\PostOutcome;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailabilityController;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\PostCalendar\PostCalendarTwigExtension;
-use OpenEMR\Services\Patient\DuplicatePatientColumn;
-use OpenEMR\Services\Patient\DuplicatePatientGroup;
-use OpenEMR\Services\Patient\DuplicatePatientRow;
-use OpenEMR\Services\Patient\PatientMergeResult;
-use OpenEMR\Tests\Isolated\Controllers\Interface\Super\FakeAvailabilityLookups;
-use OpenEMR\Tests\Isolated\Controllers\Interface\Super\FakeAvailabilityService;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\PostOutcome;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailabilityController;
+use DCL\Core\OEGlobalsBag;
+use DCL\PostCalendar\PostCalendarTwigExtension;
+use DCL\Services\Patient\DuplicatePatientColumn;
+use DCL\Services\Patient\DuplicatePatientGroup;
+use DCL\Services\Patient\DuplicatePatientRow;
+use DCL\Services\Patient\PatientMergeResult;
+use DCL\Tests\Isolated\Controllers\Interface\Super\FakeAvailabilityLookups;
+use DCL\Tests\Isolated\Controllers\Interface\Super\FakeAvailabilityService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;

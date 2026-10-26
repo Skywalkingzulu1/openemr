@@ -3,11 +3,11 @@
 /**
  * Multi Site Administration Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 ?>
@@ -34,7 +34,7 @@
    <body>
         <div class="container oe-help-container">
             <div>
-                <h2 class="text-center"><a name='entire_doc'><?php echo ("OpenEMR Multi Site Administration");?></a></h2>
+                <h2 class="text-center"><a name='entire_doc'><?php echo ("DCL Multi Site Administration");?></a></h2>
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -59,13 +59,13 @@
 
                     <p><?php echo ("<strong>DB Name</strong> - the name of the database containing site-specific data");?>.</p>
 
-                    <p><?php echo ("<strong>Site Name</strong> - by default it will be OpenEMR, once the site is setup this can be changed for that instance by going to Administration > Appearance > Application Title");?>.</p>
+                    <p><?php echo ("<strong>Site Name</strong> - by default it will be DCL, once the site is setup this can be changed for that instance by going to Administration > Appearance > Application Title");?>.</p>
 
                     <p><?php echo ("<strong>Version</strong> - the version of the current installation");?>.</p>
 
                     <p><?php echo ("As the script files are common to all sites, it would be imperative that all sites have the same version number");?>.</p>
 
-                    <p><?php echo ("<strong>Is Current</strong> - Whether on not the the site's installed database, access control list version and patch status is current i.e. the OpenEMR scripts will work with the installed database, the latest access control lists are available and that the required patches have been applied and is up to date ");?>.</p>
+                    <p><?php echo ("<strong>Is Current</strong> - Whether on not the the site's installed database, access control list version and patch status is current i.e. the DCL scripts will work with the installed database, the latest access control lists are available and that the required patches have been applied and is up to date ");?>.</p>
 
                     <p><?php echo ("<strong>Log In</strong> - That will let you login to the particular site");?>.</p>
 

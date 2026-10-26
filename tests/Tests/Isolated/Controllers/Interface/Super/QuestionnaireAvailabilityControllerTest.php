@@ -6,25 +6,25 @@
  * The service and pick lists are in-memory fakes, so these cover what the controller itself
  * decides: what the grid and panels show, and which writes a submitted form turns into.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Controllers\Interface\Super;
+namespace DCL\Tests\Isolated\Controllers\Interface\Super;
 
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\GridRow;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\PostOutcome;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\RuleForm;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\RuleRow;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailabilityController;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\GridRow;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\PostOutcome;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\RuleForm;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\RuleRow;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailabilityController;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -388,7 +388,7 @@ class QuestionnaireAvailabilityControllerTest extends TestCase
     }
 
     /**
-     * @return array<string, \OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\GridCell>
+     * @return array<string, \DCL\Controllers\Interface\Super\QuestionnaireAvailability\GridCell>
      */
     private function cellsBySurface(GridRow $row): array
     {

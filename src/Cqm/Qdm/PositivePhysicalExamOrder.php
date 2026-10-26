@@ -1,15 +1,15 @@
 <?php
 
-namespace OpenEMR\Cqm\Qdm;
+namespace DCL\Cqm\Qdm;
 
 /**
- * OpenEMR\Cqm\Qdm\PositivePhysicalExamOrder
+ * DCL\Cqm\Qdm\PositivePhysicalExamOrder
  *
  * This is a class generated with Laminas\Code\Generator.
  *
  * @QDM Version 5.6
  * @author Ken Chapple <ken@mi-squared.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General
  * Public License 3
  */
 class PositivePhysicalExamOrder extends PhysicalExamOrder

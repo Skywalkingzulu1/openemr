@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
@@ -23,7 +23,7 @@ use Symfony\Component\Process\Process;
  * message). This test only covers the CLI shell around it: the required
  * positional argument, an empty --repo-dir override, and a single
  * end-to-end happy-path invocation against a synthetic git repo carrying
- * an annotated tag whose message matches the openemr-devops#664 spec.
+ * an annotated tag whose message matches the DCL-devops#664 spec.
  */
 final class VerifyTagCliTest extends TestCase
 {
@@ -33,7 +33,7 @@ final class VerifyTagCliTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-verify-tag-cli-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-verify-tag-cli-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -73,7 +73,7 @@ final class VerifyTagCliTest extends TestCase
     public function testHappyPathAgainstSyntheticRepo(): void
     {
         // Build a minimal git repo with one commit and an annotated tag
-        // carrying a message that satisfies the openemr-devops#664 spec
+        // carrying a message that satisfies the DCL-devops#664 spec
         // (version + ISO date + 40-hex merge-commit SHA). Confirm the
         // CLI exits 0 and reports success on stdout.
         $repoDir = $this->tmpDir . '/repo';
@@ -96,7 +96,7 @@ final class VerifyTagCliTest extends TestCase
         $revParse->mustRun();
         $sha = trim($revParse->getOutput());
 
-        $message = "OpenEMR 8.1.0 released 2026-07-21\n\nMerge commit: {$sha}\n";
+        $message = "DCL 8.1.0 released 2026-07-21\n\nMerge commit: {$sha}\n";
         $this->git($repoDir, ['tag', '-a', 'v8_1_0', '-m', $message]);
 
         $process = new Process(['php', self::BIN, 'v8_1_0', '--repo-dir=' . $repoDir]);

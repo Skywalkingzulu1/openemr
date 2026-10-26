@@ -3,22 +3,22 @@
 /**
  * GgUserMenuLinksTest class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2024 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e;
+namespace DCL\Tests\E2e;
 
-use OpenEMR\Tests\E2e\Base\BaseTrait;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
-use OpenEMR\Tests\E2e\Login\LoginTrait;
+use DCL\Tests\E2e\Base\BaseTrait;
+use DCL\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Login\LoginTrait;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\Attributes\Test;
@@ -61,8 +61,8 @@ class GgUserMenuLinksTest extends PantherTestCase
             'Settings user menu link' => ['fa-cog', 'Settings', 'User Settings'],
             'Change Password user menu link' => ['fa-lock', 'Change Password', 'Change Password'],
             'MFA Management user menu link' => ['fa-key', 'MFA Management', 'Manage Multi Factor Authentication'],
-            'About OpenEMR user menu link' => ['fa-info', 'About OpenEMR', 'About OpenEMR'],
-            'Logout user menu link' => ['fa-sign-out-alt', 'Logout', 'OpenEMR Login']
+            'About DCL user menu link' => ['fa-info', 'About DCL', 'About DCL'],
+            'Logout user menu link' => ['fa-sign-out-alt', 'Logout', 'DCL Login']
         ];
     }
 }

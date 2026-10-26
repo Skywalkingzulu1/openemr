@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImmunization;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
@@ -71,19 +71,19 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Date of reaction to the immunization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Details of the reaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $detail = null;
 
     /**
      * Self-reported indicator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $reported = null;
 
@@ -94,7 +94,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Date of reaction to the immunization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -103,7 +103,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Date of reaction to the immunization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -114,7 +114,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Details of the reaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDetail()
     {
@@ -123,7 +123,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Details of the reaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $detail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $detail
      * @return $this
      */
     public function setDetail($detail)
@@ -134,7 +134,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Self-reported indicator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getReported()
     {
@@ -143,7 +143,7 @@ class FHIRImmunizationReaction extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Self-reported indicator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $reported
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $reported
      * @return $this
      */
     public function setReported($reported)

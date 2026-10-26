@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describes a measurement, calculation or setting capability of a medical device.
@@ -72,61 +72,61 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique instance identifiers assigned to a device by the device or gateway software, manufacturers, other organizations or owners. For example: handle ID.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Describes the unit that an observed value determined for this metric will have. For example: Percent, Seconds, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unit = null;
 
     /**
      * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacturer, serial number, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $source = null;
 
     /**
      * Describes the link to the  Device that this DeviceMetric belongs to and that provide information about the location of this DeviceMetric in the containment structure of the parent Device. An example would be a Device that represents a Channel. This reference can be used by a client application to distinguish DeviceMetrics that have the same type, but should be interpreted based on their containment location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $parent = null;
 
     /**
      * Indicates current operational state of the device. For example: On, Off, Standby, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
      */
     public $operationalStatus = null;
 
     /**
      * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricColor
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricColor
      */
     public $color = null;
 
     /**
      * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCategory
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCategory
      */
     public $category = null;
 
     /**
      * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $measurementPeriod = null;
 
     /**
      * Describes the calibrations that have been performed or that are required to be performed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration[]
      */
     public $calibration = [];
 
@@ -137,7 +137,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique instance identifiers assigned to a device by the device or gateway software, manufacturers, other organizations or owners. For example: handle ID.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -146,7 +146,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique instance identifiers assigned to a device by the device or gateway software, manufacturers, other organizations or owners. For example: handle ID.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -157,7 +157,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -166,7 +166,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -177,7 +177,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the unit that an observed value determined for this metric will have. For example: Percent, Seconds, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnit()
     {
@@ -186,7 +186,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the unit that an observed value determined for this metric will have. For example: Percent, Seconds, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
      * @return $this
      */
     public function setUnit($unit)
@@ -197,7 +197,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacturer, serial number, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSource()
     {
@@ -206,7 +206,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacturer, serial number, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function setSource($source)
@@ -217,7 +217,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the link to the  Device that this DeviceMetric belongs to and that provide information about the location of this DeviceMetric in the containment structure of the parent Device. An example would be a Device that represents a Channel. This reference can be used by a client application to distinguish DeviceMetrics that have the same type, but should be interpreted based on their containment location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParent()
     {
@@ -226,7 +226,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the link to the  Device that this DeviceMetric belongs to and that provide information about the location of this DeviceMetric in the containment structure of the parent Device. An example would be a Device that represents a Channel. This reference can be used by a client application to distinguish DeviceMetrics that have the same type, but should be interpreted based on their containment location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $parent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $parent
      * @return $this
      */
     public function setParent($parent)
@@ -237,7 +237,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates current operational state of the device. For example: On, Off, Standby, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
      */
     public function getOperationalStatus()
     {
@@ -246,7 +246,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates current operational state of the device. For example: On, Off, Standby, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
      * @return $this
      */
     public function setOperationalStatus($operationalStatus)
@@ -257,7 +257,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricColor
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricColor
      */
     public function getColor()
     {
@@ -266,7 +266,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricColor $color
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricColor $color
      * @return $this
      */
     public function setColor($color)
@@ -277,7 +277,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCategory
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCategory
      */
     public function getCategory()
     {
@@ -286,7 +286,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCategory $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCategory $category
      * @return $this
      */
     public function setCategory($category)
@@ -297,7 +297,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getMeasurementPeriod()
     {
@@ -306,7 +306,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $measurementPeriod
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $measurementPeriod
      * @return $this
      */
     public function setMeasurementPeriod($measurementPeriod)
@@ -317,7 +317,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the calibrations that have been performed or that are required to be performed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration[]
      */
     public function getCalibration()
     {
@@ -326,7 +326,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the calibrations that have been performed or that are required to be performed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration $calibration
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration $calibration
      * @return $this
      */
     public function addCalibration($calibration)

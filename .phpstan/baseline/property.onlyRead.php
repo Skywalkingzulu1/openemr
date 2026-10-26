@@ -7,7 +7,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/eRxPage.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Property OpenEMR\\\\Modules\\\\WenoModule\\\\Bootstrap\\:\\:\\$twig is never written, only read\\.$#',
+    'message' => '#^Property DCL\\\\Modules\\\\WenoModule\\\\Bootstrap\\:\\:\\$twig is never written, only read\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-weno/src/Bootstrap.php',
 ];

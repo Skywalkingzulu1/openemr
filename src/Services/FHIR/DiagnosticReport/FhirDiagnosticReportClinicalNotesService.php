@@ -2,44 +2,44 @@
 
 /**
  * FhirDiagnosticReportClinicalNotesService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\DiagnosticReport;
+namespace DCL\Services\FHIR\DiagnosticReport;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRInstant;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia;
-use OpenEMR\Services\ClinicalNotesService;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirOrganizationService;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDiagnosticReport;
+use DCL\FHIR\R4\FHIRElement\FHIRAttachment;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRInstant;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia;
+use DCL\Services\ClinicalNotesService;
+use DCL\Services\CodeTypesService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirOrganizationService;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\ListService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class FhirDiagnosticReportClinicalNotesService extends FhirServiceBase implements IResourceUSCIGProfileService, IPatientCompartmentResourceService
@@ -68,7 +68,7 @@ class FhirDiagnosticReportClinicalNotesService extends FhirServiceBase implement
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -101,7 +101,7 @@ class FhirDiagnosticReportClinicalNotesService extends FhirServiceBase implement
         return $this->service->isValidClinicalNoteCode($code);
     }
 
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDiagnosticReport
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDiagnosticReport
     {
         $report = new FHIRDiagnosticReport();
         $this->populateMeta($report, $dataRecord);
@@ -201,24 +201,24 @@ class FhirDiagnosticReportClinicalNotesService extends FhirServiceBase implement
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (isset($openEMRSearchParameters['code']) && $openEMRSearchParameters['code'] instanceof TokenSearchField) {
-            $openEMRSearchParameters['code']->transformValues($this->addLOINCPrefix(...));
+        if (isset($DCLSearchParameters['code']) && $DCLSearchParameters['code'] instanceof TokenSearchField) {
+            $DCLSearchParameters['code']->transformValues($this->addLOINCPrefix(...));
         }
 
-        if (isset($openEMRSearchParameters['category_code']) && $openEMRSearchParameters['category_code'] instanceof TokenSearchField) {
-            $openEMRSearchParameters['category_code']->transformValues($this->addLOINCPrefix(...));
+        if (isset($DCLSearchParameters['category_code']) && $DCLSearchParameters['category_code'] instanceof TokenSearchField) {
+            $DCLSearchParameters['category_code']->transformValues($this->addLOINCPrefix(...));
         } else {
             // we need to make sure we only include things with a category code in our clinical notes
-            $openEMRSearchParameters['category_code'] = new TokenSearchField('category_code', [new TokenSearchValue(false)]);
-            $openEMRSearchParameters['category_code']->setModifier(SearchModifier::MISSING);
+            $DCLSearchParameters['category_code'] = new TokenSearchField('category_code', [new TokenSearchValue(false)]);
+            $DCLSearchParameters['category_code']->setModifier(SearchModifier::MISSING);
         }
-        $result = $this->service->search($openEMRSearchParameters);
+        $result = $this->service->search($DCLSearchParameters);
         return $result;
     }
 
@@ -233,7 +233,7 @@ class FhirDiagnosticReportClinicalNotesService extends FhirServiceBase implement
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return the FHIR Resource. Returned format is defined using $encode parameter.
      */

@@ -3,27 +3,27 @@
 /**
  * Installer class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Andrew Moore <amoore@cpan.org>
  * @author    Ranganath Pathak <pathak@scrs1.org>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2010 Andrew Moore <amoore@cpan.org>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2025-2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025-2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\DatabaseConnectionFactory;
-use OpenEMR\BC\DatabaseConnectionOptions;
-use OpenEMR\Common\Command\RootCliGuard;
-use OpenEMR\Common\Crypto\KeyVersion;
-use OpenEMR\Common\Crypto\PasswordBasedCrypto;
-use OpenEMR\Common\Installer\InstallerInterface;
-use OpenEMR\Core\VersionFile;
-use OpenEMR\Gacl\GaclApi;
+use DCL\BC\DatabaseConnectionFactory;
+use DCL\BC\DatabaseConnectionOptions;
+use DCL\Common\Command\RootCliGuard;
+use DCL\Common\Crypto\KeyVersion;
+use DCL\Common\Crypto\PasswordBasedCrypto;
+use DCL\Common\Installer\InstallerInterface;
+use DCL\Core\VersionFile;
+use DCL\Gacl\GaclApi;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -119,7 +119,7 @@ class Installer implements InstallerInterface
         // Record names of sql table files
         $this->main_sql = __DIR__ . '/../../sql/database.sql';
         $this->translation_sql = __DIR__ . '/../../contrib/util/language_translations/currentLanguage_utf8.sql';
-        $this->devel_translation_sql = "http://translations.openemr.io/languageTranslations_utf8.sql";
+        $this->devel_translation_sql = "http://translations.DCL.io/languageTranslations_utf8.sql";
         $this->ippf_sql = __DIR__ . "/../../sql/ippf_layout.sql";
         $this->cvx = __DIR__ . "/../../sql/cvx_codes.sql";
         $this->additional_users = __DIR__ . "/../../sql/official_additional_users.sql";
@@ -546,7 +546,7 @@ class Installer implements InstallerInterface
      * Add version information to the database.
      *
      * Loads version constants from version.php and updates the version table
-     * with current OpenEMR version information.
+     * with current DCL version information.
      *
      * @return bool True if version info added successfully, false otherwise
      */
@@ -605,8 +605,8 @@ class Installer implements InstallerInterface
         $escapedHash = $this->escapeSql($hash);
         if (empty($hash)) {
             // Something is seriously wrong
-            error_log('OpenEMR Error : OpenEMR is not working because unable to create a hash.');
-            $this->die("OpenEMR Error : OpenEMR is not working because unable to create a hash.");
+            error_log('DCL Error : DCL is not working because unable to create a hash.');
+            $this->die("DCL Error : DCL is not working because unable to create a hash.");
         }
         if ($this->execute_sql("INSERT INTO users_secure (id, username, password, last_update_password) VALUES (1,'{$escapedUser}','{$escapedHash}',NOW())") == false) {
             $this->error_message = "ERROR. Unable to add initial user login credentials\n" .
@@ -636,7 +636,7 @@ class Installer implements InstallerInterface
      */
     public function install_additional_users(): bool
     {
-        // Add the official openemr users (services)
+        // Add the official DCL users (services)
         if ($this->load_file($this->additional_users, "Additional Official Users") == false) {
             return false;
         }
@@ -746,7 +746,7 @@ class Installer implements InstallerInterface
         }
 
         $string = '<?php
-//  OpenEMR
+//  DCL
 //  MySQL Config
 
 ';
@@ -886,7 +886,7 @@ $config = 1; /////////////
      * Install the Generic Access Control List (GACL) system.
      *
      * Creates all access control objects (ACOs), sections, and groups
-     * needed for OpenEMR's role-based access control system.
+     * needed for DCL's role-based access control system.
      *
      * @return bool True if GACL installation successful, false otherwise
      */
@@ -896,7 +896,7 @@ $config = 1; /////////////
 
         // Create the ACO sections.  Every ACO must have a section.
         if ($gacl->add_object_section('Accounting', 'acct', 10, 0, 'ACO') === false) {
-            $this->error_message = "ERROR, Unable to create the access controls for OpenEMR.";
+            $this->error_message = "ERROR, Unable to create the access controls for DCL.";
             return false;
         }
         // xl('Accounting')
@@ -1087,8 +1087,8 @@ $config = 1; /////////////
         // xl('Reporting')
 
         // Create ARO groups.
-        $users = $gacl->add_group('users', 'OpenEMR Users', 0, 'ARO');
-        // xl('OpenEMR Users')
+        $users = $gacl->add_group('users', 'DCL Users', 0, 'ARO');
+        // xl('DCL Users')
         $admin = $gacl->add_group('admin', 'Administrators', $users, 'ARO');
         // xl('Administrators')
         $clin  = $gacl->add_group('clin', 'Clinicians', $users, 'ARO');
@@ -1109,7 +1109,7 @@ $config = 1; /////////////
 
         // Create the Administrator in the above-created "users" section
         // and add him/her to the above-created "admin" group.
-        // If this script is being used by OpenEMR's setup, then will
+        // If this script is being used by DCL's setup, then will
         //   incorporate the installation values. Otherwise will
         //    hardcode the 'admin' user.
         $gacl->add_object('users', $this->iuname, $this->iuser, 10, 0, 'ARO');
@@ -1425,7 +1425,7 @@ $config = 1; /////////////
     }
 
     /**
-     * Perform a complete OpenEMR installation process.
+     * Perform a complete DCL installation process.
      *
      * Orchestrates the entire installation by validating settings,
      * creating databases and users, loading SQL files, configuring
@@ -1439,7 +1439,7 @@ $config = 1; /////////////
         // does substantial filesystem writes (site directory copy, key
         // material, generated config) and root-owned outputs would brick
         // the web server later. CLI entry points are InstallerAuto.php
-        // (this repo) and auto_configure.php (openemr-devops); the web
+        // (this repo) and auto_configure.php (DCL-devops); the web
         // setup.php is also a caller but RootCliGuard short-circuits for
         // non-CLI SAPI so web installs are unaffected. Skipped under
         // PHPUnit so InstallerTest can construct/exercise the class.
@@ -1447,7 +1447,7 @@ $config = 1; /////////////
             RootCliGuard::assertNotRoot();
         }
 
-        // Validation of OpenEMR user settings
+        // Validation of DCL user settings
         //   (applicable if not cloning from another database)
         if (empty($this->clone_database)) {
             $this->logger->debug('Validating installation parameters');
@@ -1656,7 +1656,7 @@ $config = 1; /////////////
                 if ($showError) {
                     $error_mes = $this->mysqliError($this->dbh);
                     $this->error_message = "unable to execute SQL: '$sql' due to: " . $error_mes;
-                    $this->logger->error("ERROR IN OPENEMR INSTALL: Unable to execute SQL: {sql} due to: {error}", ['sql' => $sql, 'error' => $error_mes]);
+                    $this->logger->error("ERROR IN DCL INSTALL: Unable to execute SQL: {sql} due to: {error}", ['sql' => $sql, 'error' => $error_mes]);
                 }
                 return false;
             }
@@ -1664,7 +1664,7 @@ $config = 1; /////////////
         } catch (\mysqli_sql_exception $exception) {
             if ($showError) {
                 $this->error_message = "unable to execute SQL: '$sql' due to: " . $exception->getMessage();
-                $this->logger->error("ERROR IN OPENEMR INSTALL: Unable to execute SQL: {sql} due to: {message}", ['sql' => $sql, 'message' => $exception->getMessage(), 'exception' => $exception]);
+                $this->logger->error("ERROR IN DCL INSTALL: Unable to execute SQL: {sql} due to: {message}", ['sql' => $sql, 'message' => $exception->getMessage(), 'exception' => $exception]);
             }
             return false;
         }
@@ -2044,7 +2044,7 @@ DSTD;
         <script>
             $(function () {
                 $('#help-href').click (function(){
-                    document.getElementById('targetiframe').src = "Documentation/help_files/openemr_installation_help.php";
+                    document.getElementById('targetiframe').src = "Documentation/help_files/DCL_installation_help.php";
                 })
             });
             $(function () {
@@ -2101,7 +2101,7 @@ SETHLP;
     }
 
     /**
-     * Check if OpenEMR CryptoGen class exists.
+     * Check if DCL CryptoGen class exists.
      *
      * @codeCoverageIgnore
      *
@@ -2109,7 +2109,7 @@ SETHLP;
      */
     protected function cryptoGenClassExists(): bool
     {
-        return class_exists(\OpenEMR\Common\Crypto\CryptoGen::class);
+        return class_exists(\DCL\Common\Crypto\CryptoGen::class);
     }
 
     /**

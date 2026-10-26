@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
@@ -71,13 +71,13 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement implements \Jso
 {
     /**
      * Defines how to interpret the expression that defines what the context of the extension is.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExtensionContextType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExtensionContextType
      */
     public $type = null;
 
     /**
      * An expression that defines where an extension can be used in resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
@@ -88,7 +88,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement implements \Jso
 
     /**
      * Defines how to interpret the expression that defines what the context of the extension is.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExtensionContextType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExtensionContextType
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement implements \Jso
 
     /**
      * Defines how to interpret the expression that defines what the context of the extension is.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExtensionContextType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExtensionContextType $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement implements \Jso
 
     /**
      * An expression that defines where an extension can be used in resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -117,7 +117,7 @@ class FHIRStructureDefinitionContext extends FHIRBackboneElement implements \Jso
 
     /**
      * An expression that defines where an extension can be used in resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)

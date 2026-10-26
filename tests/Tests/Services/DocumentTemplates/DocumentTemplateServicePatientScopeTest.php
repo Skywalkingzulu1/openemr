@@ -11,20 +11,20 @@
  * renderer-facing `fetchTemplateForPatient()` seam used by the portal and
  * shared renderers.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\DocumentTemplates;
+namespace DCL\Tests\Services\DocumentTemplates;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\DocumentTemplates\DocumentTemplateRender;
-use OpenEMR\Services\DocumentTemplates\DocumentTemplateService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\DocumentTemplates\DocumentTemplateRender;
+use DCL\Services\DocumentTemplates\DocumentTemplateService;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 

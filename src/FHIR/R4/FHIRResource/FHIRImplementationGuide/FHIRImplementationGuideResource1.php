@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,23 +71,23 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
 {
     /**
      * Where this resource is found.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $reference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $exampleBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $exampleCanonical = null;
 
     /**
      * The relative path for primary page for this resource within the IG.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $relativePath = null;
 
@@ -98,7 +98,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
 
     /**
      * Where this resource is found.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReference()
     {
@@ -107,7 +107,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
 
     /**
      * Where this resource is found.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reference
      * @return $this
      */
     public function setReference($reference)
@@ -117,7 +117,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExampleBoolean()
     {
@@ -125,7 +125,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $exampleBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $exampleBoolean
      * @return $this
      */
     public function setExampleBoolean($exampleBoolean)
@@ -135,7 +135,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getExampleCanonical()
     {
@@ -143,7 +143,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $exampleCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $exampleCanonical
      * @return $this
      */
     public function setExampleCanonical($exampleCanonical)
@@ -154,7 +154,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
 
     /**
      * The relative path for primary page for this resource within the IG.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getRelativePath()
     {
@@ -163,7 +163,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement implements \J
 
     /**
      * The relative path for primary page for this resource within the IG.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $relativePath
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $relativePath
      * @return $this
      */
     public function setRelativePath($relativePath)

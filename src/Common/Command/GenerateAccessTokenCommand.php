@@ -3,14 +3,14 @@
 /**
  * GenerateAccessTokenTestCommand is a command that generates an access token for a test client
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use DateInterval;
 use DateTimeImmutable;
@@ -18,27 +18,27 @@ use League\OAuth2\Server\CryptKey;
 use League\OAuth2\Server\Entities\RefreshTokenEntityInterface;
 use League\OAuth2\Server\Exception\UniqueTokenIdentifierConstraintViolationException;
 use League\OAuth2\Server\ResponseTypes\BearerTokenResponse;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\AuthUtils;
-use OpenEMR\Common\Auth\OAuth2KeyConfig;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\RefreshTokenEntity;
-//use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\Services\IGlobalsAware;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Trait\GlobalInterfaceTrait;
-use OpenEMR\Services\TrustedUserService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\AuthUtils;
+use DCL\Common\Auth\OAuth2KeyConfig;
+use DCL\Common\Auth\OpenIDConnect\Entities\AccessTokenEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\RefreshTokenEntity;
+//use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\AccessTokenRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Repositories\RefreshTokenRepository;
+use DCL\Common\Http\Psr17Factory;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\Services\IGlobalsAware;
+use DCL\Services\PatientService;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Trait\GlobalInterfaceTrait;
+use DCL\Services\TrustedUserService;
+use DCL\Services\UserService;
 use Random\RandomException;
 use RuntimeException;
 use Symfony\Component\Console\Command\Command;
@@ -62,7 +62,7 @@ class GenerateAccessTokenCommand extends Command implements IGlobalsAware
     protected function configure(): void
     {
         $this
-            ->setName('openemr-dev:api-generate-access-token')
+            ->setName('DCL-dev:api-generate-access-token')
             ->setDescription("Utility class to help test api clients by generating an access token for a test client")
             ->addUsage('--site=default')
             ->setDefinition(

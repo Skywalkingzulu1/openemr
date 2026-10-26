@@ -1,21 +1,21 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers;
+namespace DCL\Tests\RestControllers;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\FacilityRestController;
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\FacilityRestController;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\InputBag;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ServerBag;
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FacilityRestControllerTest extends TestCase
 {

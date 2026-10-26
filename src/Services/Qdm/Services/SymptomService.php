@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm\Services;
+namespace DCL\Services\Qdm\Services;
 
-use OpenEMR\Cqm\Qdm\BaseTypes\Interval;
-use OpenEMR\Cqm\Qdm\Symptom;
-use OpenEMR\Services\Qdm\Interfaces\QdmServiceInterface;
-use OpenEMR\Services\Qdm\QdmRecord;
+use DCL\Cqm\Qdm\BaseTypes\Interval;
+use DCL\Cqm\Qdm\Symptom;
+use DCL\Services\Qdm\Interfaces\QdmServiceInterface;
+use DCL\Services\Qdm\QdmRecord;
 
 class SymptomService extends AbstractQdmService implements QdmServiceInterface
 {

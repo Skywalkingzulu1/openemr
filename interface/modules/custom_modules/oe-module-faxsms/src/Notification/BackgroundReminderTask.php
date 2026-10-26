@@ -19,12 +19,12 @@
  * from any other entry point that already has a populated request
  * context.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * @codeCoverageIgnore Thin bridge: resolves the channel client through
  *     `AppDispatch::getApiService()` (DB-backed), narrows credentials,
@@ -38,14 +38,14 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\Notification;
+namespace DCL\Modules\FaxSMS\Notification;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
-use OpenEMR\Modules\FaxSMS\Controller\EmailClient;
-use OpenEMR\Modules\FaxSMS\Controller\NotificationTaskManager;
-use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Modules\FaxSMS\Controller\EmailClient;
+use DCL\Modules\FaxSMS\Controller\NotificationTaskManager;
+use DCL\Modules\FaxSMS\Enums\NotificationChannel;
 
 final class BackgroundReminderTask
 {

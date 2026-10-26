@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\Unit\ClinicalDecisionRules;
+namespace DCL\Tests\Unit\ClinicalDecisionRules;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\TimeUnit;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalDetail;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalRange;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\ReminderIntervalType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\TimeUnit;
 use PHPUnit\Framework\TestCase;
 
 class ReminderIntervalDetailTest extends TestCase

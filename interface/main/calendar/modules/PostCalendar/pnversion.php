@@ -29,7 +29,7 @@
 $modversion['name']             = 'PostCalendar';
 $modversion['id']               = '44';
 $modversion['version']          = '4.0.0';
-$modversion['description']      = 'PostNuke Calendar Module Modified for OpenEMR';
+$modversion['description']      = 'PostNuke Calendar Module Modified for DCL';
 $modversion['official']         = 0;
 $modversion['author']           = 'The PostCalendar Team & Pennington Firm';
 $modversion['contact']          = 'http://www.pennfirm.com';

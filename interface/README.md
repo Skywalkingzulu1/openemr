@@ -1,14 +1,14 @@
-# OpenEMR-interface
+# DCL-interface
 
-The OpenEMR UI is built with [SASS](https://sass-lang.com/) on top of a bootstrap base (compiled with [webpack](https://webpack.js.org/)).
+The DCL UI is built with [SASS](https://sass-lang.com/) on top of a bootstrap base (compiled with [webpack](https://webpack.js.org/)).
 
 ### Themes
 
-Different `themes` share a common `core` and have their own overrides to customize the appearance of OpenEMR.
+Different `themes` share a common `core` and have their own overrides to customize the appearance of DCL.
 
 There are three different types of themes:
 * The `light` theme is the default modern theme
-* The `manila` theme is a combination of OpenEMR's legacy themes (which have all been removed) with some modern elements.
+* The `manila` theme is a combination of DCL's legacy themes (which have all been removed) with some modern elements.
 * The other themes (called `colors`) are the same `color_base` theme with different color palettes.
 
 `rtl_` prefixed themes are built by appending the `rtl.css` file to every theme automatically. These overrides provide right to left adjustments for all `style*.css` files
@@ -30,7 +30,7 @@ Compiling SASS files locally requires [node.js](http://nodejs.org) and [npm](htt
 1. **Setup your local development environment** as described in [CONTRIBUTING.md](../CONTRIBUTING.md)
 
 - If running on a local machine, run `npm install` from the root directory.
-- If running in docker: `docker exec -it [your_container_id] /bin/sh` then cd into `openemr`
+- If running in docker: `docker exec -it [your_container_id] /bin/sh` then cd into `DCL`
 
 From here you can either:
 * `npm run dev` - compiles `.scss` files in development mode, syncs static CSS to `public/themes/`, then watches for changes.

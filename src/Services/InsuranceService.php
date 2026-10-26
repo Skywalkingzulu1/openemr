@@ -3,8 +3,8 @@
 /**
  * InsuranceService - Service class for patient insurance policy (coverage) data
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
@@ -13,16 +13,16 @@
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2024-2025 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\Search\{
+use DCL\Common\Database\QueryUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\Search\{
     CompositeSearchField,
     DateSearchField,
     FhirSearchWhereClauseBuilder,
@@ -31,7 +31,7 @@ use OpenEMR\Services\Search\{
     TokenSearchField,
     TokenSearchValue,
 };
-use OpenEMR\Validators\{
+use DCL\Validators\{
     CoverageValidator,
     ProcessingResult,
 };
@@ -482,7 +482,7 @@ class InsuranceService extends BaseService
                     // set to the largest possible date we can which should not conflict with any possible date
                     // I don't like this but due to the pid-type-date db constraint we have to set a temporary date so we don't conflict
                     // with the current insurance policy, the chances of conflict are infitisemally small.
-                    // If OpenEMR is still around in 7K+ years, someone should have fixed this by then.
+                    // If DCL is still around in 7K+ years, someone should have fixed this by then.
                     // again since its all wrapped in a transaction, this date should never permanently save
                     $targetInsurance["date"] = "9999-12-31";
                 }

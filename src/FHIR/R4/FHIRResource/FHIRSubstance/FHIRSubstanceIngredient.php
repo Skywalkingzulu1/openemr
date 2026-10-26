@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstance;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A homogeneous material with a definite composition.
@@ -71,17 +71,17 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * The amount of the ingredient in the substance - a concentration ratio.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $quantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $substanceCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $substanceReference = null;
 
@@ -92,7 +92,7 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The amount of the ingredient in the substance - a concentration ratio.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getQuantity()
     {
@@ -101,7 +101,7 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The amount of the ingredient in the substance - a concentration ratio.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -111,7 +111,7 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstanceCodeableConcept()
     {
@@ -119,7 +119,7 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
      * @return $this
      */
     public function setSubstanceCodeableConcept($substanceCodeableConcept)
@@ -129,7 +129,7 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubstanceReference()
     {
@@ -137,7 +137,7 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $substanceReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $substanceReference
      * @return $this
      */
     public function setSubstanceReference($substanceReference)

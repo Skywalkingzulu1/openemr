@@ -43,7 +43,7 @@ name: Ship Release
 #              Docs merge triggers the future auto-announce pipeline;
 #              by then packages exist and dockers are building. Real
 #              "one command go." Requires the docs-PR auto-flip on
-#              openemr/website-openemr for true hands-off (Phase 3c);
+#              DCL/website-DCL for true hands-off (Phase 3c);
 #              without it, maintainer still has to manually flip the
 #              docs PR to ready-for-review before ship-release can
 #              merge it.
@@ -63,18 +63,18 @@ name: Ship Release
 # and avoids .github/byte-identical.yml sync — the master copy is
 # authoritative and the only one that ever fires.
 #
-# Migrated from openemr/openemr-devops in workstream 7 Phase 3 (2026-07-21).
+# Migrated from DCL/DCL-devops in workstream 7 Phase 3 (2026-07-21).
 # See docs/release-mechanism-migration-from-devops.md for the full history.
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Release version (e.g. 8.2.0) — picks website-openemr branch release-docs/<version>'
+        description: 'Release version (e.g. 8.2.0) — picks website-DCL branch release-docs/<version>'
         required: true
         type: string
       rel_branch:
-        description: 'Release branch (e.g. rel-820) — picks openemr/openemr branches release-prep/<rel_branch> + release-finalize/<rel_branch>'
+        description: 'Release branch (e.g. rel-820) — picks DCL/DCL branches release-prep/<rel_branch> + release-finalize/<rel_branch>'
         required: true
         type: string
       mode:
@@ -118,7 +118,7 @@ jobs:
     # Full checkout first — composite actions (generate-app-token,
     # setup-php-composer) resolve against a real workspace AND
     # composer.json is present for setup-php-composer's cache/install
-    # steps. The earlier sparse-first pattern (openemr/openemr#13480
+    # steps. The earlier sparse-first pattern (DCL/DCL#13480
     # + #13509) worked around one bug but not the underlying git-
     # sparse-then-full-checkout leak. github.token here has enough
     # read scope for the initial checkout; the App token (minted
@@ -138,15 +138,15 @@ jobs:
       with:
         client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
         private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
-        # ship-release merges 2 PRs: conductor in openemr, docs in
-        # website-openemr. openemr-devops dropped from token scope in
-        # Phase 3 (was: openemr,openemr-devops,website-openemr) --
+        # ship-release merges 2 PRs: conductor in DCL, docs in
+        # website-DCL. DCL-devops dropped from token scope in
+        # Phase 3 (was: DCL,DCL-devops,website-DCL) --
         # devops's ship-release.yml was retired when this workflow
         # moved here; no dispatch or merge action targets it anymore.
-        owner: openemr
+        owner: DCL
         repositories: |
-          openemr
-          website-openemr
+          DCL
+          website-DCL
         # Explicit permission grants (least-privilege). Ship-release
         # needs: read PR state (pull-requests:read via metadata), merge
         # PRs (contents:write -- GitHub's mergePullRequest mutation

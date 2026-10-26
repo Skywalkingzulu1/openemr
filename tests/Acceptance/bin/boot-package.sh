@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #
-# Boot the acceptance-package stack against an openemr release tarball.
+# Boot the acceptance-package stack against an DCL release tarball.
 #
 # Downloads the tarball from the GitHub release page, extracts it into
 # a scratch directory, boots the compose stack (flex image + mariadb)
 # with the extracted tree bind-mounted, then (by default) runs
 # install-helper.php via `docker compose exec` to complete the install
-# via OpenEMR's Installer class.
+# via DCL's Installer class.
 #
 # Usage:
 #   tests/Acceptance/bin/boot-package.sh [--skip-install-helper] \
@@ -15,7 +15,7 @@
 #         Skip the install-helper.php step. Leaves the artifact serving
 #         setup.php on http://localhost:8680/, ready for the
 #         InstallWizardUiTest (Phase 4c) to drive the wizard end-to-end
-#         via Panther. Also skips the "wait for openemr healthy" gate
+#         via Panther. Also skips the "wait for DCL healthy" gate
 #         because that healthcheck asserts the post-install login-page
 #         redirect target, which only appears AFTER a completed install;
 #         instead, waits for /setup.php to return 200 (proves apache is
@@ -41,12 +41,12 @@
 #               is constructed — VERSION is caller-controlled and flows
 #               into `rm -rf` / `curl -o` paths.
 #               Without --local-tarball / --local-zip: fetches
-#               https://github.com/openemr/openemr/releases/download/v<X_Y_Z>/openemr-<version>.tar.gz
+#               https://github.com/DCL/DCL/releases/download/v<X_Y_Z>/DCL-<version>.tar.gz
 #
 # After a successful boot (default mode):
 #   Artifact URL:  http://localhost:8680
 #   HTTPS URL:     https://localhost:8643  (self-signed cert)
-#   Scratch dir:   /tmp/openemr-acceptance-<version>/  (bind-mount source)
+#   Scratch dir:   /tmp/DCL-acceptance-<version>/  (bind-mount source)
 #
 # Run tests:      ACCEPTANCE_ARTIFACT_URL=http://localhost:8680 composer acceptance
 # Tear down:      tests/Acceptance/bin/down-package.sh
@@ -86,8 +86,8 @@ if [[ $# -ne 1 ]]; then
     echo "Usage: $0 [--skip-install-helper] [--local-tarball=<path> | --local-zip=<path>] <version>" >&2
     echo "  e.g.: $0 8.2.0" >&2
     echo "        $0 --skip-install-helper 8.2.0" >&2
-    echo "        $0 --local-tarball=/tmp/openemr-8.2.0.tar.gz 8.2.0" >&2
-    echo "        $0 --local-zip=/tmp/openemr-8.2.0.zip 8.2.0" >&2
+    echo "        $0 --local-tarball=/tmp/DCL-8.2.0.tar.gz 8.2.0" >&2
+    echo "        $0 --local-zip=/tmp/DCL-8.2.0.zip 8.2.0" >&2
     exit 2
 fi
 
@@ -102,11 +102,11 @@ if [[ ! "${VERSION}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     exit 2
 fi
 
-# openemr's tag scheme uses underscores: 8.2.0 → v8_2_0. Bash
+# DCL's tag scheme uses underscores: 8.2.0 → v8_2_0. Bash
 # parameter-substitution avoids the SC2250 SC lint that `$(echo ... | tr)`
 # would trigger.
 TAG_NAME="v${VERSION//./_}"
-TARBALL_URL="https://github.com/openemr/openemr/releases/download/${TAG_NAME}/openemr-${VERSION}.tar.gz"
+TARBALL_URL="https://github.com/DCL/DCL/releases/download/${TAG_NAME}/DCL-${VERSION}.tar.gz"
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../../.." &>/dev/null && pwd)"
@@ -117,10 +117,10 @@ source "${SCRIPT_DIR}/lib/extract-zip.sh"
 # Persist TARBALL_DIR + HELPER_PATH for every compose invocation in this
 # script (compose reparses the file each time and would otherwise warn
 # about the unset variable + create broken bind mounts).
-export TARBALL_DIR="/tmp/openemr-acceptance-${VERSION}"
+export TARBALL_DIR="/tmp/DCL-acceptance-${VERSION}"
 export HELPER_PATH="${SCRIPT_DIR}/install-helper.php"
 export COMPOSE_FILE="${REPO_ROOT}/.github/docker/acceptance-package-compose.yml"
-export COMPOSE_PROJECT_NAME="openemr-acceptance-package"
+export COMPOSE_PROJECT_NAME="DCL-acceptance-package"
 
 if [[ -n "${local_tarball}" ]]; then
     # Local-tarball mode: use the file the caller pointed us at, no
@@ -133,7 +133,7 @@ if [[ -n "${local_tarball}" ]]; then
         exit 2
     fi
     # Absolute-ize before the `cd "${REPO_ROOT}"` below — a caller who
-    # passes a relative path (e.g. `--local-tarball=openemr-8.2.0.tar.gz`
+    # passes a relative path (e.g. `--local-tarball=DCL-8.2.0.tar.gz`
     # from their own cwd) would otherwise see `tar` look for it under
     # REPO_ROOT and either extract the wrong file or fail. realpath
     # handles both leading-`./` and no-leading-`./` shapes uniformly.
@@ -153,9 +153,9 @@ elif [[ -n "${local_zip}" ]]; then
     # No trap cleanup — the caller owns this file.
 else
     # Random tarball path via mktemp — a predictable path like
-    # /tmp/openemr-${VERSION}.tar.gz would let a local attacker
+    # /tmp/DCL-${VERSION}.tar.gz would let a local attacker
     # pre-create a symlink to redirect the curl download.
-    ARTIFACT_PATH="$(mktemp -t "openemr-acceptance-tarball.XXXXXX.tar.gz")"
+    ARTIFACT_PATH="$(mktemp -t "DCL-acceptance-tarball.XXXXXX.tar.gz")"
     ARTIFACT_FORMAT="tar"
     trap 'rm -f "${ARTIFACT_PATH}"' EXIT
 fi
@@ -179,7 +179,7 @@ echo "==> Extracting into ${TARBALL_DIR} (format=${ARTIFACT_FORMAT})"
 case "${ARTIFACT_FORMAT}" in
     tar)
         # --strip-components=1 pulls contents up so ${TARBALL_DIR} matches
-        # the openemr web-root layout the flex image's bind mount expects.
+        # the DCL web-root layout the flex image's bind mount expects.
         tar -pxzf "${ARTIFACT_PATH}" -C "${TARBALL_DIR}" --strip-components=1
         ;;
     zip)
@@ -191,7 +191,7 @@ case "${ARTIFACT_FORMAT}" in
         extract_zip_flattening_single_top_level_dir \
             "${ARTIFACT_PATH}" \
             "${TARBALL_DIR}" \
-            "openemr-acceptance-zip.XXXXXX" \
+            "DCL-acceptance-zip.XXXXXX" \
             "--local-zip / zip extraction"
         ;;
     *)
@@ -204,11 +204,11 @@ case "${ARTIFACT_FORMAT}" in
         ;;
 esac
 
-echo "==> Booting compose stack (mysql + openemr, EMPTY=yes)"
+echo "==> Booting compose stack (mysql + DCL, EMPTY=yes)"
 docker compose up --detach --no-recreate
 
 echo "==> Waiting for MariaDB to become healthy (compose --wait can't be used"
-echo "    here because the openemr healthcheck depends on install running first)"
+echo "    here because the DCL healthcheck depends on install running first)"
 for attempt in $(seq 1 30); do
     HEALTH="$(docker compose ps mysql --format '{{.Health}}' 2>/dev/null || echo unknown)"
     if [[ "${HEALTH}" == "healthy" ]]; then
@@ -225,7 +225,7 @@ done
 if [[ "${skip_install_helper}" == "true" ]]; then
     echo "==> Skipping install-helper.php (--skip-install-helper set)"
     echo "==> Waiting for apache to serve /setup.php (proxy for 'container up')"
-    # Can't wait on the compose openemr healthcheck here because that
+    # Can't wait on the compose DCL healthcheck here because that
     # check asserts the post-install login-page redirect target — a
     # freshly-extracted artifact serves /setup.php instead, and would
     # never pass the healthcheck. Poll setup.php directly instead.
@@ -261,31 +261,31 @@ if [[ "${skip_install_helper}" == "true" ]]; then
 fi
 
 echo "==> Running install-helper.php via docker compose exec (as apache user)"
-# install-helper.php is mounted READ-ONLY at /opt/openemr-acceptance-helper.php
-# by the compose file (OUTSIDE the openemr webroot, so Apache never
+# install-helper.php is mounted READ-ONLY at /opt/DCL-acceptance-helper.php
+# by the compose file (OUTSIDE the DCL webroot, so Apache never
 # serves it). RootCliGuard rejects UID 0 → wrap in `su -s /bin/sh apache`.
-# OPENEMR_ENABLE_ACCEPTANCE_HELPER is the helper's opt-in env guard
+# DCL_ENABLE_ACCEPTANCE_HELPER is the helper's opt-in env guard
 # (same pattern InstallerAuto.php uses). su clears the environment, so
 # the var is set inside the su-launched shell as a `VAR=x prog` prefix.
-docker compose exec -T openemr \
+docker compose exec -T DCL \
     su -s /bin/sh apache -c \
-    'OPENEMR_ENABLE_ACCEPTANCE_HELPER=1 php /opt/openemr-acceptance-helper.php'
+    'DCL_ENABLE_ACCEPTANCE_HELPER=1 php /opt/DCL-acceptance-helper.php'
 
-echo "==> Waiting for openemr container to become healthy"
+echo "==> Waiting for DCL container to become healthy"
 for attempt in $(seq 1 60); do
-    HEALTH="$(docker compose ps openemr --format '{{.Health}}' 2>/dev/null || echo unknown)"
+    HEALTH="$(docker compose ps DCL --format '{{.Health}}' 2>/dev/null || echo unknown)"
     if [[ "${HEALTH}" == "healthy" ]]; then
-        echo "    openemr healthy"
+        echo "    DCL healthy"
         break
     fi
     if [[ "${attempt}" -eq 60 ]]; then
-        echo "::error::openemr did not become healthy within 300s (last status: ${HEALTH})" >&2
+        echo "::error::DCL did not become healthy within 300s (last status: ${HEALTH})" >&2
         exit 1
     fi
     sleep 5
 done
 
-# Post-install DB version assertion (openemr/openemr#13634).
+# Post-install DB version assertion (DCL/DCL#13634).
 # install-helper.php ran install-time SQL population; the `version` row
 # should now match the tarball's shipped version. Catches the class of
 # bug where install "succeeded" (helper exited 0) but the version row
@@ -301,7 +301,7 @@ done
 # (99.99.99 default). VERSION as fallback keeps this script usable
 # standalone (dev-time boot without the workflow's env-plumbing) and
 # on the shipped-tarball path where label == actual anyway. See
-# openemr/openemr#13753 for the full failure trace when the two
+# DCL/DCL#13753 for the full failure trace when the two
 # diverged.
 #
 # Root creds `root/root` are the acceptance stack default
@@ -312,11 +312,11 @@ done
 EXPECTED="${ACCEPTANCE_EXPECTED_VERSION:-${VERSION}}"
 echo "==> Asserting DB version matches ${EXPECTED}"
 DB_VERSION="$(docker compose exec -T mysql \
-    mariadb -uroot -proot openemr -sN \
+    mariadb -uroot -proot DCL -sN \
     -e "SELECT CONCAT(v_major,'.',v_minor,'.',v_patch) FROM version" \
     2>/dev/null || echo "query-failed")"
 if [[ "${DB_VERSION}" != "${EXPECTED}" ]]; then
-    echo "::error::post-install DB version '${DB_VERSION}' does not match expected '${EXPECTED}' (see openemr/openemr#13634)" >&2
+    echo "::error::post-install DB version '${DB_VERSION}' does not match expected '${EXPECTED}' (see DCL/DCL#13634)" >&2
     exit 1
 fi
 echo "    DB version=${DB_VERSION}"

@@ -1,28 +1,28 @@
 # Daily orchestrator for production docker image rebuilds.
 #
 # Reads .github/release-targets.yml as the source of truth for which
-# branches to build, which docker tags to push, and which openemr source
+# branches to build, which docker tags to push, and which DCL source
 # ref to bake in. Applies the include/exclude inputs to filter that list,
 # then fans out one docker-build-release.yml dispatch per remaining row.
 #
 # Each fan-out call goes via `gh workflow run docker-build-release.yml
-# --ref <branch> -f docker_tags=<...> -f openemr_version_ref=<...>` which
+# --ref <branch> -f docker_tags=<...> -f DCL_version_ref=<...>` which
 # dispatches that branch's own docker-build-release.yml against that
 # branch's docker/release/Dockerfile -- per-branch isolation validated in
 # the throwaway fork experiment described in
-# openemr/openemr-devops#790.
+# DCL/DCL-devops#790.
 #
 # The docker-build-release.yml workflow:
 #   * is byte-identical across master and every rel branch (it reads
-#     docker_tags + openemr_version_ref purely from inputs)
+#     docker_tags + DCL_version_ref purely from inputs)
 #   * applies the version-number -> dated-sibling rule to docker_tags
 #     (e.g. "8.1.0" gets a "8.1.0-YYYY-MM-DD" sibling pushed alongside)
-#   * passes openemr_version_ref to docker build as OPENEMR_VERSION ARG
+#   * passes DCL_version_ref to docker build as DCL_VERSION ARG
 #
 # Adding a rel branch: append a row to .github/release-targets.yml.
 # Rotating `latest` between rel branches: edit one (or two) row(s)'s
 # docker_tags in that same file. Promoting rel-810 to a v8_1_0 release:
-# edit one row's openemr_version_ref from rel-810 to v8_1_0. None of
+# edit one row's DCL_version_ref from rel-810 to v8_1_0. None of
 # these changes require editing this workflow file.
 
 name: Docker release orchestrator
@@ -65,7 +65,7 @@ jobs:
     name: compute-matrix
     # Only run from master in the upstream repository -- this workflow lives
     # only on master (downstream forks shouldn't trigger production builds).
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.gen.outputs.matrix }}
@@ -201,13 +201,13 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJSON(needs.compute-matrix.outputs.matrix) }}
     steps:
-    - name: Dispatch ${{ matrix.branch }} (docker_tags=${{ matrix.docker_tags }} openemr_version_ref=${{ matrix.openemr_version_ref }})
+    - name: Dispatch ${{ matrix.branch }} (docker_tags=${{ matrix.docker_tags }} DCL_version_ref=${{ matrix.DCL_version_ref }})
       env:
         GH_TOKEN: ${{ github.token }}
         REPO: ${{ github.repository }}
         BRANCH: ${{ matrix.branch }}
         DOCKER_TAGS: ${{ matrix.docker_tags }}
-        OPENEMR_VERSION_REF: ${{ matrix.openemr_version_ref }}
+        DCL_VERSION_REF: ${{ matrix.DCL_version_ref }}
         MATRIX_GATE_WITH_ACCEPTANCE: ${{ matrix.gate_with_acceptance }}
         MATRIX_REQUIRE_UPGRADE_CELL: ${{ matrix.require_upgrade_cell }}
       run: |
@@ -264,7 +264,7 @@ jobs:
           --repo "$REPO" \
           --ref "$BRANCH" \
           -f docker_tags="$DOCKER_TAGS" \
-          -f openemr_version_ref="$OPENEMR_VERSION_REF" \
+          -f DCL_version_ref="$DCL_VERSION_REF" \
           "${GATE_ARGS[@]}" \
           "${REQUIRE_UPGRADE_CELL_ARGS[@]}"
-        echo "Dispatched $BRANCH with docker_tags=$DOCKER_TAGS openemr_version_ref=$OPENEMR_VERSION_REF gate_with_acceptance=$GATE require_upgrade_cell=${MATRIX_REQUIRE_UPGRADE_CELL}"
+        echo "Dispatched $BRANCH with docker_tags=$DOCKER_TAGS DCL_version_ref=$DCL_VERSION_REF gate_with_acceptance=$GATE require_upgrade_cell=${MATRIX_REQUIRE_UPGRADE_CELL}"

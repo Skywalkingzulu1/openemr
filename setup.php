@@ -9,31 +9,31 @@
  *      state:
  *        empty or 0 - Ensures required file and directory permission are correctly set prior to starting installation.
  *        1 - Step 1: Select database setup (ie. create the database or use a database already initialized)
- *        2 - Step 2: Enter in database and openemr user information
+ *        2 - Step 2: Enter in database and DCL user information
  *        3 - Step 3: Create database
  *        4 - Step 4: Instructions on configuring PHP
  *        5 - Step 5: Instructions on configuring the web server
  *        6 - Step 6: Select a theme
- *        7 - Final step: Several miscellaneous instruction, login credentials, and link to OpenEMR
+ *        7 - Final step: Several miscellaneous instruction, login credentials, and link to DCL
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Roberto Vasquez <robertogagliotta@gmail.com>
  * @author    Scott Wakefield <scott@npclinics.com.au>
  * @author    Ranganath Pathak <pathak@scrs1.org>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2016 Roberto Vasquez <robertogagliotta@gmail.com>
  * @copyright Copyright (c) 2016 Scott Wakefield <scott@npclinics.com.au>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019-2021 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with DCL:
 require_once(__DIR__ . "/src/Common/Compatibility/Checker.php");
-$response = OpenEMR\Common\Compatibility\Checker::checkPhpVersion();
+$response = DCL\Common\Compatibility\Checker::checkPhpVersion();
 if ($response !== true) {
     die(htmlspecialchars($response));
 }
@@ -59,11 +59,11 @@ $allow_cloning_setup = false;
 // Include standard libraries/classes
 require_once __DIR__ . "/vendor/autoload.php";
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
 
 if (!$allow_cloning_setup && !empty($_REQUEST['clone_database'])) {
     SessionUtil::setupScriptSessionStart();
@@ -142,7 +142,7 @@ if (empty($_REQUEST['site']) && $allow_multisite_setup && empty($state)) {
     <!DOCTYPE html>
     <html>
     <head>
-        <title>OpenEMR Setup Tool</title>
+        <title>DCL Setup Tool</title>
         <link rel="stylesheet" href="public/assets/bootstrap/dist/css/bootstrap.min.css">
         <script src="public/assets/jquery/dist/jquery.min.js"></script>
         <script src="public/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -157,7 +157,7 @@ if (empty($_REQUEST['site']) && $allow_multisite_setup && empty($state)) {
     <body>
         <nav class="navbar navbar-expand navbar-light bg-light">
            <div class="container">
-           <a class="navbar-brand" href="#">OpenEMR Setup</a>
+           <a class="navbar-brand" href="#">DCL Setup</a>
            <div class="collapse navbar-collapse justify-content-end">
                <ul class="navbar-nav">
                    <li class="nav-item active">
@@ -174,7 +174,7 @@ if (empty($_REQUEST['site']) && $allow_multisite_setup && empty($state)) {
                     <h3 class="mb-3 border-bottom">Optional Site ID Selection</h3>
                     <div class="jumbotron p-5">
                         <p>
-                            Most OpenEMR installations support only one site.  If that is
+                            Most DCL installations support only one site.  If that is
                             true for you then ignore the rest of this text and just click Continue.
                         </p>
                         <p class='p-2 bg-warning'>
@@ -284,12 +284,12 @@ if (file_exists($installer->conffile)) {
 if (!empty($config) && (($state ?? 0) < 4)) {
     SessionUtil::setupScriptSessionStart();
     SessionUtil::setupScriptSessionCookieDestroy();
-    error_log("OpenEMR has already been installed. If you wish to force re-installation, then edit " . errorLogEscape($installer->conffile) . " (change the 'config' variable to 0), and re-run the setup.php script.");
-    die("OpenEMR has already been installed. If you wish to force re-installation, see log for details.<br />\n");
+    error_log("DCL has already been installed. If you wish to force re-installation, then edit " . errorLogEscape($installer->conffile) . " (change the 'config' variable to 0), and re-run the setup.php script.");
+    die("DCL has already been installed. If you wish to force re-installation, see log for details.<br />\n");
 }
 
 // This will effectively only allow entry into the setup.php script at the first step and will bar entry to the
-//  script if openemr has already been installed.
+//  script if DCL has already been installed.
 //  2 mechanisms are also in place to ensure go through script in chronological order
 //   - a session variable tracks the next state expected and kills script is not correct
 //   - only the next state csrf is handed out in the form
@@ -298,8 +298,8 @@ if (empty($state)) {
     if (!empty($config)) {
         SessionUtil::setupScriptSessionStart();
         SessionUtil::setupScriptSessionCookieDestroy();
-        error_log("OpenEMR has already been installed. If you wish to force re-installation, then edit " . errorLogEscape($installer->conffile) . " (change the 'config' variable to 0), and re-run the setup.php script.");
-        die("OpenEMR has already been installed. If you wish to force re-installation, see log for details.<br />\n");
+        error_log("DCL has already been installed. If you wish to force re-installation, then edit " . errorLogEscape($installer->conffile) . " (change the 'config' variable to 0), and re-run the setup.php script.");
+        die("DCL has already been installed. If you wish to force re-installation, see log for details.<br />\n");
     }
     // set up new blank session and csrf mechanism
     SessionUtil::setupScriptSessionStart();
@@ -353,7 +353,7 @@ if (empty($state)) {
 ?>
 <html>
 <head>
-<title>OpenEMR Setup Tool</title>
+<title>DCL Setup Tool</title>
 <!--<link rel=stylesheet href="interface/themes/style_blue.css">-->
 <link rel="stylesheet" href="public/assets/bootstrap/dist/css/bootstrap.min.css">
 <script src="public/assets/jquery/dist/jquery.min.js"></script>
@@ -449,7 +449,7 @@ function cloneClicked() {
 <body>
     <nav class="navbar navbar-expand navbar-light bg-light">
        <div class="container">
-        <a class="navbar-brand" href="#">OpenEMR Setup</a>
+        <a class="navbar-brand" href="#">DCL Setup</a>
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
@@ -501,34 +501,34 @@ function cloneClicked() {
                 ?>
             <h3 class="mb-3 border-bottom">Final step - Success</h3>
             <div class="jumbotron p-5">
-            <p>Congratulations! OpenEMR is now installed.</p>
+            <p>Congratulations! DCL is now installed.</p>
             <ul>
                 <li>Access controls (php-GACL) are installed for fine-grained security, and can be administered in
-                    OpenEMR's admin->acl menu.</li>
+                    DCL's admin->acl menu.</li>
                 <li>Reviewing <code> <?php echo text($OE_SITE_DIR); ?>/config.php </code> is a good idea. This file
                     contains some settings that you may want to change.</li>
-                <li>There's much information and many extra tools bundled within the OpenEMR installation directory.
-                    Please refer to openemr/Documentation. Many forms and other useful scripts can be found at openemr/contrib.</li>
+                <li>There's much information and many extra tools bundled within the DCL installation directory.
+                    Please refer to DCL/Documentation. Many forms and other useful scripts can be found at DCL/contrib.</li>
                 <li>To ensure a consistent look and feel throughout the application,
-                    <a href='http://www.mozilla.org/products/firefox/'>Firefox</a> and <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> are recommended. The OpenEMR development team exclusively tests with modern versions of these browsers.</li>
-                <li>The OpenEMR project home page, documentation, and forums can be found at <a href = "https://www.open-emr.org" rel='noopener' target="_blank">https://www.open-emr.org</a></li>
-                <li>We pursue grants to help fund the future development of OpenEMR.  To apply for these grants, we need to estimate how many times this program is installed and how many practices are evaluating or using this software.  It would be awesome if you would email us at <a href="mailto:hello@open-emr.org">hello@open-emr.org</a> if you have installed this software. The more details about your plans with this software, the better, but even just sending us an email stating you just installed it is very helpful.</li>
+                    <a href='http://www.mozilla.org/products/firefox/'>Firefox</a> and <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a> are recommended. The DCL development team exclusively tests with modern versions of these browsers.</li>
+                <li>The DCL project home page, documentation, and forums can be found at <a href = "https://www.dcl.org" rel='noopener' target="_blank">https://www.dcl.org</a></li>
+                <li>We pursue grants to help fund the future development of DCL.  To apply for these grants, we need to estimate how many times this program is installed and how many practices are evaluating or using this software.  It would be awesome if you would email us at <a href="mailto:hello@dcl.org">hello@dcl.org</a> if you have installed this software. The more details about your plans with this software, the better, but even just sending us an email stating you just installed it is very helpful.</li>
             </ul>
             <p>We recommend you print these instructions for future reference.</p>
                 <?php
                 echo "<p> The selected theme is :</p>";
                 $installer->displayNewThemeDiv();
                 if (empty($installer->clone_database)) {
-                    echo "<p><b>The initial OpenEMR user is <span class='text-primary'>'" . text($installer->iuser) . "'</span> and the password is <span class='text-primary'>'" . text($installer->iuserpass) . "'</span></b></p>";
+                    echo "<p><b>The initial DCL user is <span class='text-primary'>'" . text($installer->iuser) . "'</span> and the password is <span class='text-primary'>'" . text($installer->iuserpass) . "'</span></b></p>";
                 } else {
-                    echo "<p>The initial OpenEMR user name and password is the same as that of source site <b>'" . text($installer->source_site_id) . "'</span></b></p>";
+                    echo "<p>The initial DCL user name and password is the same as that of source site <b>'" . text($installer->source_site_id) . "'</span></b></p>";
                 }
-                echo "<p>If you edited the PHP or Apache configuration files during this installation process, then we recommend you restart your Apache server before following below OpenEMR link.</p>";
+                echo "<p>If you edited the PHP or Apache configuration files during this installation process, then we recommend you restart your Apache server before following below DCL link.</p>";
                 echo "<p>In Linux use the following command:</p>";
                 echo "<p><code>sudo apachectl -k restart</code></p>";
 
                 ?>
-            <p>Click to start using OpenEMR.</p>
+            <p>Click to start using DCL.</p>
             <div class="row">
                 <div class="col-12">
                     <a href='./?site=<?php echo attr_url($site_id); ?>' class='btn btn-primary'>
@@ -610,7 +610,7 @@ STP1;
                     $inst_esc = attr($inst);
                     $csrf_id = CsrfUtils::collectCsrfToken($session, 'state3');
                     $step2top = <<<STP2TOP
-                    <h3 class="mb-3 border-bottom">Step $state_esc - Database and OpenEMR Initial User Setup Details</h3>
+                    <h3 class="mb-3 border-bottom">Step $state_esc - Database and DCL Initial User Setup Details</h3>
                     <div class="jumbotron p-5">
                         <p>Now you need to supply the MySQL server information and path information. Detailed instructions on each item can be found in the
                             <a href='Documentation/INSTALL' rel='noopener' target='_blank'><u>'INSTALL'</u>
@@ -667,14 +667,14 @@ STP2TOP;
                                     <label class="font-weight-bold" for="dbname">Database Name:</label> <a href="#dbname_info"  class="info-anchor icon-tooltip"  data-toggle="collapse" ><i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                 </div>
                                 <div>
-                                    <input name='dbname' id='dbname' type='text' class='form-control' value='openemr' />
+                                    <input name='dbname' id='dbname' type='text' class='form-control' value='DCL' />
                                 </div>
                             </div>
                             <div id="dbname_info" class="collapse">
                                 <a href="#dbname_info" data-toggle="collapse" class="oe-pull-away"><i class="fa fa-times oe-help-x" aria-hidden="true"></i></a>
-                                <p>This will be the name of the OpenEMR database in MySQL.</p>
-                                <p>'openemr' is the recommended name.</p>
-                                <p>This database will contain patient data as well as data pertaining to the OpenEMR installation.</p>
+                                <p>This will be the name of the DCL database in MySQL.</p>
+                                <p>'DCL' is the recommended name.</p>
+                                <p>This database will contain patient data as well as data pertaining to the DCL installation.</p>
                             </div>
                         </div>
                     </div>
@@ -685,13 +685,13 @@ STP2TOP;
                                     <label class="font-weight-bold" for="login">Login Name:</label> <a href="#login_info"  class="info-anchor icon-tooltip"  data-toggle="collapse" ><i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                 </div>
                                 <div>
-                                    <input name='login' ID='login' type='text' class='form-control' value='openemr' />
+                                    <input name='login' ID='login' type='text' class='form-control' value='DCL' />
                                 </div>
                             </div>
                             <div id="login_info" class="collapse">
                                 <a href="#login_info" data-toggle="collapse" class="oe-pull-away"><i class="fa fa-times oe-help-x" aria-hidden="true"></i></a>
-                                <p>This is the name that OpenEMR will use to login to the MySQL database.</p>
-                                <p>'openemr' is the recommended name.</p>
+                                <p>This is the name that DCL will use to login to the MySQL database.</p>
+                                <p>'DCL' is the recommended name.</p>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -706,7 +706,7 @@ STP2TOP;
                             </div>
                             <div id="pass_info" class="collapse">
                                 <a href="#pass_info" data-toggle="collapse" class="oe-pull-away"><i class="fa fa-times oe-help-x" aria-hidden="true"></i></a>
-                                <p>This is the Login Password that OpenEMR will use to accesses the MySQL database.</p>
+                                <p>This is the Login Password that DCL will use to accesses the MySQL database.</p>
                                 <p>It should be at least 12 characters long and composed of both numbers and letters.</p>
                                 <p>It cannot contain any of these characters: \ ; ( ) < > / ' "</p>
                             </div>
@@ -851,7 +851,7 @@ STP2TBLTOP1;
                                 <p>This is the collation setting for MySQL.</p>
                                 <p>Collation refers to a set of rules that determine how data is sorted and compared in a database.</p>
                                 <p>Leave as 'General' if you are not sure.</p>
-                                <p>If the language you are planning to use in OpenEMR is in the menu, then you can select it.</p>
+                                <p>If the language you are planning to use in DCL is in the menu, then you can select it.</p>
                                 <p>Otherwise, just select 'General'.</p>
                             </div>
                         </div>
@@ -954,11 +954,11 @@ SOURCESITEBOT;
                     // App Based TOTP secret
                     // Shared key (per rfc6238 and rfc4226) should be 20 bytes (160 bits) and encoded in base32, which should
                     //   be 32 characters in base32
-                    // Would be nice to use the OpenEMR\Common\Utils\RandomGenUtils\produceRandomBytes() function and then encode to base32,
+                    // Would be nice to use the DCL\Common\Utils\RandomGenUtils\produceRandomBytes() function and then encode to base32,
                     //   but does not appear to be a standard way to encode binary to base32 in php.
                     $randomsecret = RandomGenUtils::produceRandomString(32, "234567ABCDEFGHIJKLMNOPQRSTUVWXYZ");
                     if (empty($randomsecret) || empty($randomusernamepre) || empty($randomusernamepost)) {
-                        error_log('OpenEMR Error : Random String error - exiting');
+                        error_log('DCL Error : Random String error - exiting');
                         die();
                     }
                     $disableCheckbox = "";
@@ -973,7 +973,7 @@ SOURCESITEBOT;
                 </fieldset>
                 <br />
                 <fieldset class='noclone'>
-                    <legend name="form_legend" id="form_legend" class='oe-setup-legend'>OpenEMR Initial User Details<i id="enter-details-tooltip" class="fa fa-info-circle oe-text-black oe-superscript enter-details-tooltip" aria-hidden="true"></i></legend>
+                    <legend name="form_legend" id="form_legend" class='oe-setup-legend'>DCL Initial User Details<i id="enter-details-tooltip" class="fa fa-info-circle oe-text-black oe-superscript enter-details-tooltip" aria-hidden="true"></i></legend>
                     <div class="ml-2 row">
                         <div class="col-sm-4">
                             <div class="clearfix form-group">
@@ -1527,7 +1527,7 @@ STP4TOP;
                     $mysqli_allow_local_infile = ini_get('mysqli.allow_local_infile') ? 'On' : 'Off';
                     $mysqli_allow_local_infile_style = (strcmp($mysqli_allow_local_infile, 'On')  === 0) ? '' : 'text-danger';
 
-                    echo   "<li>To ensure proper functioning of OpenEMR you must make sure that PHP settings include:
+                    echo   "<li>To ensure proper functioning of DCL you must make sure that PHP settings include:
                             <table class='phpset'>
                                 <tr>
                                     <th>Setting</th>
@@ -1624,7 +1624,7 @@ STP4TOP;
                     $isCliServer = PHP_SAPI === 'cli-server';
                     $defaultWs = $isFpm ? 'fpm' : ($isCliServer ? 'cli' : 'apache');
                     $docsDirectoryGlob = text(preg_replace("/{$site_id}/", "*", realpath($docsDirectory)));
-                    $openemrDirectory = text(realpath(__DIR__));
+                    $DCLDirectory = text(realpath(__DIR__));
                     echo "<h3 class='mb-3 border-bottom'>Step " . text($state) . " - Configure Web Server</h3>";
                     echo "<div class='jumbotron p-5'>";
                     echo "<p>Select your web server configuration to see the required setup instructions.</p>";
@@ -1646,18 +1646,18 @@ STP4TOP;
                     echo "
                     <div id='instructions_apache'" . ($defaultWs === 'apache' ? '' : " style='display:none'") . ">
                         <p>The <code>\"" . $docsDirectoryGlob . "\"</code> directory contain patient information, and
-                        it is important to secure these directories. Additionally, some settings are required for the Zend Framework to work in OpenEMR. This can be done by pasting the below to end of your apache configuration file:</p>
-                        &nbsp;&nbsp;<code>&lt;Directory \"" . $openemrDirectory . "\"&gt;<br />
+                        it is important to secure these directories. Additionally, some settings are required for the Zend Framework to work in DCL. This can be done by pasting the below to end of your apache configuration file:</p>
+                        &nbsp;&nbsp;<code>&lt;Directory \"" . $DCLDirectory . "\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowOverride FileInfo<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require all granted<br />
                         &nbsp;&nbsp;<code>&lt;/Directory&gt;</code><br />
-                        &nbsp;&nbsp;&lt;Directory \"" . $openemrDirectory . "/sites\"&gt;<br />
+                        &nbsp;&nbsp;&lt;Directory \"" . $DCLDirectory . "/sites\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowOverride None<br />
                         &nbsp;&nbsp;&lt;/Directory&gt;</code><br />
                         &nbsp;&nbsp;<code>&lt;Directory \"" . $docsDirectoryGlob . "\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require all denied<br />
                         &nbsp;&nbsp;&lt;/Directory&gt;</code><br />
-                        &nbsp;&nbsp;<code>&lt;Directory \"" . $openemrDirectory . "/bin\"&gt;<br />
+                        &nbsp;&nbsp;<code>&lt;Directory \"" . $DCLDirectory . "/bin\"&gt;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Require all denied<br />
                         &nbsp;&nbsp;&lt;/Directory&gt;</code><br /><br />
                         <p>If you are having difficulty finding your apache configuration file, then refer to the <a href='Documentation/INSTALL' rel='noopener' target='_blank'><u>'INSTALL'</u></a> manual for suggestions.</p>
@@ -1744,7 +1744,7 @@ STP4TOP;
                     $session->set('bootstrapStateInSetup', 7);
                     echo "<h3 class='mb-3 border-bottom'>Step " . text($state) . " - Select a Theme</h3>";
                     echo "<div class='jumbotron p-5'>";
-                    echo "<p>Select a theme for OpenEMR...</p>\n";
+                    echo "<p>Select a theme for DCL...</p>\n";
                     $btn_text = "Proceed to Final Step";
                     $installer->displaySelectedThemeDiv();
                     echo "<div class='row'>
@@ -1793,7 +1793,7 @@ STP4TOP;
                         <h3 class="mb-3 border-bottom">Pre Install - Checking File and Directory Permissions</h3>
                             <div class="jumbotron p-5">
                                 <p>
-                                    Welcome to OpenEMR. This utility will step you through the installation and configuration of OpenEMR for your practice.
+                                    Welcome to DCL. This utility will step you through the installation and configuration of DCL for your practice.
                                 </p>
                                 <ul>
                                     <li>
@@ -1924,7 +1924,7 @@ BOT;
                 }
             });
             $('.enter-details-tooltip').prop( "title", "Additional help to fill out this form is available by hovering over labels of each box and clicking on the dark blue help ? icon that is revealed. On mobile devices tap once on the label to reveal the help icon and tap on the icon to show the help section").tooltip();
-            $('.2fa-section-tooltip').prop( "title", "Two factor authentication prevents unauthorized access to openEMR thus improves security. It is optional. More information is available in the help file under Step 2 Database and OpenEMR Initial User Setup Details.").tooltip();
+            $('.2fa-section-tooltip').prop( "title", "Two factor authentication prevents unauthorized access to DCL thus improves security. It is optional. More information is available in the help file under Step 2 Database and DCL Initial User Setup Details.").tooltip();
 
 
         });

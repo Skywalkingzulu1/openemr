@@ -3,16 +3,16 @@
 /**
  * FHIR Questionnaire import and preview dialog.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Forms\CoreFormToPortalUtility;
-use OpenEMR\Core\Header;
-use OpenEMR\Services\QuestionnaireService;
+use DCL\Common\Forms\CoreFormToPortalUtility;
+use DCL\Core\Header;
+use DCL\Services\QuestionnaireService;
 
 // block of code to securely support use by the patient portal
 // Need access to classes, so run autoloader now instead of in globals.php.
@@ -54,7 +54,7 @@ $initialQuestionnaireJson = json_encode(
 <head>
     <title><?php echo xlt('Portal'); ?> | <?php echo xlt('Questionnaire'); ?></title>
     <?php Header::setupHeader(['opener']); ?>
-    <?php require __DIR__ . '/../interface/forms/questionnaire_assessments/openemr_questionnaire_components.php'; ?>
+    <?php require __DIR__ . '/../interface/forms/questionnaire_assessments/DCL_questionnaire_components.php'; ?>
     <script>
         const initialQuestionnaireJson = <?php echo $initialQuestionnaireJson; ?>;
         let formMode = <?php echo js_escape($mode); ?>;
@@ -101,7 +101,7 @@ $initialQuestionnaireJson = json_encode(
 
             if (!resource || resource.resourceType !== 'Questionnaire') {
                 throw new Error(
-                    xl('Only FHIR Questionnaire JSON can be imported by the OpenEMR Questionnaire Runtime.')
+                    xl('Only FHIR Questionnaire JSON can be imported by the DCL Questionnaire Runtime.')
                 );
             }
 
@@ -120,7 +120,7 @@ $initialQuestionnaireJson = json_encode(
                 questionnaireField.value = normalizedJson;
 
                 questionnaireResource = resource;
-                questionnaireRuntime = OpenEMRQuestionnaire.mount({
+                questionnaireRuntime = DCLQuestionnaire.mount({
                     questionnaire: resource,
                     container: document.getElementById('formContainer'),
                     options: {

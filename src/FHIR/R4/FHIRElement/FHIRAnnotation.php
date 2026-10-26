@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A  text note which also  contains information about who made the statement and when.
@@ -71,24 +71,24 @@ use OpenEMR\FHIR\R4\FHIRElement;
 class FHIRAnnotation extends FHIRElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $authorReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $authorString = null;
 
     /**
      * Indicates when this particular annotation was made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $time = null;
 
     /**
      * The text of the annotation in markdown format.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $text = null;
 
@@ -98,7 +98,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
     private $_fhirElementName = 'Annotation';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthorReference()
     {
@@ -106,7 +106,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $authorReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $authorReference
      * @return $this
      */
     public function setAuthorReference($authorReference)
@@ -116,7 +116,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAuthorString()
     {
@@ -124,7 +124,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $authorString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $authorString
      * @return $this
      */
     public function setAuthorString($authorString)
@@ -135,7 +135,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
 
     /**
      * Indicates when this particular annotation was made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTime()
     {
@@ -144,7 +144,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
 
     /**
      * Indicates when this particular annotation was made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $time
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $time
      * @return $this
      */
     public function setTime($time)
@@ -155,7 +155,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
 
     /**
      * The text of the annotation in markdown format.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getText()
     {
@@ -164,7 +164,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
 
     /**
      * The text of the annotation in markdown format.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $text
      * @return $this
      */
     public function setText($text)

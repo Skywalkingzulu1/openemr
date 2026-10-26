@@ -3,8 +3,8 @@
 /**
  * Common script for the encounter form (new and view) scripts.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ranganath Pathak <pathak@scrs1.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -12,17 +12,17 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2025 Mountain Valley Health <mvhinspire@mountainvalleyhealthinc.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  * @license   There are segments of code in this file that have been generated via Claude.ai and are licensed as Public Domain.  They have been marked with a header and footer.
  */
 
 require_once(__DIR__ . "/../../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Forms\NewPatient\C_EncounterVisitForm;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Core\OEGlobalsBag;
+use DCL\Forms\NewPatient\C_EncounterVisitForm;
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
 $srcdir = OEGlobalsBag::getInstance()->getSrcDir();

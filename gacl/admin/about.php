@@ -3,9 +3,9 @@
 //First make sure user has access
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Gacl\GaclAdminApi;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Gacl\GaclAdminApi;
 
 //ensure user has proper access
 if (!AclMain::aclCheckCore('admin', 'acl')) {
@@ -42,7 +42,7 @@ function get_system_info(GaclAdminApi $gacl_api): string
 }
 
 
-/** @var \OpenEMR\Gacl\GaclAdminApi $gacl_api */
+/** @var \DCL\Gacl\GaclAdminApi $gacl_api */
 /** @var \ADOConnection $db */
 /** @var \Smarty $smarty */
 

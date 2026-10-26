@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSearchParameter;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSearchParameter;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSearchParameter;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A search parameter that defines a named search item that can be used to search/filter on a resource.
@@ -71,13 +71,13 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement implements \JsonS
 {
     /**
      * The definition of the search parameter that describes this part.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $definition = null;
 
     /**
      * A sub-expression that defines how to extract values for this component from the output of the main SearchParameter.expression.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
@@ -88,7 +88,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement implements \JsonS
 
     /**
      * The definition of the search parameter that describes this part.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefinition()
     {
@@ -97,7 +97,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement implements \JsonS
 
     /**
      * The definition of the search parameter that describes this part.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definition
      * @return $this
      */
     public function setDefinition($definition)
@@ -108,7 +108,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement implements \JsonS
 
     /**
      * A sub-expression that defines how to extract values for this component from the output of the main SearchParameter.expression.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -117,7 +117,7 @@ class FHIRSearchParameterComponent extends FHIRBackboneElement implements \JsonS
 
     /**
      * A sub-expression that defines how to extract values for this component from the output of the main SearchParameter.expression.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)

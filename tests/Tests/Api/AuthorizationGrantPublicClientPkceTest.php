@@ -19,21 +19,21 @@
  * regression that stopped enforcing verifier match would let anyone
  * who observed the code_challenge + auth code redeem the token.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\Promise\Utils as PromiseUtils;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -52,10 +52,10 @@ class AuthorizationGrantPublicClientPkceTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -261,7 +261,7 @@ class AuthorizationGrantPublicClientPkceTest extends TestCase
     #[Test]
     public function testPublicClientRejectedAtAuthorizeWithoutPkce(): void
     {
-        // OpenEMR forces PKCE for public clients at /authorize time
+        // DCL forces PKCE for public clients at /authorize time
         // (see AuthorizationController registerClient() comment:
         // "only include secret if a confidential app else force PKCE
         // for native and web apps"). This is stronger than
@@ -342,7 +342,7 @@ class AuthorizationGrantPublicClientPkceTest extends TestCase
 
     private function runFlowThroughConsent(Client $http, string $codeChallenge): string
     {
-        // DCR a public client (application_type=web). OpenEMR returns
+        // DCR a public client (application_type=web). DCL returns
         // is_confidential=0 for these — no client_secret in the response.
         $reg = $http->post($this->baseUrl . '/oauth2/default/registration', [
             'headers' => ['Content-Type' => 'application/json'],
@@ -350,7 +350,7 @@ class AuthorizationGrantPublicClientPkceTest extends TestCase
                 'application_type' => 'web',
                 'redirect_uris' => [self::REDIRECT_URI],
                 'client_name' => 'AuthorizationGrantPublicClientPkceTest-' . bin2hex(random_bytes(3)),
-                // OpenEMR DCR restricts token_endpoint_auth_method to
+                // DCL DCR restricts token_endpoint_auth_method to
                 // client_secret_basic | client_secret_post | private_key_jwt
                 // even for public clients — see AuthorizationController
                 // registerClient() validation. application_type=web is

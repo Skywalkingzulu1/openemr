@@ -15,16 +15,16 @@
  * later invoked, which is a separate concern from the caught-exception
  * context.
  *
- * @package   OpenEMR
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\Exit_;
@@ -99,7 +99,7 @@ class ForbiddenExitInCatchFinallyRule implements Rule
         return RuleErrorBuilder::message(
             sprintf('exit/die inside a %s block swallows the caught exception and aborts the process.', $block)
         )
-            ->identifier('openemr.exitInCatchOrFinally')
+            ->identifier('DCL.exitInCatchOrFinally')
             ->line($exit->getStartLine())
             ->tip('Re-throw (throw;) or wrap the exception (throw new …Exception(…, previous: $e)) so the global exception handler can log and respond.')
             ->build();

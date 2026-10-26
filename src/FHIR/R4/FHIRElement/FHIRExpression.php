@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A expression that is evaluated in a specified context and returns a value. The context of use of the expression must specify the context in which the expression is evaluated, and how the result of the expression is used.
@@ -72,31 +72,31 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 {
     /**
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * A short name assigned to the expression to allow for multiple reuse of the expression in the context where it is defined.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $name = null;
 
     /**
      * The media type of the language for the expression.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpressionLanguage
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpressionLanguage
      */
     public $language = null;
 
     /**
      * An expression in the specified language that returns a value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
     /**
      * A URI that defines where the expression is found.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $reference = null;
 
@@ -107,7 +107,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -116,7 +116,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -127,7 +127,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * A short name assigned to the expression to allow for multiple reuse of the expression in the context where it is defined.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getName()
     {
@@ -136,7 +136,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * A short name assigned to the expression to allow for multiple reuse of the expression in the context where it is defined.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $name
      * @return $this
      */
     public function setName($name)
@@ -147,7 +147,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * The media type of the language for the expression.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpressionLanguage
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpressionLanguage
      */
     public function getLanguage()
     {
@@ -156,7 +156,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * The media type of the language for the expression.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpressionLanguage $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpressionLanguage $language
      * @return $this
      */
     public function setLanguage($language)
@@ -167,7 +167,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * An expression in the specified language that returns a value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -176,7 +176,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * An expression in the specified language that returns a value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)
@@ -187,7 +187,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * A URI that defines where the expression is found.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getReference()
     {
@@ -196,7 +196,7 @@ class FHIRExpression extends FHIRElement implements \JsonSerializable
 
     /**
      * A URI that defines where the expression is found.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $reference
      * @return $this
      */
     public function setReference($reference)

@@ -3,19 +3,19 @@
 /**
  * PatientSessionUtil refactored from pid.inc.php handles clearing and setting the session for a patient.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Session;
+namespace DCL\Common\Session;
 
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
 
 class PatientSessionUtil
 {
@@ -51,7 +51,7 @@ class PatientSessionUtil
         $new_pid_int = intval($new_pid);
         // If the $new_pid was not an integer, then send an error to error log
         if (!is_numeric($new_pid)) {
-            error_log("Critical OpenEMR Error: Attempt to set pid to following non-integer value was denied: " . errorLogEscape($new_pid), 0);
+            error_log("Critical DCL Error: Attempt to set pid to following non-integer value was denied: " . errorLogEscape($new_pid), 0);
             error_log("Requested pid " . errorLogEscape($new_pid), 0);
             error_log("Returned pid " . errorLogEscape($new_pid_int), 0);
         }

@@ -16,8 +16,8 @@ setup() {
     assert_file_contains "${SCRIPT_DIR}/Dockerfile" 'apache'
 }
 
-@test "Dockerfile: openemr.sh as entrypoint or CMD" {
-    assert_file_contains "${SCRIPT_DIR}/Dockerfile" 'openemr.sh'
+@test "Dockerfile: DCL.sh as entrypoint or CMD" {
+    assert_file_contains "${SCRIPT_DIR}/Dockerfile" 'DCL.sh'
 }
 
 @test "Dockerfile: composer install retries GitHub zipball 504s" {
@@ -28,16 +28,16 @@ setup() {
 
 @test "Dockerfile: include Composer-installed modules in production image" {
     assert_file_contains "${SCRIPT_DIR}/Dockerfile" \
-        'COPY --from=openemr-composer /openemr/interface/modules/custom_modules /tmp/openemr/interface/modules/custom_modules'
+        'COPY --from=DCL-composer /DCL/interface/modules/custom_modules /tmp/DCL/interface/modules/custom_modules'
 }
 
-@test "openemr.conf: LoadModule rewrite" {
-    assert_file_contains "${SCRIPT_DIR}/openemr.conf" 'LoadModule'
-    assert_file_contains "${SCRIPT_DIR}/openemr.conf" 'rewrite'
+@test "DCL.conf: LoadModule rewrite" {
+    assert_file_contains "${SCRIPT_DIR}/DCL.conf" 'LoadModule'
+    assert_file_contains "${SCRIPT_DIR}/DCL.conf" 'rewrite'
 }
 
-@test "openemr.conf: security or ServerTokens" {
-    assert_file_contains "${SCRIPT_DIR}/openemr.conf" 'ServerTokens\|ServerSignature\|Security'
+@test "DCL.conf: security or ServerTokens" {
+    assert_file_contains "${SCRIPT_DIR}/DCL.conf" 'ServerTokens\|ServerSignature\|Security'
 }
 
 @test "php.ini: exists" {

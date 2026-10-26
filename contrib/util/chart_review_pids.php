@@ -3,16 +3,16 @@
 /**
  * Create an array of pids for whitelisting the patient filter for a chart review
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    stephen waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2023-2025 stephen waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
 // Enable this script via environment variable
-if (!getenv('OPENEMR_ENABLE_CHART_REVIEW_PIDS')) {
-    die('Set OPENEMR_ENABLE_CHART_REVIEW_PIDS=1 environment variable to enable this script');
+if (!getenv('DCL_ENABLE_CHART_REVIEW_PIDS')) {
+    die('Set DCL_ENABLE_CHART_REVIEW_PIDS=1 environment variable to enable this script');
 }
 
 if (php_sapi_name() !== 'cli') {
@@ -29,7 +29,7 @@ $_GET['site'] = $argv[1];
 $ignoreAuth = true;
 require_once __DIR__ . "/../../interface/globals.php";
 
-use OpenEMR\Services\{
+use DCL\Services\{
     AppointmentService,
     InsuranceService,
     InsuranceCompanyService,

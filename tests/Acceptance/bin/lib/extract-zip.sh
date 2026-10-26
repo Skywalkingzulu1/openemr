@@ -86,7 +86,7 @@ extract_zip_flattening_single_top_level_dir() {
     fi
 
     # unzip has no --strip-components; extract to a temp dir first,
-    # then move the single top-level `openemr-<version>/` contents up
+    # then move the single top-level `DCL-<version>/` contents up
     # into ${dest_dir} to mirror the tarball layout.
     local zip_tmp
     zip_tmp="$(mktemp -d -t "${mktemp_template}")"

@@ -2,7 +2,7 @@
 
 /**
  * This file implements the main jquery interface for loading external
- * database files into openEMR
+ * database files into DCL
  *
  * Copyright (C) 2012 Patient Healthcare Analytics, Inc.
  * Copyright (C) 2011 Phyaura, LLC <info@phyaura.com>
@@ -18,16 +18,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  (Mac) Kevin McAloon <mcaloon@patienthealthcareanalytics.com>
  * @author  Rohit Kumar <pandit.rohit@netsity.com>
  * @author  Brady Miller <brady.g.miller@gmail.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AclMain;
 
 // Control access
 if (!AclMain::aclCheckCore('admin', 'super')) {

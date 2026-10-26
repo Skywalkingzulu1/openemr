@@ -2,40 +2,40 @@
 
 /**
  * FhirGoalService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRGoal;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDate;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget;
-use OpenEMR\Services\CarePlanService;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRGoal;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDate;
+use DCL\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget;
+use DCL\Services\CarePlanService;
+use DCL\Services\CodeTypesService;
+use DCL\Services\EncounterService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService, IPatientCompartmentResourceService
 {
@@ -59,7 +59,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -82,13 +82,13 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
     }
 
     /**
-     * Parses an OpenEMR careTeam record, returning the equivalent FHIR CareTeam Resource
+     * Parses an DCL careTeam record, returning the equivalent FHIR CareTeam Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRGoal
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $goal = new FHIRGoal();
 
@@ -266,7 +266,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
     }
 
     /**
-     * Map OpenEMR plan_status to FHIR Goal lifecycleStatus
+     * Map DCL plan_status to FHIR Goal lifecycleStatus
      *
      * @param string|null $planStatus
      * @return string
@@ -292,7 +292,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
     }
 
     /**
-     * Map OpenEMR plan_status to FHIR Goal achievementStatus
+     * Map DCL plan_status to FHIR Goal achievementStatus
      * US Core 8.0 new requirement
      *
      * @param string $planStatus
@@ -358,18 +358,18 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->service->search($openEMRSearchParameters, true);
+        return $this->service->search($DCLSearchParameters, true);
     }
 
     /**
-     * Parses a FHIR Goal into the OpenEMR shape consumed by
+     * Parses a FHIR Goal into the DCL shape consumed by
      * CarePlanService::create / replace. Goal storage uses the same form_care_plan
      * table as CarePlan, scoped to care_plan_type='goal' (this service's
      * CarePlanService is constructed with TYPE_GOAL).
@@ -431,7 +431,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
         }
 
         // lifecycleStatus -> plan_status. R4 marks lifecycleStatus as 1..1; we require it
-        // on write rather than silently defaulting. OpenEMR plan_status values are a free
+        // on write rather than silently defaulting. DCL plan_status values are a free
         // string at storage; the read side maps via mapPlanStatusToLifecycleStatus.
         $lifecycleStatus = $json['lifecycleStatus'] ?? null;
         if (!is_string($lifecycleStatus) || $lifecycleStatus === '') {
@@ -459,7 +459,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
                 $codeValue
             );
             if ($storedCode === null) {
-                $data['__validation_error__'] = 'Goal.description.coding carries no system OpenEMR '
+                $data['__validation_error__'] = 'Goal.description.coding carries no system DCL '
                     . 'recognises, so the code cannot be stored without misattributing it';
                 $data['__validation_field__'] = 'description';
                 return $data;
@@ -508,10 +508,10 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
     /**
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Goal record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Goal record array');
         }
 
         if (isset($openEmrRecord['__validation_error__'])) {
@@ -543,7 +543,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
 
         // Goal also needs an encounter to anchor the form. FHIR Goal has no encounter
         // field directly; we look at extension['encounter'] for explicit binding, otherwise
-        // require it via a custom field on the OpenEMR record. The simplest robust path:
+        // require it via a custom field on the DCL record. The simplest robust path:
         // require the FHIR resource to include encounter context via an extension URL.
         // Without that, we cannot create a form_care_plan row.
         $encounterUuid = $this->resolveGoalEncounterUuid($openEmrRecord);
@@ -572,15 +572,15 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
 
     /**
      * @param string $fhirResourceId
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        if (isset($updatedOpenEMRRecord['__validation_error__'])) {
+        if (isset($updatedDCLRecord['__validation_error__'])) {
             $result = new ProcessingResult();
-            $field = $updatedOpenEMRRecord['__validation_field__'] ?? 'lifecycleStatus';
+            $field = $updatedDCLRecord['__validation_field__'] ?? 'lifecycleStatus';
             $result->setValidationMessages([
-                is_string($field) ? $field : 'lifecycleStatus' => $updatedOpenEMRRecord['__validation_error__'],
+                is_string($field) ? $field : 'lifecycleStatus' => $updatedDCLRecord['__validation_error__'],
             ]);
             return $result;
         }
@@ -606,7 +606,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
         // surrogate id chooses the form to rewrite, and a body naming a different patient must
         // not be able to replace this one's goals. Resolve the body's subject and let
         // CarePlanService::replace() compare it against the row it locates.
-        $expectedPid = $this->resolveGoalPatientId($updatedOpenEMRRecord);
+        $expectedPid = $this->resolveGoalPatientId($updatedDCLRecord);
         if ($expectedPid instanceof ProcessingResult) {
             return $expectedPid;
         }
@@ -614,7 +614,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
         return $this->service->replace(
             (int) $encounterId,
             $formId,
-            FhirPayloadReader::rows($updatedOpenEMRRecord['items'] ?? null),
+            FhirPayloadReader::rows($updatedDCLRecord['items'] ?? null),
             [],
             $expectedPid
         );
@@ -666,12 +666,12 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
     }
 
     /**
-     * OpenEMR's form_care_plan.code column stores codes prefixed by code-type
+     * DCL's form_care_plan.code column stores codes prefixed by code-type
      * (e.g. "SNOMED-CT:182840001"). The read side splits this via CodeTypesService, so the write
      * side resolves the system URL through the same service to stay in sync.
      *
-     * Returns null when the system is absent or unknown to OpenEMR:
-     * getOpenEMRCodeForSystemAndCode() answers the bare code in that case, which the reader
+     * Returns null when the system is absent or unknown to DCL:
+     * getDCLCodeForSystemAndCode() answers the bare code in that case, which the reader
      * cannot tell from a code whose type was never recorded, so it would come back under a
      * system the caller never sent. Callers reject rather than store that.
      */
@@ -680,7 +680,7 @@ class FhirGoalService extends FhirServiceBase implements IResourceUSCIGProfileSe
         if ($system === '') {
             return null;
         }
-        $stored = (new CodeTypesService())->getOpenEMRCodeForSystemAndCode($system, $code);
+        $stored = (new CodeTypesService())->getDCLCodeForSystemAndCode($system, $code);
 
         return str_contains($stored, ':') ? $stored : null;
     }

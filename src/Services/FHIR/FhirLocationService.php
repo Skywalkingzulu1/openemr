@@ -3,43 +3,43 @@
 /**
  * FhirLocationService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Enum\PlaceOfServiceEnum;
-use OpenEMR\FHIR\Export\ExportCannotEncodeException;
-use OpenEMR\FHIR\Export\ExportException;
-use OpenEMR\FHIR\Export\ExportJob;
-use OpenEMR\FHIR\Export\ExportStreamWriter;
-use OpenEMR\FHIR\Export\ExportWillShutdownException;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRLocation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\LocationService;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Enum\PlaceOfServiceEnum;
+use DCL\FHIR\Export\ExportCannotEncodeException;
+use DCL\FHIR\Export\ExportException;
+use DCL\FHIR\Export\ExportJob;
+use DCL\FHIR\Export\ExportStreamWriter;
+use DCL\FHIR\Export\ExportWillShutdownException;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRLocation;
+use DCL\FHIR\R4\FHIRElement\FHIRContactPoint;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\LocationService;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class FhirLocationService extends FhirServiceBase implements IFhirExportableResourceService, IResourceUSCIGProfileService, INonPatientCompartmentResourceService
 {
@@ -97,7 +97,7 @@ class FhirLocationService extends FhirServiceBase implements IFhirExportableReso
     }
 
     /**
-     * Returns an array mapping FHIR Location Resource search parameters to OpenEMR Location search parameters
+     * Returns an array mapping FHIR Location Resource search parameters to DCL Location search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -139,13 +139,13 @@ class FhirLocationService extends FhirServiceBase implements IFhirExportableReso
     }
 
     /**
-     * Parses an OpenEMR location record, returning the equivalent FHIR Location Resource
+     * Parses an DCL location record, returning the equivalent FHIR Location Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRLocation
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $locationResource = new FHIRLocation();
 
@@ -297,26 +297,26 @@ class FhirLocationService extends FhirServiceBase implements IFhirExportableReso
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         // even though it's not a patient compartment issue we still don't want certain location data such as clinician home addresses
         // being returned... or other patient locations...  Weird that it's not in the patient compartment
         if (!empty($this->patientUuid)) {
-            $uuidSearch = $openEMRSearchParameters['uuid'] ?? null;
+            $uuidSearch = $DCLSearchParameters['uuid'] ?? null;
             if ($uuidSearch !== null) {
-                unset($openEMRSearchParameters['uuid']); // remove it so we can handle it properly
+                unset($DCLSearchParameters['uuid']); // remove it so we can handle it properly
             }
-            $openEMRSearchParameters['patient-facility-type'] = $this->getPatientContextSearchFieldForPatientUuids(
+            $DCLSearchParameters['patient-facility-type'] = $this->getPatientContextSearchFieldForPatientUuids(
                 [$this->patientUuid],
                 $uuidSearch
             );
         }
-        return $this->locationService->getAll($openEMRSearchParameters);
+        return $this->locationService->getAll($DCLSearchParameters);
     }
 
     /**

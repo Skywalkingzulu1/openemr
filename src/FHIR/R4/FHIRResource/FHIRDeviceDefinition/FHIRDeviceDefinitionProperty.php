@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The characteristics, operational status and capabilities of a medical-related component of a medical device.
@@ -71,19 +71,19 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Code that specifies the property DeviceDefinitionPropetyCode (Extensible).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Property value as a quantity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity[]
      */
     public $valueQuantity = [];
 
     /**
      * Property value as a code, e.g., NTP4 (synced to NTP).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $valueCode = [];
 
@@ -94,7 +94,7 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement implements \JsonS
 
     /**
      * Code that specifies the property DeviceDefinitionPropetyCode (Extensible).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement implements \JsonS
 
     /**
      * Code that specifies the property DeviceDefinitionPropetyCode (Extensible).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement implements \JsonS
 
     /**
      * Property value as a quantity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity[]
      */
     public function getValueQuantity()
     {
@@ -123,7 +123,7 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement implements \JsonS
 
     /**
      * Property value as a quantity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function addValueQuantity($valueQuantity)
@@ -134,7 +134,7 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement implements \JsonS
 
     /**
      * Property value as a code, e.g., NTP4 (synced to NTP).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getValueCode()
     {
@@ -143,7 +143,7 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement implements \JsonS
 
     /**
      * Property value as a code, e.g., NTP4 (synced to NTP).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCode
      * @return $this
      */
     public function addValueCode($valueCode)

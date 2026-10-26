@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Parsed `openemr-tag` repository_dispatch payload.
+ * Parsed `DCL-tag` repository_dispatch payload.
  *
- * The generic value object for the `openemr-tag` envelope: any consumer
+ * The generic value object for the `DCL-tag` envelope: any consumer
  * (announcements, build-release) reuses it to normalize the dispatch into
  * {version, tag, branch}.
  *
@@ -12,18 +12,18 @@
  * fails loudly at parse time instead of producing artifacts that
  * reference "null" or empty strings further down the pipeline.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
+ * @copyright Copyright (c) 2026 DCL Inc.
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 final readonly class TagDispatchPayload
 {
@@ -79,9 +79,9 @@ final readonly class TagDispatchPayload
             throw new \RuntimeException('Dispatch envelope is not a JSON object');
         }
         $event = $envelope['event'] ?? null;
-        if ($event !== 'openemr-tag') {
+        if ($event !== 'DCL-tag') {
             throw new \RuntimeException(sprintf(
-                'Expected event=openemr-tag, got: %s',
+                'Expected event=DCL-tag, got: %s',
                 is_string($event) ? $event : '(missing)',
             ));
         }

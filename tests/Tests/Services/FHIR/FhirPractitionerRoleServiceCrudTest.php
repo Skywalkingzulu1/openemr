@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\Services\FHIR\FhirPractitionerRoleService;
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Tests\Fixtures\PractitionerFixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPractitionerRole;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\Services\FHIR\FhirPractitionerRoleService;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Tests\Fixtures\PractitionerFixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -26,13 +26,13 @@ use Psr\Log\LoggerInterface;
  * table: one marker row per role (carries the FHIR uuid) plus sibling rows for
  * role_code and specialty_code.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirPractitionerRoleServiceCrudTest extends TestCase
 {
@@ -248,7 +248,7 @@ class FhirPractitionerRoleServiceCrudTest extends TestCase
         // and stored nothing satisfies every assertion above.
         //
         // The assertion looks for the code anywhere in the serialized `code` block rather than
-        // at a fixed path. parseOpenEMRRecord() calls FHIRCodeableConcept::addCoding() with the
+        // at a fixed path. parseDCLRecord() calls FHIRCodeableConcept::addCoding() with the
         // bare stored string, and that method appends its argument as-is, so `coding` currently
         // serializes as a list of strings instead of Coding objects. Pinning that path would
         // bake the malformed shape into the test; searching the block proves the new code was

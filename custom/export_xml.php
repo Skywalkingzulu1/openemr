@@ -3,20 +3,20 @@
 /**
  * Exports patient demographics to a custom XML format
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @author  Roberto Vasquez <robertogagliotta@gmail.com>
  * @copyright Copyright (c) 2005 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017 Roberto Vasquez <robertogagliotta@gmail.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
  require_once("../interface/globals.php");
 
- use OpenEMR\Common\Acl\AccessDeniedHelper;
- use OpenEMR\Common\Acl\AclMain;
- use OpenEMR\Core\Header;
+ use DCL\Common\Acl\AccessDeniedHelper;
+ use DCL\Common\Acl\AclMain;
+ use DCL\Core\Header;
 
 if (!AclMain::aclCheckCore('patients', 'demo')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/demo: Export Patient Demographics XML", xl("Export Patient Demographics XML"));

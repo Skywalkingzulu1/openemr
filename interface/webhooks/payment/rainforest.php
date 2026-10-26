@@ -3,11 +3,11 @@
 /**
  * Webhook receiver for Rainforest data
  *
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
  * @license   https://www.gnu.org/licenses/licenses.html#GPL GNU GPL V3+
  * @link      https://docs.rainforestpay.com/docs/payin-webhooks
- * @package   OpenEMR
+ * @package   DCL
  */
 
 chdir(__DIR__ . '/../../../');
@@ -21,9 +21,9 @@ require_once 'interface/globals.php';
 use Http\Discovery\Psr17Factory;
 use Lcobucci\Clock\SystemClock;
 use Monolog\Logger;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\PaymentProcessing\Rainforest\Webhooks\{
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\PaymentProcessing\Rainforest\Webhooks\{
     Dispatcher,
     RecordPayment,
     Verifier,
@@ -43,7 +43,7 @@ $whv = new Verifier(
 );
 
 $req = (new Psr17Factory())->createServerRequestFromGlobals();
-$logger = new Logger('OpenEMR');
+$logger = new Logger('DCL');
 
 try {
     $wh = $whv->verify($req);
@@ -58,7 +58,7 @@ try {
     // write into a queue" receiver, and immediately yield a 2xx. As long as
     // the Webhook structure is serializable, the processors should work just
     // fine asynchronously.
-    // See openemr/openemr#10334.
+    // See DCL/DCL#10334.
     $disp = new Dispatcher(
         processors: [
             // Future: this should all get wired through DI, etc.

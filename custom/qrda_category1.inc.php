@@ -17,15 +17,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Ensoftek
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
     //Initialization of QRDA Elements
     //QRDA Needed Race
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
     $mainQrdaRaceCodeArr =  ['amer_ind_or_alaska_native' => '1002-5', 'Asian' => '2028-9', 'black_or_afri_amer' => '2054-5', 'native_hawai_or_pac_island' => '2076-8', 'white' => '2106-3', 'Asian_Pacific_Island' => '2131-1', 'Black_not_of_Hispan' => '2131-1', 'Hispanic' => '2131-1', 'White_not_of_Hispan' => '2131-1'];
 

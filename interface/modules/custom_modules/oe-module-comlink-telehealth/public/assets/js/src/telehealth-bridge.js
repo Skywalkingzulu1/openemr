@@ -1,12 +1,12 @@
 /**
- * Javascript Wrapper around the comlink bridge object for handling telehealth bridge interactions in the way OpenEMR
+ * Javascript Wrapper around the comlink bridge object for handling telehealth bridge interactions in the way DCL
  * needs it to.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 import {VideoBridge, VideoCall} from "./cvb.min";
 

@@ -3,39 +3,39 @@
 /**
  * RestControllerHelper
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use Http\Message\Encoding\GzipEncodeStream;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\RestApiExtend\RestApiResourceServiceEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRTypeRestfulInteraction;
-use OpenEMR\FHIR\R4\FHIRResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest;
-use OpenEMR\Services\FHIR\IResourceSearchableService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\RestApiExtend\RestApiResourceServiceEvent;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRRestfulCapabilityMode;
+use DCL\FHIR\R4\FHIRElement\FHIRTypeRestfulInteraction;
+use DCL\FHIR\R4\FHIRResource;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource;
+use DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest;
+use DCL\Services\FHIR\IResourceSearchableService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Validators\ProcessingResult;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -52,7 +52,7 @@ class RestControllerHelper
      * TODO: should we build a fhir service locator class?  There are two places this is now used, in this class and
      * in the FhirProvenanceService...
      */
-    const FHIR_SERVICES_NAMESPACE = "OpenEMR\\Services\\FHIR\\Fhir";
+    const FHIR_SERVICES_NAMESPACE = "DCL\\Services\\FHIR\\Fhir";
 
     const DEFAULT_STRUCTURE_DEFINITION = "http://hl7.org/fhir/StructureDefinition/";
 
@@ -144,7 +144,7 @@ class RestControllerHelper
     private static array $unimplementedFhirWrites = [];
 
     /**
-     * Builds the route handler for a FHIR write that OpenEMR deliberately does
+     * Builds the route handler for a FHIR write that DCL deliberately does
      * not implement, and records the interaction so the CapabilityStatement
      * omits it.
      *

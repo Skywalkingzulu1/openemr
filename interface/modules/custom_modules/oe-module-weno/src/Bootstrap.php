@@ -3,32 +3,32 @@
 /**
  * Contains all of the Weno global settings and configuration
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kofi Appiah <kkappiah@medsov.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Omega Systems Group <https://omegasystemsgroup.com/>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\WenoModule;
+namespace DCL\Modules\WenoModule;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Globals\GlobalsInitializedEvent;
-use OpenEMR\Events\Patient\PatientBeforeCreatedAuxEvent;
-use OpenEMR\Events\Patient\PatientUpdatedEventAux;
-use OpenEMR\Events\PatientDemographics\RenderEvent as pRenderEvent;
-use OpenEMR\Events\PatientDemographics\RenderPharmacySectionEvent;
-use OpenEMR\Menu\MenuEvent;
-use OpenEMR\Modules\WenoModule\Services\ModuleService;
-use OpenEMR\Modules\WenoModule\Services\SelectedPatientPharmacy;
-use OpenEMR\Services\Globals\GlobalSetting;
-use OpenEMR\Services\Utils\SQLUpgradeService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Globals\GlobalsInitializedEvent;
+use DCL\Events\Patient\PatientBeforeCreatedAuxEvent;
+use DCL\Events\Patient\PatientUpdatedEventAux;
+use DCL\Events\PatientDemographics\RenderEvent as pRenderEvent;
+use DCL\Events\PatientDemographics\RenderPharmacySectionEvent;
+use DCL\Menu\MenuEvent;
+use DCL\Modules\WenoModule\Services\ModuleService;
+use DCL\Modules\WenoModule\Services\SelectedPatientPharmacy;
+use DCL\Services\Globals\GlobalSetting;
+use DCL\Services\Utils\SQLUpgradeService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
@@ -40,7 +40,7 @@ class Bootstrap
     private $moduleDirectoryName;
 
     /**
-     * The OpenEMR Twig Environment
+     * The DCL Twig Environment
      *
      * @var Environment
      */
@@ -68,7 +68,7 @@ class Bootstrap
     public bool $isConfigured = false;
 
     /**
-     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the OpenEMR system
+     * @param EventDispatcherInterface $eventDispatcher The object responsible for sending and subscribing to events through the DCL system
      */
     public function __construct(
         private readonly EventDispatcherInterface $eventDispatcher,

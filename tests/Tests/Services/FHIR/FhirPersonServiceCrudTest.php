@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPerson;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\Services\FHIR\FhirPersonService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Tests\Fixtures\PractitionerFixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPerson;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\Services\FHIR\FhirPersonService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Tests\Fixtures\PractitionerFixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -21,13 +21,13 @@ use Psr\Log\LoggerInterface;
  * is shared with PractitionerFixtureManager (which deletes users WHERE fname LIKE
  * 'test-fixture%') and our fixture uses a matching test-fixture-PersonFirst name.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirPersonServiceCrudTest extends TestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Tests\Api\ApiTestClient;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Tests\Api\ApiTestClient;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
@@ -16,10 +16,10 @@ use Psr\Http\Message\ResponseInterface;
  * - GET /api/patient/:puuid/medical_problem had ConditionService foreach
  *   overwriting the TokenSearchField for puuid
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    studebaker8
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class PatientAllergyConditionApiTest extends TestCase
 {
@@ -32,9 +32,9 @@ class PatientAllergyConditionApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new FixtureManager();
         /** @var array<string, mixed> $record */

@@ -4,20 +4,20 @@
  * VocabularyExtractor - build-time helper that turns a schematron .sch +
  * external voc.xml catalog into a compact OID => values array.
  *
- * Not called at runtime. Invoked by the `openemr:regen-schematron-vocab` console command whenever
+ * Not called at runtime. Invoked by the `DCL:regen-schematron-vocab` console command whenever
  * the upstream schematron IG revision changes. The generated vocab.php files
  * are committed and shipped, so runtime never needs to touch voc.xml.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Cda\Schematron;
+namespace DCL\Services\Cda\Schematron;
 
 use DOMDocument;
 use DOMXPath;
@@ -99,15 +99,15 @@ final class VocabularyExtractor
             . "/**\n"
             . " * Generated schematron vocabulary lookup - do not edit.\n"
             . " *\n"
-            . " * Rebuild with the `openemr:regen-schematron-vocab` console command.\n"
+            . " * Rebuild with the `DCL:regen-schematron-vocab` console command.\n"
             . " * source .sch:    " . basename($sourceSch) . "\n"
             . " * source voc.xml: " . basename($sourceVoc) . "\n"
             . " *\n"
-            . " * @package   OpenEMR\n"
-            . " * @link      https://www.open-emr.org\n"
+            . " * @package   DCL\n"
+            . " * @link      https://www.dcl.org\n"
             . " * @author    Brady Miller <brady.g.miller@gmail.com>\n"
             . " * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>\n"
-            . " * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3\n"
+            . " * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3\n"
             . " */\n\n"
             . "declare(strict_types=1);\n\n"
             . "return [\n";

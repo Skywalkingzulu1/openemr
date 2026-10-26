@@ -3,20 +3,20 @@
 /**
  * XmlUtils - Centralized XML parsing utilities.
  *
- * All XML parsing in OpenEMR should go through this class to ensure that:
+ * All XML parsing in DCL should go through this class to ensure that:
  * 1. LIBXML_NONET is always applied (prevents XXE / SSRF via external DTDs/entities).
  * 2. Parse failures are handled consistently instead of silently producing a `false`.
  * 3. Future hardening (e.g. LIBXML_DTDATTR, switch to DOMDocument) can be applied
  *    in one place rather than across every call site.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Craig Allen <craigrallen@gmail.com>
  * @copyright Copyright (c) 2026 Craig Allen <craigrallen@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Utils;
+namespace DCL\Common\Utils;
 
 use SimpleXMLElement;
 

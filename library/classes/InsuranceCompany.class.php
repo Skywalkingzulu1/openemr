@@ -3,26 +3,26 @@
 /**
  * insurance company class for smarty templates
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    duhlman
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) duhlman
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\ORDataObject\Address;
-use OpenEMR\Common\ORDataObject\ORDataObject;
-use OpenEMR\Common\ValueObjects\TypedPhoneNumber;
-use OpenEMR\Services\InsuranceCompanyService;
-use OpenEMR\Services\PhoneNumberService;
-use OpenEMR\Services\PhoneType;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\ORDataObject\Address;
+use DCL\Common\ORDataObject\ORDataObject;
+use DCL\Common\ValueObjects\TypedPhoneNumber;
+use DCL\Services\InsuranceCompanyService;
+use DCL\Services\PhoneNumberService;
+use DCL\Services\PhoneType;
 
 /**
  * class Insurance Company
@@ -44,7 +44,7 @@ class InsuranceCompany extends ORDataObject
     public $inactive;
     public $InsuranceCompany;
     /*
-    *   OpenEMR can use this value to determine special formatting for the specified type of payer.
+    *   DCL can use this value to determine special formatting for the specified type of payer.
     *   It is the key to the array returned by the InsuranceCompanyService
     *   getInsuranceTypes and getInsuranceClaimTypes methods.
     *   @var int Holds constant for type of payer

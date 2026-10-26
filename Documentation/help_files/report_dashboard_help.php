@@ -3,14 +3,14 @@
 /**
  * Report Dashboard Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -47,7 +47,7 @@ require_once("../../interface/globals.php");
                         <li><a href="#section4"><?php echo xlt("Enabling EMR Direct phiMail");?></a></li>
                     </ul>
 
-                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To help explore the various components of the Report page especially if you want to use it as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR ");?>.</p>
+                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To help explore the various components of the Report page especially if you want to use it as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL ");?>.</p>
                 </div>
             </div>
             <div class= "row" id="section1">
@@ -111,7 +111,7 @@ require_once("../../interface/globals.php");
                         </div>
                     </div>
 
-                    <p><?php echo xlt("In openEMR the Continuity of Care Record (CCR) reports to be generated can be limited to a specific date range by checking the Use Date Range check-box and entering the desired date range");?>.</p>
+                    <p><?php echo xlt("In DCL the Continuity of Care Record (CCR) reports to be generated can be limited to a specific date range by checking the Use Date Range check-box and entering the desired date range");?>.</p>
 
                     <p><?php echo xlt("There are three options available when you create a Continuity of Care Record (CCR)");?>:</p>
                         <ul>
@@ -248,7 +248,7 @@ require_once("../../interface/globals.php");
                         <a href="https://www.emrdirect.com/subscribe" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     </p>
 
-                    <p><?php echo xlt("Subscribers will receive the username, password, and server address information with which to configure OpenEMR");?>.</p>
+                    <p><?php echo xlt("Subscribers will receive the username, password, and server address information with which to configure DCL");?>.</p>
 
                     <p><?php echo xlt("Go to Administration > Globals > Connectors");?>.</p>
 
@@ -264,9 +264,9 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("Do not enter the server URL into your browser address bar, as this will not work");?>.</p>
 
-                    <p><?php echo xlt("Specify the OpenEMR user who will receive notification of new incoming Direct messages");?>.</p>
+                    <p><?php echo xlt("Specify the DCL user who will receive notification of new incoming Direct messages");?>.</p>
 
-                    <p><?php echo xlt("Enter their OpenEMR username in the notification user field");?>.</p>
+                    <p><?php echo xlt("Enter their DCL username in the notification user field");?>.</p>
 
                     <p><?php echo xlt("Specify the interval for automatic message checking, 5 or 10 minutes as a starting point");?>.</p>
 
@@ -278,7 +278,7 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("In order to send Continuity of Care Record (CCR) and /or Continuity of Care Document (CCD) optionally check phiMail Allow CCD Send and/or phiMail Allow CCR Send to enable the Transmit feature for these data types");?>.</p>
 
-                    <p><?php echo xlt("If you do not select at least one of these, OpenEMR will operate in a receive-only mode");?>.</p>
+                    <p><?php echo xlt("If you do not select at least one of these, DCL will operate in a receive-only mode");?>.</p>
 
                     <p><?php echo xlt("Click the Save button");?>.
                         <button type="button" class="btn btn-secondary btn-save btn-sm oe-no-float"><?php echo xlt("Save"); ?></button>
@@ -312,11 +312,11 @@ require_once("../../interface/globals.php");
                     <p><?php echo xlt("Assign the message to the correct patient by clicking Patient: Click to select, assign a Type and forward the message on to the correct clinician or staff member");?>.</p>
 
                     <p><?php echo xlt("More information on the use of phiMail messages is available here");?>.
-                        <a href="https://www.open-emr.org/wiki/index.php/Direct" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://www.dcl.org/wiki/index.php/Direct" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     </p>
 
                     <p><?php echo xlt("Detailed information on how to setup and troubleshoot phiMail messages is available here");?>.
-                        <a href="https://raw.githubusercontent.com/openemr/openemr/master/Documentation/Direct_Messaging_README.txt" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                        <a href="https://raw.githubusercontent.com/DCL/DCL/master/Documentation/Direct_Messaging_README.txt" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                     </p>
                 </div>
             </div>

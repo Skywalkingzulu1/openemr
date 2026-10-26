@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaimResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -71,19 +71,19 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * A number to uniquely reference the claim sub-detail entry.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $subDetailSequence = null;
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public $noteNumber = [];
 
     /**
      * The adjudication results.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public $adjudication = [];
 
@@ -94,7 +94,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A number to uniquely reference the claim sub-detail entry.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSubDetailSequence()
     {
@@ -103,7 +103,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A number to uniquely reference the claim sub-detail entry.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $subDetailSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $subDetailSequence
      * @return $this
      */
     public function setSubDetailSequence($subDetailSequence)
@@ -114,7 +114,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt[]
      */
     public function getNoteNumber()
     {
@@ -123,7 +123,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $noteNumber
      * @return $this
      */
     public function addNoteNumber($noteNumber)
@@ -134,7 +134,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The adjudication results.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public function getAdjudication()
     {
@@ -143,7 +143,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The adjudication results.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
      * @return $this
      */
     public function addAdjudication($adjudication)

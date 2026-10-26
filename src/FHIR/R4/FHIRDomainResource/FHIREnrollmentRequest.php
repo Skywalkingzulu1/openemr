@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * This resource provides the insurance enrollment details to the insurer regarding a specified coverage.
@@ -72,43 +72,43 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 {
     /**
      * The Response business identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * The date when this resource was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * The Insurer who is target  of the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $insurer = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $provider = null;
 
     /**
      * Patient Resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $candidate = null;
 
     /**
      * Reference to the program or plan identification, underwriter or payor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $coverage = null;
 
@@ -119,7 +119,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The Response business identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -128,7 +128,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The Response business identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -139,7 +139,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -148,7 +148,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -159,7 +159,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The date when this resource was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -168,7 +168,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The date when this resource was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -179,7 +179,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The Insurer who is target  of the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInsurer()
     {
@@ -188,7 +188,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The Insurer who is target  of the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $insurer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $insurer
      * @return $this
      */
     public function setInsurer($insurer)
@@ -199,7 +199,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvider()
     {
@@ -208,7 +208,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function setProvider($provider)
@@ -219,7 +219,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Patient Resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCandidate()
     {
@@ -228,7 +228,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Patient Resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $candidate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $candidate
      * @return $this
      */
     public function setCandidate($candidate)
@@ -239,7 +239,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Reference to the program or plan identification, underwriter or payor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCoverage()
     {
@@ -248,7 +248,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Reference to the program or plan identification, underwriter or payor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverage
      * @return $this
      */
     public function setCoverage($coverage)

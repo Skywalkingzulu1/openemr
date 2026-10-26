@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A set of ordered Quantities defined by a low and high limit.
@@ -72,13 +72,13 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
 {
     /**
      * The low limit. The boundary is inclusive.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $low = null;
 
     /**
      * The high limit. The boundary is inclusive.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $high = null;
 
@@ -89,7 +89,7 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
 
     /**
      * The low limit. The boundary is inclusive.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getLow()
     {
@@ -98,7 +98,7 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
 
     /**
      * The low limit. The boundary is inclusive.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $low
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $low
      * @return $this
      */
     public function setLow($low)
@@ -109,7 +109,7 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
 
     /**
      * The high limit. The boundary is inclusive.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getHigh()
     {
@@ -118,7 +118,7 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
 
     /**
      * The high limit. The boundary is inclusive.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $high
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $high
      * @return $this
      */
     public function setHigh($high)

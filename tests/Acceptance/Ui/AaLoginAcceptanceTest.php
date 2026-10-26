@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Ui;
+namespace DCL\Tests\Acceptance\Ui;
 
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
-use OpenEMR\Tests\Acceptance\Support\PantherAcceptanceTestCase;
+use DCL\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\PantherAcceptanceTestCase;
 use PHPUnit\Framework\Attributes\Group;
 
 /**
@@ -32,7 +32,7 @@ use PHPUnit\Framework\Attributes\Group;
  * scenarios; only two of them add signal over what already ships in
  * the acceptance suite:
  *
- *   - testGoToOpenemrLoginPage        (SKIPPED — duplicate of
+ *   - testGoToDCLLoginPage        (SKIPPED — duplicate of
  *     E2eCriticalPathTest's login-page-load assertion)
  *   - testLoginUnauthorized           (PORTED — negative-auth signal;
  *     nothing else in the acceptance suite asserts that a wrong
@@ -42,7 +42,7 @@ use PHPUnit\Framework\Attributes\Group;
  *     from the happy-path login-redirect chain E2eCriticalPathTest
  *     covers)
  *   - testAdminPageDisabledByDefault  (SKIPPED — docker/release/
- *     openemr.sh removes admin.php from the release image after
+ *     DCL.sh removes admin.php from the release image after
  *     configuration, so this scenario is meaningless against a booted
  *     release artifact; the disabled-by-default guard is exercised
  *     source-side against the dev checkout instead)
@@ -85,7 +85,7 @@ final class AaLoginAcceptanceTest extends PantherAcceptanceTestCase
             'clearPass' => 'pass1',
         ]);
 
-        // OpenEMR's authLoginScreen() redirects via `w.top.location
+        // DCL's authLoginScreen() redirects via `w.top.location
         // .href = ...` (client-side JS), so reading the title
         // immediately after submitForm can race the redirect. Wait
         // for the URL to settle on /interface/login/login.php before
@@ -98,12 +98,12 @@ final class AaLoginAcceptanceTest extends PantherAcceptanceTestCase
         // Post-redirect the browser is still on the login page. The
         // release image's login handler re-renders login.php on
         // failure rather than redirecting to an error page, so the
-        // title stays "OpenEMR Login" (a successful auth would
-        // transition it to "OpenEMR").
+        // title stays "DCL Login" (a successful auth would
+        // transition it to "DCL").
         self::assertSame(
             self::LOGIN_TITLE,
             $client->getTitle(),
-            'Login with a wrong password must NOT authenticate — a title change to "OpenEMR" means the artifact accepted invalid credentials',
+            'Login with a wrong password must NOT authenticate — a title change to "DCL" means the artifact accepted invalid credentials',
         );
     }
 

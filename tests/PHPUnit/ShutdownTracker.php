@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPUnit;
+namespace DCL\PHPUnit;
 
 use PHPUnit\Event\Application\{
     Finished,
@@ -35,7 +35,7 @@ class ShutdownTracker implements FinishedSubscriber
     {
         register_shutdown_function(function (): void {
             if (!$this->gotFinishedEvent) {
-                // @phpstan-ignore openemr.forbiddenErrorLog (System logger not available here)
+                // @phpstan-ignore DCL.forbiddenErrorLog (System logger not available here)
                 error_log("CRITICAL ERROR: Exiting without having received PHPUnit shutdown event");
                 exit(70); // "Internal software error"
             }

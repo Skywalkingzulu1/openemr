@@ -7,21 +7,21 @@
  * so routing, scope enforcement, and serialization are exercised end to end —
  * the path the service-layer CRUD tests bypass.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\QuestionnaireService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\QuestionnaireService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -41,9 +41,9 @@ class QuestionnaireResponseFhirWriteApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthTokenOrFail(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthTokenOrFail(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new FixtureManager();
         $this->fixtureManager->installPatientFixtures();
@@ -163,7 +163,7 @@ class QuestionnaireResponseFhirWriteApiTest extends TestCase
             $putResponse->getStatusCode(),
             'PUT ' . self::RESOURCE_URL . '/{id} should return 200. Body: ' . $putBody
         );
-        // FhirServiceBase::update() re-shapes the stored row through parseOpenEMRRecord()
+        // FhirServiceBase::update() re-shapes the stored row through parseDCLRecord()
         // to build this body. A service that leaves that on FhirServiceBaseEmptyTrait
         // answers a successful PUT with null, which the status code alone does not reveal.
         $putContents = json_decode($putBody, true);

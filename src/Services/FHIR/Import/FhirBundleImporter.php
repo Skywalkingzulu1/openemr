@@ -10,24 +10,24 @@
  * server-side bugs, strict validators, unimplemented resources, and the
  * peelable transforms below that work around each item.
  *
- * CLI entry: bin/console openemr:fhir-import (see
+ * CLI entry: bin/console DCL:fhir-import (see
  * src/Common/Command/FhirImport.php).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\FHIR\Import;
+namespace DCL\Services\FHIR\Import;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
 
 final class FhirBundleImporter
 {
@@ -118,7 +118,7 @@ final class FhirBundleImporter
     public function __construct(
         private readonly string $baseUrl,
         private readonly string $site,
-        private readonly string $openemrPath,
+        private readonly string $DCLPath,
         private readonly string $adminUser,
         private readonly string $adminPass,
         private readonly string $logFile = '/tmp/fhir_import.log',
@@ -141,7 +141,7 @@ final class FhirBundleImporter
     public function run(string $sourceDir): int
     {
         $sourceDir = rtrim($sourceDir, '/');
-        $this->logMessage("OpenEMR path: " . $this->openemrPath . "\n");
+        $this->logMessage("DCL path: " . $this->DCLPath . "\n");
         $this->logMessage("FHIR imports location: " . $sourceDir . "\n");
         $this->logMessage("Site: " . $this->site . "\n");
         $this->logMessage("Base URL: " . $this->baseUrl . "\n");
@@ -206,7 +206,7 @@ final class FhirBundleImporter
 
     private function readScopeListing(): ?string
     {
-        $file = $this->openemrPath . '/docker/library/api-scope-listing';
+        $file = $this->DCLPath . '/docker/library/api-scope-listing';
         if (!is_readable($file)) {
             $this->logMessage("FAIL: cannot read " . $file . "\n");
             return null;
@@ -621,7 +621,7 @@ final class FhirBundleImporter
     }
 
     // ========================================================================
-    // Peelable Synthea → OpenEMR transforms.
+    // Peelable Synthea → DCL transforms.
     //
     // Each transform below works around a specific README.md checklist item.
     // Delete the method AND its registry entry in __construct() when the

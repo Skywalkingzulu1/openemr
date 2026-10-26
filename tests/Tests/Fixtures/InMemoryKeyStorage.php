@@ -3,20 +3,20 @@
 /**
  * In-memory key storage for testing.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Encryption\Keys\KeyMaterial;
-use OpenEMR\Encryption\Storage\KeyMaterialId;
-use OpenEMR\Encryption\Storage\KeyStorageInterface;
+use DCL\Encryption\Keys\KeyMaterial;
+use DCL\Encryption\Storage\KeyMaterialId;
+use DCL\Encryption\Storage\KeyStorageInterface;
 use OutOfBoundsException;
 use RuntimeException;
 

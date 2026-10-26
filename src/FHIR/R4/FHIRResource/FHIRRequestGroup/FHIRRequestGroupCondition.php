@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup;
+namespace DCL\FHIR\R4\FHIRResource\FHIRRequestGroup;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A group of related requests that can be used to capture intended activities that have inter-dependencies such as "give this medication after that one".
@@ -71,13 +71,13 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * The kind of condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionConditionKind
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionConditionKind
      */
     public $kind = null;
 
     /**
      * An expression that returns true or false, indicating whether or not the condition is satisfied.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $expression = null;
 
@@ -88,7 +88,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The kind of condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionConditionKind
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionConditionKind
      */
     public function getKind()
     {
@@ -97,7 +97,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The kind of condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionConditionKind $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionConditionKind $kind
      * @return $this
      */
     public function setKind($kind)
@@ -108,7 +108,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * An expression that returns true or false, indicating whether or not the condition is satisfied.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getExpression()
     {
@@ -117,7 +117,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * An expression that returns true or false, indicating whether or not the condition is satisfied.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $expression
      * @return $this
      */
     public function setExpression($expression)

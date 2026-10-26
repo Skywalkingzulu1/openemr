@@ -6,19 +6,19 @@
  * has a fixture, each fixture belongs to the measure version installed, and
  * the recorded results are complete and internally consistent.
  *
- * A failure after updating openemr/oe-cqm-parsers means the fixtures need to
+ * A failure after updating DCL/oe-cqm-parsers means the fixtures need to
  * be captured again with capture.js.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cqm\Parity;
+namespace DCL\Tests\Isolated\Cqm\Parity;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -51,7 +51,7 @@ class ParityFixturesTest extends TestCase
         sort($installed);
         sort($captured);
 
-        $this->assertNotEmpty($installed, 'Install openemr/oe-cqm-parsers with Composer to run this test.');
+        $this->assertNotEmpty($installed, 'Install DCL/oe-cqm-parsers with Composer to run this test.');
         $this->assertSame($installed, $captured, 'The parity fixtures do not match the installed measures; capture them again.');
     }
 
@@ -270,7 +270,7 @@ class ParityFixturesTest extends TestCase
 
     private static function measuresDir(string $year): string
     {
-        return dirname(__DIR__, 5) . "/vendor/openemr/oe-cqm-parsers/{$year}_reporting_period/json_measures";
+        return dirname(__DIR__, 5) . "/vendor/DCL/oe-cqm-parsers/{$year}_reporting_period/json_measures";
     }
 
     private static function fixturesDir(string $year): string

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
@@ -72,89 +72,89 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 {
     /**
      * A unique identifier assigned to this coverage eligiblity request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * When the requestor expects the processor to complete processing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $priority = null;
 
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREligibilityRequestPurpose[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREligibilityRequestPurpose[]
      */
     public $purpose = [];
 
     /**
      * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $servicedDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $servicedPeriod = null;
 
     /**
      * The date when this resource was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * Person who created the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $enterer = null;
 
     /**
      * The provider which is responsible for the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $provider = null;
 
     /**
      * The Insurer who issued the coverage in question and is the recipient of the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $insurer = null;
 
     /**
      * Facility where the services are intended to be provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $facility = null;
 
     /**
      * Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo[]
      */
     public $supportingInfo = [];
 
     /**
      * Financial instruments for reimbursement for the health care products and services.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[]
      */
     public $insurance = [];
 
     /**
      * Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[]
      */
     public $item = [];
 
@@ -165,7 +165,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * A unique identifier assigned to this coverage eligiblity request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -174,7 +174,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * A unique identifier assigned to this coverage eligiblity request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -185,7 +185,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -194,7 +194,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -205,7 +205,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * When the requestor expects the processor to complete processing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority()
     {
@@ -214,7 +214,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * When the requestor expects the processor to complete processing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -225,7 +225,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREligibilityRequestPurpose[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREligibilityRequestPurpose[]
      */
     public function getPurpose()
     {
@@ -234,7 +234,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREligibilityRequestPurpose $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREligibilityRequestPurpose $purpose
      * @return $this
      */
     public function addPurpose($purpose)
@@ -245,7 +245,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -254,7 +254,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -264,7 +264,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getServicedDate()
     {
@@ -272,7 +272,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $servicedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $servicedDate
      * @return $this
      */
     public function setServicedDate($servicedDate)
@@ -282,7 +282,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getServicedPeriod()
     {
@@ -290,7 +290,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $servicedPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $servicedPeriod
      * @return $this
      */
     public function setServicedPeriod($servicedPeriod)
@@ -301,7 +301,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The date when this resource was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -310,7 +310,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The date when this resource was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -321,7 +321,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Person who created the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEnterer()
     {
@@ -330,7 +330,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Person who created the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $enterer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $enterer
      * @return $this
      */
     public function setEnterer($enterer)
@@ -341,7 +341,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The provider which is responsible for the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvider()
     {
@@ -350,7 +350,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The provider which is responsible for the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function setProvider($provider)
@@ -361,7 +361,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The Insurer who issued the coverage in question and is the recipient of the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInsurer()
     {
@@ -370,7 +370,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * The Insurer who issued the coverage in question and is the recipient of the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $insurer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $insurer
      * @return $this
      */
     public function setInsurer($insurer)
@@ -381,7 +381,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Facility where the services are intended to be provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getFacility()
     {
@@ -390,7 +390,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Facility where the services are intended to be provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $facility
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $facility
      * @return $this
      */
     public function setFacility($facility)
@@ -401,7 +401,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo[]
      */
     public function getSupportingInfo()
     {
@@ -410,7 +410,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo $supportingInfo
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo $supportingInfo
      * @return $this
      */
     public function addSupportingInfo($supportingInfo)
@@ -421,7 +421,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Financial instruments for reimbursement for the health care products and services.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[]
      */
     public function getInsurance()
     {
@@ -430,7 +430,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Financial instruments for reimbursement for the health care products and services.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance $insurance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance $insurance
      * @return $this
      */
     public function addInsurance($insurance)
@@ -441,7 +441,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[]
      */
     public function getItem()
     {
@@ -450,7 +450,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements \Json
 
     /**
      * Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem $item
      * @return $this
      */
     public function addItem($item)

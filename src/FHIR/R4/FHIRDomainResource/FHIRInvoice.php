@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Invoice containing collected ChargeItems from an Account with calculated individual and total price for Billing purpose.
@@ -72,97 +72,97 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The current state of the Invoice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInvoiceStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInvoiceStatus
      */
     public $status = null;
 
     /**
      * In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $cancelledReason = null;
 
     /**
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external, dental, preliminary).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The individual or set of individuals receiving the goods and services billed in this invoice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The individual or Organization responsible for balancing of this invoice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $recipient = null;
 
     /**
      * Date/time(s) of when this Invoice was posted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Indicates who or what performed or participated in the charged service.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceParticipant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceParticipant[]
      */
     public $participant = [];
 
     /**
      * The organizationissuing the Invoice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $issuer = null;
 
     /**
      * Account which is supposed to be balanced with this Invoice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $account = null;
 
     /**
      * Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceLineItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceLineItem[]
      */
     public $lineItem = [];
 
     /**
      * The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions.  The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
      */
     public $totalPriceComponent = [];
 
     /**
      * Invoice total , taxes excluded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $totalNet = null;
 
     /**
      * Invoice total, tax included.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $totalGross = null;
 
     /**
      * Payment details such as banking details, period of payment, deductibles, methods of payment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $paymentTerms = null;
 
     /**
      * Comments made about the invoice by the issuer, subject, or other participants.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -173,7 +173,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -182,7 +182,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -193,7 +193,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the Invoice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInvoiceStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInvoiceStatus
      */
     public function getStatus()
     {
@@ -202,7 +202,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the Invoice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInvoiceStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInvoiceStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -213,7 +213,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCancelledReason()
     {
@@ -222,7 +222,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $cancelledReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $cancelledReason
      * @return $this
      */
     public function setCancelledReason($cancelledReason)
@@ -233,7 +233,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external, dental, preliminary).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -242,7 +242,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external, dental, preliminary).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -253,7 +253,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or set of individuals receiving the goods and services billed in this invoice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -262,7 +262,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or set of individuals receiving the goods and services billed in this invoice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -273,7 +273,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or Organization responsible for balancing of this invoice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRecipient()
     {
@@ -282,7 +282,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or Organization responsible for balancing of this invoice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recipient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function setRecipient($recipient)
@@ -293,7 +293,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date/time(s) of when this Invoice was posted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -302,7 +302,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date/time(s) of when this Invoice was posted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -313,7 +313,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who or what performed or participated in the charged service.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceParticipant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceParticipant[]
      */
     public function getParticipant()
     {
@@ -322,7 +322,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who or what performed or participated in the charged service.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceParticipant $participant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -333,7 +333,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organizationissuing the Invoice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getIssuer()
     {
@@ -342,7 +342,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organizationissuing the Invoice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $issuer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $issuer
      * @return $this
      */
     public function setIssuer($issuer)
@@ -353,7 +353,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Account which is supposed to be balanced with this Invoice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAccount()
     {
@@ -362,7 +362,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Account which is supposed to be balanced with this Invoice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $account
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $account
      * @return $this
      */
     public function setAccount($account)
@@ -373,7 +373,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceLineItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceLineItem[]
      */
     public function getLineItem()
     {
@@ -382,7 +382,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceLineItem $lineItem
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoiceLineItem $lineItem
      * @return $this
      */
     public function addLineItem($lineItem)
@@ -393,7 +393,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions.  The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
      */
     public function getTotalPriceComponent()
     {
@@ -402,7 +402,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions.  The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent $totalPriceComponent
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent $totalPriceComponent
      * @return $this
      */
     public function addTotalPriceComponent($totalPriceComponent)
@@ -413,7 +413,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Invoice total , taxes excluded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getTotalNet()
     {
@@ -422,7 +422,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Invoice total , taxes excluded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $totalNet
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $totalNet
      * @return $this
      */
     public function setTotalNet($totalNet)
@@ -433,7 +433,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Invoice total, tax included.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getTotalGross()
     {
@@ -442,7 +442,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Invoice total, tax included.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $totalGross
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $totalGross
      * @return $this
      */
     public function setTotalGross($totalGross)
@@ -453,7 +453,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Payment details such as banking details, period of payment, deductibles, methods of payment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPaymentTerms()
     {
@@ -462,7 +462,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Payment details such as banking details, period of payment, deductibles, methods of payment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $paymentTerms
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $paymentTerms
      * @return $this
      */
     public function setPaymentTerms($paymentTerms)
@@ -473,7 +473,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the invoice by the issuer, subject, or other participants.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -482,7 +482,7 @@ class FHIRInvoice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the invoice by the issuer, subject, or other participants.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

@@ -2,14 +2,14 @@
 
 /**
  * CustomAuthCodeGrant.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Grant;
+namespace DCL\Common\Auth\OpenIDConnect\Grant;
 
 use DateInterval;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
@@ -18,10 +18,10 @@ use League\OAuth2\Server\Grant\AuthCodeGrant;
 use League\OAuth2\Server\Repositories\AuthCodeRepositoryInterface;
 use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
 use League\OAuth2\Server\RequestTypes\AuthorizationRequest;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
-use OpenEMR\Services\JWTClientAuthenticationService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\FHIR\SMART\SMARTLaunchToken;
+use DCL\Services\JWTClientAuthenticationService;
 use Psr\Http\Message\ServerRequestInterface;
 
 class CustomAuthCodeGrant extends AuthCodeGrant
@@ -29,7 +29,7 @@ class CustomAuthCodeGrant extends AuthCodeGrant
     use SystemLoggerAwareTrait;
     use ClientGrantTypeGuardTrait;
 
-    private array $openEMRCodeChallengeVerifiers;
+    private array $DCLCodeChallengeVerifiers;
 
     /**
      * @var JWTClientAuthenticationService
@@ -50,7 +50,7 @@ class CustomAuthCodeGrant extends AuthCodeGrant
     ) {
         parent::__construct($authCodeRepository, $refreshTokenRepository, $authCodeTTL);
         // the only code challenge methods we allow
-        $this->openEMRCodeChallengeVerifiers = ['S256' => true];
+        $this->DCLCodeChallengeVerifiers = ['S256' => true];
     }
 
 
@@ -266,12 +266,12 @@ class CustomAuthCodeGrant extends AuthCodeGrant
         if ($codeChallenge !== null) {
             $codeChallengeMethod = $this->getQueryStringParameter('code_challenge_method', $request, 'plain');
 
-            if (array_key_exists($codeChallengeMethod, $this->openEMRCodeChallengeVerifiers) === false) {
+            if (array_key_exists($codeChallengeMethod, $this->DCLCodeChallengeVerifiers) === false) {
                 throw OAuthServerException::invalidRequest(
                     'code_challenge_method',
                     'Code challenge method must be one of ' . implode(', ', array_map(
                         fn($method): string => '`' . $method . '`',
-                        array_keys($this->openEMRCodeChallengeVerifiers)
+                        array_keys($this->DCLCodeChallengeVerifiers)
                     ))
                 );
             }

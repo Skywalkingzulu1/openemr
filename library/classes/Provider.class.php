@@ -14,8 +14,8 @@ The original location of this file is /home/duhlman/uml-generated-code/prescript
  *
  */
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\ORDataObject\ORDataObject;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\ORDataObject\ORDataObject;
 
 class Provider extends ORDataObject
 {

@@ -3,7 +3,7 @@
 /**
  * CryptoGen class
  *
- * OpenEMR encryption/decryption strategy:
+ * DCL encryption/decryption strategy:
  * 1. Two separate private key sets are used, one key set in the database and one key set on the drive.
  * 2. The private database key set is stored in the keys mysql table
  * 3. The private drive key set is stored in sites/<site-name>/documents/logs_and_misc/methods/
@@ -17,26 +17,26 @@
  *    from the drive).
  * 9. There is also support for passphrase encryption/decryption (ie. no private keys are used).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ensoftek, Inc
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2015 Ensoftek, Inc
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Crypto;
+namespace DCL\Common\Crypto;
 
-use OpenEMR\BC\{
+use DCL\BC\{
     Crypto\ContextualEncryptionTrait,
     ServiceContainer,
 };
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use Psr\Log\LoggerInterface;
 
 class CryptoGen implements CryptoInterface
@@ -173,7 +173,7 @@ class CryptoGen implements CryptoInterface
     protected function coreEncrypt(?string $sValue, KeySource $keySource = KeySource::Drive, KeyVersion $keyVersion = KeyVersion::CURRENT): string
     {
         if (!$this->isOpenSSLExtensionLoaded()) {
-            throw new CryptoGenException("OpenEMR Error : Encryption is not working because missing openssl extension.");
+            throw new CryptoGenException("DCL Error : Encryption is not working because missing openssl extension.");
         }
 
         // Collect the encryption keys. If they do not exist, then create them
@@ -182,12 +182,12 @@ class CryptoGen implements CryptoInterface
         $sSecretKeyHmac = $this->collectCryptoKey($keyVersion, "b", $keySource);
 
         if (empty($sSecretKey) || empty($sSecretKeyHmac)) {
-            throw new CryptoGenException("OpenEMR Error : Encryption is not working because key(s) is blank.");
+            throw new CryptoGenException("DCL Error : Encryption is not working because key(s) is blank.");
         }
 
         $iv = $this->getRandomBytes($this->getOpenSSLCipherIvLength('aes-256-cbc'));
         if (empty($iv)) {
-            throw new CryptoGenException("OpenEMR Error: Random Bytes error - exiting");
+            throw new CryptoGenException("DCL Error: Random Bytes error - exiting");
         }
 
         $processedValue = $this->openSSLEncrypt(
@@ -200,7 +200,7 @@ class CryptoGen implements CryptoInterface
         $hmacHash = $this->hashHmac('sha384', $iv . $processedValue, $sSecretKeyHmac, true);
 
         if ($sValue != "" && ($processedValue == "" || $hmacHash == "")) {
-            throw new CryptoGenException("OpenEMR Error : Encryption is not working (encrypted value is blank or hmac hash is blank).");
+            throw new CryptoGenException("DCL Error : Encryption is not working (encrypted value is blank or hmac hash is blank).");
         }
 
         // prepend the encrypted value with the $hmacHash and $iv
@@ -405,7 +405,7 @@ class CryptoGen implements CryptoInterface
             ? $this->createDatabaseKey($label, $keyVersion)
             : base64_decode((string)$sqlResult['value']);
         if (empty($key)) {
-            throw new CryptoGenException("OpenEMR Error : Key creation in database is not working - Exiting.");
+            throw new CryptoGenException("DCL Error : Key creation in database is not working - Exiting.");
         }
         return $key;
     }
@@ -424,7 +424,7 @@ class CryptoGen implements CryptoInterface
         // Produce a 256bit key (32 bytes equals 256 bits)
         $newKey = $this->getRandomBytes(32);
         if (empty($newKey)) {
-            throw new CryptoGenException("OpenEMR Error: Random Bytes error - exiting");
+            throw new CryptoGenException("DCL Error: Random Bytes error - exiting");
         }
         $this->sqlStatementNoLog("INSERT INTO `keys` (`name`, `value`) VALUES (?, ?)", [$label, base64_encode($newKey)]);
         // round trip to be sure the newly created key is correctly stored and encoded
@@ -434,7 +434,7 @@ class CryptoGen implements CryptoInterface
         if ($newKey === $sqlKey) {
             return $newKey;
         }
-        throw new CryptoGenException("OpenEMR Error: The newly created key could not be stored or encoded correctly.");
+        throw new CryptoGenException("DCL Error: The newly created key could not be stored or encoded correctly.");
     }
 
     /**
@@ -458,7 +458,7 @@ class CryptoGen implements CryptoInterface
         if (!empty($key)) {
             return $key;
         }
-        throw new CryptoGenException("OpenEMR Error: Key in drive is not compatible (ie. can not be decrypted) with key in database - Exiting.");
+        throw new CryptoGenException("DCL Error: Key in drive is not compatible (ie. can not be decrypted) with key in database - Exiting.");
     }
 
     /**
@@ -475,7 +475,7 @@ class CryptoGen implements CryptoInterface
         $keyPath = $this->siteDir . "/documents/logs_and_misc/methods/" . $label;
         $key = $this->getRandomBytes(32);
         if (empty($key)) {
-            throw new CryptoGenException("OpenEMR Error: Random Bytes error - exiting");
+            throw new CryptoGenException("DCL Error: Random Bytes error - exiting");
         }
         $fileContents = $keyVersion->usesLegacyStorage()
             ? base64_encode($key)
@@ -493,7 +493,7 @@ class CryptoGen implements CryptoInterface
                 return $key;
             }
         }
-        throw new CryptoGenException("OpenEMR Error: The newly created key could not be stored, encoded or encrypted correctly.");
+        throw new CryptoGenException("DCL Error: The newly created key could not be stored, encoded or encrypted correctly.");
     }
 
     /**

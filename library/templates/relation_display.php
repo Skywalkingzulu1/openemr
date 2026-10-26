@@ -5,20 +5,20 @@
  * Updated to use ContactService, ContactRelationService, PersonService
  * Includes addresses and telecoms for each related person
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2025 David Eschelbacher <psoas@tampabay.rr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Services\ContactAddressService;
-use OpenEMR\Services\ContactRelationService;
-use OpenEMR\Services\ContactService;
-use OpenEMR\Services\ContactTelecomService;
-use OpenEMR\Services\PersonService;
+use DCL\BC\ServiceContainer;
+use DCL\Services\ContactAddressService;
+use DCL\Services\ContactRelationService;
+use DCL\Services\ContactService;
+use DCL\Services\ContactTelecomService;
+use DCL\Services\PersonService;
 
 $logger = ServiceContainer::getLogger();
 

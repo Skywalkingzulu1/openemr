@@ -2,24 +2,24 @@
 
 /**
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Brad Sharp <brad.sharp@claimrev.com>
  * @copyright Copyright (c) 2022-2025 Brad Sharp <brad.sharp@claimrev.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\Dorn;
+namespace DCL\Modules\Dorn;
 
 use DateTime;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\ClaimRevConnector\ClaimRevApi;
-use OpenEMR\Modules\ClaimRevConnector\ClaimRevAuthenticationException;
-use OpenEMR\Modules\Dorn\models\AckViewModel;
-use OpenEMR\Modules\Dorn\models\ApiResponseViewModel;
-use OpenEMR\Modules\Dorn\models\CompendiumInstallDateViewModel;
-use OpenEMR\Modules\Dorn\models\LabOrderViewModel;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\ClaimRevConnector\ClaimRevApi;
+use DCL\Modules\ClaimRevConnector\ClaimRevAuthenticationException;
+use DCL\Modules\Dorn\models\AckViewModel;
+use DCL\Modules\Dorn\models\ApiResponseViewModel;
+use DCL\Modules\Dorn\models\CompendiumInstallDateViewModel;
+use DCL\Modules\Dorn\models\LabOrderViewModel;
 
 class ConnectorApi
 {

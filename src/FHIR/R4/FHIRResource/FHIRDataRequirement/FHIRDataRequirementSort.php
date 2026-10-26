@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDataRequirement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.
@@ -72,13 +72,13 @@ class FHIRDataRequirementSort extends FHIRElement implements \JsonSerializable
 {
     /**
      * The attribute of the sort. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * The direction of the sort, ascending or descending.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSortDirection
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSortDirection
      */
     public $direction = null;
 
@@ -89,7 +89,7 @@ class FHIRDataRequirementSort extends FHIRElement implements \JsonSerializable
 
     /**
      * The attribute of the sort. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -98,7 +98,7 @@ class FHIRDataRequirementSort extends FHIRElement implements \JsonSerializable
 
     /**
      * The attribute of the sort. The specified path must be resolvable from the type of the required data. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements. Note that the index must be an integer constant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -109,7 +109,7 @@ class FHIRDataRequirementSort extends FHIRElement implements \JsonSerializable
 
     /**
      * The direction of the sort, ascending or descending.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSortDirection
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSortDirection
      */
     public function getDirection()
     {
@@ -118,7 +118,7 @@ class FHIRDataRequirementSort extends FHIRElement implements \JsonSerializable
 
     /**
      * The direction of the sort, ascending or descending.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSortDirection $direction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSortDirection $direction
      * @return $this
      */
     public function setDirection($direction)

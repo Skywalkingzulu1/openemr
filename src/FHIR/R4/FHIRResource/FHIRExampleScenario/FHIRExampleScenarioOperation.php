@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,61 +71,61 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 {
     /**
      * The sequential number of the interaction, e.g. 1.2.5.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $number = null;
 
     /**
      * The type of operation - CRUD.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $type = null;
 
     /**
      * The human-friendly name of the interaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Who starts the transaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $initiator = null;
 
     /**
      * Who receives the transaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $receiver = null;
 
     /**
      * A comment to be inserted in the diagram.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * Whether the initiator is deactivated right after the transaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $initiatorActive = null;
 
     /**
      * Whether the receiver is deactivated right after the transaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $receiverActive = null;
 
     /**
      * Each resource instance used by the initiator.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      */
     public $request = null;
 
     /**
      * Each resource instance used by the responder.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      */
     public $response = null;
 
@@ -136,7 +136,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The sequential number of the interaction, e.g. 1.2.5.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getNumber()
     {
@@ -145,7 +145,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The sequential number of the interaction, e.g. 1.2.5.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $number
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $number
      * @return $this
      */
     public function setNumber($number)
@@ -156,7 +156,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The type of operation - CRUD.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getType()
     {
@@ -165,7 +165,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The type of operation - CRUD.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $type
      * @return $this
      */
     public function setType($type)
@@ -176,7 +176,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The human-friendly name of the interaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -185,7 +185,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * The human-friendly name of the interaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -196,7 +196,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Who starts the transaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getInitiator()
     {
@@ -205,7 +205,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Who starts the transaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $initiator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $initiator
      * @return $this
      */
     public function setInitiator($initiator)
@@ -216,7 +216,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Who receives the transaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getReceiver()
     {
@@ -225,7 +225,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Who receives the transaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $receiver
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $receiver
      * @return $this
      */
     public function setReceiver($receiver)
@@ -236,7 +236,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * A comment to be inserted in the diagram.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -245,7 +245,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * A comment to be inserted in the diagram.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -256,7 +256,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether the initiator is deactivated right after the transaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getInitiatorActive()
     {
@@ -265,7 +265,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether the initiator is deactivated right after the transaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $initiatorActive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $initiatorActive
      * @return $this
      */
     public function setInitiatorActive($initiatorActive)
@@ -276,7 +276,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether the receiver is deactivated right after the transaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getReceiverActive()
     {
@@ -285,7 +285,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether the receiver is deactivated right after the transaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $receiverActive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $receiverActive
      * @return $this
      */
     public function setReceiverActive($receiverActive)
@@ -296,7 +296,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Each resource instance used by the initiator.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      */
     public function getRequest()
     {
@@ -305,7 +305,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Each resource instance used by the initiator.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $request
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $request
      * @return $this
      */
     public function setRequest($request)
@@ -316,7 +316,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Each resource instance used by the responder.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      */
     public function getResponse()
     {
@@ -325,7 +325,7 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement implements \JsonS
 
     /**
      * Each resource instance used by the responder.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $response
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $response
      * @return $this
      */
     public function setResponse($response)

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Events\Patient;
+namespace DCL\Tests\Isolated\Events\Patient;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Patient\DuplicatePatientReportColumnsEvent;
-use OpenEMR\Services\Patient\DuplicatePatientColumn;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Patient\DuplicatePatientReportColumnsEvent;
+use DCL\Services\Patient\DuplicatePatientColumn;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

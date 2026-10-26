@@ -3,11 +3,11 @@
 /**
  * interface/modules/zend_modules/module/Ccr/src/Ccr/Model/CcrTable.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Ccr\Model;
@@ -15,9 +15,9 @@ namespace Ccr\Model;
 use Application\Model\ApplicationTable;
 use DOMDocument;
 use DOMXpath;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Core\OEGlobalsBag;
 
 class CcrTable
 {

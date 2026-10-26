@@ -5,19 +5,19 @@
  *
  * Tests that ServiceContainer methods return the expected interface types.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\BC;
+namespace DCL\Tests\Isolated\BC;
 
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use InvalidArgumentException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Clock\ClockInterface;
 use Psr\Http\Client\ClientInterface;

@@ -14,20 +14,20 @@
  *
  *    When add support for a new table uuid, need to add it to the populateAllMissingUuids function.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Gerhard Brink <gjdbrink@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Gerhard Brink <gjdbrink@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Uuid;
+namespace DCL\Common\Uuid;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Uuid\UuidMapping;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Uuid\UuidMapping;
 use Ramsey\Uuid\Codec\TimestampFirstCombCodec;
 use Ramsey\Uuid\Generator\CombGenerator;
 use Ramsey\Uuid\Uuid;
@@ -57,7 +57,7 @@ class UuidRegistry
         'insurance_companies' => ['table_name' => 'insurance_companies'],
         'insurance_data' => ['table_name' => 'insurance_data'],
         'lists' => ['table_name' => 'lists'],
-        'openemr_postcalendar_events' => ['table_name' => 'openemr_postcalendar_events', 'table_id' => 'pc_eid'],
+        'DCL_postcalendar_events' => ['table_name' => 'DCL_postcalendar_events', 'table_id' => 'pc_eid'],
         'patient_care_experience_preferences' => ['table_name' => 'patient_care_experience_preferences'],
         'patient_data' => ['table_name' => 'patient_data'],
         'patient_history' => ['table_name' => 'patient_history'],
@@ -404,7 +404,7 @@ class UuidRegistry
 
         // generate some new uuids since we had duplicates... which should never happen... but we have this here in
         // case we do
-        error_log("OpenEMR Warning: There was a collision when creating a unique UUID. Will try again.");
+        error_log("DCL Warning: There was a collision when creating a unique UUID. Will try again.");
         return $this->getUnusedUuidBatch($limit);
     }
 

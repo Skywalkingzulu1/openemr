@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,61 +71,61 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Unique identifier for this particular Contract Provision.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Offer Recipient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractParty[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractParty[]
      */
     public $party = [];
 
     /**
      * The owner of an asset has the residual control rights over the asset: the right to decide all usages of the asset in any way not inconsistent with a prior contract, custom, or law (Hart, 1995, p. 30).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $topic = null;
 
     /**
      * Type of Contract Provision such as specific requirements, purposes for actions, obligations, prohibitions, e.g. life time maximum benefit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Type of choice made by accepting party with respect to an offer made by an offeror/ grantee.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $decision = null;
 
     /**
      * How the decision about a Contract was conveyed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $decisionMode = [];
 
     /**
      * Response to offer text.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
      */
     public $answer = [];
 
     /**
      * Human readable form of this Contract Offer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * The id of the clause or question text of the offer in the referenced questionnaire/response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $linkId = [];
 
     /**
      * Security labels that protects the offer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public $securityLabelNumber = [];
 
@@ -136,7 +136,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Unique identifier for this particular Contract Provision.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -145,7 +145,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Unique identifier for this particular Contract Provision.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -156,7 +156,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Offer Recipient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractParty[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractParty[]
      */
     public function getParty()
     {
@@ -165,7 +165,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Offer Recipient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractParty $party
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractParty $party
      * @return $this
      */
     public function addParty($party)
@@ -176,7 +176,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The owner of an asset has the residual control rights over the asset: the right to decide all usages of the asset in any way not inconsistent with a prior contract, custom, or law (Hart, 1995, p. 30).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTopic()
     {
@@ -185,7 +185,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The owner of an asset has the residual control rights over the asset: the right to decide all usages of the asset in any way not inconsistent with a prior contract, custom, or law (Hart, 1995, p. 30).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $topic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $topic
      * @return $this
      */
     public function setTopic($topic)
@@ -196,7 +196,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of Contract Provision such as specific requirements, purposes for actions, obligations, prohibitions, e.g. life time maximum benefit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -205,7 +205,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of Contract Provision such as specific requirements, purposes for actions, obligations, prohibitions, e.g. life time maximum benefit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -216,7 +216,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of choice made by accepting party with respect to an offer made by an offeror/ grantee.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDecision()
     {
@@ -225,7 +225,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Type of choice made by accepting party with respect to an offer made by an offeror/ grantee.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $decision
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $decision
      * @return $this
      */
     public function setDecision($decision)
@@ -236,7 +236,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How the decision about a Contract was conveyed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getDecisionMode()
     {
@@ -245,7 +245,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * How the decision about a Contract was conveyed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $decisionMode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $decisionMode
      * @return $this
      */
     public function addDecisionMode($decisionMode)
@@ -256,7 +256,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Response to offer text.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer[]
      */
     public function getAnswer()
     {
@@ -265,7 +265,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Response to offer text.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer $answer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAnswer $answer
      * @return $this
      */
     public function addAnswer($answer)
@@ -276,7 +276,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Human readable form of this Contract Offer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -285,7 +285,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Human readable form of this Contract Offer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -296,7 +296,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The id of the clause or question text of the offer in the referenced questionnaire/response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getLinkId()
     {
@@ -305,7 +305,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The id of the clause or question text of the offer in the referenced questionnaire/response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $linkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $linkId
      * @return $this
      */
     public function addLinkId($linkId)
@@ -316,7 +316,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Security labels that protects the offer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public function getSecurityLabelNumber()
     {
@@ -325,7 +325,7 @@ class FHIRContractOffer extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Security labels that protects the offer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
      * @return $this
      */
     public function addSecurityLabelNumber($securityLabelNumber)

@@ -14,18 +14,18 @@
  * parameters and verifies that the rendered HTML contains the correct
  * URL structure for form links.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR Contributors
- * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL Contributors
+ * @copyright Copyright (c) 2026 DCL Contributors
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Forms\EyeMag;
+namespace DCL\Tests\Isolated\Forms\EyeMag;
 
-use OpenEMR\Common\Twig\TwigContainer;
+use DCL\Common\Twig\TwigContainer;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -41,7 +41,7 @@ class NavbarFormUrlTest extends TestCase
     {
         $GLOBALS['fileroot'] ??= dirname(__DIR__, 5);
         $GLOBALS['date_display_format'] ??= 0;
-        $GLOBALS['rootdir'] ??= '/openemr/interface';
+        $GLOBALS['rootdir'] ??= '/DCL/interface';
         $GLOBALS['disable_translation'] = true;
     }
 
@@ -179,7 +179,7 @@ class NavbarFormUrlTest extends TestCase
 
         $GLOBALS['fileroot'] ??= dirname(__DIR__, 5);
         $GLOBALS['date_display_format'] ??= 0;
-        $GLOBALS['rootdir'] ??= '/openemr/interface';
+        $GLOBALS['rootdir'] ??= '/DCL/interface';
         $GLOBALS['disable_translation'] = true;
 
         $twigContainer = new TwigContainer();

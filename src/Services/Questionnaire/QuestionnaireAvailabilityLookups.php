@@ -10,20 +10,20 @@
  *
  * Not final so the controller's tests can stand in for it without a database.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Questionnaire;
+namespace DCL\Services\Questionnaire;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Database\QueryUtils;
+use DCL\FHIR\SMART\SmartLaunchController;
 
 class QuestionnaireAvailabilityLookups
 {
@@ -68,7 +68,7 @@ class QuestionnaireAvailabilityLookups
     {
         return $this->idLabelMap(
             QueryUtils::fetchRecordsNoLog(
-                'SELECT `pc_catid`, `pc_catname` FROM `openemr_postcalendar_categories`
+                'SELECT `pc_catid`, `pc_catname` FROM `DCL_postcalendar_categories`
                   WHERE `pc_active` = 1 ORDER BY `pc_seq`, `pc_catname`',
                 []
             ),

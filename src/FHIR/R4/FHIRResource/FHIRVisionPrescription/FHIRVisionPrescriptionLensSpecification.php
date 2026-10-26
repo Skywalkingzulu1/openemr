@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription;
+namespace DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An authorization for the provision of glasses and/or contact lenses to a patient.
@@ -71,85 +71,85 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 {
     /**
      * Identifies the type of vision correction product which is required for the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $product = null;
 
     /**
      * The eye for which the lens specification applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRVisionEyes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRVisionEyes
      */
     public $eye = null;
 
     /**
      * Lens power measured in dioptres (0.25 units).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $sphere = null;
 
     /**
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $cylinder = null;
 
     /**
      * Adjustment for astigmatism measured in integer degrees.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $axis = null;
 
     /**
      * Allows for adjustment on two axis.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionPrism[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionPrism[]
      */
     public $prism = [];
 
     /**
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $add = null;
 
     /**
      * Contact lens power measured in dioptres (0.25 units).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $power = null;
 
     /**
      * Back curvature measured in millimetres.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $backCurve = null;
 
     /**
      * Contact lens diameter measured in millimetres.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $diameter = null;
 
     /**
      * The recommended maximum wear period for the lens.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $duration = null;
 
     /**
      * Special color or pattern.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $color = null;
 
     /**
      * Brand recommendations or restrictions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $brand = null;
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -160,7 +160,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Identifies the type of vision correction product which is required for the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProduct()
     {
@@ -169,7 +169,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Identifies the type of vision correction product which is required for the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $product
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $product
      * @return $this
      */
     public function setProduct($product)
@@ -180,7 +180,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * The eye for which the lens specification applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRVisionEyes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRVisionEyes
      */
     public function getEye()
     {
@@ -189,7 +189,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * The eye for which the lens specification applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRVisionEyes $eye
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRVisionEyes $eye
      * @return $this
      */
     public function setEye($eye)
@@ -200,7 +200,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Lens power measured in dioptres (0.25 units).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getSphere()
     {
@@ -209,7 +209,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Lens power measured in dioptres (0.25 units).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $sphere
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $sphere
      * @return $this
      */
     public function setSphere($sphere)
@@ -220,7 +220,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getCylinder()
     {
@@ -229,7 +229,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $cylinder
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $cylinder
      * @return $this
      */
     public function setCylinder($cylinder)
@@ -240,7 +240,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Adjustment for astigmatism measured in integer degrees.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getAxis()
     {
@@ -249,7 +249,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Adjustment for astigmatism measured in integer degrees.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $axis
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $axis
      * @return $this
      */
     public function setAxis($axis)
@@ -260,7 +260,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Allows for adjustment on two axis.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionPrism[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionPrism[]
      */
     public function getPrism()
     {
@@ -269,7 +269,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Allows for adjustment on two axis.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionPrism $prism
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionPrism $prism
      * @return $this
      */
     public function addPrism($prism)
@@ -280,7 +280,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getAdd()
     {
@@ -289,7 +289,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $add
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $add
      * @return $this
      */
     public function setAdd($add)
@@ -300,7 +300,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Contact lens power measured in dioptres (0.25 units).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getPower()
     {
@@ -309,7 +309,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Contact lens power measured in dioptres (0.25 units).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $power
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $power
      * @return $this
      */
     public function setPower($power)
@@ -320,7 +320,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Back curvature measured in millimetres.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getBackCurve()
     {
@@ -329,7 +329,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Back curvature measured in millimetres.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $backCurve
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $backCurve
      * @return $this
      */
     public function setBackCurve($backCurve)
@@ -340,7 +340,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Contact lens diameter measured in millimetres.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getDiameter()
     {
@@ -349,7 +349,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Contact lens diameter measured in millimetres.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $diameter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $diameter
      * @return $this
      */
     public function setDiameter($diameter)
@@ -360,7 +360,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * The recommended maximum wear period for the lens.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getDuration()
     {
@@ -369,7 +369,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * The recommended maximum wear period for the lens.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $duration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $duration
      * @return $this
      */
     public function setDuration($duration)
@@ -380,7 +380,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Special color or pattern.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getColor()
     {
@@ -389,7 +389,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Special color or pattern.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $color
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $color
      * @return $this
      */
     public function setColor($color)
@@ -400,7 +400,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Brand recommendations or restrictions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getBrand()
     {
@@ -409,7 +409,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Brand recommendations or restrictions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $brand
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $brand
      * @return $this
      */
     public function setBrand($brand)
@@ -420,7 +420,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -429,7 +429,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement implem
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

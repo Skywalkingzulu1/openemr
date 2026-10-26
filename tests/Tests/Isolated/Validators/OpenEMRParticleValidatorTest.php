@@ -1,33 +1,33 @@
 <?php
 
 /**
- * Isolated OpenEMRParticleValidator Test
+ * Isolated DCLParticleValidator Test
  *
- * Tests OpenEMRParticleValidator functionality without database dependencies.
- * OpenEMRParticleValidator extends Particle\Validator\Validator to provide
- * OpenEMR-specific validation chains via the OpenEMRChain class.
+ * Tests DCLParticleValidator functionality without database dependencies.
+ * DCLParticleValidator extends Particle\Validator\Validator to provide
+ * DCL-specific validation chains via the DCLChain class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators;
+namespace DCL\Tests\Isolated\Validators;
 
-use OpenEMR\Validators\OpenEMRChain;
-use OpenEMR\Validators\OpenEMRParticleValidator;
+use DCL\Validators\DCLChain;
+use DCL\Validators\DCLParticleValidator;
 use Particle\Validator\Validator;
 use PHPUnit\Framework\TestCase;
 
-class OpenEMRParticleValidatorTest extends TestCase
+class DCLParticleValidatorTest extends TestCase
 {
-    private OpenEMRParticleValidator $validator;
+    private DCLParticleValidator $validator;
 
     protected function setUp(): void
     {
-        $this->validator = new OpenEMRParticleValidator();
+        $this->validator = new DCLParticleValidator();
     }
 
     public function testValidatorInheritsFromParticleValidator(): void
@@ -37,8 +37,8 @@ class OpenEMRParticleValidatorTest extends TestCase
 
     public function testValidatorIsInstantiable(): void
     {
-        $validator = new OpenEMRParticleValidator();
-        $this->assertInstanceOf(OpenEMRParticleValidator::class, $validator);
+        $validator = new DCLParticleValidator();
+        $this->assertInstanceOf(DCLParticleValidator::class, $validator);
     }
 
     public function testBuildChainMethodExists(): void
@@ -46,7 +46,7 @@ class OpenEMRParticleValidatorTest extends TestCase
         $this->assertTrue(method_exists($this->validator, 'buildChain'));
     }
 
-    public function testBuildChainReturnsOpenEMRChain(): void
+    public function testBuildChainReturnsDCLChain(): void
     {
         // Use reflection to test the protected buildChain method
         $reflection = new \ReflectionClass($this->validator);
@@ -60,7 +60,7 @@ class OpenEMRParticleValidatorTest extends TestCase
             true
         );
 
-        $this->assertInstanceOf(OpenEMRChain::class, $chain);
+        $this->assertInstanceOf(DCLChain::class, $chain);
     }
 
     public function testBuildChainPassesParametersCorrectly(): void
@@ -86,8 +86,8 @@ class OpenEMRParticleValidatorTest extends TestCase
             true
         );
 
-        $this->assertInstanceOf(OpenEMRChain::class, $chain1);
-        $this->assertInstanceOf(OpenEMRChain::class, $chain2);
+        $this->assertInstanceOf(DCLChain::class, $chain1);
+        $this->assertInstanceOf(DCLChain::class, $chain2);
     }
 
     public function testValidatorCanDefineRules(): void
@@ -118,7 +118,7 @@ class OpenEMRParticleValidatorTest extends TestCase
         $this->assertTrue($result->isValid(), 'Valid data should pass validation');
 
         // Reset validator for next test
-        $this->validator = new OpenEMRParticleValidator();
+        $this->validator = new DCLParticleValidator();
         $this->validator->required('name');
 
         // Test invalid data - missing required field
@@ -127,20 +127,20 @@ class OpenEMRParticleValidatorTest extends TestCase
         $this->assertFalse($result->isValid());
     }
 
-    public function testValidatorSupportsOpenEMRChainMethods(): void
+    public function testValidatorSupportsDCLChainMethods(): void
     {
-        // This tests that the OpenEMRChain is properly integrated
+        // This tests that the DCLChain is properly integrated
         // We can't test the actual listOption functionality without database,
         // but we can test that the method is available through the validator
         $chain = $this->validator->required('test_list_field');
 
-        // The chain should be an OpenEMRChain which has the listOption method
+        // The chain should be an DCLChain which has the listOption method
         $this->assertTrue(method_exists($chain, 'listOption'));
     }
 
     public function testClassExists(): void
     {
-        $this->assertTrue(class_exists(OpenEMRParticleValidator::class));
+        $this->assertTrue(class_exists(DCLParticleValidator::class));
     }
 
     public function testValidatorCanBeReused(): void
@@ -175,7 +175,7 @@ class OpenEMRParticleValidatorTest extends TestCase
         $this->assertTrue($result->isValid(), 'Valid complex data should pass');
 
         // Test invalid data - missing required field
-        $this->validator = new OpenEMRParticleValidator();
+        $this->validator = new DCLParticleValidator();
         $this->validator->required('email');
 
         $invalidData = []; // Missing required field

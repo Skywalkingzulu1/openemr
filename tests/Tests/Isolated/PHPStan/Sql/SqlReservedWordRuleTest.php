@@ -3,21 +3,21 @@
 /**
  * Tests for SqlReservedWordRule.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\PHPStan\Sql;
+namespace DCL\Tests\Isolated\PHPStan\Sql;
 
-use OpenEMR\PHPStan\Rules\Sql\ReservedWordRegistry;
-use OpenEMR\PHPStan\Rules\Sql\SchemaColumnRegistry;
-use OpenEMR\PHPStan\Rules\Sql\SqlReservedWordRule;
-use OpenEMR\PHPStan\Rules\Sql\SqlSinkResolver;
+use DCL\PHPStan\Rules\Sql\ReservedWordRegistry;
+use DCL\PHPStan\Rules\Sql\SchemaColumnRegistry;
+use DCL\PHPStan\Rules\Sql\SqlReservedWordRule;
+use DCL\PHPStan\Rules\Sql\SqlSinkResolver;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 

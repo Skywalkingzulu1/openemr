@@ -1,34 +1,34 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRHumanName;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\PractitionerService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPractitioner;
+use DCL\FHIR\R4\FHIRElement\FHIRHumanName;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\PractitionerService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR Practitioner Service
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirPractitionerService extends FhirServiceBase implements IFhirExportableResourceService, IResourceUSCIGProfileService, INonPatientCompartmentResourceService
 {
@@ -46,7 +46,7 @@ class FhirPractitionerService extends FhirServiceBase implements IFhirExportable
     /**
      * When true, getAll() drops any FHIR search parameter not on
      * {@see UsersRowPatientAllowlist::allowedSearchParams()} and
-     * searchForOpenEMRRecords() reduces each returned row to the
+     * searchForDCLRecords() reduces each returned row to the
      * allowlisted columns. Callers set this via
      * {@see self::setPatientCallerView()} on the route branch that
      * handles patient-scoped requests.
@@ -76,7 +76,7 @@ class FhirPractitionerService extends FhirServiceBase implements IFhirExportable
     }
 
     /**
-     * Returns an array mapping FHIR Practitioner Resource search parameters to OpenEMR Practitioner search parameters
+     * Returns an array mapping FHIR Practitioner Resource search parameters to DCL Practitioner search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -107,13 +107,13 @@ class FhirPractitionerService extends FhirServiceBase implements IFhirExportable
 
 
     /**
-     * Parses an OpenEMR practitioner record, returning the equivalent FHIR Practitioner Resource
+     * Parses an DCL practitioner record, returning the equivalent FHIR Practitioner Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRPractitioner
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $practitionerResource = new FHIRPractitioner();
 
@@ -213,10 +213,10 @@ class FhirPractitionerService extends FhirServiceBase implements IFhirExportable
     }
 
     /**
-     * Parses a FHIR Practitioner Resource, returning the equivalent OpenEMR practitioner record.
+     * Parses a FHIR Practitioner Resource, returning the equivalent DCL practitioner record.
      *
      * @param array $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record (array)
+     * @return array a mapped DCL data record (array)
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -300,12 +300,12 @@ class FhirPractitionerService extends FhirServiceBase implements IFhirExportable
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      *
-     * @param array $openEmrRecord OpenEMR practitioner record
+     * @param array $openEmrRecord DCL practitioner record
      * @return ProcessingResult
      */
-    public function insertOpenEMRRecord($openEmrRecord)
+    public function insertDCLRecord($openEmrRecord)
     {
         // practitioners HAVE to have a username
         if (!isset($openEmrRecord['username'])) {
@@ -318,34 +318,34 @@ class FhirPractitionerService extends FhirServiceBase implements IFhirExportable
 
 
     /**
-     * Updates an existing OpenEMR record.
+     * Updates an existing DCL record.
      *
-     * @param $fhirResourceId //The OpenEMR record's FHIR Resource ID.
-     * @param $updatedOpenEMRRecord //The "updated" OpenEMR record.
+     * @param $fhirResourceId //The DCL record's FHIR Resource ID.
+     * @param $updatedDCLRecord //The "updated" DCL record.
      * @return ProcessingResult
      */
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
-        $processingResult = $this->practitionerService->update($fhirResourceId, $updatedOpenEMRRecord);
+        $processingResult = $this->practitionerService->update($fhirResourceId, $updatedDCLRecord);
         return $processingResult;
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
      * When {@see self::$patientCallerView} is set each returned row is
      * reduced to the columns on
      * {@see UsersRowPatientAllowlist::allowedColumns()} before it reaches
-     * {@see self::parseOpenEMRRecord()}. The empty-guards in the builder
+     * {@see self::parseDCLRecord()}. The empty-guards in the builder
      * then omit the corresponding FHIR fields — no changes to the builder
      * logic needed.
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        $result = $this->practitionerService->getAll($openEMRSearchParameters, true);
+        $result = $this->practitionerService->getAll($DCLSearchParameters, true);
         if (!$this->patientCallerView || !$result->isValid()) {
             return $result;
         }
@@ -373,12 +373,12 @@ class FhirPractitionerService extends FhirServiceBase implements IFhirExportable
      * @param array $fhirSearchParameters
      * @return ISearchField[]
      */
-    protected function createOpenEMRSearchParameters(array $fhirSearchParameters, ?string $puuidBind = null): array
+    protected function createDCLSearchParameters(array $fhirSearchParameters, ?string $puuidBind = null): array
     {
         if ($this->patientCallerView) {
             $fhirSearchParameters = UsersRowPatientAllowlist::filterSearchParams($fhirSearchParameters);
         }
-        return parent::createOpenEMRSearchParameters($fhirSearchParameters, $puuidBind);
+        return parent::createDCLSearchParameters($fhirSearchParameters, $puuidBind);
     }
 
     /**

@@ -3,20 +3,20 @@
 /**
  * Patient Portal
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2016-2022 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $this->assign('title', xlt("Portal Dashboard") . " | " . xlt("Home"));
 $this->assign('nav', 'home');
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 if (!AclMain::aclCheckCore('patientportal', 'portal')) {
     AccessDeniedHelper::deny('Unauthorized access to provider home');
@@ -69,7 +69,7 @@ $v_js_includes = $globalsBag->get('v_js_includes');
             <div class="modal-body">
                 <div>
                     <span><?php echo xlt('Please see forum or wiki'); ?>
-                <a href="<?php echo attr('https://community.open-emr.org/'); ?>" target="_blank"><?php echo xlt("Visit Forum"); ?></a>
+                <a href="<?php echo attr('https://community.dcl.org/'); ?>" target="_blank"><?php echo xlt("Visit Forum"); ?></a>
                     </span>
                 </div>
             </div>

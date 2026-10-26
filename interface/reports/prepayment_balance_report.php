@@ -10,25 +10,25 @@
  * markup in templates/reports/prepayment_balance/report.html.twig; this file
  * reads the filters and wires the two together.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (C) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require_once("../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Billing\PrepaymentBalance;
-use OpenEMR\Billing\PrepaymentBalanceService;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Billing\PrepaymentBalance;
+use DCL\Billing\PrepaymentBalanceService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Services\Utils\DateFormatterUtils;
 
 $request = CurrentRequest::get();
 

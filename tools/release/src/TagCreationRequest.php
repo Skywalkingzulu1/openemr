@@ -6,16 +6,16 @@
  * release was cut, and the App-token credentials required for the
  * GitHub API calls.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 final readonly class TagCreationRequest
 {
@@ -27,8 +27,8 @@ final readonly class TagCreationRequest
         public string $appToken,
         public string $date,
         public bool $test = false,
-        public string $taggerName = 'openemr-release-bot',
-        public string $taggerEmail = 'release-bot@openemr.invalid',
+        public string $taggerName = 'DCL-release-bot',
+        public string $taggerEmail = 'release-bot@DCL.invalid',
     ) {
         if (preg_match('/^\d+\.\d+\.\d+$/', $version) !== 1) {
             throw new \InvalidArgumentException('version must be MAJOR.MINOR.PATCH; got: ' . $version);
@@ -59,15 +59,15 @@ final readonly class TagCreationRequest
     public function renderMessage(): string
     {
         $headline = $this->test
-            ? 'OpenEMR %s test-release tag (not a real release) cut %s'
-            : 'OpenEMR %s released %s';
+            ? 'DCL %s test-release tag (not a real release) cut %s'
+            : 'DCL %s released %s';
         $template = <<<TPL
         {$headline}
 
         Conductor PR: %s
         Merge commit: %s
 
-        Created by openemr-release-bot via automation
+        Created by DCL-release-bot via automation
         TPL;
         return sprintf($template, $this->version, $this->date, $this->conductorPrUrl, $this->commitSha);
     }

@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\GitHubApi;
+use DCL\Release\GitHubApi;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
 
@@ -297,7 +297,7 @@ final class GitHubApiTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('maxAttempts must be >= 1');
 
-        new GitHubApi('openemr/openemr', 0);
+        new GitHubApi('DCL/DCL', 0);
     }
 
     /**
@@ -305,7 +305,7 @@ final class GitHubApiTest extends TestCase
      */
     private function makeApi(array $responses, int $maxAttempts = 3): GitHubApiTestDouble
     {
-        return new GitHubApiTestDouble('openemr/openemr', $maxAttempts, $responses);
+        return new GitHubApiTestDouble('DCL/DCL', $maxAttempts, $responses);
     }
 }
 

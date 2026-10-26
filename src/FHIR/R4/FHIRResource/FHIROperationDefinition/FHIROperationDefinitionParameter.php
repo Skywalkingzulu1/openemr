@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIROperationDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
@@ -71,67 +71,67 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 {
     /**
      * The name of used to identify the parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $name = null;
 
     /**
      * Whether this is an input or an output parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIROperationParameterUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIROperationParameterUse
      */
     public $use = null;
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $min = null;
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $max = null;
 
     /**
      * Describes the meaning or use of this parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentation = null;
 
     /**
      * The type for this parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $type = null;
 
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this parameter refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $targetProfile = [];
 
     /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType
      */
     public $searchType = null;
 
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding
+     * @var \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding
      */
     public $binding = null;
 
     /**
      * Identifies other resource parameters within the operation invocation that are expected to resolve to this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[]
      */
     public $referencedFrom = [];
 
     /**
      * The parts of a nested Parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public $part = [];
 
@@ -142,7 +142,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The name of used to identify the parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getName()
     {
@@ -151,7 +151,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The name of used to identify the parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $name
      * @return $this
      */
     public function setName($name)
@@ -162,7 +162,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Whether this is an input or an output parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIROperationParameterUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIROperationParameterUse
      */
     public function getUse()
     {
@@ -171,7 +171,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Whether this is an input or an output parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIROperationParameterUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIROperationParameterUse $use
      * @return $this
      */
     public function setUse($use)
@@ -182,7 +182,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getMin()
     {
@@ -191,7 +191,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $min
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $min
      * @return $this
      */
     public function setMin($min)
@@ -202,7 +202,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMax()
     {
@@ -211,7 +211,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $max
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $max
      * @return $this
      */
     public function setMax($max)
@@ -222,7 +222,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Describes the meaning or use of this parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
@@ -231,7 +231,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Describes the meaning or use of this parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentation
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -242,7 +242,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The type for this parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getType()
     {
@@ -251,7 +251,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The type for this parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $type
      * @return $this
      */
     public function setType($type)
@@ -262,7 +262,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this parameter refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getTargetProfile()
     {
@@ -271,7 +271,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this parameter refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $targetProfile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $targetProfile
      * @return $this
      */
     public function addTargetProfile($targetProfile)
@@ -282,7 +282,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType
      */
     public function getSearchType()
     {
@@ -291,7 +291,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType $searchType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType $searchType
      * @return $this
      */
     public function setSearchType($searchType)
@@ -302,7 +302,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding
+     * @return \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding
      */
     public function getBinding()
     {
@@ -311,7 +311,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding $binding
+     * @param \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding $binding
      * @return $this
      */
     public function setBinding($binding)
@@ -322,7 +322,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Identifies other resource parameters within the operation invocation that are expected to resolve to this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[]
      */
     public function getReferencedFrom()
     {
@@ -331,7 +331,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * Identifies other resource parameters within the operation invocation that are expected to resolve to this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom $referencedFrom
+     * @param \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom $referencedFrom
      * @return $this
      */
     public function addReferencedFrom($referencedFrom)
@@ -342,7 +342,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The parts of a nested Parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public function getPart()
     {
@@ -351,7 +351,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
 
     /**
      * The parts of a nested Parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $part
+     * @param \DCL\FHIR\R4\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $part
      * @return $this
      */
     public function addPart($part)

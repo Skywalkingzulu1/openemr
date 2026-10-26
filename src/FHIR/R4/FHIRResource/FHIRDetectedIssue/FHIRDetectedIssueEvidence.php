@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDetectedIssue;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDetectedIssue;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, Ineffective treatment frequency, Procedure-condition conflict, etc.
@@ -71,13 +71,13 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * A manifestation that led to the recording of this detected issue.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * Links to resources that constitute evidence for the detected issue such as a GuidanceResponse or MeasureReport.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $detail = [];
 
@@ -88,7 +88,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A manifestation that led to the recording of this detected issue.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * A manifestation that led to the recording of this detected issue.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -108,7 +108,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Links to resources that constitute evidence for the detected issue such as a GuidanceResponse or MeasureReport.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDetail()
     {
@@ -117,7 +117,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Links to resources that constitute evidence for the detected issue such as a GuidanceResponse or MeasureReport.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $detail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $detail
      * @return $this
      */
     public function addDetail($detail)

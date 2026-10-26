@@ -19,28 +19,28 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-  openemr:
+  DCL:
     restart: always
-    image: openemr/openemr:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
+    image: DCL/DCL:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
     ports:
     - 8080:80
     - 8523:443
     volumes:
-    - ../../:/var/www/localhost/htdocs/openemr
+    - ../../:/var/www/localhost/htdocs/DCL
     environment:
       EMPTY: yes
       FORCE_NO_BUILD_MODE: yes
-      OPENEMR_ENABLE_CI_PHP: '1'
-      OPENEMR_SETTING_couchdb_dbase: example
-      OPENEMR_SETTING_couchdb_host: couchdb
-      OPENEMR_SETTING_couchdb_pass: password
-      OPENEMR_SETTING_couchdb_port: 6984
-      OPENEMR_SETTING_couchdb_ssl_allow_selfsigned: 1
-      OPENEMR_SETTING_couchdb_user: admin
+      DCL_ENABLE_CI_PHP: '1'
+      DCL_SETTING_couchdb_dbase: example
+      DCL_SETTING_couchdb_host: couchdb
+      DCL_SETTING_couchdb_pass: password
+      DCL_SETTING_couchdb_port: 6984
+      DCL_SETTING_couchdb_ssl_allow_selfsigned: 1
+      DCL_SETTING_couchdb_user: admin
       MYSQL_HOST: mysql
       MYSQL_ROOT_PASS: root
-      MYSQL_USER: openemr
-      MYSQL_PASS: openemr
+      MYSQL_USER: DCL
+      MYSQL_PASS: DCL
       # Coverage settings - controlled by ENABLE_COVERAGE variable
       # Set ENABLE_COVERAGE=true in run.sh to enable coverage collection
       ENABLE_COVERAGE: ${ENABLE_COVERAGE:-false}
@@ -55,7 +55,7 @@ services:
         condition: service_healthy
   ##
   # extend the inferno services so that they're in the same docker
-  # network as the openemr service,
+  # network as the DCL service,
   # but use the onc-certification-g10-test-kit directory for relative mounts.
   inferno:
     extends:

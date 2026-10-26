@@ -5,18 +5,18 @@
  *
  * Tests BC\Crypto\Key enum methods.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\BC\Crypto;
+namespace DCL\Tests\Isolated\BC\Crypto;
 
-use OpenEMR\BC\Crypto\Key;
-use OpenEMR\Common\Crypto\KeySource;
-use OpenEMR\Common\Crypto\KeyVersion;
+use DCL\BC\Crypto\Key;
+use DCL\Common\Crypto\KeySource;
+use DCL\Common\Crypto\KeyVersion;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

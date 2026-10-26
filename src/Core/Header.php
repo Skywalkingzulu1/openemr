@@ -1,19 +1,19 @@
 <?php
 
 /**
- * OpenEMR <https://open-emr.org>.
+ * DCL <https://dcl.org>.
  *
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Core;
+namespace DCL\Core;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\ScriptFilterEvent;
-use OpenEMR\Events\Core\StyleFilterEvent;
-use OpenEMR\Services\LogoService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\ScriptFilterEvent;
+use DCL\Events\Core\StyleFilterEvent;
+use DCL\Services\LogoService;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
@@ -25,7 +25,7 @@ use Symfony\Component\Yaml\Yaml;
  * for creating a `<head>` element, but for now it sufficiently handles the
  * `setupHeader()`
  *
- * @package OpenEMR
+ * @package DCL
  * @subpackage Core
  * @author Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2017-2022 Robert Down
@@ -44,7 +44,7 @@ class Header
      * Example usage in a PHP view script:
      * ```php
      * // Top of script with require_once statements
-     * use OpenEMR\Core\Header;
+     * use DCL\Core\Header;
      *
      * // Inside of <head>
      * // If no special assets are needed:

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,25 +72,25 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 {
     /**
      * Designates which child elements are used to discriminate between the slices when processing an instance. If one or more discriminators are provided, the value of the child elements in the instance data SHALL completely distinguish which slice the element in the resource matches based on the allowed values for those elements in each of the slices.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[]
      */
     public $discriminator = [];
 
     /**
      * A human-readable text description of how the slicing works. If there is no discriminator, this is required to be present to provide whatever information is possible about how the slices can be differentiated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * If the matching elements have to occur in the same order as defined in the profile.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $ordered = null;
 
     /**
      * Whether additional slices are allowed or not. When the slices are ordered, profile authors can also say that additional slices are only allowed at the end.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSlicingRules
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSlicingRules
      */
     public $rules = null;
 
@@ -101,7 +101,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * Designates which child elements are used to discriminate between the slices when processing an instance. If one or more discriminators are provided, the value of the child elements in the instance data SHALL completely distinguish which slice the element in the resource matches based on the allowed values for those elements in each of the slices.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[]
      */
     public function getDiscriminator()
     {
@@ -110,7 +110,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * Designates which child elements are used to discriminate between the slices when processing an instance. If one or more discriminators are provided, the value of the child elements in the instance data SHALL completely distinguish which slice the element in the resource matches based on the allowed values for those elements in each of the slices.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator $discriminator
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator $discriminator
      * @return $this
      */
     public function addDiscriminator($discriminator)
@@ -121,7 +121,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * A human-readable text description of how the slicing works. If there is no discriminator, this is required to be present to provide whatever information is possible about how the slices can be differentiated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -130,7 +130,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * A human-readable text description of how the slicing works. If there is no discriminator, this is required to be present to provide whatever information is possible about how the slices can be differentiated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -141,7 +141,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * If the matching elements have to occur in the same order as defined in the profile.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getOrdered()
     {
@@ -150,7 +150,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * If the matching elements have to occur in the same order as defined in the profile.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $ordered
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $ordered
      * @return $this
      */
     public function setOrdered($ordered)
@@ -161,7 +161,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether additional slices are allowed or not. When the slices are ordered, profile authors can also say that additional slices are only allowed at the end.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSlicingRules
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSlicingRules
      */
     public function getRules()
     {
@@ -170,7 +170,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement implements \JsonS
 
     /**
      * Whether additional slices are allowed or not. When the slices are ordered, profile authors can also say that additional slices are only allowed at the end.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSlicingRules $rules
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSlicingRules $rules
      * @return $this
      */
     public function setRules($rules)

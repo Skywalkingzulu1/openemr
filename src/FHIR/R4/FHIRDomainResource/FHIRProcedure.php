@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.
@@ -72,188 +72,188 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and is propagated from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * A reference to a resource that contains details of the request for this procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * A larger event of which this particular procedure is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREventStatus
      */
     public $status = null;
 
     /**
      * Captures the reason for the current state of the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $statusReason = null;
 
     /**
      * A code that classifies the procedure for searching, sorting and display purposes (e.g. "Surgical Procedure").
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. "Laparoscopic Appendectomy").
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The person, animal or group on which the procedure was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $performedDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $performedPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $performedString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $performedAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $performedRange = null;
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $recorder = null;
 
     /**
      * Individual who is making the procedure statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $asserter = null;
 
     /**
      * Limited to "real" people rather than equipment.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedurePerformer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedurePerformer[]
      */
     public $performer = [];
 
     /**
      * The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * The justification of why the procedure was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $bodySite = [];
 
     /**
      * The outcome of the procedure - did it resolve the reasons for the procedure being performed?
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $outcome = null;
 
     /**
      * This could be a histology result, pathology report, surgical report, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $report = [];
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $complication = [];
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $complicationDetail = [];
 
     /**
      * If the procedure required specific follow up - e.g. removal of sutures. The follow up may be represented as a simple note or could potentially be more complex, in which case the CarePlan resource can be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $followUp = [];
 
     /**
      * Any other notes and comments about the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice[]
      */
     public $focalDevice = [];
 
     /**
      * Identifies medications, devices and any other substance used as part of the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $usedReference = [];
 
     /**
      * Identifies coded items that were used as part of the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $usedCode = [];
 
@@ -264,7 +264,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and is propagated from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -273,7 +273,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and is propagated from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -284,7 +284,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -293,7 +293,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -304,7 +304,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -313,7 +313,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -324,7 +324,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a resource that contains details of the request for this procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -333,7 +333,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to a resource that contains details of the request for this procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -344,7 +344,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular procedure is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -353,7 +353,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular procedure is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -364,7 +364,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREventStatus
      */
     public function getStatus()
     {
@@ -373,7 +373,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREventStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREventStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -384,7 +384,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Captures the reason for the current state of the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatusReason()
     {
@@ -393,7 +393,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Captures the reason for the current state of the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function setStatusReason($statusReason)
@@ -404,7 +404,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the procedure for searching, sorting and display purposes (e.g. "Surgical Procedure").
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -413,7 +413,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the procedure for searching, sorting and display purposes (e.g. "Surgical Procedure").
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -424,7 +424,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. "Laparoscopic Appendectomy").
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -433,7 +433,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. "Laparoscopic Appendectomy").
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -444,7 +444,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person, animal or group on which the procedure was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -453,7 +453,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person, animal or group on which the procedure was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -464,7 +464,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -473,7 +473,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -483,7 +483,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getPerformedDateTime()
     {
@@ -491,7 +491,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $performedDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $performedDateTime
      * @return $this
      */
     public function setPerformedDateTime($performedDateTime)
@@ -501,7 +501,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPerformedPeriod()
     {
@@ -509,7 +509,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $performedPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $performedPeriod
      * @return $this
      */
     public function setPerformedPeriod($performedPeriod)
@@ -519,7 +519,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPerformedString()
     {
@@ -527,7 +527,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $performedString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $performedString
      * @return $this
      */
     public function setPerformedString($performedString)
@@ -537,7 +537,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getPerformedAge()
     {
@@ -545,7 +545,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $performedAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $performedAge
      * @return $this
      */
     public function setPerformedAge($performedAge)
@@ -555,7 +555,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getPerformedRange()
     {
@@ -563,7 +563,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $performedRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $performedRange
      * @return $this
      */
     public function setPerformedRange($performedRange)
@@ -574,7 +574,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRecorder()
     {
@@ -583,7 +583,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recorder
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recorder
      * @return $this
      */
     public function setRecorder($recorder)
@@ -594,7 +594,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who is making the procedure statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAsserter()
     {
@@ -603,7 +603,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Individual who is making the procedure statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $asserter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $asserter
      * @return $this
      */
     public function setAsserter($asserter)
@@ -614,7 +614,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Limited to "real" people rather than equipment.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedurePerformer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedurePerformer[]
      */
     public function getPerformer()
     {
@@ -623,7 +623,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Limited to "real" people rather than equipment.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedurePerformer $performer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedurePerformer $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -634,7 +634,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -643,7 +643,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -654,7 +654,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -663,7 +663,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -674,7 +674,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The justification of why the procedure was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -683,7 +683,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The justification of why the procedure was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -694,7 +694,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getBodySite()
     {
@@ -703,7 +703,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function addBodySite($bodySite)
@@ -714,7 +714,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The outcome of the procedure - did it resolve the reasons for the procedure being performed?
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome()
     {
@@ -723,7 +723,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The outcome of the procedure - did it resolve the reasons for the procedure being performed?
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -734,7 +734,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This could be a histology result, pathology report, surgical report, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReport()
     {
@@ -743,7 +743,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This could be a histology result, pathology report, surgical report, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $report
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $report
      * @return $this
      */
     public function addReport($report)
@@ -754,7 +754,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getComplication()
     {
@@ -763,7 +763,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $complication
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $complication
      * @return $this
      */
     public function addComplication($complication)
@@ -774,7 +774,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getComplicationDetail()
     {
@@ -783,7 +783,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $complicationDetail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $complicationDetail
      * @return $this
      */
     public function addComplicationDetail($complicationDetail)
@@ -794,7 +794,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the procedure required specific follow up - e.g. removal of sutures. The follow up may be represented as a simple note or could potentially be more complex, in which case the CarePlan resource can be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getFollowUp()
     {
@@ -803,7 +803,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the procedure required specific follow up - e.g. removal of sutures. The follow up may be represented as a simple note or could potentially be more complex, in which case the CarePlan resource can be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $followUp
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $followUp
      * @return $this
      */
     public function addFollowUp($followUp)
@@ -814,7 +814,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any other notes and comments about the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -823,7 +823,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any other notes and comments about the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -834,7 +834,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice[]
      */
     public function getFocalDevice()
     {
@@ -843,7 +843,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice $focalDevice
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice $focalDevice
      * @return $this
      */
     public function addFocalDevice($focalDevice)
@@ -854,7 +854,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies medications, devices and any other substance used as part of the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getUsedReference()
     {
@@ -863,7 +863,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies medications, devices and any other substance used as part of the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $usedReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $usedReference
      * @return $this
      */
     public function addUsedReference($usedReference)
@@ -874,7 +874,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies coded items that were used as part of the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getUsedCode()
     {
@@ -883,7 +883,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies coded items that were used as part of the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $usedCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $usedCode
      * @return $this
      */
     public function addUsedCode($usedCode)

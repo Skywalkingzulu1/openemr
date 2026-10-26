@@ -3,25 +3,25 @@
 /**
  * FhirRelatedPersonRestController.php
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2018-2026 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirRelatedPersonService;
-use OpenEMR\Services\FHIR\FhirResourcesService;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirRelatedPersonService;
+use DCL\Services\FHIR\FhirResourcesService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -129,7 +129,7 @@ class FhirRelatedPersonRestController
                                 ],
                                 [
                                     'system' => 'email',
-                                    'value' => 'example@open-emr.org',
+                                    'value' => 'example@dcl.org',
                                     'use' => 'home',
                                 ],
                             ],
@@ -153,7 +153,7 @@ class FhirRelatedPersonRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne(string $fhirId): Response
     {
@@ -240,7 +240,7 @@ class FhirRelatedPersonRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($searchParams): JsonResponse|Response
     {
@@ -267,7 +267,7 @@ class FhirRelatedPersonRestController
     // @codeCoverageIgnoreStart
     #[OA\Post(
         path: '/fhir/RelatedPerson',
-        description: 'Creates a new RelatedPerson (patient\'s family/caregiver). The patient reference is required. OpenEMR also requires a relationship.coding entry under HL7 v3 RoleCode (or its FhirCodeSystemConstants::HL7_ROLE_CODE alias) — this is an OpenEMR deviation from R4 (which makes relationship 0..*) because the read JOIN binds into list_options on a non-null relationship.',
+        description: 'Creates a new RelatedPerson (patient\'s family/caregiver). The patient reference is required. DCL also requires a relationship.coding entry under HL7 v3 RoleCode (or its FhirCodeSystemConstants::HL7_ROLE_CODE alias) — this is an DCL deviation from R4 (which makes relationship 0..*) because the read JOIN binds into list_options on a non-null relationship.',
         tags: ['fhir'],
         requestBody: new OA\RequestBody(
             required: true,
@@ -282,7 +282,7 @@ class FhirRelatedPersonRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '403', ref: '#/components/responses/forbidden'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post(array $fhirJson): void
     {
@@ -322,7 +322,7 @@ class FhirRelatedPersonRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '403', ref: '#/components/responses/forbidden'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put(string $fhirId, array $fhirJson): void
     {

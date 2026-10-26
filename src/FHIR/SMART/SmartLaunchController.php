@@ -3,36 +3,36 @@
 /**
  * SmartLaunchController handles the display and launching of SMART apps from the user interface.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\FHIR\SMART;
+namespace DCL\FHIR\SMART;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDemographics\RenderEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Questionnaire\AvailabilityContext;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDemographics\RenderEvent;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\Services\AppointmentService;
+use DCL\Services\EncounterService;
+use DCL\Services\PatientService;
+use DCL\Services\Questionnaire\AvailabilityContext;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 // not sure I really like this here... it seems like some of this
@@ -40,7 +40,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Class SmartLaunchController handles the display and launching of SMART apps from the user interface.
- * @package OpenEMR\FHIR\SMART
+ * @package DCL\FHIR\SMART
  */
 class SmartLaunchController
 {
@@ -172,7 +172,7 @@ class SmartLaunchController
             $launchCode->setAppointmentUuid($appointmentUuid);
         }
 
-        // Questionnaire context is resolved from OpenEMR database ids so the browser cannot inject FHIR references.
+        // Questionnaire context is resolved from DCL database ids so the browser cannot inject FHIR references.
         /** @var array<string, mixed> $intentData */
         $this->addQuestionnaireLaunchContext(
             $launchCode,
@@ -197,7 +197,7 @@ class SmartLaunchController
     }
     /**
      * Retrieves the registered ClientEntities that are SMART only clients.
-     * @return \OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity[]
+     * @return \DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity[]
      */
     private function getSMARTClients(): array
     {

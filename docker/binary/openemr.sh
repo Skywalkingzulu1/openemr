@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR Apache + PHP-FPM Container Startup Script (Static Binary Build)
+# DCL Apache + PHP-FPM Container Startup Script (Static Binary Build)
 # ============================================================================
 # This script runs when the container starts and handles all setup tasks needed
-# to get OpenEMR running under Apache with PHP-FPM using static binaries.
+# to get DCL running under Apache with PHP-FPM using static binaries.
 # It performs automated installation, configuration, and startup coordination
-# for OpenEMR in containerized environments.
+# for DCL in containerized environments.
 #
 # Key Features:
 #   - Automated database setup and configuration
@@ -29,10 +29,10 @@ set -euo pipefail
 # ============================================================================
 # PATH CONFIGURATION
 # ============================================================================
-# Define paths used throughout the script for OpenEMR installation and configuration
+# Define paths used throughout the script for DCL installation and configuration
 
-OE_ROOT="/var/www/localhost/htdocs/openemr"
-AUTO_CONFIG="/var/www/localhost/htdocs/openemr/auto_configure.php"
+OE_ROOT="/var/www/localhost/htdocs/DCL"
+AUTO_CONFIG="/var/www/localhost/htdocs/DCL/auto_configure.php"
 SQLCONF_FILE="${OE_ROOT}/sites/default/sqlconf.php"
 
 # ============================================================================
@@ -47,20 +47,20 @@ SQLCONF_FILE="${OE_ROOT}/sites/default/sqlconf.php"
 # ============================================================================
 # DATABASE CONFIGURATION
 # ============================================================================
-# OpenEMR requires a MySQL/MariaDB database. These variables control the
+# DCL requires a MySQL/MariaDB database. These variables control the
 # database connection and credentials. Defaults are provided for development.
 
 MYSQL_HOST="${MYSQL_HOST:-mysql}"                        # Database server hostname
 MYSQL_PORT="${MYSQL_PORT:-3306}"                         # Database server port
 MYSQL_ROOT_USER="${MYSQL_ROOT_USER:-root}"               # Database root username
 MYSQL_ROOT_PASS="${MYSQL_ROOT_PASS:-root}"               # Database root password
-MYSQL_USER="${MYSQL_USER:-openemr}"                      # OpenEMR database username
-MYSQL_PASS="${MYSQL_PASS:-openemr}"                      # OpenEMR database password
-MYSQL_DATABASE="${MYSQL_DATABASE:-openemr}"              # Database name
+MYSQL_USER="${MYSQL_USER:-DCL}"                      # DCL database username
+MYSQL_PASS="${MYSQL_PASS:-DCL}"                      # DCL database password
+MYSQL_DATABASE="${MYSQL_DATABASE:-DCL}"              # Database name
 MYSQL_COLLATION="${MYSQL_COLLATION:-utf8mb4_general_ci}" # Character encoding
 
 # ============================================================================
-# OPENEMR ADMIN USER CONFIGURATION
+# DCL ADMIN USER CONFIGURATION
 # ============================================================================
 # Initial administrator account created during first-time setup.
 # IMPORTANT: Change these defaults in production!
@@ -81,11 +81,11 @@ SWARM_MODE="${SWARM_MODE:-no}"      # Set to "yes" for multi-container coordinat
 # ============================================================================
 # CONTAINER ROLE DEFINITIONS
 # ============================================================================
-# AUTHORITY: Right to change OpenEMR's configured state
+# AUTHORITY: Right to change DCL's configured state
 #   - true for singletons, swarm leaders, and Kubernetes startup jobs
 #   - false for swarm members and Kubernetes workers
 #
-# OPERATOR: Right to launch Apache and serve OpenEMR
+# OPERATOR: Right to launch Apache and serve DCL
 #   - true for singletons, swarm members (leader or otherwise), and Kubernetes workers
 #   - false for Kubernetes startup jobs and manual image runs
 
@@ -121,7 +121,7 @@ wait_for_mysql() {
     # verify the server against it. The MariaDB 11.4+ client verifies certificates by
     # default and otherwise rejects servers whose CA is not in the system trust store
     # (e.g. Amazon RDS), which breaks these readiness checks.
-    MYSQL_CA_FILE="/var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca"
+    MYSQL_CA_FILE="/var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca"
     MYSQL_SSL_OPTS=()
     if [[ -f "${MYSQL_CA_FILE}" ]]; then
         MYSQL_SSL_OPTS=(--ssl-ca="${MYSQL_CA_FILE}")
@@ -195,7 +195,7 @@ wait_for_redis() {
     return 1
 }
 
-# Checks if OpenEMR has already been configured.
+# Checks if DCL has already been configured.
 # Returns "1" if configured, "0" if not configured yet.
 is_configured() {
     /usr/local/bin/php -r "if (is_file('${SQLCONF_FILE}')) { require '${SQLCONF_FILE}'; echo isset(\$config) && \$config ? 1 : 0; } else { echo 0; }" 2>/dev/null | tail -1 || echo 0
@@ -354,7 +354,7 @@ handle_swarm_mode() {
 # CERTIFICATE MANAGEMENT
 # ============================================================================
 
-# Copies SSL/TLS certificates from /root/certs/ to where OpenEMR expects them.
+# Copies SSL/TLS certificates from /root/certs/ to where DCL expects them.
 # These certificates are used for secure connections to MySQL, Redis, LDAP, etc.
 manage_certificates() {
     local certs_dir="/root/certs"
@@ -436,7 +436,7 @@ manage_certificates() {
 # REDIS SESSION CONFIGURATION
 # ============================================================================
 
-# Configures OpenEMR to use Redis for session storage instead of files.
+# Configures DCL to use Redis for session storage instead of files.
 # Redis provides faster session access and enables horizontal scaling.
 configure_redis_sessions() {
     # Skip if Redis isn't configured
@@ -476,7 +476,7 @@ configure_redis_sessions() {
 
     # Update PHP configuration to use Redis for sessions
     # Use a separate config file instead of sed to avoid pattern matching issues
-    # (see openemr/openemr#9473)
+    # (see DCL/DCL#9473)
     echo "Configuring Redis sessions: ${redis_path}"
     # For static PHP binaries, config directory is /usr/local/etc/php/conf.d/
     mkdir -p /usr/local/etc/php/conf.d
@@ -495,7 +495,7 @@ configure_redis_sessions() {
 # UPGRADE DETECTION AND EXECUTION
 # ============================================================================
 
-# Checks if OpenEMR needs to be upgraded to a newer version.
+# Checks if DCL needs to be upgraded to a newer version.
 # Compares version numbers from different locations to determine if upgrade is needed.
 check_upgrade() {
     # Only the leader container handles upgrades
@@ -526,19 +526,19 @@ check_upgrade() {
     return 0
 }
 
-# Performs the actual OpenEMR upgrade by running upgrade scripts.
+# Performs the actual DCL upgrade by running upgrade scripts.
 # Updates leader heartbeat periodically during execution to prevent stale leader detection.
 run_upgrade() {
-    echo "Starting OpenEMR upgrade process..."
+    echo "Starting DCL upgrade process..."
 
     # Update heartbeat before starting upgrade
     [[ "${AUTHORITY}" = "yes" ]] && update_leader_heartbeat
 
-    # Verify OpenEMR is configured before upgrading
+    # Verify DCL is configured before upgrading
     local config_state
     config_state=$(is_configured)
     if [[ "${config_state}" != "1" ]]; then
-        echo "Error: Cannot upgrade - OpenEMR is not configured yet" >&2
+        echo "Error: Cannot upgrade - DCL is not configured yet" >&2
         return 1
     fi
 
@@ -583,19 +583,19 @@ run_upgrade() {
     # Final heartbeat update
     [[ "${AUTHORITY}" = "yes" ]] && update_leader_heartbeat
 
-    echo "OpenEMR upgrade completed successfully"
+    echo "DCL upgrade completed successfully"
 }
 
 # ============================================================================
-# OPENEMR AUTO-CONFIGURATION
+# DCL AUTO-CONFIGURATION
 # ============================================================================
 
-# Runs OpenEMR's automated setup script with performance optimizations.
+# Runs DCL's automated setup script with performance optimizations.
 # Updates leader heartbeat periodically during execution to prevent stale leader detection.
 run_auto_configure() {
     [[ ! -f "${AUTO_CONFIG}" ]] && echo "auto_configure.php not found" >&2 && return 0
 
-    echo "Running OpenEMR auto configuration..."
+    echo "Running DCL auto configuration..."
 
     # Update heartbeat before starting long-running operation
     [[ "${AUTHORITY}" = "yes" ]] && update_leader_heartbeat
@@ -628,7 +628,7 @@ run_auto_configure() {
 
     # Run auto_configure with optimized PHP settings.
     # Drop privileges to apache: auto_configure.php goes through the
-    # Installer class, which openemr#12267's RootCliGuard refuses to
+    # Installer class, which DCL#12267's RootCliGuard refuses to
     # run as root. `su-exec` exec's the program directly with no
     # intervening shell, preserving env and passing each arg
     # verbatim — see run_php_as_apache in devtoolsLibrary.source for
@@ -656,17 +656,17 @@ run_auto_configure() {
         return 1
     fi
 
-    echo "OpenEMR configured successfully"
+    echo "DCL configured successfully"
 }
 
-# Removes OpenEMR's setup/installation scripts after initial configuration.
+# Removes DCL's setup/installation scripts after initial configuration.
 # These scripts are only needed during installation - after that, they're a
-# security risk because they could allow someone to reconfigure or break OpenEMR.
+# security risk because they could allow someone to reconfigure or break DCL.
 cleanup_setup_scripts() {
     local config_state
     config_state=$(is_configured)
 
-    # Only remove setup scripts if OpenEMR is configured
+    # Only remove setup scripts if DCL is configured
     if [[ "${config_state}" = "1" ]] && [[ -f "${AUTO_CONFIG}" ]]; then
         echo "Removing setup scripts (keeping upgrade scripts for future upgrades)..."
         # Remove only the initial installation scripts (not upgrade scripts)
@@ -723,7 +723,7 @@ log_timing "3-UpgradeCheck"
 # Step 4: Verify configuration exists (critical check for worker containers)
 CONFIG=$(/usr/local/bin/php -r "require_once('${SQLCONF_FILE}'); echo \$config;")
 if [[ "${AUTHORITY}" = "no" ]] && [[ "${CONFIG}" = "0" ]]; then
-    echo "Critical failure! An OpenEMR worker is trying to run on a missing configuration." >&2
+    echo "Critical failure! An DCL worker is trying to run on a missing configuration." >&2
     echo " - Is this due to a Kubernetes grant hiccup?" >&2
     echo "The worker will now terminate." >&2
     exit 1
@@ -775,7 +775,7 @@ if [[ "${AUTHORITY}" = "yes" ]]; then
             [[ "${AUTHORITY}" = "yes" ]] && update_leader_heartbeat
             if [[ ${setup_retries} -eq 1 ]]; then
                 echo "Couldn't set up. Any of these reasons could be what's wrong:"
-                echo " - You didn't spin up a MySQL container or connect your OpenEMR container to a mysql instance"
+                echo " - You didn't spin up a MySQL container or connect your DCL container to a mysql instance"
                 echo " - MySQL is still starting up and wasn't ready for connection yet"
                 echo " - The MySQL credentials were incorrect"
             elif [[ ${setup_retries} -le 5 ]]; then
@@ -878,8 +878,8 @@ if [[ "${AUTHORITY}" = "yes" ]] || [[ "${SWARM_MODE}" = "yes" ]]; then
             find sites/default/documents/smarty -type d -exec chmod 700 {} + 2>/dev/null || true
             find sites/default/documents/smarty -type f -exec chmod 600 {} + 2>/dev/null || true
 
-            # Ensure openemr.sh stays executable
-            chmod 700 openemr.sh 2>/dev/null || true
+            # Ensure DCL.sh stays executable
+            chmod 700 DCL.sh 2>/dev/null || true
 
             echo "File permissions finalized"
 
@@ -937,8 +937,8 @@ fi
 
 # Step 14: Display support message
 echo
-echo "Love OpenEMR? You can now support the project via the open collective:"
-echo " > https://opencollective.com/openemr/donate"
+echo "Love DCL? You can now support the project via the open collective:"
+echo " > https://opencollective.com/DCL/donate"
 echo
 
 # Step 15: Start PHP-FPM and Apache (if this container is an operator)
@@ -983,4 +983,4 @@ if [[ "${OPERATOR}" = "yes" ]]; then
 fi
 
 # If not an operator, exit gracefully
-echo 'OpenEMR configuration tasks have concluded.'
+echo 'DCL configuration tasks have concluded.'

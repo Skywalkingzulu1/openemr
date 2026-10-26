@@ -1,27 +1,27 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
- * @author    Stephen Waite <stephen.waite@open-emr.org>
+ * @author    Stephen Waite <stephen.waite@dcl.org>
  * @copyright Copyright (c) 2022 Sherwin Gaddis <sherwingaddis@gmail.com>
- * @copyright Copyright (c) 2022-2023 Stephen Waite <stephen.waite@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2022-2023 Stephen Waite <stephen.waite@dcl.org>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 
 require_once(dirname(__FILE__, 3) . "/interface/globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\{
+use DCL\BC\ServiceContainer;
+use DCL\Common\{
     Acl\AccessDeniedHelper,
     Acl\AclMain,
     Csrf\CsrfUtils,
     Logging\SystemLogger,
     Session\SessionWrapperFactory,
 };
-use OpenEMR\Services\SpreadSheetService;
+use DCL\Services\SpreadSheetService;
 
 if (!AclMain::aclCheckCore('patients', 'med')) {
     AccessDeniedHelper::denyWithTemplate("ACL check failed for patients/med: Immunization Registry", xl("Immunization Registry"));

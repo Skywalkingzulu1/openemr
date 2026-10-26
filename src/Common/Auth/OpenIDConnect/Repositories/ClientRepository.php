@@ -3,25 +3,25 @@
 /**
  * Authorization Server Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Repositories;
+namespace DCL\Common\Auth\OpenIDConnect\Repositories;
 
 use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\HttpUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\HttpUtils;
+use DCL\Core\OEGlobalsBag;
 
 class ClientRepository implements ClientRepositoryInterface
 {
@@ -261,7 +261,7 @@ class ClientRepository implements ClientRepositoryInterface
         $params = [$isEnabledSaveValue, $clientId];
         $res = sqlStatement("UPDATE oauth_clients SET is_enabled=? WHERE client_id = ?", $params);
         if ($res === false) {
-            // TODO: adunsulag is there a better exception to throw here in OpenEMR than runtime?
+            // TODO: adunsulag is there a better exception to throw here in DCL than runtime?
             throw new \RuntimeException("Failed to save oauth_clients is_enabled flag.  Check logs for sql error");
         }
         return true;
@@ -322,7 +322,7 @@ class ClientRepository implements ClientRepositoryInterface
         $params = [$skipFlowValue, $clientId];
         $res = sqlStatement("UPDATE oauth_clients SET skip_ehr_launch_authorization_flow=? WHERE client_id = ?", $params);
         if ($res === false) {
-            // TODO: adunsulag is there a better exception to throw here in OpenEMR than runtime?
+            // TODO: adunsulag is there a better exception to throw here in DCL than runtime?
             throw new \RuntimeException("Failed to save oauth_clients skip_ehr_launch_authorization_flow flag.  Check logs for sql error");
         }
         return true;

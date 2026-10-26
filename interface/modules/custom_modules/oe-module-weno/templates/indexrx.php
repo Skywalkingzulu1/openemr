@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * @author    Kofi Appiah <kkappiah@medsov.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2023 omega systems group international <info@omegasystemsgroup.com>
  * @copyright Copyright (c) 2024-2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 //header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-src *;", true); // Preserve CSP header for security
@@ -17,17 +17,17 @@
 require_once("../../../../globals.php");
 /** @var string $srcdir */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\WenoModule\Services\PharmacyService;
-use OpenEMR\Modules\WenoModule\Services\TransmitProperties;
-use OpenEMR\Modules\WenoModule\Services\WenoLogService;
-use OpenEMR\Modules\WenoModule\Services\WenoValidate;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\WenoModule\Services\PharmacyService;
+use DCL\Modules\WenoModule\Services\TransmitProperties;
+use DCL\Modules\WenoModule\Services\WenoLogService;
+use DCL\Modules\WenoModule\Services\WenoValidate;
 
 //ensure user has proper access permissions.
 if (!AclMain::aclCheckCore('patients', 'rx')) {

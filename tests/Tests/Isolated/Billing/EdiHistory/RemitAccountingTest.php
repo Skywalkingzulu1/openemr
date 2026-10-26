@@ -15,18 +15,18 @@
  * The balance check now compares fee and accounted totals in integer
  * cents, which these tests pin down with synthetic amounts only.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Billing\EdiHistory;
+namespace DCL\Tests\Isolated\Billing\EdiHistory;
 
-use OpenEMR\Billing\EdiHistory\RemitAccounting;
+use DCL\Billing\EdiHistory\RemitAccounting;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

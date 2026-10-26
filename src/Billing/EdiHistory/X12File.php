@@ -4,22 +4,22 @@
  * Class to read EDI X12 files in healthcare setting.
  *
  * Lifted from library/edihistory/edih_x12file_class.php into the
- * OpenEMR\Billing\EdiHistory namespace. The legacy `edih_x12_file`
+ * DCL\Billing\EdiHistory namespace. The legacy `edih_x12_file`
  * class name is preserved as a class_alias by the legacy file so
  * existing procedural callers keep working unchanged.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kevin McCormick
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2014 Kevin McCormick Longview, Texas
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Billing\EdiHistory;
+namespace DCL\Billing\EdiHistory;
 
 /*
  * edih_x12file_class.php
@@ -41,9 +41,9 @@ namespace OpenEMR\Billing\EdiHistory;
  *  <http://opensource.org/licenses/gpl-license.php>
  *
  *
- * @link       https://www.open-emr.org
+ * @link       https://www.dcl.org
  * @author     Kevin McCormick
- * @package    OpenEMR
+ * @package    DCL
  * @subpackage ediHistory
  */
 
@@ -560,7 +560,7 @@ class X12File
      * Useful for slicing and dicing.  The ['ST'][$stky]['trace'] value is used only for 835
      * or 999 type files and the ['ST'][$stky]['acct'][i] array will have multiple values
      * likely only for 835, 271, and 277 types, because response from a payer will have
-     * multiple transactions in the ST-SE envelope while OpenEMR probably will place each
+     * multiple transactions in the ST-SE envelope while DCL probably will place each
      * transaction in its own ST-SE envelope for 270 and 837 types.
      *
      * The ['start'] and ['count'] values are for use in php function array_slice()
@@ -776,7 +776,7 @@ class X12File
                     }
 
                     $env_ar['ST'][$st_ct]['trace'] = $seg_ar[2] ?? "";
-                    // to match OpenEMR billing parse file name
+                    // to match DCL billing parse file name
                     $env_ar['GS'][$gs_ct]['srcid'] = $seg_ar[4] ?? $seg_ar[3] ?? "";
 
                     continue;

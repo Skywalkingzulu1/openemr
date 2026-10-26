@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRResearchElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRResearchElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRResearchElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The ResearchElementDefinition resource describes a "PICO" element that knowledge (evidence, assertion, recommendation) is about.
@@ -70,116 +70,116 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $definitionCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $definitionCanonical = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $definitionExpression = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public $definitionDataRequirement = null;
 
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $usageContext = [];
 
     /**
      * When true, members with this characteristic are excluded from the element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $exclude = null;
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unitOfMeasure = null;
 
     /**
      * A narrative description of the time period the study covers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $studyEffectiveDescription = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $studyEffectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $studyEffectivePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $studyEffectiveDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $studyEffectiveTiming = null;
 
     /**
      * Indicates duration from the study initiation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $studyEffectiveTimeFromStart = null;
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure
      */
     public $studyEffectiveGroupMeasure = null;
 
     /**
      * A narrative description of the time period the study covers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $participantEffectiveDescription = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $participantEffectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $participantEffectivePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $participantEffectiveDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $participantEffectiveTiming = null;
 
     /**
      * Indicates duration from the participant's study entry.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $participantEffectiveTimeFromStart = null;
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure
      */
     public $participantEffectiveGroupMeasure = null;
 
@@ -189,7 +189,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     private $_fhirElementName = 'ResearchElementDefinition.Characteristic';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDefinitionCodeableConcept()
     {
@@ -197,7 +197,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
      * @return $this
      */
     public function setDefinitionCodeableConcept($definitionCodeableConcept)
@@ -207,7 +207,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefinitionCanonical()
     {
@@ -215,7 +215,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
      * @return $this
      */
     public function setDefinitionCanonical($definitionCanonical)
@@ -225,7 +225,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getDefinitionExpression()
     {
@@ -233,7 +233,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $definitionExpression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $definitionExpression
      * @return $this
      */
     public function setDefinitionExpression($definitionExpression)
@@ -243,7 +243,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public function getDefinitionDataRequirement()
     {
@@ -251,7 +251,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $definitionDataRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $definitionDataRequirement
      * @return $this
      */
     public function setDefinitionDataRequirement($definitionDataRequirement)
@@ -262,7 +262,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUsageContext()
     {
@@ -271,7 +271,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $usageContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $usageContext
      * @return $this
      */
     public function addUsageContext($usageContext)
@@ -282,7 +282,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * When true, members with this characteristic are excluded from the element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExclude()
     {
@@ -291,7 +291,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * When true, members with this characteristic are excluded from the element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $exclude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $exclude
      * @return $this
      */
     public function setExclude($exclude)
@@ -302,7 +302,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfMeasure()
     {
@@ -311,7 +311,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
      * @return $this
      */
     public function setUnitOfMeasure($unitOfMeasure)
@@ -322,7 +322,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * A narrative description of the time period the study covers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getStudyEffectiveDescription()
     {
@@ -331,7 +331,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * A narrative description of the time period the study covers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $studyEffectiveDescription
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $studyEffectiveDescription
      * @return $this
      */
     public function setStudyEffectiveDescription($studyEffectiveDescription)
@@ -341,7 +341,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getStudyEffectiveDateTime()
     {
@@ -349,7 +349,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $studyEffectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $studyEffectiveDateTime
      * @return $this
      */
     public function setStudyEffectiveDateTime($studyEffectiveDateTime)
@@ -359,7 +359,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getStudyEffectivePeriod()
     {
@@ -367,7 +367,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $studyEffectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $studyEffectivePeriod
      * @return $this
      */
     public function setStudyEffectivePeriod($studyEffectivePeriod)
@@ -377,7 +377,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getStudyEffectiveDuration()
     {
@@ -385,7 +385,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveDuration
      * @return $this
      */
     public function setStudyEffectiveDuration($studyEffectiveDuration)
@@ -395,7 +395,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getStudyEffectiveTiming()
     {
@@ -403,7 +403,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $studyEffectiveTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $studyEffectiveTiming
      * @return $this
      */
     public function setStudyEffectiveTiming($studyEffectiveTiming)
@@ -414,7 +414,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates duration from the study initiation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getStudyEffectiveTimeFromStart()
     {
@@ -423,7 +423,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates duration from the study initiation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $studyEffectiveTimeFromStart
      * @return $this
      */
     public function setStudyEffectiveTimeFromStart($studyEffectiveTimeFromStart)
@@ -434,7 +434,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure
      */
     public function getStudyEffectiveGroupMeasure()
     {
@@ -443,7 +443,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure $studyEffectiveGroupMeasure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure $studyEffectiveGroupMeasure
      * @return $this
      */
     public function setStudyEffectiveGroupMeasure($studyEffectiveGroupMeasure)
@@ -454,7 +454,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * A narrative description of the time period the study covers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getParticipantEffectiveDescription()
     {
@@ -463,7 +463,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * A narrative description of the time period the study covers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $participantEffectiveDescription
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $participantEffectiveDescription
      * @return $this
      */
     public function setParticipantEffectiveDescription($participantEffectiveDescription)
@@ -473,7 +473,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getParticipantEffectiveDateTime()
     {
@@ -481,7 +481,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $participantEffectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $participantEffectiveDateTime
      * @return $this
      */
     public function setParticipantEffectiveDateTime($participantEffectiveDateTime)
@@ -491,7 +491,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getParticipantEffectivePeriod()
     {
@@ -499,7 +499,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $participantEffectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $participantEffectivePeriod
      * @return $this
      */
     public function setParticipantEffectivePeriod($participantEffectivePeriod)
@@ -509,7 +509,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getParticipantEffectiveDuration()
     {
@@ -517,7 +517,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @return $this
      */
     public function setParticipantEffectiveDuration($participantEffectiveDuration)
@@ -527,7 +527,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getParticipantEffectiveTiming()
     {
@@ -535,7 +535,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $participantEffectiveTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $participantEffectiveTiming
      * @return $this
      */
     public function setParticipantEffectiveTiming($participantEffectiveTiming)
@@ -546,7 +546,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates duration from the participant's study entry.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getParticipantEffectiveTimeFromStart()
     {
@@ -555,7 +555,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates duration from the participant's study entry.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveTimeFromStart
      * @return $this
      */
     public function setParticipantEffectiveTimeFromStart($participantEffectiveTimeFromStart)
@@ -566,7 +566,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure
      */
     public function getParticipantEffectiveGroupMeasure()
     {
@@ -575,7 +575,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement im
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure $participantEffectiveGroupMeasure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure $participantEffectiveGroupMeasure
      * @return $this
      */
     public function setParticipantEffectiveGroupMeasure($participantEffectiveGroupMeasure)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A record of a request for a medication, substance or device used in the healthcare setting.
@@ -72,104 +72,104 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this SupplyRequest by the author and/or other systems. These identifiers remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Status of the supply request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSupplyRequestStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSupplyRequestStatus
      */
     public $status = null;
 
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $itemCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $itemReference = null;
 
     /**
      * The amount that is being ordered of the indicated item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * Specific parameters for the ordered item.  For example, the size of the indicated item.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestParameter[]
      */
     public $parameter = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $occurrenceTiming = null;
 
     /**
      * When the request was made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $authoredOn = null;
 
     /**
      * The device, practitioner, etc. who initiated the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requester = null;
 
     /**
      * Who is intended to fulfill the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supplier = [];
 
     /**
      * The reason why the supply item was requested.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * The reason why the supply item was requested.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Where the supply is expected to come from.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $deliverFrom = null;
 
     /**
      * Where the supply is destined to go.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $deliverTo = null;
 
@@ -180,7 +180,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this SupplyRequest by the author and/or other systems. These identifiers remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -189,7 +189,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this SupplyRequest by the author and/or other systems. These identifiers remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -200,7 +200,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Status of the supply request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSupplyRequestStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSupplyRequestStatus
      */
     public function getStatus()
     {
@@ -209,7 +209,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Status of the supply request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSupplyRequestStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSupplyRequestStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -220,7 +220,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -229,7 +229,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -240,7 +240,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -249,7 +249,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -259,7 +259,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
     {
@@ -267,7 +267,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
     public function setItemCodeableConcept($itemCodeableConcept)
@@ -277,7 +277,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getItemReference()
     {
@@ -285,7 +285,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $itemReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $itemReference
      * @return $this
      */
     public function setItemReference($itemReference)
@@ -296,7 +296,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The amount that is being ordered of the indicated item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -305,7 +305,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The amount that is being ordered of the indicated item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -316,7 +316,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific parameters for the ordered item.  For example, the size of the indicated item.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestParameter[]
      */
     public function getParameter()
     {
@@ -325,7 +325,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific parameters for the ordered item.  For example, the size of the indicated item.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -335,7 +335,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -343,7 +343,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -353,7 +353,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
@@ -361,7 +361,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
     public function setOccurrencePeriod($occurrencePeriod)
@@ -371,7 +371,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
@@ -379,7 +379,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
      * @return $this
      */
     public function setOccurrenceTiming($occurrenceTiming)
@@ -390,7 +390,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the request was made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn()
     {
@@ -399,7 +399,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the request was made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
     public function setAuthoredOn($authoredOn)
@@ -410,7 +410,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device, practitioner, etc. who initiated the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequester()
     {
@@ -419,7 +419,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device, practitioner, etc. who initiated the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requester
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requester
      * @return $this
      */
     public function setRequester($requester)
@@ -430,7 +430,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who is intended to fulfill the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupplier()
     {
@@ -439,7 +439,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who is intended to fulfill the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supplier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supplier
      * @return $this
      */
     public function addSupplier($supplier)
@@ -450,7 +450,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason why the supply item was requested.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -459,7 +459,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason why the supply item was requested.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -470,7 +470,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason why the supply item was requested.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -479,7 +479,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason why the supply item was requested.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -490,7 +490,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the supply is expected to come from.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDeliverFrom()
     {
@@ -499,7 +499,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the supply is expected to come from.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $deliverFrom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $deliverFrom
      * @return $this
      */
     public function setDeliverFrom($deliverFrom)
@@ -510,7 +510,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the supply is destined to go.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDeliverTo()
     {
@@ -519,7 +519,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the supply is destined to go.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $deliverTo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $deliverTo
      * @return $this
      */
     public function setDeliverTo($deliverTo)

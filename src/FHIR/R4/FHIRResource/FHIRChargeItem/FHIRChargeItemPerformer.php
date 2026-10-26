@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItem;
+namespace DCL\FHIR\R4\FHIRResource\FHIRChargeItem;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItem;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The resource ChargeItem describes the provision of healthcare provider products for a certain patient, therefore referring not only to the product, but containing in addition details of the provision, like date, time, amounts and participating organizations and persons. Main Usage of the ChargeItem is to enable the billing process and internal cost allocation.
@@ -71,13 +71,13 @@ class FHIRChargeItemPerformer extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * Describes the type of performance or participation(e.g. primary surgeon, anesthesiologiest, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $function = null;
 
     /**
      * The device, practitioner, etc. who performed or participated in the service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
@@ -88,7 +88,7 @@ class FHIRChargeItemPerformer extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Describes the type of performance or participation(e.g. primary surgeon, anesthesiologiest, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFunction()
     {
@@ -97,7 +97,7 @@ class FHIRChargeItemPerformer extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Describes the type of performance or participation(e.g. primary surgeon, anesthesiologiest, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $function
      * @return $this
      */
     public function setFunction($function)
@@ -108,7 +108,7 @@ class FHIRChargeItemPerformer extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The device, practitioner, etc. who performed or participated in the service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -117,7 +117,7 @@ class FHIRChargeItemPerformer extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The device, practitioner, etc. who performed or participated in the service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCodeSystem;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCodeSystem;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -71,25 +71,25 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * The code that identifies this filter when it is used as a filter in [[[ValueSet]]].compose.include.filter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * A description of how or why the filter is used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * A list of operators that can be used with the filter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFilterOperator[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFilterOperator[]
      */
     public $operator = [];
 
     /**
      * A description of what the value for the filter should be.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
@@ -100,7 +100,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The code that identifies this filter when it is used as a filter in [[[ValueSet]]].compose.include.filter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The code that identifies this filter when it is used as a filter in [[[ValueSet]]].compose.include.filter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A description of how or why the filter is used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -129,7 +129,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A description of how or why the filter is used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -140,7 +140,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A list of operators that can be used with the filter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFilterOperator[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFilterOperator[]
      */
     public function getOperator()
     {
@@ -149,7 +149,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A list of operators that can be used with the filter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFilterOperator $operator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFilterOperator $operator
      * @return $this
      */
     public function addOperator($operator)
@@ -160,7 +160,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A description of what the value for the filter should be.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -169,7 +169,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A description of what the value for the filter should be.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)

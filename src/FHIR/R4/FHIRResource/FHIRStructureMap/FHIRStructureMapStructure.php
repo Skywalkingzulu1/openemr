@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -71,25 +71,25 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * The canonical reference to the structure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $url = null;
 
     /**
      * How the referenced structure is used in this mapping.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapModelMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureMapModelMode
      */
     public $mode = null;
 
     /**
      * The name used for this type in the map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $alias = null;
 
     /**
      * Documentation that describes how the structure is used in the mapping.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentation = null;
 
@@ -100,7 +100,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The canonical reference to the structure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getUrl()
     {
@@ -109,7 +109,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The canonical reference to the structure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $url
      * @return $this
      */
     public function setUrl($url)
@@ -120,7 +120,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * How the referenced structure is used in this mapping.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapModelMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureMapModelMode
      */
     public function getMode()
     {
@@ -129,7 +129,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * How the referenced structure is used in this mapping.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapModelMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureMapModelMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -140,7 +140,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The name used for this type in the map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAlias()
     {
@@ -149,7 +149,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The name used for this type in the map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $alias
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $alias
      * @return $this
      */
     public function setAlias($alias)
@@ -160,7 +160,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Documentation that describes how the structure is used in the mapping.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
@@ -169,7 +169,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Documentation that describes how the structure is used in the mapping.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentation
      * @return $this
      */
     public function setDocumentation($documentation)

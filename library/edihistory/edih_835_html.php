@@ -3,13 +3,13 @@
 /*
  * new_edih_835_html.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Kevin McCormick Longview, Texas
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2016 Kevin McCormick Longview, Texas
  * @copyright Copyright (c) 2021 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 
@@ -1288,7 +1288,7 @@ function edih_835_payment_html(array $segments, edih_271_codes $codes27x, edih_8
                 // include our accounting totals
                 // round floats to 2 digit precision
                 $acctng = array_map(static fn($v): float => round((float)$v, 2), $acctng);
-                $bal = \OpenEMR\Billing\EdiHistory\RemitAccounting::isBalanced($acctng) ? "Balanced" : "Not Balanced";
+                $bal = \DCL\Billing\EdiHistory\RemitAccounting::isBalanced($acctng) ? "Balanced" : "Not Balanced";
                 // accounting totals are rounded floats; numeric, so no escaping needed
                 $acct_str = text($bal) . ": <em>Fee</em> " . $acctng['fee'] . " <em>Pmt</em> " . $acctng['pmt'] . " ";
                 $acct_str .= "<em>ClpAdj</em> " . $acctng['clmadj'] . " <em>SvcAdj</em> " . $acctng['svcadj'] . " ";

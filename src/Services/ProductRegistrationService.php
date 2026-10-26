@@ -3,20 +3,20 @@
 /**
  * ProductRegistrationService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Victor Kofia <victor.kofia@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2017 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2017 Victor Kofia <victor.kofia@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\VersionService;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\VersionService;
 
 require_once(__DIR__ . '/../../interface/product_registration/exceptions/generic_product_registration_exception.php');
 
@@ -112,13 +112,13 @@ class ProductRegistrationService
     {
         // build the information array
         $info = ['email' => $email, 'version' => (string) (new VersionService())->getSoftwareVersion()];
-        if (!empty(getenv('OPENEMR_DOCKER_ENV_TAG', true))) {
+        if (!empty(getenv('DCL_DOCKER_ENV_TAG', true))) {
             // this will add standard package information if it exists
-            $info['distribution'] = getenv('OPENEMR_DOCKER_ENV_TAG', true);
+            $info['distribution'] = getenv('DCL_DOCKER_ENV_TAG', true);
         }
 
         $httpVerifySsl = (bool) (OEGlobalsBag::getInstance()->get('http_verify_ssl') ?? true);
-        $curl = curl_init('https://reg.open-emr.org/api/registration');
+        $curl = curl_init('https://reg.dcl.org/api/registration');
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($info));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

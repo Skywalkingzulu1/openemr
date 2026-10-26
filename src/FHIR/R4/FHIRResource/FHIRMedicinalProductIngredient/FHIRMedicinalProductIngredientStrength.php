@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
@@ -71,43 +71,43 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 {
     /**
      * The quantity of substance in the unit of presentation, or in the volume (or mass) of the single pharmaceutical product or manufactured item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $presentation = null;
 
     /**
      * A lower limit for the quantity of substance in the unit of presentation. For use when there is a range of strengths, this is the lower limit, with the presentation attribute becoming the upper limit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $presentationLowLimit = null;
 
     /**
      * The strength per unitary volume (or mass).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $concentration = null;
 
     /**
      * A lower limit for the strength per unitary volume (or mass), for when there is a range. The concentration attribute then becomes the upper limit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $concentrationLowLimit = null;
 
     /**
      * For when strength is measured at a particular point or distance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $measurementPoint = null;
 
     /**
      * The country or countries for which the strength range applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $country = [];
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength[]
      */
     public $referenceStrength = [];
 
@@ -118,7 +118,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * The quantity of substance in the unit of presentation, or in the volume (or mass) of the single pharmaceutical product or manufactured item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getPresentation()
     {
@@ -127,7 +127,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * The quantity of substance in the unit of presentation, or in the volume (or mass) of the single pharmaceutical product or manufactured item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $presentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $presentation
      * @return $this
      */
     public function setPresentation($presentation)
@@ -138,7 +138,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * A lower limit for the quantity of substance in the unit of presentation. For use when there is a range of strengths, this is the lower limit, with the presentation attribute becoming the upper limit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getPresentationLowLimit()
     {
@@ -147,7 +147,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * A lower limit for the quantity of substance in the unit of presentation. For use when there is a range of strengths, this is the lower limit, with the presentation attribute becoming the upper limit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $presentationLowLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $presentationLowLimit
      * @return $this
      */
     public function setPresentationLowLimit($presentationLowLimit)
@@ -158,7 +158,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * The strength per unitary volume (or mass).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getConcentration()
     {
@@ -167,7 +167,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * The strength per unitary volume (or mass).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $concentration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $concentration
      * @return $this
      */
     public function setConcentration($concentration)
@@ -178,7 +178,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * A lower limit for the strength per unitary volume (or mass), for when there is a range. The concentration attribute then becomes the upper limit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getConcentrationLowLimit()
     {
@@ -187,7 +187,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * A lower limit for the strength per unitary volume (or mass), for when there is a range. The concentration attribute then becomes the upper limit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $concentrationLowLimit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $concentrationLowLimit
      * @return $this
      */
     public function setConcentrationLowLimit($concentrationLowLimit)
@@ -198,7 +198,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * For when strength is measured at a particular point or distance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMeasurementPoint()
     {
@@ -207,7 +207,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * For when strength is measured at a particular point or distance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $measurementPoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $measurementPoint
      * @return $this
      */
     public function setMeasurementPoint($measurementPoint)
@@ -218,7 +218,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * The country or countries for which the strength range applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCountry()
     {
@@ -227,7 +227,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * The country or countries for which the strength range applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
      * @return $this
      */
     public function addCountry($country)
@@ -238,7 +238,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength[]
      */
     public function getReferenceStrength()
     {
@@ -247,7 +247,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement impleme
 
     /**
      * Strength expressed in terms of a reference substance.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength $referenceStrength
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength $referenceStrength
      * @return $this
      */
     public function addReferenceStrength($referenceStrength)

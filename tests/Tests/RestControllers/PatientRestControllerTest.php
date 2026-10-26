@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers;
+namespace DCL\Tests\RestControllers;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\PatientRestController;
-use OpenEMR\Services\Search\SearchQueryConfig;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\PatientRestController;
+use DCL\Services\Search\SearchQueryConfig;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\InputBag;
 use Symfony\Component\HttpFoundation\Response;

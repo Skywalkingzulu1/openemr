@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Upgrade;
+namespace DCL\Tests\Acceptance\Upgrade;
 
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\LoginFlow;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\LoginFlow;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -26,7 +26,7 @@ use PHPUnit\Framework\TestCase;
  *   3. `docker compose down` (preserved named volumes)
  *   4. Swapped `image:` to to_tag
  *   5. Re-booted -- the entrypoint detected the existing installation
- *      via /var/www/localhost/htdocs/openemr/sites/ persistence and
+ *      via /var/www/localhost/htdocs/DCL/sites/ persistence and
  *      ran the auto-upgrade path: fsupgrade-<N>.sh (filesystem
  *      migrations) then sql_upgrade.php (schema migrations)
  *   6. Healthcheck asserted the login-page redirect target -- so the

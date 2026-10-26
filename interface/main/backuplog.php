@@ -6,13 +6,13 @@
  *  Here /interface/globals.php is not referred, because it includes sqlconf.php
  *  Pass these variables $webserver_root & $_GLOBALS[backup_log_dir] as parameters for CRON.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    ViCarePlus, Visolve <vicareplus_engg@visolve.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) ViCarePlus, Visolve <vicareplus_engg@visolve.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Ensure running from command line only

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Process\Process;
@@ -47,11 +47,11 @@ final class DeriveBuildInputsCliTest extends TestCase
 
     public function testPayloadFileStdinWritesKeyValueLinesToStdoutOnly(): void
     {
-        // The openemr-tag dispatch path: the workflow pipes the
+        // The DCL-tag dispatch path: the workflow pipes the
         // client_payload envelope on stdin via --payload-file=-.
         $process = new Process(['php', self::BIN, '--payload-file=-']);
         $process->setInput(json_encode([
-            'event' => 'openemr-tag',
+            'event' => 'DCL-tag',
             'data' => ['version' => '8.1.0', 'tag' => 'v8_1_0', 'branch' => 'rel-810'],
         ], JSON_THROW_ON_ERROR));
         $process->run();

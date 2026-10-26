@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -72,207 +72,207 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique identifier for this Contract or a derivative that references a Source Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Canonical identifier for this contract, represented as a URI (globally unique).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * An edition identifier used for business purposes to label business significant variants.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContractResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContractResourceStatusCodes
      */
     public $status = null;
 
     /**
      * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $legalState = null;
 
     /**
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in whole or part by this Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $instantiatesCanonical = null;
 
     /**
      * The URL pointing to an externally maintained definition that is adhered to in whole or in part by this Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $instantiatesUri = null;
 
     /**
      * The minimal content derived from the basal information source at a specific stage in its lifecycle.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $contentDerivative = null;
 
     /**
      * When this  Contract was issued.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $issued = null;
 
     /**
      * Relevant time or time-period when this Contract is applicable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $applies = null;
 
     /**
      * Event resulting in discontinuation or termination of this Contract instance by one or more parties to the contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $expirationType = null;
 
     /**
      * The target entity impacted by or of interest to parties to the agreement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subject = [];
 
     /**
      * A formally or informally recognized grouping of people, principals, organizations, or jurisdictions formed for the purpose of achieving some form of collective action such as the promulgation, administration and enforcement of contracts and policies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $authority = [];
 
     /**
      * Recognized governance framework or system operating with a circumscribed scope in accordance with specified principles, policies, processes or procedures for managing rights, actions, or behaviors of parties or principals relative to resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $domain = [];
 
     /**
      * Sites in which the contract is complied with,  exercised, or in force.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $site = [];
 
     /**
      * A natural language name identifying this Contract definition, derivative, or instance in any legal state. Provides additional information about its content. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * An explanatory or alternate user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $subtitle = null;
 
     /**
      * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $alias = [];
 
     /**
      * The individual or organization that authored the Contract definition, derivative, or instance in any legal state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * A selector of legal concerns for this Contract definition, derivative, or instance in any legal state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $scope = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $topicCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $topicReference = null;
 
     /**
      * A high-level category for the legal instrument, whether constructed as a Contract definition, derivative, or instance in any legal state.  Provides additional information about its content within the context of the Contract's scope to distinguish the kinds of systems that would be interested in the contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Sub-category for the Contract that distinguishes the kinds of systems that would be interested in the Contract within the context of the Contract's scope.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $subType = [];
 
     /**
      * Precusory content developed with a focus and intent of supporting the formation a Contract instance, which may be associated with and transformable into a Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContentDefinition
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContentDefinition
      */
     public $contentDefinition = null;
 
     /**
      * One or more Contract Provisions, which may be related and conveyed as a group, and may contain nested groups.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
      */
     public $term = [];
 
     /**
      * Information that may be needed by/relevant to the performer in their execution of this term action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInfo = [];
 
     /**
      * Links to Provenance records for past versions of this Contract definition, derivative, or instance, which identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the Contract.  The Provenance.entity indicates the target that was changed in the update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $relevantHistory = [];
 
     /**
      * Parties with legal standing in the Contract, including the principal parties, the grantor(s) and grantee(s), which are any person or organization bound by the contract, and any ancillary parties, which facilitate the execution of the contract such as a notary or witness.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSigner[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSigner[]
      */
     public $signer = [];
 
     /**
      * The "patient friendly language" versionof the Contract in whole or in parts. "Patient friendly language" means the representation of the Contract and Contract Provisions in a manner that is readily accessible and understandable by a layperson in accordance with best practices for communication styles that ensure that those agreeing to or signing the Contract understand the roles, actions, obligations, responsibilities, and implication of the agreement.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractFriendly[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractFriendly[]
      */
     public $friendly = [];
 
     /**
      * List of Legal expressions or representations of this Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractLegal[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractLegal[]
      */
     public $legal = [];
 
     /**
      * List of Computable Policy Rule Language Representations of this Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractRule[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractRule[]
      */
     public $rule = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $legallyBindingAttachment = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $legallyBindingReference = null;
 
@@ -283,7 +283,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier for this Contract or a derivative that references a Source Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -292,7 +292,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique identifier for this Contract or a derivative that references a Source Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -303,7 +303,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Canonical identifier for this contract, represented as a URI (globally unique).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -312,7 +312,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Canonical identifier for this contract, represented as a URI (globally unique).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -323,7 +323,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An edition identifier used for business purposes to label business significant variants.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -332,7 +332,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An edition identifier used for business purposes to label business significant variants.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -343,7 +343,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContractResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContractResourceStatusCodes
      */
     public function getStatus()
     {
@@ -352,7 +352,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContractResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContractResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -363,7 +363,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalState()
     {
@@ -372,7 +372,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalState
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalState
      * @return $this
      */
     public function setLegalState($legalState)
@@ -383,7 +383,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in whole or part by this Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInstantiatesCanonical()
     {
@@ -392,7 +392,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined Contract Definition that is adhered to in whole or part by this Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $instantiatesCanonical
      * @return $this
      */
     public function setInstantiatesCanonical($instantiatesCanonical)
@@ -403,7 +403,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained definition that is adhered to in whole or in part by this Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getInstantiatesUri()
     {
@@ -412,7 +412,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained definition that is adhered to in whole or in part by this Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function setInstantiatesUri($instantiatesUri)
@@ -423,7 +423,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The minimal content derived from the basal information source at a specific stage in its lifecycle.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getContentDerivative()
     {
@@ -432,7 +432,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The minimal content derived from the basal information source at a specific stage in its lifecycle.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $contentDerivative
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $contentDerivative
      * @return $this
      */
     public function setContentDerivative($contentDerivative)
@@ -443,7 +443,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When this  Contract was issued.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getIssued()
     {
@@ -452,7 +452,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When this  Contract was issued.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $issued
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $issued
      * @return $this
      */
     public function setIssued($issued)
@@ -463,7 +463,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Relevant time or time-period when this Contract is applicable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getApplies()
     {
@@ -472,7 +472,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Relevant time or time-period when this Contract is applicable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $applies
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $applies
      * @return $this
      */
     public function setApplies($applies)
@@ -483,7 +483,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Event resulting in discontinuation or termination of this Contract instance by one or more parties to the contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getExpirationType()
     {
@@ -492,7 +492,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Event resulting in discontinuation or termination of this Contract instance by one or more parties to the contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $expirationType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $expirationType
      * @return $this
      */
     public function setExpirationType($expirationType)
@@ -503,7 +503,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The target entity impacted by or of interest to parties to the agreement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubject()
     {
@@ -512,7 +512,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The target entity impacted by or of interest to parties to the agreement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -523,7 +523,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formally or informally recognized grouping of people, principals, organizations, or jurisdictions formed for the purpose of achieving some form of collective action such as the promulgation, administration and enforcement of contracts and policies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAuthority()
     {
@@ -532,7 +532,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formally or informally recognized grouping of people, principals, organizations, or jurisdictions formed for the purpose of achieving some form of collective action such as the promulgation, administration and enforcement of contracts and policies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $authority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $authority
      * @return $this
      */
     public function addAuthority($authority)
@@ -543,7 +543,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Recognized governance framework or system operating with a circumscribed scope in accordance with specified principles, policies, processes or procedures for managing rights, actions, or behaviors of parties or principals relative to resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDomain()
     {
@@ -552,7 +552,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Recognized governance framework or system operating with a circumscribed scope in accordance with specified principles, policies, processes or procedures for managing rights, actions, or behaviors of parties or principals relative to resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $domain
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $domain
      * @return $this
      */
     public function addDomain($domain)
@@ -563,7 +563,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Sites in which the contract is complied with,  exercised, or in force.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSite()
     {
@@ -572,7 +572,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Sites in which the contract is complied with,  exercised, or in force.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $site
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $site
      * @return $this
      */
     public function addSite($site)
@@ -583,7 +583,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying this Contract definition, derivative, or instance in any legal state. Provides additional information about its content. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -592,7 +592,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying this Contract definition, derivative, or instance in any legal state. Provides additional information about its content. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -603,7 +603,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -612,7 +612,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -623,7 +623,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An explanatory or alternate user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSubtitle()
     {
@@ -632,7 +632,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An explanatory or alternate user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $subtitle
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $subtitle
      * @return $this
      */
     public function setSubtitle($subtitle)
@@ -643,7 +643,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getAlias()
     {
@@ -652,7 +652,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $alias
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $alias
      * @return $this
      */
     public function addAlias($alias)
@@ -663,7 +663,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or organization that authored the Contract definition, derivative, or instance in any legal state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -672,7 +672,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or organization that authored the Contract definition, derivative, or instance in any legal state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -683,7 +683,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A selector of legal concerns for this Contract definition, derivative, or instance in any legal state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getScope()
     {
@@ -692,7 +692,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A selector of legal concerns for this Contract definition, derivative, or instance in any legal state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $scope
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $scope
      * @return $this
      */
     public function setScope($scope)
@@ -702,7 +702,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTopicCodeableConcept()
     {
@@ -710,7 +710,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
      * @return $this
      */
     public function setTopicCodeableConcept($topicCodeableConcept)
@@ -720,7 +720,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTopicReference()
     {
@@ -728,7 +728,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $topicReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $topicReference
      * @return $this
      */
     public function setTopicReference($topicReference)
@@ -739,7 +739,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A high-level category for the legal instrument, whether constructed as a Contract definition, derivative, or instance in any legal state.  Provides additional information about its content within the context of the Contract's scope to distinguish the kinds of systems that would be interested in the contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -748,7 +748,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A high-level category for the legal instrument, whether constructed as a Contract definition, derivative, or instance in any legal state.  Provides additional information about its content within the context of the Contract's scope to distinguish the kinds of systems that would be interested in the contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -759,7 +759,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Sub-category for the Contract that distinguishes the kinds of systems that would be interested in the Contract within the context of the Contract's scope.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSubType()
     {
@@ -768,7 +768,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Sub-category for the Contract that distinguishes the kinds of systems that would be interested in the Contract within the context of the Contract's scope.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
      * @return $this
      */
     public function addSubType($subType)
@@ -779,7 +779,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Precusory content developed with a focus and intent of supporting the formation a Contract instance, which may be associated with and transformable into a Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContentDefinition
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContentDefinition
      */
     public function getContentDefinition()
     {
@@ -788,7 +788,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Precusory content developed with a focus and intent of supporting the formation a Contract instance, which may be associated with and transformable into a Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContentDefinition $contentDefinition
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractContentDefinition $contentDefinition
      * @return $this
      */
     public function setContentDefinition($contentDefinition)
@@ -799,7 +799,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * One or more Contract Provisions, which may be related and conveyed as a group, and may contain nested groups.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
      */
     public function getTerm()
     {
@@ -808,7 +808,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * One or more Contract Provisions, which may be related and conveyed as a group, and may contain nested groups.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm $term
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm $term
      * @return $this
      */
     public function addTerm($term)
@@ -819,7 +819,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information that may be needed by/relevant to the performer in their execution of this term action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInfo()
     {
@@ -828,7 +828,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information that may be needed by/relevant to the performer in their execution of this term action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
     public function addSupportingInfo($supportingInfo)
@@ -839,7 +839,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Links to Provenance records for past versions of this Contract definition, derivative, or instance, which identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the Contract.  The Provenance.entity indicates the target that was changed in the update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRelevantHistory()
     {
@@ -848,7 +848,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Links to Provenance records for past versions of this Contract definition, derivative, or instance, which identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the Contract.  The Provenance.entity indicates the target that was changed in the update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
      * @return $this
      */
     public function addRelevantHistory($relevantHistory)
@@ -859,7 +859,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Parties with legal standing in the Contract, including the principal parties, the grantor(s) and grantee(s), which are any person or organization bound by the contract, and any ancillary parties, which facilitate the execution of the contract such as a notary or witness.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSigner[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSigner[]
      */
     public function getSigner()
     {
@@ -868,7 +868,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Parties with legal standing in the Contract, including the principal parties, the grantor(s) and grantee(s), which are any person or organization bound by the contract, and any ancillary parties, which facilitate the execution of the contract such as a notary or witness.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSigner $signer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSigner $signer
      * @return $this
      */
     public function addSigner($signer)
@@ -879,7 +879,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The "patient friendly language" versionof the Contract in whole or in parts. "Patient friendly language" means the representation of the Contract and Contract Provisions in a manner that is readily accessible and understandable by a layperson in accordance with best practices for communication styles that ensure that those agreeing to or signing the Contract understand the roles, actions, obligations, responsibilities, and implication of the agreement.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractFriendly[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractFriendly[]
      */
     public function getFriendly()
     {
@@ -888,7 +888,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The "patient friendly language" versionof the Contract in whole or in parts. "Patient friendly language" means the representation of the Contract and Contract Provisions in a manner that is readily accessible and understandable by a layperson in accordance with best practices for communication styles that ensure that those agreeing to or signing the Contract understand the roles, actions, obligations, responsibilities, and implication of the agreement.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractFriendly $friendly
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractFriendly $friendly
      * @return $this
      */
     public function addFriendly($friendly)
@@ -899,7 +899,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * List of Legal expressions or representations of this Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractLegal[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractLegal[]
      */
     public function getLegal()
     {
@@ -908,7 +908,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * List of Legal expressions or representations of this Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractLegal $legal
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractLegal $legal
      * @return $this
      */
     public function addLegal($legal)
@@ -919,7 +919,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * List of Computable Policy Rule Language Representations of this Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractRule[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractRule[]
      */
     public function getRule()
     {
@@ -928,7 +928,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * List of Computable Policy Rule Language Representations of this Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractRule $rule
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractRule $rule
      * @return $this
      */
     public function addRule($rule)
@@ -938,7 +938,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getLegallyBindingAttachment()
     {
@@ -946,7 +946,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $legallyBindingAttachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $legallyBindingAttachment
      * @return $this
      */
     public function setLegallyBindingAttachment($legallyBindingAttachment)
@@ -956,7 +956,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLegallyBindingReference()
     {
@@ -964,7 +964,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $legallyBindingReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $legallyBindingReference
      * @return $this
      */
     public function setLegallyBindingReference($legallyBindingReference)

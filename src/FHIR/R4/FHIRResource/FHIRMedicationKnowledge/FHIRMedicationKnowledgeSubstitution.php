@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,13 +71,13 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement implements
 {
     /**
      * Specifies the type of substitution allowed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Specifies if regulation allows for changes in the medication when dispensing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $allowed = null;
 
@@ -88,7 +88,7 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement implements
 
     /**
      * Specifies the type of substitution allowed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement implements
 
     /**
      * Specifies the type of substitution allowed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement implements
 
     /**
      * Specifies if regulation allows for changes in the medication when dispensing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAllowed()
     {
@@ -117,7 +117,7 @@ class FHIRMedicationKnowledgeSubstitution extends FHIRBackboneElement implements
 
     /**
      * Specifies if regulation allows for changes in the medication when dispensing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $allowed
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $allowed
      * @return $this
      */
     public function setAllowed($allowed)

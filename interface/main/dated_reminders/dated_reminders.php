@@ -3,21 +3,21 @@
 /**
  * Used for displaying dated reminders.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Craig Bezuidenhout <http://www.tajemo.co.za/>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2012 tajemo.co.za <http://www.tajemo.co.za/>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // removed as jquery is already called in messages page (if you need to use jQuery, uncomment it further down)
 require_once(__DIR__ . '/../../globals.php');
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
@@ -130,7 +130,7 @@ function updateme(id){
   top.restoreSession();
 
   // Send the skip_timeout_reset parameter to not count this as a manual entry in the
-  // timing out mechanism in OpenEMR.
+  // timing out mechanism in DCL.
   $.post("<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/main/dated_reminders/dated_reminders.php",
     {
       drR: id,

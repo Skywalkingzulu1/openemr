@@ -3,20 +3,20 @@
 /**
  * interface/eRxXMLBuilder.php Functions for building Ensora eRx XML.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Sam Likins <sam.likins@wsi-services.com>
  * @author    Ken Chapple <ken@mi-squared.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2015 Sam Likins <sam.likins@wsi-services.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Rx\Ensora\PatientContact;
-use OpenEMR\Rx\Ensora\PatientDiagnosisList;
-use OpenEMR\Services\VersionService;
+use DCL\Core\OEGlobalsBag;
+use DCL\Rx\Ensora\PatientContact;
+use DCL\Rx\Ensora\PatientDiagnosisList;
+use DCL\Services\VersionService;
 
 class eRxXMLBuilder
 {
@@ -103,7 +103,7 @@ class eRxXMLBuilder
     {
         $httpVerifySsl = (bool) (OEGlobalsBag::getInstance()->get('http_verify_ssl') ?? true);
         $curlHandler = curl_init($xml);
-        $sitePath = $this->getGlobals()->getOpenEMRSiteDirectory();
+        $sitePath = $this->getGlobals()->getDCLSiteDirectory();
         $data = ['RxInput' => $xml];
 
         curl_setopt($curlHandler, CURLOPT_URL, $this->getGlobals()->getPath());
@@ -278,7 +278,7 @@ class eRxXMLBuilder
         $element->appendChild($this->createElementTextFieldEmpty('partnerName', $eRxCredentials['0'], xl('Ensora eRx Partner Name')));
         $element->appendChild($this->createElementTextFieldEmpty('name', $eRxCredentials['1'], xl('Ensora eRx Account Name')));
         $element->appendChild($this->createElementTextFieldEmpty('password', $eRxCredentials['2'], xl('Ensora eRx Password')));
-        $element->appendChild($this->createElementText('productName', 'OpenEMR'));
+        $element->appendChild($this->createElementText('productName', 'DCL'));
         $element->appendChild($this->createElementText('productVersion', (new VersionService())->getSoftwareVersion()->full));
 
         return $element;

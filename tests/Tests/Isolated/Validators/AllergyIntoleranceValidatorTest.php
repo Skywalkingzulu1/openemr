@@ -6,17 +6,17 @@
  * Tests AllergyIntoleranceValidator validation logic without database dependencies.
  * Uses mocking to avoid database calls in BaseValidator.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators;
+namespace DCL\Tests\Isolated\Validators;
 
-use OpenEMR\Validators\AllergyIntoleranceValidator;
-use OpenEMR\Validators\BaseValidator;
+use DCL\Validators\AllergyIntoleranceValidator;
+use DCL\Validators\BaseValidator;
 use PHPUnit\Framework\TestCase;
 
 class AllergyIntoleranceValidatorTest extends TestCase

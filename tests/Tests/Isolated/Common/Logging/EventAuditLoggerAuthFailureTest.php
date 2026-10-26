@@ -3,24 +3,24 @@
 /**
  * Isolated tests for EventAuditLogger::logAuthFailure().
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Aanand Sreekumaran Nair Jayakumari
  * @copyright Copyright (c) 2026 Aanand Sreekumaran Nair Jayakumari
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Logging;
+namespace DCL\Tests\Isolated\Common\Logging;
 
 use Lcobucci\Clock\FrozenClock;
-use OpenEMR\Common\Auth\AuthEvent;
-use OpenEMR\Common\Logging\Audit\Event;
-use OpenEMR\Common\Logging\Audit\SinkInterface;
-use OpenEMR\Common\Logging\AuditConfig;
-use OpenEMR\Common\Logging\BreakglassCheckerInterface;
-use OpenEMR\Common\Logging\EventAuditLogger;
+use DCL\Common\Auth\AuthEvent;
+use DCL\Common\Logging\Audit\Event;
+use DCL\Common\Logging\Audit\SinkInterface;
+use DCL\Common\Logging\AuditConfig;
+use DCL\Common\Logging\BreakglassCheckerInterface;
+use DCL\Common\Logging\EventAuditLogger;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

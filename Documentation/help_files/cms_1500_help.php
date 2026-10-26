@@ -3,14 +3,14 @@
 /**
  * CMS 1500 Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -64,7 +64,7 @@ require_once("../../interface/globals.php");
 
                 <p><?php echo xlt("Patient and Insured Information - Boxes 1 - 13 and Physician or Supplier Information - Boxes 14 - 33");?>.</p>
 
-                <p><?php echo xlt("The information provided in the New Encounter Form and Fee Sheet in openEMR is used to generate the paper claim as well as electronic claims");?>.</p>
+                <p><?php echo xlt("The information provided in the New Encounter Form and Fee Sheet in DCL is used to generate the paper claim as well as electronic claims");?>.</p>
 
                 <p><?php echo xlt("Some global parameters on the setup and printing of the generated claims can be set in Administration > Globals > Billing");?>.</p>
 
@@ -109,7 +109,7 @@ require_once("../../interface/globals.php");
             </div>
             <div class= "row" id="add_notes">
                 <h4 class="oe-help-heading"><?php echo xlt("Additional Notes"); ?><a href="#"><i class="fa fa-arrow-circle-up oe-pull-away oe-help-redirect" aria-hidden="true"></i></a></h4>
-                <p><?php echo xlt("Additional Notes field is for local use in openEMR");?>.</p>
+                <p><?php echo xlt("Additional Notes field is for local use in DCL");?>.</p>
 
                 <p><?php echo xlt("Used to enter information that pertains to this particular claim in order to facilitate processing and submitting this claim");?>.</p>
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The interactions of the medicinal product with other medicinal products, or other forms of interactions.
@@ -70,12 +70,12 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRMedicinalProductInteractionInteractant extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $itemReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $itemCodeableConcept = null;
 
@@ -85,7 +85,7 @@ class FHIRMedicinalProductInteractionInteractant extends FHIRBackboneElement imp
     private $_fhirElementName = 'MedicinalProductInteraction.Interactant';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getItemReference()
     {
@@ -93,7 +93,7 @@ class FHIRMedicinalProductInteractionInteractant extends FHIRBackboneElement imp
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $itemReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $itemReference
      * @return $this
      */
     public function setItemReference($itemReference)
@@ -103,7 +103,7 @@ class FHIRMedicinalProductInteractionInteractant extends FHIRBackboneElement imp
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
     {
@@ -111,7 +111,7 @@ class FHIRMedicinalProductInteractionInteractant extends FHIRBackboneElement imp
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
     public function setItemCodeableConcept($itemCodeableConcept)

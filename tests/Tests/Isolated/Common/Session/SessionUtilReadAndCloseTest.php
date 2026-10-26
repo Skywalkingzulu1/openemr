@@ -7,20 +7,20 @@
  * correctly reopen a read-and-close session for writing, perform the operation,
  * and close the session again to release the lock.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Milan Zivkovic <zivkovic.milan@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Common\Session;
+namespace DCL\Tests\Isolated\Common\Session;
 
-use OpenEMR\Common\Session\SessionConfiguration;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
-use OpenEMR\Common\Session\WriteThroughSession;
+use DCL\Common\Session\SessionConfiguration;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
+use DCL\Common\Session\WriteThroughSession;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
@@ -50,7 +50,7 @@ class SessionUtilReadAndCloseTest extends TestCase
 
         // Clear stale session data from the previous test or from the
         // bootstrap (interface/globals.php).  Without this, $_SESSION may
-        // carry keys from the OpenEMR core session into a test's loadSession()
+        // carry keys from the DCL core session into a test's loadSession()
         // call, polluting the test's bag data.
         $_SESSION = [];
 

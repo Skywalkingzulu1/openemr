@@ -1,9 +1,9 @@
 ##
-# SMART-launch smoke (openemr/openemr#14529).
+# SMART-launch smoke (DCL/DCL#14529).
 #
 # Boots ci/smart-launch/compose.yml (flex image + MariaDB + Selenium),
-# stages upstream master of openemr/oe-smart-questionnaire into the
-# openemr container, enables REST + FHIR globals, DCRs a client, and
+# stages upstream master of DCL/oe-smart-questionnaire into the
+# DCL container, enables REST + FHIR globals, DCRs a client, and
 # runs tests/Tests/SmartLaunch/SmartLaunchQuestionnaireTest.php, which
 # drives the full standalone SMART launch via Panther. See
 # ci/smart-launch/run.sh for the orchestrator and the issue body for
@@ -59,7 +59,7 @@ jobs:
     - name: Fix permissions for Docker uid/gid differences
       run: |
         # HACK Docker runs with a different uid/gid than the host.
-        # See openemr/openemr#9233 (same mitigation inferno-test.yml uses).
+        # See DCL/DCL#9233 (same mitigation inferno-test.yml uses).
         sudo chmod -R 0777 .
 
     - name: Install PHP
@@ -121,4 +121,4 @@ jobs:
       working-directory: ci/smart-launch
       run: |
         docker compose -f compose.yml ps || true
-        docker compose -f compose.yml logs openemr selenium || true
+        docker compose -f compose.yml logs DCL selenium || true

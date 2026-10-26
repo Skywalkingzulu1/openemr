@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A medicinal product in a container or package.
@@ -71,73 +71,73 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 {
     /**
      * Including possibly Data Carrier Identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The physical type of the container of the medicine.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The quantity of this package in the medicinal product, at the current level of packaging. The outermost is always 1.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * Material type of the package item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $material = [];
 
     /**
      * A possible alternate material for the packaging.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $alternateMaterial = [];
 
     /**
      * A device accompanying a medicinal product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $device = [];
 
     /**
      * The manufactured item as contained in the packaged medicinal product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $manufacturedItem = [];
 
     /**
      * Allows containers within containers.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
      */
     public $packageItem = [];
 
     /**
      * Dimensions, color etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProdCharacteristic
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProdCharacteristic
      */
     public $physicalCharacteristics = null;
 
     /**
      * Other codeable characteristics.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $otherCharacteristics = [];
 
     /**
      * Shelf Life and storage information.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProductShelfLife[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProductShelfLife[]
      */
     public $shelfLifeStorage = [];
 
     /**
      * Manufacturer of this Package Item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $manufacturer = [];
 
@@ -148,7 +148,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Including possibly Data Carrier Identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -157,7 +157,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Including possibly Data Carrier Identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -168,7 +168,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * The physical type of the container of the medicine.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -177,7 +177,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * The physical type of the container of the medicine.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -188,7 +188,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * The quantity of this package in the medicinal product, at the current level of packaging. The outermost is always 1.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -197,7 +197,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * The quantity of this package in the medicinal product, at the current level of packaging. The outermost is always 1.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -208,7 +208,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Material type of the package item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getMaterial()
     {
@@ -217,7 +217,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Material type of the package item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $material
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $material
      * @return $this
      */
     public function addMaterial($material)
@@ -228,7 +228,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * A possible alternate material for the packaging.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAlternateMaterial()
     {
@@ -237,7 +237,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * A possible alternate material for the packaging.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $alternateMaterial
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $alternateMaterial
      * @return $this
      */
     public function addAlternateMaterial($alternateMaterial)
@@ -248,7 +248,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * A device accompanying a medicinal product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDevice()
     {
@@ -257,7 +257,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * A device accompanying a medicinal product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $device
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function addDevice($device)
@@ -268,7 +268,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * The manufactured item as contained in the packaged medicinal product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getManufacturedItem()
     {
@@ -277,7 +277,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * The manufactured item as contained in the packaged medicinal product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturedItem
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturedItem
      * @return $this
      */
     public function addManufacturedItem($manufacturedItem)
@@ -288,7 +288,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Allows containers within containers.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
      */
     public function getPackageItem()
     {
@@ -297,7 +297,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Allows containers within containers.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem $packageItem
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem $packageItem
      * @return $this
      */
     public function addPackageItem($packageItem)
@@ -308,7 +308,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Dimensions, color etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProdCharacteristic
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProdCharacteristic
      */
     public function getPhysicalCharacteristics()
     {
@@ -317,7 +317,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Dimensions, color etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProdCharacteristic $physicalCharacteristics
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProdCharacteristic $physicalCharacteristics
      * @return $this
      */
     public function setPhysicalCharacteristics($physicalCharacteristics)
@@ -328,7 +328,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Other codeable characteristics.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getOtherCharacteristics()
     {
@@ -337,7 +337,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Other codeable characteristics.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
      * @return $this
      */
     public function addOtherCharacteristics($otherCharacteristics)
@@ -348,7 +348,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Shelf Life and storage information.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProductShelfLife[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProductShelfLife[]
      */
     public function getShelfLifeStorage()
     {
@@ -357,7 +357,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Shelf Life and storage information.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProductShelfLife $shelfLifeStorage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProductShelfLife $shelfLifeStorage
      * @return $this
      */
     public function addShelfLifeStorage($shelfLifeStorage)
@@ -368,7 +368,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Manufacturer of this Package Item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getManufacturer()
     {
@@ -377,7 +377,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement implem
 
     /**
      * Manufacturer of this Package Item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $manufacturer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
     public function addManufacturer($manufacturer)

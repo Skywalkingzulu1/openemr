@@ -2,23 +2,23 @@
 
 /*
  * FhirObservationPatientServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\Observation;
+namespace DCL\Tests\Services\FHIR\Observation;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\Services\EmployerService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationEmployerService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\Services\EmployerService;
+use DCL\Services\FHIR\Observation\FhirObservationEmployerService;
+use DCL\Services\PatientService;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -291,11 +291,11 @@ class FhirObservationEmployerServiceTest extends TestCase
 
 
     /**
-     * Test parseOpenEMRRecord method directly
+     * Test parseDCLRecord method directly
      */
-    public function testParseOpenEMRRecordMethod(): void
+    public function testParseDCLRecordMethod(): void
     {
-        // AI GENERATED CODE - START: Test parseOpenEMRRecord method directly
+        // AI GENERATED CODE - START: Test parseDCLRecord method directly
 
         // Create test data record for occupation with components
         $occupationRecord = [
@@ -321,8 +321,8 @@ class FhirObservationEmployerServiceTest extends TestCase
             ]
         ];
 
-        // Test parseOpenEMRRecord method for occupation
-        $occupationObs = $this->fhirService->parseOpenEMRRecord($occupationRecord);
+        // Test parseDCLRecord method for occupation
+        $occupationObs = $this->fhirService->parseDCLRecord($occupationRecord);
         $this->assertInstanceOf(FHIRObservation::class, $occupationObs, "Should return FHIRObservation instance for occupation");
 
         // Validate occupation observation

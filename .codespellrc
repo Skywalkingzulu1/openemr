@@ -1,5 +1,5 @@
 [codespell]
-# OpenEMR Codespell Configuration
+# DCL Codespell Configuration
 # Run locally: codespell
 # Same command runs in CI via .github/workflows/spellcheck.yml
 

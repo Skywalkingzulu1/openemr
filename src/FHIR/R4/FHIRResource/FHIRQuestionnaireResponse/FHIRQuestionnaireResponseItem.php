@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.
@@ -71,31 +71,31 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 {
     /**
      * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $linkId = null;
 
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $definition = null;
 
     /**
      * Text that is displayed above the contents of the group or as the text of the question being answered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * The respondent's answer(s) to the question.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
      */
     public $answer = [];
 
     /**
      * Questions or sub-groups nested beneath a question or group.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public $item = [];
 
@@ -106,7 +106,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLinkId()
     {
@@ -115,7 +115,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $linkId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $linkId
      * @return $this
      */
     public function setLinkId($linkId)
@@ -126,7 +126,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getDefinition()
     {
@@ -135,7 +135,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $definition
      * @return $this
      */
     public function setDefinition($definition)
@@ -146,7 +146,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * Text that is displayed above the contents of the group or as the text of the question being answered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -155,7 +155,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * Text that is displayed above the contents of the group or as the text of the question being answered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -166,7 +166,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * The respondent's answer(s) to the question.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
      */
     public function getAnswer()
     {
@@ -175,7 +175,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * The respondent's answer(s) to the question.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer $answer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer $answer
      * @return $this
      */
     public function addAnswer($answer)
@@ -186,7 +186,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * Questions or sub-groups nested beneath a question or group.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public function getItem()
     {
@@ -195,7 +195,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
 
     /**
      * Questions or sub-groups nested beneath a question or group.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
      * @return $this
      */
     public function addItem($item)

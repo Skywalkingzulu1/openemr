@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient;
-use OpenEMR\Services\FHIR\FhirPatientService;
-use OpenEMR\Services\FHIR\Serialization\FhirPatientSerializer;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPatient;
+use DCL\Services\FHIR\FhirPatientService;
+use DCL\Services\FHIR\Serialization\FhirPatientSerializer;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -13,11 +13,11 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR Patient Service Crud Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 

@@ -7,23 +7,23 @@
  * (globals.php, session creation, OAuth keys) so the request-handling
  * logic can be tested without Docker or a database.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Subscriber;
+namespace DCL\Tests\Isolated\RestControllers\Subscriber;
 
-use OpenEMR\Common\Auth\OAuth2KeyException;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
-use OpenEMR\Common\Session\WriteThroughSession;
-use OpenEMR\RestControllers\Subscriber\SiteSetupListener;
+use DCL\Common\Auth\OAuth2KeyException;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
+use DCL\Common\Session\WriteThroughSession;
+use DCL\RestControllers\Subscriber\SiteSetupListener;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -272,10 +272,10 @@ class SiteSetupListenerTest extends TestCase
         // checkForOauth2Request checks basePath ending in "/oauth2"
         // Symfony needs SCRIPT_NAME + SCRIPT_FILENAME to compute basePath
         $event = $this->createRequestEvent(
-            '/openemr/oauth2/default/token',
+            '/DCL/oauth2/default/token',
             server: [
-                'SCRIPT_NAME' => '/openemr/oauth2/index.php',
-                'SCRIPT_FILENAME' => '/var/www/openemr/oauth2/index.php',
+                'SCRIPT_NAME' => '/DCL/oauth2/index.php',
+                'SCRIPT_FILENAME' => '/var/www/DCL/oauth2/index.php',
             ]
         );
 

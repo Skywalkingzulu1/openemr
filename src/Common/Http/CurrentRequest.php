@@ -3,21 +3,21 @@
 /**
  * Process-wide holder for the request being served.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Http;
+namespace DCL\Common\Http;
 
 /**
  * Holds the one request object for the current PHP process.
  *
- * OpenEMR's legacy entry points have no constructor to inject a request into,
+ * DCL's legacy entry points have no constructor to inject a request into,
  * so before this existed each script called
  * {@see HttpRestRequest::createFromGlobals()} for itself. That is worse than
  * merely wasteful: `createFromGlobals()` rewrites `$_GET['_REWRITE_COMMAND']`
@@ -33,7 +33,7 @@ namespace OpenEMR\Common\Http;
  *
  * This is a transitional seam for procedural code, not a target architecture.
  * Classes that can accept a request through their constructor should do that
- * instead — see the patient summary cards in {@see \OpenEMR\Patient\Cards} for
+ * instead — see the patient summary cards in {@see \DCL\Patient\Cards} for
  * the shape to copy.
  */
 final class CurrentRequest

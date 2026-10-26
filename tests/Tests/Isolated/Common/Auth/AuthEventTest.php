@@ -3,18 +3,18 @@
 /**
  * Isolated tests for AuthEvent value object.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Aanand Sreekumaran Nair Jayakumari
  * @copyright Copyright (c) 2026 Aanand Sreekumaran Nair Jayakumari
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Auth;
+namespace DCL\Tests\Isolated\Common\Auth;
 
-use OpenEMR\Common\Auth\AuthEvent;
+use DCL\Common\Auth\AuthEvent;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

@@ -14,7 +14,7 @@
  * of the License, or (at your option) any later version.
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 /**
  * Smarty {assetsTemplate} function plugin.
@@ -23,7 +23,7 @@ use OpenEMR\Core\Header;
  *
  * Type:     function<br />
  * Name:     assetsTemplate<br />
- * Purpose:  assetsTemplate in OpenEMR - Smarty templates<br />
+ * Purpose:  assetsTemplate in DCL - Smarty templates<br />
  *
  * @param array $params
  * @param mixed $smarty

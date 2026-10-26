@@ -2,25 +2,25 @@
 
  /**
   *
-  * @package OpenEMR
-  * @link    https://www.open-emr.org
+  * @package DCL
+  * @link    https://www.dcl.org
   *
   * @author    Brad Sharp <brad.sharp@claimrev.com>
   * @copyright Copyright (c) 2022-2025 Brad Sharp <brad.sharp@claimrev.com>
-  * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+  * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
   */
 
-namespace OpenEMR\Modules\Dorn;
+namespace DCL\Modules\Dorn;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 /**
- * @var \OpenEMR\Core\ModulesClassLoader $classLoader
+ * @var \DCL\Core\ModulesClassLoader $classLoader
  */
-$classLoader->registerNamespaceIfNotExists('OpenEMR\\Modules\\Dorn\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
+$classLoader->registerNamespaceIfNotExists('DCL\\Modules\\Dorn\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
 
 /**
- * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the OpenEMR module loader;
+ * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the DCL module loader;
  */
 
 $bootstrap = new Bootstrap($eventDispatcher, OEGlobalsBag::getInstance()->getKernel());

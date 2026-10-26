@@ -1,23 +1,23 @@
 <?php
 
 /**
- * TemplatePageEvent class is fired from pages inside OpenEMR and serves as a base class for a variety of system page
+ * TemplatePageEvent class is fired from pages inside DCL and serves as a base class for a variety of system page
  * rendering events.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Robert Down <robertdown@live.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2023 Providence Healthtech
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Core;
+namespace DCL\Events\Core;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

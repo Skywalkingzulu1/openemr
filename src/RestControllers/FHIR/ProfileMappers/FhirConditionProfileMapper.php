@@ -2,18 +2,18 @@
 
 /*
  * FhirConditionProfileMapper.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR\ProfileMappers;
+namespace DCL\RestControllers\FHIR\ProfileMappers;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\Services\FHIR\UtilsService;
 
 // TODO: @adunsulag after playing around with the profiling logic, it seems like this class is not needed
 class FhirConditionProfileMapper

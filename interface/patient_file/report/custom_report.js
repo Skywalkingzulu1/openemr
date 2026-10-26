@@ -13,15 +13,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @author  Ken Chapple <ken@mi-squared.com>
  * @author  Tony McCormick <tony@mi-squared.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 // Search & highlight backed by library/js/searchHighlight.js
-// (window.OpenEMRSearchHighlight). The previous SearchHighlight.js jQuery
+// (window.DCLSearchHighlight). The previous SearchHighlight.js jQuery
 // plugin and the hand-rolled mark_hilight() regex have been replaced by a
 // single DOM-walking module that produces the same <mark class="hilite">
 // output.
@@ -34,7 +34,7 @@ function mark_hilight(form_id, form_dir, keys, case_sensitive) { // Adds <mark c
     return;
   }
   var target = '#search_div_' + form_id + '_' + form_dir;
-  var inserted = window.OpenEMRSearchHighlight.search(target, trimmed, {
+  var inserted = window.DCLSearchHighlight.search(target, trimmed, {
     exact: 'partial',
     caseSensitive: case_sensitive === true || case_sensitive === 'true',
     className: 'hilite',
@@ -91,9 +91,9 @@ function find_all(){ // for each report the function mark_hilight() is called
 
 function remove_mark_all(){ // clears previous search results if exists
   $('.report_search_div').each(function(){
-    if (window.OpenEMRSearchHighlight) {
-      window.OpenEMRSearchHighlight.unhighlight(this, 'hilite');
-      window.OpenEMRSearchHighlight.unhighlight(this, 'hilite2');
+    if (window.DCLSearchHighlight) {
+      window.DCLSearchHighlight.unhighlight(this, 'hilite');
+      window.DCLSearchHighlight.unhighlight(this, 'hilite2');
     }
   });
   res_id = 0;

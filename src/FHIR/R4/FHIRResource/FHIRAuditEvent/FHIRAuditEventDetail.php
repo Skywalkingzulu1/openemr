@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAuditEvent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -71,17 +71,17 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * The type of extra detail provided in the value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $valueBase64Binary = null;
 
@@ -92,7 +92,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of extra detail provided in the value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getType()
     {
@@ -101,7 +101,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of extra detail provided in the value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $type
      * @return $this
      */
     public function setType($type)
@@ -111,7 +111,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -119,7 +119,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -129,7 +129,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getValueBase64Binary()
     {
@@ -137,7 +137,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @return $this
      */
     public function setValueBase64Binary($valueBase64Binary)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDevice;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDevice;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDevice;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.
@@ -71,7 +71,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $deviceIdentifier = null;
 
@@ -85,31 +85,31 @@ http://hl7.org/fhir/NamingSystem/hibcc-dI,
 http://hl7.org/fhir/NamingSystem/iccbba-blood-di,
 4) ICCBA for other devices:
 http://hl7.org/fhir/NamingSystem/iccbba-other-di.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $issuer = null;
 
     /**
      * The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $jurisdiction = null;
 
     /**
      * The full UDI carrier of the Automatic Identification and Data Capture (AIDC) technology representation of the barcode string as printed on the packaging of the device - e.g., a barcode or RFID.   Because of limitations on character sets in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be base64 encoded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $carrierAIDC = null;
 
     /**
      * The full UDI carrier as the human readable form (HRF) representation of the barcode string as printed on the packaging of the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $carrierHRF = null;
 
     /**
      * A coded entry to indicate how the data was entered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUDIEntryType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUDIEntryType
      */
     public $entryType = null;
 
@@ -120,7 +120,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDeviceIdentifier()
     {
@@ -129,7 +129,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $deviceIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $deviceIdentifier
      * @return $this
      */
     public function setDeviceIdentifier($deviceIdentifier)
@@ -148,7 +148,7 @@ http://hl7.org/fhir/NamingSystem/hibcc-dI,
 http://hl7.org/fhir/NamingSystem/iccbba-blood-di,
 4) ICCBA for other devices:
 http://hl7.org/fhir/NamingSystem/iccbba-other-di.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getIssuer()
     {
@@ -165,7 +165,7 @@ http://hl7.org/fhir/NamingSystem/hibcc-dI,
 http://hl7.org/fhir/NamingSystem/iccbba-blood-di,
 4) ICCBA for other devices:
 http://hl7.org/fhir/NamingSystem/iccbba-other-di.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $issuer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $issuer
      * @return $this
      */
     public function setIssuer($issuer)
@@ -176,7 +176,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getJurisdiction()
     {
@@ -185,7 +185,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $jurisdiction
      * @return $this
      */
     public function setJurisdiction($jurisdiction)
@@ -196,7 +196,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The full UDI carrier of the Automatic Identification and Data Capture (AIDC) technology representation of the barcode string as printed on the packaging of the device - e.g., a barcode or RFID.   Because of limitations on character sets in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be base64 encoded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getCarrierAIDC()
     {
@@ -205,7 +205,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The full UDI carrier of the Automatic Identification and Data Capture (AIDC) technology representation of the barcode string as printed on the packaging of the device - e.g., a barcode or RFID.   Because of limitations on character sets in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be base64 encoded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $carrierAIDC
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $carrierAIDC
      * @return $this
      */
     public function setCarrierAIDC($carrierAIDC)
@@ -216,7 +216,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The full UDI carrier as the human readable form (HRF) representation of the barcode string as printed on the packaging of the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCarrierHRF()
     {
@@ -225,7 +225,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * The full UDI carrier as the human readable form (HRF) representation of the barcode string as printed on the packaging of the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $carrierHRF
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $carrierHRF
      * @return $this
      */
     public function setCarrierHRF($carrierHRF)
@@ -236,7 +236,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * A coded entry to indicate how the data was entered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUDIEntryType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUDIEntryType
      */
     public function getEntryType()
     {
@@ -245,7 +245,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
 
     /**
      * A coded entry to indicate how the data was entered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUDIEntryType $entryType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUDIEntryType $entryType
      * @return $this
      */
     public function setEntryType($entryType)

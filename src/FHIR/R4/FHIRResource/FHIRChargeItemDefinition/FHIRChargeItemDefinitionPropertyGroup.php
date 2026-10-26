@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The ChargeItemDefinition resource provides the properties that apply to the (billing) codes necessary to calculate costs and prices. The properties may differ largely depending on type and realm, therefore this resource gives only a rough structure and requires profiling for each type of billing code system.
@@ -71,13 +71,13 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement implemen
 {
     /**
      * Expressions that describe applicability criteria for the priceComponent.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
      */
     public $applicability = [];
 
     /**
      * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the prices have been calculated.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent[]
      */
     public $priceComponent = [];
 
@@ -88,7 +88,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement implemen
 
     /**
      * Expressions that describe applicability criteria for the priceComponent.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
      */
     public function getApplicability()
     {
@@ -97,7 +97,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement implemen
 
     /**
      * Expressions that describe applicability criteria for the priceComponent.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $applicability
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability $applicability
      * @return $this
      */
     public function addApplicability($applicability)
@@ -108,7 +108,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement implemen
 
     /**
      * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the prices have been calculated.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent[]
      */
     public function getPriceComponent()
     {
@@ -117,7 +117,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement implemen
 
     /**
      * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the prices have been calculated.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent $priceComponent
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent $priceComponent
      * @return $this
      */
     public function addPriceComponent($priceComponent)

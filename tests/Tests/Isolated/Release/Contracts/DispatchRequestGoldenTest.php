@@ -12,18 +12,18 @@
  * caught it at dispatch time (which is what happened with the
  * release-targets-changed event pre-#12713).
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release\Contracts;
+namespace DCL\Tests\Isolated\Release\Contracts;
 
-use OpenEMR\Release\DispatchRequest;
+use DCL\Release\DispatchRequest;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -38,39 +38,39 @@ final class DispatchRequestGoldenTest extends TestCase
      */
     public static function goldenEnvelopes(): iterable
     {
-        yield 'openemr-rel-cut' => [
+        yield 'DCL-rel-cut' => [
             'good-rel-cut.json',
             new DispatchRequest(
                 event: DispatchRequest::EVENT_REL_CUT,
-                repo: 'openemr/openemr',
+                repo: 'DCL/DCL',
                 sha: '0123456789abcdef0123456789abcdef01234567',
-                actor: 'openemr-release-bot',
+                actor: 'DCL-release-bot',
                 dispatchedAt: '2026-04-29T12:00:00Z',
                 appToken: 'tok',
                 data: ['branch' => 'rel-820', 'version' => '8.2.0', 'prev_release' => '8.0.0'],
             ),
         ];
 
-        yield 'openemr-rel-update' => [
+        yield 'DCL-rel-update' => [
             'good-rel-update.json',
             new DispatchRequest(
                 event: DispatchRequest::EVENT_REL_UPDATE,
-                repo: 'openemr/openemr',
+                repo: 'DCL/DCL',
                 sha: 'fedcba9876543210fedcba9876543210fedcba98',
-                actor: 'openemr-release-bot',
+                actor: 'DCL-release-bot',
                 dispatchedAt: '2026-04-29T12:15:30Z',
                 appToken: 'tok',
                 data: ['branch' => 'rel-820', 'version' => '8.2.0', 'prev_release' => '8.0.0'],
             ),
         ];
 
-        yield 'openemr-tag' => [
+        yield 'DCL-tag' => [
             'good-tag.json',
             new DispatchRequest(
                 event: DispatchRequest::EVENT_TAG,
-                repo: 'openemr/openemr',
+                repo: 'DCL/DCL',
                 sha: 'abcdef0123456789abcdef0123456789abcdef01',
-                actor: 'openemr-release-bot',
+                actor: 'DCL-release-bot',
                 dispatchedAt: '2026-04-29T12:30:00Z',
                 appToken: 'tok',
                 data: [
@@ -82,13 +82,13 @@ final class DispatchRequestGoldenTest extends TestCase
             ),
         ];
 
-        yield 'openemr-tag (test)' => [
+        yield 'DCL-tag (test)' => [
             'good-tag-test.json',
             new DispatchRequest(
                 event: DispatchRequest::EVENT_TAG,
-                repo: 'openemr/openemr',
+                repo: 'DCL/DCL',
                 sha: 'abcdef0123456789abcdef0123456789abcdef01',
-                actor: 'openemr-release-bot',
+                actor: 'DCL-release-bot',
                 dispatchedAt: '2026-04-29T12:30:00Z',
                 appToken: 'tok',
                 data: [
@@ -100,19 +100,19 @@ final class DispatchRequestGoldenTest extends TestCase
             ),
         ];
 
-        yield 'openemr-docs-binaries' => [
+        yield 'DCL-docs-binaries' => [
             'good-docs-binaries.json',
             new DispatchRequest(
                 event: DispatchRequest::EVENT_DOCS_BINARIES,
-                repo: 'openemr/website-openemr',
+                repo: 'DCL/website-DCL',
                 sha: 'deadbeefdeadbeefdeadbeefdeadbeefdeadbeef',
-                actor: 'openemr-release-bot',
+                actor: 'DCL-release-bot',
                 dispatchedAt: '2026-04-29T13:00:00Z',
                 appToken: 'tok',
                 data: [
                     'version' => '8.2.0',
                     'branch' => 'rel-820',
-                    'files' => ['openemr-8.2.0-ehi.tar.gz', 'openemr-8.2.0-b10.tar.gz'],
+                    'files' => ['DCL-8.2.0-ehi.tar.gz', 'DCL-8.2.0-b10.tar.gz'],
                 ],
             ),
         ];
@@ -121,9 +121,9 @@ final class DispatchRequestGoldenTest extends TestCase
             'good-release-targets-changed.json',
             new DispatchRequest(
                 event: DispatchRequest::EVENT_RELEASE_TARGETS_CHANGED,
-                repo: 'openemr/openemr',
+                repo: 'DCL/DCL',
                 sha: 'cafebabecafebabecafebabecafebabecafebabe',
-                actor: 'openemr-release-bot',
+                actor: 'DCL-release-bot',
                 dispatchedAt: '2026-04-29T13:30:00Z',
                 appToken: 'tok',
                 data: [],

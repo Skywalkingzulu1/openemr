@@ -3,18 +3,18 @@
 /**
  * NetworkUtils Isolated Test
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Utils;
+namespace DCL\Tests\Isolated\Common\Utils;
 
-use OpenEMR\Common\Utils\NetworkUtils;
+use DCL\Common\Utils\NetworkUtils;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -79,7 +79,7 @@ class NetworkUtilsTest extends TestCase
     {
         yield 'https example.com' => ['https://example.com'];
         yield 'http 8.8.8.8' => ['http://8.8.8.8'];
-        yield 'https with path' => ['https://api.openemr.org/v1/patients'];
+        yield 'https with path' => ['https://api.dcl.org/v1/patients'];
     }
 
     #[DataProvider('loopbackAddressProvider')]

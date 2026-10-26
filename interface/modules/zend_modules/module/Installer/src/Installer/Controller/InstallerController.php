@@ -3,15 +3,15 @@
 /**
  * interface/modules/zend_modules/module/Installer/src/Installer/Controller/InstallerController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T.Paul <jacob@zhservices.com>
  * @author    Vipin Kumar <vipink@zhservices.com>
  * @author    Remesh Babu S <remesh@zhservices.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020-2024 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Installer\Controller;
@@ -22,13 +22,13 @@ use Installer\Model\InstModuleTable;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AccessDeniedResponseFormat;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Core\ModulesClassLoader;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\SQLUpgradeService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AccessDeniedResponseFormat;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Core\ModulesClassLoader;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\SQLUpgradeService;
 
 class InstallerController extends AbstractActionController
 {
@@ -78,7 +78,7 @@ class InstallerController extends AbstractActionController
      * Scan the zend and custom module directories on disk and register any
      * module that does not yet have a row in the modules table. Invoked from
      * indexAction() when the Manage Modules UI loads, and from the console
-     * (openemr:zfc-module --modaction=discover) so new modules can be picked
+     * (DCL:zfc-module --modaction=discover) so new modules can be picked
      * up without visiting the UI first.
      *
      * @return string[] Directory names of modules newly registered by this scan
@@ -162,7 +162,7 @@ class InstallerController extends AbstractActionController
             if ($request->getPost('mtype') == 'zend') {
                 // TODO: We want to be able to load the modules
                 // from the database.. however, this can be fairly slow so we might want to do some kind of APC caching of the module
-                // list that is loaded using the OpenEMR db connector and not the zend db connector, cache the modules, and then
+                // list that is loaded using the DCL db connector and not the zend db connector, cache the modules, and then
                 // we can filter / update that list.  We'll have to inject the unloaded module list into the installer but that is fine.
                 $rel_path = "public/" . $request->getPost('mod_name') . "/";
 

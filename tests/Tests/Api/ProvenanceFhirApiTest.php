@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\RestControllers\FHIR\FhirPatientRestController;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
+use DCL\RestControllers\FHIR\FhirPatientRestController;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,9 +18,9 @@ class ProvenanceFhirApiTest extends TestCase
     private FhirPatientRestController $fhirPatientController;
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
     }
 
     public function tearDown(): void

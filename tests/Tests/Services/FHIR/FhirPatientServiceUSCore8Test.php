@@ -6,21 +6,21 @@
  * Tests compliance with US Core 8.0.0 Patient Profile:
  * http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @copyright Elements marked with AI GENERATED CODE - are in the public domain
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirPatientService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPatient;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirPatientService;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -94,7 +94,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testUSCoreProfileMetadata(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         // Test meta profile is set correctly
         $this->assertInstanceOf(FHIRPatient::class, $patient);
@@ -109,7 +109,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredIdentifier(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         // US Core requires at least one identifier
         $identifiers = $patient->getIdentifier();
@@ -125,7 +125,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredName(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         // US Core requires at least one name
         $names = $patient->getName();
@@ -145,7 +145,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredGender(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         // US Core requires gender
         $gender = $patient->getGender();
@@ -160,7 +160,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testBirthSexExtension(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         $birthSexExtension = $this->findExtensionByUrl(
             $patient,
@@ -189,7 +189,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
             , 'UNK' => 'unknown', 'asked-declined' => 'asked-declined'];
         foreach ($options as $optionId => $code) {
             $this->compliantPatientData['sex_identified'] = $optionId;
-            $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+            $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
             $sexExtension = $this->findExtensionByUrl(
                 $patient,
@@ -223,7 +223,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testTribalAffiliationExtension(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         $tribalExtensions = $this->findAllExtensionsByUrl(
             $patient,
@@ -252,14 +252,14 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testInterpreterNeededExtension(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         $options = ['no' => '373067005', 'yes' => '373066001', 'asked-unknown' => 'asked-unknown'
             , 'unknown' => 'unknown'];
         $validCodes = array_values($options);
         foreach ($options as $optionId => $code) {
             $this->compliantPatientData['interpreter_needed'] = $optionId;
-            $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+            $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
             $extension = $this->findExtensionByUrl(
                 $patient,
@@ -297,7 +297,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
         $deceasedPatientData = $this->compliantPatientData;
         $deceasedPatientData['deceased_date'] = '2023-06-15 14:30:00';
 
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($deceasedPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($deceasedPatientData);
 
         $deceasedDateTime = $patient->getDeceasedDateTime();
         $this->assertNotNull($deceasedDateTime, 'Deceased patient should have deceasedDateTime');
@@ -311,7 +311,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testSupportedFields(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
 
         // US Core "MUST SUPPORT" fields
 
@@ -345,7 +345,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
             'period_end' => '2022-12-31'
         ]];
 
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($patientDataWithPeriod);
+        $patient = $this->fhirPatientService->parseDCLRecord($patientDataWithPeriod);
 
         $addresses = $patient->getAddress();
         $this->assertNotEmpty($addresses);
@@ -360,7 +360,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testMinimalUSCoreCompliance(): void
     {
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->minimalPatientData);
+        $patient = $this->fhirPatientService->parseDCLRecord($this->minimalPatientData);
 
         // Test minimal required fields are present
         $this->assertNotEmpty($patient->getIdentifier(), 'Minimal patient must have identifier');
@@ -392,8 +392,8 @@ class FhirPatientServiceUSCore8Test extends TestCase
     #[Test]
     public function testFHIRResourceParsing(): void
     {
-        // Test parsing FHIR resource back to OpenEMR format
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        // Test parsing FHIR resource back to DCL format
+        $patient = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $parsedData = $this->fhirPatientService->parseFhirResource($patient);
 
         // Test critical mappings
@@ -449,7 +449,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
         // Note: The actual validation behavior depends on your implementation
         // You might want to test that warnings are generated or data-absent-reason extensions are added
 
-        $patient = $this->fhirPatientService->parseOpenEMRRecord($invalidData);
+        $patient = $this->fhirPatientService->parseDCLRecord($invalidData);
 
         // The resource should still be created but should handle missing required elements
         $this->assertInstanceOf(FHIRPatient::class, $patient);
@@ -489,7 +489,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     public function testHighestCompatibleVersion311_HasCorrectProfiles(): void
     {
         $this->fhirPatientService->setHighestCompatibleUSCoreProfileVersion(FhirPatientService::PROFILE_VERSION_3_1_1);
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $profiles = $parsedResource->getMeta()->getProfile();
         $this->assertCount(2, $profiles);
         $supportedVersions = FhirPatientService::PROFILE_VERSIONS_V1;
@@ -504,7 +504,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     public function testHighestCompatibleVersion7_0_HasCorrectProfiles(): void
     {
         $this->fhirPatientService->setHighestCompatibleUSCoreProfileVersion(FhirPatientService::PROFILE_VERSION_7_0_0);
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $profiles = $parsedResource->getMeta()->getProfile();
         $this->assertCount(3, $profiles);
         $supportedVersions = array_merge(FhirPatientService::PROFILE_VERSIONS_V1, [FhirPatientService::PROFILE_VERSION_7_0_0]);
@@ -520,7 +520,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     public function testHighestCompatibleVersion8_0_HasCorrectProfiles(): void
     {
         $this->fhirPatientService->setHighestCompatibleUSCoreProfileVersion(FhirPatientService::PROFILE_VERSION_8_0_0);
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $profiles = $parsedResource->getMeta()->getProfile();
         $this->assertCount(3, $profiles);
         $supportedVersions = array_merge(FhirPatientService::PROFILE_VERSIONS_V1, [FhirPatientService::PROFILE_VERSION_8_0_0]);
@@ -539,7 +539,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     public function testHighestCompatibleVersion7_0_HasCorrectSexExtension(): void
     {
         $this->fhirPatientService->setHighestCompatibleUSCoreProfileVersion(FhirPatientService::PROFILE_VERSION_7_0_0);
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $sexExtension = $this->findExtensionByUrl(
             $parsedResource,
             'http://hl7.org/fhir/us/core/StructureDefinition/us-core-sex'
@@ -552,7 +552,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
         $this->assertEquals('248153007', (string)$sexExtension->getValueCode(), "Sex code must have correct coding for Male for version 7.0.0");
 
         $this->compliantPatientData['sex_identified'] = 'Female';
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $sexExtension = $this->findExtensionByUrl(
             $parsedResource,
             'http://hl7.org/fhir/us/core/StructureDefinition/us-core-sex'
@@ -567,7 +567,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     public function testHighestCompatibleVersion311_HasCorrectSexExtension(): void
     {
         $this->fhirPatientService->setHighestCompatibleUSCoreProfileVersion(FhirPatientService::PROFILE_VERSION_3_1_1);
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $sexExtension = $this->findExtensionByUrl(
             $parsedResource,
             'http://hl7.org/fhir/us/core/StructureDefinition/us-core-sex'
@@ -580,7 +580,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
         $this->assertEquals('248153007', (string)$sexExtension->getValueCode(), "Sex code must have correct coding for Male for version 3.1.1");
 
         $this->compliantPatientData['sex_identified'] = 'Female';
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $sexExtension = $this->findExtensionByUrl(
             $parsedResource,
             'http://hl7.org/fhir/us/core/StructureDefinition/us-core-sex'
@@ -595,7 +595,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
     public function testHighestCompatibleVersion8_0_HasCorrectSexExtension(): void
     {
         $this->fhirPatientService->setHighestCompatibleUSCoreProfileVersion(FhirPatientService::PROFILE_VERSION_8_0_0);
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $sexExtension = $this->findExtensionByUrl(
             $parsedResource,
             'http://hl7.org/fhir/us/core/StructureDefinition/us-core-sex'
@@ -612,7 +612,7 @@ class FhirPatientServiceUSCore8Test extends TestCase
         $this->assertNull($sexExtension->getValueCode(), "Sex extension should NOT populate valueCode for version 8.0.0");
 
         $this->compliantPatientData['sex_identified'] = 'Female';
-        $parsedResource = $this->fhirPatientService->parseOpenEMRRecord($this->compliantPatientData);
+        $parsedResource = $this->fhirPatientService->parseDCLRecord($this->compliantPatientData);
         $sexExtension = $this->findExtensionByUrl(
             $parsedResource,
             'http://hl7.org/fhir/us/core/StructureDefinition/us-core-sex'

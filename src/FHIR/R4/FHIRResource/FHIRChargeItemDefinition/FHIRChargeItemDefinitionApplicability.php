@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItemDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The ChargeItemDefinition resource provides the properties that apply to the (billing) codes necessary to calculate costs and prices. The properties may differ largely depending on type and realm, therefore this resource gives only a rough structure and requires profiling for each type of billing code system.
@@ -71,19 +71,19 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement implemen
 {
     /**
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The media type of the language for the expression, e.g. "text/cql" for Clinical Query Language expressions or "text/fhirpath" for FHIRPath expressions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $language = null;
 
     /**
      * An expression that returns true or false, indicating whether the condition is satisfied. When using FHIRPath expressions, the %context environment variable must be replaced at runtime with the ChargeItem resource to which this definition is applied.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
@@ -94,7 +94,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement implemen
 
     /**
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -103,7 +103,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement implemen
 
     /**
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -114,7 +114,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement implemen
 
     /**
      * The media type of the language for the expression, e.g. "text/cql" for Clinical Query Language expressions or "text/fhirpath" for FHIRPath expressions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLanguage()
     {
@@ -123,7 +123,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement implemen
 
     /**
      * The media type of the language for the expression, e.g. "text/cql" for Clinical Query Language expressions or "text/fhirpath" for FHIRPath expressions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $language
      * @return $this
      */
     public function setLanguage($language)
@@ -134,7 +134,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement implemen
 
     /**
      * An expression that returns true or false, indicating whether the condition is satisfied. When using FHIRPath expressions, the %context environment variable must be replaced at runtime with the ChargeItem resource to which this definition is applied.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -143,7 +143,7 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement implemen
 
     /**
      * An expression that returns true or false, indicating whether the condition is satisfied. When using FHIRPath expressions, the %context environment variable must be replaced at runtime with the ChargeItem resource to which this definition is applied.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)

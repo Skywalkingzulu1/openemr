@@ -3,28 +3,28 @@
 /**
  * Audit Log Tamper Report.
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Anil N <aniln@ensoftek.com>
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2014 Ensoftek
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\KeyVersion;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\KeyVersion;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\DateFormatterUtils;
 
 // Control access
 if (!AclMain::aclCheckCore('admin', 'super')) {
@@ -304,7 +304,7 @@ $check_sum = isset($_GET['check_sum']);
                 }
             } else {
                 // base64 decode if applicable (note the $encryptVersion is a misnomer here, we have added in base64 encoding
-                //  of comments in OpenEMR 6.0.0 and greater when the comments are not encrypted since they hold binary (uuid) elements)
+                //  of comments in DCL 6.0.0 and greater when the comments are not encrypted since they hold binary (uuid) elements)
                 if ($encryptVersion >= 4) {
                     $iter["comments"] = base64_decode(is_string($iter["comments"]) ? $iter["comments"] : '');
                 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasureReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
@@ -71,13 +71,13 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * The code for the stratum component value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The stratum component value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $value = null;
 
@@ -88,7 +88,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The code for the stratum component value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The code for the stratum component value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The stratum component value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValue()
     {
@@ -117,7 +117,7 @@ class FHIRMeasureReportComponent extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The stratum component value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $value
      * @return $this
      */
     public function setValue($value)

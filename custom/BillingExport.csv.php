@@ -15,7 +15,7 @@
 //
 // To implement this feature, rename this file to BillingExport.php.
 
-use OpenEMR\Services\PhoneNumberService;
+use DCL\Services\PhoneNumberService;
 
 class BillingExport
 {

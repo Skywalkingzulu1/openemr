@@ -1,8 +1,8 @@
 <?php
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Translation\TranslationCache;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Translation\TranslationCache;
+use DCL\Core\OEGlobalsBag;
 
 if (!(function_exists('xlWarmCache'))) {
     /**
@@ -20,7 +20,7 @@ if (!(function_exists('xlWarmCache'))) {
 
 if (!(function_exists('xl'))) {
     /**
-     * Translation function - the translation engine for OpenEMR
+     * Translation function - the translation engine for DCL
      *
      * Translates a given constant string into the current session language.
      * Note: In some installation scenarios this function may already be declared,
@@ -117,7 +117,7 @@ if (!(function_exists('xlCleanup'))) {
 //
 // Use above xl() function the majority of time for translations. The
 //  below wrappers are only for specific situations in order to support
-//  granular control of translations in certain parts of OpenEMR.
+//  granular control of translations in certain parts of DCL.
 //  Wrappers:
 //    xl_list_label()
 //    xl_layout_label()

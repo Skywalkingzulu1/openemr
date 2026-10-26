@@ -1,18 +1,18 @@
 <?php
 
 /**
- * PHPStan Type Aliases for OpenEMR Database Tables
+ * PHPStan Type Aliases for DCL Database Tables
  *
  * THIS FILE IS GENERATED - DO NOT EDIT MANUALLY
  *
  * Regenerate with: composer generate-phpstan-types
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Database;
+namespace DCL\Common\Database;
 
 /**
  * Type definitions for database row arrays

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
+namespace DCL\FHIR\R4\FHIRResource\FHIREncounter;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -71,19 +71,19 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Role of participant in encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Persons involved in the encounter other than the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $individual = null;
 
@@ -94,7 +94,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Role of participant in encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Role of participant in encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -114,7 +114,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -123,7 +123,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -134,7 +134,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Persons involved in the encounter other than the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getIndividual()
     {
@@ -143,7 +143,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Persons involved in the encounter other than the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $individual
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $individual
      * @return $this
      */
     public function setIndividual($individual)

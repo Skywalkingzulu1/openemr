@@ -10,26 +10,26 @@
  * expected SQL fragments and bound values for the happy paths so refactors of
  * the resolver do not silently change query generation.
  *
- * @package   OpenEMR
- * @author    Stephen Waite <stephen.waite@open-emr.org>
- * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@open-emr.org>
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @author    Stephen Waite <stephen.waite@dcl.org>
+ * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@dcl.org>
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Search;
+namespace DCL\Tests\Isolated\Services\Search;
 
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\ReferenceSearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldStatementResolver;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\ReferenceSearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldStatementResolver;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

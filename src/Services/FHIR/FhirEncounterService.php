@@ -3,8 +3,8 @@
 /**
  * FhirEncounterService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786@gmail.com>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @author    Vishnu Yarmaneni <vardhanvishnu@gmail.com>
@@ -17,35 +17,35 @@
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022 Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIREncounter;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization;
-use OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation;
-use OpenEMR\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\FHIR\R4\FHIRDomainResource\FHIREncounter;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterHospitalization;
+use DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterLocation;
+use DCL\FHIR\R4\FHIRResource\FHIREncounter\FHIREncounterParticipant;
+use DCL\Services\EncounterService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 class FhirEncounterService extends FhirServiceBase implements
     IFhirExportableResourceService,
@@ -83,7 +83,7 @@ class FhirEncounterService extends FhirServiceBase implements
     }
 
     /**
-     * Returns an array mapping FHIR Encounter Resource search parameters to OpenEMR Encounter search parameters
+     * Returns an array mapping FHIR Encounter Resource search parameters to DCL Encounter search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -111,14 +111,14 @@ class FhirEncounterService extends FhirServiceBase implements
     }
 
     /**
-     * Parses an OpenEMR patient record, returning the equivalent FHIR Patient Resource
+     * Parses an DCL patient record, returning the equivalent FHIR Patient Resource
      * https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-encounter-definitions.html
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIREncounter
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $encounterResource = new FHIREncounter();
 
@@ -293,10 +293,10 @@ class FhirEncounterService extends FhirServiceBase implements
     }
 
     /**
-     * Parses a FHIR Encounter resource, returning the equivalent OpenEMR record.
+     * Parses a FHIR Encounter resource, returning the equivalent DCL record.
      *
      * @param FHIRDomainResource $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record
+     * @return array a mapped DCL data record
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -365,7 +365,7 @@ class FhirEncounterService extends FhirServiceBase implements
                 $practitionerUuid = UtilsService::parseReferenceString($reference, 'Practitioner')['uuid'] ?? null;
                 if (
                     !is_string($practitionerUuid) || $practitionerUuid === ''
-                    || !\OpenEMR\Common\Uuid\UuidRegistry::isValidStringUUID($practitionerUuid)
+                    || !\DCL\Common\Uuid\UuidRegistry::isValidStringUUID($practitionerUuid)
                 ) {
                     throw new \InvalidArgumentException(
                         'Encounter.participant[' . (int) $idx . '].individual.reference is not a valid Practitioner reference'
@@ -414,9 +414,9 @@ class FhirEncounterService extends FhirServiceBase implements
             $organizationUuid = UtilsService::parseReferenceString($serviceProviderRef, 'Organization')['uuid'] ?? null;
             if (
                 is_string($organizationUuid) && $organizationUuid !== ''
-                && \OpenEMR\Common\Uuid\UuidRegistry::isValidStringUUID($organizationUuid)
+                && \DCL\Common\Uuid\UuidRegistry::isValidStringUUID($organizationUuid)
             ) {
-                $facilityUuidBytes = \OpenEMR\Common\Uuid\UuidRegistry::uuidToBytes($organizationUuid);
+                $facilityUuidBytes = \DCL\Common\Uuid\UuidRegistry::uuidToBytes($organizationUuid);
                 $facilityId = $this->encounterService->getIdByUuid($facilityUuidBytes, 'facility', 'id');
                 if ($facilityId) {
                     $data['facility_id'] = $facilityId;
@@ -452,7 +452,7 @@ class FhirEncounterService extends FhirServiceBase implements
         // multi-site scoping). If the row is genuinely missing the schema
         // default of 5 is correct.
         $category = QueryUtils::querySingleRow(
-            "SELECT pc_catid FROM openemr_postcalendar_categories WHERE pc_constant_id = ? LIMIT 1",
+            "SELECT pc_catid FROM DCL_postcalendar_categories WHERE pc_constant_id = ? LIMIT 1",
             ['office_visit']
         );
         $categoryId = is_array($category) ? ($category['pc_catid'] ?? null) : null;
@@ -463,15 +463,15 @@ class FhirEncounterService extends FhirServiceBase implements
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      *
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      * @return ProcessingResult
      */
-    protected function insertOpenEMRRecord($openEmrRecord)
+    protected function insertDCLRecord($openEmrRecord)
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Encounter record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Encounter record array');
         }
 
         $puuid = $openEmrRecord['puuid'] ?? '';
@@ -513,30 +513,30 @@ class FhirEncounterService extends FhirServiceBase implements
     }
 
     /**
-     * Updates an existing OpenEMR record.
+     * Updates an existing DCL record.
      *
-     * @param string $fhirResourceId The OpenEMR record's FHIR Resource ID (uuid)
-     * @param array<array-key, mixed> $updatedOpenEMRRecord The updated OpenEMR record
+     * @param string $fhirResourceId The DCL record's FHIR Resource ID (uuid)
+     * @param array<array-key, mixed> $updatedDCLRecord The updated DCL record
      * @return ProcessingResult
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
-        $puuid = $updatedOpenEMRRecord['puuid'] ?? '';
-        unset($updatedOpenEMRRecord['puuid']);
+        $puuid = $updatedDCLRecord['puuid'] ?? '';
+        unset($updatedDCLRecord['puuid']);
 
         // user and group are required by EncounterValidator for updates; as on the insert
         // path both keys must exist even when there is no session to source them from.
         $session = $this->getSession();
-        if (($updatedOpenEMRRecord['user'] ?? '') === '') {
-            $updatedOpenEMRRecord['user'] = $session?->get('authUser') ?? '';
+        if (($updatedDCLRecord['user'] ?? '') === '') {
+            $updatedDCLRecord['user'] = $session?->get('authUser') ?? '';
         }
-        if (($updatedOpenEMRRecord['group'] ?? '') === '') {
-            $updatedOpenEMRRecord['group'] = $session?->get('authProvider') ?? '';
+        if (($updatedDCLRecord['group'] ?? '') === '') {
+            $updatedDCLRecord['group'] = $session?->get('authProvider') ?? '';
         }
 
-        $this->resolveProviderUuids($updatedOpenEMRRecord);
+        $this->resolveProviderUuids($updatedDCLRecord);
 
-        return $this->encounterService->updateEncounter($puuid, $fhirResourceId, $updatedOpenEMRRecord);
+        return $this->encounterService->updateEncounter($puuid, $fhirResourceId, $updatedDCLRecord);
     }
 
     /**
@@ -549,7 +549,7 @@ class FhirEncounterService extends FhirServiceBase implements
      * write succeeded while billing/audit attributes the visit to a default
      * provider — worse than failing outright.
      *
-     * @param array<array-key, mixed> &$record The OpenEMR record to modify in place
+     * @param array<array-key, mixed> &$record The DCL record to modify in place
      */
     private function resolveProviderUuids(array &$record): void
     {
@@ -620,12 +620,12 @@ class FhirEncounterService extends FhirServiceBase implements
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($searchParam): ProcessingResult
+    protected function searchForDCLRecords($searchParam): ProcessingResult
     {
         return $this->encounterService->search($searchParam, true);
     }

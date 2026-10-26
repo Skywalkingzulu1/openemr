@@ -4,16 +4,16 @@
  * Check/cash details are entered here.Used in New Payment and Edit Payment screen.
  * Special list function
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Eldho Chacko <eldho@zhservices.com>
  * @author    Paul Simon K <paul@zhservices.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2010 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\Utilities;
+use DCL\BC\Utilities;
 
 function generate_list_payment_category(string $tag_name, string $list_id, string $currvalue, string $title, string $empty_name = ' ', string $class = '', string $onchange = '', string $PaymentType = 'insurance', string $screen = 'new_payment'): string
 {

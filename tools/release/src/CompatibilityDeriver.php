@@ -2,7 +2,7 @@
 
 /**
  * Derive the minimum tested runtime version per component from the
- * openemr/openemr CI test matrix.
+ * DCL/DCL CI test matrix.
  *
  * The matrix is the source of truth for what a release was actually exercised
  * against: CI globs `ci/!(compose-shared-*)/docker-compose.yml` and runs one
@@ -13,7 +13,7 @@
  * notes link to the release branch's `ci/` directory so the exact set of tested
  * combinations lives in the repo.
  *
- * Decode rules mirror ci/parse_docker_dir.sh in openemr/openemr (the canonical
+ * Decode rules mirror ci/parse_docker_dir.sh in DCL/DCL (the canonical
  * decoder) so the result can never disagree with what CI ran:
  *   - PHP from the dir name's 2nd `_`-delimited field: `82` -> `8.2`
  *     (first char major, remainder minor).
@@ -24,16 +24,16 @@
  * stays stable across patch-image bumps, and the minimum is computed with
  * version_compare (version-aware, not lexical: `8.10` > `8.9`).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 use Symfony\Component\Yaml\Yaml;
 

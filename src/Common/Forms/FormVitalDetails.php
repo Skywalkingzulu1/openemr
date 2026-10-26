@@ -5,16 +5,16 @@
  * For backwards compatibility it extends ORDataObject (which implements the a form of the Active record data pattern),
  * but the preferred mechanism is to use this as a POPO (Plain old PHP object) and save / retrieve data using
  * the VitalsService class.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
-use OpenEMR\Common\ORDataObject\ORDataObject;
+use DCL\Common\ORDataObject\ORDataObject;
 
 /**
  * Class FormVitalDetails

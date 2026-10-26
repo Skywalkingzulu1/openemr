@@ -3,23 +3,23 @@
 /**
  * QrdaDocumentController.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Cqm\QrdaControllers;
+namespace DCL\Cqm\QrdaControllers;
 
 use DOMDocument;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\XmlUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Qdm\MeasureCalculationException;
-use OpenEMR\Services\Qrda\QrdaReportService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\XmlUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Qdm\MeasureCalculationException;
+use DCL\Services\Qrda\QrdaReportService;
 use XSLTProcessor;
 
 class QrdaReportController
@@ -173,7 +173,7 @@ class QrdaReportController
                     // in order to deal with our zip files we are going to force our garbage collector to run
                     // json_decode stores a LOT of memory with our measures so we need to collect it.  Otherwise
                     // we end up exceeding our memory usage. ~60 patients exceeds over 256MB of memory...
-                    // we end up trading CPU cycles to make sure we don't blow up smaller OpenEMR installations.
+                    // we end up trading CPU cycles to make sure we don't blow up smaller DCL installations.
                     unset($content);
                     gc_mem_caches();
                     gc_collect_cycles(); // attempt to force memory collection here.

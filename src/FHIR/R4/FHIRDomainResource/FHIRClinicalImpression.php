@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
@@ -72,125 +72,125 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Identifies the workflow status of the assessment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRClinicalImpressionStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRClinicalImpressionStatus
      */
     public $status = null;
 
     /**
      * Captures the reason for the current state of the ClinicalImpression.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $statusReason = null;
 
     /**
      * Categorizes the type of clinical assessment performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * A summary of the context and/or cause of the assessment - why / where it was performed, and what patient events/status prompted it.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The patient or group of individuals assessed as part of this record.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The Encounter during which this ClinicalImpression was created or to which the creation of this record is tightly associated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * Indicates when the documentation of the assessment was complete.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The clinician performing the assessment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $assessor = null;
 
     /**
      * A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $previous = null;
 
     /**
      * A list of the relevant problems/conditions for a patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $problem = [];
 
     /**
      * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[]
      */
     public $investigation = [];
 
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $protocol = [];
 
     /**
      * A text summary of the investigations and the diagnosis.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $summary = null;
 
     /**
      * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
      */
     public $finding = [];
 
     /**
      * Estimate of likely outcome.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $prognosisCodeableConcept = [];
 
     /**
      * RiskAssessment expressing likely outcome.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $prognosisReference = [];
 
     /**
      * Information supporting the clinical impression.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInfo = [];
 
     /**
      * Commentary about the impression, typically recorded after the impression itself was made, though supplemental notes by the original author could also appear.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -201,7 +201,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -210,7 +210,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -221,7 +221,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identifies the workflow status of the assessment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRClinicalImpressionStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRClinicalImpressionStatus
      */
     public function getStatus()
     {
@@ -230,7 +230,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identifies the workflow status of the assessment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRClinicalImpressionStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRClinicalImpressionStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -241,7 +241,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Captures the reason for the current state of the ClinicalImpression.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatusReason()
     {
@@ -250,7 +250,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Captures the reason for the current state of the ClinicalImpression.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function setStatusReason($statusReason)
@@ -261,7 +261,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Categorizes the type of clinical assessment performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -270,7 +270,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Categorizes the type of clinical assessment performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -281,7 +281,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A summary of the context and/or cause of the assessment - why / where it was performed, and what patient events/status prompted it.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -290,7 +290,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A summary of the context and/or cause of the assessment - why / where it was performed, and what patient events/status prompted it.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -301,7 +301,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The patient or group of individuals assessed as part of this record.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -310,7 +310,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The patient or group of individuals assessed as part of this record.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -321,7 +321,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The Encounter during which this ClinicalImpression was created or to which the creation of this record is tightly associated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -330,7 +330,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The Encounter during which this ClinicalImpression was created or to which the creation of this record is tightly associated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -340,7 +340,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
     {
@@ -348,7 +348,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
     public function setEffectiveDateTime($effectiveDateTime)
@@ -358,7 +358,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -366,7 +366,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -377,7 +377,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates when the documentation of the assessment was complete.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -386,7 +386,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates when the documentation of the assessment was complete.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -397,7 +397,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The clinician performing the assessment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAssessor()
     {
@@ -406,7 +406,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The clinician performing the assessment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $assessor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $assessor
      * @return $this
      */
     public function setAssessor($assessor)
@@ -417,7 +417,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPrevious()
     {
@@ -426,7 +426,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $previous
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $previous
      * @return $this
      */
     public function setPrevious($previous)
@@ -437,7 +437,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A list of the relevant problems/conditions for a patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getProblem()
     {
@@ -446,7 +446,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A list of the relevant problems/conditions for a patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $problem
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $problem
      * @return $this
      */
     public function addProblem($problem)
@@ -457,7 +457,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation[]
      */
     public function getInvestigation()
     {
@@ -466,7 +466,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation $investigation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionInvestigation $investigation
      * @return $this
      */
     public function addInvestigation($investigation)
@@ -477,7 +477,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getProtocol()
     {
@@ -486,7 +486,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $protocol
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $protocol
      * @return $this
      */
     public function addProtocol($protocol)
@@ -497,7 +497,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A text summary of the investigations and the diagnosis.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSummary()
     {
@@ -506,7 +506,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A text summary of the investigations and the diagnosis.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $summary
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $summary
      * @return $this
      */
     public function setSummary($summary)
@@ -517,7 +517,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
      */
     public function getFinding()
     {
@@ -526,7 +526,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionFinding $finding
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClinicalImpression\FHIRClinicalImpressionFinding $finding
      * @return $this
      */
     public function addFinding($finding)
@@ -537,7 +537,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Estimate of likely outcome.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPrognosisCodeableConcept()
     {
@@ -546,7 +546,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Estimate of likely outcome.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $prognosisCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $prognosisCodeableConcept
      * @return $this
      */
     public function addPrognosisCodeableConcept($prognosisCodeableConcept)
@@ -557,7 +557,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * RiskAssessment expressing likely outcome.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPrognosisReference()
     {
@@ -566,7 +566,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * RiskAssessment expressing likely outcome.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $prognosisReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $prognosisReference
      * @return $this
      */
     public function addPrognosisReference($prognosisReference)
@@ -577,7 +577,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information supporting the clinical impression.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInfo()
     {
@@ -586,7 +586,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Information supporting the clinical impression.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
     public function addSupportingInfo($supportingInfo)
@@ -597,7 +597,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Commentary about the impression, typically recorded after the impression itself was made, though supplemental notes by the original author could also appear.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -606,7 +606,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Commentary about the impression, typically recorded after the impression itself was made, though supplemental notes by the original author could also appear.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

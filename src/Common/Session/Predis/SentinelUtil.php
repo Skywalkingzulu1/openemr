@@ -3,19 +3,19 @@
 /**
  * Support for predis sentinel (via redis)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  *  Note: This class was developed with assistance from AI (Claude by Anthropic and ChatGPT by OpenAI)
  *        for code structure and implementation guidance.
 */
 
-namespace OpenEMR\Common\Session\Predis;
+namespace DCL\Common\Session\Predis;
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler;
 

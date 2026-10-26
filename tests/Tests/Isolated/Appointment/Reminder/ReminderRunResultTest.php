@@ -8,19 +8,19 @@
  * snake_case keys on toArray() that PSR-3 logger context arrays rely
  * on across modules.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Appointment\Reminder;
+namespace DCL\Tests\Isolated\Appointment\Reminder;
 
-use OpenEMR\Appointment\Reminder\ReminderRunResult;
+use DCL\Appointment\Reminder\ReminderRunResult;
 use PHPUnit\Framework\TestCase;
 
 class ReminderRunResultTest extends TestCase

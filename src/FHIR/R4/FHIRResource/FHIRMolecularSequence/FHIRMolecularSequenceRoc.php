@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Raw data describing a biological sequence.
@@ -71,43 +71,43 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * Individual data point representing the GQ (genotype quality) score threshold.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public $score = [];
 
     /**
      * The number of true positives if the GQ score threshold was set to "score" field value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public $numTP = [];
 
     /**
      * The number of false positives if the GQ score threshold was set to "score" field value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public $numFP = [];
 
     /**
      * The number of false negatives if the GQ score threshold was set to "score" field value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public $numFN = [];
 
     /**
      * Calculated precision if the GQ score threshold was set to "score" field value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal[]
      */
     public $precision = [];
 
     /**
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal[]
      */
     public $sensitivity = [];
 
     /**
      * Calculated fScore if the GQ score threshold was set to "score" field value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal[]
      */
     public $fMeasure = [];
 
@@ -118,7 +118,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Individual data point representing the GQ (genotype quality) score threshold.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public function getScore()
     {
@@ -127,7 +127,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Individual data point representing the GQ (genotype quality) score threshold.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $score
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $score
      * @return $this
      */
     public function addScore($score)
@@ -138,7 +138,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of true positives if the GQ score threshold was set to "score" field value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public function getNumTP()
     {
@@ -147,7 +147,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of true positives if the GQ score threshold was set to "score" field value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numTP
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numTP
      * @return $this
      */
     public function addNumTP($numTP)
@@ -158,7 +158,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of false positives if the GQ score threshold was set to "score" field value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public function getNumFP()
     {
@@ -167,7 +167,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of false positives if the GQ score threshold was set to "score" field value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numFP
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numFP
      * @return $this
      */
     public function addNumFP($numFP)
@@ -178,7 +178,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of false negatives if the GQ score threshold was set to "score" field value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger[]
      */
     public function getNumFN()
     {
@@ -187,7 +187,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The number of false negatives if the GQ score threshold was set to "score" field value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numFN
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numFN
      * @return $this
      */
     public function addNumFN($numFN)
@@ -198,7 +198,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Calculated precision if the GQ score threshold was set to "score" field value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal[]
      */
     public function getPrecision()
     {
@@ -207,7 +207,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Calculated precision if the GQ score threshold was set to "score" field value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $precision
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $precision
      * @return $this
      */
     public function addPrecision($precision)
@@ -218,7 +218,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal[]
      */
     public function getSensitivity()
     {
@@ -227,7 +227,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $sensitivity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $sensitivity
      * @return $this
      */
     public function addSensitivity($sensitivity)
@@ -238,7 +238,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Calculated fScore if the GQ score threshold was set to "score" field value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal[]
      */
     public function getFMeasure()
     {
@@ -247,7 +247,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * Calculated fScore if the GQ score threshold was set to "score" field value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $fMeasure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $fMeasure
      * @return $this
      */
     public function addFMeasure($fMeasure)

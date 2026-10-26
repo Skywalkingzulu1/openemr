@@ -1,11 +1,11 @@
 #!/bin/sh
 # shellcheck shell=bash
 # ============================================================================
-# OpenEMR Development Tools Library
+# DCL Development Tools Library
 # ============================================================================
 #
 # Purpose:
-#   This library provides utility functions for OpenEMR container development,
+#   This library provides utility functions for DCL container development,
 #   testing, and maintenance tasks. Functions are designed to be sourced into
 #   other shell scripts.
 #
@@ -16,10 +16,10 @@
 # Usage:
 #   source /path/to/devtoolsLibrary.source
 #   prepareVariables
-#   resetOpenemr
+#   resetDCL
 #
 # Environment Variables:
-#   The library uses various environment variables for database and OpenEMR
+#   The library uses various environment variables for database and DCL
 #   configuration. See individual function documentation for details.
 #
 # ============================================================================
@@ -28,11 +28,11 @@
 # PRIVILEGE-DROP HELPER
 # ============================================================================
 # Drop privileges to apache and exec the given command + args.
-# OpenEMR's RootCliGuard (openemr#12267) refuses root for any script
+# DCL's RootCliGuard (DCL#12267) refuses root for any script
 # that loads interface/globals.php or runs through bin/console —
 # invoking those as root would create root-owned files the web
 # server later cannot read, the same failure mode the guard exists
-# to catch. Use this wrapper for any `php <openemr-script>`
+# to catch. Use this wrapper for any `php <DCL-script>`
 # invocation.
 #
 # Pass the command and its args as separate words, e.g.:
@@ -45,7 +45,7 @@
 # characters, or any other shell-special bytes are passed through
 # unparsed, which the equivalent `su -c "string"` form cannot do
 # without double-shell-parsing risk. su-exec also preserves the env
-# (HOME / PATH / MYSQL_* / OPENEMR_ENABLE_INSTALLER_AUTO etc.), so
+# (HOME / PATH / MYSQL_* / DCL_ENABLE_INSTALLER_AUTO etc.), so
 # no `-p` flag analog is needed.
 #
 # We chose su-exec over busybox `su` because busybox `su` rescans
@@ -66,26 +66,26 @@ run_php_as_apache() {
 # prepareVariables()
 # ----------------------------------------------------------------------------
 # Prepares configuration string and custom variables from environment variables.
-# Sets defaults for MySQL and OpenEMR configuration if not provided.
+# Sets defaults for MySQL and DCL configuration if not provided.
 #
 # Environment Variables Used:
 #   - MYSQL_HOST: MySQL server hostname (default: localhost)
 #   - MYSQL_PORT: MySQL server port (default: 3306)
 #   - MYSQL_ROOT_USER: MySQL root username (default: root)
 #   - MYSQL_ROOT_PASS: MySQL root password (required)
-#   - MYSQL_USER: MySQL username for OpenEMR (default: openemr)
-#   - MYSQL_PASS: MySQL password for OpenEMR (default: openemr)
-#   - MYSQL_DATABASE: MySQL database name (default: openemr)
-#   - OE_USER: OpenEMR initial admin username (optional)
-#   - OE_PASS: OpenEMR initial admin password (optional)
+#   - MYSQL_USER: MySQL username for DCL (default: DCL)
+#   - MYSQL_PASS: MySQL password for DCL (default: DCL)
+#   - MYSQL_DATABASE: MySQL database name (default: DCL)
+#   - OE_USER: DCL initial admin username (optional)
+#   - OE_PASS: DCL initial admin password (optional)
 #   - SQL_DATA_DRIVE: Path to directory containing SQL files for import (optional)
 #
 # Output Variables Set:
 #   - CONFIGURATION: Space-separated configuration string for auto_configure.php
 #   - CUSTOM_ROOT_USER: Resolved root user (defaults to 'root')
-#   - CUSTOM_USER: Resolved MySQL user (defaults to 'openemr')
-#   - CUSTOM_PASSWORD: Resolved MySQL password (defaults to 'openemr')
-#   - CUSTOM_DATABASE: Resolved database name (defaults to 'openemr')
+#   - CUSTOM_USER: Resolved MySQL user (defaults to 'DCL')
+#   - CUSTOM_PASSWORD: Resolved MySQL password (defaults to 'DCL')
+#   - CUSTOM_DATABASE: Resolved database name (defaults to 'DCL')
 #   - CUSTOM_PORT: Resolved MySQL port (defaults to 3306)
 #
 # ----------------------------------------------------------------------------
@@ -113,19 +113,19 @@ prepareVariables() {
         CONFIGURATION="${CONFIGURATION} login=${MYSQL_USER}"
         CUSTOM_USER="${MYSQL_USER}"
     else
-        CUSTOM_USER="openemr"
+        CUSTOM_USER="DCL"
     fi
     if [[ "${MYSQL_PASS}" != "" ]]; then
         CONFIGURATION="${CONFIGURATION} pass=${MYSQL_PASS}"
         CUSTOM_PASSWORD="${MYSQL_PASS}"
     else
-        CUSTOM_PASSWORD="openemr"
+        CUSTOM_PASSWORD="DCL"
     fi
     if [[ "${MYSQL_DATABASE}" != "" ]]; then
         CONFIGURATION="${CONFIGURATION} dbname=${MYSQL_DATABASE}"
         CUSTOM_DATABASE="${MYSQL_DATABASE}"
     else
-        CUSTOM_DATABASE="openemr"
+        CUSTOM_DATABASE="DCL"
     fi
     if [[ "${MYSQL_PORT}" != "" ]]; then
         CONFIGURATION="${CONFIGURATION} port=${MYSQL_PORT}"
@@ -144,24 +144,24 @@ prepareVariables() {
 # ----------------------------------------------------------------------------
 # setGlobalSettings()
 # ----------------------------------------------------------------------------
-# Sets OpenEMR global settings from environment variables.
+# Sets DCL global settings from environment variables.
 #
 # Environment Variables Used:
-#   Any environment variable starting with 'OPENEMR_SETTING_' will be processed.
-#   The prefix 'OPENEMR_SETTING_' is stripped to get the setting name.
+#   Any environment variable starting with 'DCL_SETTING_' will be processed.
+#   The prefix 'DCL_SETTING_' is stripped to get the setting name.
 #
 # Example:
-#   export OPENEMR_SETTING_my_setting_name="value"
+#   export DCL_SETTING_my_setting_name="value"
 #   setGlobalSettings
 #
 # This will update the 'my_setting_name' setting in the globals table.
 #
 # ----------------------------------------------------------------------------
 setGlobalSettings() {
-    # Process all environment variables that start with 'OPENEMR_SETTING_'
-    OPENEMR_SETTINGS=$(printenv | grep '^OPENEMR_SETTING_' || true)
-    if [[ -n "${OPENEMR_SETTINGS}" ]]; then
-        echo "${OPENEMR_SETTINGS}" |
+    # Process all environment variables that start with 'DCL_SETTING_'
+    DCL_SETTINGS=$(printenv | grep '^DCL_SETTING_' || true)
+    if [[ -n "${DCL_SETTINGS}" ]]; then
+        echo "${DCL_SETTINGS}" |
         while IFS= read -r line; do
             SETTING_TEMP=$(echo "${line}" | cut -d "=" -f 1)
             # note am omitting the letter O on purpose
@@ -178,9 +178,9 @@ setGlobalSettings() {
 # ============================================================================
 
 # ----------------------------------------------------------------------------
-# resetOpenemr()
+# resetDCL()
 # ----------------------------------------------------------------------------
-# Completely resets OpenEMR to a fresh state by:
+# Completely resets DCL to a fresh state by:
 #   1. Dropping the database and user
 #   2. Resetting CouchDB data
 #   3. Removing all site files
@@ -189,14 +189,14 @@ setGlobalSettings() {
 # Requirements:
 #   - prepareVariables() must be called first
 #   - Requires MySQL root access
-#   - Source OpenEMR code must be available at /openemr
+#   - Source DCL code must be available at /DCL
 #
 # WARNING:
-#   This function permanently destroys all OpenEMR data!
+#   This function permanently destroys all DCL data!
 #   Use only for development/testing environments.
 #
 # ----------------------------------------------------------------------------
-resetOpenemr() {
+resetDCL() {
     echo "Remove database"
     mariadb --skip-ssl -f -u "${CUSTOM_ROOT_USER}" --password="${MYSQL_ROOT_PASS}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "DROP DATABASE ${CUSTOM_DATABASE}"
     echo "Remove database user"
@@ -204,16 +204,16 @@ resetOpenemr() {
     echo "Reset couchdb"
     rsync --delete --recursive --links /couchdb/original/data /couchdb/
     echo "Remove files"
-    rm -fr /var/www/localhost/htdocs/openemr/sites/*
-    rsync --delete --recursive --links --exclude .git /openemr/sites /var/www/localhost/htdocs/openemr/
-    chmod 666 /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php
-    chown -R apache /var/www/localhost/htdocs/openemr/
+    rm -fr /var/www/localhost/htdocs/DCL/sites/*
+    rsync --delete --recursive --links --exclude .git /DCL/sites /var/www/localhost/htdocs/DCL/
+    chmod 666 /var/www/localhost/htdocs/DCL/sites/default/sqlconf.php
+    chown -R apache /var/www/localhost/htdocs/DCL/
 }
 
 # ----------------------------------------------------------------------------
-# installOpenemr()
+# installDCL()
 # ----------------------------------------------------------------------------
-# Reinstalls OpenEMR using the auto_configure.php script.
+# Reinstalls DCL using the auto_configure.php script.
 #
 # Requirements:
 #   - prepareVariables() must be called first to set CONFIGURATION
@@ -225,8 +225,8 @@ resetOpenemr() {
 #   3. Removes auto_configure.php from web root after installation
 #
 # ----------------------------------------------------------------------------
-installOpenemr() {
-    echo "Re-installing OpenEMR"
+installDCL() {
+    echo "Re-installing DCL"
     cp /root/auto_configure.php /var/www/localhost/htdocs/
     run_php_as_apache php /var/www/localhost/htdocs/auto_configure.php -f "${CONFIGURATION}"
     rm -f /var/www/localhost/htdocs/auto_configure.php
@@ -245,7 +245,7 @@ installOpenemr() {
 # Requirements:
 #   - prepareVariables() must be called first
 #   - demo_5_0_0_5.sql must be available in /root/
-#   - OpenEMR must be installed
+#   - DCL must be installed
 #
 # Process:
 #   1. Drops all existing tables
@@ -259,21 +259,21 @@ demoData() {
     # shellcheck disable=SC2312  # Pipeline return value is intentionally ignored
     mariadb-dump --skip-ssl -u "${CUSTOM_ROOT_USER}" --password="${MYSQL_ROOT_PASS}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" --add-drop-table --no-data "${CUSTOM_DATABASE}" | grep ^DROP | awk ' BEGIN { print "SET FOREIGN_KEY_CHECKS=0;" } { print $0 } END { print "SET FOREIGN_KEY_CHECKS=1;" } ' | mariadb --skip-ssl -u "${CUSTOM_ROOT_USER}" --password="${MYSQL_ROOT_PASS}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" "${CUSTOM_DATABASE}" || true
     mariadb --skip-ssl -u "${CUSTOM_ROOT_USER}" --password="${MYSQL_ROOT_PASS}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" "${CUSTOM_DATABASE}" < /root/demo_5_0_0_5.sql
-    upgradeOpenEMR 5.0.0
+    upgradeDCL 5.0.0
     changeEncodingCollation utf8mb4 utf8mb4_general_ci
 }
 
 # ----------------------------------------------------------------------------
-# upgradeOpenEMR(version)
+# upgradeDCL(version)
 # ----------------------------------------------------------------------------
-# Upgrades OpenEMR from a specified version to the current version.
+# Upgrades DCL from a specified version to the current version.
 #
 # Parameters:
-#   $1 - Original OpenEMR version to upgrade from (e.g., "5.0.0")
+#   $1 - Original DCL version to upgrade from (e.g., "5.0.0")
 #
 # Requirements:
 #   - prepareVariables() must be called first
-#   - OpenEMR must be installed
+#   - DCL must be installed
 #   - sql_upgrade.php must be available in web root
 #
 # Process:
@@ -283,32 +283,32 @@ demoData() {
 #   4. Cleans up temporary files
 #
 # ----------------------------------------------------------------------------
-upgradeOpenEMR() {
+upgradeDCL() {
     # Inject site context, then run the standard upgrade via its CLI interface
     if ! {
         echo "<?php \$_GET['site'] = 'default'; ?>"
-        cat /var/www/localhost/htdocs/openemr/sql_upgrade.php
-    } > /var/www/localhost/htdocs/openemr/sql_upgrade_temp.php; then
+        cat /var/www/localhost/htdocs/DCL/sql_upgrade.php
+    } > /var/www/localhost/htdocs/DCL/sql_upgrade_temp.php; then
         echo "ERROR: could not stage sql_upgrade.php (file missing?)" >&2
-        rm -f /var/www/localhost/htdocs/openemr/sql_upgrade_temp.php
+        rm -f /var/www/localhost/htdocs/DCL/sql_upgrade_temp.php
         return 1
     fi
     # Execute the upgrade script with the from-version argument
     # shellcheck disable=SC2310  # set -e behavior in conditionals is intentional
-    if ! run_php_as_apache /usr/local/bin/php -f /var/www/localhost/htdocs/openemr/sql_upgrade_temp.php -- --from="${1}"; then
+    if ! run_php_as_apache /usr/local/bin/php -f /var/www/localhost/htdocs/DCL/sql_upgrade_temp.php -- --from="${1}"; then
         echo "ERROR: Database upgrade failed (from ${1})" >&2
-        rm -f /var/www/localhost/htdocs/openemr/sql_upgrade_temp.php
+        rm -f /var/www/localhost/htdocs/DCL/sql_upgrade_temp.php
         return 1
     fi
 
     # Clean up temporary file
-    rm -f /var/www/localhost/htdocs/openemr/sql_upgrade_temp.php
+    rm -f /var/www/localhost/htdocs/DCL/sql_upgrade_temp.php
 }
 
 # ----------------------------------------------------------------------------
 # sqlDataDrive()
 # ----------------------------------------------------------------------------
-# Imports all SQL files from a specified directory into the OpenEMR database.
+# Imports all SQL files from a specified directory into the DCL database.
 #
 # Environment Variables Used:
 #   - SQL_DATA_DRIVE: Directory path containing .sql files to import
@@ -316,7 +316,7 @@ upgradeOpenEMR() {
 # Requirements:
 #   - prepareVariables() must be called first
 #   - SQL_DATA_DRIVE must be set and point to a valid directory
-#   - OpenEMR database must exist
+#   - DCL database must exist
 #
 # Process:
 #   Loops through all .sql files in SQL_DATA_DRIVE and imports them sequentially.
@@ -340,9 +340,9 @@ sqlDataDrive() {
 # ============================================================================
 
 # ----------------------------------------------------------------------------
-# backupOpenemr(identifier)
+# backupDCL(identifier)
 # ----------------------------------------------------------------------------
-# Creates a complete backup of OpenEMR installation including database,
+# Creates a complete backup of DCL installation including database,
 # site files, and CouchDB data.
 #
 # Parameters:
@@ -351,7 +351,7 @@ sqlDataDrive() {
 # Requirements:
 #   - prepareVariables() must be called first
 #   - /snapshots directory must be writable
-#   - OpenEMR must be installed and configured
+#   - DCL must be installed and configured
 #
 # Output:
 #   Creates a compressed tar.gz file at /snapshots/${identifier}.tgz containing:
@@ -360,18 +360,18 @@ sqlDataDrive() {
 #   - data/: CouchDB data directory
 #
 # Example:
-#   backupOpenemr "backup-2025-12-10"
+#   backupDCL "backup-2025-12-10"
 #   # Creates /snapshots/backup-2025-12-10.tgz
 #
 # ----------------------------------------------------------------------------
-backupOpenemr() {
+backupDCL() {
     mkdir -p "/snapshots/${1}"
 
     # Dump database (excluding onsite_activity_view which is a view, not a table)
     mariadb-dump --skip-ssl --ignore-table="${CUSTOM_DATABASE}".onsite_activity_view --hex-blob -u "${CUSTOM_ROOT_USER}" --password="${MYSQL_ROOT_PASS}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" "${CUSTOM_DATABASE}" > "/snapshots/${1}/backup.sql"
 
     # Backup site files
-    rsync --delete --recursive --links /var/www/localhost/htdocs/openemr/sites "/snapshots/${1}/"
+    rsync --delete --recursive --links /var/www/localhost/htdocs/DCL/sites "/snapshots/${1}/"
 
     # Backup CouchDB data
     rsync --delete --recursive --links /couchdb/data "/snapshots/${1}/"
@@ -385,9 +385,9 @@ backupOpenemr() {
 }
 
 # ----------------------------------------------------------------------------
-# restoreOpenemr(identifier)
+# restoreDCL(identifier)
 # ----------------------------------------------------------------------------
-# Restores OpenEMR from a previously created backup.
+# Restores DCL from a previously created backup.
 #
 # Parameters:
 #   $1 - Identifier/name of the backup to restore
@@ -395,7 +395,7 @@ backupOpenemr() {
 # Requirements:
 #   - prepareVariables() must be called first
 #   - Backup file must exist at /snapshots/${identifier}.tgz
-#   - OpenEMR database must exist
+#   - DCL database must exist
 #
 # Process:
 #   1. Extracts backup archive
@@ -410,11 +410,11 @@ backupOpenemr() {
 #   credentials, allowing restores from different environments.
 #
 # Example:
-#   restoreOpenemr "backup-2025-12-10"
+#   restoreDCL "backup-2025-12-10"
 #   # Restores from /snapshots/backup-2025-12-10.tgz
 #
 # ----------------------------------------------------------------------------
-restoreOpenemr() {
+restoreDCL() {
     cd /snapshots || exit
 
     # Extract backup archive
@@ -429,16 +429,16 @@ restoreOpenemr() {
 
     # Save current sqlconf.php before restoring sites (preserves database credentials)
     # This allows restoring backups from different environments while keeping current DB config
-    sqlconf=$(cat /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php)
+    sqlconf=$(cat /var/www/localhost/htdocs/DCL/sites/default/sqlconf.php)
 
     # Restore site files
-    rsync --delete --recursive --links "/snapshots/${1}/sites" /var/www/localhost/htdocs/openemr/
+    rsync --delete --recursive --links "/snapshots/${1}/sites" /var/www/localhost/htdocs/DCL/
 
     # Restore original sqlconf.php (maintains current database connection)
-    echo "${sqlconf}" > /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php
+    echo "${sqlconf}" > /var/www/localhost/htdocs/DCL/sites/default/sqlconf.php
 
     # Fix ownership
-    chown -R apache /var/www/localhost/htdocs/openemr/
+    chown -R apache /var/www/localhost/htdocs/DCL/
 
     # Restore CouchDB data if present in backup
     if [[ -d "/snapshots/${1}/data" ]]; then
@@ -456,7 +456,7 @@ restoreOpenemr() {
 # ----------------------------------------------------------------------------
 # changeEncodingCollation(charset, collation)
 # ----------------------------------------------------------------------------
-# Changes the character set and collation for the OpenEMR database and all tables.
+# Changes the character set and collation for the DCL database and all tables.
 #
 # Parameters:
 #   $1 - Character set (e.g., "utf8mb4")
@@ -465,7 +465,7 @@ restoreOpenemr() {
 # Requirements:
 #   - prepareVariables() must be called first
 #   - Requires MySQL root access
-#   - OpenEMR database must exist
+#   - DCL database must exist
 #
 # Process:
 #   1. Alters the database character set and collation
@@ -502,7 +502,7 @@ changeEncodingCollation() {
 #
 # Process:
 #   Uncomments RewriteEngine, RewriteCond, and RewriteRule directives in
-#   /etc/apache2/conf.d/openemr.conf to enable HTTPS redirection.
+#   /etc/apache2/conf.d/DCL.conf to enable HTTPS redirection.
 #
 # Requirements:
 #   - Apache must be configured
@@ -510,11 +510,11 @@ changeEncodingCollation() {
 #
 # ----------------------------------------------------------------------------
 forceHttps() {
-    sed -i 's@#RewriteEngine On@ RewriteEngine On@' /etc/apache2/conf.d/openemr.conf
-    sed -i 's@#RewriteCond %{HTTPS} off@ RewriteCond %{HTTPS} off@' /etc/apache2/conf.d/openemr.conf
+    sed -i 's@#RewriteEngine On@ RewriteEngine On@' /etc/apache2/conf.d/DCL.conf
+    sed -i 's@#RewriteCond %{HTTPS} off@ RewriteCond %{HTTPS} off@' /etc/apache2/conf.d/DCL.conf
     # Single quotes intentionally used for sed replacement - $1 is a sed backreference
     # shellcheck disable=SC2016
-    sed -i 's@#RewriteRule (\.\*) https://%{HTTP_HOST}/\$1 \[R,L\]@ RewriteRule (.*) https://%{HTTP_HOST}/$1 [R,L]@' /etc/apache2/conf.d/openemr.conf
+    sed -i 's@#RewriteRule (\.\*) https://%{HTTP_HOST}/\$1 \[R,L\]@ RewriteRule (.*) https://%{HTTP_HOST}/$1 [R,L]@' /etc/apache2/conf.d/DCL.conf
 }
 
 # ----------------------------------------------------------------------------
@@ -524,15 +524,15 @@ forceHttps() {
 #
 # Process:
 #   Comments out RewriteEngine, RewriteCond, and RewriteRule directives in
-#   /etc/apache2/conf.d/openemr.conf to disable HTTPS redirection.
+#   /etc/apache2/conf.d/DCL.conf to disable HTTPS redirection.
 #
 # ----------------------------------------------------------------------------
 unForceHttps() {
-    sed -i 's@[^#]RewriteEngine On@#RewriteEngine On@' /etc/apache2/conf.d/openemr.conf
-    sed -i 's@[^#]RewriteCond %{HTTPS} off@#RewriteCond %{HTTPS} off@' /etc/apache2/conf.d/openemr.conf
+    sed -i 's@[^#]RewriteEngine On@#RewriteEngine On@' /etc/apache2/conf.d/DCL.conf
+    sed -i 's@[^#]RewriteCond %{HTTPS} off@#RewriteCond %{HTTPS} off@' /etc/apache2/conf.d/DCL.conf
     # Single quotes intentionally used for sed replacement - $1 is a sed backreference
     # shellcheck disable=SC2016
-    sed -i 's@[^#]RewriteRule (\.\*) https://%{HTTP_HOST}/\$1 \[R,L\]@#RewriteRule (.*) https://%{HTTP_HOST}/$1 [R,L]@' /etc/apache2/conf.d/openemr.conf
+    sed -i 's@[^#]RewriteRule (\.\*) https://%{HTTP_HOST}/\$1 \[R,L\]@#RewriteRule (.*) https://%{HTTP_HOST}/$1 [R,L]@' /etc/apache2/conf.d/DCL.conf
 }
 
 # ============================================================================
@@ -542,7 +542,7 @@ unForceHttps() {
 # ----------------------------------------------------------------------------
 # setupClientCert(identifier)
 # ----------------------------------------------------------------------------
-# Configures OpenEMR to use client certificate authentication.
+# Configures DCL to use client certificate authentication.
 #
 # Parameters:
 #   $1 - Identifier/name for the certificate package (without .zip extension)
@@ -560,7 +560,7 @@ unForceHttps() {
 #   1. Extracts certificate package
 #   2. Configures Apache SSL certificates and keys
 #   3. Enables client certificate verification in Apache
-#   4. Updates OpenEMR global settings for client SSL
+#   4. Updates DCL global settings for client SSL
 #
 # ----------------------------------------------------------------------------
 setupClientCert() {
@@ -593,11 +593,11 @@ setupClientCert() {
     # Clean up extracted files
     rm -fr "/certs/${1}"
     # configure apache
-    sed -i "s@#SSLVerifyClient@ SSLVerifyClient@" /etc/apache2/conf.d/openemr.conf
-    sed -i "s@#SSLVerifyDepth@ SSLVerifyDepth@" /etc/apache2/conf.d/openemr.conf
-    sed -i "s@#SSLOptions@ SSLOptions@" /etc/apache2/conf.d/openemr.conf
-    sed -i "s@#SSLCACertificateFile@ SSLCACertificateFile@" /etc/apache2/conf.d/openemr.conf
-    # configure openemr
+    sed -i "s@#SSLVerifyClient@ SSLVerifyClient@" /etc/apache2/conf.d/DCL.conf
+    sed -i "s@#SSLVerifyDepth@ SSLVerifyDepth@" /etc/apache2/conf.d/DCL.conf
+    sed -i "s@#SSLOptions@ SSLOptions@" /etc/apache2/conf.d/DCL.conf
+    sed -i "s@#SSLCACertificateFile@ SSLCACertificateFile@" /etc/apache2/conf.d/DCL.conf
+    # configure DCL
     mariadb --skip-ssl -u "${CUSTOM_USER}" --password="${CUSTOM_PASSWORD}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "UPDATE globals SET gl_value = 1 WHERE gl_name = 'is_client_ssl_enabled'" "${CUSTOM_DATABASE}"
     mariadb --skip-ssl -u "${CUSTOM_USER}" --password="${CUSTOM_PASSWORD}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "UPDATE globals SET gl_value = '/etc/ssl/certs/CAcustomclientbasedwebserver.cert.pem' WHERE gl_name = 'certificate_authority_crt'" "${CUSTOM_DATABASE}"
     mariadb --skip-ssl -u "${CUSTOM_USER}" --password="${CUSTOM_PASSWORD}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "UPDATE globals SET gl_value = '/etc/ssl/private/CAcustomclientbasedwebserver.key.pem' WHERE gl_name = 'certificate_authority_key'" "${CUSTOM_DATABASE}"
@@ -606,13 +606,13 @@ setupClientCert() {
 # ----------------------------------------------------------------------------
 # toggleOnSelfSignedCert()
 # ----------------------------------------------------------------------------
-# Switches OpenEMR back to using self-signed certificates and disables
+# Switches DCL back to using self-signed certificates and disables
 # client certificate authentication.
 #
 # Process:
 #   1. Changes Apache SSL certificate/key symlinks to point to self-signed certs
 #   2. Disables client certificate verification in Apache
-#   3. Updates OpenEMR global settings to disable client SSL
+#   3. Updates DCL global settings to disable client SSL
 #
 # ----------------------------------------------------------------------------
 toggleOnSelfSignedCert() {
@@ -623,11 +623,11 @@ toggleOnSelfSignedCert() {
     rm -f /etc/ssl/private/webserver.key.pem
     ln -s /etc/ssl/private/selfsigned.key.pem /etc/ssl/private/webserver.key.pem
     # configure apache
-    sed -i "s@[^#]SSLVerifyClient@#SSLVerifyClient@" /etc/apache2/conf.d/openemr.conf
-    sed -i "s@[^#]SSLVerifyDepth@#SSLVerifyDepth@" /etc/apache2/conf.d/openemr.conf
-    sed -i "s@[^#]SSLOptions@#SSLOptions@" /etc/apache2/conf.d/openemr.conf
-    sed -i "s@[^#]SSLCACertificateFile@#SSLCACertificateFile@" /etc/apache2/conf.d/openemr.conf
-    # configure openemr
+    sed -i "s@[^#]SSLVerifyClient@#SSLVerifyClient@" /etc/apache2/conf.d/DCL.conf
+    sed -i "s@[^#]SSLVerifyDepth@#SSLVerifyDepth@" /etc/apache2/conf.d/DCL.conf
+    sed -i "s@[^#]SSLOptions@#SSLOptions@" /etc/apache2/conf.d/DCL.conf
+    sed -i "s@[^#]SSLCACertificateFile@#SSLCACertificateFile@" /etc/apache2/conf.d/DCL.conf
+    # configure DCL
     mariadb --skip-ssl -u "${CUSTOM_USER}" --password="${CUSTOM_PASSWORD}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "UPDATE globals SET gl_value = 0 WHERE gl_name = 'is_client_ssl_enabled'" "${CUSTOM_DATABASE}"
     mariadb --skip-ssl -u "${CUSTOM_USER}" --password="${CUSTOM_PASSWORD}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "UPDATE globals SET gl_value = '' WHERE gl_name = 'certificate_authority_crt'" "${CUSTOM_DATABASE}"
     mariadb --skip-ssl -u "${CUSTOM_USER}" --password="${CUSTOM_PASSWORD}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "UPDATE globals SET gl_value = '' WHERE gl_name = 'certificate_authority_key'" "${CUSTOM_DATABASE}"
@@ -649,13 +649,13 @@ toggleOnSelfSignedCert() {
 # Requirements:
 #   - Java runtime environment (JRE 11+)
 #   - Internet access for downloading Synthea
-#   - OpenEMR must be installed and configured
+#   - DCL must be installed and configured
 #   - CCDA import functionality must be available
 #
 # Process:
 #   1. Downloads and sets up Synthea if not already present
 #   2. Generates specified number of random patients in CCDA format
-#   3. Temporarily enables CCDA import in OpenEMR
+#   3. Temporarily enables CCDA import in DCL
 #   4. Imports all generated patient files
 #   5. Restores CCDA import settings
 #
@@ -704,24 +704,24 @@ importRandomPatients() {
         echo "FAIL: no CCDA files produced in /tmp/synthea/output/ccda; nothing to import" >&2
         return 1
     fi
-    sed -i "s@exit;@//exit;@" /var/www/localhost/htdocs/openemr/contrib/util/ccda_import/import_ccda.php
-    export OPENEMR_ENABLE_CCDA_IMPORT=1
-    run_php_as_apache php /var/www/localhost/htdocs/openemr/contrib/util/ccda_import/import_ccda.php --sourcePath=/tmp/synthea/output/ccda --site=default --openemrPath=/var/www/localhost/htdocs/openemr "--isDev=$2"
-    sed -i "s@//exit;@exit;@" /var/www/localhost/htdocs/openemr/contrib/util/ccda_import/import_ccda.php
+    sed -i "s@exit;@//exit;@" /var/www/localhost/htdocs/DCL/contrib/util/ccda_import/import_ccda.php
+    export DCL_ENABLE_CCDA_IMPORT=1
+    run_php_as_apache php /var/www/localhost/htdocs/DCL/contrib/util/ccda_import/import_ccda.php --sourcePath=/tmp/synthea/output/ccda --site=default --DCLPath=/var/www/localhost/htdocs/DCL "--isDev=$2"
+    sed -i "s@//exit;@exit;@" /var/www/localhost/htdocs/DCL/contrib/util/ccda_import/import_ccda.php
     echo "Completed run for following number of random patients: ${1}"
 }
 
 # ----------------------------------------------------------------------------
 # generateMultisiteBank(count)
 # ----------------------------------------------------------------------------
-# Creates a bank of multiple OpenEMR sites (multisite setup) for testing.
+# Creates a bank of multiple DCL sites (multisite setup) for testing.
 #
 # Parameters:
 #   $1 - Number of multisites to create (labeled run1, run2, run3, ...)
 #
 # Requirements:
 #   - prepareVariables() must be called first
-#   - OpenEMR must be installed with default site configured
+#   - DCL must be installed with default site configured
 #   - Requires MySQL root access
 #   - InstallerAuto.php must be available
 #
@@ -733,14 +733,14 @@ importRandomPatients() {
 #   4. Sets proper file permissions and ownership
 #
 # Environment Variables:
-#   OPENEMR_ENABLE_INSTALLER_AUTO - Set to 1 to enable installer auto mode
+#   DCL_ENABLE_INSTALLER_AUTO - Set to 1 to enable installer auto mode
 #   (for newer versions that support environment variable activation)
 #
 # Output:
 #   Creates N multisites:
 #   - Databases: run1, run2, run3, ...
 #   - Users: run1, run2, run3, ...
-#   - Directories: /var/www/localhost/htdocs/openemr/sites/run1, run2, run3, ...
+#   - Directories: /var/www/localhost/htdocs/DCL/sites/run1, run2, run3, ...
 #
 # Example:
 #   generateMultisiteBank 5
@@ -750,9 +750,9 @@ importRandomPatients() {
 generateMultisiteBank() {
     echo "Setting up a multisite bank with following number of multisites (labeled run1, run2, run3, ...): run1...run${1}"
     # Activate newer versions of InstallerAuto that support environment variable activation.
-    export OPENEMR_ENABLE_INSTALLER_AUTO=1
+    export DCL_ENABLE_INSTALLER_AUTO=1
     # Activate older versions of InstallerAuto that require `sed` activation.
-    sed -i "s@exit;@//exit;@" /var/www/localhost/htdocs/openemr/contrib/util/installScripts/InstallerAuto.php
+    sed -i "s@exit;@//exit;@" /var/www/localhost/htdocs/DCL/contrib/util/installScripts/InstallerAuto.php
     a=1
     while [[ "${a}" -le "$1" ]]
     do
@@ -760,10 +760,10 @@ generateMultisiteBank() {
         echo "dropping ${run} sql database, sql user, and directory if they already exist (just ignore any errors that are displayed)"
         mariadb --skip-ssl -u "${CUSTOM_ROOT_USER}" --password="${MYSQL_ROOT_PASS}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "DROP DATABASE ${run}"
         mariadb --skip-ssl -u "${CUSTOM_ROOT_USER}" --password="${MYSQL_ROOT_PASS}" -h "${MYSQL_HOST}" -P "${CUSTOM_PORT}" -e "DROP USER '${run}'"
-        rm -fr "/var/www/localhost/htdocs/openemr/sites/${run}"
+        rm -fr "/var/www/localhost/htdocs/DCL/sites/${run}"
         rm /tmp/setup_dump.sql
         echo "adding ${run} multisite"
-        run_php_as_apache php /var/www/localhost/htdocs/openemr/contrib/util/installScripts/InstallerAuto.php \
+        run_php_as_apache php /var/www/localhost/htdocs/DCL/contrib/util/installScripts/InstallerAuto.php \
             "rootpass=${MYSQL_ROOT_PASS}" \
             "server=${MYSQL_HOST}" \
             "port=${CUSTOM_PORT}" \
@@ -774,19 +774,19 @@ generateMultisiteBank() {
             "site=${run}" \
             source_site_id=default \
             clone_database=yes
-        chown -R apache "/var/www/localhost/htdocs/openemr/sites/${run}"
+        chown -R apache "/var/www/localhost/htdocs/DCL/sites/${run}"
         # shellcheck disable=SC2312  # Pipeline return value is intentionally ignored
-        find "/var/www/localhost/htdocs/openemr/sites/${run}" -type d -print0 | xargs -0 chmod 500 || true
+        find "/var/www/localhost/htdocs/DCL/sites/${run}" -type d -print0 | xargs -0 chmod 500 || true
         # shellcheck disable=SC2312  # Pipeline return value is intentionally ignored
-        find "/var/www/localhost/htdocs/openemr/sites/${run}" -type f -print0 | xargs -0 chmod 400 || true
+        find "/var/www/localhost/htdocs/DCL/sites/${run}" -type f -print0 | xargs -0 chmod 400 || true
         # shellcheck disable=SC2312  # Pipeline return value is intentionally ignored
-        find "/var/www/localhost/htdocs/openemr/sites/${run}/documents" -type d -print0 | xargs -0 chmod 700 || true
+        find "/var/www/localhost/htdocs/DCL/sites/${run}/documents" -type d -print0 | xargs -0 chmod 700 || true
         # shellcheck disable=SC2312  # Pipeline return value is intentionally ignored
-        find "/var/www/localhost/htdocs/openemr/sites/${run}/documents" -type f -print0 | xargs -0 chmod 700 || true
+        find "/var/www/localhost/htdocs/DCL/sites/${run}/documents" -type f -print0 | xargs -0 chmod 700 || true
         echo "completed adding ${run} multisite"
         a=$((a + 1))
     done
-    sed -i "s@//exit;@exit;@" /var/www/localhost/htdocs/openemr/contrib/util/installScripts/InstallerAuto.php
+    sed -i "s@//exit;@exit;@" /var/www/localhost/htdocs/DCL/contrib/util/installScripts/InstallerAuto.php
     echo "Completed setting up a multisite bank with following number of multisites (labeled run1, run2, run3, ...): run1...run${1}"
 }
 
@@ -825,7 +825,7 @@ generateMultisiteBank() {
 # stricter rule and the hook runs the same way under either.
 #
 # postconfig and postupgrade run inside the envelope of the config and upgrade task,
-# after OpenEMR's completed its own work. Because these upgrades can't be rolled
+# after DCL's completed its own work. Because these upgrades can't be rolled
 # back, these tasks will only have one opportunity to run, and although failure will
 # stop the container launch, on next launch the hook will be skipped.
 #

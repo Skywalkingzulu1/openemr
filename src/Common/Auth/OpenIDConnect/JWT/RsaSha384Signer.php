@@ -6,8 +6,8 @@
  * Apache2 license of the originating code.
  * @see https://github.com/jumbojett/OpenID-Connect-PHP
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author  Michael Jett <mjett@mitre.org>
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright  MITRE 2020
@@ -26,13 +26,13 @@
  * under the License.
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\JWT;
+namespace DCL\Common\Auth\OpenIDConnect\JWT;
 
 use InvalidArgumentException;
 use Lcobucci\JWT\Signer;
 use Lcobucci\JWT\Signer\Key;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Utils\HttpUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Utils\HttpUtils;
 use phpseclib3\Crypt\PublicKeyLoader;
 use phpseclib3\Crypt\RSA;
 use Psr\Log\LoggerInterface;

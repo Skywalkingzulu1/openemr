@@ -3,27 +3,27 @@
 /**
  * PractitionerService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\PractitionerValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\PractitionerValidator;
+use DCL\Validators\ProcessingResult;
 
 class PractitionerService extends BaseService
 {
@@ -94,7 +94,7 @@ class PractitionerService extends BaseService
         }
         // TODO: @adunsulag check with @brady.miller or @sjpadgett and find out if all practitioners will have usernames.
         //  I noticed that in the test database that adding entries to the addressbook appears to create users... which
-        // seems bizarre and that those users don't have usernames.  I noticed that all of the users displayed in the OpenEMR
+        // seems bizarre and that those users don't have usernames.  I noticed that all of the users displayed in the DCL
         // user selector will exclude anything w/o a username so I add the same logic here.
         if (!empty($search['username'])) {
             if (!$search['username'] instanceof ISearchField) {

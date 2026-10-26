@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance;
+namespace DCL\FHIR\R4\FHIRResource\FHIRProvenance;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
@@ -71,19 +71,19 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * How the entity was used during the activity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRProvenanceEntityRole
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRProvenanceEntityRole
      */
     public $role = null;
 
     /**
      * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $what = null;
 
     /**
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
     public $agent = [];
 
@@ -94,7 +94,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * How the entity was used during the activity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRProvenanceEntityRole
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRProvenanceEntityRole
      */
     public function getRole()
     {
@@ -103,7 +103,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * How the entity was used during the activity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRProvenanceEntityRole $role
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRProvenanceEntityRole $role
      * @return $this
      */
     public function setRole($role)
@@ -114,7 +114,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getWhat()
     {
@@ -123,7 +123,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $what
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $what
      * @return $this
      */
     public function setWhat($what)
@@ -134,7 +134,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
     public function getAgent()
     {
@@ -143,7 +143,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent $agent
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent $agent
      * @return $this
      */
     public function addAgent($agent)

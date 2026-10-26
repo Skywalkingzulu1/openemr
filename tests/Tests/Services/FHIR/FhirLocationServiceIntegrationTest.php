@@ -7,22 +7,22 @@
  * correctly filters Location resources for Group exports, ensuring only patient
  * locations for patients in the group are included while excluding others.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Integration\Services\FHIR;
+namespace DCL\Tests\Integration\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\Export\ExportJob;
-use OpenEMR\FHIR\Export\ExportMemoryStreamWriter;
-use OpenEMR\Services\FHIR\FhirLocationService;
-use OpenEMR\Services\LocationService;
-use OpenEMR\Services\PatientService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\Export\ExportJob;
+use DCL\FHIR\Export\ExportMemoryStreamWriter;
+use DCL\Services\FHIR\FhirLocationService;
+use DCL\Services\LocationService;
+use DCL\Services\PatientService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -74,7 +74,7 @@ class FhirLocationServiceIntegrationTest extends TestCase
     {
         $this->markTestSkipped("Skipping for now until we can ensure test isolation and cleanup.");
         // Create test patients
-        // TODO: should we use the openemr FixtureManager to do this?
+        // TODO: should we use the DCL FixtureManager to do this?
         $groupPatient1Uuid = $this->createTestPatient('John', 'GroupMember1');
         $groupPatient2Uuid = $this->createTestPatient('Jane', 'GroupMember2');
         $nonGroupPatientUuid = $this->createTestPatient('Bob', 'NonGroupMember');

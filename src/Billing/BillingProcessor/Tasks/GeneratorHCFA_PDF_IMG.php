@@ -7,25 +7,25 @@
  * This generator will be run in favor of the Tasks\GeneratorHCFA_PDF
  * if the setting in Globals > Billing is set for "Prints the CMS 1500 on the Preprinted form"
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2014-2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing\BillingProcessor\Tasks;
+namespace DCL\Billing\BillingProcessor\Tasks;
 
-use OpenEMR\Billing\BillingProcessor\BillingClaim;
-use OpenEMR\Billing\BillingProcessor\GeneratorCanValidateInterface;
-use OpenEMR\Billing\BillingProcessor\GeneratorInterface;
-use OpenEMR\Billing\BillingProcessor\LoggerInterface;
-use OpenEMR\Billing\Hcfa1500;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Billing\BillingProcessor\BillingClaim;
+use DCL\Billing\BillingProcessor\GeneratorCanValidateInterface;
+use DCL\Billing\BillingProcessor\GeneratorInterface;
+use DCL\Billing\BillingProcessor\LoggerInterface;
+use DCL\Billing\Hcfa1500;
+use DCL\Core\OEGlobalsBag;
 
 class GeneratorHCFA_PDF_IMG extends GeneratorHCFA_PDF implements
     GeneratorInterface,

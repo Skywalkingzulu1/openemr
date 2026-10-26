@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
@@ -71,25 +71,25 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 {
     /**
      * The specified substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The group of specified substance, e.g. group 1 to 4.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $group = null;
 
     /**
      * Confidentiality level of the specified substance as the ingredient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $confidentiality = null;
 
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
      */
     public $strength = [];
 
@@ -100,7 +100,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * The specified substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * The specified substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * The group of specified substance, e.g. group 1 to 4.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getGroup()
     {
@@ -129,7 +129,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * The group of specified substance, e.g. group 1 to 4.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $group
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $group
      * @return $this
      */
     public function setGroup($group)
@@ -140,7 +140,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * Confidentiality level of the specified substance as the ingredient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getConfidentiality()
     {
@@ -149,7 +149,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * Confidentiality level of the specified substance as the ingredient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $confidentiality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $confidentiality
      * @return $this
      */
     public function setConfidentiality($confidentiality)
@@ -160,7 +160,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
      */
     public function getStrength()
     {
@@ -169,7 +169,7 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
 
     /**
      * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $strength
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength $strength
      * @return $this
      */
     public function addStrength($strength)

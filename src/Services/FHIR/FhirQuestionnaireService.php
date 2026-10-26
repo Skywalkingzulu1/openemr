@@ -4,32 +4,32 @@
  * FHIR Resource Service class example for implementing the methods that are typically used with FHIR resources via the
  * api.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 use BadMethodCallException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceCodeTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\Questionnaire\FhirQuestionnaireFormService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\MappedServiceCodeTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirQuestionnaireService extends FhirServiceBase implements
     IResourceReadableService,
@@ -70,17 +70,17 @@ class FhirQuestionnaireService extends FhirServiceBase implements
     /**
      * @param mixed $openEmrRecord
      */
-    public function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    public function insertDCLRecord($openEmrRecord): ProcessingResult
     {
-        return $this->getWriteService()->insertOpenEMRRecord($openEmrRecord);
+        return $this->getWriteService()->insertDCLRecord($openEmrRecord);
     }
 
     /**
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        return $this->getWriteService()->updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord);
+        return $this->getWriteService()->updateDCLRecord($fhirResourceId, $updatedDCLRecord);
     }
 
     /**
@@ -91,14 +91,14 @@ class FhirQuestionnaireService extends FhirServiceBase implements
      * @param array<array-key, mixed> $dataRecord
      * @param bool $encode
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRQuestionnaire
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRQuestionnaire
     {
-        return $this->getWriteService()->parseOpenEMRRecord($dataRecord, $encode);
+        return $this->getWriteService()->parseDCLRecord($dataRecord, $encode);
     }
 
     /**
-     * This method returns the FHIR search definition objects that are used to map FHIR search fields to OpenEMR fields.
-     * Since the mapping can be one FHIR search object to many OpenEMR fields, we use the search definition objects.
+     * This method returns the FHIR search definition objects that are used to map FHIR search fields to DCL fields.
+     * Since the mapping can be one FHIR search object to many DCL fields, we use the search definition objects.
      * Search fields can be combined as Composite fields and represent a host of search options.
      * @see https://www.hl7.org/fhir/search.html to see the types of search operations, and search types that are available
      * for use.
@@ -116,7 +116,7 @@ class FhirQuestionnaireService extends FhirServiceBase implements
     }
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying DCL data elements.
      * @param array $fhirSearchParameters The FHIR resource search parameters
      * @param string $puuidBind - Optional variable to only allow visibility of the patient with this puuid.
      * @return ProcessingResult processing result
@@ -164,7 +164,7 @@ class FhirQuestionnaireService extends FhirServiceBase implements
             throw new BadMethodCallException("Data record should be correct instance class");
         }
         // provenance will just be the organization as we don't keep track of the user at the individual FHIR resource level
-        // note we do track this internally in OpenEMR but FHIR R4 doesn't expose this as far as I can tell.
+        // note we do track this internally in DCL but FHIR R4 doesn't expose this as far as I can tell.
         $fhirProvenance = $this->getFhirProvenanceService()->createProvenanceForDomainResource($dataRecord);
         if ($fhirProvenance === null) {
             // Provenance can legitimately be unavailable (e.g. no resolvable organization/author

@@ -3,17 +3,17 @@
 /**
  * Fax SMS Authentication Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use Exception;
-use OpenEMR\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoGenException;
 use RingCentral\SDK\Http\ApiException;
 use RingCentral\SDK\SDK;
 
@@ -178,7 +178,7 @@ trait AuthenticateTrait
     private function initializeSDK(): void
     {
         if (isset($this->credentials['appKey'], $this->credentials['appSecret'])) {
-            $this->rcsdk = new SDK($this->credentials['appKey'], $this->credentials['appSecret'], $this->serverUrl, 'OpenEMR', '1.0.0');
+            $this->rcsdk = new SDK($this->credentials['appKey'], $this->credentials['appSecret'], $this->serverUrl, 'DCL', '1.0.0');
             $this->platform = $this->rcsdk->platform();
         } else {
             throw new Exception("App Key and App Secret are required to initialize SDK.");

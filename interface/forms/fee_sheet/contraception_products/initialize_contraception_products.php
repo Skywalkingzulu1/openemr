@@ -2,11 +2,11 @@
 
 require_once("templates/contraception_products.php");
 
-use OpenEMR\Common\Utils\CacheUtils;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Utils\CacheUtils;
+use DCL\Core\OEGlobalsBag;
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
-$web_root = \OpenEMR\Core\OEGlobalsBag::getInstance()->getWebRoot();
+$web_root = \DCL\Core\OEGlobalsBag::getInstance()->getWebRoot();
 ?>
 
 <script type="text/javascript" src='<?php echo CacheUtils::addAssetCacheParamToPath("$web_root/interface/forms/fee_sheet/contraception_products/js/view_model.js"); ?>'></script>

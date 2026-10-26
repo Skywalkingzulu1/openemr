@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describes the intended objective(s) for a patient, group or organization care, for example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
@@ -72,101 +72,101 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Business identifiers assigned to this goal by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The state of the goal throughout its lifecycle.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus
      */
     public $lifecycleStatus = null;
 
     /**
      * Describes the progression, or lack thereof, towards the goal against the target.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $achievementStatus = null;
 
     /**
      * Indicates a category the goal falls within.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $priority = null;
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $description = null;
 
     /**
      * Identifies the patient, group or organization for whom the goal is being established.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $startDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $startCodeableConcept = null;
 
     /**
      * Indicates what should be done by when.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget[]
      */
     public $target = [];
 
     /**
      * Identifies when the current status.  I.e. When initially created, when achieved, when cancelled, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $statusDate = null;
 
     /**
      * Captures the reason for the current status.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $statusReason = null;
 
     /**
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $expressedBy = null;
 
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $addresses = [];
 
     /**
      * Any comments related to the goal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Identifies the change (or lack of change) at the point when the status of the goal is assessed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $outcomeCode = [];
 
     /**
      * Details of what's changed (or not changed).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $outcomeReference = [];
 
@@ -177,7 +177,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this goal by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -186,7 +186,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Business identifiers assigned to this goal by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -197,7 +197,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The state of the goal throughout its lifecycle.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus
      */
     public function getLifecycleStatus()
     {
@@ -206,7 +206,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The state of the goal throughout its lifecycle.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus $lifecycleStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGoalLifecycleStatus $lifecycleStatus
      * @return $this
      */
     public function setLifecycleStatus($lifecycleStatus)
@@ -217,7 +217,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the progression, or lack thereof, towards the goal against the target.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAchievementStatus()
     {
@@ -226,7 +226,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the progression, or lack thereof, towards the goal against the target.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $achievementStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $achievementStatus
      * @return $this
      */
     public function setAchievementStatus($achievementStatus)
@@ -237,7 +237,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates a category the goal falls within.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -246,7 +246,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates a category the goal falls within.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -257,7 +257,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority()
     {
@@ -266,7 +266,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -277,7 +277,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDescription()
     {
@@ -286,7 +286,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $description
      * @return $this
      */
     public function setDescription($description)
@@ -297,7 +297,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient, group or organization for whom the goal is being established.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -306,7 +306,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient, group or organization for whom the goal is being established.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -316,7 +316,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getStartDate()
     {
@@ -324,7 +324,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $startDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $startDate
      * @return $this
      */
     public function setStartDate($startDate)
@@ -334,7 +334,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStartCodeableConcept()
     {
@@ -342,7 +342,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $startCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $startCodeableConcept
      * @return $this
      */
     public function setStartCodeableConcept($startCodeableConcept)
@@ -353,7 +353,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates what should be done by when.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget[]
      */
     public function getTarget()
     {
@@ -362,7 +362,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates what should be done by when.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget $target
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRGoal\FHIRGoalTarget $target
      * @return $this
      */
     public function addTarget($target)
@@ -373,7 +373,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies when the current status.  I.e. When initially created, when achieved, when cancelled, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getStatusDate()
     {
@@ -382,7 +382,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies when the current status.  I.e. When initially created, when achieved, when cancelled, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $statusDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $statusDate
      * @return $this
      */
     public function setStatusDate($statusDate)
@@ -393,7 +393,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Captures the reason for the current status.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getStatusReason()
     {
@@ -402,7 +402,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Captures the reason for the current status.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $statusReason
      * @return $this
      */
     public function setStatusReason($statusReason)
@@ -413,7 +413,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getExpressedBy()
     {
@@ -422,7 +422,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $expressedBy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $expressedBy
      * @return $this
      */
     public function setExpressedBy($expressedBy)
@@ -433,7 +433,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAddresses()
     {
@@ -442,7 +442,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $addresses
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $addresses
      * @return $this
      */
     public function addAddresses($addresses)
@@ -453,7 +453,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any comments related to the goal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -462,7 +462,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any comments related to the goal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -473,7 +473,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the change (or lack of change) at the point when the status of the goal is assessed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getOutcomeCode()
     {
@@ -482,7 +482,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the change (or lack of change) at the point when the status of the goal is assessed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcomeCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcomeCode
      * @return $this
      */
     public function addOutcomeCode($outcomeCode)
@@ -493,7 +493,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details of what's changed (or not changed).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getOutcomeReference()
     {
@@ -502,7 +502,7 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details of what's changed (or not changed).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $outcomeReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $outcomeReference
      * @return $this
      */
     public function addOutcomeReference($outcomeReference)

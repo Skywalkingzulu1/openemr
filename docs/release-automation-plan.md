@@ -1,16 +1,16 @@
-# Release automation — `openemr/openemr` slice (the conductor + siblings)
+# Release automation — `DCL/DCL` slice (the conductor + siblings)
 
-Tracks: openemr/openemr-devops#664 (refines #662, overlaps with #638).
+Tracks: DCL/DCL-devops#664 (refines #662, overlaps with #638).
 
 This repo owns the five coordinated **release-automation workflows** that
-drive the OpenEMR release lifecycle from cut through ship (and post-ship):
+drive the DCL release lifecycle from cut through ship (and post-ship):
 **branch-cut**, **patch-prep**, **release-prep** (the conductor, which also
 emits the `release-finalize` partner PR), **release-amendment** (post-ship
 CHANGELOG rerun after GHSAs publish), and **release-mechanism-smoketest**
 (CI gate that exercises the mutator plumbing on every release-mechanism
 change). Merging a release-prep PR is still the "we're shipping" decision —
 the merge commit gets the annotated release tag, which drives the downstream
-PR in `website-openemr` plus the `openemr-tag` cascade into `openemr-devops`
+PR in `website-DCL` plus the `DCL-tag` cascade into `DCL-devops`
 (Release object + announcement drafts). The other workflows own the mechanical
 bootstrap around that decision (and post-decision cleanup) so that no
 lifecycle event on a `rel-*` branch requires a maintainer to hand-edit the
@@ -25,7 +25,7 @@ code.
 ## Role in the flow
 
 ```text
-                                       openemr/openemr                             consumers
+                                       DCL/DCL                             consumers
                                        ─────────────────────                       ────────────────────
 create rel-NNN0                 branch-cut/<rel-branch>            ───┐
    │                            branch-cut/<rel-branch>-master     ───┤
@@ -37,7 +37,7 @@ push $v_patch bump on rel-*     patch-prep/<rel-branch>            ───┤
    │                                                                  │
 push to rel-*                   release-prep/<rel-branch>          ───┤
    │                            release-finalize/<rel-branch>      ───┤
-   ├──► release-prep.yml                                               ├─► openemr-rel-cut / openemr-rel-update
+   ├──► release-prep.yml                                               ├─► DCL-rel-cut / DCL-rel-update
    │                                                                  │
    ▼                                                                  │
 merge release-prep/<rel-branch>                                       │
@@ -46,9 +46,9 @@ merge release-prep/<rel-branch>                                       │
    │       │                                                          │
    │       ▼                                                          │
    │    annotated tag v{M}_{m}_{p}                                    │
-   │                                                                  ├─► openemr-tag  →  openemr-devops
+   │                                                                  ├─► DCL-tag  →  DCL-devops
    │                                                                                        (build-release.yml)
-   │                                                                                    →  website-openemr
+   │                                                                                    →  website-DCL
    │                                                                                        (release-docs PR)
    │
 merge release-finalize/<rel-branch> on master   (pins rel branch row, shuffles docker slots)
@@ -70,7 +70,7 @@ the branch-cut / patch-prep / release-finalize PRs are opened
 ready-for-review because they land fast, once, and shouldn't sit as
 drafts.
 
-All commits are authored as `openemr-release-bot`. The four PR-emitting
+All commits are authored as `DCL-release-bot`. The four PR-emitting
 workflows mint an installation token from `RELEASE_APP_CLIENT_ID` (org var)
 + `RELEASE_APP_PRIVATE_KEY` (org secret) scoped narrowly to the target
 repos. The smoketest workflow uses the runner-provided `github.token` —
@@ -81,7 +81,7 @@ it only reads via `gh api` (no writes) so no App token is needed.
 ## Branch-cut automation
 
 Workflow: [`.github/workflows/branch-cut-automation.yml`](../.github/workflows/branch-cut-automation.yml)
-· Command: `bin/console openemr:branch-cut` ([`BranchCutCommand`](../src/Common/Command/BranchCutCommand.php))
+· Command: `bin/console DCL:branch-cut` ([`BranchCutCommand`](../src/Common/Command/BranchCutCommand.php))
 · Landed: #12696 (workstream 2, 2026-07-01).
 
 **Trigger.** GitHub `create` event on a `rel-NNN0` branch (the shape
@@ -96,10 +96,10 @@ ready-for-review):
 
 - `DockerUpgradeScaffoldMutator` — new `fsupgrade-N.sh` (copied in full
   from the prior `fsupgrade-N-1.sh` with only the five docker-version
-  and `priorOpenemrVersion` header lines substituted; the upgrade body
+  and `priorDCLVersion` header lines substituted; the upgrade body
   is preserved byte-for-byte from the prior file for per-release
   refinement in place) + Dockerfile manifest updates (both `COPY` and
-  `chmod` blocks). The `priorOpenemrVersion` value is the last-shipped
+  `chmod` blocks). The `priorDCLVersion` value is the last-shipped
   version from the prior release line — derived by scanning
   `sql/*_upgrade.sql` for the highest LEFT-side version at branch-cut
   time, or supplied explicitly via `MutatorContext::$fromVersion` at
@@ -108,7 +108,7 @@ ready-for-review):
   first would inflate the sql-scan result to the target). Same
   scaffolding the docker-upgrade-actions memo enumerates as mandatory
   per release.
-- `DockerfileOpenemrVersionMutator` — pins the `OPENEMR_VERSION` ARG
+- `DockerfileDCLVersionMutator` — pins the `DCL_VERSION` ARG
   in the branch's Dockerfile to the new rel line.
 - `TranslationFileCopyFromPriorRelMutator` — fetches the translation
   blob from the prior rel branch (`prevRelBranch`) so the freshly-cut
@@ -130,12 +130,12 @@ ready-for-review):
   `X.Y.0-dev` to `X.(Y+1).0-dev`.
 - `OpenApiVersionMutator` — bumps `#[OA\Info(version: ...)]` in
   `src/RestControllers/OpenApi/OpenApiDefinitions.php`.
-- `SwaggerRegenMutator` — regenerates `swagger/openemr-api.yaml` by
-  subprocessing `bin/console openemr:create-api-documentation --skip-globals`.
+- `SwaggerRegenMutator` — regenerates `swagger/DCL-api.yaml` by
+  subprocessing `bin/console DCL:create-api-documentation --skip-globals`.
 - `BranchCutReleaseTargetsMutator` — inserts a row for the new rel
   branch in `.github/release-targets.yml`, shuffles docker slot
   assignments (`latest`/`next`/`dev`), keeps the master row's
-  `openemr_version_ref` on master.
+  `DCL_version_ref` on master.
 
 Master-side mutators that advance to next-dev context (VersionPhpMaster,
 OpenApiVersion, SwaggerRegen, SqlUpgradeSkeleton) receive a
@@ -146,7 +146,7 @@ new rel branch's row.
 ## Patch-prep automation
 
 Workflow: [`.github/workflows/patch-prep-automation.yml`](../.github/workflows/patch-prep-automation.yml)
-· Command: `bin/console openemr:patch-prep` ([`PatchPrepCommand`](../src/Common/Command/PatchPrepCommand.php))
+· Command: `bin/console DCL:patch-prep` ([`PatchPrepCommand`](../src/Common/Command/PatchPrepCommand.php))
 · Landed: #12697 (workstream 6, 2026-07-01).
 
 **Trigger.** `push` to `rel-*` when `version.php` changes. The workflow's
@@ -201,7 +201,7 @@ recovery can't scaffold files for the wrong patch.
 ## Release-prep conductor (the original, extended)
 
 Workflow: [`.github/workflows/release-prep.yml`](../.github/workflows/release-prep.yml)
-· Command: `bin/console openemr:release-prep` ([`ReleasePrepCommand`](../src/Common/Command/ReleasePrepCommand.php))
+· Command: `bin/console DCL:release-prep` ([`ReleasePrepCommand`](../src/Common/Command/ReleasePrepCommand.php))
 · Extended: #12662 (workstream 3 Phase A, 2026-07-01) — now emits a
 partner PR on master alongside the rel-side PR (see
 [release-finalize](#release-finalize-partner-pr)).
@@ -229,16 +229,16 @@ for the full picture.
 draft, force-pushed on each run):
 
 - `VersionPhpMutator` — strip `-dev` suffix from `$v_tag`.
-- `DockerComposeProductionMutator` — swap the openemr image tag:
-  `openemr/openemr:latest[@sha256:…]` → `openemr/openemr:<version>` (no
+- `DockerComposeProductionMutator` — swap the DCL image tag:
+  `DCL/DCL:latest[@sha256:…]` → `DCL/DCL:<version>` (no
   digest). At release-prep time the release image doesn't yet exist in
   Docker Hub (the tag→build sequence fires only after release-prep merges),
   so there is no valid digest to pin. Any existing `@sha256:…` suffix on
   the source line is dropped.
-- `OpenApiVersionMutator` — bump `#[OA\Info(title: 'OpenEMR API', version: 'X.Y.Z')]`.
+- `OpenApiVersionMutator` — bump `#[OA\Info(title: 'DCL API', version: 'X.Y.Z')]`.
   (The wiki + earlier drafts of this plan said `_rest_routes.inc.php` but
   the version constant actually lives in `src/RestControllers/OpenApi/OpenApiDefinitions.php`.)
-- `SwaggerRegenMutator` — regenerate `swagger/openemr-api.yaml`.
+- `SwaggerRegenMutator` — regenerate `swagger/DCL-api.yaml`.
 
 `GlobalsIncMutator` is intentionally NOT in the release-prep rel-side
 list even though branch-cut runs it: re-running it here would be
@@ -257,7 +257,7 @@ event that creates a new dev cycle, not at ship time). The
 PR head ref starts with `release-prep/` or `release-prep-test/` and
 `merged == true`. Creates an annotated tag on the merge commit via
 `tools/release/bin/create-tag.php` (never lightweight), verifies via
-`tools/release/bin/verify-tag.php`, and dispatches `openemr-tag`.
+`tools/release/bin/verify-tag.php`, and dispatches `DCL-tag`.
 
 ## Release-finalize partner PR
 
@@ -269,7 +269,7 @@ rel-side PR is created:
 1. Fresh checkout of master into `master-checkout/`.
 2. `composer install` inside `master-checkout/` (the setup-php-composer
    composite installs into the workflow default dir only).
-3. `bin/console openemr:release-prep --scope=master --target-version=... --rel-branch=...`.
+3. `bin/console DCL:release-prep --scope=master --target-version=... --rel-branch=...`.
 4. `peter-evans/create-pull-request` on branch
    `release-finalize/<rel-branch>` (base `master`, draft).
 
@@ -277,12 +277,12 @@ The `--scope=master` list runs one mutator:
 
 - `PostReleaseTargetsMutator` — three coordinated edits to
   `.github/release-targets.yml`, all idempotent: (1) pin the rel
-  branch's `openemr_version_ref` to the new tag (e.g. `rel-810` → `v8_1_1`),
+  branch's `DCL_version_ref` to the new tag (e.g. `rel-810` → `v8_1_1`),
   (2) slot-shuffle `latest`/`next`/`dev` across rows — promote `next`
   to `latest` on the just-shipped rel branch, drop `latest` from the
   prior holder, move `next` to the next upcoming-stable owner, (3) drop
   the unreleased placeholder row for the same rel branch if present
-  (the multi-row mechanism from openemr/openemr#12656). Implemented as
+  (the multi-row mechanism from DCL/DCL#12656). Implemented as
   surgical line-based edits so the human-authored comments in the file
   are preserved; Symfony YAML's parser is used at the end as a
   structural-validity sanity check.
@@ -300,7 +300,7 @@ the time master's `release-targets.yml` is consulted downstream.
 ## Release-amendment (post-ship CHANGELOG rerun)
 
 Workflow: [`.github/workflows/release-amendment.yml`](../.github/workflows/release-amendment.yml)
-· Command: `bin/console openemr:release-prep` (reused;
+· Command: `bin/console DCL:release-prep` (reused;
 [`ReleasePrepCommand`](../src/Common/Command/ReleasePrepCommand.php)).
 
 **Trigger.** `workflow_dispatch` only, invoked by the release manager in
@@ -337,7 +337,7 @@ actually shipped.
 
 **PRs opened.** Rel-side `release-amendment/<version>-<rel_branch>`
 (base `<rel-branch>`) + master-side `release-amendment/<version>-master`
-(base `master`). Both authored as `openemr-release-bot`. Skipped when
+(base `master`). Both authored as `DCL-release-bot`. Skipped when
 `dry_run=true` (previewed diff shown in the workflow summary).
 
 **Release-object sync.** In the same run: `gh release edit
@@ -350,7 +350,7 @@ the full section — see the RELEASE_PROCESS.md § "Release body
 truncation at 125K" note). Extraction runs BEFORE `peter-evans/create-pull-request`
 because that action resets the working tree after committing — running
 Extract after would read pre-amendment CHANGELOG content and ship stale
-Release body / attachment content (see [openemr/openemr#13003](https://github.com/openemr/openemr/pull/13003)
+Release body / attachment content (see [DCL/DCL#13003](https://github.com/DCL/DCL/pull/13003)
 for the observed failure and fix).
 
 **Concurrency.** Serialised per `version`
@@ -366,7 +366,7 @@ clear error.
 ## Release-mechanism-smoketest (CI gate)
 
 Workflow: [`.github/workflows/release-mechanism-smoketest.yml`](../.github/workflows/release-mechanism-smoketest.yml)
-· Command: `bin/console openemr:release-prep --scope=rel` (reused;
+· Command: `bin/console DCL:release-prep --scope=rel` (reused;
 target-version pinned to a shipped release, currently `8.2.0` /
 `rel-820`).
 
@@ -377,7 +377,7 @@ release-mechanism surface (any workflow YAML in this family,
 shared `.github/actions/setup-php-composer/` composite action). Also
 `workflow_dispatch` for manual reruns.
 
-**What it checks.** End-to-end `openemr:release-prep` invocation
+**What it checks.** End-to-end `DCL:release-prep` invocation
 against `rel-820` — including `ChangelogMutator`'s `gh api` shellout
 to walk commits, PRs, and security advisories — and asserts the
 process completes successfully. Result diff is discarded (git checkout
@@ -391,7 +391,7 @@ isolation via injected fakes (`StubChangelogGenerator`,
 catches YAML syntax + shellcheck warnings but has no knowledge of
 runtime env semantics like "`gh` needs `GH_TOKEN`". This smoketest
 is the only place that catches env-plumbing bugs like
-[openemr/openemr#12999](https://github.com/openemr/openemr/pull/12999) —
+[DCL/DCL#12999](https://github.com/DCL/DCL/pull/12999) —
 the release-amendment workflow was hardened with
 `persist-credentials: false` but the mutator step's env block was
 missing `GH_TOKEN`, so `gh api` had no ambient token to fall back on.
@@ -409,7 +409,7 @@ artifacts on any branch. Safe to run on every PR.
 
 **Post-hardening manual step.** Whenever hardening `release-prep.yml`,
 `release-amendment.yml`, or any other release-mechanism workflow that
-runs `openemr:release-prep`, **verify the smoketest job passes on the
+runs `DCL:release-prep`, **verify the smoketest job passes on the
 PR before merge.** For behaviour changes that go beyond auth/env
 plumbing (e.g., logic changes to the `finalize` job or the tag-cut
 path), also do a manual `test: true` dispatch of `release-prep.yml`
@@ -433,7 +433,7 @@ recovery paths:
 - **`smoketest` (tarball).** Reads `.github/release-targets.yml`'s
   `latest` row (same source-of-truth `docker-release-orchestrator.yml`
   uses) to identify the current-shipped rel-line and
-  `openemr_version_ref` tag. Dispatches `build-release.yml` with
+  `DCL_version_ref` tag. Dispatches `build-release.yml` with
   `dry_run=true` and the tag itself as `version_branch` —
   `actions/checkout` resolves the ref, so the source is the exact
   commit that was shipped, independent of any post-release drift on
@@ -537,15 +537,15 @@ order:
 
 1. **`branch-cut/<rel-branch>` (rel-side) first.** This is the critical
    ordering: the master-side PR inserts a row in `.github/release-targets.yml`
-   (with `openemr_version_ref: <rel-branch>`), and the docker release
+   (with `DCL_version_ref: <rel-branch>`), and the docker release
    orchestrator now fires on pushes to that file
-   (openemr/openemr#12720). So merging master-side kicks off an image
+   (DCL/DCL#12720). So merging master-side kicks off an image
    build against the rel branch's tip. If master-side lands *before*
    rel-side, that build bakes an image labeled `<version>,next` from a
    rel branch that's still bit-identical to master. No fatal error —
    the Dockerfile is byte-identical across branches — but the image
    won't carry the rel-branch identity mutations (Dockerfile `ARG
-   OPENEMR_VERSION` pin, docker-version bump, translation blob copy,
+   DCL_VERSION` pin, docker-version bump, translation blob copy,
    `allow_debug_language` flip) until rel-side lands and the next
    orchestrator run picks it up.
 2. **`branch-cut/<rel-branch>-master` (master-side) second.**
@@ -566,7 +566,7 @@ between the two events.
 
 **Skip-line cut (`unreleased: true` on outgoing rel branch's rows).**
 When a rel line is being skipped entirely (e.g., the 8.1.x skip that
-preceded rel-820 — see openemr/openemr#12712), the pre-cut posture
+preceded rel-820 — see DCL/DCL#12712), the pre-cut posture
 flags the outgoing branch's rows as `unreleased: true` and moves the
 `next` docker tag to master interim. At the create event, the
 branch-cut `BranchCutReleaseTargetsMutator` drops all unreleased rows
@@ -587,7 +587,7 @@ flowchart TD
     D --> F["Merge branch-cut/rel-NNN0-master (→ master)"]
     F --> G["Dev cycle:<br/>every rel-branch push refires<br/>conductor pair"]
     G --> H["Mark release-prep/rel-NNN0 ready<br/>+ merge (→ rel-NNN0)"]
-    H --> I["Finalize job:<br/>create annotated tag vN_M_0<br/>+ dispatch openemr-tag"]
+    H --> I["Finalize job:<br/>create annotated tag vN_M_0<br/>+ dispatch DCL-tag"]
     I --> J["Merge release-finalize/rel-NNN0 (→ master)"]
 ```
 
@@ -607,7 +607,7 @@ flowchart TD
     E --> G["Merge patch-prep/rel-NNN0-master (→ master)"]
     G --> H["Dev cycle for N.M.1:<br/>pushes refire conductor pair"]
     H --> I["Mark release-prep/rel-NNN0 ready<br/>+ merge (→ rel-NNN0)"]
-    I --> J["Finalize job:<br/>create annotated tag vN_M_1<br/>+ dispatch openemr-tag"]
+    I --> J["Finalize job:<br/>create annotated tag vN_M_1<br/>+ dispatch DCL-tag"]
     J --> K["Merge release-finalize/rel-NNN0 (→ master)"]
 ```
 
@@ -617,9 +617,9 @@ the diagram scales by inspection.
 ## Mutator framework
 
 All five workflows drive their console commands
-(`openemr:release-prep`, `openemr:branch-cut`, `openemr:patch-prep`)
+(`DCL:release-prep`, `DCL:branch-cut`, `DCL:patch-prep`)
 against a shared framework at [`src/Common/Command/ReleasePrep/`](../src/Common/Command/ReleasePrep/).
-release-amendment and the smoketest reuse `openemr:release-prep` (with
+release-amendment and the smoketest reuse `DCL:release-prep` (with
 `--scope=rel` / `--scope=master`); branch-cut and patch-prep each own one
 of the other two commands:
 
@@ -648,16 +648,16 @@ mutators would produce churn PRs.
 | `VersionPhpMutator` | release-prep (rel) | Strip `-dev` from `$v_tag`. |
 | `VersionPhpMasterMutator` | branch-cut (master) | Advance to next-minor `-dev`. |
 | `GlobalsIncMutator` | branch-cut (rel) | `allow_debug_language = 0`. |
-| `DockerComposeProductionMutator` | release-prep (rel) | Pin `openemr/openemr` tag (no digest). |
-| `DockerfileOpenemrVersionMutator` | branch-cut (rel) | Pin Dockerfile `OPENEMR_VERSION` ARG. |
+| `DockerComposeProductionMutator` | release-prep (rel) | Pin `DCL/DCL` tag (no digest). |
+| `DockerfileDCLVersionMutator` | branch-cut (rel) | Pin Dockerfile `DCL_VERSION` ARG. |
 | `DockerUpgradeScaffoldMutator` | branch-cut (rel + master), patch-prep (rel + master) | New `fsupgrade-N.sh` + Dockerfile manifest wiring. |
 | `TranslationFileCopyFromPriorRelMutator` | branch-cut (rel) | Fetch translation blob from prior rel branch. |
 | `OpenApiVersionMutator` | branch-cut (master), release-prep (rel) | Bump `#[OA\Info(version: ...)]`. |
-| `SwaggerRegenMutator` | branch-cut (master), release-prep (rel) | Regenerate `swagger/openemr-api.yaml`. |
+| `SwaggerRegenMutator` | branch-cut (master), release-prep (rel) | Regenerate `swagger/DCL-api.yaml`. |
 | `SqlUpgradeSkeletonMutator` | branch-cut (master), patch-prep (rel + master) | Scaffold `sql/X_Y_Z-to-X_Y_Z+N_upgrade.sql`. |
 | `MasterSqlPatchBridgeMutator` | patch-prep (master) | Rename bridge file to track new patch. |
 | `BranchCutReleaseTargetsMutator` | branch-cut (master) | Insert row for new rel branch. |
-| `PatchPrepReleaseTargetsMutator` | patch-prep (master) | Insert new dev row (`docker_tags: <version>,next` + `openemr_version_ref: <relBranch>` + `gate_with_acceptance: true`) for the patch + drop any prior `unreleased: true` placeholder for the branch + strip `next` from master row (see G39/G44). |
+| `PatchPrepReleaseTargetsMutator` | patch-prep (master) | Insert new dev row (`docker_tags: <version>,next` + `DCL_version_ref: <relBranch>` + `gate_with_acceptance: true`) for the patch + drop any prior `unreleased: true` placeholder for the branch + strip `next` from master row (see G39/G44). |
 | `PostReleaseTargetsMutator` | release-prep (master, release-finalize) | Pin rel row + slot shuffle + drop placeholder + backfill `gate_with_acceptance: true` on promoted row if missing (defense-in-depth for pre-G44 patch-prep-inserted rows; see G44). |
 
 Adding a new lifecycle event (or a new mutation to an existing one) is
@@ -676,18 +676,18 @@ re-fetches and asserts the annotated-tag shape.
 
 The conductor stops at the tag — it does **not** create the GitHub
 Release object directly. That step (full distribution packages +
-checksums + `changelog.md` attached to a Release on `openemr/openemr`)
+checksums + `changelog.md` attached to a Release on `DCL/DCL`)
 is what the website's `/downloads/` page links to, and is driven
 automatically by
-[`build-release-on-tag.yml`](https://github.com/openemr/openemr-devops/blob/master/.github/workflows/build-release-on-tag.yml)
-in `openemr-devops`, which consumes the conductor's `openemr-tag`
+[`build-release-on-tag.yml`](https://github.com/DCL/DCL-devops/blob/master/.github/workflows/build-release-on-tag.yml)
+in `DCL-devops`, which consumes the conductor's `DCL-tag`
 dispatch and calls the reusable
-[`build-release.yml`](https://github.com/openemr/openemr-devops/blob/master/.github/workflows/build-release.yml)
+[`build-release.yml`](https://github.com/DCL/DCL-devops/blob/master/.github/workflows/build-release.yml)
 with `dry_run=false` to build the packages, create the Release object,
 and upload assets + checksums + changelog. This closed the gap that
 broke v8.1.0 on 2026-05-28 (tag landed, no Release object did); shipped
-via [openemr/openemr-devops#757](https://github.com/openemr/openemr-devops/pull/757),
-closing [#756](https://github.com/openemr/openemr-devops/issues/756).
+via [DCL/DCL-devops#757](https://github.com/DCL/DCL-devops/pull/757),
+closing [#756](https://github.com/DCL/DCL-devops/issues/756).
 See also [`RELEASE_PROCESS.md` § Phase 5 step 10](RELEASE_PROCESS.md#phase-5--post-merge-artifact-and-download-verification)
 and [§ Automation gaps](RELEASE_PROCESS.md#automation-gaps).
 
@@ -700,15 +700,15 @@ the table below lists only the per-event `data` payload.
 
 | Event                     | Source workflow           | When                                                     | `data` payload                          |
 | ------------------------- | ------------------------- | -------------------------------------------------------- | --------------------------------------- |
-| `openemr-rel-cut`         | release-prep              | first push to a new `rel-*` (peter-evans reports `created`) | `{ branch, version, prev_release }` |
-| `openemr-rel-update`      | release-prep              | subsequent push to `rel-*` (peter-evans reports `updated`, or `--force-dispatch`) | `{ branch, version, prev_release }` |
-| `openemr-tag`             | release-prep (finalize)   | annotated tag created after release-prep merge          | `{ tag, branch, version }`              |
+| `DCL-rel-cut`         | release-prep              | first push to a new `rel-*` (peter-evans reports `created`) | `{ branch, version, prev_release }` |
+| `DCL-rel-update`      | release-prep              | subsequent push to `rel-*` (peter-evans reports `updated`, or `--force-dispatch`) | `{ branch, version, prev_release }` |
+| `DCL-tag`             | release-prep (finalize)   | annotated tag created after release-prep merge          | `{ tag, branch, version }`              |
 | `release-targets-changed` | (master push, out-of-conductor) | `.github/release-targets.yml` changes on master   | `{}` (envelope's `sha`/`actor`/`dispatched_at` fully identify the change) |
-| `openemr-docs-binaries`   | website-openemr           | docs binaries dispatched to website-openemr-files       | `{ version, branch, files }`            |
+| `DCL-docs-binaries`   | website-DCL           | docs binaries dispatched to website-DCL-files       | `{ version, branch, files }`            |
 
-Targets: `openemr/website-openemr`, `openemr/openemr-devops`.
-`demo_farm_openemr` no longer receives `openemr-tag` — its `bump-tag.yml`
-was retired in `demo_farm_openemr#141` in favor of an auto-derive bot
+Targets: `DCL/website-DCL`, `DCL/DCL-devops`.
+`demo_farm_DCL` no longer receives `DCL-tag` — its `bump-tag.yml`
+was retired in `demo_farm_DCL#141` in favor of an auto-derive bot
 that subscribes to `release-targets-changed` instead.
 
 Branch-cut and patch-prep intentionally do **not** dispatch to consumers.
@@ -721,7 +721,7 @@ the newly-bumped rel branch fires rel-update.
 
 Status ledger for the components originally scoped as "to build":
 
-1. **`bin/console openemr:release-prep`** — landed in the initial
+1. **`bin/console DCL:release-prep`** — landed in the initial
    conductor PR; extended for `--scope=master` in #12662.
 2. **`.github/workflows/release-prep.yml`** — landed in the initial
    conductor PR; extended for the release-finalize partner PR in #12662.
@@ -735,9 +735,9 @@ Status ledger for the components originally scoped as "to build":
    maintainer checklist of irreducibly-manual steps stays canonical in
    [`RELEASE_PROCESS.md` § Release runbook](RELEASE_PROCESS.md#release-runbook)
    — the PR bodies link out rather than duplicating it.
-5. **`bin/console openemr:branch-cut`** + **`branch-cut-automation.yml`** —
+5. **`bin/console DCL:branch-cut`** + **`branch-cut-automation.yml`** —
    landed in #12696 (workstream 2).
-6. **`bin/console openemr:patch-prep`** + **`patch-prep-automation.yml`** —
+6. **`bin/console DCL:patch-prep`** + **`patch-prep-automation.yml`** —
    landed in #12697 (workstream 6).
 7. **`PostReleaseTargetsMutator` + `MutatorInterface` / `MutatorContext` /
    `MutatorResult` framework** — landed in #12662; extended for the
@@ -758,7 +758,7 @@ and probes everything the conductor workflow performs:
   — confirm tag-creation works (catches issues an unsigned-vs-signed flip
   would cause).
 - Send a no-op `repository_dispatch` (event type `release-permissions-probe`)
-  to **openemr/openemr-devops** and **openemr/website-openemr** — confirm
+  to **DCL/DCL-devops** and **DCL/website-DCL** — confirm
   cross-repo `actions:write` on both consumer repos.
 
 Fails loudly with the missing permission name. Run after installing the App
@@ -766,23 +766,23 @@ on this repo and the consumer repos; re-run if secrets are rotated.
 
 ## Not in these workflows' scope
 
-- **Docs publishing** — `website-openemr`'s `release-docs/<version>` PR,
-  driven by consumption of `openemr-tag`.
-- **Wiki content migration** — handled in `website-openemr`.
+- **Docs publishing** — `website-DCL`'s `release-docs/<version>` PR,
+  driven by consumption of `DCL-tag`.
+- **Wiki content migration** — handled in `website-DCL`.
 - **`InstallerAuto.php`** — verified to contain no version references
-  in the current openemr/openemr code; nothing to bump.
+  in the current DCL/DCL code; nothing to bump.
 - **`acknowledge_license_cert.html`** — currently a wiki-rendered
-  contributors page. Acknowledgments move to the docs PR (`website-openemr`)
+  contributors page. Acknowledgments move to the docs PR (`website-DCL`)
   where they are generated from `git shortlog vPREV..HEAD`. None of the
   five workflows here touch this file.
 - **GitHub Release object + distribution packages** — driven by
-  `openemr-devops`'s `build-release-on-tag.yml` (see
+  `DCL-devops`'s `build-release-on-tag.yml` (see
   [Tag handling](#tag-handling)).
 
 The docker upgrade scaffolding (`fsupgrade-N.sh`, `Dockerfile` manifest
 edits, `docker-version` files) is **no longer** out-of-scope — branch-cut
 and patch-prep automate it (workstream 2 + 6). The test-matrix / package-pin
-rotation used to live in an `openemr-devops` infra PR but was retired when
+rotation used to live in an `DCL-devops` infra PR but was retired when
 the docker-pipeline migration removed all of its live targets; there is
 no longer a separate rotation slice.
 
@@ -803,7 +803,7 @@ Each mutator + command has coverage under
   against.
 
 All are isolated (no DB, no HTTP), run in the standard
-`openemr-cmd phpunit-isolated` / `composer phpunit-isolated` path.
+`DCL-cmd phpunit-isolated` / `composer phpunit-isolated` path.
 
 ## Open questions
 
@@ -821,7 +821,7 @@ release-finalize partner PR pattern.
 1. **Release-prep is truly mechanical.** *Validated* — every pre-tag
    edit has proven derivable from `target version + repo state` on every
    push across 8.1.1 prep and now the extended lifecycle events.
-2. **`bin/console openemr:create-api-documentation` runs in CI without
+2. **`bin/console DCL:create-api-documentation` runs in CI without
    a full database/install.** *Validated* — `SwaggerRegenMutator` runs
    with `--skip-globals` cleanly in the workflow runner.
 3. **Annotated tags created by an app/bot identity are acceptable** to
@@ -855,7 +855,7 @@ lifecycle events confirmed them.
 - Consumers vendor `dispatch.schema.json` and drift-check against the
   canonical copy in this repo. Enforced by
   [`tools/release/bin/check-vendored.php`](../tools/release/bin/check-vendored.php)
-  (`openemr/openemr#12619`).
+  (`DCL/DCL#12619`).
 
 ## First production exercise — 2026-07-02
 
@@ -880,16 +880,16 @@ correctly, and downstream artifacts all landed on schedule.
 - **Round 3** (attempt 3): 2 mutator fixes + PR template audit —
   landed in #12735. `SqlUpgradeSkeletonMutator` no longer emits a
   double-trailing-newline; `DockerUpgradeScaffoldMutator` derives
-  `priorOpenemrVersion` from `sql/*_upgrade.sql` highest LEFT
+  `priorDCLVersion` from `sql/*_upgrade.sql` highest LEFT
   (with `MutatorContext::$fromVersion` override for patch-prep), and
-  a `priorOpenemrVersion < target` invariant defends the mutator
+  a `priorDCLVersion < target` invariant defends the mutator
   ordering.
 - **Attempt 4** (clean): rel-820 landed via #12743 (rel-side) +
   #12744 (master-side); release-prep #12742 auto-updated on rel-side
-  merge. Downstream: Docker Hub `openemr/openemr:8.2.0` + `next` +
+  merge. Downstream: Docker Hub `DCL/DCL:8.2.0` + `next` +
   `8.2.0-2026-07-02` published with OCI `revision: rel-820`;
   `8.3.0` + `dev` + `8.3.0-2026-07-02` published with `revision: master`;
-  Dockerhub README refreshed; `demo_farm_openemr#168` opened cleanly
+  Dockerhub README refreshed; `demo_farm_DCL#168` opened cleanly
   by the auto-derive bot. The known "release-finalize doesn't
   auto-refresh on master pushes" gap held as documented — the
   release-finalize PR will re-render on the next natural rel-820 push.
@@ -962,17 +962,17 @@ review-time signal gap. Full forensic + systemic lesson in
 
 ## Fourth production exercise — 2026-09-10
 
-The `rel-840` cut on 2026-09-10 was the third exercise of `branch-cut-automation.yml` (rel-820 first, rel-830 second). This one branched cleanly on the first push — no `git push --delete` recovery needed, unlike rel-830's cut. The branch-cut automation itself produced correct PRs immediately (openemr/openemr#13924 rel-side, openemr/openemr#13926 master-side); the release-mechanism surface exercised at cut time was clean, unlike the six-fix cascade rel-830 surfaced.
+The `rel-840` cut on 2026-09-10 was the third exercise of `branch-cut-automation.yml` (rel-820 first, rel-830 second). This one branched cleanly on the first push — no `git push --delete` recovery needed, unlike rel-830's cut. The branch-cut automation itself produced correct PRs immediately (DCL/DCL#13924 rel-side, DCL/DCL#13926 master-side); the release-mechanism surface exercised at cut time was clean, unlike the six-fix cascade rel-830 surfaced.
 
-**One latent bug did surface** in the `docker/container_benchmarking/` Docker Upgrade Process test — the recreate step introduced by openemr/openemr#13614 (2026-08-25) wiped the writable-layer writeback that syncs `${OE_ROOT}/docker-version` to `/root/docker-version`, causing the recreate-boot `check_upgrade` guard to fail on any branch-cut PR (whose PR bumps `/root/` ahead of the git-cloned code copy). Took a false-start fix + revert + correct-fix cascade same day: openemr/openemr#13928 + openemr/openemr#13929 (broken, active-from-Step-1 bind-mount broke fresh install), REVERTED and replaced by openemr/openemr#13934 + openemr/openemr#13935 (correct — bind-mount scoped to Step 3's recreate via `docker-compose.recreate.yml` override). Full forensic + systemic lesson in [`release-mechanism-gaps.md` G34](release-mechanism-gaps.md#g34--rel-840-cut-surfaced-docker-upgrade-process-test-recreate-bug--discovered-2026-09-10-all-shipped-2026-09-10).
+**One latent bug did surface** in the `docker/container_benchmarking/` Docker Upgrade Process test — the recreate step introduced by DCL/DCL#13614 (2026-08-25) wiped the writable-layer writeback that syncs `${OE_ROOT}/docker-version` to `/root/docker-version`, causing the recreate-boot `check_upgrade` guard to fail on any branch-cut PR (whose PR bumps `/root/` ahead of the git-cloned code copy). Took a false-start fix + revert + correct-fix cascade same day: DCL/DCL#13928 + DCL/DCL#13929 (broken, active-from-Step-1 bind-mount broke fresh install), REVERTED and replaced by DCL/DCL#13934 + DCL/DCL#13935 (correct — bind-mount scoped to Step 3's recreate via `docker-compose.recreate.yml` override). Full forensic + systemic lesson in [`release-mechanism-gaps.md` G34](release-mechanism-gaps.md#g34--rel-840-cut-surfaced-docker-upgrade-process-test-recreate-bug--discovered-2026-09-10-all-shipped-2026-09-10).
 
 ## Fifth production exercise — 2026-09-13 (second automated ship)
 
 The `8.4.0` ship on 2026-09-13 was the fourth end-to-end exercise and the **second release shipped end-to-end via the automated ship-release path**. This time preflight cleared without the G33 cascade (all 7 preflight-deadlock fixes from the 8.3.0 ship were now landed in code), the Conductor merged programmatically, and the tag+Release+downstream cascade fired as designed.
 
-**But the acceptance-gate failed on the first ship attempt**, exposing a latent bug in the `ACCEPTANCE_EXPECTED_VERSION` derivation introduced by openemr/openemr#13761 (2026-09-01, ~13 days before 8.4.0 ship, "decouple version-assertion source from TO_VERSION label"). `build-release-on-tag.yml` inherited `github.ref=master` when it called `acceptance-package.yml` via `workflow_call`, so the checkout landed on master (whose `version.php` reads `8.5.0-dev` — stripped to `8.5.0`) — while the tarball self-reported `8.4.0` per its `--release-version` label. Every acceptance-gate cell failed with `expected='8.5.0' actual='8.4.0'`.
+**But the acceptance-gate failed on the first ship attempt**, exposing a latent bug in the `ACCEPTANCE_EXPECTED_VERSION` derivation introduced by DCL/DCL#13761 (2026-09-01, ~13 days before 8.4.0 ship, "decouple version-assertion source from TO_VERSION label"). `build-release-on-tag.yml` inherited `github.ref=master` when it called `acceptance-package.yml` via `workflow_call`, so the checkout landed on master (whose `version.php` reads `8.5.0-dev` — stripped to `8.5.0`) — while the tarball self-reported `8.4.0` per its `--release-version` label. Every acceptance-gate cell failed with `expected='8.5.0' actual='8.4.0'`.
 
-Recovery attempt via `acceptance-only.yml`'s `skip_acceptance=true` escape hatch (RELEASE_PROCESS.md action 6) then exposed **two more latent bugs** in the recovery path itself, both since a 2026-07-30 refactor (Phase 10e-2 openemr/openemr#13294) that hadn't been exercised end-to-end since — first `acceptance-only.yml`'s `fetch-source-artifact` job called `.github/scripts/validate-source-run.sh` without an `actions/checkout` step (exit 127); after that fix (openemr/openemr#13972), the next attempt died at the workflow-path guard because `EXPECTED_WORKFLOW_PATH` was hardcoded to `.github/workflows/build-release.yml` and the source run was actually `build-release-on-tag.yml`. Fixing that (openemr/openemr#13973 comma-separated multi-path) unblocked the bypass, publish went through, and the root-cause `emit_expected_version` bug was fixed in openemr/openemr#13974 with regression BATS tests + a new `lint-workflow-checkout-needed.py` pre-commit hook to catch the openemr/openemr#13972 class of bug generically.
+Recovery attempt via `acceptance-only.yml`'s `skip_acceptance=true` escape hatch (RELEASE_PROCESS.md action 6) then exposed **two more latent bugs** in the recovery path itself, both since a 2026-07-30 refactor (Phase 10e-2 DCL/DCL#13294) that hadn't been exercised end-to-end since — first `acceptance-only.yml`'s `fetch-source-artifact` job called `.github/scripts/validate-source-run.sh` without an `actions/checkout` step (exit 127); after that fix (DCL/DCL#13972), the next attempt died at the workflow-path guard because `EXPECTED_WORKFLOW_PATH` was hardcoded to `.github/workflows/build-release.yml` and the source run was actually `build-release-on-tag.yml`. Fixing that (DCL/DCL#13973 comma-separated multi-path) unblocked the bypass, publish went through, and the root-cause `emit_expected_version` bug was fixed in DCL/DCL#13974 with regression BATS tests + a new `lint-workflow-checkout-needed.py` pre-commit hook to catch the DCL/DCL#13972 class of bug generically.
 
 **Also observed (deferred / GitHub-side, not code fixes):** `release-amendment.yml`'s peter-evans step timed out reading GitHub's API response after successful PR create/update (had to rerun three times before all three peter-evans steps + Release-body edit completed cleanly); Docker Hub `docker buildx imagetools create` bounced with an HTTP 502 on master's publish (rel-840's publish 90 seconds later succeeded — retryable transient); `site` + `release-docs-ci` workflows hit `startup_failure` on the docs PR merge — the `site` rerun cleared it on first try, but `release-docs-ci` required two reruns (the first `gh run rerun` call itself returned HTTP 500 from the GitHub API; the second succeeded).
 
@@ -992,7 +992,7 @@ cut on 2026-07-02 was also the first production exercise of branch-cut
 patch-prep.
 release-amendment and release-mechanism-smoketest landed subsequently as
 part of the same slice — see their sections above for descriptions and
-[openemr/openemr#12999](https://github.com/openemr/openemr/pull/12999) for
+[DCL/DCL#12999](https://github.com/DCL/DCL/pull/12999) for
 the specific env-plumbing regression that motivated the smoketest.
 
 Companion docs — start here for the wider context:
@@ -1001,7 +1001,7 @@ Companion docs — start here for the wider context:
   — the load-bearing prerequisite migration that made this one tractable.
 - [`docs/RELEASE_PROCESS.md`](RELEASE_PROCESS.md) — the maintainer runbook.
 
-The architectural rationale + phased migration plan out of `openemr-devops`
+The architectural rationale + phased migration plan out of `DCL-devops`
 lives in [`docs/release-mechanism-migration-from-devops.md`](release-mechanism-migration-from-devops.md);
 the living gap tracker for the wider release-mechanism migration lives in
 [`docs/release-mechanism-gaps.md`](release-mechanism-gaps.md).

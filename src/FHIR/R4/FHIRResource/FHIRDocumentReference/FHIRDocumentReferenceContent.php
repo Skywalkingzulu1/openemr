@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDocumentReference;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any serialized object with a mime-type, so includes formal patient centric documents (CDA), clinical notes, scanned paper, and non-patient specific documents like policy text.
@@ -71,13 +71,13 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
 {
     /**
      * The document or URL of the document along with critical metadata to prove content has integrity.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $attachment = null;
 
     /**
      * An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $format = null;
 
@@ -88,7 +88,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
 
     /**
      * The document or URL of the document along with critical metadata to prove content has integrity.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getAttachment()
     {
@@ -97,7 +97,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
 
     /**
      * The document or URL of the document along with critical metadata to prove content has integrity.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $attachment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $attachment
      * @return $this
      */
     public function setAttachment($attachment)
@@ -108,7 +108,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
 
     /**
      * An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getFormat()
     {
@@ -117,7 +117,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
 
     /**
      * An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $format
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $format
      * @return $this
      */
     public function setFormat($format)

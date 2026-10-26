@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
 use Nyholm\Psr7\Response as Psr7Response;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;

@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest a feature for OpenEMR
+about: Suggest a feature for DCL
 
 ---
 
@@ -14,5 +14,5 @@ Write concise description of what feature you want
 
 
 
-<!-- Love openemr? Please consider supporting our project:
-👉  https://github.com/sponsors/openemr -->
+<!-- Love DCL? Please consider supporting our project:
+👉  https://github.com/sponsors/DCL -->

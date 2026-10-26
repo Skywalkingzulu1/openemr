@@ -1,20 +1,20 @@
 <?php
 
 /**
- * This file is part of OpenEMR.
+ * This file is part of DCL.
  *
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Appointments;
+namespace DCL\Events\Appointments;
 
 use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Event object for creating custom filters on calendar events
  *
- * @package OpenEMR\Events
+ * @package DCL\Events
  * @subpackage Appointments
  * @author Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2019 Ken Chapple <ken@mi-squared.com>

@@ -2,27 +2,27 @@
 
 /**
  * PatientIssuesService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Services\Traits\ServiceEventTrait;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Services\Traits\ServiceEventTrait;
+use DCL\Validators\ProcessingResult;
 
 class PatientIssuesService extends BaseService
 {

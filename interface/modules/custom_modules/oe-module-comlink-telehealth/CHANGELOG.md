@@ -6,7 +6,7 @@ V2.0.0
 - Patient invitation email when telehealth session starts
 - Third party invitation email when third party recipient is added
 - Direct patient launch screen from email (will redirect to login page if not logged in)
-- Improved OpenEMR email validation for patient portal and patient db insert
+- Improved DCL email validation for patient portal and patient db insert
 - Telehealth hooks on email invitations for developer enhancements (such as sending invitation via SMS)
 - Minimized note taking session screen default position setting (Top Left, Bottom Left, Top Right, Bottom Right options)
 - Minimized session screen will remember drag position during session if you move it to another location

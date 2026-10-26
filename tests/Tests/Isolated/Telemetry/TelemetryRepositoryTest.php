@@ -6,16 +6,16 @@
  * Tests TelemetryRepository functionality without database dependencies.
  * Uses stubs and mocks to test business logic in isolation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Telemetry;
+namespace DCL\Tests\Isolated\Telemetry;
 
-use OpenEMR\Telemetry\TelemetryRepository;
+use DCL\Telemetry\TelemetryRepository;
 use PHPUnit\Framework\TestCase;
 
 class TelemetryRepositoryTest extends TestCase

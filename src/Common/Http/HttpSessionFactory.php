@@ -1,14 +1,14 @@
 <?php
 
-namespace OpenEMR\Common\Http;
+namespace DCL\Common\Http;
 
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Session\Predis\SentinelUtil;
-use OpenEMR\Common\Session\SessionConfiguration;
-use OpenEMR\Common\Session\SessionConfigurationBuilder;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
-use OpenEMR\Common\Session\WriteThroughSession;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Session\Predis\SentinelUtil;
+use DCL\Common\Session\SessionConfiguration;
+use DCL\Common\Session\SessionConfigurationBuilder;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\Storage\ReadAndCloseNativeSessionStorage;
+use DCL\Common\Session\WriteThroughSession;
 use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
 use Symfony\Component\HttpFoundation\Session\SessionFactoryInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

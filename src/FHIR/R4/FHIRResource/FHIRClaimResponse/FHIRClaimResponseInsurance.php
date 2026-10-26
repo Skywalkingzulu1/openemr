@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRClaimResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -71,31 +71,31 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * A number to uniquely identify insurance entries and provide a sequence of coverages to convey coordination of benefit order.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
      * A flag to indicate that this Coverage is to be used for adjudication of this claim when set to true.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $focal = null;
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $coverage = null;
 
     /**
      * A business agreement number established between the provider and the insurer for special business processing purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $businessArrangement = null;
 
     /**
      * The result of the adjudication of the line items for the Coverage specified in this insurance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $claimResponse = null;
 
@@ -106,7 +106,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A number to uniquely identify insurance entries and provide a sequence of coverages to convey coordination of benefit order.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -115,7 +115,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A number to uniquely identify insurance entries and provide a sequence of coverages to convey coordination of benefit order.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -126,7 +126,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A flag to indicate that this Coverage is to be used for adjudication of this claim when set to true.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getFocal()
     {
@@ -135,7 +135,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A flag to indicate that this Coverage is to be used for adjudication of this claim when set to true.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $focal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $focal
      * @return $this
      */
     public function setFocal($focal)
@@ -146,7 +146,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCoverage()
     {
@@ -155,7 +155,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverage
      * @return $this
      */
     public function setCoverage($coverage)
@@ -166,7 +166,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A business agreement number established between the provider and the insurer for special business processing purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getBusinessArrangement()
     {
@@ -175,7 +175,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A business agreement number established between the provider and the insurer for special business processing purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $businessArrangement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $businessArrangement
      * @return $this
      */
     public function setBusinessArrangement($businessArrangement)
@@ -186,7 +186,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The result of the adjudication of the line items for the Coverage specified in this insurance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getClaimResponse()
     {
@@ -195,7 +195,7 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The result of the adjudication of the line items for the Coverage specified in this insurance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $claimResponse
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $claimResponse
      * @return $this
      */
     public function setClaimResponse($claimResponse)

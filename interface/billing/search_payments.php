@@ -5,8 +5,8 @@
 * Deletion of the payment is done with logging.
 *
 *
-* @package   OpenEMR
-* @link      https://www.open-emr.org
+* @package   DCL
+* @link      https://www.dcl.org
 * @author    Eldho Chacko <eldho@zhservices.com>
 * @author    Paul Simon K <paul@zhservices.com>
 * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -14,19 +14,19 @@
 * @copyright Copyright (c) 2010 Z&H Consultancy Services Private Limited <sam@zhservices.com>
 * @copyright Copyright (c) 2019-2020 Brady Miller <brady.g.miller@gmail.com>
 * @copyright Copyright (c) 2020 Rod Roark <rod@sunsetsystems.com>
-* @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+* @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
 require_once("../globals.php");
 require_once("../../custom/code_types.inc.php");
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Billing\Payments\DeletePayment;
-use OpenEMR\OeUI\OemrUI;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Billing\Payments\DeletePayment;
+use DCL\OeUI\OemrUI;
 
 $srcDir = OEGlobalsBag::getInstance()->getSrcDir();
 require_once($srcDir . '/options.inc.php');

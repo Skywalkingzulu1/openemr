@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
+namespace DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -71,31 +71,31 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 {
     /**
      * The kind of nutritional supplement product required such as a high protein or pediatric clear liquid supplement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The product or brand name of the nutritional supplement such as "Acme Protein Shake".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $productName = null;
 
     /**
      * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming[]
      */
     public $schedule = [];
 
     /**
      * The amount of the nutritional supplement to be given.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * Free text or additional instructions or information pertaining to the oral supplement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $instruction = null;
 
@@ -106,7 +106,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The kind of nutritional supplement product required such as a high protein or pediatric clear liquid supplement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -115,7 +115,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The kind of nutritional supplement product required such as a high protein or pediatric clear liquid supplement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -126,7 +126,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The product or brand name of the nutritional supplement such as "Acme Protein Shake".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getProductName()
     {
@@ -135,7 +135,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The product or brand name of the nutritional supplement such as "Acme Protein Shake".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $productName
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $productName
      * @return $this
      */
     public function setProductName($productName)
@@ -146,7 +146,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming[]
      */
     public function getSchedule()
     {
@@ -155,7 +155,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $schedule
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $schedule
      * @return $this
      */
     public function addSchedule($schedule)
@@ -166,7 +166,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The amount of the nutritional supplement to be given.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -175,7 +175,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * The amount of the nutritional supplement to be given.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -186,7 +186,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * Free text or additional instructions or information pertaining to the oral supplement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getInstruction()
     {
@@ -195,7 +195,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
 
     /**
      * Free text or additional instructions or information pertaining to the oral supplement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $instruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $instruction
      * @return $this
      */
     public function setInstruction($instruction)

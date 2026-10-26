@@ -6,28 +6,28 @@
  * Tests compliance with US Core 8.0.0 MedicationRequest Profile:
  * http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @copyright Elements marked with AI GENERATED CODE - are in the public domain
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
-use OpenEMR\FHIR\R4\FHIRElement;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRTiming;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirMedicationRequestService;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationRequest;
+use DCL\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRQuantity;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRTiming;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirMedicationRequestService;
+use DCL\Services\FHIR\UtilsService;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -120,7 +120,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testUSCoreProfileMetadata(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // Test that the resource is created correctly
         $this->assertInstanceOf(FHIRMedicationRequest::class, $medicationRequest);
@@ -136,7 +136,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredStatus(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core requires status 1..1
         $status = $medicationRequest->getStatus();
@@ -151,7 +151,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredIntent(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core requires intent 1..1
         $intent = $medicationRequest->getIntent();
@@ -166,7 +166,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportCategory(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core category is must support
         $categories = $medicationRequest->getCategory();
@@ -190,7 +190,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportReported(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core reported[x] is must support
         // Should have either reportedBoolean or reportedReference
@@ -220,7 +220,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredMedication(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core requires medication[x] 1..1 - either CodeableConcept or Reference
         $medicationCodeableConcept = $medicationRequest->getMedicationCodeableConcept();
@@ -261,7 +261,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredSubject(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core requires subject 1..1
         $subject = $medicationRequest->getSubject();
@@ -278,7 +278,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportEncounter(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core encounter is must support 0..1
         $encounter = $medicationRequest->getEncounter();
@@ -296,7 +296,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportAuthoredOn(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core authoredOn is must support 0..1
         $authoredOn = $medicationRequest->getAuthoredOn();
@@ -311,7 +311,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredRequester(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core requester is required 0..1 (data-absent-reason if not present)
         $requester = $medicationRequest->getRequester();
@@ -335,7 +335,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
         $this->markTestIncomplete("ReasonCode is currently stubbed in the service and needs implementation");
 //        // Test with reason code data
 //        $testData = $this->compliantMedicationRequestData;
-//        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($testData);
+//        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($testData);
 //
 //        // US Core reasonCode is must support 0..*
 //        $reasonCodes = $medicationRequest->getReasonCode();
@@ -381,7 +381,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
         $this->markTestIncomplete("ReasonReference is currently stubbed in the service and needs implementation");
 //        // Test with reason reference data
 //        $testData = $this->compliantMedicationRequestData;
-//        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($testData);
+//        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($testData);
 //
 //        // US Core reasonReference is must support 0..*
 //        $reasonReferences = $medicationRequest->getReasonReference();
@@ -410,7 +410,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportDosageInstruction(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core dosageInstruction is must support 0..*
         $dosageInstructions = $medicationRequest->getDosageInstruction();
@@ -451,7 +451,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     {
         $requestData = $this->compliantMedicationRequestData;
         $requestData['route_codes'] = null; // No codes, only text
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
         $this->assertNotEmpty($medicationRequest->getDosageInstruction(), 'DosageInstruction must be present (must support)');
         $dosage = $medicationRequest->getDosageInstruction()[0];
         $route = $dosage->getRoute();
@@ -463,7 +463,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportDispenseRequest(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core dispenseRequest is must support 0..1
         $dispenseRequest = $medicationRequest->getDispenseRequest();
@@ -491,7 +491,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMustSupportMedicationAdherenceExtension(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->compliantMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->compliantMedicationRequestData);
 
         // US Core medicationAdherence extension is must support
         $medicationAdherence = $this->findExtensionByUrl(
@@ -545,7 +545,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
             // Missing required fields: status, intent, medication, subject
         ];
 
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($invalidData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($invalidData);
 
         // The resource should still be created
         $this->assertInstanceOf(FHIRMedicationRequest::class, $medicationRequest);
@@ -557,7 +557,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
     #[Test]
     public function testMinimalValidMedicationRequest(): void
     {
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($this->minimalMedicationRequestData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($this->minimalMedicationRequestData);
 
         // Test all required elements are present
         $this->assertNotNull($medicationRequest->getStatus(), 'Status is required');
@@ -592,7 +592,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
         $testData = $this->compliantMedicationRequestData;
         $testData['status'] = $status;
 
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($testData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($testData);
 
         $this->assertEquals($status, $medicationRequest->getStatus());
     }
@@ -619,7 +619,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
         $testData = $this->compliantMedicationRequestData;
         $testData['intent'] = $intent;
 
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($testData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($testData);
 
         $this->assertEquals($intent, $medicationRequest->getIntent());
     }
@@ -637,7 +637,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
         ]
         ; // RxNorm code for Amoxicillin
 
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($testData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($testData);
 
         $medicationCC = $medicationRequest->getMedicationCodeableConcept();
         $this->assertNotNull($medicationCC);
@@ -663,7 +663,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
         $testData = $this->compliantMedicationRequestData;
         unset($testData['drugcode']); // Remove RxNorm code to test text-only
 
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($testData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($testData);
 
         $medicationCC = $medicationRequest->getMedicationCodeableConcept();
         $this->assertNotNull($medicationCC);
@@ -680,7 +680,7 @@ class FhirMedicationRequestServiceUSCore8Test extends TestCase
         $testData = $this->minimalMedicationRequestData;
         // No category specified, should default to community
 
-        $medicationRequest = $this->fhirMedicationRequestService->parseOpenEMRRecord($testData);
+        $medicationRequest = $this->fhirMedicationRequestService->parseDCLRecord($testData);
 
         $categories = $medicationRequest->getCategory();
         $this->assertNotEmpty($categories);

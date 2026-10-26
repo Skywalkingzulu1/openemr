@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,13 +71,13 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * The maximum amount of a service item a plan will pay for a covered benefit.  For examples. wellness visits, or eyeglasses.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $value = null;
 
     /**
      * The specific limit on the benefit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
@@ -88,7 +88,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The maximum amount of a service item a plan will pay for a covered benefit.  For examples. wellness visits, or eyeglasses.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValue()
     {
@@ -97,7 +97,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The maximum amount of a service item a plan will pay for a covered benefit.  For examples. wellness visits, or eyeglasses.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $value
      * @return $this
      */
     public function setValue($value)
@@ -108,7 +108,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The specific limit on the benefit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -117,7 +117,7 @@ class FHIRInsurancePlanLimit extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The specific limit on the benefit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)

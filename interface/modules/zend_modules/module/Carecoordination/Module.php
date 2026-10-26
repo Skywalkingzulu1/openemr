@@ -3,15 +3,15 @@
 /**
  * Module is responsible for setting up the configuration of the module and any events it listens to.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2015 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination;
@@ -19,8 +19,8 @@ namespace Carecoordination;
 use Carecoordination\Listener\CCDAEventsSubscriber;
 use Laminas\ModuleManager\ModuleManager;
 use Laminas\Mvc\MvcEvent;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class Module
@@ -75,7 +75,7 @@ class Module
 
     public function onBootstrap(MvcEvent $e)
     {
-        // we grab the OpenEMR event listener (which is injected as Laminas has its own dispatcher)
+        // we grab the DCL event listener (which is injected as Laminas has its own dispatcher)
         $serviceManager = $e->getApplication()->getServiceManager();
         $oemrDispatcher = $serviceManager->get(EventDispatcherInterface::class);
 

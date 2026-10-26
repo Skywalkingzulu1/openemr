@@ -4,8 +4,8 @@
  *
  * Patient summary screen.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Sharon Cohen <sharonco@matrix.co.il>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
@@ -14,7 +14,7 @@
  * @author    Robert Down <robertdown@live.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2017-2020 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017 Sharon Cohen <sharonco@matrix.co.il>
  * @copyright Copyright (c) 2018-2020 Stephen Waite <stephen.waite@cmsvt.com>
@@ -23,14 +23,14 @@
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
  * @copyright Copyright (c) 2021-2022 Robert Down <robertdown@live.com
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
 
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$webserver_root = \OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$webserver_root = \DCL\Core\OEGlobalsBag::getInstance()->getProjectDir();
 // fetchNextXAppts() (in library/appointments.inc.php) writes $resNotNull via the
 // global keyword to signal whether the appointments query returned a non-null result.
 $resNotNull = false;
@@ -40,35 +40,35 @@ require_once($srcdir . "/clinical_rules.php");
 require_once($srcdir . "/group.inc.php");
 require_once(__DIR__ . "/../../../library/appointments.inc.php");
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Patient\Summary\Card\RenderEvent as CardRenderEvent;
-use OpenEMR\Events\Patient\Summary\Card\SectionEvent;
-use OpenEMR\Events\PatientDemographics\RenderEvent;
-use OpenEMR\Events\PatientDemographics\ViewEvent;
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\Menu\PatientMenuRole;
-use OpenEMR\OeUI\OemrUI;
-use OpenEMR\Patient\Cards\BillingViewCard;
-use OpenEMR\Patient\Cards\CareExperiencePreferenceViewCard;
-use OpenEMR\Patient\Cards\CarePlanViewCard;
-use OpenEMR\Patient\Cards\CareTeamViewCard;
-use OpenEMR\Patient\Cards\DemographicsViewCard;
-use OpenEMR\Patient\Cards\InsuranceViewCard;
-use OpenEMR\Patient\Cards\PortalCard;
-use OpenEMR\Patient\Cards\TreatmentPreferenceViewCard;
-use OpenEMR\Reminder\BirthdayReminder;
-use OpenEMR\Services\AllergyIntoleranceService;
-use OpenEMR\Services\Forms\CarePlanFormService;
-use OpenEMR\Services\FormService;
-use OpenEMR\Services\PatientIssuesService;
-use OpenEMR\Services\PatientService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Patient\Summary\Card\RenderEvent as CardRenderEvent;
+use DCL\Events\Patient\Summary\Card\SectionEvent;
+use DCL\Events\PatientDemographics\RenderEvent;
+use DCL\Events\PatientDemographics\ViewEvent;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\Menu\PatientMenuRole;
+use DCL\OeUI\OemrUI;
+use DCL\Patient\Cards\BillingViewCard;
+use DCL\Patient\Cards\CareExperiencePreferenceViewCard;
+use DCL\Patient\Cards\CarePlanViewCard;
+use DCL\Patient\Cards\CareTeamViewCard;
+use DCL\Patient\Cards\DemographicsViewCard;
+use DCL\Patient\Cards\InsuranceViewCard;
+use DCL\Patient\Cards\PortalCard;
+use DCL\Patient\Cards\TreatmentPreferenceViewCard;
+use DCL\Reminder\BirthdayReminder;
+use DCL\Services\AllergyIntoleranceService;
+use DCL\Services\Forms\CarePlanFormService;
+use DCL\Services\FormService;
+use DCL\Services\PatientIssuesService;
+use DCL\Services\PatientService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 // Pass the request to the cards that need it rather than having each card reach
@@ -940,8 +940,8 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
             var Count = 0;
                 <?php
             //Encounter details are stored to javascript as array.
-                $result4 = sqlStatement("SELECT fe.encounter,fe.date,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-                " left join openemr_postcalendar_categories on fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? order by fe.date desc", [$pid]);
+                $result4 = sqlStatement("SELECT fe.encounter,fe.date,DCL_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+                " left join DCL_postcalendar_categories on fe.pc_catid=DCL_postcalendar_categories.pc_catid  WHERE fe.pid = ? order by fe.date desc", [$pid]);
                 if (sqlNumRows($result4) > 0) {
                     while ($rowresult4 = sqlFetchArray($result4)) { ?>
             EncounterIdArray[Count] = <?php echo js_escape($rowresult4['encounter']); ?>;
@@ -1876,7 +1876,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                         $toggleSet = true;
                         $priorDate = "";
                         $therapyGroupCategories = [];
-                        $query = sqlStatement("SELECT pc_catid FROM openemr_postcalendar_categories WHERE pc_cattype = 3 AND pc_active = 1");
+                        $query = sqlStatement("SELECT pc_catid FROM DCL_postcalendar_categories WHERE pc_cattype = 3 AND pc_active = 1");
                         while ($result = sqlFetchArray($query)) {
                             $therapyGroupCategories[] = $result['pc_catid'];
                         }

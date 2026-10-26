@@ -1,35 +1,35 @@
 <?php
 
-namespace OpenEMR\Services\FHIR\Observation;
+namespace DCL\Services\FHIR\Observation;
 
 use InvalidArgumentException;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceSearchableService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Observation\Trait\FhirObservationTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRElement\FHIRAnnotation;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceSearchableService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Observation\Trait\FhirObservationTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirObservationCareExperiencePreferenceService extends FhirServiceBase implements IResourceSearchableService, IResourceUSCIGProfileService, IPatientCompartmentResourceService
 {
@@ -99,22 +99,22 @@ class FhirObservationCareExperiencePreferenceService extends FhirServiceBase imp
         return in_array($code, self::SUPPORTED_LOINC_CODES, true);
     }
 
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $result = new ProcessingResult();
 
         // Handle category filter
-        if (isset($openEMRSearchParameters['category'])) {
-            $cat = $openEMRSearchParameters['category'];
+        if (isset($DCLSearchParameters['category'])) {
+            $cat = $DCLSearchParameters['category'];
             if (!($cat instanceof TokenSearchField) || !$cat->hasCodeValue(self::CATEGORY_CODE)) {
                 return $result;
             }
-            unset($openEMRSearchParameters['category']);
+            unset($DCLSearchParameters['category']);
         }
 
         // Handle code filter - check against ALL supported codes
-        if (isset($openEMRSearchParameters['observation_code'])) {
-            $tok = $openEMRSearchParameters['observation_code'];
+        if (isset($DCLSearchParameters['observation_code'])) {
+            $tok = $DCLSearchParameters['observation_code'];
             if (!($tok instanceof TokenSearchField)) {
                 throw new SearchFieldException('code', 'Invalid code token');
             }
@@ -134,11 +134,11 @@ class FhirObservationCareExperiencePreferenceService extends FhirServiceBase imp
                 return $result;
             } else {
                 // we remove the system code as we only support LOINC codes here
-                $openEMRSearchParameters['observation_code'] = new TokenSearchField('observation_code', $requestedCodes);
+                $DCLSearchParameters['observation_code'] = new TokenSearchField('observation_code', $requestedCodes);
             }
         }
 
-        $whereClause = FhirSearchWhereClauseBuilder::build($openEMRSearchParameters, true);
+        $whereClause = FhirSearchWhereClauseBuilder::build($DCLSearchParameters, true);
         $sql_frag = $whereClause->getFragment();
         $sqlBindArray = $whereClause->getBoundValues();
         // Build and execute query
@@ -215,7 +215,7 @@ class FhirObservationCareExperiencePreferenceService extends FhirServiceBase imp
         return null;
     }
 
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDomainResource|string
     {
         if (empty($dataRecord)) {
             throw new InvalidArgumentException("Data record cannot be empty");
@@ -322,7 +322,7 @@ class FhirObservationCareExperiencePreferenceService extends FhirServiceBase imp
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return false|string|FHIRProvenance the FHIR Resource. Returned format is defined using $encode parameter.
      */

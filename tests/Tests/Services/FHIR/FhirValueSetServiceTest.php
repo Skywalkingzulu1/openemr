@@ -3,19 +3,19 @@
 /**
  * FhirValueSetService Integration Tests
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    David Lavoy <david@p.industries>
  * @copyright Copyright (c) 2026 P Industries
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRValueSet;
-use OpenEMR\Services\FHIR\FhirValueSetService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRValueSet;
+use DCL\Services\FHIR\FhirValueSetService;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

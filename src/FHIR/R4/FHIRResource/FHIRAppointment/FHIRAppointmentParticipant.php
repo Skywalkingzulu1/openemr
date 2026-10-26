@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAppointment;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAppointment;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAppointment;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
@@ -71,31 +71,31 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * Role of participant in the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * A Person, Location/HealthcareService or Device that is participating in the appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $actor = null;
 
     /**
      * Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipantRequired
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRParticipantRequired
      */
     public $required = null;
 
     /**
      * Participation status of the actor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRParticipationStatus
      */
     public $status = null;
 
     /**
      * Participation period of the actor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -106,7 +106,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Role of participant in the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -115,7 +115,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Role of participant in the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -126,7 +126,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A Person, Location/HealthcareService or Device that is participating in the appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getActor()
     {
@@ -135,7 +135,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * A Person, Location/HealthcareService or Device that is participating in the appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $actor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $actor
      * @return $this
      */
     public function setActor($actor)
@@ -146,7 +146,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipantRequired
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRParticipantRequired
      */
     public function getRequired()
     {
@@ -155,7 +155,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipantRequired $required
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRParticipantRequired $required
      * @return $this
      */
     public function setRequired($required)
@@ -166,7 +166,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Participation status of the actor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRParticipationStatus
      */
     public function getStatus()
     {
@@ -175,7 +175,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Participation status of the actor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRParticipationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRParticipationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -186,7 +186,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Participation period of the actor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -195,7 +195,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Participation period of the actor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

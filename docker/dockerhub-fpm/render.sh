@@ -7,7 +7,7 @@
 #   recovery needed. Suppressing wholesale to keep the script readable.
 #
 # Render docker/dockerhub-fpm/overview.md into the markdown that ships to
-# Docker Hub's repo description for openemr/dev-php-fpm.
+# Docker Hub's repo description for DCL/dev-php-fpm.
 #
 # Input sources:
 #   * .github/workflows/weekly-build-php-fpm-dockers.yml -- one `build_*` job
@@ -40,14 +40,14 @@ for f in "${TEMPLATE}" "${WEEKLY_WORKFLOW}" "${NIGHTLY_WORKFLOW}"; do
     [[ -f "${f}" ]] || { echo "missing input: ${f}" >&2; exit 1; }
 done
 
-# Extract every `tags: openemr/dev-php-fpm:<TAG>` value from a workflow file.
+# Extract every `tags: DCL/dev-php-fpm:<TAG>` value from a workflow file.
 # The `tags:` line under each docker/build-push-action `with:` block is the
 # authoritative record of what gets pushed. Grep is faster and more portable
 # than walking the YAML tree with yq flavors that differ across environments.
 extract_tags() {
     local wf="$1"
-    grep -oE 'openemr/dev-php-fpm:[A-Za-z0-9._-]+' "${wf}" \
-        | sed 's|^openemr/dev-php-fpm:||' \
+    grep -oE 'DCL/dev-php-fpm:[A-Za-z0-9._-]+' "${wf}" \
+        | sed 's|^DCL/dev-php-fpm:||' \
         | grep -v '^$' \
         | sort -u
 }

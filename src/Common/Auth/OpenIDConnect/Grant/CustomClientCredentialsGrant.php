@@ -2,25 +2,25 @@
 
 /**
  * CustomClientCredentialsGrant implements the requirements for ONC SMART Bulk FHIR Client Credentials grant.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Grant;
+namespace DCL\Common\Auth\OpenIDConnect\Grant;
 
 use DateInterval;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\ScopeEntityInterface;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Grant\ClientCredentialsGrant;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Services\JWTClientAuthenticationService;
-use OpenEMR\Services\TrustedUserService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Services\JWTClientAuthenticationService;
+use DCL\Services\TrustedUserService;
+use DCL\Services\UserService;
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -88,7 +88,7 @@ class CustomClientCredentialsGrant extends ClientCredentialsGrant
     }
 
     /**
-     * We issue an access token, but we force the user account to be our OpenEMR API system user.  We also save off the
+     * We issue an access token, but we force the user account to be our DCL API system user.  We also save off the
      * grant as a TrustedUser which we can use later for revocation if necessary.
      * @param DateInterval $accessTokenTTL
      * @param ClientEntityInterface $client

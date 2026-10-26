@@ -12,24 +12,24 @@
  * steals the expired lease, so background services self-recover without
  * operator intervention. See GH issue #11661.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Background;
+namespace DCL\Services\Background;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Database\TableTypes;
-use OpenEMR\Common\Filesystem\SafeIncludeResolver;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Database\TableTypes;
+use DCL\Common\Filesystem\SafeIncludeResolver;
+use DCL\Core\OEGlobalsBag;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -69,10 +69,10 @@ class BackgroundServiceRunner
      *
      * GET_LOCK is session-scoped, so when the orchestrator process dies
      * (SIGKILL, container restart, fatal), the DB session closes and the
-     * lock auto-releases. The name is prefixed with `openemr.` so it
+     * lock auto-releases. The name is prefixed with `DCL.` so it
      * doesn't collide with anything else using GET_LOCK in the same DB.
      */
-    private const ORCHESTRATOR_LOCK_NAME = 'openemr.bg_orchestrator';
+    private const ORCHESTRATOR_LOCK_NAME = 'DCL.bg_orchestrator';
 
     private ?string $currentServiceName = null;
 
@@ -460,7 +460,7 @@ class BackgroundServiceRunner
      * Release the lease for a service by clearing `lock_expires_at` (and
      * the legacy `running` flag).
      *
-     * @throws \OpenEMR\Common\Database\SqlQueryException when the UPDATE
+     * @throws \DCL\Common\Database\SqlQueryException when the UPDATE
      *         cannot be executed — e.g. the DB connection is dead, the
      *         table/column is missing, or a deadlock aborted the statement.
      *         Orchestration callers that must survive cleanup failures

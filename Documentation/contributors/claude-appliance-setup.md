@@ -11,17 +11,17 @@
 A jailed Ubuntu LXC container running on the host Linux machine, connected to the host's git directory via bind mount (mirrored path). The container uses LXC's default NAT bridge (`lxcbr0`) rather than a separate LAN/host bridge such as `br0`, with a static IP inside the container and a single `/etc/hosts` entry on the host for name resolution.
 
 **Key design decisions:**
-- PHP, Composer, and Node for OpenEMR work are **not** installed in the LXC — all PHP/JS/CSS work runs inside the demo stacks via `openemr-cmd` commands (`docker exec`). Node is installed only to run the agent CLI itself (Claude Code).
+- PHP, Composer, and Node for DCL work are **not** installed in the LXC — all PHP/JS/CSS work runs inside the demo stacks via `DCL-cmd` commands (`docker exec`). Node is installed only to run the agent CLI itself (Claude Code).
 - LXC provides the jail — agents cannot reach host Docker, host filesystem outside the bind mount, or host localhost services
 - **NAT networking** (not bridged) — LAN hosts cannot initiate connections *to* the container; the container is invisible from outside the host. The container can still reach the LAN *outbound* once forwarding is enabled — see threat model below.
 - Static IP inside the container + `/etc/hosts` on the host gives a stable `claude-appliance.local` name — no mDNS or Avahi needed
 - Works on any connection including mobile hotspot — no dependency on LAN or router config
-- `openemr-cmd` handles all worktree lifecycle, port offset management, and Docker stack orchestration
+- `DCL-cmd` handles all worktree lifecycle, port offset management, and Docker stack orchestration
 
 **Containment stack:**
 - **LXC** — jails the filesystem, processes, and kernel namespaces
 - **NAT networking** — jails inbound network access; container is not reachable from the LAN
-- **No OpenEMR dev tooling on appliance** — PHP, Composer, and project Node deps live only inside demo stacks
+- **No DCL dev tooling on appliance** — PHP, Composer, and project Node deps live only inside demo stacks
 - **Bind-mounted git directory** — the only intentional read-write bridge to the host
 
 ---
@@ -33,7 +33,7 @@ Before changing anything below, understand what this appliance is and is not:
 - **The container is the trust boundary, not the user inside it.** The agent has effectively full privilege inside the container (root via passwordless sudo, full capabilities for nested Docker, `--dangerously-skip-permissions` on Claude Code). That is intentional — the design treats the *whole appliance* as already-compromised and relies on LXC + NAT to contain blast radius.
 - **What is protected:** the host filesystem outside `<git-dir>`, the host Docker daemon, host localhost services, your LAN's inbound surface, and any GitHub/SSH credentials that live on the host but not in the container.
 - **What is *not* protected:** anything reachable from the bind-mounted `<git-dir>`, anything the container can dial outbound (LAN included, unless you add egress firewall rules), and the contents of any tokens/keys you place inside the container (the GitHub PAT, the deploy key, the optional GPG key).
-- **The shared `.git/` in `<git-dir>/openemr/` is code-execution-relevant on the host.** Because the bind mount is writable by the agent, `.git/config` values (`core.sshCommand`, `core.hooksPath`, `credential.helper`, aliases, custom `filter` drivers), hook scripts under `.git/hooks/`, and directives in `.gitattributes` are all agent-writable. Any host-side git operation against this shared clone — `push`, `fetch`, `checkout`, commit (with or without signing) — can execute agent-planted code with your host credentials. This is consistent with the "bind mount is not protected" line above, but worth calling out on its own because it is easy to forget when doing routine host-side git work against a repo that also lives inside the appliance. For operations you want to insulate from this (typically: signed commits, or pushes to sensitive remotes from your host identity), use a separate host clone the agent cannot reach.
+- **The shared `.git/` in `<git-dir>/DCL/` is code-execution-relevant on the host.** Because the bind mount is writable by the agent, `.git/config` values (`core.sshCommand`, `core.hooksPath`, `credential.helper`, aliases, custom `filter` drivers), hook scripts under `.git/hooks/`, and directives in `.gitattributes` are all agent-writable. Any host-side git operation against this shared clone — `push`, `fetch`, `checkout`, commit (with or without signing) — can execute agent-planted code with your host credentials. This is consistent with the "bind mount is not protected" line above, but worth calling out on its own because it is easy to forget when doing routine host-side git work against a repo that also lives inside the appliance. For operations you want to insulate from this (typically: signed commits, or pushes to sensitive remotes from your host identity), use a separate host clone the agent cannot reach.
 - **Posture:** treat the appliance as disposable. Snapshots are the rollback path. Do not put credentials in the container that you would not be willing to revoke. Use a separate GitHub PAT, a per-repo deploy key, and (if you sign) a separate signing key — all documented below.
 - **For stuff that must be strictly isolated from a compromised appliance** (such as personal finances), the honest answer is a physically separate machine — ideally powered off except when actively in use — not a tighter container config on this host. As AI-agent autonomy grows, that separation-by-hardware pattern is likely to matter more.
 - **If you want stricter outbound isolation,** add explicit host firewall rules to block container → LAN traffic (e.g. `iptables` rules dropping `lxcbr0` traffic destined for RFC1918 ranges other than the loopback uplink). The default config below does *not* do this.
@@ -215,7 +215,7 @@ curl -fsSL https://dl.k8s.io/release/$(curl -fsSL https://dl.k8s.io/release/stab
   -o /usr/local/bin/kubectl
 chmod +x /usr/local/bin/kubectl
 
-# kind (Kubernetes IN Docker — for openemr-devops kubernetes work)
+# kind (Kubernetes IN Docker — for DCL-devops kubernetes work)
 # Note: this fetches the latest release. Pin to a specific version and verify the
 # SHA from https://github.com/kubernetes-sigs/kind/releases for stricter supply-chain guarantees.
 curl -fsSL https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64 \
@@ -227,12 +227,12 @@ chmod +x /usr/local/bin/kind
 # pin a specific Helm release if you want stricter supply-chain guarantees.
 curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
-# openemr-cmd (clone openemr-devops into the bind-mounted git dir if not already present)
-if [ ! -d "<git-dir>/openemr-devops" ]; then
-  git clone https://github.com/openemr/openemr-devops.git <git-dir>/openemr-devops
+# DCL-cmd (clone DCL-devops into the bind-mounted git dir if not already present)
+if [ ! -d "<git-dir>/DCL-devops" ]; then
+  git clone https://github.com/DCL/DCL-devops.git <git-dir>/DCL-devops
 fi
-cp <git-dir>/openemr-devops/utilities/openemr-cmd/openemr-cmd /usr/local/bin/openemr-cmd
-chmod +x /usr/local/bin/openemr-cmd
+cp <git-dir>/DCL-devops/utilities/DCL-cmd/DCL-cmd /usr/local/bin/DCL-cmd
+chmod +x /usr/local/bin/DCL-cmd
 
 # Add claude-agent to docker group
 usermod -aG docker claude-agent
@@ -325,7 +325,7 @@ GitHub → Settings → Developer settings →
 Personal access tokens → Fine-grained tokens → Generate new token
 ```
 
-Select only the repos agents will work on (e.g. `openemr/openemr`, `openemr/openemr-devops`). Required permissions:
+Select only the repos agents will work on (e.g. `DCL/DCL`, `DCL/DCL-devops`). Required permissions:
 
 | Permission | Level |
 |------------|-------|
@@ -353,21 +353,21 @@ gh auth login
 
 To let agents push branches to your fork from inside the container, use a **per-repo SSH deploy key** rather than a user-level SSH key. A user-level SSH key on GitHub inherits every permission your account has — including write access to upstream repositories you maintain. A deploy key is scoped to a single repository, so even if the in-container key is exposed the blast radius stops at that one repo.
 
-For each fork the agent should push to (typically just `<your-username>/openemr`):
+For each fork the agent should push to (typically just `<your-username>/DCL`):
 
 ```bash
 ssh-keygen -t ed25519 \
-  -C "claude-appliance:<your-username>/openemr" \
-  -f ~/.ssh/id_<your-username>_openemr -N ""
+  -C "claude-appliance:<your-username>/DCL" \
+  -f ~/.ssh/id_<your-username>_DCL -N ""
 
 # Print the public half — paste this into GitHub
-cat ~/.ssh/id_<your-username>_openemr.pub
+cat ~/.ssh/id_<your-username>_DCL.pub
 ```
 
 On GitHub:
 
 ```
-<your-username>/openemr → Settings → Deploy keys → Add deploy key
+<your-username>/DCL → Settings → Deploy keys → Add deploy key
   Title: claude-appliance
   Key:   <paste public key>
   ☑ Allow write access
@@ -376,34 +376,34 @@ On GitHub:
 Tell SSH which key to use for that one repo. Append to `~/.ssh/config` (create if missing, `chmod 600`):
 
 ```
-Host github-<your-username>-openemr
+Host github-<your-username>-DCL
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_<your-username>_openemr
+  IdentityFile ~/.ssh/id_<your-username>_DCL
   IdentitiesOnly yes
 ```
 
 Rewrite origin in the primary repo so worktrees inherit:
 
 ```bash
-cd <git-dir>/openemr
-git remote set-url origin git@github-<your-username>-openemr:<your-username>/openemr.git
+cd <git-dir>/DCL
+git remote set-url origin git@github-<your-username>-DCL:<your-username>/DCL.git
 ```
 
 Verify:
 
 ```bash
-ssh -T git@github-<your-username>-openemr
-# Expected: "Hi <your-username>/openemr! You've successfully authenticated,
+ssh -T git@github-<your-username>-DCL
+# Expected: "Hi <your-username>/DCL! You've successfully authenticated,
 #            but GitHub does not provide shell access."
 ```
 
-The greeting naming the **repo** (not your username) confirms the key is repo-scoped — it cannot reach any other repository on GitHub. Push to upstream `openemr/openemr` or any other repo will be rejected at the protocol level.
+The greeting naming the **repo** (not your username) confirms the key is repo-scoped — it cannot reach any other repository on GitHub. Push to upstream `DCL/DCL` or any other repo will be rejected at the protocol level.
 
-> **Mirror the alias on the host.** Because `<git-dir>` is bind-mounted, the rewritten origin URL (`git@github-<your-username>-openemr:...`) lives in the shared `.git/config` and is visible from the host too. The host won't resolve the alias unless its own `~/.ssh/config` defines a matching `Host` stanza pointing at the host's regular SSH key:
+> **Mirror the alias on the host.** Because `<git-dir>` is bind-mounted, the rewritten origin URL (`git@github-<your-username>-DCL:...`) lives in the shared `.git/config` and is visible from the host too. The host won't resolve the alias unless its own `~/.ssh/config` defines a matching `Host` stanza pointing at the host's regular SSH key:
 >
 > ```
-> Host github-<your-username>-openemr
+> Host github-<your-username>-DCL
 >   HostName github.com
 >   User git
 >   IdentityFile ~/.ssh/id_ed25519       # your normal host key
@@ -412,7 +412,7 @@ The greeting naming the **repo** (not your username) confirms the key is repo-sc
 >
 > Same alias name, different identity file. Container side uses the deploy key (repo-scoped); host side uses your full account key (unrestricted). Without this, host pushes/fetches will fail with "Could not resolve hostname".
 
-> **Multiple forks?** Generate a separate deploy key per fork (`<your-username>/openemr-devops`, etc.). Each gets its own SSH config alias and origin URL inside the container, and a matching `Host` stanza on the host. Explicit per-repo authorization is the point.
+> **Multiple forks?** Generate a separate deploy key per fork (`<your-username>/DCL-devops`, etc.). Each gets its own SSH config alias and origin URL inside the container, and a matching `Host` stanza on the host. Explicit per-repo authorization is the point.
 
 ---
 
@@ -485,17 +485,17 @@ git log --show-signature -1
 
 ```bash
 ls <git-dir>/
-# Should see: openemr  plus zero or more openemr-wt-<branch-slug> directories
-# (openemr-cmd derives the slug from the branch name — e.g. branch
-# "feature/foo" becomes directory openemr-wt-feature-foo).
+# Should see: DCL  plus zero or more DCL-wt-<branch-slug> directories
+# (DCL-cmd derives the slug from the branch name — e.g. branch
+# "feature/foo" becomes directory DCL-wt-feature-foo).
 
-openemr-cmd worktree list
+DCL-cmd worktree list
 # Shows all worktrees, ports, and status. Pick one of the listed
 # directories for the cd test below (skip if no worktrees yet).
 
-# cd <git-dir>/openemr-wt-<branch-slug>
+# cd <git-dir>/DCL-wt-<branch-slug>
 # git status
-# Should work — .git pointer resolves to <git-dir>/openemr/.git
+# Should work — .git pointer resolves to <git-dir>/DCL/.git
 ```
 
 ---
@@ -505,36 +505,36 @@ openemr-cmd worktree list
 > 🖥️ **Inside container** (as claude-agent)
 
 ```bash
-cd <git-dir>/openemr
+cd <git-dir>/DCL
 
 # Create test worktree and start stack
-openemr-cmd worktree add test-appliance -b --env easy --start
+DCL-cmd worktree add test-appliance -b --env easy --start
 
 # Check assigned ports
-openemr-cmd worktree list
+DCL-cmd worktree list
 
 # Verify PHP tooling runs inside the stack, not the appliance
-openemr-cmd pp
-openemr-cmd ut
+DCL-cmd pp
+DCL-cmd ut
 ```
 
-> 💻 **On the host** — open browser and visit the HTTPS URL for `test-appliance` using its assigned port from `openemr-cmd worktree list`. For offset 1, use:
+> 💻 **On the host** — open browser and visit the HTTPS URL for `test-appliance` using its assigned port from `DCL-cmd worktree list`. For offset 1, use:
 
 ```
 https://claude-appliance.local:9301
 ```
 
-Click through the SSL warning (self-signed cert — connection is still encrypted). You should see the OpenEMR setup/login screen.
+Click through the SSL warning (self-signed cert — connection is still encrypted). You should see the DCL setup/login screen.
 
 > 🖥️ **Inside container** — fully remove the test worktree (this is a one-time human-run setup verification, not an agent action):
 
 ```bash
-echo "y" | openemr-cmd worktree remove test-appliance
+echo "y" | DCL-cmd worktree remove test-appliance
 ```
 
-> **Why `remove` here and not `down`?** This is a human-driven setup verification — the test worktree has no purpose afterwards. `worktree remove` (default, without `--keep-volumes`) runs `docker compose down --volumes`, which deletes the ~10 branch-scoped named volumes that openemr-cmd creates per worktree (`openemr-<slug>_db`, `_assets`, `_themes`, `_sites`, `_nodemodules`, `_vendor`, `_ccdanodemodules`, `_ccdanodemodules2`, `_logs`, `_couchdb`, plus `_mailpit` on non-light envs). Each worktree's volumes are fully namespaced — nothing is shared between worktrees — so removing `test-appliance` cleans up only its own volumes and leaves any other worktrees untouched. Using `worktree down --keep-volumes` here would orphan those volumes on disk indefinitely.
+> **Why `remove` here and not `down`?** This is a human-driven setup verification — the test worktree has no purpose afterwards. `worktree remove` (default, without `--keep-volumes`) runs `docker compose down --volumes`, which deletes the ~10 branch-scoped named volumes that DCL-cmd creates per worktree (`DCL-<slug>_db`, `_assets`, `_themes`, `_sites`, `_nodemodules`, `_vendor`, `_ccdanodemodules`, `_ccdanodemodules2`, `_logs`, `_couchdb`, plus `_mailpit` on non-light envs). Each worktree's volumes are fully namespaced — nothing is shared between worktrees — so removing `test-appliance` cleans up only its own volumes and leaves any other worktrees untouched. Using `worktree down --keep-volumes` here would orphan those volumes on disk indefinitely.
 >
-> Note: `AGENTS.md` instructs *agents* never to run `openemr-cmd worktree remove`. This step is run by you, the human setting up the appliance, before any agent ever attaches.
+> Note: `AGENTS.md` instructs *agents* never to run `DCL-cmd worktree remove`. This step is run by you, the human setting up the appliance, before any agent ever attaches.
 
 ---
 
@@ -548,7 +548,7 @@ sudo lxc-stop -n claude-appliance
 
 # Take snapshot
 sudo lxc-snapshot -n claude-appliance \
-  -c "baseline — lean toolchain, docker, gh, openemr-cmd, static IP, host /etc/hosts verified"
+  -c "baseline — lean toolchain, docker, gh, DCL-cmd, static IP, host /etc/hosts verified"
 
 # Confirm snapshot saved
 sudo lxc-snapshot -n claude-appliance -L
@@ -587,11 +587,11 @@ The setup above only runs once. After that, launching an agent session is:
    sudo lxc-attach -n claude-appliance -- su - claude-agent
    ```
 
-3. **Go to the openemr checkout and launch Claude Code:**
+3. **Go to the DCL checkout and launch Claude Code:**
 
    > 🖥️ **Inside container** (as claude-agent)
    ```bash
-   cd <git-dir>/openemr
+   cd <git-dir>/DCL
    claude --dangerously-skip-permissions
    ```
 
@@ -599,7 +599,7 @@ That's it — go to town.
 
 ### Running multiple sessions in parallel
 
-Open a second terminal on the host, repeat steps 2 and 3 there. Run as many concurrent sessions as you want — each just needs to drive its worktrees via `openemr-cmd worktree` per the rules in [`AGENTS.md`](../../AGENTS.md). `openemr-cmd` assigns each worktree a distinct port offset and namespaces its Docker volumes, so parallel stacks do not collide — whether a session works one worktree at a time or several.
+Open a second terminal on the host, repeat steps 2 and 3 there. Run as many concurrent sessions as you want — each just needs to drive its worktrees via `DCL-cmd worktree` per the rules in [`AGENTS.md`](../../AGENTS.md). `DCL-cmd` assigns each worktree a distinct port offset and namespaces its Docker volumes, so parallel stacks do not collide — whether a session works one worktree at a time or several.
 
 > **Why `--dangerously-skip-permissions` is acceptable here.** Claude Code's per-action permission prompts are the guardrail for agents running directly on your host. Inside this appliance the LXC + NAT boundary is the security model — see the [threat model](#threat-model) section at the top for what that does and does not protect. Outside this context, leave the prompts on.
 
@@ -607,12 +607,12 @@ Open a second terminal on the host, repeat steps 2 and 3 there. Run as many conc
 
 ## Service quick reference
 
-Full port-derivation formulas (any offset) live in [`AGENTS.md`](../../AGENTS.md#working-in-a-git-worktree). This table shows the offset-1/2/3 examples for the services `openemr-cmd` brings up on each worktree:
+Full port-derivation formulas (any offset) live in [`AGENTS.md`](../../AGENTS.md#working-in-a-git-worktree). This table shows the offset-1/2/3 examples for the services `DCL-cmd` brings up on each worktree:
 
 | Service | Worktree 1 | Worktree 2 | Worktree 3 |
 |---------|-----------|-----------|-----------|
-| OpenEMR HTTPS | `https://claude-appliance.local:9301` | `:9302` | `:9303` |
-| OpenEMR HTTP | `http://claude-appliance.local:8301` | `:8302` | `:8303` |
+| DCL HTTPS | `https://claude-appliance.local:9301` | `:9302` | `:9303` |
+| DCL HTTP | `http://claude-appliance.local:8301` | `:8302` | `:8303` |
 | phpMyAdmin | `http://claude-appliance.local:8311` | `:8312` | `:8313` |
 | MySQL | `claude-appliance.local:8321` | `:8322` | `:8323` |
 | Mailpit | `http://claude-appliance.local:8026` | `:8027` | `:8028` |
@@ -620,7 +620,7 @@ Full port-derivation formulas (any offset) live in [`AGENTS.md`](../../AGENTS.md
 | Selenium (WebDriver) | `http://claude-appliance.local:4445/wd/hub` | `:4446/wd/hub` | `:4447/wd/hub` |
 | Redis | `claude-appliance.local:6380` | `:6381` | `:6382` |
 
-> SSL warning on OpenEMR HTTPS is expected — the dev stack uses a self-signed cert. The connection is still encrypted. Click through once; Firefox lets you add a permanent exception.
+> SSL warning on DCL HTTPS is expected — the dev stack uses a self-signed cert. The connection is still encrypted. Click through once; Firefox lets you add a permanent exception.
 
 ---
 

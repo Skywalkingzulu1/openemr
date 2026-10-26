@@ -3,14 +3,14 @@
 /**
  * pid.inc.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\PatientSessionUtil;
 
 // Function called to set the global session variable for patient id (pid) number.
 function setpid($new_pid): void

@@ -20,16 +20,16 @@
  *
  * Exempt paths: /tests/ plus the auth-extraction classes themselves.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Arg;
@@ -112,7 +112,7 @@ class ForbiddenAuthorizationHeaderReadRule implements Rule
             RuleErrorBuilder::message(
                 'Direct read of the Authorization header is forbidden. Bearer tokens must flow through BearerTokenAuthorizationStrategy so the signature, revocation, scope, and trusted-user checks run.',
             )
-                ->identifier('openemr.forbiddenAuthorizationHeaderRead')
+                ->identifier('DCL.forbiddenAuthorizationHeaderRead')
                 ->tip('If you need the authenticated user or client, read it from the request attributes set by BearerTokenAuthorizationStrategy (userId, clientId, oauth_scopes). If you are implementing a new authorization strategy, add it to the exempt list in ForbiddenAuthorizationHeaderReadRule::DEFAULT_EXEMPT_PATH_FRAGMENTS.')
                 ->build(),
         ];

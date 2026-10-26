@@ -3,18 +3,18 @@
 /**
  * Voice Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\RCVoice;
+namespace DCL\Modules\FaxSMS\RCVoice;
 
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Core\OEGlobalsBag;
 
 trait VoiceFunctionsTrait
 {
@@ -54,7 +54,7 @@ trait VoiceFunctionsTrait
                 'msg' => xlt('Voice webhook secret provisioned. Event subscription registration is not yet available.'),
             ];
         } catch (\Throwable $e) {
-            \OpenEMR\BC\ServiceContainer::getLogger()->error('Voice webhook secret provisioning failed', ['exception' => $e]);
+            \DCL\BC\ServiceContainer::getLogger()->error('Voice webhook secret provisioning failed', ['exception' => $e]);
             $response = ['status' => 'ERROR', 'msg' => xlt('Webhook secret provisioning failed. See server log.')];
         }
         return (string) json_encode($response);
@@ -66,7 +66,7 @@ trait VoiceFunctionsTrait
      *
      * Stored under a fixed (auth_user=0, vendor='_voice_webhook') row in
      * module_faxsms_credentials so the session-less voice_webhook.php can read
-     * it back to authenticate deliveries. One secret per OpenEMR database
+     * it back to authenticate deliveries. One secret per DCL database
      * (i.e. per site for the standard one-DB-per-site layout).
      */
     private function getOrCreateWebhookSecret(): string

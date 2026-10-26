@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
+namespace DCL\FHIR\R4\FHIRResource\FHIRValueSet;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
@@ -71,25 +71,25 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * The Locked Date is  the effective date that is used to determine the version of all referenced Code Systems and Value Set Definitions included in the compose that are not already tied to a specific version.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $lockedDate = null;
 
     /**
      * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $inactive = null;
 
     /**
      * Include one or more codes from a code system or other value set(s).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public $include = [];
 
     /**
      * Exclude one or more codes from the value set based on code system filters and/or other value sets.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public $exclude = [];
 
@@ -100,7 +100,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The Locked Date is  the effective date that is used to determine the version of all referenced Code Systems and Value Set Definitions included in the compose that are not already tied to a specific version.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getLockedDate()
     {
@@ -109,7 +109,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The Locked Date is  the effective date that is used to determine the version of all referenced Code Systems and Value Set Definitions included in the compose that are not already tied to a specific version.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $lockedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $lockedDate
      * @return $this
      */
     public function setLockedDate($lockedDate)
@@ -120,7 +120,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getInactive()
     {
@@ -129,7 +129,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable $expand parameters (but generally, inactive codes would be expected to be included).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $inactive
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $inactive
      * @return $this
      */
     public function setInactive($inactive)
@@ -140,7 +140,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Include one or more codes from a code system or other value set(s).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public function getInclude()
     {
@@ -149,7 +149,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Include one or more codes from a code system or other value set(s).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude $include
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude $include
      * @return $this
      */
     public function addInclude($include)
@@ -160,7 +160,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Exclude one or more codes from the value set based on code system filters and/or other value sets.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public function getExclude()
     {
@@ -169,7 +169,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Exclude one or more codes from the value set based on code system filters and/or other value sets.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude $exclude
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude $exclude
      * @return $this
      */
     public function addExclude($exclude)

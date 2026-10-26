@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The regulatory authorization of a medicinal product.
@@ -71,29 +71,29 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
 {
     /**
      * Identifier for this procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * Type of procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $datePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $dateDateTime = null;
 
     /**
      * Applications submitted to obtain a marketing authorization.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
      */
     public $application = [];
 
@@ -104,7 +104,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
 
     /**
      * Identifier for this procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -113,7 +113,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
 
     /**
      * Identifier for this procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -124,7 +124,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
 
     /**
      * Type of procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -133,7 +133,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
 
     /**
      * Type of procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -143,7 +143,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getDatePeriod()
     {
@@ -151,7 +151,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $datePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $datePeriod
      * @return $this
      */
     public function setDatePeriod($datePeriod)
@@ -161,7 +161,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDateDateTime()
     {
@@ -169,7 +169,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $dateDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $dateDateTime
      * @return $this
      */
     public function setDateDateTime($dateDateTime)
@@ -180,7 +180,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
 
     /**
      * Applications submitted to obtain a marketing authorization.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
      */
     public function getApplication()
     {
@@ -189,7 +189,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement imp
 
     /**
      * Applications submitted to obtain a marketing authorization.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $application
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $application
      * @return $this
      */
     public function addApplication($application)

@@ -66,10 +66,10 @@ initialize_inferno() {
     echo 'Inferno lit'
 }
 
-initialize_openemr() {
-    echo 'Initializing OpenEMR'
+initialize_DCL() {
+    echo 'Initializing DCL'
     local -x DOCKER_DIR=inferno
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x DCL_DIR=/var/www/localhost/htdocs/DCL
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
     cd -P "${repo_root}"
@@ -80,17 +80,17 @@ initialize_openemr() {
     cd -
     dockers_env_start
     install_configure
-    "${HOME}/bin/openemr-cmd" pc inferno-files/files/resources/openemr-snapshots/2026-10-16-inferno-baseline.tgz
-    "${HOME}/bin/openemr-cmd" rs 2026-10-16-inferno-baseline
+    "${HOME}/bin/DCL-cmd" pc inferno-files/files/resources/DCL-snapshots/2026-10-16-inferno-baseline.tgz
+    "${HOME}/bin/DCL-cmd" rs 2026-10-16-inferno-baseline
     # Snapshot is from 8.5.0-dev (database 550). Upgrading from 8.4.1 re-runs
     # 8_4_1-to-8_5_0_upgrade.sql, which picks up schema added since then.
-    docker compose exec -T openemr su-exec apache php "${OPENEMR_DIR}/sql_upgrade.php" --from=8.4.1
+    docker compose exec -T DCL su-exec apache php "${DCL_DIR}/sql_upgrade.php" --from=8.4.1
     # (may need to configure api globals here)
     # Prevent password expiration from blocking OAuth password grant
-    docker compose exec -T openemr mysql -u openemr --password=openemr -h mysql openemr \
+    docker compose exec -T DCL mysql -u DCL --password=DCL -h mysql DCL \
         -e "UPDATE users_secure SET last_update_password = NOW()"
 
-    # Configure coverage after containers are running and OpenEMR is initialized
+    # Configure coverage after containers are running and DCL is initialized
     if [[ ${ENABLE_COVERAGE:-false} = true ]]; then
         # Set COMPOSE_FILE so docker compose commands work from any directory
         local compose_file="${repo_root}/ci/inferno/compose.yml"
@@ -103,11 +103,11 @@ initialize_openemr() {
         echo "COVERAGE_RAW_TMPDIR=${RUNNER_TEMP:-/tmp}/coverage-inferno-raw"
     fi
 
-    echo 'OpenEMR initialized'
+    echo 'DCL initialized'
 }
 run_testsuite() {
     local -x DOCKER_DIR=inferno
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x DCL_DIR=/var/www/localhost/htdocs/DCL
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
 
@@ -132,7 +132,7 @@ run_testsuite() {
     phpunit --testsuite certification \
             "${coverage_args[@]}" \
             --log-junit junit-inferno.xml \
-            -c "${OPENEMR_DIR}/phpunit.xml" || status=$?
+            -c "${DCL_DIR}/phpunit.xml" || status=$?
 
     echo "Certification Tests Executed (exit code ${status})"
     return "${status}"
@@ -140,7 +140,7 @@ run_testsuite() {
 
 collect_inferno_coverage() {
     local -x DOCKER_DIR=inferno
-    local -x OPENEMR_DIR=/var/www/localhost/htdocs/openemr
+    local -x DCL_DIR=/var/www/localhost/htdocs/DCL
     local repo_root
     repo_root="$(git rev-parse --show-toplevel)"
 
@@ -157,7 +157,7 @@ collect_inferno_coverage() {
 
     # Convert HTTP request coverage to clover.xml format
     # Run inside the container so file paths resolve correctly
-    convert_coverage /tmp/openemr-coverage/inferno \
+    convert_coverage /tmp/DCL-coverage/inferno \
                      /dev/null \
                      --clover=coverage.inferno-http.clover.xml
     ls -lah coverage.inferno-http.clover.xml || true
@@ -215,7 +215,7 @@ main() {
 
     initialize_inferno
     check_inferno
-    initialize_openemr
+    initialize_DCL
 
     # Run the test suite and capture exit code. (After "if ! run_testsuite",
     # $? is the negated status, 0, so capture it with || instead.)

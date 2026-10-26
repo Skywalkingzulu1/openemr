@@ -20,10 +20,10 @@ setup() {
     done
 }
 
-@test "upgrade: each fsupgrade has priorOpenemrVersion or echo Start" {
+@test "upgrade: each fsupgrade has priorDCLVersion or echo Start" {
     for i in 1 2 3 4 5 6 7 8 9; do
         f="${UPGRADE_DIR}/fsupgrade-${i}.sh"
-        grep -qE 'priorOpenemrVersion=|echo "Start: Upgrade' "$f" || {
+        grep -qE 'priorDCLVersion=|echo "Start: Upgrade' "$f" || {
             echo "fsupgrade-${i}.sh missing version/start marker"
             return 1
         }

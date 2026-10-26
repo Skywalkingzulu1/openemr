@@ -7,13 +7,13 @@
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
 //
-// This may be run after an upgraded OpenEMR has been installed.
-// Its purpose is to upgrade the MySQL OpenEMR database as needed
+// This may be run after an upgraded DCL has been installed.
+// Its purpose is to upgrade the MySQL DCL database as needed
 // for the new release.
 
-// Checks if the server's PHP version is compatible with OpenEMR:
+// Checks if the server's PHP version is compatible with DCL:
 require_once(__DIR__ . "/src/Common/Compatibility/Checker.php");
-$response = OpenEMR\Common\Compatibility\Checker::checkPhpVersion();
+$response = DCL\Common\Compatibility\Checker::checkPhpVersion();
 if ($response !== true) {
     die(htmlspecialchars($response));
 }
@@ -25,11 +25,11 @@ $ignoreAuth = true; // no login required
 
 require_once('interface/globals.php');
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Utils\SQLUpgradeService;
-use OpenEMR\Services\VersionService;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Utils\SQLUpgradeService;
+use DCL\Services\VersionService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 // Force logging off
@@ -43,14 +43,14 @@ $sqlUpgradeService = new SQLUpgradeService();
 
 <html>
 <head>
-<title>OpenEMR <?php echo attr($EMRversion) ?> <?php echo xlt('Database Patch'); ?></title>
+<title>DCL <?php echo attr($EMRversion) ?> <?php echo xlt('Database Patch'); ?></title>
 <link rel="shortcut icon" href="public/images/favicon.ico" />
 </head>
 <body style="color:green;">
 
 <div style="box-shadow: 3px 3px 5px 6px #ccc; border-radius: 20px; padding: 10px 40px;background-color:#EFEFEF; width:500px; margin:40px auto">
 
-  <p style="font-weight:bold; font-size:1.8em; text-align:center">OpenEMR <?php echo text($EMRversion),' ',xlt('Database Patch'),' ',text($v_realpatch) ?></p>
+  <p style="font-weight:bold; font-size:1.8em; text-align:center">DCL <?php echo text($EMRversion),' ',xlt('Database Patch'),' ',text($v_realpatch) ?></p>
   <p style="font-weight:bold; text-align:center;"><?php echo xlt('Applying Patch to site'),' : ',text($session->get('site_id')) ?></p>
 
 
@@ -102,7 +102,7 @@ $sqlUpgradeService = new SQLUpgradeService();
 
     echo '<p style="text-align:center; font-size:1.8em;">',xlt('Database Patch'),' ',text($desiredVersion['v_realpatch']),' ',xlt('finished'),'.</p>';
 
-    echo '<p style="text-align:center; font-size:1.8em;">OpenEMR ',xlt('Version'),' = ',text($EMRversion . '(' . $desiredVersion['v_realpatch'] . ')'),'.</p>';
+    echo '<p style="text-align:center; font-size:1.8em;">DCL ',xlt('Version'),' = ',text($EMRversion . '(' . $desiredVersion['v_realpatch'] . ')'),'.</p>';
 
     echo '<p><a style="border-radius: 10px; padding:5px; width:200px; margin:0 auto; background-color:green; color:white; font-weight:bold; display:block; text-align:center;" href="index.php?site=',attr($session->get('site_id')) . '">',xlt('Log in'),'</a></p>';
 

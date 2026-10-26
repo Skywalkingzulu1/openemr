@@ -5,17 +5,17 @@
  * directories names, file names, etc.
  * Also including csrf token management functions.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Roberto Vasquez <robertogagliotta@gmail.com>
  * @author    Shachar Zilbershlag <shaharzi@matrix.co.il>
  * @copyright Copyright (c) 2012-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\Sanitize\IsAcceptedFileFilterEvent;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\Sanitize\IsAcceptedFileFilterEvent;
 
 /**
  * Function to collect ip address(es)
@@ -51,7 +51,7 @@ function json_sanitize($json)
     if (json_decode((string) $json)) {
         return json_encode(json_decode((string) $json, true));
     } else {
-        error_log("OPENEMR ERROR: " . errorLogEscape($json) . " is not a valid json ");
+        error_log("DCL ERROR: " . errorLogEscape($json) . " is not a valid json ");
         return false;
     }
 }

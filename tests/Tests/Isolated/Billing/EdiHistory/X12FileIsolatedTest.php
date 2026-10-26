@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Isolated tests for the OpenEMR\Billing\EdiHistory\X12File parser.
+ * Isolated tests for the DCL\Billing\EdiHistory\X12File parser.
  *
  * Builds a synthetic, minimal X12 270 (eligibility inquiry) file in a
  * temp directory and verifies that the parser exposes the expected
@@ -10,18 +10,18 @@
  * The tests stay synthetic to keep PHI out of the repository and to
  * avoid coupling to any specific real-world payer dialect.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Billing\EdiHistory;
+namespace DCL\Tests\Isolated\Billing\EdiHistory;
 
-use OpenEMR\Billing\EdiHistory\X12File;
+use DCL\Billing\EdiHistory\X12File;
 use PHPUnit\Framework\TestCase;
 
 // X12File renders error messages through the global text() helper that

@@ -1,11 +1,11 @@
 # Email Testing with Mailpit
 
-This directory contains automated tests for email functionality in OpenEMR using [Mailpit](https://github.com/axllent/mailpit) as a mail testing service.
+This directory contains automated tests for email functionality in DCL using [Mailpit](https://github.com/axllent/mailpit) as a mail testing service.
 
 ## Overview
 
 The email testing infrastructure allows you to:
-- Test email sending functionality in OpenEMR core
+- Test email sending functionality in DCL core
 - Test email sending in the oe-module-faxsms module
 - Verify email delivery, content, and metadata
 - Run tests both locally and in CI/CD pipelines
@@ -31,7 +31,7 @@ The email testing infrastructure allows you to:
    - Mailpit configuration
 
 4. **Test Suites**:
-   - `EmailSendTest.php` - Integration tests for OpenEMR core email functionality using direct PHP calls
+   - `EmailSendTest.php` - Integration tests for DCL core email functionality using direct PHP calls
    - `FaxSmsEmailTest.php` - Placeholder tests for oe-module-faxsms (currently skipped, pending proper setup)
 
 **Note**: These are integration tests, not E2E tests. They do **not** require Selenium or browser automation. They test email functionality by:
@@ -45,7 +45,7 @@ The email testing infrastructure allows you to:
 ### Prerequisites
 
 1. Docker and Docker Compose installed
-2. OpenEMR development environment set up
+2. DCL development environment set up
 
 ### Start the Environment
 
@@ -56,7 +56,7 @@ docker compose up -d
 
 This will start:
 - MySQL database
-- OpenEMR application
+- DCL application
 - Mailpit service
 - Other supporting services (Selenium, CouchDB, etc.)
 
@@ -68,7 +68,7 @@ You can view all emails sent during testing in the web interface.
 
 ### Run Email Tests
 
-From the OpenEMR root directory:
+From the DCL root directory:
 
 ```bash
 # Run all email tests
@@ -104,13 +104,13 @@ The tests run on all configured PHP/database combinations defined in `.github/wo
 Email settings are configured in `docker/development-easy/docker-compose.yml`:
 
 ```yaml
-OPENEMR_SETTING_EMAIL_METHOD: SMTP
-OPENEMR_SETTING_SMTP_HOST: mailpit
-OPENEMR_SETTING_SMTP_PORT: 1025
-OPENEMR_SETTING_SMTP_USER: openemr
-OPENEMR_SETTING_SMTP_PASS: openemr
-OPENEMR_SETTING_SMTP_SECURE: ''
-OPENEMR_SETTING_SMTP_Auth: 'TRUE'
+DCL_SETTING_EMAIL_METHOD: SMTP
+DCL_SETTING_SMTP_HOST: mailpit
+DCL_SETTING_SMTP_PORT: 1025
+DCL_SETTING_SMTP_USER: DCL
+DCL_SETTING_SMTP_PASS: DCL
+DCL_SETTING_SMTP_SECURE: ''
+DCL_SETTING_SMTP_Auth: 'TRUE'
 ```
 
 ### CI Environment
@@ -131,11 +131,11 @@ You can override Mailpit configuration using environment variables:
 ```php
 <?php
 
-namespace OpenEMR\Tests\E2e;
+namespace DCL\Tests\E2e;
 
 use MyMailer;
-use OpenEMR\Tests\E2e\Email\EmailTestingTrait;
-use OpenEMR\Tests\E2e\Email\EmailTestData;
+use DCL\Tests\E2e\Email\EmailTestingTrait;
+use DCL\Tests\E2e\Email\EmailTestData;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -234,14 +234,14 @@ Full message response includes:
 
 1. Check Mailpit is running: `docker compose ps mailpit`
 2. Check logs: `docker compose logs mailpit`
-3. Verify SMTP settings in OpenEMR
+3. Verify SMTP settings in DCL
 4. Check network connectivity between containers
 
 ### Tests Timing Out
 
 1. Increase timeout in `waitForEmail()` calls
 2. Check if email sending is actually triggered
-3. Review OpenEMR error logs: `docker compose logs openemr`
+3. Review DCL error logs: `docker compose logs DCL`
 
 ### Mailpit API Connection Errors
 
@@ -264,7 +264,7 @@ Full message response includes:
 
 - [Mailpit Documentation](https://mailpit.axllent.org/)
 - [Mailpit GitHub Repository](https://github.com/axllent/mailpit)
-- [OpenEMR Email Queue System](../../../../library/classes/postmaster.php)
+- [DCL Email Queue System](../../../../library/classes/postmaster.php)
 - [PHPUnit Documentation](https://phpunit.de/)
 - [Symfony Panther Documentation](https://github.com/symfony/panther)
 
@@ -280,5 +280,5 @@ When adding new email tests:
 
 ## License
 
-Copyright (c) 2025 OpenCoreEMR Inc.
+Copyright (c) 2025 DCL Inc.
 Licensed under GPL v3 - see LICENSE file for details

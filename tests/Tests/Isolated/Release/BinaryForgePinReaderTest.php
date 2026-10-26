@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\BinaryForgePinReader;
+use DCL\Release\BinaryForgePinReader;
 use PHPUnit\Framework\TestCase;
 
 final class BinaryForgePinReaderTest extends TestCase
@@ -34,41 +34,41 @@ final class BinaryForgePinReaderTest extends TestCase
         ARG ALPINE_VERSION=3.24
         FROM alpine:${ALPINE_VERSION} AS base
 
-        ARG OPENEMR_VERSION=8_3_0
+        ARG DCL_VERSION=8_3_0
         ARG BINARY_RELEASE_DATE=08232026
         ARG PHP_VERSION=8.5
-        ENV OPENEMR_VERSION=${OPENEMR_VERSION}
+        ENV DCL_VERSION=${DCL_VERSION}
         DOCKERFILE);
 
         $pin = (new BinaryForgePinReader($path))->read();
 
-        self::assertSame('8_3_0', $pin->openemrVersion);
+        self::assertSame('8_3_0', $pin->DCLVersion);
         self::assertSame('08232026', $pin->releaseDate);
         self::assertSame('8.5', $pin->phpVersion);
     }
 
     /**
-     * `ENV OPENEMR_VERSION=${OPENEMR_VERSION}` sits two lines below the
+     * `ENV DCL_VERSION=${DCL_VERSION}` sits two lines below the
      * ARG in the real Dockerfile. Anchoring on `ARG` keeps the reader off
      * the interpolated ENV line, which would parse as the literal
-     * `${OPENEMR_VERSION}`.
+     * `${DCL_VERSION}`.
      */
     public function testIgnoresTheEnvLineThatMirrorsTheArg(): void
     {
         $path = $this->writeDockerfile(<<<'DOCKERFILE'
-        ENV OPENEMR_VERSION=${OPENEMR_VERSION}
-        ARG OPENEMR_VERSION=8_3_0
+        ENV DCL_VERSION=${DCL_VERSION}
+        ARG DCL_VERSION=8_3_0
         ARG BINARY_RELEASE_DATE=08232026
         ARG PHP_VERSION=8.5
         DOCKERFILE);
 
-        self::assertSame('8_3_0', (new BinaryForgePinReader($path))->read()->openemrVersion);
+        self::assertSame('8_3_0', (new BinaryForgePinReader($path))->read()->DCLVersion);
     }
 
     public function testFailsLoudlyWhenAnArgIsMissing(): void
     {
         $path = $this->writeDockerfile(<<<'DOCKERFILE'
-        ARG OPENEMR_VERSION=8_3_0
+        ARG DCL_VERSION=8_3_0
         ARG PHP_VERSION=8.5
         DOCKERFILE);
 

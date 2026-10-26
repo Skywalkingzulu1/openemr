@@ -3,14 +3,14 @@
 /**
  * Message Center Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -56,7 +56,7 @@ require_once("../../interface/globals.php");
 
                 <p><i class="fa fa-exclamation-circle oe-text-orange"  aria-hidden="true"></i> <strong><?php echo xlt("It is a part of the medical record"); ?>.</strong></p>
 
-                <p><?php echo xlt("Upon logging in to openEMR a small envelope icon is visible on the top right. It shows the number of pending messages and dated reminders"); ?>.
+                <p><?php echo xlt("Upon logging in to DCL a small envelope icon is visible on the top right. It shows the number of pending messages and dated reminders"); ?>.
                     <button type="button" class="btn btn-secondary btn-sm oe-no-float"><i class="fa fa-envelope"></i></button>
                 </p>
 
@@ -89,7 +89,7 @@ require_once("../../interface/globals.php");
                 <p><?php echo xlt("Select a patient by clicking on the patient input box"); ?>.</p>
 
                 <p><?php echo xlt("It will bring up the Multi patient finder  popup"); ?>.&nbsp;</p>
-                <i class="fa fa-exclamation-circle oe-text-orange"  aria-hidden="true"></i> <strong><?php echo xlt("New to openEMR 5.0.2"); ?></strong>
+                <i class="fa fa-exclamation-circle oe-text-orange"  aria-hidden="true"></i> <strong><?php echo xlt("New to DCL 5.0.2"); ?></strong>
 
                 <p><?php echo xlt("Clicking on either the Enter Name or Enter ID tab will bring up the search box which you can use to select a patient"); ?>.</p>
 
@@ -263,9 +263,9 @@ require_once("../../interface/globals.php");
 
                 <p><?php echo xlt("Search and select a patient and click OK"); ?>.</p>
 
-                <p><?php echo xlt("If the patient has any demographic data entered in openEMR it will automatically populate the relevant fields on the right sections"); ?>.</p>
+                <p><?php echo xlt("If the patient has any demographic data entered in DCL it will automatically populate the relevant fields on the right sections"); ?>.</p>
 
-                <p><?php echo xlt("Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in openEMR"); ?>.</p>
+                <p><?php echo xlt("Fill in any missing details or edit existing information. This will be saved in the patient's demographics page in DCL"); ?>.</p>
 
                 <p><?php echo xlt("The last visit date will automatically be filled"); ?>.</p>
 
@@ -339,7 +339,7 @@ require_once("../../interface/globals.php");
             </div>
             <div class= "row" id="medex_communication_service">
                 <h4 class="oe-help-heading"><?php echo xlt("MedEx Communication Service"); ?><a href="#"><i class="fa fa-arrow-circle-up oe-pull-away oe-help-redirect" aria-hidden="true"></i></a></h4>
-                <p><i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i> <strong><?php echo xlt("It is a commercial messaging module available to openEMR practices utilizing version 5.0.1 and higher"); ?>.</strong></p>
+                <p><i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i> <strong><?php echo xlt("It is a commercial messaging module available to DCL practices utilizing version 5.0.1 and higher"); ?>.</strong></p>
 
                 <p><?php echo xlt("MedEx automates Appointment Reminders and Recalls using phone calls, text messages and e-mails"); ?>.</p>
 
@@ -359,8 +359,8 @@ require_once("../../interface/globals.php");
 
                 <p><?php echo xlt("It will take you to the MedEx sign-up page"); ?>.</p>
 
-                <p><?php echo xlt("More information available at the openEMR MedEx wiki page"); ?>.
-                    <a href="https://www.open-emr.org/wiki/index.php/MedEx" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
+                <p><?php echo xlt("More information available at the DCL MedEx wiki page"); ?>.
+                    <a href="https://www.dcl.org/wiki/index.php/MedEx" rel="noopener" target="_blank"><i class="fa fa-external-link-alt text-primary" aria-hidden="true" data-original-title="" title=""></i></a>
                 </p>
 
                 <p><?php echo xlt("The features of a MedEx enabled installation are explained in this video"); ?>.

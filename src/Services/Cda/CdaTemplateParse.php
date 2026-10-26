@@ -3,20 +3,20 @@
 /**
  * Qrda and Cda ParseService Class
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021-2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Cda;
+namespace DCL\Services\Cda;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\CDA\CDAPostParseEvent;
-use OpenEMR\Events\CDA\CDAPreParseEvent;
-use OpenEMR\Services\CodeTypesService;
+use DCL\BC\ServiceContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\CDA\CDAPostParseEvent;
+use DCL\Events\CDA\CDAPreParseEvent;
+use DCL\Services\CodeTypesService;
 
 class CdaTemplateParse
 {

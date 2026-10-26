@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -72,103 +72,103 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers assigned to this order by the order sender or by the order receiver.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiates = [];
 
     /**
      * The workflow status of the nutrition order/request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public $status = null;
 
     /**
      * Indicates the level of authority/intentionality associated with the NutrionOrder and where the request fits into the workflow chain.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public $intent = null;
 
     /**
      * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * An encounter that provides additional information about the healthcare context in which this request is made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The date and time that this nutrition order was requested.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $dateTime = null;
 
     /**
      * The practitioner that holds legal responsibility for ordering the diet, nutritional supplement, or formula feedings.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $orderer = null;
 
     /**
      * A link to a record of allergies or intolerances  which should be included in the nutrition order.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $allergyIntolerance = [];
 
     /**
      * This modifier is used to convey order-specific modifiers about the type of food that should be given. These can be derived from patient allergies, intolerances, or preferences such as Halal, Vegan or Kosher. This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $foodPreferenceModifier = [];
 
     /**
      * This modifier is used to convey Order-specific modifier about the type of oral food or oral fluids that should not be given. These can be derived from patient allergies, intolerances, or preferences such as No Red Meat, No Soy or No Wheat or  Gluten-Free.  While it should not be necessary to repeat allergy or intolerance information captured in the referenced AllergyIntolerance resource in the excludeFoodModifier, this element may be used to convey additional specificity related to foods that should be eliminated from the patient’s diet for any reason.  This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $excludeFoodModifier = [];
 
     /**
      * Diet given orally in contrast to enteral (tube) feeding.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      */
     public $oralDiet = null;
 
     /**
      * Oral nutritional products given in order to add further nutritional value to the patient's diet.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement[]
      */
     public $supplement = [];
 
     /**
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      */
     public $enteralFormula = null;
 
     /**
      * Comments made about the {{title}} by the requester, performer, subject or other participants.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -179,7 +179,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this order by the order sender or by the order receiver.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -188,7 +188,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this order by the order sender or by the order receiver.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -199,7 +199,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -208,7 +208,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -219,7 +219,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -228,7 +228,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -239,7 +239,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiates()
     {
@@ -248,7 +248,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiates
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiates
      * @return $this
      */
     public function addInstantiates($instantiates)
@@ -259,7 +259,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The workflow status of the nutrition order/request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public function getStatus()
     {
@@ -268,7 +268,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The workflow status of the nutrition order/request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -279,7 +279,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the level of authority/intentionality associated with the NutrionOrder and where the request fits into the workflow chain.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public function getIntent()
     {
@@ -288,7 +288,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the level of authority/intentionality associated with the NutrionOrder and where the request fits into the workflow chain.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -299,7 +299,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -308,7 +308,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -319,7 +319,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An encounter that provides additional information about the healthcare context in which this request is made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -328,7 +328,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An encounter that provides additional information about the healthcare context in which this request is made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -339,7 +339,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time that this nutrition order was requested.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDateTime()
     {
@@ -348,7 +348,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time that this nutrition order was requested.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $dateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $dateTime
      * @return $this
      */
     public function setDateTime($dateTime)
@@ -359,7 +359,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The practitioner that holds legal responsibility for ordering the diet, nutritional supplement, or formula feedings.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getOrderer()
     {
@@ -368,7 +368,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The practitioner that holds legal responsibility for ordering the diet, nutritional supplement, or formula feedings.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $orderer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $orderer
      * @return $this
      */
     public function setOrderer($orderer)
@@ -379,7 +379,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A link to a record of allergies or intolerances  which should be included in the nutrition order.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAllergyIntolerance()
     {
@@ -388,7 +388,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A link to a record of allergies or intolerances  which should be included in the nutrition order.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $allergyIntolerance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $allergyIntolerance
      * @return $this
      */
     public function addAllergyIntolerance($allergyIntolerance)
@@ -399,7 +399,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This modifier is used to convey order-specific modifiers about the type of food that should be given. These can be derived from patient allergies, intolerances, or preferences such as Halal, Vegan or Kosher. This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getFoodPreferenceModifier()
     {
@@ -408,7 +408,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This modifier is used to convey order-specific modifiers about the type of food that should be given. These can be derived from patient allergies, intolerances, or preferences such as Halal, Vegan or Kosher. This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $foodPreferenceModifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $foodPreferenceModifier
      * @return $this
      */
     public function addFoodPreferenceModifier($foodPreferenceModifier)
@@ -419,7 +419,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This modifier is used to convey Order-specific modifier about the type of oral food or oral fluids that should not be given. These can be derived from patient allergies, intolerances, or preferences such as No Red Meat, No Soy or No Wheat or  Gluten-Free.  While it should not be necessary to repeat allergy or intolerance information captured in the referenced AllergyIntolerance resource in the excludeFoodModifier, this element may be used to convey additional specificity related to foods that should be eliminated from the patient’s diet for any reason.  This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getExcludeFoodModifier()
     {
@@ -428,7 +428,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This modifier is used to convey Order-specific modifier about the type of oral food or oral fluids that should not be given. These can be derived from patient allergies, intolerances, or preferences such as No Red Meat, No Soy or No Wheat or  Gluten-Free.  While it should not be necessary to repeat allergy or intolerance information captured in the referenced AllergyIntolerance resource in the excludeFoodModifier, this element may be used to convey additional specificity related to foods that should be eliminated from the patient’s diet for any reason.  This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $excludeFoodModifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $excludeFoodModifier
      * @return $this
      */
     public function addExcludeFoodModifier($excludeFoodModifier)
@@ -439,7 +439,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Diet given orally in contrast to enteral (tube) feeding.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      */
     public function getOralDiet()
     {
@@ -448,7 +448,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Diet given orally in contrast to enteral (tube) feeding.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $oralDiet
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderOralDiet $oralDiet
      * @return $this
      */
     public function setOralDiet($oralDiet)
@@ -459,7 +459,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Oral nutritional products given in order to add further nutritional value to the patient's diet.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement[]
      */
     public function getSupplement()
     {
@@ -468,7 +468,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Oral nutritional products given in order to add further nutritional value to the patient's diet.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement $supplement
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement $supplement
      * @return $this
      */
     public function addSupplement($supplement)
@@ -479,7 +479,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      */
     public function getEnteralFormula()
     {
@@ -488,7 +488,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula $enteralFormula
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula $enteralFormula
      * @return $this
      */
     public function setEnteralFormula($enteralFormula)
@@ -499,7 +499,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the {{title}} by the requester, performer, subject or other participants.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -508,7 +508,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the {{title}} by the requester, performer, subject or other participants.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

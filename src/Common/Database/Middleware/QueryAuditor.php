@@ -1,27 +1,27 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL <https://DCL.com>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Database\Middleware;
+namespace DCL\Common\Database\Middleware;
 
 use Doctrine\DBAL\ParameterType;
 use Firehed\DbalLogger\DbalLogger;
-use OpenEMR\Common\Logging\AuditLoggerInterface;
+use DCL\Common\Logging\AuditLoggerInterface;
 use Throwable;
 
 /**
  * DBAL middleware logger that delegates to an AuditLoggerInterface (i.e.
  * EventAuditLogger) for SQL auditing.
  *
- * This bridges the DBAL middleware system to the existing OpenEMR audit
+ * This bridges the DBAL middleware system to the existing DCL audit
  * infrastructure. EventAuditLogger reads session state (authUser, authProvider,
  * pid) at query time via its internally-held session reference.
  */

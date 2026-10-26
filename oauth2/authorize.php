@@ -3,18 +3,18 @@
 /**
  * Authorization Server Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\FallbackRouter;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\RestControllers\ApiApplication;
+use DCL\BC\FallbackRouter;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\RequestTerminator;
+use DCL\RestControllers\ApiApplication;
 use Symfony\Component\HttpFoundation\Response;
 
 require_once "../vendor/autoload.php";

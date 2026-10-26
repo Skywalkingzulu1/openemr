@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,43 +72,43 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 {
     /**
      * Allows identification of which elements have their cardinalities impacted by the constraint.  Will not be referenced for constraints that do not affect cardinality.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $key = null;
 
     /**
      * Description of why this constraint is necessary or appropriate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $requirements = null;
 
     /**
      * Identifies the impact constraint violation has on the conformance of the instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRConstraintSeverity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRConstraintSeverity
      */
     public $severity = null;
 
     /**
      * Text that can be used to describe the constraint in messages identifying that the constraint has been violated.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $human = null;
 
     /**
      * A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see if this constraint is met.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
     /**
      * An XPath expression of constraint that can be executed to see if this constraint is met.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $xpath = null;
 
     /**
      * A reference to the original source of the constraint, for traceability purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $source = null;
 
@@ -119,7 +119,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Allows identification of which elements have their cardinalities impacted by the constraint.  Will not be referenced for constraints that do not affect cardinality.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getKey()
     {
@@ -128,7 +128,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Allows identification of which elements have their cardinalities impacted by the constraint.  Will not be referenced for constraints that do not affect cardinality.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $key
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $key
      * @return $this
      */
     public function setKey($key)
@@ -139,7 +139,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Description of why this constraint is necessary or appropriate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRequirements()
     {
@@ -148,7 +148,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Description of why this constraint is necessary or appropriate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $requirements
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $requirements
      * @return $this
      */
     public function setRequirements($requirements)
@@ -159,7 +159,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Identifies the impact constraint violation has on the conformance of the instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRConstraintSeverity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRConstraintSeverity
      */
     public function getSeverity()
     {
@@ -168,7 +168,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Identifies the impact constraint violation has on the conformance of the instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRConstraintSeverity $severity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRConstraintSeverity $severity
      * @return $this
      */
     public function setSeverity($severity)
@@ -179,7 +179,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Text that can be used to describe the constraint in messages identifying that the constraint has been violated.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getHuman()
     {
@@ -188,7 +188,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * Text that can be used to describe the constraint in messages identifying that the constraint has been violated.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $human
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $human
      * @return $this
      */
     public function setHuman($human)
@@ -199,7 +199,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see if this constraint is met.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -208,7 +208,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see if this constraint is met.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)
@@ -219,7 +219,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * An XPath expression of constraint that can be executed to see if this constraint is met.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getXpath()
     {
@@ -228,7 +228,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * An XPath expression of constraint that can be executed to see if this constraint is met.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $xpath
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $xpath
      * @return $this
      */
     public function setXpath($xpath)
@@ -239,7 +239,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * A reference to the original source of the constraint, for traceability purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getSource()
     {
@@ -248,7 +248,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement implements \Js
 
     /**
      * A reference to the original source of the constraint, for traceability purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $source
      * @return $this
      */
     public function setSource($source)

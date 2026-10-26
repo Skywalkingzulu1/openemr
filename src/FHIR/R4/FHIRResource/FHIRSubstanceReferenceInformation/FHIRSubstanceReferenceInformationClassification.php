@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,25 +71,25 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $domain = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $classification = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $subtype = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
@@ -100,7 +100,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDomain()
     {
@@ -109,7 +109,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $domain
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $domain
      * @return $this
      */
     public function setDomain($domain)
@@ -120,7 +120,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getClassification()
     {
@@ -129,7 +129,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $classification
      * @return $this
      */
     public function setClassification($classification)
@@ -140,7 +140,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSubtype()
     {
@@ -149,7 +149,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subtype
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subtype
      * @return $this
      */
     public function addSubtype($subtype)
@@ -160,7 +160,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -169,7 +169,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)

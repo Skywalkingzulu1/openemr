@@ -15,22 +15,22 @@
  * a stored jwks_uri has been mutated out-of-band or predates the DCR
  * SSRF check.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use Lcobucci\JWT\Signer\Key\InMemory;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Tools\OAuth2\ClientCredentialsAssertionGenerator;
+use DCL\Common\Database\QueryUtils;
+use DCL\Tools\OAuth2\ClientCredentialsAssertionGenerator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -41,10 +41,10 @@ class JwksBoundaryNegativesTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -70,7 +70,7 @@ class JwksBoundaryNegativesTest extends TestCase
     public function testJwtAssertionAgainstClientWithNoJwksIsRejected(): void
     {
         // Register a private_key_jwt client without a jwks or jwks_uri.
-        // OpenEMR DCR allows this for non-system scopes; the rejection
+        // DCL DCR allows this for non-system scopes; the rejection
         // happens at runtime in validateJWTClientAssertion (line 287-290).
         $http = $this->buildClient();
         $reg = $http->post($this->baseUrl . '/oauth2/default/registration', [
@@ -100,8 +100,8 @@ class JwksBoundaryNegativesTest extends TestCase
         // Use the test RSA keypair. The signed assertion is well-formed
         // but the server has no JWKS to verify it against.
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
             $privateKey,
             $publicKey,
@@ -166,8 +166,8 @@ class JwksBoundaryNegativesTest extends TestCase
             ['http://127.0.0.1/jwks.json', $this->clientId]
         );
 
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
             $privateKey,
             $publicKey,
@@ -234,8 +234,8 @@ class JwksBoundaryNegativesTest extends TestCase
             ['https://jwks-does-not-resolve.invalid/jwks.json', $this->clientId]
         );
 
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
             $privateKey,
             $publicKey,
@@ -297,8 +297,8 @@ class JwksBoundaryNegativesTest extends TestCase
             ['{"keys": [not-valid-json', $this->clientId]
         );
 
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
             $privateKey,
             $publicKey,
@@ -358,8 +358,8 @@ class JwksBoundaryNegativesTest extends TestCase
         );
 
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
             $privateKey,
             $publicKey,
@@ -421,8 +421,8 @@ class JwksBoundaryNegativesTest extends TestCase
         );
 
         $keyLocation = __DIR__ . '/../data/Unit/Common/Auth/Grant/';
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
             $privateKey,
             $publicKey,

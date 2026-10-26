@@ -7,14 +7,14 @@
  * The interface exists to make PatientPortalLoginController unit-testable: tests inject
  * an in-memory implementation; production uses the SQL-backed implementation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Controllers\Portal;
+namespace DCL\Controllers\Portal;
 
 /**
  * Typed shapes for rows produced by this repository. The SQL implementation normalises

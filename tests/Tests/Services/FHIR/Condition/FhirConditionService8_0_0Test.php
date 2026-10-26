@@ -4,26 +4,26 @@
  * FhirConditionService8_0_0Test.php
  * Unit tests for US Core 8.0.0 Condition Profile compliance
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @copyright Public Domain for most of this file marked as AI Generated which were created with the assistance of Claude.AI and Microsoft Copilot
  *            Minor additions were made by Stephen Nielson
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\Condition;
+namespace DCL\Tests\Services\FHIR\Condition;
 
 use InvalidArgumentException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\Services\FHIR\Condition\Enum\FhirConditionCategory;
-use OpenEMR\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
-use OpenEMR\Services\FHIR\Condition\FhirConditionHealthConcernService;
-use OpenEMR\Services\FHIR\Condition\FhirConditionProblemListItemService;
-use OpenEMR\Services\FHIR\FhirConditionService;
-use OpenEMR\Tests\Fixtures\ConditionFixtureManager;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\Services\FHIR\Condition\Enum\FhirConditionCategory;
+use DCL\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
+use DCL\Services\FHIR\Condition\FhirConditionHealthConcernService;
+use DCL\Services\FHIR\Condition\FhirConditionProblemListItemService;
+use DCL\Services\FHIR\FhirConditionService;
+use DCL\Tests\Fixtures\ConditionFixtureManager;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -90,7 +90,7 @@ class FhirConditionService8_0_0Test extends TestCase
 
         // Act
         $supportsCategory = $this->encounterDiagnosisService->supportsCategory('encounter-diagnosis');
-        $fhirCondition = $this->encounterDiagnosisService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->encounterDiagnosisService->parseDCLRecord($conditionData);
 
         // Assert
         $this->assertTrue($supportsCategory);
@@ -122,7 +122,7 @@ class FhirConditionService8_0_0Test extends TestCase
 
         // Act
         $supportsCategory = $this->problemsService->supportsCategory('problem-list-item');
-        $fhirCondition = $this->problemsService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->problemsService->parseDCLRecord($conditionData);
 
         // Assert
         $this->assertTrue($supportsCategory);
@@ -152,7 +152,7 @@ class FhirConditionService8_0_0Test extends TestCase
         ]);
 
         // Act
-        $fhirCondition = $this->encounterDiagnosisService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->encounterDiagnosisService->parseDCLRecord($conditionData);
 
         // Assert
         $resourceId = $fhirCondition->getId()->getValue();
@@ -165,7 +165,7 @@ class FhirConditionService8_0_0Test extends TestCase
         $this->assertEquals($conditionData['uuid'], $resourceId, "UUID should be issue_encounter uuid and not lists_uuid");
 
         // Should be deterministic - same condition + encounter should generate same UUID
-        $fhirCondition2 = $this->encounterDiagnosisService->parseOpenEMRRecord($conditionData);
+        $fhirCondition2 = $this->encounterDiagnosisService->parseDCLRecord($conditionData);
         $resourceId2 = $fhirCondition2->getId()->getValue();
         $this->assertEquals($resourceId, $resourceId2, 'Synthetic UUID should be deterministic');
     }
@@ -215,7 +215,7 @@ class FhirConditionService8_0_0Test extends TestCase
             $conditionData['resolved'] = $case['resolved'];
 
             // Act
-            $fhirCondition = $this->encounterDiagnosisService->parseOpenEMRRecord($conditionData);
+            $fhirCondition = $this->encounterDiagnosisService->parseDCLRecord($conditionData);
 
             // Assert
             $clinicalStatus = $fhirCondition->getClinicalStatus();
@@ -262,7 +262,7 @@ class FhirConditionService8_0_0Test extends TestCase
         $conditionData = $this->fixtureManager->createTestEncounterCondition($patientData, $encounterData);
 
         // Act
-        $fhirCondition = $this->encounterDiagnosisService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->encounterDiagnosisService->parseDCLRecord($conditionData);
 
         // Assert
         $meta = $fhirCondition->getMeta();
@@ -287,7 +287,7 @@ class FhirConditionService8_0_0Test extends TestCase
         $conditionData = $this->fixtureManager->createTestCondition($patientData);
 
         // Act
-        $fhirCondition = $this->problemsService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->problemsService->parseDCLRecord($conditionData);
 
         // Assert
         $meta = $fhirCondition->getMeta();
@@ -312,7 +312,7 @@ class FhirConditionService8_0_0Test extends TestCase
         $conditionData = $this->fixtureManager->createTestEncounterCondition($patientData, $encounterData);
 
         // Act
-        $fhirCondition = $this->encounterDiagnosisService->parseOpenEMRRecord($conditionData);
+        $fhirCondition = $this->encounterDiagnosisService->parseDCLRecord($conditionData);
 
         // Assert
         $recordedDate = $fhirCondition->getRecordedDate();
@@ -342,8 +342,8 @@ class FhirConditionService8_0_0Test extends TestCase
         ]);
 
         // Act
-        $fhirCondition1 = $this->encounterDiagnosisService->parseOpenEMRRecord($condition1);
-        $fhirCondition2 = $this->encounterDiagnosisService->parseOpenEMRRecord($condition2);
+        $fhirCondition1 = $this->encounterDiagnosisService->parseDCLRecord($condition1);
+        $fhirCondition2 = $this->encounterDiagnosisService->parseDCLRecord($condition2);
 
         // Assert
         $resourceId1 = $fhirCondition1->getId()->getValue();
@@ -383,8 +383,8 @@ class FhirConditionService8_0_0Test extends TestCase
         unset($problemCondition['verification']); // Remove explicit verification
 
         // Act
-        $encounterFhirCondition = $this->encounterDiagnosisService->parseOpenEMRRecord($encounterCondition);
-        $problemFhirCondition = $this->problemsService->parseOpenEMRRecord($problemCondition);
+        $encounterFhirCondition = $this->encounterDiagnosisService->parseDCLRecord($encounterCondition);
+        $problemFhirCondition = $this->problemsService->parseDCLRecord($problemCondition);
 
         // Assert
         $encounterVerification = $encounterFhirCondition->getVerificationStatus()->getCoding()[0]->getCode();
@@ -466,6 +466,6 @@ class FhirConditionService8_0_0Test extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('EncounterDiagnosis must have valid encounter reference');
 
-        $this->encounterDiagnosisService->parseOpenEMRRecord($conditionData);
+        $this->encounterDiagnosisService->parseDCLRecord($conditionData);
     }
 }

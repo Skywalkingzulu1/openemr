@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A kind of specimen with associated set of requirements.
@@ -72,37 +72,37 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * A business identifier associated with the kind of specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * The kind of material to be collected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $typeCollected = null;
 
     /**
      * Preparation of the patient for specimen collection.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $patientPreparation = [];
 
     /**
      * Time aspect of specimen collection (duration or offset).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $timeAspect = null;
 
     /**
      * The action to be performed for collecting the specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $collection = [];
 
     /**
      * Specimen conditioned in a container as expected by the testing laboratory.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested[]
      */
     public $typeTested = [];
 
@@ -113,7 +113,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A business identifier associated with the kind of specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -122,7 +122,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A business identifier associated with the kind of specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -133,7 +133,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The kind of material to be collected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTypeCollected()
     {
@@ -142,7 +142,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The kind of material to be collected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $typeCollected
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $typeCollected
      * @return $this
      */
     public function setTypeCollected($typeCollected)
@@ -153,7 +153,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Preparation of the patient for specimen collection.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPatientPreparation()
     {
@@ -162,7 +162,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Preparation of the patient for specimen collection.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $patientPreparation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $patientPreparation
      * @return $this
      */
     public function addPatientPreparation($patientPreparation)
@@ -173,7 +173,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Time aspect of specimen collection (duration or offset).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTimeAspect()
     {
@@ -182,7 +182,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Time aspect of specimen collection (duration or offset).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $timeAspect
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $timeAspect
      * @return $this
      */
     public function setTimeAspect($timeAspect)
@@ -193,7 +193,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The action to be performed for collecting the specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCollection()
     {
@@ -202,7 +202,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The action to be performed for collecting the specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $collection
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $collection
      * @return $this
      */
     public function addCollection($collection)
@@ -213,7 +213,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Specimen conditioned in a container as expected by the testing laboratory.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested[]
      */
     public function getTypeTested()
     {
@@ -222,7 +222,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Specimen conditioned in a container as expected by the testing laboratory.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested $typeTested
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested $typeTested
      * @return $this
      */
     public function addTypeTested($typeTested)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasureReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
@@ -71,25 +71,25 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 {
     /**
      * The value for this stratum, expressed as a CodeableConcept. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $value = null;
 
     /**
      * A stratifier component value.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportComponent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportComponent[]
      */
     public $component = [];
 
     /**
      * The populations that make up the stratum, one for each type of population appropriate to the measure.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1[]
      */
     public $population = [];
 
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $measureScore = null;
 
@@ -100,7 +100,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The value for this stratum, expressed as a CodeableConcept. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValue()
     {
@@ -109,7 +109,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The value for this stratum, expressed as a CodeableConcept. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $value
      * @return $this
      */
     public function setValue($value)
@@ -120,7 +120,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A stratifier component value.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportComponent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportComponent[]
      */
     public function getComponent()
     {
@@ -129,7 +129,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * A stratifier component value.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportComponent $component
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportComponent $component
      * @return $this
      */
     public function addComponent($component)
@@ -140,7 +140,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The populations that make up the stratum, one for each type of population appropriate to the measure.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1[]
      */
     public function getPopulation()
     {
@@ -149,7 +149,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The populations that make up the stratum, one for each type of population appropriate to the measure.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1 $population
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1 $population
      * @return $this
      */
     public function addPopulation($population)
@@ -160,7 +160,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMeasureScore()
     {
@@ -169,7 +169,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
 
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $measureScore
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $measureScore
      * @return $this
      */
     public function setMeasureScore($measureScore)

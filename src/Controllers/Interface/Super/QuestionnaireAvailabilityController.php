@@ -22,32 +22,32 @@
  * This class parses the request, applies changes through the service, and builds the view;
  * the markup is templates/super/questionnaire_availability.html.twig.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Controllers\Interface\Super;
+namespace DCL\Controllers\Interface\Super;
 
 use InvalidArgumentException;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\GridCell;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\GridRow;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\PostOutcome;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\RuleDescriber;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\RuleForm;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailability\SurfaceOption;
-use OpenEMR\Services\Questionnaire\AssignmentRecord;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityLookups;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\GridCell;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\GridRow;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\PostOutcome;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\RuleDescriber;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\RuleForm;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailability\SurfaceOption;
+use DCL\Services\Questionnaire\AssignmentRecord;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityLookups;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\InputBag;
 use Symfony\Component\HttpFoundation\Request;

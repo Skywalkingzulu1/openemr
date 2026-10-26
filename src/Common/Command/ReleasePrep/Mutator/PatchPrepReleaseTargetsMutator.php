@@ -7,7 +7,7 @@
  * shipped → 8.1.1-dev):
  *
  *   (1) Insert a new row for the rel branch carrying
- *       `docker_tags: <X.Y.P>,next` and `openemr_version_ref: <relBranch>`.
+ *       `docker_tags: <X.Y.P>,next` and `DCL_version_ref: <relBranch>`.
  *       Placement: immediately after the master row, before the first
  *       existing rel-* row. Idempotent: if a row with these exact tags
  *       already exists for this branch, no-op.
@@ -34,20 +34,20 @@
  * comments, mirroring BranchCutReleaseTargetsMutator. Symfony YAML's
  * parser is used at the end as a structural sanity check.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command\ReleasePrep\Mutator;
+namespace DCL\Common\Command\ReleasePrep\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
@@ -57,8 +57,8 @@ use Symfony\Component\Yaml\Yaml;
  *   startLine: int,
  *   dockerTags: ?string,
  *   dockerTagsLine: ?int,
- *   openemrVersionRef: ?string,
- *   openemrVersionRefLine: ?int,
+ *   DCLVersionRef: ?string,
+ *   DCLVersionRefLine: ?int,
  *   unreleased: ?string,
  * }
  */
@@ -132,8 +132,8 @@ final readonly class PatchPrepReleaseTargetsMutator implements MutatorInterface
                     'startLine' => $i,
                     'dockerTags' => null,
                     'dockerTagsLine' => null,
-                    'openemrVersionRef' => null,
-                    'openemrVersionRefLine' => null,
+                    'DCLVersionRef' => null,
+                    'DCLVersionRefLine' => null,
                     'unreleased' => null,
                 ];
                 continue;
@@ -146,9 +146,9 @@ final readonly class PatchPrepReleaseTargetsMutator implements MutatorInterface
                 $current['dockerTagsLine'] = $i;
                 continue;
             }
-            if (preg_match('/^  openemr_version_ref:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
-                $current['openemrVersionRef'] = trim($m[1]);
-                $current['openemrVersionRefLine'] = $i;
+            if (preg_match('/^  DCL_version_ref:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
+                $current['DCLVersionRef'] = trim($m[1]);
+                $current['DCLVersionRefLine'] = $i;
                 continue;
             }
             if (preg_match('/^  unreleased:\s*([^#\n]*?)(?:\s+#.*)?$/', $line, $m) === 1) {
@@ -215,7 +215,7 @@ final readonly class PatchPrepReleaseTargetsMutator implements MutatorInterface
      * Insert a fresh row for the new dev cycle:
      *   - branch: <relBranch>
      *     docker_tags: <X.Y.P>,next
-     *     openemr_version_ref: <relBranch>
+     *     DCL_version_ref: <relBranch>
      *
      * Placement: immediately after the master row's full block (with a
      * blank-line separator), before the first existing rel-* row.
@@ -275,7 +275,7 @@ final readonly class PatchPrepReleaseTargetsMutator implements MutatorInterface
     }
 
     /**
-     * Render the new dev row: <X.Y.P>,next + openemr_version_ref=<relBranch>
+     * Render the new dev row: <X.Y.P>,next + DCL_version_ref=<relBranch>
      * + gate_with_acceptance: true.
      *
      * `gate_with_acceptance: true` matches what BranchCutReleaseTargetsMutator
@@ -285,7 +285,7 @@ final readonly class PatchPrepReleaseTargetsMutator implements MutatorInterface
      * gated publish path that pushes directly to final tags without running
      * the acceptance-gate matrix. Every patch-cycle docker publish would
      * silently skip acceptance -- a stomp-adjacent regression not caught
-     * until openemr/openemr#14069's 8.4.1 finalize diff was reviewed.
+     * until DCL/DCL#14069's 8.4.1 finalize diff was reviewed.
      *
      * @return list<string>
      */
@@ -295,7 +295,7 @@ final readonly class PatchPrepReleaseTargetsMutator implements MutatorInterface
         return [
             '- branch: ' . $relBranch,
             '  docker_tags: ' . $versionTag . ',next',
-            '  openemr_version_ref: ' . $relBranch,
+            '  DCL_version_ref: ' . $relBranch,
             '  gate_with_acceptance: true',
         ];
     }

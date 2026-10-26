@@ -14,18 +14,18 @@
  * "must be blocked" list, so a future addition to `users` cannot slip
  * into the patient view without an explicit decision here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\Services\FHIR\UsersRowPatientAllowlist;
+use DCL\Services\FHIR\UsersRowPatientAllowlist;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -87,7 +87,7 @@ class UsersRowPatientAllowlistIsolatedTest extends TestCase
             $column,
             UsersRowPatientAllowlist::allowedColumns(),
             sprintf(
-                'Patient allowlist must NOT include %s — the row filter must drop it before parseOpenEMRRecord builds the FHIR resource',
+                'Patient allowlist must NOT include %s — the row filter must drop it before parseDCLRecord builds the FHIR resource',
                 $column
             )
         );

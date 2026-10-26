@@ -3,9 +3,9 @@
 //these are the functions used to access the forms registry database
 //
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\InfoTxt;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\InfoTxt;
+use DCL\Core\OEGlobalsBag;
 
 function registerForm($directory, $sql_run = 0, $unpackaged = 1, $state = 0)
 {

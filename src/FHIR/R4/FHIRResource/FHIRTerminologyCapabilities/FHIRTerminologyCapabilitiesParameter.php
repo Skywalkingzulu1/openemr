@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,13 +71,13 @@ class FHIRTerminologyCapabilitiesParameter extends FHIRBackboneElement implement
 {
     /**
      * Expansion Parameter name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $name = null;
 
     /**
      * Description of support for parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentation = null;
 
@@ -88,7 +88,7 @@ class FHIRTerminologyCapabilitiesParameter extends FHIRBackboneElement implement
 
     /**
      * Expansion Parameter name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getName()
     {
@@ -97,7 +97,7 @@ class FHIRTerminologyCapabilitiesParameter extends FHIRBackboneElement implement
 
     /**
      * Expansion Parameter name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $name
      * @return $this
      */
     public function setName($name)
@@ -108,7 +108,7 @@ class FHIRTerminologyCapabilitiesParameter extends FHIRBackboneElement implement
 
     /**
      * Description of support for parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
@@ -117,7 +117,7 @@ class FHIRTerminologyCapabilitiesParameter extends FHIRBackboneElement implement
 
     /**
      * Description of support for parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentation
      * @return $this
      */
     public function setDocumentation($documentation)

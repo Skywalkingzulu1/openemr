@@ -7,18 +7,18 @@
 # Checks:
 #   1. The YAML parses cleanly.
 #   2. Every row has all three required fields (branch, docker_tags,
-#      openemr_version_ref). `unreleased` is an optional boolean.
+#      DCL_version_ref). `unreleased` is an optional boolean.
 #   3. No two rows declare the same docker_tag (which would race when both
 #      builds tried to push the same image:tag). Multiple rows for the same
 #      `branch` ARE allowed — the multi-row mechanism enables the in-dev
 #      patch-release pattern (rel branch keeps publishing the prior stable
 #      while a new dev iterates on the same branch). See the
 #      release-targets.yml header for the full mechanism description.
-#   4. Every `openemr_version_ref` resolves to a real git ref in
-#      openemr/openemr.
+#   4. Every `DCL_version_ref` resolves to a real git ref in
+#      DCL/DCL.
 #   5. Every version-number entry in each row's docker_tags aligns with the
 #      major.minor.patch from version.php at the same row's
-#      openemr_version_ref. Each tag must match either the base
+#      DCL_version_ref. Each tag must match either the base
 #      (X.Y.Z, when realpatch == 0) or the base.realpatch form
 #      (X.Y.Z.W, when realpatch > 0). Catches both the version.php-bump-
 #      without-release-targets-bump drift case AND typo'd secondary tags
@@ -27,7 +27,7 @@
 #      the merge-commit state -- "what master will look like after this
 #      PR merges") so a PR that coordinately bumps BOTH docker_tags and
 #      version.php validates cleanly; non-master rows use raw URL fetch
-#      against the stable git tag in openemr_version_ref.
+#      against the stable git tag in DCL_version_ref.
 #
 # Rows flagged `unreleased: true` are still validated for required fields,
 # version-ref resolution, and docker_tag<->version.php alignment so they
@@ -35,9 +35,9 @@
 # pusher, demo_farm bumper) are responsible for skipping these rows -- the
 # validator does not.
 #
-# **release-finalize/* PR special case (openemr/openemr#13580).** The
+# **release-finalize/* PR special case (DCL/DCL#13580).** The
 # `release-finalize/<rel-branch>` PR (opened by release-prep.yml alongside
-# the conductor PR) proposes adding a row like `openemr_version_ref:
+# the conductor PR) proposes adding a row like `DCL_version_ref:
 # v8_3_0` whose tag DOES NOT exist yet -- the conductor merge is what
 # creates the tag. On those PRs, ref-resolution failures degrade from
 # error to warning (the unresolvable row is expected pre-tag), and the
@@ -68,25 +68,25 @@ permissions:
 
 jobs:
   validate:
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
     runs-on: ubuntu-24.04
     env:
       # Detect release-finalize/<rel-branch> PRs so ref-resolution failures
       # downgrade from error to warning. See workflow header for the full
-      # rationale (openemr/openemr#13580).
+      # rationale (DCL/DCL#13580).
       #
       # Three-way guard: (1) branch-name prefix, (2) head repo == this repo
       # (blocks fork PRs spoofing the prefix), (3) opener is the release-App
       # bot (blocks an org member manually pushing a `release-finalize/foo`
       # branch to get lax validation). Legitimate finalize PRs are always
-      # opened by openemr-release-bot from the openemr/openemr repository
+      # opened by DCL-release-bot from the DCL/DCL repository
       # itself -- see release-prep.yml's `peter-evans/create-pull-request`
       # step. All three signals must line up before the lax-validation
       # exception fires.
       IS_FINALIZE_PR: >-
         ${{ startsWith(github.head_ref, 'release-finalize/')
             && github.event.pull_request.head.repo.full_name == github.repository
-            && github.event.pull_request.user.login == 'openemr-release-bot[bot]' }}
+            && github.event.pull_request.user.login == 'DCL-release-bot[bot]' }}
     steps:
     - uses: actions/checkout@v7
 
@@ -97,11 +97,11 @@ jobs:
 
         # 2. Every row has all three required fields
         MISSING=$(yq -o=json -I=0 . .github/release-targets.yml | jq -r '
-          .[] | select(.branch == null or .docker_tags == null or .openemr_version_ref == null)
+          .[] | select(.branch == null or .docker_tags == null or .DCL_version_ref == null)
           | (.branch // "<unnamed>")
         ')
         if [ -n "$MISSING" ]; then
-          echo "::error::Rows missing required field(s) [branch, docker_tags, openemr_version_ref]: $MISSING"
+          echo "::error::Rows missing required field(s) [branch, docker_tags, DCL_version_ref]: $MISSING"
           exit 1
         fi
 
@@ -117,7 +117,7 @@ jobs:
 
         echo "✓ Schema check passed."
 
-    - name: Verify every openemr_version_ref resolves in openemr/openemr
+    - name: Verify every DCL_version_ref resolves in DCL/DCL
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -126,11 +126,11 @@ jobs:
         # shared-IP). Same G19 rationale as docker-build-release.yml's
         # own fetch: an anonymous 429 previously showed up here as "does
         # not resolve," which lied about the actual cause.
-        yq -o=json -I=0 . .github/release-targets.yml | jq -r '.[] | "\(.branch)\t\(.openemr_version_ref)"' | \
+        yq -o=json -I=0 . .github/release-targets.yml | jq -r '.[] | "\(.branch)\t\(.DCL_version_ref)"' | \
         while IFS=$'\t' read -r BRANCH REF; do
-          if err_output=$(gh api "/repos/openemr/openemr/contents/version.php?ref=${REF}" \
+          if err_output=$(gh api "/repos/DCL/DCL/contents/version.php?ref=${REF}" \
                --silent 2>&1); then
-            echo "✓ $BRANCH: openemr_version_ref '$REF' resolves."
+            echo "✓ $BRANCH: DCL_version_ref '$REF' resolves."
           elif echo "$err_output" | grep -qE 'HTTP 404|Not Found'; then
             # The lax "unresolvable is a warning" branch only applies to
             # non-master rows on finalize PRs. Master row's ref should
@@ -138,18 +138,18 @@ jobs:
             # non-master ref is a real bug that must be caught even on a
             # finalize PR.
             if [ "${IS_FINALIZE_PR}" = "true" ] && [ "$BRANCH" != "master" ]; then
-              echo "::warning::Row '$BRANCH': openemr_version_ref '$REF' not yet resolvable — expected on release-finalize PR (tag will be created by conductor merge)."
+              echo "::warning::Row '$BRANCH': DCL_version_ref '$REF' not yet resolvable — expected on release-finalize PR (tag will be created by conductor merge)."
             else
-              echo "::error::Row '$BRANCH': openemr_version_ref '$REF' does not resolve in openemr/openemr"
+              echo "::error::Row '$BRANCH': DCL_version_ref '$REF' does not resolve in DCL/DCL"
               exit 1
             fi
           else
-            echo "::error::Row '$BRANCH': failed to check openemr_version_ref '$REF' (not a 404): $err_output"
+            echo "::error::Row '$BRANCH': failed to check DCL_version_ref '$REF' (not a 404): $err_output"
             exit 1
           fi
         done
 
-    - name: Cross-check docker_tag version against version.php at openemr_version_ref
+    - name: Cross-check docker_tag version against version.php at DCL_version_ref
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -161,7 +161,7 @@ jobs:
         FAIL=0
         while read -r ROW; do
           BRANCH=$(echo "$ROW" | jq -r '.branch')
-          REF=$(echo "$ROW" | jq -r '.openemr_version_ref')
+          REF=$(echo "$ROW" | jq -r '.DCL_version_ref')
 
           # Every version-number docker_tag (digits-and-dots), one per line.
           # Floating-name tags (latest, dev, next, ...) are skipped.
@@ -188,10 +188,10 @@ jobs:
             # docker_tags would be compared against the upstream master's
             # PRE-bump version.php (the PR hasn't merged yet, so raw URL
             # serves the old content). Non-master rows continue to use the
-            # raw URL because their openemr_version_ref is a stable git tag
+            # raw URL because their DCL_version_ref is a stable git tag
             # that a PR can't modify locally.
             cp version.php /tmp/v.php
-          elif ! gh api "/repos/openemr/openemr/contents/version.php?ref=${REF}" \
+          elif ! gh api "/repos/DCL/DCL/contents/version.php?ref=${REF}" \
                     -H 'Accept: application/vnd.github.raw' \
                     > /tmp/v.php 2> /tmp/gh-api-err; then
             # Distinguish 404 (real bad ref -- release-targets.yml
@@ -208,12 +208,12 @@ jobs:
               # and any 404 that reaches here for a `branch: master` row
               # means someone put a non-master ref there, which is a real
               # bug even on a finalize PR. See workflow header
-              # (openemr/openemr#13580).
+              # (DCL/DCL#13580).
               if [ "${IS_FINALIZE_PR}" = "true" ] && [ "$BRANCH" != "master" ]; then
-                echo "::warning::Row '$BRANCH': openemr_version_ref '$REF' not yet resolvable — skipping alignment check on release-finalize PR."
+                echo "::warning::Row '$BRANCH': DCL_version_ref '$REF' not yet resolvable — skipping alignment check on release-finalize PR."
                 continue
               fi
-              echo "::error::Row '$BRANCH': openemr_version_ref '$REF' does not resolve in openemr/openemr"
+              echo "::error::Row '$BRANCH': DCL_version_ref '$REF' does not resolve in DCL/DCL"
             else
               echo "::error::Row '$BRANCH': failed to fetch version.php at ref '$REF' (not a 404):"
               cat /tmp/gh-api-err
@@ -232,7 +232,7 @@ jobs:
           # Each must independently match one of:
           #   - the base (e.g., "8.1.0" == version.php base "8.1.0", realpatch=0)
           #   - base.realpatch when realpatch > 0 (e.g., "8.0.0.3" for v_realpatch='3')
-          # So a row like `docker_tags: 8.0.0,8.0.0.3` with openemr_version_ref
+          # So a row like `docker_tags: 8.0.0,8.0.0.3` with DCL_version_ref
           # v8_0_0_3 validates both pointers; a typo like `8.0.0,9.9.9` fails on
           # the second; and `8.0.0,8.0.0.4` with v_realpatch=3 catches the
           # patch-tag-ahead-of-source class of drift.
@@ -241,7 +241,7 @@ jobs:
               echo "✓ $BRANCH: docker_tag '$TAG_VER' aligns with version.php '$SRC_BASE' (realpatch=$RP) at $REF"
             else
               echo "::error::Row '$BRANCH': docker_tag '$TAG_VER' doesn't match version.php base '$SRC_BASE' or base.realpatch '$SRC_WITH_REALPATCH' at $REF (realpatch=$RP)."
-              echo "  Either bump release-targets.yml to match the source, or bump version.php on the openemr branch."
+              echo "  Either bump release-targets.yml to match the source, or bump version.php on the DCL branch."
               FAIL=1
             fi
           done <<< "$VERSION_TAGS"

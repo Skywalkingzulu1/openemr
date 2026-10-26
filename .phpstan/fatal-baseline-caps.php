@@ -24,11 +24,11 @@
  * baseline — if one ever appears, the test fails instead of quietly
  * baselining it.
  *
- * See openemr/openemr#11792 for the plan to drive every cap to zero.
+ * See DCL/DCL#11792 for the plan to drive every cap to zero.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);

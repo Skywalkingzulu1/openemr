@@ -1,14 +1,14 @@
 {#
 Product Registration modal
 
-@package OpenEMR
+@package DCL
 @subpackage Login
 @author Robert Down <robertdown@live.com>
 @author Jerry Padgett <sjpadgett@gmail.com>
 @copyright Copyright (c) 2023 Robert Down <robertdown@live.com>
 @copyright Copyright (c) 2023 Providence Healthtech
 @copyright Copyright (c) 2025 <sjpadgett@gmail.com>
-@license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+@license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 #}
 
 <div class="product-registration-modal modal fade">
@@ -19,7 +19,7 @@ Product Registration modal
                 {% if allowEmail %}
                     <div class="form-group">
                         <p class="context">
-                            {{ "We kindly ask you to take a moment to register your installation by providing an email. This ensures you receive timely updates, security alerts, and critical announcements from the OpenEMR Foundation. You can opt out of this by simply leaving this field blank."|xlt }}
+                            {{ "We kindly ask you to take a moment to register your installation by providing an email. This ensures you receive timely updates, security alerts, and critical announcements from the DCL Foundation. You can opt out of this by simply leaving this field blank."|xlt }}
                         </p>
                         <input placeholder="{{ "email"|xla }}" type="email" id="email" class="email w-100 text-body form-control" value="" />
                         <p class="message font-italic"></p>
@@ -32,8 +32,8 @@ Product Registration modal
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="allow_telemetry" id="allowTelemetry" name="allow_telemetry" checked>
                             <label class="form-check-label" for="allowTelemetry">
-                                {{ "I consent to share anonymous usage data with the OpenEMR Foundation."|xlt }}
-                                {{ "We are committed to continually improving OpenEMR. By opting in to anonymous telemetry data collection, you help us better understand real-world usage and prioritize new features. No Personal Health Information (PHI) is ever collected. Please consider consenting to share the following data types:"|xlt }}
+                                {{ "I consent to share anonymous usage data with the DCL Foundation."|xlt }}
+                                {{ "We are committed to continually improving DCL. By opting in to anonymous telemetry data collection, you help us better understand real-world usage and prioritize new features. No Personal Health Information (PHI) is ever collected. Please consider consenting to share the following data types:"|xlt }}
                                 <div class="m-1">
                                     <li>{{ "Usage Metrics (features used)"|xlt }}</li>
                                     <li>{{ "Aggregated User Data (total patients, clinicians, etc.)"|xlt }}</li>

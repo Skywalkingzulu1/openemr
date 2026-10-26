@@ -8,16 +8,16 @@
  * attribution to only the listed symbols, which causes test file lines to show
  * 0% in codecov patch coverage reports on test-only PRs.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Class_;
@@ -56,7 +56,7 @@ class ForbiddenCoversRule implements Rule
         $docComment = $node->getDocComment();
         if ($docComment !== null && preg_match('/@covers\b/', $docComment->getText()) === 1) {
             $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '@covers'))
-                ->identifier('openemr.forbiddenCovers')
+                ->identifier('DCL.forbiddenCovers')
                 ->line($docComment->getStartLine())
                 ->build();
         }
@@ -67,7 +67,7 @@ class ForbiddenCoversRule implements Rule
                 $attrName = $attr->name->getLast();
                 if (in_array($attrName, self::FORBIDDEN_ATTRIBUTES, true)) {
                     $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '#[' . $attrName . ']'))
-                        ->identifier('openemr.forbiddenCovers')
+                        ->identifier('DCL.forbiddenCovers')
                         ->line($attr->getStartLine())
                         ->build();
                 }
@@ -84,7 +84,7 @@ class ForbiddenCoversRule implements Rule
             $methodDoc = $stmt->getDocComment();
             if ($methodDoc !== null && preg_match('/@covers\b/', $methodDoc->getText()) === 1) {
                 $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '@covers'))
-                    ->identifier('openemr.forbiddenCovers')
+                    ->identifier('DCL.forbiddenCovers')
                     ->line($methodDoc->getStartLine())
                     ->build();
             }
@@ -95,7 +95,7 @@ class ForbiddenCoversRule implements Rule
                     $attrName = $attr->name->getLast();
                     if (in_array($attrName, self::FORBIDDEN_ATTRIBUTES, true)) {
                         $errors[] = RuleErrorBuilder::message(sprintf(self::ERROR_MESSAGE, '#[' . $attrName . ']'))
-                            ->identifier('openemr.forbiddenCovers')
+                            ->identifier('DCL.forbiddenCovers')
                             ->line($attr->getStartLine())
                             ->build();
                     }

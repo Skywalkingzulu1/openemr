@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical package that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
@@ -72,91 +72,91 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A version-independent identifier for the Composition. This identifier stays constant as the composition is changed over time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * The workflow/clinical status of this composition. The status is a marker for the clinical standing of the document.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCompositionStatus
      */
     public $status = null;
 
     /**
      * Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Who or what the composition is about. The composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * Describes the clinical encounter or type of care this documentation is associated with.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The composition editing time, when the composition was last logically changed by the author.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $author = [];
 
     /**
      * Official human-readable label for the composition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The code specifying the level of confidentiality of the Composition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRVConfidentialityClassification
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRVConfidentialityClassification
      */
     public $confidentiality = null;
 
     /**
      * A participant who has attested to the accuracy of the composition/document.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionAttester[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionAttester[]
      */
     public $attester = [];
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $custodian = null;
 
     /**
      * Relationships that this composition has with other compositions or documents that already exist.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo[]
      */
     public $relatesTo = [];
 
     /**
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionEvent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionEvent[]
      */
     public $event = [];
 
     /**
      * The root of the sections that make up the composition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
     public $section = [];
 
@@ -167,7 +167,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A version-independent identifier for the Composition. This identifier stays constant as the composition is changed over time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -176,7 +176,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A version-independent identifier for the Composition. This identifier stays constant as the composition is changed over time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -187,7 +187,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The workflow/clinical status of this composition. The status is a marker for the clinical standing of the document.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCompositionStatus
      */
     public function getStatus()
     {
@@ -196,7 +196,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The workflow/clinical status of this composition. The status is a marker for the clinical standing of the document.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCompositionStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -207,7 +207,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -216,7 +216,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -227,7 +227,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -236,7 +236,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -247,7 +247,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who or what the composition is about. The composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -256,7 +256,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who or what the composition is about. The composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -267,7 +267,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the clinical encounter or type of care this documentation is associated with.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -276,7 +276,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes the clinical encounter or type of care this documentation is associated with.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -287,7 +287,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The composition editing time, when the composition was last logically changed by the author.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -296,7 +296,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The composition editing time, when the composition was last logically changed by the author.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -307,7 +307,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAuthor()
     {
@@ -316,7 +316,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function addAuthor($author)
@@ -327,7 +327,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Official human-readable label for the composition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -336,7 +336,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Official human-readable label for the composition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -347,7 +347,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The code specifying the level of confidentiality of the Composition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRVConfidentialityClassification
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRVConfidentialityClassification
      */
     public function getConfidentiality()
     {
@@ -356,7 +356,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The code specifying the level of confidentiality of the Composition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRVConfidentialityClassification $confidentiality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRVConfidentialityClassification $confidentiality
      * @return $this
      */
     public function setConfidentiality($confidentiality)
@@ -367,7 +367,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A participant who has attested to the accuracy of the composition/document.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionAttester[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionAttester[]
      */
     public function getAttester()
     {
@@ -376,7 +376,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A participant who has attested to the accuracy of the composition/document.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionAttester $attester
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionAttester $attester
      * @return $this
      */
     public function addAttester($attester)
@@ -387,7 +387,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCustodian()
     {
@@ -396,7 +396,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $custodian
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $custodian
      * @return $this
      */
     public function setCustodian($custodian)
@@ -407,7 +407,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Relationships that this composition has with other compositions or documents that already exist.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo[]
      */
     public function getRelatesTo()
     {
@@ -416,7 +416,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Relationships that this composition has with other compositions or documents that already exist.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo $relatesTo
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo $relatesTo
      * @return $this
      */
     public function addRelatesTo($relatesTo)
@@ -427,7 +427,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionEvent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionEvent[]
      */
     public function getEvent()
     {
@@ -436,7 +436,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionEvent $event
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionEvent $event
      * @return $this
      */
     public function addEvent($event)
@@ -447,7 +447,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The root of the sections that make up the composition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
     public function getSection()
     {
@@ -456,7 +456,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The root of the sections that make up the composition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection $section
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection $section
      * @return $this
      */
     public function addSection($section)

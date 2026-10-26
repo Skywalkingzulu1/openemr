@@ -22,23 +22,23 @@
  * Category is a property of the resource rather than of the caller, which is why it has
  * no counterpart in AvailabilityContext. A row with neither set matches nothing.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\Questionnaire;
+namespace DCL\Services\Questionnaire;
 
 use InvalidArgumentException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
 
 /**
  * @phpstan-type AssignmentRow array{
@@ -174,7 +174,7 @@ class QuestionnaireAvailabilityService
      * Drop questionnaire rows from an encounter form list that this encounter may not use.
      *
      * Rows for every other form type pass through untouched. The registry is shared by
-     * all of OpenEMR's encounter forms and this service speaks only for questionnaires,
+     * all of DCL's encounter forms and this service speaks only for questionnaires,
      * so anything it does not recognise is none of its business.
      *
      * The availability lookup is deferred until a questionnaire row actually turns up,
@@ -638,7 +638,7 @@ class QuestionnaireAvailabilityService
             );
         }
         if (($record->aclSection === null) !== ($record->aclLevel === null)) {
-            // OpenEMR ACL sections and levels are only meaningful as pairs.
+            // DCL ACL sections and levels are only meaningful as pairs.
             throw new InvalidArgumentException(
                 'set both acl_section and acl_level, or neither',
                 self::ERROR_HALF_ACL
@@ -825,7 +825,7 @@ class QuestionnaireAvailabilityService
     /**
      * Whether the current user passes the assignment's ACL.
      *
-     * An assignment overrides the surface default as a PAIR or not at all. OpenEMR's ACL
+     * An assignment overrides the surface default as a PAIR or not at all. DCL's ACL
      * sections and levels are only meaningful together -- 'patients'/'med',
      * 'encounters'/'notes', 'admin'/'super' -- so mixing an assignment's section with the
      * surface default's level names a combination the installer never created, which

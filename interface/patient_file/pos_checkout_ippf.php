@@ -34,8 +34,8 @@
  *     show invoice number
  * </pre>
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Ranganath Pathak <pathak@scrs1.org>
@@ -46,26 +46,26 @@
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2019 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-$webserver_root = \OpenEMR\Core\OEGlobalsBag::getInstance()->getProjectDir();
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$webserver_root = \DCL\Core\OEGlobalsBag::getInstance()->getProjectDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 require_once($srcdir . "/options.inc.php");
 require_once("../../custom/code_types.inc.php");
 require_once($srcdir . "/appointment_status.inc.php");
 
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Billing\SLEOB;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\OeUI\OemrUI;
-use OpenEMR\PaymentProcessing\Recorder;
-use OpenEMR\Services\FacilityService;
+use DCL\Billing\BillingUtilities;
+use DCL\Billing\SLEOB;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\OeUI\OemrUI;
+use DCL\PaymentProcessing\Recorder;
+use DCL\Services\FacilityService;
 
 $recorder = new Recorder();
 
@@ -548,7 +548,7 @@ function ippf_generate_receipt($patient_id, $encounter = 0): void
 
     <script>
 
-    <?php require(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/restoreSession.php"); ?>
+    <?php require(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/restoreSession.php"); ?>
 
     $(function () {
         var win = top.printLogSetup ? top : opener.top;
@@ -1856,7 +1856,7 @@ while ($urow = sqlFetchArray($ures)) {
 <script>
     var mypcc = <?php echo OEGlobalsBag::getInstance()->getInt('phone_country_code'); ?>;
 
-    <?php require(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/restoreSession.php"); ?>
+    <?php require(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/restoreSession.php"); ?>
 
     // This clears tax amounts in preparation for recomputing taxes.
     // TBD: Probably don't need this at all.
@@ -2840,7 +2840,7 @@ if (OEGlobalsBag::getInstance()->get('ippf_specific')) {
     // o If there is an initial contraceptive consult, make sure a LBFccicon form exists with that method on it.
     // o If a LBFccicon form exists with a new method on it, make sure the TS initial consult exists.
 
-    require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/contraception_billing_scan.inc.php");
+    require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/contraception_billing_scan.inc.php");
     contraception_billing_scan($patient_id, $encounter_id);
     $contraception_billing_code = OEGlobalsBag::getInstance()->get('contraception_billing_code', '');
 

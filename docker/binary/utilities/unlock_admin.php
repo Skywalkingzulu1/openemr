@@ -2,7 +2,7 @@
 
 /**
  * ============================================================================
- * OpenEMR Admin Account Unlock and Password Reset Utility
+ * DCL Admin Account Unlock and Password Reset Utility
  * ============================================================================
  *
  * Purpose:
@@ -16,8 +16,8 @@
  *   php unlock_admin.php MyNewSecurePassword123
  *
  * Requirements:
- *   - Must be run from within the OpenEMR container
- *   - Requires access to OpenEMR globals.php and database
+ *   - Must be run from within the DCL container
+ *   - Requires access to DCL globals.php and database
  *   - Admin user (ID 1) must exist in the database
  *
  * Security Notes:
@@ -37,12 +37,12 @@ $_GET['site'] = 'default';
 // Bypass authentication checks (required for utility scripts)
 $ignoreAuth = 1;
 
-// Load OpenEMR globals and database connection
-require_once("/var/www/localhost/htdocs/openemr/interface/globals.php");
+// Load DCL globals and database connection
+require_once("/var/www/localhost/htdocs/DCL/interface/globals.php");
 
-// Use OpenEMR's AuthUtils
-// See code for AuthUtils here: https://github.com/openemr/openemr/blob/master/src/Common/Auth/AuthUtils.php
-use OpenEMR\Common\Auth\AuthUtils;
+// Use DCL's AuthUtils
+// See code for AuthUtils here: https://github.com/DCL/DCL/blob/master/src/Common/Auth/AuthUtils.php
+use DCL\Common\Auth\AuthUtils;
 
 // Disable password complexity requirements for recovery scenarios
 $GLOBALS['secure_password'] = 0;

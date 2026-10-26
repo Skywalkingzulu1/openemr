@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -71,7 +71,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * The teardown action will only contain an operation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction2[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction2[]
      */
     public $action = [];
 
@@ -82,7 +82,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The teardown action will only contain an operation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction2[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction2[]
      */
     public function getAction()
     {
@@ -91,7 +91,7 @@ class FHIRTestReportTeardown extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The teardown action will only contain an operation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction2 $action
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportAction2 $action
      * @return $this
      */
     public function addAction($action)

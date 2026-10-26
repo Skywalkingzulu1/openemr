@@ -19,24 +19,24 @@
  * is the load-bearing contract; if that changes shape the reflection call
  * fails and this test is the alarm.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\PaymentProcessing\Rainforest;
+namespace DCL\Tests\Isolated\PaymentProcessing\Rainforest;
 
 use InvalidArgumentException;
 use Money\{
     Currency,
     Money,
 };
-use OpenEMR\PaymentProcessing\Rainforest\Api;
-use OpenEMR\PaymentProcessing\Rainforest\EncounterData;
+use DCL\PaymentProcessing\Rainforest\Api;
+use DCL\PaymentProcessing\Rainforest\EncounterData;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 

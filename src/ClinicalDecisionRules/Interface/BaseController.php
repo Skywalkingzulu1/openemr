@@ -12,13 +12,13 @@
  * and open the template in the editor.
  */
 
-namespace OpenEMR\ClinicalDecisionRules\Interface;
+namespace DCL\ClinicalDecisionRules\Interface;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleManager;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\BaseController
+ * Description of DCL\ClinicalDecisionRules\Interface\BaseController
  *
  * @author aron
  */

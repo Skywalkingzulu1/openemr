@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Record details about an anatomical structure.  This resource may be used when a coded concept does not provide the necessary detail needed for the use case.
@@ -72,49 +72,49 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for this instance of the anatomical structure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Whether this body site is in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * The kind of structure being represented by the body structure at `BodyStructure.location`.  This can define both normal and abnormal morphologies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $morphology = null;
 
     /**
      * The anatomical location or region of the specimen, lesion, or body structure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $location = null;
 
     /**
      * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $locationQualifier = [];
 
     /**
      * A summary, characterization or explanation of the body structure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Image or images used to identify a location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public $image = [];
 
     /**
      * The person to which the body site belongs.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
@@ -125,7 +125,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for this instance of the anatomical structure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for this instance of the anatomical structure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether this body site is in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -154,7 +154,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether this body site is in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -165,7 +165,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of structure being represented by the body structure at `BodyStructure.location`.  This can define both normal and abnormal morphologies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMorphology()
     {
@@ -174,7 +174,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of structure being represented by the body structure at `BodyStructure.location`.  This can define both normal and abnormal morphologies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $morphology
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $morphology
      * @return $this
      */
     public function setMorphology($morphology)
@@ -185,7 +185,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The anatomical location or region of the specimen, lesion, or body structure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLocation()
     {
@@ -194,7 +194,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The anatomical location or region of the specimen, lesion, or body structure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $location
      * @return $this
      */
     public function setLocation($location)
@@ -205,7 +205,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getLocationQualifier()
     {
@@ -214,7 +214,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $locationQualifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $locationQualifier
      * @return $this
      */
     public function addLocationQualifier($locationQualifier)
@@ -225,7 +225,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A summary, characterization or explanation of the body structure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -234,7 +234,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A summary, characterization or explanation of the body structure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -245,7 +245,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Image or images used to identify a location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public function getImage()
     {
@@ -254,7 +254,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Image or images used to identify a location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $image
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $image
      * @return $this
      */
     public function addImage($image)
@@ -265,7 +265,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person to which the body site belongs.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -274,7 +274,7 @@ class FHIRBodyStructure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person to which the body site belongs.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)

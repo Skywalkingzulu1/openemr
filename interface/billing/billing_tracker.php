@@ -6,24 +6,24 @@
  * The back-end ajax that goes with this datatables implementation is
  * located in library/ajax/billing_tracker_ajax.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../globals.php");
 
-use OpenEMR\Common\{
+use DCL\Common\{
     Acl\AccessDeniedHelper,
     Acl\AclMain,
     Csrf\CsrfUtils,
     Session\SessionWrapperFactory,
     Twig\TwigContainer
 };
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 require_once OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php";
 

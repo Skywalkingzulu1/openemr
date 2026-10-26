@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A pharmaceutical product described in terms of its composition and dose form.
@@ -71,43 +71,43 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 {
     /**
      * Coded expression for the route.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The first dose (dose quantity) administered in humans can be specified, for a product under investigation, using a numerical value and its unit of measurement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $firstDose = null;
 
     /**
      * The maximum single dose that can be administered as per the protocol of a clinical trial can be specified using a numerical value and its unit of measurement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $maxSingleDose = null;
 
     /**
      * The maximum dose per day (maximum dose quantity to be administered in any one 24-h period) that can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $maxDosePerDay = null;
 
     /**
      * The maximum dose per treatment period that can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $maxDosePerTreatmentPeriod = null;
 
     /**
      * The maximum treatment period during which an Investigational Medicinal Product can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $maxTreatmentPeriod = null;
 
     /**
      * A species for which this route applies.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies[]
      */
     public $targetSpecies = [];
 
@@ -118,7 +118,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * Coded expression for the route.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -127,7 +127,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * Coded expression for the route.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -138,7 +138,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The first dose (dose quantity) administered in humans can be specified, for a product under investigation, using a numerical value and its unit of measurement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getFirstDose()
     {
@@ -147,7 +147,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The first dose (dose quantity) administered in humans can be specified, for a product under investigation, using a numerical value and its unit of measurement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $firstDose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $firstDose
      * @return $this
      */
     public function setFirstDose($firstDose)
@@ -158,7 +158,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum single dose that can be administered as per the protocol of a clinical trial can be specified using a numerical value and its unit of measurement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMaxSingleDose()
     {
@@ -167,7 +167,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum single dose that can be administered as per the protocol of a clinical trial can be specified using a numerical value and its unit of measurement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $maxSingleDose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $maxSingleDose
      * @return $this
      */
     public function setMaxSingleDose($maxSingleDose)
@@ -178,7 +178,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum dose per day (maximum dose quantity to be administered in any one 24-h period) that can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getMaxDosePerDay()
     {
@@ -187,7 +187,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum dose per day (maximum dose quantity to be administered in any one 24-h period) that can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $maxDosePerDay
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $maxDosePerDay
      * @return $this
      */
     public function setMaxDosePerDay($maxDosePerDay)
@@ -198,7 +198,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum dose per treatment period that can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getMaxDosePerTreatmentPeriod()
     {
@@ -207,7 +207,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum dose per treatment period that can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $maxDosePerTreatmentPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $maxDosePerTreatmentPeriod
      * @return $this
      */
     public function setMaxDosePerTreatmentPeriod($maxDosePerTreatmentPeriod)
@@ -218,7 +218,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum treatment period during which an Investigational Medicinal Product can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getMaxTreatmentPeriod()
     {
@@ -227,7 +227,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * The maximum treatment period during which an Investigational Medicinal Product can be administered as per the protocol referenced in the clinical trial authorisation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $maxTreatmentPeriod
      * @return $this
      */
     public function setMaxTreatmentPeriod($maxTreatmentPeriod)
@@ -238,7 +238,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * A species for which this route applies.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies[]
      */
     public function getTargetSpecies()
     {
@@ -247,7 +247,7 @@ class FHIRMedicinalProductPharmaceuticalRouteOfAdministration extends FHIRBackbo
 
     /**
      * A species for which this route applies.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies $targetSpecies
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalTargetSpecies $targetSpecies
      * @return $this
      */
     public function addTargetSpecies($targetSpecies)

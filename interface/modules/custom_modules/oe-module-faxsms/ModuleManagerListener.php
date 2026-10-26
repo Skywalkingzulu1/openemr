@@ -1,11 +1,11 @@
 <?php
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\AbstractModuleActionListener;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\BootstrapService;
-use OpenEMR\Modules\FaxSMS\Controller\NotificationTaskManager;
-use OpenEMR\Modules\FaxSMS\ModuleLifecycleState;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\AbstractModuleActionListener;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\BootstrapService;
+use DCL\Modules\FaxSMS\Controller\NotificationTaskManager;
+use DCL\Modules\FaxSMS\ModuleLifecycleState;
 
 /**
  * Class to be called from Laminas Module Manager for reporting management actions.
@@ -18,11 +18,11 @@ use OpenEMR\Modules\FaxSMS\ModuleLifecycleState;
  * Catch any exceptions because chances are they will be overlooked in Laminas module.
  * Report them in the return value.
  *
- * @package   OpenEMR Modules
- * @link      https://www.open-emr.org
+ * @package   DCL Modules
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 class ModuleManagerListener extends AbstractModuleActionListener
@@ -67,7 +67,7 @@ class ModuleManagerListener extends AbstractModuleActionListener
      */
     public static function getModuleNamespace(): string
     {
-        return 'OpenEMR\\Modules\\FaxSMS\\';
+        return 'DCL\\Modules\\FaxSMS\\';
     }
 
     /**

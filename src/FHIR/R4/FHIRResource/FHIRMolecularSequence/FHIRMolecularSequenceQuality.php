@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Raw data describing a biological sequence.
@@ -71,91 +71,91 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 {
     /**
      * INDEL / SNP / Undefined variant.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQualityType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQualityType
      */
     public $type = null;
 
     /**
      * Gold standard sequence used for comparing against.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $standardSequence = null;
 
     /**
      * Start position of the sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $start = null;
 
     /**
      * End position of the sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $end = null;
 
     /**
      * The score of an experimentally derived feature such as a p-value ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $score = null;
 
     /**
      * Which method is used to get sequence quality.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * True positives, from the perspective of the truth data, i.e. the number of sites in the Truth Call Set for which there are paths through the Query Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $truthTP = null;
 
     /**
      * True positives, from the perspective of the query data, i.e. the number of sites in the Query Call Set for which there are paths through the Truth Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $queryTP = null;
 
     /**
      * False negatives, i.e. the number of sites in the Truth Call Set for which there is no path through the Query Call Set that is consistent with all of the alleles at this site, or sites for which there is an inaccurate genotype call for the event. Sites with correct variant but incorrect genotype are counted here.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $truthFN = null;
 
     /**
      * False positives, i.e. the number of sites in the Query Call Set for which there is no path through the Truth Call Set that is consistent with this site. Sites with correct variant but incorrect genotype are counted here.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $queryFP = null;
 
     /**
      * The number of false positives where the non-REF alleles in the Truth and Query Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or similar).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $gtFP = null;
 
     /**
      * QUERY.TP / (QUERY.TP + QUERY.FP).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $precision = null;
 
     /**
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $recall = null;
 
     /**
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall / (precision + recall).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $fScore = null;
 
     /**
      * Receiver Operator Characteristic (ROC) Curve  to give sensitivity/specificity tradeoff.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRoc
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      */
     public $roc = null;
 
@@ -166,7 +166,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * INDEL / SNP / Undefined variant.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQualityType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQualityType
      */
     public function getType()
     {
@@ -175,7 +175,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * INDEL / SNP / Undefined variant.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQualityType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQualityType $type
      * @return $this
      */
     public function setType($type)
@@ -186,7 +186,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Gold standard sequence used for comparing against.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStandardSequence()
     {
@@ -195,7 +195,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Gold standard sequence used for comparing against.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $standardSequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $standardSequence
      * @return $this
      */
     public function setStandardSequence($standardSequence)
@@ -206,7 +206,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Start position of the sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getStart()
     {
@@ -215,7 +215,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Start position of the sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $start
      * @return $this
      */
     public function setStart($start)
@@ -226,7 +226,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * End position of the sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getEnd()
     {
@@ -235,7 +235,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * End position of the sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $end
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $end
      * @return $this
      */
     public function setEnd($end)
@@ -246,7 +246,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * The score of an experimentally derived feature such as a p-value ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getScore()
     {
@@ -255,7 +255,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * The score of an experimentally derived feature such as a p-value ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $score
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $score
      * @return $this
      */
     public function setScore($score)
@@ -266,7 +266,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Which method is used to get sequence quality.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -275,7 +275,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Which method is used to get sequence quality.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -286,7 +286,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * True positives, from the perspective of the truth data, i.e. the number of sites in the Truth Call Set for which there are paths through the Query Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getTruthTP()
     {
@@ -295,7 +295,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * True positives, from the perspective of the truth data, i.e. the number of sites in the Truth Call Set for which there are paths through the Query Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $truthTP
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $truthTP
      * @return $this
      */
     public function setTruthTP($truthTP)
@@ -306,7 +306,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * True positives, from the perspective of the query data, i.e. the number of sites in the Query Call Set for which there are paths through the Truth Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getQueryTP()
     {
@@ -315,7 +315,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * True positives, from the perspective of the query data, i.e. the number of sites in the Query Call Set for which there are paths through the Truth Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $queryTP
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $queryTP
      * @return $this
      */
     public function setQueryTP($queryTP)
@@ -326,7 +326,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * False negatives, i.e. the number of sites in the Truth Call Set for which there is no path through the Query Call Set that is consistent with all of the alleles at this site, or sites for which there is an inaccurate genotype call for the event. Sites with correct variant but incorrect genotype are counted here.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getTruthFN()
     {
@@ -335,7 +335,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * False negatives, i.e. the number of sites in the Truth Call Set for which there is no path through the Query Call Set that is consistent with all of the alleles at this site, or sites for which there is an inaccurate genotype call for the event. Sites with correct variant but incorrect genotype are counted here.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $truthFN
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $truthFN
      * @return $this
      */
     public function setTruthFN($truthFN)
@@ -346,7 +346,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * False positives, i.e. the number of sites in the Query Call Set for which there is no path through the Truth Call Set that is consistent with this site. Sites with correct variant but incorrect genotype are counted here.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getQueryFP()
     {
@@ -355,7 +355,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * False positives, i.e. the number of sites in the Query Call Set for which there is no path through the Truth Call Set that is consistent with this site. Sites with correct variant but incorrect genotype are counted here.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $queryFP
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $queryFP
      * @return $this
      */
     public function setQueryFP($queryFP)
@@ -366,7 +366,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * The number of false positives where the non-REF alleles in the Truth and Query Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or similar).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getGtFP()
     {
@@ -375,7 +375,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * The number of false positives where the non-REF alleles in the Truth and Query Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or similar).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $gtFP
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $gtFP
      * @return $this
      */
     public function setGtFP($gtFP)
@@ -386,7 +386,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * QUERY.TP / (QUERY.TP + QUERY.FP).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getPrecision()
     {
@@ -395,7 +395,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * QUERY.TP / (QUERY.TP + QUERY.FP).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $precision
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $precision
      * @return $this
      */
     public function setPrecision($precision)
@@ -406,7 +406,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getRecall()
     {
@@ -415,7 +415,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $recall
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $recall
      * @return $this
      */
     public function setRecall($recall)
@@ -426,7 +426,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall / (precision + recall).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFScore()
     {
@@ -435,7 +435,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall / (precision + recall).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $fScore
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $fScore
      * @return $this
      */
     public function setFScore($fScore)
@@ -446,7 +446,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Receiver Operator Characteristic (ROC) Curve  to give sensitivity/specificity tradeoff.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRoc
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      */
     public function getRoc()
     {
@@ -455,7 +455,7 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement implements \JsonS
 
     /**
      * Receiver Operator Characteristic (ROC) Curve  to give sensitivity/specificity tradeoff.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRoc $roc
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceRoc $roc
      * @return $this
      */
     public function setRoc($roc)

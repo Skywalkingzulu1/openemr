@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConceptMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -71,25 +71,25 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
     public $mode = null;
 
     /**
      * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * The canonical reference to an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $url = null;
 
@@ -100,7 +100,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
     public function getMode()
     {
@@ -109,7 +109,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines which action to take if there is no match for the source concept in the target system designated for the group. One of 3 actions are possible: use the unmapped code (this is useful when doing a mapping between versions, and only a few codes have changed), use a fixed code (a default code), or alternatively, a reference to a different concept map can be provided (by canonical URL).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRConceptMapGroupUnmappedMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -120,7 +120,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -129,7 +129,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -140,7 +140,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -149,7 +149,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -160,7 +160,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The canonical reference to an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getUrl()
     {
@@ -169,7 +169,7 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The canonical reference to an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $url
      * @return $this
      */
     public function setUrl($url)

@@ -20,18 +20,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  EMR Direct <https://www.emrdirect.com/>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 require_once(__DIR__ . "/../library/direct_message_check.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\DirectMessaging\ErrorConstants;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\DirectMessaging\ErrorConstants;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * Connect to a phiMail Direct Messaging server and transmit

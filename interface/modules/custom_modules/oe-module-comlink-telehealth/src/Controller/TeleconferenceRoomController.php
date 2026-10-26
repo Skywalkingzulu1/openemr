@@ -3,51 +3,51 @@
 /**
  * Handles all of the page rendering and api communications for a teleconference room.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Controller;
+namespace Comlink\DCL\Modules\TeleHealthModule\Controller;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Bootstrap;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Exception\TelehealthProviderNotEnrolledException;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Exception\TeleHealthProviderSuspendedException;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Exception\TelehealthProvisioningServiceRequestException;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Exception\TelehealthValidationException;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthSessionRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\FormattedPatientService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\ParticipantListService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TelehealthConfigurationVerifier;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthParticipantInvitationMailerService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthProvisioningService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Util\CalendarUtils;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Util\TelehealthAuthUtils;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Validators\TelehealthPatientValidator;
+use Comlink\DCL\Modules\TeleHealthModule\Bootstrap;
+use Comlink\DCL\Modules\TeleHealthModule\Exception\TelehealthProviderNotEnrolledException;
+use Comlink\DCL\Modules\TeleHealthModule\Exception\TeleHealthProviderSuspendedException;
+use Comlink\DCL\Modules\TeleHealthModule\Exception\TelehealthProvisioningServiceRequestException;
+use Comlink\DCL\Modules\TeleHealthModule\Exception\TelehealthValidationException;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthSessionRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Services\FormattedPatientService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\ParticipantListService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TelehealthConfigurationVerifier;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthParticipantInvitationMailerService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthProvisioningService;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use Comlink\DCL\Modules\TeleHealthModule\Util\CalendarUtils;
+use Comlink\DCL\Modules\TeleHealthModule\Util\TelehealthAuthUtils;
+use Comlink\DCL\Modules\TeleHealthModule\Validators\TelehealthPatientValidator;
 use InvalidArgumentException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\OneTimeAuth;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\EncounterSessionUtil;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\PatientAccessOnsiteService;
-use OpenEMR\Services\PatientPortalService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\UserService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\OneTimeAuth;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\EncounterSessionUtil;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\AppointmentService;
+use DCL\Services\EncounterService;
+use DCL\Services\ListService;
+use DCL\Services\PatientAccessOnsiteService;
+use DCL\Services\PatientPortalService;
+use DCL\Services\PatientService;
+use DCL\Services\UserService;
+use DCL\Validators\ProcessingResult;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Twig\Environment;
@@ -904,7 +904,7 @@ class TeleconferenceRoomController
         $userId = $user['id'];
         $auditTrail = $user['fname'] . ' ' . $user['lname'] . '(' . $user['username'] . ')';
 
-        $sql = "UPDATE openemr_postcalendar_events SET pc_aid =? WHERE pc_eid =? ";
+        $sql = "UPDATE DCL_postcalendar_events SET pc_aid =? WHERE pc_eid =? ";
         QueryUtils::sqlStatementThrowException($sql, [$userId, $appt['pc_eid']]);
 
         if (!AclMain::aclCheckCore('patients', 'appt', '', ['write', 'wsome'])) {
@@ -1424,7 +1424,7 @@ class TeleconferenceRoomController
 
     /**
      * @param $user - a user as returned from UserService
-     * @return \Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthUser|null
+     * @return \Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthUser|null
      * @throws TelehealthProvisioningServiceRequestException
      */
     private function getOrCreateTelehealthProvider($user)
@@ -1434,7 +1434,7 @@ class TeleconferenceRoomController
 
     /**
      * @param $patient
-     * @return \Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthUser|null
+     * @return \Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthUser|null
      * @throws TelehealthProvisioningServiceRequestException
      */
     private function getOrCreateTelehealthPatient($patient)

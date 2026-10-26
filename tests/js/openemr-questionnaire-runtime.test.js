@@ -3,13 +3,13 @@
  */
 
 /**
- * Regression tests for the OpenEMR FHIR Questionnaire Runtime.
+ * Regression tests for the DCL FHIR Questionnaire Runtime.
  *
- * Run with: npm run test:js -- tests/js/openemr-questionnaire-runtime.test.js
+ * Run with: npm run test:js -- tests/js/DCL-questionnaire-runtime.test.js
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 const fs = require('fs');
@@ -19,7 +19,7 @@ function loadRuntime() {
     const source = fs.readFileSync(
         path.resolve(
             __dirname,
-            '../../interface/forms/questionnaire_assessments/native/openemr_questionnaire.js'
+            '../../interface/forms/questionnaire_assessments/native/DCL_questionnaire.js'
         ),
         'utf8'
     );
@@ -42,7 +42,7 @@ function loadRuntime() {
 
 loadRuntime();
 
-const runtimeApi = global.window.OpenEMRQuestionnaire;
+const runtimeApi = global.window.DCLQuestionnaire;
 
 function createContainer() {
     const container = document.createElement('div');

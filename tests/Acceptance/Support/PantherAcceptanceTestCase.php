@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Support;
+namespace DCL\Tests\Acceptance\Support;
 
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\Exception\WebDriverException;
@@ -67,14 +67,14 @@ abstract class PantherAcceptanceTestCase extends TestCase
      * once the shell is loaded. Used as the primary "am I authenticated
      * yet" gate for the post-login redirect race.
      */
-    protected const SHELL_TITLE = 'OpenEMR';
+    protected const SHELL_TITLE = 'DCL';
 
     /**
      * Login-page title — asserted before submitting credentials so a
      * broken login route surfaces with a clear signal rather than a
      * confusing downstream failure.
      */
-    protected const LOGIN_TITLE = 'OpenEMR Login';
+    protected const LOGIN_TITLE = 'DCL Login';
 
     /**
      * Top-right user icon in the post-login shell. Used by ports that
@@ -306,7 +306,7 @@ abstract class PantherAcceptanceTestCase extends TestCase
                 $client->quit();
             } catch (WebDriverException) {
                 // Driver session already gone; nothing left to clean up.
-                // Narrowed from \Throwable per openemr.forbiddenCatchType
+                // Narrowed from \Throwable per DCL.forbiddenCatchType
                 // rule — genuine PHP errors should still propagate.
             } finally {
                 $this->client = null;
@@ -330,7 +330,7 @@ abstract class PantherAcceptanceTestCase extends TestCase
      * Log in as admin/pass and wait for the Knockout-rendered
      * #mainMenu to actually populate. Two-gate discipline:
      *
-     *   1. Title change to "OpenEMR" — proves the login POST
+     *   1. Title change to "DCL" — proves the login POST
      *      authenticated and the post-login redirect fired.
      *   2. `#mainMenu` element present in DOM — proves the shell
      *      rendered.
@@ -366,7 +366,7 @@ abstract class PantherAcceptanceTestCase extends TestCase
 
         // Post-login redirect is client-side / async — same race the
         // source-side LoginTrait::performLogin handles by waiting for
-        // getTitle() === 'OpenEMR'.
+        // getTitle() === 'DCL'.
         try {
             $client->wait(10)->until(
                 static fn(WebDriver $driver): bool => $driver->getTitle() === self::SHELL_TITLE,
@@ -469,7 +469,7 @@ abstract class PantherAcceptanceTestCase extends TestCase
         // Guard the jQuery call — if jQuery is under noConflict or
         // absent from window entirely, calling `window.jQuery(...)`
         // throws a WebDriver JS error. If the guard hits (jQuery
-        // missing on a shipped OpenEMR release image would itself be
+        // missing on a shipped DCL release image would itself be
         // a real problem to surface), the modal stays visible and
         // the fade-out wait below times out — that TimeoutException
         // propagates and fails the test with a clear signal that

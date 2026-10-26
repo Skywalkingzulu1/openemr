@@ -373,7 +373,7 @@ CREATE TABLE `content_assignments` (
   `category` varchar(64) DEFAULT NULL COMMENT 'with resource_id set, unused; with resource_id NULL, assigns every resource whose own category matches',
   `facility` int(11) DEFAULT NULL COMMENT 'fk to facility.id; NULL means any',
   `provider` int(11) UNSIGNED DEFAULT NULL COMMENT 'fk to users.id; NULL means any',
-  `visit_category_id` int(11) DEFAULT NULL COMMENT 'fk to openemr_postcalendar_categories.pc_catid, as form_encounter.pc_catid carries it; NULL means any',
+  `visit_category_id` int(11) DEFAULT NULL COMMENT 'fk to DCL_postcalendar_categories.pc_catid, as form_encounter.pc_catid carries it; NULL means any',
   `client_id` varchar(255) DEFAULT NULL COMMENT 'oauth client for surface=smart; NULL means any',
   `acl_section` varchar(64) DEFAULT NULL COMMENT 'ACL section required; set with acl_level or leave both NULL to use the surface default',
   `acl_level` varchar(31) DEFAULT NULL COMMENT 'ACL level required; set with acl_section or leave both NULL to use the surface default',

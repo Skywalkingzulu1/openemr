@@ -5,15 +5,15 @@
 
 require_once dirname(__DIR__, 4) . "/globals.php";
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\WenoModule\Services\DownloadWenoPharmacies;
-use OpenEMR\Modules\WenoModule\Services\WenoLogService;
-use OpenEMR\Modules\WenoModule\Services\WenoValidate;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\WenoModule\Services\DownloadWenoPharmacies;
+use DCL\Modules\WenoModule\Services\WenoLogService;
+use DCL\Modules\WenoModule\Services\WenoValidate;
 
 // Gate: match the ACL enforced on the calling page (download_log_viewer.php).
 if (!AclMain::aclCheckCore('admin', 'super')) {

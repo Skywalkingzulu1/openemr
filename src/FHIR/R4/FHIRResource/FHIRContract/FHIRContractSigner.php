@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,19 +71,19 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * Role of this Contract signer, e.g. notary, grantee.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $type = null;
 
     /**
      * Party which is a signator to this Contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $party = null;
 
     /**
      * Legally binding Contract DSIG signature contents in Base64.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSignature[]
      */
     public $signature = [];
 
@@ -94,7 +94,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Role of this Contract signer, e.g. notary, grantee.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Role of this Contract signer, e.g. notary, grantee.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Party which is a signator to this Contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParty()
     {
@@ -123,7 +123,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Party which is a signator to this Contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $party
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $party
      * @return $this
      */
     public function setParty($party)
@@ -134,7 +134,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Legally binding Contract DSIG signature contents in Base64.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSignature[]
      */
     public function getSignature()
     {
@@ -143,7 +143,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Legally binding Contract DSIG signature contents in Base64.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSignature $signature
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSignature $signature
      * @return $this
      */
     public function addSignature($signature)

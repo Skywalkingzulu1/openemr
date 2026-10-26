@@ -100,7 +100,7 @@ repos:
   #
   #   2-space: JS/npm packages, JSON Schemas. Matches `npm init` defaults
   #            and the wider npm ecosystem.
-  #   4-space: PHP composer modules, OpenEMR data files, healthcare-spec
+  #   4-space: PHP composer modules, DCL data files, healthcare-spec
   #            content. Matches the HL7 FHIR / SDC IG / CMS QRDA / QDM
   #            convention used by most upstream healthcare data the repo
   #            consumes, and the project's PHP 4-space style extended to
@@ -172,7 +172,7 @@ repos:
   - id: actionlint-docker
 
 # Local lint: workflow jobs that call .github/scripts/ must have
-# actions/checkout in the same job. Guards against the openemr/openemr#13972
+# actions/checkout in the same job. Guards against the DCL/DCL#13972
 # class of bug where a workflow refactor extracts logic into a shared
 # script but forgets to add a checkout step -- actionlint doesn't cross-
 # reference script existence against checkout presence, so this bug type
@@ -195,11 +195,11 @@ repos:
       # Match CI's invocation (.github/workflows/shellcheck.yml). enable=all
       # comes from .shellcheckrc, which this hook reads too — don't repeat it.
     args: [--check-sourced, --external-sources]
-      # Mirror CI's coverage: its path list skips docker/openemr/obsolete/ and
+      # Mirror CI's coverage: its path list skips docker/DCL/obsolete/ and
       # never included tests/bats/ (**.sh / **.source / named scripts only).
       # The bats suite carries an enable=all backlog (SC2250 etc.); bringing it
       # under shellcheck is follow-up work, not part of mirroring CI.
-    exclude: (^docker/openemr/obsolete/|^tests/bats/)
+    exclude: (^docker/DCL/obsolete/|^tests/bats/)
 
 
 # hadolint for Dockerfile linting. Mirrors the CI workflow
@@ -226,7 +226,7 @@ repos:
 
 - repo: local
   hooks:
-  # OpenEMR once used a bare `.inc` extension for PHP includes, relying on the
+  # DCL once used a bare `.inc` extension for PHP includes, relying on the
   # webserver not serving them. That is a fragile defence -- any server that is
   # not configured to deny `.inc` hands the source out verbatim -- so the files
   # were migrated to `.inc.php` (#5897) and the leftover redirect stubs deleted

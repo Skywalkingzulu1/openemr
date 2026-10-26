@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedication;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\Services\FHIR\FhirMedicationService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedication;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\Services\FHIR\FhirMedicationService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -20,13 +20,13 @@ use Psr\Log\LoggerInterface;
  * batch (lot/expiration/manufacturer) lives on drug_inventory and is intentionally
  * not round-trip-writable through this endpoint.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirMedicationServiceCrudTest extends TestCase
 {
@@ -83,7 +83,7 @@ class FhirMedicationServiceCrudTest extends TestCase
     #[Test]
     public function testInsertWithUnknownCodeSystemIsRejected(): void
     {
-        // A coding whose system OpenEMR cannot map has no TYPE: prefix to store it under, and
+        // A coding whose system DCL cannot map has no TYPE: prefix to store it under, and
         // the read side derives the FHIR system from that prefix -- so storing the bare code
         // would hand it back claiming a system the caller never sent. The write is refused
         // instead. code.text is left in place: text asserts no code system, so accepting it
@@ -96,7 +96,7 @@ class FhirMedicationServiceCrudTest extends TestCase
         $this->assertIsArray($coding);
         $this->assertArrayHasKey(0, $coding);
         $this->assertIsArray($coding[0]);
-        $coding[0]['system'] = 'http://example.org/not-a-code-system-openemr-knows';
+        $coding[0]['system'] = 'http://example.org/not-a-code-system-DCL-knows';
         $code['coding'] = $coding;
         $payload['code'] = $code;
         $fixture = new FHIRMedication($payload);
@@ -143,7 +143,7 @@ class FhirMedicationServiceCrudTest extends TestCase
         // Two nearer-looking fields are deliberately not asserted. code.coding[].display is
         // rebuilt on read from the drug-code registry and only falls back to `drugs`.`name`
         // when the registry has no description, so the result depends on whether RxNorm data is
-        // loaded. `form` is written by this branch but never read back: parseOpenEMRRecord()
+        // loaded. `form` is written by this branch but never read back: parseDCLRecord()
         // builds the CodeableConcept and then discards it without calling setForm(), which
         // predates this branch -- so Medication.form is write-only until that is fixed.
         $payload['status'] = 'inactive';

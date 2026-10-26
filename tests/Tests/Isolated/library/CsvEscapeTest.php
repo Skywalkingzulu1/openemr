@@ -7,9 +7,9 @@
  * Verifies that dangerous formula prefixes (=, +, -, @, \t, \r) are
  * properly neutralized in CSV cell values.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * AI-Generated Code Notice: This file contains code generated with
  * assistance from Claude Code (Anthropic). The code has been reviewed
@@ -18,7 +18,7 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\library;
+namespace DCL\Tests\Isolated\library;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;

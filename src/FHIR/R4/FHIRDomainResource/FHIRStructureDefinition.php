@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
@@ -72,163 +72,163 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure definition is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the structure definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this structure definition. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the structure definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the structure definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the structure definition is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this structure definition is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $keyword = [];
 
     /**
      * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.0.0. for this version.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion
      */
     public $fhirVersion = null;
 
     /**
      * An external specification that the content is mapped to.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
     public $mapping = [];
 
     /**
      * Defines the kind of structure that this definition is describing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureDefinitionKind
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureDefinitionKind
      */
     public $kind = null;
 
     /**
      * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $abstract = null;
 
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContext[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContext[]
      */
     public $context = [];
 
     /**
      * A set of rules as FHIRPath Invariants about when the extension can be used (e.g. co-occurrence variants for the extension). All the rules must be true.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $contextInvariant = [];
 
     /**
      * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).  References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $type = null;
 
     /**
      * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $baseDefinition = null;
 
     /**
      * How the type relates to the baseDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTypeDerivationRule
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTypeDerivationRule
      */
     public $derivation = null;
 
     /**
      * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
     public $snapshot = null;
 
     /**
      * A differential view is expressed relative to the base StructureDefinition - a statement of differences that it applies.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      */
     public $differential = null;
 
@@ -239,7 +239,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure definition is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -248,7 +248,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure definition is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -259,7 +259,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -268,7 +268,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -279,7 +279,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -288,7 +288,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -299,7 +299,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -308,7 +308,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -319,7 +319,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the structure definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -328,7 +328,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the structure definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -339,7 +339,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this structure definition. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -348,7 +348,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this structure definition. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -359,7 +359,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -368,7 +368,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -379,7 +379,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -388,7 +388,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -399,7 +399,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the structure definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -408,7 +408,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the structure definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -419,7 +419,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -428,7 +428,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -439,7 +439,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the structure definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -448,7 +448,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the structure definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -459,7 +459,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -468,7 +468,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -479,7 +479,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the structure definition is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -488,7 +488,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the structure definition is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -499,7 +499,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Explanation of why this structure definition is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -508,7 +508,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Explanation of why this structure definition is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -519,7 +519,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -528,7 +528,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -539,7 +539,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getKeyword()
     {
@@ -548,7 +548,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $keyword
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $keyword
      * @return $this
      */
     public function addKeyword($keyword)
@@ -559,7 +559,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.0.0. for this version.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion
      */
     public function getFhirVersion()
     {
@@ -568,7 +568,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.0.0. for this version.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
      * @return $this
      */
     public function setFhirVersion($fhirVersion)
@@ -579,7 +579,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An external specification that the content is mapped to.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
     public function getMapping()
     {
@@ -588,7 +588,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An external specification that the content is mapped to.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping $mapping
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping $mapping
      * @return $this
      */
     public function addMapping($mapping)
@@ -599,7 +599,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Defines the kind of structure that this definition is describing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureDefinitionKind
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureDefinitionKind
      */
     public function getKind()
     {
@@ -608,7 +608,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Defines the kind of structure that this definition is describing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureDefinitionKind $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureDefinitionKind $kind
      * @return $this
      */
     public function setKind($kind)
@@ -619,7 +619,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAbstract()
     {
@@ -628,7 +628,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $abstract
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $abstract
      * @return $this
      */
     public function setAbstract($abstract)
@@ -639,7 +639,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContext[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContext[]
      */
     public function getContext()
     {
@@ -648,7 +648,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContext $context
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContext $context
      * @return $this
      */
     public function addContext($context)
@@ -659,7 +659,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A set of rules as FHIRPath Invariants about when the extension can be used (e.g. co-occurrence variants for the extension). All the rules must be true.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getContextInvariant()
     {
@@ -668,7 +668,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A set of rules as FHIRPath Invariants about when the extension can be used (e.g. co-occurrence variants for the extension). All the rules must be true.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $contextInvariant
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $contextInvariant
      * @return $this
      */
     public function addContextInvariant($contextInvariant)
@@ -679,7 +679,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).  References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getType()
     {
@@ -688,7 +688,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).  References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $type
      * @return $this
      */
     public function setType($type)
@@ -699,7 +699,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getBaseDefinition()
     {
@@ -708,7 +708,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $baseDefinition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $baseDefinition
      * @return $this
      */
     public function setBaseDefinition($baseDefinition)
@@ -719,7 +719,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * How the type relates to the baseDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTypeDerivationRule
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTypeDerivationRule
      */
     public function getDerivation()
     {
@@ -728,7 +728,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * How the type relates to the baseDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTypeDerivationRule $derivation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTypeDerivationRule $derivation
      * @return $this
      */
     public function setDerivation($derivation)
@@ -739,7 +739,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
     public function getSnapshot()
     {
@@ -748,7 +748,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot $snapshot
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot $snapshot
      * @return $this
      */
     public function setSnapshot($snapshot)
@@ -759,7 +759,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A differential view is expressed relative to the base StructureDefinition - a statement of differences that it applies.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      */
     public function getDifferential()
     {
@@ -768,7 +768,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A differential view is expressed relative to the base StructureDefinition - a statement of differences that it applies.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential $differential
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential $differential
      * @return $this
      */
     public function setDifferential($differential)

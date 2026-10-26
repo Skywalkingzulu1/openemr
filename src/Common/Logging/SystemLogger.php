@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEMR\Common\Logging;
+namespace DCL\Common\Logging;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
 use Stringable;
@@ -21,11 +21,11 @@ use Stringable;
  * 2. Convert to Monolog levels internally using Logger::toMonologLevel()
  * This would allow SystemLoggerAwareTrait to use PSR-3 types in its public API.
  *
- * @package OpenEMR\Common\Logging
- * @link      https://www.open-emr.org
+ * @package DCL\Common\Logging
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class SystemLogger implements LoggerInterface
 {
@@ -40,7 +40,7 @@ class SystemLogger implements LoggerInterface
         /**
          * We use mono
          */
-        $this->logger = new Logger('OpenEMR');
+        $this->logger = new Logger('DCL');
 
         // Override switch (this allows hard-coded setting of log level since there are several
         //  cases that are outside of the globals context if the developer needs to turn on
@@ -58,7 +58,7 @@ class SystemLogger implements LoggerInterface
 
 //        $facility = LOG_SYSLOG; // @see syslog constants https://www.php.net/manual/en/network.constants.php
 //        // Change the logger level to see what logs you want to log
-//        $this->logger->pushHandler(new Monolog\Handler\ErrorLogHandler('OpenEMR - ', $facility, $logLevel));
+//        $this->logger->pushHandler(new Monolog\Handler\ErrorLogHandler('DCL - ', $facility, $logLevel));
         $handler = new ErrorLogHandler(ErrorLogHandler::OPERATING_SYSTEM, $logLevel);
         $formatter = new LineFormatter("%channel%.%level_name%: %message% %context% %extra%");
         $formatter->includeStacktraces(true);
@@ -87,7 +87,7 @@ class SystemLogger implements LoggerInterface
         }
 
         // the inner library may already be safely escaping values, but we don't want to assume that
-        // so we go through and make sure we use the OpenEMR errorLogEscape to make sure nothing
+        // so we go through and make sure we use the DCL errorLogEscape to make sure nothing
         // hits the log file that could be an attack vector
         // if we have a different LogHandler this logic may need to be revisited.
         $escapedDict = [];

@@ -3,16 +3,16 @@
 /**
  * VitalsFieldRanges provides clinically-informed validation ranges for vitals form fields.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Davit Mnatsakanyan
- * @copyright Copyright (c) 2026 OpenEMR Foundation
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Foundation
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
 final class VitalsFieldRanges
 {

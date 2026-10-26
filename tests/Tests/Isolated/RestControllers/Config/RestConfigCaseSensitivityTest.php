@@ -2,16 +2,16 @@
 
 /**
  * RestConfigCaseSensitivityTest tests case-sensitive endpoint checking
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    GitHub Copilot AI-generated code
- * @copyright Copyright (c) 2025 OpenEMR Foundation
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025 DCL Foundation
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Config;
+namespace DCL\Tests\Isolated\RestControllers\Config;
 
-use OpenEMR\RestControllers\Config\RestConfig;
+use DCL\RestControllers\Config\RestConfig;
 use PHPUnit\Framework\TestCase;
 
 class RestConfigCaseSensitivityTest extends TestCase

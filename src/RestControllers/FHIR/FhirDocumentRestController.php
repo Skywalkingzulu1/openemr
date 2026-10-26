@@ -5,25 +5,25 @@
  * rights for the document as well as whether the document has an expiration date.  If an expired document is found
  * this class cleans it up if it is needed.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Http\StatusCode;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\FHIR\Document\BaseDocumentDownloader;
-use OpenEMR\Services\FHIR\Document\IDocumentDownloader;
-use OpenEMR\Services\PatientService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Http\StatusCode;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\FHIR\Document\BaseDocumentDownloader;
+use DCL\Services\FHIR\Document\IDocumentDownloader;
+use DCL\Services\PatientService;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -59,7 +59,7 @@ class FhirDocumentRestController
      */
     #[OA\Get(
         path: '/fhir/Binary/{id}',
-        description: "Used for downloading binary documents generated either with BULK FHIR Export or with the \$docref CCD export operation.  Documentation can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>",
+        description: "Used for downloading binary documents generated either with BULK FHIR Export or with the \$docref CCD export operation.  Documentation can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>",
         tags: ['fhir'],
         parameters: [
             new OA\Parameter(
@@ -73,12 +73,12 @@ class FhirDocumentRestController
         responses: [
             new OA\Response(
                 response: '200',
-                description: "The documentation for working with BULK FHIR or \$docref document exports can be found at <a href='https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API</a>"
+                description: "The documentation for working with BULK FHIR or \$docref document exports can be found at <a href='https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API' target='_blank' rel='noopener'>https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API</a>"
             ),
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function downloadDocument($documentId, $patientUuid = null): ResponseInterface
     {

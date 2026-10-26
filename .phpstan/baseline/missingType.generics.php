@@ -2,7 +2,7 @@
 
 $ignoreErrors = [];
 $ignoreErrors[] = [
-    'message' => '#^Property OpenEMR\\\\Modules\\\\EhiExporter\\\\Models\\\\ExportState\\:\\:\\$queue with generic class SplQueue does not specify its types\\: TValue$#',
+    'message' => '#^Property DCL\\\\Modules\\\\EhiExporter\\\\Models\\\\ExportState\\:\\:\\$queue with generic class SplQueue does not specify its types\\: TValue$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-ehi-exporter/src/Models/ExportState.php',
 ];
@@ -177,12 +177,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../portal/patient/fwk/libs/verysimple/Phreeze/DataSet.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Class OpenEMR\\\\Common\\\\Auth\\\\OpenIDConnect\\\\Entities\\\\ResourceScopeEntityList extends generic class ArrayObject but does not specify its types\\: TKey, TValue$#',
+    'message' => '#^Class DCL\\\\Common\\\\Auth\\\\OpenIDConnect\\\\Entities\\\\ResourceScopeEntityList extends generic class ArrayObject but does not specify its types\\: TKey, TValue$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Common/Auth/OpenIDConnect/Entities/ResourceScopeEntityList.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Class OpenEMR\\\\Menu\\\\MenuItems extends generic class ArrayObject but does not specify its types\\: TKey, TValue$#',
+    'message' => '#^Class DCL\\\\Menu\\\\MenuItems extends generic class ArrayObject but does not specify its types\\: TKey, TValue$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Menu/MenuItems.php',
 ];

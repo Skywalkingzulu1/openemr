@@ -3,18 +3,18 @@
 /**
  * DatabaseCheck - Verifies database connectivity
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Health\Check;
+namespace DCL\Health\Check;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Health\HealthCheckInterface;
-use OpenEMR\Health\HealthCheckResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Health\HealthCheckInterface;
+use DCL\Health\HealthCheckResult;
 
 class DatabaseCheck implements HealthCheckInterface
 {

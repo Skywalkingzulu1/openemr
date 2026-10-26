@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Ui;
+namespace DCL\Tests\Acceptance\Ui;
 
 use Facebook\WebDriver\WebDriverBy;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
-use OpenEMR\Tests\Acceptance\Support\PantherAcceptanceTestCase;
+use DCL\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\PantherAcceptanceTestCase;
 use PHPUnit\Framework\Attributes\Group;
 
 /**
@@ -23,7 +23,7 @@ use PHPUnit\Framework\Attributes\Group;
  * First test in the acceptance suite that drives an actual headless
  * Chrome via Panther/WebDriver rather than HTTP-only via BrowserKit.
  * Every earlier acceptance test (InstallTest, UpgradeIntegrityTest,
- * FhirSmokeTest, OAuth2SmokeTest) hits openemr as an HTTP client
+ * FhirSmokeTest, OAuth2SmokeTest) hits DCL as an HTTP client
  * with no JS runtime — so those tests would still pass even if
  * webpack builds broken bundles, if a JS asset 404s, or if Knockout
  * bindings fail to apply. This test catches that class of regression:
@@ -57,7 +57,7 @@ final class E2eCriticalPathTest extends PantherAcceptanceTestCase
 
         // At this point the app is fully booted — assert one visible
         // menu label to prove the menu isn't just full of empty nodes.
-        // "Calendar" is the first top-level entry in the openemr menu
+        // "Calendar" is the first top-level entry in the DCL menu
         // and is essentially unrenameable (it's the landing icon in
         // every skin). If this ever fails, the failure message points
         // at the specific expectation being wrong rather than a vague

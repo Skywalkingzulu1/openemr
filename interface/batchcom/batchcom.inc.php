@@ -3,16 +3,16 @@
 /**
  * Misc. BatchCom convenience functions
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Andres Paglayan <andres@paglayan.com>
  * @author  Jason 'Toolbox' Oettinger <jason@oettinger.email>
  * @copyright Copyright (c) 2005 Andres Paglayan <andres@paglayan.com>
  * @copyright Copyright (c) 2017 Jason 'Toolbox' Oettinger <jason@oettinger.email>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\Utilities;
+use DCL\BC\Utilities;
 
 //validation functions
 function check_date_format($date): bool

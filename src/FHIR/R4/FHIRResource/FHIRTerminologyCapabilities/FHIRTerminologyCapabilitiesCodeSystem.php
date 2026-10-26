@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,19 +71,19 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement implemen
 {
     /**
      * URI for the Code System.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $uri = null;
 
     /**
      * For the code system, a list of versions that are supported by the server.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[]
      */
     public $version = [];
 
     /**
      * True if subsumption is supported for this version of the code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $subsumption = null;
 
@@ -94,7 +94,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement implemen
 
     /**
      * URI for the Code System.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getUri()
     {
@@ -103,7 +103,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement implemen
 
     /**
      * URI for the Code System.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $uri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $uri
      * @return $this
      */
     public function setUri($uri)
@@ -114,7 +114,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement implemen
 
     /**
      * For the code system, a list of versions that are supported by the server.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[]
      */
     public function getVersion()
     {
@@ -123,7 +123,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement implemen
 
     /**
      * For the code system, a list of versions that are supported by the server.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $version
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $version
      * @return $this
      */
     public function addVersion($version)
@@ -134,7 +134,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement implemen
 
     /**
      * True if subsumption is supported for this version of the code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getSubsumption()
     {
@@ -143,7 +143,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement implemen
 
     /**
      * True if subsumption is supported for this version of the code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $subsumption
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $subsumption
      * @return $this
      */
     public function setSubsumption($subsumption)

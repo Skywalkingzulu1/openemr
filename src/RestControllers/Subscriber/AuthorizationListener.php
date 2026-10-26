@@ -1,36 +1,36 @@
 <?php
 
 /**
- * AuthorizationListener is currently functioning as the Policy Decision Point (PEP) for the OpenEMR REST API.
- * There are currently two Policy Enforcement Points (PEP) in the rest API flow sequence in OpenEMR
+ * AuthorizationListener is currently functioning as the Policy Decision Point (PEP) for the DCL REST API.
+ * There are currently two Policy Enforcement Points (PEP) in the rest API flow sequence in DCL
  * 1. The onKernelRequest which is the first PEP that checks the request and authorizes it based on the defined authorization strategies.
  * 2. The onRestApiSecurityCheck which is the second PEP that checks the request and authorizes it based upon the access token scopes.
  *
  * We probably need to refactor this in the future to have a more robust policy decision point (PDP) and policy enforcement point (PEP) system.
  * This would allow for more flexibility in the authorization process and would allow for more complex authorization scenarios.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\RestApiExtend\RestApiSecurityCheckEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\RestControllers\Authorization\BearerTokenAuthorizationStrategy;
-use OpenEMR\RestControllers\Authorization\IAuthorizationStrategy;
-use OpenEMR\RestControllers\Authorization\LocalApiAuthorizationController;
-use OpenEMR\RestControllers\Authorization\SkipAuthorizationStrategy;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\RestApiExtend\RestApiSecurityCheckEvent;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\RestControllers\Authorization\BearerTokenAuthorizationStrategy;
+use DCL\RestControllers\Authorization\IAuthorizationStrategy;
+use DCL\RestControllers\Authorization\LocalApiAuthorizationController;
+use DCL\RestControllers\Authorization\SkipAuthorizationStrategy;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -95,7 +95,7 @@ class AuthorizationListener implements EventSubscriberInterface
             // resources whose canonicals are referenced from /metadata.
             // Keep this list to those three — do not add convenience /api/
             // endpoints here; their OpenAPI annotations declare
-            // openemr_auth as required and the runtime must match.
+            // DCL_auth as required and the runtime must match.
             $skipAuthorizationStrategy->addSkipRoute('/fhir/metadata');
             $skipAuthorizationStrategy->addSkipRoute('/fhir/.well-known/smart-configuration');
             // Prefix form so /fhir/OperationDefinition/{op} named-operation

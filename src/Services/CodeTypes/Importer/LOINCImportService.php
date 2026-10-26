@@ -6,19 +6,19 @@
  * The column order of that file is not stable between releases, so the mapping is derived from the
  * header row rather than hard coded.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (C) 2026 Open Plan IT Ltd. <support@openplanit.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Services\CodeTypes\Importer;
+namespace DCL\Services\CodeTypes\Importer;
 
-use OpenEMR\Services\CodeTypes\CodeImportException;
+use DCL\Services\CodeTypes\CodeImportException;
 
 class LOINCImportService extends BaseCodeTypeImporter
 {

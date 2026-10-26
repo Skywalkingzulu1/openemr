@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -72,67 +72,67 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $type = null;
 
     /**
      * Identifier for the category of event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $subtype = [];
 
     /**
      * Indicator for type of action performed during the event that generated the audit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventAction
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAuditEventAction
      */
     public $action = null;
 
     /**
      * The period during which the activity occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * The time when the event was recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $recorded = null;
 
     /**
      * Indicates whether the event succeeded or failed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventOutcome
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAuditEventOutcome
      */
     public $outcome = null;
 
     /**
      * A free text description of the outcome of the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $outcomeDesc = null;
 
     /**
      * The purposeOfUse (reason) that was used during the event being recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $purposeOfEvent = [];
 
     /**
      * An actor taking an active role in the event or activity that is logged.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
     public $agent = [];
 
     /**
      * The system that is reporting the event.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource
      */
     public $source = null;
 
     /**
      * Specific instances of data or objects that have been accessed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
     public $entity = [];
 
@@ -143,7 +143,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getType()
     {
@@ -152,7 +152,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function setType($type)
@@ -163,7 +163,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the category of event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getSubtype()
     {
@@ -172,7 +172,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the category of event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $subtype
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $subtype
      * @return $this
      */
     public function addSubtype($subtype)
@@ -183,7 +183,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicator for type of action performed during the event that generated the audit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventAction
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAuditEventAction
      */
     public function getAction()
     {
@@ -192,7 +192,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicator for type of action performed during the event that generated the audit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventAction $action
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAuditEventAction $action
      * @return $this
      */
     public function setAction($action)
@@ -203,7 +203,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period during which the activity occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -212,7 +212,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The period during which the activity occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -223,7 +223,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time when the event was recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getRecorded()
     {
@@ -232,7 +232,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time when the event was recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $recorded
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $recorded
      * @return $this
      */
     public function setRecorded($recorded)
@@ -243,7 +243,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the event succeeded or failed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventOutcome
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAuditEventOutcome
      */
     public function getOutcome()
     {
@@ -252,7 +252,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether the event succeeded or failed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAuditEventOutcome $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAuditEventOutcome $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -263,7 +263,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text description of the outcome of the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getOutcomeDesc()
     {
@@ -272,7 +272,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text description of the outcome of the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $outcomeDesc
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $outcomeDesc
      * @return $this
      */
     public function setOutcomeDesc($outcomeDesc)
@@ -283,7 +283,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The purposeOfUse (reason) that was used during the event being recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPurposeOfEvent()
     {
@@ -292,7 +292,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The purposeOfUse (reason) that was used during the event being recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $purposeOfEvent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $purposeOfEvent
      * @return $this
      */
     public function addPurposeOfEvent($purposeOfEvent)
@@ -303,7 +303,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An actor taking an active role in the event or activity that is logged.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
     public function getAgent()
     {
@@ -312,7 +312,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An actor taking an active role in the event or activity that is logged.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent $agent
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventAgent $agent
      * @return $this
      */
     public function addAgent($agent)
@@ -323,7 +323,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The system that is reporting the event.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource
      */
     public function getSource()
     {
@@ -332,7 +332,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The system that is reporting the event.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource $source
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventSource $source
      * @return $this
      */
     public function setSource($source)
@@ -343,7 +343,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific instances of data or objects that have been accessed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
     public function getEntity()
     {
@@ -352,7 +352,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Specific instances of data or objects that have been accessed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity $entity
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAuditEvent\FHIRAuditEventEntity $entity
      * @return $this
      */
     public function addEntity($entity)

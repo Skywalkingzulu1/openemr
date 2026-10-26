@@ -3,17 +3,17 @@
 /**
  * CodeTypesService.php
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
 use InvalidArgumentException;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
 
 /**
  * Service for code type
@@ -571,12 +571,12 @@ class CodeTypesService
     }
 
     /**
-     * Given a system URL and code, return the first valid OpenEMR formatted code with type prefix if applicable.
+     * Given a system URL and code, return the first valid DCL formatted code with type prefix if applicable.
      * @param string|null $system
      * @param float|bool|int|string $code
      * @return string
      */
-    public function getOpenEMRCodeForSystemAndCode(?string $system, float|bool|int|string $code): string
+    public function getDCLCodeForSystemAndCode(?string $system, float|bool|int|string $code): string
     {
         if (!empty($system)) {
             $codeType = $this->getCodeTypeForSystemUrl($system);
@@ -587,7 +587,7 @@ class CodeTypesService
         return $code;
     }
 
-    public function getAllOpenEMRCodesForSystemAndCode(?string $system, float|bool|int|string $code): array
+    public function getAllDCLCodesForSystemAndCode(?string $system, float|bool|int|string $code): array
     {
         $codes = [];
         if (!empty($system)) {

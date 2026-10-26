@@ -6,27 +6,27 @@
  * the user which measure to leave out instead of failing with the engine's
  * internal error.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Qdm;
+namespace DCL\Tests\Isolated\Services\Qdm;
 
-use OpenEMR\Cqm\Qdm\Patient;
-use OpenEMR\Services\Qdm\CqmCalculator;
-use OpenEMR\Services\Qdm\Measure;
-use OpenEMR\Services\Qdm\MeasureCalculationException;
-use OpenEMR\Services\Qdm\MeasureService;
+use DCL\Cqm\Qdm\Patient;
+use DCL\Services\Qdm\CqmCalculator;
+use DCL\Services\Qdm\Measure;
+use DCL\Services\Qdm\MeasureCalculationException;
+use DCL\Services\Qdm\MeasureService;
 use PHPUnit\Framework\TestCase;
 
 class CqmCalculatorTest extends TestCase
 {
-    private const MEASURES = __DIR__ . '/../../../../../vendor/openemr/oe-cqm-parsers/2025_reporting_period/json_measures/';
+    private const MEASURES = __DIR__ . '/../../../../../vendor/DCL/oe-cqm-parsers/2025_reporting_period/json_measures/';
 
     public function testAMeasureTheEngineCannotRunNamesTheMeasure(): void
     {

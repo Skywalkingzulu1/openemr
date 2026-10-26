@@ -10,38 +10,38 @@
  * of nulls. Node types the installed measures do not use are not
  * implemented and throw.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Cqm\Cql\Engine;
+namespace DCL\Cqm\Cql\Engine;
 
-use OpenEMR\Cqm\Cql\Qdm\QdmObject;
-use OpenEMR\Cqm\Cql\Types\Code;
-use OpenEMR\Cqm\Cql\Types\CodeSystem;
-use OpenEMR\Cqm\Cql\Types\Comparison;
-use OpenEMR\Cqm\Cql\Types\Concept;
-use OpenEMR\Cqm\Cql\Types\CqlDate;
-use OpenEMR\Cqm\Cql\Types\CqlDateTime;
-use OpenEMR\Cqm\Cql\Types\CqlTemporal;
-use OpenEMR\Cqm\Cql\Types\CqlValueSet;
-use OpenEMR\Cqm\Cql\Types\Interval;
-use OpenEMR\Cqm\Cql\Types\Precision;
-use OpenEMR\Cqm\Cql\Types\Quantity;
-use OpenEMR\Cqm\Cql\Types\Ratio;
-use OpenEMR\Cqm\Cql\Types\ThreeValuedLogic;
-use OpenEMR\Cqm\Cql\Types\Tuple;
-use OpenEMR\Cqm\Cql\Types\Uncertainty;
-use OpenEMR\Cqm\Cql\Types\ValueSet;
-use OpenEMR\Cqm\Cql\Util\CqlMath;
-use OpenEMR\Cqm\Cql\Util\CqlOverflowException;
-use OpenEMR\Cqm\Cql\Util\Fdlibm;
-use OpenEMR\Cqm\Cql\Util\JavaScript;
+use DCL\Cqm\Cql\Qdm\QdmObject;
+use DCL\Cqm\Cql\Types\Code;
+use DCL\Cqm\Cql\Types\CodeSystem;
+use DCL\Cqm\Cql\Types\Comparison;
+use DCL\Cqm\Cql\Types\Concept;
+use DCL\Cqm\Cql\Types\CqlDate;
+use DCL\Cqm\Cql\Types\CqlDateTime;
+use DCL\Cqm\Cql\Types\CqlTemporal;
+use DCL\Cqm\Cql\Types\CqlValueSet;
+use DCL\Cqm\Cql\Types\Interval;
+use DCL\Cqm\Cql\Types\Precision;
+use DCL\Cqm\Cql\Types\Quantity;
+use DCL\Cqm\Cql\Types\Ratio;
+use DCL\Cqm\Cql\Types\ThreeValuedLogic;
+use DCL\Cqm\Cql\Types\Tuple;
+use DCL\Cqm\Cql\Types\Uncertainty;
+use DCL\Cqm\Cql\Types\ValueSet;
+use DCL\Cqm\Cql\Util\CqlMath;
+use DCL\Cqm\Cql\Util\CqlOverflowException;
+use DCL\Cqm\Cql\Util\Fdlibm;
+use DCL\Cqm\Cql\Util\JavaScript;
 
 final class Evaluator
 {

@@ -3,24 +3,24 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Service;
+namespace DCL\Modules\FaxSMS\Service;
 
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
-use OpenEMR\Modules\FaxSMS\Controller\ClickatellSMSClient;
-use OpenEMR\Modules\FaxSMS\Controller\EmailClient;
-use OpenEMR\Modules\FaxSMS\Controller\EtherFaxActions;
-use OpenEMR\Modules\FaxSMS\Controller\RCFaxClient;
-use OpenEMR\Modules\FaxSMS\Controller\SignalWireClient;
-use OpenEMR\Modules\FaxSMS\Controller\TwilioSMSClient;
-use OpenEMR\Modules\FaxSMS\Controller\VoiceClient;
-use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Modules\FaxSMS\Controller\ClickatellSMSClient;
+use DCL\Modules\FaxSMS\Controller\EmailClient;
+use DCL\Modules\FaxSMS\Controller\EtherFaxActions;
+use DCL\Modules\FaxSMS\Controller\RCFaxClient;
+use DCL\Modules\FaxSMS\Controller\SignalWireClient;
+use DCL\Modules\FaxSMS\Controller\TwilioSMSClient;
+use DCL\Modules\FaxSMS\Controller\VoiceClient;
+use DCL\Modules\FaxSMS\Enums\ServiceType;
 use RuntimeException;
 
 /**

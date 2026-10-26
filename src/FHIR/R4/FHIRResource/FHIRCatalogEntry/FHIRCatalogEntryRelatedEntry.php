@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCatalogEntry;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCatalogEntry;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCatalogEntry;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Catalog entries are wrappers that contextualize items included in a catalog.
@@ -71,13 +71,13 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement implements \JsonS
 {
     /**
      * The type of relation to the related item: child, parent, packageContent, containerPackage, usedIn, uses, requires, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCatalogEntryRelationType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCatalogEntryRelationType
      */
     public $relationtype = null;
 
     /**
      * The reference to the related item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $item = null;
 
@@ -88,7 +88,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement implements \JsonS
 
     /**
      * The type of relation to the related item: child, parent, packageContent, containerPackage, usedIn, uses, requires, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCatalogEntryRelationType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCatalogEntryRelationType
      */
     public function getRelationtype()
     {
@@ -97,7 +97,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement implements \JsonS
 
     /**
      * The type of relation to the related item: child, parent, packageContent, containerPackage, usedIn, uses, requires, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCatalogEntryRelationType $relationtype
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCatalogEntryRelationType $relationtype
      * @return $this
      */
     public function setRelationtype($relationtype)
@@ -108,7 +108,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement implements \JsonS
 
     /**
      * The reference to the related item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getItem()
     {
@@ -117,7 +117,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement implements \JsonS
 
     /**
      * The reference to the related item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $item
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $item
      * @return $this
      */
     public function setItem($item)

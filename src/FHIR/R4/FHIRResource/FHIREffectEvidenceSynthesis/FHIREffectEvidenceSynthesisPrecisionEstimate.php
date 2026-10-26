@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
+namespace DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
@@ -71,25 +71,25 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 {
     /**
      * Examples include confidence interval and interquartile range.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Use 95 for a 95% confidence interval.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $level = null;
 
     /**
      * Lower bound of confidence interval.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $from = null;
 
     /**
      * Upper bound of confidence interval.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $to = null;
 
@@ -100,7 +100,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Examples include confidence interval and interquartile range.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -109,7 +109,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Examples include confidence interval and interquartile range.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -120,7 +120,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Use 95 for a 95% confidence interval.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getLevel()
     {
@@ -129,7 +129,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Use 95 for a 95% confidence interval.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $level
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $level
      * @return $this
      */
     public function setLevel($level)
@@ -140,7 +140,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Lower bound of confidence interval.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFrom()
     {
@@ -149,7 +149,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Lower bound of confidence interval.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $from
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $from
      * @return $this
      */
     public function setFrom($from)
@@ -160,7 +160,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Upper bound of confidence interval.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getTo()
     {
@@ -169,7 +169,7 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement i
 
     /**
      * Upper bound of confidence interval.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $to
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $to
      * @return $this
      */
     public function setTo($to)

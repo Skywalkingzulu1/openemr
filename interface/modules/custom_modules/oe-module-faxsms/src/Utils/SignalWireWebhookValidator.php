@@ -4,14 +4,14 @@
  * SignalWire Webhook Receiver
  * Handles incoming fax notifications from SignalWire
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    SignalWire Integration
  * @copyright Copyright (c) 2026
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Utils;
+namespace DCL\Modules\FaxSMS\Utils;
 
 /**
  * SignalWire webhook input, URL, MIME, and signature validation helpers.

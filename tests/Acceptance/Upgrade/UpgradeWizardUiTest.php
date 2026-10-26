@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Upgrade;
+namespace DCL\Tests\Acceptance\Upgrade;
 
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\WebDriverBy;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\BrowserSession;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Panther\Client;
@@ -197,9 +197,9 @@ final class UpgradeWizardUiTest extends TestCase
             'GET / after wizard upgrade should redirect to /interface/login/login.php — staying at / means the migration did not fully take effect',
         );
         self::assertStringContainsString(
-            'OpenEMR Login',
+            'DCL Login',
             $client->getTitle(),
-            'Post-redirect page title should be "OpenEMR Login"',
+            'Post-redirect page title should be "DCL Login"',
         );
     }
 }

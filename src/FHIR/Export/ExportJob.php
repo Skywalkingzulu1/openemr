@@ -2,32 +2,32 @@
 
 /**
  * ExportJob.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
  * ExportJob represents a FHIR export job as part of the bulk on fhir specification.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\FHIR\Export;
+namespace DCL\FHIR\Export;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\SearchComparator;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\SearchComparator;
+use DCL\Services\Utils\DateFormatterUtils;
 
 class ExportJob
 {
     /**
-     * The name of the OpenEMR table record this record belongs to.
+     * The name of the DCL table record this record belongs to.
      */
     const TABLE_NAME = "ExportJob";
 

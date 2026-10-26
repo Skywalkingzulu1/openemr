@@ -3,18 +3,18 @@
 /**
  * Handles the TeleHealthUserRepository Unit Tests
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule;
+namespace Comlink\DCL\Modules\TeleHealthModule;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthUser;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
-use OpenEMR\Common\Database\QueryUtils;
+use Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthUser;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\TestCase;
 
 class TeleHealthUserRepositoryTest extends TestCase

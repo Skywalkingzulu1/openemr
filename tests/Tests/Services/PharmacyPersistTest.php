@@ -9,17 +9,17 @@
  * since Pharmacy got the exact same buggy persist() code from PR #10326
  * (the PhoneNumberService consolidation refactor) as InsuranceCompany did.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude Code
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\PhoneType;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\PhoneType;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

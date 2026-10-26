@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConceptMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -71,37 +71,37 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Identity (code or path) or the element/item that the map refers to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRConceptMapEquivalence
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRConceptMapEquivalence
      */
     public $equivalence = null;
 
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     public $dependsOn = [];
 
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     public $product = [];
 
@@ -112,7 +112,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identity (code or path) or the element/item that the map refers to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -121,7 +121,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Identity (code or path) or the element/item that the map refers to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -132,7 +132,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -141,7 +141,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -152,7 +152,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRConceptMapEquivalence
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRConceptMapEquivalence
      */
     public function getEquivalence()
     {
@@ -161,7 +161,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRConceptMapEquivalence $equivalence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRConceptMapEquivalence $equivalence
      * @return $this
      */
     public function setEquivalence($equivalence)
@@ -172,7 +172,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -181,7 +181,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -192,7 +192,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     public function getDependsOn()
     {
@@ -201,7 +201,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
      * @return $this
      */
     public function addDependsOn($dependsOn)
@@ -212,7 +212,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     public function getProduct()
     {
@@ -221,7 +221,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn $product
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn $product
      * @return $this
      */
     public function addProduct($product)

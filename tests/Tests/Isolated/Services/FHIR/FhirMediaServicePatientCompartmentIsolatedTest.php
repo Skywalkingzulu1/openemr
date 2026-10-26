@@ -8,20 +8,20 @@
  * future refactors cannot silently drop the marker. The route ACL side of
  * this endpoint is covered separately.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\Services\FHIR\FhirMediaService;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\FHIR\FhirMediaService;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
 use PHPUnit\Framework\TestCase;
 
 class FhirMediaServicePatientCompartmentIsolatedTest extends TestCase
@@ -54,7 +54,7 @@ class FhirMediaServicePatientCompartmentIsolatedTest extends TestCase
     }
 
     /**
-     * Extracts the name of the first mapped OpenEMR field a FHIR search
+     * Extracts the name of the first mapped DCL field a FHIR search
      * definition targets. Per the {@see FhirSearchParameterDefinition}
      * contract the mapped-fields accessor returns either an array of
      * ServiceField instances (typed) or a single string (untyped legacy

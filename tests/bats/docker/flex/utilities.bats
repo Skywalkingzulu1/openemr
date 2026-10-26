@@ -24,7 +24,7 @@ setup() {
 
 @test "flex Dockerfile: demo_5_0_0_5.sql fetch is wired up" {
     # The 50 MB demo SQL is no longer committed to the repo; it's fetched at
-    # build time from openemr-devops pinned to a specific commit SHA, with
+    # build time from DCL-devops pinned to a specific commit SHA, with
     # checksum verification. Verify the Dockerfile carries the right plumbing
     # so a build will actually retrieve and verify it.
     assert_file_contains "${SCRIPT_DIR}/Dockerfile" 'DEMO_SQL_REPO_SHA='

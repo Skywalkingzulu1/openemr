@@ -13,7 +13,7 @@ setup() {
     sites="${base}/sites"
     default="${sites}/default"
     mkdir -p "$default"
-    sed "s|/var/www/localhost/htdocs/openemr|${base}|g" "$FSUP1" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh"
+    sed "s|/var/www/localhost/htdocs/DCL|${base}|g" "$FSUP1" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh"
     sed 's/chown -R apache:root.*/true/' "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh.tmp" && mv "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh.tmp" "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh"
     touch "${base}/sql_upgrade.php"
     chmod +x "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh"

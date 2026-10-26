@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A slot of time on a schedule that may be available for booking appointments.
@@ -72,67 +72,67 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * External Ids for this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $serviceCategory = [];
 
     /**
      * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $serviceType = [];
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialty = [];
 
     /**
      * The style of appointment or patient that may be booked in the slot (not service type).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $appointmentType = null;
 
     /**
      * The schedule resource that this slot defines an interval of status information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $schedule = null;
 
     /**
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSlotStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSlotStatus
      */
     public $status = null;
 
     /**
      * Date/Time that the slot is to begin.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $start = null;
 
     /**
      * Date/Time that the slot is to conclude.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $end = null;
 
     /**
      * This slot has already been overbooked, appointments are unlikely to be accepted for this time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $overbooked = null;
 
     /**
      * Comments on the slot to describe any extended information. Such as custom constraints on the slot.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
@@ -143,7 +143,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * External Ids for this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -152,7 +152,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * External Ids for this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -163,7 +163,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceCategory()
     {
@@ -172,7 +172,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A broad categorization of the service that is to be performed during this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceCategory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceCategory
      * @return $this
      */
     public function addServiceCategory($serviceCategory)
@@ -183,7 +183,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceType()
     {
@@ -192,7 +192,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceType
      * @return $this
      */
     public function addServiceType($serviceType)
@@ -203,7 +203,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
@@ -212,7 +212,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -223,7 +223,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The style of appointment or patient that may be booked in the slot (not service type).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAppointmentType()
     {
@@ -232,7 +232,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The style of appointment or patient that may be booked in the slot (not service type).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $appointmentType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $appointmentType
      * @return $this
      */
     public function setAppointmentType($appointmentType)
@@ -243,7 +243,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The schedule resource that this slot defines an interval of status information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSchedule()
     {
@@ -252,7 +252,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The schedule resource that this slot defines an interval of status information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $schedule
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $schedule
      * @return $this
      */
     public function setSchedule($schedule)
@@ -263,7 +263,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSlotStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSlotStatus
      */
     public function getStatus()
     {
@@ -272,7 +272,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * busy | free | busy-unavailable | busy-tentative | entered-in-error.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSlotStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSlotStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -283,7 +283,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date/Time that the slot is to begin.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getStart()
     {
@@ -292,7 +292,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date/Time that the slot is to begin.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $start
      * @return $this
      */
     public function setStart($start)
@@ -303,7 +303,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date/Time that the slot is to conclude.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getEnd()
     {
@@ -312,7 +312,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date/Time that the slot is to conclude.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $end
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $end
      * @return $this
      */
     public function setEnd($end)
@@ -323,7 +323,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This slot has already been overbooked, appointments are unlikely to be accepted for this time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getOverbooked()
     {
@@ -332,7 +332,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This slot has already been overbooked, appointments are unlikely to be accepted for this time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $overbooked
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $overbooked
      * @return $this
      */
     public function setOverbooked($overbooked)
@@ -343,7 +343,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments on the slot to describe any extended information. Such as custom constraints on the slot.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -352,7 +352,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments on the slot to describe any extended information. Such as custom constraints on the slot.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)

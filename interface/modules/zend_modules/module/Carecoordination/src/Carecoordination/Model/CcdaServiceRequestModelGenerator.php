@@ -4,8 +4,8 @@
  * CcdaServiceRequestModelGenerator is responsible for generating an xml model file that is used to generate a CCDA file by the ccda generator
  * service.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Riju K P <rijukp@zhservices.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -13,15 +13,15 @@
  * @copyright Copyright (c) 2014 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Model;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\EncounterService;
+use DCL\Services\PatientService;
+use DCL\Validators\ProcessingResult;
 
 class CcdaServiceRequestModelGenerator
 {

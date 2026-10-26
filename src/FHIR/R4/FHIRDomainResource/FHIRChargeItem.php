@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The resource ChargeItem describes the provision of healthcare provider products for a certain patient, therefore referring not only to the product, but containing in addition details of the provision, like date, time, amounts and participating organizations and persons. Main Usage of the ChargeItem is to enable the billing process and internal cost allocation.
@@ -72,170 +72,170 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers assigned to this event performer or other systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * References the (external) source of pricing information, rules of application for the code this ChargeItem uses.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $definitionUri = [];
 
     /**
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $definitionCanonical = [];
 
     /**
      * The current state of the ChargeItem.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRChargeItemStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRChargeItemStatus
      */
     public $status = null;
 
     /**
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * A code that identifies the charge, like a billing code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The individual or set of individuals the action is being or was performed on.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The encounter or episode of care that establishes the context for this event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $context = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $occurrenceTiming = null;
 
     /**
      * Indicates who or what performed or participated in the charged service.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItem\FHIRChargeItemPerformer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRChargeItem\FHIRChargeItemPerformer[]
      */
     public $performer = [];
 
     /**
      * The organization requesting the service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $performingOrganization = null;
 
     /**
      * The organization performing the service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requestingOrganization = null;
 
     /**
      * The financial cost center permits the tracking of charge attribution.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $costCenter = null;
 
     /**
      * Quantity of which the charge item has been serviced.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * The anatomical location where the related service has been applied.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $bodysite = [];
 
     /**
      * Factor overriding the factor determined by the rules associated with the code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $factorOverride = null;
 
     /**
      * Total price of the charge overriding the list price associated with the code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $priceOverride = null;
 
     /**
      * If the list price or the rule-based factor associated with the code is overridden, this attribute can capture a text to indicate the  reason for this action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $overrideReason = null;
 
     /**
      * The device, practitioner, etc. who entered the charge item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $enterer = null;
 
     /**
      * Date the charge item was entered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $enteredDate = null;
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reason = [];
 
     /**
      * Indicated the rendered service that caused this charge.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $service = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $productReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productCodeableConcept = null;
 
     /**
      * Account into which this ChargeItems belongs.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $account = [];
 
     /**
      * Comments made about the event by the performer, subject or other participants.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Further information supporting this charge.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInformation = [];
 
@@ -246,7 +246,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this event performer or other systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -255,7 +255,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this event performer or other systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -266,7 +266,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * References the (external) source of pricing information, rules of application for the code this ChargeItem uses.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getDefinitionUri()
     {
@@ -275,7 +275,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * References the (external) source of pricing information, rules of application for the code this ChargeItem uses.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $definitionUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $definitionUri
      * @return $this
      */
     public function addDefinitionUri($definitionUri)
@@ -286,7 +286,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getDefinitionCanonical()
     {
@@ -295,7 +295,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
      * @return $this
      */
     public function addDefinitionCanonical($definitionCanonical)
@@ -306,7 +306,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the ChargeItem.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRChargeItemStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRChargeItemStatus
      */
     public function getStatus()
     {
@@ -315,7 +315,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The current state of the ChargeItem.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRChargeItemStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRChargeItemStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -326,7 +326,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -335,7 +335,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -346,7 +346,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that identifies the charge, like a billing code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -355,7 +355,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that identifies the charge, like a billing code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -366,7 +366,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or set of individuals the action is being or was performed on.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -375,7 +375,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual or set of individuals the action is being or was performed on.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -386,7 +386,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter or episode of care that establishes the context for this event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getContext()
     {
@@ -395,7 +395,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter or episode of care that establishes the context for this event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $context
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $context
      * @return $this
      */
     public function setContext($context)
@@ -405,7 +405,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -413,7 +413,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -423,7 +423,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
@@ -431,7 +431,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
     public function setOccurrencePeriod($occurrencePeriod)
@@ -441,7 +441,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
@@ -449,7 +449,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
      * @return $this
      */
     public function setOccurrenceTiming($occurrenceTiming)
@@ -460,7 +460,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who or what performed or participated in the charged service.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItem\FHIRChargeItemPerformer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRChargeItem\FHIRChargeItemPerformer[]
      */
     public function getPerformer()
     {
@@ -469,7 +469,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who or what performed or participated in the charged service.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRChargeItem\FHIRChargeItemPerformer $performer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRChargeItem\FHIRChargeItemPerformer $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -480,7 +480,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization requesting the service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPerformingOrganization()
     {
@@ -489,7 +489,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization requesting the service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performingOrganization
      * @return $this
      */
     public function setPerformingOrganization($performingOrganization)
@@ -500,7 +500,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization performing the service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequestingOrganization()
     {
@@ -509,7 +509,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization performing the service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requestingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requestingOrganization
      * @return $this
      */
     public function setRequestingOrganization($requestingOrganization)
@@ -520,7 +520,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The financial cost center permits the tracking of charge attribution.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCostCenter()
     {
@@ -529,7 +529,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The financial cost center permits the tracking of charge attribution.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $costCenter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $costCenter
      * @return $this
      */
     public function setCostCenter($costCenter)
@@ -540,7 +540,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Quantity of which the charge item has been serviced.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -549,7 +549,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Quantity of which the charge item has been serviced.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -560,7 +560,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The anatomical location where the related service has been applied.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getBodysite()
     {
@@ -569,7 +569,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The anatomical location where the related service has been applied.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodysite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodysite
      * @return $this
      */
     public function addBodysite($bodysite)
@@ -580,7 +580,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Factor overriding the factor determined by the rules associated with the code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getFactorOverride()
     {
@@ -589,7 +589,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Factor overriding the factor determined by the rules associated with the code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $factorOverride
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $factorOverride
      * @return $this
      */
     public function setFactorOverride($factorOverride)
@@ -600,7 +600,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Total price of the charge overriding the list price associated with the code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getPriceOverride()
     {
@@ -609,7 +609,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Total price of the charge overriding the list price associated with the code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $priceOverride
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $priceOverride
      * @return $this
      */
     public function setPriceOverride($priceOverride)
@@ -620,7 +620,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the list price or the rule-based factor associated with the code is overridden, this attribute can capture a text to indicate the  reason for this action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getOverrideReason()
     {
@@ -629,7 +629,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the list price or the rule-based factor associated with the code is overridden, this attribute can capture a text to indicate the  reason for this action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $overrideReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $overrideReason
      * @return $this
      */
     public function setOverrideReason($overrideReason)
@@ -640,7 +640,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device, practitioner, etc. who entered the charge item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEnterer()
     {
@@ -649,7 +649,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device, practitioner, etc. who entered the charge item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $enterer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $enterer
      * @return $this
      */
     public function setEnterer($enterer)
@@ -660,7 +660,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date the charge item was entered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEnteredDate()
     {
@@ -669,7 +669,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Date the charge item was entered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $enteredDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $enteredDate
      * @return $this
      */
     public function setEnteredDate($enteredDate)
@@ -680,7 +680,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReason()
     {
@@ -689,7 +689,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes why the event occurred in coded or textual form.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -700,7 +700,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicated the rendered service that caused this charge.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getService()
     {
@@ -709,7 +709,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicated the rendered service that caused this charge.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $service
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $service
      * @return $this
      */
     public function addService($service)
@@ -719,7 +719,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProductReference()
     {
@@ -727,7 +727,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $productReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $productReference
      * @return $this
      */
     public function setProductReference($productReference)
@@ -737,7 +737,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCodeableConcept()
     {
@@ -745,7 +745,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return $this
      */
     public function setProductCodeableConcept($productCodeableConcept)
@@ -756,7 +756,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Account into which this ChargeItems belongs.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAccount()
     {
@@ -765,7 +765,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Account into which this ChargeItems belongs.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $account
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $account
      * @return $this
      */
     public function addAccount($account)
@@ -776,7 +776,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the event by the performer, subject or other participants.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -785,7 +785,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments made about the event by the performer, subject or other participants.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -796,7 +796,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Further information supporting this charge.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInformation()
     {
@@ -805,7 +805,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Further information supporting this charge.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInformation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInformation
      * @return $this
      */
     public function addSupportingInformation($supportingInformation)

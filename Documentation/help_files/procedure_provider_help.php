@@ -3,15 +3,15 @@
 /**
  * Message Center Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
  * @version 1.0.0
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -50,13 +50,13 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("It consists of two parts - defining a Provider and configuring the Orders and Results");?>.</p>
 
-                    <p><?php echo xlt("While lab tests and radiological tests can be performed in the practice facility they are generally done at an external facility and the provider details for that entity will have to be entered in openEMR before the Procedure module setup can begin");?>.</p>
+                    <p><?php echo xlt("While lab tests and radiological tests can be performed in the practice facility they are generally done at an external facility and the provider details for that entity will have to be entered in DCL before the Procedure module setup can begin");?>.</p>
 
                     <p><?php echo xlt("For procedures performed in the practice, whether it is an office based procedure or a lab or radiological procedure done in the facility, the provider can be defined as Local Lab, Office Based or have any descriptive name");?>.</p>
 
                     <p><?php echo xlt("The setup for lab tests will be described in detail, minor modification to these steps will be needed to setup in-office procedures and other procedure types");?>.</p>
 
-                    <p><?php echo xlt("Integrating lab results into a patient's chart in openEMR can be done manually i.e. both ordering tests and uploading the received results or electronically");?>.</p>
+                    <p><?php echo xlt("Integrating lab results into a patient's chart in DCL can be done manually i.e. both ordering tests and uploading the received results or electronically");?>.</p>
 
                     <p><?php echo xlt("Electronic results can be bidirectional - both order tests and receive results electronically or unidirectional - only receive the results electronically");?>.</p>
 
@@ -84,7 +84,7 @@ require_once("../../interface/globals.php");
                     <h4 class="oe-help-heading"><?php echo xlt("Define lab service locations"); ?><a href="#top_section"><i class="fa fa-arrow-circle-up oe-pull-away oe-help-redirect" aria-hidden="true"></i></a></h4>
                     <p><i class="fa fa-exclamation-triangle  oe-text-red" aria-hidden="true"></i> <strong><?php echo xlt("You need administrator privileges to perform this action"); ?>.</strong></p>
 
-                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To use this help file as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR");?>.</p>
+                    <p><i class="fa fa-lightbulb-o fa-lg  oe-text-green" aria-hidden="true"></i>&nbsp <?php echo xlt("To use this help file as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL");?>.</p>
 
                     <p><?php echo xlt("Go to Administration > Address Book > Add New");?>.</p>
 
@@ -132,7 +132,7 @@ require_once("../../interface/globals.php");
 
                     <p><?php echo xlt("The values listed here will show up in the drop-down boxes that will be used to process orders");?>.</p>
 
-                    <p><?php echo xlt("There are 10 settings that are related to procedures included in the standard release of openEMR"); ?>.&nbsp <i id="show_hide" class="fa fa-eye fa-lg small" title="<?php echo xla('Click to Show'); ?>"></i></p>
+                    <p><?php echo xlt("There are 10 settings that are related to procedures included in the standard release of DCL"); ?>.&nbsp <i id="show_hide" class="fa fa-eye fa-lg small" title="<?php echo xla('Click to Show'); ?>"></i></p>
 
                     <div id="proc_list" class='hideaway' style='display: none;'>
                         <ul>
@@ -185,7 +185,7 @@ require_once("../../interface/globals.php");
 
                     <p><i class="fa fa-exclamation-circle  oe-text-orange" aria-hidden="true"></i>&nbsp<?php echo xlt("Procedure Types - Group, Procedure Order, Discrete Result, Recommendation, Custom Favorite Group and Custom Favorite Item. Used in the next step - Configure the lab test structure");?>.</p>
 
-                    <p><?php echo xlt("Custom Favorite Group and Custom Favorite Item is used to create customized groups of orders");?>. <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i>&nbsp;<strong><?php echo xlt("New in openEMR ver 5.0.2 "); ?></strong></li></p>
+                    <p><?php echo xlt("Custom Favorite Group and Custom Favorite Item is used to create customized groups of orders");?>. <i class="fa fa-exclamation-circle oe-text-orange" aria-hidden="true"></i>&nbsp;<strong><?php echo xlt("New in DCL ver 5.0.2 "); ?></strong></li></p>
 
                     <p><?php echo xlt("Procedure Units - various units needed to define result values - may need to add to this list depending on the tests that are included, will vary according to need");?>.</p>
 

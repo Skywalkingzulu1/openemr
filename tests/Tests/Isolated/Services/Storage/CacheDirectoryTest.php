@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL <https://DCL.com>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Storage;
+namespace DCL\Tests\Isolated\Services\Storage;
 
 use InvalidArgumentException;
-use OpenEMR\Services\Storage\CacheDirectory;
+use DCL\Services\Storage\CacheDirectory;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
@@ -24,7 +24,7 @@ final class CacheDirectoryTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->testBaseDir = sys_get_temp_dir() . '/openemr-cache-test-' . bin2hex(random_bytes(8));
+        $this->testBaseDir = sys_get_temp_dir() . '/DCL-cache-test-' . bin2hex(random_bytes(8));
         mkdir($this->testBaseDir, 0700, true);
     }
 
@@ -138,7 +138,7 @@ final class CacheDirectoryTest extends TestCase
 
     public function testForUsesSystemTempDirWhenNoBaseDirProvided(): void
     {
-        $scope = 'openemr-cache-test-' . bin2hex(random_bytes(8));
+        $scope = 'DCL-cache-test-' . bin2hex(random_bytes(8));
         $cache = new CacheDirectory();
         $tempDir = sys_get_temp_dir();
 

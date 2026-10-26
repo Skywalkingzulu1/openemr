@@ -5,19 +5,19 @@
  *
  * Exercises the process-wide request holder without a database.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Http;
+namespace DCL\Tests\Isolated\Common\Http;
 
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\HttpRestRequest;
 use PHPUnit\Framework\TestCase;
 
 class CurrentRequestIsolatedTest extends TestCase

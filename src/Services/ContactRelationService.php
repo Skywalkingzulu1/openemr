@@ -4,27 +4,27 @@
  * Contact Relation Service - Generic Relationship Management
  * Manages relationships between contacts and other entities
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\ORDataObject\ContactRelation;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Utils\DateFormatterUtils;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\ORDataObject\ContactRelation;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\BaseService;
+use DCL\Services\ListService;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Utils\DateFormatterUtils;
+use DCL\Validators\ProcessingResult;
 
 class ContactRelationService extends BaseService
 {
@@ -333,7 +333,7 @@ class ContactRelationService extends BaseService
 
         // Read the related person back through the search path rather than returning the
         // ids the transaction produced. FhirServiceBase::update() feeds this result
-        // straight into parseOpenEMRRecord(), which expects the read-side shape built by
+        // straight into parseDCLRecord(), which expects the read-side shape built by
         // getPersonFromRecord() -- uuid, puuid, active, relationship, name, telecom,
         // addresses -- not just the identifiers.
         // Scoped to the owning patient as well as the person: one `person` row can be linked
@@ -1169,7 +1169,7 @@ class ContactRelationService extends BaseService
             'middle_name' => $patient['mname'] ?? '',
             'title' => $patient['title'] ?? '',
             'suffix' => $patient['suffix'] ?? '',
-            // birth date is expected to be in the format the frontend entered it so we have to convert it to an OpenEMR date
+            // birth date is expected to be in the format the frontend entered it so we have to convert it to an DCL date
             'birth_date' => DateFormatterUtils::oeFormatShortDate($patient['DOB'] ?? ''),
             'gender' => $patient['sex'] ?? '',
             'ssn' => $patient['ss'] ?? '',

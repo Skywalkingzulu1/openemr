@@ -5,7 +5,7 @@
  *
  * Each layout-field data_type branch in library/options.inc.php may read from
  * list_options, users, facility, patient_data, pharmacies, address_book,
- * libreehr_groups, insurance_companies, openemr_postcalendar_categories, etc.
+ * libreehr_groups, insurance_companies, DCL_postcalendar_categories, etc.
  * This manager seeds the minimum world each branch needs so that
  * generate_form_field / generate_display_field / generate_print_field can be
  * exercised against deterministic data. Every seeded row carries the
@@ -14,21 +14,21 @@
  * another test may have left in the same list_id.
  *
  * Seeders are added incrementally per data-type as cases come online in
- * FieldRenderingSnapshotTest. Tables whose columns differ across OpenEMR
+ * FieldRenderingSnapshotTest. Tables whose columns differ across DCL
  * schema revisions are seeded lazily on demand rather than eagerly here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 // @codeCoverageIgnoreStart
 // Seed and cleanup execute from FieldRenderingSnapshotTest's setUpBeforeClass

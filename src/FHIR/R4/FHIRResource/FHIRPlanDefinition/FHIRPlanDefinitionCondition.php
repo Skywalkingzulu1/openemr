@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols.
@@ -71,13 +71,13 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * The kind of condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionConditionKind
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionConditionKind
      */
     public $kind = null;
 
     /**
      * An expression that returns true or false, indicating whether the condition is satisfied.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $expression = null;
 
@@ -88,7 +88,7 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The kind of condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionConditionKind
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionConditionKind
      */
     public function getKind()
     {
@@ -97,7 +97,7 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The kind of condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionConditionKind $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionConditionKind $kind
      * @return $this
      */
     public function setKind($kind)
@@ -108,7 +108,7 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An expression that returns true or false, indicating whether the condition is satisfied.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getExpression()
     {
@@ -117,7 +117,7 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An expression that returns true or false, indicating whether the condition is satisfied.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $expression
      * @return $this
      */
     public function setExpression($expression)

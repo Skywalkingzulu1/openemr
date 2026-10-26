@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The characteristics, operational status and capabilities of a medical-related component of a medical device.
@@ -71,13 +71,13 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement implements 
 {
     /**
      * The standard that is used to operate and communicate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $systemType = null;
 
     /**
      * The version of the standard that is used to operate and communicate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
@@ -88,7 +88,7 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement implements 
 
     /**
      * The standard that is used to operate and communicate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSystemType()
     {
@@ -97,7 +97,7 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement implements 
 
     /**
      * The standard that is used to operate and communicate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $systemType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $systemType
      * @return $this
      */
     public function setSystemType($systemType)
@@ -108,7 +108,7 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement implements 
 
     /**
      * The version of the standard that is used to operate and communicate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -117,7 +117,7 @@ class FHIRDeviceDefinitionSpecialization extends FHIRBackboneElement implements 
 
     /**
      * The version of the standard that is used to operate and communicate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)

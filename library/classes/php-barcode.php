@@ -20,7 +20,7 @@
  * @author HOUREZ Jonathan
  * @copyright 2013
  *
- * Added to Openemr by Terry Hill terry@lillysystems.com
+ * Added to DCL by Terry Hill terry@lillysystems.com
  * this is from the barcode-coder website
  *
  */

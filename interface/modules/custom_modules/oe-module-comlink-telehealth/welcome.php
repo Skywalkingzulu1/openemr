@@ -1,18 +1,18 @@
 <?php
 
 /**
- * package   OpenEMR
- *  link      http://www.open-emr.org
+ * package   DCL
+ *  link      http://www.dcl.org
  *  author    Sherwin Gaddis <sherwingaddis@gmail.com>
  *  copyright Copyright (c )2021. Sherwin Gaddis <sherwingaddis@gmail.com>
- *  license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ *  license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Bootstrap;
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use Comlink\DCL\Modules\TeleHealthModule\Bootstrap;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 require_once dirname(__FILE__, 4) . "/globals.php";
 
@@ -191,7 +191,7 @@ $isCoreConfigured = $globalConfig->isTelehealthCoreSettingsConfigured() === true
             <div class="row mb-5">
                 <div class="col">
                     <h4><?php echo xlt("Access the documentation by clicking the link below"); ?></h4>
-                    <a href="https://www.open-emr.org/wiki/index.php/Comlink_Telehealth" target="_blank"><?php echo xlt("Comlink Telehealth Module Instructions"); ?></a>
+                    <a href="https://www.dcl.org/wiki/index.php/Comlink_Telehealth" target="_blank"><?php echo xlt("Comlink Telehealth Module Instructions"); ?></a>
                     <p><?php echo xlt("The documentation will open in a new tab"); ?></p>
                 </div>
             </div>

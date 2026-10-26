@@ -1,6 +1,6 @@
 <?php
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Services;
+namespace Comlink\DCL\Modules\TeleHealthModule\Services;
 
 use Exception;
 use Twig\Environment;

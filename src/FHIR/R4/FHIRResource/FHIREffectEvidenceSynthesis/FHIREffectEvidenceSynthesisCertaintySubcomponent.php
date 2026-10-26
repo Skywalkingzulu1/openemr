@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
+namespace DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
@@ -71,19 +71,19 @@ class FHIREffectEvidenceSynthesisCertaintySubcomponent extends FHIRBackboneEleme
 {
     /**
      * Type of subcomponent of certainty rating.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A rating of a subcomponent of rating certainty.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $rating = [];
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -94,7 +94,7 @@ class FHIREffectEvidenceSynthesisCertaintySubcomponent extends FHIRBackboneEleme
 
     /**
      * Type of subcomponent of certainty rating.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIREffectEvidenceSynthesisCertaintySubcomponent extends FHIRBackboneEleme
 
     /**
      * Type of subcomponent of certainty rating.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIREffectEvidenceSynthesisCertaintySubcomponent extends FHIRBackboneEleme
 
     /**
      * A rating of a subcomponent of rating certainty.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRating()
     {
@@ -123,7 +123,7 @@ class FHIREffectEvidenceSynthesisCertaintySubcomponent extends FHIRBackboneEleme
 
     /**
      * A rating of a subcomponent of rating certainty.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $rating
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $rating
      * @return $this
      */
     public function addRating($rating)
@@ -134,7 +134,7 @@ class FHIREffectEvidenceSynthesisCertaintySubcomponent extends FHIRBackboneEleme
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -143,7 +143,7 @@ class FHIREffectEvidenceSynthesisCertaintySubcomponent extends FHIRBackboneEleme
 
     /**
      * A human-readable string to clarify or explain concepts about the resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

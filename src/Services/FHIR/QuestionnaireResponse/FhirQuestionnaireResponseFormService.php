@@ -2,55 +2,55 @@
 
 /*
  * FhirQuestionnaireResponseFormService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\QuestionnaireResponse;
+namespace DCL\Services\FHIR\QuestionnaireResponse;
 
 use BadMethodCallException;
 use DateTime;
 use DateTimeInterface;
 use InvalidArgumentException;
 use JsonException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\DomainModels\OpenEMRFhirQuestionnaireResponse;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRExtension;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRInstant;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FHIR\FhirPayloadReader;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceCreatableService;
-use OpenEMR\Services\FHIR\IResourceReadableService;
-use OpenEMR\Services\FHIR\IResourceSearchableService;
-use OpenEMR\Services\FHIR\IResourceUpdateableService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\QuestionnaireResponseService;
-use OpenEMR\Services\QuestionnaireService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\DomainModels\DCLFhirQuestionnaireResponse;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRExtension;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRInstant;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireResponseStatus;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\EncounterService;
+use DCL\Services\FHIR\FhirPayloadReader;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceCreatableService;
+use DCL\Services\FHIR\IResourceReadableService;
+use DCL\Services\FHIR\IResourceSearchableService;
+use DCL\Services\FHIR\IResourceUpdateableService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\PatientService;
+use DCL\Services\QuestionnaireResponseService;
+use DCL\Services\QuestionnaireService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
     IResourceReadableService,
@@ -149,7 +149,7 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
         if ($status === null) {
             throw new InvalidArgumentException("QuestionnaireResponse.status is required");
         }
-        // OpenEMR keeps its own vocabulary for an unfinished response
+        // DCL keeps its own vocabulary for an unfinished response
         $parsedResource['status'] = $status === 'in-progress' ? 'incomplete' : $status;
 
         $parsedResource['questionnaire_response'] = $json;
@@ -226,9 +226,9 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
     /**
      * @param array $dataRecord
      * @param bool $encode
-     * @return OpenEMRFhirQuestionnaireResponse
+     * @return DCLFhirQuestionnaireResponse
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): OpenEMRFhirQuestionnaireResponse
+    public function parseDCLRecord($dataRecord = [], $encode = false): DCLFhirQuestionnaireResponse
     {
         // US Core 8.0 requires the following fields
         // identifier 0..1
@@ -274,7 +274,7 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
                 ['exception' => $exception, 'uuid' => $dataRecord['uuid'] ?? '']
             );
         }
-        $fhirResource = new OpenEMRFhirQuestionnaireResponse($innerData);
+        $fhirResource = new DCLFhirQuestionnaireResponse($innerData);
 
         $meta = new FHIRMeta();
         $meta->setVersionId($dataRecord['version'] ?? '1');
@@ -289,7 +289,7 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
         // we trust the db records rather than the JSON as our master record if we have it.
         if (!empty($dataRecord['questionnaire_id'])) {
             // TODO: @adunsulag how do we want to handle non-standard Questionnaires that are via the _questionnaire attribute
-            // currently we have nothing in OpenEMR that links to a pdf type survery.  I suppose a Document could be referenced
+            // currently we have nothing in DCL that links to a pdf type survery.  I suppose a Document could be referenced
             // as a questionnaire result... but then how to populate all the answers?
             $questionnaire = UtilsService::createCanonicalUrlForResource('Questionnaire', $dataRecord['questionnaire_id']);
             if (!empty($dataRecord['questionnaire_name'])) {
@@ -340,8 +340,8 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
     }
 
     /**
-     * This method returns the FHIR search definition objects that are used to map FHIR search fields to OpenEMR fields.
-     * Since the mapping can be one FHIR search object to many OpenEMR fields, we use the search definition objects.
+     * This method returns the FHIR search definition objects that are used to map FHIR search fields to DCL fields.
+     * Since the mapping can be one FHIR search object to many DCL fields, we use the search definition objects.
      * Search fields can be combined as Composite fields and represent a host of search options.
      * @see https://www.hl7.org/fhir/search.html to see the types of search operations, and search types that are available
      * for use.
@@ -376,12 +376,12 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
     }
 
     /**
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->service->search($openEMRSearchParameters);
+        return $this->service->search($DCLSearchParameters);
     }
 
     /**
@@ -395,11 +395,11 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
         // we don't return any provenance authorship for this custom resource
         // if we did return it, we would fill out the following record
 //        $provenance = new FHIRProvenance();
-        if (!($dataRecord instanceof OpenEMRFhirQuestionnaireResponse)) {
+        if (!($dataRecord instanceof DCLFhirQuestionnaireResponse)) {
             throw new BadMethodCallException("Data record should be correct instance class");
         }
         // provenance will just be the organization as we don't keep track of the user at the individual FHIR resource level
-        // note we do track this internally in OpenEMR but FHIR R4 doesn't expose this as far as I can tell.
+        // note we do track this internally in DCL but FHIR R4 doesn't expose this as far as I can tell.
         $fhirProvenance = $this->getFhirProvenanceService()->createProvenanceForDomainResource($dataRecord);
         if ($fhirProvenance === null) {
             // Provenance can legitimately be unavailable (e.g. no resolvable organization/author
@@ -418,7 +418,7 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
         return new FhirProvenanceService();
     }
 
-    public function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    public function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         $patientId = $this->resolvePatientId($openEmrRecord['puuid'] ?? null);
         $encounterId = $this->resolveEncounterId(
@@ -451,9 +451,9 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
     }
 
     /**
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         $processingResult = new ProcessingResult();
         if (!UuidRegistry::isValidStringUUID($fhirResourceId)) {
@@ -468,7 +468,7 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
         }
 
         $storedPatientId = self::toInt($stored['patient_id'] ?? null);
-        $patientId = $this->resolvePatientId($updatedOpenEMRRecord['puuid'] ?? null);
+        $patientId = $this->resolvePatientId($updatedDCLRecord['puuid'] ?? null);
         if ($storedPatientId !== $patientId) {
             // The subject is not rebindable: `patient_id` is not in the update statement, so
             // honouring a changed subject is impossible. Report it the same way an unknown id
@@ -476,7 +476,7 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
             return $processingResult;
         }
 
-        $questionnaireId = $updatedOpenEMRRecord['questionnaire_id'] ?? null;
+        $questionnaireId = $updatedDCLRecord['questionnaire_id'] ?? null;
         if ($questionnaireId !== ($stored['questionnaire_id'] ?? null)) {
             $processingResult->setValidationMessages(
                 ['questionnaire' => 'QuestionnaireResponse.questionnaire cannot be changed by an update']
@@ -485,16 +485,16 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
         }
 
         // Both sides resolved to the stored integer id before comparing. questionnaire_response
-        // .encounter holds the encounter's id, while parseOpenEMRRecord() hands this method an
+        // .encounter holds the encounter's id, while parseDCLRecord() hands this method an
         // `encounter_uuid` string -- comparing those two directly is never equal, so an update
         // that left Encounter/<uuid> untouched was rejected as a rebind whenever the response
         // had an encounter at all.
         $storedEncounter = self::toInt($stored['encounter'] ?? null);
-        $encounterUuid = $updatedOpenEMRRecord['encounter_uuid'] ?? null;
+        $encounterUuid = $updatedDCLRecord['encounter_uuid'] ?? null;
         if ($encounterUuid !== null) {
             $incomingEncounter = $this->resolveEncounterId(
                 $encounterUuid,
-                $updatedOpenEMRRecord['puuid'] ?? null
+                $updatedDCLRecord['puuid'] ?? null
             );
             if ($incomingEncounter !== $storedEncounter) {
                 // `encounter` is not in the update statement either, so the same reasoning applies.
@@ -508,7 +508,7 @@ class FhirQuestionnaireResponseFormService extends FhirServiceBase implements
         // saveQuestionnaireResponse() resolves the row to update from the response id carried by
         // the payload, so it is pinned to the stored value rather than to whatever the client sent.
         $storedResponseId = $stored['response_id'] ?? null;
-        $payload = self::toPayload($updatedOpenEMRRecord['questionnaire_response'] ?? null);
+        $payload = self::toPayload($updatedDCLRecord['questionnaire_response'] ?? null);
         if (is_array($payload) && is_string($storedResponseId)) {
             $payload['id'] = $storedResponseId;
         }

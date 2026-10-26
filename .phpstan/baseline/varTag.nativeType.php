@@ -7,12 +7,12 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/forms/procedure_order/templates/procedure_specimen_row.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @var with type OpenEMR\\\\Services\\\\Qdm\\\\PopulationSet is not subtype of native type array\\|null\\.$#',
+    'message' => '#^PHPDoc tag @var with type DCL\\\\Services\\\\Qdm\\\\PopulationSet is not subtype of native type array\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/Qdm/ResultsCalculator.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @var with type OpenEMR\\\\Telemetry\\\\TelemetryRepository\\|OpenEMR\\\\Tests\\\\Isolated\\\\Telemetry\\\\MockObject is not subtype of native type PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\.$#',
+    'message' => '#^PHPDoc tag @var with type DCL\\\\Telemetry\\\\TelemetryRepository\\|DCL\\\\Tests\\\\Isolated\\\\Telemetry\\\\MockObject is not subtype of native type PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\.$#',
     'count' => 5,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Telemetry/TelemetryRepositoryTest.php',
 ];

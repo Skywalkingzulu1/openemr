@@ -3,34 +3,34 @@
 /**
  * Message and Reminder Center UI
  *
- * @Package OpenEMR
- * @link https://www.open-emr.org
- * @author OpenEMR Support LLC
+ * @Package DCL
+ * @link https://www.dcl.org
+ * @author DCL Support LLC
  * @author Roberto Vasquez <robertogagliotta@gmail.com>
  * @author Rod Roark <rod@sunsetsystems.com>
  * @author Brady Miller <brady.g.miller@gmail.com>
  * @author Ray Magauran <magauran@medfetch.com>
  * @author Tyler Wrenn <tyler@tylerwrenn.com>
- * @author Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2010 OpenEMR Support LLC
+ * @author Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2010 DCL Support LLC
  * @copyright Copyright (c) 2017 MedEXBank.com
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\OeUI\OemrUI;
-use OpenEMR\Services\Globals\UserSettingsService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\OeUI\OemrUI;
+use DCL\Services\Globals\UserSettingsService;
+use DCL\Services\Utils\DateFormatterUtils;
 
 $srcDir = OEGlobalsBag::getInstance()->getSrcDir();
 require_once("$srcDir/options.inc.php");
@@ -91,7 +91,7 @@ if (
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="MedEx Bank" />
-    <meta name="author" content="OpenEMR: MedExBank" />
+    <meta name="author" content="DCL: MedExBank" />
     <?php Header::setupHeader(['datetime-picker', 'opener', 'moment', 'select2']); ?>
     <link rel="stylesheet" href="<?php echo OEGlobalsBag::getInstance()->getWebRoot(); ?>/interface/main/messages/css/reminder_style.css?v=<?php echo OEGlobalsBag::getInstance()->getString('v_js_includes'); ?>">
 

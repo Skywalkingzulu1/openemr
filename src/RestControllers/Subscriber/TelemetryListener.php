@@ -1,9 +1,9 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Telemetry\TelemetryService;
+use DCL\Core\OEHttpKernel;
+use DCL\Telemetry\TelemetryService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\TerminateEvent;
 use Symfony\Component\HttpKernel\KernelEvents;

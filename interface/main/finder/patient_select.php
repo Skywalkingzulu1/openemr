@@ -3,25 +3,25 @@
 /**
  * Patient selector screen.
  *
- * @package OpenEMR
+ * @package DCL
  * @author Brady Miller <brady.g.miller@gmail.com>
  * @copyright (C) 2017 Brady Miller <brady.g.miller@gmail.com>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../../globals.php");
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\PaginationUtils;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\BoundFilter;
-use OpenEMR\Events\PatientSelect\PatientSelectFilterEvent;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\PaginationUtils;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\BoundFilter;
+use DCL\Events\PatientSelect\PatientSelectFilterEvent;
 
 require_once(OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 

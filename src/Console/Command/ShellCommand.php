@@ -3,17 +3,17 @@
 /**
  * Wrap PsySH in a console command with some pre-configured variables.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <eric@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <eric@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  * @see       https://physh.org
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Console\Command;
+namespace DCL\Console\Command;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Psy\Shell;

@@ -19,7 +19,7 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://opensource.org/licenses/gpl-license.php>.
 *
-* @package   OpenEMR
+* @package   DCL
 * @author    Rod Roark <rod@sunsetsystems.com>
 */
 
@@ -27,10 +27,10 @@ set_time_limit(0);
 
 require_once("../globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 // This array is an important reference for the supported labs and their NPI
 // numbers as known to this program.  The clinic must define at least one
@@ -77,7 +77,7 @@ if (!empty($_POST['form_import'])) {
 $auto_continue = false;
 
 // Set up main paths.
-$EXPORT_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_config.sql";
+$EXPORT_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/DCL_config.sql";
 ?>
 <html>
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
+namespace DCL\FHIR\R4\FHIRResource\FHIREncounter;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -71,19 +71,19 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $condition = null;
 
     /**
      * Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $use = null;
 
     /**
      * Ranking of the diagnosis (for each role type).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $rank = null;
 
@@ -94,7 +94,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCondition()
     {
@@ -103,7 +103,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $condition
      * @return $this
      */
     public function setCondition($condition)
@@ -114,7 +114,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUse()
     {
@@ -123,7 +123,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $use
      * @return $this
      */
     public function setUse($use)
@@ -134,7 +134,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Ranking of the diagnosis (for each role type).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getRank()
     {
@@ -143,7 +143,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Ranking of the diagnosis (for each role type).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $rank
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $rank
      * @return $this
      */
     public function setRank($rank)

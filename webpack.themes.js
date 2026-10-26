@@ -3,7 +3,7 @@
 const fs = require("fs");
 
 /**
- * Webpack build for OpenEMR SCSS themes.
+ * Webpack build for DCL SCSS themes.
  *
  * Invoked by `npm run build` and `npm run build:webpack`.
  *
@@ -19,7 +19,7 @@ const fs = require("fs");
  *
  * Docker cache:
  *   The filesystem cache writes to .webpack-cache/ (mapped by the Dockerfile's
- *   --mount=type=cache,id=webpack-openemr,target=…/.webpack-cache mount).
+ *   --mount=type=cache,id=webpack-DCL,target=…/.webpack-cache mount).
  */
 
 const path = require("path");

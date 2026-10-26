@@ -1,24 +1,24 @@
 <?php
 
 /**
- * CLI command to test email sending via each of OpenEMR's email code paths
+ * CLI command to test email sending via each of DCL's email code paths
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Services\Email\EmailSendMethod;
-use OpenEMR\Services\Email\EmailTestService;
-use OpenEMR\Services\IGlobalsAware;
-use OpenEMR\Services\Trait\GlobalInterfaceTrait;
+use DCL\BC\ServiceContainer;
+use DCL\Services\Email\EmailSendMethod;
+use DCL\Services\Email\EmailTestService;
+use DCL\Services\IGlobalsAware;
+use DCL\Services\Trait\GlobalInterfaceTrait;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
@@ -34,7 +34,7 @@ class EmailTestCommand extends Command implements IGlobalsAware
     {
         $this
             ->setName('email:test')
-            ->setDescription('Send a test email via one or more of OpenEMR\'s email code paths')
+            ->setDescription('Send a test email via one or more of DCL\'s email code paths')
             ->setDefinition(
                 new InputDefinition([
                     new InputOption('sender', 's', InputOption::VALUE_REQUIRED, 'Sender email address'),

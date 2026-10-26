@@ -10,18 +10,18 @@
  * This test is intentionally self-contained (no shared traits) so that it
  * does not inherit PHPStan baseline debt from the trait chain.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR Contributors
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL Contributors
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Contributors
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\E2e;
+namespace DCL\Tests\E2e;
 
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\JavaScriptExecutor;
@@ -29,11 +29,11 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\WebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\Tests\E2e\Login\LoginTestData;
-use OpenEMR\Tests\E2e\Patient\PatientTestData;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstants;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstantsEncounterOpenTrait;
-use OpenEMR\Tests\E2e\Xpaths\XpathsConstantsPatientOpenTrait;
+use DCL\Tests\E2e\Login\LoginTestData;
+use DCL\Tests\E2e\Patient\PatientTestData;
+use DCL\Tests\E2e\Xpaths\XpathsConstants;
+use DCL\Tests\E2e\Xpaths\XpathsConstantsEncounterOpenTrait;
+use DCL\Tests\E2e\Xpaths\XpathsConstantsPatientOpenTrait;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Panther\Client;
 use Symfony\Component\Panther\PantherTestCase;
@@ -123,7 +123,7 @@ class KkEncounterFormNavbarUrlTest extends PantherTestCase
 
         if ($useGrid === "true") {
             $seleniumHost = getenv("SELENIUM_HOST", true) ?: "selenium";
-            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://openemr";
+            $e2eBaseUrl = getenv("SELENIUM_BASE_URL", true) ?: "http://DCL";
             $implicitWait = (int) (getenv("SELENIUM_IMPLICIT_WAIT") ?: 0);
             $pageLoadTimeout = (int) (getenv("SELENIUM_PAGE_LOAD_TIMEOUT") ?: 60);
 
@@ -196,18 +196,18 @@ class KkEncounterFormNavbarUrlTest extends PantherTestCase
         // The post-login redirect is asynchronous: submit() returns once the
         // POST responds, but the browser still has to follow the redirect and
         // load the main shell before document.title changes from
-        // 'OpenEMR Login' to 'OpenEMR'. Under CI load that lag is long enough
+        // 'DCL Login' to 'DCL'. Under CI load that lag is long enough
         // that reading getTitle() immediately races the redirect. Wait for the
         // transition first; on timeout fall through so the assertion below
         // reports the actual title.
         try {
             $this->client->wait(10)->until(
-                static fn(WebDriver $driver): bool => $driver->getTitle() === 'OpenEMR'
+                static fn(WebDriver $driver): bool => $driver->getTitle() === 'DCL'
             );
         } catch (TimeoutException) {
             // Fall through to the assertion for a diagnostic message.
         }
-        $this->assertSame('OpenEMR', $this->client->getTitle(), 'Login FAILED');
+        $this->assertSame('DCL', $this->client->getTitle(), 'Login FAILED');
     }
 
     /**

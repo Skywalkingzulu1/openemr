@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
+namespace DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -71,37 +71,37 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * The time period and frequency at which the diet should be given.  The diet should be given for the combination of all schedules if more than one schedule is present.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming[]
      */
     public $schedule = [];
 
     /**
      * Class that defines the quantity and type of nutrient modifications (for example carbohydrate, fiber or sodium) required for the oral diet.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient[]
      */
     public $nutrient = [];
 
     /**
      * Class that describes any texture modifications required for the patient to safely consume various types of solid foods.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture[]
      */
     public $texture = [];
 
     /**
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $fluidConsistencyType = [];
 
     /**
      * Free text or additional instructions or information pertaining to the oral diet.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $instruction = null;
 
@@ -112,7 +112,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -121,7 +121,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -132,7 +132,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The time period and frequency at which the diet should be given.  The diet should be given for the combination of all schedules if more than one schedule is present.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming[]
      */
     public function getSchedule()
     {
@@ -141,7 +141,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The time period and frequency at which the diet should be given.  The diet should be given for the combination of all schedules if more than one schedule is present.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $schedule
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $schedule
      * @return $this
      */
     public function addSchedule($schedule)
@@ -152,7 +152,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Class that defines the quantity and type of nutrient modifications (for example carbohydrate, fiber or sodium) required for the oral diet.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient[]
      */
     public function getNutrient()
     {
@@ -161,7 +161,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Class that defines the quantity and type of nutrient modifications (for example carbohydrate, fiber or sodium) required for the oral diet.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient $nutrient
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient $nutrient
      * @return $this
      */
     public function addNutrient($nutrient)
@@ -172,7 +172,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Class that describes any texture modifications required for the patient to safely consume various types of solid foods.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture[]
      */
     public function getTexture()
     {
@@ -181,7 +181,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Class that describes any texture modifications required for the patient to safely consume various types of solid foods.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture $texture
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture $texture
      * @return $this
      */
     public function addTexture($texture)
@@ -192,7 +192,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getFluidConsistencyType()
     {
@@ -201,7 +201,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $fluidConsistencyType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $fluidConsistencyType
      * @return $this
      */
     public function addFluidConsistencyType($fluidConsistencyType)
@@ -212,7 +212,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Free text or additional instructions or information pertaining to the oral diet.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getInstruction()
     {
@@ -221,7 +221,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Free text or additional instructions or information pertaining to the oral diet.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $instruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $instruction
      * @return $this
      */
     public function setInstruction($instruction)

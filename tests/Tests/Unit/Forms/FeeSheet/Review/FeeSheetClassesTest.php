@@ -3,18 +3,18 @@
 /**
  * FeeSheetClassesTest.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEmr Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 OpenCoreEmr Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Forms\FeeSheet\Review;
+namespace DCL\Tests\Unit\Forms\FeeSheet\Review;
 
-use OpenEMR\Forms\FeeSheet\Review\CodeInfo;
-use OpenEMR\Forms\FeeSheet\Review\EncounterInfo;
-use OpenEMR\Forms\FeeSheet\Review\Procedure;
+use DCL\Forms\FeeSheet\Review\CodeInfo;
+use DCL\Forms\FeeSheet\Review\EncounterInfo;
+use DCL\Forms\FeeSheet\Review\Procedure;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 

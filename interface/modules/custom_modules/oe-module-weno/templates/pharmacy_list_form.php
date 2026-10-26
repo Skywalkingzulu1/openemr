@@ -7,26 +7,26 @@
  * interface/patient_file/summary/demographics_save.php
  * and in interface/new/new_comprehensive_save.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Kofi Appiah <kkappiah@medsov.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Omega Systems Group International. <info@omegasystemsgroup.com>
  * @copyright Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 //require_once("../../../../globals.php");
-require_once \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/options.inc.php';
+require_once \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/options.inc.php';
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\WenoModule\Services\PharmacyService;
-use OpenEMR\Modules\WenoModule\Services\WenoLogService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\WenoModule\Services\PharmacyService;
+use DCL\Modules\WenoModule\Services\WenoLogService;
 
 // Log the denial but let the request continue: this template is embedded in the
 // demographics dashboard, so terminating here kills the whole page for roles that

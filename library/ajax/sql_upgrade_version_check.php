@@ -22,11 +22,11 @@
  * the main polling loop. Whichever mechanism notices completion first ends
  * the polling display.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -38,16 +38,16 @@ $ignoreAuth = true;
 // flags gate behavior inside globals.php itself so they must be set as
 // $GLOBALS entries before globals.php loads and the autoloader is available
 // (matches sql_server_status.php pattern).
-// @phpstan-ignore openemr.forbiddenGlobalsAccess (Required before globals.php loads the autoloader)
+// @phpstan-ignore DCL.forbiddenGlobalsAccess (Required before globals.php loads the autoloader)
 $GLOBALS['ongoing_sql_upgrade'] = true;
-// @phpstan-ignore openemr.forbiddenGlobalsAccess (Required before globals.php loads the autoloader)
+// @phpstan-ignore DCL.forbiddenGlobalsAccess (Required before globals.php loads the autoloader)
 $GLOBALS['connection_pooling_off'] = true;
 $skipAuditLog = true;
 require_once(__DIR__ . '/../../interface/globals.php');
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 // Same guard as sql_server_status.php -- only sql_upgrade.php's page should
@@ -64,7 +64,7 @@ if (
     || !is_string($row['v_minor'] ?? null)
     || !is_string($row['v_patch'] ?? null)
 ) {
-    // Should not happen on a properly-installed OpenEMR (globals.php would
+    // Should not happen on a properly-installed DCL (globals.php would
     // have failed before us if the DB were not reachable). Empty response
     // keeps the client-side comparison safely in the "not complete" state.
     echo '';

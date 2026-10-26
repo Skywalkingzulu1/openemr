@@ -14,19 +14,19 @@ Use \\\\Monolog\\\\Level\\:\\:Warning$#',
     'path' => __DIR__ . '/../../src/Common/Logging/SystemLogger.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Fetching deprecated class constant FHIR_PROCEDURE_STATUS_COMPLETED of class OpenEMR\\\\Services\\\\FHIR\\\\FhirProcedureService\\:
+    'message' => '#^Fetching deprecated class constant FHIR_PROCEDURE_STATUS_COMPLETED of class DCL\\\\Services\\\\FHIR\\\\FhirProcedureService\\:
 use EventStatusEnum\\:\\:COMPLETED\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Procedure/FhirProcedureSurgeryService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Fetching deprecated class constant FHIR_PROCEDURE_STATUS_IN_PROGRESS of class OpenEMR\\\\Services\\\\FHIR\\\\FhirProcedureService\\:
+    'message' => '#^Fetching deprecated class constant FHIR_PROCEDURE_STATUS_IN_PROGRESS of class DCL\\\\Services\\\\FHIR\\\\FhirProcedureService\\:
 use EventStatusEnum\\:\\:IN_PROGRESS\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Procedure/FhirProcedureSurgeryService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Fetching deprecated class constant FHIR_PROCEDURE_STATUS_UNKNOWN of class OpenEMR\\\\Services\\\\FHIR\\\\FhirProcedureService\\:
+    'message' => '#^Fetching deprecated class constant FHIR_PROCEDURE_STATUS_UNKNOWN of class DCL\\\\Services\\\\FHIR\\\\FhirProcedureService\\:
 use EventStatusEnum\\:\\:UNKNOWN\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Procedure/FhirProcedureSurgeryService.php',

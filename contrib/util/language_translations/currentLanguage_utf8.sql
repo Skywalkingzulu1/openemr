@@ -125,7 +125,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (16, 'A followup appointment can also be scheduled right from the fee sheet.'),
 (17, 'A GCAC visit form should be added to this visit.'),
 (18, 'A HL7 v2.x message simply consists of several lines of text, each line is called a segment and is further divided into fields by using the pipe (|) character'),
-(19, 'A large application like openEMR is used by a multitude of users with varying roles and degrees of responsibility. It is imperative that access to various parts of the program be granted to users on a need to know basis. To achieve this - Access Control Lists (ACL) are used.'),
+(19, 'A large application like DCL is used by a multitude of users with varying roles and degrees of responsibility. It is imperative that access to various parts of the program be granted to users on a need to know basis. To achieve this - Access Control Lists (ACL) are used.'),
 (20, 'A lot number is required'),
 (21, 'A lot number is required!'),
 (22, 'A lowercase letter'),
@@ -441,7 +441,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (332, 'Additional information to process paper claims'),
 (333, 'Additional Labs'),
 (334, 'Additional Notes'),
-(335, 'Additional Notes field is for local use in openEMR'),
+(335, 'Additional Notes field is for local use in DCL'),
 (336, 'Additional notes for this result or recommendation'),
 (337, 'Additional Notes:'),
 (338, 'Additional Notes: '),
@@ -607,7 +607,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (498, 'All or part of the first name'),
 (499, 'All or part of the last name'),
 (500, 'All or part of the organization'),
-(501, 'All patient interactions in OpenEMR are linked to encounters'),
+(501, 'All patient interactions in DCL are linked to encounters'),
 (502, 'All Patients'),
 (503, 'All pending messages are displayed on the MY MESSAGES pane'),
 (504, 'All Product Types'),
@@ -784,12 +784,12 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (675, 'An electronic order and the returned result is in the form of a message called the HL7 message. HL7 stands for Health Level (Application Layer) 7. HL7’s prime objective is to simplify the implementation of interfaces between healthcare software applications and various vendors so as to reduce the pain and cost involved in custom interface programming'),
 (676, 'An end date later than the start date is required for repeated events!'),
 (677, 'An error occured signing the form'),
-(678, 'An error occurred while dumping OpenEMR web directory tree'),
+(678, 'An error occurred while dumping DCL web directory tree'),
 (679, 'An error occurred while dumping phpGACL web directory tree'),
 (680, 'An error occurred while dumping SQL-Ledger web directory tree'),
 (681, 'An error occurred: Missing file to upload. Returning to form.'),
 (682, 'An error occurred: Missing file to upload: Use back button!'),
-(683, 'An important concept to grasp is that once the secret key delivered via the QR code is captured by the authenticator app there is no further communication between the app and OpenEMR, each will use the current UNIX time and its copy of the user-specific shared secret key to generate the same unique 6 digit number'),
+(683, 'An important concept to grasp is that once the secret key delivered via the QR code is captured by the authenticator app there is no further communication between the app and DCL, each will use the current UNIX time and its copy of the user-specific shared secret key to generate the same unique 6 digit number'),
 (684, 'An important point to remember is that the various individuals tests in each panel are listed as Results, the fruit, you cannot directly order these individual tests'),
 (685, 'An incomplete GCAC issue has been created and linked. Someone will need to complete it later.'),
 (686, 'An internal server error occurred'),
@@ -1038,7 +1038,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (929, 'at'),
 (930, 'At least one diagnosis is required! Please add a diagnosis for this order.'),
 (931, 'At least one search parameter is required if you select All.'),
-(932, 'At present e-prescribing from openEMR is possible only in the United States'),
+(932, 'At present e-prescribing from DCL is possible only in the United States'),
 (933, 'At present only Continuity of Care Record (CCR) Continuity of Care Document (CCD) can be sent using phiMail'),
 (934, 'At the Navicular'),
 (935, 'At the Navicular:'),
@@ -2319,10 +2319,10 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (2210, 'Configuration'),
 (2211, 'Configuration Export/Import'),
 (2212, 'Configuration saved successfully'),
-(2213, 'Configure Apache and OpenEMR to use Client side SSL certificates.'),
+(2213, 'Configure Apache and DCL to use Client side SSL certificates.'),
 (2214, 'Configure Apache to use Client side SSL certificates'),
 (2215, 'Configure Apache to use HTTPS.'),
-(2216, 'Configure Openemr to use Client side SSL certificates'),
+(2216, 'Configure DCL to use Client side SSL certificates'),
 (2217, 'Configure Orders and Results'),
 (2218, 'Configure Orders Help'),
 (2219, 'Configure the lab test structure'),
@@ -2378,7 +2378,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (2269, 'Contact Medical Information Integration, LLC at http://mi-squared.com for Lab Exchange Service.'),
 (2270, 'Contact Medical Information Integration, LLC at http://mi-squared.com or ZH Healthcare at http://zhservices.com for subscribing the eRx service'),
 (2271, 'Contact Medical Information Integration, LLC at http://mi-squared.com or ZH Healthcare at http://zhservices.com for subscribing to the NewCrop eRx service.'),
-(2272, 'Contact mi-squared at http://www.mi-squared.com/products-services/openemr/ or ZH Healthcare at https://blueehr.com/contact-us/ for subscribing to the NewCrop eRx service.'),
+(2272, 'Contact mi-squared at http://www.mi-squared.com/products-services/DCL/ or ZH Healthcare at https://blueehr.com/contact-us/ for subscribing to the NewCrop eRx service.'),
 (2273, 'Contact name'),
 (2274, 'Contact Open Med Practice, www.openmedpractice.com for subscribing to the Weno Free eRx service.'),
 (2275, 'Contact or Notify Phone'),
@@ -2655,7 +2655,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (2546, 'Currently Busy{{Service}}'),
 (2547, 'Currently off-line'),
 (2548, 'Currently Running'),
-(2549, 'Currently there are 5 types of transactions in OpenEMR'),
+(2549, 'Currently there are 5 types of transactions in DCL'),
 (2550, 'Currently there are no facilities.'),
 (2551, 'Currently working on making this document'),
 (2552, 'Cushing Syndrom'),
@@ -3431,8 +3431,8 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3322, 'Due Soon'),
 (3323, 'Due Status'),
 (3324, 'Due Status Update'),
-(3325, 'Dumping OpenEMR database'),
-(3326, 'Dumping OpenEMR web directory tree'),
+(3325, 'Dumping DCL database'),
+(3326, 'Dumping DCL web directory tree'),
 (3327, 'Dumping phpGACL database'),
 (3328, 'Dumping phpGACL web directory tree'),
 (3329, 'Dumping SQL-Ledger database'),
@@ -3598,7 +3598,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3489, 'Email Transport Method'),
 (3490, 'Email was sent to following address'),
 (3491, 'emails not sent'),
-(3492, 'Embed {login} where the OpenEMR login name of the user is to be; for example: uid={login},dc=example,dc=com'),
+(3492, 'Embed {login} where the DCL login name of the user is to be; for example: uid={login},dc=example,dc=com'),
 (3493, 'Emergency Care'),
 (3494, 'Emergency contact'),
 (3495, 'Emergency Contact'),
@@ -3721,18 +3721,18 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3612, 'Enable Onsite Patient Portal Document Download'),
 (3613, 'Enable Onsite Patient Portal new patient to self register.'),
 (3614, 'Enable Onsite Patient Portal.'),
-(3615, 'Enable OpenEMR FHIR System Scopes (Recommended Off, Turn on only if you know what you are doing)'),
-(3616, 'Enable OpenEMR FHIR System Scopes.'),
-(3617, 'Enable OpenEMR Patient Portal FHIR REST API (EXPERIMENTAL)'),
-(3618, 'Enable OpenEMR Patient Portal FHIR RESTful API.'),
-(3619, 'Enable OpenEMR Patient Portal REST API (EXPERIMENTAL)'),
-(3620, 'Enable OpenEMR Patient Portal RESTful API.'),
-(3621, 'Enable OpenEMR REST API'),
-(3622, 'Enable OpenEMR RESTful API. SSL Required'),
-(3623, 'Enable OpenEMR Standard FHIR REST API'),
-(3624, 'Enable OpenEMR Standard FHIR RESTful API.'),
-(3625, 'Enable OpenEMR Standard REST API'),
-(3626, 'Enable OpenEMR Standard RESTful API.'),
+(3615, 'Enable DCL FHIR System Scopes (Recommended Off, Turn on only if you know what you are doing)'),
+(3616, 'Enable DCL FHIR System Scopes.'),
+(3617, 'Enable DCL Patient Portal FHIR REST API (EXPERIMENTAL)'),
+(3618, 'Enable DCL Patient Portal FHIR RESTful API.'),
+(3619, 'Enable DCL Patient Portal REST API (EXPERIMENTAL)'),
+(3620, 'Enable DCL Patient Portal RESTful API.'),
+(3621, 'Enable DCL REST API'),
+(3622, 'Enable DCL RESTful API. SSL Required'),
+(3623, 'Enable DCL Standard FHIR REST API'),
+(3624, 'Enable DCL Standard FHIR RESTful API.'),
+(3625, 'Enable DCL Standard REST API'),
+(3626, 'Enable DCL Standard RESTful API.'),
 (3627, 'Enable Patient Portal'),
 (3628, 'Enable Patient Portal Document Download'),
 (3629, 'Enable Patient Portal new patient to self register.'),
@@ -3749,7 +3749,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3640, 'Enable support for the open source WordPress Portal by Sunset Systems'),
 (3641, 'Enable Text Templates in Encounter Forms'),
 (3642, 'Enable the Medical Information Integration, LLC Lab Exchange Service.'),
-(3643, 'Enable the OpenEMR Support LLC Lab Exchange Service.'),
+(3643, 'Enable the DCL Support LLC Lab Exchange Service.'),
 (3644, 'Enable User Certificate Authentication'),
 (3645, 'Enable Version 1 Onsite Patient Portal'),
 (3646, 'Enable Version 2 Onsite Patient Portal'),
@@ -3865,7 +3865,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3756, 'English (Indian)'),
 (3757, 'English (Standard)'),
 (3758, 'Enscript command used by Hylafax.'),
-(3759, 'Ensure OpenEMR has write privileges to directory'),
+(3759, 'Ensure DCL has write privileges to directory'),
 (3760, 'Ensure that Identifying Codes are unique'),
 (3761, 'ENT Discharge'),
 (3762, 'ENT Pain'),
@@ -3932,14 +3932,14 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3823, 'Enter the Logical Observation Identifiers Names and Codes (LOINC) code for this procedure'),
 (3824, 'Enter the Logical Observation Identifiers Names and Codes (LOINC) code for this procedure. LOINC is a database and universal standard for identifying medical laboratory observations.'),
 (3825, 'Enter the LOINC code for this procedure'),
-(3826, 'Enter the OpenEMR login password for the user and click Submit'),
+(3826, 'Enter the DCL login password for the user and click Submit'),
 (3827, 'Enter the Re Identification code'),
 (3828, 'Enter the relevant site if applicable.'),
 (3829, 'Enter the Server Address, Username, and Password provided to you'),
 (3830, 'Enter the Severity of the allergy'),
 (3831, 'Enter the specimen type if applicable.'),
 (3832, 'Enter the values 3.4 - 7.2 - Men, 2.4–6.1 - Women'),
-(3833, 'Enter their OpenEMR username in the notification user field'),
+(3833, 'Enter their DCL username in the notification user field'),
 (3834, 'Enter User Login ID'),
 (3835, 'Enter values in this section to create a new group also known as Access Request Object (ARO)'),
 (3836, 'Enter your credentials'),
@@ -4007,7 +4007,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3898, 'Error retrieving results from Lab Exchange Network'),
 (3899, 'Error retrieving values.'),
 (3900, 'Error saving document'),
-(3901, 'Error when granting file privilege to the OpenEMR user.'),
+(3901, 'Error when granting file privilege to the DCL user.'),
 (3902, 'Error while adding new plan'),
 (3903, 'Error while deleting the plan'),
 (3904, 'error while registering form!'),
@@ -4031,7 +4031,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (3922, 'Error, unable to create the Server certificate.'),
 (3923, 'Error, unable to create zip file with all the certificates'),
 (3924, 'Error, unable to open file'),
-(3925, 'Error, User Certificate Authentication is not enabled in OpenEMR'),
+(3925, 'Error, User Certificate Authentication is not enabled in DCL'),
 (3926, 'ERROR. Could not open'),
 (3927, 'Error. Not authorized'),
 (3928, 'Error. Not Authorized.'),
@@ -4395,7 +4395,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (4286, 'File Not Found'),
 (4287, 'File on server (modification date)'),
 (4288, 'File path not found.'),
-(4289, 'File privilege granted to OpenEMR user.'),
+(4289, 'File privilege granted to DCL user.'),
 (4290, 'File retrieval from CouchDB failed'),
 (4291, 'File Room'),
 (4292, 'File to upload'),
@@ -4412,7 +4412,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (4303, 'fill'),
 (4304, 'Fill any of the Below Row.'),
 (4305, 'Fill here only if sending email notification to patients'),
-(4306, 'Fill in any missing details or edit existing information. This will be saved in the patient\'s demographics page in openEMR'),
+(4306, 'Fill in any missing details or edit existing information. This will be saved in the patient\'s demographics page in DCL'),
 (4307, 'Fill in the CPT codes using the displayed format. The common E/M codes are already filled in, add more as needed'),
 (4308, 'Fill in the details as required and click Save'),
 (4309, 'Fill in the details for the Organ/Disease Panel as before and click Save to close the pop-up'),
@@ -4594,7 +4594,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (4485, 'For those interested in what happens under the hood'),
 (4486, 'For those lines the Description will indicate the details of the code'),
 (4487, 'For those with administrative privileges an icon is displayed next to the My Messages caption'),
-(4488, 'For TOTP to work a unique secret key must be shared between OpenEMR and the user'),
+(4488, 'For TOTP to work a unique secret key must be shared between DCL and the user'),
 (4489, 'For U2F support on Linux click'),
 (4490, 'for variable'),
 (4491, 'for:'),
@@ -5149,7 +5149,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5040, 'HTML Output?'),
 (5041, 'HTN{{hypertension}}'),
 (5042, 'Http Error'),
-(5043, 'Https link for the OpenEMR Support LLC Lab Exchange Service.'),
+(5043, 'Https link for the DCL Support LLC Lab Exchange Service.'),
 (5044, 'HT{{hyperphoria}}'),
 (5045, 'Hungarian'),
 (5046, 'Hylafax Directory'),
@@ -5221,7 +5221,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5112, 'If NewCrop eRx - the electronic prescription module, is enabled the NewCrop MedEntry and NewCrop Account Status buttons will be appear here'),
 (5113, 'If not listed you can add the drug to the Title text-box'),
 (5114, 'If nothing is selected here then all are permitted.'),
-(5115, 'If only capture the QR code but do not register the TOTP key with OpenEMR this feature will not be enabled at login'),
+(5115, 'If only capture the QR code but do not register the TOTP key with DCL this feature will not be enabled at login'),
 (5116, 'If patient has appointment click OK to create encounter otherwise, cancel this and then create an encounter for today visit.'),
 (5117, 'If paying by'),
 (5118, 'If person is deceased, then enter date of death.'),
@@ -5245,7 +5245,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5136, 'If the Offsite Patient portal is enabled there will be either a button that says Create Offsite Portal Credentials provided the patient has given permission to access the online patient portal or a message that says Patient has not authorized the Patient Portal'),
 (5137, 'If the Online Patient portal is enabled there will be either a button that says Create Online Portal Credentials provided the patient has given permission to access the online patient portal or a message that says Patient has not authorized the Patient Portal'),
 (5138, 'If the Online/Offsite Portal Credentials has already been set the button will change to'),
-(5139, 'If the patient has any demographic data entered in openEMR it will automatically populate the relevant fields on the right sections'),
+(5139, 'If the patient has any demographic data entered in DCL it will automatically populate the relevant fields on the right sections'),
 (5140, 'If the patient has not authorized patient portal then a Patient has not authorized the Patient Portal message will be shown here'),
 (5141, 'If the patient is being added to the recall list on the day of the visit it would reflect the current date'),
 (5142, 'If the patient is calling back to be added to the list the last visit may be in the remote past. Be aware that the 1,2,3 plus years are calculated and displayed on the Date box at the bottom of this section'),
@@ -5279,10 +5279,10 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5170, 'If you continue to experience this error please contact support.'),
 (5171, 'If you do not find a required value in the drop-down box you will need to add it via Administration > Lists > Procedure Units. Refer to the help file in Procedures > Providers'),
 (5172, 'If you do not select a match the patient will be created.'),
-(5173, 'If you do not select at least one of these, OpenEMR will operate in a receive-only mode'),
+(5173, 'If you do not select at least one of these, DCL will operate in a receive-only mode'),
 (5174, 'If you do not submit orders electronically or receive result electronically leave it as the default value, Download'),
 (5175, 'If you do not want to allow this application to have offline access to your data, uncheck the offline_permission scope'),
-(5176, 'If you do not want to do so the following method involves adding data manually using the openEMR interface'),
+(5176, 'If you do not want to do so the following method involves adding data manually using the DCL interface'),
 (5177, 'If you drill down to the Electrolyte Panel line and click on the + sign in the Name column you should see Sodium listed underneath it with a Category value of Result with a Tier value of 4'),
 (5178, 'If you drill down to the Electrolyte Panel line you should see it have a Category of Order and be highlighted in yellow indicating that it is a search-able and valid order and has a Tier value of 3'),
 (5179, 'If you had selected multiple codes they will be separated by semi-colons'),
@@ -5397,11 +5397,11 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5288, 'in left eye'),
 (5289, 'in nostril'),
 (5290, 'In Office'),
-(5291, 'In openEMR the Continuity of Care Record (CCR) reports to be generated can be limited to a specific date range by checking the Use Date Range check-box and entering the desired date range'),
+(5291, 'In DCL the Continuity of Care Record (CCR) reports to be generated can be limited to a specific date range by checking the Use Date Range check-box and entering the desired date range'),
 (5292, 'In order to fulfill Meaningful Use requirements for Computerized Provider Order Entry (CPOE) for lab and radiology tests this module needs to be used'),
 (5293, 'In order to properly store and retrieve test results and place new orders, tests/orders have to be setup in a hierarchical manner'),
 (5294, 'In order to record the values of the results returned you have to create a separate Discrete Result (Tier 4) for each of the panel\'s constituents, the fruit, as direct descendants of this (General Health Panel) branch (Tier 3). Examples of the results being CBC - Hemoglobin, CBC - Hematocrit, CMP - Sodium, CMP - Potassium, TSH etc. '),
-(5295, 'In order to register your device, please provide your OpenEMR login password'),
+(5295, 'In order to register your device, please provide your DCL login password'),
 (5296, 'In order to send Continuity of Care Record (CCR) and /or Continuity of Care Document (CCD) optionally check phiMail Allow CCD Send and/or phiMail Allow CCR Send to enable the Transmit feature for these data types'),
 (5297, 'In our case we will choose Local Lab that was setup previously'),
 (5298, 'In our case we will leave it as Unassigned'),
@@ -5575,7 +5575,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5466, 'Installation Details'),
 (5467, 'Installations processing a large number of Direct messages may want a shorter interval'),
 (5468, 'Installed Release'),
-(5469, 'Installing codes in openEMR'),
+(5469, 'Installing codes in DCL'),
 (5470, 'Instructed'),
 (5471, 'Instruction'),
 (5472, 'Instructions'),
@@ -5612,7 +5612,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5503, 'Intake Conclusion'),
 (5504, 'Intake Date'),
 (5505, 'Integers1-100'),
-(5506, 'Integrating lab results into a patient\'s chart in openEMR can be done manually i.e. both ordering tests and uploading the received results or electronically'),
+(5506, 'Integrating lab results into a patient\'s chart in DCL can be done manually i.e. both ordering tests and uploading the received results or electronically'),
 (5507, 'Intellectual Decline'),
 (5508, 'Inter-pupillary distance'),
 (5509, 'Interact with created transactions'),
@@ -5813,14 +5813,14 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5704, 'It does so by using an algorithm to combine the current UNIX time with the secret key to generate an ever changing unique key'),
 (5705, 'It has four tabs'),
 (5706, 'It has three tiers '),
-(5707, 'It is a commercial messaging module available to openEMR practices utilizing version 5.0.1 and higher'),
+(5707, 'It is a commercial messaging module available to DCL practices utilizing version 5.0.1 and higher'),
 (5708, 'It is a field in the HL7 Message header known as Processing ID'),
 (5709, 'It is a part of the medical record'),
 (5710, 'It is also a subscription based service'),
 (5711, 'It is also necessary to list an ICD10 code in order for the problem to be listed in Continuity of Care Report (CCR) and Continuity of Care Document (CCD)'),
 (5712, 'It is divided into two sections'),
 (5713, 'It is essential that you read through the first four sections to understand the underlying principles'),
-(5714, 'It is far easier and intuitive to make major changes and reorganize the data on the spreadsheet before you start entering the data in openEMR'),
+(5714, 'It is far easier and intuitive to make major changes and reorganize the data on the spreadsheet before you start entering the data in DCL'),
 (5715, 'It is important to realize that this manages the MFA for the logged in user'),
 (5716, 'It is important to understand the function of these two icons as all subsequent steps needed to properly set up the hierarchy will depend on the correct use of these two icons'),
 (5717, 'It is intended to include only the information that is critical to effectively continue care'),
@@ -5832,7 +5832,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (5723, 'It is prudent to follow up with provider if not contacted.'),
 (5724, 'It is the basic paper claim form prescribed by many payers for claims submitted by individual doctors & practices, nurses, and professionals, including therapists, chiropractors, and out-patient clinics, and in some cases, for ambulance services'),
 (5725, 'It is used to link problems with encounters and is also used to see which encounters are associated to a particular issue'),
-(5726, 'It is useful to practice on a trial site to become familiar with the process before doing so on the production openEMR application'),
+(5726, 'It is useful to practice on a trial site to become familiar with the process before doing so on the production DCL application'),
 (5727, 'It lets you search by ICD 9 and ICD 10 diagnostic codes and CPT4 and HCPCS service/procedure codes'),
 (5728, 'It lets you send messages and dated reminders to staff members, add patient to the recall list and send SMS text messages to patients'),
 (5729, 'It serves as a necessary bridge to a different environment, often with new clinicians who know nothing about the patient, enabling next provider to easily'),
@@ -6238,11 +6238,11 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (6129, 'Local'),
 (6130, 'Local Content'),
 (6131, 'Local Filesystem'),
-(6132, 'Local Filesystem will store the order as a HL7v2.3 message in a predefined location in the local server hosting openEMR'),
+(6132, 'Local Filesystem will store the order as a HL7v2.3 message in a predefined location in the local server hosting DCL'),
 (6133, 'Locale'),
 (6134, 'Locality'),
 (6135, 'Location'),
-(6136, 'location of the openemr machine and may contain sensitive data, so it is recommended to manually delete the files after its use'),
+(6136, 'location of the DCL machine and may contain sensitive data, so it is recommended to manually delete the files after its use'),
 (6137, 'Location of this lot'),
 (6138, 'Location unspecified'),
 (6139, 'Location where Hylafax stores faxes.'),
@@ -6709,7 +6709,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (6600, 'More information about Clinical Decision Rule can be found here'),
 (6601, 'More information about Issues can be found here'),
 (6602, 'More information about what phiMail is and how to set it up is available here'),
-(6603, 'More information available at the openEMR MedEx wiki page'),
+(6603, 'More information available at the DCL MedEx wiki page'),
 (6604, 'More information on how to edit this form and other such forms can be found here'),
 (6605, 'More information on the use of phiMail messages is available here'),
 (6606, 'More options'),
@@ -6975,7 +6975,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (6866, 'New in ACL Ver 6'),
 (6867, 'New in ACL Ver 7'),
 (6868, 'New in ACL Ver 8'),
-(6869, 'New in openEMR ver 5.0.2 '),
+(6869, 'New in DCL ver 5.0.2 '),
 (6870, 'New Inj/Status'),
 (6871, 'New Items (see above for details)'),
 (6872, 'New Layout'),
@@ -7006,7 +7006,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (6897, 'New results from Lab Exchange'),
 (6898, 'New Search'),
 (6899, 'New Submissions'),
-(6900, 'New to openEMR 5.0.2'),
+(6900, 'New to DCL 5.0.2'),
 (6901, 'New User'),
 (6902, 'New Value'),
 (6903, 'New Visit'),
@@ -7405,7 +7405,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (7296, 'Notify via Patient Portal'),
 (7297, 'Nov'),
 (7298, 'November'),
-(7299, 'Now is the time to check and adjust the settings in openEMR for default units, sites, etc., refer to the help file in Procedures > Providers'),
+(7299, 'Now is the time to check and adjust the settings in DCL for default units, sites, etc., refer to the help file in Procedures > Providers'),
 (7300, 'Now posting for'),
 (7301, 'Now posting for:'),
 (7302, 'Now printing'),
@@ -7562,11 +7562,11 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (7453, 'Once completed, view and store this encounter as a PDF file'),
 (7454, 'Once finished editing, click Save. The procedure forms current procedure diagnoses will fill exactly as built in this dialog.'),
 (7455, 'Once saved the entity for a Custom Favorite Group cannot be changed. If you need to change the entity you have to delete this entry and create a new one'),
-(7456, 'Once the app captures the QR code it will show the OpenEMR user name in the app'),
+(7456, 'Once the app captures the QR code it will show the DCL user name in the app'),
 (7457, 'Once the Primary Business Facility is set, changing the facility id will affect NewCrop ePrescription.'),
 (7458, 'Once the Primary Business Facility is set, it should not be changed. Changing the facility will affect the working in NewCrop ePrescription.'),
 (7459, 'Once this feature is enabled you will be required to type in the 6 digit key at each login'),
-(7460, 'Once this is done the shared secret key that is unique for each user should only exist in OpenEMR and on the user\'s authenticator app'),
+(7460, 'Once this is done the shared secret key that is unique for each user should only exist in DCL and on the user\'s authenticator app'),
 (7461, 'Once this step is completed you can proceed to next step - to configure the tests that can be ordered from the system'),
 (7462, 'Once you change your password, you will have to re-login.'),
 (7463, 'Once you select a justification code for the first CPT line all subsequent CPT code lines will have the same justification. Can be manually altered later if so desired'),
@@ -7666,23 +7666,23 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (7557, 'Open/Close the Shorthand Window and display Shorthand Codes'),
 (7558, 'Open/Close the Shorthand Window and display Shorthand Codes next to each field'),
 (7559, 'Open/Close the Shorthand Window and display Shorthand Codes.'),
-(7560, 'OpenEMR'),
-(7561, 'OpenEMR allows one TOTP but multiple U2F methods per user'),
-(7562, 'OpenEMR already has a Certificate Authority configured.'),
-(7563, 'OpenEMR App Registration'),
-(7564, 'OpenEMR Application'),
-(7565, 'OpenEMR Application Category'),
-(7566, 'OpenEMR Authorization'),
-(7567, 'OpenEMR Database Upgrade'),
-(7568, 'OpenEMR Database Upgrade for De-identification'),
-(7569, 'OpenEMR does not recognize the incoming file in the contrib directory. This is most likely because you need to configure the release in the supported_external_dataloads table in the MySQL database.'),
-(7570, 'OpenEMR Login'),
-(7571, 'OpenEMR must be configured to use certificates before it can create client certificates.'),
-(7572, 'OpenEMR offers 2 methods of 2FA'),
-(7573, 'OpenEMR Portal'),
-(7574, 'OpenEMR Product Registration'),
-(7575, 'OpenEMR requires Javascript to perform user authentication.'),
-(7576, 'OpenEMR Users'),
+(7560, 'DCL'),
+(7561, 'DCL allows one TOTP but multiple U2F methods per user'),
+(7562, 'DCL already has a Certificate Authority configured.'),
+(7563, 'DCL App Registration'),
+(7564, 'DCL Application'),
+(7565, 'DCL Application Category'),
+(7566, 'DCL Authorization'),
+(7567, 'DCL Database Upgrade'),
+(7568, 'DCL Database Upgrade for De-identification'),
+(7569, 'DCL does not recognize the incoming file in the contrib directory. This is most likely because you need to configure the release in the supported_external_dataloads table in the MySQL database.'),
+(7570, 'DCL Login'),
+(7571, 'DCL must be configured to use certificates before it can create client certificates.'),
+(7572, 'DCL offers 2 methods of 2FA'),
+(7573, 'DCL Portal'),
+(7574, 'DCL Product Registration'),
+(7575, 'DCL requires Javascript to perform user authentication.'),
+(7576, 'DCL Users'),
 (7577, 'Openings'),
 (7578, 'Opens in Bottom frame'),
 (7579, 'Opens in Top frame'),
@@ -8262,7 +8262,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (8153, 'Pending Rx Count'),
 (8154, 'Pending since'),
 (8155, 'Penicillin Allergy'),
-(8156, 'Pennington Firm OpenEMR  v'),
+(8156, 'Pennington Firm DCL  v'),
 (8157, 'Peptic Ulcer Disease'),
 (8158, 'Per Encounter'),
 (8159, 'per min'),
@@ -8505,7 +8505,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (8396, 'Please return this bottom part with your payment'),
 (8397, 'Please see forum and wiki'),
 (8398, 'Please see forum or wiki'),
-(8399, 'Please see http://www.open-emr.org/wiki/index.php/LBV_Forms for more on this topic'),
+(8399, 'Please see http://www.dcl.org/wiki/index.php/LBV_Forms for more on this topic'),
 (8400, 'Please see the attached PDF.'),
 (8401, 'Please Select'),
 (8402, 'Please select a default provider.'),
@@ -8551,7 +8551,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (8442, 'Please supply a heading'),
 (8443, 'Please take action to prevent being logged out!'),
 (8444, 'Please try again or contact the providers office for further assistance.'),
-(8445, 'Please upgrade OpenEMR Database to include De Identification procedures, function, tables'),
+(8445, 'Please upgrade DCL Database to include De Identification procedures, function, tables'),
 (8446, 'Please use valid NPI'),
 (8447, 'Please view De Identification error log table for more details'),
 (8448, 'Please visit De Identification screen after some time'),
@@ -8731,7 +8731,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (8622, 'Presenting Complaint'),
 (8623, 'Presenting Issue(s)'),
 (8624, 'Press Continue to proceed'),
-(8625, 'Press the flashing button on the USB key within 1 minute of inserting it and click on register to register the key with OpenEMR'),
+(8625, 'Press the flashing button on the USB key within 1 minute of inserting it and click on register to register the key with DCL'),
 (8626, 'Press this icon to build your Impression/Plan.'),
 (8627, 'Presumed Diagnosis'),
 (8628, 'Presumed diagnosis by specialist'),
@@ -9401,7 +9401,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (9292, 'reload names below'),
 (9293, 'Relogin'),
 (9294, 'Remdr'),
-(9295, 'Remember grouping of tests is only for conveniently organizing the data in the Procedure Order module in openEMR, for this process to work, configuring the Procedure Orders (the tests themselves) and the Discrete Result (the place to enter and display the returned result) are critically important'),
+(9295, 'Remember grouping of tests is only for conveniently organizing the data in the Procedure Order module in DCL, for this process to work, configuring the Procedure Orders (the tests themselves) and the Discrete Result (the place to enter and display the returned result) are critically important'),
 (9296, 'Remember Me'),
 (9297, 'Remember Selected Facility'),
 (9298, 'Remember the dictum that Identifying codes have to be unique, you should not set up a custom grouping of a panel of tests as well have the panels setup as individual recognized panel, i.e. have CBC and Renal panel grouped as a Custom Favorite and list CBC and Renal Panel separately as individually ordered panels'),
@@ -10402,7 +10402,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (10293, 'Site Address Override (if needed for OAuth2, FHIR or CCDA)'),
 (10294, 'Site ID'),
 (10295, 'Site ID for the Medical Information Integration, LLC Lab Exchange Service.'),
-(10296, 'Site ID for the OpenEMR Support LLC Lab Exchange Service.'),
+(10296, 'Site ID for the DCL Support LLC Lab Exchange Service.'),
 (10297, 'Site Worker'),
 (10298, 'Six Months Ago'),
 (10299, 'Six Months Ahead'),
@@ -10588,7 +10588,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (10479, 'Specifies formatting for the external patient ID.  # = digit, * = any character.  Empty if not used.'),
 (10480, 'Specifies formatting for the external patient ID.  # = digit, @ = alpha, * = any character.  Empty if not used.'),
 (10481, 'Specify the interval for automatic message checking, 5 or 10 minutes as a starting point'),
-(10482, 'Specify the OpenEMR user who will receive notification of new incoming Direct messages'),
+(10482, 'Specify the DCL user who will receive notification of new incoming Direct messages'),
 (10483, 'Specimen'),
 (10484, 'Specimen Collections date has not been entered and this is not a PSC Hold Order!'),
 (10485, 'Specimen number/identifier'),
@@ -10606,7 +10606,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (10497, 'Sphere Patientfront (Ecomm) Transaction CustID'),
 (10498, 'Sphere Patientfront (Ecomm) Transaction CustID License Key'),
 (10499, 'Sphere RETAIL TC Link Password'),
-(10500, 'Sphere Void/Credit Confirmation Password. OpenEMR confirms pin/password before proceeding with void/credit.'),
+(10500, 'Sphere Void/Credit Confirmation Password. DCL confirms pin/password before proceeding with void/credit.'),
 (10501, 'Sphere Void/Credit Confirmation PIN'),
 (10502, 'Sph{{Sphere}}'),
 (10503, 'SPH{{Sphere}}'),
@@ -10803,7 +10803,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (10694, 'Subscriber State'),
 (10695, 'Subscriber Zip'),
 (10696, 'Subscriber/Policy'),
-(10697, 'Subscribers will receive the username, password, and server address information with which to configure OpenEMR'),
+(10697, 'Subscribers will receive the username, password, and server address information with which to configure DCL'),
 (10698, 'Subscribter Phone'),
 (10699, 'Substance'),
 (10700, 'Substance Refusal Reason'),
@@ -10970,7 +10970,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (10861, 'Target patient not found'),
 (10862, 'Target/Action Groups'),
 (10863, 'Targets'),
-(10864, 'Taskman: Documents in openEMR'),
+(10864, 'Taskman: Documents in DCL'),
 (10865, 'Tatar'),
 (10866, 'Tax Id'),
 (10867, 'Tax ID'),
@@ -11074,7 +11074,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (10965, 'The Add icon is used to setup a tier that will be a direct descendant of this tier'),
 (10966, 'The advantage of integrating the results with the patient\'s chart as structured data is the ability to manipulate it to see trends in one convenient location, to plot graphs with the data and use it in data analysis'),
 (10967, 'The advantage of scanning the results into the chart is simplicity - no setup is required other than defining a directory/folder in the patient\'s chart under Documents where the result will be stored. Being unstructured data it does not have the above advantages and will not fulfill Meaningful Use criteria for Computerized Provider Order Entry (CPOE)'),
-(10968, 'The Allscripts solution integrates the Allscripts ePrescribe web site with openEMR'),
+(10968, 'The Allscripts solution integrates the Allscripts ePrescribe web site with DCL'),
 (10969, 'The American Medical Association has defined 9 panels that can be ordered. Each panel contains several tests grouped together'),
 (10970, 'The amount will be displayed in either the Payment or Adjustment column as the case may be'),
 (10971, 'The Apache SSL server certificate and public key'),
@@ -11229,7 +11229,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11120, 'The Identifying Code of R34392-1, an arbitrary number, in this case the Identifying Code preceded by R to indicate result and succeeded by 1 to indicate the first in the sequence, it could be anything unique you choose'),
 (11121, 'The information entered here is used to display a summary of the encounter. It is also used for billing purposes'),
 (11122, 'The information entered in this form will be used to complete a paper claim'),
-(11123, 'The information provided in the New Encounter Form and Fee Sheet in openEMR is used to generate the paper claim as well as electronic claims'),
+(11123, 'The information provided in the New Encounter Form and Fee Sheet in DCL is used to generate the paper claim as well as electronic claims'),
 (11124, 'The initial efforts led to the creation of duplicative and conflicting Implementation Guides (IGs) published by different standards organizations'),
 (11125, 'The initial screen lets you select a method by offering you these two options.'),
 (11126, 'The initial window is the invoice search page.  At the top you may enter a source (e.g. check number), pay date and check amount.  The reason for the source and pay date is so that you don\'t have to enter them over and over again for each claim.  The amount that you enter will be decreased for each invoice that is given part of the payment, and hopefully will end at zero when you are done.'),
@@ -11398,7 +11398,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11289, 'The Units will be 1 as each code is billed only once for the encounter'),
 (11290, 'The upcoming reminders have a green exclamation icon'),
 (11291, 'The USB devices communicate with the host computer using the human interface device (HID) protocol, essentially mimicking a keyboard'),
-(11292, 'The USB key needs to be plugged in to the computer and then registered with OpenEMR'),
+(11292, 'The USB key needs to be plugged in to the computer and then registered with DCL'),
 (11293, 'The USB key takes this the nonce supplied by the application after confirming the checksum and generates a private key using the process similar to that used in the registration process'),
 (11294, 'The user\'s actual privileges are determined by the access to the parts of the program i.e. (ACO) that each group (ARO) has.'),
 (11295, 'The Username fields are not the same.'),
@@ -11409,9 +11409,9 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11300, 'The vendor-specific code identifying this procedure or result. If no vendor enter any arbitrary unique number, preferably a 5 digit zero-padded e.g. 00211'),
 (11301, 'The very first step would be install the ICD codes. Go to Administraion > Other > External Data Loads. Select the Code sets you want to install and click Install'),
 (11302, 'The very last line of this report will give the Grand Total of Charges, Payments, Adjustments and the Balance'),
-(11303, 'The Weno Exchange is well integrated with openEMR and is not subscription based'),
-(11304, 'The X12 files as well as the resulting HTML output reports are archived in the \"era\" subdirectory of the main OpenEMR installation directory.  You will want to refer to these archives from time to time.  The URL is '),
-(11305, 'The X12 files as well as the resulting HTML output reports are archived in the \'era\' subdirectory of the main OpenEMR installation directory. You will want to refer to these archives from time to time.'),
+(11303, 'The Weno Exchange is well integrated with DCL and is not subscription based'),
+(11304, 'The X12 files as well as the resulting HTML output reports are archived in the \"era\" subdirectory of the main DCL installation directory.  You will want to refer to these archives from time to time.  The URL is '),
+(11305, 'The X12 files as well as the resulting HTML output reports are archived in the \'era\' subdirectory of the main DCL installation directory. You will want to refer to these archives from time to time.'),
 (11306, 'The zip file will contain the following items'),
 (11307, 'Theme'),
 (11308, 'Theme of the tabs layout (need to logout and then login to see this new setting).'),
@@ -11427,7 +11427,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11318, 'Therapy Group Encounter'),
 (11319, 'Therapy Group Finder'),
 (11320, 'There are'),
-(11321, 'There are 10 settings that are related to procedures included in the standard release of openEMR'),
+(11321, 'There are 10 settings that are related to procedures included in the standard release of DCL'),
 (11322, 'There are 3 forms in the Core category - Demographics, Facility Specific User Information and History and all 5 forms in Transactions that can be edited '),
 (11323, 'There are currently no prescriptions'),
 (11324, 'There are errors with your submission.  These are outlined below.'),
@@ -11481,7 +11481,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11372, 'There was a problem registering you. Recommend contacting clinic for assistance.'),
 (11373, 'There was a problem sending the message.'),
 (11374, 'There was an error while processing your request.'),
-(11375, 'There was an OpenEMR SQL Escaping ERROR of the following string'),
+(11375, 'There was an DCL SQL Escaping ERROR of the following string'),
 (11376, 'Therefore each user has to individually activate this feature'),
 (11377, 'These ACOs are grouped into ten broad categories that are part of the default installation. They are - Administration, Accounting, Patient Information, Encounter Information, Squads, Sensitivities, Lists, Placeholder, Nation Notes and Patient Portal. Each of these categories has one or several sub-categories that provide access to specific parts of the program.'),
 (11378, 'These are free and can be downloaded from the respective app store for ios and android devices'),
@@ -11493,7 +11493,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11384, 'These entries will be used to define the Providers in the Procedures module'),
 (11385, 'These groups (AROs) can then be given a set of privileges by assigning different categories (ACOs).'),
 (11386, 'These items can be edited if the user has sufficient privilege'),
-(11387, 'These lists are used to determine who can access what in openEMR. They work in a top down manner, i.e. initially everybody is denied access to those parts of the program controlled by the ACL.'),
+(11387, 'These lists are used to determine who can access what in DCL. They work in a top down manner, i.e. initially everybody is denied access to those parts of the program controlled by the ACL.'),
 (11388, 'These numbers need to match to successfully authenticate the user'),
 (11389, 'These Patient notes are sent without an assigned patient'),
 (11390, 'These sub-categories represent the actual Access Control Objects (ACOs).'),
@@ -11623,7 +11623,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11514, 'This module is being used by '),
 (11515, 'This module is in test mode. The database will not be changed.'),
 (11516, 'This module is subscription based and needs to be enabled from Administration > Globals > Connectors > Enable NewCrop eRx Service'),
-(11517, 'This module is well integrated with openEMR, there are however two non-subscription based alternatives, Weno and Allscripts that can be used instead'),
+(11517, 'This module is well integrated with DCL, there are however two non-subscription based alternatives, Weno and Allscripts that can be used instead'),
 (11518, 'This module promotes efficient entry of EOB data.'),
 (11519, 'This Month to Date'),
 (11520, 'This name already exists under this parent.'),
@@ -11807,7 +11807,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11698, 'To Dems'),
 (11699, 'To disable automatic message checking go to Administration > Globals > Connectors  and set phiMail Message Check Interval to 0 (zero) '),
 (11700, 'To Disable client side SSL certificates, comment above lines in Apache configuration file and set'),
-(11701, 'To Disable client side SSL certificates, comment above lines in Apache configuration file and turn off the \'Enable Client SSL\' global setting in OpenEMR and restart Apache server.'),
+(11701, 'To Disable client side SSL certificates, comment above lines in Apache configuration file and turn off the \'Enable Client SSL\' global setting in DCL and restart Apache server.'),
 (11702, 'To Disable HTTPS, comment the above lines in Apache configuration file and restart Apache server.'),
 (11703, 'To display the copay amount it must have been entered in the patient\'s insurance under Edit > Demographics'),
 (11704, 'To do so click on the black + sign at the far end on the Serum Uric Acid order line to bring up the Enter Details pop-up'),
@@ -11826,8 +11826,8 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11717, 'To fulfill Meaningful use requirements and help track its use you can check on the Sent Summary of Care check-box and the Sent Summary of Care Electronically check-box if appropriate'),
 (11718, 'To fully delete hit \'Save\''),
 (11719, 'To get started you choose one of the two radio buttons. \'Invoice Search\' or \'ERA Upload\' '),
-(11720, 'To help explore the various components of the Report page especially if you want to use it as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR '),
-(11721, 'To help familiarize you with the various components of the Dashboard page it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR'),
+(11720, 'To help explore the various components of the Report page especially if you want to use it as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL '),
+(11721, 'To help familiarize you with the various components of the Dashboard page it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL'),
 (11722, 'To help simplify implementations, commonly used templates were harmonized from existing CDA implementation guides and consolidated into a single implementation guide – the C-CDA Implementation Guide (IG) (07/2012)'),
 (11723, 'To History'),
 (11724, 'To include the scanned documents that are a part of the patient\'s record select the desired records by check the relevant check-boxes'),
@@ -11860,9 +11860,9 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11751, 'to this visit?'),
 (11752, 'To upload CCR document of already existing patient use Patient Summary Screen->Documents. For CCR document of a new patient use Miscellanous->New Documents screen'),
 (11753, 'To upload local text or html templates click the Upload button in Template Repository title to expose the file select button. Next select a Category from Scope bar if wanted then click files select button to show the file browser. You may select as many files to upload within reason'),
-(11754, 'To use the help page as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR '),
-(11755, 'To use this help file as an instruction manual it is best to resize your browser to occupy half the screen, open another instance of the browser to fill the other half of the screen, login to openEMR and open the help file in this browser and resize it by clicking and dragging the bottom right corner so that it occupies the entire half screen'),
-(11756, 'To use this help file as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to openEMR'),
+(11754, 'To use the help page as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL '),
+(11755, 'To use this help file as an instruction manual it is best to resize your browser to occupy half the screen, open another instance of the browser to fill the other half of the screen, login to DCL and open the help file in this browser and resize it by clicking and dragging the bottom right corner so that it occupies the entire half screen'),
+(11756, 'To use this help file as an instruction manual it is suggested that you reduce the size of the browser to cover half the viewport, resize the help pop-up by clicking and dragging the bottom right corner of the pop-up. Open another instance of the browser and resize it to cover the other half of the viewport, login to DCL'),
 (11757, 'To:'),
 (11758, 'To: '),
 (11759, 'TO_CITY'),
@@ -11903,7 +11903,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (11794, 'Token Expiration'),
 (11795, 'Token for connection to ASSE SOAP server'),
 (11796, 'Token ID for the Medical Information Integration, LLC Lab Exchange Service.'),
-(11797, 'Token ID for the OpenEMR Support LLC Lab Exchange Service.'),
+(11797, 'Token ID for the DCL Support LLC Lab Exchange Service.'),
 (11798, 'Token JTI(DB token value)'),
 (11799, 'Token Status'),
 (11800, 'Token Tools'),
@@ -12294,7 +12294,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12185, 'Upgrade ACL'),
 (12186, 'Upgrade Database'),
 (12187, 'Upgrade SQL'),
-(12188, 'Upgrades the OpenEMR database to include Procedures, Functions and tables needed for De-identification process'),
+(12188, 'Upgrades the DCL database to include Procedures, Functions and tables needed for De-identification process'),
 (12189, 'Upgrading will continue'),
 (12190, 'UPIN'),
 (12191, 'Upload'),
@@ -12320,7 +12320,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12211, 'Upon clicking an invoice number the \"manual posting window\" appears. Here you can change the due date and notes for the invoice, select the party for whom you are posting, and select the insurances for which all expected paymants have been received.  Most importantly, for each billing code for which an amount was charged, you can enter payment and adjustment information.'),
 (12212, 'Upon clicking an invoice number the \'manual posting window\' appears. Here you can change the due date and notes for the invoice, select the party for whom you are posting, and select the insurances for which all expected payments have been received. Most importantly, for each billing code for which an amount was charged, you can enter payment and adjustment information.'),
 (12213, 'Upon entering the page there are two buttons visible below the navigation bar'),
-(12214, 'Upon logging in to openEMR a small envelope icon is visible on the top right. It shows the number of pending messages and dated reminders'),
+(12214, 'Upon logging in to DCL a small envelope icon is visible on the top right. It shows the number of pending messages and dated reminders'),
 (12215, 'Upon reaching a predetermined point, either a date or value, the rule will trigger one or more events'),
 (12216, 'Upon searching you are presented with a list of invoices.  You may click on one of the invoice numbers to open a second window, which is the data entry page for manual posting.  You may also click on a patient name if you want to enter a note that the front office staff will see when the patient checks in, and you may select invoices to appear on patient statements and print those statements.'),
 (12217, 'Upon selecting a list to edit the edit page with the list values will be displayed'),
@@ -12341,7 +12341,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12232, 'Urine Urgency'),
 (12233, 'URL'),
 (12234, 'URL for NewCrop eRx Site Address.'),
-(12235, 'URL for OpenEMR support.'),
+(12235, 'URL for DCL support.'),
 (12236, 'URL for Phone Gateway.'),
 (12237, 'URL for Phone Gateway. Automated VOIP service provided by Maviq. Please visit http://signup.maviq.com for more information.'),
 (12238, 'URL for the WordPress site that supports the portal'),
@@ -12487,7 +12487,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12378, 'Using 2FA'),
 (12379, 'Using a fruit tree as an easier to visualize analogy will explain the concept of this hierarchy better, the trunk of the tree is the Group (Serum Chemistry), the fruit bearing branch is the actual order, Procedure Order (Serum Uric acid) and the fruit is the result, Discrete Result, also called (Serum Uric Acid) that will hold the value of the returned result. Just as the fruit is not borne on the main trunk you should not place a Discrete Result as a direct descendant or child of a Top Group. Similarly the fruit bearing branch (Procedure Order) cannot be placed as a direct descendant or child of a fruit (Discrete Result)'),
 (12380, 'Using technology to improve productivity'),
-(12381, 'Using the details entered into the system openEMR will generate valid HL7 v2.3 messages in 3 formats, a text file that is automatically downloaded to the downloads folder of your browser, a HL7 message that is written to a folder or directory on the server running openEMR or use SFTP - Secure File Transfer Protocol, which is a network protocol that provides file access, file transfer, and file management over a secure connection and transfer this message to a lab'),
+(12381, 'Using the details entered into the system DCL will generate valid HL7 v2.3 messages in 3 formats, a text file that is automatically downloaded to the downloads folder of your browser, a HL7 message that is written to a folder or directory on the server running DCL or use SFTP - Secure File Transfer Protocol, which is a network protocol that provides file access, file transfer, and file management over a secure connection and transfer this message to a lab'),
 (12382, 'Using the Feesheet'),
 (12383, 'Using the main headings on the lab slip will help start this process - Organ/Disease Panels, Hematology, Individual Tests, Microbiology, Other'),
 (12384, 'Using this fruit tree analogy we can get a better understanding of the steps needed to create an order for a panel of tests'),
@@ -12550,7 +12550,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12441, 'Version'),
 (12442, 'Version 1 Onsite Patient Portal Site Address'),
 (12443, 'Version 2 Onsite Patient Portal Site Address'),
-(12444, 'Version 2.x is widely used in the healthcare industry and openEMR uses HL7 version 2.3 '),
+(12444, 'Version 2.x is widely used in the healthcare industry and DCL uses HL7 version 2.3 '),
 (12445, 'Version Number'),
 (12446, 'Version/Model Number'),
 (12447, 'Vert Base{{abbreviation for Vertical Prism Base}}'),
@@ -12782,7 +12782,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12673, 'Weight Loss'),
 (12674, 'Weight loss clinic'),
 (12675, 'Welcome'),
-(12676, 'Welcome to OpenEMR'),
+(12676, 'Welcome to DCL'),
 (12677, 'Welsh'),
 (12678, 'Weno Account Clinic ID information missing'),
 (12679, 'Weno Account ID information missing'),
@@ -12829,7 +12829,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12720, 'Which notes are to be displayed in the Billing Screen'),
 (12721, 'While forwarding a dated reminder the old message is displayed, it can be overwritten'),
 (12722, 'While it is intuitive to think of this module as the place where lab tests and imaging studies can be ordered and reviewed this module can also be used to track other procedures performed in office'),
-(12723, 'While lab tests and radiological tests can be performed in the practice facility they are generally done at an external facility and the provider details for that entity will have to be entered in openEMR before the Procedure module setup can begin'),
+(12723, 'While lab tests and radiological tests can be performed in the practice facility they are generally done at an external facility and the provider details for that entity will have to be entered in DCL before the Procedure module setup can begin'),
 (12724, 'Whiplash'),
 (12725, 'White'),
 (12726, 'White list'),
@@ -12850,7 +12850,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12741, 'With selected'),
 (12742, 'With selected:'),
 (12743, 'with the old name'),
-(12744, 'With the U2F key you will need to plug it in to the USB port and then access OpenEMR using the latest versions of the following modern browsers - Chrome, Firefox, Safari, Edge and Opera and pressing the button on the device'),
+(12744, 'With the U2F key you will need to plug it in to the USB port and then access DCL using the latest versions of the following modern browsers - Chrome, Firefox, Safari, Edge and Opera and pressing the button on the device'),
 (12745, 'with value'),
 (12746, 'With whom may we leave a message?'),
 (12747, 'Withheld'),
@@ -13084,7 +13084,7 @@ INSERT INTO `lang_constants`   (`cons_id`, `constant_name`) VALUES
 (12975, 'Your file is too large'),
 (12976, 'Your first day of the week.'),
 (12977, 'Your Id is missing. Cancel and try again.'),
-(12978, 'Your installation of OpenEMR has been registered'),
+(12978, 'Your installation of DCL has been registered'),
 (12979, 'Your JWKS is invalid'),
 (12980, 'Your Lab Results'),
 (12981, 'Your list name has been changed to meet naming requirements.'),
@@ -13654,7 +13654,7 @@ INSERT INTO `lang_definitions` VALUES (285, 667, 2, 'Belopp som betalts');
 INSERT INTO `lang_definitions` VALUES (286, 668, 2, 'Belopp:');
 INSERT INTO `lang_definitions` VALUES (287, 671, 2, 'fakturerat belopp');
 INSERT INTO `lang_definitions` VALUES (288, 676, 2, 'Ett slutdatum senare än startdatum krävs för upprepade händelser!');
-INSERT INTO `lang_definitions` VALUES (289, 678, 2, 'ett fel uppstod när OpenEMR sparades');
+INSERT INTO `lang_definitions` VALUES (289, 678, 2, 'ett fel uppstod när DCL sparades');
 INSERT INTO `lang_definitions` VALUES (290, 679, 2, 'Ett fel uppstod när phpGACL sparades');
 INSERT INTO `lang_definitions` VALUES (291, 680, 2, 'Ett fel uppstod när SQL-ledger sparades');
 INSERT INTO `lang_definitions` VALUES (292, 685, 2, 'En ofullständig GCAC fråga har inrättats och knutits. Någon kommer att behöva fylla i det senare.');
@@ -14326,7 +14326,7 @@ INSERT INTO `lang_definitions` VALUES (957, 2211, 2, 'Inställningar import/expo
 INSERT INTO `lang_definitions` VALUES (958, 2213, 2, 'Konfigurera Apache och open EMR för att använda klient SSL certifikat');
 INSERT INTO `lang_definitions` VALUES (959, 2214, 2, 'Konfigurera Apache att använda Klient SSL certifikat');
 INSERT INTO `lang_definitions` VALUES (960, 2215, 2, 'Konfigurera apache för att använda HTTPS');
-INSERT INTO `lang_definitions` VALUES (961, 2216, 2, 'Konfigurera openEMR för att använda Klient SSL certifikat');
+INSERT INTO `lang_definitions` VALUES (961, 2216, 2, 'Konfigurera DCL för att använda Klient SSL certifikat');
 INSERT INTO `lang_definitions` VALUES (962, 2225, 2, 'Bekräfta Skapa ny patient');
 INSERT INTO `lang_definitions` VALUES (963, 2227, 2, 'Bekräfta Nytt lösenord');
 INSERT INTO `lang_definitions` VALUES (964, 2229, 2, 'Bekräfta Betalning');
@@ -14869,8 +14869,8 @@ INSERT INTO `lang_definitions` VALUES (1500, 3321, 2, 'Förfaller patienter');
 INSERT INTO `lang_definitions` VALUES (1501, 3322, 2, 'Förfaller snart');
 INSERT INTO `lang_definitions` VALUES (1502, 3323, 2, 'Förfallostatus');
 INSERT INTO `lang_definitions` VALUES (1503, 3324, 2, 'Uppdatera förfallostatus');
-INSERT INTO `lang_definitions` VALUES (1504, 3325, 2, 'Dumping OpenEMR database');
-INSERT INTO `lang_definitions` VALUES (1505, 3326, 2, 'Dumping OpenEMR web directory tree');
+INSERT INTO `lang_definitions` VALUES (1504, 3325, 2, 'Dumping DCL database');
+INSERT INTO `lang_definitions` VALUES (1505, 3326, 2, 'Dumping DCL web directory tree');
 INSERT INTO `lang_definitions` VALUES (1506, 3327, 2, 'Dumping phpGACL database');
 INSERT INTO `lang_definitions` VALUES (1507, 3328, 2, 'Dumping phpGACL web directory tree');
 INSERT INTO `lang_definitions` VALUES (1508, 3329, 2, 'Dumping SQL-Ledger database');
@@ -15669,7 +15669,7 @@ INSERT INTO `lang_definitions` VALUES (2300, 7505, 2, 'Uppkomsten av sjukdom:');
 INSERT INTO `lang_definitions` VALUES (2301, 7506, 2, 'Uppkomsten av Svullnad:');
 INSERT INTO `lang_definitions` VALUES (2302, 7510, 2, 'Debut / Inskrivning. Datum:');
 INSERT INTO `lang_definitions` VALUES (2303, 7519, 2, 'Öppen');
-INSERT INTO `lang_definitions` VALUES (2304, 7575, 2, 'OpenEMR kräver Javascript för att utföra användarverifiering.');
+INSERT INTO `lang_definitions` VALUES (2304, 7575, 2, 'DCL kräver Javascript för att utföra användarverifiering.');
 INSERT INTO `lang_definitions` VALUES (2305, 7586, 2, 'Alternativ');
 INSERT INTO `lang_definitions` VALUES (2306, 7590, 2, 'Valfritt');
 INSERT INTO `lang_definitions` VALUES (2307, 7602, 2, 'Frivillig information om denna händelse');
@@ -17013,7 +17013,7 @@ INSERT INTO `lang_definitions` VALUES (3644, 667, 3, 'Importe pagado');
 INSERT INTO `lang_definitions` VALUES (3645, 668, 3, 'Importe:');
 INSERT INTO `lang_definitions` VALUES (3646, 671, 3, 'Importe Facturado');
 INSERT INTO `lang_definitions` VALUES (3647, 676, 3, '¡Se requiere una fecha de finalización posterior a la fecha de inicio para los eventos repetidos!');
-INSERT INTO `lang_definitions` VALUES (3648, 678, 3, 'Ocurrió un error durante la descarga web de los directorios de OpenEMR');
+INSERT INTO `lang_definitions` VALUES (3648, 678, 3, 'Ocurrió un error durante la descarga web de los directorios de DCL');
 INSERT INTO `lang_definitions` VALUES (3649, 679, 3, 'Ocurrió un error durante la descarga web de los directorios de phpGACL');
 INSERT INTO `lang_definitions` VALUES (3650, 680, 3, 'Ocurrió un error durante la descarga web de los directorios SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (3651, 685, 3, 'Una incidencia GCAC incompleta ha sido creada y vinculada. Alguien tendrá que completarla más tarde.');
@@ -17663,10 +17663,10 @@ INSERT INTO `lang_definitions` VALUES (4294, 2202, 3, 'Conclusiones');
 INSERT INTO `lang_definitions` VALUES (4295, 2209, 3, 'Config');
 INSERT INTO `lang_definitions` VALUES (4296, 2210, 3, 'Configuración');
 INSERT INTO `lang_definitions` VALUES (4297, 2211, 3, 'Configuración Exportar/Importar');
-INSERT INTO `lang_definitions` VALUES (4298, 2213, 3, 'Configure Apache y OpenEMR para usar certificados SSL del Cliente');
+INSERT INTO `lang_definitions` VALUES (4298, 2213, 3, 'Configure Apache y DCL para usar certificados SSL del Cliente');
 INSERT INTO `lang_definitions` VALUES (4299, 2214, 3, 'Configure Apache para usar certificados SSL del Cliente');
 INSERT INTO `lang_definitions` VALUES (4300, 2215, 3, 'Configure Apache para usar HTTPS');
-INSERT INTO `lang_definitions` VALUES (4301, 2216, 3, 'Configure Openemr para usar certificado SSL del Cliente');
+INSERT INTO `lang_definitions` VALUES (4301, 2216, 3, 'Configure DCL para usar certificado SSL del Cliente');
 INSERT INTO `lang_definitions` VALUES (4302, 2225, 3, 'Confirma Crear Nuevo Paciente');
 INSERT INTO `lang_definitions` VALUES (4303, 2227, 3, 'Confirmar Nueva Contraseña');
 INSERT INTO `lang_definitions` VALUES (4304, 2229, 3, 'Confirmar Pago');
@@ -18199,8 +18199,8 @@ INSERT INTO `lang_definitions` VALUES (4830, 3321, 3, 'Deuda Paciente');
 INSERT INTO `lang_definitions` VALUES (4831, 3322, 3, 'Deuda próxima');
 INSERT INTO `lang_definitions` VALUES (4832, 3323, 3, 'Estado de Deuda');
 INSERT INTO `lang_definitions` VALUES (4833, 3324, 3, 'Actualización Estado de Deuda');
-INSERT INTO `lang_definitions` VALUES (4834, 3325, 3, 'Volcar OpenEMR base de datos');
-INSERT INTO `lang_definitions` VALUES (4835, 3326, 3, 'Volcar OpenEMR web de árbol de directorios');
+INSERT INTO `lang_definitions` VALUES (4834, 3325, 3, 'Volcar DCL base de datos');
+INSERT INTO `lang_definitions` VALUES (4835, 3326, 3, 'Volcar DCL web de árbol de directorios');
 INSERT INTO `lang_definitions` VALUES (4836, 3327, 3, 'Volcar phpGACL base de datos');
 INSERT INTO `lang_definitions` VALUES (4837, 3328, 3, 'volcar phpGACL web de árbol de directorios');
 INSERT INTO `lang_definitions` VALUES (4838, 3329, 3, 'Volcar SQL-Ledger base de datos');
@@ -18351,7 +18351,7 @@ INSERT INTO `lang_definitions` VALUES (4982, 3630, 3, 'Activar widget recordator
 INSERT INTO `lang_definitions` VALUES (4983, 3634, 3, 'Activar aviso fecha requerida para Medidas de Cálculo Automático (MCA)');
 INSERT INTO `lang_definitions` VALUES (4984, 3636, 3, 'Activar Informe de Seguimiento de Fecha para Medidas de Cálculo Automático (MCA)');
 INSERT INTO `lang_definitions` VALUES (4985, 3638, 3, 'Activar Soporte escaner');
-INSERT INTO `lang_definitions` VALUES (4986, 3643, 3, 'Activar servicio de soporte OpenEMR LLC Laboratorio de intercambio');
+INSERT INTO `lang_definitions` VALUES (4986, 3643, 3, 'Activar servicio de soporte DCL LLC Laboratorio de intercambio');
 INSERT INTO `lang_definitions` VALUES (4987, 3644, 3, 'Activar Certificado de Autenticación del usuario.');
 INSERT INTO `lang_definitions` VALUES (4988, 3650, 3, 'Activar servicio ZMG, Receta electrónica LLC');
 INSERT INTO `lang_definitions` VALUES (4989, 3651, 3, 'Activado');
@@ -18415,7 +18415,7 @@ INSERT INTO `lang_definitions` VALUES (5046, 3754, 3, 'Inglés');
 INSERT INTO `lang_definitions` VALUES (5047, 3756, 3, 'Ingleses (Indios)');
 INSERT INTO `lang_definitions` VALUES (5048, 3757, 3, 'Inglés (Estándar)');
 INSERT INTO `lang_definitions` VALUES (5049, 3758, 3, 'Enscript comando usado por Hylafax.');
-INSERT INTO `lang_definitions` VALUES (5050, 3759, 3, 'Garantizar OpenEMR tiene privilegios al directorio');
+INSERT INTO `lang_definitions` VALUES (5050, 3759, 3, 'Garantizar DCL tiene privilegios al directorio');
 INSERT INTO `lang_definitions` VALUES (5051, 3761, 3, 'ENT Descarga');
 INSERT INTO `lang_definitions` VALUES (5052, 3762, 3, 'ENT Dolor');
 INSERT INTO `lang_definitions` VALUES (5053, 3765, 3, 'Introduzca un código de la diagnosis para excluir todas las facturas que no lo contienen');
@@ -18455,7 +18455,7 @@ INSERT INTO `lang_definitions` VALUES (5086, 3889, 3, 'Error en la opción SI o 
 INSERT INTO `lang_definitions` VALUES (5087, 3894, 3, 'Error al abrir fichero adjunto para lectura');
 INSERT INTO `lang_definitions` VALUES (5088, 3897, 3, 'Error al eliminar el mensaje');
 INSERT INTO `lang_definitions` VALUES (5089, 3898, 3, 'Error recuperando resultados de la red de intercambio del laboratorio');
-INSERT INTO `lang_definitions` VALUES (5090, 3901, 3, 'Error en el fichero de concesión de privilegios para el usuario de OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (5090, 3901, 3, 'Error en el fichero de concesión de privilegios para el usuario de DCL.');
 INSERT INTO `lang_definitions` VALUES (5091, 3904, 3, 'error al registrar la forma!');
 INSERT INTO `lang_definitions` VALUES (5092, 3905, 3, 'Error al guardar el fichero');
 INSERT INTO `lang_definitions` VALUES (5093, 3907, 3, 'Error al escribir en el fichero');
@@ -18466,7 +18466,7 @@ INSERT INTO `lang_definitions` VALUES (5097, 3920, 3, 'Error, incapaz de crear e
 INSERT INTO `lang_definitions` VALUES (5098, 3921, 3, 'Error. No puede crearse certificadodo de Certificado de Autenticación');
 INSERT INTO `lang_definitions` VALUES (5099, 3922, 3, 'Error, incapaz de crear el certificado del servidor');
 INSERT INTO `lang_definitions` VALUES (5100, 3924, 3, 'Error, incapaz de abrir el file');
-INSERT INTO `lang_definitions` VALUES (5101, 3925, 3, 'Error. Certificado de Autenticación de usuario no está activado en OpenEMR');
+INSERT INTO `lang_definitions` VALUES (5101, 3925, 3, 'Error. Certificado de Autenticación de usuario no está activado en DCL');
 INSERT INTO `lang_definitions` VALUES (5102, 3933, 3, 'Error. Necesita instalar el fichero/Tar.php módulo php');
 INSERT INTO `lang_definitions` VALUES (5103, 3934, 3, 'ERROR: no pudo abrir tabla sql, formulario roto?');
 INSERT INTO `lang_definitions` VALUES (5104, 3937, 3, 'Error: ID duplicado en línea');
@@ -18660,7 +18660,7 @@ INSERT INTO `lang_definitions` VALUES (5291, 4277, 3, 'Fichero');
 INSERT INTO `lang_definitions` VALUES (5292, 4280, 3, 'Fichero en el directorio de documentación para aprender como automatizar el proceso de creación de logs de backup');
 INSERT INTO `lang_definitions` VALUES (5293, 4281, 3, 'Ubicacion del file');
 INSERT INTO `lang_definitions` VALUES (5294, 4282, 3, 'Gestión de Fichero');
-INSERT INTO `lang_definitions` VALUES (5295, 4289, 3, 'Fichero de permisos de usuario de OpenEMR');
+INSERT INTO `lang_definitions` VALUES (5295, 4289, 3, 'Fichero de permisos de usuario de DCL');
 INSERT INTO `lang_definitions` VALUES (5296, 4290, 3, 'Fallo en la recuperación de archivo de CouchDB');
 INSERT INTO `lang_definitions` VALUES (5297, 4291, 3, 'Sala de archivo');
 INSERT INTO `lang_definitions` VALUES (5298, 4292, 3, 'Fichero para adjuntar');
@@ -19010,7 +19010,7 @@ INSERT INTO `lang_definitions` VALUES (5641, 5024, 3, '¿Cuántos meses de antel
 INSERT INTO `lang_definitions` VALUES (5642, 5036, 3, 'HPI:');
 INSERT INTO `lang_definitions` VALUES (5643, 5038, 3, 'Altura');
 INSERT INTO `lang_definitions` VALUES (5644, 5039, 3, 'HTML');
-INSERT INTO `lang_definitions` VALUES (5645, 5043, 3, 'Vínculo Https segurizado para el soporte OpenEMR LLC Laboratorio de intercambio de sevicio.');
+INSERT INTO `lang_definitions` VALUES (5645, 5043, 3, 'Vínculo Https segurizado para el soporte DCL LLC Laboratorio de intercambio de sevicio.');
 INSERT INTO `lang_definitions` VALUES (5646, 5045, 3, 'Húngaro');
 INSERT INTO `lang_definitions` VALUES (5647, 5046, 3, 'Hylafax Directorio');
 INSERT INTO `lang_definitions` VALUES (5648, 5047, 3, 'Hylafax Commando Enscript');
@@ -19174,7 +19174,7 @@ INSERT INTO `lang_definitions` VALUES (5805, 5456, 3, 'INSTALAR');
 INSERT INTO `lang_definitions` VALUES (5806, 5457, 3, 'Instalar');
 INSERT INTO `lang_definitions` VALUES (5807, 5460, 3, 'Instalar BD');
 INSERT INTO `lang_definitions` VALUES (5808, 5468, 3, 'Versión instalada');
-INSERT INTO `lang_definitions` VALUES (5809, 5469, 3, 'Instalando códigos en openEMR');
+INSERT INTO `lang_definitions` VALUES (5809, 5469, 3, 'Instalando códigos en DCL');
 INSERT INTO `lang_definitions` VALUES (5810, 5470, 3, 'instrucciones');
 INSERT INTO `lang_definitions` VALUES (5811, 5471, 3, 'Instrucción');
 INSERT INTO `lang_definitions` VALUES (5812, 5472, 3, 'Instrucciones');
@@ -19478,7 +19478,7 @@ INSERT INTO `lang_definitions` VALUES (6109, 6129, 3, 'Local');
 INSERT INTO `lang_definitions` VALUES (6110, 6133, 3, 'Lugar');
 INSERT INTO `lang_definitions` VALUES (6111, 6134, 3, 'Localidad');
 INSERT INTO `lang_definitions` VALUES (6112, 6135, 3, 'Localización');
-INSERT INTO `lang_definitions` VALUES (6113, 6136, 3, 'Ubicación de la máquina openemr puede contener datos sensible, por eso se recomienda borrar manualmente los ficheros después de su uso');
+INSERT INTO `lang_definitions` VALUES (6113, 6136, 3, 'Ubicación de la máquina DCL puede contener datos sensible, por eso se recomienda borrar manualmente los ficheros después de su uso');
 INSERT INTO `lang_definitions` VALUES (6114, 6137, 3, 'Localizacion de este lote');
 INSERT INTO `lang_definitions` VALUES (6115, 6138, 3, 'Lugar no especificado');
 INSERT INTO `lang_definitions` VALUES (6116, 6139, 3, 'Directorio dónde Hylafax archiva los faxes');
@@ -20096,13 +20096,13 @@ INSERT INTO `lang_definitions` VALUES (6727, 7518, 3, '¡Uy!');
 INSERT INTO `lang_definitions` VALUES (6728, 7519, 3, 'Abrir');
 INSERT INTO `lang_definitions` VALUES (6729, 7528, 3, 'Abrir en ventana nueva');
 INSERT INTO `lang_definitions` VALUES (6730, 7535, 3, 'Abrir visitas para hoy');
-INSERT INTO `lang_definitions` VALUES (6731, 7562, 3, 'OpenEMR ya tiene un Certificado de Autoridad Configurado');
-INSERT INTO `lang_definitions` VALUES (6732, 7567, 3, 'Actualización base de datos OpenEMR');
-INSERT INTO `lang_definitions` VALUES (6733, 7568, 3, 'Actualización base de datos OpenEMR para De-identificación');
-INSERT INTO `lang_definitions` VALUES (6734, 7569, 3, 'OpenEMR no reconoce el archivo de entrada en el directorio contrib. Esto es probablemente porque necesita configurar la versión en la tabla supported_external_dataloads en la base de datos MySQL.');
-INSERT INTO `lang_definitions` VALUES (6735, 7571, 3, 'OpenEMR debe configurarse para usar certificado antes de poder crear cliente');
-INSERT INTO `lang_definitions` VALUES (6736, 7575, 3, 'OpenEMR requiere Javascript para realizar la autenticación de usuario.');
-INSERT INTO `lang_definitions` VALUES (6737, 7576, 3, 'OpenEMR Usuarios');
+INSERT INTO `lang_definitions` VALUES (6731, 7562, 3, 'DCL ya tiene un Certificado de Autoridad Configurado');
+INSERT INTO `lang_definitions` VALUES (6732, 7567, 3, 'Actualización base de datos DCL');
+INSERT INTO `lang_definitions` VALUES (6733, 7568, 3, 'Actualización base de datos DCL para De-identificación');
+INSERT INTO `lang_definitions` VALUES (6734, 7569, 3, 'DCL no reconoce el archivo de entrada en el directorio contrib. Esto es probablemente porque necesita configurar la versión en la tabla supported_external_dataloads en la base de datos MySQL.');
+INSERT INTO `lang_definitions` VALUES (6735, 7571, 3, 'DCL debe configurarse para usar certificado antes de poder crear cliente');
+INSERT INTO `lang_definitions` VALUES (6736, 7575, 3, 'DCL requiere Javascript para realizar la autenticación de usuario.');
+INSERT INTO `lang_definitions` VALUES (6737, 7576, 3, 'DCL Usuarios');
 INSERT INTO `lang_definitions` VALUES (6738, 7577, 3, 'Vacantes');
 INSERT INTO `lang_definitions` VALUES (6739, 7583, 3, 'Oftálmico');
 INSERT INTO `lang_definitions` VALUES (6740, 7586, 3, 'Opcion');
@@ -20385,7 +20385,7 @@ INSERT INTO `lang_definitions` VALUES (7016, 8151, 3, 'Ordenes pendientes');
 INSERT INTO `lang_definitions` VALUES (7017, 8152, 3, 'Revisión Pendientes');
 INSERT INTO `lang_definitions` VALUES (7018, 8153, 3, 'Contador Recetas pendientes');
 INSERT INTO `lang_definitions` VALUES (7019, 8155, 3, 'Alergia a penicilina');
-INSERT INTO `lang_definitions` VALUES (7020, 8156, 3, 'Pennington firme OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (7020, 8156, 3, 'Pennington firme DCL v');
 INSERT INTO `lang_definitions` VALUES (7021, 8157, 3, 'La úlcera péptica');
 INSERT INTO `lang_definitions` VALUES (7022, 8158, 3, 'Por Encuentro');
 INSERT INTO `lang_definitions` VALUES (7023, 8159, 3, 'por minuto');
@@ -20556,7 +20556,7 @@ INSERT INTO `lang_definitions` VALUES (7187, 8434, 3, 'Por favor seleccione soci
 INSERT INTO `lang_definitions` VALUES (7188, 8435, 3, 'Por favor ajuste');
 INSERT INTO `lang_definitions` VALUES (7189, 8436, 3, 'Por favor ponga la variable de_identification_config a cero');
 INSERT INTO `lang_definitions` VALUES (7190, 8441, 3, 'Por favor inicie un nuevo proceso de De identificación');
-INSERT INTO `lang_definitions` VALUES (7191, 8445, 3, 'Por favor actualice la base de datos OpenEMR para incluir procedimientos, funciones, tablas para De identificación');
+INSERT INTO `lang_definitions` VALUES (7191, 8445, 3, 'Por favor actualice la base de datos DCL para incluir procedimientos, funciones, tablas para De identificación');
 INSERT INTO `lang_definitions` VALUES (7192, 8447, 3, 'Por favor, consulte la tabla de log de errores de De Identificación para más detalles');
 INSERT INTO `lang_definitions` VALUES (7193, 8448, 3, 'Por favor visite la pantalla de Re-Identificación después de algún tiempo');
 INSERT INTO `lang_definitions` VALUES (7194, 8449, 3, 'Por favor visite la pantalla de Re-Identificación después de algún tiempo');
@@ -21388,7 +21388,7 @@ INSERT INTO `lang_definitions` VALUES (8019, 10286, 3, 'Cirugía de Seno');
 INSERT INTO `lang_definitions` VALUES (8020, 10287, 3, 'SENSIBILIDAD DE SENO:');
 INSERT INTO `lang_definitions` VALUES (8021, 10288, 3, 'Sinusitis');
 INSERT INTO `lang_definitions` VALUES (8022, 10294, 3, 'Nº Identificación');
-INSERT INTO `lang_definitions` VALUES (8023, 10296, 3, 'Nº Identificación para soporte OpenEMR del Servicio Intercambio Laboratorio LLC.');
+INSERT INTO `lang_definitions` VALUES (8023, 10296, 3, 'Nº Identificación para soporte DCL del Servicio Intercambio Laboratorio LLC.');
 INSERT INTO `lang_definitions` VALUES (8024, 10300, 3, 'Tamaño');
 INSERT INTO `lang_definitions` VALUES (8025, 10303, 3, 'El tamaño debe ser un número entre 1 y 999');
 INSERT INTO `lang_definitions` VALUES (8026, 10305, 3, 'Tamaño/Lista');
@@ -21798,7 +21798,7 @@ INSERT INTO `lang_definitions` VALUES (8429, 11277, 3, 'La traducción de descri
 INSERT INTO `lang_definitions` VALUES (8430, 11278, 3, 'La tabla de traducción está sincronizada');
 INSERT INTO `lang_definitions` VALUES (8431, 11279, 3, 'Tipo de esta entidad');
 INSERT INTO `lang_definitions` VALUES (8432, 11299, 3, 'El código de identificación específico del proveedor de este procedimiento o el resultado');
-INSERT INTO `lang_definitions` VALUES (8433, 11304, 3, 'Los ficheros X12, así como la salida de informes HTML resultantes son archivados en el subdirectorio -era- del directorio principal de la instalación de OpenEMR. Si quiere hacer referencia a estos ficheros de vez en cuando. La URL es');
+INSERT INTO `lang_definitions` VALUES (8433, 11304, 3, 'Los ficheros X12, así como la salida de informes HTML resultantes son archivados en el subdirectorio -era- del directorio principal de la instalación de DCL. Si quiere hacer referencia a estos ficheros de vez en cuando. La URL es');
 INSERT INTO `lang_definitions` VALUES (8434, 11306, 3, 'El file comprimido ha de contener los siguientes items');
 INSERT INTO `lang_definitions` VALUES (8435, 11307, 3, 'Tema');
 INSERT INTO `lang_definitions` VALUES (8436, 11314, 3, 'Inyecciones Terapéuticas');
@@ -22130,7 +22130,7 @@ INSERT INTO `lang_definitions` VALUES (8761, 12182, 3, 'Actualizando indicadores
 INSERT INTO `lang_definitions` VALUES (8762, 12183, 3, 'ACTUALIZACIÓN');
 INSERT INTO `lang_definitions` VALUES (8763, 12184, 3, 'Actualizar');
 INSERT INTO `lang_definitions` VALUES (8764, 12186, 3, 'Actualizar BBDD');
-INSERT INTO `lang_definitions` VALUES (8765, 12188, 3, 'Actualización de base de datos OpenEMR para incluir procedimientos, funciones y tablas necesarias para el proceso de De-identificación.');
+INSERT INTO `lang_definitions` VALUES (8765, 12188, 3, 'Actualización de base de datos DCL para incluir procedimientos, funciones y tablas necesarias para el proceso de De-identificación.');
 INSERT INTO `lang_definitions` VALUES (8766, 12189, 3, 'la actualización continuará');
 INSERT INTO `lang_definitions` VALUES (8767, 12190, 3, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (8768, 12191, 3, 'Adjuntar');
@@ -22155,7 +22155,7 @@ INSERT INTO `lang_definitions` VALUES (8786, 12230, 3, 'Microalbúmina de la ori
 INSERT INTO `lang_definitions` VALUES (8787, 12231, 3, 'Flujo de Orina');
 INSERT INTO `lang_definitions` VALUES (8788, 12232, 3, 'Urgencia de la Orina');
 INSERT INTO `lang_definitions` VALUES (8789, 12233, 3, 'URL');
-INSERT INTO `lang_definitions` VALUES (8790, 12235, 3, 'URL para soporte OpenEMR');
+INSERT INTO `lang_definitions` VALUES (8790, 12235, 3, 'URL para soporte DCL');
 INSERT INTO `lang_definitions` VALUES (8791, 12237, 3, 'URL para puerta de enlace telefónico. Servicio automático de VOIP desarrollado por Maviq. Por favor visite http://signup.maviq.com para más información.');
 INSERT INTO `lang_definitions` VALUES (8792, 12248, 3, 'Indicador de uso (ISA15)');
 INSERT INTO `lang_definitions` VALUES (8793, 12249, 3, 'Consejos de uso');
@@ -22506,7 +22506,7 @@ INSERT INTO `lang_definitions` VALUES (9137, 12973, 3, 'Su evento ha sido acepta
 INSERT INTO `lang_definitions` VALUES (9138, 12974, 3, 'Su archivo no tiene extensión');
 INSERT INTO `lang_definitions` VALUES (9139, 12975, 3, 'El fichero es demasiado grande');
 INSERT INTO `lang_definitions` VALUES (9140, 12976, 3, 'Su primer día de la semana');
-INSERT INTO `lang_definitions` VALUES (9141, 12978, 3, 'Su instalación de OpenEMR ha sido registrada');
+INSERT INTO `lang_definitions` VALUES (9141, 12978, 3, 'Su instalación de DCL ha sido registrada');
 INSERT INTO `lang_definitions` VALUES (9142, 12980, 3, 'Sus resultados de laboratorio');
 INSERT INTO `lang_definitions` VALUES (9143, 12981, 3, 'Su nombre de la lista se ha cambiado para resolver requisitos de nombre.');
 INSERT INTO `lang_definitions` VALUES (9144, 12982, 3, 'Su mensaje fue enviado para reparto a');
@@ -22728,7 +22728,7 @@ INSERT INTO `lang_definitions` VALUES (9359, 8, 4, 'Un código del mismo tipo ya
 INSERT INTO `lang_definitions` VALUES (9360, 13, 4, 'Se requiere un distribuidor');
 INSERT INTO `lang_definitions` VALUES (9361, 15, 4, 'Unas palabras para indicar el motivo de la visita');
 INSERT INTO `lang_definitions` VALUES (9362, 17, 4, 'Formulario de visita GCAC debe ser agregado a esta visita');
-INSERT INTO `lang_definitions` VALUES (9363, 19, 4, 'Una gran aplicación como OpenEMR es usada por una multitud de usuarios con variados roles y grados de responsabilidad. Es imperativo que el acceso a diferentes partes del programa sea garantizado para usuarios que conozcan los requisitos básicos. Para lograr esto se usan las Listas de control de acceso (ACL) ');
+INSERT INTO `lang_definitions` VALUES (9363, 19, 4, 'Una gran aplicación como DCL es usada por una multitud de usuarios con variados roles y grados de responsabilidad. Es imperativo que el acceso a diferentes partes del programa sea garantizado para usuarios que conozcan los requisitos básicos. Para lograr esto se usan las Listas de control de acceso (ACL) ');
 INSERT INTO `lang_definitions` VALUES (9364, 20, 4, 'Un número de lote es requerido');
 INSERT INTO `lang_definitions` VALUES (9365, 21, 4, 'Un número de lote es requerido!');
 INSERT INTO `lang_definitions` VALUES (9366, 22, 4, 'Una letra minúscula');
@@ -23209,7 +23209,7 @@ INSERT INTO `lang_definitions` VALUES (9840, 668, 4, 'Balance:');
 INSERT INTO `lang_definitions` VALUES (9841, 671, 4, 'Importe Facturado');
 INSERT INTO `lang_definitions` VALUES (9842, 676, 4, '¡Se requiere una fecha de finalización posterior a la fecha de inicio para los eventos repetidos!');
 INSERT INTO `lang_definitions` VALUES (9843, 677, 4, 'Ocurrió un error al firmar el formulario');
-INSERT INTO `lang_definitions` VALUES (9844, 678, 4, 'Ocurrió un error al volcar el directorio de arbol de la web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (9844, 678, 4, 'Ocurrió un error al volcar el directorio de arbol de la web DCL');
 INSERT INTO `lang_definitions` VALUES (9845, 679, 4, 'Ocurrió un error al volcar el directorio de arbol de la web phpGACL');
 INSERT INTO `lang_definitions` VALUES (9846, 680, 4, 'Ocurrió un error al volcar el directorio de arbol de la web SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (9847, 685, 4, 'Se ha creado y se ha ligado una edición incompleta de GCAC. Alguien necesitará terminarla más adelante.');
@@ -24101,10 +24101,10 @@ INSERT INTO `lang_definitions` VALUES (10732, 2205, 4, 'Estado de condición');
 INSERT INTO `lang_definitions` VALUES (10733, 2209, 4, 'Config');
 INSERT INTO `lang_definitions` VALUES (10734, 2210, 4, 'Configuración');
 INSERT INTO `lang_definitions` VALUES (10735, 2211, 4, 'Configuración Exportar / Importar');
-INSERT INTO `lang_definitions` VALUES (10736, 2213, 4, 'Configure Apache y OpenEMR para usar certificados SSL del Cliente');
+INSERT INTO `lang_definitions` VALUES (10736, 2213, 4, 'Configure Apache y DCL para usar certificados SSL del Cliente');
 INSERT INTO `lang_definitions` VALUES (10737, 2214, 4, 'Configure Apache para usar certificados SSL del Cliente');
 INSERT INTO `lang_definitions` VALUES (10738, 2215, 4, 'Configure Apache para usar HTTPS');
-INSERT INTO `lang_definitions` VALUES (10739, 2216, 4, 'Configure Openemr para usar certificado SSL del Cliente');
+INSERT INTO `lang_definitions` VALUES (10739, 2216, 4, 'Configure DCL para usar certificado SSL del Cliente');
 INSERT INTO `lang_definitions` VALUES (10740, 2220, 4, 'Configurar pistas');
 INSERT INTO `lang_definitions` VALUES (10741, 2221, 4, 'Configurar pistas');
 INSERT INTO `lang_definitions` VALUES (10742, 2224, 4, 'Confirmar');
@@ -24711,8 +24711,8 @@ INSERT INTO `lang_definitions` VALUES (11342, 3321, 4, 'Deuda Paciente');
 INSERT INTO `lang_definitions` VALUES (11343, 3322, 4, 'Deuda próxima');
 INSERT INTO `lang_definitions` VALUES (11344, 3323, 4, 'Estado de Deuda');
 INSERT INTO `lang_definitions` VALUES (11345, 3324, 4, 'Actualización Estado de Deuda');
-INSERT INTO `lang_definitions` VALUES (11346, 3325, 4, 'Volcar base de datos OpenEMR');
-INSERT INTO `lang_definitions` VALUES (11347, 3326, 4, 'Volcar árbol de directorios web de OpenEMR');
+INSERT INTO `lang_definitions` VALUES (11346, 3325, 4, 'Volcar base de datos DCL');
+INSERT INTO `lang_definitions` VALUES (11347, 3326, 4, 'Volcar árbol de directorios web de DCL');
 INSERT INTO `lang_definitions` VALUES (11348, 3327, 4, 'Volcar base de datos phpGACL');
 INSERT INTO `lang_definitions` VALUES (11349, 3328, 4, 'Volcar phpGACL web de árbol de directorios');
 INSERT INTO `lang_definitions` VALUES (11350, 3329, 4, 'Volcar SQL-Ledger base de datos');
@@ -24892,7 +24892,7 @@ INSERT INTO `lang_definitions` VALUES (11523, 3630, 4, 'Activar widget recordato
 INSERT INTO `lang_definitions` VALUES (11524, 3634, 4, 'Activar aviso fecha requerida para Medidas de Cálculo Automático (MCA)');
 INSERT INTO `lang_definitions` VALUES (11525, 3636, 4, 'Activar Informe de Seguimiento de Fecha para Medidas de Cálculo Automático (MCA)');
 INSERT INTO `lang_definitions` VALUES (11526, 3638, 4, 'Activar Soporte escaner');
-INSERT INTO `lang_definitions` VALUES (11527, 3643, 4, 'Activar servicio de soporte OpenEMR LLC Laboratorio de intercambio');
+INSERT INTO `lang_definitions` VALUES (11527, 3643, 4, 'Activar servicio de soporte DCL LLC Laboratorio de intercambio');
 INSERT INTO `lang_definitions` VALUES (11528, 3644, 4, 'Activar Certificado de Autenticación del usuario.');
 INSERT INTO `lang_definitions` VALUES (11529, 3645, 4, 'Habilitar Versión 1 de portal de paciente en sitio');
 INSERT INTO `lang_definitions` VALUES (11530, 3646, 4, 'Habilitar Versión 2 de portal de paciente en sitio');
@@ -24961,7 +24961,7 @@ INSERT INTO `lang_definitions` VALUES (11592, 3754, 4, 'Inglés');
 INSERT INTO `lang_definitions` VALUES (11593, 3756, 4, 'Ingleses (Indios)');
 INSERT INTO `lang_definitions` VALUES (11594, 3757, 4, 'Inglés (Estándar)');
 INSERT INTO `lang_definitions` VALUES (11595, 3758, 4, 'Enscript comando usado por Hylafax.');
-INSERT INTO `lang_definitions` VALUES (11596, 3759, 4, 'Garantizar OpenEMR tiene privilegios al directorio');
+INSERT INTO `lang_definitions` VALUES (11596, 3759, 4, 'Garantizar DCL tiene privilegios al directorio');
 INSERT INTO `lang_definitions` VALUES (11597, 3761, 4, 'Descarga ORL');
 INSERT INTO `lang_definitions` VALUES (11598, 3762, 4, 'Dolor ORL');
 INSERT INTO `lang_definitions` VALUES (11599, 3765, 4, 'Introduzca un código de la diagnosis para excluir todas las facturas que no lo contienen');
@@ -25001,7 +25001,7 @@ INSERT INTO `lang_definitions` VALUES (11632, 3889, 4, 'Error en la opción SI o
 INSERT INTO `lang_definitions` VALUES (11633, 3894, 4, 'Error al abrir archivo cargado para lectura');
 INSERT INTO `lang_definitions` VALUES (11634, 3897, 4, 'Error al eliminar el mensaje');
 INSERT INTO `lang_definitions` VALUES (11635, 3898, 4, 'Error recuperando resultados de la red de intercambio del laboratorio');
-INSERT INTO `lang_definitions` VALUES (11636, 3901, 4, 'Error en el fichero de concesión de privilegios para el usuario de OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (11636, 3901, 4, 'Error en el fichero de concesión de privilegios para el usuario de DCL.');
 INSERT INTO `lang_definitions` VALUES (11637, 3904, 4, 'error al registrar la forma!');
 INSERT INTO `lang_definitions` VALUES (11638, 3905, 4, 'Error al guardar en el archivo');
 INSERT INTO `lang_definitions` VALUES (11639, 3907, 4, 'Error al escribir en el archivo');
@@ -25012,7 +25012,7 @@ INSERT INTO `lang_definitions` VALUES (11643, 3920, 4, 'Error, incapaz de crear 
 INSERT INTO `lang_definitions` VALUES (11644, 3921, 4, 'Error. No puede crearse certificadodo de Certificado de Autenticacion');
 INSERT INTO `lang_definitions` VALUES (11645, 3922, 4, 'Error, incapaz de crear el certificado del servidor');
 INSERT INTO `lang_definitions` VALUES (11646, 3924, 4, 'Error, incapaz de abrir el file');
-INSERT INTO `lang_definitions` VALUES (11647, 3925, 4, 'Error. Certificado de Autenticacion de usuario no esta habilitado en OpenEMR');
+INSERT INTO `lang_definitions` VALUES (11647, 3925, 4, 'Error. Certificado de Autenticacion de usuario no esta habilitado en DCL');
 INSERT INTO `lang_definitions` VALUES (11648, 3933, 4, 'Error. Necesita instalar el Archivo/Tar.php php modulo');
 INSERT INTO `lang_definitions` VALUES (11649, 3934, 4, 'ERROR: no pudo abrir tabla sql, formulario roto?');
 INSERT INTO `lang_definitions` VALUES (11650, 3937, 4, 'Error: ID duplicado en línea');
@@ -25217,7 +25217,7 @@ INSERT INTO `lang_definitions` VALUES (11848, 4277, 4, 'Fichero');
 INSERT INTO `lang_definitions` VALUES (11849, 4280, 4, 'Archivo en el directorio de documentación para aprender a automatizar el proceso de creación de copias de seguridad de registro');
 INSERT INTO `lang_definitions` VALUES (11850, 4281, 4, 'Ubicacion del file');
 INSERT INTO `lang_definitions` VALUES (11851, 4282, 4, 'Gestión de Fichero');
-INSERT INTO `lang_definitions` VALUES (11852, 4289, 4, 'Fichero de permisos de usuario de OpenEMR');
+INSERT INTO `lang_definitions` VALUES (11852, 4289, 4, 'Fichero de permisos de usuario de DCL');
 INSERT INTO `lang_definitions` VALUES (11853, 4290, 4, 'Fallo en la recuperación de archivo de CouchDB');
 INSERT INTO `lang_definitions` VALUES (11854, 4291, 4, 'Sala de archivo');
 INSERT INTO `lang_definitions` VALUES (11855, 4292, 4, 'Fichero para adjuntar');
@@ -25583,7 +25583,7 @@ INSERT INTO `lang_definitions` VALUES (12214, 5024, 4, '¿Cuántos meses de ante
 INSERT INTO `lang_definitions` VALUES (12215, 5036, 4, 'Hist.Enfd.Actual:');
 INSERT INTO `lang_definitions` VALUES (12216, 5038, 4, 'Altura');
 INSERT INTO `lang_definitions` VALUES (12217, 5039, 4, 'HTML');
-INSERT INTO `lang_definitions` VALUES (12218, 5043, 4, 'Vínculo Https segurizado para el soporte OpenEMR LLC Servicio de tránsito de datos de laboratorio.');
+INSERT INTO `lang_definitions` VALUES (12218, 5043, 4, 'Vínculo Https segurizado para el soporte DCL LLC Servicio de tránsito de datos de laboratorio.');
 INSERT INTO `lang_definitions` VALUES (12219, 5045, 4, 'Húngaro');
 INSERT INTO `lang_definitions` VALUES (12220, 5046, 4, 'Hylafax Directorio');
 INSERT INTO `lang_definitions` VALUES (12221, 5047, 4, 'Hylafax Commando Enscript');
@@ -26069,7 +26069,7 @@ INSERT INTO `lang_definitions` VALUES (12700, 6131, 4, 'Sistema de archivos loca
 INSERT INTO `lang_definitions` VALUES (12701, 6133, 4, 'Lugar');
 INSERT INTO `lang_definitions` VALUES (12702, 6134, 4, 'Localidad');
 INSERT INTO `lang_definitions` VALUES (12703, 6135, 4, 'Localización');
-INSERT INTO `lang_definitions` VALUES (12704, 6136, 4, 'Ubicación de la máquina openemr puede contener datos sensible, por eso se recomienda borrar manualmente los ficheros después de su uso');
+INSERT INTO `lang_definitions` VALUES (12704, 6136, 4, 'Ubicación de la máquina DCL puede contener datos sensible, por eso se recomienda borrar manualmente los ficheros después de su uso');
 INSERT INTO `lang_definitions` VALUES (12705, 6137, 4, 'Localizacion de este lote');
 INSERT INTO `lang_definitions` VALUES (12706, 6138, 4, 'Lugar no especificado');
 INSERT INTO `lang_definitions` VALUES (12707, 6139, 4, 'Directorio dónde Hylafax archiva los faxes');
@@ -26744,13 +26744,13 @@ INSERT INTO `lang_definitions` VALUES (13375, 7528, 4, 'Abrir en ventana nueva')
 INSERT INTO `lang_definitions` VALUES (13376, 7531, 4, 'Abrir paciente');
 INSERT INTO `lang_definitions` VALUES (13377, 7532, 4, 'Abrir paciente en ventana nueva');
 INSERT INTO `lang_definitions` VALUES (13378, 7535, 4, 'Abrir visitas para hoy');
-INSERT INTO `lang_definitions` VALUES (13379, 7562, 4, 'OpenEMR ya tiene un Certificado de Autoridad Configurado');
-INSERT INTO `lang_definitions` VALUES (13380, 7567, 4, 'Actualización base de datos OpenEMR');
-INSERT INTO `lang_definitions` VALUES (13381, 7568, 4, 'Actualización base de datos OpenEMR para De-identificación');
-INSERT INTO `lang_definitions` VALUES (13382, 7569, 4, 'OpenEMR no reconoce el archivo de entrada en el directorio contrib. Esto es probablemente porque necesita configurar la versión en la tabla supported_external_dataloads en la base de datos MySQL.');
-INSERT INTO `lang_definitions` VALUES (13383, 7571, 4, 'OpenEMR debe configurarse para usar certificado antes de poder crear cliente');
-INSERT INTO `lang_definitions` VALUES (13384, 7575, 4, 'OpenEMR requiere Javascript para realizar la autenticación de usuario.');
-INSERT INTO `lang_definitions` VALUES (13385, 7576, 4, 'OpenEMR Usuarios');
+INSERT INTO `lang_definitions` VALUES (13379, 7562, 4, 'DCL ya tiene un Certificado de Autoridad Configurado');
+INSERT INTO `lang_definitions` VALUES (13380, 7567, 4, 'Actualización base de datos DCL');
+INSERT INTO `lang_definitions` VALUES (13381, 7568, 4, 'Actualización base de datos DCL para De-identificación');
+INSERT INTO `lang_definitions` VALUES (13382, 7569, 4, 'DCL no reconoce el archivo de entrada en el directorio contrib. Esto es probablemente porque necesita configurar la versión en la tabla supported_external_dataloads en la base de datos MySQL.');
+INSERT INTO `lang_definitions` VALUES (13383, 7571, 4, 'DCL debe configurarse para usar certificado antes de poder crear cliente');
+INSERT INTO `lang_definitions` VALUES (13384, 7575, 4, 'DCL requiere Javascript para realizar la autenticación de usuario.');
+INSERT INTO `lang_definitions` VALUES (13385, 7576, 4, 'DCL Usuarios');
 INSERT INTO `lang_definitions` VALUES (13386, 7577, 4, 'Vacantes');
 INSERT INTO `lang_definitions` VALUES (13387, 7583, 4, 'Oftálmico');
 INSERT INTO `lang_definitions` VALUES (13388, 7586, 4, 'Opcion');
@@ -27045,7 +27045,7 @@ INSERT INTO `lang_definitions` VALUES (13676, 8151, 4, 'Ordenes pendientes');
 INSERT INTO `lang_definitions` VALUES (13677, 8152, 4, 'Revisión Pendientes');
 INSERT INTO `lang_definitions` VALUES (13678, 8153, 4, 'Contador Recetas pendientes');
 INSERT INTO `lang_definitions` VALUES (13679, 8155, 4, 'Alergia a penicilina');
-INSERT INTO `lang_definitions` VALUES (13680, 8156, 4, 'Pennington firme OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (13680, 8156, 4, 'Pennington firme DCL v');
 INSERT INTO `lang_definitions` VALUES (13681, 8157, 4, 'La úlcera péptica');
 INSERT INTO `lang_definitions` VALUES (13682, 8158, 4, 'Por Encuentro');
 INSERT INTO `lang_definitions` VALUES (13683, 8159, 4, 'por minuto');
@@ -27216,7 +27216,7 @@ INSERT INTO `lang_definitions` VALUES (13847, 8434, 4, 'Por favor seleccione soc
 INSERT INTO `lang_definitions` VALUES (13848, 8435, 4, 'Por favor ajuste');
 INSERT INTO `lang_definitions` VALUES (13849, 8436, 4, 'Por favor ponga la variable de_identification_config a cero');
 INSERT INTO `lang_definitions` VALUES (13850, 8441, 4, 'Por favor inicie un nuevo proceso de De identificación');
-INSERT INTO `lang_definitions` VALUES (13851, 8445, 4, 'Por favor actualice la base de datos OpenEMR para incluir procedimientos, funciones, tablas para De identificación');
+INSERT INTO `lang_definitions` VALUES (13851, 8445, 4, 'Por favor actualice la base de datos DCL para incluir procedimientos, funciones, tablas para De identificación');
 INSERT INTO `lang_definitions` VALUES (13852, 8447, 4, 'Por favor, consulte la tabla de log de errores de De Identificación para más detalles');
 INSERT INTO `lang_definitions` VALUES (13853, 8448, 4, 'Por favor visite la pantalla de Re-Identificación después de algún tiempo');
 INSERT INTO `lang_definitions` VALUES (13854, 8449, 4, 'Por favor visite la pantalla de Re-Identificación después de algún tiempo');
@@ -28088,7 +28088,7 @@ INSERT INTO `lang_definitions` VALUES (14719, 10286, 4, 'Cirugía de Seno');
 INSERT INTO `lang_definitions` VALUES (14720, 10287, 4, 'SENSIBILIDAD DE SENO:');
 INSERT INTO `lang_definitions` VALUES (14721, 10288, 4, 'Sinusitis');
 INSERT INTO `lang_definitions` VALUES (14722, 10294, 4, 'Nº Identificación');
-INSERT INTO `lang_definitions` VALUES (14723, 10296, 4, 'Nº Identificación para soporte OpenEMR del Servicio Intercambio Laboratorio LLC.');
+INSERT INTO `lang_definitions` VALUES (14723, 10296, 4, 'Nº Identificación para soporte DCL del Servicio Intercambio Laboratorio LLC.');
 INSERT INTO `lang_definitions` VALUES (14724, 10300, 4, 'Tamaño');
 INSERT INTO `lang_definitions` VALUES (14725, 10303, 4, 'El tamaño debe ser un número entre 1 y 999');
 INSERT INTO `lang_definitions` VALUES (14726, 10305, 4, 'Tamaño/Lista');
@@ -28517,7 +28517,7 @@ INSERT INTO `lang_definitions` VALUES (15148, 11277, 4, 'La traducción de descr
 INSERT INTO `lang_definitions` VALUES (15149, 11278, 4, 'La tabla de traducción está sincronizada');
 INSERT INTO `lang_definitions` VALUES (15150, 11279, 4, 'Tipo de esta entidad');
 INSERT INTO `lang_definitions` VALUES (15151, 11299, 4, 'El código de identificación específico del proveedor de este procedimiento o el resultado');
-INSERT INTO `lang_definitions` VALUES (15152, 11304, 4, 'Los ficheros X12, así como la salida de informes HTML resultantes son archivados en el subdirectorio -era- del directorio principal de la instalación de OpenEMR. Si quiere hacer referencia a estos ficheros de vez en cuando. La URL es');
+INSERT INTO `lang_definitions` VALUES (15152, 11304, 4, 'Los ficheros X12, así como la salida de informes HTML resultantes son archivados en el subdirectorio -era- del directorio principal de la instalación de DCL. Si quiere hacer referencia a estos ficheros de vez en cuando. La URL es');
 INSERT INTO `lang_definitions` VALUES (15153, 11306, 4, 'El file comprimido ha de contener los siguientes items');
 INSERT INTO `lang_definitions` VALUES (15154, 11307, 4, 'Tema');
 INSERT INTO `lang_definitions` VALUES (15155, 11314, 4, 'Inyecciones Terapéuticas');
@@ -28860,7 +28860,7 @@ INSERT INTO `lang_definitions` VALUES (15491, 12182, 4, 'Actualizando indicadore
 INSERT INTO `lang_definitions` VALUES (15492, 12183, 4, 'ACTUALIZACIÓN');
 INSERT INTO `lang_definitions` VALUES (15493, 12184, 4, 'Actualizar');
 INSERT INTO `lang_definitions` VALUES (15494, 12186, 4, 'Actualizar BBDD');
-INSERT INTO `lang_definitions` VALUES (15495, 12188, 4, 'Actualización de base de datos OpenEMR para incluir procedimientos, funciones y tablas necesarias para el proceso de De-identificación.');
+INSERT INTO `lang_definitions` VALUES (15495, 12188, 4, 'Actualización de base de datos DCL para incluir procedimientos, funciones y tablas necesarias para el proceso de De-identificación.');
 INSERT INTO `lang_definitions` VALUES (15496, 12189, 4, 'la actualización continuará');
 INSERT INTO `lang_definitions` VALUES (15497, 12190, 4, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (15498, 12191, 4, 'Subir');
@@ -28889,7 +28889,7 @@ INSERT INTO `lang_definitions` VALUES (15520, 12230, 4, 'Microalbúmina de la or
 INSERT INTO `lang_definitions` VALUES (15521, 12231, 4, 'Flujo de Orina');
 INSERT INTO `lang_definitions` VALUES (15522, 12232, 4, 'Urgencia de la Orina');
 INSERT INTO `lang_definitions` VALUES (15523, 12233, 4, 'URL');
-INSERT INTO `lang_definitions` VALUES (15524, 12235, 4, 'URL para soporte OpenEMR');
+INSERT INTO `lang_definitions` VALUES (15524, 12235, 4, 'URL para soporte DCL');
 INSERT INTO `lang_definitions` VALUES (15525, 12236, 4, 'URL para puerta de enlace telefónico. ');
 INSERT INTO `lang_definitions` VALUES (15526, 12237, 4, 'URL para puerta de enlace telefónico. Servicio automático de VOIP desarrollado por Maviq. Por favor visite http://signup.maviq.com para más información.');
 INSERT INTO `lang_definitions` VALUES (15527, 12238, 4, 'URL para el sitio de WordPress que admite el portal');
@@ -29356,7 +29356,7 @@ INSERT INTO `lang_definitions` VALUES (15987, 12973, 4, 'Su evento ha sido acept
 INSERT INTO `lang_definitions` VALUES (15988, 12974, 4, 'Su archivo no tiene extensión');
 INSERT INTO `lang_definitions` VALUES (15989, 12975, 4, 'El fichero es demasiado grande');
 INSERT INTO `lang_definitions` VALUES (15990, 12976, 4, 'Su primer día de la semana');
-INSERT INTO `lang_definitions` VALUES (15991, 12978, 4, 'Su instalación de OpenEMR ha sido registrada');
+INSERT INTO `lang_definitions` VALUES (15991, 12978, 4, 'Su instalación de DCL ha sido registrada');
 INSERT INTO `lang_definitions` VALUES (15992, 12980, 4, 'Sus resultados de lab.');
 INSERT INTO `lang_definitions` VALUES (15993, 12981, 4, 'Su nombre de la lista se ha cambiado para resolver el nombramiento de requisitos.');
 INSERT INTO `lang_definitions` VALUES (15994, 12982, 4, 'Su mensaje fue enviado para envío a');
@@ -29605,7 +29605,7 @@ INSERT INTO `lang_definitions` VALUES (16236, 15, 5, 'Ein paar Worte, um den Gru
 INSERT INTO `lang_definitions` VALUES (16237, 16, 5, 'Ein Folgetermin kann auch direkt über das Gebührenblatt vereinbart werden.');
 INSERT INTO `lang_definitions` VALUES (16238, 17, 5, 'Ein GCAC Konsultationsformular sollte angefügt werden');
 INSERT INTO `lang_definitions` VALUES (16239, 18, 5, 'Eine HL7 v2.x-Nachricht besteht einfach aus mehreren Textzeilen. Jede Zeile wird als Segment bezeichnet und mit dem Pipe-Zeichen (|) in Felder unterteilt');
-INSERT INTO `lang_definitions` VALUES (16240, 19, 5, 'Eine grosse Anwendung wie openEMR wird von einer Vielzahl von Benutzern mit unterschiedlichen Rollen und Verantwortungsgraden verwendet. Der Zugriff auf verschiedene Programmteile muss den Benutzern unbedingt auf der Grundlage von Kenntnissen gewährt werden. Zu diesem Zweck werden Zugriffssteuerungslisten (Access Control Lists, ACL) verwendet.');
+INSERT INTO `lang_definitions` VALUES (16240, 19, 5, 'Eine grosse Anwendung wie DCL wird von einer Vielzahl von Benutzern mit unterschiedlichen Rollen und Verantwortungsgraden verwendet. Der Zugriff auf verschiedene Programmteile muss den Benutzern unbedingt auf der Grundlage von Kenntnissen gewährt werden. Zu diesem Zweck werden Zugriffssteuerungslisten (Access Control Lists, ACL) verwendet.');
 INSERT INTO `lang_definitions` VALUES (16241, 20, 5, 'Eine Losnummer ist notwendig');
 INSERT INTO `lang_definitions` VALUES (16242, 21, 5, 'Eine Losnummer ist notwendig!');
 INSERT INTO `lang_definitions` VALUES (16243, 22, 5, 'Kleinbuchstabe');
@@ -29875,7 +29875,7 @@ INSERT INTO `lang_definitions` VALUES (16506, 330, 5, 'Weitere Informationen zu 
 INSERT INTO `lang_definitions` VALUES (16507, 332, 5, 'Zusätzliche Informationen zur Bearbeitung von Papierforderungen');
 INSERT INTO `lang_definitions` VALUES (16508, 333, 5, 'Weitere Laborbefunde');
 INSERT INTO `lang_definitions` VALUES (16509, 334, 5, 'Weitere Bemerkungen');
-INSERT INTO `lang_definitions` VALUES (16510, 335, 5, 'Das Feld Zusätzliche Hinweise ist für die lokale Verwendung in openEMR vorgesehen');
+INSERT INTO `lang_definitions` VALUES (16510, 335, 5, 'Das Feld Zusätzliche Hinweise ist für die lokale Verwendung in DCL vorgesehen');
 INSERT INTO `lang_definitions` VALUES (16511, 336, 5, 'zusätzliche Bemerkungen für diesen Befund oder Empfehlung');
 INSERT INTO `lang_definitions` VALUES (16512, 337, 5, 'Weitere Bemerkungen:');
 INSERT INTO `lang_definitions` VALUES (16513, 338, 5, 'Weitere Bemerkungen:');
@@ -30018,7 +30018,7 @@ INSERT INTO `lang_definitions` VALUES (16649, 497, 5, 'Alle offiziellen Messgrup
 INSERT INTO `lang_definitions` VALUES (16650, 498, 5, 'Vollständiger oder Teil des Vornamens');
 INSERT INTO `lang_definitions` VALUES (16651, 499, 5, 'Vollständiger oder Teil des Familiennamens');
 INSERT INTO `lang_definitions` VALUES (16652, 500, 5, 'Alle oder Teil der Organisation');
-INSERT INTO `lang_definitions` VALUES (16653, 501, 5, 'Alle Patienteninteraktionen in OpenEMR sind mit Begegnungen verknüpft');
+INSERT INTO `lang_definitions` VALUES (16653, 501, 5, 'Alle Patienteninteraktionen in DCL sind mit Begegnungen verknüpft');
 INSERT INTO `lang_definitions` VALUES (16654, 502, 5, 'Alle Patienten');
 INSERT INTO `lang_definitions` VALUES (16655, 503, 5, 'Alle ausstehenden Nachrichten werden im Bereich MEINE NACHRICHTEN angezeigt');
 INSERT INTO `lang_definitions` VALUES (16656, 505, 5, 'Alle Produkte');
@@ -30162,11 +30162,11 @@ INSERT INTO `lang_definitions` VALUES (16793, 674, 5, 'Eine E-Mail mit Ihren neu
 INSERT INTO `lang_definitions` VALUES (16794, 675, 5, 'Eine elektronische Bestellung und das zurückgegebene Ergebnis liegen in Form einer Nachricht vor, die als HL7-Nachricht bezeichnet wird. HL7 steht für Health Level (Application Layer) 7. Das Hauptziel von HL7 ist die Vereinfachung der Implementierung von Schnittstellen zwischen Gesundheitssoftwareanwendungen und verschiedenen Anbietern, um den mit der Programmierung benutzerdefinierter Schnittstellen verbundenen Aufwand und die Kosten zu verringern');
 INSERT INTO `lang_definitions` VALUES (16795, 676, 5, 'Für sich wiederholende Ereignisse muss Enddatum nach dem Startdatum sein!');
 INSERT INTO `lang_definitions` VALUES (16796, 677, 5, 'Beim Signieren des Formulars ist ein Fehler aufgetreten');
-INSERT INTO `lang_definitions` VALUES (16797, 678, 5, 'Beim Dump des OpenEMR Web-Verzeichnisbaums ist ein Fehler aufgetreten');
+INSERT INTO `lang_definitions` VALUES (16797, 678, 5, 'Beim Dump des DCL Web-Verzeichnisbaums ist ein Fehler aufgetreten');
 INSERT INTO `lang_definitions` VALUES (16798, 679, 5, 'Ein Fehler trat auf beim Dump des phpGACL Web-Verzeichnisbaums');
 INSERT INTO `lang_definitions` VALUES (16799, 680, 5, 'Ein Fehler trat auf beim Dump des SQL-Ledger Web-Verzeichnisbaums');
 INSERT INTO `lang_definitions` VALUES (16800, 682, 5, 'Ein Fehler ist aufgetreten: Fehlende Datei zum Hochladen: Verwenden Sie die Zurück-Taste!');
-INSERT INTO `lang_definitions` VALUES (16801, 683, 5, 'Ein wichtiges Konzept ist, dass, sobald der über den QR-Code gelieferte geheime Schlüssel von der Authentifikator-App erfasst wurde, keine weitere Kommunikation zwischen der App und OpenEMR stattfindet, jede die aktuelle UNIX-Zeit und ihre Kopie des benutzerspezifischen gemeinsamen Geheimnisses verwendet Taste, um dieselbe eindeutige 6-stellige Nummer zu generieren');
+INSERT INTO `lang_definitions` VALUES (16801, 683, 5, 'Ein wichtiges Konzept ist, dass, sobald der über den QR-Code gelieferte geheime Schlüssel von der Authentifikator-App erfasst wurde, keine weitere Kommunikation zwischen der App und DCL stattfindet, jede die aktuelle UNIX-Zeit und ihre Kopie des benutzerspezifischen gemeinsamen Geheimnisses verwendet Taste, um dieselbe eindeutige 6-stellige Nummer zu generieren');
 INSERT INTO `lang_definitions` VALUES (16802, 684, 5, 'Ein wichtiger Punkt, an den Sie sich erinnern sollten, ist, dass die verschiedenen Einzeltests in jedem Panel als Ergebnisse aufgeführt sind. Sie können diese Einzeltests nicht direkt bestellen');
 INSERT INTO `lang_definitions` VALUES (16803, 685, 5, 'Ein unvollständiges GCAC Problem ist erstellt und verlinkt worden. Es sollte später vervollständigt werden');
 INSERT INTO `lang_definitions` VALUES (16804, 687, 5, 'Ein Problem betrifft Fragen im Zusammenhang mit der Gesundheit des Patienten');
@@ -30379,7 +30379,7 @@ INSERT INTO `lang_definitions` VALUES (17010, 927, 5, 'Nehme an Patient erhielt 
 INSERT INTO `lang_definitions` VALUES (17011, 928, 5, 'Asthma');
 INSERT INTO `lang_definitions` VALUES (17012, 929, 5, 'bei');
 INSERT INTO `lang_definitions` VALUES (17013, 931, 5, 'Mindestens ein Suchparameter ist notwendig wenn Sie \'Alle\' selektieren');
-INSERT INTO `lang_definitions` VALUES (17014, 932, 5, 'Derzeit ist die elektronische Verschreibung von openEMR nur in den USA möglich');
+INSERT INTO `lang_definitions` VALUES (17014, 932, 5, 'Derzeit ist die elektronische Verschreibung von DCL nur in den USA möglich');
 INSERT INTO `lang_definitions` VALUES (17015, 933, 5, 'Derzeit kann nur das Continuity of Care-Dokument (CCD) (Continuity of Care Record) mit phiMail gesendet werden');
 INSERT INTO `lang_definitions` VALUES (17016, 934, 5, 'Am naviculare');
 INSERT INTO `lang_definitions` VALUES (17017, 935, 5, 'Am naviculare:');
@@ -31280,10 +31280,10 @@ INSERT INTO `lang_definitions` VALUES (17911, 2200, 5, 'Computergestütztes medi
 INSERT INTO `lang_definitions` VALUES (17912, 2202, 5, 'Schlußfolgerungen');
 INSERT INTO `lang_definitions` VALUES (17913, 2210, 5, 'Konfiguration');
 INSERT INTO `lang_definitions` VALUES (17914, 2211, 5, 'Export/Import konfigurieren');
-INSERT INTO `lang_definitions` VALUES (17915, 2213, 5, 'Apache und OpenEMR konfigurieren, um clientseitige SSL-Zertifikate zu verwenden');
+INSERT INTO `lang_definitions` VALUES (17915, 2213, 5, 'Apache und DCL konfigurieren, um clientseitige SSL-Zertifikate zu verwenden');
 INSERT INTO `lang_definitions` VALUES (17916, 2214, 5, 'Apache konfigurieren, um clientseitige SSL-Zertifikate zu verwenden');
 INSERT INTO `lang_definitions` VALUES (17917, 2215, 5, 'Apache konfigurieren, um HTTPS zu verwenden');
-INSERT INTO `lang_definitions` VALUES (17918, 2216, 5, 'OpenEMR konfigurieren, um clientseitige SSL-Zertifikate zu verwenden');
+INSERT INTO `lang_definitions` VALUES (17918, 2216, 5, 'DCL konfigurieren, um clientseitige SSL-Zertifikate zu verwenden');
 INSERT INTO `lang_definitions` VALUES (17919, 2225, 5, 'Neuen Patient jetzt anlegen');
 INSERT INTO `lang_definitions` VALUES (17920, 2227, 5, 'Bestätige neues Passwort');
 INSERT INTO `lang_definitions` VALUES (17921, 2229, 5, 'Bestätige Zahlung');
@@ -31828,7 +31828,7 @@ INSERT INTO `lang_definitions` VALUES (18459, 3321, 5, 'aufgrund Pt');
 INSERT INTO `lang_definitions` VALUES (18460, 3322, 5, 'Bald fällig');
 INSERT INTO `lang_definitions` VALUES (18461, 3323, 5, 'Fälligkeitsstatus');
 INSERT INTO `lang_definitions` VALUES (18462, 3324, 5, 'Fälligkeitsstatus Update');
-INSERT INTO `lang_definitions` VALUES (18463, 3325, 5, 'Erstelle Dump der OpenEMR database');
+INSERT INTO `lang_definitions` VALUES (18463, 3325, 5, 'Erstelle Dump der DCL database');
 INSERT INTO `lang_definitions` VALUES (18464, 3326, 5, 'Erstelle Dump des Web-Verzeichnis-Baumes');
 INSERT INTO `lang_definitions` VALUES (18465, 3327, 5, 'Erstelle Dump der phpGACL-Datenbank');
 INSERT INTO `lang_definitions` VALUES (18466, 3328, 5, 'Erstelle Dump des phpGACL-Web-Verzeichnis-Baumes');
@@ -31983,7 +31983,7 @@ INSERT INTO `lang_definitions` VALUES (18614, 3634, 5, 'Abfrage für AMC-Daten a
 INSERT INTO `lang_definitions` VALUES (18615, 3636, 5, 'Berichtswesen für Verfolgungsdaten des AMC aktivieren');
 INSERT INTO `lang_definitions` VALUES (18616, 3638, 5, 'Scanner-Unterstützung aktivieren');
 INSERT INTO `lang_definitions` VALUES (18617, 3642, 5, 'aktiviere Medical Information Integration, LLC Lab Exchange Service.');
-INSERT INTO `lang_definitions` VALUES (18618, 3643, 5, 'OpenEMR Support LLC Lab Exchange Service aktivieren');
+INSERT INTO `lang_definitions` VALUES (18618, 3643, 5, 'DCL Support LLC Lab Exchange Service aktivieren');
 INSERT INTO `lang_definitions` VALUES (18619, 3644, 5, 'Nutzer-Zertifikats-Authentifizierung aktivieren');
 INSERT INTO `lang_definitions` VALUES (18620, 3650, 5, 'ZMG, LLC eRx-Service aktivieren');
 INSERT INTO `lang_definitions` VALUES (18621, 3651, 5, 'aktiviert');
@@ -32046,7 +32046,7 @@ INSERT INTO `lang_definitions` VALUES (18677, 3754, 5, 'Englisch');
 INSERT INTO `lang_definitions` VALUES (18678, 3756, 5, 'Englisch (Indisch)');
 INSERT INTO `lang_definitions` VALUES (18679, 3757, 5, 'Englisch (Standard)');
 INSERT INTO `lang_definitions` VALUES (18680, 3758, 5, 'Enskript kommando gebraucht bei Hylafax');
-INSERT INTO `lang_definitions` VALUES (18681, 3759, 5, 'OpenEMR muß Schreibrechte im Verzeichnis haben');
+INSERT INTO `lang_definitions` VALUES (18681, 3759, 5, 'DCL muß Schreibrechte im Verzeichnis haben');
 INSERT INTO `lang_definitions` VALUES (18682, 3761, 5, 'HNO Sekretion');
 INSERT INTO `lang_definitions` VALUES (18683, 3762, 5, 'HNO Schmerz');
 INSERT INTO `lang_definitions` VALUES (18684, 3765, 5, 'Diagnosekode eingeben , um alle Rechnung ohne diese Diagnose auszuschliessen');
@@ -32094,7 +32094,7 @@ INSERT INTO `lang_definitions` VALUES (18725, 3896, 5, 'Fehler beim Upload');
 INSERT INTO `lang_definitions` VALUES (18726, 3897, 5, 'Fehler beim Löschen der Nachricht');
 INSERT INTO `lang_definitions` VALUES (18727, 3898, 5, 'Fehler beim Abrufen der Befunde vom Lab Exchange Network');
 INSERT INTO `lang_definitions` VALUES (18728, 3899, 5, 'Fehler beim Abrufen der Werte.');
-INSERT INTO `lang_definitions` VALUES (18729, 3901, 5, 'Fehler bei der Gewähung des File-Privilegs für den OpenEMR Nutzer');
+INSERT INTO `lang_definitions` VALUES (18729, 3901, 5, 'Fehler bei der Gewähung des File-Privilegs für den DCL Nutzer');
 INSERT INTO `lang_definitions` VALUES (18730, 3904, 5, 'Fehler bei der Registrierung des Formulars!');
 INSERT INTO `lang_definitions` VALUES (18731, 3905, 5, 'Fehler beim Speichern');
 INSERT INTO `lang_definitions` VALUES (18732, 3907, 5, 'Fehler beim Schreiben der Daten');
@@ -32106,7 +32106,7 @@ INSERT INTO `lang_definitions` VALUES (18737, 3920, 5, 'Fehler: admin.p12-Zertif
 INSERT INTO `lang_definitions` VALUES (18738, 3921, 5, 'Fehler: Certificate Authority Zertifikat kann nicht erstellt werden');
 INSERT INTO `lang_definitions` VALUES (18739, 3922, 5, 'Fehler: Server-Zertifikat kann nicht erstellt werden');
 INSERT INTO `lang_definitions` VALUES (18740, 3924, 5, 'Fehler: Datei kann nicht geöffnet werden');
-INSERT INTO `lang_definitions` VALUES (18741, 3925, 5, 'Fehler: Authentifizierung mittels Nutzer-Zertifikat ist nicht aktiviert in OpenEMR');
+INSERT INTO `lang_definitions` VALUES (18741, 3925, 5, 'Fehler: Authentifizierung mittels Nutzer-Zertifikat ist nicht aktiviert in DCL');
 INSERT INTO `lang_definitions` VALUES (18742, 3933, 5, 'Fehler: Du musst das Archive/Tar.php-Modul installieren');
 INSERT INTO `lang_definitions` VALUES (18743, 3934, 5, 'Fehler: Die Datei table.sql konnte nicht geöffnet werden.');
 INSERT INTO `lang_definitions` VALUES (18744, 3937, 5, 'FEHLER: Doppelte ID in Zeile');
@@ -32287,7 +32287,7 @@ INSERT INTO `lang_definitions` VALUES (18918, 4277, 5, 'Datei');
 INSERT INTO `lang_definitions` VALUES (18919, 4280, 5, 'Datei im Dokumentations-Verzeichnis, das zeigt, wie der Log-Backups automatisch erstellt werden können');
 INSERT INTO `lang_definitions` VALUES (18920, 4281, 5, 'Datei Ort');
 INSERT INTO `lang_definitions` VALUES (18921, 4282, 5, 'Dateiverwaltung');
-INSERT INTO `lang_definitions` VALUES (18922, 4289, 5, 'File-Privileg dem OpenEMR-Nutzer gewährt');
+INSERT INTO `lang_definitions` VALUES (18922, 4289, 5, 'File-Privileg dem DCL-Nutzer gewährt');
 INSERT INTO `lang_definitions` VALUES (18923, 4290, 5, 'Datei-Abruf von CouchDB fehlgeschlagen');
 INSERT INTO `lang_definitions` VALUES (18924, 4291, 5, 'Aktenraum');
 INSERT INTO `lang_definitions` VALUES (18925, 4292, 5, 'Datei für den Upload');
@@ -32630,7 +32630,7 @@ INSERT INTO `lang_definitions` VALUES (19261, 5036, 5, 'HPI:');
 INSERT INTO `lang_definitions` VALUES (19262, 5038, 5, 'HT');
 INSERT INTO `lang_definitions` VALUES (19263, 5039, 5, 'HTML');
 INSERT INTO `lang_definitions` VALUES (19264, 5040, 5, 'HTML Ausgabe?');
-INSERT INTO `lang_definitions` VALUES (19265, 5043, 5, 'Https link for the OpenEMR Support LLC Lab Exchange Service.');
+INSERT INTO `lang_definitions` VALUES (19265, 5043, 5, 'Https link for the DCL Support LLC Lab Exchange Service.');
 INSERT INTO `lang_definitions` VALUES (19266, 5045, 5, 'Ungarn');
 INSERT INTO `lang_definitions` VALUES (19267, 5046, 5, 'Hylafax Verzeichnis');
 INSERT INTO `lang_definitions` VALUES (19268, 5047, 5, 'Hylafax Enscript Command');
@@ -33046,7 +33046,7 @@ INSERT INTO `lang_definitions` VALUES (19677, 6129, 5, 'Lokal');
 INSERT INTO `lang_definitions` VALUES (19678, 6133, 5, 'Lokal');
 INSERT INTO `lang_definitions` VALUES (19679, 6134, 5, 'Örtlichkeit');
 INSERT INTO `lang_definitions` VALUES (19680, 6135, 5, 'Ort');
-INSERT INTO `lang_definitions` VALUES (19681, 6136, 5, 'Die Lage des OpenEMR Servers und dessen Inhalt können sensible Daten enthalten, so ist es empfehlenswert, diese Dateien, nach ihrer Verwendung, manuell zu löschen.');
+INSERT INTO `lang_definitions` VALUES (19681, 6136, 5, 'Die Lage des DCL Servers und dessen Inhalt können sensible Daten enthalten, so ist es empfehlenswert, diese Dateien, nach ihrer Verwendung, manuell zu löschen.');
 INSERT INTO `lang_definitions` VALUES (19682, 6137, 5, 'Ort dieser Charge');
 INSERT INTO `lang_definitions` VALUES (19683, 6138, 5, 'Ort unbekannt');
 INSERT INTO `lang_definitions` VALUES (19684, 6139, 5, 'Ort, an dem Hylafax Faxe gespeichert werden.');
@@ -33597,11 +33597,11 @@ INSERT INTO `lang_definitions` VALUES (20228, 7518, 5, 'Ups!');
 INSERT INTO `lang_definitions` VALUES (20229, 7519, 5, 'Öffnen');
 INSERT INTO `lang_definitions` VALUES (20230, 7528, 5, 'in neuen Fenster öffnen');
 INSERT INTO `lang_definitions` VALUES (20231, 7535, 5, 'Heutige Visite öffnent');
-INSERT INTO `lang_definitions` VALUES (20232, 7562, 5, 'Für OpenEMR wurde bereits eine Zertifikats-Authorität konfiguriert');
-INSERT INTO `lang_definitions` VALUES (20233, 7567, 5, 'OpenEMR Datenbank Update');
-INSERT INTO `lang_definitions` VALUES (20234, 7571, 5, 'OpenEMR muss für die Verwendung von Zertifikaten konfiguriert sein, bevor Client-Zertifikate erstellt werden können.');
-INSERT INTO `lang_definitions` VALUES (20235, 7575, 5, 'OpenEMR erfordert Javascript, um den Nutzer authentifizieren zu können.');
-INSERT INTO `lang_definitions` VALUES (20236, 7576, 5, 'OpenEMR Anwender');
+INSERT INTO `lang_definitions` VALUES (20232, 7562, 5, 'Für DCL wurde bereits eine Zertifikats-Authorität konfiguriert');
+INSERT INTO `lang_definitions` VALUES (20233, 7567, 5, 'DCL Datenbank Update');
+INSERT INTO `lang_definitions` VALUES (20234, 7571, 5, 'DCL muss für die Verwendung von Zertifikaten konfiguriert sein, bevor Client-Zertifikate erstellt werden können.');
+INSERT INTO `lang_definitions` VALUES (20235, 7575, 5, 'DCL erfordert Javascript, um den Nutzer authentifizieren zu können.');
+INSERT INTO `lang_definitions` VALUES (20236, 7576, 5, 'DCL Anwender');
 INSERT INTO `lang_definitions` VALUES (20237, 7583, 5, 'ophthalmologisch');
 INSERT INTO `lang_definitions` VALUES (20238, 7586, 5, 'Option');
 INSERT INTO `lang_definitions` VALUES (20239, 7596, 5, 'Optionaler Ziel-Name');
@@ -33960,7 +33960,7 @@ INSERT INTO `lang_definitions` VALUES (20591, 8434, 5, 'Wähle X12-Partner; erfo
 INSERT INTO `lang_definitions` VALUES (20592, 8435, 5, 'Wähle');
 INSERT INTO `lang_definitions` VALUES (20593, 8436, 5, 'Setze de_identification_config-Variable zurück auf null.');
 INSERT INTO `lang_definitions` VALUES (20594, 8441, 5, 'Starte einen neuen De-Identifikationsprozess');
-INSERT INTO `lang_definitions` VALUES (20595, 8445, 5, 'Aktualisiere die OpenEMR-Datenbank, um De-Identifikation nutzen zu können');
+INSERT INTO `lang_definitions` VALUES (20595, 8445, 5, 'Aktualisiere die DCL-Datenbank, um De-Identifikation nutzen zu können');
 INSERT INTO `lang_definitions` VALUES (20596, 8447, 5, 'Schaue in die De-Identification Log-Tabelle für Details');
 INSERT INTO `lang_definitions` VALUES (20597, 8448, 5, 'Besuche den De-Identification-Screen nach einiger Zeit');
 INSERT INTO `lang_definitions` VALUES (20598, 8449, 5, 'Besuche den Re-Identification-Screen nach einiger Zeit');
@@ -34725,7 +34725,7 @@ INSERT INTO `lang_definitions` VALUES (21356, 12182, 5, 'Aktualisiere Versionsin
 INSERT INTO `lang_definitions` VALUES (21357, 12183, 5, 'UPGRADE');
 INSERT INTO `lang_definitions` VALUES (21358, 12184, 5, 'Upgrade');
 INSERT INTO `lang_definitions` VALUES (21359, 12186, 5, 'Datenbank aktualisieren');
-INSERT INTO `lang_definitions` VALUES (21360, 12188, 5, 'Aktualisiert die OpenEMR-Datenbank für Verfahren, Funktionen und Tabellen, die für De-identification gebraucht werden');
+INSERT INTO `lang_definitions` VALUES (21360, 12188, 5, 'Aktualisiert die DCL-Datenbank für Verfahren, Funktionen und Tabellen, die für De-identification gebraucht werden');
 INSERT INTO `lang_definitions` VALUES (21361, 12189, 5, 'Aktualisieren wird fortgesetzt');
 INSERT INTO `lang_definitions` VALUES (21362, 12190, 5, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (21363, 12191, 5, 'Upload');
@@ -34746,7 +34746,7 @@ INSERT INTO `lang_definitions` VALUES (21377, 12230, 5, 'Urin Mikroalbumin');
 INSERT INTO `lang_definitions` VALUES (21378, 12231, 5, 'Urinstrahl');
 INSERT INTO `lang_definitions` VALUES (21379, 12232, 5, 'Urin Drang');
 INSERT INTO `lang_definitions` VALUES (21380, 12233, 5, 'URL');
-INSERT INTO `lang_definitions` VALUES (21381, 12235, 5, 'URL für OpenEMR support.');
+INSERT INTO `lang_definitions` VALUES (21381, 12235, 5, 'URL für DCL support.');
 INSERT INTO `lang_definitions` VALUES (21382, 12248, 5, 'Gebrauchsindikator (ISA15)');
 INSERT INTO `lang_definitions` VALUES (21383, 12269, 5, 'Benutzerdefinierte Impfung Liste');
 INSERT INTO `lang_definitions` VALUES (21384, 12271, 5, 'Verwende Datumsbereich');
@@ -35183,7 +35183,7 @@ INSERT INTO `lang_definitions` VALUES (21814, 7, 6, 'Klinisch document is bijgev
 INSERT INTO `lang_definitions` VALUES (21815, 8, 6, 'Een code van dit type is al gekozen. Verwijder eerst het veld, als je deze wilt vervangen.');
 INSERT INTO `lang_definitions` VALUES (21816, 13, 6, 'Hiervoor is een distributeur nodig');
 INSERT INTO `lang_definitions` VALUES (21817, 17, 6, 'Een CGAC visite formulier hoort bij dit bezoek.');
-INSERT INTO `lang_definitions` VALUES (21818, 19, 6, 'Een grote applicatie zoals openEMR die wordt gebruikt door een groot aantal USERS met verschillende rollen en verantwoordelijkheden. Dan is het is noodzakelijk dat de toegang tot de verschillende delen van het programma wordt verleend aan gebruikers op basis van noodzakelijke wensen. Om dit te bereiken, wordt ACL gebruikt.');
+INSERT INTO `lang_definitions` VALUES (21818, 19, 6, 'Een grote applicatie zoals DCL die wordt gebruikt door een groot aantal USERS met verschillende rollen en verantwoordelijkheden. Dan is het is noodzakelijk dat de toegang tot de verschillende delen van het programma wordt verleend aan gebruikers op basis van noodzakelijke wensen. Om dit te bereiken, wordt ACL gebruikt.');
 INSERT INTO `lang_definitions` VALUES (21819, 20, 6, 'Een lot # is vereist');
 INSERT INTO `lang_definitions` VALUES (21820, 21, 6, 'Een lot # is vereist!');
 INSERT INTO `lang_definitions` VALUES (21821, 22, 6, 'Kleine letter');
@@ -35672,7 +35672,7 @@ INSERT INTO `lang_definitions` VALUES (22303, 671, 6, 'Bedrag in rekening gebrac
 INSERT INTO `lang_definitions` VALUES (22304, 674, 6, 'Een e-mail met nieuwe accountgegevens wordt verzonden naar het e-mailadres dat u eerder hebt opgegeven. U kunt nog steeds elk deel van uw informatie bekijken of bewerken door de bovenstaande knoppen te gebruiken om naar de juiste screens te gaan. Is dit het juiste e-mail adres? Neem contact op met de administratie als u problemen ondervindt na het ontvangen van inloggegevens en/of als u problemen ondervindt met toegang via portaal.');
 INSERT INTO `lang_definitions` VALUES (22305, 676, 6, 'Eind datum moet later zijn dan start datum om herhaling van events!');
 INSERT INTO `lang_definitions` VALUES (22306, 677, 6, 'Ondertekenen van formulier mislukt');
-INSERT INTO `lang_definitions` VALUES (22307, 678, 6, 'Een fout opgetreden bij dumpen OpenEMR web directorie structuur');
+INSERT INTO `lang_definitions` VALUES (22307, 678, 6, 'Een fout opgetreden bij dumpen DCL web directorie structuur');
 INSERT INTO `lang_definitions` VALUES (22308, 679, 6, 'Een fout opgetreden tijdens dumpen phpGACL web directorie structuur');
 INSERT INTO `lang_definitions` VALUES (22309, 680, 6, 'Een fout opgetreden bij dumpen SQL-Ledger web directorie structuur');
 INSERT INTO `lang_definitions` VALUES (22310, 682, 6, 'Foutje, geen file gevonden voor upload: Gebruik de TERUG knop!');
@@ -36815,10 +36815,10 @@ INSERT INTO `lang_definitions` VALUES (23446, 2209, 6, 'Config');
 INSERT INTO `lang_definitions` VALUES (23447, 2210, 6, 'Configuratie');
 INSERT INTO `lang_definitions` VALUES (23448, 2211, 6, 'Configuratie im-/ex-port');
 INSERT INTO `lang_definitions` VALUES (23449, 2212, 6, 'Configuratie met succes bewaard');
-INSERT INTO `lang_definitions` VALUES (23450, 2213, 6, 'Apache en OpenEMR instellen om SSL-clientcertificaten te gebruiken');
+INSERT INTO `lang_definitions` VALUES (23450, 2213, 6, 'Apache en DCL instellen om SSL-clientcertificaten te gebruiken');
 INSERT INTO `lang_definitions` VALUES (23451, 2214, 6, 'Apache instellen om SSL-clientcertificaten te gebruiken');
 INSERT INTO `lang_definitions` VALUES (23452, 2215, 6, 'Apache instellen om HTTPS te gebruiken.');
-INSERT INTO `lang_definitions` VALUES (23453, 2216, 6, 'OpenEMR instellen om SSL-clientcertificaten te gebruiken');
+INSERT INTO `lang_definitions` VALUES (23453, 2216, 6, 'DCL instellen om SSL-clientcertificaten te gebruiken');
 INSERT INTO `lang_definitions` VALUES (23454, 2220, 6, 'Tracks configureren');
 INSERT INTO `lang_definitions` VALUES (23455, 2221, 6, 'Tracks configureren');
 INSERT INTO `lang_definitions` VALUES (23456, 2224, 6, 'Bevestigen');
@@ -36857,7 +36857,7 @@ INSERT INTO `lang_definitions` VALUES (23488, 2268, 6, 'Contact lenzen');
 INSERT INTO `lang_definitions` VALUES (23489, 2269, 6, 'Neem contact op kmet Medical Information Intergration, LLC via http://mi-squared.com om Lab exchange Service te activeren.');
 INSERT INTO `lang_definitions` VALUES (23490, 2270, 6, 'Neem contact op met Medical Information Integration, LLC via http://mi-squared.com of ZH Healthcare via http://zhservices.com voor abb. op eRx service');
 INSERT INTO `lang_definitions` VALUES (23491, 2271, 6, 'Contact Medical Information Integration, LLC op http://mi-squared.com of ZH Healthcare bij http://zhservices.com voor een abonnement op de NewCrop ERX service.');
-INSERT INTO `lang_definitions` VALUES (23492, 2272, 6, 'Neem contact op met mi-squared op http://www.mi-squared.com/products-services/openemr/ of ZH Healthcare op https://blueehr.com/contact-us/ voor een abonnement op de NewCrop eRx-service.');
+INSERT INTO `lang_definitions` VALUES (23492, 2272, 6, 'Neem contact op met mi-squared op http://www.mi-squared.com/products-services/DCL/ of ZH Healthcare op https://blueehr.com/contact-us/ voor een abonnement op de NewCrop eRx-service.');
 INSERT INTO `lang_definitions` VALUES (23493, 2273, 6, 'Naam contact');
 INSERT INTO `lang_definitions` VALUES (23494, 2274, 6, 'Neem contact op met Open Med Practice, www.openmedpractice.com voor een abonnement op de Weno Free eRx-service.');
 INSERT INTO `lang_definitions` VALUES (23495, 2275, 6, 'Telefoon voor contact of bericht');
@@ -37645,8 +37645,8 @@ INSERT INTO `lang_definitions` VALUES (24276, 3321, 6, 'Vanwege Pt');
 INSERT INTO `lang_definitions` VALUES (24277, 3322, 6, 'Binnenkort aan de beurt');
 INSERT INTO `lang_definitions` VALUES (24278, 3323, 6, 'Datum bevalling');
 INSERT INTO `lang_definitions` VALUES (24279, 3324, 6, 'Update aanpasing datum');
-INSERT INTO `lang_definitions` VALUES (24280, 3325, 6, 'Dumping OpenEMR database');
-INSERT INTO `lang_definitions` VALUES (24281, 3326, 6, 'Dumping OpenEMR web directory tree');
+INSERT INTO `lang_definitions` VALUES (24280, 3325, 6, 'Dumping DCL database');
+INSERT INTO `lang_definitions` VALUES (24281, 3326, 6, 'Dumping DCL web directory tree');
 INSERT INTO `lang_definitions` VALUES (24282, 3327, 6, 'Dumping phpGACL database');
 INSERT INTO `lang_definitions` VALUES (24283, 3328, 6, 'Dumping phpGACL web directory tree');
 INSERT INTO `lang_definitions` VALUES (24284, 3329, 6, 'Dumping SQL-Ledger database');
@@ -37849,7 +37849,7 @@ INSERT INTO `lang_definitions` VALUES (24480, 3638, 6, 'Toestaan van ondersteuni
 INSERT INTO `lang_definitions` VALUES (24481, 3639, 6, 'Aanmaken van standaard Rapport per item');
 INSERT INTO `lang_definitions` VALUES (24482, 3640, 6, 'Aanmaken van WordPress ondersteuning door Sunset systems');
 INSERT INTO `lang_definitions` VALUES (24483, 3642, 6, 'Toestaan van Medical Information Integration, LLC Lab uitwisseling Service.');
-INSERT INTO `lang_definitions` VALUES (24484, 3643, 6, 'Toestaan van OpenEMR Ondersteuning LLC lab uitwisseling');
+INSERT INTO `lang_definitions` VALUES (24484, 3643, 6, 'Toestaan van DCL Ondersteuning LLC lab uitwisseling');
 INSERT INTO `lang_definitions` VALUES (24485, 3644, 6, 'Activeer User Certificaat Authenticatie');
 INSERT INTO `lang_definitions` VALUES (24486, 3650, 6, 'Toestaan ZMO LLC eRx service');
 INSERT INTO `lang_definitions` VALUES (24487, 3651, 6, 'geactiveerd');
@@ -37930,7 +37930,7 @@ INSERT INTO `lang_definitions` VALUES (24561, 3754, 6, 'Engels');
 INSERT INTO `lang_definitions` VALUES (24562, 3756, 6, 'Engels (India)');
 INSERT INTO `lang_definitions` VALUES (24563, 3757, 6, 'Engels (Standaard)');
 INSERT INTO `lang_definitions` VALUES (24564, 3758, 6, 'Enscript commandos gebruikt door Hylafax');
-INSERT INTO `lang_definitions` VALUES (24565, 3759, 6, 'Zorg ervoor dat OpenEMR schrijf privileges heeft');
+INSERT INTO `lang_definitions` VALUES (24565, 3759, 6, 'Zorg ervoor dat DCL schrijf privileges heeft');
 INSERT INTO `lang_definitions` VALUES (24566, 3761, 6, 'KNO afscheiding');
 INSERT INTO `lang_definitions` VALUES (24567, 3762, 6, 'KNO pijn');
 INSERT INTO `lang_definitions` VALUES (24568, 3765, 6, 'Voer diagnosecode in om alle facturen uit te sluiten die het NIET bevatten');
@@ -37989,7 +37989,7 @@ INSERT INTO `lang_definitions` VALUES (24620, 3897, 6, 'FOUT bij verwijderen ber
 INSERT INTO `lang_definitions` VALUES (24621, 3898, 6, 'FOUT bij ophalen van Lab Uitwisselings Netwerk');
 INSERT INTO `lang_definitions` VALUES (24622, 3899, 6, 'FOUT bij ophalen van waarden');
 INSERT INTO `lang_definitions` VALUES (24623, 3900, 6, 'FOUT bij bewaren van het Document');
-INSERT INTO `lang_definitions` VALUES (24624, 3901, 6, 'FOUT bij toekennen bestandprivileges aan OpenEMR gebruiker');
+INSERT INTO `lang_definitions` VALUES (24624, 3901, 6, 'FOUT bij toekennen bestandprivileges aan DCL gebruiker');
 INSERT INTO `lang_definitions` VALUES (24625, 3902, 6, 'FOUT bij aanmaken nieuw plan');
 INSERT INTO `lang_definitions` VALUES (24626, 3903, 6, 'FOUT bij verwijderen plan');
 INSERT INTO `lang_definitions` VALUES (24627, 3904, 6, 'FOUT tijdens registreren van formulier');
@@ -38260,7 +38260,7 @@ INSERT INTO `lang_definitions` VALUES (24891, 4285, 6, 'Bestand niet gevonden');
 INSERT INTO `lang_definitions` VALUES (24892, 4286, 6, 'Bestand Niet Gevonden');
 INSERT INTO `lang_definitions` VALUES (24893, 4287, 6, 'Bestand op de server (modificatie datum)');
 INSERT INTO `lang_definitions` VALUES (24894, 4288, 6, 'Pad voor file niet gevonden');
-INSERT INTO `lang_definitions` VALUES (24895, 4289, 6, 'File pivilege toegekend aan OpenEMR gebruiker');
+INSERT INTO `lang_definitions` VALUES (24895, 4289, 6, 'File pivilege toegekend aan DCL gebruiker');
 INSERT INTO `lang_definitions` VALUES (24896, 4290, 6, 'Oproepen van File uit CouchDB mislukt');
 INSERT INTO `lang_definitions` VALUES (24897, 4291, 6, 'Archiefruimte');
 INSERT INTO `lang_definitions` VALUES (24898, 4292, 6, 'File om te uploaden');
@@ -39313,7 +39313,7 @@ INSERT INTO `lang_definitions` VALUES (25944, 6131, 6, 'Lokaal file systeem');
 INSERT INTO `lang_definitions` VALUES (25945, 6133, 6, 'Lokaal');
 INSERT INTO `lang_definitions` VALUES (25946, 6134, 6, 'Lokatie');
 INSERT INTO `lang_definitions` VALUES (25947, 6135, 6, 'Locatie:');
-INSERT INTO `lang_definitions` VALUES (25948, 6136, 6, 'Lokatie van de OpenEMR machiene en kan gevoelige data bevatten, dus het is aan te bevelen om handmatig de files te dleten na gebruik');
+INSERT INTO `lang_definitions` VALUES (25948, 6136, 6, 'Lokatie van de DCL machiene en kan gevoelige data bevatten, dus het is aan te bevelen om handmatig de files te dleten na gebruik');
 INSERT INTO `lang_definitions` VALUES (25949, 6137, 6, 'Locaties van deze voorraad');
 INSERT INTO `lang_definitions` VALUES (25950, 6138, 6, 'Locatie niet gespecificeerd');
 INSERT INTO `lang_definitions` VALUES (25951, 6139, 6, 'Locatie waar Hylafax de fax berichten bewaard.');
@@ -40182,15 +40182,15 @@ INSERT INTO `lang_definitions` VALUES (26813, 7528, 6, 'Openen in nieuw venster'
 INSERT INTO `lang_definitions` VALUES (26814, 7531, 6, 'Huidige patient');
 INSERT INTO `lang_definitions` VALUES (26815, 7532, 6, 'Open patient in een nieuw scherm');
 INSERT INTO `lang_definitions` VALUES (26816, 7535, 6, 'Maak het bezoek van vandaag open');
-INSERT INTO `lang_definitions` VALUES (26817, 7562, 6, 'OpenEMR heef al een Certificaat Authority geconfigureerd');
-INSERT INTO `lang_definitions` VALUES (26818, 7565, 6, 'OpenEMR Applicatie Categorie');
-INSERT INTO `lang_definitions` VALUES (26819, 7567, 6, 'OpenEMR DB upgrade');
-INSERT INTO `lang_definitions` VALUES (26820, 7568, 6, 'OpenEMR Database voo De-identificatie');
-INSERT INTO `lang_definitions` VALUES (26821, 7569, 6, 'OpenEMR herkent de binnenkomende file niet in de CONTRIB directory. Dit komt waarschijnlijk doordat de release in support_external_dataloads tabel in de MySQL database geconfigureerd worden.');
-INSERT INTO `lang_definitions` VALUES (26822, 7571, 6, 'OpenEMR moet geconfigureerd worden voordat het client certificaten kan gebruiken');
-INSERT INTO `lang_definitions` VALUES (26823, 7574, 6, 'OpenEMR Product Registratie');
-INSERT INTO `lang_definitions` VALUES (26824, 7575, 6, 'OpenEMR heeft Javascript nodig voor toegangscontrole.');
-INSERT INTO `lang_definitions` VALUES (26825, 7576, 6, 'OpenEMR gebruikers');
+INSERT INTO `lang_definitions` VALUES (26817, 7562, 6, 'DCL heef al een Certificaat Authority geconfigureerd');
+INSERT INTO `lang_definitions` VALUES (26818, 7565, 6, 'DCL Applicatie Categorie');
+INSERT INTO `lang_definitions` VALUES (26819, 7567, 6, 'DCL DB upgrade');
+INSERT INTO `lang_definitions` VALUES (26820, 7568, 6, 'DCL Database voo De-identificatie');
+INSERT INTO `lang_definitions` VALUES (26821, 7569, 6, 'DCL herkent de binnenkomende file niet in de CONTRIB directory. Dit komt waarschijnlijk doordat de release in support_external_dataloads tabel in de MySQL database geconfigureerd worden.');
+INSERT INTO `lang_definitions` VALUES (26822, 7571, 6, 'DCL moet geconfigureerd worden voordat het client certificaten kan gebruiken');
+INSERT INTO `lang_definitions` VALUES (26823, 7574, 6, 'DCL Product Registratie');
+INSERT INTO `lang_definitions` VALUES (26824, 7575, 6, 'DCL heeft Javascript nodig voor toegangscontrole.');
+INSERT INTO `lang_definitions` VALUES (26825, 7576, 6, 'DCL gebruikers');
 INSERT INTO `lang_definitions` VALUES (26826, 7577, 6, 'Openingen');
 INSERT INTO `lang_definitions` VALUES (26827, 7578, 6, 'Opent in het onderste scherm');
 INSERT INTO `lang_definitions` VALUES (26828, 7579, 6, 'Opent in het bovenste scherm');
@@ -40540,7 +40540,7 @@ INSERT INTO `lang_definitions` VALUES (27171, 8151, 6, 'Res volgt');
 INSERT INTO `lang_definitions` VALUES (27172, 8152, 6, 'Review niet afgerond');
 INSERT INTO `lang_definitions` VALUES (27173, 8153, 6, 'Rx telling pending');
 INSERT INTO `lang_definitions` VALUES (27174, 8155, 6, 'Pencilline allergie');
-INSERT INTO `lang_definitions` VALUES (27175, 8156, 6, 'Pennington Firm OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (27175, 8156, 6, 'Pennington Firm DCL v');
 INSERT INTO `lang_definitions` VALUES (27176, 8157, 6, 'Maagzweer/Ulcus Pepticum');
 INSERT INTO `lang_definitions` VALUES (27177, 8158, 6, 'Per encounter');
 INSERT INTO `lang_definitions` VALUES (27178, 8159, 6, 'per min');
@@ -40727,7 +40727,7 @@ INSERT INTO `lang_definitions` VALUES (27358, 8434, 6, 'X12 partner kiezen, nodi
 INSERT INTO `lang_definitions` VALUES (27359, 8435, 6, 'Opnieuw instellen');
 INSERT INTO `lang_definitions` VALUES (27360, 8436, 6, 'Zet de de_identification_config variabele terug op nul');
 INSERT INTO `lang_definitions` VALUES (27361, 8441, 6, 'Opnieuwd De-Identificatie proces starten');
-INSERT INTO `lang_definitions` VALUES (27362, 8445, 6, 'OpenEMR DB upgraden om de De-Identificatie procedure, functie, tafels toe te voegen');
+INSERT INTO `lang_definitions` VALUES (27362, 8445, 6, 'DCL DB upgraden om de De-Identificatie procedure, functie, tafels toe te voegen');
 INSERT INTO `lang_definitions` VALUES (27363, 8447, 6, 'Bekijk de De-Identificatie fout-log-tabel voor meer details');
 INSERT INTO `lang_definitions` VALUES (27364, 8448, 6, 'Bezoek het De-Indentificatie scherm wat later');
 INSERT INTO `lang_definitions` VALUES (27365, 8449, 6, 'Bezoek het Re-Identificatie scherm wat later');
@@ -41817,7 +41817,7 @@ INSERT INTO `lang_definitions` VALUES (28448, 10289, 6, 'Zuster');
 INSERT INTO `lang_definitions` VALUES (28449, 10290, 6, 'Site');
 INSERT INTO `lang_definitions` VALUES (28450, 10294, 6, 'Site ID');
 INSERT INTO `lang_definitions` VALUES (28451, 10295, 6, 'Site ID voor Medische Informatie Inetegratie, LLC Lab Exchange Service.');
-INSERT INTO `lang_definitions` VALUES (28452, 10296, 6, 'Site ID voor de OpenEMR ondersteuning v an Lab uitwisselings Service');
+INSERT INTO `lang_definitions` VALUES (28452, 10296, 6, 'Site ID voor de DCL ondersteuning v an Lab uitwisselings Service');
 INSERT INTO `lang_definitions` VALUES (28453, 10298, 6, 'Zes maanden geleden');
 INSERT INTO `lang_definitions` VALUES (28454, 10299, 6, 'Zes maanden vooruit');
 INSERT INTO `lang_definitions` VALUES (28455, 10300, 6, 'Lengte');
@@ -42366,7 +42366,7 @@ INSERT INTO `lang_definitions` VALUES (28997, 11277, 6, 'De vertaling van de bes
 INSERT INTO `lang_definitions` VALUES (28998, 11278, 6, 'De vertaal tabellen zijn gesynchroniseerd');
 INSERT INTO `lang_definitions` VALUES (28999, 11279, 6, 'Het type van deze entiteit');
 INSERT INTO `lang_definitions` VALUES (29000, 11299, 6, 'De verkoper-specifieke code die deze procedure of het resultaat indentificeerd');
-INSERT INTO `lang_definitions` VALUES (29001, 11304, 6, 'De X12-bestanden evenals de resulterende HTML output rapporten worden gearchiveerd in de \"ERA\" submap van de hoofd OpenEMR installatie directory. U wilt soms verwijzen naar deze archieven. De URL is');
+INSERT INTO `lang_definitions` VALUES (29001, 11304, 6, 'De X12-bestanden evenals de resulterende HTML output rapporten worden gearchiveerd in de \"ERA\" submap van de hoofd DCL installatie directory. U wilt soms verwijzen naar deze archieven. De URL is');
 INSERT INTO `lang_definitions` VALUES (29002, 11306, 6, 'Het zip-bestand zal de volgende items bevatten');
 INSERT INTO `lang_definitions` VALUES (29003, 11307, 6, 'Thema');
 INSERT INTO `lang_definitions` VALUES (29004, 11313, 6, 'Dan kan de geplande data feed release verkegen worden bij');
@@ -42398,7 +42398,7 @@ INSERT INTO `lang_definitions` VALUES (29029, 11370, 6, 'Er is geen onderdelen i
 INSERT INTO `lang_definitions` VALUES (29030, 11371, 6, 'Er is geen patient met Portaal login');
 INSERT INTO `lang_definitions` VALUES (29031, 11373, 6, 'Er was een probleem bij het verzenden van de boodschap.');
 INSERT INTO `lang_definitions` VALUES (29032, 11374, 6, 'Er is een fout opgetreden bij het verwerken van uw verzoek.');
-INSERT INTO `lang_definitions` VALUES (29033, 11375, 6, 'Er was een OpenEMR SQL escape fout in de volgende string');
+INSERT INTO `lang_definitions` VALUES (29033, 11375, 6, 'Er was een DCL SQL escape fout in de volgende string');
 INSERT INTO `lang_definitions` VALUES (29034, 11379, 6, 'Dit zijn de 2012 links');
 INSERT INTO `lang_definitions` VALUES (29035, 11400, 6, 'Verdikt rechts');
 INSERT INTO `lang_definitions` VALUES (29036, 11401, 6, 'Dijbeen');
@@ -42600,7 +42600,7 @@ INSERT INTO `lang_definitions` VALUES (29231, 11787, 6, 'Allemaal omzetten');
 INSERT INTO `lang_definitions` VALUES (29232, 11788, 6, 'Omschakelen van navigatie');
 INSERT INTO `lang_definitions` VALUES (29233, 11789, 6, 'Omschakelen van Patient scherm');
 INSERT INTO `lang_definitions` VALUES (29234, 11796, 6, 'Token ID voor de Medical Information Integration, LLC Lab Exchange Service.');
-INSERT INTO `lang_definitions` VALUES (29235, 11797, 6, 'Token ID voor de OpenEMR ondersteuning voor LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (29235, 11797, 6, 'Token ID voor de DCL ondersteuning voor LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (29236, 11802, 6, 'Tonga (TOnga Eilenden)');
 INSERT INTO `lang_definitions` VALUES (29237, 11803, 6, 'Tonsilectomie');
 INSERT INTO `lang_definitions` VALUES (29238, 11804, 6, 'tonsilectomie');
@@ -42835,7 +42835,7 @@ INSERT INTO `lang_definitions` VALUES (29466, 12182, 6, 'Aanpassing versie indid
 INSERT INTO `lang_definitions` VALUES (29467, 12183, 6, 'UPGRADE');
 INSERT INTO `lang_definitions` VALUES (29468, 12184, 6, 'Upgrade');
 INSERT INTO `lang_definitions` VALUES (29469, 12186, 6, 'Database upgraden');
-INSERT INTO `lang_definitions` VALUES (29470, 12188, 6, 'Om OpenEMR database te upgraden om Procedures, Functies en tabellen, nodig voor het De-identificatie proces toe te voegen');
+INSERT INTO `lang_definitions` VALUES (29470, 12188, 6, 'Om DCL database te upgraden om Procedures, Functies en tabellen, nodig voor het De-identificatie proces toe te voegen');
 INSERT INTO `lang_definitions` VALUES (29471, 12189, 6, 'Upgrading gaat door');
 INSERT INTO `lang_definitions` VALUES (29472, 12190, 6, 'Old NPI');
 INSERT INTO `lang_definitions` VALUES (29473, 12191, 6, 'Uploaden');
@@ -42871,7 +42871,7 @@ INSERT INTO `lang_definitions` VALUES (29502, 12230, 6, 'Urine microalbumine');
 INSERT INTO `lang_definitions` VALUES (29503, 12231, 6, 'Straal van mictie');
 INSERT INTO `lang_definitions` VALUES (29504, 12232, 6, 'Mictie drang');
 INSERT INTO `lang_definitions` VALUES (29505, 12233, 6, 'URL');
-INSERT INTO `lang_definitions` VALUES (29506, 12235, 6, 'URL van ondersteuning voor OpenEMR');
+INSERT INTO `lang_definitions` VALUES (29506, 12235, 6, 'URL van ondersteuning voor DCL');
 INSERT INTO `lang_definitions` VALUES (29507, 12237, 6, 'URL voor de telefoon Gateway. Geautomatiseerde VOIP service verleend door Maviq. Bezoek http://signup.maviq.com voor meer informatie.');
 INSERT INTO `lang_definitions` VALUES (29508, 12238, 6, 'URL voor de WordPress site die de portaalsite ondersteunt');
 INSERT INTO `lang_definitions` VALUES (29509, 12245, 6, 'USA');
@@ -43288,7 +43288,7 @@ INSERT INTO `lang_definitions` VALUES (29919, 12973, 6, 'Gebeurtenis is toegevoe
 INSERT INTO `lang_definitions` VALUES (29920, 12974, 6, 'Uw bestand heeft geen extensie');
 INSERT INTO `lang_definitions` VALUES (29921, 12975, 6, 'U file is te groot');
 INSERT INTO `lang_definitions` VALUES (29922, 12976, 6, 'Uw eerste dag van de week');
-INSERT INTO `lang_definitions` VALUES (29923, 12978, 6, 'Uw installatie van OpenEMR is geregistreerd');
+INSERT INTO `lang_definitions` VALUES (29923, 12978, 6, 'Uw installatie van DCL is geregistreerd');
 INSERT INTO `lang_definitions` VALUES (29924, 12980, 6, 'Uw Lab resultaten');
 INSERT INTO `lang_definitions` VALUES (29925, 12981, 6, 'U lijstnaam is veranderd om aan de naamvereisten tegemoet te komen.');
 INSERT INTO `lang_definitions` VALUES (29926, 12982, 6, 'Uw bericht was verstuurd naar:');
@@ -43943,7 +43943,7 @@ INSERT INTO `lang_definitions` VALUES (30574, 668, 7, 'סכום:');
 INSERT INTO `lang_definitions` VALUES (30575, 671, 7, 'סכום שחויב בחשבון');
 INSERT INTO `lang_definitions` VALUES (30576, 676, 7, 'לאירועים חוזרים דרוש תאריך סיום המאוחר יותר מתאריך ההתחלה!');
 INSERT INTO `lang_definitions` VALUES (30577, 677, 7, 'אירעה שגיאה בחתימה על הטופס');
-INSERT INTO `lang_definitions` VALUES (30578, 678, 7, 'אירעה שגיאה בעת ביצוע Dump של עץ ספריית אינטרנט של OpenEMR');
+INSERT INTO `lang_definitions` VALUES (30578, 678, 7, 'אירעה שגיאה בעת ביצוע Dump של עץ ספריית אינטרנט של DCL');
 INSERT INTO `lang_definitions` VALUES (30579, 679, 7, 'אירעה שגיאה בעת ביצוע Dump של עץ ספריית אינטרנט של phpGACL');
 INSERT INTO `lang_definitions` VALUES (30580, 680, 7, 'אירעה שגיאה בעת ביצוע Dump של עץ ספריית אינטרנט של SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (30581, 685, 7, 'בעיית GCAC שלא הושלמה נוצרה וקושרה. צריך יהיה להשלים זאת מאוחר יותר.');
@@ -44831,10 +44831,10 @@ INSERT INTO `lang_definitions` VALUES (31462, 2209, 7, 'תצורה');
 INSERT INTO `lang_definitions` VALUES (31463, 2210, 7, 'תצורה');
 INSERT INTO `lang_definitions` VALUES (31464, 2211, 7, 'ייצוא/ייבוא תצורה');
 INSERT INTO `lang_definitions` VALUES (31465, 2212, 7, 'התצורה נשמרה בהצלחה');
-INSERT INTO `lang_definitions` VALUES (31466, 2213, 7, 'הגדר תצורה של Apache ו-OpenEMR לשימוש באישורי SSL בצד הלקוח.');
+INSERT INTO `lang_definitions` VALUES (31466, 2213, 7, 'הגדר תצורה של Apache ו-DCL לשימוש באישורי SSL בצד הלקוח.');
 INSERT INTO `lang_definitions` VALUES (31467, 2214, 7, 'הגדר תצורה של Apache לשימוש באישורי SSL בצד הלקוח.');
 INSERT INTO `lang_definitions` VALUES (31468, 2215, 7, 'הגדר תצורה של Apache לשימוש ב-HTTPS.');
-INSERT INTO `lang_definitions` VALUES (31469, 2216, 7, 'הגדר תצורה של Openemr לשימוש באישורי SSL בצד הלקוח.');
+INSERT INTO `lang_definitions` VALUES (31469, 2216, 7, 'הגדר תצורה של DCL לשימוש באישורי SSL בצד הלקוח.');
 INSERT INTO `lang_definitions` VALUES (31470, 2217, 7, 'הגדר הזמנות ותוצאות');
 INSERT INTO `lang_definitions` VALUES (31471, 2220, 7, 'הגדר תצורת מעקבים');
 INSERT INTO `lang_definitions` VALUES (31472, 2221, 7, 'הגדר תצורת מעקבים');
@@ -45564,8 +45564,8 @@ INSERT INTO `lang_definitions` VALUES (32195, 3321, 7, 'ניקוד~תשלום ל
 INSERT INTO `lang_definitions` VALUES (32196, 3322, 7, 'לפירעון בקרוב');
 INSERT INTO `lang_definitions` VALUES (32197, 3323, 7, 'מצב פירעון');
 INSERT INTO `lang_definitions` VALUES (32198, 3324, 7, 'עדכון מצב פירעון');
-INSERT INTO `lang_definitions` VALUES (32199, 3325, 7, 'מבצע Dump מסד נתונים של OpenEMR');
-INSERT INTO `lang_definitions` VALUES (32200, 3326, 7, 'מבצע Dump עץ ספריית אינטרנט של OpenEMR');
+INSERT INTO `lang_definitions` VALUES (32199, 3325, 7, 'מבצע Dump מסד נתונים של DCL');
+INSERT INTO `lang_definitions` VALUES (32200, 3326, 7, 'מבצע Dump עץ ספריית אינטרנט של DCL');
 INSERT INTO `lang_definitions` VALUES (32201, 3327, 7, 'מבצע Dump מסד נתונים של phpGACL');
 INSERT INTO `lang_definitions` VALUES (32202, 3328, 7, 'מבצע Dump עץ ספריית אינטרנט של phpGACL');
 INSERT INTO `lang_definitions` VALUES (32203, 3329, 7, 'מבצע Dump מסד נתונים של SQL-Ledger');
@@ -45875,7 +45875,7 @@ INSERT INTO `lang_definitions` VALUES (32506, 3754, 7, 'אנגלית');
 INSERT INTO `lang_definitions` VALUES (32507, 3756, 7, 'אנגלית (הודית)');
 INSERT INTO `lang_definitions` VALUES (32508, 3757, 7, 'אנגלית (רגילה)');
 INSERT INTO `lang_definitions` VALUES (32509, 3758, 7, 'פקודת Enscript בשימוש על-ידי Hylafax.');
-INSERT INTO `lang_definitions` VALUES (32510, 3759, 7, 'ודא של-OpenEMR יש הרשאות כתיבה לספרייה');
+INSERT INTO `lang_definitions` VALUES (32510, 3759, 7, 'ודא של-DCL יש הרשאות כתיבה לספרייה');
 INSERT INTO `lang_definitions` VALUES (32511, 3761, 7, 'הפרשה~שחרור אף, אוזן, גרון');
 INSERT INTO `lang_definitions` VALUES (32512, 3762, 7, 'כאב אף, אוזן, גרון');
 INSERT INTO `lang_definitions` VALUES (32513, 3763, 7, 'הכנס 1 תחת רצף, עוד מידע על מספרי רצפים אחר כך');
@@ -45948,7 +45948,7 @@ INSERT INTO `lang_definitions` VALUES (32579, 3897, 7, 'שגיאה בהסרת ה
 INSERT INTO `lang_definitions` VALUES (32580, 3898, 7, 'שגיאה באחזור תוצאות מרשת Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (32581, 3899, 7, 'שגיאה באחזור ערכים.');
 INSERT INTO `lang_definitions` VALUES (32582, 3900, 7, 'שגיאה בשמירת מסמך');
-INSERT INTO `lang_definitions` VALUES (32583, 3901, 7, 'שגיאה בעת הענקת הרשאות קובץ למשתמש OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (32583, 3901, 7, 'שגיאה בעת הענקת הרשאות קובץ למשתמש DCL.');
 INSERT INTO `lang_definitions` VALUES (32584, 3902, 7, 'שגיאה בעת הוספת תוכנית חדשה');
 INSERT INTO `lang_definitions` VALUES (32585, 3903, 7, 'שגיאה בעת מחיקת התוכנית');
 INSERT INTO `lang_definitions` VALUES (32586, 3904, 7, 'שגיאה בעת רישום טופס!');
@@ -45965,7 +45965,7 @@ INSERT INTO `lang_definitions` VALUES (32596, 3921, 7, 'שגיאה, לא נית�
 INSERT INTO `lang_definitions` VALUES (32597, 3922, 7, 'שגיאה, לא ניתן ליצור אישור שרת.');
 INSERT INTO `lang_definitions` VALUES (32598, 3923, 7, 'שגיאה, לא ניתן ליצור קובץ ZIP עם כל האישורים');
 INSERT INTO `lang_definitions` VALUES (32599, 3924, 7, 'שגיאה: לא ניתן לפתוח קובץ');
-INSERT INTO `lang_definitions` VALUES (32600, 3925, 7, 'שגיאה, אימות אישור המשתמש אינו מוגדר כזמין ב-OpenEMR');
+INSERT INTO `lang_definitions` VALUES (32600, 3925, 7, 'שגיאה, אימות אישור המשתמש אינו מוגדר כזמין ב-DCL');
 INSERT INTO `lang_definitions` VALUES (32601, 3927, 7, 'שגיאה. אין הרשאה');
 INSERT INTO `lang_definitions` VALUES (32602, 3932, 7, 'שגיאה. נסה שוב מאוחר יותר');
 INSERT INTO `lang_definitions` VALUES (32603, 3933, 7, 'שגיאה. עליך להתקין את מודול Archive/Tar.php php.');
@@ -46213,7 +46213,7 @@ INSERT INTO `lang_definitions` VALUES (32844, 4281, 7, 'מיקום קובץ');
 INSERT INTO `lang_definitions` VALUES (32845, 4282, 7, 'ניהול קבצים');
 INSERT INTO `lang_definitions` VALUES (32846, 4284, 7, 'שם קובץ');
 INSERT INTO `lang_definitions` VALUES (32847, 4288, 7, 'נתיב הקובץ לא נמצא.');
-INSERT INTO `lang_definitions` VALUES (32848, 4289, 7, 'הרשאת קובץ מוענקת למשתמש OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (32848, 4289, 7, 'הרשאת קובץ מוענקת למשתמש DCL.');
 INSERT INTO `lang_definitions` VALUES (32849, 4290, 7, 'אחזור קובץ מ-CouchDB נכשל');
 INSERT INTO `lang_definitions` VALUES (32850, 4291, 7, 'חדר תיקים~תיוק חדר');
 INSERT INTO `lang_definitions` VALUES (32851, 4292, 7, 'קובץ להעלאה');
@@ -46774,7 +46774,7 @@ INSERT INTO `lang_definitions` VALUES (33405, 5286, 7, 'בבית');
 INSERT INTO `lang_definitions` VALUES (33406, 5288, 7, 'בעין שמאל');
 INSERT INTO `lang_definitions` VALUES (33407, 5289, 7, 'בנחיר');
 INSERT INTO `lang_definitions` VALUES (33408, 5290, 7, 'במשרד');
-INSERT INTO `lang_definitions` VALUES (33409, 5295, 7, 'על מנת לרשום את מכשירך, אנא ספק את סיסמת ההתחברות שלך ל-OpenEMR');
+INSERT INTO `lang_definitions` VALUES (33409, 5295, 7, 'על מנת לרשום את מכשירך, אנא ספק את סיסמת ההתחברות שלך ל-DCL');
 INSERT INTO `lang_definitions` VALUES (33410, 5302, 7, 'בעין ימין');
 INSERT INTO `lang_definitions` VALUES (33411, 5307, 7, 'במילותיו של המטופל');
 INSERT INTO `lang_definitions` VALUES (33412, 5312, 7, 'בשימוש');
@@ -47307,7 +47307,7 @@ INSERT INTO `lang_definitions` VALUES (33938, 6131, 7, 'מערכת קבצים מ
 INSERT INTO `lang_definitions` VALUES (33939, 6133, 7, 'מקומי');
 INSERT INTO `lang_definitions` VALUES (33940, 6134, 7, 'מיקום');
 INSERT INTO `lang_definitions` VALUES (33941, 6135, 7, 'מיקום');
-INSERT INTO `lang_definitions` VALUES (33942, 6136, 7, 'מיקום מחשב openemr ועשוי להכיל נתונים רגישים, ולכן מומלץ למחוק ידנית את הקבצים לאחר השימוש');
+INSERT INTO `lang_definitions` VALUES (33942, 6136, 7, 'מיקום מחשב DCL ועשוי להכיל נתונים רגישים, ולכן מומלץ למחוק ידנית את הקבצים לאחר השימוש');
 INSERT INTO `lang_definitions` VALUES (33943, 6137, 7, 'מיקום מנה זו');
 INSERT INTO `lang_definitions` VALUES (33944, 6138, 7, 'לא צוין מיקום');
 INSERT INTO `lang_definitions` VALUES (33945, 6139, 7, 'מיקום לאחסון פקס של Hylafax.');
@@ -47628,7 +47628,7 @@ INSERT INTO `lang_definitions` VALUES (34259, 6596, 7, 'לפני חודשים');
 INSERT INTO `lang_definitions` VALUES (34260, 6598, 7, 'פעולות נוספות');
 INSERT INTO `lang_definitions` VALUES (34261, 6599, 7, 'יתכן וקיימות פגישות נוספות');
 INSERT INTO `lang_definitions` VALUES (34262, 6601, 7, 'עוד מידע על הנושאים ניתן למצוא כאן');
-INSERT INTO `lang_definitions` VALUES (34263, 6603, 7, 'מידע נוסף זמין בדף הויקי של openEMR MedEx');
+INSERT INTO `lang_definitions` VALUES (34263, 6603, 7, 'מידע נוסף זמין בדף הויקי של DCL MedEx');
 INSERT INTO `lang_definitions` VALUES (34264, 6606, 7, 'אפשרויות נוספות');
 INSERT INTO `lang_definitions` VALUES (34265, 6607, 7, 'יותר מ');
 INSERT INTO `lang_definitions` VALUES (34266, 6608, 7, 'נמצאו יותר מ-100 רשומות. נא לצמצם את קריטריוני החיפוש.');
@@ -47813,7 +47813,7 @@ INSERT INTO `lang_definitions` VALUES (34444, 6895, 7, 'דירוג~תשלום~נ
 INSERT INTO `lang_definitions` VALUES (34445, 6897, 7, 'תוצאות חדשות מ-Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (34446, 6898, 7, 'חיפוש חדש');
 INSERT INTO `lang_definitions` VALUES (34447, 6899, 7, 'שליחות חדשות');
-INSERT INTO `lang_definitions` VALUES (34448, 6900, 7, 'חדש ב-openEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (34448, 6900, 7, 'חדש ב-DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (34449, 6901, 7, 'משתמש חדש');
 INSERT INTO `lang_definitions` VALUES (34450, 6902, 7, 'ערך חדש');
 INSERT INTO `lang_definitions` VALUES (34451, 6903, 7, 'ביקור חדש');
@@ -48220,14 +48220,14 @@ INSERT INTO `lang_definitions` VALUES (34851, 7528, 7, 'פתח בחלון חדש
 INSERT INTO `lang_definitions` VALUES (34852, 7531, 7, 'פתח מטופל');
 INSERT INTO `lang_definitions` VALUES (34853, 7532, 7, 'פתח מטופל בחלון חדש');
 INSERT INTO `lang_definitions` VALUES (34854, 7535, 7, 'פתח את הביקור של היום');
-INSERT INTO `lang_definitions` VALUES (34855, 7562, 7, 'רשות אישורים כבר מוגדרת בתצורת OpenEMR.');
-INSERT INTO `lang_definitions` VALUES (34856, 7565, 7, 'קטגוריית יישום OpenEMR');
-INSERT INTO `lang_definitions` VALUES (34857, 7567, 7, 'שדרוג מסד נתונים של OpenEMR');
-INSERT INTO `lang_definitions` VALUES (34858, 7568, 7, 'שדרוג מסד נתונים של OpenEMR עבור ביטול זיהוי');
-INSERT INTO `lang_definitions` VALUES (34859, 7569, 7, 'OpenEMR לא מזהה את הקובץ הנכנס בספריית contrib. בדרך כלל, זאת משום שעליך לקבוע את תצורת המהדורה בטבלה supported_external_dataloads במסד הנתונים של MySQL.');
-INSERT INTO `lang_definitions` VALUES (34860, 7571, 7, 'יש לקבוע את תצורת OpenEMR לשימוש באישורים לפני שתוכל ליצור אישורי לקוח.');
-INSERT INTO `lang_definitions` VALUES (34861, 7575, 7, 'ל-OpenEMR נדרש Javascript לביצוע אימות משתמשים.');
-INSERT INTO `lang_definitions` VALUES (34862, 7576, 7, 'משתמשים ב-OpenEMR');
+INSERT INTO `lang_definitions` VALUES (34855, 7562, 7, 'רשות אישורים כבר מוגדרת בתצורת DCL.');
+INSERT INTO `lang_definitions` VALUES (34856, 7565, 7, 'קטגוריית יישום DCL');
+INSERT INTO `lang_definitions` VALUES (34857, 7567, 7, 'שדרוג מסד נתונים של DCL');
+INSERT INTO `lang_definitions` VALUES (34858, 7568, 7, 'שדרוג מסד נתונים של DCL עבור ביטול זיהוי');
+INSERT INTO `lang_definitions` VALUES (34859, 7569, 7, 'DCL לא מזהה את הקובץ הנכנס בספריית contrib. בדרך כלל, זאת משום שעליך לקבוע את תצורת המהדורה בטבלה supported_external_dataloads במסד הנתונים של MySQL.');
+INSERT INTO `lang_definitions` VALUES (34860, 7571, 7, 'יש לקבוע את תצורת DCL לשימוש באישורים לפני שתוכל ליצור אישורי לקוח.');
+INSERT INTO `lang_definitions` VALUES (34861, 7575, 7, 'ל-DCL נדרש Javascript לביצוע אימות משתמשים.');
+INSERT INTO `lang_definitions` VALUES (34862, 7576, 7, 'משתמשים ב-DCL');
 INSERT INTO `lang_definitions` VALUES (34863, 7577, 7, 'זמינויות');
 INSERT INTO `lang_definitions` VALUES (34864, 7582, 7, 'מפעיל~אופרטור');
 INSERT INTO `lang_definitions` VALUES (34865, 7583, 7, 'אופתלמי');
@@ -48589,7 +48589,7 @@ INSERT INTO `lang_definitions` VALUES (35220, 8151, 7, 'בהמתנה ליישו�
 INSERT INTO `lang_definitions` VALUES (35221, 8152, 7, 'סקירה בהמתנה');
 INSERT INTO `lang_definitions` VALUES (35222, 8153, 7, 'ספירת Rx בהמתנה');
 INSERT INTO `lang_definitions` VALUES (35223, 8155, 7, 'רגישות לפניצילין');
-INSERT INTO `lang_definitions` VALUES (35224, 8156, 7, 'Pennington Firm OpenEMR  v');
+INSERT INTO `lang_definitions` VALUES (35224, 8156, 7, 'Pennington Firm DCL  v');
 INSERT INTO `lang_definitions` VALUES (35225, 8157, 7, 'מחלת אולקוס עיכולית');
 INSERT INTO `lang_definitions` VALUES (35226, 8158, 7, 'למפגש');
 INSERT INTO `lang_definitions` VALUES (35227, 8159, 7, 'לדקה');
@@ -48780,7 +48780,7 @@ INSERT INTO `lang_definitions` VALUES (35411, 8435, 7, 'נא להגדיר');
 INSERT INTO `lang_definitions` VALUES (35412, 8436, 7, 'הגדר משתנה de_identification_config כאפס שוב');
 INSERT INTO `lang_definitions` VALUES (35413, 8438, 7, 'ציין כתובת ישירה אחת לפחות');
 INSERT INTO `lang_definitions` VALUES (35414, 8441, 7, 'התחל בתהליך חדש של ביטול זיהוי');
-INSERT INTO `lang_definitions` VALUES (35415, 8445, 7, 'שדרג את מסד הנתונים של OpenEMR לכלילת הליכי ביטול זיהוי, פונקציה, טבלאות');
+INSERT INTO `lang_definitions` VALUES (35415, 8445, 7, 'שדרג את מסד הנתונים של DCL לכלילת הליכי ביטול זיהוי, פונקציה, טבלאות');
 INSERT INTO `lang_definitions` VALUES (35416, 8446, 7, 'אנא השתמש בNPI תקף');
 INSERT INTO `lang_definitions` VALUES (35417, 8447, 7, 'עיין בטבלת יומן השגיאות של ביטול זיהוי לפרטים נוספים');
 INSERT INTO `lang_definitions` VALUES (35418, 8448, 7, 'בקר במסך ביטול הזיהוי לאחר זמן מה');
@@ -50567,7 +50567,7 @@ INSERT INTO `lang_definitions` VALUES (37198, 11279, 7, 'סוג ישות זו');
 INSERT INTO `lang_definitions` VALUES (37199, 11280, 7, 'הסוג יהיה ריק');
 INSERT INTO `lang_definitions` VALUES (37200, 11286, 7, 'הסוג יהיה ניתוח');
 INSERT INTO `lang_definitions` VALUES (37201, 11299, 7, 'קוד ספציפי לספק המזהה הליך או תוצאה אלה');
-INSERT INTO `lang_definitions` VALUES (37202, 11304, 7, 'קובצי X12 כמו גם דוחות פלט HTML של התוצאה מאוחסנים בארכיון בספריית משנה של \"תקופה\" בספריית ההתקנה הראשית של OpenEMR.  מומלץ לעיין בארכיונים אלה מעת לעת.  כתובת ה-URL היא');
+INSERT INTO `lang_definitions` VALUES (37202, 11304, 7, 'קובצי X12 כמו גם דוחות פלט HTML של התוצאה מאוחסנים בארכיון בספריית משנה של \"תקופה\" בספריית ההתקנה הראשית של DCL.  מומלץ לעיין בארכיונים אלה מעת לעת.  כתובת ה-URL היא');
 INSERT INTO `lang_definitions` VALUES (37203, 11306, 7, 'קובץ ה-zip יכיל את הפריטים הבאים');
 INSERT INTO `lang_definitions` VALUES (37204, 11307, 7, 'ערכת נושא');
 INSERT INTO `lang_definitions` VALUES (37205, 11313, 7, 'לאחר מכן ניתן לקבל את מהדורת הזנת הנתונים הגולמיים מ:');
@@ -50602,7 +50602,7 @@ INSERT INTO `lang_definitions` VALUES (37233, 11370, 7, 'אין רשומת חל�
 INSERT INTO `lang_definitions` VALUES (37234, 11371, 7, 'אין מטופל על עם שם כניסה לפורטל');
 INSERT INTO `lang_definitions` VALUES (37235, 11373, 7, 'אירעה בעיה בעת שליחת הודעה.');
 INSERT INTO `lang_definitions` VALUES (37236, 11374, 7, 'אירעה בעיה בעת עיבוד בקשתך.');
-INSERT INTO `lang_definitions` VALUES (37237, 11375, 7, 'קיימת שגיאת Escaping של OpenEMR SQL של המחרוזת הבאה');
+INSERT INTO `lang_definitions` VALUES (37237, 11375, 7, 'קיימת שגיאת Escaping של DCL SQL של המחרוזת הבאה');
 INSERT INTO `lang_definitions` VALUES (37238, 11379, 7, 'אלו הם קישורי 2012');
 INSERT INTO `lang_definitions` VALUES (37239, 11400, 7, 'התעבות ימין:');
 INSERT INTO `lang_definitions` VALUES (37240, 11401, 7, 'ירך');
@@ -51030,7 +51030,7 @@ INSERT INTO `lang_definitions` VALUES (37661, 12182, 7, 'מעדכן מחווני
 INSERT INTO `lang_definitions` VALUES (37662, 12183, 7, 'שדרוג');
 INSERT INTO `lang_definitions` VALUES (37663, 12184, 7, 'שדרוג');
 INSERT INTO `lang_definitions` VALUES (37664, 12186, 7, 'שדרג מסד נתונים');
-INSERT INTO `lang_definitions` VALUES (37665, 12188, 7, 'משדר מסד נתונים של OpenEMR לכלילת הליכים, פונקציות וטבלאות הנחוצים לתהליך ביטול הזיהוי');
+INSERT INTO `lang_definitions` VALUES (37665, 12188, 7, 'משדר מסד נתונים של DCL לכלילת הליכים, פונקציות וטבלאות הנחוצים לתהליך ביטול הזיהוי');
 INSERT INTO `lang_definitions` VALUES (37666, 12189, 7, 'השדרוג יימשך');
 INSERT INTO `lang_definitions` VALUES (37667, 12190, 7, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (37668, 12191, 7, 'העלאה');
@@ -51061,7 +51061,7 @@ INSERT INTO `lang_definitions` VALUES (37692, 12231, 7, 'זרימת שתן');
 INSERT INTO `lang_definitions` VALUES (37693, 12232, 7, 'בהילות שתן');
 INSERT INTO `lang_definitions` VALUES (37694, 12233, 7, 'כתובת URL');
 INSERT INTO `lang_definitions` VALUES (37695, 12234, 7, 'כתובת URL של כתובת אתר NewCrop eRx.');
-INSERT INTO `lang_definitions` VALUES (37696, 12235, 7, 'כתובת URL לתמיכת OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (37696, 12235, 7, 'כתובת URL לתמיכת DCL.');
 INSERT INTO `lang_definitions` VALUES (37697, 12236, 7, 'כתובת URL עבור שער טלפון.');
 INSERT INTO `lang_definitions` VALUES (37698, 12237, 7, 'כתובת URL עבור שער טלפון. שירות VOIP אוטומטי מסופק על-ידי Maviq. עבור אל http://signup.maviq.com למידע נוסף.');
 INSERT INTO `lang_definitions` VALUES (37699, 12238, 7, 'כתובת URL עבור אתר WordPress התומך בפורטל');
@@ -51441,7 +51441,7 @@ INSERT INTO `lang_definitions` VALUES (38072, 12972, 7, 'האירוע השתנה
 INSERT INTO `lang_definitions` VALUES (38073, 12973, 7, 'האירוע נשלח.');
 INSERT INTO `lang_definitions` VALUES (38074, 12975, 7, 'הקובץ גדול מדי');
 INSERT INTO `lang_definitions` VALUES (38075, 12977, 7, 'מספר הזיהוי (ID) שלך חסר. בטל ונסה שוב.');
-INSERT INTO `lang_definitions` VALUES (38076, 12978, 7, 'ההתקנה שלך של OpenEMR נרשמה');
+INSERT INTO `lang_definitions` VALUES (38076, 12978, 7, 'ההתקנה שלך של DCL נרשמה');
 INSERT INTO `lang_definitions` VALUES (38077, 12980, 7, 'תוצאות המעבדה שלך');
 INSERT INTO `lang_definitions` VALUES (38078, 12981, 7, 'שם הרשימה השתנה בהתאם לדרישות מתן השמות.');
 INSERT INTO `lang_definitions` VALUES (38079, 12982, 7, 'ההודעה נשלחה למסירה אל');
@@ -51659,7 +51659,7 @@ INSERT INTO `lang_definitions` VALUES (38290, 7, 8, 'Un document clinique a ét�
 INSERT INTO `lang_definitions` VALUES (38291, 8, 8, 'un code pour ce type a déja été selectionné. Veuillez supprimer le contenu du champ en premier afin de le remplacer.');
 INSERT INTO `lang_definitions` VALUES (38292, 13, 8, 'Un distributeur est requis');
 INSERT INTO `lang_definitions` VALUES (38293, 17, 8, 'Un formulaire de visite GCAC doit être ajouté à cette visite');
-INSERT INTO `lang_definitions` VALUES (38294, 19, 8, 'Une application importante comme openEMR est utilisée par une multitude d\'utilisateurs avec des rôles et des degrés de responsabilité variés. Il est impératif que l\'accès aux différentes parties du programme soit accordé en fonction des besoins de chaque utilisateur. Pour ce faire il faut utiliser la liste de contrôle d\'accès (ACL).');
+INSERT INTO `lang_definitions` VALUES (38294, 19, 8, 'Une application importante comme DCL est utilisée par une multitude d\'utilisateurs avec des rôles et des degrés de responsabilité variés. Il est impératif que l\'accès aux différentes parties du programme soit accordé en fonction des besoins de chaque utilisateur. Pour ce faire il faut utiliser la liste de contrôle d\'accès (ACL).');
 INSERT INTO `lang_definitions` VALUES (38295, 20, 8, 'Un numéro de lot est requis');
 INSERT INTO `lang_definitions` VALUES (38296, 21, 8, 'Un numéro de lot est exigé !');
 INSERT INTO `lang_definitions` VALUES (38297, 22, 8, 'Une lettre en minuscule');
@@ -52084,7 +52084,7 @@ INSERT INTO `lang_definitions` VALUES (38715, 669, 8, 'Amplitudes');
 INSERT INTO `lang_definitions` VALUES (38716, 671, 8, 'Montant a payer');
 INSERT INTO `lang_definitions` VALUES (38717, 676, 8, 'Une date de fin postérieur à la date de démarrage est nécessaire pour les événements répétés!');
 INSERT INTO `lang_definitions` VALUES (38718, 677, 8, 'Une erreur est survenue lors de la signature du formulaire');
-INSERT INTO `lang_definitions` VALUES (38719, 678, 8, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (38719, 678, 8, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web DCL');
 INSERT INTO `lang_definitions` VALUES (38720, 679, 8, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web phpGACL');
 INSERT INTO `lang_definitions` VALUES (38721, 680, 8, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (38722, 682, 8, 'une erreur est survenue: Fichier à télécharger manquant: utiliser le bouton retour!');
@@ -52828,10 +52828,10 @@ INSERT INTO `lang_definitions` VALUES (39459, 2200, 8, 'Système de commande Mé
 INSERT INTO `lang_definitions` VALUES (39460, 2202, 8, 'Conclusions');
 INSERT INTO `lang_definitions` VALUES (39461, 2210, 8, 'Configuration');
 INSERT INTO `lang_definitions` VALUES (39462, 2211, 8, 'Export / Import de la Configuration');
-INSERT INTO `lang_definitions` VALUES (39463, 2213, 8, 'Configurer Apache et OpenEMR pour utiliser des certificats SSL côté client.');
+INSERT INTO `lang_definitions` VALUES (39463, 2213, 8, 'Configurer Apache et DCL pour utiliser des certificats SSL côté client.');
 INSERT INTO `lang_definitions` VALUES (39464, 2214, 8, 'Configurer Apache pour utiliser les certificats SSL côté client');
 INSERT INTO `lang_definitions` VALUES (39465, 2215, 8, 'Configurer Apache pour utiliser le protocole HTTPS.');
-INSERT INTO `lang_definitions` VALUES (39466, 2216, 8, 'Configurez OpenEMR pour utiliser des certificats SSL côté client');
+INSERT INTO `lang_definitions` VALUES (39466, 2216, 8, 'Configurez DCL pour utiliser des certificats SSL côté client');
 INSERT INTO `lang_definitions` VALUES (39467, 2225, 8, 'Confirmer la création du nouveau Patient');
 INSERT INTO `lang_definitions` VALUES (39468, 2227, 8, 'Confirmer le Nouveau Passe');
 INSERT INTO `lang_definitions` VALUES (39469, 2229, 8, 'Confirmer le Payement');
@@ -53377,8 +53377,8 @@ INSERT INTO `lang_definitions` VALUES (40008, 3321, 8, 'Échéance du patient');
 INSERT INTO `lang_definitions` VALUES (40009, 3322, 8, 'Échéance prochaine');
 INSERT INTO `lang_definitions` VALUES (40010, 3323, 8, 'Etat échéance');
 INSERT INTO `lang_definitions` VALUES (40011, 3324, 8, 'Mise à jour de Etat échéance');
-INSERT INTO `lang_definitions` VALUES (40012, 3325, 8, 'Dumping de la base de données OpenEMR');
-INSERT INTO `lang_definitions` VALUES (40013, 3326, 8, 'Dumping de l\'arborescence web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (40012, 3325, 8, 'Dumping de la base de données DCL');
+INSERT INTO `lang_definitions` VALUES (40013, 3326, 8, 'Dumping de l\'arborescence web DCL');
 INSERT INTO `lang_definitions` VALUES (40014, 3327, 8, 'Dumping de la base de données phpGACL');
 INSERT INTO `lang_definitions` VALUES (40015, 3328, 8, 'Dumping de l\'arborescence web phpGACL');
 INSERT INTO `lang_definitions` VALUES (40016, 3329, 8, 'Dumping de la base de données SQL-Ledger');
@@ -53528,7 +53528,7 @@ INSERT INTO `lang_definitions` VALUES (40159, 3630, 8, 'Activer le widget de rap
 INSERT INTO `lang_definitions` VALUES (40160, 3632, 8, 'Activer le service de messagerie direct phiMail');
 INSERT INTO `lang_definitions` VALUES (40161, 3638, 8, 'Activer le support du scanner');
 INSERT INTO `lang_definitions` VALUES (40162, 3642, 8, 'Activer l\'intégration des informations médical, LLC service d\'échange de laboratoire');
-INSERT INTO `lang_definitions` VALUES (40163, 3643, 8, 'Activer le support OpenEMR du LLC service d\'échange de laboratoire');
+INSERT INTO `lang_definitions` VALUES (40163, 3643, 8, 'Activer le support DCL du LLC service d\'échange de laboratoire');
 INSERT INTO `lang_definitions` VALUES (40164, 3644, 8, 'Activer lauthentification utilisateur par certificat');
 INSERT INTO `lang_definitions` VALUES (40165, 3650, 8, 'Activer ZMG, service LLC eRx');
 INSERT INTO `lang_definitions` VALUES (40166, 3651, 8, 'Activé');
@@ -53585,7 +53585,7 @@ INSERT INTO `lang_definitions` VALUES (40216, 3754, 8, 'Anglais');
 INSERT INTO `lang_definitions` VALUES (40217, 3756, 8, 'Anglais (Indien)');
 INSERT INTO `lang_definitions` VALUES (40218, 3757, 8, 'Anglais (Standard)');
 INSERT INTO `lang_definitions` VALUES (40219, 3758, 8, 'Commande Enscript utilisé par Hylafax.');
-INSERT INTO `lang_definitions` VALUES (40220, 3759, 8, 'Vérifier que OpenEMR a les privilèges d\'écriture dans le répertoire');
+INSERT INTO `lang_definitions` VALUES (40220, 3759, 8, 'Vérifier que DCL a les privilèges d\'écriture dans le répertoire');
 INSERT INTO `lang_definitions` VALUES (40221, 3765, 8, 'Entrer un code diagnostic pour exclure toute les factures exemptent de ce code');
 INSERT INTO `lang_definitions` VALUES (40222, 3772, 8, 'Entrer le mot de passe root de la base de donnée');
 INSERT INTO `lang_definitions` VALUES (40223, 3773, 8, 'Entrer le nom d\'utilisateur root de la base de donnée');
@@ -53622,7 +53622,7 @@ INSERT INTO `lang_definitions` VALUES (40253, 3896, 8, 'Erreur lors du téléver
 INSERT INTO `lang_definitions` VALUES (40254, 3897, 8, 'Erreur lors de la suppression du message');
 INSERT INTO `lang_definitions` VALUES (40255, 3898, 8, 'Erreur lors de la récupérations des résultats via Lab Exchange Network');
 INSERT INTO `lang_definitions` VALUES (40256, 3899, 8, 'Erreur lors de la récupération des valeurs.');
-INSERT INTO `lang_definitions` VALUES (40257, 3901, 8, 'Erreur lors de l\'élevage de privilège sur les fichier pour l\'utilisateur OpenEMR');
+INSERT INTO `lang_definitions` VALUES (40257, 3901, 8, 'Erreur lors de l\'élevage de privilège sur les fichier pour l\'utilisateur DCL');
 INSERT INTO `lang_definitions` VALUES (40258, 3904, 8, 'erreur lors de l\'enregistrement du formulaire!');
 INSERT INTO `lang_definitions` VALUES (40259, 3905, 8, 'Erreur lors de l\'enregistrement du fichier');
 INSERT INTO `lang_definitions` VALUES (40260, 3907, 8, 'Erreur lors de l\'écriture dans le ficher');
@@ -53634,7 +53634,7 @@ INSERT INTO `lang_definitions` VALUES (40265, 3920, 8, 'Erreur, impossible de cr
 INSERT INTO `lang_definitions` VALUES (40266, 3921, 8, 'Erreur, impossible de créer le certificat de l\'autorité de certification.');
 INSERT INTO `lang_definitions` VALUES (40267, 3922, 8, 'Erreur, impossible de créer le certificat serveur.');
 INSERT INTO `lang_definitions` VALUES (40268, 3924, 8, 'Erreur, impossible d\'ouvrir le fichier');
-INSERT INTO `lang_definitions` VALUES (40269, 3925, 8, 'Erreur, l\'authorité de certification est pas activée dand OpenEMR');
+INSERT INTO `lang_definitions` VALUES (40269, 3925, 8, 'Erreur, l\'authorité de certification est pas activée dand DCL');
 INSERT INTO `lang_definitions` VALUES (40270, 3933, 8, 'Erreur, vous devez intaller le module php Archive/Tar.php.');
 INSERT INTO `lang_definitions` VALUES (40271, 3934, 8, 'ERREUR: ne peut pas ouvrir table.sql, le formulaire est-il cassé?');
 INSERT INTO `lang_definitions` VALUES (40272, 3937, 8, 'Erreur: identifiant dupliqué à la ligne');
@@ -53821,7 +53821,7 @@ INSERT INTO `lang_definitions` VALUES (40452, 4277, 8, 'Fichier');
 INSERT INTO `lang_definitions` VALUES (40453, 4280, 8, 'Fichier dans le répertoire de documentation pour apprendre comment créer le processus de création des sauvegardes de log');
 INSERT INTO `lang_definitions` VALUES (40454, 4281, 8, 'Location du fichier');
 INSERT INTO `lang_definitions` VALUES (40455, 4282, 8, 'Gestion de Fichiers');
-INSERT INTO `lang_definitions` VALUES (40456, 4289, 8, 'Privilège sur les fichiers accordé à l\'utilisateur OpenEMR');
+INSERT INTO `lang_definitions` VALUES (40456, 4289, 8, 'Privilège sur les fichiers accordé à l\'utilisateur DCL');
 INSERT INTO `lang_definitions` VALUES (40457, 4290, 8, 'Echec de la récupération du fichier via CouchDB');
 INSERT INTO `lang_definitions` VALUES (40458, 4291, 8, 'Chambre du fichier');
 INSERT INTO `lang_definitions` VALUES (40459, 4292, 8, 'Fichier à télécharger');
@@ -54540,7 +54540,7 @@ INSERT INTO `lang_definitions` VALUES (41171, 6129, 8, 'Locale');
 INSERT INTO `lang_definitions` VALUES (41172, 6133, 8, 'Locale');
 INSERT INTO `lang_definitions` VALUES (41173, 6134, 8, 'Localité');
 INSERT INTO `lang_definitions` VALUES (41174, 6135, 8, 'Location');
-INSERT INTO `lang_definitions` VALUES (41175, 6136, 8, 'location de la machine openemr et peut contenir des données sensible, il est recommendé de supprimer manuelement les fichiers après leurs utilisation');
+INSERT INTO `lang_definitions` VALUES (41175, 6136, 8, 'location de la machine DCL et peut contenir des données sensible, il est recommendé de supprimer manuelement les fichiers après leurs utilisation');
 INSERT INTO `lang_definitions` VALUES (41176, 6137, 8, 'Location de ce lot');
 INSERT INTO `lang_definitions` VALUES (41177, 6138, 8, 'Location non spécifié');
 INSERT INTO `lang_definitions` VALUES (41178, 6139, 8, 'Location ou Hylafax stock les faxes.');
@@ -55116,9 +55116,9 @@ INSERT INTO `lang_definitions` VALUES (41747, 7519, 8, 'Ouvrir');
 INSERT INTO `lang_definitions` VALUES (41748, 7525, 8, 'Venue ouverte');
 INSERT INTO `lang_definitions` VALUES (41749, 7528, 8, 'Ouvrir dans une nouvelle fenètre');
 INSERT INTO `lang_definitions` VALUES (41750, 7535, 8, 'Ouvrir les visites d\'aujourd\'hui');
-INSERT INTO `lang_definitions` VALUES (41751, 7562, 8, 'OpenEMR a déjà un certificat d\'autorité configuré');
-INSERT INTO `lang_definitions` VALUES (41752, 7567, 8, 'Mettre à jour la base de donnée d\'OpenEMR');
-INSERT INTO `lang_definitions` VALUES (41753, 7576, 8, 'Utilisateurs d\'OpenEMR');
+INSERT INTO `lang_definitions` VALUES (41751, 7562, 8, 'DCL a déjà un certificat d\'autorité configuré');
+INSERT INTO `lang_definitions` VALUES (41752, 7567, 8, 'Mettre à jour la base de donnée d\'DCL');
+INSERT INTO `lang_definitions` VALUES (41753, 7576, 8, 'Utilisateurs d\'DCL');
 INSERT INTO `lang_definitions` VALUES (41754, 7577, 8, 'Ouvertures');
 INSERT INTO `lang_definitions` VALUES (41755, 7586, 8, 'Option');
 INSERT INTO `lang_definitions` VALUES (41756, 7590, 8, 'Optionneil');
@@ -56694,7 +56694,7 @@ INSERT INTO `lang_definitions` VALUES (43325, 12182, 8, 'Mise à jour des indica
 INSERT INTO `lang_definitions` VALUES (43326, 12183, 8, 'MISE À JOUR');
 INSERT INTO `lang_definitions` VALUES (43327, 12184, 8, 'Mise à niveau');
 INSERT INTO `lang_definitions` VALUES (43328, 12186, 8, 'Mise à niveau de Base de Données');
-INSERT INTO `lang_definitions` VALUES (43329, 12188, 8, 'Mises à niveau la base de données OpenEMR afin d\'inclure les Procédures, Fonctions et tables nécessaires au processus de De-identification');
+INSERT INTO `lang_definitions` VALUES (43329, 12188, 8, 'Mises à niveau la base de données DCL afin d\'inclure les Procédures, Fonctions et tables nécessaires au processus de De-identification');
 INSERT INTO `lang_definitions` VALUES (43330, 12189, 8, 'Mise à niveau va continuer');
 INSERT INTO `lang_definitions` VALUES (43331, 12191, 8, 'Transférer');
 INSERT INTO `lang_definitions` VALUES (43332, 12196, 8, 'Transférer les données de configuration');
@@ -56715,7 +56715,7 @@ INSERT INTO `lang_definitions` VALUES (43346, 12230, 8, 'Microalbumine urinaire'
 INSERT INTO `lang_definitions` VALUES (43347, 12231, 8, 'Jet d\'Urine');
 INSERT INTO `lang_definitions` VALUES (43348, 12232, 8, 'Urgence urinaire');
 INSERT INTO `lang_definitions` VALUES (43349, 12233, 8, 'URL');
-INSERT INTO `lang_definitions` VALUES (43350, 12235, 8, 'URL pour le support OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (43350, 12235, 8, 'URL pour le support DCL.');
 INSERT INTO `lang_definitions` VALUES (43351, 12237, 8, 'URL pour la passerelle téléphonique. Service automatisé VOIP offert par Maviq. Veuillez visitez http://signup.maviq.com pour plus d\'informations.');
 INSERT INTO `lang_definitions` VALUES (43352, 12246, 8, 'Utilisation');
 INSERT INTO `lang_definitions` VALUES (43353, 12248, 8, 'Indicateur d\'Utilisation (ISA15)');
@@ -57533,7 +57533,7 @@ INSERT INTO `lang_definitions` VALUES (44164, 668, 9, 'Montant:');
 INSERT INTO `lang_definitions` VALUES (44165, 671, 9, 'Montant facturé');
 INSERT INTO `lang_definitions` VALUES (44166, 676, 9, 'Une date de fin ultérieure à la date de début est requise pour des événements répétés!');
 INSERT INTO `lang_definitions` VALUES (44167, 677, 9, 'Une erreur s\'est produite à la signature du formulaire');
-INSERT INTO `lang_definitions` VALUES (44168, 678, 9, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (44168, 678, 9, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web DCL');
 INSERT INTO `lang_definitions` VALUES (44169, 679, 9, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web phpGACL');
 INSERT INTO `lang_definitions` VALUES (44170, 680, 9, 'Une erreur est survenue durant le vidage de l\'arborescence du répertoire web SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (44171, 685, 9, 'Une édition incomplète de GCAC a été crée et reliée. Elle devra être complétée plus tard.');
@@ -58150,10 +58150,10 @@ INSERT INTO `lang_definitions` VALUES (44781, 2200, 9, 'Système de commande Mé
 INSERT INTO `lang_definitions` VALUES (44782, 2202, 9, 'Conclusions');
 INSERT INTO `lang_definitions` VALUES (44783, 2210, 9, 'Configuration');
 INSERT INTO `lang_definitions` VALUES (44784, 2211, 9, 'Export / Import de la Configuration');
-INSERT INTO `lang_definitions` VALUES (44785, 2213, 9, 'Configurer Apache et OpenEMR pour utiliser les certificats SSL coté client');
+INSERT INTO `lang_definitions` VALUES (44785, 2213, 9, 'Configurer Apache et DCL pour utiliser les certificats SSL coté client');
 INSERT INTO `lang_definitions` VALUES (44786, 2214, 9, 'Configurer Apache pour utiliser les certificats SSL coté client');
 INSERT INTO `lang_definitions` VALUES (44787, 2215, 9, 'Configurer Apache pour utiliser HTTPS');
-INSERT INTO `lang_definitions` VALUES (44788, 2216, 9, 'Configurer OpenEMR pour utiliser les certificats SSL coté client');
+INSERT INTO `lang_definitions` VALUES (44788, 2216, 9, 'Configurer DCL pour utiliser les certificats SSL coté client');
 INSERT INTO `lang_definitions` VALUES (44789, 2225, 9, 'Confirmer la création du nouveau Patient');
 INSERT INTO `lang_definitions` VALUES (44790, 2227, 9, 'Confirmer le Nouveau Passe');
 INSERT INTO `lang_definitions` VALUES (44791, 2229, 9, 'Confirmer le Payement');
@@ -58546,8 +58546,8 @@ INSERT INTO `lang_definitions` VALUES (45177, 3321, 9, 'Due Pt');
 INSERT INTO `lang_definitions` VALUES (45178, 3322, 9, 'Due Bientôt');
 INSERT INTO `lang_definitions` VALUES (45179, 3323, 9, 'Etat échéance');
 INSERT INTO `lang_definitions` VALUES (45180, 3324, 9, 'Mise à jour de Etat échéance');
-INSERT INTO `lang_definitions` VALUES (45181, 3325, 9, 'Dumping de la base de données OpenEMR');
-INSERT INTO `lang_definitions` VALUES (45182, 3326, 9, 'Dumping de l\'arborescence web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (45181, 3325, 9, 'Dumping de la base de données DCL');
+INSERT INTO `lang_definitions` VALUES (45182, 3326, 9, 'Dumping de l\'arborescence web DCL');
 INSERT INTO `lang_definitions` VALUES (45183, 3327, 9, 'Dumping de la base de données phpGACL');
 INSERT INTO `lang_definitions` VALUES (45184, 3328, 9, 'Dumping de l\'arborescence web phpGACL');
 INSERT INTO `lang_definitions` VALUES (45185, 3329, 9, 'Dumping de la base de données SQL-Ledger');
@@ -58663,7 +58663,7 @@ INSERT INTO `lang_definitions` VALUES (45294, 3754, 9, 'Anglais');
 INSERT INTO `lang_definitions` VALUES (45295, 3756, 9, 'Anglais (Indien)');
 INSERT INTO `lang_definitions` VALUES (45296, 3757, 9, 'Anglais (Standard)');
 INSERT INTO `lang_definitions` VALUES (45297, 3758, 9, 'Commande Enscript utilisé par Hylafax.');
-INSERT INTO `lang_definitions` VALUES (45298, 3759, 9, 'Vérifier que OpenEMR a les privilèges d\'écriture dans le répertoire');
+INSERT INTO `lang_definitions` VALUES (45298, 3759, 9, 'Vérifier que DCL a les privilèges d\'écriture dans le répertoire');
 INSERT INTO `lang_definitions` VALUES (45299, 3785, 9, 'Entrer le diagnostic');
 INSERT INTO `lang_definitions` VALUES (45300, 3786, 9, 'Entrer la liste des médicaments');
 INSERT INTO `lang_definitions` VALUES (45301, 3794, 9, 'Entrer les vaccinations');
@@ -59345,7 +59345,7 @@ INSERT INTO `lang_definitions` VALUES (45976, 12182, 9, 'Mettre à niveau les in
 INSERT INTO `lang_definitions` VALUES (45977, 12183, 9, 'MISE À NIVEAU');
 INSERT INTO `lang_definitions` VALUES (45978, 12184, 9, 'Mise à niveau');
 INSERT INTO `lang_definitions` VALUES (45979, 12186, 9, 'Mise à niveau de Base de Données');
-INSERT INTO `lang_definitions` VALUES (45980, 12188, 9, 'Mises à niveau la base de données OpenEMR afin d\'inclure les Procédures, Fonctions et tables nécessaires au processus de De-identification');
+INSERT INTO `lang_definitions` VALUES (45980, 12188, 9, 'Mises à niveau la base de données DCL afin d\'inclure les Procédures, Fonctions et tables nécessaires au processus de De-identification');
 INSERT INTO `lang_definitions` VALUES (45981, 12189, 9, 'Mise à niveau va continuer');
 INSERT INTO `lang_definitions` VALUES (45982, 12191, 9, 'Transférer');
 INSERT INTO `lang_definitions` VALUES (45983, 12196, 9, 'Transférer les données de configuration');
@@ -59365,7 +59365,7 @@ INSERT INTO `lang_definitions` VALUES (45996, 12230, 9, 'Microalbumine urinaire'
 INSERT INTO `lang_definitions` VALUES (45997, 12231, 9, 'Jet d\'Urine');
 INSERT INTO `lang_definitions` VALUES (45998, 12232, 9, 'Urgence urinaire');
 INSERT INTO `lang_definitions` VALUES (45999, 12233, 9, 'URL');
-INSERT INTO `lang_definitions` VALUES (46000, 12235, 9, 'URL pour le support OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (46000, 12235, 9, 'URL pour le support DCL.');
 INSERT INTO `lang_definitions` VALUES (46001, 12237, 9, 'URL pour la passerelle téléphonique. Service automatisé VOIP offert par Maviq. Veuillez visitez http://signup.maviq.com pour plus d\'informations.');
 INSERT INTO `lang_definitions` VALUES (46002, 12248, 9, 'Indicateur d\'Utilisation (ISA15)');
 INSERT INTO `lang_definitions` VALUES (46003, 12251, 9, 'Utiliser % seul dans un champ afin de trier uniquement sur cette colonne');
@@ -61047,7 +61047,7 @@ INSERT INTO `lang_definitions` VALUES (47678, 667, 11, '已付金额');
 INSERT INTO `lang_definitions` VALUES (47679, 668, 11, '金额：');
 INSERT INTO `lang_definitions` VALUES (47680, 671, 11, '已开发票金额');
 INSERT INTO `lang_definitions` VALUES (47681, 676, 11, '重复活动的结束日期必须晚于起始日期！');
-INSERT INTO `lang_definitions` VALUES (47682, 678, 11, '导出OpenEMR网页目录时错误');
+INSERT INTO `lang_definitions` VALUES (47682, 678, 11, '导出DCL网页目录时错误');
 INSERT INTO `lang_definitions` VALUES (47683, 679, 11, '导出phpGACL网页目录时错误');
 INSERT INTO `lang_definitions` VALUES (47684, 680, 11, '导出SQL数据库时错误');
 INSERT INTO `lang_definitions` VALUES (47685, 685, 11, '一个不完成的GCAC问题已经被创建和连接，稍后需要有人去完成。');
@@ -61663,10 +61663,10 @@ INSERT INTO `lang_definitions` VALUES (48294, 2200, 11, '医学计算机辅助�
 INSERT INTO `lang_definitions` VALUES (48295, 2202, 11, '结论');
 INSERT INTO `lang_definitions` VALUES (48296, 2210, 11, '配置');
 INSERT INTO `lang_definitions` VALUES (48297, 2211, 11, '配置导入/导出');
-INSERT INTO `lang_definitions` VALUES (48298, 2213, 11, '配置及openemr使用客户端证书。');
+INSERT INTO `lang_definitions` VALUES (48298, 2213, 11, '配置及DCL使用客户端证书。');
 INSERT INTO `lang_definitions` VALUES (48299, 2214, 11, '配置要使用客户端证书');
 INSERT INTO `lang_definitions` VALUES (48300, 2215, 11, '配置要使用加密。');
-INSERT INTO `lang_definitions` VALUES (48301, 2216, 11, '配置openemr使用客户端证书');
+INSERT INTO `lang_definitions` VALUES (48301, 2216, 11, '配置DCL使用客户端证书');
 INSERT INTO `lang_definitions` VALUES (48302, 2225, 11, '创建确认新客户');
 INSERT INTO `lang_definitions` VALUES (48303, 2227, 11, '创建新的密码');
 INSERT INTO `lang_definitions` VALUES (48304, 2229, 11, '创建新的付款方式');
@@ -62154,8 +62154,8 @@ INSERT INTO `lang_definitions` VALUES (48785, 3321, 11, '由于铂');
 INSERT INTO `lang_definitions` VALUES (48786, 3322, 11, '即将到期');
 INSERT INTO `lang_definitions` VALUES (48787, 3323, 11, '应有的地位');
 INSERT INTO `lang_definitions` VALUES (48788, 3324, 11, '应有的地位更新');
-INSERT INTO `lang_definitions` VALUES (48789, 3325, 11, '倾倒OpenEMR数据库');
-INSERT INTO `lang_definitions` VALUES (48790, 3326, 11, '倾倒OpenEMR web目录树');
+INSERT INTO `lang_definitions` VALUES (48789, 3325, 11, '倾倒DCL数据库');
+INSERT INTO `lang_definitions` VALUES (48790, 3326, 11, '倾倒DCL web目录树');
 INSERT INTO `lang_definitions` VALUES (48791, 3327, 11, '倾倒phpGACL数据库');
 INSERT INTO `lang_definitions` VALUES (48792, 3328, 11, '倾倒phpGACL Web目录树');
 INSERT INTO `lang_definitions` VALUES (48793, 3329, 11, '倾销SQL的总帐数据库');
@@ -62294,7 +62294,7 @@ INSERT INTO `lang_definitions` VALUES (48925, 3630, 11, '使客户提醒部件')
 INSERT INTO `lang_definitions` VALUES (48926, 3634, 11, '启用自动测量计算所需的数据（AMC）的激励');
 INSERT INTO `lang_definitions` VALUES (48927, 3636, 11, '启用的自动测量计算日期（AMC）的跟踪报告');
 INSERT INTO `lang_definitions` VALUES (48928, 3638, 11, '启用扫描仪支持');
-INSERT INTO `lang_definitions` VALUES (48929, 3643, 11, '启用的OpenEMR支持LLC实验室外汇服务。');
+INSERT INTO `lang_definitions` VALUES (48929, 3643, 11, '启用的DCL支持LLC实验室外汇服务。');
 INSERT INTO `lang_definitions` VALUES (48930, 3644, 11, '启用用户证书验证');
 INSERT INTO `lang_definitions` VALUES (48931, 3650, 11, '启用ZMG，ERX服务有限责任公司');
 INSERT INTO `lang_definitions` VALUES (48932, 3651, 11, '启用');
@@ -62357,7 +62357,7 @@ INSERT INTO `lang_definitions` VALUES (48988, 3754, 11, '英语');
 INSERT INTO `lang_definitions` VALUES (48989, 3756, 11, '英语（印度）');
 INSERT INTO `lang_definitions` VALUES (48990, 3757, 11, '英语（标准）');
 INSERT INTO `lang_definitions` VALUES (48991, 3758, 11, 'enscript命令使用HylaFax等。');
-INSERT INTO `lang_definitions` VALUES (48992, 3759, 11, '确保OpenEMR有写权限的目录');
+INSERT INTO `lang_definitions` VALUES (48992, 3759, 11, '确保DCL有写权限的目录');
 INSERT INTO `lang_definitions` VALUES (48993, 3761, 11, '耳鼻喉科放电');
 INSERT INTO `lang_definitions` VALUES (48994, 3762, 11, '耳鼻喉科疼痛');
 INSERT INTO `lang_definitions` VALUES (48995, 3765, 11, '输入诊断代码排除所有不包含发票');
@@ -62396,7 +62396,7 @@ INSERT INTO `lang_definitions` VALUES (49027, 3889, 11, 'YES或NO选项的错误
 INSERT INTO `lang_definitions` VALUES (49028, 3894, 11, '阅读文件上传错误开幕');
 INSERT INTO `lang_definitions` VALUES (49029, 3897, 11, '删除邮件时出错');
 INSERT INTO `lang_definitions` VALUES (49030, 3898, 11, '从实验室交换网络的​​错误检索结果');
-INSERT INTO `lang_definitions` VALUES (49031, 3901, 11, '批准文件的特权的OpenEMR用户时的错误。');
+INSERT INTO `lang_definitions` VALUES (49031, 3901, 11, '批准文件的特权的DCL用户时的错误。');
 INSERT INTO `lang_definitions` VALUES (49032, 3904, 11, '在注册表格的错误！');
 INSERT INTO `lang_definitions` VALUES (49033, 3905, 11, '错误，而保存的文件');
 INSERT INTO `lang_definitions` VALUES (49034, 3907, 11, '写入文件时出错');
@@ -62407,7 +62407,7 @@ INSERT INTO `lang_definitions` VALUES (49038, 3920, 11, '错误，无法，以�
 INSERT INTO `lang_definitions` VALUES (49039, 3921, 11, '错误，无法创建的证书颁发机构证书。');
 INSERT INTO `lang_definitions` VALUES (49040, 3922, 11, '错误，无法创建服务器证书。');
 INSERT INTO `lang_definitions` VALUES (49041, 3924, 11, '错误，无法打开文件');
-INSERT INTO `lang_definitions` VALUES (49042, 3925, 11, '错误，用户证书验证不在OpenEMR启用');
+INSERT INTO `lang_definitions` VALUES (49042, 3925, 11, '错误，用户证书验证不在DCL启用');
 INSERT INTO `lang_definitions` VALUES (49043, 3933, 11, '错误。你需要安装存档/ Tar.php的PHP模块。');
 INSERT INTO `lang_definitions` VALUES (49044, 3934, 11, '错误：无法打开table.sql，破碎的形式？');
 INSERT INTO `lang_definitions` VALUES (49045, 3937, 11, '错误：重复的ID上线');
@@ -62595,7 +62595,7 @@ INSERT INTO `lang_definitions` VALUES (49226, 4277, 11, '档案');
 INSERT INTO `lang_definitions` VALUES (49227, 4280, 11, '在“文档”目录中的档案，用来了解如何创建日志过程自动化');
 INSERT INTO `lang_definitions` VALUES (49228, 4281, 11, '档案位置');
 INSERT INTO `lang_definitions` VALUES (49229, 4282, 11, '档案处理');
-INSERT INTO `lang_definitions` VALUES (49230, 4289, 11, '档案授权给OpenEMR用户');
+INSERT INTO `lang_definitions` VALUES (49230, 4289, 11, '档案授权给DCL用户');
 INSERT INTO `lang_definitions` VALUES (49231, 4291, 11, '档案室');
 INSERT INTO `lang_definitions` VALUES (49232, 4292, 11, '上传档案');
 INSERT INTO `lang_definitions` VALUES (49233, 4294, 11, '具有相同名称的档案已经存在于：');
@@ -62935,7 +62935,7 @@ INSERT INTO `lang_definitions` VALUES (49566, 5024, 11, '有多少未来几个�
 INSERT INTO `lang_definitions` VALUES (49567, 5036, 11, '液相色谱法：');
 INSERT INTO `lang_definitions` VALUES (49568, 5038, 11, 'HT');
 INSERT INTO `lang_definitions` VALUES (49569, 5039, 11, 'HTML');
-INSERT INTO `lang_definitions` VALUES (49570, 5043, 11, '网页链接的OpenEMR支持实验室交流服务有限责任公司。');
+INSERT INTO `lang_definitions` VALUES (49570, 5043, 11, '网页链接的DCL支持实验室交流服务有限责任公司。');
 INSERT INTO `lang_definitions` VALUES (49571, 5045, 11, '匈牙利语');
 INSERT INTO `lang_definitions` VALUES (49572, 5046, 11, 'HylaFax目录');
 INSERT INTO `lang_definitions` VALUES (49573, 5047, 11, 'HylaFax等Enscript指令');
@@ -63346,7 +63346,7 @@ INSERT INTO `lang_definitions` VALUES (49977, 6129, 11, '当地');
 INSERT INTO `lang_definitions` VALUES (49978, 6133, 11, '语言环境');
 INSERT INTO `lang_definitions` VALUES (49979, 6134, 11, '地方');
 INSERT INTO `lang_definitions` VALUES (49980, 6135, 11, '位置');
-INSERT INTO `lang_definitions` VALUES (49981, 6136, 11, '位置的openemr机，并可能包含敏感数据，因此建议手动删除后，其使用的文件');
+INSERT INTO `lang_definitions` VALUES (49981, 6136, 11, '位置的DCL机，并可能包含敏感数据，因此建议手动删除后，其使用的文件');
 INSERT INTO `lang_definitions` VALUES (49982, 6137, 11, '这个地段的位置');
 INSERT INTO `lang_definitions` VALUES (49983, 6138, 11, '地点不详');
 INSERT INTO `lang_definitions` VALUES (49984, 6139, 11, '位置HylaFax等商店传真。');
@@ -63939,12 +63939,12 @@ INSERT INTO `lang_definitions` VALUES (50570, 7514, 11, '上门客户门户网�
 INSERT INTO `lang_definitions` VALUES (50571, 7518, 11, '哎呀！');
 INSERT INTO `lang_definitions` VALUES (50572, 7519, 11, '打开');
 INSERT INTO `lang_definitions` VALUES (50573, 7535, 11, '今日访华');
-INSERT INTO `lang_definitions` VALUES (50574, 7562, 11, 'OpenEMR已经配置证书颁发机构。');
-INSERT INTO `lang_definitions` VALUES (50575, 7567, 11, 'OpenEMR数据库升级');
-INSERT INTO `lang_definitions` VALUES (50576, 7568, 11, '德识别OpenEMR数据库升级');
-INSERT INTO `lang_definitions` VALUES (50577, 7571, 11, 'OpenEMR必须配置使用证书之前，它可以创建客户端证书。');
-INSERT INTO `lang_definitions` VALUES (50578, 7575, 11, 'OpenEMR需要Javascript执行用户身份验证。');
-INSERT INTO `lang_definitions` VALUES (50579, 7576, 11, 'OpenEMR用户');
+INSERT INTO `lang_definitions` VALUES (50574, 7562, 11, 'DCL已经配置证书颁发机构。');
+INSERT INTO `lang_definitions` VALUES (50575, 7567, 11, 'DCL数据库升级');
+INSERT INTO `lang_definitions` VALUES (50576, 7568, 11, '德识别DCL数据库升级');
+INSERT INTO `lang_definitions` VALUES (50577, 7571, 11, 'DCL必须配置使用证书之前，它可以创建客户端证书。');
+INSERT INTO `lang_definitions` VALUES (50578, 7575, 11, 'DCL需要Javascript执行用户身份验证。');
+INSERT INTO `lang_definitions` VALUES (50579, 7576, 11, 'DCL用户');
 INSERT INTO `lang_definitions` VALUES (50580, 7577, 11, '开口');
 INSERT INTO `lang_definitions` VALUES (50581, 7583, 11, '眼科');
 INSERT INTO `lang_definitions` VALUES (50582, 7586, 11, '选项');
@@ -64208,7 +64208,7 @@ INSERT INTO `lang_definitions` VALUES (50839, 8150, 11, '挂单');
 INSERT INTO `lang_definitions` VALUES (50840, 8151, 11, '待水库');
 INSERT INTO `lang_definitions` VALUES (50841, 8152, 11, '待审查');
 INSERT INTO `lang_definitions` VALUES (50842, 8153, 11, '待Rx计数');
-INSERT INTO `lang_definitions` VALUES (50843, 8156, 11, '彭宁顿事务所OpenEMR至五');
+INSERT INTO `lang_definitions` VALUES (50843, 8156, 11, '彭宁顿事务所DCL至五');
 INSERT INTO `lang_definitions` VALUES (50844, 8157, 11, '消化性溃疡病');
 INSERT INTO `lang_definitions` VALUES (50845, 8159, 11, '每分钟');
 INSERT INTO `lang_definitions` VALUES (50846, 8160, 11, '每个鼻孔');
@@ -64339,7 +64339,7 @@ INSERT INTO `lang_definitions` VALUES (50970, 8434, 11, '请选择X12的合作�
 INSERT INTO `lang_definitions` VALUES (50971, 8435, 11, '请设置');
 INSERT INTO `lang_definitions` VALUES (50972, 8436, 11, '请设置de_identification_config变回零');
 INSERT INTO `lang_definitions` VALUES (50973, 8441, 11, '请开始新德鉴定过程');
-INSERT INTO `lang_definitions` VALUES (50974, 8445, 11, '请升级OpenEMR数据库，包括德鉴定程序，功能表');
+INSERT INTO `lang_definitions` VALUES (50974, 8445, 11, '请升级DCL数据库，包括德鉴定程序，功能表');
 INSERT INTO `lang_definitions` VALUES (50975, 8447, 11, '有关详细信息，请查看德识别错误日志表');
 INSERT INTO `lang_definitions` VALUES (50976, 8448, 11, '经过一段时间后，请门诊德识别屏幕');
 INSERT INTO `lang_definitions` VALUES (50977, 8449, 11, '请门诊一段时间后，重新标识屏幕');
@@ -65130,7 +65130,7 @@ INSERT INTO `lang_definitions` VALUES (51761, 10286, 11, '鼻窦手术');
 INSERT INTO `lang_definitions` VALUES (51762, 10287, 11, '窦压痛：');
 INSERT INTO `lang_definitions` VALUES (51763, 10288, 11, '鼻窦炎');
 INSERT INTO `lang_definitions` VALUES (51764, 10294, 11, '站点ID');
-INSERT INTO `lang_definitions` VALUES (51765, 10296, 11, '为OpenEMR支持LLC实验室Exchange服务的网站ID。');
+INSERT INTO `lang_definitions` VALUES (51765, 10296, 11, '为DCL支持LLC实验室Exchange服务的网站ID。');
 INSERT INTO `lang_definitions` VALUES (51766, 10300, 11, '大小');
 INSERT INTO `lang_definitions` VALUES (51767, 10303, 11, '尺寸必须介于1和999');
 INSERT INTO `lang_definitions` VALUES (51768, 10305, 11, '尺寸/名单');
@@ -65517,7 +65517,7 @@ INSERT INTO `lang_definitions` VALUES (52148, 11277, 11, '翻译的语言描述�
 INSERT INTO `lang_definitions` VALUES (52149, 11278, 11, '翻译表同步。');
 INSERT INTO `lang_definitions` VALUES (52150, 11279, 11, '这个实体的类型');
 INSERT INTO `lang_definitions` VALUES (52151, 11299, 11, '供应商特定的代码确定这一过程或结果');
-INSERT INTO `lang_definitions` VALUES (52152, 11304, 11, '在X12的文件以及由此产生的HTML输出报告的存档中的“时代”子目录主要OpenEMR安装目录。您将要提及这些档案不时。网址是');
+INSERT INTO `lang_definitions` VALUES (52152, 11304, 11, '在X12的文件以及由此产生的HTML输出报告的存档中的“时代”子目录主要DCL安装目录。您将要提及这些档案不时。网址是');
 INSERT INTO `lang_definitions` VALUES (52153, 11306, 11, '压缩文件将包含下列项目');
 INSERT INTO `lang_definitions` VALUES (52154, 11307, 11, '主题');
 INSERT INTO `lang_definitions` VALUES (52155, 11314, 11, '注射治疗');
@@ -65674,7 +65674,7 @@ INSERT INTO `lang_definitions` VALUES (52305, 11782, 11, '今天 平衡');
 INSERT INTO `lang_definitions` VALUES (52306, 11783, 11, '今天\'的指控');
 INSERT INTO `lang_definitions` VALUES (52307, 11784, 11, '今天的日期');
 INSERT INTO `lang_definitions` VALUES (52308, 11785, 11, '今天的活动');
-INSERT INTO `lang_definitions` VALUES (52309, 11797, 11, '令牌编号为openemr支持实验室交流服务有限责任公司。');
+INSERT INTO `lang_definitions` VALUES (52309, 11797, 11, '令牌编号为DCL支持实验室交流服务有限责任公司。');
 INSERT INTO `lang_definitions` VALUES (52310, 11803, 11, '扁桃体');
 INSERT INTO `lang_definitions` VALUES (52311, 11807, 11, '顶端');
 INSERT INTO `lang_definitions` VALUES (52312, 11810, 11, '专题');
@@ -65830,7 +65830,7 @@ INSERT INTO `lang_definitions` VALUES (52461, 12172, 11, '更新用户资料');
 INSERT INTO `lang_definitions` VALUES (52462, 12180, 11, '更新人口统计未授权');
 INSERT INTO `lang_definitions` VALUES (52463, 12184, 11, '升级');
 INSERT INTO `lang_definitions` VALUES (52464, 12186, 11, '升级数据库');
-INSERT INTO `lang_definitions` VALUES (52465, 12188, 11, '升级openemr数据库包括程序，功能和表所需的识别过程');
+INSERT INTO `lang_definitions` VALUES (52465, 12188, 11, '升级DCL数据库包括程序，功能和表所需的识别过程');
 INSERT INTO `lang_definitions` VALUES (52466, 12189, 11, '升级将继续');
 INSERT INTO `lang_definitions` VALUES (52467, 12190, 11, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (52468, 12191, 11, '上传');
@@ -65853,7 +65853,7 @@ INSERT INTO `lang_definitions` VALUES (52484, 12230, 11, '尿微量白蛋白');
 INSERT INTO `lang_definitions` VALUES (52485, 12231, 11, '尿流');
 INSERT INTO `lang_definitions` VALUES (52486, 12232, 11, '尿急');
 INSERT INTO `lang_definitions` VALUES (52487, 12233, 11, '网址');
-INSERT INTO `lang_definitions` VALUES (52488, 12235, 11, 'OpenEMR支持地址');
+INSERT INTO `lang_definitions` VALUES (52488, 12235, 11, 'DCL支持地址');
 INSERT INTO `lang_definitions` VALUES (52489, 12237, 11, '电话网关。自动电话服务提供商maviq。门诊http://signup.maviq.com获得更多信息请门诊。');
 INSERT INTO `lang_definitions` VALUES (52490, 12248, 11, '使用指标（isa15）');
 INSERT INTO `lang_definitions` VALUES (52491, 12251, 11, '使用%单独在一场只是排序的列');
@@ -66559,7 +66559,7 @@ INSERT INTO `lang_definitions` VALUES (53190, 665, 12, '過去平衡的數量');
 INSERT INTO `lang_definitions` VALUES (53191, 666, 12, '這次看診的數量');
 INSERT INTO `lang_definitions` VALUES (53192, 667, 12, '已付金額');
 INSERT INTO `lang_definitions` VALUES (53193, 668, 12, '數量：');
-INSERT INTO `lang_definitions` VALUES (53194, 678, 12, '棄置OpenEMR網頁目錄樹時發生錯誤');
+INSERT INTO `lang_definitions` VALUES (53194, 678, 12, '棄置DCL網頁目錄樹時發生錯誤');
 INSERT INTO `lang_definitions` VALUES (53195, 679, 12, '棄置phpGACL網站目錄樹時發生錯誤');
 INSERT INTO `lang_definitions` VALUES (53196, 680, 12, '棄置SQL總帳web目錄樹時發生錯誤');
 INSERT INTO `lang_definitions` VALUES (53197, 685, 12, '一個不完整的GCAC問題已創建和連接。有人會需要稍後完成它。');
@@ -67167,10 +67167,10 @@ INSERT INTO `lang_definitions` VALUES (53798, 2200, 12, '電腦輔助醫囑系�
 INSERT INTO `lang_definitions` VALUES (53799, 2202, 12, '結論');
 INSERT INTO `lang_definitions` VALUES (53800, 2210, 12, '配置');
 INSERT INTO `lang_definitions` VALUES (53801, 2211, 12, '配置出口或進口');
-INSERT INTO `lang_definitions` VALUES (53802, 2213, 12, '配置Apache和OpenEMR以使用客戶端的SSL證書。');
+INSERT INTO `lang_definitions` VALUES (53802, 2213, 12, '配置Apache和DCL以使用客戶端的SSL證書。');
 INSERT INTO `lang_definitions` VALUES (53803, 2214, 12, '配置Apache以使用客戶端的SSL證書');
 INSERT INTO `lang_definitions` VALUES (53804, 2215, 12, '配置Apache以使用HTTPS。');
-INSERT INTO `lang_definitions` VALUES (53805, 2216, 12, '配置Openemr以使用客戶端SSL證書');
+INSERT INTO `lang_definitions` VALUES (53805, 2216, 12, '配置DCL以使用客戶端SSL證書');
 INSERT INTO `lang_definitions` VALUES (53806, 2225, 12, '證實創造新的患者');
 INSERT INTO `lang_definitions` VALUES (53807, 2227, 12, '證實新的密碼');
 INSERT INTO `lang_definitions` VALUES (53808, 2229, 12, '證實付款');
@@ -67646,8 +67646,8 @@ INSERT INTO `lang_definitions` VALUES (54277, 3321, 12, '由於病人');
 INSERT INTO `lang_definitions` VALUES (54278, 3322, 12, '即將到期');
 INSERT INTO `lang_definitions` VALUES (54279, 3323, 12, '應有的地位');
 INSERT INTO `lang_definitions` VALUES (54280, 3324, 12, '應有的地位更新');
-INSERT INTO `lang_definitions` VALUES (54281, 3325, 12, '傾銷OpenEMR數據庫');
-INSERT INTO `lang_definitions` VALUES (54282, 3326, 12, '傾銷OpenEMR web目錄樹');
+INSERT INTO `lang_definitions` VALUES (54281, 3325, 12, '傾銷DCL數據庫');
+INSERT INTO `lang_definitions` VALUES (54282, 3326, 12, '傾銷DCL web目錄樹');
 INSERT INTO `lang_definitions` VALUES (54283, 3327, 12, '傾銷phpGACL數據庫');
 INSERT INTO `lang_definitions` VALUES (54284, 3328, 12, '傾銷phpGACL Web目錄樹');
 INSERT INTO `lang_definitions` VALUES (54285, 3329, 12, '傾銷SQL的總帳數據庫');
@@ -67781,7 +67781,7 @@ INSERT INTO `lang_definitions` VALUES (54412, 3630, 12, '允許病人提醒構�
 INSERT INTO `lang_definitions` VALUES (54413, 3634, 12, '允許自動測量計算所需的數據（AMC）的激勵');
 INSERT INTO `lang_definitions` VALUES (54414, 3636, 12, '允許自動測量計算日期（AMC）的追踪報告');
 INSERT INTO `lang_definitions` VALUES (54415, 3638, 12, '允許掃描儀支持');
-INSERT INTO `lang_definitions` VALUES (54416, 3643, 12, '允許OpenEMR支持LLC實驗室交流服務。');
+INSERT INTO `lang_definitions` VALUES (54416, 3643, 12, '允許DCL支持LLC實驗室交流服務。');
 INSERT INTO `lang_definitions` VALUES (54417, 3644, 12, '允許用戶證書驗證');
 INSERT INTO `lang_definitions` VALUES (54418, 3650, 12, '允許ZMG，ERX服務有限責任公司');
 INSERT INTO `lang_definitions` VALUES (54419, 3651, 12, '使能');
@@ -67842,7 +67842,7 @@ INSERT INTO `lang_definitions` VALUES (54473, 3754, 12, '英文');
 INSERT INTO `lang_definitions` VALUES (54474, 3756, 12, '英語（印度）');
 INSERT INTO `lang_definitions` VALUES (54475, 3757, 12, '英語（標準）');
 INSERT INTO `lang_definitions` VALUES (54476, 3758, 12, 'enscript命令由HylaFax使用');
-INSERT INTO `lang_definitions` VALUES (54477, 3759, 12, '確保OpenEMR有寫權限的目錄');
+INSERT INTO `lang_definitions` VALUES (54477, 3759, 12, '確保DCL有寫權限的目錄');
 INSERT INTO `lang_definitions` VALUES (54478, 3761, 12, '耳鼻喉分泌物');
 INSERT INTO `lang_definitions` VALUES (54479, 3762, 12, '耳鼻喉疼痛');
 INSERT INTO `lang_definitions` VALUES (54480, 3765, 12, '輸入診斷代碼排除所有不包含發票');
@@ -67880,7 +67880,7 @@ INSERT INTO `lang_definitions` VALUES (54511, 3888, 12, '在GZIP壓縮文件中�
 INSERT INTO `lang_definitions` VALUES (54512, 3889, 12, '在是或不是選項的錯誤');
 INSERT INTO `lang_definitions` VALUES (54513, 3894, 12, '錯誤閱讀啟用上傳檔案');
 INSERT INTO `lang_definitions` VALUES (54514, 3898, 12, '從實驗室交換網絡的錯誤檢索結果');
-INSERT INTO `lang_definitions` VALUES (54515, 3901, 12, '授予OpenEMR使用者檔案權限時的錯誤。');
+INSERT INTO `lang_definitions` VALUES (54515, 3901, 12, '授予DCL使用者檔案權限時的錯誤。');
 INSERT INTO `lang_definitions` VALUES (54516, 3904, 12, '在註冊表格的錯誤！');
 INSERT INTO `lang_definitions` VALUES (54517, 3905, 12, '儲存檔案時出錯');
 INSERT INTO `lang_definitions` VALUES (54518, 3907, 12, '寫入檔案時出錯');
@@ -67891,7 +67891,7 @@ INSERT INTO `lang_definitions` VALUES (54522, 3920, 12, '錯誤，無法創建ad
 INSERT INTO `lang_definitions` VALUES (54523, 3921, 12, '錯誤，無法創建的證書頒發機構證書。');
 INSERT INTO `lang_definitions` VALUES (54524, 3922, 12, '錯誤，無法創建伺服器憑證。');
 INSERT INTO `lang_definitions` VALUES (54525, 3924, 12, '錯誤，無法打開檔案');
-INSERT INTO `lang_definitions` VALUES (54526, 3925, 12, '錯誤，用戶證書驗證無法在OpenEMR啟用');
+INSERT INTO `lang_definitions` VALUES (54526, 3925, 12, '錯誤，用戶證書驗證無法在DCL啟用');
 INSERT INTO `lang_definitions` VALUES (54527, 3933, 12, '錯誤，你需要安裝存檔/ Tar.php的PHP模組。');
 INSERT INTO `lang_definitions` VALUES (54528, 3934, 12, '錯誤：無法打開table.sql，破碎的形式？');
 INSERT INTO `lang_definitions` VALUES (54529, 3937, 12, '錯誤：重複的識別碼上線');
@@ -68074,7 +68074,7 @@ INSERT INTO `lang_definitions` VALUES (54705, 4277, 12, '檔案');
 INSERT INTO `lang_definitions` VALUES (54706, 4280, 12, '在“文檔”目錄中的檔案，以了解如何創建日誌備份過程自動化');
 INSERT INTO `lang_definitions` VALUES (54707, 4281, 12, '檔案的位置');
 INSERT INTO `lang_definitions` VALUES (54708, 4282, 12, '檔案處理');
-INSERT INTO `lang_definitions` VALUES (54709, 4289, 12, '檔案授予權限給OpenEMR用戶');
+INSERT INTO `lang_definitions` VALUES (54709, 4289, 12, '檔案授予權限給DCL用戶');
 INSERT INTO `lang_definitions` VALUES (54710, 4291, 12, '檔案室');
 INSERT INTO `lang_definitions` VALUES (54711, 4292, 12, '上傳檔案');
 INSERT INTO `lang_definitions` VALUES (54712, 4294, 12, '具有相同名稱的檔案已經存在在位置：');
@@ -68397,7 +68397,7 @@ INSERT INTO `lang_definitions` VALUES (55028, 5024, 12, '多少個月提前為�
 INSERT INTO `lang_definitions` VALUES (55029, 5036, 12, '華能國際：');
 INSERT INTO `lang_definitions` VALUES (55030, 5038, 12, '羥色胺 高溫');
 INSERT INTO `lang_definitions` VALUES (55031, 5039, 12, 'HTML');
-INSERT INTO `lang_definitions` VALUES (55032, 5043, 12, 'HTTPS連結OpenEMR支持LLC實驗室交換服務。');
+INSERT INTO `lang_definitions` VALUES (55032, 5043, 12, 'HTTPS連結DCL支持LLC實驗室交換服務。');
 INSERT INTO `lang_definitions` VALUES (55033, 5046, 12, 'HylaFax目錄');
 INSERT INTO `lang_definitions` VALUES (55034, 5047, 12, 'HylaFax等Enscript指令');
 INSERT INTO `lang_definitions` VALUES (55035, 5048, 12, 'HylaFAX服務器');
@@ -68798,7 +68798,7 @@ INSERT INTO `lang_definitions` VALUES (55429, 6129, 12, '當地');
 INSERT INTO `lang_definitions` VALUES (55430, 6133, 12, '區域設置');
 INSERT INTO `lang_definitions` VALUES (55431, 6134, 12, '方位');
 INSERT INTO `lang_definitions` VALUES (55432, 6135, 12, '位置');
-INSERT INTO `lang_definitions` VALUES (55433, 6136, 12, 'openemr機的位置，並可能包含敏感數據，因此建議在使用後手動刪除該文件');
+INSERT INTO `lang_definitions` VALUES (55433, 6136, 12, 'DCL機的位置，並可能包含敏感數據，因此建議在使用後手動刪除該文件');
 INSERT INTO `lang_definitions` VALUES (55434, 6137, 12, '這個地段的位置');
 INSERT INTO `lang_definitions` VALUES (55435, 6138, 12, '地點不詳');
 INSERT INTO `lang_definitions` VALUES (55436, 6139, 12, '位置HylaFax等商店傳真。');
@@ -69627,7 +69627,7 @@ INSERT INTO `lang_definitions` VALUES (56258, 8150, 12, '等待處理的醫囑')
 INSERT INTO `lang_definitions` VALUES (56259, 8151, 12, '掛起分辨率');
 INSERT INTO `lang_definitions` VALUES (56260, 8152, 12, '待審查');
 INSERT INTO `lang_definitions` VALUES (56261, 8153, 12, '待Rx計數');
-INSERT INTO `lang_definitions` VALUES (56262, 8156, 12, '彭寧頓事務所OpenEMR至五');
+INSERT INTO `lang_definitions` VALUES (56262, 8156, 12, '彭寧頓事務所DCL至五');
 INSERT INTO `lang_definitions` VALUES (56263, 8157, 12, '胃潰瘍疾病');
 INSERT INTO `lang_definitions` VALUES (56264, 8159, 12, '每分鐘');
 INSERT INTO `lang_definitions` VALUES (56265, 8160, 12, '每個鼻孔');
@@ -69750,7 +69750,7 @@ INSERT INTO `lang_definitions` VALUES (56381, 8434, 12, '請選擇X12的合作�
 INSERT INTO `lang_definitions` VALUES (56382, 8435, 12, '請設置');
 INSERT INTO `lang_definitions` VALUES (56383, 8436, 12, '請設置de_identification_config變數回到零');
 INSERT INTO `lang_definitions` VALUES (56384, 8441, 12, '請開始新的去識別過程');
-INSERT INTO `lang_definitions` VALUES (56385, 8445, 12, '請升級OpenEMR數據庫，包括去識別程序，功能，表');
+INSERT INTO `lang_definitions` VALUES (56385, 8445, 12, '請升級DCL數據庫，包括去識別程序，功能，表');
 INSERT INTO `lang_definitions` VALUES (56386, 8447, 12, '有關詳細信息，請查看去識別錯誤日誌表');
 INSERT INTO `lang_definitions` VALUES (56387, 8448, 12, '經過一段時間後，請瀏覽去識別螢幕');
 INSERT INTO `lang_definitions` VALUES (56388, 8449, 12, '經過一段時間後，請瀏覽再識別螢幕');
@@ -70502,7 +70502,7 @@ INSERT INTO `lang_definitions` VALUES (57133, 10286, 12, '竇手術');
 INSERT INTO `lang_definitions` VALUES (57134, 10287, 12, '竇壓痛：');
 INSERT INTO `lang_definitions` VALUES (57135, 10288, 12, '鼻竇炎');
 INSERT INTO `lang_definitions` VALUES (57136, 10294, 12, '網站憑證');
-INSERT INTO `lang_definitions` VALUES (57137, 10296, 12, '為OpenEMR支持LLC實驗室交換服務的網站憑證。');
+INSERT INTO `lang_definitions` VALUES (57137, 10296, 12, '為DCL支持LLC實驗室交換服務的網站憑證。');
 INSERT INTO `lang_definitions` VALUES (57138, 10300, 12, '大小');
 INSERT INTO `lang_definitions` VALUES (57139, 10303, 12, '大小必須是一個介於1和999之間的數字');
 INSERT INTO `lang_definitions` VALUES (57140, 10305, 12, '尺寸/名單');
@@ -70881,7 +70881,7 @@ INSERT INTO `lang_definitions` VALUES (57512, 11277, 12, '用當前的語言描�
 INSERT INTO `lang_definitions` VALUES (57513, 11278, 12, '翻譯表是同步的。');
 INSERT INTO `lang_definitions` VALUES (57514, 11279, 12, '這個實體的類型');
 INSERT INTO `lang_definitions` VALUES (57515, 11299, 12, '供應商特定的代碼，識別此過程或結果');
-INSERT INTO `lang_definitions` VALUES (57516, 11304, 12, '這個X12的文件，就像由此產生的HTML輸出報告，存檔在“時代”的主要OpenEMR安裝目錄的子目錄。你將要不時對這些檔案存檔。 URL是');
+INSERT INTO `lang_definitions` VALUES (57516, 11304, 12, '這個X12的文件，就像由此產生的HTML輸出報告，存檔在“時代”的主要DCL安裝目錄的子目錄。你將要不時對這些檔案存檔。 URL是');
 INSERT INTO `lang_definitions` VALUES (57517, 11306, 12, 'zip文件將包含以下項目');
 INSERT INTO `lang_definitions` VALUES (57518, 11307, 12, '主題');
 INSERT INTO `lang_definitions` VALUES (57519, 11314, 12, '治療性注射');
@@ -71034,7 +71034,7 @@ INSERT INTO `lang_definitions` VALUES (57665, 11779, 12, '今天');
 INSERT INTO `lang_definitions` VALUES (57666, 11781, 12, '今天');
 INSERT INTO `lang_definitions` VALUES (57667, 11784, 12, '今天的日期');
 INSERT INTO `lang_definitions` VALUES (57668, 11785, 12, '今天的活動');
-INSERT INTO `lang_definitions` VALUES (57669, 11797, 12, '標記ID的OpenEMR支持LLC實驗室交流中心。');
+INSERT INTO `lang_definitions` VALUES (57669, 11797, 12, '標記ID的DCL支持LLC實驗室交流中心。');
 INSERT INTO `lang_definitions` VALUES (57670, 11803, 12, '扁桃腺切除術');
 INSERT INTO `lang_definitions` VALUES (57671, 11807, 12, '頂部');
 INSERT INTO `lang_definitions` VALUES (57672, 11810, 12, '主題');
@@ -71188,7 +71188,7 @@ INSERT INTO `lang_definitions` VALUES (57819, 12172, 12, '更新用戶資料');
 INSERT INTO `lang_definitions` VALUES (57820, 12180, 12, '更新人口統計未被授權。');
 INSERT INTO `lang_definitions` VALUES (57821, 12184, 12, '升級');
 INSERT INTO `lang_definitions` VALUES (57822, 12186, 12, '升級資料庫');
-INSERT INTO `lang_definitions` VALUES (57823, 12188, 12, '升級OpenEMR資料庫，包括過程，函數和去識別過程中所需的表格');
+INSERT INTO `lang_definitions` VALUES (57823, 12188, 12, '升級DCL資料庫，包括過程，函數和去識別過程中所需的表格');
 INSERT INTO `lang_definitions` VALUES (57824, 12189, 12, '升級將繼續');
 INSERT INTO `lang_definitions` VALUES (57825, 12190, 12, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (57826, 12191, 12, '上載');
@@ -71211,7 +71211,7 @@ INSERT INTO `lang_definitions` VALUES (57842, 12230, 12, '尿微量白蛋白');
 INSERT INTO `lang_definitions` VALUES (57843, 12231, 12, '尿流');
 INSERT INTO `lang_definitions` VALUES (57844, 12232, 12, '尿急');
 INSERT INTO `lang_definitions` VALUES (57845, 12233, 12, '網址');
-INSERT INTO `lang_definitions` VALUES (57846, 12235, 12, '網址為OpenEMR支持。');
+INSERT INTO `lang_definitions` VALUES (57846, 12235, 12, '網址為DCL支持。');
 INSERT INTO `lang_definitions` VALUES (57847, 12237, 12, '電話網關的URL。由Maviq提供自動化的VOIP服務。更多信息，請訪問http://signup.maviq.com。');
 INSERT INTO `lang_definitions` VALUES (57848, 12248, 12, '使用指標（ISA15）');
 INSERT INTO `lang_definitions` VALUES (57849, 12252, 12, '使用24小時時間格式？');
@@ -71916,7 +71916,7 @@ INSERT INTO `lang_definitions` VALUES (58547, 667, 13, 'Итоговая опл�
 INSERT INTO `lang_definitions` VALUES (58548, 668, 13, 'Итог:');
 INSERT INTO `lang_definitions` VALUES (58549, 671, 13, 'Оплаченный итог');
 INSERT INTO `lang_definitions` VALUES (58550, 676, 13, 'Для повторных событий требуется, чтобы дата окончания была позднее, чем дата начала');
-INSERT INTO `lang_definitions` VALUES (58551, 678, 13, 'При формировании дампа дерева веб-каталога OpenEMR произошла ошибка');
+INSERT INTO `lang_definitions` VALUES (58551, 678, 13, 'При формировании дампа дерева веб-каталога DCL произошла ошибка');
 INSERT INTO `lang_definitions` VALUES (58552, 679, 13, 'Во время формирования дампа дерева веб-каталога phpGACL произошла ошибка');
 INSERT INTO `lang_definitions` VALUES (58553, 680, 13, 'Во время форирования дампа по дереву веб-каталога для регистра SQL произошла ошибка');
 INSERT INTO `lang_definitions` VALUES (58554, 685, 13, 'Создана и связана неполная проблема GCAC. Позже потребуется ее заполение.');
@@ -72552,10 +72552,10 @@ INSERT INTO `lang_definitions` VALUES (59183, 2200, 13, 'Автоматизир�
 INSERT INTO `lang_definitions` VALUES (59184, 2202, 13, 'Заключения');
 INSERT INTO `lang_definitions` VALUES (59185, 2210, 13, 'Настройки');
 INSERT INTO `lang_definitions` VALUES (59186, 2211, 13, 'Экспорт/импорт настроек');
-INSERT INTO `lang_definitions` VALUES (59187, 2213, 13, 'Настройте Apache и OpenEMR для использования сертификатов SSL на стороне клиента.');
+INSERT INTO `lang_definitions` VALUES (59187, 2213, 13, 'Настройте Apache и DCL для использования сертификатов SSL на стороне клиента.');
 INSERT INTO `lang_definitions` VALUES (59188, 2214, 13, 'Настройка Apache для использования сертификатов SSL на стороне клиента');
 INSERT INTO `lang_definitions` VALUES (59189, 2215, 13, 'Настраивает Apache для использования HTTPS.');
-INSERT INTO `lang_definitions` VALUES (59190, 2216, 13, 'Настройка OpenEMR для использования сертификатов SSL на стороне клиента.');
+INSERT INTO `lang_definitions` VALUES (59190, 2216, 13, 'Настройка DCL для использования сертификатов SSL на стороне клиента.');
 INSERT INTO `lang_definitions` VALUES (59191, 2225, 13, 'Подтвердите регистрацию нового пациента');
 INSERT INTO `lang_definitions` VALUES (59192, 2227, 13, 'Подтвердите новый пароль');
 INSERT INTO `lang_definitions` VALUES (59193, 2229, 13, 'Подтвердите оплату');
@@ -73068,8 +73068,8 @@ INSERT INTO `lang_definitions` VALUES (59699, 3321, 13, 'Подлежит опл
 INSERT INTO `lang_definitions` VALUES (59700, 3322, 13, 'Подлежит вскоре');
 INSERT INTO `lang_definitions` VALUES (59701, 3323, 13, 'Назначенный статус');
 INSERT INTO `lang_definitions` VALUES (59702, 3324, 13, 'Обновление статуса оплаты');
-INSERT INTO `lang_definitions` VALUES (59703, 3325, 13, 'Формирование дампа базы данных OpenEMR');
-INSERT INTO `lang_definitions` VALUES (59704, 3326, 13, 'Формирование дампа дерева веб-каталога OpenEMR');
+INSERT INTO `lang_definitions` VALUES (59703, 3325, 13, 'Формирование дампа базы данных DCL');
+INSERT INTO `lang_definitions` VALUES (59704, 3326, 13, 'Формирование дампа дерева веб-каталога DCL');
 INSERT INTO `lang_definitions` VALUES (59705, 3327, 13, 'Формирование дампа базы данных phpGACL');
 INSERT INTO `lang_definitions` VALUES (59706, 3328, 13, 'Формирование дампа дерева веб-каталога phpGACL');
 INSERT INTO `lang_definitions` VALUES (59707, 3329, 13, 'Формирование дампа базы данных регистра SQL');
@@ -73214,7 +73214,7 @@ INSERT INTO `lang_definitions` VALUES (59845, 3630, 13, 'Включить вид
 INSERT INTO `lang_definitions` VALUES (59846, 3634, 13, 'Включить приглашение ввода даты для автоматического вычисления единицы измерения (AMC)');
 INSERT INTO `lang_definitions` VALUES (59847, 3636, 13, 'Включить отчетность об отслеживании даты для автоматического вычисления единицы измерения (AMC)');
 INSERT INTO `lang_definitions` VALUES (59848, 3638, 13, 'Включить поддержку сканера');
-INSERT INTO `lang_definitions` VALUES (59849, 3643, 13, 'Включает поддержку OpenEMR службой лабораторного обмена LLC.');
+INSERT INTO `lang_definitions` VALUES (59849, 3643, 13, 'Включает поддержку DCL службой лабораторного обмена LLC.');
 INSERT INTO `lang_definitions` VALUES (59850, 3644, 13, 'Включить аутентификацию пользовательского сертификата');
 INSERT INTO `lang_definitions` VALUES (59851, 3650, 13, 'Включить службу eRx для ZMG, LLC');
 INSERT INTO `lang_definitions` VALUES (59852, 3651, 13, 'включено');
@@ -73278,7 +73278,7 @@ INSERT INTO `lang_definitions` VALUES (59909, 3754, 13, 'Английский');
 INSERT INTO `lang_definitions` VALUES (59910, 3756, 13, 'Английский (индийский)');
 INSERT INTO `lang_definitions` VALUES (59911, 3757, 13, 'Английский (стандартный)');
 INSERT INTO `lang_definitions` VALUES (59912, 3758, 13, 'Шифровать команду, используя Hylafax.');
-INSERT INTO `lang_definitions` VALUES (59913, 3759, 13, 'Убедитесь, что OpenEMR имеет права записи в каталог');
+INSERT INTO `lang_definitions` VALUES (59913, 3759, 13, 'Убедитесь, что DCL имеет права записи в каталог');
 INSERT INTO `lang_definitions` VALUES (59914, 3761, 13, 'Отделяемое ЛОР');
 INSERT INTO `lang_definitions` VALUES (59915, 3762, 13, 'Отоларингологические боли');
 INSERT INTO `lang_definitions` VALUES (59916, 3765, 13, 'Введите код диагноза для исключения всех счетов, не содержащих его');
@@ -73317,7 +73317,7 @@ INSERT INTO `lang_definitions` VALUES (59948, 3889, 13, 'Ошибка для о�
 INSERT INTO `lang_definitions` VALUES (59949, 3894, 13, 'Ошибка открытия на чтение загруженного файла');
 INSERT INTO `lang_definitions` VALUES (59950, 3897, 13, 'Удаленное сообщение об ошибке');
 INSERT INTO `lang_definitions` VALUES (59951, 3898, 13, 'Ошибка исправления результатов из Lab Exchange Network');
-INSERT INTO `lang_definitions` VALUES (59952, 3901, 13, 'Ошибка при предоставлении прав доступа к файлу для пользователя OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (59952, 3901, 13, 'Ошибка при предоставлении прав доступа к файлу для пользователя DCL.');
 INSERT INTO `lang_definitions` VALUES (59953, 3904, 13, 'ошибка при регистрации формы!');
 INSERT INTO `lang_definitions` VALUES (59954, 3905, 13, 'Ошибка сохранения в файл');
 INSERT INTO `lang_definitions` VALUES (59955, 3907, 13, 'Ошибка записи в файл');
@@ -73328,7 +73328,7 @@ INSERT INTO `lang_definitions` VALUES (59959, 3920, 13, 'Ошибка, нево�
 INSERT INTO `lang_definitions` VALUES (59960, 3921, 13, 'Ошибка, невозможно создать доверенный сертификат Certificate.');
 INSERT INTO `lang_definitions` VALUES (59961, 3922, 13, 'Ошибка, невозможно создать сертификат сервера.');
 INSERT INTO `lang_definitions` VALUES (59962, 3924, 13, 'Ошибка, невозможно открыть файл');
-INSERT INTO `lang_definitions` VALUES (59963, 3925, 13, 'Ошибка, в OpenEMR не включена аутентификация сертификата пользователя');
+INSERT INTO `lang_definitions` VALUES (59963, 3925, 13, 'Ошибка, в DCL не включена аутентификация сертификата пользователя');
 INSERT INTO `lang_definitions` VALUES (59964, 3933, 13, 'Ошибка, необходимо установить модуль php Archive/Tar.php.');
 INSERT INTO `lang_definitions` VALUES (59965, 3934, 13, 'ОШИБКА: не удалось открыть table.sql, поврежденная форма?');
 INSERT INTO `lang_definitions` VALUES (59966, 3937, 13, 'Ошибка: в строке дублированный ID');
@@ -73515,7 +73515,7 @@ INSERT INTO `lang_definitions` VALUES (60146, 4277, 13, 'Файл');
 INSERT INTO `lang_definitions` VALUES (60147, 4280, 13, 'файл в директории Documentation для изучения, как автоматизировать процесс создания журнала резервного копирования');
 INSERT INTO `lang_definitions` VALUES (60148, 4281, 13, 'расположение файла');
 INSERT INTO `lang_definitions` VALUES (60149, 4282, 13, 'Управление файлом');
-INSERT INTO `lang_definitions` VALUES (60150, 4289, 13, 'Право на файл, предоставленное пользователю OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (60150, 4289, 13, 'Право на файл, предоставленное пользователю DCL.');
 INSERT INTO `lang_definitions` VALUES (60151, 4291, 13, 'Регистратура');
 INSERT INTO `lang_definitions` VALUES (60152, 4292, 13, 'Файл для загрузки');
 INSERT INTO `lang_definitions` VALUES (60153, 4294, 13, 'В этом месте уже имеется файл с таким именем:');
@@ -73855,7 +73855,7 @@ INSERT INTO `lang_definitions` VALUES (60486, 5024, 13, 'На сколько м�
 INSERT INTO `lang_definitions` VALUES (60487, 5036, 13, 'Анамнез сопутствующих заболеваний:');
 INSERT INTO `lang_definitions` VALUES (60488, 5038, 13, 'Пересадка сердца');
 INSERT INTO `lang_definitions` VALUES (60489, 5039, 13, 'HTML');
-INSERT INTO `lang_definitions` VALUES (60490, 5043, 13, 'Ссылка https для поддержки OpenEMR службой лабораторного обмена LLC.');
+INSERT INTO `lang_definitions` VALUES (60490, 5043, 13, 'Ссылка https для поддержки DCL службой лабораторного обмена LLC.');
 INSERT INTO `lang_definitions` VALUES (60491, 5046, 13, 'Направление в Hylafax');
 INSERT INTO `lang_definitions` VALUES (60492, 5047, 13, 'Команда шифрования Hylafax');
 INSERT INTO `lang_definitions` VALUES (60493, 5048, 13, 'Сервер Hylafax');
@@ -74265,7 +74265,7 @@ INSERT INTO `lang_definitions` VALUES (60896, 6129, 13, 'Локально');
 INSERT INTO `lang_definitions` VALUES (60897, 6133, 13, 'Локальный');
 INSERT INTO `lang_definitions` VALUES (60898, 6134, 13, 'Местоположение');
 INSERT INTO `lang_definitions` VALUES (60899, 6135, 13, 'Размещение');
-INSERT INTO `lang_definitions` VALUES (60900, 6136, 13, 'расположение машины openemr и может содержать секретные данные, поэтому рекомендуется вручную удалить их после использования');
+INSERT INTO `lang_definitions` VALUES (60900, 6136, 13, 'расположение машины DCL и может содержать секретные данные, поэтому рекомендуется вручную удалить их после использования');
 INSERT INTO `lang_definitions` VALUES (60901, 6137, 13, 'Размещение этой партии');
 INSERT INTO `lang_definitions` VALUES (60902, 6138, 13, 'Неопределенное размещение');
 INSERT INTO `lang_definitions` VALUES (60903, 6139, 13, 'Место, где Hylafax сохраняет факсы.');
@@ -74860,12 +74860,12 @@ INSERT INTO `lang_definitions` VALUES (61491, 7514, 13, 'Адрес сайта �
 INSERT INTO `lang_definitions` VALUES (61492, 7518, 13, 'Оплошность!');
 INSERT INTO `lang_definitions` VALUES (61493, 7519, 13, 'Открыть');
 INSERT INTO `lang_definitions` VALUES (61494, 7535, 13, 'Открыть посещение за сегодня');
-INSERT INTO `lang_definitions` VALUES (61495, 7562, 13, 'OpenEMR уже имеет настроенный доверенный сертификат.');
-INSERT INTO `lang_definitions` VALUES (61496, 7567, 13, 'Модернизация базы данных OpenEMR');
-INSERT INTO `lang_definitions` VALUES (61497, 7568, 13, 'Модернизация базы данных OpenEMR для исключения дублирования идентификации');
-INSERT INTO `lang_definitions` VALUES (61498, 7571, 13, 'До того, как OpenEMR сможет создавать клиентские сертификаты, он должен быть настроен для использования сертификатов.');
-INSERT INTO `lang_definitions` VALUES (61499, 7575, 13, 'Для выполнения аутентификации пользователя OpenEMR необходим Javascript.');
-INSERT INTO `lang_definitions` VALUES (61500, 7576, 13, 'Пользователи OpenEMR');
+INSERT INTO `lang_definitions` VALUES (61495, 7562, 13, 'DCL уже имеет настроенный доверенный сертификат.');
+INSERT INTO `lang_definitions` VALUES (61496, 7567, 13, 'Модернизация базы данных DCL');
+INSERT INTO `lang_definitions` VALUES (61497, 7568, 13, 'Модернизация базы данных DCL для исключения дублирования идентификации');
+INSERT INTO `lang_definitions` VALUES (61498, 7571, 13, 'До того, как DCL сможет создавать клиентские сертификаты, он должен быть настроен для использования сертификатов.');
+INSERT INTO `lang_definitions` VALUES (61499, 7575, 13, 'Для выполнения аутентификации пользователя DCL необходим Javascript.');
+INSERT INTO `lang_definitions` VALUES (61500, 7576, 13, 'Пользователи DCL');
 INSERT INTO `lang_definitions` VALUES (61501, 7577, 13, 'Вступление');
 INSERT INTO `lang_definitions` VALUES (61502, 7583, 13, 'Глазной');
 INSERT INTO `lang_definitions` VALUES (61503, 7586, 13, 'Опция');
@@ -75139,7 +75139,7 @@ INSERT INTO `lang_definitions` VALUES (61770, 8150, 13, 'Ожидающие на
 INSERT INTO `lang_definitions` VALUES (61771, 8151, 13, 'Ожидающие иссл.');
 INSERT INTO `lang_definitions` VALUES (61772, 8152, 13, 'Ожидающий просмотра');
 INSERT INTO `lang_definitions` VALUES (61773, 8153, 13, 'Ожидающий подсчета Rx');
-INSERT INTO `lang_definitions` VALUES (61774, 8156, 13, 'OpenEMR для фирмы Pennington v');
+INSERT INTO `lang_definitions` VALUES (61774, 8156, 13, 'DCL для фирмы Pennington v');
 INSERT INTO `lang_definitions` VALUES (61775, 8159, 13, 'Язвенная болезнь');
 INSERT INTO `lang_definitions` VALUES (61776, 8160, 13, 'в мин.');
 INSERT INTO `lang_definitions` VALUES (61777, 8161, 13, 'В ноздрю');
@@ -75269,7 +75269,7 @@ INSERT INTO `lang_definitions` VALUES (61900, 8434, 13, 'Выберите пар
 INSERT INTO `lang_definitions` VALUES (61901, 8435, 13, 'Установите');
 INSERT INTO `lang_definitions` VALUES (61902, 8436, 13, 'Установите переменную de_identification_config обратно на ноль');
 INSERT INTO `lang_definitions` VALUES (61903, 8441, 13, 'Запустите новую обработку исключения дублирования идентификации');
-INSERT INTO `lang_definitions` VALUES (61904, 8445, 13, 'Модернизируйте базу данных OpenEMR для включения методик де-идентификации, функции, таблиц');
+INSERT INTO `lang_definitions` VALUES (61904, 8445, 13, 'Модернизируйте базу данных DCL для включения методик де-идентификации, функции, таблиц');
 INSERT INTO `lang_definitions` VALUES (61905, 8447, 13, 'За дополнительными сведениями обратитесь к лог-таблице по ошибкам де-идентификации');
 INSERT INTO `lang_definitions` VALUES (61906, 8448, 13, 'Через некоторое время перейдите на экран снятия идентификации');
 INSERT INTO `lang_definitions` VALUES (61907, 8449, 13, 'Через некоторое время перейдите на экран повторной идентификации');
@@ -76068,7 +76068,7 @@ INSERT INTO `lang_definitions` VALUES (62699, 10286, 13, 'Хирургия па�
 INSERT INTO `lang_definitions` VALUES (62700, 10287, 13, 'БОЛЕЗНЕННАЯ ПАЗУХА:');
 INSERT INTO `lang_definitions` VALUES (62701, 10288, 13, 'Синуситы');
 INSERT INTO `lang_definitions` VALUES (62702, 10294, 13, 'ID сайта');
-INSERT INTO `lang_definitions` VALUES (62703, 10296, 13, 'ID сайта для поддержки OpenEMR службой лабораторного обмена LLC.');
+INSERT INTO `lang_definitions` VALUES (62703, 10296, 13, 'ID сайта для поддержки DCL службой лабораторного обмена LLC.');
 INSERT INTO `lang_definitions` VALUES (62704, 10300, 13, 'Размер');
 INSERT INTO `lang_definitions` VALUES (62705, 10303, 13, 'Размер должен быть числом между 1 и 999');
 INSERT INTO `lang_definitions` VALUES (62706, 10305, 13, 'Размер/список');
@@ -76457,7 +76457,7 @@ INSERT INTO `lang_definitions` VALUES (63088, 11277, 13, 'Перевод опи�
 INSERT INTO `lang_definitions` VALUES (63089, 11278, 13, 'Таблицы переводов синхронизированы.');
 INSERT INTO `lang_definitions` VALUES (63090, 11279, 13, 'Тип этого объекта');
 INSERT INTO `lang_definitions` VALUES (63091, 11299, 13, 'Код производителя, идентифицирующий эту методику или результат');
-INSERT INTO `lang_definitions` VALUES (63092, 11304, 13, 'Файлы X12 также, как полученные отчеты вывода HTML, архивируются в подкаталоге \"era\" основной инсталляционной директории OpenEMR. Следует обращаться время от времени к этим архивам. URL-адрес');
+INSERT INTO `lang_definitions` VALUES (63092, 11304, 13, 'Файлы X12 также, как полученные отчеты вывода HTML, архивируются в подкаталоге \"era\" основной инсталляционной директории DCL. Следует обращаться время от времени к этим архивам. URL-адрес');
 INSERT INTO `lang_definitions` VALUES (63093, 11306, 13, 'Файл zip будет содержать следующие пункты');
 INSERT INTO `lang_definitions` VALUES (63094, 11307, 13, 'Тема');
 INSERT INTO `lang_definitions` VALUES (63095, 11314, 13, 'Терапевтические инъекции');
@@ -76614,7 +76614,7 @@ INSERT INTO `lang_definitions` VALUES (63245, 11782, 13, 'Сегодняшний
 INSERT INTO `lang_definitions` VALUES (63246, 11783, 13, 'Сегодняшние оплаты');
 INSERT INTO `lang_definitions` VALUES (63247, 11784, 13, 'Сегодняшняя дата');
 INSERT INTO `lang_definitions` VALUES (63248, 11785, 13, 'Сегодняшние события');
-INSERT INTO `lang_definitions` VALUES (63249, 11797, 13, 'ID знака для поддержки OpenEMR лабораторных услуг обмена LLC');
+INSERT INTO `lang_definitions` VALUES (63249, 11797, 13, 'ID знака для поддержки DCL лабораторных услуг обмена LLC');
 INSERT INTO `lang_definitions` VALUES (63250, 11803, 13, 'Тонзилэктомия');
 INSERT INTO `lang_definitions` VALUES (63251, 11807, 13, 'Верх');
 INSERT INTO `lang_definitions` VALUES (63252, 11810, 13, 'Раздел');
@@ -76773,7 +76773,7 @@ INSERT INTO `lang_definitions` VALUES (63404, 12172, 13, 'Обновляет и�
 INSERT INTO `lang_definitions` VALUES (63405, 12180, 13, 'Обновление персональных данных не разрешено.');
 INSERT INTO `lang_definitions` VALUES (63406, 12184, 13, 'Модернизация');
 INSERT INTO `lang_definitions` VALUES (63407, 12186, 13, 'Модернизация базы данных');
-INSERT INTO `lang_definitions` VALUES (63408, 12188, 13, 'Модернизирует базу данных OpenEMR для включения методик, функций и таблиц, необходимых для процесса исключения дублирования идентификации');
+INSERT INTO `lang_definitions` VALUES (63408, 12188, 13, 'Модернизирует базу данных DCL для включения методик, функций и таблиц, необходимых для процесса исключения дублирования идентификации');
 INSERT INTO `lang_definitions` VALUES (63409, 12189, 13, 'Модернизация будет продолжена');
 INSERT INTO `lang_definitions` VALUES (63410, 12190, 13, 'Уникальный врачебный идентификационный номер');
 INSERT INTO `lang_definitions` VALUES (63411, 12191, 13, 'Загрузить');
@@ -76798,7 +76798,7 @@ INSERT INTO `lang_definitions` VALUES (63429, 12230, 13, 'Микроальбум
 INSERT INTO `lang_definitions` VALUES (63430, 12231, 13, 'Поток мочи');
 INSERT INTO `lang_definitions` VALUES (63431, 12232, 13, 'Безотлагательность позыва на мочеиспускание');
 INSERT INTO `lang_definitions` VALUES (63432, 12233, 13, 'URL');
-INSERT INTO `lang_definitions` VALUES (63433, 12235, 13, 'URL для поддержки OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (63433, 12235, 13, 'URL для поддержки DCL.');
 INSERT INTO `lang_definitions` VALUES (63434, 12237, 13, 'URL для телефонного шлюза. Автоматизированная служба VOIP предоставлена через Maviq. Посетите http://signup.maviq.com для получения дополнительной информации.');
 INSERT INTO `lang_definitions` VALUES (63435, 12248, 13, 'Индикатор использования (ISA15)');
 INSERT INTO `lang_definitions` VALUES (63436, 12251, 13, 'Для сортировки напрямую в этом столбце просто используйте %');
@@ -77124,7 +77124,7 @@ INSERT INTO `lang_definitions` VALUES (63755, 12972, 13, 'Событие изм�
 INSERT INTO `lang_definitions` VALUES (63756, 12973, 13, 'Событие записано.');
 INSERT INTO `lang_definitions` VALUES (63757, 12975, 13, 'Выбранный файл слишком большой');
 INSERT INTO `lang_definitions` VALUES (63758, 12976, 13, 'Первый день недели.');
-INSERT INTO `lang_definitions` VALUES (63759, 12978, 13, 'Ваш экземпляр программы OpenEMR был успешно зарегистрирован');
+INSERT INTO `lang_definitions` VALUES (63759, 12978, 13, 'Ваш экземпляр программы DCL был успешно зарегистрирован');
 INSERT INTO `lang_definitions` VALUES (63760, 12980, 13, 'Результаты Вашей лаборатории');
 INSERT INTO `lang_definitions` VALUES (63761, 12981, 13, 'Название списка было изменено в соответствии с требованиями.');
 INSERT INTO `lang_definitions` VALUES (63762, 12982, 13, 'Ваше сообщение принято к отправке в');
@@ -77676,7 +77676,7 @@ INSERT INTO `lang_definitions` VALUES (64307, 668, 14, 'Ընդհանուր գո�
 INSERT INTO `lang_definitions` VALUES (64308, 671, 14, 'Ընդհանուր վճար։');
 INSERT INTO `lang_definitions` VALUES (64309, 676, 14, 'Կրկնակի իրադարձության համար անհրաժեշտ է, որ ավարտման օրը մեկնարկի օրից ավելի ուշ լինի։');
 INSERT INTO `lang_definitions` VALUES (64310, 677, 14, 'Ձևաթուղթն ստորագրելու պահին սխալ է տեղի ունեցել');
-INSERT INTO `lang_definitions` VALUES (64311, 678, 14, 'OpenEMR֊ի վեբ֊կատալոգը բեռնաթափելիս սխալ է տեղի ունեցել');
+INSERT INTO `lang_definitions` VALUES (64311, 678, 14, 'DCL֊ի վեբ֊կատալոգը բեռնաթափելիս սխալ է տեղի ունեցել');
 INSERT INTO `lang_definitions` VALUES (64312, 679, 14, 'phpGACL֊ի վեբ֊կատալոգը բեռնաթափելիս սխալ է տեղի ունեցել');
 INSERT INTO `lang_definitions` VALUES (64313, 680, 14, 'SQL-Ledger֊ի վեբ֊կատալոգը բեռնաթափելիս սխալ է տեղի  ունեցել');
 INSERT INTO `lang_definitions` VALUES (64314, 685, 14, 'ստեղծվել ու  հղում է տրվել  անլիարժեք GCAC խնդիր');
@@ -78447,10 +78447,10 @@ INSERT INTO `lang_definitions` VALUES (65078, 2200, 14, 'Բժշկական նշա
 INSERT INTO `lang_definitions` VALUES (65079, 2202, 14, 'Եզրակացություններ');
 INSERT INTO `lang_definitions` VALUES (65080, 2210, 14, 'Կարգավորումներ');
 INSERT INTO `lang_definitions` VALUES (65081, 2211, 14, 'Կարգավորումների Արտահանում/ներմուծում');
-INSERT INTO `lang_definitions` VALUES (65082, 2213, 14, 'Կարգավորել Apache և OpenEMR Հաճախորդի/Հիվանդի կողմից  SSL հավաստագրերի օգտագործման համար');
+INSERT INTO `lang_definitions` VALUES (65082, 2213, 14, 'Կարգավորել Apache և DCL Հաճախորդի/Հիվանդի կողմից  SSL հավաստագրերի օգտագործման համար');
 INSERT INTO `lang_definitions` VALUES (65083, 2214, 14, 'Կարգավորել Apache  Հաճախորդի/Հիվանդի կողմից  SSL հավաստագրերի օգտագործման համար');
 INSERT INTO `lang_definitions` VALUES (65084, 2215, 14, 'Կարգավորել Apache   HTTPS օգտագործման համար');
-INSERT INTO `lang_definitions` VALUES (65085, 2216, 14, 'Կարգավորել OpenEMR Հաճախորդի/Հիվանդի կողմից  SSL հավաստագրերի օգտագործման համար');
+INSERT INTO `lang_definitions` VALUES (65085, 2216, 14, 'Կարգավորել DCL Հաճախորդի/Հիվանդի կողմից  SSL հավաստագրերի օգտագործման համար');
 INSERT INTO `lang_definitions` VALUES (65086, 2225, 14, 'Հաստատել նոր պացիենտի գրանցումը');
 INSERT INTO `lang_definitions` VALUES (65087, 2227, 14, 'Հաստատել նոր գաղտնաբառը');
 INSERT INTO `lang_definitions` VALUES (65088, 2229, 14, 'Հաստատել վճարումը');
@@ -79048,8 +79048,8 @@ INSERT INTO `lang_definitions` VALUES (65679, 3318, 14, 'Պարտքի վճարմ
 INSERT INTO `lang_definitions` VALUES (65680, 3319, 14, 'Պարտքի վճարման ամսաթիվ։');
 INSERT INTO `lang_definitions` VALUES (65681, 3320, 14, 'Վերջնաժամկետ։');
 INSERT INTO `lang_definitions` VALUES (65682, 3324, 14, 'Պարտքի կարգավիճակի թարմացում');
-INSERT INTO `lang_definitions` VALUES (65683, 3325, 14, 'OpenEMR տվյալների բազայի դատարկում');
-INSERT INTO `lang_definitions` VALUES (65684, 3326, 14, 'OpenEMR  վեբ֊ուղեցույցի կաղապարի դատարկում');
+INSERT INTO `lang_definitions` VALUES (65683, 3325, 14, 'DCL տվյալների բազայի դատարկում');
+INSERT INTO `lang_definitions` VALUES (65684, 3326, 14, 'DCL  վեբ֊ուղեցույցի կաղապարի դատարկում');
 INSERT INTO `lang_definitions` VALUES (65685, 3327, 14, 'phpGACL տվյալների բազայի դատարկում');
 INSERT INTO `lang_definitions` VALUES (65686, 3328, 14, 'phpGACL  վեբ֊ուղեցույցի կաղապարի դատարկում');
 INSERT INTO `lang_definitions` VALUES (65687, 3329, 14, 'SQL-Ledger տվյալների բազայի դատարկում');
@@ -79226,7 +79226,7 @@ INSERT INTO `lang_definitions` VALUES (65857, 3634, 14, 'Միացնել Ավտո
 INSERT INTO `lang_definitions` VALUES (65858, 3635, 14, 'Թույլատրել/Ակտիվացնել տարբեր տեսակի դեղորայքի թեստավորումը');
 INSERT INTO `lang_definitions` VALUES (65859, 3638, 14, 'Միացնել սկաները');
 INSERT INTO `lang_definitions` VALUES (65860, 3639, 14, 'Ակտիվացնել/Միացնել Ստանդարտ զեկույցների բնորոշումը/հստակեցումը');
-INSERT INTO `lang_definitions` VALUES (65861, 3643, 14, 'Միացնել OpenEMR օգնության  LLC Լաբորատոր փոխանակման ծառայությունը');
+INSERT INTO `lang_definitions` VALUES (65861, 3643, 14, 'Միացնել DCL օգնության  LLC Լաբորատոր փոխանակման ծառայությունը');
 INSERT INTO `lang_definitions` VALUES (65862, 3644, 14, 'Միացնել Օգտվողի Հավաստագրի իսկության ստուգում');
 INSERT INTO `lang_definitions` VALUES (65863, 3650, 14, 'Միացնել ZMG, LLC eRx ծառայություն');
 INSERT INTO `lang_definitions` VALUES (65864, 3651, 14, 'Միացված/թույլատրված է');
@@ -79302,7 +79302,7 @@ INSERT INTO `lang_definitions` VALUES (65933, 3754, 14, 'Անգլերեն');
 INSERT INTO `lang_definitions` VALUES (65934, 3756, 14, 'Անգլերեն (հնդկական)');
 INSERT INTO `lang_definitions` VALUES (65935, 3757, 14, 'Անգլերեն (սատնդարտ)');
 INSERT INTO `lang_definitions` VALUES (65936, 3758, 14, 'Կոդավորել Hylafax֊ով օգտագործված/կիրառված հրամանը');
-INSERT INTO `lang_definitions` VALUES (65937, 3759, 14, 'Համոզվեք, որ OpenEMR֊ը տեղեկատուի մուտքի արտոնություն ունի');
+INSERT INTO `lang_definitions` VALUES (65937, 3759, 14, 'Համոզվեք, որ DCL֊ը տեղեկատուի մուտքի արտոնություն ունի');
 INSERT INTO `lang_definitions` VALUES (65938, 3761, 14, 'Քիթ֊Կոկորդ֊Ականջ/ՔԿԱ դուրսգրում');
 INSERT INTO `lang_definitions` VALUES (65939, 3762, 14, 'ՔԿԱ/Քիթ֊Կոկորդ֊Ականջ/ ցավեր');
 INSERT INTO `lang_definitions` VALUES (65940, 3765, 14, 'Մուտքագրեք ախտորոշման կոդը՝ բացառելու համար այդ կոդը չպարունակող մնացած հաշիվ֊ապրանքագրերը');
@@ -79358,7 +79358,7 @@ INSERT INTO `lang_definitions` VALUES (65989, 3897, 14, 'Հաղորդագրու�
 INSERT INTO `lang_definitions` VALUES (65990, 3898, 14, 'Lab Exchange Network ֊ից  արդյունքների վերստացման/վերականգնման սխալ');
 INSERT INTO `lang_definitions` VALUES (65991, 3899, 14, 'Նշանակության/արժեքի վերստացման/վերականգնման սխալ');
 INSERT INTO `lang_definitions` VALUES (65992, 3900, 14, 'Փաստաթղթի պահպանման սխալ');
-INSERT INTO `lang_definitions` VALUES (65993, 3901, 14, 'OpenEMR Օգտվողին ֆայլի հասանելիության տրամադրման սխալ');
+INSERT INTO `lang_definitions` VALUES (65993, 3901, 14, 'DCL Օգտվողին ֆայլի հասանելիության տրամադրման սխալ');
 INSERT INTO `lang_definitions` VALUES (65994, 3902, 14, 'Նոր պլանի ավելացման սխալ');
 INSERT INTO `lang_definitions` VALUES (65995, 3903, 14, 'Պլանի հեռացման սխալ');
 INSERT INTO `lang_definitions` VALUES (65996, 3904, 14, 'Ձևաչափի գրանցման սխալ');
@@ -79373,7 +79373,7 @@ INSERT INTO `lang_definitions` VALUES (66004, 3920, 14, 'Սխալ։ հնարավ
 INSERT INTO `lang_definitions` VALUES (66005, 3921, 14, 'Սխալ։ հնարավոր չէ ստեղծել Հավաստագրող Մարմնի վկայական');
 INSERT INTO `lang_definitions` VALUES (66006, 3922, 14, 'Սխալ։ հնարավոր չէ ստեղծել Սերվերի վկայական');
 INSERT INTO `lang_definitions` VALUES (66007, 3924, 14, 'Սխալ։ հնարավոր չէ բացել ֆայլը');
-INSERT INTO `lang_definitions` VALUES (66008, 3925, 14, 'Սխալ։  OpenEMR֊ում Սերտիֆիկացման Լիազորություն միացված/ակտիվացված չէ');
+INSERT INTO `lang_definitions` VALUES (66008, 3925, 14, 'Սխալ։  DCL֊ում Սերտիֆիկացման Լիազորություն միացված/ակտիվացված չէ');
 INSERT INTO `lang_definitions` VALUES (66009, 3933, 14, 'Սխալ։ անհրաժեշտ է տեղադրել Archive/Tar.php php մոդուլ');
 INSERT INTO `lang_definitions` VALUES (66010, 3934, 14, 'ՍԽԱԼ։ հնարավո՞ր չէ բացել table.sql վնասված ձևը');
 INSERT INTO `lang_definitions` VALUES (66011, 3937, 14, 'Սխալ։ տողում առկա է ID կրկնօրինակ');
@@ -79594,7 +79594,7 @@ INSERT INTO `lang_definitions` VALUES (66225, 4281, 14, 'ֆայլի տեղակա
 INSERT INTO `lang_definitions` VALUES (66226, 4282, 14, 'Ֆայլի կառավարում');
 INSERT INTO `lang_definitions` VALUES (66227, 4284, 14, 'Ֆայլի անվանումը');
 INSERT INTO `lang_definitions` VALUES (66228, 4288, 14, 'Ֆայլի ուղին չի գտնվել');
-INSERT INTO `lang_definitions` VALUES (66229, 4289, 14, 'Ֆայլի հանդեպ OpenEMR օգտվողի իրավունք/արտոնություն');
+INSERT INTO `lang_definitions` VALUES (66229, 4289, 14, 'Ֆայլի հանդեպ DCL օգտվողի իրավունք/արտոնություն');
 INSERT INTO `lang_definitions` VALUES (66230, 4290, 14, 'Ֆայլի վերադարձը CouchDB-ից ձախողվեց');
 INSERT INTO `lang_definitions` VALUES (66231, 4291, 14, 'Գրանցման բաժին');
 INSERT INTO `lang_definitions` VALUES (66232, 4292, 14, 'բեռնվող ֆայլ');
@@ -79982,7 +79982,7 @@ INSERT INTO `lang_definitions` VALUES (66613, 5021, 14, 'Ինչպե՞ս են ի�
 INSERT INTO `lang_definitions` VALUES (66614, 5036, 14, 'Ուղեկցվող հիվանդությունների անամնեզ');
 INSERT INTO `lang_definitions` VALUES (66615, 5038, 14, 'Սրտի փոխպատվաստում');
 INSERT INTO `lang_definitions` VALUES (66616, 5039, 14, 'HTML');
-INSERT INTO `lang_definitions` VALUES (66617, 5043, 14, 'OpenEMR Support LLC֊ի Լաբորատոր փոխանակման ծառայության Https լինք');
+INSERT INTO `lang_definitions` VALUES (66617, 5043, 14, 'DCL Support LLC֊ի Լաբորատոր փոխանակման ծառայության Https լինք');
 INSERT INTO `lang_definitions` VALUES (66618, 5045, 14, 'Հունգարերեն');
 INSERT INTO `lang_definitions` VALUES (66619, 5046, 14, 'Hylafax ուղեցույց');
 INSERT INTO `lang_definitions` VALUES (66620, 5047, 14, 'Hylafax կոդավորման հրաման');
@@ -80525,7 +80525,7 @@ INSERT INTO `lang_definitions` VALUES (67156, 6129, 14, 'Տեղային');
 INSERT INTO `lang_definitions` VALUES (67157, 6133, 14, 'Տեղային');
 INSERT INTO `lang_definitions` VALUES (67158, 6134, 14, 'Բնակավայր / տեղ');
 INSERT INTO `lang_definitions` VALUES (67159, 6135, 14, 'Տեղակայում / տեղադրում/ տեղավորություն');
-INSERT INTO `lang_definitions` VALUES (67160, 6136, 14, 'openemr  մեքենայի տեղակայումը կարող է պարունակել գաղտնի տվյալներ․ ուստի խորհուրդ է տրվում օգտվելուց հետո ձեռքով ջնջել դրանք');
+INSERT INTO `lang_definitions` VALUES (67160, 6136, 14, 'DCL  մեքենայի տեղակայումը կարող է պարունակել գաղտնի տվյալներ․ ուստի խորհուրդ է տրվում օգտվելուց հետո ձեռքով ջնջել դրանք');
 INSERT INTO `lang_definitions` VALUES (67161, 6137, 14, 'Այս /սույն  խմբաքանակի տեղակայումը');
 INSERT INTO `lang_definitions` VALUES (67162, 6138, 14, 'Չմասնավորեցված / անորոշ տեղակայում');
 INSERT INTO `lang_definitions` VALUES (67163, 6139, 14, 'Վայր, ուր Hylafax֊ը պահեստավորում է  ֆաքսերը');
@@ -81306,13 +81306,13 @@ INSERT INTO `lang_definitions` VALUES (67937, 7528, 14, 'Բացել նոր պա�
 INSERT INTO `lang_definitions` VALUES (67938, 7531, 14, 'Բացել Պացիենտի էջը');
 INSERT INTO `lang_definitions` VALUES (67939, 7532, 14, 'Բացել Պացիենտի էջը նոր պատուհանում');
 INSERT INTO `lang_definitions` VALUES (67940, 7535, 14, 'Բացել այսօրվա այցը');
-INSERT INTO `lang_definitions` VALUES (67941, 7562, 14, 'OpenEMR֊ն արդեն ունի/կազմել է հավաստագիր');
-INSERT INTO `lang_definitions` VALUES (67942, 7565, 14, 'OpenEMR  դիմումների կատեգորիա');
-INSERT INTO `lang_definitions` VALUES (67943, 7567, 14, 'OpenEMR տվյալների բազայի թարմացում');
-INSERT INTO `lang_definitions` VALUES (67944, 7568, 14, 'OpenEMR տվյալների բազայի թարմացում դդեիդենտիֆիկացիայի համար');
-INSERT INTO `lang_definitions` VALUES (67945, 7571, 14, 'Մինչև հաճախորդների հավաստագիր ստեղծելը OpenEMR֊ին պետք են հավաստագրերի կիրառման կարգավորումներ');
-INSERT INTO `lang_definitions` VALUES (67946, 7575, 14, 'օգտվողի իսկությունը ստուգելու համար OpenEMR-ը պահանջում է Javascript');
-INSERT INTO `lang_definitions` VALUES (67947, 7576, 14, 'OpenEMR օգտատերեր');
+INSERT INTO `lang_definitions` VALUES (67941, 7562, 14, 'DCL֊ն արդեն ունի/կազմել է հավաստագիր');
+INSERT INTO `lang_definitions` VALUES (67942, 7565, 14, 'DCL  դիմումների կատեգորիա');
+INSERT INTO `lang_definitions` VALUES (67943, 7567, 14, 'DCL տվյալների բազայի թարմացում');
+INSERT INTO `lang_definitions` VALUES (67944, 7568, 14, 'DCL տվյալների բազայի թարմացում դդեիդենտիֆիկացիայի համար');
+INSERT INTO `lang_definitions` VALUES (67945, 7571, 14, 'Մինչև հաճախորդների հավաստագիր ստեղծելը DCL֊ին պետք են հավաստագրերի կիրառման կարգավորումներ');
+INSERT INTO `lang_definitions` VALUES (67946, 7575, 14, 'օգտվողի իսկությունը ստուգելու համար DCL-ը պահանջում է Javascript');
+INSERT INTO `lang_definitions` VALUES (67947, 7576, 14, 'DCL օգտատերեր');
 INSERT INTO `lang_definitions` VALUES (67948, 7577, 14, 'Մուտքեր');
 INSERT INTO `lang_definitions` VALUES (67949, 7582, 14, 'Օպերատոր');
 INSERT INTO `lang_definitions` VALUES (67950, 7583, 14, 'Աչքի / ակնաբուժական');
@@ -81818,7 +81818,7 @@ INSERT INTO `lang_definitions` VALUES (68449, 8434, 14, 'Ընտրեք 270 խմբ
 INSERT INTO `lang_definitions` VALUES (68450, 8435, 14, 'Տեղադրեք');
 INSERT INTO `lang_definitions` VALUES (68451, 8438, 14, 'Նշեք առնվազն մեկ հասցե');
 INSERT INTO `lang_definitions` VALUES (68452, 8441, 14, 'Սկսեք նոր դեիդենտիֆիկացիոն գործընթացը');
-INSERT INTO `lang_definitions` VALUES (68453, 8445, 14, 'Թարմացրեք OpenEMR տվյալների բազան՝ դեիդենտիֆիկացիոն միջամտությունների, ֆունկցիայի և աղյուսակների  ներառման համար');
+INSERT INTO `lang_definitions` VALUES (68453, 8445, 14, 'Թարմացրեք DCL տվյալների բազան՝ դեիդենտիֆիկացիոն միջամտությունների, ֆունկցիայի և աղյուսակների  ներառման համար');
 INSERT INTO `lang_definitions` VALUES (68454, 8447, 14, 'Մանրամասն տեղեկությունների համար նայեք դեիդենտիֆիկացիոն սխալների աղյուսակը');
 INSERT INTO `lang_definitions` VALUES (68455, 8448, 14, 'Որոշ ժամանակ անց այցելեք դեիդենտիֆիկացիայի էկրան');
 INSERT INTO `lang_definitions` VALUES (68456, 8449, 14, 'Որոշ ժամանակ անց այցելեք վերանույնականացման էկրան');
@@ -82810,7 +82810,7 @@ INSERT INTO `lang_definitions` VALUES (69441, 10282, 14, 'Եզակի');
 INSERT INTO `lang_definitions` VALUES (69442, 10290, 14, 'Կայք');
 INSERT INTO `lang_definitions` VALUES (69443, 10294, 14, 'Կայքի ID');
 INSERT INTO `lang_definitions` VALUES (69444, 10295, 14, 'LLC Lab Exchange Service-ում բժշկական ինֆորմացիայի տեղադրման համար պահանջվող կայքի ID');
-INSERT INTO `lang_definitions` VALUES (69445, 10296, 14, 'LLC Lab Exchange Service-ում OpenEMR գործարկելու համար պահանջվող կայքի ID');
+INSERT INTO `lang_definitions` VALUES (69445, 10296, 14, 'LLC Lab Exchange Service-ում DCL գործարկելու համար պահանջվող կայքի ID');
 INSERT INTO `lang_definitions` VALUES (69446, 10298, 14, 'Վեց ամիս առաջ');
 INSERT INTO `lang_definitions` VALUES (69447, 10300, 14, 'Չափ');
 INSERT INTO `lang_definitions` VALUES (69448, 10303, 14, 'Չափը պետք է լինի 1-999 միջակայքի թիվ');
@@ -83670,7 +83670,7 @@ INSERT INTO `lang_definitions` VALUES (70301, 12182, 14, 'Տարբերակներ
 INSERT INTO `lang_definitions` VALUES (70302, 12183, 14, 'ԹԱՐՄԱՑՈւՄ / ԲԱՐԵԼԱՎՈւՄ');
 INSERT INTO `lang_definitions` VALUES (70303, 12184, 14, 'Թարմացում');
 INSERT INTO `lang_definitions` VALUES (70304, 12186, 14, 'Թարմացնել տվյալների բազան');
-INSERT INTO `lang_definitions` VALUES (70305, 12188, 14, 'OpenEMR-ի տվյալների բազայի թարմացում՝  դեիդենտիֆիկացիոն գործընթացում անհրաժեշտ Միջամտությունների, ֆունկցիաների և աղյուսակների ներառման համար');
+INSERT INTO `lang_definitions` VALUES (70305, 12188, 14, 'DCL-ի տվյալների բազայի թարմացում՝  դեիդենտիֆիկացիոն գործընթացում անհրաժեշտ Միջամտությունների, ֆունկցիաների և աղյուսակների ներառման համար');
 INSERT INTO `lang_definitions` VALUES (70306, 12189, 14, 'Թարմացումը կշարունակվի');
 INSERT INTO `lang_definitions` VALUES (70307, 12190, 14, 'Նհատական բժշկական նույնականացման համար');
 INSERT INTO `lang_definitions` VALUES (70308, 12191, 14, 'Բեռնել/Վերբեռնել');
@@ -83698,7 +83698,7 @@ INSERT INTO `lang_definitions` VALUES (70329, 12231, 14, 'Մեզի հոսք');
 INSERT INTO `lang_definitions` VALUES (70330, 12232, 14, 'Միզարձակության հրատատապություն');
 INSERT INTO `lang_definitions` VALUES (70331, 12233, 14, 'ռեսուրսի տեղակայման ցուցիչ վեբ կայքի հասցե');
 INSERT INTO `lang_definitions` VALUES (70332, 12234, 14, 'NewCrop eRx կայքի հասցեն');
-INSERT INTO `lang_definitions` VALUES (70333, 12235, 14, 'OpenEMR-ի աջակցման հասցե');
+INSERT INTO `lang_definitions` VALUES (70333, 12235, 14, 'DCL-ի աջակցման հասցե');
 INSERT INTO `lang_definitions` VALUES (70334, 12245, 14, 'ԱՄՆ');
 INSERT INTO `lang_definitions` VALUES (70335, 12246, 14, 'Օգտագործում/կիրառում');
 INSERT INTO `lang_definitions` VALUES (70336, 12248, 14, 'Կիրառման ցուցիչ/չափորոշիչ  (ISA15)');
@@ -84582,7 +84582,7 @@ INSERT INTO `lang_definitions` VALUES (71213, 668, 16, 'Jumlah:');
 INSERT INTO `lang_definitions` VALUES (71214, 669, 16, 'Amplitudo');
 INSERT INTO `lang_definitions` VALUES (71215, 671, 16, 'Jml Tagihan');
 INSERT INTO `lang_definitions` VALUES (71216, 676, 16, 'Batas waktu akhir diperlukan untuk kegiatan berulang!');
-INSERT INTO `lang_definitions` VALUES (71217, 678, 16, 'Terjadi masalah saat membuka susunan direktori web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (71217, 678, 16, 'Terjadi masalah saat membuka susunan direktori web DCL');
 INSERT INTO `lang_definitions` VALUES (71218, 679, 16, 'Terjadi masalah saat membuka susunan direktori phpGACL');
 INSERT INTO `lang_definitions` VALUES (71219, 680, 16, 'Terjadi masalah saat membuka susunan direktori SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (71220, 685, 16, 'Isu GCAC yang tidak lengkap telah dibuat dan terhubung. Perlu seseorang untuk menyempurnakannya kemudian.');
@@ -85222,10 +85222,10 @@ INSERT INTO `lang_definitions` VALUES (71853, 2200, 16, 'Sistem Pengurutan Medis
 INSERT INTO `lang_definitions` VALUES (71854, 2202, 16, 'Kesimpulan');
 INSERT INTO `lang_definitions` VALUES (71855, 2210, 16, 'Konfigurasi');
 INSERT INTO `lang_definitions` VALUES (71856, 2211, 16, 'Konfigurasi Ekspor/Impor');
-INSERT INTO `lang_definitions` VALUES (71857, 2213, 16, 'Konfigurasi Apache dan OpenEMR untuk menggunakan sertifikat SSL dari sisi Klien.');
+INSERT INTO `lang_definitions` VALUES (71857, 2213, 16, 'Konfigurasi Apache dan DCL untuk menggunakan sertifikat SSL dari sisi Klien.');
 INSERT INTO `lang_definitions` VALUES (71858, 2214, 16, 'Konfigurasi Apache untuk menggunakan sertifikat SSL dari sisi Klien');
 INSERT INTO `lang_definitions` VALUES (71859, 2215, 16, 'Konfigurasi Apache untuk menggunakan HTTPS.');
-INSERT INTO `lang_definitions` VALUES (71860, 2216, 16, 'Konfigurasi Openemr untuk menggunakan sertifikat SSL dari sisi klien');
+INSERT INTO `lang_definitions` VALUES (71860, 2216, 16, 'Konfigurasi DCL untuk menggunakan sertifikat SSL dari sisi klien');
 INSERT INTO `lang_definitions` VALUES (71861, 2225, 16, 'Konfirmasi Buat Pasien Baru');
 INSERT INTO `lang_definitions` VALUES (71862, 2227, 16, 'Konfirmasi Sandi Baru');
 INSERT INTO `lang_definitions` VALUES (71863, 2229, 16, 'Konfirmasi Pembayaran');
@@ -85725,8 +85725,8 @@ INSERT INTO `lang_definitions` VALUES (72356, 3321, 16, 'Pt Jatuh Tempi(batas)')
 INSERT INTO `lang_definitions` VALUES (72357, 3322, 16, 'Segera Jatuh Tempo');
 INSERT INTO `lang_definitions` VALUES (72358, 3323, 16, 'Status Jatuh Tempo');
 INSERT INTO `lang_definitions` VALUES (72359, 3324, 16, 'Update Status Jatuh Tempo');
-INSERT INTO `lang_definitions` VALUES (72360, 3325, 16, 'Dumping database OpenEMR');
-INSERT INTO `lang_definitions` VALUES (72361, 3326, 16, 'Dumping pohon direktori web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (72360, 3325, 16, 'Dumping database DCL');
+INSERT INTO `lang_definitions` VALUES (72361, 3326, 16, 'Dumping pohon direktori web DCL');
 INSERT INTO `lang_definitions` VALUES (72362, 3327, 16, 'Dumping database phpGACL');
 INSERT INTO `lang_definitions` VALUES (72363, 3328, 16, 'Dumping pohon direktori web phpGACL');
 INSERT INTO `lang_definitions` VALUES (72364, 3329, 16, 'Dumping database SQL-Ledger');
@@ -85887,7 +85887,7 @@ INSERT INTO `lang_definitions` VALUES (72518, 3630, 16, 'Aktifkan Widget Penging
 INSERT INTO `lang_definitions` VALUES (72519, 3634, 16, 'Aktifkan Percepatan Untuk Penghitungan Ukuran Otomatis (AMC) Data yang Dibutuhkan');
 INSERT INTO `lang_definitions` VALUES (72520, 3636, 16, 'Aktifkan Laporan dari Pelacakan Tanggal Dari Penghitungan Ukuran Otomatis (AMC)');
 INSERT INTO `lang_definitions` VALUES (72521, 3638, 16, 'Aktifkan Dukungan Scanner');
-INSERT INTO `lang_definitions` VALUES (72522, 3643, 16, 'Aktifkan Dukungan OpenEMR LLC Layanan Pertukaran Lab.');
+INSERT INTO `lang_definitions` VALUES (72522, 3643, 16, 'Aktifkan Dukungan DCL LLC Layanan Pertukaran Lab.');
 INSERT INTO `lang_definitions` VALUES (72523, 3644, 16, 'Aktifkan Otentikasi Sertifikat Pengguna');
 INSERT INTO `lang_definitions` VALUES (72524, 3650, 16, 'Aktifkan layanan ZMG, LLC, eRx');
 INSERT INTO `lang_definitions` VALUES (72525, 3651, 16, 'diaktifkan');
@@ -85951,7 +85951,7 @@ INSERT INTO `lang_definitions` VALUES (72582, 3754, 16, 'Inggris');
 INSERT INTO `lang_definitions` VALUES (72583, 3756, 16, 'Inggris (Indian)');
 INSERT INTO `lang_definitions` VALUES (72584, 3757, 16, 'Inggris (Standar)');
 INSERT INTO `lang_definitions` VALUES (72585, 3758, 16, 'Perintah Enscript digunakan oleh Hylafax');
-INSERT INTO `lang_definitions` VALUES (72586, 3759, 16, 'Patikan OpenEMR telah menulis hak akses ke direktori');
+INSERT INTO `lang_definitions` VALUES (72586, 3759, 16, 'Patikan DCL telah menulis hak akses ke direktori');
 INSERT INTO `lang_definitions` VALUES (72587, 3761, 16, 'Pelepasan THT');
 INSERT INTO `lang_definitions` VALUES (72588, 3765, 16, 'Masukkan kode diagnosa untuk mengecualikan semua faktur/tagihan yang tidak mengandung hal tersebut');
 INSERT INTO `lang_definitions` VALUES (72589, 3770, 16, 'Masukkan badan surat disini');
@@ -85989,7 +85989,7 @@ INSERT INTO `lang_definitions` VALUES (72620, 3889, 16, 'Kesalahan dalam pilihan
 INSERT INTO `lang_definitions` VALUES (72621, 3894, 16, 'Kesalahan pembukaan file yang telah diupload untuk dibaca');
 INSERT INTO `lang_definitions` VALUES (72622, 3897, 16, 'Kesalahan Menghapus Pesan');
 INSERT INTO `lang_definitions` VALUES (72623, 3898, 16, 'Kesalahan mengambil hasil dari Lab Exchange Network (Jaringan Pertukaran Lab)');
-INSERT INTO `lang_definitions` VALUES (72624, 3901, 16, 'Kesalahan saat memberikan hak akses file kepada pengguna OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (72624, 3901, 16, 'Kesalahan saat memberikan hak akses file kepada pengguna DCL.');
 INSERT INTO `lang_definitions` VALUES (72625, 3904, 16, 'kesalahan saat mendaftarkan formulir');
 INSERT INTO `lang_definitions` VALUES (72626, 3905, 16, 'Kesalahan saat menyimpan kedalam file');
 INSERT INTO `lang_definitions` VALUES (72627, 3907, 16, 'Kesalahan saat menulis kedalam file');
@@ -86000,7 +86000,7 @@ INSERT INTO `lang_definitions` VALUES (72631, 3920, 16, 'Kesalahan, tidak dapat 
 INSERT INTO `lang_definitions` VALUES (72632, 3921, 16, 'Kesalahan, tidak dapat membuat sertifikat Pengizinan Sertifikat.');
 INSERT INTO `lang_definitions` VALUES (72633, 3922, 16, 'Kesalaham, tidak dapat membuat sertifikat Server.');
 INSERT INTO `lang_definitions` VALUES (72634, 3924, 16, 'Kesalahan, tidak dapat membuka file');
-INSERT INTO `lang_definitions` VALUES (72635, 3925, 16, 'Kesalahan, Otentikasi Sertifikat Pengguna tidak diaktifkan pada OpenEMR');
+INSERT INTO `lang_definitions` VALUES (72635, 3925, 16, 'Kesalahan, Otentikasi Sertifikat Pengguna tidak diaktifkan pada DCL');
 INSERT INTO `lang_definitions` VALUES (72636, 3933, 16, 'Kesalahan. Anda harus menginstal modul php Archive/Tar.php.');
 INSERT INTO `lang_definitions` VALUES (72637, 3934, 16, 'KESALAHAN: tidak dapat membuka table.sql, formulir rusak?');
 INSERT INTO `lang_definitions` VALUES (72638, 3937, 16, 'Kesalahan: ID rangkap pada baris');
@@ -86188,7 +86188,7 @@ INSERT INTO `lang_definitions` VALUES (72819, 4277, 16, 'File');
 INSERT INTO `lang_definitions` VALUES (72820, 4280, 16, 'file dalam direktori dokumentasi untuk mempelajari bagaimana cara untuk mengotomatisasi proses menciptakan backup log');
 INSERT INTO `lang_definitions` VALUES (72821, 4281, 16, 'lokasi file');
 INSERT INTO `lang_definitions` VALUES (72822, 4282, 16, 'Pengelolaan file');
-INSERT INTO `lang_definitions` VALUES (72823, 4289, 16, 'Hak akses file diberikan kepada pengguna OpenEMR');
+INSERT INTO `lang_definitions` VALUES (72823, 4289, 16, 'Hak akses file diberikan kepada pengguna DCL');
 INSERT INTO `lang_definitions` VALUES (72824, 4291, 16, 'File Kamar');
 INSERT INTO `lang_definitions` VALUES (72825, 4292, 16, 'File untuk diupload');
 INSERT INTO `lang_definitions` VALUES (72826, 4294, 16, 'FIle dengan nama yang sama telah ada pada lokasi:');
@@ -86540,7 +86540,7 @@ INSERT INTO `lang_definitions` VALUES (73171, 5024, 16, 'Berapa bulan kedepan un
 INSERT INTO `lang_definitions` VALUES (73172, 5036, 16, 'HPI:');
 INSERT INTO `lang_definitions` VALUES (73173, 5038, 16, 'HT');
 INSERT INTO `lang_definitions` VALUES (73174, 5039, 16, 'HTML');
-INSERT INTO `lang_definitions` VALUES (73175, 5043, 16, 'Link Https untuk dukungan OpenEMR LLC Lab Exchange Service (Layanan Pertukaran Lab)');
+INSERT INTO `lang_definitions` VALUES (73175, 5043, 16, 'Link Https untuk dukungan DCL LLC Lab Exchange Service (Layanan Pertukaran Lab)');
 INSERT INTO `lang_definitions` VALUES (73176, 5045, 16, 'Hongaria');
 INSERT INTO `lang_definitions` VALUES (73177, 5046, 16, 'Direktori Hylafax');
 INSERT INTO `lang_definitions` VALUES (73178, 5047, 16, 'Perintah Enscript Hylafax');
@@ -87002,7 +87002,7 @@ INSERT INTO `lang_definitions` VALUES (73633, 6129, 16, 'Lokal');
 INSERT INTO `lang_definitions` VALUES (73634, 6133, 16, 'Lokal');
 INSERT INTO `lang_definitions` VALUES (73635, 6134, 16, 'Lokalitas');
 INSERT INTO `lang_definitions` VALUES (73636, 6135, 16, 'Lokasi');
-INSERT INTO `lang_definitions` VALUES (73637, 6136, 16, 'lokasi dari mesin openemr dan mungkin berisi data sensitif, sehingga dianjurkan untuk secara manual menghapus file setelah penggunaannya');
+INSERT INTO `lang_definitions` VALUES (73637, 6136, 16, 'lokasi dari mesin DCL dan mungkin berisi data sensitif, sehingga dianjurkan untuk secara manual menghapus file setelah penggunaannya');
 INSERT INTO `lang_definitions` VALUES (73638, 6137, 16, 'Lokasi dari lot ini');
 INSERT INTO `lang_definitions` VALUES (73639, 6138, 16, 'Lokasi tidakk ditentukan');
 INSERT INTO `lang_definitions` VALUES (73640, 6139, 16, 'Lokasi dimana Hylafax menyimpan faks.');
@@ -87653,12 +87653,12 @@ INSERT INTO `lang_definitions` VALUES (74284, 7519, 16, 'Buka');
 INSERT INTO `lang_definitions` VALUES (74285, 7525, 16, 'Buka Kunjungan');
 INSERT INTO `lang_definitions` VALUES (74286, 7528, 16, 'Buka pada Jendela Baru');
 INSERT INTO `lang_definitions` VALUES (74287, 7535, 16, 'Buka Kunjungan Hari Ini');
-INSERT INTO `lang_definitions` VALUES (74288, 7562, 16, 'OpenEMR telah memiliki Otoritas Sertifikat dikonfigurasi.');
-INSERT INTO `lang_definitions` VALUES (74289, 7567, 16, 'Upgrade Database OpenEMR');
-INSERT INTO `lang_definitions` VALUES (74290, 7568, 16, 'Upgrade Database OpenEMR untuk de-identifikasi');
-INSERT INTO `lang_definitions` VALUES (74291, 7571, 16, 'OpenEMR harus dikonfigurasi untuk menggunakan sertifikat sebelum dapat membuat sertifikat klien.');
-INSERT INTO `lang_definitions` VALUES (74292, 7575, 16, 'OpenEMR membutuhkan Javascript untuk melakukan otentikasi pengguna.');
-INSERT INTO `lang_definitions` VALUES (74293, 7576, 16, 'Pengguna OpenEMR');
+INSERT INTO `lang_definitions` VALUES (74288, 7562, 16, 'DCL telah memiliki Otoritas Sertifikat dikonfigurasi.');
+INSERT INTO `lang_definitions` VALUES (74289, 7567, 16, 'Upgrade Database DCL');
+INSERT INTO `lang_definitions` VALUES (74290, 7568, 16, 'Upgrade Database DCL untuk de-identifikasi');
+INSERT INTO `lang_definitions` VALUES (74291, 7571, 16, 'DCL harus dikonfigurasi untuk menggunakan sertifikat sebelum dapat membuat sertifikat klien.');
+INSERT INTO `lang_definitions` VALUES (74292, 7575, 16, 'DCL membutuhkan Javascript untuk melakukan otentikasi pengguna.');
+INSERT INTO `lang_definitions` VALUES (74293, 7576, 16, 'Pengguna DCL');
 INSERT INTO `lang_definitions` VALUES (74294, 7577, 16, 'Membuka');
 INSERT INTO `lang_definitions` VALUES (74295, 7583, 16, 'Kedokteran Mata');
 INSERT INTO `lang_definitions` VALUES (74296, 7586, 16, 'Pilihan');
@@ -87924,7 +87924,7 @@ INSERT INTO `lang_definitions` VALUES (74555, 8150, 16, 'Menunggu Pesanan/Pesana
 INSERT INTO `lang_definitions` VALUES (74556, 8151, 16, 'Menunggu Res/Res Tertunda');
 INSERT INTO `lang_definitions` VALUES (74557, 8152, 16, 'Menunggu Tinjauan/Tinjauan Tertunda');
 INSERT INTO `lang_definitions` VALUES (74558, 8153, 16, 'Menunggu Jumlah Rx/Jumlah Rx Tertunda');
-INSERT INTO `lang_definitions` VALUES (74559, 8156, 16, 'Kantor Pennington OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (74559, 8156, 16, 'Kantor Pennington DCL v');
 INSERT INTO `lang_definitions` VALUES (74560, 8157, 16, 'Penyakit Maag');
 INSERT INTO `lang_definitions` VALUES (74561, 8159, 16, 'per min');
 INSERT INTO `lang_definitions` VALUES (74562, 8160, 16, 'Per Lubang Hidung');
@@ -88055,7 +88055,7 @@ INSERT INTO `lang_definitions` VALUES (74686, 8434, 16, 'Silahkan pilih mitra X1
 INSERT INTO `lang_definitions` VALUES (74687, 8435, 16, 'Silahkan set');
 INSERT INTO `lang_definitions` VALUES (74688, 8436, 16, 'Silahkan set variabel de_identification_config kembali ke nol');
 INSERT INTO `lang_definitions` VALUES (74689, 8441, 16, 'Silahkan mulai proses De Identifikasi baru');
-INSERT INTO `lang_definitions` VALUES (74690, 8445, 16, 'Silahkan upgrade Database OpenEMR untuk memasukkan prosedur, fungsi, tabel De Identifikasi');
+INSERT INTO `lang_definitions` VALUES (74690, 8445, 16, 'Silahkan upgrade Database DCL untuk memasukkan prosedur, fungsi, tabel De Identifikasi');
 INSERT INTO `lang_definitions` VALUES (74691, 8447, 16, 'Silahkan lihat tabel log kesalahan De Identifikasi untuk lebih jelasnya');
 INSERT INTO `lang_definitions` VALUES (74692, 8448, 16, 'Silahkan kunjungi layar De Identifikasi setelah beberapa waktu');
 INSERT INTO `lang_definitions` VALUES (74693, 8449, 16, 'Silahkan kunjungi layar Re Identifikasi setelah beberapa waktu');
@@ -88916,7 +88916,7 @@ INSERT INTO `lang_definitions` VALUES (75547, 10287, 16, 'KELEMBUTAN SINUS');
 INSERT INTO `lang_definitions` VALUES (75548, 10288, 16, 'Sinusitis');
 INSERT INTO `lang_definitions` VALUES (75549, 10290, 16, 'Situs');
 INSERT INTO `lang_definitions` VALUES (75550, 10294, 16, 'ID Situs');
-INSERT INTO `lang_definitions` VALUES (75551, 10296, 16, 'ID Situs untuk Dukungan OpenEMR Lab Exchange Service (Layanan Pertukaran Lab).');
+INSERT INTO `lang_definitions` VALUES (75551, 10296, 16, 'ID Situs untuk Dukungan DCL Lab Exchange Service (Layanan Pertukaran Lab).');
 INSERT INTO `lang_definitions` VALUES (75552, 10300, 16, 'Ukuran');
 INSERT INTO `lang_definitions` VALUES (75553, 10301, 16, 'ukuran');
 INSERT INTO `lang_definitions` VALUES (75554, 10303, 16, 'Ukuran harus berupa angka antara 1 dan 999');
@@ -89318,7 +89318,7 @@ INSERT INTO `lang_definitions` VALUES (75949, 11277, 16, 'Terjemahan dari deskri
 INSERT INTO `lang_definitions` VALUES (75950, 11278, 16, 'Tabel terjemahan disinkronisasi.');
 INSERT INTO `lang_definitions` VALUES (75951, 11279, 16, 'Jenis entitas ini');
 INSERT INTO `lang_definitions` VALUES (75952, 11299, 16, 'Kode vendor-khusus mengidentifikasi proses atau hasil ini');
-INSERT INTO `lang_definitions` VALUES (75953, 11304, 16, 'File X12 serta laporan output yang dihasilkan HTML diarsipkan dalam subdirektori \"era\" dari direktori instalasi utama OpenEMR. Anda akan ingin melihat arsip ini dari waktu ke waktu. URL tersebut adalah');
+INSERT INTO `lang_definitions` VALUES (75953, 11304, 16, 'File X12 serta laporan output yang dihasilkan HTML diarsipkan dalam subdirektori \"era\" dari direktori instalasi utama DCL. Anda akan ingin melihat arsip ini dari waktu ke waktu. URL tersebut adalah');
 INSERT INTO `lang_definitions` VALUES (75954, 11306, 16, 'File zip akan berisi item berikut');
 INSERT INTO `lang_definitions` VALUES (75955, 11307, 16, 'Tema');
 INSERT INTO `lang_definitions` VALUES (75956, 11314, 16, 'Terapi Suntikan');
@@ -89475,7 +89475,7 @@ INSERT INTO `lang_definitions` VALUES (76106, 11782, 16, 'Saldo Hari Ini');
 INSERT INTO `lang_definitions` VALUES (76107, 11783, 16, 'Biaya Hari Ini');
 INSERT INTO `lang_definitions` VALUES (76108, 11784, 16, 'Tanggal Hari Ini');
 INSERT INTO `lang_definitions` VALUES (76109, 11785, 16, 'Event Hari Ini');
-INSERT INTO `lang_definitions` VALUES (76110, 11797, 16, 'ID Token untuk dukungan OpenEMR LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (76110, 11797, 16, 'ID Token untuk dukungan DCL LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (76111, 11803, 16, 'Operasi Amandel');
 INSERT INTO `lang_definitions` VALUES (76112, 11807, 16, 'Atas');
 INSERT INTO `lang_definitions` VALUES (76113, 11809, 16, 'Batas Atas (mm)');
@@ -89632,7 +89632,7 @@ INSERT INTO `lang_definitions` VALUES (76263, 12172, 16, 'Update Informasi Pengg
 INSERT INTO `lang_definitions` VALUES (76264, 12180, 16, 'Update demografi tidak diizinkan');
 INSERT INTO `lang_definitions` VALUES (76265, 12184, 16, 'Upgrade');
 INSERT INTO `lang_definitions` VALUES (76266, 12186, 16, 'Upgrade Database');
-INSERT INTO `lang_definitions` VALUES (76267, 12188, 16, 'Upgrade database OpenEMR untuk memasukkan Prosedur, Fungsi, dan tabel yang diperlukan untuk proses De-identifikasi');
+INSERT INTO `lang_definitions` VALUES (76267, 12188, 16, 'Upgrade database DCL untuk memasukkan Prosedur, Fungsi, dan tabel yang diperlukan untuk proses De-identifikasi');
 INSERT INTO `lang_definitions` VALUES (76268, 12189, 16, 'Pengupgradean akan berlanjut');
 INSERT INTO `lang_definitions` VALUES (76269, 12190, 16, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (76270, 12191, 16, 'Upload');
@@ -89655,7 +89655,7 @@ INSERT INTO `lang_definitions` VALUES (76286, 12230, 16, 'Urin Microalbumin');
 INSERT INTO `lang_definitions` VALUES (76287, 12231, 16, 'Aliran Urin');
 INSERT INTO `lang_definitions` VALUES (76288, 12232, 16, 'Urgensi Urin');
 INSERT INTO `lang_definitions` VALUES (76289, 12233, 16, 'URL');
-INSERT INTO `lang_definitions` VALUES (76290, 12235, 16, 'URL untuk dukungan OpenEMR');
+INSERT INTO `lang_definitions` VALUES (76290, 12235, 16, 'URL untuk dukungan DCL');
 INSERT INTO `lang_definitions` VALUES (76291, 12237, 16, 'URL untuk Gateway Telepon. Layanan VOIP otomatis disediakan oleh Maviq. Silahkan kunjungi http://signup.maviq.com untuk informasi lebih lanjut.');
 INSERT INTO `lang_definitions` VALUES (76292, 12248, 16, 'Indikator Penggunaan (ISA15)');
 INSERT INTO `lang_definitions` VALUES (76293, 12251, 16, 'Gunakan % saja pada field untuk hanya mengurutkan pada kolom tersebut');
@@ -90480,7 +90480,7 @@ INSERT INTO `lang_definitions` VALUES (77111, 496, 17, 'Όλα τα Μηνύμα
 INSERT INTO `lang_definitions` VALUES (77112, 498, 17, 'Μικρό Όνομα ή τμήμα του');
 INSERT INTO `lang_definitions` VALUES (77113, 499, 17, 'Επώνυμο ή τμήμα του');
 INSERT INTO `lang_definitions` VALUES (77114, 500, 17, 'Οργανισμός ή τμήμα του');
-INSERT INTO `lang_definitions` VALUES (77115, 501, 17, 'Στο OpenEMR όλες οι αλληλεπιδράσεις με ασθενείς είναι συνδεδεμένες με επισκέψεις');
+INSERT INTO `lang_definitions` VALUES (77115, 501, 17, 'Στο DCL όλες οι αλληλεπιδράσεις με ασθενείς είναι συνδεδεμένες με επισκέψεις');
 INSERT INTO `lang_definitions` VALUES (77116, 502, 17, 'Όλοι οι ασθενείς');
 INSERT INTO `lang_definitions` VALUES (77117, 503, 17, 'Όλα τα μηνύματα που εκκρεμούν εμφανίζονται στην καρτέλα ΤΑ ΜΗΝΥΜΑΤΑ ΜΟΥ');
 INSERT INTO `lang_definitions` VALUES (77118, 505, 17, 'Όλα τα Προϊόντα');
@@ -90581,7 +90581,7 @@ INSERT INTO `lang_definitions` VALUES (77212, 671, 17, 'Ποσό που χρεώ
 INSERT INTO `lang_definitions` VALUES (77213, 672, 17, 'Ένα ραντεβού μπορεί να προγραμματιστεί κάνοντας κλικ στο εικονίδιο με το ημερολόγιο, στο αντίστοιχο κελί');
 INSERT INTO `lang_definitions` VALUES (77214, 676, 17, 'Για τα επαναλαμβανόμενα γεγονότα, χρειάζεται μια ημ/νία τέλους μετά την ημερ. έναρξης.');
 INSERT INTO `lang_definitions` VALUES (77215, 677, 17, 'Προέκυψε σφάλμα κατά την υπογραφή της φόρμας');
-INSERT INTO `lang_definitions` VALUES (77216, 678, 17, 'Προέκυψε σφάλμα κατά το dumping του web directory του OpenEMR');
+INSERT INTO `lang_definitions` VALUES (77216, 678, 17, 'Προέκυψε σφάλμα κατά το dumping του web directory του DCL');
 INSERT INTO `lang_definitions` VALUES (77217, 679, 17, 'Προέκυψε σφάλμα κατά το dumping του web directory του phpGACL');
 INSERT INTO `lang_definitions` VALUES (77218, 680, 17, 'Προέκυψε σφάλμα κατά το dumping του web directory του SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (77219, 685, 17, 'Ένα ατελές θέμα GCAC δημιουργήθηκε και συνδέθηκε. Κάποιος θα πρέπει να το ολοκληρώσει αργότερα.');
@@ -91534,10 +91534,10 @@ INSERT INTO `lang_definitions` VALUES (78165, 2209, 17, 'Διαμόρφωση');
 INSERT INTO `lang_definitions` VALUES (78166, 2210, 17, 'Διαμόρφωση');
 INSERT INTO `lang_definitions` VALUES (78167, 2211, 17, 'Εξαγωγή/ Εισαγωγή Ρυθμίσεων');
 INSERT INTO `lang_definitions` VALUES (78168, 2212, 17, 'Οι ρυθμίσεις αποθηκεύτηκαν επιτυχώς');
-INSERT INTO `lang_definitions` VALUES (78169, 2213, 17, 'Ρύθμιση του Apache και του OpenEMR για χρήση πιστοποιητικών SSL από τη μεριά του Πελάτη');
+INSERT INTO `lang_definitions` VALUES (78169, 2213, 17, 'Ρύθμιση του Apache και του DCL για χρήση πιστοποιητικών SSL από τη μεριά του Πελάτη');
 INSERT INTO `lang_definitions` VALUES (78170, 2214, 17, 'Ρύθμιση του Apache για χρήση πιστοποιητικών SSL από τη μεριά του Πελάτη');
 INSERT INTO `lang_definitions` VALUES (78171, 2215, 17, 'Ρύθμιση του Apache για χρήση HTTPS.');
-INSERT INTO `lang_definitions` VALUES (78172, 2216, 17, 'Ρύθμιση του OpenEMR για χρήση πιστοποιητικών SSL από τη μεριά του Πελάτη');
+INSERT INTO `lang_definitions` VALUES (78172, 2216, 17, 'Ρύθμιση του DCL για χρήση πιστοποιητικών SSL από τη μεριά του Πελάτη');
 INSERT INTO `lang_definitions` VALUES (78173, 2217, 17, 'Διαμόρφωση Παραγγελιών και Αποτελεσμάτων');
 INSERT INTO `lang_definitions` VALUES (78174, 2218, 17, 'Βοήθεια για Διαμόρφωση Παραγγελιών');
 INSERT INTO `lang_definitions` VALUES (78175, 2224, 17, 'Επιβεβαίωση');
@@ -92488,7 +92488,7 @@ INSERT INTO `lang_definitions` VALUES (79119, 3632, 17, 'Ενεργοποίησ�
 INSERT INTO `lang_definitions` VALUES (79120, 3634, 17, 'Ενεργοποίηση Προτροπής Δεδομένων Αυτόματων Υπολογισμών Μετρήσεων');
 INSERT INTO `lang_definitions` VALUES (79121, 3635, 17, 'Ενεργοποίηση Τυχαιοποιημένου Ελέγχου Φαρμάκων');
 INSERT INTO `lang_definitions` VALUES (79122, 3638, 17, 'Ενεργοποίηση Υποστήριξης Σαρωτή Εγγράφων');
-INSERT INTO `lang_definitions` VALUES (79123, 3643, 17, 'Ενεργοποίηση της υπηρεσίας υποστήριξης του OpenEMR LLC Ανταλλαγής Εργαστηρ. αποτελεσμάτων');
+INSERT INTO `lang_definitions` VALUES (79123, 3643, 17, 'Ενεργοποίηση της υπηρεσίας υποστήριξης του DCL LLC Ανταλλαγής Εργαστηρ. αποτελεσμάτων');
 INSERT INTO `lang_definitions` VALUES (79124, 3644, 17, 'Ενεργοποίηση Επαλήθευσης του Πιστοπ. Χρήστη');
 INSERT INTO `lang_definitions` VALUES (79125, 3650, 17, 'Ενεργοποίηση της υπηρεσίας ZMG, LLC eRx');
 INSERT INTO `lang_definitions` VALUES (79126, 3651, 17, 'ενεργοποιήθηκε');
@@ -92573,7 +92573,7 @@ INSERT INTO `lang_definitions` VALUES (79204, 3753, 17, 'Αγγλικά');
 INSERT INTO `lang_definitions` VALUES (79205, 3754, 17, 'Αγγλικά');
 INSERT INTO `lang_definitions` VALUES (79206, 3756, 17, 'Αγγλικά (Ινδικά)');
 INSERT INTO `lang_definitions` VALUES (79207, 3757, 17, 'Αγγλικά (Standard)');
-INSERT INTO `lang_definitions` VALUES (79208, 3759, 17, 'Βεβαιωθείτε ότι το OpenEMR έχει δικαιώματα εγγραφής σε αυτόν τον κατάλογο');
+INSERT INTO `lang_definitions` VALUES (79208, 3759, 17, 'Βεβαιωθείτε ότι το DCL έχει δικαιώματα εγγραφής σε αυτόν τον κατάλογο');
 INSERT INTO `lang_definitions` VALUES (79209, 3761, 17, 'Έκκριμα ΩΡΛ');
 INSERT INTO `lang_definitions` VALUES (79210, 3762, 17, 'Πόνος ΩΡΛ');
 INSERT INTO `lang_definitions` VALUES (79211, 3764, 17, 'Εισάγετε Ημ. Έναρξης');
@@ -92642,7 +92642,7 @@ INSERT INTO `lang_definitions` VALUES (79273, 3897, 17, 'Σφάλμα κατά �
 INSERT INTO `lang_definitions` VALUES (79274, 3898, 17, 'Σφάλμα κατά την ανάκτηση αποτελεσμάτων από το Δίκτυο Ανταλλαγής Εργαστηριακών');
 INSERT INTO `lang_definitions` VALUES (79275, 3899, 17, 'Σφάλμα κατά την ανάκτηση τιμών');
 INSERT INTO `lang_definitions` VALUES (79276, 3900, 17, 'Σφάλμα κατά την αποθήκευση του εγγράφου');
-INSERT INTO `lang_definitions` VALUES (79277, 3901, 17, 'Σφάλμα κατά την απόδοση δικαιωμάτων αρχείου στον χρήστη OpenEMR');
+INSERT INTO `lang_definitions` VALUES (79277, 3901, 17, 'Σφάλμα κατά την απόδοση δικαιωμάτων αρχείου στον χρήστη DCL');
 INSERT INTO `lang_definitions` VALUES (79278, 3902, 17, 'Σφάλμα κατά την προσθήκη νέου πλάνου');
 INSERT INTO `lang_definitions` VALUES (79279, 3903, 17, 'Σφάλμα κατά την διαγραφή του πλάνου');
 INSERT INTO `lang_definitions` VALUES (79280, 3904, 17, 'Σφάλμα κατά την καταχώρηση του εντύπου!');
@@ -92911,7 +92911,7 @@ INSERT INTO `lang_definitions` VALUES (79542, 4284, 17, 'Όνομα Αρχείο
 INSERT INTO `lang_definitions` VALUES (79543, 4285, 17, 'Το αρχείο δεν βρέθηκε');
 INSERT INTO `lang_definitions` VALUES (79544, 4287, 17, 'Αρχείο στον server (ημ/νία τροποποίησης)');
 INSERT INTO `lang_definitions` VALUES (79545, 4288, 17, 'Η διαδρομή του αρχείου δεν βρέθηκε.');
-INSERT INTO `lang_definitions` VALUES (79546, 4289, 17, 'Το δικαίωμα αρχείου δόθηκε στον χρήστη OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (79546, 4289, 17, 'Το δικαίωμα αρχείου δόθηκε στον χρήστη DCL.');
 INSERT INTO `lang_definitions` VALUES (79547, 4290, 17, 'Απέτυχε η ανάκτηση αρχείων από την CouchDB');
 INSERT INTO `lang_definitions` VALUES (79548, 4291, 17, 'Χώρος Αρχειοθέτησης');
 INSERT INTO `lang_definitions` VALUES (79549, 4292, 17, 'Αρχείο για ανέβασμα');
@@ -93356,7 +93356,7 @@ INSERT INTO `lang_definitions` VALUES (79987, 5039, 17, 'HTML');
 INSERT INTO `lang_definitions` VALUES (79988, 5040, 17, 'Εξαγωγή HTML;');
 INSERT INTO `lang_definitions` VALUES (79989, 5041, 17, 'Υπέρταση');
 INSERT INTO `lang_definitions` VALUES (79990, 5042, 17, 'Σφάλμα Http');
-INSERT INTO `lang_definitions` VALUES (79991, 5043, 17, 'Ασφαλής σύνδεση https για την υπηρεσία υποστήριξης OpenEMR LLC LAB exchange');
+INSERT INTO `lang_definitions` VALUES (79991, 5043, 17, 'Ασφαλής σύνδεση https για την υπηρεσία υποστήριξης DCL LLC LAB exchange');
 INSERT INTO `lang_definitions` VALUES (79992, 5045, 17, 'Ουγγρικά');
 INSERT INTO `lang_definitions` VALUES (79993, 5046, 17, 'Κατάλογος Hylafax');
 INSERT INTO `lang_definitions` VALUES (79994, 5048, 17, 'Διακομιστής Hylafax');
@@ -93992,7 +93992,7 @@ INSERT INTO `lang_definitions` VALUES (80623, 6131, 17, 'Τοπικό Σύστη
 INSERT INTO `lang_definitions` VALUES (80624, 6133, 17, 'Γλώσσα');
 INSERT INTO `lang_definitions` VALUES (80625, 6134, 17, 'Τοπικότητα');
 INSERT INTO `lang_definitions` VALUES (80626, 6135, 17, 'Τοποθεσία');
-INSERT INTO `lang_definitions` VALUES (80627, 6136, 17, 'εντοπισμός της μηχανής OpenEMR. Μπορεί να περιέχει ευαίσθητα δεδομένα. Συνιστάται να διαγράψετε χειροκίνητα τα αρχεία μετά τη χρήση του');
+INSERT INTO `lang_definitions` VALUES (80627, 6136, 17, 'εντοπισμός της μηχανής DCL. Μπορεί να περιέχει ευαίσθητα δεδομένα. Συνιστάται να διαγράψετε χειροκίνητα τα αρχεία μετά τη χρήση του');
 INSERT INTO `lang_definitions` VALUES (80628, 6137, 17, 'Τοποθεσία αυτής της παρτίδας');
 INSERT INTO `lang_definitions` VALUES (80629, 6138, 17, 'Άγνωστη Τοποθεσία');
 INSERT INTO `lang_definitions` VALUES (80630, 6139, 17, 'Τοποθεσία αποθήκευσης των Fax από το Hylafax.');
@@ -94496,7 +94496,7 @@ INSERT INTO `lang_definitions` VALUES (81127, 6896, 17, 'Νέα Επανεκτί
 INSERT INTO `lang_definitions` VALUES (81128, 6897, 17, 'Νέα αποτελέσματα από Ανταλλαγή Εργαστηριακών');
 INSERT INTO `lang_definitions` VALUES (81129, 6898, 17, 'Νέα Αναζήτηση');
 INSERT INTO `lang_definitions` VALUES (81130, 6899, 17, 'Νέες Αποστολές');
-INSERT INTO `lang_definitions` VALUES (81131, 6900, 17, 'Νέα στο OpenEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (81131, 6900, 17, 'Νέα στο DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (81132, 6901, 17, 'Νέος Χρήστης');
 INSERT INTO `lang_definitions` VALUES (81133, 6902, 17, 'Νέα Τιμή');
 INSERT INTO `lang_definitions` VALUES (81134, 6903, 17, 'Νέα Επίσκεψη');
@@ -94897,17 +94897,17 @@ INSERT INTO `lang_definitions` VALUES (81528, 7532, 17, 'Άνοιγμα Ασθε
 INSERT INTO `lang_definitions` VALUES (81529, 7533, 17, 'Άνοιγμα των Πάνελ Γρήγορης Επιλογής');
 INSERT INTO `lang_definitions` VALUES (81530, 7534, 17, 'Άνοιγμα Παραθύρου Συντομογραφιών και προβολή Κωδικών Συντομογραφιών');
 INSERT INTO `lang_definitions` VALUES (81531, 7535, 17, 'Άνοιγμα Σημερινής Επίσκεψης');
-INSERT INTO `lang_definitions` VALUES (81532, 7562, 17, 'Το OpenEMR διαθέτει, ήδη εξ αρχής, ένα Πιστοπ. Εξουσιοδότησης.');
-INSERT INTO `lang_definitions` VALUES (81533, 7564, 17, 'Εφαρμογή OpenEMR');
-INSERT INTO `lang_definitions` VALUES (81534, 7565, 17, 'Κατηγορία Εφαρμογής OpenEMR');
-INSERT INTO `lang_definitions` VALUES (81535, 7567, 17, 'Ενημέρωση βάσης δεδομένων του OpenEMR');
-INSERT INTO `lang_definitions` VALUES (81536, 7568, 17, 'Ενημέρωση βάσης δεδομένων του OpenEMR για Απο-ταυτοποίηση');
-INSERT INTO `lang_definitions` VALUES (81537, 7569, 17, 'Το OpenEMR δεν αναγνωρίζει το εισερχόμενο αρχείο στον κατάλογο των συνεισφορών (contrib dir). Αυτό συμβαίνει μάλλον διότι πρέπει να ρυθμίσετε την έκδοση στον Πίνακα με την υποστηριζόμενη_εξωτερική_φόρτωση_δεδομένων στη βάση δεδομένων MySQL.');
-INSERT INTO `lang_definitions` VALUES (81538, 7571, 17, 'Το OpenEMR πρέπει να ρυθμισθεί για τη χρήση Πιστοποιητικών, πριν είναι σε θέση να δημιουργεί Πιστοποιητικά χρήστη.');
-INSERT INTO `lang_definitions` VALUES (81539, 7573, 17, 'OpenEMR Portal');
-INSERT INTO `lang_definitions` VALUES (81540, 7574, 17, 'Δήλωση προϊόντος OpenEMR');
-INSERT INTO `lang_definitions` VALUES (81541, 7575, 17, 'Το OpenEMR απαιτεί Javascript για να εκτελέσει την ταυτοποίηση του χρήστη.');
-INSERT INTO `lang_definitions` VALUES (81542, 7576, 17, 'Χρήστες OpenEMR');
+INSERT INTO `lang_definitions` VALUES (81532, 7562, 17, 'Το DCL διαθέτει, ήδη εξ αρχής, ένα Πιστοπ. Εξουσιοδότησης.');
+INSERT INTO `lang_definitions` VALUES (81533, 7564, 17, 'Εφαρμογή DCL');
+INSERT INTO `lang_definitions` VALUES (81534, 7565, 17, 'Κατηγορία Εφαρμογής DCL');
+INSERT INTO `lang_definitions` VALUES (81535, 7567, 17, 'Ενημέρωση βάσης δεδομένων του DCL');
+INSERT INTO `lang_definitions` VALUES (81536, 7568, 17, 'Ενημέρωση βάσης δεδομένων του DCL για Απο-ταυτοποίηση');
+INSERT INTO `lang_definitions` VALUES (81537, 7569, 17, 'Το DCL δεν αναγνωρίζει το εισερχόμενο αρχείο στον κατάλογο των συνεισφορών (contrib dir). Αυτό συμβαίνει μάλλον διότι πρέπει να ρυθμίσετε την έκδοση στον Πίνακα με την υποστηριζόμενη_εξωτερική_φόρτωση_δεδομένων στη βάση δεδομένων MySQL.');
+INSERT INTO `lang_definitions` VALUES (81538, 7571, 17, 'Το DCL πρέπει να ρυθμισθεί για τη χρήση Πιστοποιητικών, πριν είναι σε θέση να δημιουργεί Πιστοποιητικά χρήστη.');
+INSERT INTO `lang_definitions` VALUES (81539, 7573, 17, 'DCL Portal');
+INSERT INTO `lang_definitions` VALUES (81540, 7574, 17, 'Δήλωση προϊόντος DCL');
+INSERT INTO `lang_definitions` VALUES (81541, 7575, 17, 'Το DCL απαιτεί Javascript για να εκτελέσει την ταυτοποίηση του χρήστη.');
+INSERT INTO `lang_definitions` VALUES (81542, 7576, 17, 'Χρήστες DCL');
 INSERT INTO `lang_definitions` VALUES (81543, 7577, 17, 'Ανοίγματα');
 INSERT INTO `lang_definitions` VALUES (81544, 7582, 17, 'Χειριστής');
 INSERT INTO `lang_definitions` VALUES (81545, 7583, 17, 'Οφθαλμικό');
@@ -95345,7 +95345,7 @@ INSERT INTO `lang_definitions` VALUES (81976, 8152, 17, 'Εκκρεμεί Επα
 INSERT INTO `lang_definitions` VALUES (81977, 8153, 17, 'Αριθμός Εκκρεμών Θεραπείων');
 INSERT INTO `lang_definitions` VALUES (81978, 8154, 17, 'Εκκρεμεί από');
 INSERT INTO `lang_definitions` VALUES (81979, 8155, 17, 'Αλλεργία στην Πενικιλλίνη');
-INSERT INTO `lang_definitions` VALUES (81980, 8156, 17, 'Εταιρεία Pennington OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (81980, 8156, 17, 'Εταιρεία Pennington DCL v');
 INSERT INTO `lang_definitions` VALUES (81981, 8157, 17, 'Πεπτικό έλκος');
 INSERT INTO `lang_definitions` VALUES (81982, 8158, 17, 'Ανά Επίσκεψη');
 INSERT INTO `lang_definitions` VALUES (81983, 8159, 17, 'ανά λεπτό');
@@ -95549,7 +95549,7 @@ INSERT INTO `lang_definitions` VALUES (82180, 8435, 17, 'Παρακαλώ καθ
 INSERT INTO `lang_definitions` VALUES (82181, 8436, 17, 'Παρακαλώ ορίστε την μεταβλητή de_identification_config ξανά στο μηδέν');
 INSERT INTO `lang_definitions` VALUES (82182, 8437, 17, 'Παρακαλώ ορίστε Φαρμακείο στον Φάκελο Ασθενούς!');
 INSERT INTO `lang_definitions` VALUES (82183, 8441, 17, 'Παρακαλώ αρχίστε μία νέα διαδικασία Απο Ταυτοποίησης');
-INSERT INTO `lang_definitions` VALUES (82184, 8445, 17, 'Παρακαλώ αναβαθμίστε τη βάση δεδομένων του OpenEMR, για να ενσωματώσει τις διαδικασίες Απο Ταυτοποίησης, λειτουργίες, πίνακες');
+INSERT INTO `lang_definitions` VALUES (82184, 8445, 17, 'Παρακαλώ αναβαθμίστε τη βάση δεδομένων του DCL, για να ενσωματώσει τις διαδικασίες Απο Ταυτοποίησης, λειτουργίες, πίνακες');
 INSERT INTO `lang_definitions` VALUES (82185, 8447, 17, 'Παρακαλώ δείτε τον πίνακα καταγραφής σφαλμάτων Απο Ταυτοποίησης, για παραπάνω πληροφορίες');
 INSERT INTO `lang_definitions` VALUES (82186, 8448, 17, 'Παρακαλώ, επισκεφθείτε ξανά την οθόνη Απο Ταυτοποίησης μετά από λίγο καιρό');
 INSERT INTO `lang_definitions` VALUES (82187, 8449, 17, 'Παρακαλώ, επισκεφθείτε ξανά την οθόνη Επανα Ταυτοποίησης μετά από λίγο καιρό');
@@ -96820,7 +96820,7 @@ INSERT INTO `lang_definitions` VALUES (83451, 10286, 17, 'Εγχείριση Ι�
 INSERT INTO `lang_definitions` VALUES (83452, 10287, 17, 'Ευαισθησία Ιγμορίων:');
 INSERT INTO `lang_definitions` VALUES (83453, 10288, 17, 'Ιγμορίτις');
 INSERT INTO `lang_definitions` VALUES (83454, 10289, 17, 'Αδερφή');
-INSERT INTO `lang_definitions` VALUES (83455, 10296, 17, 'ID ιστοσελίδας για την υπηρεσία υποστήριξης OpenEMR Support LLC Lab Exchange');
+INSERT INTO `lang_definitions` VALUES (83455, 10296, 17, 'ID ιστοσελίδας για την υπηρεσία υποστήριξης DCL Support LLC Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (83456, 10298, 17, 'Προ Εξαμήνου');
 INSERT INTO `lang_definitions` VALUES (83457, 10299, 17, 'Μετά Εξαμήνου');
 INSERT INTO `lang_definitions` VALUES (83458, 10300, 17, 'Μέγεθος');
@@ -97321,7 +97321,7 @@ INSERT INTO `lang_definitions` VALUES (83952, 11277, 17, 'Η μετάφραση 
 INSERT INTO `lang_definitions` VALUES (83953, 11278, 17, 'Οι πίνακες μετάφρασης είναι συγχρονισμένοι');
 INSERT INTO `lang_definitions` VALUES (83954, 11279, 17, 'Το είδος αυτής της οντότητος');
 INSERT INTO `lang_definitions` VALUES (83955, 11299, 17, 'Ο ειδικός κωδικός πωλητή, που ταυτοποιεί την διαδικασία ή το αποτέλεσμα');
-INSERT INTO `lang_definitions` VALUES (83956, 11304, 17, 'Τα αρχεία X12 και οι σχετικές αναφορές εξόδου HTML αρχειοθετούνται στον υποκατάλογο \"era\" του κυρίου καταλόγου εγκατάστασης του OpenEMR. Θα θέλατε να αναφερθείτε σε αυτά τα αρχεία κάπου κάπου. Η διεύθυνση URL είναι');
+INSERT INTO `lang_definitions` VALUES (83956, 11304, 17, 'Τα αρχεία X12 και οι σχετικές αναφορές εξόδου HTML αρχειοθετούνται στον υποκατάλογο \"era\" του κυρίου καταλόγου εγκατάστασης του DCL. Θα θέλατε να αναφερθείτε σε αυτά τα αρχεία κάπου κάπου. Η διεύθυνση URL είναι');
 INSERT INTO `lang_definitions` VALUES (83957, 11306, 17, 'Το αρχείο zip θα περιέχει τα ακόλουθα στοιχεία');
 INSERT INTO `lang_definitions` VALUES (83958, 11307, 17, 'Θέμα');
 INSERT INTO `lang_definitions` VALUES (83959, 11308, 17, 'Θέμα της διάταξης των Καρτελών (χρειάζεται αποσύνδεση/επανασύνδεση για εφαρμογή)');
@@ -97767,7 +97767,7 @@ INSERT INTO `lang_definitions` VALUES (84398, 12182, 17, 'Γίνεται ενη�
 INSERT INTO `lang_definitions` VALUES (84399, 12183, 17, 'ΑΝΑΒΑΘΜΙΣΗ');
 INSERT INTO `lang_definitions` VALUES (84400, 12184, 17, 'Αναβάθμιση');
 INSERT INTO `lang_definitions` VALUES (84401, 12186, 17, 'Αναβάθμιση βάσης δεδομένων');
-INSERT INTO `lang_definitions` VALUES (84402, 12188, 17, 'Αναβαθμίζει τη βάση δεδομένων του OpenEMR για να συμπεριλάβει Διαδικασίες, Συναρτήσεις και πίνακες που απαιτούνται για τη διαδικασία απο-ταυτοποίησης.');
+INSERT INTO `lang_definitions` VALUES (84402, 12188, 17, 'Αναβαθμίζει τη βάση δεδομένων του DCL για να συμπεριλάβει Διαδικασίες, Συναρτήσεις και πίνακες που απαιτούνται για τη διαδικασία απο-ταυτοποίησης.');
 INSERT INTO `lang_definitions` VALUES (84403, 12189, 17, 'Η αναβάθμιση θα συνεχίσει');
 INSERT INTO `lang_definitions` VALUES (84404, 12190, 17, 'Προσ αριθμ');
 INSERT INTO `lang_definitions` VALUES (84405, 12191, 17, 'Ανέβασμα');
@@ -97801,7 +97801,7 @@ INSERT INTO `lang_definitions` VALUES (84432, 12230, 17, 'Μικροαλβουμ
 INSERT INTO `lang_definitions` VALUES (84433, 12231, 17, 'Ακτίνα ούρησης');
 INSERT INTO `lang_definitions` VALUES (84434, 12232, 17, 'Επιτακτική ούρηση');
 INSERT INTO `lang_definitions` VALUES (84435, 12233, 17, 'URL');
-INSERT INTO `lang_definitions` VALUES (84436, 12235, 17, 'URL για υποστήριξη του OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (84436, 12235, 17, 'URL για υποστήριξη του DCL.');
 INSERT INTO `lang_definitions` VALUES (84437, 12237, 17, 'URL για το Phone Gateway. Προσφέρεται αυτόματη υπηρεσία VOIP από την Maviq. Παρακαλώ επισκεφθείτε το http://signup.maviq.com για περισσότερες πληροφορίες.');
 INSERT INTO `lang_definitions` VALUES (84438, 12245, 17, 'ΗΠΑ');
 INSERT INTO `lang_definitions` VALUES (84439, 12246, 17, 'Χρήση');
@@ -98040,7 +98040,7 @@ INSERT INTO `lang_definitions` VALUES (84671, 12672, 17, 'Αλλαγή βάρο�
 INSERT INTO `lang_definitions` VALUES (84672, 12673, 17, 'Απώλεια βάρους');
 INSERT INTO `lang_definitions` VALUES (84673, 12674, 17, 'Κλινική απώλειας βάρους');
 INSERT INTO `lang_definitions` VALUES (84674, 12675, 17, 'Καλωσορίσατε');
-INSERT INTO `lang_definitions` VALUES (84675, 12676, 17, 'Καλωσορίσατε στο OpenEMR');
+INSERT INTO `lang_definitions` VALUES (84675, 12676, 17, 'Καλωσορίσατε στο DCL');
 INSERT INTO `lang_definitions` VALUES (84676, 12692, 17, 'Τε');
 INSERT INTO `lang_definitions` VALUES (84677, 12694, 17, 'Τι θέλετε να μετρηθεί;');
 INSERT INTO `lang_definitions` VALUES (84678, 12697, 17, 'Συριγμός');
@@ -98195,7 +98195,7 @@ INSERT INTO `lang_definitions` VALUES (84826, 12973, 17, 'Η συνεδρία κ
 INSERT INTO `lang_definitions` VALUES (84827, 12974, 17, 'Το αρχείο δεν έχει επέκταση');
 INSERT INTO `lang_definitions` VALUES (84828, 12975, 17, 'Το αρχείο σας είναι πολύ μεγάλο');
 INSERT INTO `lang_definitions` VALUES (84829, 12976, 17, 'Η πρώτη μέρα της εβδομάδας σας');
-INSERT INTO `lang_definitions` VALUES (84830, 12978, 17, 'Η εγκατάσταση του OpenEMR έχει δηλωθεί');
+INSERT INTO `lang_definitions` VALUES (84830, 12978, 17, 'Η εγκατάσταση του DCL έχει δηλωθεί');
 INSERT INTO `lang_definitions` VALUES (84831, 12980, 17, 'Τα Εργαστηριακά Αποτελέσματά σας');
 INSERT INTO `lang_definitions` VALUES (84832, 12981, 17, 'Το όνομα της λίστας έχει αλλάξει για να ανταποκρίνεται στις απαιτήσεις της ονοματοδοσίας.');
 INSERT INTO `lang_definitions` VALUES (84833, 12982, 17, 'Το μήνυμά σας έχει υποβληθεί για αποστολή σε');
@@ -98590,7 +98590,7 @@ INSERT INTO `lang_definitions` VALUES (85221, 15, 19, 'Algumas palavras para ind
 INSERT INTO `lang_definitions` VALUES (85222, 16, 19, 'Um compromisso de acompanhamento também pode ser agendado diretamente na folha de taxas.');
 INSERT INTO `lang_definitions` VALUES (85223, 17, 19, 'Um formulário GCAC deve ser acrescentado a esta visita');
 INSERT INTO `lang_definitions` VALUES (85224, 18, 19, 'Uma mensagem HL7 v2.x consiste simplesmente em várias linhas de texto, cada linha é chamada de segmento e é dividida em campos usando o caractere barra vertical (|)');
-INSERT INTO `lang_definitions` VALUES (85225, 19, 19, 'Um grande aplicativo como openEMR é usado por uma infinidade de usuários com funções e graus de responsabilidade variados. É imperativo que o acesso a várias partes do programa seja concedido aos usuários com base na necessidade de conhecimento. Para conseguir isso - Listas de controle de acesso (ACL) são usadas.');
+INSERT INTO `lang_definitions` VALUES (85225, 19, 19, 'Um grande aplicativo como DCL é usado por uma infinidade de usuários com funções e graus de responsabilidade variados. É imperativo que o acesso a várias partes do programa seja concedido aos usuários com base na necessidade de conhecimento. Para conseguir isso - Listas de controle de acesso (ACL) são usadas.');
 INSERT INTO `lang_definitions` VALUES (85226, 20, 19, 'Falta o número de lote');
 INSERT INTO `lang_definitions` VALUES (85227, 21, 19, 'Falta o número de lote!');
 INSERT INTO `lang_definitions` VALUES (85228, 22, 19, 'Letra minúscula');
@@ -98858,7 +98858,7 @@ INSERT INTO `lang_definitions` VALUES (85489, 330, 19, 'Informações adicionais
 INSERT INTO `lang_definitions` VALUES (85490, 332, 19, 'Informações adicionais para processar pedidos em papel');
 INSERT INTO `lang_definitions` VALUES (85491, 333, 19, 'Laboratórios adicionais');
 INSERT INTO `lang_definitions` VALUES (85492, 334, 19, 'Notas adicionais');
-INSERT INTO `lang_definitions` VALUES (85493, 335, 19, 'O campo de notas adicionais é para uso local em openEMR');
+INSERT INTO `lang_definitions` VALUES (85493, 335, 19, 'O campo de notas adicionais é para uso local em DCL');
 INSERT INTO `lang_definitions` VALUES (85494, 336, 19, 'Notas adicionais para este resultado ou recomendação');
 INSERT INTO `lang_definitions` VALUES (85495, 337, 19, 'Notas adicionais:');
 INSERT INTO `lang_definitions` VALUES (85496, 338, 19, 'Notas adicionais:');
@@ -99000,7 +99000,7 @@ INSERT INTO `lang_definitions` VALUES (85631, 497, 19, 'Todos os Grupos de Medid
 INSERT INTO `lang_definitions` VALUES (85632, 498, 19, 'Tudo ou parte do nome próprio');
 INSERT INTO `lang_definitions` VALUES (85633, 499, 19, 'Tudo ou parte do último nome');
 INSERT INTO `lang_definitions` VALUES (85634, 500, 19, 'Todos ou parte da organização');
-INSERT INTO `lang_definitions` VALUES (85635, 501, 19, 'Todas as interações do paciente no OpenEMR estão vinculadas aos encontros');
+INSERT INTO `lang_definitions` VALUES (85635, 501, 19, 'Todas as interações do paciente no DCL estão vinculadas aos encontros');
 INSERT INTO `lang_definitions` VALUES (85636, 502, 19, 'Todos os Pacientes');
 INSERT INTO `lang_definitions` VALUES (85637, 503, 19, 'Todas as mensagens pendentes são exibidas no painel MINHAS MENSAGENS');
 INSERT INTO `lang_definitions` VALUES (85638, 505, 19, 'Todos os produtos');
@@ -99143,11 +99143,11 @@ INSERT INTO `lang_definitions` VALUES (85774, 674, 19, 'Um e-mail com as suas no
 INSERT INTO `lang_definitions` VALUES (85775, 675, 19, 'Uma ordem eletrônica e o resultado retornado estão na forma de uma mensagem chamada a mensagem HL7. HL7 significa Nível de Saúde (Application Layer) 7. O principal objetivo da HL7 é simplificar a implementação de interfaces entre aplicativos de software de saúde e vários fornecedores, de modo a reduzir a dor e o custo envolvido na programação de interface personalizada');
 INSERT INTO `lang_definitions` VALUES (85776, 676, 19, 'Uma data de término posterior a data de início é necessário para eventos repetidos!');
 INSERT INTO `lang_definitions` VALUES (85777, 677, 19, 'Ocorreu um erro assinar o formulário');
-INSERT INTO `lang_definitions` VALUES (85778, 678, 19, 'ocorreu um erro durante o «dumping» da árvore do directório OpenEMR');
+INSERT INTO `lang_definitions` VALUES (85778, 678, 19, 'ocorreu um erro durante o «dumping» da árvore do directório DCL');
 INSERT INTO `lang_definitions` VALUES (85779, 679, 19, 'ocorreu um erro durante o \"dumping\" da árvore do directório phpGACL');
 INSERT INTO `lang_definitions` VALUES (85780, 680, 19, 'ocorreu um erro durante o \"dumping\" da árvore do directório SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (85781, 682, 19, 'Ocorreu um erro: Ficheiro em falta para enviar: Use o botão de voltar!');
-INSERT INTO `lang_definitions` VALUES (85782, 683, 19, 'Um conceito importante a ser compreendido é que, uma vez que a chave secreta entregue por meio do código QR é capturada pelo aplicativo autenticador, não há mais comunicação entre o aplicativo e o OpenEMR, cada um usará a hora atual do UNIX e sua cópia da chave secreta compartilhada específica do usuário para gerar o mesmo número único de 6 dígitos');
+INSERT INTO `lang_definitions` VALUES (85782, 683, 19, 'Um conceito importante a ser compreendido é que, uma vez que a chave secreta entregue por meio do código QR é capturada pelo aplicativo autenticador, não há mais comunicação entre o aplicativo e o DCL, cada um usará a hora atual do UNIX e sua cópia da chave secreta compartilhada específica do usuário para gerar o mesmo número único de 6 dígitos');
 INSERT INTO `lang_definitions` VALUES (85783, 684, 19, 'Um ponto importante a lembrar é que os vários testes individuais em cada painel estão listados como Resultados, o fruto, você não pode encomendar diretamente esses testes individuais');
 INSERT INTO `lang_definitions` VALUES (85784, 685, 19, 'Um assunto de GCAC incompleto foi criado e foi unido. Alguém precisará completar isto depois.');
 INSERT INTO `lang_definitions` VALUES (85785, 687, 19, 'Um problema diz respeito a questões relacionadas à saúde do paciente');
@@ -99360,7 +99360,7 @@ INSERT INTO `lang_definitions` VALUES (85991, 927, 19, 'Suponha que os pacientes
 INSERT INTO `lang_definitions` VALUES (85992, 928, 19, 'Asma');
 INSERT INTO `lang_definitions` VALUES (85993, 929, 19, 'a');
 INSERT INTO `lang_definitions` VALUES (85994, 931, 19, 'Pelo menos um parâmetro de procura é necessário se você selecionar Todos.');
-INSERT INTO `lang_definitions` VALUES (85995, 932, 19, 'No momento, a prescrição eletrônica do openEMR é possível apenas nos Estados Unidos');
+INSERT INTO `lang_definitions` VALUES (85995, 932, 19, 'No momento, a prescrição eletrônica do DCL é possível apenas nos Estados Unidos');
 INSERT INTO `lang_definitions` VALUES (85996, 933, 19, 'No momento, apenas a Continuidade de Registro de Cuidados (CCR), o Continuidade de Documento de Cuidados (CCD) pode ser enviado usando phiMail');
 INSERT INTO `lang_definitions` VALUES (85997, 934, 19, 'Ao Navicular');
 INSERT INTO `lang_definitions` VALUES (85998, 935, 19, 'Ao Navicular:');
@@ -100494,10 +100494,10 @@ INSERT INTO `lang_definitions` VALUES (87125, 2209, 19, 'Configuração');
 INSERT INTO `lang_definitions` VALUES (87126, 2210, 19, 'Configuração');
 INSERT INTO `lang_definitions` VALUES (87127, 2211, 19, 'Configuração Exportar/Importar');
 INSERT INTO `lang_definitions` VALUES (87128, 2212, 19, 'Configuração salva com sucesso');
-INSERT INTO `lang_definitions` VALUES (87129, 2213, 19, 'Configure Servidor Web (Apache) e OpenEMR para uso de certificado SSL pelo clíente.');
+INSERT INTO `lang_definitions` VALUES (87129, 2213, 19, 'Configure Servidor Web (Apache) e DCL para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (87130, 2214, 19, 'Configure Servidor Web (Apache) para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (87131, 2215, 19, 'Configure Servidor Web (Apache) para uso HTTPS.');
-INSERT INTO `lang_definitions` VALUES (87132, 2216, 19, 'Configure OpenEMR para uso de certificado SSL pelo clíente.');
+INSERT INTO `lang_definitions` VALUES (87132, 2216, 19, 'Configure DCL para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (87133, 2217, 19, 'Configurar pedidos e resultados');
 INSERT INTO `lang_definitions` VALUES (87134, 2218, 19, 'Ajuda para configurar pedidos');
 INSERT INTO `lang_definitions` VALUES (87135, 2219, 19, 'Configure a estrutura de teste de laboratório');
@@ -100544,7 +100544,7 @@ INSERT INTO `lang_definitions` VALUES (87175, 2268, 19, 'Lentes de Contacto');
 INSERT INTO `lang_definitions` VALUES (87176, 2269, 19, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com para obter o Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (87177, 2270, 19, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com ou ZH Healthcare em http://zhservices.com para assinar o serviço eRx');
 INSERT INTO `lang_definitions` VALUES (87178, 2271, 19, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com ou ZH Healthcare em http://zhservices.com para assinar no serviço NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (87179, 2272, 19, 'Entre em contato com a mi-squared em http://www.mi-squared.com/products-services/openemr/ ou ZH Healthcare em https://bl Budaphr.com/contact-us/ para assinar no serviço NewCrop eRx');
+INSERT INTO `lang_definitions` VALUES (87179, 2272, 19, 'Entre em contato com a mi-squared em http://www.mi-squared.com/products-services/DCL/ ou ZH Healthcare em https://bl Budaphr.com/contact-us/ para assinar no serviço NewCrop eRx');
 INSERT INTO `lang_definitions` VALUES (87180, 2273, 19, 'Nome de Contacto');
 INSERT INTO `lang_definitions` VALUES (87181, 2274, 19, 'Entre em contato com a Open Med Practice, www.openmedpractice.com para assinar no serviço Weno Free eRx');
 INSERT INTO `lang_definitions` VALUES (87182, 2275, 19, 'Contate ou notifique o telefone');
@@ -100786,7 +100786,7 @@ INSERT INTO `lang_definitions` VALUES (87417, 2544, 19, 'Atualmente ativo');
 INSERT INTO `lang_definitions` VALUES (87418, 2545, 19, 'Atualmente ocupado');
 INSERT INTO `lang_definitions` VALUES (87419, 2547, 19, 'Atualmente offline');
 INSERT INTO `lang_definitions` VALUES (87420, 2548, 19, 'Atualmente em execução');
-INSERT INTO `lang_definitions` VALUES (87421, 2549, 19, 'Atualmente, existem 5 tipos de transações no OpenEMR');
+INSERT INTO `lang_definitions` VALUES (87421, 2549, 19, 'Atualmente, existem 5 tipos de transações no DCL');
 INSERT INTO `lang_definitions` VALUES (87422, 2550, 19, 'Atualmente não há instalações');
 INSERT INTO `lang_definitions` VALUES (87423, 2551, 19, 'Atualmente trabalhando para fazer este documento');
 INSERT INTO `lang_definitions` VALUES (87424, 2552, 19, 'Síndrome de Cushing');
@@ -101478,8 +101478,8 @@ INSERT INTO `lang_definitions` VALUES (88109, 3321, 19, 'Vencimento Pt');
 INSERT INTO `lang_definitions` VALUES (88110, 3322, 19, 'Vencimento logo');
 INSERT INTO `lang_definitions` VALUES (88111, 3323, 19, 'Status de vencimento');
 INSERT INTO `lang_definitions` VALUES (88112, 3324, 19, 'Actualização do status de vencimento');
-INSERT INTO `lang_definitions` VALUES (88113, 3325, 19, 'Base de dados OpenEMR esvaziado');
-INSERT INTO `lang_definitions` VALUES (88114, 3326, 19, 'Rede da árvore OpenEMR do diretório esvaziando');
+INSERT INTO `lang_definitions` VALUES (88113, 3325, 19, 'Base de dados DCL esvaziado');
+INSERT INTO `lang_definitions` VALUES (88114, 3326, 19, 'Rede da árvore DCL do diretório esvaziando');
 INSERT INTO `lang_definitions` VALUES (88115, 3327, 19, 'Base de dados de phpGACL esvaziando');
 INSERT INTO `lang_definitions` VALUES (88116, 3328, 19, 'Rede da árvore phpGACL do diretório esvaziando');
 INSERT INTO `lang_definitions` VALUES (88117, 3329, 19, 'Base de dados SQL-Ledger esvaziado');
@@ -101733,8 +101733,8 @@ INSERT INTO `lang_definitions` VALUES (88364, 3611, 19, 'Habilitar Portal do Pac
 INSERT INTO `lang_definitions` VALUES (88365, 3612, 19, 'Habilitar download do documento do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (88366, 3613, 19, 'Habilitar novo paciente no Portal do Paciente no local para se auto-registrar');
 INSERT INTO `lang_definitions` VALUES (88367, 3614, 19, 'Habilitar Portal do Paciente no Local');
-INSERT INTO `lang_definitions` VALUES (88368, 3621, 19, 'Habilitar API REST OpenEMR');
-INSERT INTO `lang_definitions` VALUES (88369, 3622, 19, 'Habilitar a API OpenEMR RESTful. SSL necessário');
+INSERT INTO `lang_definitions` VALUES (88368, 3621, 19, 'Habilitar API REST DCL');
+INSERT INTO `lang_definitions` VALUES (88369, 3622, 19, 'Habilitar a API DCL RESTful. SSL necessário');
 INSERT INTO `lang_definitions` VALUES (88370, 3630, 19, 'Ativar widget de lembrete de paciente');
 INSERT INTO `lang_definitions` VALUES (88371, 3632, 19, 'Habilitar serviço de mensagens diretas phiMail');
 INSERT INTO `lang_definitions` VALUES (88372, 3633, 19, 'Habilitar postagem');
@@ -101745,7 +101745,7 @@ INSERT INTO `lang_definitions` VALUES (88376, 3638, 19, 'Habilitar Suporte a Sca
 INSERT INTO `lang_definitions` VALUES (88377, 3639, 19, 'Habilitar itemização de relatório padrão');
 INSERT INTO `lang_definitions` VALUES (88378, 3640, 19, 'Habilitar suporte para o Portal WordPress de código aberto da Sunset Systems');
 INSERT INTO `lang_definitions` VALUES (88379, 3642, 19, 'Habilitar o serviço de integração de informações médicas, LLC Lab Exchange');
-INSERT INTO `lang_definitions` VALUES (88380, 3643, 19, 'Habilitar o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (88380, 3643, 19, 'Habilitar o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (88381, 3644, 19, 'Habilitar autenticação de certificado de usuário');
 INSERT INTO `lang_definitions` VALUES (88382, 3645, 19, 'Habilitar versão 1 do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (88383, 3646, 19, 'Habilitar versão 2 do portal do paciente no local');
@@ -101849,7 +101849,7 @@ INSERT INTO `lang_definitions` VALUES (88480, 3754, 19, 'Inglês');
 INSERT INTO `lang_definitions` VALUES (88481, 3756, 19, 'Inglês (Indiano)');
 INSERT INTO `lang_definitions` VALUES (88482, 3757, 19, 'Inglês (Defeito)');
 INSERT INTO `lang_definitions` VALUES (88483, 3758, 19, 'Comando Enscript usado pelo Hylafax');
-INSERT INTO `lang_definitions` VALUES (88484, 3759, 19, 'Assegurar OpenEMR tem privilégios de gravação para o diretório');
+INSERT INTO `lang_definitions` VALUES (88484, 3759, 19, 'Assegurar DCL tem privilégios de gravação para o diretório');
 INSERT INTO `lang_definitions` VALUES (88485, 3760, 19, 'Ensure that Identifying Codes are unique');
 INSERT INTO `lang_definitions` VALUES (88486, 3761, 19, 'ENT Descarga');
 INSERT INTO `lang_definitions` VALUES (88487, 3762, 19, 'ENT Dor');
@@ -101909,14 +101909,14 @@ INSERT INTO `lang_definitions` VALUES (88540, 3822, 19, 'Insira a lateralidade d
 INSERT INTO `lang_definitions` VALUES (88541, 3823, 19, 'Insira o código dos nomes e códigos dos identificadores de observação lógica (LOINC) para este procedimento');
 INSERT INTO `lang_definitions` VALUES (88542, 3824, 19, 'Insira o código dos nomes e códigos dos identificadores de observação lógica (LOINC) para este procedimento. LOINC é um banco de dados e padrão universal para identificar observações de laboratórios médicos.');
 INSERT INTO `lang_definitions` VALUES (88543, 3825, 19, 'Insira o código LOINC para este procedimento');
-INSERT INTO `lang_definitions` VALUES (88544, 3826, 19, 'Insira a senha de login do OpenEMR para o usuário e clique em Enviar');
+INSERT INTO `lang_definitions` VALUES (88544, 3826, 19, 'Insira a senha de login do DCL para o usuário e clique em Enviar');
 INSERT INTO `lang_definitions` VALUES (88545, 3827, 19, 'Insira o código de Re identificação');
 INSERT INTO `lang_definitions` VALUES (88546, 3828, 19, 'Insira o site relevante, se aplicável');
 INSERT INTO `lang_definitions` VALUES (88547, 3829, 19, 'Insira o endereço do servidor, nome de usuário e senha fornecidos a você');
 INSERT INTO `lang_definitions` VALUES (88548, 3830, 19, 'Insira a gravidade da alergia');
 INSERT INTO `lang_definitions` VALUES (88549, 3831, 19, 'Insira o tipo de amostra, se aplicável');
 INSERT INTO `lang_definitions` VALUES (88550, 3832, 19, 'Insira os valores 3,4 - 7,2 - Homens, 2,4–6,1 - Mulheres');
-INSERT INTO `lang_definitions` VALUES (88551, 3833, 19, 'Insira seu nome de usuário Openemr no campo usuário de notificação');
+INSERT INTO `lang_definitions` VALUES (88551, 3833, 19, 'Insira seu nome de usuário DCL no campo usuário de notificação');
 INSERT INTO `lang_definitions` VALUES (88552, 3834, 19, 'Insira o ID de login do usuário');
 INSERT INTO `lang_definitions` VALUES (88553, 3835, 19, 'Insira valores nesta seção para criar um novo grupo também conhecido como Objeto de Solicitação de Acesso (ARO)');
 INSERT INTO `lang_definitions` VALUES (88554, 3836, 19, 'Enter your credentials');
@@ -101974,7 +101974,7 @@ INSERT INTO `lang_definitions` VALUES (88605, 3897, 19, 'Erro ao remover mensage
 INSERT INTO `lang_definitions` VALUES (88606, 3898, 19, 'Erro ao recuperar resultados do Lab Exchange Network');
 INSERT INTO `lang_definitions` VALUES (88607, 3899, 19, 'Erro ao recuperar valores');
 INSERT INTO `lang_definitions` VALUES (88608, 3900, 19, 'Erro ao salvar documento');
-INSERT INTO `lang_definitions` VALUES (88609, 3901, 19, 'Erro ao conceder privilégio de arquivo ao usuário OpenEMR');
+INSERT INTO `lang_definitions` VALUES (88609, 3901, 19, 'Erro ao conceder privilégio de arquivo ao usuário DCL');
 INSERT INTO `lang_definitions` VALUES (88610, 3902, 19, 'Erro ao adicionar novo plano');
 INSERT INTO `lang_definitions` VALUES (88611, 3903, 19, 'Erro ao excluir o plano');
 INSERT INTO `lang_definitions` VALUES (88612, 3904, 19, 'erro enquanto registrando forma!');
@@ -101992,7 +101992,7 @@ INSERT INTO `lang_definitions` VALUES (88623, 3920, 19, 'Erro: incapaz de criar 
 INSERT INTO `lang_definitions` VALUES (88624, 3921, 19, 'Erro: incapaz de criar certificado \'Certificate Authority\'');
 INSERT INTO `lang_definitions` VALUES (88625, 3922, 19, 'Erro: incapaz de criar certificado \'Server\'');
 INSERT INTO `lang_definitions` VALUES (88626, 3924, 19, 'Erro: incapaz de abrir ficheiro');
-INSERT INTO `lang_definitions` VALUES (88627, 3925, 19, 'Erro, \'User Certificate Authentication\' não está configurado no OpenEMR');
+INSERT INTO `lang_definitions` VALUES (88627, 3925, 19, 'Erro, \'User Certificate Authentication\' não está configurado no DCL');
 INSERT INTO `lang_definitions` VALUES (88628, 3932, 19, 'Erro. Tente mais tarde');
 INSERT INTO `lang_definitions` VALUES (88629, 3933, 19, 'Erro. Tem de instalar o modulo \'Archive/Tar.php\'.');
 INSERT INTO `lang_definitions` VALUES (88630, 3934, 19, 'ERRO: não pude abrir \'table.sql\', formulário defeituoso?');
@@ -102313,7 +102313,7 @@ INSERT INTO `lang_definitions` VALUES (88944, 4285, 19, 'Arquivo não encontrado
 INSERT INTO `lang_definitions` VALUES (88945, 4286, 19, 'File Not Found');
 INSERT INTO `lang_definitions` VALUES (88946, 4287, 19, 'Arquivo no servidor (data de modificação)');
 INSERT INTO `lang_definitions` VALUES (88947, 4288, 19, 'Caminho do arquivo não encontrado');
-INSERT INTO `lang_definitions` VALUES (88948, 4289, 19, 'Privilégio de arquivo concedido ao usuário OpenEMR');
+INSERT INTO `lang_definitions` VALUES (88948, 4289, 19, 'Privilégio de arquivo concedido ao usuário DCL');
 INSERT INTO `lang_definitions` VALUES (88949, 4290, 19, 'A recuperação do arquivo do CouchDB falhou');
 INSERT INTO `lang_definitions` VALUES (88950, 4291, 19, 'Quarto de Arquivo');
 INSERT INTO `lang_definitions` VALUES (88951, 4292, 19, 'Arquive para transferir');
@@ -102329,7 +102329,7 @@ INSERT INTO `lang_definitions` VALUES (88960, 4302, 19, 'Filipino');
 INSERT INTO `lang_definitions` VALUES (88961, 4303, 19, 'preencher');
 INSERT INTO `lang_definitions` VALUES (88962, 4304, 19, 'Preencha qualquer uma das linhas abaixo.');
 INSERT INTO `lang_definitions` VALUES (88963, 4305, 19, 'Preencha aqui somente se enviarem notificação do e-mail para');
-INSERT INTO `lang_definitions` VALUES (88964, 4306, 19, 'Preencha todos os detalhes ausentes ou edite as informações existentes. Isso será salvo na página de dados demográficos do paciente no openEMR');
+INSERT INTO `lang_definitions` VALUES (88964, 4306, 19, 'Preencha todos os detalhes ausentes ou edite as informações existentes. Isso será salvo na página de dados demográficos do paciente no DCL');
 INSERT INTO `lang_definitions` VALUES (88965, 4307, 19, 'Preencha os códigos CPT usando o formato exibido. Os códigos E / M comuns já estão preenchidos, adicione mais conforme necessário');
 INSERT INTO `lang_definitions` VALUES (88966, 4308, 19, 'Preencha os detalhes conforme necessário e clique em Salvar');
 INSERT INTO `lang_definitions` VALUES (88967, 4309, 19, 'Preencha os detalhes do painel Órgão / Doença como antes e clique em Salvar para fechar o pop-up');
@@ -102493,7 +102493,7 @@ INSERT INTO `lang_definitions` VALUES (89124, 4484, 19, 'Para aqueles interessad
 INSERT INTO `lang_definitions` VALUES (89125, 4485, 19, 'Para aqueles interessados no que acontece nos bastidores');
 INSERT INTO `lang_definitions` VALUES (89126, 4486, 19, 'Para essas linhas, a descrição indicará os detalhes do código');
 INSERT INTO `lang_definitions` VALUES (89127, 4487, 19, 'Para aqueles com privilégios administrativos, um ícone é exibido ao lado da legenda Minhas mensagens');
-INSERT INTO `lang_definitions` VALUES (89128, 4488, 19, 'Para que o TOTP funcione, uma chave secreta exclusiva deve ser compartilhada entre o OpenEMR e o usuário');
+INSERT INTO `lang_definitions` VALUES (89128, 4488, 19, 'Para que o TOTP funcione, uma chave secreta exclusiva deve ser compartilhada entre o DCL e o usuário');
 INSERT INTO `lang_definitions` VALUES (89129, 4489, 19, 'Para suporte U2F no Linux, clique');
 INSERT INTO `lang_definitions` VALUES (89130, 4490, 19, 'para variável');
 INSERT INTO `lang_definitions` VALUES (89131, 4491, 19, 'para:');
@@ -102993,7 +102993,7 @@ INSERT INTO `lang_definitions` VALUES (89624, 5039, 19, 'HTML');
 INSERT INTO `lang_definitions` VALUES (89625, 5040, 19, 'Saída HTML?');
 INSERT INTO `lang_definitions` VALUES (89626, 5041, 19, 'HTN {{hipertensão}}');
 INSERT INTO `lang_definitions` VALUES (89627, 5042, 19, 'Erro HTTP');
-INSERT INTO `lang_definitions` VALUES (89628, 5043, 19, 'Link Https para o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (89628, 5043, 19, 'Link Https para o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (89629, 5044, 19, 'HT {{hiperforia}}');
 INSERT INTO `lang_definitions` VALUES (89630, 5045, 19, 'Húngaro');
 INSERT INTO `lang_definitions` VALUES (89631, 5046, 19, 'Diretório Hylafax');
@@ -103058,7 +103058,7 @@ INSERT INTO `lang_definitions` VALUES (89689, 5110, 19, 'Se ainda estiver ativo,
 INSERT INTO `lang_definitions` VALUES (89690, 5111, 19, 'Se nome, qualquer parte do último nome ou');
 INSERT INTO `lang_definitions` VALUES (89691, 5112, 19, 'Se NewCrop eRx - o módulo de prescrição eletrônica, estiver habilitado, os botões NewCrop MedEntry e NewCrop Account Status aparecerão aqui');
 INSERT INTO `lang_definitions` VALUES (89692, 5113, 19, 'Se não estiver listado, você pode adicionar o medicamento à caixa de texto Título');
-INSERT INTO `lang_definitions` VALUES (89693, 5115, 19, 'Se apenas capturar o código QR, mas não registrar a chave TOTP com OpenEMR, este recurso não será habilitado no login');
+INSERT INTO `lang_definitions` VALUES (89693, 5115, 19, 'Se apenas capturar o código QR, mas não registrar a chave TOTP com DCL, este recurso não será habilitado no login');
 INSERT INTO `lang_definitions` VALUES (89694, 5116, 19, 'Se o paciente tiver um compromisso, clique em OK para criar um encontro, caso contrário, cancele esto e logo crie um encontro para a visita de hoje.');
 INSERT INTO `lang_definitions` VALUES (89695, 5117, 19, 'Se pagar por');
 INSERT INTO `lang_definitions` VALUES (89696, 5118, 19, 'Se a pessoa faleceu, insira a data da morte');
@@ -103082,7 +103082,7 @@ INSERT INTO `lang_definitions` VALUES (89713, 5135, 19, 'Se a mensagem for encam
 INSERT INTO `lang_definitions` VALUES (89714, 5136, 19, 'Se o portal do paciente externo estiver ativado, haverá um botão que diz Criar credenciais do portal externo, desde que o paciente tenha dado permissão para acessar o portal do paciente online ou uma mensagem que diz que o paciente não autorizou o portal do paciente');
 INSERT INTO `lang_definitions` VALUES (89715, 5137, 19, 'Se o portal do paciente externo estiver ativado, haverá um botão que diz Criar credenciais do portal externo, desde que o paciente tenha dado permissão para acessar o portal do paciente online ou uma mensagem que diz que o paciente não autorizou o portal do paciente');
 INSERT INTO `lang_definitions` VALUES (89716, 5138, 19, 'Se as credenciais do portal online / offsite já tiverem sido definidas, o botão mudará para');
-INSERT INTO `lang_definitions` VALUES (89717, 5139, 19, 'Se o paciente tiver quaisquer dados demográficos inseridos no openEMR, ele preencherá automaticamente os campos relevantes nas seções corretas');
+INSERT INTO `lang_definitions` VALUES (89717, 5139, 19, 'Se o paciente tiver quaisquer dados demográficos inseridos no DCL, ele preencherá automaticamente os campos relevantes nas seções corretas');
 INSERT INTO `lang_definitions` VALUES (89718, 5140, 19, 'Se o paciente não autorizou o portal do paciente, então um paciente não autorizou a mensagem do portal do paciente será exibida aqui');
 INSERT INTO `lang_definitions` VALUES (89719, 5141, 19, 'Se o paciente estiver sendo adicionado à lista de recall no dia da visita, ele refletirá a data atual');
 INSERT INTO `lang_definitions` VALUES (89720, 5142, 19, 'Se o paciente está ligando de volta para ser adicionado à lista, a última consulta pode ter sido no passado remoto. Esteja ciente de que os mais de 1,2,3 anos são calculados e exibidos na caixa Data na parte inferior desta seção');
@@ -103113,9 +103113,9 @@ INSERT INTO `lang_definitions` VALUES (89744, 5169, 19, 'Se você clicar no sina
 INSERT INTO `lang_definitions` VALUES (89745, 5170, 19, 'Se você continuar tendo esse erro, por favor entre em contato com o suporte');
 INSERT INTO `lang_definitions` VALUES (89746, 5171, 19, 'Se você não encontrar um valor necessário na caixa suspensa, você precisará adicioná-lo via Administração> Listas> Unidades de procedimento. Consulte o arquivo de ajuda em Procedimentos> Provedores');
 INSERT INTO `lang_definitions` VALUES (89747, 5172, 19, 'Se você não selecionar uma correspondência, o paciente será criado');
-INSERT INTO `lang_definitions` VALUES (89748, 5173, 19, 'Se você não selecionar pelo menos um deles, o OpenEMR operará em um modo somente de recepção');
+INSERT INTO `lang_definitions` VALUES (89748, 5173, 19, 'Se você não selecionar pelo menos um deles, o DCL operará em um modo somente de recepção');
 INSERT INTO `lang_definitions` VALUES (89749, 5174, 19, 'Se você não enviar pedidos eletronicamente ou receber resultados eletronicamente, deixe como o valor padrão, Download');
-INSERT INTO `lang_definitions` VALUES (89750, 5176, 19, 'Se você não quiser fazer isso, o método a seguir envolve adicionar dados manualmente usando a interface openEMR');
+INSERT INTO `lang_definitions` VALUES (89750, 5176, 19, 'Se você não quiser fazer isso, o método a seguir envolve adicionar dados manualmente usando a interface DCL');
 INSERT INTO `lang_definitions` VALUES (89751, 5177, 19, 'Se você detalhar a linha do painel de eletrólito e clicar no sinal + na coluna Nome, você deverá ver o sódio listado abaixo dela com um valor de categoria de resultado com um valor de nível 4');
 INSERT INTO `lang_definitions` VALUES (89752, 5178, 19, 'Se você detalhar a linha do painel de eletrólito, deverá ver que ele tem uma categoria de pedido e destacado em amarelo, indicando que é um pedido pesquisável e válido e tem um valor de nível 3');
 INSERT INTO `lang_definitions` VALUES (89753, 5179, 19, 'Se você selecionou vários códigos, eles serão separados por ponto e vírgula');
@@ -103223,11 +103223,11 @@ INSERT INTO `lang_definitions` VALUES (89854, 5286, 19, 'In House');
 INSERT INTO `lang_definitions` VALUES (89855, 5288, 19, 'no olho esquerdo');
 INSERT INTO `lang_definitions` VALUES (89856, 5289, 19, 'na narina');
 INSERT INTO `lang_definitions` VALUES (89857, 5290, 19, 'Disponível');
-INSERT INTO `lang_definitions` VALUES (89858, 5291, 19, 'No openEMR, os relatórios de Registro de Continuidade de Cuidados (CCR) a serem gerados podem ser limitados a um intervalo de datas específico marcando a caixa de seleção Usar intervalo de datas e inserindo o intervalo de datas desejado');
+INSERT INTO `lang_definitions` VALUES (89858, 5291, 19, 'No DCL, os relatórios de Registro de Continuidade de Cuidados (CCR) a serem gerados podem ser limitados a um intervalo de datas específico marcando a caixa de seleção Usar intervalo de datas e inserindo o intervalo de datas desejado');
 INSERT INTO `lang_definitions` VALUES (89859, 5292, 19, 'A fim de cumprir os requisitos de uso significativo para entrada de pedido de provedor computadorizado (CPOE) para testes de laboratório e radiologia, este módulo precisa ser usado');
 INSERT INTO `lang_definitions` VALUES (89860, 5293, 19, 'Para armazenar e recuperar adequadamente os resultados do teste e fazer novos pedidos, os testes / pedidos devem ser configurados de maneira hierárquica');
 INSERT INTO `lang_definitions` VALUES (89861, 5294, 19, 'Para registrar os valores dos resultados retornados, você deve criar um Resultado Discreto separado (Nível 4) para cada um dos constituintes do painel, a fruta, como descendentes diretos deste ramo (Painel de Saúde Geral) (Nível 3). Exemplos dos resultados são CBC - Hemoglobina, CBC - Hematócrito, CMP - Sódio, CMP - Potássio, TSH etc.');
-INSERT INTO `lang_definitions` VALUES (89862, 5295, 19, 'Para registrar seu dispositivo, por favor forneça sua senha de login do OpenEMR');
+INSERT INTO `lang_definitions` VALUES (89862, 5295, 19, 'Para registrar seu dispositivo, por favor forneça sua senha de login do DCL');
 INSERT INTO `lang_definitions` VALUES (89863, 5296, 19, 'Para enviar Registro de Continuidade de Cuidados (CCR) e / ou Documento de Continuidade de Cuidados (CCD), opcionalmente, marque phiMail Permitir CCD Send e / ou phiMail Permitir CCR Send para habilitar o recurso de transmissão para esses tipos de dados');
 INSERT INTO `lang_definitions` VALUES (89864, 5297, 19, 'No nosso caso, escolheremos o laboratório local que foi configurado anteriormente');
 INSERT INTO `lang_definitions` VALUES (89865, 5298, 19, 'No nosso caso, vamos deixá-lo como Não atribuído');
@@ -103382,7 +103382,7 @@ INSERT INTO `lang_definitions` VALUES (90013, 5462, 19, 'Instalar códigos de se
 INSERT INTO `lang_definitions` VALUES (90014, 5465, 19, 'Instale o certificado de âncora de confiança EMR Direct');
 INSERT INTO `lang_definitions` VALUES (90015, 5467, 19, 'As instalações que processam um grande número de mensagens diretas podem exigir um intervalo mais curto');
 INSERT INTO `lang_definitions` VALUES (90016, 5468, 19, 'Versão Instalada');
-INSERT INTO `lang_definitions` VALUES (90017, 5469, 19, 'Instalando códigos em openEMR');
+INSERT INTO `lang_definitions` VALUES (90017, 5469, 19, 'Instalando códigos em DCL');
 INSERT INTO `lang_definitions` VALUES (90018, 5470, 19, 'Instruido');
 INSERT INTO `lang_definitions` VALUES (90019, 5471, 19, 'Instrução');
 INSERT INTO `lang_definitions` VALUES (90020, 5472, 19, 'Instruções');
@@ -103418,7 +103418,7 @@ INSERT INTO `lang_definitions` VALUES (90049, 5502, 19, 'Conveniado');
 INSERT INTO `lang_definitions` VALUES (90050, 5503, 19, 'Conclusão de Entrada');
 INSERT INTO `lang_definitions` VALUES (90051, 5504, 19, 'Data de Entrada');
 INSERT INTO `lang_definitions` VALUES (90052, 5505, 19, 'Inteiros 1-100');
-INSERT INTO `lang_definitions` VALUES (90053, 5506, 19, 'A integração dos resultados de laboratório no prontuário de um paciente no openEMR pode ser feita manualmente, ou seja, ambos solicitar testes e enviar os resultados recebidos ou eletronicamente');
+INSERT INTO `lang_definitions` VALUES (90053, 5506, 19, 'A integração dos resultados de laboratório no prontuário de um paciente no DCL pode ser feita manualmente, ou seja, ambos solicitar testes e enviar os resultados recebidos ou eletronicamente');
 INSERT INTO `lang_definitions` VALUES (90054, 5507, 19, 'Declínio Intelectual');
 INSERT INTO `lang_definitions` VALUES (90055, 5508, 19, 'Distância inter-pupilar');
 INSERT INTO `lang_definitions` VALUES (90056, 5509, 19, 'Interaja com transações criadas');
@@ -103600,14 +103600,14 @@ INSERT INTO `lang_definitions` VALUES (90231, 5703, 19, 'Não se refere à refer
 INSERT INTO `lang_definitions` VALUES (90232, 5704, 19, 'Ele faz isso usando um algoritmo para combinar o horário UNIX atual com a chave secreta para gerar uma chave única em constante mudança');
 INSERT INTO `lang_definitions` VALUES (90233, 5705, 19, 'Tem quatro guias');
 INSERT INTO `lang_definitions` VALUES (90234, 5706, 19, 'Tem três níveis');
-INSERT INTO `lang_definitions` VALUES (90235, 5707, 19, 'É um módulo de mensagem comercial disponível para práticas openEMR utilizando a versão 5.0.1 e superior');
+INSERT INTO `lang_definitions` VALUES (90235, 5707, 19, 'É um módulo de mensagem comercial disponível para práticas DCL utilizando a versão 5.0.1 e superior');
 INSERT INTO `lang_definitions` VALUES (90236, 5708, 19, 'É um campo no cabeçalho da mensagem HL7 conhecido como ID de processamento');
 INSERT INTO `lang_definitions` VALUES (90237, 5709, 19, 'Faz parte do prontuário médico');
 INSERT INTO `lang_definitions` VALUES (90238, 5710, 19, 'É também um serviço baseado em assinatura');
 INSERT INTO `lang_definitions` VALUES (90239, 5711, 19, 'Também é necessário listar um código CID10 para que o problema seja listado no Relatório de Continuidade de Cuidados (CCR) e no Documento de Continuidade de Cuidados (CCD)');
 INSERT INTO `lang_definitions` VALUES (90240, 5712, 19, 'Está dividido em duas seções');
 INSERT INTO `lang_definitions` VALUES (90241, 5713, 19, 'É essencial que você leia as primeiras quatro seções para compreender os princípios subjacentes');
-INSERT INTO `lang_definitions` VALUES (90242, 5714, 19, 'É muito mais fácil e intuitivo fazer grandes alterações e reorganizar os dados na planilha antes de começar a inserir os dados no openEMR');
+INSERT INTO `lang_definitions` VALUES (90242, 5714, 19, 'É muito mais fácil e intuitivo fazer grandes alterações e reorganizar os dados na planilha antes de começar a inserir os dados no DCL');
 INSERT INTO `lang_definitions` VALUES (90243, 5715, 19, 'É importante perceber que isso gerencia o MFA para o usuário conectado');
 INSERT INTO `lang_definitions` VALUES (90244, 5716, 19, 'É importante compreender a função destes dois ícones dado que todos os passos subsequentes necessários para configurar correctamente a hierarquia irão depender da utilização correcta destes dois ícones');
 INSERT INTO `lang_definitions` VALUES (90245, 5717, 19, 'Destina-se a incluir apenas as informações que são críticas para efetivamente continuar o cuidado');
@@ -103618,7 +103618,7 @@ INSERT INTO `lang_definitions` VALUES (90249, 5721, 19, 'Não é enviado com a r
 INSERT INTO `lang_definitions` VALUES (90250, 5722, 19, 'Não é incomum solicitar vários exames de sangue juntos, agrupá-los como um painel de exames facilita esse processo');
 INSERT INTO `lang_definitions` VALUES (90251, 5724, 19, 'É o formulário de reclamação em papel básico prescrito por muitos pagadores para reclamações submetidas por médicos e práticas individuais, enfermeiras e profissionais, incluindo terapeutas, quiropráticos e clínicas ambulatoriais e, em alguns casos, para serviços de ambulância');
 INSERT INTO `lang_definitions` VALUES (90252, 5725, 19, 'É usado para vincular problemas a encontros e também é usado para ver quais encontros estão associados a um determinado problema');
-INSERT INTO `lang_definitions` VALUES (90253, 5726, 19, 'É útil praticar em um local de teste para se familiarizar com o processo antes de fazer isso no aplicativo openEMR de produção');
+INSERT INTO `lang_definitions` VALUES (90253, 5726, 19, 'É útil praticar em um local de teste para se familiarizar com o processo antes de fazer isso no aplicativo DCL de produção');
 INSERT INTO `lang_definitions` VALUES (90254, 5727, 19, 'Permite pesquisar por códigos de diagnóstico ICD 9 e ICD 10 e CPT4 e HCPCS');
 INSERT INTO `lang_definitions` VALUES (90255, 5728, 19, 'Ele permite que você envie mensagens e lembretes datados aos membros da equipe, adicione o paciente à lista de re call e envie mensagens de texto SMS para os pacientes');
 INSERT INTO `lang_definitions` VALUES (90256, 5729, 19, 'Ele serve como uma ponte necessária para um ambiente diferente, muitas vezes com novos médicos que não sabem nada sobre o paciente, permitindo que o próximo provedor facilmente');
@@ -103985,11 +103985,11 @@ INSERT INTO `lang_definitions` VALUES (90616, 6128, 19, 'LOC');
 INSERT INTO `lang_definitions` VALUES (90617, 6129, 19, 'Local');
 INSERT INTO `lang_definitions` VALUES (90618, 6130, 19, 'Conteúdo local');
 INSERT INTO `lang_definitions` VALUES (90619, 6131, 19, 'Sistema de arquivos local');
-INSERT INTO `lang_definitions` VALUES (90620, 6132, 19, 'O sistema de arquivos local armazenará o pedido como uma mensagem HL7v2.3 em um local predefinido no servidor local que hospeda o openEMR');
+INSERT INTO `lang_definitions` VALUES (90620, 6132, 19, 'O sistema de arquivos local armazenará o pedido como uma mensagem HL7v2.3 em um local predefinido no servidor local que hospeda o DCL');
 INSERT INTO `lang_definitions` VALUES (90621, 6133, 19, 'Definições Regionais');
 INSERT INTO `lang_definitions` VALUES (90622, 6134, 19, 'Localidade');
 INSERT INTO `lang_definitions` VALUES (90623, 6135, 19, 'Localização');
-INSERT INTO `lang_definitions` VALUES (90624, 6136, 19, 'localização da máquina openemr e pode conter dados sensíveis, por isso é recomendado excluir manualmente os arquivos após seu uso');
+INSERT INTO `lang_definitions` VALUES (90624, 6136, 19, 'localização da máquina DCL e pode conter dados sensíveis, por isso é recomendado excluir manualmente os arquivos após seu uso');
 INSERT INTO `lang_definitions` VALUES (90625, 6137, 19, 'Localização deste lote');
 INSERT INTO `lang_definitions` VALUES (90626, 6138, 19, 'Localização não especificada');
 INSERT INTO `lang_definitions` VALUES (90627, 6139, 19, 'Local onde o Hylafax armazena faxes');
@@ -104407,7 +104407,7 @@ INSERT INTO `lang_definitions` VALUES (91038, 6597, 19, 'Humor / Afetar Nml {{Hu
 INSERT INTO `lang_definitions` VALUES (91039, 6600, 19, 'Mais informações sobre a regra de decisão clínica podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (91040, 6601, 19, 'Mais informações sobre os problemas podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (91041, 6602, 19, 'Mais informações sobre o que é phiMail e como configurá-lo estão disponíveis aqui');
-INSERT INTO `lang_definitions` VALUES (91042, 6603, 19, 'Mais informações disponíveis na página wiki openEMR MedEx');
+INSERT INTO `lang_definitions` VALUES (91042, 6603, 19, 'Mais informações disponíveis na página wiki DCL MedEx');
 INSERT INTO `lang_definitions` VALUES (91043, 6604, 19, 'Mais informações sobre como editar este formulário e outros formulários podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (91044, 6605, 19, 'Mais informações sobre o uso de mensagens phiMail estão disponíveis aqui');
 INSERT INTO `lang_definitions` VALUES (91045, 6606, 19, 'Mais opções');
@@ -104649,7 +104649,7 @@ INSERT INTO `lang_definitions` VALUES (91280, 6865, 19, 'Novo no ACL Versão 5')
 INSERT INTO `lang_definitions` VALUES (91281, 6866, 19, 'Novo no ACL VersãoV r 6');
 INSERT INTO `lang_definitions` VALUES (91282, 6867, 19, 'Novo no ACL Versão 7');
 INSERT INTO `lang_definitions` VALUES (91283, 6868, 19, 'Novo no ACL Versão 8');
-INSERT INTO `lang_definitions` VALUES (91284, 6869, 19, 'Novo no openEMR versão 5.0.2');
+INSERT INTO `lang_definitions` VALUES (91284, 6869, 19, 'Novo no DCL versão 5.0.2');
 INSERT INTO `lang_definitions` VALUES (91285, 6870, 19, 'Novo Inj / Status');
 INSERT INTO `lang_definitions` VALUES (91286, 6871, 19, 'Novos itens (veja detalhes acima)');
 INSERT INTO `lang_definitions` VALUES (91287, 6872, 19, 'Novo Layout');
@@ -104675,7 +104675,7 @@ INSERT INTO `lang_definitions` VALUES (91306, 6896, 19, 'Novo recall');
 INSERT INTO `lang_definitions` VALUES (91307, 6897, 19, 'Novos resultados do Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (91308, 6898, 19, 'Nova Busca');
 INSERT INTO `lang_definitions` VALUES (91309, 6899, 19, 'Submissões novas');
-INSERT INTO `lang_definitions` VALUES (91310, 6900, 19, 'Novo no openEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (91310, 6900, 19, 'Novo no DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (91311, 6901, 19, 'Novo Utilizador');
 INSERT INTO `lang_definitions` VALUES (91312, 6902, 19, 'Novo valor');
 INSERT INTO `lang_definitions` VALUES (91313, 6903, 19, 'Nova Visita');
@@ -105010,7 +105010,7 @@ INSERT INTO `lang_definitions` VALUES (91641, 7294, 19, 'Notificar Paciente');
 INSERT INTO `lang_definitions` VALUES (91642, 7296, 19, 'Notificar via Portal do Paciente');
 INSERT INTO `lang_definitions` VALUES (91643, 7297, 19, 'Nov');
 INSERT INTO `lang_definitions` VALUES (91644, 7298, 19, 'Novembro');
-INSERT INTO `lang_definitions` VALUES (91645, 7299, 19, 'Agora é a hora de verificar e ajustar as configurações no openEMR para unidades padrão, sites, etc., consulte o arquivo de ajuda em Procedimentos> Provedores');
+INSERT INTO `lang_definitions` VALUES (91645, 7299, 19, 'Agora é a hora de verificar e ajustar as configurações no DCL para unidades padrão, sites, etc., consulte o arquivo de ajuda em Procedimentos> Provedores');
 INSERT INTO `lang_definitions` VALUES (91646, 7300, 19, 'Agora enviar para');
 INSERT INTO `lang_definitions` VALUES (91647, 7301, 19, 'A enviar para:');
 INSERT INTO `lang_definitions` VALUES (91648, 7302, 19, 'A imprimir');
@@ -105152,11 +105152,11 @@ INSERT INTO `lang_definitions` VALUES (91783, 7451, 19, 'Assim que um compromiss
 INSERT INTO `lang_definitions` VALUES (91784, 7452, 19, 'Assim que um compromisso for agendado, a retirada irá sair do quadro de recall');
 INSERT INTO `lang_definitions` VALUES (91785, 7453, 19, 'Depois de concluído, visualize e armazene este encontro como um arquivo PDF');
 INSERT INTO `lang_definitions` VALUES (91786, 7455, 19, 'Depois de salva, a entidade de um grupo de favoritos personalizados não pode ser alterada. Se você precisar alterar a entidade, você deve excluir esta entrada e criar uma nova');
-INSERT INTO `lang_definitions` VALUES (91787, 7456, 19, 'Assim que o aplicativo capturar o código QR, ele mostrará o nome de usuário do OpenEMR no aplicativo');
+INSERT INTO `lang_definitions` VALUES (91787, 7456, 19, 'Assim que o aplicativo capturar o código QR, ele mostrará o nome de usuário do DCL no aplicativo');
 INSERT INTO `lang_definitions` VALUES (91788, 7457, 19, 'Uma vez que a unidade de negócios principal é definida, a alteração da id da unidade afetará NewCrop ePrescription');
 INSERT INTO `lang_definitions` VALUES (91789, 7458, 19, 'Uma vez que a unidade de negócios principal é definida, ela não deve ser alterada. Mudar a unidade afetará o funcionamento no NewCrop ePrescription');
 INSERT INTO `lang_definitions` VALUES (91790, 7459, 19, 'Uma vez que este recurso esteja habilitado, você deverá digitar a chave de 6 dígitos em cada login');
-INSERT INTO `lang_definitions` VALUES (91791, 7460, 19, 'Uma vez feito isso, a chave secreta compartilhada que é única para cada usuário deve existir apenas no OpenEMR e no aplicativo autenticador do usuário');
+INSERT INTO `lang_definitions` VALUES (91791, 7460, 19, 'Uma vez feito isso, a chave secreta compartilhada que é única para cada usuário deve existir apenas no DCL e no aplicativo autenticador do usuário');
 INSERT INTO `lang_definitions` VALUES (91792, 7461, 19, 'Assim que esta etapa for concluída, você pode prosseguir para a próxima etapa - para configurar os testes que podem ser solicitados do sistema');
 INSERT INTO `lang_definitions` VALUES (91793, 7462, 19, 'Sempre que mudar a password tem de fazer Logout seguido de Login');
 INSERT INTO `lang_definitions` VALUES (91794, 7463, 19, 'Depois de selecionar um código de justificação para a primeira linha CPT, todas as linhas de código CPT subsequentes terão a mesma justificativa. Pode ser manualmente alterado mais tarde, se desejado');
@@ -105237,20 +105237,20 @@ INSERT INTO `lang_definitions` VALUES (91868, 7554, 19, 'Abra / feche o painel d
 INSERT INTO `lang_definitions` VALUES (91869, 7555, 19, 'Abra / feche o painel Retinal Exam Quick Picks');
 INSERT INTO `lang_definitions` VALUES (91870, 7557, 19, 'Abra / feche a janela abreviada e exiba os códigos abreviados');
 INSERT INTO `lang_definitions` VALUES (91871, 7558, 19, 'Abra / feche a janela abreviada e exiba os códigos abreviados ao lado de cada campo');
-INSERT INTO `lang_definitions` VALUES (91872, 7560, 19, 'OpenEMR');
-INSERT INTO `lang_definitions` VALUES (91873, 7561, 19, 'OpenEMR permite um TOTP, mas vários métodos U2F por usuário');
-INSERT INTO `lang_definitions` VALUES (91874, 7562, 19, 'OpenEMR já tem uma autoridade de certificação configurada');
-INSERT INTO `lang_definitions` VALUES (91875, 7564, 19, 'Aplicativo OpenEMR');
-INSERT INTO `lang_definitions` VALUES (91876, 7565, 19, 'Categoria de aplicativo OpenEMR');
+INSERT INTO `lang_definitions` VALUES (91872, 7560, 19, 'DCL');
+INSERT INTO `lang_definitions` VALUES (91873, 7561, 19, 'DCL permite um TOTP, mas vários métodos U2F por usuário');
+INSERT INTO `lang_definitions` VALUES (91874, 7562, 19, 'DCL já tem uma autoridade de certificação configurada');
+INSERT INTO `lang_definitions` VALUES (91875, 7564, 19, 'Aplicativo DCL');
+INSERT INTO `lang_definitions` VALUES (91876, 7565, 19, 'Categoria de aplicativo DCL');
 INSERT INTO `lang_definitions` VALUES (91877, 7567, 19, 'Base de Dados Actualizada');
-INSERT INTO `lang_definitions` VALUES (91878, 7568, 19, 'Atualização do banco de dados OpenEMR para desidentificação');
-INSERT INTO `lang_definitions` VALUES (91879, 7569, 19, 'OpenEMR não reconhece o arquivo de entrada no diretório contrib. Isso é mais provável porque você precisa configurar a versão na tabela supported_external_dataloads no banco de dados MySQL');
-INSERT INTO `lang_definitions` VALUES (91880, 7571, 19, 'OpenEMR deve ser configurado para usar certificados antes de poder criar certificados de cliente');
-INSERT INTO `lang_definitions` VALUES (91881, 7572, 19, 'OpenEMR oferece 2 métodos de 2FA');
-INSERT INTO `lang_definitions` VALUES (91882, 7573, 19, 'Portal OpenEMR');
-INSERT INTO `lang_definitions` VALUES (91883, 7574, 19, 'Registro de produto OpenEMR');
-INSERT INTO `lang_definitions` VALUES (91884, 7575, 19, 'OpenEMR exige para Javascript que execute autenticação de usuário.');
-INSERT INTO `lang_definitions` VALUES (91885, 7576, 19, 'Utilizadores do OpenEMR');
+INSERT INTO `lang_definitions` VALUES (91878, 7568, 19, 'Atualização do banco de dados DCL para desidentificação');
+INSERT INTO `lang_definitions` VALUES (91879, 7569, 19, 'DCL não reconhece o arquivo de entrada no diretório contrib. Isso é mais provável porque você precisa configurar a versão na tabela supported_external_dataloads no banco de dados MySQL');
+INSERT INTO `lang_definitions` VALUES (91880, 7571, 19, 'DCL deve ser configurado para usar certificados antes de poder criar certificados de cliente');
+INSERT INTO `lang_definitions` VALUES (91881, 7572, 19, 'DCL oferece 2 métodos de 2FA');
+INSERT INTO `lang_definitions` VALUES (91882, 7573, 19, 'Portal DCL');
+INSERT INTO `lang_definitions` VALUES (91883, 7574, 19, 'Registro de produto DCL');
+INSERT INTO `lang_definitions` VALUES (91884, 7575, 19, 'DCL exige para Javascript que execute autenticação de usuário.');
+INSERT INTO `lang_definitions` VALUES (91885, 7576, 19, 'Utilizadores do DCL');
 INSERT INTO `lang_definitions` VALUES (91886, 7577, 19, 'Vagas');
 INSERT INTO `lang_definitions` VALUES (91887, 7578, 19, 'Abre no quadro inferior');
 INSERT INTO `lang_definitions` VALUES (91888, 7579, 19, 'Abre no quadro superior');
@@ -105775,7 +105775,7 @@ INSERT INTO `lang_definitions` VALUES (92406, 8152, 19, 'Revisão pendente');
 INSERT INTO `lang_definitions` VALUES (92407, 8153, 19, 'Contagem de Rx pendente');
 INSERT INTO `lang_definitions` VALUES (92408, 8154, 19, 'Pendente desde');
 INSERT INTO `lang_definitions` VALUES (92409, 8155, 19, 'Alergia à penicilina');
-INSERT INTO `lang_definitions` VALUES (92410, 8156, 19, 'Pennington OpenEMR v Firme');
+INSERT INTO `lang_definitions` VALUES (92410, 8156, 19, 'Pennington DCL v Firme');
 INSERT INTO `lang_definitions` VALUES (92411, 8157, 19, 'Úlcera péptica');
 INSERT INTO `lang_definitions` VALUES (92412, 8158, 19, 'Por encontro');
 INSERT INTO `lang_definitions` VALUES (92413, 8159, 19, 'por minuto');
@@ -105998,7 +105998,7 @@ INSERT INTO `lang_definitions` VALUES (92629, 8393, 19, 'Por favor redefina a se
 INSERT INTO `lang_definitions` VALUES (92630, 8395, 19, 'Por favor, reinicie o servidor apache antes de brincar com a desidentificação');
 INSERT INTO `lang_definitions` VALUES (92631, 8396, 19, 'Por favor, devolva esta parte inferior com o seu pagamento');
 INSERT INTO `lang_definitions` VALUES (92632, 8397, 19, 'Por favor, veja fórum e wiki');
-INSERT INTO `lang_definitions` VALUES (92633, 8399, 19, 'Consulte http://www.open-emr.org/wiki/index.php/LBV_Forms para obter mais informações sobre este tópico');
+INSERT INTO `lang_definitions` VALUES (92633, 8399, 19, 'Consulte http://www.dcl.org/wiki/index.php/LBV_Forms para obter mais informações sobre este tópico');
 INSERT INTO `lang_definitions` VALUES (92634, 8400, 19, 'Por favor, veja o PDF em anexo');
 INSERT INTO `lang_definitions` VALUES (92635, 8401, 19, 'Por favor selecione');
 INSERT INTO `lang_definitions` VALUES (92636, 8403, 19, 'Por favor, selecione um formato');
@@ -106034,7 +106034,7 @@ INSERT INTO `lang_definitions` VALUES (92665, 8437, 19, 'Por favor, definir farm
 INSERT INTO `lang_definitions` VALUES (92666, 8438, 19, 'Por favor, especifique pelo menos um endereço direto');
 INSERT INTO `lang_definitions` VALUES (92667, 8441, 19, 'Por favor, iniciar novo processo de De Identificação');
 INSERT INTO `lang_definitions` VALUES (92668, 8442, 19, 'Por favor, forneça um título');
-INSERT INTO `lang_definitions` VALUES (92669, 8445, 19, 'Por favor, atualizar o banco de dados OpenEMR para incluir procedimentos, funções e tabelas de identificação');
+INSERT INTO `lang_definitions` VALUES (92669, 8445, 19, 'Por favor, atualizar o banco de dados DCL para incluir procedimentos, funções e tabelas de identificação');
 INSERT INTO `lang_definitions` VALUES (92670, 8446, 19, 'Por favor, use NPI válido');
 INSERT INTO `lang_definitions` VALUES (92671, 8447, 19, 'Por favor, veja a tabela de log de erros de identificação para mais detalhes');
 INSERT INTO `lang_definitions` VALUES (92672, 8448, 19, 'Por favor, visite a tela De Identificação após algum tempo');
@@ -106198,7 +106198,7 @@ INSERT INTO `lang_definitions` VALUES (92829, 8620, 19, 'Presente');
 INSERT INTO `lang_definitions` VALUES (92830, 8622, 19, 'Reclamação apresentando');
 INSERT INTO `lang_definitions` VALUES (92831, 8623, 19, 'Assunto apresentado');
 INSERT INTO `lang_definitions` VALUES (92832, 8624, 19, 'Pressione Continuar');
-INSERT INTO `lang_definitions` VALUES (92833, 8625, 19, 'Pressione o botão piscando na chave USB dentro de 1 minuto após inseri-la e clique em registrar para registrar a chave com OpenEMR');
+INSERT INTO `lang_definitions` VALUES (92833, 8625, 19, 'Pressione o botão piscando na chave USB dentro de 1 minuto após inseri-la e clique em registrar para registrar a chave com DCL');
 INSERT INTO `lang_definitions` VALUES (92834, 8626, 19, 'Pressione este ícone para construir sua impressão / plano');
 INSERT INTO `lang_definitions` VALUES (92835, 8627, 19, 'Presume-Diagnóstico');
 INSERT INTO `lang_definitions` VALUES (92836, 8628, 19, 'Diagnose presumida por especialista');
@@ -106801,7 +106801,7 @@ INSERT INTO `lang_definitions` VALUES (93432, 9291, 19, 'recarregar');
 INSERT INTO `lang_definitions` VALUES (93433, 9292, 19, 'recarregar nomes abaixo');
 INSERT INTO `lang_definitions` VALUES (93434, 9293, 19, 'Relogin');
 INSERT INTO `lang_definitions` VALUES (93435, 9294, 19, 'Lembrete');
-INSERT INTO `lang_definitions` VALUES (93436, 9295, 19, 'Lembre-se que o agrupamento de testes serve apenas para organizar convenientemente os dados no módulo de Ordem de Procedimento no openEMR, para que esse processo funcione, configurando as Ordens de Procedimento (os próprios testes) e o Resultado Discreto (o local para inserir e exibir o resultado retornado) são Criticamente importante');
+INSERT INTO `lang_definitions` VALUES (93436, 9295, 19, 'Lembre-se que o agrupamento de testes serve apenas para organizar convenientemente os dados no módulo de Ordem de Procedimento no DCL, para que esse processo funcione, configurando as Ordens de Procedimento (os próprios testes) e o Resultado Discreto (o local para inserir e exibir o resultado retornado) são Criticamente importante');
 INSERT INTO `lang_definitions` VALUES (93437, 9297, 19, 'Recordar Clínica Seleccionada');
 INSERT INTO `lang_definitions` VALUES (93438, 9298, 19, 'Lembre-se do ditado de que os códigos de identificação devem ser únicos, você não deve configurar um agrupamento personalizado de um painel de testes, bem como ter os painéis configurados como painel individual reconhecido, ou seja, ter o painel CBC e Renal agrupados como um favorito personalizado e listar CBC e Painel Renal separadamente como painéis encomendados individualmente');
 INSERT INTO `lang_definitions` VALUES (93439, 9299, 19, 'Lembre-se desses resultados discretos ou a fruta (Nível 4) terá que pendurar no galho frutífero ou na Ordem de Procedimento, nomeadamente, Painel de eletrólito (Nível 3)');
@@ -107697,7 +107697,7 @@ INSERT INTO `lang_definitions` VALUES (94328, 10289, 19, 'Irmã');
 INSERT INTO `lang_definitions` VALUES (94329, 10290, 19, 'Local');
 INSERT INTO `lang_definitions` VALUES (94330, 10294, 19, 'Identificação de site');
 INSERT INTO `lang_definitions` VALUES (94331, 10295, 19, 'ID do site para a integração de informações médicas, LLC Serviço de troca de laboratório');
-INSERT INTO `lang_definitions` VALUES (94332, 10296, 19, 'ID do site para o OpenEMR Support LLC Serviço de troca de laboratório');
+INSERT INTO `lang_definitions` VALUES (94332, 10296, 19, 'ID do site para o DCL Support LLC Serviço de troca de laboratório');
 INSERT INTO `lang_definitions` VALUES (94333, 10297, 19, 'Trabalhador local');
 INSERT INTO `lang_definitions` VALUES (94334, 10298, 19, 'Seis meses atrás');
 INSERT INTO `lang_definitions` VALUES (94335, 10299, 19, 'Seis meses antes');
@@ -107869,7 +107869,7 @@ INSERT INTO `lang_definitions` VALUES (94500, 10478, 19, 'Especifica a formataç
 INSERT INTO `lang_definitions` VALUES (94501, 10479, 19, 'Especifica a formatação da ID externa do paciente. # = dígito, * = qualquer caractere. Vazio se não for usado');
 INSERT INTO `lang_definitions` VALUES (94502, 10480, 19, 'Especifica a formatação da ID externa do paciente. # = dígito, @ = alfa, * = qualquer caractere. Vazio se não for usado');
 INSERT INTO `lang_definitions` VALUES (94503, 10481, 19, 'Especifique o intervalo para verificação automática de mensagens, 5 ou 10 minutos como ponto de partida');
-INSERT INTO `lang_definitions` VALUES (94504, 10482, 19, 'Especifique o usuário OpenEMR que receberá notificação de novas mensagens diretas de entrada');
+INSERT INTO `lang_definitions` VALUES (94504, 10482, 19, 'Especifique o usuário DCL que receberá notificação de novas mensagens diretas de entrada');
 INSERT INTO `lang_definitions` VALUES (94505, 10483, 19, 'Espécime');
 INSERT INTO `lang_definitions` VALUES (94506, 10485, 19, 'Número / identificador da amostra');
 INSERT INTO `lang_definitions` VALUES (94507, 10486, 19, 'Tipo de amostra');
@@ -108056,7 +108056,7 @@ INSERT INTO `lang_definitions` VALUES (94687, 10693, 19, 'Assinante SS');
 INSERT INTO `lang_definitions` VALUES (94688, 10694, 19, 'Estado do assinante');
 INSERT INTO `lang_definitions` VALUES (94689, 10695, 19, 'CEP do assinante');
 INSERT INTO `lang_definitions` VALUES (94690, 10696, 19, 'Assinante / Política');
-INSERT INTO `lang_definitions` VALUES (94691, 10697, 19, 'Os assinantes receberão o nome de usuário, a senha e as informações de endereço do servidor para configurar o OpenEMR');
+INSERT INTO `lang_definitions` VALUES (94691, 10697, 19, 'Os assinantes receberão o nome de usuário, a senha e as informações de endereço do servidor para configurar o DCL');
 INSERT INTO `lang_definitions` VALUES (94692, 10698, 19, 'Telefone do assinante');
 INSERT INTO `lang_definitions` VALUES (94693, 10699, 19, 'Substância');
 INSERT INTO `lang_definitions` VALUES (94694, 10700, 19, 'Razão de recusa de substância');
@@ -108203,7 +108203,7 @@ INSERT INTO `lang_definitions` VALUES (94834, 10860, 19, 'O paciente alvo não t
 INSERT INTO `lang_definitions` VALUES (94835, 10861, 19, 'Paciente alvo não encontrado');
 INSERT INTO `lang_definitions` VALUES (94836, 10862, 19, 'Grupos Alvo / Ação');
 INSERT INTO `lang_definitions` VALUES (94837, 10863, 19, 'Alvos');
-INSERT INTO `lang_definitions` VALUES (94838, 10864, 19, 'Taskman: Documentos em openEMR');
+INSERT INTO `lang_definitions` VALUES (94838, 10864, 19, 'Taskman: Documentos em DCL');
 INSERT INTO `lang_definitions` VALUES (94839, 10865, 19, 'Tártaro');
 INSERT INTO `lang_definitions` VALUES (94840, 10866, 19, 'Taxa de identificação');
 INSERT INTO `lang_definitions` VALUES (94841, 10867, 19, 'Taxa de identificação');
@@ -108292,7 +108292,7 @@ INSERT INTO `lang_definitions` VALUES (94923, 10964, 19, 'Os testes ou procedime
 INSERT INTO `lang_definitions` VALUES (94924, 10965, 19, 'O ícone Adicionar é usado para configurar um nível que será um descendente direto deste nível');
 INSERT INTO `lang_definitions` VALUES (94925, 10966, 19, 'A vantagem de integrar os resultados ao prontuário do paciente como dados estruturados é a capacidade de manipulá-los para ver as tendências em um local conveniente, para traçar gráficos com os dados e usá-los na análise de dados');
 INSERT INTO `lang_definitions` VALUES (94926, 10967, 19, 'A vantagem de digitalizar os resultados no gráfico é a simplicidade - nenhuma configuração é necessária, a não ser definir um diretório / pasta no prontuário do paciente em Documentos onde o resultado será armazenado. Sendo dados não estruturados, eles não têm as vantagens acima e não atenderão aos critérios de uso significativo para entrada de pedido do provedor computadorizado (CPOE)');
-INSERT INTO `lang_definitions` VALUES (94927, 10968, 19, 'A solução Allscripts integra o site Allscripts ePrescribe com openEMR');
+INSERT INTO `lang_definitions` VALUES (94927, 10968, 19, 'A solução Allscripts integra o site Allscripts ePrescribe com DCL');
 INSERT INTO `lang_definitions` VALUES (94928, 10969, 19, 'A American Medical Association definiu 9 painéis que podem ser solicitados. Cada painel contém vários testes agrupados');
 INSERT INTO `lang_definitions` VALUES (94929, 10970, 19, 'O valor será exibido na coluna Pagamento ou Ajuste, conforme o caso');
 INSERT INTO `lang_definitions` VALUES (94930, 10971, 19, 'O certificado do servidor Apache SSL e a chave pública');
@@ -108442,7 +108442,7 @@ INSERT INTO `lang_definitions` VALUES (95073, 11119, 19, 'O código de identific
 INSERT INTO `lang_definitions` VALUES (95074, 11120, 19, 'O código de identificação de R34392-1, um número arbitrário, neste caso o código de identificação precedido por R para indicar o resultado e seguido por 1 para indicar o primeiro na sequência, pode ser qualquer coisa única que você escolher');
 INSERT INTO `lang_definitions` VALUES (95075, 11121, 19, 'As informações inseridas aqui são usadas para exibir um resumo do encontro. Também é usado para fins de cobrança');
 INSERT INTO `lang_definitions` VALUES (95076, 11122, 19, 'As informações inseridas neste formulário serão usadas para preencher uma reclamação em papel');
-INSERT INTO `lang_definitions` VALUES (95077, 11123, 19, 'As informações fornecidas no Formulário de Novo Encontro e Folha de Taxas no openEMR são usadas para gerar a reclamação em papel, bem como as reclamações eletrônicas');
+INSERT INTO `lang_definitions` VALUES (95077, 11123, 19, 'As informações fornecidas no Formulário de Novo Encontro e Folha de Taxas no DCL são usadas para gerar a reclamação em papel, bem como as reclamações eletrônicas');
 INSERT INTO `lang_definitions` VALUES (95078, 11124, 19, 'Os esforços iniciais levaram à criação de Guias de Implementação (IGs) duplicados e conflitantes publicados por diferentes organizações de padrões');
 INSERT INTO `lang_definitions` VALUES (95079, 11125, 19, 'A tela inicial permite que você selecione um método, oferecendo-lhe essas duas opções');
 INSERT INTO `lang_definitions` VALUES (95080, 11126, 19, 'A janela inicial é a página de procura de fatura. Ao topo você pode entrar em uma fonte (por exemplo confira número), pague data e confira quantia. A razão para a fonte e data de pagamento está de forma que você dom \'t têm que entrar neles inúmeras vezes para cada reivindicação. A quantia na que você entra será diminuída para cada fatura que é determinada parte do pagamento, e esperançosamente terminará a zero quando você for terminado.');
@@ -108600,7 +108600,7 @@ INSERT INTO `lang_definitions` VALUES (95231, 11288, 19, 'A coluna Unidade ficar
 INSERT INTO `lang_definitions` VALUES (95232, 11289, 19, 'As unidades serão 1, pois cada código é cobrado apenas uma vez para o encontro');
 INSERT INTO `lang_definitions` VALUES (95233, 11290, 19, 'Os próximos lembretes têm um ícone de exclamação verde');
 INSERT INTO `lang_definitions` VALUES (95234, 11291, 19, 'Os dispositivos USB se comunicam com o computador host usando o protocolo do dispositivo de interface humana (HID), essencialmente imitando um teclado');
-INSERT INTO `lang_definitions` VALUES (95235, 11292, 19, 'A chave USB precisa ser conectada ao computador elogo registrada com OpenEMR');
+INSERT INTO `lang_definitions` VALUES (95235, 11292, 19, 'A chave USB precisa ser conectada ao computador elogo registrada com DCL');
 INSERT INTO `lang_definitions` VALUES (95236, 11293, 19, 'A chave USB pega este nonce fornecido pelo aplicativo depois de confirmar a soma de verificação e gera uma chave privada usando o processo semelhante ao usado no processo de registro');
 INSERT INTO `lang_definitions` VALUES (95237, 11294, 19, 'Os privilégios reais do usuário são determinados pelo acesso às partes do programa, ou seja, (ACO) que cada grupo (ARO) possui');
 INSERT INTO `lang_definitions` VALUES (95238, 11296, 19, 'O nome de usuário é seu endereço direto');
@@ -108610,9 +108610,9 @@ INSERT INTO `lang_definitions` VALUES (95241, 11299, 19, 'O código específico 
 INSERT INTO `lang_definitions` VALUES (95242, 11300, 19, 'O código específico do fornecedor que identifica este procedimento ou resultado. Se nenhum fornecedor inserir qualquer número único arbitrário, de preferência, um preenchido de zero 5 dígitos, por exemplo, 00211');
 INSERT INTO `lang_definitions` VALUES (95243, 11301, 19, 'O primeiro passo seria instalar os códigos ICD. Vá para Administração> Outro> Cargas de dados externos. Selecione os conjuntos de códigos que deseja instalar e clique em Instalar');
 INSERT INTO `lang_definitions` VALUES (95244, 11302, 19, 'A última linha deste relatório fornecerá o Total Geral de Encargos, Pagamentos, Ajustes e o Saldo');
-INSERT INTO `lang_definitions` VALUES (95245, 11303, 19, 'O Weno Exchange está bem integrado com openEMR e não é baseado em assinatura');
-INSERT INTO `lang_definitions` VALUES (95246, 11304, 19, 'O X12 arquiva como também a HTML resultante produziu são arquivados relatórios no subdiretório de \"era\" do OpenEMR instalação diretório principal. Você quererá recorrer de vez em quando a estes arquivos. A URL é');
-INSERT INTO `lang_definitions` VALUES (95247, 11305, 19, 'Os arquivos X12, bem como os relatórios de saída HTML resultantes, são arquivados no subdiretório \'era\' do diretório principal de instalação do OpenEMR. Você vai querer consultar esses arquivos de vez em quando');
+INSERT INTO `lang_definitions` VALUES (95245, 11303, 19, 'O Weno Exchange está bem integrado com DCL e não é baseado em assinatura');
+INSERT INTO `lang_definitions` VALUES (95246, 11304, 19, 'O X12 arquiva como também a HTML resultante produziu são arquivados relatórios no subdiretório de \"era\" do DCL instalação diretório principal. Você quererá recorrer de vez em quando a estes arquivos. A URL é');
+INSERT INTO `lang_definitions` VALUES (95247, 11305, 19, 'Os arquivos X12, bem como os relatórios de saída HTML resultantes, são arquivados no subdiretório \'era\' do diretório principal de instalação do DCL. Você vai querer consultar esses arquivos de vez em quando');
 INSERT INTO `lang_definitions` VALUES (95248, 11306, 19, 'O arquivo zip conterá os seguintes itens');
 INSERT INTO `lang_definitions` VALUES (95249, 11307, 19, 'Tema');
 INSERT INTO `lang_definitions` VALUES (95250, 11308, 19, 'Tema do layout das guias (é necessário sair e logo fazer login para ver esta nova configuração)');
@@ -108628,7 +108628,7 @@ INSERT INTO `lang_definitions` VALUES (95259, 11317, 19, 'Grupo de terapia');
 INSERT INTO `lang_definitions` VALUES (95260, 11318, 19, 'Encontro do Grupo de Terapia');
 INSERT INTO `lang_definitions` VALUES (95261, 11319, 19, 'Localizador de grupo de terapia');
 INSERT INTO `lang_definitions` VALUES (95262, 11320, 19, 'Há');
-INSERT INTO `lang_definitions` VALUES (95263, 11321, 19, 'Existem 10 configurações que estão relacionadas aos procedimentos incluídos na versão padrão do openEMR');
+INSERT INTO `lang_definitions` VALUES (95263, 11321, 19, 'Existem 10 configurações que estão relacionadas aos procedimentos incluídos na versão padrão do DCL');
 INSERT INTO `lang_definitions` VALUES (95264, 11322, 19, 'Existem 3 formulários na categoria principal - dados demográficos, informações específicas do usuário do local e histórico e todos os 5 formulários em transações que podem ser editados');
 INSERT INTO `lang_definitions` VALUES (95265, 11323, 19, 'Não há prescrição');
 INSERT INTO `lang_definitions` VALUES (95266, 11324, 19, 'Há erros com sua submissão. Estes são esboçados abaixo.');
@@ -108676,7 +108676,7 @@ INSERT INTO `lang_definitions` VALUES (95307, 11370, 19, 'Não há nenhuma entra
 INSERT INTO `lang_definitions` VALUES (95308, 11371, 19, 'Não há paciente com login do portal');
 INSERT INTO `lang_definitions` VALUES (95309, 11373, 19, 'Ocorreu um problema ao enviar a mensagem');
 INSERT INTO `lang_definitions` VALUES (95310, 11374, 19, 'Havia um erro enquanto processando seu pedido.');
-INSERT INTO `lang_definitions` VALUES (95311, 11375, 19, 'Houve um ERRO de escape de SQL OpenEMR da seguinte string');
+INSERT INTO `lang_definitions` VALUES (95311, 11375, 19, 'Houve um ERRO de escape de SQL DCL da seguinte string');
 INSERT INTO `lang_definitions` VALUES (95312, 11376, 19, 'Portanto, cada usuário deve ativar individualmente este recurso');
 INSERT INTO `lang_definitions` VALUES (95313, 11377, 19, 'Esses ACOs são agrupados em dez categorias amplas que fazem parte da instalação padrão. Eles são - Administração, Contabilidade, Informações do Paciente, Informações do Encontro, Esquadrões, Sensibilidades, Listas, Espaço Reservado, Notas da Nação e Portal do Paciente. Cada uma dessas categorias tem uma ou várias subcategorias que fornecem acesso a partes específicas do programa');
 INSERT INTO `lang_definitions` VALUES (95314, 11378, 19, 'Eles são gratuitos e podem ser baixados da respectiva loja de aplicativos para dispositivos iOS e Android');
@@ -108688,7 +108688,7 @@ INSERT INTO `lang_definitions` VALUES (95319, 11383, 19, 'Esses grupos personali
 INSERT INTO `lang_definitions` VALUES (95320, 11384, 19, 'Essas entradas serão usadas para definir os provedores no módulo de procedimentos');
 INSERT INTO `lang_definitions` VALUES (95321, 11385, 19, 'Esses grupos (AROs) podem então receber um conjunto de privilégios atribuindo diferentes categorias (ACOs)');
 INSERT INTO `lang_definitions` VALUES (95322, 11386, 19, 'Esses itens podem ser editados se o usuário tiver privilégios suficientes');
-INSERT INTO `lang_definitions` VALUES (95323, 11387, 19, 'Essas listas são usadas para determinar quem pode acessar o que em openEMR. Eles funcionam de cima para baixo, ou seja, inicialmente todos têm acesso negado às partes do programa controladas pela ACL');
+INSERT INTO `lang_definitions` VALUES (95323, 11387, 19, 'Essas listas são usadas para determinar quem pode acessar o que em DCL. Eles funcionam de cima para baixo, ou seja, inicialmente todos têm acesso negado às partes do programa controladas pela ACL');
 INSERT INTO `lang_definitions` VALUES (95324, 11388, 19, 'Esses números precisam ser iguais para autenticar o usuário com sucesso');
 INSERT INTO `lang_definitions` VALUES (95325, 11389, 19, 'Estas notas do paciente são enviadas sem um paciente atribuído');
 INSERT INTO `lang_definitions` VALUES (95326, 11390, 19, 'Essas subcategorias representam os objetos de controle de acesso (ACOs) reais');
@@ -108804,7 +108804,7 @@ INSERT INTO `lang_definitions` VALUES (95435, 11513, 19, 'No entanto, este méto
 INSERT INTO `lang_definitions` VALUES (95436, 11514, 19, 'Este módulo está sendo usado por');
 INSERT INTO `lang_definitions` VALUES (95437, 11515, 19, 'Este módulo está em modo de teste. O banco de dados não será mudado.');
 INSERT INTO `lang_definitions` VALUES (95438, 11516, 19, 'Este módulo é baseado em assinatura e precisa ser habilitado em Administração> Globais> Conectores> Habilitar Serviço NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (95439, 11517, 19, 'Este módulo está bem integrado com openEMR, no entanto, existem duas alternativas não baseadas em assinatura, Weno e Allscripts que podem ser usados em seu lugar');
+INSERT INTO `lang_definitions` VALUES (95439, 11517, 19, 'Este módulo está bem integrado com DCL, no entanto, existem duas alternativas não baseadas em assinatura, Weno e Allscripts que podem ser usados em seu lugar');
 INSERT INTO `lang_definitions` VALUES (95440, 11518, 19, 'Este módulo promove entrada eficiente de dados de EOB.');
 INSERT INTO `lang_definitions` VALUES (95441, 11519, 19, 'Este mês até à data');
 INSERT INTO `lang_definitions` VALUES (95442, 11520, 19, 'Este nome já existe sob este pai');
@@ -108985,8 +108985,8 @@ INSERT INTO `lang_definitions` VALUES (95616, 11716, 19, 'Filtrar através de se
 INSERT INTO `lang_definitions` VALUES (95617, 11717, 19, 'Para cumprir os requisitos de uso significativo e ajudar a rastrear seu uso, você pode marcar a caixa de seleção Resumo de cuidados enviados e a caixa de seleção Resumo de cuidados enviados eletronicamente, se apropriado');
 INSERT INTO `lang_definitions` VALUES (95618, 11718, 19, 'Para excluir totalmente, clique em \'Salvar\'');
 INSERT INTO `lang_definitions` VALUES (95619, 11719, 19, 'Para começar, você escolhe um dos dois botões de opção. \'Pesquisa de fatura\' ou \'Upload ERA\'');
-INSERT INTO `lang_definitions` VALUES (95620, 11720, 19, 'Para ajudar a explorar os vários componentes da página Relatório, especialmente se você quiser usá-la como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
-INSERT INTO `lang_definitions` VALUES (95621, 11721, 19, 'Para ajudar a se familiarizar com os vários componentes da página Dashboard, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
+INSERT INTO `lang_definitions` VALUES (95620, 11720, 19, 'Para ajudar a explorar os vários componentes da página Relatório, especialmente se você quiser usá-la como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
+INSERT INTO `lang_definitions` VALUES (95621, 11721, 19, 'Para ajudar a se familiarizar com os vários componentes da página Dashboard, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
 INSERT INTO `lang_definitions` VALUES (95622, 11722, 19, 'Para ajudar a simplificar as implementações, os modelos comumente usados foram harmonizados a partir de guias de implementação de CDA existentes e consolidados em um único guia de implementação - o Guia de Implementação C-CDA (IG) (07/2012)');
 INSERT INTO `lang_definitions` VALUES (95623, 11723, 19, 'Para História');
 INSERT INTO `lang_definitions` VALUES (95624, 11724, 19, 'Para incluir os documentos digitalizados que fazem parte do registro do paciente, selecione os registros desejados marcando as caixas de seleção relevantes');
@@ -109015,9 +109015,9 @@ INSERT INTO `lang_definitions` VALUES (95646, 11749, 19, 'esfolar');
 INSERT INTO `lang_definitions` VALUES (95647, 11750, 19, 'Para resumir');
 INSERT INTO `lang_definitions` VALUES (95648, 11751, 19, 'para esta visita?');
 INSERT INTO `lang_definitions` VALUES (95649, 11752, 19, 'Para carregar o documento CCR de um paciente já existente, use a Tela de resumo do paciente-> Documentos. Para o documento CCR de um novo paciente, use a tela Miscellanous-> New Documents');
-INSERT INTO `lang_definitions` VALUES (95650, 11754, 19, 'Para usar a página de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
-INSERT INTO `lang_definitions` VALUES (95651, 11755, 19, 'Para usar este arquivo de ajuda como um manual de instruções é melhor redimensionar seu navegador para ocupar metade da tela, abrir outra instância do navegador para preencher a outra metade da tela, fazer o login para openEMR e abrir o arquivo de ajuda neste navegador e redimensionar clicando e arrastando o canto inferior direito para que ocupae toda a metade da tela');
-INSERT INTO `lang_definitions` VALUES (95652, 11756, 19, 'Para usar este arquivo de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
+INSERT INTO `lang_definitions` VALUES (95650, 11754, 19, 'Para usar a página de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
+INSERT INTO `lang_definitions` VALUES (95651, 11755, 19, 'Para usar este arquivo de ajuda como um manual de instruções é melhor redimensionar seu navegador para ocupar metade da tela, abrir outra instância do navegador para preencher a outra metade da tela, fazer o login para DCL e abrir o arquivo de ajuda neste navegador e redimensionar clicando e arrastando o canto inferior direito para que ocupae toda a metade da tela');
+INSERT INTO `lang_definitions` VALUES (95652, 11756, 19, 'Para usar este arquivo de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
 INSERT INTO `lang_definitions` VALUES (95653, 11757, 19, 'Para:');
 INSERT INTO `lang_definitions` VALUES (95654, 11758, 19, 'Para:');
 INSERT INTO `lang_definitions` VALUES (95655, 11759, 19, 'TO_CITY');
@@ -109053,7 +109053,7 @@ INSERT INTO `lang_definitions` VALUES (95684, 11788, 19, 'Alternar de navegaçã
 INSERT INTO `lang_definitions` VALUES (95685, 11789, 19, 'Alternar o painel do paciente');
 INSERT INTO `lang_definitions` VALUES (95686, 11790, 19, 'Alternar o painel PMSFH do lado direito');
 INSERT INTO `lang_definitions` VALUES (95687, 11796, 19, 'ID do token para o Medical Information Integration, LLC Lab Exchange Service');
-INSERT INTO `lang_definitions` VALUES (95688, 11797, 19, 'Token ID para o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (95688, 11797, 19, 'Token ID para o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (95689, 11802, 19, 'Tonga (Ilhas Tonga)');
 INSERT INTO `lang_definitions` VALUES (95690, 11803, 19, 'Amigdalectomia');
 INSERT INTO `lang_definitions` VALUES (95691, 11804, 19, 'tonsilectomia');
@@ -109385,7 +109385,7 @@ INSERT INTO `lang_definitions` VALUES (96016, 12182, 19, 'Atualizando indicadore
 INSERT INTO `lang_definitions` VALUES (96017, 12183, 19, 'MELHORIA');
 INSERT INTO `lang_definitions` VALUES (96018, 12184, 19, 'Melhoria');
 INSERT INTO `lang_definitions` VALUES (96019, 12186, 19, 'Atualizar banco de dados');
-INSERT INTO `lang_definitions` VALUES (96020, 12188, 19, 'Atualiza o banco de dados OpenEMR para incluir procedimentos, funções e tabelas necessárias para o processo de desidentificação');
+INSERT INTO `lang_definitions` VALUES (96020, 12188, 19, 'Atualiza o banco de dados DCL para incluir procedimentos, funções e tabelas necessárias para o processo de desidentificação');
 INSERT INTO `lang_definitions` VALUES (96021, 12189, 19, 'A atualização vai continuar');
 INSERT INTO `lang_definitions` VALUES (96022, 12190, 19, 'Cédula Profissional');
 INSERT INTO `lang_definitions` VALUES (96023, 12191, 19, 'Carga');
@@ -109409,7 +109409,7 @@ INSERT INTO `lang_definitions` VALUES (96040, 12210, 19, 'Após uma pesquisa bem
 INSERT INTO `lang_definitions` VALUES (96041, 12211, 19, 'Ao clicar um número de fatura a janela postando\" manual\" se aparece. Aqui você pode mudar a data de vencimento e notas para a fatura, selecione a festa para quem você está postando, e seleciona foram recebidos os seguros para os quais tudo esperaram paymants. Importantemente, para cada código de faturamento pelo qual uma quantia foi cobrada, você pode entrar em pagamento e informação de ajuste.');
 INSERT INTO `lang_definitions` VALUES (96042, 12212, 19, 'Ao clicar em um número de fatura, a \'janela de lançamento manual\' aparece. Aqui você pode alterar a data de vencimento e as notas da fatura, selecionar a parte para a qual está lançando e selecionar os seguros para os quais todos os pagamentos esperados foram recebidos. Mais importante ainda, para cada código de faturamento pelo qual um valor foi cobrado, você pode inserir informações de pagamento e ajuste');
 INSERT INTO `lang_definitions` VALUES (96043, 12213, 19, 'Ao entrar na página, existem dois botões visíveis abaixo da barra de navegação');
-INSERT INTO `lang_definitions` VALUES (96044, 12214, 19, 'Ao fazer login no openEMR, um pequeno ícone de envelope fica visível no canto superior direito. Mostra o número de mensagens pendentes e lembretes datados');
+INSERT INTO `lang_definitions` VALUES (96044, 12214, 19, 'Ao fazer login no DCL, um pequeno ícone de envelope fica visível no canto superior direito. Mostra o número de mensagens pendentes e lembretes datados');
 INSERT INTO `lang_definitions` VALUES (96045, 12215, 19, 'Ao atingir um ponto predeterminado, seja uma data ou valor, a regra irá disparar um ou mais eventos');
 INSERT INTO `lang_definitions` VALUES (96046, 12216, 19, 'Ao o procurar é apresentado com uma lista de faturas. Você pode clicar aceso dos números de fatura abrir uma segunda janela que é a página de entrada de dados por manual postar. Você também pode fazer tique-taque em um nome paciente se você quiser entrar em uma nota que o pessoal de escritório dianteiro verá quando os cheques pacientes em, e você pode selecionar faturas para se aparecer em declarações pacientes e imprimir essas declarações.');
 INSERT INTO `lang_definitions` VALUES (96047, 12217, 19, 'Ao selecionar uma lista para editar a página de edição com os valores da lista serão exibidos');
@@ -109429,7 +109429,7 @@ INSERT INTO `lang_definitions` VALUES (96060, 12231, 19, 'Fluxo de urina');
 INSERT INTO `lang_definitions` VALUES (96061, 12232, 19, 'Urgência de urina');
 INSERT INTO `lang_definitions` VALUES (96062, 12233, 19, 'URL');
 INSERT INTO `lang_definitions` VALUES (96063, 12234, 19, 'URL para endereço do site NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (96064, 12235, 19, 'URL para suporte OpenEMR');
+INSERT INTO `lang_definitions` VALUES (96064, 12235, 19, 'URL para suporte DCL');
 INSERT INTO `lang_definitions` VALUES (96065, 12236, 19, 'URL para gateway de telefone');
 INSERT INTO `lang_definitions` VALUES (96066, 12237, 19, 'URL para gateway de telefone. Serviço VOIP automatizado fornecido pela Maviq. Por favor, visite http://signup.maviq.com para obter mais informações');
 INSERT INTO `lang_definitions` VALUES (96067, 12238, 19, 'URL para o site WordPress que suporta o portal');
@@ -109556,7 +109556,7 @@ INSERT INTO `lang_definitions` VALUES (96187, 12377, 19, 'usa <a php href=\"\"ht
 INSERT INTO `lang_definitions` VALUES (96188, 12378, 19, 'Usando 2FA');
 INSERT INTO `lang_definitions` VALUES (96189, 12379, 19, 'Usar uma árvore frutífera como uma analogia mais fácil de visualizar explicará melhor o conceito desta hierarquia, o tronco da árvore é o Grupo (Química do Soro), o ramo frutífero é a ordem real, Ordem do Procedimento (Ácido Úrico no Soro) e o fruta é o resultado, Resultado Discreto, também chamado de (Ácido Úrico no Soro) que conterá o valor do resultado retornado. Assim como a fruta não é carregada no tronco principal, você não deve colocar um Resultado Discreto como um descendente direto ou filho de um Grupo Superior. Da mesma forma, o ramo frutífero (Ordem de Procedimento) não pode ser colocado como um descendente direto ou filho de uma fruta (Resultado Discreto)');
 INSERT INTO `lang_definitions` VALUES (96190, 12380, 19, 'Usando tecnologia para melhorar a produtividade');
-INSERT INTO `lang_definitions` VALUES (96191, 12381, 19, 'Usando os detalhes inseridos no sistema openEMR irá gerar mensagens HL7 v2.3 válidas em 3 formatos, um arquivo de texto que é baixado automaticamente para a pasta de downloads do seu navegador, uma mensagem HL7 que é gravada em uma pasta ou diretório no servidor em execução openEMR ou use SFTP - Protocolo de transferência segura de arquivos, que é um protocolo de rede que fornece acesso, transferência e gerenciamento de arquivos em uma conexão segura e transfere esta mensagem para um laboratório');
+INSERT INTO `lang_definitions` VALUES (96191, 12381, 19, 'Usando os detalhes inseridos no sistema DCL irá gerar mensagens HL7 v2.3 válidas em 3 formatos, um arquivo de texto que é baixado automaticamente para a pasta de downloads do seu navegador, uma mensagem HL7 que é gravada em uma pasta ou diretório no servidor em execução DCL ou use SFTP - Protocolo de transferência segura de arquivos, que é um protocolo de rede que fornece acesso, transferência e gerenciamento de arquivos em uma conexão segura e transfere esta mensagem para um laboratório');
 INSERT INTO `lang_definitions` VALUES (96192, 12382, 19, 'Usando a folha de taxas');
 INSERT INTO `lang_definitions` VALUES (96193, 12383, 19, 'Usar os cabeçalhos principais da ficha de laboratório ajudará a iniciar este processo - Painéis de órgãos / doenças, hematologia, testes individuais, microbiologia, outros');
 INSERT INTO `lang_definitions` VALUES (96194, 12384, 19, 'Usando esta analogia com a árvore frutífera, podemos obter uma melhor compreensão das etapas necessárias para criar um pedido para um painel de testes');
@@ -109606,7 +109606,7 @@ INSERT INTO `lang_definitions` VALUES (96237, 12437, 19, 'Verificar');
 INSERT INTO `lang_definitions` VALUES (96238, 12441, 19, 'Versão');
 INSERT INTO `lang_definitions` VALUES (96239, 12442, 19, 'Versão 1 Endereço do site do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (96240, 12443, 19, 'Versão 2 Endereço do site do portal do paciente no local');
-INSERT INTO `lang_definitions` VALUES (96241, 12444, 19, 'A versão 2.x é amplamente usada na indústria de saúde e openEMR usa HL7 versão 2.3');
+INSERT INTO `lang_definitions` VALUES (96241, 12444, 19, 'A versão 2.x é amplamente usada na indústria de saúde e DCL usa HL7 versão 2.3');
 INSERT INTO `lang_definitions` VALUES (96242, 12445, 19, 'Número da versão');
 INSERT INTO `lang_definitions` VALUES (96243, 12447, 19, 'Base Vert{{abreviação para base de prisma vertical}}');
 INSERT INTO `lang_definitions` VALUES (96244, 12448, 19, 'Distância Vert {{abreviação para Distância Vértice}}');
@@ -109810,7 +109810,7 @@ INSERT INTO `lang_definitions` VALUES (96441, 12672, 19, 'Mudança de peso');
 INSERT INTO `lang_definitions` VALUES (96442, 12673, 19, 'Perda de peso');
 INSERT INTO `lang_definitions` VALUES (96443, 12674, 19, 'Perda de peso clínico');
 INSERT INTO `lang_definitions` VALUES (96444, 12675, 19, 'Bemvindo');
-INSERT INTO `lang_definitions` VALUES (96445, 12676, 19, 'Bem-vindo ao OpenEMR');
+INSERT INTO `lang_definitions` VALUES (96445, 12676, 19, 'Bem-vindo ao DCL');
 INSERT INTO `lang_definitions` VALUES (96446, 12677, 19, 'galês');
 INSERT INTO `lang_definitions` VALUES (96447, 12678, 19, 'Faltam as informações do ID do Weno Account Clinic');
 INSERT INTO `lang_definitions` VALUES (96448, 12679, 19, 'Faltam as informações do ID do Weno Account');
@@ -109851,7 +109851,7 @@ INSERT INTO `lang_definitions` VALUES (96482, 12719, 19, 'quais dias são seus d
 INSERT INTO `lang_definitions` VALUES (96483, 12720, 19, 'Quais notas devem ser exibidas na tela de faturamento');
 INSERT INTO `lang_definitions` VALUES (96484, 12721, 19, 'Ao encaminhar um lembrete com data, a mensagem antiga é exibida, ela pode ser substituída');
 INSERT INTO `lang_definitions` VALUES (96485, 12722, 19, 'Embora seja intuitivo pensar deste módulo como o local onde os testes de laboratório e estudos de imagem podem ser solicitados e revisados, este módulo também pode ser usado para rastrear outros procedimentos realizados no escritório');
-INSERT INTO `lang_definitions` VALUES (96486, 12723, 19, 'Embora os testes de laboratório e radiológicos possam ser realizados na clínica, eles geralmente são feitos em uma instalação externa e os detalhes do provedor para essa entidade terão que ser inseridos no openEMR antes que a configuração do módulo de procedimento possa começar');
+INSERT INTO `lang_definitions` VALUES (96486, 12723, 19, 'Embora os testes de laboratório e radiológicos possam ser realizados na clínica, eles geralmente são feitos em uma instalação externa e os detalhes do provedor para essa entidade terão que ser inseridos no DCL antes que a configuração do módulo de procedimento possa começar');
 INSERT INTO `lang_definitions` VALUES (96487, 12724, 19, 'Chicotada');
 INSERT INTO `lang_definitions` VALUES (96488, 12725, 19, 'Branco');
 INSERT INTO `lang_definitions` VALUES (96489, 12726, 19, 'Lista branca');
@@ -109871,7 +109871,7 @@ INSERT INTO `lang_definitions` VALUES (96502, 12739, 19, 'com importação');
 INSERT INTO `lang_definitions` VALUES (96503, 12740, 19, 'com idioma preferido');
 INSERT INTO `lang_definitions` VALUES (96504, 12742, 19, 'Com selecionado:');
 INSERT INTO `lang_definitions` VALUES (96505, 12743, 19, 'com o nome antigo');
-INSERT INTO `lang_definitions` VALUES (96506, 12744, 19, 'Com a chave U2F, você precisará conectá-la à porta USB e logo acessar o OpenEMR usando as versões mais recentes dos seguintes navegadores modernos - Chrome, Firefox, Safari, Edge e Opera e pressionando o botão no dispositivo');
+INSERT INTO `lang_definitions` VALUES (96506, 12744, 19, 'Com a chave U2F, você precisará conectá-la à porta USB e logo acessar o DCL usando as versões mais recentes dos seguintes navegadores modernos - Chrome, Firefox, Safari, Edge e Opera e pressionando o botão no dispositivo');
 INSERT INTO `lang_definitions` VALUES (96507, 12745, 19, 'com valor');
 INSERT INTO `lang_definitions` VALUES (96508, 12746, 19, 'A quem podemos deixar mensagem?');
 INSERT INTO `lang_definitions` VALUES (96509, 12747, 19, 'Retido');
@@ -110079,7 +110079,7 @@ INSERT INTO `lang_definitions` VALUES (96710, 12973, 19, 'Evento submetido.');
 INSERT INTO `lang_definitions` VALUES (96711, 12974, 19, 'Seu arquivo não tem extensão');
 INSERT INTO `lang_definitions` VALUES (96712, 12975, 19, 'O ficheiro é muito grande');
 INSERT INTO `lang_definitions` VALUES (96713, 12976, 19, 'Seu primeiro dia da semana');
-INSERT INTO `lang_definitions` VALUES (96714, 12978, 19, 'Sua instalação do OpenEMR foi registrada');
+INSERT INTO `lang_definitions` VALUES (96714, 12978, 19, 'Sua instalação do DCL foi registrada');
 INSERT INTO `lang_definitions` VALUES (96715, 12980, 19, 'Resultados do seu laboratório');
 INSERT INTO `lang_definitions` VALUES (96716, 12981, 19, 'O nome da sua lista foi alterado em conformidade com as regras.');
 INSERT INTO `lang_definitions` VALUES (96717, 12982, 19, 'Sua mensagem foi submatida à entrega para');
@@ -110337,7 +110337,7 @@ INSERT INTO `lang_definitions` VALUES (96968, 15, 20, 'Algumas palavras para ind
 INSERT INTO `lang_definitions` VALUES (96969, 16, 20, 'A followup appointment can also be scheduled right from the fee sheet');
 INSERT INTO `lang_definitions` VALUES (96970, 17, 20, 'Um formulário GCAC deve ser acrescentado a esta visita.');
 INSERT INTO `lang_definitions` VALUES (96971, 18, 20, 'Uma mensagem HL7 v2.x consiste simplesmente em várias linhas de texto, cada linha é chamada de segmento e é mais dividida em campos usando o caractere pipe (|)');
-INSERT INTO `lang_definitions` VALUES (96972, 19, 20, 'Um grande aplicativo como openEMR é usado por uma infinidade de usuários com diferentes papéis e graus de responsabilidade. É imperativo que o acesso a várias partes do programa seja concedido aos usuários em uma necessidade para conhecer a base. Para conseguir isso - Listas de controle de acesso (LCA) são usadas.');
+INSERT INTO `lang_definitions` VALUES (96972, 19, 20, 'Um grande aplicativo como DCL é usado por uma infinidade de usuários com diferentes papéis e graus de responsabilidade. É imperativo que o acesso a várias partes do programa seja concedido aos usuários em uma necessidade para conhecer a base. Para conseguir isso - Listas de controle de acesso (LCA) são usadas.');
 INSERT INTO `lang_definitions` VALUES (96973, 20, 20, 'Um número de lote é necessário');
 INSERT INTO `lang_definitions` VALUES (96974, 21, 20, 'Um número de lote é necessário!');
 INSERT INTO `lang_definitions` VALUES (96975, 22, 20, 'Uma letra minúscula');
@@ -110609,7 +110609,7 @@ INSERT INTO `lang_definitions` VALUES (97240, 330, 20, 'Informações adicionais
 INSERT INTO `lang_definitions` VALUES (97241, 332, 20, 'Informações adicionais para processar pedidos em papel');
 INSERT INTO `lang_definitions` VALUES (97242, 333, 20, 'Laboratórios Complementares');
 INSERT INTO `lang_definitions` VALUES (97243, 334, 20, 'Observações Adicionais');
-INSERT INTO `lang_definitions` VALUES (97244, 335, 20, 'O campo de notas adicionais é para uso local em openEMR');
+INSERT INTO `lang_definitions` VALUES (97244, 335, 20, 'O campo de notas adicionais é para uso local em DCL');
 INSERT INTO `lang_definitions` VALUES (97245, 336, 20, 'Observações ou recomendação adicionais para este resultado');
 INSERT INTO `lang_definitions` VALUES (97246, 337, 20, 'Observações Adicionais:');
 INSERT INTO `lang_definitions` VALUES (97247, 338, 20, 'Observações Adicionais:');
@@ -110751,7 +110751,7 @@ INSERT INTO `lang_definitions` VALUES (97382, 497, 20, 'Todos os Grupos de Medid
 INSERT INTO `lang_definitions` VALUES (97383, 498, 20, 'Parte ou todo primeiro nome');
 INSERT INTO `lang_definitions` VALUES (97384, 499, 20, 'Parte ou todo sobrenome');
 INSERT INTO `lang_definitions` VALUES (97385, 500, 20, 'Todos ou parte da organização');
-INSERT INTO `lang_definitions` VALUES (97386, 501, 20, 'Todas as interações do paciente no OpenEMR estão vinculadas aos encontros');
+INSERT INTO `lang_definitions` VALUES (97386, 501, 20, 'Todas as interações do paciente no DCL estão vinculadas aos encontros');
 INSERT INTO `lang_definitions` VALUES (97387, 502, 20, 'Todos os Pacientes');
 INSERT INTO `lang_definitions` VALUES (97388, 503, 20, 'Todas as mensagens pendentes são exibidas no painel MINHAS MENSAGENS');
 INSERT INTO `lang_definitions` VALUES (97389, 505, 20, 'Todos os Produtos');
@@ -110894,11 +110894,11 @@ INSERT INTO `lang_definitions` VALUES (97525, 674, 20, 'Um e-mail com as suas no
 INSERT INTO `lang_definitions` VALUES (97526, 675, 20, 'Uma ordem eletrônica e o resultado retornado estão na forma de uma mensagem chamada a mensagem HL7. HL7 significa Nível de Saúde (Application Layer) 7. O principal objetivo da HL7 é simplificar a implementação de interfaces entre aplicativos de software de saúde e vários fornecedores, de modo a reduzir a dor e o custo envolvido na programação de interface personalizada');
 INSERT INTO `lang_definitions` VALUES (97527, 676, 20, 'Uma data de término posterior a data de início é necessário para eventos repetidos!');
 INSERT INTO `lang_definitions` VALUES (97528, 677, 20, 'Ocorreu um erro assinar o formulário');
-INSERT INTO `lang_definitions` VALUES (97529, 678, 20, 'Ocorreu um erro enquanto se limpava a árvore de diretórios Web do OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (97529, 678, 20, 'Ocorreu um erro enquanto se limpava a árvore de diretórios Web do DCL.');
 INSERT INTO `lang_definitions` VALUES (97530, 679, 20, 'Ocorreu um erro enquanto se limpava a árvore de diretórios Web do phpGACL.');
 INSERT INTO `lang_definitions` VALUES (97531, 680, 20, 'Ocorreu um erro enquanto se limpava a árvore de diretórios Web do SQL-Ledger.');
 INSERT INTO `lang_definitions` VALUES (97532, 682, 20, 'Ocorreu um erro: Ficheiro em falta para enviar: Use o botão de voltar!');
-INSERT INTO `lang_definitions` VALUES (97533, 683, 20, 'Um conceito importante a ser compreendido é que, uma vez que a chave secreta entregue por meio do código QR é capturada pelo aplicativo autenticador, não há mais comunicação entre o aplicativo e o OpenEMR, cada um usará a hora atual do UNIX e sua cópia da chave secreta compartilhada específica do usuário para gerar o mesmo número único de 6 dígitos');
+INSERT INTO `lang_definitions` VALUES (97533, 683, 20, 'Um conceito importante a ser compreendido é que, uma vez que a chave secreta entregue por meio do código QR é capturada pelo aplicativo autenticador, não há mais comunicação entre o aplicativo e o DCL, cada um usará a hora atual do UNIX e sua cópia da chave secreta compartilhada específica do usuário para gerar o mesmo número único de 6 dígitos');
 INSERT INTO `lang_definitions` VALUES (97534, 684, 20, 'Um ponto importante a lembrar é que os vários testes individuais em cada painel estão listados como Resultados, o fruto, você não pode encomendar diretamente esses testes individuais');
 INSERT INTO `lang_definitions` VALUES (97535, 685, 20, 'Uma questão GCAC incompleta foi criado e vinculado. Alguém terá de concluí-lo mais tarde.');
 INSERT INTO `lang_definitions` VALUES (97536, 687, 20, 'Um problema diz respeito a questões relacionadas à saúde do paciente');
@@ -111111,7 +111111,7 @@ INSERT INTO `lang_definitions` VALUES (97742, 927, 20, 'Suponha que os pacientes
 INSERT INTO `lang_definitions` VALUES (97743, 928, 20, 'Asma');
 INSERT INTO `lang_definitions` VALUES (97744, 929, 20, 'em');
 INSERT INTO `lang_definitions` VALUES (97745, 931, 20, 'Pelo menos um parâmetro de procura é necessário se você selecionar Todos.');
-INSERT INTO `lang_definitions` VALUES (97746, 932, 20, 'No momento, a prescrição eletrônica do openEMR é possível apenas nos Estados Unidos');
+INSERT INTO `lang_definitions` VALUES (97746, 932, 20, 'No momento, a prescrição eletrônica do DCL é possível apenas nos Estados Unidos');
 INSERT INTO `lang_definitions` VALUES (97747, 933, 20, 'No momento, apenas a Continuidade de Registro de Cuidados (CCR), o Continuidade de Documento de Cuidados (CCD) pode ser enviado usando phiMail');
 INSERT INTO `lang_definitions` VALUES (97748, 934, 20, 'No navicular');
 INSERT INTO `lang_definitions` VALUES (97749, 935, 20, 'At the navicular:');
@@ -112249,10 +112249,10 @@ INSERT INTO `lang_definitions` VALUES (98880, 2209, 20, 'Configuração');
 INSERT INTO `lang_definitions` VALUES (98881, 2210, 20, 'Configuração');
 INSERT INTO `lang_definitions` VALUES (98882, 2211, 20, 'Configuração Exportar/Importar');
 INSERT INTO `lang_definitions` VALUES (98883, 2212, 20, 'Configuração salva com sucesso');
-INSERT INTO `lang_definitions` VALUES (98884, 2213, 20, 'Configure Servidor Web (Apache) e OpenEMR para uso de certificado SSL pelo clíente.');
+INSERT INTO `lang_definitions` VALUES (98884, 2213, 20, 'Configure Servidor Web (Apache) e DCL para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (98885, 2214, 20, 'Configure Servidor Web (Apache) para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (98886, 2215, 20, 'Configure Servidor Web (Apache) para uso HTTPS.');
-INSERT INTO `lang_definitions` VALUES (98887, 2216, 20, 'Configure OpenEMR para uso de certificado SSL pelo clíente.');
+INSERT INTO `lang_definitions` VALUES (98887, 2216, 20, 'Configure DCL para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (98888, 2217, 20, 'Configurar pedidos e resultados');
 INSERT INTO `lang_definitions` VALUES (98889, 2218, 20, 'Ajuda para configurar pedidos');
 INSERT INTO `lang_definitions` VALUES (98890, 2219, 20, 'Configure a estrutura de teste de laboratório');
@@ -112299,7 +112299,7 @@ INSERT INTO `lang_definitions` VALUES (98930, 2268, 20, 'Lentes de Contato');
 INSERT INTO `lang_definitions` VALUES (98931, 2269, 20, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com para obter o Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (98932, 2270, 20, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com ou ZH Healthcare em http://zhservices.com para assinar o serviço eRx');
 INSERT INTO `lang_definitions` VALUES (98933, 2271, 20, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com ou ZH Healthcare em http://zhservices.com para assinar no serviço NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (98934, 2272, 20, 'Entre em contato com a mi-squared em http://www.mi-squared.com/products-services/openemr/ ou ZH Healthcare em https://bl Budaphr.com/contact-us/ para assinar no serviço NewCrop eRx');
+INSERT INTO `lang_definitions` VALUES (98934, 2272, 20, 'Entre em contato com a mi-squared em http://www.mi-squared.com/products-services/DCL/ ou ZH Healthcare em https://bl Budaphr.com/contact-us/ para assinar no serviço NewCrop eRx');
 INSERT INTO `lang_definitions` VALUES (98935, 2273, 20, 'Nome de contato');
 INSERT INTO `lang_definitions` VALUES (98936, 2274, 20, 'Entre em contato com a Open Med Practice, www.openmedpractice.com para assinar no serviço Weno Free eRx');
 INSERT INTO `lang_definitions` VALUES (98937, 2275, 20, 'Contate ou notifique o telefone');
@@ -112539,7 +112539,7 @@ INSERT INTO `lang_definitions` VALUES (99170, 2544, 20, 'Atualmente Ativo');
 INSERT INTO `lang_definitions` VALUES (99171, 2545, 20, 'Atualmente ocupado');
 INSERT INTO `lang_definitions` VALUES (99172, 2547, 20, 'Atualmente offline');
 INSERT INTO `lang_definitions` VALUES (99173, 2548, 20, 'Atualmente em execução');
-INSERT INTO `lang_definitions` VALUES (99174, 2549, 20, 'Atualmente, existem 5 tipos de transações no OpenEMR');
+INSERT INTO `lang_definitions` VALUES (99174, 2549, 20, 'Atualmente, existem 5 tipos de transações no DCL');
 INSERT INTO `lang_definitions` VALUES (99175, 2550, 20, 'Atualmente não há instalações');
 INSERT INTO `lang_definitions` VALUES (99176, 2551, 20, 'Atualmente trabalhando para fazer este documento');
 INSERT INTO `lang_definitions` VALUES (99177, 2552, 20, 'Síndrome de Cushing');
@@ -113231,8 +113231,8 @@ INSERT INTO `lang_definitions` VALUES (99862, 3321, 20, 'Devido Pt');
 INSERT INTO `lang_definitions` VALUES (99863, 3322, 20, 'Vencimento logo');
 INSERT INTO `lang_definitions` VALUES (99864, 3323, 20, 'Status de vencimento');
 INSERT INTO `lang_definitions` VALUES (99865, 3324, 20, 'Actualização do status de vencimento');
-INSERT INTO `lang_definitions` VALUES (99866, 3325, 20, 'Dumping banco OpenEMR');
-INSERT INTO `lang_definitions` VALUES (99867, 3326, 20, 'Dumping OpenEMR árvore de diretórios web');
+INSERT INTO `lang_definitions` VALUES (99866, 3325, 20, 'Dumping banco DCL');
+INSERT INTO `lang_definitions` VALUES (99867, 3326, 20, 'Dumping DCL árvore de diretórios web');
 INSERT INTO `lang_definitions` VALUES (99868, 3327, 20, 'Dumping banco phpgacl');
 INSERT INTO `lang_definitions` VALUES (99869, 3328, 20, 'Dumping árvore de diretórios phpgacl web');
 INSERT INTO `lang_definitions` VALUES (99870, 3329, 20, 'Dumping banco de dados SQL-Ledger');
@@ -113487,8 +113487,8 @@ INSERT INTO `lang_definitions` VALUES (100118, 3611, 20, 'Habilitar Portal do Pa
 INSERT INTO `lang_definitions` VALUES (100119, 3612, 20, 'Habilitar download do documento do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (100120, 3613, 20, 'Habilitar novo paciente no Portal do Paciente no local para se auto-registrar');
 INSERT INTO `lang_definitions` VALUES (100121, 3614, 20, 'Habilitar Portal do Paciente no Local');
-INSERT INTO `lang_definitions` VALUES (100122, 3621, 20, 'Habilitar API REST OpenEMR');
-INSERT INTO `lang_definitions` VALUES (100123, 3622, 20, 'Habilitar a API OpenEMR RESTful. SSL necessário');
+INSERT INTO `lang_definitions` VALUES (100122, 3621, 20, 'Habilitar API REST DCL');
+INSERT INTO `lang_definitions` VALUES (100123, 3622, 20, 'Habilitar a API DCL RESTful. SSL necessário');
 INSERT INTO `lang_definitions` VALUES (100124, 3630, 20, 'Ativar widget de lembrete de paciente');
 INSERT INTO `lang_definitions` VALUES (100125, 3632, 20, 'Habilitar serviço de mensagens diretas phiMail');
 INSERT INTO `lang_definitions` VALUES (100126, 3633, 20, 'Habilitar postagem');
@@ -113499,7 +113499,7 @@ INSERT INTO `lang_definitions` VALUES (100130, 3638, 20, 'Habilitar Suporte a Sc
 INSERT INTO `lang_definitions` VALUES (100131, 3639, 20, 'Habilitar itemização de relatório padrão');
 INSERT INTO `lang_definitions` VALUES (100132, 3640, 20, 'Habilitar suporte para o Portal WordPress de código aberto da Sunset Systems');
 INSERT INTO `lang_definitions` VALUES (100133, 3642, 20, 'Habilitar o serviço de integração de informações médicas, LLC Lab Exchange');
-INSERT INTO `lang_definitions` VALUES (100134, 3643, 20, 'Habilitar o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (100134, 3643, 20, 'Habilitar o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (100135, 3644, 20, 'Habilitar autenticação de certificado de usuário');
 INSERT INTO `lang_definitions` VALUES (100136, 3645, 20, 'Habilitar versão 1 do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (100137, 3646, 20, 'Habilitar versão 2 do portal do paciente no local');
@@ -113603,7 +113603,7 @@ INSERT INTO `lang_definitions` VALUES (100234, 3754, 20, 'Inglês');
 INSERT INTO `lang_definitions` VALUES (100235, 3756, 20, 'Inglês (indiana)');
 INSERT INTO `lang_definitions` VALUES (100236, 3757, 20, 'Inglês (Standard)');
 INSERT INTO `lang_definitions` VALUES (100237, 3758, 20, 'Comando Enscript usado pelo Hylafax');
-INSERT INTO `lang_definitions` VALUES (100238, 3759, 20, 'Assegurar OpenEMR tem privilégios de gravação para o diretório');
+INSERT INTO `lang_definitions` VALUES (100238, 3759, 20, 'Assegurar DCL tem privilégios de gravação para o diretório');
 INSERT INTO `lang_definitions` VALUES (100239, 3760, 20, 'Ensure that Identifying Codes are unique');
 INSERT INTO `lang_definitions` VALUES (100240, 3761, 20, 'ENT Quitação');
 INSERT INTO `lang_definitions` VALUES (100241, 3762, 20, 'ENT Pain');
@@ -113663,14 +113663,14 @@ INSERT INTO `lang_definitions` VALUES (100294, 3822, 20, 'Insira a lateralidade 
 INSERT INTO `lang_definitions` VALUES (100295, 3823, 20, 'Insira o código dos nomes e códigos dos identificadores de observação lógica (LOINC) para este procedimento');
 INSERT INTO `lang_definitions` VALUES (100296, 3824, 20, 'Insira o código dos nomes e códigos dos identificadores de observação lógica (LOINC) para este procedimento. LOINC é um banco de dados e padrão universal para identificar observações de laboratórios médicos.');
 INSERT INTO `lang_definitions` VALUES (100297, 3825, 20, 'Insira o código LOINC para este procedimento');
-INSERT INTO `lang_definitions` VALUES (100298, 3826, 20, 'Insira a senha de login do OpenEMR para o usuário e clique em Enviar');
+INSERT INTO `lang_definitions` VALUES (100298, 3826, 20, 'Insira a senha de login do DCL para o usuário e clique em Enviar');
 INSERT INTO `lang_definitions` VALUES (100299, 3827, 20, 'Insira o código de Re identificação');
 INSERT INTO `lang_definitions` VALUES (100300, 3828, 20, 'Insira o site relevante, se aplicável');
 INSERT INTO `lang_definitions` VALUES (100301, 3829, 20, 'Insira o endereço do servidor, nome de usuário e senha fornecidos a você');
 INSERT INTO `lang_definitions` VALUES (100302, 3830, 20, 'Insira a gravidade da alergia');
 INSERT INTO `lang_definitions` VALUES (100303, 3831, 20, 'Insira o tipo de amostra, se aplicável');
 INSERT INTO `lang_definitions` VALUES (100304, 3832, 20, 'Insira os valores 3,4 - 7,2 - Homens, 2,4–6,1 - Mulheres');
-INSERT INTO `lang_definitions` VALUES (100305, 3833, 20, 'Insira seu nome de usuário Openemr no campo usuário de notificação');
+INSERT INTO `lang_definitions` VALUES (100305, 3833, 20, 'Insira seu nome de usuário DCL no campo usuário de notificação');
 INSERT INTO `lang_definitions` VALUES (100306, 3834, 20, 'Insira o ID de login do usuário');
 INSERT INTO `lang_definitions` VALUES (100307, 3835, 20, 'Insira valores nesta seção para criar um novo grupo também conhecido como Objeto de Solicitação de Acesso (ARO)');
 INSERT INTO `lang_definitions` VALUES (100308, 3836, 20, 'Enter your credentials');
@@ -113728,7 +113728,7 @@ INSERT INTO `lang_definitions` VALUES (100359, 3897, 20, 'Erro ao remover mensag
 INSERT INTO `lang_definitions` VALUES (100360, 3898, 20, 'Erro ao recuperar resultados do Lab Exchange Network');
 INSERT INTO `lang_definitions` VALUES (100361, 3899, 20, 'Erro ao recuperar valores');
 INSERT INTO `lang_definitions` VALUES (100362, 3900, 20, 'Erro ao salvar documento');
-INSERT INTO `lang_definitions` VALUES (100363, 3901, 20, 'Erro ao conceder privilégio de arquivo ao usuário OpenEMR');
+INSERT INTO `lang_definitions` VALUES (100363, 3901, 20, 'Erro ao conceder privilégio de arquivo ao usuário DCL');
 INSERT INTO `lang_definitions` VALUES (100364, 3902, 20, 'Erro ao adicionar novo plano');
 INSERT INTO `lang_definitions` VALUES (100365, 3903, 20, 'Erro ao excluir o plano');
 INSERT INTO `lang_definitions` VALUES (100366, 3904, 20, 'erro ao registrar formulário!');
@@ -113746,7 +113746,7 @@ INSERT INTO `lang_definitions` VALUES (100377, 3920, 20, 'Erro, não foi possív
 INSERT INTO `lang_definitions` VALUES (100378, 3921, 20, 'Erro, não foi possível criar o certificado da Autoridade de Certificação');
 INSERT INTO `lang_definitions` VALUES (100379, 3922, 20, 'Erro, não foi possível criar o certificado do servidor');
 INSERT INTO `lang_definitions` VALUES (100380, 3924, 20, 'Erro, não foi possível abrir o arquivo');
-INSERT INTO `lang_definitions` VALUES (100381, 3925, 20, 'Erro, a autenticação do certificado do usuário não está ativada no OpenEMR');
+INSERT INTO `lang_definitions` VALUES (100381, 3925, 20, 'Erro, a autenticação do certificado do usuário não está ativada no DCL');
 INSERT INTO `lang_definitions` VALUES (100382, 3932, 20, 'Erro. Tente mais tarde');
 INSERT INTO `lang_definitions` VALUES (100383, 3933, 20, 'Erro. Você precisa instalar o módulo PHP Archive / Tar.php');
 INSERT INTO `lang_definitions` VALUES (100384, 3934, 20, 'ERRO: não pôde abrir table.sql, forma quebrado?');
@@ -114067,7 +114067,7 @@ INSERT INTO `lang_definitions` VALUES (100698, 4285, 20, 'Arquivo não encontrad
 INSERT INTO `lang_definitions` VALUES (100699, 4286, 20, 'File Not Found');
 INSERT INTO `lang_definitions` VALUES (100700, 4287, 20, 'Arquivo no servidor (data de modificação)');
 INSERT INTO `lang_definitions` VALUES (100701, 4288, 20, 'Caminho do arquivo não encontrado');
-INSERT INTO `lang_definitions` VALUES (100702, 4289, 20, 'Privilégio de arquivo concedido ao usuário OpenEMR');
+INSERT INTO `lang_definitions` VALUES (100702, 4289, 20, 'Privilégio de arquivo concedido ao usuário DCL');
 INSERT INTO `lang_definitions` VALUES (100703, 4290, 20, 'A recuperação do arquivo do CouchDB falhou');
 INSERT INTO `lang_definitions` VALUES (100704, 4291, 20, 'Arquivo do quarto');
 INSERT INTO `lang_definitions` VALUES (100705, 4292, 20, 'Arquivo para upload');
@@ -114083,7 +114083,7 @@ INSERT INTO `lang_definitions` VALUES (100714, 4302, 20, 'Filipino');
 INSERT INTO `lang_definitions` VALUES (100715, 4303, 20, 'preencher');
 INSERT INTO `lang_definitions` VALUES (100716, 4304, 20, 'Preencha qualquer uma das linhas abaixo.');
 INSERT INTO `lang_definitions` VALUES (100717, 4305, 20, 'Preencha somente para envio de notificação de e-mail aos pacientes');
-INSERT INTO `lang_definitions` VALUES (100718, 4306, 20, 'Preencha todos os detalhes ausentes ou edite as informações existentes. Isso será salvo na página de dados demográficos do paciente no openEMR');
+INSERT INTO `lang_definitions` VALUES (100718, 4306, 20, 'Preencha todos os detalhes ausentes ou edite as informações existentes. Isso será salvo na página de dados demográficos do paciente no DCL');
 INSERT INTO `lang_definitions` VALUES (100719, 4307, 20, 'Preencha os códigos CPT usando o formato exibido. Os códigos E / M comuns já estão preenchidos, adicione mais conforme necessário');
 INSERT INTO `lang_definitions` VALUES (100720, 4308, 20, 'Preencha os detalhes conforme necessário e clique em Salvar');
 INSERT INTO `lang_definitions` VALUES (100721, 4309, 20, 'Preencha os detalhes do painel Órgão / Doença como antes e clique em Salvar para fechar o pop-up');
@@ -114247,7 +114247,7 @@ INSERT INTO `lang_definitions` VALUES (100878, 4484, 20, 'Para aqueles interessa
 INSERT INTO `lang_definitions` VALUES (100879, 4485, 20, 'Para aqueles interessados no que acontece nos bastidores');
 INSERT INTO `lang_definitions` VALUES (100880, 4486, 20, 'Para essas linhas, a descrição indicará os detalhes do código');
 INSERT INTO `lang_definitions` VALUES (100881, 4487, 20, 'Para aqueles com privilégios administrativos, um ícone é exibido ao lado da legenda Minhas mensagens');
-INSERT INTO `lang_definitions` VALUES (100882, 4488, 20, 'Para que o TOTP funcione, uma chave secreta exclusiva deve ser compartilhada entre o OpenEMR e o usuário');
+INSERT INTO `lang_definitions` VALUES (100882, 4488, 20, 'Para que o TOTP funcione, uma chave secreta exclusiva deve ser compartilhada entre o DCL e o usuário');
 INSERT INTO `lang_definitions` VALUES (100883, 4489, 20, 'Para suporte U2F no Linux, clique');
 INSERT INTO `lang_definitions` VALUES (100884, 4490, 20, 'para variável');
 INSERT INTO `lang_definitions` VALUES (100885, 4491, 20, 'para:');
@@ -114748,7 +114748,7 @@ INSERT INTO `lang_definitions` VALUES (101379, 5039, 20, 'HTML');
 INSERT INTO `lang_definitions` VALUES (101380, 5040, 20, 'Saída HTML?');
 INSERT INTO `lang_definitions` VALUES (101381, 5041, 20, 'HTN {{hipertensão}}');
 INSERT INTO `lang_definitions` VALUES (101382, 5042, 20, 'Erro HTTP');
-INSERT INTO `lang_definitions` VALUES (101383, 5043, 20, 'Link Https para o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (101383, 5043, 20, 'Link Https para o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (101384, 5044, 20, 'HT {{hiperforia}}');
 INSERT INTO `lang_definitions` VALUES (101385, 5045, 20, 'Húngaro');
 INSERT INTO `lang_definitions` VALUES (101386, 5046, 20, 'Diretório Hylafax');
@@ -114813,7 +114813,7 @@ INSERT INTO `lang_definitions` VALUES (101444, 5110, 20, 'Se ainda estiver ativo
 INSERT INTO `lang_definitions` VALUES (101445, 5111, 20, 'Se o nome, qualquer parte do apelido, ou sobrenome, nome');
 INSERT INTO `lang_definitions` VALUES (101446, 5112, 20, 'Se NewCrop eRx - o módulo de prescrição eletrônica, estiver habilitado, os botões NewCrop MedEntry e NewCrop Account Status aparecerão aqui');
 INSERT INTO `lang_definitions` VALUES (101447, 5113, 20, 'Se não estiver listado, você pode adicionar o medicamento à caixa de texto Título');
-INSERT INTO `lang_definitions` VALUES (101448, 5115, 20, 'Se apenas capturar o código QR, mas não registrar a chave TOTP com OpenEMR, este recurso não será habilitado no login');
+INSERT INTO `lang_definitions` VALUES (101448, 5115, 20, 'Se apenas capturar o código QR, mas não registrar a chave TOTP com DCL, este recurso não será habilitado no login');
 INSERT INTO `lang_definitions` VALUES (101449, 5116, 20, 'Se o paciente tiver um compromisso, clique em OK para criar um encontro, caso contrário, cancele esto e logo crie um encontro para a visita de hoje.');
 INSERT INTO `lang_definitions` VALUES (101450, 5117, 20, 'Se pagar por');
 INSERT INTO `lang_definitions` VALUES (101451, 5118, 20, 'Se a pessoa faleceu, insira a data da morte');
@@ -114837,7 +114837,7 @@ INSERT INTO `lang_definitions` VALUES (101468, 5135, 20, 'Se a mensagem for enca
 INSERT INTO `lang_definitions` VALUES (101469, 5136, 20, 'Se o portal do paciente externo estiver ativado, haverá um botão que diz Criar credenciais do portal externo, desde que o paciente tenha dado permissão para acessar o portal do paciente online ou uma mensagem que diz que o paciente não autorizou o portal do paciente');
 INSERT INTO `lang_definitions` VALUES (101470, 5137, 20, 'Se o portal do paciente externo estiver ativado, haverá um botão que diz Criar credenciais do portal externo, desde que o paciente tenha dado permissão para acessar o portal do paciente online ou uma mensagem que diz que o paciente não autorizou o portal do paciente');
 INSERT INTO `lang_definitions` VALUES (101471, 5138, 20, 'Se as credenciais do portal online / offsite já tiverem sido definidas, o botão mudará para');
-INSERT INTO `lang_definitions` VALUES (101472, 5139, 20, 'Se o paciente tiver quaisquer dados demográficos inseridos no openEMR, ele preencherá automaticamente os campos relevantes nas seções corretas');
+INSERT INTO `lang_definitions` VALUES (101472, 5139, 20, 'Se o paciente tiver quaisquer dados demográficos inseridos no DCL, ele preencherá automaticamente os campos relevantes nas seções corretas');
 INSERT INTO `lang_definitions` VALUES (101473, 5140, 20, 'Se o paciente não autorizou o portal do paciente, então um paciente não autorizou a mensagem do portal do paciente será exibida aqui');
 INSERT INTO `lang_definitions` VALUES (101474, 5141, 20, 'Se o paciente estiver sendo adicionado à lista de recall no dia da visita, ele refletirá a data atual');
 INSERT INTO `lang_definitions` VALUES (101475, 5142, 20, 'Se o paciente está ligando de volta para ser adicionado à lista, a última consulta pode ter sido no passado remoto. Esteja ciente de que os mais de 1,2,3 anos são calculados e exibidos na caixa Data na parte inferior desta seção');
@@ -114868,9 +114868,9 @@ INSERT INTO `lang_definitions` VALUES (101499, 5169, 20, 'Se você clicar no sin
 INSERT INTO `lang_definitions` VALUES (101500, 5170, 20, 'Se você continuar tendo esse erro, por favor entre em contato com o suporte');
 INSERT INTO `lang_definitions` VALUES (101501, 5171, 20, 'Se você não encontrar um valor necessário na caixa suspensa, você precisará adicioná-lo via Administração> Listas> Unidades de procedimento. Consulte o arquivo de ajuda em Procedimentos> Provedores');
 INSERT INTO `lang_definitions` VALUES (101502, 5172, 20, 'Se você não selecionar uma correspondência, o paciente será criado');
-INSERT INTO `lang_definitions` VALUES (101503, 5173, 20, 'Se você não selecionar pelo menos um deles, o OpenEMR operará em um modo somente de recepção');
+INSERT INTO `lang_definitions` VALUES (101503, 5173, 20, 'Se você não selecionar pelo menos um deles, o DCL operará em um modo somente de recepção');
 INSERT INTO `lang_definitions` VALUES (101504, 5174, 20, 'Se você não enviar pedidos eletronicamente ou receber resultados eletronicamente, deixe como o valor padrão, Download');
-INSERT INTO `lang_definitions` VALUES (101505, 5176, 20, 'Se você não quiser fazer isso, o método a seguir envolve adicionar dados manualmente usando a interface openEMR');
+INSERT INTO `lang_definitions` VALUES (101505, 5176, 20, 'Se você não quiser fazer isso, o método a seguir envolve adicionar dados manualmente usando a interface DCL');
 INSERT INTO `lang_definitions` VALUES (101506, 5177, 20, 'Se você detalhar a linha do painel de eletrólito e clicar no sinal + na coluna Nome, você deverá ver o sódio listado abaixo dela com um valor de categoria de resultado com um valor de nível 4');
 INSERT INTO `lang_definitions` VALUES (101507, 5178, 20, 'Se você detalhar a linha do painel de eletrólito, deverá ver que ele tem uma categoria de pedido e destacado em amarelo, indicando que é um pedido pesquisável e válido e tem um valor de nível 3');
 INSERT INTO `lang_definitions` VALUES (101508, 5179, 20, 'Se você selecionou vários códigos, eles serão separados por ponto e vírgula');
@@ -114978,11 +114978,11 @@ INSERT INTO `lang_definitions` VALUES (101609, 5286, 20, 'In House');
 INSERT INTO `lang_definitions` VALUES (101610, 5288, 20, 'no olho esquerdo');
 INSERT INTO `lang_definitions` VALUES (101611, 5289, 20, 'na narina');
 INSERT INTO `lang_definitions` VALUES (101612, 5290, 20, 'Na Clínica - Disponível');
-INSERT INTO `lang_definitions` VALUES (101613, 5291, 20, 'No openEMR, os relatórios de Registro de Continuidade de Cuidados (CCR) a serem gerados podem ser limitados a um intervalo de datas específico marcando a caixa de seleção Usar intervalo de datas e inserindo o intervalo de datas desejado');
+INSERT INTO `lang_definitions` VALUES (101613, 5291, 20, 'No DCL, os relatórios de Registro de Continuidade de Cuidados (CCR) a serem gerados podem ser limitados a um intervalo de datas específico marcando a caixa de seleção Usar intervalo de datas e inserindo o intervalo de datas desejado');
 INSERT INTO `lang_definitions` VALUES (101614, 5292, 20, 'A fim de cumprir os requisitos de uso significativo para entrada de pedido de provedor computadorizado (CPOE) para testes de laboratório e radiologia, este módulo precisa ser usado');
 INSERT INTO `lang_definitions` VALUES (101615, 5293, 20, 'Para armazenar e recuperar adequadamente os resultados do teste e fazer novos pedidos, os testes / pedidos devem ser configurados de maneira hierárquica');
 INSERT INTO `lang_definitions` VALUES (101616, 5294, 20, 'Para registrar os valores dos resultados retornados, você deve criar um Resultado Discreto separado (Nível 4) para cada um dos constituintes do painel, a fruta, como descendentes diretos deste ramo (Painel de Saúde Geral) (Nível 3). Exemplos dos resultados são CBC - Hemoglobina, CBC - Hematócrito, CMP - Sódio, CMP - Potássio, TSH etc.');
-INSERT INTO `lang_definitions` VALUES (101617, 5295, 20, 'Para registrar seu dispositivo, por favor forneça sua senha de login do OpenEMR');
+INSERT INTO `lang_definitions` VALUES (101617, 5295, 20, 'Para registrar seu dispositivo, por favor forneça sua senha de login do DCL');
 INSERT INTO `lang_definitions` VALUES (101618, 5296, 20, 'Para enviar Registro de Continuidade de Cuidados (CCR) e / ou Documento de Continuidade de Cuidados (CCD), opcionalmente, marque phiMail Permitir CCD Send e / ou phiMail Permitir CCR Send para habilitar o recurso de transmissão para esses tipos de dados');
 INSERT INTO `lang_definitions` VALUES (101619, 5297, 20, 'No nosso caso, escolheremos o laboratório local que foi configurado anteriormente');
 INSERT INTO `lang_definitions` VALUES (101620, 5298, 20, 'No nosso caso, vamos deixá-lo como Não atribuído');
@@ -115137,7 +115137,7 @@ INSERT INTO `lang_definitions` VALUES (101768, 5462, 20, 'Instalar códigos de s
 INSERT INTO `lang_definitions` VALUES (101769, 5465, 20, 'Instale o certificado de âncora de confiança EMR Direct');
 INSERT INTO `lang_definitions` VALUES (101770, 5467, 20, 'As instalações que processam um grande número de mensagens diretas podem exigir um intervalo mais curto');
 INSERT INTO `lang_definitions` VALUES (101771, 5468, 20, 'Versão Instalada');
-INSERT INTO `lang_definitions` VALUES (101772, 5469, 20, 'Instalando códigos em openEMR');
+INSERT INTO `lang_definitions` VALUES (101772, 5469, 20, 'Instalando códigos em DCL');
 INSERT INTO `lang_definitions` VALUES (101773, 5470, 20, 'Instruída');
 INSERT INTO `lang_definitions` VALUES (101774, 5471, 20, 'Instrução');
 INSERT INTO `lang_definitions` VALUES (101775, 5472, 20, 'Instruções');
@@ -115173,7 +115173,7 @@ INSERT INTO `lang_definitions` VALUES (101804, 5502, 20, 'Conveniado');
 INSERT INTO `lang_definitions` VALUES (101805, 5503, 20, 'Ingestão de Conclusão');
 INSERT INTO `lang_definitions` VALUES (101806, 5504, 20, 'Data de admissão');
 INSERT INTO `lang_definitions` VALUES (101807, 5505, 20, 'Inteiros 1-100');
-INSERT INTO `lang_definitions` VALUES (101808, 5506, 20, 'A integração dos resultados de laboratório no prontuário de um paciente no openEMR pode ser feita manualmente, ou seja, ambos solicitar testes e enviar os resultados recebidos ou eletronicamente');
+INSERT INTO `lang_definitions` VALUES (101808, 5506, 20, 'A integração dos resultados de laboratório no prontuário de um paciente no DCL pode ser feita manualmente, ou seja, ambos solicitar testes e enviar os resultados recebidos ou eletronicamente');
 INSERT INTO `lang_definitions` VALUES (101809, 5507, 20, 'Declínio Intelectual');
 INSERT INTO `lang_definitions` VALUES (101810, 5508, 20, 'Distância inter-pupilar');
 INSERT INTO `lang_definitions` VALUES (101811, 5509, 20, 'Interaja com transações criadas');
@@ -115355,14 +115355,14 @@ INSERT INTO `lang_definitions` VALUES (101986, 5703, 20, 'Não se refere à refe
 INSERT INTO `lang_definitions` VALUES (101987, 5704, 20, 'Ele faz isso usando um algoritmo para combinar o horário UNIX atual com a chave secreta para gerar uma chave única em constante mudança');
 INSERT INTO `lang_definitions` VALUES (101988, 5705, 20, 'Tem quatro guias');
 INSERT INTO `lang_definitions` VALUES (101989, 5706, 20, 'Tem três níveis');
-INSERT INTO `lang_definitions` VALUES (101990, 5707, 20, 'É um módulo de mensagem comercial disponível para práticas openEMR utilizando a versão 5.0.1 e superior');
+INSERT INTO `lang_definitions` VALUES (101990, 5707, 20, 'É um módulo de mensagem comercial disponível para práticas DCL utilizando a versão 5.0.1 e superior');
 INSERT INTO `lang_definitions` VALUES (101991, 5708, 20, 'É um campo no cabeçalho da mensagem HL7 conhecido como ID de processamento');
 INSERT INTO `lang_definitions` VALUES (101992, 5709, 20, 'Faz parte do prontuário médico');
 INSERT INTO `lang_definitions` VALUES (101993, 5710, 20, 'É também um serviço baseado em assinatura');
 INSERT INTO `lang_definitions` VALUES (101994, 5711, 20, 'Também é necessário listar um código CID10 para que o problema seja listado no Relatório de Continuidade de Cuidados (CCR) e no Documento de Continuidade de Cuidados (CCD)');
 INSERT INTO `lang_definitions` VALUES (101995, 5712, 20, 'Está dividido em duas seções');
 INSERT INTO `lang_definitions` VALUES (101996, 5713, 20, 'É essencial que você leia as primeiras quatro seções para compreender os princípios subjacentes');
-INSERT INTO `lang_definitions` VALUES (101997, 5714, 20, 'É muito mais fácil e intuitivo fazer grandes alterações e reorganizar os dados na planilha antes de começar a inserir os dados no openEMR');
+INSERT INTO `lang_definitions` VALUES (101997, 5714, 20, 'É muito mais fácil e intuitivo fazer grandes alterações e reorganizar os dados na planilha antes de começar a inserir os dados no DCL');
 INSERT INTO `lang_definitions` VALUES (101998, 5715, 20, 'É importante perceber que isso gerencia o MFA para o usuário conectado');
 INSERT INTO `lang_definitions` VALUES (101999, 5716, 20, 'É importante compreender a função destes dois ícones dado que todos os passos subsequentes necessários para configurar correctamente a hierarquia irão depender da utilização correcta destes dois ícones');
 INSERT INTO `lang_definitions` VALUES (102000, 5717, 20, 'Destina-se a incluir apenas as informações que são críticas para efetivamente continuar o cuidado');
@@ -115373,7 +115373,7 @@ INSERT INTO `lang_definitions` VALUES (102004, 5721, 20, 'Não é enviado com a 
 INSERT INTO `lang_definitions` VALUES (102005, 5722, 20, 'Não é incomum solicitar vários exames de sangue juntos, agrupá-los como um painel de exames facilita esse processo');
 INSERT INTO `lang_definitions` VALUES (102006, 5724, 20, 'É o formulário de reclamação em papel básico prescrito por muitos pagadores para reclamações submetidas por médicos e práticas individuais, enfermeiras e profissionais, incluindo terapeutas, quiropráticos e clínicas ambulatoriais e, em alguns casos, para serviços de ambulância');
 INSERT INTO `lang_definitions` VALUES (102007, 5725, 20, 'É usado para vincular problemas a encontros e também é usado para ver quais encontros estão associados a um determinado problema');
-INSERT INTO `lang_definitions` VALUES (102008, 5726, 20, 'É útil praticar em um local de teste para se familiarizar com o processo antes de fazer isso no aplicativo openEMR de produção');
+INSERT INTO `lang_definitions` VALUES (102008, 5726, 20, 'É útil praticar em um local de teste para se familiarizar com o processo antes de fazer isso no aplicativo DCL de produção');
 INSERT INTO `lang_definitions` VALUES (102009, 5727, 20, 'Permite pesquisar por códigos de diagnóstico ICD 9 e ICD 10 e CPT4 e HCPCS');
 INSERT INTO `lang_definitions` VALUES (102010, 5728, 20, 'Ele permite que você envie mensagens e lembretes datados aos membros da equipe, adicione o paciente à lista de re call e envie mensagens de texto SMS para os pacientes');
 INSERT INTO `lang_definitions` VALUES (102011, 5729, 20, 'Ele serve como uma ponte necessária para um ambiente diferente, muitas vezes com novos médicos que não sabem nada sobre o paciente, permitindo que o próximo provedor facilmente');
@@ -115740,11 +115740,11 @@ INSERT INTO `lang_definitions` VALUES (102371, 6128, 20, 'LOC');
 INSERT INTO `lang_definitions` VALUES (102372, 6129, 20, 'Local');
 INSERT INTO `lang_definitions` VALUES (102373, 6130, 20, 'Conteúdo local');
 INSERT INTO `lang_definitions` VALUES (102374, 6131, 20, 'Sistema de arquivos local');
-INSERT INTO `lang_definitions` VALUES (102375, 6132, 20, 'O sistema de arquivos local armazenará o pedido como uma mensagem HL7v2.3 em um local predefinido no servidor local que hospeda o openEMR');
+INSERT INTO `lang_definitions` VALUES (102375, 6132, 20, 'O sistema de arquivos local armazenará o pedido como uma mensagem HL7v2.3 em um local predefinido no servidor local que hospeda o DCL');
 INSERT INTO `lang_definitions` VALUES (102376, 6133, 20, 'Locale');
 INSERT INTO `lang_definitions` VALUES (102377, 6134, 20, 'Estado');
 INSERT INTO `lang_definitions` VALUES (102378, 6135, 20, 'Local');
-INSERT INTO `lang_definitions` VALUES (102379, 6136, 20, 'localização da máquina openemr e pode conter dados sensíveis, por isso é recomendado excluir manualmente os arquivos após seu uso');
+INSERT INTO `lang_definitions` VALUES (102379, 6136, 20, 'localização da máquina DCL e pode conter dados sensíveis, por isso é recomendado excluir manualmente os arquivos após seu uso');
 INSERT INTO `lang_definitions` VALUES (102380, 6137, 20, 'Localização deste lote');
 INSERT INTO `lang_definitions` VALUES (102381, 6138, 20, 'Localização não especificada');
 INSERT INTO `lang_definitions` VALUES (102382, 6139, 20, 'Local onde o Hylafax armazena faxes');
@@ -116162,7 +116162,7 @@ INSERT INTO `lang_definitions` VALUES (102793, 6597, 20, 'Humor / Afetar Nml {{H
 INSERT INTO `lang_definitions` VALUES (102794, 6600, 20, 'Mais informações sobre a regra de decisão clínica podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (102795, 6601, 20, 'Mais informações sobre os problemas podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (102796, 6602, 20, 'Mais informações sobre o que é phiMail e como configurá-lo estão disponíveis aqui');
-INSERT INTO `lang_definitions` VALUES (102797, 6603, 20, 'Mais informações disponíveis na página wiki openEMR MedEx');
+INSERT INTO `lang_definitions` VALUES (102797, 6603, 20, 'Mais informações disponíveis na página wiki DCL MedEx');
 INSERT INTO `lang_definitions` VALUES (102798, 6604, 20, 'Mais informações sobre como editar este formulário e outros formulários podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (102799, 6605, 20, 'Mais informações sobre o uso de mensagens phiMail estão disponíveis aqui');
 INSERT INTO `lang_definitions` VALUES (102800, 6606, 20, 'Mais opções');
@@ -116404,7 +116404,7 @@ INSERT INTO `lang_definitions` VALUES (103035, 6865, 20, 'Novo no ACL Versão 5'
 INSERT INTO `lang_definitions` VALUES (103036, 6866, 20, 'Novo no ACL VersãoV r 6');
 INSERT INTO `lang_definitions` VALUES (103037, 6867, 20, 'Novo no ACL Versão 7');
 INSERT INTO `lang_definitions` VALUES (103038, 6868, 20, 'Novo no ACL Versão 8');
-INSERT INTO `lang_definitions` VALUES (103039, 6869, 20, 'Novo no openEMR versão 5.0.2');
+INSERT INTO `lang_definitions` VALUES (103039, 6869, 20, 'Novo no DCL versão 5.0.2');
 INSERT INTO `lang_definitions` VALUES (103040, 6870, 20, 'Novo Inj / Status');
 INSERT INTO `lang_definitions` VALUES (103041, 6871, 20, 'Novos itens (veja detalhes acima)');
 INSERT INTO `lang_definitions` VALUES (103042, 6872, 20, 'Novo Layout');
@@ -116430,7 +116430,7 @@ INSERT INTO `lang_definitions` VALUES (103061, 6896, 20, 'Novo recall');
 INSERT INTO `lang_definitions` VALUES (103062, 6897, 20, 'Novos resultados do Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (103063, 6898, 20, 'Nova Busca');
 INSERT INTO `lang_definitions` VALUES (103064, 6899, 20, 'Nova Submissão');
-INSERT INTO `lang_definitions` VALUES (103065, 6900, 20, 'Novo no openEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (103065, 6900, 20, 'Novo no DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (103066, 6901, 20, 'Novo Usuário');
 INSERT INTO `lang_definitions` VALUES (103067, 6902, 20, 'Novo valor');
 INSERT INTO `lang_definitions` VALUES (103068, 6903, 20, 'Nova Visita');
@@ -116765,7 +116765,7 @@ INSERT INTO `lang_definitions` VALUES (103396, 7294, 20, 'Notificar Paciente');
 INSERT INTO `lang_definitions` VALUES (103397, 7296, 20, 'Notificar via Portal do Paciente');
 INSERT INTO `lang_definitions` VALUES (103398, 7297, 20, 'Novembro');
 INSERT INTO `lang_definitions` VALUES (103399, 7298, 20, 'Novembro');
-INSERT INTO `lang_definitions` VALUES (103400, 7299, 20, 'Agora é a hora de verificar e ajustar as configurações no openEMR para unidades padrão, sites, etc., consulte o arquivo de ajuda em Procedimentos> Provedores');
+INSERT INTO `lang_definitions` VALUES (103400, 7299, 20, 'Agora é a hora de verificar e ajustar as configurações no DCL para unidades padrão, sites, etc., consulte o arquivo de ajuda em Procedimentos> Provedores');
 INSERT INTO `lang_definitions` VALUES (103401, 7300, 20, 'Agora enviar para');
 INSERT INTO `lang_definitions` VALUES (103402, 7301, 20, 'Agora enviar para:');
 INSERT INTO `lang_definitions` VALUES (103403, 7302, 20, 'A imprimir');
@@ -116907,11 +116907,11 @@ INSERT INTO `lang_definitions` VALUES (103538, 7451, 20, 'Assim que um compromis
 INSERT INTO `lang_definitions` VALUES (103539, 7452, 20, 'Assim que um compromisso for agendado, a retirada irá sair do quadro de recall');
 INSERT INTO `lang_definitions` VALUES (103540, 7453, 20, 'Depois de concluído, visualize e armazene este encontro como um arquivo PDF');
 INSERT INTO `lang_definitions` VALUES (103541, 7455, 20, 'Depois de salva, a entidade de um grupo de favoritos personalizados não pode ser alterada. Se você precisar alterar a entidade, você deve excluir esta entrada e criar uma nova');
-INSERT INTO `lang_definitions` VALUES (103542, 7456, 20, 'Assim que o aplicativo capturar o código QR, ele mostrará o nome de usuário do OpenEMR no aplicativo');
+INSERT INTO `lang_definitions` VALUES (103542, 7456, 20, 'Assim que o aplicativo capturar o código QR, ele mostrará o nome de usuário do DCL no aplicativo');
 INSERT INTO `lang_definitions` VALUES (103543, 7457, 20, 'Uma vez que a unidade de negócios principal é definida, a alteração da id da unidade afetará NewCrop ePrescription');
 INSERT INTO `lang_definitions` VALUES (103544, 7458, 20, 'Uma vez que a unidade de negócios principal é definida, ela não deve ser alterada. Mudar a unidade afetará o funcionamento no NewCrop ePrescription');
 INSERT INTO `lang_definitions` VALUES (103545, 7459, 20, 'Uma vez que este recurso esteja habilitado, você deverá digitar a chave de 6 dígitos em cada login');
-INSERT INTO `lang_definitions` VALUES (103546, 7460, 20, 'Uma vez feito isso, a chave secreta compartilhada que é única para cada usuário deve existir apenas no OpenEMR e no aplicativo autenticador do usuário');
+INSERT INTO `lang_definitions` VALUES (103546, 7460, 20, 'Uma vez feito isso, a chave secreta compartilhada que é única para cada usuário deve existir apenas no DCL e no aplicativo autenticador do usuário');
 INSERT INTO `lang_definitions` VALUES (103547, 7461, 20, 'Assim que esta etapa for concluída, você pode prosseguir para a próxima etapa - para configurar os testes que podem ser solicitados do sistema');
 INSERT INTO `lang_definitions` VALUES (103548, 7462, 20, 'Uma vez que você alterar sua senha, você terá que re-login.');
 INSERT INTO `lang_definitions` VALUES (103549, 7463, 20, 'Depois de selecionar um código de justificação para a primeira linha CPT, todas as linhas de código CPT subsequentes terão a mesma justificativa. Pode ser manualmente alterado mais tarde, se desejado');
@@ -116992,20 +116992,20 @@ INSERT INTO `lang_definitions` VALUES (103623, 7554, 20, 'Abra / feche o painel 
 INSERT INTO `lang_definitions` VALUES (103624, 7555, 20, 'Abra / feche o painel Retinal Exam Quick Picks');
 INSERT INTO `lang_definitions` VALUES (103625, 7557, 20, 'Abra / feche a janela abreviada e exiba os códigos abreviados');
 INSERT INTO `lang_definitions` VALUES (103626, 7558, 20, 'Abra / feche a janela abreviada e exiba os códigos abreviados ao lado de cada campo');
-INSERT INTO `lang_definitions` VALUES (103627, 7560, 20, 'OpenEMR');
-INSERT INTO `lang_definitions` VALUES (103628, 7561, 20, 'OpenEMR permite um TOTP, mas vários métodos U2F por usuário');
-INSERT INTO `lang_definitions` VALUES (103629, 7562, 20, 'OpenEMR já tem uma autoridade de certificação configurada');
-INSERT INTO `lang_definitions` VALUES (103630, 7564, 20, 'Aplicativo OpenEMR');
-INSERT INTO `lang_definitions` VALUES (103631, 7565, 20, 'Categoria de aplicativo OpenEMR');
-INSERT INTO `lang_definitions` VALUES (103632, 7567, 20, 'Atualização do banco de dados OpenEMR');
-INSERT INTO `lang_definitions` VALUES (103633, 7568, 20, 'Atualização do banco de dados OpenEMR para desidentificação');
-INSERT INTO `lang_definitions` VALUES (103634, 7569, 20, 'OpenEMR não reconhece o arquivo de entrada no diretório contrib. Isso é mais provável porque você precisa configurar a versão na tabela supported_external_dataloads no banco de dados MySQL');
-INSERT INTO `lang_definitions` VALUES (103635, 7571, 20, 'OpenEMR deve ser configurado para usar certificados antes de poder criar certificados de cliente');
-INSERT INTO `lang_definitions` VALUES (103636, 7572, 20, 'OpenEMR oferece 2 métodos de 2FA');
-INSERT INTO `lang_definitions` VALUES (103637, 7573, 20, 'Portal OpenEMR');
-INSERT INTO `lang_definitions` VALUES (103638, 7574, 20, 'Registro de produto OpenEMR');
-INSERT INTO `lang_definitions` VALUES (103639, 7575, 20, 'OpenEMR requer que o Javascript para realizar a autenticação do usuário.');
-INSERT INTO `lang_definitions` VALUES (103640, 7576, 20, 'Usuários OpenEMR');
+INSERT INTO `lang_definitions` VALUES (103627, 7560, 20, 'DCL');
+INSERT INTO `lang_definitions` VALUES (103628, 7561, 20, 'DCL permite um TOTP, mas vários métodos U2F por usuário');
+INSERT INTO `lang_definitions` VALUES (103629, 7562, 20, 'DCL já tem uma autoridade de certificação configurada');
+INSERT INTO `lang_definitions` VALUES (103630, 7564, 20, 'Aplicativo DCL');
+INSERT INTO `lang_definitions` VALUES (103631, 7565, 20, 'Categoria de aplicativo DCL');
+INSERT INTO `lang_definitions` VALUES (103632, 7567, 20, 'Atualização do banco de dados DCL');
+INSERT INTO `lang_definitions` VALUES (103633, 7568, 20, 'Atualização do banco de dados DCL para desidentificação');
+INSERT INTO `lang_definitions` VALUES (103634, 7569, 20, 'DCL não reconhece o arquivo de entrada no diretório contrib. Isso é mais provável porque você precisa configurar a versão na tabela supported_external_dataloads no banco de dados MySQL');
+INSERT INTO `lang_definitions` VALUES (103635, 7571, 20, 'DCL deve ser configurado para usar certificados antes de poder criar certificados de cliente');
+INSERT INTO `lang_definitions` VALUES (103636, 7572, 20, 'DCL oferece 2 métodos de 2FA');
+INSERT INTO `lang_definitions` VALUES (103637, 7573, 20, 'Portal DCL');
+INSERT INTO `lang_definitions` VALUES (103638, 7574, 20, 'Registro de produto DCL');
+INSERT INTO `lang_definitions` VALUES (103639, 7575, 20, 'DCL requer que o Javascript para realizar a autenticação do usuário.');
+INSERT INTO `lang_definitions` VALUES (103640, 7576, 20, 'Usuários DCL');
 INSERT INTO `lang_definitions` VALUES (103641, 7577, 20, 'Vagas');
 INSERT INTO `lang_definitions` VALUES (103642, 7578, 20, 'Abre no quadro inferior');
 INSERT INTO `lang_definitions` VALUES (103643, 7579, 20, 'Abre no quadro superior');
@@ -117530,7 +117530,7 @@ INSERT INTO `lang_definitions` VALUES (104161, 8152, 20, 'Revisão pendente');
 INSERT INTO `lang_definitions` VALUES (104162, 8153, 20, 'Contagem de Rx pendente');
 INSERT INTO `lang_definitions` VALUES (104163, 8154, 20, 'Pendente desde');
 INSERT INTO `lang_definitions` VALUES (104164, 8155, 20, 'Alergia à penicilina');
-INSERT INTO `lang_definitions` VALUES (104165, 8156, 20, 'Empresa Pennington OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (104165, 8156, 20, 'Empresa Pennington DCL v');
 INSERT INTO `lang_definitions` VALUES (104166, 8157, 20, 'Úlcera Péptica Doença');
 INSERT INTO `lang_definitions` VALUES (104167, 8158, 20, 'Por encontro');
 INSERT INTO `lang_definitions` VALUES (104168, 8159, 20, 'por minuto');
@@ -117753,7 +117753,7 @@ INSERT INTO `lang_definitions` VALUES (104384, 8393, 20, 'Por favor, redefina a 
 INSERT INTO `lang_definitions` VALUES (104385, 8395, 20, 'Por favor, reinicie o servidor apache antes de brincar com a desidentificação');
 INSERT INTO `lang_definitions` VALUES (104386, 8396, 20, 'Por favor, devolva esta parte inferior com o seu pagamento');
 INSERT INTO `lang_definitions` VALUES (104387, 8397, 20, 'Por favor, veja fórum e wiki');
-INSERT INTO `lang_definitions` VALUES (104388, 8399, 20, 'Consulte http://www.open-emr.org/wiki/index.php/LBV_Forms para obter mais informações sobre este tópico');
+INSERT INTO `lang_definitions` VALUES (104388, 8399, 20, 'Consulte http://www.dcl.org/wiki/index.php/LBV_Forms para obter mais informações sobre este tópico');
 INSERT INTO `lang_definitions` VALUES (104389, 8400, 20, 'Por favor, veja o PDF em anexo');
 INSERT INTO `lang_definitions` VALUES (104390, 8401, 20, 'Por favor selecione');
 INSERT INTO `lang_definitions` VALUES (104391, 8403, 20, 'Por favor, selecione um formato');
@@ -117790,7 +117790,7 @@ INSERT INTO `lang_definitions` VALUES (104421, 8437, 20, 'Por favor, definir far
 INSERT INTO `lang_definitions` VALUES (104422, 8438, 20, 'Por favor, especifique pelo menos um endereço direto');
 INSERT INTO `lang_definitions` VALUES (104423, 8441, 20, 'Por favor, iniciar novo processo de De Identificação');
 INSERT INTO `lang_definitions` VALUES (104424, 8442, 20, 'Por favor, forneça um título');
-INSERT INTO `lang_definitions` VALUES (104425, 8445, 20, 'Por favor, atualizar o banco de dados OpenEMR para incluir procedimentos, funções e tabelas de identificação');
+INSERT INTO `lang_definitions` VALUES (104425, 8445, 20, 'Por favor, atualizar o banco de dados DCL para incluir procedimentos, funções e tabelas de identificação');
 INSERT INTO `lang_definitions` VALUES (104426, 8446, 20, 'Por favor, use NPI válido');
 INSERT INTO `lang_definitions` VALUES (104427, 8447, 20, 'Por favor, veja a tabela de log de erros de identificação para mais detalhes');
 INSERT INTO `lang_definitions` VALUES (104428, 8448, 20, 'Por favor, visite a tela De Identificação após algum tempo');
@@ -117953,7 +117953,7 @@ INSERT INTO `lang_definitions` VALUES (104584, 8620, 20, 'Presente');
 INSERT INTO `lang_definitions` VALUES (104585, 8622, 20, 'Apresentando Reclamação');
 INSERT INTO `lang_definitions` VALUES (104586, 8623, 20, 'Apresentando problema (s)');
 INSERT INTO `lang_definitions` VALUES (104587, 8624, 20, 'Pressione Continuar para prosseguir');
-INSERT INTO `lang_definitions` VALUES (104588, 8625, 20, 'Pressione o botão piscando na chave USB dentro de 1 minuto após inseri-la e clique em registrar para registrar a chave com OpenEMR');
+INSERT INTO `lang_definitions` VALUES (104588, 8625, 20, 'Pressione o botão piscando na chave USB dentro de 1 minuto após inseri-la e clique em registrar para registrar a chave com DCL');
 INSERT INTO `lang_definitions` VALUES (104589, 8626, 20, 'Pressione este ícone para construir sua impressão / plano');
 INSERT INTO `lang_definitions` VALUES (104590, 8627, 20, 'Presume-Diagnóstico');
 INSERT INTO `lang_definitions` VALUES (104591, 8628, 20, 'Diagnóstico presumido por especialista');
@@ -118556,7 +118556,7 @@ INSERT INTO `lang_definitions` VALUES (105187, 9291, 20, 'recarregar');
 INSERT INTO `lang_definitions` VALUES (105188, 9292, 20, 'recarregar nomes abaixo');
 INSERT INTO `lang_definitions` VALUES (105189, 9293, 20, 'Relogin');
 INSERT INTO `lang_definitions` VALUES (105190, 9294, 20, 'Remdr');
-INSERT INTO `lang_definitions` VALUES (105191, 9295, 20, 'Lembre-se que o agrupamento de testes serve apenas para organizar convenientemente os dados no módulo de Ordem de Procedimento no openEMR, para que esse processo funcione, configurando as Ordens de Procedimento (os próprios testes) e o Resultado Discreto (o local para inserir e exibir o resultado retornado) são Criticamente importante');
+INSERT INTO `lang_definitions` VALUES (105191, 9295, 20, 'Lembre-se que o agrupamento de testes serve apenas para organizar convenientemente os dados no módulo de Ordem de Procedimento no DCL, para que esse processo funcione, configurando as Ordens de Procedimento (os próprios testes) e o Resultado Discreto (o local para inserir e exibir o resultado retornado) são Criticamente importante');
 INSERT INTO `lang_definitions` VALUES (105192, 9297, 20, 'Lembre-se de instalação selecionada');
 INSERT INTO `lang_definitions` VALUES (105193, 9298, 20, 'Lembre-se do ditado de que os códigos de identificação devem ser únicos, você não deve configurar um agrupamento personalizado de um painel de testes, bem como ter os painéis configurados como painel individual reconhecido, ou seja, ter o painel CBC e Renal agrupados como um favorito personalizado e listar CBC e Painel Renal separadamente como painéis encomendados individualmente');
 INSERT INTO `lang_definitions` VALUES (105194, 9299, 20, 'Lembre-se desses resultados discretos ou a fruta (Nível 4) terá que pendurar no galho frutífero ou na Ordem de Procedimento, nomeadamente, Painel de eletrólito (Nível 3)');
@@ -119450,7 +119450,7 @@ INSERT INTO `lang_definitions` VALUES (106081, 10289, 20, 'Irmã');
 INSERT INTO `lang_definitions` VALUES (106082, 10290, 20, 'Local');
 INSERT INTO `lang_definitions` VALUES (106083, 10294, 20, 'Identificação de site');
 INSERT INTO `lang_definitions` VALUES (106084, 10295, 20, 'ID do site para a integração de informações médicas, LLC Serviço de troca de laboratório');
-INSERT INTO `lang_definitions` VALUES (106085, 10296, 20, 'ID do site para o OpenEMR Support LLC Serviço de troca de laboratório');
+INSERT INTO `lang_definitions` VALUES (106085, 10296, 20, 'ID do site para o DCL Support LLC Serviço de troca de laboratório');
 INSERT INTO `lang_definitions` VALUES (106086, 10297, 20, 'Trabalhador local');
 INSERT INTO `lang_definitions` VALUES (106087, 10298, 20, 'Seis meses atrás');
 INSERT INTO `lang_definitions` VALUES (106088, 10299, 20, 'Seis meses antes');
@@ -119622,7 +119622,7 @@ INSERT INTO `lang_definitions` VALUES (106253, 10478, 20, 'Especifica a formata�
 INSERT INTO `lang_definitions` VALUES (106254, 10479, 20, 'Especifica a formatação da ID externa do paciente. # = dígito, * = qualquer caractere. Vazio se não for usado');
 INSERT INTO `lang_definitions` VALUES (106255, 10480, 20, 'Especifica a formatação da ID externa do paciente. # = dígito, @ = alfa, * = qualquer caractere. Vazio se não for usado');
 INSERT INTO `lang_definitions` VALUES (106256, 10481, 20, 'Especifique o intervalo para verificação automática de mensagens, 5 ou 10 minutos como ponto de partida');
-INSERT INTO `lang_definitions` VALUES (106257, 10482, 20, 'Especifique o usuário OpenEMR que receberá notificação de novas mensagens diretas de entrada');
+INSERT INTO `lang_definitions` VALUES (106257, 10482, 20, 'Especifique o usuário DCL que receberá notificação de novas mensagens diretas de entrada');
 INSERT INTO `lang_definitions` VALUES (106258, 10483, 20, 'Espécime');
 INSERT INTO `lang_definitions` VALUES (106259, 10485, 20, 'Número / identificador da amostra');
 INSERT INTO `lang_definitions` VALUES (106260, 10486, 20, 'Tipo de amostra');
@@ -119809,7 +119809,7 @@ INSERT INTO `lang_definitions` VALUES (106440, 10693, 20, 'Assinante SS');
 INSERT INTO `lang_definitions` VALUES (106441, 10694, 20, 'Estado do assinante');
 INSERT INTO `lang_definitions` VALUES (106442, 10695, 20, 'CEP do assinante');
 INSERT INTO `lang_definitions` VALUES (106443, 10696, 20, 'Assinante / Política');
-INSERT INTO `lang_definitions` VALUES (106444, 10697, 20, 'Os assinantes receberão o nome de usuário, a senha e as informações de endereço do servidor para configurar o OpenEMR');
+INSERT INTO `lang_definitions` VALUES (106444, 10697, 20, 'Os assinantes receberão o nome de usuário, a senha e as informações de endereço do servidor para configurar o DCL');
 INSERT INTO `lang_definitions` VALUES (106445, 10698, 20, 'Telefone do assinante');
 INSERT INTO `lang_definitions` VALUES (106446, 10699, 20, 'Substância');
 INSERT INTO `lang_definitions` VALUES (106447, 10700, 20, 'Razão de recusa de substância');
@@ -119956,7 +119956,7 @@ INSERT INTO `lang_definitions` VALUES (106587, 10860, 20, 'O paciente alvo não 
 INSERT INTO `lang_definitions` VALUES (106588, 10861, 20, 'Paciente alvo não encontrado');
 INSERT INTO `lang_definitions` VALUES (106589, 10862, 20, 'Grupos Alvo / Ação');
 INSERT INTO `lang_definitions` VALUES (106590, 10863, 20, 'Alvos');
-INSERT INTO `lang_definitions` VALUES (106591, 10864, 20, 'Taskman: Documentos em openEMR');
+INSERT INTO `lang_definitions` VALUES (106591, 10864, 20, 'Taskman: Documentos em DCL');
 INSERT INTO `lang_definitions` VALUES (106592, 10865, 20, 'Tártaro');
 INSERT INTO `lang_definitions` VALUES (106593, 10866, 20, 'Taxa de identificação');
 INSERT INTO `lang_definitions` VALUES (106594, 10867, 20, 'Taxa de identificação');
@@ -120045,7 +120045,7 @@ INSERT INTO `lang_definitions` VALUES (106676, 10964, 20, 'Os testes ou procedim
 INSERT INTO `lang_definitions` VALUES (106677, 10965, 20, 'O ícone Adicionar é usado para configurar um nível que será um descendente direto deste nível');
 INSERT INTO `lang_definitions` VALUES (106678, 10966, 20, 'A vantagem de integrar os resultados ao prontuário do paciente como dados estruturados é a capacidade de manipulá-los para ver as tendências em um local conveniente, para traçar gráficos com os dados e usá-los na análise de dados');
 INSERT INTO `lang_definitions` VALUES (106679, 10967, 20, 'A vantagem de digitalizar os resultados no gráfico é a simplicidade - nenhuma configuração é necessária, a não ser definir um diretório / pasta no prontuário do paciente em Documentos onde o resultado será armazenado. Sendo dados não estruturados, eles não têm as vantagens acima e não atenderão aos critérios de uso significativo para entrada de pedido do provedor computadorizado (CPOE)');
-INSERT INTO `lang_definitions` VALUES (106680, 10968, 20, 'A solução Allscripts integra o site Allscripts ePrescribe com openEMR');
+INSERT INTO `lang_definitions` VALUES (106680, 10968, 20, 'A solução Allscripts integra o site Allscripts ePrescribe com DCL');
 INSERT INTO `lang_definitions` VALUES (106681, 10969, 20, 'A American Medical Association definiu 9 painéis que podem ser solicitados. Cada painel contém vários testes agrupados');
 INSERT INTO `lang_definitions` VALUES (106682, 10970, 20, 'O valor será exibido na coluna Pagamento ou Ajuste, conforme o caso');
 INSERT INTO `lang_definitions` VALUES (106683, 10971, 20, 'O certificado do servidor Apache SSL e a chave pública');
@@ -120195,7 +120195,7 @@ INSERT INTO `lang_definitions` VALUES (106826, 11119, 20, 'O código de identifi
 INSERT INTO `lang_definitions` VALUES (106827, 11120, 20, 'O código de identificação de R34392-1, um número arbitrário, neste caso o código de identificação precedido por R para indicar o resultado e seguido por 1 para indicar o primeiro na sequência, pode ser qualquer coisa única que você escolher');
 INSERT INTO `lang_definitions` VALUES (106828, 11121, 20, 'As informações inseridas aqui são usadas para exibir um resumo do encontro. Também é usado para fins de cobrança');
 INSERT INTO `lang_definitions` VALUES (106829, 11122, 20, 'As informações inseridas neste formulário serão usadas para preencher uma reclamação em papel');
-INSERT INTO `lang_definitions` VALUES (106830, 11123, 20, 'As informações fornecidas no Formulário de Novo Encontro e Folha de Taxas no openEMR são usadas para gerar a reclamação em papel, bem como as reclamações eletrônicas');
+INSERT INTO `lang_definitions` VALUES (106830, 11123, 20, 'As informações fornecidas no Formulário de Novo Encontro e Folha de Taxas no DCL são usadas para gerar a reclamação em papel, bem como as reclamações eletrônicas');
 INSERT INTO `lang_definitions` VALUES (106831, 11124, 20, 'Os esforços iniciais levaram à criação de Guias de Implementação (IGs) duplicados e conflitantes publicados por diferentes organizações de padrões');
 INSERT INTO `lang_definitions` VALUES (106832, 11125, 20, 'A tela inicial permite que você selecione um método, oferecendo-lhe essas duas opções');
 INSERT INTO `lang_definitions` VALUES (106833, 11126, 20, 'A janela inicial é a página de pesquisa na factura. No topo você pode inserir um código (número do cheque, por exemplo), pagamento de data e quantidade de seleção. A razão para isto é não ter que inseri-las uma e outra vez de cada pedido. A quantidade que você inserir será reduzida para cada nota fiscal que é dado parte do pagamento, e esperamos que vai terminar em zero quando você está feito.');
@@ -120353,7 +120353,7 @@ INSERT INTO `lang_definitions` VALUES (106984, 11288, 20, 'A coluna Unidade fica
 INSERT INTO `lang_definitions` VALUES (106985, 11289, 20, 'As unidades serão 1, pois cada código é cobrado apenas uma vez para o encontro');
 INSERT INTO `lang_definitions` VALUES (106986, 11290, 20, 'Os próximos lembretes têm um ícone de exclamação verde');
 INSERT INTO `lang_definitions` VALUES (106987, 11291, 20, 'Os dispositivos USB se comunicam com o computador host usando o protocolo do dispositivo de interface humana (HID), essencialmente imitando um teclado');
-INSERT INTO `lang_definitions` VALUES (106988, 11292, 20, 'A chave USB precisa ser conectada ao computador elogo registrada com OpenEMR');
+INSERT INTO `lang_definitions` VALUES (106988, 11292, 20, 'A chave USB precisa ser conectada ao computador elogo registrada com DCL');
 INSERT INTO `lang_definitions` VALUES (106989, 11293, 20, 'A chave USB pega este nonce fornecido pelo aplicativo depois de confirmar a soma de verificação e gera uma chave privada usando o processo semelhante ao usado no processo de registro');
 INSERT INTO `lang_definitions` VALUES (106990, 11294, 20, 'Os privilégios reais do usuário são determinados pelo acesso às partes do programa, ou seja, (ACO) que cada grupo (ARO) possui');
 INSERT INTO `lang_definitions` VALUES (106991, 11296, 20, 'O nome de usuário é seu endereço direto');
@@ -120363,9 +120363,9 @@ INSERT INTO `lang_definitions` VALUES (106994, 11299, 20, 'O código específico
 INSERT INTO `lang_definitions` VALUES (106995, 11300, 20, 'O código específico do fornecedor que identifica este procedimento ou resultado. Se nenhum fornecedor inserir qualquer número único arbitrário, de preferência, um preenchido de zero 5 dígitos, por exemplo, 00211');
 INSERT INTO `lang_definitions` VALUES (106996, 11301, 20, 'O primeiro passo seria instalar os códigos ICD. Vá para Administração> Outro> Cargas de dados externos. Selecione os conjuntos de códigos que deseja instalar e clique em Instalar');
 INSERT INTO `lang_definitions` VALUES (106997, 11302, 20, 'A última linha deste relatório fornecerá o Total Geral de Encargos, Pagamentos, Ajustes e o Saldo');
-INSERT INTO `lang_definitions` VALUES (106998, 11303, 20, 'O Weno Exchange está bem integrado com openEMR e não é baseado em assinatura');
-INSERT INTO `lang_definitions` VALUES (106999, 11304, 20, 'O X12 arquivos, bem como os relatórios resultantes de saída HTML são arquivados na pasta \"\"era \"\" subdiretório do diretório principal OpenEMR instalação. Você vai querer referir-se a estes arquivos de vez em quando. O URL é');
-INSERT INTO `lang_definitions` VALUES (107000, 11305, 20, 'Os arquivos X12, bem como os relatórios de saída HTML resultantes, são arquivados no subdiretório \'era\' do diretório principal de instalação do OpenEMR. Você vai querer consultar esses arquivos de vez em quando');
+INSERT INTO `lang_definitions` VALUES (106998, 11303, 20, 'O Weno Exchange está bem integrado com DCL e não é baseado em assinatura');
+INSERT INTO `lang_definitions` VALUES (106999, 11304, 20, 'O X12 arquivos, bem como os relatórios resultantes de saída HTML são arquivados na pasta \"\"era \"\" subdiretório do diretório principal DCL instalação. Você vai querer referir-se a estes arquivos de vez em quando. O URL é');
+INSERT INTO `lang_definitions` VALUES (107000, 11305, 20, 'Os arquivos X12, bem como os relatórios de saída HTML resultantes, são arquivados no subdiretório \'era\' do diretório principal de instalação do DCL. Você vai querer consultar esses arquivos de vez em quando');
 INSERT INTO `lang_definitions` VALUES (107001, 11306, 20, 'O arquivo zip conterá os seguintes itens');
 INSERT INTO `lang_definitions` VALUES (107002, 11307, 20, 'Theme');
 INSERT INTO `lang_definitions` VALUES (107003, 11308, 20, 'Tema do layout das guias (é necessário sair e logo fazer login para ver esta nova configuração)');
@@ -120381,7 +120381,7 @@ INSERT INTO `lang_definitions` VALUES (107012, 11317, 20, 'Grupo de terapia');
 INSERT INTO `lang_definitions` VALUES (107013, 11318, 20, 'Encontro do Grupo de Terapia');
 INSERT INTO `lang_definitions` VALUES (107014, 11319, 20, 'Localizador de grupo de terapia');
 INSERT INTO `lang_definitions` VALUES (107015, 11320, 20, 'Há');
-INSERT INTO `lang_definitions` VALUES (107016, 11321, 20, 'Existem 10 configurações que estão relacionadas aos procedimentos incluídos na versão padrão do openEMR');
+INSERT INTO `lang_definitions` VALUES (107016, 11321, 20, 'Existem 10 configurações que estão relacionadas aos procedimentos incluídos na versão padrão do DCL');
 INSERT INTO `lang_definitions` VALUES (107017, 11322, 20, 'Existem 3 formulários na categoria principal - dados demográficos, informações específicas do usuário do local e histórico e todos os 5 formulários em transações que podem ser editados');
 INSERT INTO `lang_definitions` VALUES (107018, 11323, 20, 'Atualmente não há prescrições');
 INSERT INTO `lang_definitions` VALUES (107019, 11324, 20, 'Há erros com a sua apresentação. Estes são descritos abaixo.');
@@ -120429,7 +120429,7 @@ INSERT INTO `lang_definitions` VALUES (107060, 11370, 20, 'Não há entrada de p
 INSERT INTO `lang_definitions` VALUES (107061, 11371, 20, 'Não há paciente com login do portal');
 INSERT INTO `lang_definitions` VALUES (107062, 11373, 20, 'Ocorreu um problema ao enviar a mensagem');
 INSERT INTO `lang_definitions` VALUES (107063, 11374, 20, 'Houve um erro ao processar seu pedido.');
-INSERT INTO `lang_definitions` VALUES (107064, 11375, 20, 'Houve um ERRO de escape de SQL OpenEMR da seguinte string');
+INSERT INTO `lang_definitions` VALUES (107064, 11375, 20, 'Houve um ERRO de escape de SQL DCL da seguinte string');
 INSERT INTO `lang_definitions` VALUES (107065, 11376, 20, 'Portanto, cada usuário deve ativar individualmente este recurso');
 INSERT INTO `lang_definitions` VALUES (107066, 11377, 20, 'Esses ACOs são agrupados em dez categorias amplas que fazem parte da instalação padrão. Eles são - Administração, Contabilidade, Informações do Paciente, Informações do Encontro, Esquadrões, Sensibilidades, Listas, Espaço Reservado, Notas da Nação e Portal do Paciente. Cada uma dessas categorias tem uma ou várias subcategorias que fornecem acesso a partes específicas do programa');
 INSERT INTO `lang_definitions` VALUES (107067, 11378, 20, 'Eles são gratuitos e podem ser baixados da respectiva loja de aplicativos para dispositivos iOS e Android');
@@ -120441,7 +120441,7 @@ INSERT INTO `lang_definitions` VALUES (107072, 11383, 20, 'Esses grupos personal
 INSERT INTO `lang_definitions` VALUES (107073, 11384, 20, 'Essas entradas serão usadas para definir os provedores no módulo de procedimentos');
 INSERT INTO `lang_definitions` VALUES (107074, 11385, 20, 'Esses grupos (AROs) podem então receber um conjunto de privilégios atribuindo diferentes categorias (ACOs)');
 INSERT INTO `lang_definitions` VALUES (107075, 11386, 20, 'Esses itens podem ser editados se o usuário tiver privilégios suficientes');
-INSERT INTO `lang_definitions` VALUES (107076, 11387, 20, 'Essas listas são usadas para determinar quem pode acessar o que em openEMR. Eles funcionam de cima para baixo, ou seja, inicialmente todos têm acesso negado às partes do programa controladas pela ACL');
+INSERT INTO `lang_definitions` VALUES (107076, 11387, 20, 'Essas listas são usadas para determinar quem pode acessar o que em DCL. Eles funcionam de cima para baixo, ou seja, inicialmente todos têm acesso negado às partes do programa controladas pela ACL');
 INSERT INTO `lang_definitions` VALUES (107077, 11388, 20, 'Esses números precisam ser iguais para autenticar o usuário com sucesso');
 INSERT INTO `lang_definitions` VALUES (107078, 11389, 20, 'Estas notas do paciente são enviadas sem um paciente atribuído');
 INSERT INTO `lang_definitions` VALUES (107079, 11390, 20, 'Essas subcategorias representam os objetos de controle de acesso (ACOs) reais');
@@ -120557,7 +120557,7 @@ INSERT INTO `lang_definitions` VALUES (107188, 11513, 20, 'No entanto, este mét
 INSERT INTO `lang_definitions` VALUES (107189, 11514, 20, 'Este módulo está sendo usado por');
 INSERT INTO `lang_definitions` VALUES (107190, 11515, 20, 'Este módulo está em modo de teste. O banco de dados não serão alterados.');
 INSERT INTO `lang_definitions` VALUES (107191, 11516, 20, 'Este módulo é baseado em assinatura e precisa ser habilitado em Administração> Globais> Conectores> Habilitar Serviço NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (107192, 11517, 20, 'Este módulo está bem integrado com openEMR, no entanto, existem duas alternativas não baseadas em assinatura, Weno e Allscripts que podem ser usados em seu lugar');
+INSERT INTO `lang_definitions` VALUES (107192, 11517, 20, 'Este módulo está bem integrado com DCL, no entanto, existem duas alternativas não baseadas em assinatura, Weno e Allscripts que podem ser usados em seu lugar');
 INSERT INTO `lang_definitions` VALUES (107193, 11518, 20, 'Este módulo promove a entrada eficiente de dados EOB.');
 INSERT INTO `lang_definitions` VALUES (107194, 11519, 20, 'Este mês até a data');
 INSERT INTO `lang_definitions` VALUES (107195, 11520, 20, 'Este nome já existe sob este pai');
@@ -120738,8 +120738,8 @@ INSERT INTO `lang_definitions` VALUES (107369, 11716, 20, 'Para filtrar por sexo
 INSERT INTO `lang_definitions` VALUES (107370, 11717, 20, 'Para cumprir os requisitos de uso significativo e ajudar a rastrear seu uso, você pode marcar a caixa de seleção Resumo de cuidados enviados e a caixa de seleção Resumo de cuidados enviados eletronicamente, se apropriado');
 INSERT INTO `lang_definitions` VALUES (107371, 11718, 20, 'Para excluir totalmente, clique em \'Salvar\'');
 INSERT INTO `lang_definitions` VALUES (107372, 11719, 20, 'Para começar, você escolhe um dos dois botões de opção. \'Pesquisa de fatura\' ou \'Upload ERA\'');
-INSERT INTO `lang_definitions` VALUES (107373, 11720, 20, 'Para ajudar a explorar os vários componentes da página Relatório, especialmente se você quiser usá-la como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
-INSERT INTO `lang_definitions` VALUES (107374, 11721, 20, 'Para ajudar a se familiarizar com os vários componentes da página Dashboard, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
+INSERT INTO `lang_definitions` VALUES (107373, 11720, 20, 'Para ajudar a explorar os vários componentes da página Relatório, especialmente se você quiser usá-la como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
+INSERT INTO `lang_definitions` VALUES (107374, 11721, 20, 'Para ajudar a se familiarizar com os vários componentes da página Dashboard, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
 INSERT INTO `lang_definitions` VALUES (107375, 11722, 20, 'Para ajudar a simplificar as implementações, os modelos comumente usados foram harmonizados a partir de guias de implementação de CDA existentes e consolidados em um único guia de implementação - o Guia de Implementação C-CDA (IG) (07/2012)');
 INSERT INTO `lang_definitions` VALUES (107376, 11723, 20, 'Acrescentar/Consultar Histórico');
 INSERT INTO `lang_definitions` VALUES (107377, 11724, 20, 'Para incluir os documentos digitalizados que fazem parte do registro do paciente, selecione os registros desejados marcando as caixas de seleção relevantes');
@@ -120768,9 +120768,9 @@ INSERT INTO `lang_definitions` VALUES (107399, 11749, 20, 'para a pele');
 INSERT INTO `lang_definitions` VALUES (107400, 11750, 20, 'Para resumir');
 INSERT INTO `lang_definitions` VALUES (107401, 11751, 20, 'a esta visita?');
 INSERT INTO `lang_definitions` VALUES (107402, 11752, 20, 'Para carregar o documento CCR de um paciente já existente, use a Tela de resumo do paciente-> Documentos. Para o documento CCR de um novo paciente, use a tela Miscellanous-> New Documents');
-INSERT INTO `lang_definitions` VALUES (107403, 11754, 20, 'Para usar a página de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
-INSERT INTO `lang_definitions` VALUES (107404, 11755, 20, 'Para usar este arquivo de ajuda como um manual de instruções é melhor redimensionar seu navegador para ocupar metade da tela, abrir outra instância do navegador para preencher a outra metade da tela, fazer o login para openEMR e abrir o arquivo de ajuda neste navegador e redimensionar clicando e arrastando o canto inferior direito para que ocupae toda a metade da tela');
-INSERT INTO `lang_definitions` VALUES (107405, 11756, 20, 'Para usar este arquivo de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
+INSERT INTO `lang_definitions` VALUES (107403, 11754, 20, 'Para usar a página de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
+INSERT INTO `lang_definitions` VALUES (107404, 11755, 20, 'Para usar este arquivo de ajuda como um manual de instruções é melhor redimensionar seu navegador para ocupar metade da tela, abrir outra instância do navegador para preencher a outra metade da tela, fazer o login para DCL e abrir o arquivo de ajuda neste navegador e redimensionar clicando e arrastando o canto inferior direito para que ocupae toda a metade da tela');
+INSERT INTO `lang_definitions` VALUES (107405, 11756, 20, 'Para usar este arquivo de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
 INSERT INTO `lang_definitions` VALUES (107406, 11757, 20, 'Para:');
 INSERT INTO `lang_definitions` VALUES (107407, 11758, 20, 'Para:');
 INSERT INTO `lang_definitions` VALUES (107408, 11759, 20, 'To_city');
@@ -120806,7 +120806,7 @@ INSERT INTO `lang_definitions` VALUES (107437, 11788, 20, 'Alternar de navegaç�
 INSERT INTO `lang_definitions` VALUES (107438, 11789, 20, 'Alternar o painel do paciente');
 INSERT INTO `lang_definitions` VALUES (107439, 11790, 20, 'Alternar o painel PMSFH do lado direito');
 INSERT INTO `lang_definitions` VALUES (107440, 11796, 20, 'ID do token para o Medical Information Integration, LLC Lab Exchange Service');
-INSERT INTO `lang_definitions` VALUES (107441, 11797, 20, 'Token ID para o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (107441, 11797, 20, 'Token ID para o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (107442, 11802, 20, 'Tonga (Ilhas Tonga)');
 INSERT INTO `lang_definitions` VALUES (107443, 11803, 20, 'Amigdalectomia');
 INSERT INTO `lang_definitions` VALUES (107444, 11804, 20, 'tonsilectomia');
@@ -121138,7 +121138,7 @@ INSERT INTO `lang_definitions` VALUES (107769, 12182, 20, 'Atualizando indicador
 INSERT INTO `lang_definitions` VALUES (107770, 12183, 20, 'MELHORIA');
 INSERT INTO `lang_definitions` VALUES (107771, 12184, 20, 'Melhoria');
 INSERT INTO `lang_definitions` VALUES (107772, 12186, 20, 'Atualizar banco de dados');
-INSERT INTO `lang_definitions` VALUES (107773, 12188, 20, 'Atualiza o banco de dados OpenEMR para incluir procedimentos, funções e tabelas necessárias para o processo de desidentificação');
+INSERT INTO `lang_definitions` VALUES (107773, 12188, 20, 'Atualiza o banco de dados DCL para incluir procedimentos, funções e tabelas necessárias para o processo de desidentificação');
 INSERT INTO `lang_definitions` VALUES (107774, 12189, 20, 'A atualização vai continuar');
 INSERT INTO `lang_definitions` VALUES (107775, 12190, 20, 'CPF');
 INSERT INTO `lang_definitions` VALUES (107776, 12191, 20, 'Upload');
@@ -121162,7 +121162,7 @@ INSERT INTO `lang_definitions` VALUES (107793, 12210, 20, 'Após uma pesquisa be
 INSERT INTO `lang_definitions` VALUES (107794, 12211, 20, 'Ao clicar em um número da factura a \"\"janela de lançamento manual \"\" aparece. Aqui você pode mudar a data de vencimento e as notas para a factura, selecione o partido para o qual você está postando, e selecione os seguros para a qual todos os paymants esperados foram recebidos. Mais importante ainda, para cada código de faturamento para as quais foi cobrada uma quantia, você pode inserir informações de pagamento e de ajustamento.');
 INSERT INTO `lang_definitions` VALUES (107795, 12212, 20, 'Ao clicar em um número de fatura, a \'janela de lançamento manual\' aparece. Aqui você pode alterar a data de vencimento e as notas da fatura, selecionar a parte para a qual está lançando e selecionar os seguros para os quais todos os pagamentos esperados foram recebidos. Mais importante ainda, para cada código de faturamento pelo qual um valor foi cobrado, você pode inserir informações de pagamento e ajuste');
 INSERT INTO `lang_definitions` VALUES (107796, 12213, 20, 'Ao entrar na página, existem dois botões visíveis abaixo da barra de navegação');
-INSERT INTO `lang_definitions` VALUES (107797, 12214, 20, 'Ao fazer login no openEMR, um pequeno ícone de envelope fica visível no canto superior direito. Mostra o número de mensagens pendentes e lembretes datados');
+INSERT INTO `lang_definitions` VALUES (107797, 12214, 20, 'Ao fazer login no DCL, um pequeno ícone de envelope fica visível no canto superior direito. Mostra o número de mensagens pendentes e lembretes datados');
 INSERT INTO `lang_definitions` VALUES (107798, 12215, 20, 'Ao atingir um ponto predeterminado, seja uma data ou valor, a regra irá disparar um ou mais eventos');
 INSERT INTO `lang_definitions` VALUES (107799, 12216, 20, 'Após a pesquisa que você é apresentado com uma lista de faturas. Você pode clicar em um dos números de factura para abrir uma segunda janela, que é a página de entrada de dados para lançamento manual. Você também pode clicar no nome do paciente, se você deseja inserir uma nota que o pessoal do escritório da frente vai ver quando as verificações no paciente, e você pode selecionar as facturas para aparecer em declarações paciente e imprimir essas declarações.');
 INSERT INTO `lang_definitions` VALUES (107800, 12217, 20, 'Ao selecionar uma lista para editar a página de edição com os valores da lista serão exibidos');
@@ -121182,7 +121182,7 @@ INSERT INTO `lang_definitions` VALUES (107813, 12231, 20, 'Urina Stream');
 INSERT INTO `lang_definitions` VALUES (107814, 12232, 20, 'Urina Urgência');
 INSERT INTO `lang_definitions` VALUES (107815, 12233, 20, 'URL');
 INSERT INTO `lang_definitions` VALUES (107816, 12234, 20, 'URL para endereço do site NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (107817, 12235, 20, 'URL para suporte OpenEMR');
+INSERT INTO `lang_definitions` VALUES (107817, 12235, 20, 'URL para suporte DCL');
 INSERT INTO `lang_definitions` VALUES (107818, 12236, 20, 'URL para gateway de telefone');
 INSERT INTO `lang_definitions` VALUES (107819, 12237, 20, 'URL para gateway de telefone. Serviço VOIP automatizado fornecido pela Maviq. Por favor, visite http://signup.maviq.com para obter mais informações');
 INSERT INTO `lang_definitions` VALUES (107820, 12238, 20, 'URL para o site WordPress que suporta o portal');
@@ -121309,7 +121309,7 @@ INSERT INTO `lang_definitions` VALUES (107940, 12377, 20, 'usa <a php href=\"\"h
 INSERT INTO `lang_definitions` VALUES (107941, 12378, 20, 'Usando 2FA');
 INSERT INTO `lang_definitions` VALUES (107942, 12379, 20, 'Usar uma árvore frutífera como uma analogia mais fácil de visualizar explicará melhor o conceito desta hierarquia, o tronco da árvore é o Grupo (Química do Soro), o ramo frutífero é a ordem real, Ordem do Procedimento (Ácido Úrico no Soro) e o fruta é o resultado, Resultado Discreto, também chamado de (Ácido Úrico no Soro) que conterá o valor do resultado retornado. Assim como a fruta não é carregada no tronco principal, você não deve colocar um Resultado Discreto como um descendente direto ou filho de um Grupo Superior. Da mesma forma, o ramo frutífero (Ordem de Procedimento) não pode ser colocado como um descendente direto ou filho de uma fruta (Resultado Discreto)');
 INSERT INTO `lang_definitions` VALUES (107943, 12380, 20, 'Usando tecnologia para melhorar a produtividade');
-INSERT INTO `lang_definitions` VALUES (107944, 12381, 20, 'Usando os detalhes inseridos no sistema openEMR irá gerar mensagens HL7 v2.3 válidas em 3 formatos, um arquivo de texto que é baixado automaticamente para a pasta de downloads do seu navegador, uma mensagem HL7 que é gravada em uma pasta ou diretório no servidor em execução openEMR ou use SFTP - Protocolo de transferência segura de arquivos, que é um protocolo de rede que fornece acesso, transferência e gerenciamento de arquivos em uma conexão segura e transfere esta mensagem para um laboratório');
+INSERT INTO `lang_definitions` VALUES (107944, 12381, 20, 'Usando os detalhes inseridos no sistema DCL irá gerar mensagens HL7 v2.3 válidas em 3 formatos, um arquivo de texto que é baixado automaticamente para a pasta de downloads do seu navegador, uma mensagem HL7 que é gravada em uma pasta ou diretório no servidor em execução DCL ou use SFTP - Protocolo de transferência segura de arquivos, que é um protocolo de rede que fornece acesso, transferência e gerenciamento de arquivos em uma conexão segura e transfere esta mensagem para um laboratório');
 INSERT INTO `lang_definitions` VALUES (107945, 12382, 20, 'Usando a folha de taxas');
 INSERT INTO `lang_definitions` VALUES (107946, 12383, 20, 'Usar os cabeçalhos principais da ficha de laboratório ajudará a iniciar este processo - Painéis de órgãos / doenças, hematologia, testes individuais, microbiologia, outros');
 INSERT INTO `lang_definitions` VALUES (107947, 12384, 20, 'Usando esta analogia com a árvore frutífera, podemos obter uma melhor compreensão das etapas necessárias para criar um pedido para um painel de testes');
@@ -121359,7 +121359,7 @@ INSERT INTO `lang_definitions` VALUES (107990, 12437, 20, 'Verificar');
 INSERT INTO `lang_definitions` VALUES (107991, 12441, 20, 'Versão');
 INSERT INTO `lang_definitions` VALUES (107992, 12442, 20, 'Versão 1 Endereço do site do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (107993, 12443, 20, 'Versão 2 Endereço do site do portal do paciente no local');
-INSERT INTO `lang_definitions` VALUES (107994, 12444, 20, 'A versão 2.x é amplamente usada na indústria de saúde e openEMR usa HL7 versão 2.3');
+INSERT INTO `lang_definitions` VALUES (107994, 12444, 20, 'A versão 2.x é amplamente usada na indústria de saúde e DCL usa HL7 versão 2.3');
 INSERT INTO `lang_definitions` VALUES (107995, 12445, 20, 'Número da versão');
 INSERT INTO `lang_definitions` VALUES (107996, 12447, 20, 'Base Vert{{abreviação para base de prisma vertical}}');
 INSERT INTO `lang_definitions` VALUES (107997, 12448, 20, 'Distância Vert {{abreviação para Distância Vértice}}');
@@ -121563,7 +121563,7 @@ INSERT INTO `lang_definitions` VALUES (108194, 12672, 20, 'Alteração de peso')
 INSERT INTO `lang_definitions` VALUES (108195, 12673, 20, 'Perda de peso');
 INSERT INTO `lang_definitions` VALUES (108196, 12674, 20, 'Perda de peso clínico');
 INSERT INTO `lang_definitions` VALUES (108197, 12675, 20, 'Bem-vindo');
-INSERT INTO `lang_definitions` VALUES (108198, 12676, 20, 'Bem-vindo ao OpenEMR');
+INSERT INTO `lang_definitions` VALUES (108198, 12676, 20, 'Bem-vindo ao DCL');
 INSERT INTO `lang_definitions` VALUES (108199, 12677, 20, 'galês');
 INSERT INTO `lang_definitions` VALUES (108200, 12678, 20, 'Faltam as informações do ID do Weno Account Clinic');
 INSERT INTO `lang_definitions` VALUES (108201, 12679, 20, 'Faltam as informações do ID do Weno Account');
@@ -121604,7 +121604,7 @@ INSERT INTO `lang_definitions` VALUES (108235, 12719, 20, 'quais dias são seus 
 INSERT INTO `lang_definitions` VALUES (108236, 12720, 20, 'Quais notas devem ser exibidas na tela de faturamento');
 INSERT INTO `lang_definitions` VALUES (108237, 12721, 20, 'Ao encaminhar um lembrete com data, a mensagem antiga é exibida, ela pode ser substituída');
 INSERT INTO `lang_definitions` VALUES (108238, 12722, 20, 'Embora seja intuitivo pensar deste módulo como o local onde os testes de laboratório e estudos de imagem podem ser solicitados e revisados, este módulo também pode ser usado para rastrear outros procedimentos realizados no escritório');
-INSERT INTO `lang_definitions` VALUES (108239, 12723, 20, 'Embora os testes de laboratório e radiológicos possam ser realizados na clínica, eles geralmente são feitos em uma instalação externa e os detalhes do provedor para essa entidade terão que ser inseridos no openEMR antes que a configuração do módulo de procedimento possa começar');
+INSERT INTO `lang_definitions` VALUES (108239, 12723, 20, 'Embora os testes de laboratório e radiológicos possam ser realizados na clínica, eles geralmente são feitos em uma instalação externa e os detalhes do provedor para essa entidade terão que ser inseridos no DCL antes que a configuração do módulo de procedimento possa começar');
 INSERT INTO `lang_definitions` VALUES (108240, 12724, 20, 'Whiplash');
 INSERT INTO `lang_definitions` VALUES (108241, 12725, 20, 'Branco');
 INSERT INTO `lang_definitions` VALUES (108242, 12726, 20, 'Lista branca');
@@ -121624,7 +121624,7 @@ INSERT INTO `lang_definitions` VALUES (108255, 12739, 20, 'com importação');
 INSERT INTO `lang_definitions` VALUES (108256, 12740, 20, 'com idioma preferido');
 INSERT INTO `lang_definitions` VALUES (108257, 12742, 20, 'Com selecionado:');
 INSERT INTO `lang_definitions` VALUES (108258, 12743, 20, 'com o nome antigo');
-INSERT INTO `lang_definitions` VALUES (108259, 12744, 20, 'Com a chave U2F, você precisará conectá-la à porta USB e logo acessar o OpenEMR usando as versões mais recentes dos seguintes navegadores modernos - Chrome, Firefox, Safari, Edge e Opera e pressionando o botão no dispositivo');
+INSERT INTO `lang_definitions` VALUES (108259, 12744, 20, 'Com a chave U2F, você precisará conectá-la à porta USB e logo acessar o DCL usando as versões mais recentes dos seguintes navegadores modernos - Chrome, Firefox, Safari, Edge e Opera e pressionando o botão no dispositivo');
 INSERT INTO `lang_definitions` VALUES (108260, 12745, 20, 'com valor');
 INSERT INTO `lang_definitions` VALUES (108261, 12746, 20, 'Com quem podemos deixar uma mensagem?');
 INSERT INTO `lang_definitions` VALUES (108262, 12747, 20, 'Retido');
@@ -121832,7 +121832,7 @@ INSERT INTO `lang_definitions` VALUES (108463, 12973, 20, 'Seu evento foi submet
 INSERT INTO `lang_definitions` VALUES (108464, 12974, 20, 'Seu arquivo não tem extensão');
 INSERT INTO `lang_definitions` VALUES (108465, 12975, 20, 'O arquivo é muito grande');
 INSERT INTO `lang_definitions` VALUES (108466, 12976, 20, 'Seu primeiro dia da semana');
-INSERT INTO `lang_definitions` VALUES (108467, 12978, 20, 'Sua instalação do OpenEMR foi registrada');
+INSERT INTO `lang_definitions` VALUES (108467, 12978, 20, 'Sua instalação do DCL foi registrada');
 INSERT INTO `lang_definitions` VALUES (108468, 12980, 20, 'Resultados do seu laboratório');
 INSERT INTO `lang_definitions` VALUES (108469, 12981, 20, 'Seu nome na lista foi alterado para atender aos requisitos.');
 INSERT INTO `lang_definitions` VALUES (108470, 12982, 20, 'Sua mensagem foi submatida à entrega para');
@@ -122090,7 +122090,7 @@ INSERT INTO `lang_definitions` VALUES (108721, 15, 21, 'Algumas palavras para in
 INSERT INTO `lang_definitions` VALUES (108722, 16, 21, 'Um compromisso de acompanhamento também pode ser agendado diretamente na folha de taxas.');
 INSERT INTO `lang_definitions` VALUES (108723, 17, 21, 'Um formulário GCAC deve ser acrescentado a esta visita');
 INSERT INTO `lang_definitions` VALUES (108724, 18, 21, 'Uma mensagem HL7 v2.x consiste simplesmente em várias linhas de texto, cada linha é chamada de segmento e é dividida em campos usando o caractere barra vertical (|)');
-INSERT INTO `lang_definitions` VALUES (108725, 19, 21, 'Um grande aplicativo como openEMR é usado por uma infinidade de usuários com funções e graus de responsabilidade variados. É imperativo que o acesso a várias partes do programa seja concedido aos usuários com base na necessidade de conhecimento. Para conseguir isso - Listas de controle de acesso (ACL) são usadas.');
+INSERT INTO `lang_definitions` VALUES (108725, 19, 21, 'Um grande aplicativo como DCL é usado por uma infinidade de usuários com funções e graus de responsabilidade variados. É imperativo que o acesso a várias partes do programa seja concedido aos usuários com base na necessidade de conhecimento. Para conseguir isso - Listas de controle de acesso (ACL) são usadas.');
 INSERT INTO `lang_definitions` VALUES (108726, 20, 21, 'Falta o número de lote');
 INSERT INTO `lang_definitions` VALUES (108727, 21, 21, 'Falta o número de lote!');
 INSERT INTO `lang_definitions` VALUES (108728, 22, 21, 'Letra minúscula');
@@ -122358,7 +122358,7 @@ INSERT INTO `lang_definitions` VALUES (108989, 330, 21, 'Informações adicionai
 INSERT INTO `lang_definitions` VALUES (108990, 332, 21, 'Informações adicionais para processar pedidos em papel');
 INSERT INTO `lang_definitions` VALUES (108991, 333, 21, 'Laboratórios adicionais');
 INSERT INTO `lang_definitions` VALUES (108992, 334, 21, 'Notas adicionais');
-INSERT INTO `lang_definitions` VALUES (108993, 335, 21, 'O campo de notas adicionais é para uso local em openEMR');
+INSERT INTO `lang_definitions` VALUES (108993, 335, 21, 'O campo de notas adicionais é para uso local em DCL');
 INSERT INTO `lang_definitions` VALUES (108994, 336, 21, 'Notas adicionais para este resultado ou recomendação');
 INSERT INTO `lang_definitions` VALUES (108995, 337, 21, 'Notas adicionais:');
 INSERT INTO `lang_definitions` VALUES (108996, 338, 21, 'Notas adicionais:');
@@ -122500,7 +122500,7 @@ INSERT INTO `lang_definitions` VALUES (109131, 497, 21, 'Todos os Grupos de Medi
 INSERT INTO `lang_definitions` VALUES (109132, 498, 21, 'Tudo ou parte do nome próprio');
 INSERT INTO `lang_definitions` VALUES (109133, 499, 21, 'Tudo ou parte do último nome');
 INSERT INTO `lang_definitions` VALUES (109134, 500, 21, 'Todos ou parte da organização');
-INSERT INTO `lang_definitions` VALUES (109135, 501, 21, 'Todas as interações do paciente no OpenEMR estão vinculadas aos encontros');
+INSERT INTO `lang_definitions` VALUES (109135, 501, 21, 'Todas as interações do paciente no DCL estão vinculadas aos encontros');
 INSERT INTO `lang_definitions` VALUES (109136, 502, 21, 'Todos os Pacientes');
 INSERT INTO `lang_definitions` VALUES (109137, 503, 21, 'Todas as mensagens pendentes são exibidas no painel MINHAS MENSAGENS');
 INSERT INTO `lang_definitions` VALUES (109138, 505, 21, 'Todos os produtos');
@@ -122643,11 +122643,11 @@ INSERT INTO `lang_definitions` VALUES (109274, 674, 21, 'Um e-mail com as suas n
 INSERT INTO `lang_definitions` VALUES (109275, 675, 21, 'Uma ordem eletrônica e o resultado retornado estão na forma de uma mensagem chamada a mensagem HL7. HL7 significa Nível de Saúde (Application Layer) 7. O principal objetivo da HL7 é simplificar a implementação de interfaces entre aplicativos de software de saúde e vários fornecedores, de modo a reduzir a dor e o custo envolvido na programação de interface personalizada');
 INSERT INTO `lang_definitions` VALUES (109276, 676, 21, 'Uma data de término posterior a data de início é necessário para eventos repetidos!');
 INSERT INTO `lang_definitions` VALUES (109277, 677, 21, 'Ocorreu um erro assinar o formulário');
-INSERT INTO `lang_definitions` VALUES (109278, 678, 21, 'ocorreu um erro durante o «dumping» da árvore do directório OpenEMR');
+INSERT INTO `lang_definitions` VALUES (109278, 678, 21, 'ocorreu um erro durante o «dumping» da árvore do directório DCL');
 INSERT INTO `lang_definitions` VALUES (109279, 679, 21, 'ocorreu um erro durante o \"dumping\" da árvore do directório phpGACL');
 INSERT INTO `lang_definitions` VALUES (109280, 680, 21, 'ocorreu um erro durante o \"dumping\" da árvore do directório SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (109281, 682, 21, 'Ocorreu um erro: Ficheiro em falta para enviar: Use o botão de voltar!');
-INSERT INTO `lang_definitions` VALUES (109282, 683, 21, 'Um conceito importante a ser compreendido é que, uma vez que a chave secreta entregue por meio do código QR é capturada pelo aplicativo autenticador, não há mais comunicação entre o aplicativo e o OpenEMR, cada um usará a hora atual do UNIX e sua cópia da chave secreta compartilhada específica do usuário para gerar o mesmo número único de 6 dígitos');
+INSERT INTO `lang_definitions` VALUES (109282, 683, 21, 'Um conceito importante a ser compreendido é que, uma vez que a chave secreta entregue por meio do código QR é capturada pelo aplicativo autenticador, não há mais comunicação entre o aplicativo e o DCL, cada um usará a hora atual do UNIX e sua cópia da chave secreta compartilhada específica do usuário para gerar o mesmo número único de 6 dígitos');
 INSERT INTO `lang_definitions` VALUES (109283, 684, 21, 'Um ponto importante a lembrar é que os vários testes individuais em cada painel estão listados como Resultados, o fruto, você não pode encomendar diretamente esses testes individuais');
 INSERT INTO `lang_definitions` VALUES (109284, 685, 21, 'Um assunto de GCAC incompleto foi criado e foi unido. Alguém precisará completar isto depois.');
 INSERT INTO `lang_definitions` VALUES (109285, 687, 21, 'Um problema diz respeito a questões relacionadas à saúde do paciente');
@@ -122860,7 +122860,7 @@ INSERT INTO `lang_definitions` VALUES (109491, 927, 21, 'Suponha que os paciente
 INSERT INTO `lang_definitions` VALUES (109492, 928, 21, 'Asma');
 INSERT INTO `lang_definitions` VALUES (109493, 929, 21, 'a');
 INSERT INTO `lang_definitions` VALUES (109494, 931, 21, 'Pelo menos um parâmetro de procura é necessário se você selecionar Todos.');
-INSERT INTO `lang_definitions` VALUES (109495, 932, 21, 'No momento, a prescrição eletrônica do openEMR é possível apenas nos Estados Unidos');
+INSERT INTO `lang_definitions` VALUES (109495, 932, 21, 'No momento, a prescrição eletrônica do DCL é possível apenas nos Estados Unidos');
 INSERT INTO `lang_definitions` VALUES (109496, 933, 21, 'No momento, apenas a Continuidade de Registro de Cuidados (CCR), o Continuidade de Documento de Cuidados (CCD) pode ser enviado usando phiMail');
 INSERT INTO `lang_definitions` VALUES (109497, 934, 21, 'Ao Navicular');
 INSERT INTO `lang_definitions` VALUES (109498, 935, 21, 'Ao Navicular:');
@@ -123994,10 +123994,10 @@ INSERT INTO `lang_definitions` VALUES (110625, 2209, 21, 'Configuração');
 INSERT INTO `lang_definitions` VALUES (110626, 2210, 21, 'Configuração');
 INSERT INTO `lang_definitions` VALUES (110627, 2211, 21, 'Configuração Exportar/Importar');
 INSERT INTO `lang_definitions` VALUES (110628, 2212, 21, 'Configuração salva com sucesso');
-INSERT INTO `lang_definitions` VALUES (110629, 2213, 21, 'Configure Servidor Web (Apache) e OpenEMR para uso de certificado SSL pelo clíente.');
+INSERT INTO `lang_definitions` VALUES (110629, 2213, 21, 'Configure Servidor Web (Apache) e DCL para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (110630, 2214, 21, 'Configure Servidor Web (Apache) para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (110631, 2215, 21, 'Configure Servidor Web (Apache) para uso HTTPS.');
-INSERT INTO `lang_definitions` VALUES (110632, 2216, 21, 'Configure OpenEMR para uso de certificado SSL pelo clíente.');
+INSERT INTO `lang_definitions` VALUES (110632, 2216, 21, 'Configure DCL para uso de certificado SSL pelo clíente.');
 INSERT INTO `lang_definitions` VALUES (110633, 2217, 21, 'Configurar pedidos e resultados');
 INSERT INTO `lang_definitions` VALUES (110634, 2218, 21, 'Ajuda para configurar pedidos');
 INSERT INTO `lang_definitions` VALUES (110635, 2219, 21, 'Configure a estrutura de teste de laboratório');
@@ -124044,7 +124044,7 @@ INSERT INTO `lang_definitions` VALUES (110675, 2268, 21, 'Lentes de Contacto');
 INSERT INTO `lang_definitions` VALUES (110676, 2269, 21, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com para obter o Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (110677, 2270, 21, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com ou ZH Healthcare em http://zhservices.com para assinar o serviço eRx');
 INSERT INTO `lang_definitions` VALUES (110678, 2271, 21, 'Entre em contato com a Medical Information Integration, LLC em http://mi-squared.com ou ZH Healthcare em http://zhservices.com para assinar no serviço NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (110679, 2272, 21, 'Entre em contato com a mi-squared em http://www.mi-squared.com/products-services/openemr/ ou ZH Healthcare em https://bl Budaphr.com/contact-us/ para assinar no serviço NewCrop eRx');
+INSERT INTO `lang_definitions` VALUES (110679, 2272, 21, 'Entre em contato com a mi-squared em http://www.mi-squared.com/products-services/DCL/ ou ZH Healthcare em https://bl Budaphr.com/contact-us/ para assinar no serviço NewCrop eRx');
 INSERT INTO `lang_definitions` VALUES (110680, 2273, 21, 'Nome de Contacto');
 INSERT INTO `lang_definitions` VALUES (110681, 2274, 21, 'Entre em contato com a Open Med Practice, www.openmedpractice.com para assinar no serviço Weno Free eRx');
 INSERT INTO `lang_definitions` VALUES (110682, 2275, 21, 'Contate ou notifique o telefone');
@@ -124286,7 +124286,7 @@ INSERT INTO `lang_definitions` VALUES (110917, 2544, 21, 'Atualmente ativo');
 INSERT INTO `lang_definitions` VALUES (110918, 2545, 21, 'Atualmente ocupado');
 INSERT INTO `lang_definitions` VALUES (110919, 2547, 21, 'Atualmente offline');
 INSERT INTO `lang_definitions` VALUES (110920, 2548, 21, 'Atualmente em execução');
-INSERT INTO `lang_definitions` VALUES (110921, 2549, 21, 'Atualmente, existem 5 tipos de transações no OpenEMR');
+INSERT INTO `lang_definitions` VALUES (110921, 2549, 21, 'Atualmente, existem 5 tipos de transações no DCL');
 INSERT INTO `lang_definitions` VALUES (110922, 2550, 21, 'Atualmente não há instalações');
 INSERT INTO `lang_definitions` VALUES (110923, 2551, 21, 'Atualmente trabalhando para fazer este documento');
 INSERT INTO `lang_definitions` VALUES (110924, 2552, 21, 'Síndrome de Cushing');
@@ -124978,8 +124978,8 @@ INSERT INTO `lang_definitions` VALUES (111609, 3321, 21, 'Vencimento Pt');
 INSERT INTO `lang_definitions` VALUES (111610, 3322, 21, 'Vencimento logo');
 INSERT INTO `lang_definitions` VALUES (111611, 3323, 21, 'Status de vencimento');
 INSERT INTO `lang_definitions` VALUES (111612, 3324, 21, 'Actualização do status de vencimento');
-INSERT INTO `lang_definitions` VALUES (111613, 3325, 21, 'Base de dados OpenEMR esvaziado');
-INSERT INTO `lang_definitions` VALUES (111614, 3326, 21, 'Rede da árvore OpenEMR do diretório esvaziando');
+INSERT INTO `lang_definitions` VALUES (111613, 3325, 21, 'Base de dados DCL esvaziado');
+INSERT INTO `lang_definitions` VALUES (111614, 3326, 21, 'Rede da árvore DCL do diretório esvaziando');
 INSERT INTO `lang_definitions` VALUES (111615, 3327, 21, 'Base de dados de phpGACL esvaziando');
 INSERT INTO `lang_definitions` VALUES (111616, 3328, 21, 'Rede da árvore phpGACL do diretório esvaziando');
 INSERT INTO `lang_definitions` VALUES (111617, 3329, 21, 'Base de dados SQL-Ledger esvaziado');
@@ -125233,8 +125233,8 @@ INSERT INTO `lang_definitions` VALUES (111864, 3611, 21, 'Habilitar Portal do Pa
 INSERT INTO `lang_definitions` VALUES (111865, 3612, 21, 'Habilitar download do documento do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (111866, 3613, 21, 'Habilitar novo paciente no Portal do Paciente no local para se auto-registrar');
 INSERT INTO `lang_definitions` VALUES (111867, 3614, 21, 'Habilitar Portal do Paciente no Local');
-INSERT INTO `lang_definitions` VALUES (111868, 3621, 21, 'Habilitar API REST OpenEMR');
-INSERT INTO `lang_definitions` VALUES (111869, 3622, 21, 'Habilitar a API OpenEMR RESTful. SSL necessário');
+INSERT INTO `lang_definitions` VALUES (111868, 3621, 21, 'Habilitar API REST DCL');
+INSERT INTO `lang_definitions` VALUES (111869, 3622, 21, 'Habilitar a API DCL RESTful. SSL necessário');
 INSERT INTO `lang_definitions` VALUES (111870, 3630, 21, 'Ativar widget de lembrete de paciente');
 INSERT INTO `lang_definitions` VALUES (111871, 3632, 21, 'Habilitar serviço de mensagens diretas phiMail');
 INSERT INTO `lang_definitions` VALUES (111872, 3633, 21, 'Habilitar postagem');
@@ -125245,7 +125245,7 @@ INSERT INTO `lang_definitions` VALUES (111876, 3638, 21, 'Habilitar Suporte a Sc
 INSERT INTO `lang_definitions` VALUES (111877, 3639, 21, 'Habilitar itemização de relatório padrão');
 INSERT INTO `lang_definitions` VALUES (111878, 3640, 21, 'Habilitar suporte para o Portal WordPress de código aberto da Sunset Systems');
 INSERT INTO `lang_definitions` VALUES (111879, 3642, 21, 'Habilitar o serviço de integração de informações médicas, LLC Lab Exchange');
-INSERT INTO `lang_definitions` VALUES (111880, 3643, 21, 'Habilitar o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (111880, 3643, 21, 'Habilitar o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (111881, 3644, 21, 'Habilitar autenticação de certificado de usuário');
 INSERT INTO `lang_definitions` VALUES (111882, 3645, 21, 'Habilitar versão 1 do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (111883, 3646, 21, 'Habilitar versão 2 do portal do paciente no local');
@@ -125349,7 +125349,7 @@ INSERT INTO `lang_definitions` VALUES (111980, 3754, 21, 'Inglês');
 INSERT INTO `lang_definitions` VALUES (111981, 3756, 21, 'Inglês (Indiano)');
 INSERT INTO `lang_definitions` VALUES (111982, 3757, 21, 'Inglês (Defeito)');
 INSERT INTO `lang_definitions` VALUES (111983, 3758, 21, 'Comando Enscript usado pelo Hylafax');
-INSERT INTO `lang_definitions` VALUES (111984, 3759, 21, 'Assegurar OpenEMR tem privilégios de gravação para o diretório');
+INSERT INTO `lang_definitions` VALUES (111984, 3759, 21, 'Assegurar DCL tem privilégios de gravação para o diretório');
 INSERT INTO `lang_definitions` VALUES (111985, 3760, 21, 'Ensure that Identifying Codes are unique');
 INSERT INTO `lang_definitions` VALUES (111986, 3761, 21, 'ENT Descarga');
 INSERT INTO `lang_definitions` VALUES (111987, 3762, 21, 'ENT Dor');
@@ -125409,14 +125409,14 @@ INSERT INTO `lang_definitions` VALUES (112040, 3822, 21, 'Insira a lateralidade 
 INSERT INTO `lang_definitions` VALUES (112041, 3823, 21, 'Insira o código dos nomes e códigos dos identificadores de observação lógica (LOINC) para este procedimento');
 INSERT INTO `lang_definitions` VALUES (112042, 3824, 21, 'Insira o código dos nomes e códigos dos identificadores de observação lógica (LOINC) para este procedimento. LOINC é um banco de dados e padrão universal para identificar observações de laboratórios médicos.');
 INSERT INTO `lang_definitions` VALUES (112043, 3825, 21, 'Insira o código LOINC para este procedimento');
-INSERT INTO `lang_definitions` VALUES (112044, 3826, 21, 'Insira a senha de login do OpenEMR para o usuário e clique em Enviar');
+INSERT INTO `lang_definitions` VALUES (112044, 3826, 21, 'Insira a senha de login do DCL para o usuário e clique em Enviar');
 INSERT INTO `lang_definitions` VALUES (112045, 3827, 21, 'Insira o código de Re identificação');
 INSERT INTO `lang_definitions` VALUES (112046, 3828, 21, 'Insira o site relevante, se aplicável');
 INSERT INTO `lang_definitions` VALUES (112047, 3829, 21, 'Insira o endereço do servidor, nome de usuário e senha fornecidos a você');
 INSERT INTO `lang_definitions` VALUES (112048, 3830, 21, 'Insira a gravidade da alergia');
 INSERT INTO `lang_definitions` VALUES (112049, 3831, 21, 'Insira o tipo de amostra, se aplicável');
 INSERT INTO `lang_definitions` VALUES (112050, 3832, 21, 'Insira os valores 3,4 - 7,2 - Homens, 2,4–6,1 - Mulheres');
-INSERT INTO `lang_definitions` VALUES (112051, 3833, 21, 'Insira seu nome de usuário Openemr no campo usuário de notificação');
+INSERT INTO `lang_definitions` VALUES (112051, 3833, 21, 'Insira seu nome de usuário DCL no campo usuário de notificação');
 INSERT INTO `lang_definitions` VALUES (112052, 3834, 21, 'Insira o ID de login do usuário');
 INSERT INTO `lang_definitions` VALUES (112053, 3835, 21, 'Insira valores nesta seção para criar um novo grupo também conhecido como Objeto de Solicitação de Acesso (ARO)');
 INSERT INTO `lang_definitions` VALUES (112054, 3836, 21, 'Enter your credentials');
@@ -125474,7 +125474,7 @@ INSERT INTO `lang_definitions` VALUES (112105, 3897, 21, 'Erro ao remover mensag
 INSERT INTO `lang_definitions` VALUES (112106, 3898, 21, 'Erro ao recuperar resultados do Lab Exchange Network');
 INSERT INTO `lang_definitions` VALUES (112107, 3899, 21, 'Erro ao recuperar valores');
 INSERT INTO `lang_definitions` VALUES (112108, 3900, 21, 'Erro ao salvar documento');
-INSERT INTO `lang_definitions` VALUES (112109, 3901, 21, 'Erro ao conceder privilégio de arquivo ao usuário OpenEMR');
+INSERT INTO `lang_definitions` VALUES (112109, 3901, 21, 'Erro ao conceder privilégio de arquivo ao usuário DCL');
 INSERT INTO `lang_definitions` VALUES (112110, 3902, 21, 'Erro ao adicionar novo plano');
 INSERT INTO `lang_definitions` VALUES (112111, 3903, 21, 'Erro ao excluir o plano');
 INSERT INTO `lang_definitions` VALUES (112112, 3904, 21, 'erro enquanto registrando forma!');
@@ -125492,7 +125492,7 @@ INSERT INTO `lang_definitions` VALUES (112123, 3920, 21, 'Erro: incapaz de criar
 INSERT INTO `lang_definitions` VALUES (112124, 3921, 21, 'Erro: incapaz de criar certificado \'Certificate Authority\'');
 INSERT INTO `lang_definitions` VALUES (112125, 3922, 21, 'Erro: incapaz de criar certificado \'Server\'');
 INSERT INTO `lang_definitions` VALUES (112126, 3924, 21, 'Erro: incapaz de abrir ficheiro');
-INSERT INTO `lang_definitions` VALUES (112127, 3925, 21, 'Erro, \'User Certificate Authentication\' não está configurado no OpenEMR');
+INSERT INTO `lang_definitions` VALUES (112127, 3925, 21, 'Erro, \'User Certificate Authentication\' não está configurado no DCL');
 INSERT INTO `lang_definitions` VALUES (112128, 3932, 21, 'Erro. Tente mais tarde');
 INSERT INTO `lang_definitions` VALUES (112129, 3933, 21, 'Erro. Tem de instalar o modulo \'Archive/Tar.php\'.');
 INSERT INTO `lang_definitions` VALUES (112130, 3934, 21, 'ERRO: não pude abrir \'table.sql\', formulário defeituoso?');
@@ -125813,7 +125813,7 @@ INSERT INTO `lang_definitions` VALUES (112444, 4285, 21, 'Arquivo não encontrad
 INSERT INTO `lang_definitions` VALUES (112445, 4286, 21, 'File Not Found');
 INSERT INTO `lang_definitions` VALUES (112446, 4287, 21, 'Arquivo no servidor (data de modificação)');
 INSERT INTO `lang_definitions` VALUES (112447, 4288, 21, 'Caminho do arquivo não encontrado');
-INSERT INTO `lang_definitions` VALUES (112448, 4289, 21, 'Privilégio de arquivo concedido ao usuário OpenEMR');
+INSERT INTO `lang_definitions` VALUES (112448, 4289, 21, 'Privilégio de arquivo concedido ao usuário DCL');
 INSERT INTO `lang_definitions` VALUES (112449, 4290, 21, 'A recuperação do arquivo do CouchDB falhou');
 INSERT INTO `lang_definitions` VALUES (112450, 4291, 21, 'Quarto de Arquivo');
 INSERT INTO `lang_definitions` VALUES (112451, 4292, 21, 'Arquive para transferir');
@@ -125829,7 +125829,7 @@ INSERT INTO `lang_definitions` VALUES (112460, 4302, 21, 'Filipino');
 INSERT INTO `lang_definitions` VALUES (112461, 4303, 21, 'preencher');
 INSERT INTO `lang_definitions` VALUES (112462, 4304, 21, 'Preencha qualquer uma das linhas abaixo.');
 INSERT INTO `lang_definitions` VALUES (112463, 4305, 21, 'Preencha aqui somente se enviarem notificação do e-mail para');
-INSERT INTO `lang_definitions` VALUES (112464, 4306, 21, 'Preencha todos os detalhes ausentes ou edite as informações existentes. Isso será salvo na página de dados demográficos do paciente no openEMR');
+INSERT INTO `lang_definitions` VALUES (112464, 4306, 21, 'Preencha todos os detalhes ausentes ou edite as informações existentes. Isso será salvo na página de dados demográficos do paciente no DCL');
 INSERT INTO `lang_definitions` VALUES (112465, 4307, 21, 'Preencha os códigos CPT usando o formato exibido. Os códigos E / M comuns já estão preenchidos, adicione mais conforme necessário');
 INSERT INTO `lang_definitions` VALUES (112466, 4308, 21, 'Preencha os detalhes conforme necessário e clique em Salvar');
 INSERT INTO `lang_definitions` VALUES (112467, 4309, 21, 'Preencha os detalhes do painel Órgão / Doença como antes e clique em Salvar para fechar o pop-up');
@@ -125993,7 +125993,7 @@ INSERT INTO `lang_definitions` VALUES (112624, 4484, 21, 'Para aqueles interessa
 INSERT INTO `lang_definitions` VALUES (112625, 4485, 21, 'Para aqueles interessados no que acontece nos bastidores');
 INSERT INTO `lang_definitions` VALUES (112626, 4486, 21, 'Para essas linhas, a descrição indicará os detalhes do código');
 INSERT INTO `lang_definitions` VALUES (112627, 4487, 21, 'Para aqueles com privilégios administrativos, um ícone é exibido ao lado da legenda Minhas mensagens');
-INSERT INTO `lang_definitions` VALUES (112628, 4488, 21, 'Para que o TOTP funcione, uma chave secreta exclusiva deve ser compartilhada entre o OpenEMR e o usuário');
+INSERT INTO `lang_definitions` VALUES (112628, 4488, 21, 'Para que o TOTP funcione, uma chave secreta exclusiva deve ser compartilhada entre o DCL e o usuário');
 INSERT INTO `lang_definitions` VALUES (112629, 4489, 21, 'Para suporte U2F no Linux, clique');
 INSERT INTO `lang_definitions` VALUES (112630, 4490, 21, 'para variável');
 INSERT INTO `lang_definitions` VALUES (112631, 4491, 21, 'para:');
@@ -126493,7 +126493,7 @@ INSERT INTO `lang_definitions` VALUES (113124, 5039, 21, 'HTML');
 INSERT INTO `lang_definitions` VALUES (113125, 5040, 21, 'Saída HTML?');
 INSERT INTO `lang_definitions` VALUES (113126, 5041, 21, 'HTN {{hipertensão}}');
 INSERT INTO `lang_definitions` VALUES (113127, 5042, 21, 'Erro HTTP');
-INSERT INTO `lang_definitions` VALUES (113128, 5043, 21, 'Link Https para o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (113128, 5043, 21, 'Link Https para o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (113129, 5044, 21, 'HT {{hiperforia}}');
 INSERT INTO `lang_definitions` VALUES (113130, 5045, 21, 'Húngaro');
 INSERT INTO `lang_definitions` VALUES (113131, 5046, 21, 'Diretório Hylafax');
@@ -126558,7 +126558,7 @@ INSERT INTO `lang_definitions` VALUES (113189, 5110, 21, 'Se ainda estiver ativo
 INSERT INTO `lang_definitions` VALUES (113190, 5111, 21, 'Se nome, qualquer parte do último nome ou');
 INSERT INTO `lang_definitions` VALUES (113191, 5112, 21, 'Se NewCrop eRx - o módulo de prescrição eletrônica, estiver habilitado, os botões NewCrop MedEntry e NewCrop Account Status aparecerão aqui');
 INSERT INTO `lang_definitions` VALUES (113192, 5113, 21, 'Se não estiver listado, você pode adicionar o medicamento à caixa de texto Título');
-INSERT INTO `lang_definitions` VALUES (113193, 5115, 21, 'Se apenas capturar o código QR, mas não registrar a chave TOTP com OpenEMR, este recurso não será habilitado no login');
+INSERT INTO `lang_definitions` VALUES (113193, 5115, 21, 'Se apenas capturar o código QR, mas não registrar a chave TOTP com DCL, este recurso não será habilitado no login');
 INSERT INTO `lang_definitions` VALUES (113194, 5116, 21, 'Se o paciente tiver um compromisso, clique em OK para criar um encontro, caso contrário, cancele esto e logo crie um encontro para a visita de hoje.');
 INSERT INTO `lang_definitions` VALUES (113195, 5117, 21, 'Se pagar por');
 INSERT INTO `lang_definitions` VALUES (113196, 5118, 21, 'Se a pessoa faleceu, insira a data da morte');
@@ -126582,7 +126582,7 @@ INSERT INTO `lang_definitions` VALUES (113213, 5135, 21, 'Se a mensagem for enca
 INSERT INTO `lang_definitions` VALUES (113214, 5136, 21, 'Se o portal do paciente externo estiver ativado, haverá um botão que diz Criar credenciais do portal externo, desde que o paciente tenha dado permissão para acessar o portal do paciente online ou uma mensagem que diz que o paciente não autorizou o portal do paciente');
 INSERT INTO `lang_definitions` VALUES (113215, 5137, 21, 'Se o portal do paciente externo estiver ativado, haverá um botão que diz Criar credenciais do portal externo, desde que o paciente tenha dado permissão para acessar o portal do paciente online ou uma mensagem que diz que o paciente não autorizou o portal do paciente');
 INSERT INTO `lang_definitions` VALUES (113216, 5138, 21, 'Se as credenciais do portal online / offsite já tiverem sido definidas, o botão mudará para');
-INSERT INTO `lang_definitions` VALUES (113217, 5139, 21, 'Se o paciente tiver quaisquer dados demográficos inseridos no openEMR, ele preencherá automaticamente os campos relevantes nas seções corretas');
+INSERT INTO `lang_definitions` VALUES (113217, 5139, 21, 'Se o paciente tiver quaisquer dados demográficos inseridos no DCL, ele preencherá automaticamente os campos relevantes nas seções corretas');
 INSERT INTO `lang_definitions` VALUES (113218, 5140, 21, 'Se o paciente não autorizou o portal do paciente, então um paciente não autorizou a mensagem do portal do paciente será exibida aqui');
 INSERT INTO `lang_definitions` VALUES (113219, 5141, 21, 'Se o paciente estiver sendo adicionado à lista de recall no dia da visita, ele refletirá a data atual');
 INSERT INTO `lang_definitions` VALUES (113220, 5142, 21, 'Se o paciente está ligando de volta para ser adicionado à lista, a última consulta pode ter sido no passado remoto. Esteja ciente de que os mais de 1,2,3 anos são calculados e exibidos na caixa Data na parte inferior desta seção');
@@ -126613,9 +126613,9 @@ INSERT INTO `lang_definitions` VALUES (113244, 5169, 21, 'Se você clicar no sin
 INSERT INTO `lang_definitions` VALUES (113245, 5170, 21, 'Se você continuar tendo esse erro, por favor entre em contato com o suporte');
 INSERT INTO `lang_definitions` VALUES (113246, 5171, 21, 'Se você não encontrar um valor necessário na caixa suspensa, você precisará adicioná-lo via Administração> Listas> Unidades de procedimento. Consulte o arquivo de ajuda em Procedimentos> Provedores');
 INSERT INTO `lang_definitions` VALUES (113247, 5172, 21, 'Se você não selecionar uma correspondência, o paciente será criado');
-INSERT INTO `lang_definitions` VALUES (113248, 5173, 21, 'Se você não selecionar pelo menos um deles, o OpenEMR operará em um modo somente de recepção');
+INSERT INTO `lang_definitions` VALUES (113248, 5173, 21, 'Se você não selecionar pelo menos um deles, o DCL operará em um modo somente de recepção');
 INSERT INTO `lang_definitions` VALUES (113249, 5174, 21, 'Se você não enviar pedidos eletronicamente ou receber resultados eletronicamente, deixe como o valor padrão, Download');
-INSERT INTO `lang_definitions` VALUES (113250, 5176, 21, 'Se você não quiser fazer isso, o método a seguir envolve adicionar dados manualmente usando a interface openEMR');
+INSERT INTO `lang_definitions` VALUES (113250, 5176, 21, 'Se você não quiser fazer isso, o método a seguir envolve adicionar dados manualmente usando a interface DCL');
 INSERT INTO `lang_definitions` VALUES (113251, 5177, 21, 'Se você detalhar a linha do painel de eletrólito e clicar no sinal + na coluna Nome, você deverá ver o sódio listado abaixo dela com um valor de categoria de resultado com um valor de nível 4');
 INSERT INTO `lang_definitions` VALUES (113252, 5178, 21, 'Se você detalhar a linha do painel de eletrólito, deverá ver que ele tem uma categoria de pedido e destacado em amarelo, indicando que é um pedido pesquisável e válido e tem um valor de nível 3');
 INSERT INTO `lang_definitions` VALUES (113253, 5179, 21, 'Se você selecionou vários códigos, eles serão separados por ponto e vírgula');
@@ -126723,11 +126723,11 @@ INSERT INTO `lang_definitions` VALUES (113354, 5286, 21, 'In House');
 INSERT INTO `lang_definitions` VALUES (113355, 5288, 21, 'no olho esquerdo');
 INSERT INTO `lang_definitions` VALUES (113356, 5289, 21, 'na narina');
 INSERT INTO `lang_definitions` VALUES (113357, 5290, 21, 'Disponível');
-INSERT INTO `lang_definitions` VALUES (113358, 5291, 21, 'No openEMR, os relatórios de Registro de Continuidade de Cuidados (CCR) a serem gerados podem ser limitados a um intervalo de datas específico marcando a caixa de seleção Usar intervalo de datas e inserindo o intervalo de datas desejado');
+INSERT INTO `lang_definitions` VALUES (113358, 5291, 21, 'No DCL, os relatórios de Registro de Continuidade de Cuidados (CCR) a serem gerados podem ser limitados a um intervalo de datas específico marcando a caixa de seleção Usar intervalo de datas e inserindo o intervalo de datas desejado');
 INSERT INTO `lang_definitions` VALUES (113359, 5292, 21, 'A fim de cumprir os requisitos de uso significativo para entrada de pedido de provedor computadorizado (CPOE) para testes de laboratório e radiologia, este módulo precisa ser usado');
 INSERT INTO `lang_definitions` VALUES (113360, 5293, 21, 'Para armazenar e recuperar adequadamente os resultados do teste e fazer novos pedidos, os testes / pedidos devem ser configurados de maneira hierárquica');
 INSERT INTO `lang_definitions` VALUES (113361, 5294, 21, 'Para registrar os valores dos resultados retornados, você deve criar um Resultado Discreto separado (Nível 4) para cada um dos constituintes do painel, a fruta, como descendentes diretos deste ramo (Painel de Saúde Geral) (Nível 3). Exemplos dos resultados são CBC - Hemoglobina, CBC - Hematócrito, CMP - Sódio, CMP - Potássio, TSH etc.');
-INSERT INTO `lang_definitions` VALUES (113362, 5295, 21, 'Para registrar seu dispositivo, por favor forneça sua senha de login do OpenEMR');
+INSERT INTO `lang_definitions` VALUES (113362, 5295, 21, 'Para registrar seu dispositivo, por favor forneça sua senha de login do DCL');
 INSERT INTO `lang_definitions` VALUES (113363, 5296, 21, 'Para enviar Registro de Continuidade de Cuidados (CCR) e / ou Documento de Continuidade de Cuidados (CCD), opcionalmente, marque phiMail Permitir CCD Send e / ou phiMail Permitir CCR Send para habilitar o recurso de transmissão para esses tipos de dados');
 INSERT INTO `lang_definitions` VALUES (113364, 5297, 21, 'No nosso caso, escolheremos o laboratório local que foi configurado anteriormente');
 INSERT INTO `lang_definitions` VALUES (113365, 5298, 21, 'No nosso caso, vamos deixá-lo como Não atribuído');
@@ -126882,7 +126882,7 @@ INSERT INTO `lang_definitions` VALUES (113513, 5462, 21, 'Instalar códigos de s
 INSERT INTO `lang_definitions` VALUES (113514, 5465, 21, 'Instale o certificado de âncora de confiança EMR Direct');
 INSERT INTO `lang_definitions` VALUES (113515, 5467, 21, 'As instalações que processam um grande número de mensagens diretas podem exigir um intervalo mais curto');
 INSERT INTO `lang_definitions` VALUES (113516, 5468, 21, 'Versão Instalada');
-INSERT INTO `lang_definitions` VALUES (113517, 5469, 21, 'Instalando códigos em openEMR');
+INSERT INTO `lang_definitions` VALUES (113517, 5469, 21, 'Instalando códigos em DCL');
 INSERT INTO `lang_definitions` VALUES (113518, 5470, 21, 'Instruido');
 INSERT INTO `lang_definitions` VALUES (113519, 5471, 21, 'Instrução');
 INSERT INTO `lang_definitions` VALUES (113520, 5472, 21, 'Instruções');
@@ -126918,7 +126918,7 @@ INSERT INTO `lang_definitions` VALUES (113549, 5502, 21, 'Conveniado');
 INSERT INTO `lang_definitions` VALUES (113550, 5503, 21, 'Conclusão de Entrada');
 INSERT INTO `lang_definitions` VALUES (113551, 5504, 21, 'Data de Entrada');
 INSERT INTO `lang_definitions` VALUES (113552, 5505, 21, 'Inteiros 1-100');
-INSERT INTO `lang_definitions` VALUES (113553, 5506, 21, 'A integração dos resultados de laboratório no prontuário de um paciente no openEMR pode ser feita manualmente, ou seja, ambos solicitar testes e enviar os resultados recebidos ou eletronicamente');
+INSERT INTO `lang_definitions` VALUES (113553, 5506, 21, 'A integração dos resultados de laboratório no prontuário de um paciente no DCL pode ser feita manualmente, ou seja, ambos solicitar testes e enviar os resultados recebidos ou eletronicamente');
 INSERT INTO `lang_definitions` VALUES (113554, 5507, 21, 'Declínio Intelectual');
 INSERT INTO `lang_definitions` VALUES (113555, 5508, 21, 'Distância inter-pupilar');
 INSERT INTO `lang_definitions` VALUES (113556, 5509, 21, 'Interaja com transações criadas');
@@ -127100,14 +127100,14 @@ INSERT INTO `lang_definitions` VALUES (113731, 5703, 21, 'Não se refere à refe
 INSERT INTO `lang_definitions` VALUES (113732, 5704, 21, 'Ele faz isso usando um algoritmo para combinar o horário UNIX atual com a chave secreta para gerar uma chave única em constante mudança');
 INSERT INTO `lang_definitions` VALUES (113733, 5705, 21, 'Tem quatro guias');
 INSERT INTO `lang_definitions` VALUES (113734, 5706, 21, 'Tem três níveis');
-INSERT INTO `lang_definitions` VALUES (113735, 5707, 21, 'É um módulo de mensagem comercial disponível para práticas openEMR utilizando a versão 5.0.1 e superior');
+INSERT INTO `lang_definitions` VALUES (113735, 5707, 21, 'É um módulo de mensagem comercial disponível para práticas DCL utilizando a versão 5.0.1 e superior');
 INSERT INTO `lang_definitions` VALUES (113736, 5708, 21, 'É um campo no cabeçalho da mensagem HL7 conhecido como ID de processamento');
 INSERT INTO `lang_definitions` VALUES (113737, 5709, 21, 'Faz parte do prontuário médico');
 INSERT INTO `lang_definitions` VALUES (113738, 5710, 21, 'É também um serviço baseado em assinatura');
 INSERT INTO `lang_definitions` VALUES (113739, 5711, 21, 'Também é necessário listar um código CID10 para que o problema seja listado no Relatório de Continuidade de Cuidados (CCR) e no Documento de Continuidade de Cuidados (CCD)');
 INSERT INTO `lang_definitions` VALUES (113740, 5712, 21, 'Está dividido em duas seções');
 INSERT INTO `lang_definitions` VALUES (113741, 5713, 21, 'É essencial que você leia as primeiras quatro seções para compreender os princípios subjacentes');
-INSERT INTO `lang_definitions` VALUES (113742, 5714, 21, 'É muito mais fácil e intuitivo fazer grandes alterações e reorganizar os dados na planilha antes de começar a inserir os dados no openEMR');
+INSERT INTO `lang_definitions` VALUES (113742, 5714, 21, 'É muito mais fácil e intuitivo fazer grandes alterações e reorganizar os dados na planilha antes de começar a inserir os dados no DCL');
 INSERT INTO `lang_definitions` VALUES (113743, 5715, 21, 'É importante perceber que isso gerencia o MFA para o usuário conectado');
 INSERT INTO `lang_definitions` VALUES (113744, 5716, 21, 'É importante compreender a função destes dois ícones dado que todos os passos subsequentes necessários para configurar correctamente a hierarquia irão depender da utilização correcta destes dois ícones');
 INSERT INTO `lang_definitions` VALUES (113745, 5717, 21, 'Destina-se a incluir apenas as informações que são críticas para efetivamente continuar o cuidado');
@@ -127118,7 +127118,7 @@ INSERT INTO `lang_definitions` VALUES (113749, 5721, 21, 'Não é enviado com a 
 INSERT INTO `lang_definitions` VALUES (113750, 5722, 21, 'Não é incomum solicitar vários exames de sangue juntos, agrupá-los como um painel de exames facilita esse processo');
 INSERT INTO `lang_definitions` VALUES (113751, 5724, 21, 'É o formulário de reclamação em papel básico prescrito por muitos pagadores para reclamações submetidas por médicos e práticas individuais, enfermeiras e profissionais, incluindo terapeutas, quiropráticos e clínicas ambulatoriais e, em alguns casos, para serviços de ambulância');
 INSERT INTO `lang_definitions` VALUES (113752, 5725, 21, 'É usado para vincular problemas a encontros e também é usado para ver quais encontros estão associados a um determinado problema');
-INSERT INTO `lang_definitions` VALUES (113753, 5726, 21, 'É útil praticar em um local de teste para se familiarizar com o processo antes de fazer isso no aplicativo openEMR de produção');
+INSERT INTO `lang_definitions` VALUES (113753, 5726, 21, 'É útil praticar em um local de teste para se familiarizar com o processo antes de fazer isso no aplicativo DCL de produção');
 INSERT INTO `lang_definitions` VALUES (113754, 5727, 21, 'Permite pesquisar por códigos de diagnóstico ICD 9 e ICD 10 e CPT4 e HCPCS');
 INSERT INTO `lang_definitions` VALUES (113755, 5728, 21, 'Ele permite que você envie mensagens e lembretes datados aos membros da equipe, adicione o paciente à lista de re call e envie mensagens de texto SMS para os pacientes');
 INSERT INTO `lang_definitions` VALUES (113756, 5729, 21, 'Ele serve como uma ponte necessária para um ambiente diferente, muitas vezes com novos médicos que não sabem nada sobre o paciente, permitindo que o próximo provedor facilmente');
@@ -127485,11 +127485,11 @@ INSERT INTO `lang_definitions` VALUES (114116, 6128, 21, 'LOC');
 INSERT INTO `lang_definitions` VALUES (114117, 6129, 21, 'Local');
 INSERT INTO `lang_definitions` VALUES (114118, 6130, 21, 'Conteúdo local');
 INSERT INTO `lang_definitions` VALUES (114119, 6131, 21, 'Sistema de arquivos local');
-INSERT INTO `lang_definitions` VALUES (114120, 6132, 21, 'O sistema de arquivos local armazenará o pedido como uma mensagem HL7v2.3 em um local predefinido no servidor local que hospeda o openEMR');
+INSERT INTO `lang_definitions` VALUES (114120, 6132, 21, 'O sistema de arquivos local armazenará o pedido como uma mensagem HL7v2.3 em um local predefinido no servidor local que hospeda o DCL');
 INSERT INTO `lang_definitions` VALUES (114121, 6133, 21, 'Definições Regionais');
 INSERT INTO `lang_definitions` VALUES (114122, 6134, 21, 'Localidade');
 INSERT INTO `lang_definitions` VALUES (114123, 6135, 21, 'Localização');
-INSERT INTO `lang_definitions` VALUES (114124, 6136, 21, 'localização da máquina openemr e pode conter dados sensíveis, por isso é recomendado excluir manualmente os arquivos após seu uso');
+INSERT INTO `lang_definitions` VALUES (114124, 6136, 21, 'localização da máquina DCL e pode conter dados sensíveis, por isso é recomendado excluir manualmente os arquivos após seu uso');
 INSERT INTO `lang_definitions` VALUES (114125, 6137, 21, 'Localização deste lote');
 INSERT INTO `lang_definitions` VALUES (114126, 6138, 21, 'Localização não especificada');
 INSERT INTO `lang_definitions` VALUES (114127, 6139, 21, 'Local onde o Hylafax armazena faxes');
@@ -127907,7 +127907,7 @@ INSERT INTO `lang_definitions` VALUES (114538, 6597, 21, 'Humor / Afetar Nml {{H
 INSERT INTO `lang_definitions` VALUES (114539, 6600, 21, 'Mais informações sobre a regra de decisão clínica podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (114540, 6601, 21, 'Mais informações sobre os problemas podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (114541, 6602, 21, 'Mais informações sobre o que é phiMail e como configurá-lo estão disponíveis aqui');
-INSERT INTO `lang_definitions` VALUES (114542, 6603, 21, 'Mais informações disponíveis na página wiki openEMR MedEx');
+INSERT INTO `lang_definitions` VALUES (114542, 6603, 21, 'Mais informações disponíveis na página wiki DCL MedEx');
 INSERT INTO `lang_definitions` VALUES (114543, 6604, 21, 'Mais informações sobre como editar este formulário e outros formulários podem ser encontradas aqui');
 INSERT INTO `lang_definitions` VALUES (114544, 6605, 21, 'Mais informações sobre o uso de mensagens phiMail estão disponíveis aqui');
 INSERT INTO `lang_definitions` VALUES (114545, 6606, 21, 'Mais opções');
@@ -128149,7 +128149,7 @@ INSERT INTO `lang_definitions` VALUES (114780, 6865, 21, 'Novo no ACL Versão 5'
 INSERT INTO `lang_definitions` VALUES (114781, 6866, 21, 'Novo no ACL VersãoV r 6');
 INSERT INTO `lang_definitions` VALUES (114782, 6867, 21, 'Novo no ACL Versão 7');
 INSERT INTO `lang_definitions` VALUES (114783, 6868, 21, 'Novo no ACL Versão 8');
-INSERT INTO `lang_definitions` VALUES (114784, 6869, 21, 'Novo no openEMR versão 5.0.2');
+INSERT INTO `lang_definitions` VALUES (114784, 6869, 21, 'Novo no DCL versão 5.0.2');
 INSERT INTO `lang_definitions` VALUES (114785, 6870, 21, 'Novo Inj / Status');
 INSERT INTO `lang_definitions` VALUES (114786, 6871, 21, 'Novos itens (veja detalhes acima)');
 INSERT INTO `lang_definitions` VALUES (114787, 6872, 21, 'Novo Layout');
@@ -128175,7 +128175,7 @@ INSERT INTO `lang_definitions` VALUES (114806, 6896, 21, 'Novo recall');
 INSERT INTO `lang_definitions` VALUES (114807, 6897, 21, 'Novos resultados do Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (114808, 6898, 21, 'Nova Busca');
 INSERT INTO `lang_definitions` VALUES (114809, 6899, 21, 'Submissões novas');
-INSERT INTO `lang_definitions` VALUES (114810, 6900, 21, 'Novo no openEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (114810, 6900, 21, 'Novo no DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (114811, 6901, 21, 'Novo Utilizador');
 INSERT INTO `lang_definitions` VALUES (114812, 6902, 21, 'Novo valor');
 INSERT INTO `lang_definitions` VALUES (114813, 6903, 21, 'Nova Visita');
@@ -128510,7 +128510,7 @@ INSERT INTO `lang_definitions` VALUES (115141, 7294, 21, 'Notificar Paciente');
 INSERT INTO `lang_definitions` VALUES (115142, 7296, 21, 'Notificar via Portal do Paciente');
 INSERT INTO `lang_definitions` VALUES (115143, 7297, 21, 'Nov');
 INSERT INTO `lang_definitions` VALUES (115144, 7298, 21, 'Novembro');
-INSERT INTO `lang_definitions` VALUES (115145, 7299, 21, 'Agora é a hora de verificar e ajustar as configurações no openEMR para unidades padrão, sites, etc., consulte o arquivo de ajuda em Procedimentos> Provedores');
+INSERT INTO `lang_definitions` VALUES (115145, 7299, 21, 'Agora é a hora de verificar e ajustar as configurações no DCL para unidades padrão, sites, etc., consulte o arquivo de ajuda em Procedimentos> Provedores');
 INSERT INTO `lang_definitions` VALUES (115146, 7300, 21, 'Agora enviar para');
 INSERT INTO `lang_definitions` VALUES (115147, 7301, 21, 'A enviar para:');
 INSERT INTO `lang_definitions` VALUES (115148, 7302, 21, 'A imprimir');
@@ -128652,11 +128652,11 @@ INSERT INTO `lang_definitions` VALUES (115283, 7451, 21, 'Assim que um compromis
 INSERT INTO `lang_definitions` VALUES (115284, 7452, 21, 'Assim que um compromisso for agendado, a retirada irá sair do quadro de recall');
 INSERT INTO `lang_definitions` VALUES (115285, 7453, 21, 'Depois de concluído, visualize e armazene este encontro como um arquivo PDF');
 INSERT INTO `lang_definitions` VALUES (115286, 7455, 21, 'Depois de salva, a entidade de um grupo de favoritos personalizados não pode ser alterada. Se você precisar alterar a entidade, você deve excluir esta entrada e criar uma nova');
-INSERT INTO `lang_definitions` VALUES (115287, 7456, 21, 'Assim que o aplicativo capturar o código QR, ele mostrará o nome de usuário do OpenEMR no aplicativo');
+INSERT INTO `lang_definitions` VALUES (115287, 7456, 21, 'Assim que o aplicativo capturar o código QR, ele mostrará o nome de usuário do DCL no aplicativo');
 INSERT INTO `lang_definitions` VALUES (115288, 7457, 21, 'Uma vez que a unidade de negócios principal é definida, a alteração da id da unidade afetará NewCrop ePrescription');
 INSERT INTO `lang_definitions` VALUES (115289, 7458, 21, 'Uma vez que a unidade de negócios principal é definida, ela não deve ser alterada. Mudar a unidade afetará o funcionamento no NewCrop ePrescription');
 INSERT INTO `lang_definitions` VALUES (115290, 7459, 21, 'Uma vez que este recurso esteja habilitado, você deverá digitar a chave de 6 dígitos em cada login');
-INSERT INTO `lang_definitions` VALUES (115291, 7460, 21, 'Uma vez feito isso, a chave secreta compartilhada que é única para cada usuário deve existir apenas no OpenEMR e no aplicativo autenticador do usuário');
+INSERT INTO `lang_definitions` VALUES (115291, 7460, 21, 'Uma vez feito isso, a chave secreta compartilhada que é única para cada usuário deve existir apenas no DCL e no aplicativo autenticador do usuário');
 INSERT INTO `lang_definitions` VALUES (115292, 7461, 21, 'Assim que esta etapa for concluída, você pode prosseguir para a próxima etapa - para configurar os testes que podem ser solicitados do sistema');
 INSERT INTO `lang_definitions` VALUES (115293, 7462, 21, 'Sempre que mudar a password tem de fazer Logout seguido de Login');
 INSERT INTO `lang_definitions` VALUES (115294, 7463, 21, 'Depois de selecionar um código de justificação para a primeira linha CPT, todas as linhas de código CPT subsequentes terão a mesma justificativa. Pode ser manualmente alterado mais tarde, se desejado');
@@ -128737,20 +128737,20 @@ INSERT INTO `lang_definitions` VALUES (115368, 7554, 21, 'Abra / feche o painel 
 INSERT INTO `lang_definitions` VALUES (115369, 7555, 21, 'Abra / feche o painel Retinal Exam Quick Picks');
 INSERT INTO `lang_definitions` VALUES (115370, 7557, 21, 'Abra / feche a janela abreviada e exiba os códigos abreviados');
 INSERT INTO `lang_definitions` VALUES (115371, 7558, 21, 'Abra / feche a janela abreviada e exiba os códigos abreviados ao lado de cada campo');
-INSERT INTO `lang_definitions` VALUES (115372, 7560, 21, 'OpenEMR');
-INSERT INTO `lang_definitions` VALUES (115373, 7561, 21, 'OpenEMR permite um TOTP, mas vários métodos U2F por usuário');
-INSERT INTO `lang_definitions` VALUES (115374, 7562, 21, 'OpenEMR já tem uma autoridade de certificação configurada');
-INSERT INTO `lang_definitions` VALUES (115375, 7564, 21, 'Aplicativo OpenEMR');
-INSERT INTO `lang_definitions` VALUES (115376, 7565, 21, 'Categoria de aplicativo OpenEMR');
+INSERT INTO `lang_definitions` VALUES (115372, 7560, 21, 'DCL');
+INSERT INTO `lang_definitions` VALUES (115373, 7561, 21, 'DCL permite um TOTP, mas vários métodos U2F por usuário');
+INSERT INTO `lang_definitions` VALUES (115374, 7562, 21, 'DCL já tem uma autoridade de certificação configurada');
+INSERT INTO `lang_definitions` VALUES (115375, 7564, 21, 'Aplicativo DCL');
+INSERT INTO `lang_definitions` VALUES (115376, 7565, 21, 'Categoria de aplicativo DCL');
 INSERT INTO `lang_definitions` VALUES (115377, 7567, 21, 'Base de Dados Actualizada');
-INSERT INTO `lang_definitions` VALUES (115378, 7568, 21, 'Atualização do banco de dados OpenEMR para desidentificação');
-INSERT INTO `lang_definitions` VALUES (115379, 7569, 21, 'OpenEMR não reconhece o arquivo de entrada no diretório contrib. Isso é mais provável porque você precisa configurar a versão na tabela supported_external_dataloads no banco de dados MySQL');
-INSERT INTO `lang_definitions` VALUES (115380, 7571, 21, 'OpenEMR deve ser configurado para usar certificados antes de poder criar certificados de cliente');
-INSERT INTO `lang_definitions` VALUES (115381, 7572, 21, 'OpenEMR oferece 2 métodos de 2FA');
-INSERT INTO `lang_definitions` VALUES (115382, 7573, 21, 'Portal OpenEMR');
-INSERT INTO `lang_definitions` VALUES (115383, 7574, 21, 'Registro de produto OpenEMR');
-INSERT INTO `lang_definitions` VALUES (115384, 7575, 21, 'OpenEMR exige para Javascript que execute autenticação de usuário.');
-INSERT INTO `lang_definitions` VALUES (115385, 7576, 21, 'Utilizadores do OpenEMR');
+INSERT INTO `lang_definitions` VALUES (115378, 7568, 21, 'Atualização do banco de dados DCL para desidentificação');
+INSERT INTO `lang_definitions` VALUES (115379, 7569, 21, 'DCL não reconhece o arquivo de entrada no diretório contrib. Isso é mais provável porque você precisa configurar a versão na tabela supported_external_dataloads no banco de dados MySQL');
+INSERT INTO `lang_definitions` VALUES (115380, 7571, 21, 'DCL deve ser configurado para usar certificados antes de poder criar certificados de cliente');
+INSERT INTO `lang_definitions` VALUES (115381, 7572, 21, 'DCL oferece 2 métodos de 2FA');
+INSERT INTO `lang_definitions` VALUES (115382, 7573, 21, 'Portal DCL');
+INSERT INTO `lang_definitions` VALUES (115383, 7574, 21, 'Registro de produto DCL');
+INSERT INTO `lang_definitions` VALUES (115384, 7575, 21, 'DCL exige para Javascript que execute autenticação de usuário.');
+INSERT INTO `lang_definitions` VALUES (115385, 7576, 21, 'Utilizadores do DCL');
 INSERT INTO `lang_definitions` VALUES (115386, 7577, 21, 'Vagas');
 INSERT INTO `lang_definitions` VALUES (115387, 7578, 21, 'Abre no quadro inferior');
 INSERT INTO `lang_definitions` VALUES (115388, 7579, 21, 'Abre no quadro superior');
@@ -129275,7 +129275,7 @@ INSERT INTO `lang_definitions` VALUES (115906, 8152, 21, 'Revisão pendente');
 INSERT INTO `lang_definitions` VALUES (115907, 8153, 21, 'Contagem de Rx pendente');
 INSERT INTO `lang_definitions` VALUES (115908, 8154, 21, 'Pendente desde');
 INSERT INTO `lang_definitions` VALUES (115909, 8155, 21, 'Alergia à penicilina');
-INSERT INTO `lang_definitions` VALUES (115910, 8156, 21, 'Pennington OpenEMR v Firme');
+INSERT INTO `lang_definitions` VALUES (115910, 8156, 21, 'Pennington DCL v Firme');
 INSERT INTO `lang_definitions` VALUES (115911, 8157, 21, 'Úlcera péptica');
 INSERT INTO `lang_definitions` VALUES (115912, 8158, 21, 'Por encontro');
 INSERT INTO `lang_definitions` VALUES (115913, 8159, 21, 'por minuto');
@@ -129498,7 +129498,7 @@ INSERT INTO `lang_definitions` VALUES (116129, 8393, 21, 'Por favor redefina a s
 INSERT INTO `lang_definitions` VALUES (116130, 8395, 21, 'Por favor, reinicie o servidor apache antes de brincar com a desidentificação');
 INSERT INTO `lang_definitions` VALUES (116131, 8396, 21, 'Por favor, devolva esta parte inferior com o seu pagamento');
 INSERT INTO `lang_definitions` VALUES (116132, 8397, 21, 'Por favor, veja fórum e wiki');
-INSERT INTO `lang_definitions` VALUES (116133, 8399, 21, 'Consulte http://www.open-emr.org/wiki/index.php/LBV_Forms para obter mais informações sobre este tópico');
+INSERT INTO `lang_definitions` VALUES (116133, 8399, 21, 'Consulte http://www.dcl.org/wiki/index.php/LBV_Forms para obter mais informações sobre este tópico');
 INSERT INTO `lang_definitions` VALUES (116134, 8400, 21, 'Por favor, veja o PDF em anexo');
 INSERT INTO `lang_definitions` VALUES (116135, 8401, 21, 'Por favor seleccione');
 INSERT INTO `lang_definitions` VALUES (116136, 8403, 21, 'Por favor, selecione um formato');
@@ -129534,7 +129534,7 @@ INSERT INTO `lang_definitions` VALUES (116165, 8437, 21, 'Por favor, definir far
 INSERT INTO `lang_definitions` VALUES (116166, 8438, 21, 'Por favor, especifique pelo menos um endereço direto');
 INSERT INTO `lang_definitions` VALUES (116167, 8441, 21, 'Por favor, iniciar novo processo de De Identificação');
 INSERT INTO `lang_definitions` VALUES (116168, 8442, 21, 'Por favor, forneça um título');
-INSERT INTO `lang_definitions` VALUES (116169, 8445, 21, 'Por favor, atualizar o banco de dados OpenEMR para incluir procedimentos, funções e tabelas de identificação');
+INSERT INTO `lang_definitions` VALUES (116169, 8445, 21, 'Por favor, atualizar o banco de dados DCL para incluir procedimentos, funções e tabelas de identificação');
 INSERT INTO `lang_definitions` VALUES (116170, 8446, 21, 'Por favor, use NPI válido');
 INSERT INTO `lang_definitions` VALUES (116171, 8447, 21, 'Por favor, veja a tabela de log de erros de identificação para mais detalhes');
 INSERT INTO `lang_definitions` VALUES (116172, 8448, 21, 'Por favor, visite a tela De Identificação após algum tempo');
@@ -129698,7 +129698,7 @@ INSERT INTO `lang_definitions` VALUES (116329, 8620, 21, 'Presente');
 INSERT INTO `lang_definitions` VALUES (116330, 8622, 21, 'Reclamação apresentando');
 INSERT INTO `lang_definitions` VALUES (116331, 8623, 21, 'Assunto apresentado');
 INSERT INTO `lang_definitions` VALUES (116332, 8624, 21, 'Pressione Continuar');
-INSERT INTO `lang_definitions` VALUES (116333, 8625, 21, 'Pressione o botão piscando na chave USB dentro de 1 minuto após inseri-la e clique em registrar para registrar a chave com OpenEMR');
+INSERT INTO `lang_definitions` VALUES (116333, 8625, 21, 'Pressione o botão piscando na chave USB dentro de 1 minuto após inseri-la e clique em registrar para registrar a chave com DCL');
 INSERT INTO `lang_definitions` VALUES (116334, 8626, 21, 'Pressione este ícone para construir sua impressão / plano');
 INSERT INTO `lang_definitions` VALUES (116335, 8627, 21, 'Presume-Diagnóstico');
 INSERT INTO `lang_definitions` VALUES (116336, 8628, 21, 'Diagnose presumida por especialista');
@@ -130301,7 +130301,7 @@ INSERT INTO `lang_definitions` VALUES (116932, 9291, 21, 'recarregar');
 INSERT INTO `lang_definitions` VALUES (116933, 9292, 21, 'recarregar nomes abaixo');
 INSERT INTO `lang_definitions` VALUES (116934, 9293, 21, 'Relogin');
 INSERT INTO `lang_definitions` VALUES (116935, 9294, 21, 'Lembrete');
-INSERT INTO `lang_definitions` VALUES (116936, 9295, 21, 'Lembre-se que o agrupamento de testes serve apenas para organizar convenientemente os dados no módulo de Ordem de Procedimento no openEMR, para que esse processo funcione, configurando as Ordens de Procedimento (os próprios testes) e o Resultado Discreto (o local para inserir e exibir o resultado retornado) são Criticamente importante');
+INSERT INTO `lang_definitions` VALUES (116936, 9295, 21, 'Lembre-se que o agrupamento de testes serve apenas para organizar convenientemente os dados no módulo de Ordem de Procedimento no DCL, para que esse processo funcione, configurando as Ordens de Procedimento (os próprios testes) e o Resultado Discreto (o local para inserir e exibir o resultado retornado) são Criticamente importante');
 INSERT INTO `lang_definitions` VALUES (116937, 9297, 21, 'Recordar Clínica Seleccionada');
 INSERT INTO `lang_definitions` VALUES (116938, 9298, 21, 'Lembre-se do ditado de que os códigos de identificação devem ser únicos, você não deve configurar um agrupamento personalizado de um painel de testes, bem como ter os painéis configurados como painel individual reconhecido, ou seja, ter o painel CBC e Renal agrupados como um favorito personalizado e listar CBC e Painel Renal separadamente como painéis encomendados individualmente');
 INSERT INTO `lang_definitions` VALUES (116939, 9299, 21, 'Lembre-se desses resultados discretos ou a fruta (Nível 4) terá que pendurar no galho frutífero ou na Ordem de Procedimento, nomeadamente, Painel de eletrólito (Nível 3)');
@@ -131197,7 +131197,7 @@ INSERT INTO `lang_definitions` VALUES (117828, 10289, 21, 'Irmã');
 INSERT INTO `lang_definitions` VALUES (117829, 10290, 21, 'Local');
 INSERT INTO `lang_definitions` VALUES (117830, 10294, 21, 'Identificação de site');
 INSERT INTO `lang_definitions` VALUES (117831, 10295, 21, 'ID do site para a integração de informações médicas, LLC Serviço de troca de laboratório');
-INSERT INTO `lang_definitions` VALUES (117832, 10296, 21, 'ID do site para o OpenEMR Support LLC Serviço de troca de laboratório');
+INSERT INTO `lang_definitions` VALUES (117832, 10296, 21, 'ID do site para o DCL Support LLC Serviço de troca de laboratório');
 INSERT INTO `lang_definitions` VALUES (117833, 10297, 21, 'Trabalhador local');
 INSERT INTO `lang_definitions` VALUES (117834, 10298, 21, 'Seis meses atrás');
 INSERT INTO `lang_definitions` VALUES (117835, 10299, 21, 'Seis meses antes');
@@ -131369,7 +131369,7 @@ INSERT INTO `lang_definitions` VALUES (118000, 10478, 21, 'Especifica a formata�
 INSERT INTO `lang_definitions` VALUES (118001, 10479, 21, 'Especifica a formatação da ID externa do paciente. # = dígito, * = qualquer caractere. Vazio se não for usado');
 INSERT INTO `lang_definitions` VALUES (118002, 10480, 21, 'Especifica a formatação da ID externa do paciente. # = dígito, @ = alfa, * = qualquer caractere. Vazio se não for usado');
 INSERT INTO `lang_definitions` VALUES (118003, 10481, 21, 'Especifique o intervalo para verificação automática de mensagens, 5 ou 10 minutos como ponto de partida');
-INSERT INTO `lang_definitions` VALUES (118004, 10482, 21, 'Especifique o usuário OpenEMR que receberá notificação de novas mensagens diretas de entrada');
+INSERT INTO `lang_definitions` VALUES (118004, 10482, 21, 'Especifique o usuário DCL que receberá notificação de novas mensagens diretas de entrada');
 INSERT INTO `lang_definitions` VALUES (118005, 10483, 21, 'Espécime');
 INSERT INTO `lang_definitions` VALUES (118006, 10485, 21, 'Número / identificador da amostra');
 INSERT INTO `lang_definitions` VALUES (118007, 10486, 21, 'Tipo de amostra');
@@ -131556,7 +131556,7 @@ INSERT INTO `lang_definitions` VALUES (118187, 10693, 21, 'Assinante SS');
 INSERT INTO `lang_definitions` VALUES (118188, 10694, 21, 'Estado do assinante');
 INSERT INTO `lang_definitions` VALUES (118189, 10695, 21, 'CEP do assinante');
 INSERT INTO `lang_definitions` VALUES (118190, 10696, 21, 'Assinante / Política');
-INSERT INTO `lang_definitions` VALUES (118191, 10697, 21, 'Os assinantes receberão o nome de usuário, a senha e as informações de endereço do servidor para configurar o OpenEMR');
+INSERT INTO `lang_definitions` VALUES (118191, 10697, 21, 'Os assinantes receberão o nome de usuário, a senha e as informações de endereço do servidor para configurar o DCL');
 INSERT INTO `lang_definitions` VALUES (118192, 10698, 21, 'Telefone do assinante');
 INSERT INTO `lang_definitions` VALUES (118193, 10699, 21, 'Substância');
 INSERT INTO `lang_definitions` VALUES (118194, 10700, 21, 'Razão de recusa de substância');
@@ -131703,7 +131703,7 @@ INSERT INTO `lang_definitions` VALUES (118334, 10860, 21, 'O paciente alvo não 
 INSERT INTO `lang_definitions` VALUES (118335, 10861, 21, 'Paciente alvo não encontrado');
 INSERT INTO `lang_definitions` VALUES (118336, 10862, 21, 'Grupos Alvo / Ação');
 INSERT INTO `lang_definitions` VALUES (118337, 10863, 21, 'Alvos');
-INSERT INTO `lang_definitions` VALUES (118338, 10864, 21, 'Taskman: Documentos em openEMR');
+INSERT INTO `lang_definitions` VALUES (118338, 10864, 21, 'Taskman: Documentos em DCL');
 INSERT INTO `lang_definitions` VALUES (118339, 10865, 21, 'Tártaro');
 INSERT INTO `lang_definitions` VALUES (118340, 10866, 21, 'Taxa de identificação');
 INSERT INTO `lang_definitions` VALUES (118341, 10867, 21, 'Taxa de identificação');
@@ -131792,7 +131792,7 @@ INSERT INTO `lang_definitions` VALUES (118423, 10964, 21, 'Os testes ou procedim
 INSERT INTO `lang_definitions` VALUES (118424, 10965, 21, 'O ícone Adicionar é usado para configurar um nível que será um descendente direto deste nível');
 INSERT INTO `lang_definitions` VALUES (118425, 10966, 21, 'A vantagem de integrar os resultados ao prontuário do paciente como dados estruturados é a capacidade de manipulá-los para ver as tendências em um local conveniente, para traçar gráficos com os dados e usá-los na análise de dados');
 INSERT INTO `lang_definitions` VALUES (118426, 10967, 21, 'A vantagem de digitalizar os resultados no gráfico é a simplicidade - nenhuma configuração é necessária, a não ser definir um diretório / pasta no prontuário do paciente em Documentos onde o resultado será armazenado. Sendo dados não estruturados, eles não têm as vantagens acima e não atenderão aos critérios de uso significativo para entrada de pedido do provedor computadorizado (CPOE)');
-INSERT INTO `lang_definitions` VALUES (118427, 10968, 21, 'A solução Allscripts integra o site Allscripts ePrescribe com openEMR');
+INSERT INTO `lang_definitions` VALUES (118427, 10968, 21, 'A solução Allscripts integra o site Allscripts ePrescribe com DCL');
 INSERT INTO `lang_definitions` VALUES (118428, 10969, 21, 'A American Medical Association definiu 9 painéis que podem ser solicitados. Cada painel contém vários testes agrupados');
 INSERT INTO `lang_definitions` VALUES (118429, 10970, 21, 'O valor será exibido na coluna Pagamento ou Ajuste, conforme o caso');
 INSERT INTO `lang_definitions` VALUES (118430, 10971, 21, 'O certificado do servidor Apache SSL e a chave pública');
@@ -131942,7 +131942,7 @@ INSERT INTO `lang_definitions` VALUES (118573, 11119, 21, 'O código de identifi
 INSERT INTO `lang_definitions` VALUES (118574, 11120, 21, 'O código de identificação de R34392-1, um número arbitrário, neste caso o código de identificação precedido por R para indicar o resultado e seguido por 1 para indicar o primeiro na sequência, pode ser qualquer coisa única que você escolher');
 INSERT INTO `lang_definitions` VALUES (118575, 11121, 21, 'As informações inseridas aqui são usadas para exibir um resumo do encontro. Também é usado para fins de cobrança');
 INSERT INTO `lang_definitions` VALUES (118576, 11122, 21, 'As informações inseridas neste formulário serão usadas para preencher uma reclamação em papel');
-INSERT INTO `lang_definitions` VALUES (118577, 11123, 21, 'As informações fornecidas no Formulário de Novo Encontro e Folha de Taxas no openEMR são usadas para gerar a reclamação em papel, bem como as reclamações eletrônicas');
+INSERT INTO `lang_definitions` VALUES (118577, 11123, 21, 'As informações fornecidas no Formulário de Novo Encontro e Folha de Taxas no DCL são usadas para gerar a reclamação em papel, bem como as reclamações eletrônicas');
 INSERT INTO `lang_definitions` VALUES (118578, 11124, 21, 'Os esforços iniciais levaram à criação de Guias de Implementação (IGs) duplicados e conflitantes publicados por diferentes organizações de padrões');
 INSERT INTO `lang_definitions` VALUES (118579, 11125, 21, 'A tela inicial permite que você selecione um método, oferecendo-lhe essas duas opções');
 INSERT INTO `lang_definitions` VALUES (118580, 11126, 21, 'A janela inicial é a página de procura de fatura. Ao topo você pode entrar em uma fonte (por exemplo confira número), pague data e confira quantia. A razão para a fonte e data de pagamento está de forma que você dom \'t têm que entrar neles inúmeras vezes para cada reivindicação. A quantia na que você entra será diminuída para cada fatura que é determinada parte do pagamento, e esperançosamente terminará a zero quando você for terminado.');
@@ -132100,7 +132100,7 @@ INSERT INTO `lang_definitions` VALUES (118731, 11288, 21, 'A coluna Unidade fica
 INSERT INTO `lang_definitions` VALUES (118732, 11289, 21, 'As unidades serão 1, pois cada código é cobrado apenas uma vez para o encontro');
 INSERT INTO `lang_definitions` VALUES (118733, 11290, 21, 'Os próximos lembretes têm um ícone de exclamação verde');
 INSERT INTO `lang_definitions` VALUES (118734, 11291, 21, 'Os dispositivos USB se comunicam com o computador host usando o protocolo do dispositivo de interface humana (HID), essencialmente imitando um teclado');
-INSERT INTO `lang_definitions` VALUES (118735, 11292, 21, 'A chave USB precisa ser conectada ao computador elogo registrada com OpenEMR');
+INSERT INTO `lang_definitions` VALUES (118735, 11292, 21, 'A chave USB precisa ser conectada ao computador elogo registrada com DCL');
 INSERT INTO `lang_definitions` VALUES (118736, 11293, 21, 'A chave USB pega este nonce fornecido pelo aplicativo depois de confirmar a soma de verificação e gera uma chave privada usando o processo semelhante ao usado no processo de registro');
 INSERT INTO `lang_definitions` VALUES (118737, 11294, 21, 'Os privilégios reais do usuário são determinados pelo acesso às partes do programa, ou seja, (ACO) que cada grupo (ARO) possui');
 INSERT INTO `lang_definitions` VALUES (118738, 11296, 21, 'O nome de usuário é seu endereço direto');
@@ -132110,9 +132110,9 @@ INSERT INTO `lang_definitions` VALUES (118741, 11299, 21, 'O código específico
 INSERT INTO `lang_definitions` VALUES (118742, 11300, 21, 'O código específico do fornecedor que identifica este procedimento ou resultado. Se nenhum fornecedor inserir qualquer número único arbitrário, de preferência, um preenchido de zero 5 dígitos, por exemplo, 00211');
 INSERT INTO `lang_definitions` VALUES (118743, 11301, 21, 'O primeiro passo seria instalar os códigos ICD. Vá para Administração> Outro> Cargas de dados externos. Selecione os conjuntos de códigos que deseja instalar e clique em Instalar');
 INSERT INTO `lang_definitions` VALUES (118744, 11302, 21, 'A última linha deste relatório fornecerá o Total Geral de Encargos, Pagamentos, Ajustes e o Saldo');
-INSERT INTO `lang_definitions` VALUES (118745, 11303, 21, 'O Weno Exchange está bem integrado com openEMR e não é baseado em assinatura');
-INSERT INTO `lang_definitions` VALUES (118746, 11304, 21, 'O X12 arquiva como também a HTML resultante produziu são arquivados relatórios no subdiretório de \"era\" do OpenEMR instalação diretório principal. Você quererá recorrer de vez em quando a estes arquivos. A URL é');
-INSERT INTO `lang_definitions` VALUES (118747, 11305, 21, 'Os arquivos X12, bem como os relatórios de saída HTML resultantes, são arquivados no subdiretório \'era\' do diretório principal de instalação do OpenEMR. Você vai querer consultar esses arquivos de vez em quando');
+INSERT INTO `lang_definitions` VALUES (118745, 11303, 21, 'O Weno Exchange está bem integrado com DCL e não é baseado em assinatura');
+INSERT INTO `lang_definitions` VALUES (118746, 11304, 21, 'O X12 arquiva como também a HTML resultante produziu são arquivados relatórios no subdiretório de \"era\" do DCL instalação diretório principal. Você quererá recorrer de vez em quando a estes arquivos. A URL é');
+INSERT INTO `lang_definitions` VALUES (118747, 11305, 21, 'Os arquivos X12, bem como os relatórios de saída HTML resultantes, são arquivados no subdiretório \'era\' do diretório principal de instalação do DCL. Você vai querer consultar esses arquivos de vez em quando');
 INSERT INTO `lang_definitions` VALUES (118748, 11306, 21, 'O arquivo zip conterá os seguintes itens');
 INSERT INTO `lang_definitions` VALUES (118749, 11307, 21, 'Tema');
 INSERT INTO `lang_definitions` VALUES (118750, 11308, 21, 'Tema do layout das guias (é necessário sair e logo fazer login para ver esta nova configuração)');
@@ -132128,7 +132128,7 @@ INSERT INTO `lang_definitions` VALUES (118759, 11317, 21, 'Grupo de terapia');
 INSERT INTO `lang_definitions` VALUES (118760, 11318, 21, 'Encontro do Grupo de Terapia');
 INSERT INTO `lang_definitions` VALUES (118761, 11319, 21, 'Localizador de grupo de terapia');
 INSERT INTO `lang_definitions` VALUES (118762, 11320, 21, 'Há');
-INSERT INTO `lang_definitions` VALUES (118763, 11321, 21, 'Existem 10 configurações que estão relacionadas aos procedimentos incluídos na versão padrão do openEMR');
+INSERT INTO `lang_definitions` VALUES (118763, 11321, 21, 'Existem 10 configurações que estão relacionadas aos procedimentos incluídos na versão padrão do DCL');
 INSERT INTO `lang_definitions` VALUES (118764, 11322, 21, 'Existem 3 formulários na categoria principal - dados demográficos, informações específicas do usuário do local e histórico e todos os 5 formulários em transações que podem ser editados');
 INSERT INTO `lang_definitions` VALUES (118765, 11323, 21, 'Não há prescrição');
 INSERT INTO `lang_definitions` VALUES (118766, 11324, 21, 'Há erros com sua submissão. Estes são esboçados abaixo.');
@@ -132176,7 +132176,7 @@ INSERT INTO `lang_definitions` VALUES (118807, 11370, 21, 'Não há nenhuma entr
 INSERT INTO `lang_definitions` VALUES (118808, 11371, 21, 'Não há paciente com login do portal');
 INSERT INTO `lang_definitions` VALUES (118809, 11373, 21, 'Ocorreu um problema ao enviar a mensagem');
 INSERT INTO `lang_definitions` VALUES (118810, 11374, 21, 'Havia um erro enquanto processando seu pedido.');
-INSERT INTO `lang_definitions` VALUES (118811, 11375, 21, 'Houve um ERRO de escape de SQL OpenEMR da seguinte string');
+INSERT INTO `lang_definitions` VALUES (118811, 11375, 21, 'Houve um ERRO de escape de SQL DCL da seguinte string');
 INSERT INTO `lang_definitions` VALUES (118812, 11376, 21, 'Portanto, cada usuário deve ativar individualmente este recurso');
 INSERT INTO `lang_definitions` VALUES (118813, 11377, 21, 'Esses ACOs são agrupados em dez categorias amplas que fazem parte da instalação padrão. Eles são - Administração, Contabilidade, Informações do Paciente, Informações do Encontro, Esquadrões, Sensibilidades, Listas, Espaço Reservado, Notas da Nação e Portal do Paciente. Cada uma dessas categorias tem uma ou várias subcategorias que fornecem acesso a partes específicas do programa');
 INSERT INTO `lang_definitions` VALUES (118814, 11378, 21, 'Eles são gratuitos e podem ser baixados da respectiva loja de aplicativos para dispositivos iOS e Android');
@@ -132188,7 +132188,7 @@ INSERT INTO `lang_definitions` VALUES (118819, 11383, 21, 'Esses grupos personal
 INSERT INTO `lang_definitions` VALUES (118820, 11384, 21, 'Essas entradas serão usadas para definir os provedores no módulo de procedimentos');
 INSERT INTO `lang_definitions` VALUES (118821, 11385, 21, 'Esses grupos (AROs) podem então receber um conjunto de privilégios atribuindo diferentes categorias (ACOs)');
 INSERT INTO `lang_definitions` VALUES (118822, 11386, 21, 'Esses itens podem ser editados se o usuário tiver privilégios suficientes');
-INSERT INTO `lang_definitions` VALUES (118823, 11387, 21, 'Essas listas são usadas para determinar quem pode acessar o que em openEMR. Eles funcionam de cima para baixo, ou seja, inicialmente todos têm acesso negado às partes do programa controladas pela ACL');
+INSERT INTO `lang_definitions` VALUES (118823, 11387, 21, 'Essas listas são usadas para determinar quem pode acessar o que em DCL. Eles funcionam de cima para baixo, ou seja, inicialmente todos têm acesso negado às partes do programa controladas pela ACL');
 INSERT INTO `lang_definitions` VALUES (118824, 11388, 21, 'Esses números precisam ser iguais para autenticar o usuário com sucesso');
 INSERT INTO `lang_definitions` VALUES (118825, 11389, 21, 'Estas notas do paciente são enviadas sem um paciente atribuído');
 INSERT INTO `lang_definitions` VALUES (118826, 11390, 21, 'Essas subcategorias representam os objetos de controle de acesso (ACOs) reais');
@@ -132304,7 +132304,7 @@ INSERT INTO `lang_definitions` VALUES (118935, 11513, 21, 'No entanto, este mét
 INSERT INTO `lang_definitions` VALUES (118936, 11514, 21, 'Este módulo está sendo usado por');
 INSERT INTO `lang_definitions` VALUES (118937, 11515, 21, 'Este módulo está em modo de teste. O banco de dados não será mudado.');
 INSERT INTO `lang_definitions` VALUES (118938, 11516, 21, 'Este módulo é baseado em assinatura e precisa ser habilitado em Administração> Globais> Conectores> Habilitar Serviço NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (118939, 11517, 21, 'Este módulo está bem integrado com openEMR, no entanto, existem duas alternativas não baseadas em assinatura, Weno e Allscripts que podem ser usados em seu lugar');
+INSERT INTO `lang_definitions` VALUES (118939, 11517, 21, 'Este módulo está bem integrado com DCL, no entanto, existem duas alternativas não baseadas em assinatura, Weno e Allscripts que podem ser usados em seu lugar');
 INSERT INTO `lang_definitions` VALUES (118940, 11518, 21, 'Este módulo promove entrada eficiente de dados de EOB.');
 INSERT INTO `lang_definitions` VALUES (118941, 11519, 21, 'Este mês até à data');
 INSERT INTO `lang_definitions` VALUES (118942, 11520, 21, 'Este nome já existe sob este pai');
@@ -132485,8 +132485,8 @@ INSERT INTO `lang_definitions` VALUES (119116, 11716, 21, 'Filtrar através de s
 INSERT INTO `lang_definitions` VALUES (119117, 11717, 21, 'Para cumprir os requisitos de uso significativo e ajudar a rastrear seu uso, você pode marcar a caixa de seleção Resumo de cuidados enviados e a caixa de seleção Resumo de cuidados enviados eletronicamente, se apropriado');
 INSERT INTO `lang_definitions` VALUES (119118, 11718, 21, 'Para excluir totalmente, clique em \'Salvar\'');
 INSERT INTO `lang_definitions` VALUES (119119, 11719, 21, 'Para começar, você escolhe um dos dois botões de opção. \'Pesquisa de fatura\' ou \'Upload ERA\'');
-INSERT INTO `lang_definitions` VALUES (119120, 11720, 21, 'Para ajudar a explorar os vários componentes da página Relatório, especialmente se você quiser usá-la como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
-INSERT INTO `lang_definitions` VALUES (119121, 11721, 21, 'Para ajudar a se familiarizar com os vários componentes da página Dashboard, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
+INSERT INTO `lang_definitions` VALUES (119120, 11720, 21, 'Para ajudar a explorar os vários componentes da página Relatório, especialmente se você quiser usá-la como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
+INSERT INTO `lang_definitions` VALUES (119121, 11721, 21, 'Para ajudar a se familiarizar com os vários componentes da página Dashboard, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando a parte inferior canto direito da janela pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
 INSERT INTO `lang_definitions` VALUES (119122, 11722, 21, 'Para ajudar a simplificar as implementações, os modelos comumente usados foram harmonizados a partir de guias de implementação de CDA existentes e consolidados em um único guia de implementação - o Guia de Implementação C-CDA (IG) (07/2012)');
 INSERT INTO `lang_definitions` VALUES (119123, 11723, 21, 'Para História');
 INSERT INTO `lang_definitions` VALUES (119124, 11724, 21, 'Para incluir os documentos digitalizados que fazem parte do registro do paciente, selecione os registros desejados marcando as caixas de seleção relevantes');
@@ -132515,9 +132515,9 @@ INSERT INTO `lang_definitions` VALUES (119146, 11749, 21, 'esfolar');
 INSERT INTO `lang_definitions` VALUES (119147, 11750, 21, 'Para resumir');
 INSERT INTO `lang_definitions` VALUES (119148, 11751, 21, 'para esta visita?');
 INSERT INTO `lang_definitions` VALUES (119149, 11752, 21, 'Para carregar o documento CCR de um paciente já existente, use a Tela de resumo do paciente-> Documentos. Para o documento CCR de um novo paciente, use a tela Miscellanous-> New Documents');
-INSERT INTO `lang_definitions` VALUES (119150, 11754, 21, 'Para usar a página de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
-INSERT INTO `lang_definitions` VALUES (119151, 11755, 21, 'Para usar este arquivo de ajuda como um manual de instruções é melhor redimensionar seu navegador para ocupar metade da tela, abrir outra instância do navegador para preencher a outra metade da tela, fazer o login para openEMR e abrir o arquivo de ajuda neste navegador e redimensionar clicando e arrastando o canto inferior direito para que ocupae toda a metade da tela');
-INSERT INTO `lang_definitions` VALUES (119152, 11756, 21, 'Para usar este arquivo de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no openEMR');
+INSERT INTO `lang_definitions` VALUES (119150, 11754, 21, 'Para usar a página de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
+INSERT INTO `lang_definitions` VALUES (119151, 11755, 21, 'Para usar este arquivo de ajuda como um manual de instruções é melhor redimensionar seu navegador para ocupar metade da tela, abrir outra instância do navegador para preencher a outra metade da tela, fazer o login para DCL e abrir o arquivo de ajuda neste navegador e redimensionar clicando e arrastando o canto inferior direito para que ocupae toda a metade da tela');
+INSERT INTO `lang_definitions` VALUES (119152, 11756, 21, 'Para usar este arquivo de ajuda como um manual de instruções, é sugerido que você reduza o tamanho do navegador para cobrir metade da janela de visualização, redimensione o pop-up de ajuda clicando e arrastando o canto inferior direito do pop-up. Abra outra instância do navegador e redimensione-a para cobrir a outra metade da janela de visualização, faça login no DCL');
 INSERT INTO `lang_definitions` VALUES (119153, 11757, 21, 'Para:');
 INSERT INTO `lang_definitions` VALUES (119154, 11758, 21, 'Para:');
 INSERT INTO `lang_definitions` VALUES (119155, 11759, 21, 'TO_CITY');
@@ -132553,7 +132553,7 @@ INSERT INTO `lang_definitions` VALUES (119184, 11788, 21, 'Alternar de navegaç�
 INSERT INTO `lang_definitions` VALUES (119185, 11789, 21, 'Alternar o painel do paciente');
 INSERT INTO `lang_definitions` VALUES (119186, 11790, 21, 'Alternar o painel PMSFH do lado direito');
 INSERT INTO `lang_definitions` VALUES (119187, 11796, 21, 'ID do token para o Medical Information Integration, LLC Lab Exchange Service');
-INSERT INTO `lang_definitions` VALUES (119188, 11797, 21, 'Token ID para o OpenEMR Support LLC Lab Exchange Service');
+INSERT INTO `lang_definitions` VALUES (119188, 11797, 21, 'Token ID para o DCL Support LLC Lab Exchange Service');
 INSERT INTO `lang_definitions` VALUES (119189, 11802, 21, 'Tonga (Ilhas Tonga)');
 INSERT INTO `lang_definitions` VALUES (119190, 11803, 21, 'Amigdalectomia');
 INSERT INTO `lang_definitions` VALUES (119191, 11804, 21, 'tonsilectomia');
@@ -132885,7 +132885,7 @@ INSERT INTO `lang_definitions` VALUES (119516, 12182, 21, 'Atualizando indicador
 INSERT INTO `lang_definitions` VALUES (119517, 12183, 21, 'MELHORIA');
 INSERT INTO `lang_definitions` VALUES (119518, 12184, 21, 'Melhoria');
 INSERT INTO `lang_definitions` VALUES (119519, 12186, 21, 'Atualizar banco de dados');
-INSERT INTO `lang_definitions` VALUES (119520, 12188, 21, 'Atualiza o banco de dados OpenEMR para incluir procedimentos, funções e tabelas necessárias para o processo de desidentificação');
+INSERT INTO `lang_definitions` VALUES (119520, 12188, 21, 'Atualiza o banco de dados DCL para incluir procedimentos, funções e tabelas necessárias para o processo de desidentificação');
 INSERT INTO `lang_definitions` VALUES (119521, 12189, 21, 'A atualização vai continuar');
 INSERT INTO `lang_definitions` VALUES (119522, 12190, 21, 'Cédula Profissional');
 INSERT INTO `lang_definitions` VALUES (119523, 12191, 21, 'Carga');
@@ -132909,7 +132909,7 @@ INSERT INTO `lang_definitions` VALUES (119540, 12210, 21, 'Após uma pesquisa be
 INSERT INTO `lang_definitions` VALUES (119541, 12211, 21, 'Ao clicar um número de fatura a janela postando\" manual\" se aparece. Aqui você pode mudar a data de vencimento e notas para a fatura, selecione a festa para quem você está postando, e seleciona foram recebidos os seguros para os quais tudo esperaram paymants. Importantemente, para cada código de faturamento pelo qual uma quantia foi cobrada, você pode entrar em pagamento e informação de ajuste.');
 INSERT INTO `lang_definitions` VALUES (119542, 12212, 21, 'Ao clicar em um número de fatura, a \'janela de lançamento manual\' aparece. Aqui você pode alterar a data de vencimento e as notas da fatura, selecionar a parte para a qual está lançando e selecionar os seguros para os quais todos os pagamentos esperados foram recebidos. Mais importante ainda, para cada código de faturamento pelo qual um valor foi cobrado, você pode inserir informações de pagamento e ajuste');
 INSERT INTO `lang_definitions` VALUES (119543, 12213, 21, 'Ao entrar na página, existem dois botões visíveis abaixo da barra de navegação');
-INSERT INTO `lang_definitions` VALUES (119544, 12214, 21, 'Ao fazer login no openEMR, um pequeno ícone de envelope fica visível no canto superior direito. Mostra o número de mensagens pendentes e lembretes datados');
+INSERT INTO `lang_definitions` VALUES (119544, 12214, 21, 'Ao fazer login no DCL, um pequeno ícone de envelope fica visível no canto superior direito. Mostra o número de mensagens pendentes e lembretes datados');
 INSERT INTO `lang_definitions` VALUES (119545, 12215, 21, 'Ao atingir um ponto predeterminado, seja uma data ou valor, a regra irá disparar um ou mais eventos');
 INSERT INTO `lang_definitions` VALUES (119546, 12216, 21, 'Ao o procurar é apresentado com uma lista de faturas. Você pode clicar aceso dos números de fatura abrir uma segunda janela que é a página de entrada de dados por manual postar. Você também pode fazer tique-taque em um nome paciente se você quiser entrar em uma nota que o pessoal de escritório dianteiro verá quando os cheques pacientes em, e você pode selecionar faturas para se aparecer em declarações pacientes e imprimir essas declarações.');
 INSERT INTO `lang_definitions` VALUES (119547, 12217, 21, 'Ao selecionar uma lista para editar a página de edição com os valores da lista serão exibidos');
@@ -132929,7 +132929,7 @@ INSERT INTO `lang_definitions` VALUES (119560, 12231, 21, 'Fluxo de urina');
 INSERT INTO `lang_definitions` VALUES (119561, 12232, 21, 'Urgência de urina');
 INSERT INTO `lang_definitions` VALUES (119562, 12233, 21, 'URL');
 INSERT INTO `lang_definitions` VALUES (119563, 12234, 21, 'URL para endereço do site NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (119564, 12235, 21, 'URL para suporte OpenEMR');
+INSERT INTO `lang_definitions` VALUES (119564, 12235, 21, 'URL para suporte DCL');
 INSERT INTO `lang_definitions` VALUES (119565, 12236, 21, 'URL para gateway de telefone');
 INSERT INTO `lang_definitions` VALUES (119566, 12237, 21, 'URL para gateway de telefone. Serviço VOIP automatizado fornecido pela Maviq. Por favor, visite http://signup.maviq.com para obter mais informações');
 INSERT INTO `lang_definitions` VALUES (119567, 12238, 21, 'URL para o site WordPress que suporta o portal');
@@ -133056,7 +133056,7 @@ INSERT INTO `lang_definitions` VALUES (119687, 12377, 21, 'usa <a php href=\"\"h
 INSERT INTO `lang_definitions` VALUES (119688, 12378, 21, 'Usando 2FA');
 INSERT INTO `lang_definitions` VALUES (119689, 12379, 21, 'Usar uma árvore frutífera como uma analogia mais fácil de visualizar explicará melhor o conceito desta hierarquia, o tronco da árvore é o Grupo (Química do Soro), o ramo frutífero é a ordem real, Ordem do Procedimento (Ácido Úrico no Soro) e o fruta é o resultado, Resultado Discreto, também chamado de (Ácido Úrico no Soro) que conterá o valor do resultado retornado. Assim como a fruta não é carregada no tronco principal, você não deve colocar um Resultado Discreto como um descendente direto ou filho de um Grupo Superior. Da mesma forma, o ramo frutífero (Ordem de Procedimento) não pode ser colocado como um descendente direto ou filho de uma fruta (Resultado Discreto)');
 INSERT INTO `lang_definitions` VALUES (119690, 12380, 21, 'Usando tecnologia para melhorar a produtividade');
-INSERT INTO `lang_definitions` VALUES (119691, 12381, 21, 'Usando os detalhes inseridos no sistema openEMR irá gerar mensagens HL7 v2.3 válidas em 3 formatos, um arquivo de texto que é baixado automaticamente para a pasta de downloads do seu navegador, uma mensagem HL7 que é gravada em uma pasta ou diretório no servidor em execução openEMR ou use SFTP - Protocolo de transferência segura de arquivos, que é um protocolo de rede que fornece acesso, transferência e gerenciamento de arquivos em uma conexão segura e transfere esta mensagem para um laboratório');
+INSERT INTO `lang_definitions` VALUES (119691, 12381, 21, 'Usando os detalhes inseridos no sistema DCL irá gerar mensagens HL7 v2.3 válidas em 3 formatos, um arquivo de texto que é baixado automaticamente para a pasta de downloads do seu navegador, uma mensagem HL7 que é gravada em uma pasta ou diretório no servidor em execução DCL ou use SFTP - Protocolo de transferência segura de arquivos, que é um protocolo de rede que fornece acesso, transferência e gerenciamento de arquivos em uma conexão segura e transfere esta mensagem para um laboratório');
 INSERT INTO `lang_definitions` VALUES (119692, 12382, 21, 'Usando a folha de taxas');
 INSERT INTO `lang_definitions` VALUES (119693, 12383, 21, 'Usar os cabeçalhos principais da ficha de laboratório ajudará a iniciar este processo - Painéis de órgãos / doenças, hematologia, testes individuais, microbiologia, outros');
 INSERT INTO `lang_definitions` VALUES (119694, 12384, 21, 'Usando esta analogia com a árvore frutífera, podemos obter uma melhor compreensão das etapas necessárias para criar um pedido para um painel de testes');
@@ -133106,7 +133106,7 @@ INSERT INTO `lang_definitions` VALUES (119737, 12437, 21, 'Verificar');
 INSERT INTO `lang_definitions` VALUES (119738, 12441, 21, 'Versão');
 INSERT INTO `lang_definitions` VALUES (119739, 12442, 21, 'Versão 1 Endereço do site do portal do paciente no local');
 INSERT INTO `lang_definitions` VALUES (119740, 12443, 21, 'Versão 2 Endereço do site do portal do paciente no local');
-INSERT INTO `lang_definitions` VALUES (119741, 12444, 21, 'A versão 2.x é amplamente usada na indústria de saúde e openEMR usa HL7 versão 2.3');
+INSERT INTO `lang_definitions` VALUES (119741, 12444, 21, 'A versão 2.x é amplamente usada na indústria de saúde e DCL usa HL7 versão 2.3');
 INSERT INTO `lang_definitions` VALUES (119742, 12445, 21, 'Número da versão');
 INSERT INTO `lang_definitions` VALUES (119743, 12447, 21, 'Base Vert{{abreviação para base de prisma vertical}}');
 INSERT INTO `lang_definitions` VALUES (119744, 12448, 21, 'Distância Vert {{abreviação para Distância Vértice}}');
@@ -133310,7 +133310,7 @@ INSERT INTO `lang_definitions` VALUES (119941, 12672, 21, 'Mudança de peso');
 INSERT INTO `lang_definitions` VALUES (119942, 12673, 21, 'Perda de peso');
 INSERT INTO `lang_definitions` VALUES (119943, 12674, 21, 'Perda de peso clínico');
 INSERT INTO `lang_definitions` VALUES (119944, 12675, 21, 'Bemvindo');
-INSERT INTO `lang_definitions` VALUES (119945, 12676, 21, 'Bem-vindo ao OpenEMR');
+INSERT INTO `lang_definitions` VALUES (119945, 12676, 21, 'Bem-vindo ao DCL');
 INSERT INTO `lang_definitions` VALUES (119946, 12677, 21, 'galês');
 INSERT INTO `lang_definitions` VALUES (119947, 12678, 21, 'Faltam as informações do ID do Weno Account Clinic');
 INSERT INTO `lang_definitions` VALUES (119948, 12679, 21, 'Faltam as informações do ID do Weno Account');
@@ -133351,7 +133351,7 @@ INSERT INTO `lang_definitions` VALUES (119982, 12719, 21, 'quais dias são seus 
 INSERT INTO `lang_definitions` VALUES (119983, 12720, 21, 'Quais notas devem ser exibidas na tela de faturamento');
 INSERT INTO `lang_definitions` VALUES (119984, 12721, 21, 'Ao encaminhar um lembrete com data, a mensagem antiga é exibida, ela pode ser substituída');
 INSERT INTO `lang_definitions` VALUES (119985, 12722, 21, 'Embora seja intuitivo pensar deste módulo como o local onde os testes de laboratório e estudos de imagem podem ser solicitados e revisados, este módulo também pode ser usado para rastrear outros procedimentos realizados no escritório');
-INSERT INTO `lang_definitions` VALUES (119986, 12723, 21, 'Embora os testes de laboratório e radiológicos possam ser realizados na clínica, eles geralmente são feitos em uma instalação externa e os detalhes do provedor para essa entidade terão que ser inseridos no openEMR antes que a configuração do módulo de procedimento possa começar');
+INSERT INTO `lang_definitions` VALUES (119986, 12723, 21, 'Embora os testes de laboratório e radiológicos possam ser realizados na clínica, eles geralmente são feitos em uma instalação externa e os detalhes do provedor para essa entidade terão que ser inseridos no DCL antes que a configuração do módulo de procedimento possa começar');
 INSERT INTO `lang_definitions` VALUES (119987, 12724, 21, 'Chicotada');
 INSERT INTO `lang_definitions` VALUES (119988, 12725, 21, 'Branco');
 INSERT INTO `lang_definitions` VALUES (119989, 12726, 21, 'Lista branca');
@@ -133371,7 +133371,7 @@ INSERT INTO `lang_definitions` VALUES (120002, 12739, 21, 'com importação');
 INSERT INTO `lang_definitions` VALUES (120003, 12740, 21, 'com idioma preferido');
 INSERT INTO `lang_definitions` VALUES (120004, 12742, 21, 'Com selecionado:');
 INSERT INTO `lang_definitions` VALUES (120005, 12743, 21, 'com o nome antigo');
-INSERT INTO `lang_definitions` VALUES (120006, 12744, 21, 'Com a chave U2F, você precisará conectá-la à porta USB e logo acessar o OpenEMR usando as versões mais recentes dos seguintes navegadores modernos - Chrome, Firefox, Safari, Edge e Opera e pressionando o botão no dispositivo');
+INSERT INTO `lang_definitions` VALUES (120006, 12744, 21, 'Com a chave U2F, você precisará conectá-la à porta USB e logo acessar o DCL usando as versões mais recentes dos seguintes navegadores modernos - Chrome, Firefox, Safari, Edge e Opera e pressionando o botão no dispositivo');
 INSERT INTO `lang_definitions` VALUES (120007, 12745, 21, 'com valor');
 INSERT INTO `lang_definitions` VALUES (120008, 12746, 21, 'A quem podemos deixar mensagem?');
 INSERT INTO `lang_definitions` VALUES (120009, 12747, 21, 'Retido');
@@ -133579,7 +133579,7 @@ INSERT INTO `lang_definitions` VALUES (120210, 12973, 21, 'Evento submetido.');
 INSERT INTO `lang_definitions` VALUES (120211, 12974, 21, 'Seu arquivo não tem extensão');
 INSERT INTO `lang_definitions` VALUES (120212, 12975, 21, 'O ficheiro é muito grande');
 INSERT INTO `lang_definitions` VALUES (120213, 12976, 21, 'Seu primeiro dia da semana');
-INSERT INTO `lang_definitions` VALUES (120214, 12978, 21, 'Sua instalação do OpenEMR foi registrada');
+INSERT INTO `lang_definitions` VALUES (120214, 12978, 21, 'Sua instalação do DCL foi registrada');
 INSERT INTO `lang_definitions` VALUES (120215, 12980, 21, 'Resultados do seu laboratório');
 INSERT INTO `lang_definitions` VALUES (120216, 12981, 21, 'O nome da sua lista foi alterado em conformidade com as regras.');
 INSERT INTO `lang_definitions` VALUES (120217, 12982, 21, 'Sua mensagem foi submatida à entrega para');
@@ -133837,7 +133837,7 @@ INSERT INTO `lang_definitions` VALUES (120468, 15, 22, 'بضع كلمات للإ
 INSERT INTO `lang_definitions` VALUES (120469, 16, 22, 'يمكن أيضًا تحديد موعد للمتابعة مباشرةً من ورقة المصاريف.');
 INSERT INTO `lang_definitions` VALUES (120470, 17, 22, 'ينبغي اضافة استمارة الزيارة لهذه الزيارة');
 INSERT INTO `lang_definitions` VALUES (120471, 18, 22, 'تتكون رسالة HL7 v2.x ببساطة من عدة أسطر من النص ، ويطلق على كل سطر اسم مقطع ويتم تقسيمه إلى مزيد من الحقول باستخدام حرف الأنبوب (|)');
-INSERT INTO `lang_definitions` VALUES (120472, 19, 22, 'يتم استخدام تطبيق كبير مثل openEMR من قبل العديد من المستخدمين بأدوار ودرجات متفاوتة من المسؤولية. من الضروري أن يتم منح الوصول إلى أجزاء مختلفة من البرنامج للمستخدمين على أساس الحاجة إلى المعرفة. لتحقيق ذلك - يتم استخدام قوائم التحكم في الوصول (ACL).');
+INSERT INTO `lang_definitions` VALUES (120472, 19, 22, 'يتم استخدام تطبيق كبير مثل DCL من قبل العديد من المستخدمين بأدوار ودرجات متفاوتة من المسؤولية. من الضروري أن يتم منح الوصول إلى أجزاء مختلفة من البرنامج للمستخدمين على أساس الحاجة إلى المعرفة. لتحقيق ذلك - يتم استخدام قوائم التحكم في الوصول (ACL).');
 INSERT INTO `lang_definitions` VALUES (120473, 20, 22, 'رقم الشحنة مطلوب');
 INSERT INTO `lang_definitions` VALUES (120474, 21, 22, 'رقم الشحنة مطلوب');
 INSERT INTO `lang_definitions` VALUES (120475, 22, 22, 'حرف صغير من الأبجدية الانجليزية');
@@ -134202,7 +134202,7 @@ INSERT INTO `lang_definitions` VALUES (120833, 667, 22, 'المقدار المد
 INSERT INTO `lang_definitions` VALUES (120834, 668, 22, 'الكمية');
 INSERT INTO `lang_definitions` VALUES (120835, 671, 22, 'قيمة الفاتورة');
 INSERT INTO `lang_definitions` VALUES (120836, 676, 22, 'تاريخ نهاية بعد تاريخ البداية مطلوب للأحداث المتكررة');
-INSERT INTO `lang_definitions` VALUES (120837, 678, 22, 'OpenEMR حدث خطأ أثناء إلقاء دليل الويب شجرة ل');
+INSERT INTO `lang_definitions` VALUES (120837, 678, 22, 'DCL حدث خطأ أثناء إلقاء دليل الويب شجرة ل');
 INSERT INTO `lang_definitions` VALUES (120838, 679, 22, 'phpGACL حدث خطأ أثناء إلقاء دليل الويب شجرة ل');
 INSERT INTO `lang_definitions` VALUES (120839, 680, 22, 'SQL-Ledger حدث خطأ أثناء إلقاء دليل الويب شجرة ل');
 INSERT INTO `lang_definitions` VALUES (120840, 685, 22, 'القضية غير مكتملة تم إنشاؤها وربطها. شخص ما يجب حاجة لاستكماله في وقت لاحق');
@@ -141213,8 +141213,8 @@ INSERT INTO `lang_definitions` VALUES (127844, 3319, 23, 'Forfaldsdato');
 INSERT INTO `lang_definitions` VALUES (127845, 3322, 23, 'Forfald snart');
 INSERT INTO `lang_definitions` VALUES (127846, 3323, 23, 'Forfald status');
 INSERT INTO `lang_definitions` VALUES (127847, 3324, 23, 'Forfald status opdatering');
-INSERT INTO `lang_definitions` VALUES (127848, 3325, 23, 'Dumping OpenEMR database');
-INSERT INTO `lang_definitions` VALUES (127849, 3326, 23, 'Dumping OpenEMR web directory tree');
+INSERT INTO `lang_definitions` VALUES (127848, 3325, 23, 'Dumping DCL database');
+INSERT INTO `lang_definitions` VALUES (127849, 3326, 23, 'Dumping DCL web directory tree');
 INSERT INTO `lang_definitions` VALUES (127850, 3327, 23, 'Dumping phpGACL database');
 INSERT INTO `lang_definitions` VALUES (127851, 3328, 23, 'Dumping phpGACL web directory tree');
 INSERT INTO `lang_definitions` VALUES (127852, 3329, 23, 'Dumping SQL-Ledger database');
@@ -142238,7 +142238,7 @@ INSERT INTO `lang_definitions` VALUES (128869, 7510, 23, 'Debut / Inskrivning. D
 INSERT INTO `lang_definitions` VALUES (128870, 7518, 23, 'Ups!');
 INSERT INTO `lang_definitions` VALUES (128871, 7519, 23, 'Åben');
 INSERT INTO `lang_definitions` VALUES (128872, 7535, 23, 'Åben dagens besøg');
-INSERT INTO `lang_definitions` VALUES (128873, 7575, 23, 'OpenEMR kräver Javascript för att utföra användarverifiering.');
+INSERT INTO `lang_definitions` VALUES (128873, 7575, 23, 'DCL kräver Javascript för att utföra användarverifiering.');
 INSERT INTO `lang_definitions` VALUES (128874, 7586, 23, 'Alternativ');
 INSERT INTO `lang_definitions` VALUES (128875, 7590, 23, 'Valfritt');
 INSERT INTO `lang_definitions` VALUES (128876, 7602, 23, 'Frivillig information om denna händelse');
@@ -144626,7 +144626,7 @@ INSERT INTO `lang_definitions` VALUES (131257, 2209, 24, 'Yapılandırma');
 INSERT INTO `lang_definitions` VALUES (131258, 2210, 24, 'Yapılandırma');
 INSERT INTO `lang_definitions` VALUES (131259, 2211, 24, 'Yapılandırmayı İçe/Dışa aktar');
 INSERT INTO `lang_definitions` VALUES (131260, 2212, 24, 'Yapılandırma başarı ile kaydedildi');
-INSERT INTO `lang_definitions` VALUES (131261, 2213, 24, 'Müşteri SSL sertifikalarını kullanmak üzere Apache ve OpenEMR ı yapılandır');
+INSERT INTO `lang_definitions` VALUES (131261, 2213, 24, 'Müşteri SSL sertifikalarını kullanmak üzere Apache ve DCL ı yapılandır');
 INSERT INTO `lang_definitions` VALUES (131262, 2214, 24, 'Müşteri tarafı SSL sertifikalarını kullanmak üzere Apache\'yi yapılandır.');
 INSERT INTO `lang_definitions` VALUES (131263, 2215, 24, 'Apacheyi HTTPS kullanmak üzere yapılandır');
 INSERT INTO `lang_definitions` VALUES (131264, 2216, 24, 'ÖzgürETK yı Kullanıcı tarafı SSL sertifikalarını kullanmak üzere yapılandır');
@@ -145366,7 +145366,7 @@ INSERT INTO `lang_definitions` VALUES (131997, 3754, 24, 'İngilizce');
 INSERT INTO `lang_definitions` VALUES (131998, 3756, 24, 'İngilizce (Hint)');
 INSERT INTO `lang_definitions` VALUES (131999, 3757, 24, 'İngilizce(Standart)');
 INSERT INTO `lang_definitions` VALUES (132000, 3758, 24, 'Hylafax yazdır komutu');
-INSERT INTO `lang_definitions` VALUES (132001, 3759, 24, 'OpenEMR nin klasöre yazma ayrıcalığı olmasını sağlayınız');
+INSERT INTO `lang_definitions` VALUES (132001, 3759, 24, 'DCL nin klasöre yazma ayrıcalığı olmasını sağlayınız');
 INSERT INTO `lang_definitions` VALUES (132002, 3761, 24, 'KBB Akıntı');
 INSERT INTO `lang_definitions` VALUES (132003, 3762, 24, 'KBB ağrısı');
 INSERT INTO `lang_definitions` VALUES (132004, 3765, 24, 'Onu içermeyen tüm faturaların dışarıda bırakılması için bir tanı kodu giriniz');
@@ -147199,7 +147199,7 @@ INSERT INTO `lang_definitions` VALUES (133830, 8434, 24, 'Lütfen 270 yığın d
 INSERT INTO `lang_definitions` VALUES (133831, 8435, 24, 'Lütfen ayarlayınız');
 INSERT INTO `lang_definitions` VALUES (133832, 8436, 24, 'Lütfen de_identification_config değişkenini tekrar 0 a ayarlayınız');
 INSERT INTO `lang_definitions` VALUES (133833, 8441, 24, 'Lütfen yeni kimlik gizleme işlemi başlatınız');
-INSERT INTO `lang_definitions` VALUES (133834, 8445, 24, 'Lütfen OpenEMR Veri tabanını kimlik gizleme işlemleri, fonksiyonları, tablolarını içerecek şekilde güncelleyiniz');
+INSERT INTO `lang_definitions` VALUES (133834, 8445, 24, 'Lütfen DCL Veri tabanını kimlik gizleme işlemleri, fonksiyonları, tablolarını içerecek şekilde güncelleyiniz');
 INSERT INTO `lang_definitions` VALUES (133835, 8447, 24, 'Lütfen daha fazla ayrıntı için kimlik gizleme günlük hata kaydına bakınız');
 INSERT INTO `lang_definitions` VALUES (133836, 8448, 24, 'Bir süre sonra lütfen kimlik gizleme ekranını ziyaret ediniz');
 INSERT INTO `lang_definitions` VALUES (133837, 8449, 24, 'Bir süre sonra lütfen kimlik gösterme ekranını ziyaret ediniz');
@@ -147900,7 +147900,7 @@ INSERT INTO `lang_definitions` VALUES (134531, 10287, 24, 'SİNÜS HASSASİYETİ
 INSERT INTO `lang_definitions` VALUES (134532, 10288, 24, 'Sinüzit');
 INSERT INTO `lang_definitions` VALUES (134533, 10290, 24, 'Site');
 INSERT INTO `lang_definitions` VALUES (134534, 10294, 24, 'Site kimliği');
-INSERT INTO `lang_definitions` VALUES (134535, 10296, 24, 'LLC Lab Değişim Servisi OpenEMR desteği için site kimliği');
+INSERT INTO `lang_definitions` VALUES (134535, 10296, 24, 'LLC Lab Değişim Servisi DCL desteği için site kimliği');
 INSERT INTO `lang_definitions` VALUES (134536, 10300, 24, 'Büyüklük');
 INSERT INTO `lang_definitions` VALUES (134537, 10303, 24, 'Büyüklüğü 1 ve 999 arasına bir sayı olmalıdır');
 INSERT INTO `lang_definitions` VALUES (134538, 10305, 24, 'Büyüklük/Liste');
@@ -148425,7 +148425,7 @@ INSERT INTO `lang_definitions` VALUES (135056, 11779, 24, 'Bugün');
 INSERT INTO `lang_definitions` VALUES (135057, 11781, 24, 'bugün');
 INSERT INTO `lang_definitions` VALUES (135058, 11784, 24, 'Bugünün tarihi');
 INSERT INTO `lang_definitions` VALUES (135059, 11785, 24, 'Bugünün Olayları');
-INSERT INTO `lang_definitions` VALUES (135060, 11797, 24, 'LLC Lab. Değişim hizmeti OpenEMR desteği için Simge kimliği');
+INSERT INTO `lang_definitions` VALUES (135060, 11797, 24, 'LLC Lab. Değişim hizmeti DCL desteği için Simge kimliği');
 INSERT INTO `lang_definitions` VALUES (135061, 11803, 24, 'Tonsilektomi');
 INSERT INTO `lang_definitions` VALUES (135062, 11807, 24, 'Üst');
 INSERT INTO `lang_definitions` VALUES (135063, 11810, 24, 'Konu');
@@ -148988,7 +148988,7 @@ INSERT INTO `lang_definitions` VALUES (135619, 7, 25, 'Dokument kliniczny w zał
 INSERT INTO `lang_definitions` VALUES (135620, 8, 25, 'Kod tego typu jest już wybrany. Najpierw usuń pole, jeśli chcesz je zastąpić.');
 INSERT INTO `lang_definitions` VALUES (135621, 13, 25, 'Wymagany jest dystybutor');
 INSERT INTO `lang_definitions` VALUES (135622, 17, 25, 'Formularz GCAC powinien być dodany do tej wizyty');
-INSERT INTO `lang_definitions` VALUES (135623, 19, 25, 'Duża aplikacja, taka jak openEMR, jest używana przez wielu użytkowników o różnych rolach i stopniach odpowiedzialności. Konieczne jest, aby dostęp do różnych części programu był przyznawany użytkownikom w oparciu o potrzebne im informacje. Aby to osiągnąć, używa się list kontroli dostępu (ACL).');
+INSERT INTO `lang_definitions` VALUES (135623, 19, 25, 'Duża aplikacja, taka jak DCL, jest używana przez wielu użytkowników o różnych rolach i stopniach odpowiedzialności. Konieczne jest, aby dostęp do różnych części programu był przyznawany użytkownikom w oparciu o potrzebne im informacje. Aby to osiągnąć, używa się list kontroli dostępu (ACL).');
 INSERT INTO `lang_definitions` VALUES (135624, 20, 25, 'Wymagany jest numer serii');
 INSERT INTO `lang_definitions` VALUES (135625, 21, 25, 'Wymagany jest numer serii!');
 INSERT INTO `lang_definitions` VALUES (135626, 22, 25, 'Mała litera');
@@ -149391,7 +149391,7 @@ INSERT INTO `lang_definitions` VALUES (136022, 670, 25, 'Amslera');
 INSERT INTO `lang_definitions` VALUES (136023, 671, 25, 'Kwota zapowiadane');
 INSERT INTO `lang_definitions` VALUES (136024, 674, 25, 'Wiadomość e-mail z nowymi danymi uwierzytelniającymi Twojego konta zostanie wysłana na podany wcześniej adres e-mail. Nadal możesz przeglądać lub edytować dowolną część swoich informacji, używając górnych przycisków, aby przejść do odpowiednich paneli. Uupewnij się, że podałeś poprawny adres e-mail. Jeśli po otrzymaniu poświadczeń  masz problemy z dostępem do portalu, skontaktuj się z administratorem.');
 INSERT INTO `lang_definitions` VALUES (136025, 676, 25, 'Dla zdarzeń cyklicznych wymagane jest podanie daty zakończenia późniejszej od daty rozpoczęcia!');
-INSERT INTO `lang_definitions` VALUES (136026, 678, 25, 'Wystąpił błąd podczas dumpingu internetowej OpenEMR drzewo katalogów');
+INSERT INTO `lang_definitions` VALUES (136026, 678, 25, 'Wystąpił błąd podczas dumpingu internetowej DCL drzewo katalogów');
 INSERT INTO `lang_definitions` VALUES (136027, 679, 25, 'Wystąpił błąd podczas dumpingu phpGACL drzewo katalogów internetowych');
 INSERT INTO `lang_definitions` VALUES (136028, 680, 25, 'Wystąpił błąd podczas dumpingu SQL-Ledger drzewo katalogów internetowych');
 INSERT INTO `lang_definitions` VALUES (136029, 685, 25, 'Niepełne GCAC problem został stworzony i powiązane. Ktoś będzie musiał wypełnić później.');
@@ -150117,10 +150117,10 @@ INSERT INTO `lang_definitions` VALUES (136748, 2205, 25, 'Stan warunku');
 INSERT INTO `lang_definitions` VALUES (136749, 2210, 25, 'Konfiguracja');
 INSERT INTO `lang_definitions` VALUES (136750, 2211, 25, 'Konfiguracja Export / Import');
 INSERT INTO `lang_definitions` VALUES (136751, 2212, 25, 'Konfiguracja zapisana pomyślnie');
-INSERT INTO `lang_definitions` VALUES (136752, 2213, 25, 'Apache i OpenEMR użyć po stronie klienta certyfikaty SSL.');
+INSERT INTO `lang_definitions` VALUES (136752, 2213, 25, 'Apache i DCL użyć po stronie klienta certyfikaty SSL.');
 INSERT INTO `lang_definitions` VALUES (136753, 2214, 25, 'Skonfigurować Apache w użyciu klient certyfikaty SSL niepożądane');
 INSERT INTO `lang_definitions` VALUES (136754, 2215, 25, 'Skonfiguruj Apache do używania HTTPS.');
-INSERT INTO `lang_definitions` VALUES (136755, 2216, 25, 'Skonfiguruj Openemr używać certyfikatów SSL Client boczne');
+INSERT INTO `lang_definitions` VALUES (136755, 2216, 25, 'Skonfiguruj DCL używać certyfikatów SSL Client boczne');
 INSERT INTO `lang_definitions` VALUES (136756, 2225, 25, 'Potwierdź utworzenie nowego pacjenta');
 INSERT INTO `lang_definitions` VALUES (136757, 2227, 25, 'Potwierdź nowe hasło');
 INSERT INTO `lang_definitions` VALUES (136758, 2229, 25, 'Potwierdź Płatność');
@@ -150926,7 +150926,7 @@ INSERT INTO `lang_definitions` VALUES (137557, 7510, 25, 'Początek/Data hospita
 INSERT INTO `lang_definitions` VALUES (137558, 7518, 25, 'Ups!');
 INSERT INTO `lang_definitions` VALUES (137559, 7519, 25, 'Otwórz');
 INSERT INTO `lang_definitions` VALUES (137560, 7528, 25, 'Otwórz w nowym oknie');
-INSERT INTO `lang_definitions` VALUES (137561, 7576, 25, 'Użytkownicy OpenEMR');
+INSERT INTO `lang_definitions` VALUES (137561, 7576, 25, 'Użytkownicy DCL');
 INSERT INTO `lang_definitions` VALUES (137562, 7590, 25, 'Opcjonalne');
 INSERT INTO `lang_definitions` VALUES (137563, 7607, 25, 'Opcje');
 INSERT INTO `lang_definitions` VALUES (137564, 7608, 25, 'LUB');
@@ -151789,7 +151789,7 @@ INSERT INTO `lang_definitions` VALUES (138420, 12971, 25, 'Twoje zdarzenie zosta
 INSERT INTO `lang_definitions` VALUES (138421, 12972, 25, 'Twoje zdarzenie zostało zmodyfikowane.');
 INSERT INTO `lang_definitions` VALUES (138422, 12975, 25, 'Twój plik jest zbyt duży');
 INSERT INTO `lang_definitions` VALUES (138423, 12976, 25, 'Twój pierwszy dzień tygodnia.');
-INSERT INTO `lang_definitions` VALUES (138424, 12978, 25, 'Twoja instalacja OpenEMR została zarejestrowana.');
+INSERT INTO `lang_definitions` VALUES (138424, 12978, 25, 'Twoja instalacja DCL została zarejestrowana.');
 INSERT INTO `lang_definitions` VALUES (138425, 12988, 25, 'Twoje hasło');
 INSERT INTO `lang_definitions` VALUES (138426, 12989, 25, 'Twoje hasło wygasło. Proszę zmienić hasło.');
 INSERT INTO `lang_definitions` VALUES (138427, 12990, 25, 'Twoje hasło wygasa');
@@ -152213,7 +152213,7 @@ INSERT INTO `lang_definitions` VALUES (138844, 667, 27, 'Importo pagato');
 INSERT INTO `lang_definitions` VALUES (138845, 668, 27, 'Importo:');
 INSERT INTO `lang_definitions` VALUES (138846, 671, 27, 'Importo fatturato');
 INSERT INTO `lang_definitions` VALUES (138847, 676, 27, 'La data di fine oltre la data di inizio è richiesta per gli eventi ripetuti!');
-INSERT INTO `lang_definitions` VALUES (138848, 678, 27, 'Si è verificato un errore nel salvataggio delle directory di OpenEMR');
+INSERT INTO `lang_definitions` VALUES (138848, 678, 27, 'Si è verificato un errore nel salvataggio delle directory di DCL');
 INSERT INTO `lang_definitions` VALUES (138849, 679, 27, 'Si è verificato un errore nel salvataggio delle directory di phpGACL');
 INSERT INTO `lang_definitions` VALUES (138850, 680, 27, 'Si è verificato un errore nel salvataggio delle directory di SQL_Ledger');
 INSERT INTO `lang_definitions` VALUES (138851, 685, 27, 'E\' stato creato e linkato un oggetto GCAC incompleto. E\' necessario completarlo in seguito.');
@@ -152985,10 +152985,10 @@ INSERT INTO `lang_definitions` VALUES (139616, 2209, 27, 'Config');
 INSERT INTO `lang_definitions` VALUES (139617, 2210, 27, 'Configurazione');
 INSERT INTO `lang_definitions` VALUES (139618, 2211, 27, 'Esporta/Importa configurazione');
 INSERT INTO `lang_definitions` VALUES (139619, 2212, 27, 'Configurazione salvata con successo');
-INSERT INTO `lang_definitions` VALUES (139620, 2213, 27, 'Configura Apache e OpenEMR per usare i certificati SSL lato client');
+INSERT INTO `lang_definitions` VALUES (139620, 2213, 27, 'Configura Apache e DCL per usare i certificati SSL lato client');
 INSERT INTO `lang_definitions` VALUES (139621, 2214, 27, 'Configura Apache per usare certificati SSL lato client');
 INSERT INTO `lang_definitions` VALUES (139622, 2215, 27, 'Configura Apache per usare HTTPS');
-INSERT INTO `lang_definitions` VALUES (139623, 2216, 27, 'Configura Openemr per usare certificati SSL lato client');
+INSERT INTO `lang_definitions` VALUES (139623, 2216, 27, 'Configura DCL per usare certificati SSL lato client');
 INSERT INTO `lang_definitions` VALUES (139624, 2220, 27, 'Traccia configurazioni');
 INSERT INTO `lang_definitions` VALUES (139625, 2221, 27, 'Traccia Configurazioni');
 INSERT INTO `lang_definitions` VALUES (139626, 2225, 27, 'Conferma creazione Nuovo Paziente');
@@ -153584,8 +153584,8 @@ INSERT INTO `lang_definitions` VALUES (140215, 3321, 27, 'Debito Parz.');
 INSERT INTO `lang_definitions` VALUES (140216, 3322, 27, 'Debiti a breve');
 INSERT INTO `lang_definitions` VALUES (140217, 3323, 27, 'Status debito');
 INSERT INTO `lang_definitions` VALUES (140218, 3324, 27, 'Aggiornamento status debito');
-INSERT INTO `lang_definitions` VALUES (140219, 3325, 27, 'Dumping OpenEMR database');
-INSERT INTO `lang_definitions` VALUES (140220, 3326, 27, 'Dumping OpenEMR web directory tree');
+INSERT INTO `lang_definitions` VALUES (140219, 3325, 27, 'Dumping DCL database');
+INSERT INTO `lang_definitions` VALUES (140220, 3326, 27, 'Dumping DCL web directory tree');
 INSERT INTO `lang_definitions` VALUES (140221, 3327, 27, 'Dumping phpGACL database');
 INSERT INTO `lang_definitions` VALUES (140222, 3328, 27, 'Dumping phpGACL web directory tree');
 INSERT INTO `lang_definitions` VALUES (140223, 3329, 27, 'Dumping SQL-Ledger database');
@@ -153761,7 +153761,7 @@ INSERT INTO `lang_definitions` VALUES (140392, 3638, 27, 'Abilita il supporto pe
 INSERT INTO `lang_definitions` VALUES (140393, 3639, 27, 'Abilita il report standard di itemizzazione');
 INSERT INTO `lang_definitions` VALUES (140394, 3640, 27, 'Abilitare il supporto per l\'open source WordPress Portal da Sunset Sistemi');
 INSERT INTO `lang_definitions` VALUES (140395, 3642, 27, 'Abilitare il Medical Information Integration, LLC Lab Service Exchange.');
-INSERT INTO `lang_definitions` VALUES (140396, 3643, 27, 'Abilita il supporto OpenEMR per il servizio Scambio LLC Lab');
+INSERT INTO `lang_definitions` VALUES (140396, 3643, 27, 'Abilita il supporto DCL per il servizio Scambio LLC Lab');
 INSERT INTO `lang_definitions` VALUES (140397, 3644, 27, 'Abilita l\'autenticazione certificato dell\'utente');
 INSERT INTO `lang_definitions` VALUES (140398, 3650, 27, 'Abilita il servizio ZMG, LLC eRx');
 INSERT INTO `lang_definitions` VALUES (140399, 3651, 27, 'abilitato');
@@ -153828,7 +153828,7 @@ INSERT INTO `lang_definitions` VALUES (140459, 3754, 27, 'Inglese');
 INSERT INTO `lang_definitions` VALUES (140460, 3756, 27, 'Inglese (indiano)');
 INSERT INTO `lang_definitions` VALUES (140461, 3757, 27, 'Inglese (standard)');
 INSERT INTO `lang_definitions` VALUES (140462, 3758, 27, 'Comando enscript usato da Hylafax.');
-INSERT INTO `lang_definitions` VALUES (140463, 3759, 27, 'Accertarsi che OpenEMR abbia i privilegi di scrittura nella directory');
+INSERT INTO `lang_definitions` VALUES (140463, 3759, 27, 'Accertarsi che DCL abbia i privilegi di scrittura nella directory');
 INSERT INTO `lang_definitions` VALUES (140464, 3761, 27, 'ENT fuoriuscita');
 INSERT INTO `lang_definitions` VALUES (140465, 3762, 27, 'ENT dolore');
 INSERT INTO `lang_definitions` VALUES (140466, 3765, 27, 'Inserisci un codice diagnosi per escludere tutte le fatture che non lo contengono');
@@ -153881,7 +153881,7 @@ INSERT INTO `lang_definitions` VALUES (140512, 3897, 27, 'Errore rimozione messa
 INSERT INTO `lang_definitions` VALUES (140513, 3898, 27, 'Errore nel recupero dei risultati dal Network Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (140514, 3899, 27, 'Errore nel recupero dei valori.');
 INSERT INTO `lang_definitions` VALUES (140515, 3900, 27, 'Errore nel salvataggio del documento');
-INSERT INTO `lang_definitions` VALUES (140516, 3901, 27, 'Errore nell\'assegnare il file dei privilegi all\'utente OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (140516, 3901, 27, 'Errore nell\'assegnare il file dei privilegi all\'utente DCL.');
 INSERT INTO `lang_definitions` VALUES (140517, 3904, 27, 'errore nella registrazione del modulo!');
 INSERT INTO `lang_definitions` VALUES (140518, 3905, 27, 'Errore nel salvataggio sul file');
 INSERT INTO `lang_definitions` VALUES (140519, 3907, 27, 'Errore nella scrittura del file');
@@ -153893,7 +153893,7 @@ INSERT INTO `lang_definitions` VALUES (140524, 3920, 27, 'Errore, impossibile cr
 INSERT INTO `lang_definitions` VALUES (140525, 3921, 27, 'Errore, impossibile creare il certificato Certificate Authority');
 INSERT INTO `lang_definitions` VALUES (140526, 3922, 27, 'Errore, impossibile creare il certificato del Server');
 INSERT INTO `lang_definitions` VALUES (140527, 3924, 27, 'Errore, impossibile aprire il file');
-INSERT INTO `lang_definitions` VALUES (140528, 3925, 27, 'Errore, l\'Autenticazione del certificato utente non è abilitata in OpenEMR');
+INSERT INTO `lang_definitions` VALUES (140528, 3925, 27, 'Errore, l\'Autenticazione del certificato utente non è abilitata in DCL');
 INSERT INTO `lang_definitions` VALUES (140529, 3933, 27, 'Errore. Devi installare il modulo Archive/Tar.php');
 INSERT INTO `lang_definitions` VALUES (140530, 3934, 27, 'ERRORE: non si è potuto aprire table.sql, modulo deteriorato?');
 INSERT INTO `lang_definitions` VALUES (140531, 3937, 27, 'Errore: ID duplicato nella linea');
@@ -154105,7 +154105,7 @@ INSERT INTO `lang_definitions` VALUES (140736, 4277, 27, 'File');
 INSERT INTO `lang_definitions` VALUES (140737, 4280, 27, 'file nella directory Documentation per apprendere come automatizzare il processo di creazione del log dei backup');
 INSERT INTO `lang_definitions` VALUES (140738, 4281, 27, 'collocazione del file');
 INSERT INTO `lang_definitions` VALUES (140739, 4282, 27, 'Gestione del file');
-INSERT INTO `lang_definitions` VALUES (140740, 4289, 27, 'Privilegio del file garantito all\'utente OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (140740, 4289, 27, 'Privilegio del file garantito all\'utente DCL.');
 INSERT INTO `lang_definitions` VALUES (140741, 4290, 27, 'Recupero file da CouchDB non riuscito');
 INSERT INTO `lang_definitions` VALUES (140742, 4291, 27, 'Spazio file');
 INSERT INTO `lang_definitions` VALUES (140743, 4292, 27, 'File da caricare');
@@ -154499,7 +154499,7 @@ INSERT INTO `lang_definitions` VALUES (141130, 5038, 27, 'HT');
 INSERT INTO `lang_definitions` VALUES (141131, 5039, 27, 'HTML');
 INSERT INTO `lang_definitions` VALUES (141132, 5040, 27, 'HTML Output?');
 INSERT INTO `lang_definitions` VALUES (141133, 5041, 27, 'Ipertensione');
-INSERT INTO `lang_definitions` VALUES (141134, 5043, 27, 'Collegamento https al supporto OpenEMR per il servizio scambio Lab LLC.');
+INSERT INTO `lang_definitions` VALUES (141134, 5043, 27, 'Collegamento https al supporto DCL per il servizio scambio Lab LLC.');
 INSERT INTO `lang_definitions` VALUES (141135, 5044, 27, 'Iperforia');
 INSERT INTO `lang_definitions` VALUES (141136, 5045, 27, 'Ungherese');
 INSERT INTO `lang_definitions` VALUES (141137, 5046, 27, 'Directory Hylafax');
@@ -155047,7 +155047,7 @@ INSERT INTO `lang_definitions` VALUES (141678, 6131, 27, 'File di sistema locale
 INSERT INTO `lang_definitions` VALUES (141679, 6133, 27, 'Locale');
 INSERT INTO `lang_definitions` VALUES (141680, 6134, 27, 'Località');
 INSERT INTO `lang_definitions` VALUES (141681, 6135, 27, 'Collocazione');
-INSERT INTO `lang_definitions` VALUES (141682, 6136, 27, 'collocazione della macchina openemr e potrebbe contenere dati sensibili, così si raccomanda di eliminare manualmente i file dopo il suo uso');
+INSERT INTO `lang_definitions` VALUES (141682, 6136, 27, 'collocazione della macchina DCL e potrebbe contenere dati sensibili, così si raccomanda di eliminare manualmente i file dopo il suo uso');
 INSERT INTO `lang_definitions` VALUES (141683, 6137, 27, 'Collocazione di questo lotto');
 INSERT INTO `lang_definitions` VALUES (141684, 6138, 27, 'Collocazione non specificata');
 INSERT INTO `lang_definitions` VALUES (141685, 6139, 27, 'Collocazione dove Hylafax immagazzina i fax.');
@@ -155795,14 +155795,14 @@ INSERT INTO `lang_definitions` VALUES (142426, 7519, 27, 'Aperto');
 INSERT INTO `lang_definitions` VALUES (142427, 7528, 27, 'Apri in una nuova finestra');
 INSERT INTO `lang_definitions` VALUES (142428, 7531, 27, 'Apri paziente');
 INSERT INTO `lang_definitions` VALUES (142429, 7535, 27, 'Apri la visita di oggi');
-INSERT INTO `lang_definitions` VALUES (142430, 7562, 27, 'OpenEMR ha già configurato il Certificate Authority.');
-INSERT INTO `lang_definitions` VALUES (142431, 7565, 27, 'OpenEMR Categoria Applicazione');
-INSERT INTO `lang_definitions` VALUES (142432, 7567, 27, 'Aggiornamento Database di OpenEMR');
-INSERT INTO `lang_definitions` VALUES (142433, 7568, 27, 'Aggiornamento Database di OpenEMR per la de-identificazione');
-INSERT INTO `lang_definitions` VALUES (142434, 7569, 27, 'OpenEMR non riconosce il file in ingresso nella directory contrib. Questo è più probabile perché è necessario configurare la release nella tabella supported_external_dataloads nel database MySQL.');
-INSERT INTO `lang_definitions` VALUES (142435, 7571, 27, 'OpenEMR deve essere configurato per usare i certificati prima che si possano creare i certificati client.');
-INSERT INTO `lang_definitions` VALUES (142436, 7575, 27, 'OpenEMR richiede Javascript per attuare l\'autenticazione dell\'utente.');
-INSERT INTO `lang_definitions` VALUES (142437, 7576, 27, 'Utenti OpenEMR');
+INSERT INTO `lang_definitions` VALUES (142430, 7562, 27, 'DCL ha già configurato il Certificate Authority.');
+INSERT INTO `lang_definitions` VALUES (142431, 7565, 27, 'DCL Categoria Applicazione');
+INSERT INTO `lang_definitions` VALUES (142432, 7567, 27, 'Aggiornamento Database di DCL');
+INSERT INTO `lang_definitions` VALUES (142433, 7568, 27, 'Aggiornamento Database di DCL per la de-identificazione');
+INSERT INTO `lang_definitions` VALUES (142434, 7569, 27, 'DCL non riconosce il file in ingresso nella directory contrib. Questo è più probabile perché è necessario configurare la release nella tabella supported_external_dataloads nel database MySQL.');
+INSERT INTO `lang_definitions` VALUES (142435, 7571, 27, 'DCL deve essere configurato per usare i certificati prima che si possano creare i certificati client.');
+INSERT INTO `lang_definitions` VALUES (142436, 7575, 27, 'DCL richiede Javascript per attuare l\'autenticazione dell\'utente.');
+INSERT INTO `lang_definitions` VALUES (142437, 7576, 27, 'Utenti DCL');
 INSERT INTO `lang_definitions` VALUES (142438, 7577, 27, 'Aperture');
 INSERT INTO `lang_definitions` VALUES (142439, 7583, 27, 'Oftalmico');
 INSERT INTO `lang_definitions` VALUES (142440, 7586, 27, 'Opzione');
@@ -156117,7 +156117,7 @@ INSERT INTO `lang_definitions` VALUES (142748, 8150, 27, 'Ordini pendenti');
 INSERT INTO `lang_definitions` VALUES (142749, 8151, 27, 'Res pendente');
 INSERT INTO `lang_definitions` VALUES (142750, 8152, 27, 'Revisione pendente');
 INSERT INTO `lang_definitions` VALUES (142751, 8153, 27, 'In attesa di conteggio Rx');
-INSERT INTO `lang_definitions` VALUES (142752, 8156, 27, 'Pennington Firm OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (142752, 8156, 27, 'Pennington Firm DCL v');
 INSERT INTO `lang_definitions` VALUES (142753, 8157, 27, 'Ulcera Peptica');
 INSERT INTO `lang_definitions` VALUES (142754, 8158, 27, 'Per incontro');
 INSERT INTO `lang_definitions` VALUES (142755, 8159, 27, 'al minuto');
@@ -156283,7 +156283,7 @@ INSERT INTO `lang_definitions` VALUES (142914, 8434, 27, 'Selezionare il partner
 INSERT INTO `lang_definitions` VALUES (142915, 8435, 27, 'Si prega di impostare');
 INSERT INTO `lang_definitions` VALUES (142916, 8436, 27, 'Assegna di nuovo 0 alla variabile de_identification_config');
 INSERT INTO `lang_definitions` VALUES (142917, 8441, 27, 'Devi riavviare il processo di De-Identificazione');
-INSERT INTO `lang_definitions` VALUES (142918, 8445, 27, 'Aggiorna il database OpenEMR per includere le procedure, funzioni e tabelle per la De-Identificazione');
+INSERT INTO `lang_definitions` VALUES (142918, 8445, 27, 'Aggiorna il database DCL per includere le procedure, funzioni e tabelle per la De-Identificazione');
 INSERT INTO `lang_definitions` VALUES (142919, 8447, 27, 'Per maggiori dettagli guarda la tabella dei log degli errori della De-Identificazione');
 INSERT INTO `lang_definitions` VALUES (142920, 8448, 27, 'Visita tra un po\' di tempo la schermata della De-Identificazione');
 INSERT INTO `lang_definitions` VALUES (142921, 8449, 27, 'Visita tra un po\' di tempo la schermata della Re-Identificazione');
@@ -157268,7 +157268,7 @@ INSERT INTO `lang_definitions` VALUES (143899, 10288, 27, 'Sinusite');
 INSERT INTO `lang_definitions` VALUES (143900, 10290, 27, 'Sito');
 INSERT INTO `lang_definitions` VALUES (143901, 10294, 27, 'ID Sito');
 INSERT INTO `lang_definitions` VALUES (143902, 10295, 27, 'ID Sito per il Medical Information Integration, LLC Lab Service Exchange.');
-INSERT INTO `lang_definitions` VALUES (143903, 10296, 27, 'ID Sito per il supporto LLC Lab Service Exchange OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (143903, 10296, 27, 'ID Sito per il supporto LLC Lab Service Exchange DCL.');
 INSERT INTO `lang_definitions` VALUES (143904, 10300, 27, 'Dimensione');
 INSERT INTO `lang_definitions` VALUES (143905, 10303, 27, 'La dimensione deve essere un numero tra 1 e 999');
 INSERT INTO `lang_definitions` VALUES (143906, 10305, 27, 'Dimensione/Elenco');
@@ -157762,7 +157762,7 @@ INSERT INTO `lang_definitions` VALUES (144393, 11277, 27, 'La traduzione della d
 INSERT INTO `lang_definitions` VALUES (144394, 11278, 27, 'Le tabelle delle traduzioni sono sincronizzate');
 INSERT INTO `lang_definitions` VALUES (144395, 11279, 27, 'Il tipo di questa entità');
 INSERT INTO `lang_definitions` VALUES (144396, 11299, 27, 'Il codice specifico del ventitore identificante questa procedura o risultato');
-INSERT INTO `lang_definitions` VALUES (144397, 11304, 27, 'Il file X12, nonché i rapporti di output HTML risultante vengono archiviati nell\'\"era\" della directory di installazione OpenEMR principale. Si vuole fare riferimento a questi archivi di volta in volta. L\'URL è');
+INSERT INTO `lang_definitions` VALUES (144397, 11304, 27, 'Il file X12, nonché i rapporti di output HTML risultante vengono archiviati nell\'\"era\" della directory di installazione DCL principale. Si vuole fare riferimento a questi archivi di volta in volta. L\'URL è');
 INSERT INTO `lang_definitions` VALUES (144398, 11306, 27, 'Il file zip contine i seguenti elementi');
 INSERT INTO `lang_definitions` VALUES (144399, 11307, 27, 'Tema');
 INSERT INTO `lang_definitions` VALUES (144400, 11313, 27, 'Poi la fornitura di dati raw di rilascio può essere ottenuto da');
@@ -157792,7 +157792,7 @@ INSERT INTO `lang_definitions` VALUES (144423, 11370, 27, 'Non vi è alcuna voce
 INSERT INTO `lang_definitions` VALUES (144424, 11371, 27, 'Non vi è alcun paziente con login al portale');
 INSERT INTO `lang_definitions` VALUES (144425, 11373, 27, 'C\'è stato un errore nell\'invio del messaggio.');
 INSERT INTO `lang_definitions` VALUES (144426, 11374, 27, 'C\'è stato un errore mentre elaboravo la richiesta.');
-INSERT INTO `lang_definitions` VALUES (144427, 11375, 27, 'E\' sfuggito un ERRORE in OpenEMR alla seguente stringa');
+INSERT INTO `lang_definitions` VALUES (144427, 11375, 27, 'E\' sfuggito un ERRORE in DCL alla seguente stringa');
 INSERT INTO `lang_definitions` VALUES (144428, 11379, 27, 'Questi sono i link 2012');
 INSERT INTO `lang_definitions` VALUES (144429, 11400, 27, 'Inspessito a destra:');
 INSERT INTO `lang_definitions` VALUES (144430, 11401, 27, 'Coscia');
@@ -157957,7 +157957,7 @@ INSERT INTO `lang_definitions` VALUES (144588, 11783, 27, 'Spesae di oggi');
 INSERT INTO `lang_definitions` VALUES (144589, 11784, 27, 'Data di oggi');
 INSERT INTO `lang_definitions` VALUES (144590, 11785, 27, 'Eventi di oggi');
 INSERT INTO `lang_definitions` VALUES (144591, 11796, 27, 'ID Token per il Medical Information Integration, LLC Lab Service Exchange.');
-INSERT INTO `lang_definitions` VALUES (144592, 11797, 27, 'ID Token per il supporto LLC Lab Service Exchange OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (144592, 11797, 27, 'ID Token per il supporto LLC Lab Service Exchange DCL.');
 INSERT INTO `lang_definitions` VALUES (144593, 11803, 27, 'Tonsillectomia');
 INSERT INTO `lang_definitions` VALUES (144594, 11807, 27, 'In alto');
 INSERT INTO `lang_definitions` VALUES (144595, 11810, 27, 'Argomento');
@@ -158136,7 +158136,7 @@ INSERT INTO `lang_definitions` VALUES (144767, 12182, 27, 'Aggiornamento indicat
 INSERT INTO `lang_definitions` VALUES (144768, 12183, 27, 'AGGIORNA');
 INSERT INTO `lang_definitions` VALUES (144769, 12184, 27, 'Aggiorna');
 INSERT INTO `lang_definitions` VALUES (144770, 12186, 27, 'Aggiorna il Database');
-INSERT INTO `lang_definitions` VALUES (144771, 12188, 27, 'Aggiorna il Database di OpenEMR per includere Procedure, Funzioni e tabelle necessarie al processo di De-identificazione');
+INSERT INTO `lang_definitions` VALUES (144771, 12188, 27, 'Aggiorna il Database di DCL per includere Procedure, Funzioni e tabelle necessarie al processo di De-identificazione');
 INSERT INTO `lang_definitions` VALUES (144772, 12189, 27, 'L\'aggiormamento continuerà');
 INSERT INTO `lang_definitions` VALUES (144773, 12190, 27, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (144774, 12191, 27, 'Carica');
@@ -158160,7 +158160,7 @@ INSERT INTO `lang_definitions` VALUES (144791, 12230, 27, 'Microalbumina urina')
 INSERT INTO `lang_definitions` VALUES (144792, 12231, 27, 'Fuoriuscita urina');
 INSERT INTO `lang_definitions` VALUES (144793, 12232, 27, 'Urgenza urinaria');
 INSERT INTO `lang_definitions` VALUES (144794, 12233, 27, 'URL');
-INSERT INTO `lang_definitions` VALUES (144795, 12235, 27, 'URL per il supporto OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (144795, 12235, 27, 'URL per il supporto DCL.');
 INSERT INTO `lang_definitions` VALUES (144796, 12237, 27, 'URL per il gateway in fonia. Servizio automatico VOIP fornito da Maviq. Per maggiori informazioni viisita http://signup.maviq.com');
 INSERT INTO `lang_definitions` VALUES (144797, 12246, 27, 'Utilizzo');
 INSERT INTO `lang_definitions` VALUES (144798, 12248, 27, 'Indicatore di uso (ISA15)');
@@ -158929,7 +158929,7 @@ INSERT INTO `lang_definitions` VALUES (145560, 667, 28, 'प्रदाय र�
 INSERT INTO `lang_definitions` VALUES (145561, 668, 28, 'राशि:');
 INSERT INTO `lang_definitions` VALUES (145562, 671, 28, 'राशि बिल किया');
 INSERT INTO `lang_definitions` VALUES (145563, 676, 28, 'बाद में शुरू की तारीख से एक समापन दिनांक, दोहराया घटनाओं के लिए आवश्यक है!');
-INSERT INTO `lang_definitions` VALUES (145564, 678, 28, 'OpenEMR वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
+INSERT INTO `lang_definitions` VALUES (145564, 678, 28, 'DCL वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
 INSERT INTO `lang_definitions` VALUES (145565, 679, 28, 'PhpGACL वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
 INSERT INTO `lang_definitions` VALUES (145566, 680, 28, 'SQL लेजर वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
 INSERT INTO `lang_definitions` VALUES (145567, 685, 28, 'एक अधूरा GCAC मुद्दा बनाया और जोड़ा गया है. किसी को बाद में इसे पूरा करने की आवश्यकता होगी.');
@@ -159602,10 +159602,10 @@ INSERT INTO `lang_definitions` VALUES (146233, 2200, 28, 'कंप्यूट�
 INSERT INTO `lang_definitions` VALUES (146234, 2202, 28, 'निष्कर्ष');
 INSERT INTO `lang_definitions` VALUES (146235, 2210, 28, 'विन्यास');
 INSERT INTO `lang_definitions` VALUES (146236, 2211, 28, 'विन्यास निर्यात / आयात');
-INSERT INTO `lang_definitions` VALUES (146237, 2213, 28, 'ग्राहक साइड का SSL प्रमाणपत्र का उपयोग करने के लिए अपाचे और OpenEMR विन्यस्त करें.');
+INSERT INTO `lang_definitions` VALUES (146237, 2213, 28, 'ग्राहक साइड का SSL प्रमाणपत्र का उपयोग करने के लिए अपाचे और DCL विन्यस्त करें.');
 INSERT INTO `lang_definitions` VALUES (146238, 2214, 28, 'ग्राहक साइड SSL प्रमाणपत्र का उपयोग करने के लिए अपाचे कॉन्फ़िगर करें.');
 INSERT INTO `lang_definitions` VALUES (146239, 2215, 28, 'HTTPS का उपयोग करने के लिए अपाचे कॉन्फ़िगर करें.');
-INSERT INTO `lang_definitions` VALUES (146240, 2216, 28, 'ग्राहक साइड SSL प्रमाणपत्र का उपयोग करने के लिए Openemr कॉन्फ़िगर करें.');
+INSERT INTO `lang_definitions` VALUES (146240, 2216, 28, 'ग्राहक साइड SSL प्रमाणपत्र का उपयोग करने के लिए DCL कॉन्फ़िगर करें.');
 INSERT INTO `lang_definitions` VALUES (146241, 2225, 28, 'नई रोगी बनाने के लिए पुष्टि');
 INSERT INTO `lang_definitions` VALUES (146242, 2227, 28, 'नए पासवर्ड की पुष्टि');
 INSERT INTO `lang_definitions` VALUES (146243, 2229, 28, 'भुगतान की पुष्टि');
@@ -160150,8 +160150,8 @@ INSERT INTO `lang_definitions` VALUES (146781, 3321, 28, 'देय रोगी
 INSERT INTO `lang_definitions` VALUES (146782, 3322, 28, 'जल्द ही देय');
 INSERT INTO `lang_definitions` VALUES (146783, 3323, 28, 'देय स्थिति');
 INSERT INTO `lang_definitions` VALUES (146784, 3324, 28, 'देय स्थिति अपडेट');
-INSERT INTO `lang_definitions` VALUES (146785, 3325, 28, 'OpenEMR डेटाबेस डम्पिंग');
-INSERT INTO `lang_definitions` VALUES (146786, 3326, 28, 'OpenEMR वेब निर्देशिका वृक्ष डम्पिंग');
+INSERT INTO `lang_definitions` VALUES (146785, 3325, 28, 'DCL डेटाबेस डम्पिंग');
+INSERT INTO `lang_definitions` VALUES (146786, 3326, 28, 'DCL वेब निर्देशिका वृक्ष डम्पिंग');
 INSERT INTO `lang_definitions` VALUES (146787, 3327, 28, 'PhpGACL डेटाबेस डम्पिंग');
 INSERT INTO `lang_definitions` VALUES (146788, 3328, 28, 'PhpGACL वेब निर्देशिका वृक्ष डम्पिंग');
 INSERT INTO `lang_definitions` VALUES (146789, 3329, 28, 'एसक्यूएल लेजर डेटाबेस डम्पिंग');
@@ -160309,7 +160309,7 @@ INSERT INTO `lang_definitions` VALUES (146940, 3634, 28, 'स्वचालि�
 INSERT INTO `lang_definitions` VALUES (146941, 3636, 28, 'स्वचालित उपाय गणना के लिए ट्रैकिंग तिथि (एएमसी) की रिपोर्टिंग सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (146942, 3638, 28, 'स्कैनर समर्थन सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (146943, 3642, 28, 'मैडिकल इन्फोर्मेशन इंटीग्रेशन, LLC लैब विनिमय सेवा को सक्रिय करें');
-INSERT INTO `lang_definitions` VALUES (146944, 3643, 28, 'OpenEMR समर्थन LLC लैब विनिमय सेवा को सक्रिय करें');
+INSERT INTO `lang_definitions` VALUES (146944, 3643, 28, 'DCL समर्थन LLC लैब विनिमय सेवा को सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (146945, 3644, 28, 'उपयोगकर्ता प्रमाणपत्र प्रमाणीकरण सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (146946, 3650, 28, 'ZMG, LLC ERX सेवा सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (146947, 3651, 28, 'सक्रिय किया');
@@ -160374,7 +160374,7 @@ INSERT INTO `lang_definitions` VALUES (147005, 3754, 28, 'अंग्रेज�
 INSERT INTO `lang_definitions` VALUES (147006, 3756, 28, 'अंग्रेजी (भारतीय)');
 INSERT INTO `lang_definitions` VALUES (147007, 3757, 28, 'अंग्रेजी (मानक)');
 INSERT INTO `lang_definitions` VALUES (147008, 3758, 28, 'Hylafax द्वारा इस्तेमाल किया Enscript आदेश.');
-INSERT INTO `lang_definitions` VALUES (147009, 3759, 28, 'OpenEMR के लिए निर्देशिका में लिखने के विशेषाधिकार सुनिश्चित करें!');
+INSERT INTO `lang_definitions` VALUES (147009, 3759, 28, 'DCL के लिए निर्देशिका में लिखने के विशेषाधिकार सुनिश्चित करें!');
 INSERT INTO `lang_definitions` VALUES (147010, 3761, 28, 'इ एन टी निर्वहन');
 INSERT INTO `lang_definitions` VALUES (147011, 3762, 28, 'इ एन टी दर्द');
 INSERT INTO `lang_definitions` VALUES (147012, 3765, 28, 'इसको समाहित नहीं करने वाले सभी चालान बाहर करने के लिए एक निदान कोड दर्ज करें!');
@@ -160422,7 +160422,7 @@ INSERT INTO `lang_definitions` VALUES (147053, 3896, 28, 'अपलोड प्
 INSERT INTO `lang_definitions` VALUES (147054, 3897, 28, 'त्रुटि संदेश हटा रहा है');
 INSERT INTO `lang_definitions` VALUES (147055, 3898, 28, 'लैब एक्सचेंज नेटवर्क से परिणाम पाने में त्रुटि');
 INSERT INTO `lang_definitions` VALUES (147056, 3899, 28, 'मूल्यों को पुन: प्राप्त करने में त्रुटि.');
-INSERT INTO `lang_definitions` VALUES (147057, 3901, 28, 'OpenEMR उपयोगकर्ता के लिए फ़ाइल विशेषाधिकार देने में त्रुटि.');
+INSERT INTO `lang_definitions` VALUES (147057, 3901, 28, 'DCL उपयोगकर्ता के लिए फ़ाइल विशेषाधिकार देने में त्रुटि.');
 INSERT INTO `lang_definitions` VALUES (147058, 3904, 28, 'फॉर्म पंजीकरण करने के दौरान त्रुटि!');
 INSERT INTO `lang_definitions` VALUES (147059, 3905, 28, 'फ़ाइल सहेजने के दौरान त्रुटि.');
 INSERT INTO `lang_definitions` VALUES (147060, 3907, 28, 'फ़ाइल लिखने के दौरान त्रुटि');
@@ -160434,7 +160434,7 @@ INSERT INTO `lang_definitions` VALUES (147065, 3920, 28, 'त्रुटि, ad
 INSERT INTO `lang_definitions` VALUES (147066, 3921, 28, 'त्रुटि, प्रमाणपत्र प्राधिकार प्रमाण पत्र नहीं बना सके.');
 INSERT INTO `lang_definitions` VALUES (147067, 3922, 28, 'त्रुटि, सर्वर प्रमाणपत्र बनाने में असमर्थ.');
 INSERT INTO `lang_definitions` VALUES (147068, 3924, 28, 'त्रुटि, को खोलने में असमर्थ फ़ाइल');
-INSERT INTO `lang_definitions` VALUES (147069, 3925, 28, 'त्रुटि, उपयोगकर्ता प्रमाणपत्र प्रमाणीकरण OpenEMR में सक्षम नहीं है');
+INSERT INTO `lang_definitions` VALUES (147069, 3925, 28, 'त्रुटि, उपयोगकर्ता प्रमाणपत्र प्रमाणीकरण DCL में सक्षम नहीं है');
 INSERT INTO `lang_definitions` VALUES (147070, 3933, 28, 'त्रुटि. आप संग्रह / Tar.php PHP मॉड्यूल स्थापित करने की जरूरत है.');
 INSERT INTO `lang_definitions` VALUES (147071, 3934, 28, 'त्रुटि: table.sql, टूटे फार्म को नहीं खोल सकता है?');
 INSERT INTO `lang_definitions` VALUES (147072, 3937, 28, 'त्रुटि: लाइन पर आईडी दोहराया');
@@ -160629,7 +160629,7 @@ INSERT INTO `lang_definitions` VALUES (147260, 4277, 28, 'फ़ाइल');
 INSERT INTO `lang_definitions` VALUES (147261, 4280, 28, 'लॉग बैकअप बनाने की प्रक्रिया को स्वचालित कैसे करें यह जानने के लिए प्रलेखन निर्देशिका में फाइल!');
 INSERT INTO `lang_definitions` VALUES (147262, 4281, 28, 'फ़ाइल स्थान');
 INSERT INTO `lang_definitions` VALUES (147263, 4282, 28, 'फ़ाइल प्रबंधन');
-INSERT INTO `lang_definitions` VALUES (147264, 4289, 28, 'फ़ाइल का विशेषाधिकार OpenEMR उपयोगकर्ता के लिए दीया गया.');
+INSERT INTO `lang_definitions` VALUES (147264, 4289, 28, 'फ़ाइल का विशेषाधिकार DCL उपयोगकर्ता के लिए दीया गया.');
 INSERT INTO `lang_definitions` VALUES (147265, 4290, 28, 'CouchDB से फ़ाइल पुनर्प्राप्ति विफल रहा');
 INSERT INTO `lang_definitions` VALUES (147266, 4291, 28, 'फ़ाइल कक्ष');
 INSERT INTO `lang_definitions` VALUES (147267, 4292, 28, 'अपलोड करने के लिए फ़ाइल');
@@ -160990,7 +160990,7 @@ INSERT INTO `lang_definitions` VALUES (147621, 5036, 28, 'HPI:');
 INSERT INTO `lang_definitions` VALUES (147622, 5038, 28, 'HT');
 INSERT INTO `lang_definitions` VALUES (147623, 5039, 28, 'HTML के');
 INSERT INTO `lang_definitions` VALUES (147624, 5040, 28, 'HTML उत्पादन?');
-INSERT INTO `lang_definitions` VALUES (147625, 5043, 28, 'OpenEMR समर्थन LLC लैब विनिमय सेवा के लिए HTTPS लिंक.');
+INSERT INTO `lang_definitions` VALUES (147625, 5043, 28, 'DCL समर्थन LLC लैब विनिमय सेवा के लिए HTTPS लिंक.');
 INSERT INTO `lang_definitions` VALUES (147626, 5045, 28, 'हंगेरी');
 INSERT INTO `lang_definitions` VALUES (147627, 5046, 28, 'Hylafax निर्देशिका');
 INSERT INTO `lang_definitions` VALUES (147628, 5047, 28, 'Hylafax Enscript कमान');
@@ -161463,7 +161463,7 @@ INSERT INTO `lang_definitions` VALUES (148094, 6129, 28, 'स्थानीय'
 INSERT INTO `lang_definitions` VALUES (148095, 6133, 28, 'स्थानीय');
 INSERT INTO `lang_definitions` VALUES (148096, 6134, 28, 'इलाका');
 INSERT INTO `lang_definitions` VALUES (148097, 6135, 28, 'स्थान');
-INSERT INTO `lang_definitions` VALUES (148098, 6136, 28, 'openemr मशीन का स्थान और संवेदनशील डेटा हो सकता है, इसलिए यह मैन्युअल रूप से इसके उपयोग के बाद फ़ाइलों को हटाने की सिफारिश की है');
+INSERT INTO `lang_definitions` VALUES (148098, 6136, 28, 'DCL मशीन का स्थान और संवेदनशील डेटा हो सकता है, इसलिए यह मैन्युअल रूप से इसके उपयोग के बाद फ़ाइलों को हटाने की सिफारिश की है');
 INSERT INTO `lang_definitions` VALUES (148099, 6137, 28, 'इस स्थल का स्थान');
 INSERT INTO `lang_definitions` VALUES (148100, 6138, 28, 'अनिर्दिष्ट स्थान');
 INSERT INTO `lang_definitions` VALUES (148101, 6139, 28, 'स्थान, जहां Hylafax फैक्स जमा हो जाते है.');
@@ -162128,14 +162128,14 @@ INSERT INTO `lang_definitions` VALUES (148759, 7518, 28, 'उफ़!');
 INSERT INTO `lang_definitions` VALUES (148760, 7519, 28, 'खुला');
 INSERT INTO `lang_definitions` VALUES (148761, 7528, 28, 'नई विंडो में खोलें');
 INSERT INTO `lang_definitions` VALUES (148762, 7535, 28, 'खोलें आज की भेंट');
-INSERT INTO `lang_definitions` VALUES (148763, 7562, 28, 'OpenEMR में पहले से ही एक प्रमाणपत्र प्राधिकार कॉन्फ़िगर है.');
-INSERT INTO `lang_definitions` VALUES (148764, 7565, 28, 'OpenEMR आवेदन श्रेणी');
-INSERT INTO `lang_definitions` VALUES (148765, 7567, 28, 'OpenEMR डेटाबेस नवीनीकरण');
-INSERT INTO `lang_definitions` VALUES (148766, 7568, 28, 'De-IDENTIFICATION के लिए OpenEMR डेटाबेस नवीनीकरण');
-INSERT INTO `lang_definitions` VALUES (148767, 7569, 28, 'OpenEMR योगदान निर्देशिका में आने वाली फ़ाइल को नहीं पहचानता है. क्योंकि संभावना यह है, आपको MySQL डाटाबेस में supported_external_dataloads तालिका के रिलीज, विन्यस्त करने की जरूरत है.');
-INSERT INTO `lang_definitions` VALUES (148768, 7571, 28, 'क्लाइंट प्रमाण पत्र बनाने से पहले OpenEMR प्रमाण पत्र का उपयोग करने के लिए कॉन्फ़िगर किया जाना चाहिए.');
-INSERT INTO `lang_definitions` VALUES (148769, 7575, 28, 'OpenEMR को उपयोगकर्ता प्रमाणीकरण करने के लिए जावास्क्रिप्ट की आवश्यकता है.');
-INSERT INTO `lang_definitions` VALUES (148770, 7576, 28, 'OpenEMR उपयोगकर्ता');
+INSERT INTO `lang_definitions` VALUES (148763, 7562, 28, 'DCL में पहले से ही एक प्रमाणपत्र प्राधिकार कॉन्फ़िगर है.');
+INSERT INTO `lang_definitions` VALUES (148764, 7565, 28, 'DCL आवेदन श्रेणी');
+INSERT INTO `lang_definitions` VALUES (148765, 7567, 28, 'DCL डेटाबेस नवीनीकरण');
+INSERT INTO `lang_definitions` VALUES (148766, 7568, 28, 'De-IDENTIFICATION के लिए DCL डेटाबेस नवीनीकरण');
+INSERT INTO `lang_definitions` VALUES (148767, 7569, 28, 'DCL योगदान निर्देशिका में आने वाली फ़ाइल को नहीं पहचानता है. क्योंकि संभावना यह है, आपको MySQL डाटाबेस में supported_external_dataloads तालिका के रिलीज, विन्यस्त करने की जरूरत है.');
+INSERT INTO `lang_definitions` VALUES (148768, 7571, 28, 'क्लाइंट प्रमाण पत्र बनाने से पहले DCL प्रमाण पत्र का उपयोग करने के लिए कॉन्फ़िगर किया जाना चाहिए.');
+INSERT INTO `lang_definitions` VALUES (148769, 7575, 28, 'DCL को उपयोगकर्ता प्रमाणीकरण करने के लिए जावास्क्रिप्ट की आवश्यकता है.');
+INSERT INTO `lang_definitions` VALUES (148770, 7576, 28, 'DCL उपयोगकर्ता');
 INSERT INTO `lang_definitions` VALUES (148771, 7577, 28, 'उद्घाटन');
 INSERT INTO `lang_definitions` VALUES (148772, 7583, 28, 'ऑप्थाल्मिक');
 INSERT INTO `lang_definitions` VALUES (148773, 7586, 28, 'विकल्प');
@@ -162432,7 +162432,7 @@ INSERT INTO `lang_definitions` VALUES (149063, 8150, 28, 'लंबित आद
 INSERT INTO `lang_definitions` VALUES (149064, 8151, 28, 'लंबित Res');
 INSERT INTO `lang_definitions` VALUES (149065, 8152, 28, 'लंबित समीक्षा');
 INSERT INTO `lang_definitions` VALUES (149066, 8153, 28, 'लंबित Rx गणना');
-INSERT INTO `lang_definitions` VALUES (149067, 8156, 28, 'Pennington फर्म OpenEMR V');
+INSERT INTO `lang_definitions` VALUES (149067, 8156, 28, 'Pennington फर्म DCL V');
 INSERT INTO `lang_definitions` VALUES (149068, 8157, 28, 'पेप्टिक अल्सर रोग');
 INSERT INTO `lang_definitions` VALUES (149069, 8158, 28, 'प्रति मुठभेड़');
 INSERT INTO `lang_definitions` VALUES (149070, 8159, 28, 'प्रति मिनट');
@@ -162583,7 +162583,7 @@ INSERT INTO `lang_definitions` VALUES (149214, 8434, 28, '270 बैच बन�
 INSERT INTO `lang_definitions` VALUES (149215, 8435, 28, 'सेट करें');
 INSERT INTO `lang_definitions` VALUES (149216, 8436, 28, 'de_identification_config चर को वापस शून्य पर सेट करें');
 INSERT INTO `lang_definitions` VALUES (149217, 8441, 28, 'नई De Identification प्रक्रिया शुरू करें');
-INSERT INTO `lang_definitions` VALUES (149218, 8445, 28, 'De Identification प्रक्रियाओं, समारोह, टेबल शामिल करने के लिए OpenEMR डाटाबेस अपग्रेड करें');
+INSERT INTO `lang_definitions` VALUES (149218, 8445, 28, 'De Identification प्रक्रियाओं, समारोह, टेबल शामिल करने के लिए DCL डाटाबेस अपग्रेड करें');
 INSERT INTO `lang_definitions` VALUES (149219, 8447, 28, 'अधिक जानकारी के लिए De Identification त्रुटि लॉग तालिका देखें');
 INSERT INTO `lang_definitions` VALUES (149220, 8448, 28, 'कुछ समय के बाद De Identification स्क्रीन पर जाएँ');
 INSERT INTO `lang_definitions` VALUES (149221, 8449, 28, 'कुछ समय बाद De Identification स्क्रीन पर जाएँ');
@@ -163470,7 +163470,7 @@ INSERT INTO `lang_definitions` VALUES (150101, 10288, 28, 'शिरानाल
 INSERT INTO `lang_definitions` VALUES (150102, 10290, 28, 'स्थल');
 INSERT INTO `lang_definitions` VALUES (150103, 10294, 28, 'स्थल ID');
 INSERT INTO `lang_definitions` VALUES (150104, 10295, 28, 'मैडिकल इन्फोर्मेशन इंटीग्रेशन, LLC लैब विनिमय सेवा के लिए साइट ID.');
-INSERT INTO `lang_definitions` VALUES (150105, 10296, 28, 'OpenEMR समर्थन LLC लैब विनिमय सेवा के लिए साइट ID.');
+INSERT INTO `lang_definitions` VALUES (150105, 10296, 28, 'DCL समर्थन LLC लैब विनिमय सेवा के लिए साइट ID.');
 INSERT INTO `lang_definitions` VALUES (150106, 10300, 28, 'आकार');
 INSERT INTO `lang_definitions` VALUES (150107, 10303, 28, 'आकार 1 और 999 के बीच में होनी चाहिए');
 INSERT INTO `lang_definitions` VALUES (150108, 10305, 28, 'आकार / सूची');
@@ -163918,7 +163918,7 @@ INSERT INTO `lang_definitions` VALUES (150549, 11277, 28, 'वर्तमान
 INSERT INTO `lang_definitions` VALUES (150550, 11278, 28, 'अनुवाद तालिकाएँ सिंक्रनाइज़ हैं.');
 INSERT INTO `lang_definitions` VALUES (150551, 11279, 28, 'इस इकाई के प्रकार');
 INSERT INTO `lang_definitions` VALUES (150552, 11299, 28, 'इस प्रक्रिया या परिणाम की पहचान करनेवाला विक्रेता विशेष कोड');
-INSERT INTO `lang_definitions` VALUES (150553, 11304, 28, 'X 12 फाइलें और परिणामस्वरूप HTML उत्पादन रिपोर्ट्स मुख्य OpenEMR स्थापना निर्देशिका के \"युग\" उपनिर्देशिका में संग्रहीत हैं. आप समय समय पर इन अभिलेखागार का उल्लेख करना चाहते होगे. यूआरएल है');
+INSERT INTO `lang_definitions` VALUES (150553, 11304, 28, 'X 12 फाइलें और परिणामस्वरूप HTML उत्पादन रिपोर्ट्स मुख्य DCL स्थापना निर्देशिका के \"युग\" उपनिर्देशिका में संग्रहीत हैं. आप समय समय पर इन अभिलेखागार का उल्लेख करना चाहते होगे. यूआरएल है');
 INSERT INTO `lang_definitions` VALUES (150554, 11306, 28, 'ज़िप फ़ाइल में निम्न आइटम्स शामिल होंगे');
 INSERT INTO `lang_definitions` VALUES (150555, 11307, 28, 'थीम');
 INSERT INTO `lang_definitions` VALUES (150556, 11313, 28, 'फिर कच्चा डेटा फीड रिलीज से प्राप्त किया जा सकता है');
@@ -163945,7 +163945,7 @@ INSERT INTO `lang_definitions` VALUES (150576, 11369, 28, 'चालान आ�
 INSERT INTO `lang_definitions` VALUES (150577, 11370, 28, 'सेवाएँ ID के लिए कोई हिस्से प्रविष्टि नहीं है');
 INSERT INTO `lang_definitions` VALUES (150578, 11373, 28, 'संदेश भेजने में कोई समस्या थी.');
 INSERT INTO `lang_definitions` VALUES (150579, 11374, 28, 'आपका अनुरोध संसाधित करते समय एक त्रुटि हुई थी.');
-INSERT INTO `lang_definitions` VALUES (150580, 11375, 28, 'निम्न स्ट्रिंग के एक OpenEMR एसक्यूएल भागने की त्रुटि थी');
+INSERT INTO `lang_definitions` VALUES (150580, 11375, 28, 'निम्न स्ट्रिंग के एक DCL एसक्यूएल भागने की त्रुटि थी');
 INSERT INTO `lang_definitions` VALUES (150581, 11379, 28, 'ये 2012 लिंक हैं');
 INSERT INTO `lang_definitions` VALUES (150582, 11400, 28, 'दाएँ गाढ़ा:');
 INSERT INTO `lang_definitions` VALUES (150583, 11401, 28, 'जांघ');
@@ -164106,7 +164106,7 @@ INSERT INTO `lang_definitions` VALUES (150737, 11783, 28, 'आज का शु�
 INSERT INTO `lang_definitions` VALUES (150738, 11784, 28, 'आज की तिथि');
 INSERT INTO `lang_definitions` VALUES (150739, 11785, 28, 'आज का घटनाक्रम');
 INSERT INTO `lang_definitions` VALUES (150740, 11796, 28, 'मैडिकल इन्फोर्मेशन एकता, LLC लैब विनिमय सेवा के लिए टोकन ID.');
-INSERT INTO `lang_definitions` VALUES (150741, 11797, 28, 'OpenEMR समर्थन LLC लैब विनिमय सेवा के लिए टोकन ID.');
+INSERT INTO `lang_definitions` VALUES (150741, 11797, 28, 'DCL समर्थन LLC लैब विनिमय सेवा के लिए टोकन ID.');
 INSERT INTO `lang_definitions` VALUES (150742, 11803, 28, 'गलतुण्डिका उच्छेदन');
 INSERT INTO `lang_definitions` VALUES (150743, 11807, 28, 'शीर्ष');
 INSERT INTO `lang_definitions` VALUES (150744, 11810, 28, 'विषय');
@@ -164285,7 +164285,7 @@ INSERT INTO `lang_definitions` VALUES (150916, 12182, 28, 'संस्करण
 INSERT INTO `lang_definitions` VALUES (150917, 12183, 28, 'उन्नयन');
 INSERT INTO `lang_definitions` VALUES (150918, 12184, 28, 'उन्नयन करें');
 INSERT INTO `lang_definitions` VALUES (150919, 12186, 28, 'डेटाबेस उन्नयन');
-INSERT INTO `lang_definitions` VALUES (150920, 12188, 28, 'प्रक्रिया, कार्य और तालिकाएँ शामिल करने के लिए OpenEMR डेटाबेस उन्नयन करें. de-identification की प्रक्रिया के लिए आवश्यक है.');
+INSERT INTO `lang_definitions` VALUES (150920, 12188, 28, 'प्रक्रिया, कार्य और तालिकाएँ शामिल करने के लिए DCL डेटाबेस उन्नयन करें. de-identification की प्रक्रिया के लिए आवश्यक है.');
 INSERT INTO `lang_definitions` VALUES (150921, 12189, 28, 'उन्नयन जारी रहेगा');
 INSERT INTO `lang_definitions` VALUES (150922, 12190, 28, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (150923, 12191, 28, 'अपलोड');
@@ -164309,7 +164309,7 @@ INSERT INTO `lang_definitions` VALUES (150940, 12230, 28, 'मूत्र Micro
 INSERT INTO `lang_definitions` VALUES (150941, 12231, 28, 'मूत्र धारा');
 INSERT INTO `lang_definitions` VALUES (150942, 12232, 28, 'मूत्र तात्कालिकता');
 INSERT INTO `lang_definitions` VALUES (150943, 12233, 28, 'URL');
-INSERT INTO `lang_definitions` VALUES (150944, 12235, 28, 'OpenEMR समर्थन के लिए URL.');
+INSERT INTO `lang_definitions` VALUES (150944, 12235, 28, 'DCL समर्थन के लिए URL.');
 INSERT INTO `lang_definitions` VALUES (150945, 12237, 28, 'फोन प्रवेश द्वार के लिए URL. Maviq द्वारा प्रदान की स्वचालित VOIP सेवा. अधिक जानकारी के लिए http://signup.maviq.com जाएँ.');
 INSERT INTO `lang_definitions` VALUES (150946, 12246, 28, 'प्रयोग');
 INSERT INTO `lang_definitions` VALUES (150947, 12248, 28, 'उपयोग संकेतक (ISA15)');
@@ -164813,7 +164813,7 @@ INSERT INTO `lang_definitions` VALUES (151444, 15, 29, 'Câteva cuvinte pentru a
 INSERT INTO `lang_definitions` VALUES (151445, 16, 29, 'O întâlnire ulterioară poate fi, de asemenea, programată chiar din foaia de taxe.');
 INSERT INTO `lang_definitions` VALUES (151446, 17, 29, 'Un formular GCAC trebuie adaugat la aceasta vizita.');
 INSERT INTO `lang_definitions` VALUES (151447, 18, 29, 'Un mesaj HL7 v2.x constă pur și simplu din mai multe rânduri de text, fiecare linie este numită segment și este împărțită în câmpuri folosind caracterul pipe (|)');
-INSERT INTO `lang_definitions` VALUES (151448, 19, 29, 'O aplicatie complexa precum openEMR este utilizata de o multitudine de utilizatori cu diferite roluri si grade de responsabilitate. Este imperativ necesar ca accesul la diferite parti ale programului sa fie acordat conform nevoilor. Pentru a realiza aceasta se utilizeaza Liste de Contol al Accesului (ACL- Access Control Lists)');
+INSERT INTO `lang_definitions` VALUES (151448, 19, 29, 'O aplicatie complexa precum DCL este utilizata de o multitudine de utilizatori cu diferite roluri si grade de responsabilitate. Este imperativ necesar ca accesul la diferite parti ale programului sa fie acordat conform nevoilor. Pentru a realiza aceasta se utilizeaza Liste de Contol al Accesului (ACL- Access Control Lists)');
 INSERT INTO `lang_definitions` VALUES (151449, 20, 29, 'Este necesar un numar de lot');
 INSERT INTO `lang_definitions` VALUES (151450, 21, 29, 'Este necesar un numar de lot!');
 INSERT INTO `lang_definitions` VALUES (151451, 22, 29, 'O litera mica');
@@ -165104,7 +165104,7 @@ INSERT INTO `lang_definitions` VALUES (151735, 330, 29, 'Informații suplimentar
 INSERT INTO `lang_definitions` VALUES (151736, 332, 29, 'Informații suplimentare pentru procesarea cererilor pe hârtie');
 INSERT INTO `lang_definitions` VALUES (151737, 333, 29, 'Laboratoare suplimentare');
 INSERT INTO `lang_definitions` VALUES (151738, 334, 29, 'Note suplimentare');
-INSERT INTO `lang_definitions` VALUES (151739, 335, 29, 'Câmpul Note suplimentare este pentru uz local în openEMR');
+INSERT INTO `lang_definitions` VALUES (151739, 335, 29, 'Câmpul Note suplimentare este pentru uz local în DCL');
 INSERT INTO `lang_definitions` VALUES (151740, 336, 29, 'Note suplimentare pentru acest rezultat sau recomandari');
 INSERT INTO `lang_definitions` VALUES (151741, 337, 29, 'Note suplimentare:');
 INSERT INTO `lang_definitions` VALUES (151742, 338, 29, 'Note suplimentare:');
@@ -165255,7 +165255,7 @@ INSERT INTO `lang_definitions` VALUES (151886, 497, 29, 'Toate masurile de calit
 INSERT INTO `lang_definitions` VALUES (151887, 498, 29, 'Toate sau o parte din prenume');
 INSERT INTO `lang_definitions` VALUES (151888, 499, 29, 'Toate sau o parte din numele de familie');
 INSERT INTO `lang_definitions` VALUES (151889, 500, 29, 'Totul sau o parte din oragnizatie');
-INSERT INTO `lang_definitions` VALUES (151890, 501, 29, 'Toate interacțiunile pacientului în OpenEMR sunt legate de întâlniri');
+INSERT INTO `lang_definitions` VALUES (151890, 501, 29, 'Toate interacțiunile pacientului în DCL sunt legate de întâlniri');
 INSERT INTO `lang_definitions` VALUES (151891, 502, 29, 'Toti Pacientii');
 INSERT INTO `lang_definitions` VALUES (151892, 503, 29, 'Toate mesajele în așteptare sunt afișate în panoul MESAJE MELE');
 INSERT INTO `lang_definitions` VALUES (151893, 505, 29, 'Toate produsele');
@@ -165422,11 +165422,11 @@ INSERT INTO `lang_definitions` VALUES (152053, 674, 29, 'Va fi trimis un e-mail 
 INSERT INTO `lang_definitions` VALUES (152054, 675, 29, 'O comandă electronică și rezultatul returnat este sub forma unui mesaj numit mesaj HL7. HL7 înseamnă Health Level (Application Layer) 7. Obiectivul principal al HL7 este de a simplifica implementarea interfețelor dintre aplicațiile software de asistență medicală și diverși furnizori, astfel încât să reducă durerea și costurile implicate în programarea interfeței personalizată.');
 INSERT INTO `lang_definitions` VALUES (152055, 676, 29, 'O data de incheiere ulterioara datei de inceput este necesara pentru evenimente repetate!');
 INSERT INTO `lang_definitions` VALUES (152056, 677, 29, 'A aparut o eroare la semnarea formularului');
-INSERT INTO `lang_definitions` VALUES (152057, 678, 29, 'A apărut o eroare la descărcarea arborelui de directoare web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (152057, 678, 29, 'A apărut o eroare la descărcarea arborelui de directoare web DCL');
 INSERT INTO `lang_definitions` VALUES (152058, 679, 29, 'A apărut o eroare la descărcarea arborelui directorului web phpGACL');
 INSERT INTO `lang_definitions` VALUES (152059, 680, 29, 'A apărut o eroare la descărcarea arborelui de directoare web SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (152060, 682, 29, 'A apărut o eroare: Lipsește fișierul de încărcat: Folosiți butonul Înapoi!');
-INSERT INTO `lang_definitions` VALUES (152061, 683, 29, 'Un concept important de înțeles este că, odată ce cheia secretă furnizată prin codul QR este capturată de aplicația de autentificare, nu mai există nicio comunicare între aplicație și OpenEMR, fiecare va folosi ora UNIX curentă și copia sa a secretului partajat specific utilizatorului. pentru a genera același număr unic de 6 cifre');
+INSERT INTO `lang_definitions` VALUES (152061, 683, 29, 'Un concept important de înțeles este că, odată ce cheia secretă furnizată prin codul QR este capturată de aplicația de autentificare, nu mai există nicio comunicare între aplicație și DCL, fiecare va folosi ora UNIX curentă și copia sa a secretului partajat specific utilizatorului. pentru a genera același număr unic de 6 cifre');
 INSERT INTO `lang_definitions` VALUES (152062, 684, 29, 'Un punct important de reținut este că diferitele teste individuale din fiecare panou sunt listate ca Rezultate, fructe, nu puteți comanda direct aceste teste individuale.');
 INSERT INTO `lang_definitions` VALUES (152063, 685, 29, 'O instanta GCAC a fost create. Trebuie completata ulterior.');
 INSERT INTO `lang_definitions` VALUES (152064, 687, 29, 'O problemă se referă la chestiuni legate de sănătatea pacientului');
@@ -165652,7 +165652,7 @@ INSERT INTO `lang_definitions` VALUES (152283, 927, 29, 'Să presupunem că paci
 INSERT INTO `lang_definitions` VALUES (152284, 928, 29, 'Astm');
 INSERT INTO `lang_definitions` VALUES (152285, 929, 29, 'la');
 INSERT INTO `lang_definitions` VALUES (152286, 931, 29, 'Este necesar cel puțin un parametru de căutare dacă selectați Toate.');
-INSERT INTO `lang_definitions` VALUES (152287, 932, 29, 'În prezent, prescrierea electronică de la openEMR este posibilă numai în Statele Unite');
+INSERT INTO `lang_definitions` VALUES (152287, 932, 29, 'În prezent, prescrierea electronică de la DCL este posibilă numai în Statele Unite');
 INSERT INTO `lang_definitions` VALUES (152288, 933, 29, 'În prezent, numai documentul de continuitate a îngrijirii (CCR) documentul de continuitate a îngrijirii (CCD) poate fi trimis folosind phiMail');
 INSERT INTO `lang_definitions` VALUES (152289, 934, 29, 'La osul navicular');
 INSERT INTO `lang_definitions` VALUES (152290, 935, 29, 'La osul navicular:');
@@ -166855,10 +166855,10 @@ INSERT INTO `lang_definitions` VALUES (153486, 2209, 29, 'Config');
 INSERT INTO `lang_definitions` VALUES (153487, 2210, 29, 'Configurare');
 INSERT INTO `lang_definitions` VALUES (153488, 2211, 29, 'Export/Import configurație');
 INSERT INTO `lang_definitions` VALUES (153489, 2212, 29, 'Configurația a fost salvată cu succes');
-INSERT INTO `lang_definitions` VALUES (153490, 2213, 29, 'Configurați Apache și OpenEMR pentru a utiliza certificate SSL pentru client.');
+INSERT INTO `lang_definitions` VALUES (153490, 2213, 29, 'Configurați Apache și DCL pentru a utiliza certificate SSL pentru client.');
 INSERT INTO `lang_definitions` VALUES (153491, 2214, 29, 'Configurați Apache pentru a utiliza certificate SSL pe partea clientului');
 INSERT INTO `lang_definitions` VALUES (153492, 2215, 29, 'Configurați Apache pentru a utiliza HTTPS.');
-INSERT INTO `lang_definitions` VALUES (153493, 2216, 29, 'Configurați Openemr pentru a utiliza certificate SSL pentru client');
+INSERT INTO `lang_definitions` VALUES (153493, 2216, 29, 'Configurați DCL pentru a utiliza certificate SSL pentru client');
 INSERT INTO `lang_definitions` VALUES (153494, 2217, 29, 'Configurați comenzi și rezultate');
 INSERT INTO `lang_definitions` VALUES (153495, 2218, 29, 'Ajutor pentru configurarea comenzilor');
 INSERT INTO `lang_definitions` VALUES (153496, 2219, 29, 'Configurați structura testului de laborator');
@@ -166909,7 +166909,7 @@ INSERT INTO `lang_definitions` VALUES (153540, 2268, 29, 'Lentile de contact');
 INSERT INTO `lang_definitions` VALUES (153541, 2269, 29, 'Contactați Medical Information Integration, LLC la http://mi-squared.com pentru serviciul de schimb de laborator.');
 INSERT INTO `lang_definitions` VALUES (153542, 2270, 29, 'Contactați Medical Information Integration, LLC la http://mi-squared.com sau ZH Healthcare la http://zhservices.com pentru a vă abona la serviciul eRx');
 INSERT INTO `lang_definitions` VALUES (153543, 2271, 29, 'Contactați Medical Information Integration, LLC la http://mi-squared.com sau ZH Healthcare la http://zhservices.com pentru a vă abona la serviciul NewCrop eRx.');
-INSERT INTO `lang_definitions` VALUES (153544, 2272, 29, 'Contactați mi-squared la http://www.mi-squared.com/products-services/openemr/ sau ZH Healthcare la https://blueehr.com/contact-us/ pentru a vă abona la serviciul NewCrop eRx.');
+INSERT INTO `lang_definitions` VALUES (153544, 2272, 29, 'Contactați mi-squared la http://www.mi-squared.com/products-services/DCL/ sau ZH Healthcare la https://blueehr.com/contact-us/ pentru a vă abona la serviciul NewCrop eRx.');
 INSERT INTO `lang_definitions` VALUES (153545, 2273, 29, 'Nume de contact');
 INSERT INTO `lang_definitions` VALUES (153546, 2274, 29, 'Contactați Open Med Practice, www.openmedpractice.com pentru a vă abona la serviciul Weno Free eRx.');
 INSERT INTO `lang_definitions` VALUES (153547, 2275, 29, 'Contactați sau notificați telefonul');
@@ -167164,7 +167164,7 @@ INSERT INTO `lang_definitions` VALUES (153795, 2545, 29, 'Momentan ocupat');
 INSERT INTO `lang_definitions` VALUES (153796, 2546, 29, 'Momentan ocupat{{Serviciul}}');
 INSERT INTO `lang_definitions` VALUES (153797, 2547, 29, 'Momentan offline');
 INSERT INTO `lang_definitions` VALUES (153798, 2548, 29, 'În curs de desfășurare');
-INSERT INTO `lang_definitions` VALUES (153799, 2549, 29, 'În prezent există 5 tipuri de tranzacții în OpenEMR');
+INSERT INTO `lang_definitions` VALUES (153799, 2549, 29, 'În prezent există 5 tipuri de tranzacții în DCL');
 INSERT INTO `lang_definitions` VALUES (153800, 2550, 29, 'Momentan nu exista facilitati.');
 INSERT INTO `lang_definitions` VALUES (153801, 2551, 29, 'În prezent se lucrează la realizarea acestui document');
 INSERT INTO `lang_definitions` VALUES (153802, 2552, 29, 'Sindromul Cushing');
@@ -167885,8 +167885,8 @@ INSERT INTO `lang_definitions` VALUES (154516, 3321, 29, 'Datorită Pt');
 INSERT INTO `lang_definitions` VALUES (154517, 3322, 29, 'În curând');
 INSERT INTO `lang_definitions` VALUES (154518, 3323, 29, 'Statut scadent');
 INSERT INTO `lang_definitions` VALUES (154519, 3324, 29, 'Actualizare de stare scadentă');
-INSERT INTO `lang_definitions` VALUES (154520, 3325, 29, 'Eliminarea bazei de date OpenEMR');
-INSERT INTO `lang_definitions` VALUES (154521, 3326, 29, 'Eliminarea arborelui de directoare web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (154520, 3325, 29, 'Eliminarea bazei de date DCL');
+INSERT INTO `lang_definitions` VALUES (154521, 3326, 29, 'Eliminarea arborelui de directoare web DCL');
 INSERT INTO `lang_definitions` VALUES (154522, 3327, 29, 'Dumping baza de date phpGACL');
 INSERT INTO `lang_definitions` VALUES (154523, 3328, 29, 'Eliminarea arborelui de directoare web phpGACL');
 INSERT INTO `lang_definitions` VALUES (154524, 3329, 29, 'Dumping baza de date SQL-Ledger');
@@ -168044,7 +168044,7 @@ INSERT INTO `lang_definitions` VALUES (154675, 3488, 29, 'Text de e-mail, etiche
 INSERT INTO `lang_definitions` VALUES (154676, 3489, 29, 'Metoda de transport prin e-mail');
 INSERT INTO `lang_definitions` VALUES (154677, 3490, 29, 'E-mailul a fost trimis la următoarea adresă');
 INSERT INTO `lang_definitions` VALUES (154678, 3491, 29, 'e-mailuri nu au fost trimise');
-INSERT INTO `lang_definitions` VALUES (154679, 3492, 29, 'Încorporați {login} unde va fi numele de conectare OpenEMR al utilizatorului; de exemplu: uid={login},dc=example,dc=com');
+INSERT INTO `lang_definitions` VALUES (154679, 3492, 29, 'Încorporați {login} unde va fi numele de conectare DCL al utilizatorului; de exemplu: uid={login},dc=example,dc=com');
 INSERT INTO `lang_definitions` VALUES (154680, 3493, 29, 'Îngrijire de urgență');
 INSERT INTO `lang_definitions` VALUES (154681, 3494, 29, 'Contact de urgență');
 INSERT INTO `lang_definitions` VALUES (154682, 3495, 29, 'Contact de urgență');
@@ -168160,16 +168160,16 @@ INSERT INTO `lang_definitions` VALUES (154791, 3611, 29, 'Activați portalul pac
 INSERT INTO `lang_definitions` VALUES (154792, 3612, 29, 'Activați descărcarea documentelor pe portalul pacientului la fața locului');
 INSERT INTO `lang_definitions` VALUES (154793, 3613, 29, 'Activați portalul pacienților la fața locului pentru a se înregistra singur pacientul.');
 INSERT INTO `lang_definitions` VALUES (154794, 3614, 29, 'Activați portalul pacientului la fața locului.');
-INSERT INTO `lang_definitions` VALUES (154795, 3617, 29, 'Activați OpenEMR Patient Portal FHIR REST API (EXPERIMENTAL)');
-INSERT INTO `lang_definitions` VALUES (154796, 3618, 29, 'Activați OpenEMR Patient Portal FHIR RESTful API.');
-INSERT INTO `lang_definitions` VALUES (154797, 3619, 29, 'Activați OpenEMR Patient Portal REST API (EXPERIMENTAL)');
-INSERT INTO `lang_definitions` VALUES (154798, 3620, 29, 'Activați OpenEMR Patient Portal RESTful API.');
-INSERT INTO `lang_definitions` VALUES (154799, 3621, 29, 'Activați API-ul OpenEMR REST');
-INSERT INTO `lang_definitions` VALUES (154800, 3622, 29, 'Activați API-ul OpenEMR RESTful. SSL obligatoriu');
-INSERT INTO `lang_definitions` VALUES (154801, 3623, 29, 'Activați API-ul OpenEMR Standard FHIR REST');
-INSERT INTO `lang_definitions` VALUES (154802, 3624, 29, 'Activați API-ul OpenEMR Standard FHIR RESTful.');
-INSERT INTO `lang_definitions` VALUES (154803, 3625, 29, 'Activați API-ul REST standard OpenEMR');
-INSERT INTO `lang_definitions` VALUES (154804, 3626, 29, 'Activați API-ul RESTful OpenEMR Standard.');
+INSERT INTO `lang_definitions` VALUES (154795, 3617, 29, 'Activați DCL Patient Portal FHIR REST API (EXPERIMENTAL)');
+INSERT INTO `lang_definitions` VALUES (154796, 3618, 29, 'Activați DCL Patient Portal FHIR RESTful API.');
+INSERT INTO `lang_definitions` VALUES (154797, 3619, 29, 'Activați DCL Patient Portal REST API (EXPERIMENTAL)');
+INSERT INTO `lang_definitions` VALUES (154798, 3620, 29, 'Activați DCL Patient Portal RESTful API.');
+INSERT INTO `lang_definitions` VALUES (154799, 3621, 29, 'Activați API-ul DCL REST');
+INSERT INTO `lang_definitions` VALUES (154800, 3622, 29, 'Activați API-ul DCL RESTful. SSL obligatoriu');
+INSERT INTO `lang_definitions` VALUES (154801, 3623, 29, 'Activați API-ul DCL Standard FHIR REST');
+INSERT INTO `lang_definitions` VALUES (154802, 3624, 29, 'Activați API-ul DCL Standard FHIR RESTful.');
+INSERT INTO `lang_definitions` VALUES (154803, 3625, 29, 'Activați API-ul REST standard DCL');
+INSERT INTO `lang_definitions` VALUES (154804, 3626, 29, 'Activați API-ul RESTful DCL Standard.');
 INSERT INTO `lang_definitions` VALUES (154805, 3627, 29, 'Activați Portalul Pacienților');
 INSERT INTO `lang_definitions` VALUES (154806, 3628, 29, 'Activați Descărcarea documentelor pe portalul pacientului');
 INSERT INTO `lang_definitions` VALUES (154807, 3629, 29, 'Activați portalul pacientului noul pacient să se înregistreze singur.');
@@ -168185,7 +168185,7 @@ INSERT INTO `lang_definitions` VALUES (154816, 3639, 29, 'Activați detalierea r
 INSERT INTO `lang_definitions` VALUES (154817, 3640, 29, 'Activați suportul pentru portalul WordPress open source de la Sunset Systems');
 INSERT INTO `lang_definitions` VALUES (154818, 3641, 29, 'Activați șabloanele de text în formularele de întâlnire');
 INSERT INTO `lang_definitions` VALUES (154819, 3642, 29, 'Activați serviciul Medical Information Integration, LLC Lab Exchange.');
-INSERT INTO `lang_definitions` VALUES (154820, 3643, 29, 'Activați serviciul de schimb de laborator OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (154820, 3643, 29, 'Activați serviciul de schimb de laborator DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (154821, 3644, 29, 'Activați autentificarea cu certificat de utilizator');
 INSERT INTO `lang_definitions` VALUES (154822, 3645, 29, 'Activați Versiunea 1 Portalul pacientului la fața locului');
 INSERT INTO `lang_definitions` VALUES (154823, 3646, 29, 'Activați Versiunea 2 Portalul pacientului la fața locului');
@@ -168295,7 +168295,7 @@ INSERT INTO `lang_definitions` VALUES (154926, 3754, 29, 'Engleză');
 INSERT INTO `lang_definitions` VALUES (154927, 3756, 29, 'engleză (indiană)');
 INSERT INTO `lang_definitions` VALUES (154928, 3757, 29, 'engleză (standard)');
 INSERT INTO `lang_definitions` VALUES (154929, 3758, 29, 'Comanda Enscript folosită de Hylafax.');
-INSERT INTO `lang_definitions` VALUES (154930, 3759, 29, 'Asigurați-vă că OpenEMR are privilegii de scriere în director');
+INSERT INTO `lang_definitions` VALUES (154930, 3759, 29, 'Asigurați-vă că DCL are privilegii de scriere în director');
 INSERT INTO `lang_definitions` VALUES (154931, 3760, 29, 'Asigurați-vă că codurile de identificare sunt unice');
 INSERT INTO `lang_definitions` VALUES (154932, 3761, 29, 'Descărcare ORL');
 INSERT INTO `lang_definitions` VALUES (154933, 3762, 29, 'Durere ORL');
@@ -168356,14 +168356,14 @@ INSERT INTO `lang_definitions` VALUES (154987, 3822, 29, 'Introduceți lateralit
 INSERT INTO `lang_definitions` VALUES (154988, 3823, 29, 'Introduceți codul LOINC (Loical Observation Identifiers Names and Codes) pentru această procedură');
 INSERT INTO `lang_definitions` VALUES (154989, 3824, 29, 'Introduceți codul LOINC (Loical Observation Identifiers Names and Codes) pentru această procedură. LOINC este o bază de date și un standard universal pentru identificarea observațiilor de laborator medical.');
 INSERT INTO `lang_definitions` VALUES (154990, 3825, 29, 'Introduceți codul LOINC pentru această procedură');
-INSERT INTO `lang_definitions` VALUES (154991, 3826, 29, 'Introduceți parola de conectare OpenEMR pentru utilizator și faceți clic pe Trimitere');
+INSERT INTO `lang_definitions` VALUES (154991, 3826, 29, 'Introduceți parola de conectare DCL pentru utilizator și faceți clic pe Trimitere');
 INSERT INTO `lang_definitions` VALUES (154992, 3827, 29, 'Introduceți codul de Re Identificare');
 INSERT INTO `lang_definitions` VALUES (154993, 3828, 29, 'Intrați pe site-ul relevant, dacă este cazul.');
 INSERT INTO `lang_definitions` VALUES (154994, 3829, 29, 'Introduceți adresa serverului, numele de utilizator și parola care vi s-au furnizat');
 INSERT INTO `lang_definitions` VALUES (154995, 3830, 29, 'Introduceți severitatea alergiei');
 INSERT INTO `lang_definitions` VALUES (154996, 3831, 29, 'Introduceți tipul specimenului, dacă este cazul.');
 INSERT INTO `lang_definitions` VALUES (154997, 3832, 29, 'Introduceți valorile 3,4 - 7,2 - Bărbați, 2,4–6,1 - Femei');
-INSERT INTO `lang_definitions` VALUES (154998, 3833, 29, 'Introduceți numele de utilizator OpenEMR în câmpul de notificare pentru utilizator');
+INSERT INTO `lang_definitions` VALUES (154998, 3833, 29, 'Introduceți numele de utilizator DCL în câmpul de notificare pentru utilizator');
 INSERT INTO `lang_definitions` VALUES (154999, 3834, 29, 'Introduceți ID-ul de conectare al utilizatorului');
 INSERT INTO `lang_definitions` VALUES (155000, 3835, 29, 'Introduceți valori în această secțiune pentru a crea un grup nou, cunoscut și sub numele de obiect de solicitare de acces (ARO)');
 INSERT INTO `lang_definitions` VALUES (155001, 3836, 29, 'Introduceți acreditările dvs');
@@ -168425,7 +168425,7 @@ INSERT INTO `lang_definitions` VALUES (155056, 3897, 29, 'Eroare la eliminarea m
 INSERT INTO `lang_definitions` VALUES (155057, 3898, 29, 'Eroare la preluarea rezultatelor din Lab Exchange Network');
 INSERT INTO `lang_definitions` VALUES (155058, 3899, 29, 'Eroare la preluarea valorilor.');
 INSERT INTO `lang_definitions` VALUES (155059, 3900, 29, 'Eroare la salvarea documentului');
-INSERT INTO `lang_definitions` VALUES (155060, 3901, 29, 'Eroare la acordarea privilegiului de fișier utilizatorului OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (155060, 3901, 29, 'Eroare la acordarea privilegiului de fișier utilizatorului DCL.');
 INSERT INTO `lang_definitions` VALUES (155061, 3902, 29, 'Eroare la adăugarea unui plan nou');
 INSERT INTO `lang_definitions` VALUES (155062, 3903, 29, 'Eroare la ștergerea planului');
 INSERT INTO `lang_definitions` VALUES (155063, 3904, 29, 'Eroare la înregistrarea formularului!');
@@ -168447,7 +168447,7 @@ INSERT INTO `lang_definitions` VALUES (155078, 3921, 29, 'Eroare, nu se poate cr
 INSERT INTO `lang_definitions` VALUES (155079, 3922, 29, 'Eroare, nu se poate crea certificatul de server.');
 INSERT INTO `lang_definitions` VALUES (155080, 3923, 29, 'Eroare, nu se poate crea fișierul zip cu toate certificatele');
 INSERT INTO `lang_definitions` VALUES (155081, 3924, 29, 'Eroare, nu se poate deschide fișierul');
-INSERT INTO `lang_definitions` VALUES (155082, 3925, 29, 'Eroare, autentificarea cu certificat de utilizator nu este activată în OpenEMR');
+INSERT INTO `lang_definitions` VALUES (155082, 3925, 29, 'Eroare, autentificarea cu certificat de utilizator nu este activată în DCL');
 INSERT INTO `lang_definitions` VALUES (155083, 3926, 29, 'EROARE. Nu poate fi deschis');
 INSERT INTO `lang_definitions` VALUES (155084, 3927, 29, 'Eroare. Neautorizat');
 INSERT INTO `lang_definitions` VALUES (155085, 3932, 29, 'Eroare. Încercați mai târziu');
@@ -168786,7 +168786,7 @@ INSERT INTO `lang_definitions` VALUES (155417, 4285, 29, 'Fișierul nu a fost g�
 INSERT INTO `lang_definitions` VALUES (155418, 4286, 29, 'Fișierul nu a fost găsit');
 INSERT INTO `lang_definitions` VALUES (155419, 4287, 29, 'Fișier pe server (data modificării)');
 INSERT INTO `lang_definitions` VALUES (155420, 4288, 29, 'Calea fișierului nu a fost găsită.');
-INSERT INTO `lang_definitions` VALUES (155421, 4289, 29, 'Privilegiul de fișier acordat utilizatorului OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (155421, 4289, 29, 'Privilegiul de fișier acordat utilizatorului DCL.');
 INSERT INTO `lang_definitions` VALUES (155422, 4290, 29, 'Preluarea fișierului din CouchDB a eșuat');
 INSERT INTO `lang_definitions` VALUES (155423, 4291, 29, 'Camera de fișiere');
 INSERT INTO `lang_definitions` VALUES (155424, 4292, 29, 'Fișier de încărcat');
@@ -168803,7 +168803,7 @@ INSERT INTO `lang_definitions` VALUES (155434, 4302, 29, 'filipineză');
 INSERT INTO `lang_definitions` VALUES (155435, 4303, 29, 'completati');
 INSERT INTO `lang_definitions` VALUES (155436, 4304, 29, 'Completați oricare dintre rândurile de mai jos.');
 INSERT INTO `lang_definitions` VALUES (155437, 4305, 29, 'Completați aici doar dacă trimiteți o notificare prin e-mail către pacienți');
-INSERT INTO `lang_definitions` VALUES (155438, 4306, 29, 'Completați orice detalii lipsă sau editați informațiile existente. Acesta va fi salvat în pagina demografică a pacientului în openEMR');
+INSERT INTO `lang_definitions` VALUES (155438, 4306, 29, 'Completați orice detalii lipsă sau editați informațiile existente. Acesta va fi salvat în pagina demografică a pacientului în DCL');
 INSERT INTO `lang_definitions` VALUES (155439, 4307, 29, 'Completați codurile CPT folosind formatul afișat. Codurile comune E/M sunt deja completate, adăugați mai multe după cum este necesar');
 INSERT INTO `lang_definitions` VALUES (155440, 4308, 29, 'Completați detaliile după cum este necesar și faceți clic pe Salvare');
 INSERT INTO `lang_definitions` VALUES (155441, 4309, 29, 'Completați detaliile pentru panoul de organe/boli ca înainte și faceți clic pe Salvare pentru a închide fereastra pop-up');
@@ -168974,7 +168974,7 @@ INSERT INTO `lang_definitions` VALUES (155605, 4484, 29, 'Pentru cei interesați
 INSERT INTO `lang_definitions` VALUES (155606, 4485, 29, 'Pentru cei interesați de ceea ce se întâmplă sub capotă');
 INSERT INTO `lang_definitions` VALUES (155607, 4486, 29, 'Pentru acele linii, Descrierea va indica detaliile codului');
 INSERT INTO `lang_definitions` VALUES (155608, 4487, 29, 'Pentru cei cu privilegii administrative, o pictogramă este afișată lângă legenda Mesajele mele');
-INSERT INTO `lang_definitions` VALUES (155609, 4488, 29, 'Pentru ca TOTP să funcționeze, o cheie secretă unică trebuie să fie partajată între OpenEMR și utilizator');
+INSERT INTO `lang_definitions` VALUES (155609, 4488, 29, 'Pentru ca TOTP să funcționeze, o cheie secretă unică trebuie să fie partajată între DCL și utilizator');
 INSERT INTO `lang_definitions` VALUES (155610, 4489, 29, 'Pentru suport U2F pe Linux, faceți clic');
 INSERT INTO `lang_definitions` VALUES (155611, 4490, 29, 'pentru variabilă');
 INSERT INTO `lang_definitions` VALUES (155612, 4491, 29, 'pentru:');
@@ -169487,7 +169487,7 @@ INSERT INTO `lang_definitions` VALUES (156118, 5039, 29, 'HTML');
 INSERT INTO `lang_definitions` VALUES (156119, 5040, 29, 'Ieșire HTML?');
 INSERT INTO `lang_definitions` VALUES (156120, 5041, 29, 'HTN{{hipertensiune arterială}}');
 INSERT INTO `lang_definitions` VALUES (156121, 5042, 29, 'Eroare HTTP');
-INSERT INTO `lang_definitions` VALUES (156122, 5043, 29, 'Link HTTP pentru serviciul de schimb de laborator OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (156122, 5043, 29, 'Link HTTP pentru serviciul de schimb de laborator DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (156123, 5044, 29, 'HT{{hiperforie}}');
 INSERT INTO `lang_definitions` VALUES (156124, 5045, 29, 'maghiară');
 INSERT INTO `lang_definitions` VALUES (156125, 5046, 29, 'Director Hylafax');
@@ -169556,7 +169556,7 @@ INSERT INTO `lang_definitions` VALUES (156187, 5110, 29, 'Dacă este încă acti
 INSERT INTO `lang_definitions` VALUES (156188, 5111, 29, 'Dacă nume, orice parte a numelui sau prenumelui, prenume');
 INSERT INTO `lang_definitions` VALUES (156189, 5112, 29, 'Dacă NewCrop eRx - modulul de prescripție electronică, este activat, butoanele NewCrop MedEntry și NewCrop Account Status vor apărea aici');
 INSERT INTO `lang_definitions` VALUES (156190, 5113, 29, 'Dacă nu este listat, puteți adăuga medicamentul în caseta de text Titlu');
-INSERT INTO `lang_definitions` VALUES (156191, 5115, 29, 'Dacă capturați doar codul QR, dar nu înregistrați cheia TOTP cu OpenEMR, această funcție nu va fi activată la conectare');
+INSERT INTO `lang_definitions` VALUES (156191, 5115, 29, 'Dacă capturați doar codul QR, dar nu înregistrați cheia TOTP cu DCL, această funcție nu va fi activată la conectare');
 INSERT INTO `lang_definitions` VALUES (156192, 5116, 29, 'Dacă pacientul are o programare, faceți clic pe OK pentru a crea o întâlnire în caz contrar, anulați aceasta și apoi creați o întâlnire pentru vizita de astăzi.');
 INSERT INTO `lang_definitions` VALUES (156193, 5117, 29, 'Dacă plătiți prin');
 INSERT INTO `lang_definitions` VALUES (156194, 5118, 29, 'Dacă persoana este decedată, atunci introduceți data morții.');
@@ -169580,7 +169580,7 @@ INSERT INTO `lang_definitions` VALUES (156211, 5135, 29, 'Dacă mesajul este red
 INSERT INTO `lang_definitions` VALUES (156212, 5136, 29, 'Dacă portalul pentru pacienți în afara locației este activat, va exista fie un buton care spune Creare acreditări ale portalului în afara locației, cu condiția ca pacientul să-și acorde permisiunea de a accesa portalul online pentru pacient, fie un mesaj care spune că pacientul nu a autorizat portalul pentru pacienți');
 INSERT INTO `lang_definitions` VALUES (156213, 5137, 29, 'Dacă portalul pentru pacienți online este activat, va exista fie un buton care spune Creare acreditări ale portalului online, cu condiția ca pacientul să-și acorde permisiunea de a accesa portalul online pentru pacienți, fie un mesaj care spune că pacientul nu a autorizat portalul pentru pacienți');
 INSERT INTO `lang_definitions` VALUES (156214, 5138, 29, 'Dacă acreditările portalului online/offsite au fost deja setate, butonul se va schimba în');
-INSERT INTO `lang_definitions` VALUES (156215, 5139, 29, 'Dacă pacientul are date demografice introduse în openEMR, acesta va completa automat câmpurile relevante din secțiunile din dreapta');
+INSERT INTO `lang_definitions` VALUES (156215, 5139, 29, 'Dacă pacientul are date demografice introduse în DCL, acesta va completa automat câmpurile relevante din secțiunile din dreapta');
 INSERT INTO `lang_definitions` VALUES (156216, 5140, 29, 'Dacă pacientul nu a autorizat portalul pacientului, atunci un pacient nu a autorizat mesajul Portalul pacientului va fi afișat aici');
 INSERT INTO `lang_definitions` VALUES (156217, 5141, 29, 'Dacă pacientul este adăugat la lista de retragere în ziua vizitei, aceasta ar reflecta data curentă');
 INSERT INTO `lang_definitions` VALUES (156218, 5142, 29, 'Dacă pacientul sună înapoi pentru a fi adăugat pe listă, ultima vizită poate fi în trecutul îndepărtat. Rețineți că cei 1, 2, 3 plus ani sunt calculați și afișați în caseta Data din partea de jos a acestei secțiuni');
@@ -169613,9 +169613,9 @@ INSERT INTO `lang_definitions` VALUES (156244, 5169, 29, 'Dacă faceți clic pe 
 INSERT INTO `lang_definitions` VALUES (156245, 5170, 29, 'Dacă întâmpinați în continuare această eroare, contactați asistența.');
 INSERT INTO `lang_definitions` VALUES (156246, 5171, 29, 'Dacă nu găsiți o valoare necesară în caseta derulantă, va trebui să o adăugați prin Administrare > Liste > Unități de procedură. Consultați fișierul de ajutor din Proceduri > Furnizori');
 INSERT INTO `lang_definitions` VALUES (156247, 5172, 29, 'Dacă nu selectați o potrivire, pacientul va fi creat.');
-INSERT INTO `lang_definitions` VALUES (156248, 5173, 29, 'Dacă nu selectați cel puțin unul dintre acestea, OpenEMR va funcționa într-un mod numai de recepție');
+INSERT INTO `lang_definitions` VALUES (156248, 5173, 29, 'Dacă nu selectați cel puțin unul dintre acestea, DCL va funcționa într-un mod numai de recepție');
 INSERT INTO `lang_definitions` VALUES (156249, 5174, 29, 'Dacă nu trimiteți comenzi electronic sau primiți rezultatul electronic, lăsați-l ca valoare implicită, Descărcați');
-INSERT INTO `lang_definitions` VALUES (156250, 5176, 29, 'Dacă nu doriți să faceți acest lucru, următoarea metodă implică adăugarea manuală a datelor folosind interfața openEMR');
+INSERT INTO `lang_definitions` VALUES (156250, 5176, 29, 'Dacă nu doriți să faceți acest lucru, următoarea metodă implică adăugarea manuală a datelor folosind interfața DCL');
 INSERT INTO `lang_definitions` VALUES (156251, 5177, 29, 'Dacă detaliați până la linia panoului de electroliți și faceți clic pe semnul + din coloana Nume, ar trebui să vedeți sodiu listat sub aceasta cu o valoare de categorie de rezultat cu o valoare de nivel de 4');
 INSERT INTO `lang_definitions` VALUES (156252, 5178, 29, 'Dacă detaliați până la linia Panoului de electroliți, ar trebui să vedeți că are o categorie de comandă și să fie evidențiată cu galben, indicând că este o comandă validă și care poate fi căutată și are o valoare de nivel 3');
 INSERT INTO `lang_definitions` VALUES (156253, 5179, 29, 'Dacă ați selectat mai multe coduri, acestea vor fi separate prin punct și virgulă');
@@ -169725,11 +169725,11 @@ INSERT INTO `lang_definitions` VALUES (156356, 5286, 29, 'În casă');
 INSERT INTO `lang_definitions` VALUES (156357, 5288, 29, 'în ochiul stâng');
 INSERT INTO `lang_definitions` VALUES (156358, 5289, 29, 'în nară');
 INSERT INTO `lang_definitions` VALUES (156359, 5290, 29, 'În birou');
-INSERT INTO `lang_definitions` VALUES (156360, 5291, 29, 'În openEMR, rapoartele de înregistrare a continuității îngrijirii (CCR) care trebuie generate pot fi limitate la un anumit interval de date, bifând caseta de selectare Utilizare interval de date și introducând intervalul de date dorit.');
+INSERT INTO `lang_definitions` VALUES (156360, 5291, 29, 'În DCL, rapoartele de înregistrare a continuității îngrijirii (CCR) care trebuie generate pot fi limitate la un anumit interval de date, bifând caseta de selectare Utilizare interval de date și introducând intervalul de date dorit.');
 INSERT INTO `lang_definitions` VALUES (156361, 5292, 29, 'Pentru a îndeplini cerințele de utilizare semnificativă pentru intrarea computerizată a comenzilor furnizorilor (CPOE) pentru testele de laborator și radiologie, acest modul trebuie utilizat');
 INSERT INTO `lang_definitions` VALUES (156362, 5293, 29, 'Pentru a stoca și a prelua corect rezultatele testelor și pentru a plasa comenzi noi, testele/comenzile trebuie configurate într-o manieră ierarhică');
 INSERT INTO `lang_definitions` VALUES (156363, 5294, 29, 'Pentru a înregistra valorile rezultatelor returnate, trebuie să creați un rezultat discret separat (Nivelul 4) pentru fiecare dintre constituenții panoului, fructul, ca descendenți direcți ai acestei ramuri (General Health Panel) (Nivelul 3). Exemple de rezultate fiind CBC - Hemoglobina, CBC - Hematocrit, CMP - Sodiu, CMP - Potasiu, TSH etc.');
-INSERT INTO `lang_definitions` VALUES (156364, 5295, 29, 'Pentru a vă înregistra dispozitivul, vă rugăm să furnizați parola de conectare OpenEMR');
+INSERT INTO `lang_definitions` VALUES (156364, 5295, 29, 'Pentru a vă înregistra dispozitivul, vă rugăm să furnizați parola de conectare DCL');
 INSERT INTO `lang_definitions` VALUES (156365, 5296, 29, 'Pentru a trimite înregistrarea de continuitate a îngrijirii (CCR) și/sau documentul de continuitate a îngrijirii (CCD), opțional, verificați phiMail Allow CCD Send și/sau phiMail Allow CCR Send pentru a activa caracteristica Transmit pentru aceste tipuri de date');
 INSERT INTO `lang_definitions` VALUES (156366, 5297, 29, 'În cazul nostru, vom alege Local Lab care a fost configurat anterior');
 INSERT INTO `lang_definitions` VALUES (156367, 5298, 29, 'În cazul nostru, îl vom lăsa ca Neatribuit');
@@ -169889,7 +169889,7 @@ INSERT INTO `lang_definitions` VALUES (156520, 5465, 29, 'Instalați certificatu
 INSERT INTO `lang_definitions` VALUES (156521, 5466, 29, 'Detalii de instalare');
 INSERT INTO `lang_definitions` VALUES (156522, 5467, 29, 'Instalațiile care procesează un număr mare de mesaje Direct pot dori un interval mai scurt');
 INSERT INTO `lang_definitions` VALUES (156523, 5468, 29, 'Versiune instalată');
-INSERT INTO `lang_definitions` VALUES (156524, 5469, 29, 'Instalarea codurilor în openEMR');
+INSERT INTO `lang_definitions` VALUES (156524, 5469, 29, 'Instalarea codurilor în DCL');
 INSERT INTO `lang_definitions` VALUES (156525, 5470, 29, 'Instruit');
 INSERT INTO `lang_definitions` VALUES (156526, 5471, 29, 'Instruire');
 INSERT INTO `lang_definitions` VALUES (156527, 5472, 29, 'Instrucțiuni');
@@ -169925,7 +169925,7 @@ INSERT INTO `lang_definitions` VALUES (156556, 5502, 29, 'Asigurat');
 INSERT INTO `lang_definitions` VALUES (156557, 5503, 29, 'Concluzie de admisie');
 INSERT INTO `lang_definitions` VALUES (156558, 5504, 29, 'Data admiterii');
 INSERT INTO `lang_definitions` VALUES (156559, 5505, 29, 'Întregi 1-100');
-INSERT INTO `lang_definitions` VALUES (156560, 5506, 29, 'Integrarea rezultatelor de laborator în diagrama unui pacient în openEMR se poate face manual, adică atât comandând teste, cât și încărcând rezultatele primite sau electronic');
+INSERT INTO `lang_definitions` VALUES (156560, 5506, 29, 'Integrarea rezultatelor de laborator în diagrama unui pacient în DCL se poate face manual, adică atât comandând teste, cât și încărcând rezultatele primite sau electronic');
 INSERT INTO `lang_definitions` VALUES (156561, 5507, 29, 'Declin intelectual');
 INSERT INTO `lang_definitions` VALUES (156562, 5508, 29, 'Distanța inter-pupilară');
 INSERT INTO `lang_definitions` VALUES (156563, 5509, 29, 'Interacționează cu tranzacțiile create');
@@ -170114,14 +170114,14 @@ INSERT INTO `lang_definitions` VALUES (156745, 5703, 29, 'Nu se referă la trimi
 INSERT INTO `lang_definitions` VALUES (156746, 5704, 29, 'Face acest lucru folosind un algoritm pentru a combina ora UNIX curentă cu cheia secretă pentru a genera o cheie unică în continuă schimbare.');
 INSERT INTO `lang_definitions` VALUES (156747, 5705, 29, 'Are patru file');
 INSERT INTO `lang_definitions` VALUES (156748, 5706, 29, 'Are trei niveluri');
-INSERT INTO `lang_definitions` VALUES (156749, 5707, 29, 'Este un modul de mesagerie comercial disponibil pentru practicile openEMR care utilizează versiunea 5.0.1 și o versiune ulterioară');
+INSERT INTO `lang_definitions` VALUES (156749, 5707, 29, 'Este un modul de mesagerie comercial disponibil pentru practicile DCL care utilizează versiunea 5.0.1 și o versiune ulterioară');
 INSERT INTO `lang_definitions` VALUES (156750, 5708, 29, 'Este un câmp din antetul mesajului HL7 cunoscut sub numele de Procesare ID');
 INSERT INTO `lang_definitions` VALUES (156751, 5709, 29, 'Face parte din dosarul medical');
 INSERT INTO `lang_definitions` VALUES (156752, 5710, 29, 'Este, de asemenea, un serviciu bazat pe abonament');
 INSERT INTO `lang_definitions` VALUES (156753, 5711, 29, 'De asemenea, este necesar să enumerați un cod ICD10 pentru ca problema să fie listată în Raportul de continuitate a îngrijirii (CCR) și Documentul de continuitate a îngrijirii (CCD)');
 INSERT INTO `lang_definitions` VALUES (156754, 5712, 29, 'Este împărțit în două secțiuni');
 INSERT INTO `lang_definitions` VALUES (156755, 5713, 29, 'Este esențial să citiți primele patru secțiuni pentru a înțelege principiile care stau la baza');
-INSERT INTO `lang_definitions` VALUES (156756, 5714, 29, 'Este mult mai ușor și intuitiv să faceți modificări majore și să reorganizați datele pe foaia de calcul înainte de a începe să introduceți datele în openEMR');
+INSERT INTO `lang_definitions` VALUES (156756, 5714, 29, 'Este mult mai ușor și intuitiv să faceți modificări majore și să reorganizați datele pe foaia de calcul înainte de a începe să introduceți datele în DCL');
 INSERT INTO `lang_definitions` VALUES (156757, 5715, 29, 'Este important să realizați că aceasta gestionează MFA pentru utilizatorul conectat');
 INSERT INTO `lang_definitions` VALUES (156758, 5716, 29, 'Este important să înțelegeți funcția acestor două pictograme, deoarece toți pașii următori necesari pentru configurarea corectă a ierarhiei vor depinde de utilizarea corectă a acestor două pictograme.');
 INSERT INTO `lang_definitions` VALUES (156759, 5717, 29, 'Este destinat să includă doar informațiile care sunt esențiale pentru a continua îngrijirea în mod eficient');
@@ -170133,7 +170133,7 @@ INSERT INTO `lang_definitions` VALUES (156764, 5722, 29, 'Nu este neobișnuit s�
 INSERT INTO `lang_definitions` VALUES (156765, 5723, 29, 'Este prudent să urmăriți furnizorul dacă nu este contactat.');
 INSERT INTO `lang_definitions` VALUES (156766, 5724, 29, 'Este formularul de cerere de bază pe hârtie prescris de mulți plătitori pentru cererile depuse de către medici și cabinete individuale, asistente și profesioniști, inclusiv terapeuți, chiropracticieni și clinici de ambulatoriu și, în unele cazuri, pentru serviciile de ambulanță.');
 INSERT INTO `lang_definitions` VALUES (156767, 5725, 29, 'Este folosit pentru a lega problemele cu întâlniri și este, de asemenea, folosit pentru a vedea care întâlniri sunt asociate cu o anumită problemă');
-INSERT INTO `lang_definitions` VALUES (156768, 5726, 29, 'Este util să exersați pe un site de probă pentru a vă familiariza cu procesul înainte de a face acest lucru pe aplicația de producție openEMR');
+INSERT INTO `lang_definitions` VALUES (156768, 5726, 29, 'Este util să exersați pe un site de probă pentru a vă familiariza cu procesul înainte de a face acest lucru pe aplicația de producție DCL');
 INSERT INTO `lang_definitions` VALUES (156769, 5727, 29, 'Vă permite să căutați după codurile de diagnostic ICD 9 și ICD 10 și codurile de serviciu/procedură CPT4 și HCPCS');
 INSERT INTO `lang_definitions` VALUES (156770, 5728, 29, 'Vă permite să trimiteți mesaje și memento-uri datate membrilor personalului, să adăugați pacient la lista de rechemare și să trimiteți mesaje text SMS pacienților');
 INSERT INTO `lang_definitions` VALUES (156771, 5729, 29, 'Acesta servește ca o punte necesară către un mediu diferit, adesea cu medici noi care nu știu nimic despre pacient, permițând următorului furnizor să');
@@ -170515,11 +170515,11 @@ INSERT INTO `lang_definitions` VALUES (157146, 6128, 29, 'LOC');
 INSERT INTO `lang_definitions` VALUES (157147, 6129, 29, 'Local');
 INSERT INTO `lang_definitions` VALUES (157148, 6130, 29, 'Continut local');
 INSERT INTO `lang_definitions` VALUES (157149, 6131, 29, 'Sistemul de fișiere local');
-INSERT INTO `lang_definitions` VALUES (157150, 6132, 29, 'Sistemul de fișiere local va stoca comanda ca mesaj HL7v2.3 într-o locație predefinită pe serverul local care găzduiește openEMR');
+INSERT INTO `lang_definitions` VALUES (157150, 6132, 29, 'Sistemul de fișiere local va stoca comanda ca mesaj HL7v2.3 într-o locație predefinită pe serverul local care găzduiește DCL');
 INSERT INTO `lang_definitions` VALUES (157151, 6133, 29, 'Locale');
 INSERT INTO `lang_definitions` VALUES (157152, 6134, 29, 'Localitate');
 INSERT INTO `lang_definitions` VALUES (157153, 6135, 29, 'Locație');
-INSERT INTO `lang_definitions` VALUES (157154, 6136, 29, 'locația mașinii openemr și poate conține date sensibile, de aceea se recomandă ștergerea manuală a fișierelor după utilizare');
+INSERT INTO `lang_definitions` VALUES (157154, 6136, 29, 'locația mașinii DCL și poate conține date sensibile, de aceea se recomandă ștergerea manuală a fișierelor după utilizare');
 INSERT INTO `lang_definitions` VALUES (157155, 6137, 29, 'Locația acestui lot');
 INSERT INTO `lang_definitions` VALUES (157156, 6138, 29, 'Locație nespecificată');
 INSERT INTO `lang_definitions` VALUES (157157, 6139, 29, 'Locația în care Hylafax stochează faxurile.');
@@ -170962,7 +170962,7 @@ INSERT INTO `lang_definitions` VALUES (157593, 6599, 29, 'Pot exista mai multe p
 INSERT INTO `lang_definitions` VALUES (157594, 6600, 29, 'Mai multe informații despre Regula de decizie clinică pot fi găsite aici');
 INSERT INTO `lang_definitions` VALUES (157595, 6601, 29, 'Mai multe informații despre Probleme pot fi găsite aici');
 INSERT INTO `lang_definitions` VALUES (157596, 6602, 29, 'Mai multe informații despre ce este phiMail și despre cum să-l configurați sunt disponibile aici');
-INSERT INTO `lang_definitions` VALUES (157597, 6603, 29, 'Mai multe informații sunt disponibile pe pagina wiki openEMR MedEx');
+INSERT INTO `lang_definitions` VALUES (157597, 6603, 29, 'Mai multe informații sunt disponibile pe pagina wiki DCL MedEx');
 INSERT INTO `lang_definitions` VALUES (157598, 6604, 29, 'Mai multe informații despre cum să editați acest formular și alte astfel de formulare pot fi găsite aici');
 INSERT INTO `lang_definitions` VALUES (157599, 6605, 29, 'Mai multe informații despre utilizarea mesajelor phiMail sunt disponibile aici');
 INSERT INTO `lang_definitions` VALUES (157600, 6606, 29, 'Mai multe opțiuni');
@@ -171209,7 +171209,7 @@ INSERT INTO `lang_definitions` VALUES (157840, 6865, 29, 'Nou în ACL Ver 5');
 INSERT INTO `lang_definitions` VALUES (157841, 6866, 29, 'Nou în ACL Ver 6');
 INSERT INTO `lang_definitions` VALUES (157842, 6867, 29, 'Nou în ACL Ver 7');
 INSERT INTO `lang_definitions` VALUES (157843, 6868, 29, 'Nou în ACL Ver 8');
-INSERT INTO `lang_definitions` VALUES (157844, 6869, 29, 'Nou în openEMR versiunea 5.0.2');
+INSERT INTO `lang_definitions` VALUES (157844, 6869, 29, 'Nou în DCL versiunea 5.0.2');
 INSERT INTO `lang_definitions` VALUES (157845, 6870, 29, 'New Inj/Stare');
 INSERT INTO `lang_definitions` VALUES (157846, 6871, 29, 'Articole noi (vezi mai sus pentru detalii)');
 INSERT INTO `lang_definitions` VALUES (157847, 6872, 29, 'Aspect nou');
@@ -171238,7 +171238,7 @@ INSERT INTO `lang_definitions` VALUES (157869, 6896, 29, 'Noua rechemare');
 INSERT INTO `lang_definitions` VALUES (157870, 6897, 29, 'Rezultate noi de la Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (157871, 6898, 29, 'O nouă căutare');
 INSERT INTO `lang_definitions` VALUES (157872, 6899, 29, 'Trimiteri noi');
-INSERT INTO `lang_definitions` VALUES (157873, 6900, 29, 'Nou în openEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (157873, 6900, 29, 'Nou în DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (157874, 6901, 29, 'Utilizator nou');
 INSERT INTO `lang_definitions` VALUES (157875, 6902, 29, 'Valoare nouă');
 INSERT INTO `lang_definitions` VALUES (157876, 6903, 29, 'Vizită nouă');
@@ -171610,7 +171610,7 @@ INSERT INTO `lang_definitions` VALUES (158241, 7295, 29, 'Portalul de notificare
 INSERT INTO `lang_definitions` VALUES (158242, 7296, 29, 'Notificați prin Portalul Pacienților');
 INSERT INTO `lang_definitions` VALUES (158243, 7297, 29, 'nov');
 INSERT INTO `lang_definitions` VALUES (158244, 7298, 29, 'noiembrie');
-INSERT INTO `lang_definitions` VALUES (158245, 7299, 29, 'Acum este momentul să verificați și să ajustați setările în openEMR pentru unități, site-uri, etc., consultați fișierul de ajutor din Proceduri > Furnizori');
+INSERT INTO `lang_definitions` VALUES (158245, 7299, 29, 'Acum este momentul să verificați și să ajustați setările în DCL pentru unități, site-uri, etc., consultați fișierul de ajutor din Proceduri > Furnizori');
 INSERT INTO `lang_definitions` VALUES (158246, 7300, 29, 'Acum postează pentru');
 INSERT INTO `lang_definitions` VALUES (158247, 7301, 29, 'Acum postez pentru:');
 INSERT INTO `lang_definitions` VALUES (158248, 7302, 29, 'Acum se imprimă');
@@ -171761,11 +171761,11 @@ INSERT INTO `lang_definitions` VALUES (158392, 7452, 29, 'Odată programată o �
 INSERT INTO `lang_definitions` VALUES (158393, 7453, 29, 'Odată finalizat, vizualizați și stocați această întâlnire ca fișier PDF');
 INSERT INTO `lang_definitions` VALUES (158394, 7454, 29, 'După ce ați terminat editarea, faceți clic pe Salvare. Procedura formează diagnosticele curente ale procedurii se vor completa exact așa cum este construit în acest dialog.');
 INSERT INTO `lang_definitions` VALUES (158395, 7455, 29, 'Odată salvată, entitatea pentru un grup preferat personalizat nu poate fi modificată. Dacă trebuie să schimbați entitatea, trebuie să ștergeți această intrare și să creați una nouă');
-INSERT INTO `lang_definitions` VALUES (158396, 7456, 29, 'Odată ce aplicația captează codul QR, va afișa numele de utilizator OpenEMR în aplicație');
+INSERT INTO `lang_definitions` VALUES (158396, 7456, 29, 'Odată ce aplicația captează codul QR, va afișa numele de utilizator DCL în aplicație');
 INSERT INTO `lang_definitions` VALUES (158397, 7457, 29, 'Odată ce facilitatea principală de afaceri este setată, schimbarea ID-ului unității va afecta NewCrop ePrescription.');
 INSERT INTO `lang_definitions` VALUES (158398, 7458, 29, 'Odată setat facilitatea de afaceri primară, aceasta nu trebuie modificată. Schimbarea instalației va afecta funcționarea în NewCrop ePrescription.');
 INSERT INTO `lang_definitions` VALUES (158399, 7459, 29, 'Odată ce această caracteristică este activată, vi se va solicita să introduceți cheia din 6 cifre la fiecare conectare');
-INSERT INTO `lang_definitions` VALUES (158400, 7460, 29, 'Odată ce se face acest lucru, cheia secretă partajată, care este unică pentru fiecare utilizator, ar trebui să existe numai în OpenEMR și în aplicația de autentificare a utilizatorului');
+INSERT INTO `lang_definitions` VALUES (158400, 7460, 29, 'Odată ce se face acest lucru, cheia secretă partajată, care este unică pentru fiecare utilizator, ar trebui să existe numai în DCL și în aplicația de autentificare a utilizatorului');
 INSERT INTO `lang_definitions` VALUES (158401, 7461, 29, 'Odată ce acest pas este finalizat, puteți trece la pasul următor - pentru a configura testele care pot fi comandate din sistem');
 INSERT INTO `lang_definitions` VALUES (158402, 7462, 29, 'După ce vă schimbați parola, va trebui să vă reconectați.');
 INSERT INTO `lang_definitions` VALUES (158403, 7463, 29, 'După ce selectați un cod de justificare pentru prima linie CPT, toate liniile de cod CPT ulterioare vor avea aceeași justificare. Poate fi modificat manual ulterior, dacă se dorește');
@@ -171857,23 +171857,23 @@ INSERT INTO `lang_definitions` VALUES (158488, 7555, 29, 'Deschideți/Închideț
 INSERT INTO `lang_definitions` VALUES (158489, 7556, 29, 'Deschide/Închide fereastra Stenografie și coduri');
 INSERT INTO `lang_definitions` VALUES (158490, 7557, 29, 'Deschideți/Închideți fereastra Stenografie și afișați coduri Stenografie');
 INSERT INTO `lang_definitions` VALUES (158491, 7558, 29, 'Deschideți/Închideți fereastra Stenografie și afișați coduri Stenografie lângă fiecare câmp');
-INSERT INTO `lang_definitions` VALUES (158492, 7560, 29, 'OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158493, 7561, 29, 'OpenEMR permite un TOTP, dar mai multe metode U2F per utilizator');
-INSERT INTO `lang_definitions` VALUES (158494, 7562, 29, 'OpenEMR are deja configurată o autoritate de certificare.');
-INSERT INTO `lang_definitions` VALUES (158495, 7563, 29, 'Înregistrarea aplicației OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158496, 7564, 29, 'Aplicația OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158497, 7565, 29, 'Categoria de aplicații OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158498, 7566, 29, 'Autorizație OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158499, 7567, 29, 'Actualizarea bazei de date OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158500, 7568, 29, 'Actualizarea bazei de date OpenEMR pentru de-identificare');
-INSERT INTO `lang_definitions` VALUES (158501, 7569, 29, 'OpenEMR nu recunoaște fișierul primit în directorul contrib. Acest lucru este cel mai probabil pentru că trebuie să configurați versiunea în tabelul supported_external_dataloads din baza de date MySQL.');
-INSERT INTO `lang_definitions` VALUES (158502, 7570, 29, 'Conectare OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158503, 7571, 29, 'OpenEMR trebuie configurat să utilizeze certificate înainte de a putea crea certificate client.');
-INSERT INTO `lang_definitions` VALUES (158504, 7572, 29, 'OpenEMR oferă 2 metode de 2FA');
-INSERT INTO `lang_definitions` VALUES (158505, 7573, 29, 'Portalul OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158506, 7574, 29, 'Înregistrarea produsului OpenEMR');
-INSERT INTO `lang_definitions` VALUES (158507, 7575, 29, 'OpenEMR necesită Javascript pentru a efectua autentificarea utilizatorului.');
-INSERT INTO `lang_definitions` VALUES (158508, 7576, 29, 'Utilizatori OpenEMR');
+INSERT INTO `lang_definitions` VALUES (158492, 7560, 29, 'DCL');
+INSERT INTO `lang_definitions` VALUES (158493, 7561, 29, 'DCL permite un TOTP, dar mai multe metode U2F per utilizator');
+INSERT INTO `lang_definitions` VALUES (158494, 7562, 29, 'DCL are deja configurată o autoritate de certificare.');
+INSERT INTO `lang_definitions` VALUES (158495, 7563, 29, 'Înregistrarea aplicației DCL');
+INSERT INTO `lang_definitions` VALUES (158496, 7564, 29, 'Aplicația DCL');
+INSERT INTO `lang_definitions` VALUES (158497, 7565, 29, 'Categoria de aplicații DCL');
+INSERT INTO `lang_definitions` VALUES (158498, 7566, 29, 'Autorizație DCL');
+INSERT INTO `lang_definitions` VALUES (158499, 7567, 29, 'Actualizarea bazei de date DCL');
+INSERT INTO `lang_definitions` VALUES (158500, 7568, 29, 'Actualizarea bazei de date DCL pentru de-identificare');
+INSERT INTO `lang_definitions` VALUES (158501, 7569, 29, 'DCL nu recunoaște fișierul primit în directorul contrib. Acest lucru este cel mai probabil pentru că trebuie să configurați versiunea în tabelul supported_external_dataloads din baza de date MySQL.');
+INSERT INTO `lang_definitions` VALUES (158502, 7570, 29, 'Conectare DCL');
+INSERT INTO `lang_definitions` VALUES (158503, 7571, 29, 'DCL trebuie configurat să utilizeze certificate înainte de a putea crea certificate client.');
+INSERT INTO `lang_definitions` VALUES (158504, 7572, 29, 'DCL oferă 2 metode de 2FA');
+INSERT INTO `lang_definitions` VALUES (158505, 7573, 29, 'Portalul DCL');
+INSERT INTO `lang_definitions` VALUES (158506, 7574, 29, 'Înregistrarea produsului DCL');
+INSERT INTO `lang_definitions` VALUES (158507, 7575, 29, 'DCL necesită Javascript pentru a efectua autentificarea utilizatorului.');
+INSERT INTO `lang_definitions` VALUES (158508, 7576, 29, 'Utilizatori DCL');
 INSERT INTO `lang_definitions` VALUES (158509, 7577, 29, 'Deschideri');
 INSERT INTO `lang_definitions` VALUES (158510, 7578, 29, 'Se deschide în cadrul de jos');
 INSERT INTO `lang_definitions` VALUES (158511, 7579, 29, 'Se deschide în cadrul de sus');
@@ -172426,7 +172426,7 @@ INSERT INTO `lang_definitions` VALUES (159057, 8152, 29, 'Revizuire în aștepta
 INSERT INTO `lang_definitions` VALUES (159058, 8153, 29, 'Număr de Rx în așteptare');
 INSERT INTO `lang_definitions` VALUES (159059, 8154, 29, 'În așteptare de atunci');
 INSERT INTO `lang_definitions` VALUES (159060, 8155, 29, 'Alergia la penicilină');
-INSERT INTO `lang_definitions` VALUES (159061, 8156, 29, 'Pennington Firm OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (159061, 8156, 29, 'Pennington Firm DCL v');
 INSERT INTO `lang_definitions` VALUES (159062, 8157, 29, 'Boala Ulcerului Peptic');
 INSERT INTO `lang_definitions` VALUES (159063, 8158, 29, 'Per întâlnire');
 INSERT INTO `lang_definitions` VALUES (159064, 8159, 29, 'pe min');
@@ -172661,7 +172661,7 @@ INSERT INTO `lang_definitions` VALUES (159292, 8395, 29, 'Vă rugăm să reporni
 INSERT INTO `lang_definitions` VALUES (159293, 8396, 29, 'Vă rugăm să returnați această parte de jos împreună cu plata');
 INSERT INTO `lang_definitions` VALUES (159294, 8397, 29, 'Vă rugăm să vedeți forum și wiki');
 INSERT INTO `lang_definitions` VALUES (159295, 8398, 29, 'Vă rugăm să vedeți forum sau wiki');
-INSERT INTO `lang_definitions` VALUES (159296, 8399, 29, 'Vă rugăm să consultați http://www.open-emr.org/wiki/index.php/LBV_Forms pentru mai multe despre acest subiect');
+INSERT INTO `lang_definitions` VALUES (159296, 8399, 29, 'Vă rugăm să consultați http://www.dcl.org/wiki/index.php/LBV_Forms pentru mai multe despre acest subiect');
 INSERT INTO `lang_definitions` VALUES (159297, 8400, 29, 'Vă rugăm să vedeți PDF-ul atașat.');
 INSERT INTO `lang_definitions` VALUES (159298, 8401, 29, 'Te rog selecteaza');
 INSERT INTO `lang_definitions` VALUES (159299, 8403, 29, 'Vă rugăm să selectați un format');
@@ -172701,7 +172701,7 @@ INSERT INTO `lang_definitions` VALUES (159332, 8438, 29, 'Vă rugăm să specifi
 INSERT INTO `lang_definitions` VALUES (159333, 8441, 29, 'Vă rugăm să începeți un nou proces de identificare');
 INSERT INTO `lang_definitions` VALUES (159334, 8442, 29, 'Vă rugăm să furnizați un titlu');
 INSERT INTO `lang_definitions` VALUES (159335, 8444, 29, 'Vă rugăm să încercați din nou sau să contactați biroul furnizorilor pentru asistență suplimentară.');
-INSERT INTO `lang_definitions` VALUES (159336, 8445, 29, 'Vă rugăm să actualizați baza de date OpenEMR pentru a include proceduri de identificare, funcții, tabele');
+INSERT INTO `lang_definitions` VALUES (159336, 8445, 29, 'Vă rugăm să actualizați baza de date DCL pentru a include proceduri de identificare, funcții, tabele');
 INSERT INTO `lang_definitions` VALUES (159337, 8446, 29, 'Vă rugăm să utilizați NPI valid');
 INSERT INTO `lang_definitions` VALUES (159338, 8447, 29, 'Vă rugăm să consultați tabelul jurnalului de erori de identificare pentru mai multe detalii');
 INSERT INTO `lang_definitions` VALUES (159339, 8448, 29, 'Vă rugăm să vizitați ecranul de identificare după ceva timp');
@@ -172870,7 +172870,7 @@ INSERT INTO `lang_definitions` VALUES (159501, 8620, 29, 'Prezent');
 INSERT INTO `lang_definitions` VALUES (159502, 8622, 29, 'Prezentarea plângerii');
 INSERT INTO `lang_definitions` VALUES (159503, 8623, 29, 'Prezentarea problemelor');
 INSERT INTO `lang_definitions` VALUES (159504, 8624, 29, 'Apăsați Continuați pentru a continua');
-INSERT INTO `lang_definitions` VALUES (159505, 8625, 29, 'Apăsați butonul intermitent de pe cheia USB în termen de 1 minut de la introducere și faceți clic pe înregistrare pentru a înregistra cheia la OpenEMR');
+INSERT INTO `lang_definitions` VALUES (159505, 8625, 29, 'Apăsați butonul intermitent de pe cheia USB în termen de 1 minut de la introducere și faceți clic pe înregistrare pentru a înregistra cheia la DCL');
 INSERT INTO `lang_definitions` VALUES (159506, 8626, 29, 'Apăsați această pictogramă pentru a vă construi Impresia/Planul.');
 INSERT INTO `lang_definitions` VALUES (159507, 8627, 29, 'Diagnostic presupus');
 INSERT INTO `lang_definitions` VALUES (159508, 8628, 29, 'Diagnostic presupus de către specialist');
@@ -173495,7 +173495,7 @@ INSERT INTO `lang_definitions` VALUES (160126, 9291, 29, 'Reîncărcați');
 INSERT INTO `lang_definitions` VALUES (160127, 9292, 29, 'reîncărcați numele de mai jos');
 INSERT INTO `lang_definitions` VALUES (160128, 9293, 29, 'Re logare');
 INSERT INTO `lang_definitions` VALUES (160129, 9294, 29, 'Remdr');
-INSERT INTO `lang_definitions` VALUES (160130, 9295, 29, 'Amintiți-vă că gruparea testelor este doar pentru organizarea convenabilă a datelor în modulul Ordin de procedură din openEMR, pentru ca acest proces să funcționeze, configurarea Ordinelor de procedură (testele în sine) și Rezultatul discret (locul de introducere și afișare a rezultatului returnat) sunt critic important');
+INSERT INTO `lang_definitions` VALUES (160130, 9295, 29, 'Amintiți-vă că gruparea testelor este doar pentru organizarea convenabilă a datelor în modulul Ordin de procedură din DCL, pentru ca acest proces să funcționeze, configurarea Ordinelor de procedură (testele în sine) și Rezultatul discret (locul de introducere și afișare a rezultatului returnat) sunt critic important');
 INSERT INTO `lang_definitions` VALUES (160131, 9296, 29, 'Ține-mă minte');
 INSERT INTO `lang_definitions` VALUES (160132, 9297, 29, 'Amintiți-vă instalația selectată');
 INSERT INTO `lang_definitions` VALUES (160133, 9298, 29, 'Rețineți că codurile de identificare trebuie să fie unice, nu ar trebui să configurați o grupare personalizată a unui panou de teste, precum și să aveți panourile configurate ca panou recunoscut individual, adică să aveți CBC și panoul Renal grupate ca un Favorit personalizat și să enumerați CBC și Panoul renal separat ca panouri comandate individual');
@@ -174427,7 +174427,7 @@ INSERT INTO `lang_definitions` VALUES (161058, 10291, 29, 'Adresa site-ului (obl
 INSERT INTO `lang_definitions` VALUES (161059, 10292, 29, 'Adresa site-ului (necesară pentru OAuth2 și FHIR). Exemplul este');
 INSERT INTO `lang_definitions` VALUES (161060, 10294, 29, 'ID-ul site-ului');
 INSERT INTO `lang_definitions` VALUES (161061, 10295, 29, 'ID-ul site-ului pentru Serviciul de schimb de laboratoare Medical Information Integration, LLC.');
-INSERT INTO `lang_definitions` VALUES (161062, 10296, 29, 'ID de site pentru serviciul de schimb de laborator OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (161062, 10296, 29, 'ID de site pentru serviciul de schimb de laborator DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (161063, 10297, 29, 'Lucrător de șantier');
 INSERT INTO `lang_definitions` VALUES (161064, 10298, 29, 'Acum șase luni');
 INSERT INTO `lang_definitions` VALUES (161065, 10299, 29, 'Cu șase luni înainte');
@@ -174610,7 +174610,7 @@ INSERT INTO `lang_definitions` VALUES (161241, 10478, 29, 'Specifică formatarea
 INSERT INTO `lang_definitions` VALUES (161242, 10479, 29, 'Specifică formatarea pentru ID-ul pacientului extern. # = cifră, * = orice caracter. Goliți dacă nu este folosit.');
 INSERT INTO `lang_definitions` VALUES (161243, 10480, 29, 'Specifică formatarea pentru ID-ul pacientului extern. # = cifră, @ = alfa, * = orice caracter. Goliți dacă nu este folosit.');
 INSERT INTO `lang_definitions` VALUES (161244, 10481, 29, 'Specificați intervalul pentru verificarea automată a mesajelor, 5 sau 10 minute ca punct de plecare');
-INSERT INTO `lang_definitions` VALUES (161245, 10482, 29, 'Specificați utilizatorul OpenEMR care va primi notificarea cu privire la noile mesaje Direct primite');
+INSERT INTO `lang_definitions` VALUES (161245, 10482, 29, 'Specificați utilizatorul DCL care va primi notificarea cu privire la noile mesaje Direct primite');
 INSERT INTO `lang_definitions` VALUES (161246, 10483, 29, 'Specimen');
 INSERT INTO `lang_definitions` VALUES (161247, 10485, 29, 'Numărul specimenului/identificatorul');
 INSERT INTO `lang_definitions` VALUES (161248, 10486, 29, 'Tipul specimenului');
@@ -174804,7 +174804,7 @@ INSERT INTO `lang_definitions` VALUES (161435, 10693, 29, 'Abonatul SS');
 INSERT INTO `lang_definitions` VALUES (161436, 10694, 29, 'Statul abonatului');
 INSERT INTO `lang_definitions` VALUES (161437, 10695, 29, 'Zip abonatului');
 INSERT INTO `lang_definitions` VALUES (161438, 10696, 29, 'Abonat/Politică');
-INSERT INTO `lang_definitions` VALUES (161439, 10697, 29, 'Abonații vor primi informații despre numele de utilizator, parola și adresa serverului cu care să configureze OpenEMR');
+INSERT INTO `lang_definitions` VALUES (161439, 10697, 29, 'Abonații vor primi informații despre numele de utilizator, parola și adresa serverului cu care să configureze DCL');
 INSERT INTO `lang_definitions` VALUES (161440, 10698, 29, 'Telefonul abonatului');
 INSERT INTO `lang_definitions` VALUES (161441, 10699, 29, 'Substanţă');
 INSERT INTO `lang_definitions` VALUES (161442, 10700, 29, 'Motivul refuzului substanței');
@@ -174958,7 +174958,7 @@ INSERT INTO `lang_definitions` VALUES (161589, 10860, 29, 'Pacientul țintă nu 
 INSERT INTO `lang_definitions` VALUES (161590, 10861, 29, 'Pacientul țintă nu a fost găsit');
 INSERT INTO `lang_definitions` VALUES (161591, 10862, 29, 'Grupuri țintă/de acțiune');
 INSERT INTO `lang_definitions` VALUES (161592, 10863, 29, 'Ținte');
-INSERT INTO `lang_definitions` VALUES (161593, 10864, 29, 'Taskman: Documente în openEMR');
+INSERT INTO `lang_definitions` VALUES (161593, 10864, 29, 'Taskman: Documente în DCL');
 INSERT INTO `lang_definitions` VALUES (161594, 10865, 29, 'tătar');
 INSERT INTO `lang_definitions` VALUES (161595, 10866, 29, 'Cod fiscal');
 INSERT INTO `lang_definitions` VALUES (161596, 10867, 29, 'Cod fiscal');
@@ -175049,7 +175049,7 @@ INSERT INTO `lang_definitions` VALUES (161680, 10964, 29, 'Testele sau proceduri
 INSERT INTO `lang_definitions` VALUES (161681, 10965, 29, 'Pictograma Adăugați este folosită pentru a configura un nivel care va fi un descendent direct al acestui nivel');
 INSERT INTO `lang_definitions` VALUES (161682, 10966, 29, 'Avantajul integrării rezultatelor cu diagrama pacientului ca date structurate este capacitatea de a le manipula pentru a vedea tendințele într-o locație convenabilă, de a reprezenta grafice cu datele și de a le utiliza în analiza datelor.');
 INSERT INTO `lang_definitions` VALUES (161683, 10967, 29, 'Avantajul scanării rezultatelor în diagramă este simplitatea - nu este necesară nicio configurare, în afară de definirea unui director/dosar în diagrama pacientului sub Documente unde va fi stocat rezultatul. Fiind date nestructurate, nu are avantajele de mai sus și nu vor îndeplini criteriile de utilizare semnificativă pentru introducerea computerizată a comenzilor furnizorilor (CPOE)');
-INSERT INTO `lang_definitions` VALUES (161684, 10968, 29, 'Soluția Allscripts integrează site-ul web Allscripts ePrescribe cu openEMR');
+INSERT INTO `lang_definitions` VALUES (161684, 10968, 29, 'Soluția Allscripts integrează site-ul web Allscripts ePrescribe cu DCL');
 INSERT INTO `lang_definitions` VALUES (161685, 10969, 29, 'Asociația Medicală Americană a definit 9 panouri care pot fi comandate. Fiecare panou conține mai multe teste grupate împreună');
 INSERT INTO `lang_definitions` VALUES (161686, 10970, 29, 'Suma va fi afișată fie în coloana Plată, fie în coloana Ajustare, după caz');
 INSERT INTO `lang_definitions` VALUES (161687, 10971, 29, 'Certificatul serverului Apache SSL și cheia publică');
@@ -175203,7 +175203,7 @@ INSERT INTO `lang_definitions` VALUES (161834, 11119, 29, 'Codul de identificare
 INSERT INTO `lang_definitions` VALUES (161835, 11120, 29, 'Codul de identificare al R34392-1, un număr arbitrar, în acest caz codul de identificare precedat de R pentru a indica rezultatul și urmat de 1 pentru a indica primul din secvență, ar putea fi orice unic pe care îl alegeți');
 INSERT INTO `lang_definitions` VALUES (161836, 11121, 29, 'Informațiile introduse aici sunt folosite pentru a afișa un rezumat al întâlnirii. Este folosit și în scopuri de facturare');
 INSERT INTO `lang_definitions` VALUES (161837, 11122, 29, 'Informațiile introduse în acest formular vor fi folosite pentru a completa o cerere de cerere pe hârtie');
-INSERT INTO `lang_definitions` VALUES (161838, 11123, 29, 'Informațiile furnizate în Formularul de întâlnire nouă și Fișa de taxe în openEMR sunt utilizate pentru a genera cererea de despăgubire pe hârtie, precum și cererile electronice.');
+INSERT INTO `lang_definitions` VALUES (161838, 11123, 29, 'Informațiile furnizate în Formularul de întâlnire nouă și Fișa de taxe în DCL sunt utilizate pentru a genera cererea de despăgubire pe hârtie, precum și cererile electronice.');
 INSERT INTO `lang_definitions` VALUES (161839, 11124, 29, 'Eforturile inițiale au condus la crearea unor Ghiduri de implementare (IG) duplicative și conflictuale publicate de diferite organizații de standardizare.');
 INSERT INTO `lang_definitions` VALUES (161840, 11125, 29, 'Ecranul inițial vă permite să selectați o metodă, oferindu-vă aceste două opțiuni.');
 INSERT INTO `lang_definitions` VALUES (161841, 11126, 29, 'Fereastra inițială este pagina de căutare a facturii. În partea de sus puteți introduce o sursă (de exemplu, numărul cecului), data plății și suma cecului. Motivul sursei și datei plății este astfel încât să nu fie nevoie să le introduceți din nou și din nou pentru fiecare revendicare. Suma pe care o introduceți va fi scăzută pentru fiecare factură care i se acordă o parte din plată și, sperăm, se va termina la zero când ați terminat.');
@@ -175367,7 +175367,7 @@ INSERT INTO `lang_definitions` VALUES (161998, 11288, 29, 'Coloana Unitate ar fi
 INSERT INTO `lang_definitions` VALUES (161999, 11289, 29, 'Unitățile vor fi 1, deoarece fiecare cod este facturat o singură dată pentru întâlnire');
 INSERT INTO `lang_definitions` VALUES (162000, 11290, 29, 'Mementourile viitoare au o pictogramă de exclamare verde');
 INSERT INTO `lang_definitions` VALUES (162001, 11291, 29, 'Dispozitivele USB comunică cu computerul gazdă utilizând protocolul dispozitivului de interfață umană (HID), imitând în esență o tastatură');
-INSERT INTO `lang_definitions` VALUES (162002, 11292, 29, 'Cheia USB trebuie conectată la computer și apoi înregistrată la OpenEMR');
+INSERT INTO `lang_definitions` VALUES (162002, 11292, 29, 'Cheia USB trebuie conectată la computer și apoi înregistrată la DCL');
 INSERT INTO `lang_definitions` VALUES (162003, 11293, 29, 'Cheia USB preia acest nonce furnizat de aplicație după confirmarea sumei de control și generează o cheie privată utilizând un proces similar cu cel utilizat în procesul de înregistrare');
 INSERT INTO `lang_definitions` VALUES (162004, 11294, 29, 'Privilegiile reale ale utilizatorului sunt determinate de accesul la părțile programului, adică (ACO) pe care le are fiecare grup (ARO).');
 INSERT INTO `lang_definitions` VALUES (162005, 11295, 29, 'Câmpurile Nume de utilizator nu sunt aceleași.');
@@ -175378,9 +175378,9 @@ INSERT INTO `lang_definitions` VALUES (162009, 11299, 29, 'Codul specific furniz
 INSERT INTO `lang_definitions` VALUES (162010, 11300, 29, 'Codul specific furnizorului care identifică această procedură sau rezultat. Dacă niciun furnizor nu introduce niciun număr unic arbitrar, de preferință un număr de 5 cifre cu zero, de ex. 00211');
 INSERT INTO `lang_definitions` VALUES (162011, 11301, 29, 'Primul pas ar fi instalarea codurilor ICD. Accesați Administration > Other > External Data Loads. Selectați seturile de coduri pe care doriți să le instalați și faceți clic pe Instalare');
 INSERT INTO `lang_definitions` VALUES (162012, 11302, 29, 'Ultima linie a acestui raport va oferi totalul general al taxelor, plăților, ajustărilor și soldului');
-INSERT INTO `lang_definitions` VALUES (162013, 11303, 29, 'Weno Exchange este bine integrat cu openEMR și nu se bazează pe abonament');
-INSERT INTO `lang_definitions` VALUES (162014, 11304, 29, 'Fișierele X12, precum și rapoartele HTML rezultate sunt arhivate în subdirectorul „era” al directorului principal de instalare OpenEMR. Veți dori să vă referiți la aceste arhive din când în când. URL-ul este');
-INSERT INTO `lang_definitions` VALUES (162015, 11305, 29, 'Fișierele X12, precum și rapoartele HTML rezultate sunt arhivate în subdirectorul „era” al directorului principal de instalare OpenEMR. Veți dori să vă referiți la aceste arhive din când în când.');
+INSERT INTO `lang_definitions` VALUES (162013, 11303, 29, 'Weno Exchange este bine integrat cu DCL și nu se bazează pe abonament');
+INSERT INTO `lang_definitions` VALUES (162014, 11304, 29, 'Fișierele X12, precum și rapoartele HTML rezultate sunt arhivate în subdirectorul „era” al directorului principal de instalare DCL. Veți dori să vă referiți la aceste arhive din când în când. URL-ul este');
+INSERT INTO `lang_definitions` VALUES (162015, 11305, 29, 'Fișierele X12, precum și rapoartele HTML rezultate sunt arhivate în subdirectorul „era” al directorului principal de instalare DCL. Veți dori să vă referiți la aceste arhive din când în când.');
 INSERT INTO `lang_definitions` VALUES (162016, 11306, 29, 'Fișierul zip va conține următoarele elemente');
 INSERT INTO `lang_definitions` VALUES (162017, 11307, 29, 'Temă');
 INSERT INTO `lang_definitions` VALUES (162018, 11308, 29, 'Tema aspectului filelor (trebuie să vă deconectați și apoi să vă conectați pentru a vedea această nouă setare).');
@@ -175396,7 +175396,7 @@ INSERT INTO `lang_definitions` VALUES (162027, 11317, 29, 'Grup de terapie');
 INSERT INTO `lang_definitions` VALUES (162028, 11318, 29, 'Întâlnire de grup de terapie');
 INSERT INTO `lang_definitions` VALUES (162029, 11319, 29, 'Găsire grup de terapie');
 INSERT INTO `lang_definitions` VALUES (162030, 11320, 29, 'Sunt');
-INSERT INTO `lang_definitions` VALUES (162031, 11321, 29, 'Există 10 setări care sunt legate de procedurile incluse în versiunea standard a openEMR');
+INSERT INTO `lang_definitions` VALUES (162031, 11321, 29, 'Există 10 setări care sunt legate de procedurile incluse în versiunea standard a DCL');
 INSERT INTO `lang_definitions` VALUES (162032, 11322, 29, 'Există 3 formulare în categoria de bază - Date demografice, Informații despre utilizator specifice unității și istoric și toate cele 5 formulare din Tranzacții care pot fi editate');
 INSERT INTO `lang_definitions` VALUES (162033, 11323, 29, 'Momentan nu există rețete');
 INSERT INTO `lang_definitions` VALUES (162034, 11324, 29, 'Există erori cu trimiterea dvs. Acestea sunt prezentate mai jos.');
@@ -175445,7 +175445,7 @@ INSERT INTO `lang_definitions` VALUES (162076, 11370, 29, 'Nu există nicio intr
 INSERT INTO `lang_definitions` VALUES (162077, 11371, 29, 'Nu există niciun pacient cu autentificare pe portal');
 INSERT INTO `lang_definitions` VALUES (162078, 11373, 29, 'A apărut o problemă la trimiterea mesajului.');
 INSERT INTO `lang_definitions` VALUES (162079, 11374, 29, 'A apărut o eroare la procesarea solicitării dvs.');
-INSERT INTO `lang_definitions` VALUES (162080, 11375, 29, 'A existat o EROARE de evadare SQL OpenEMR a următorului șir');
+INSERT INTO `lang_definitions` VALUES (162080, 11375, 29, 'A existat o EROARE de evadare SQL DCL a următorului șir');
 INSERT INTO `lang_definitions` VALUES (162081, 11376, 29, 'Prin urmare, fiecare utilizator trebuie să activeze individual această funcție');
 INSERT INTO `lang_definitions` VALUES (162082, 11377, 29, 'Aceste ACO sunt grupate în zece categorii largi care fac parte din instalarea implicită. Acestea sunt - Administrație, Contabilitate, Informații despre pacienți, Informații despre întâlniri, Echipe, Sensibilitati, Liste, Substituent, Note Naționale și Portalul Pacienților. Fiecare dintre aceste categorii are una sau mai multe subcategorii care oferă acces la anumite părți ale programului.');
 INSERT INTO `lang_definitions` VALUES (162083, 11378, 29, 'Acestea sunt gratuite și pot fi descărcate din magazinul de aplicații respectiv pentru dispozitive iOS și Android');
@@ -175457,7 +175457,7 @@ INSERT INTO `lang_definitions` VALUES (162088, 11383, 29, 'Aceste grupuri person
 INSERT INTO `lang_definitions` VALUES (162089, 11384, 29, 'Aceste intrări vor fi folosite pentru a defini Furnizorii în modulul Proceduri');
 INSERT INTO `lang_definitions` VALUES (162090, 11385, 29, 'Aceste grupuri (ARO) pot primi apoi un set de privilegii prin atribuirea de categorii diferite (ACO).');
 INSERT INTO `lang_definitions` VALUES (162091, 11386, 29, 'Aceste elemente pot fi editate dacă utilizatorul are suficiente privilegii');
-INSERT INTO `lang_definitions` VALUES (162092, 11387, 29, 'Aceste liste sunt folosite pentru a determina cine poate accesa ce în openEMR. Ele funcționează de sus în jos, adică inițial tuturor li se interzice accesul la acele părți ale programului controlate de ACL.');
+INSERT INTO `lang_definitions` VALUES (162092, 11387, 29, 'Aceste liste sunt folosite pentru a determina cine poate accesa ce în DCL. Ele funcționează de sus în jos, adică inițial tuturor li se interzice accesul la acele părți ale programului controlate de ACL.');
 INSERT INTO `lang_definitions` VALUES (162093, 11388, 29, 'Aceste numere trebuie să se potrivească pentru a autentifica cu succes utilizatorul');
 INSERT INTO `lang_definitions` VALUES (162094, 11389, 29, 'Aceste note pentru pacient sunt trimise fără un pacient alocat');
 INSERT INTO `lang_definitions` VALUES (162095, 11390, 29, 'Aceste subcategorii reprezintă obiectele reale de control al accesului (ACO).');
@@ -175579,7 +175579,7 @@ INSERT INTO `lang_definitions` VALUES (162210, 11513, 29, 'Cu toate acestea, ace
 INSERT INTO `lang_definitions` VALUES (162211, 11514, 29, 'Acest modul este folosit de');
 INSERT INTO `lang_definitions` VALUES (162212, 11515, 29, 'Acest modul este în modul de testare. Baza de date nu va fi modificată.');
 INSERT INTO `lang_definitions` VALUES (162213, 11516, 29, 'Acest modul se bazează pe abonament și trebuie activat din Administrare > Globale > Conectori > Activare NewCrop eRx Service');
-INSERT INTO `lang_definitions` VALUES (162214, 11517, 29, 'Acest modul este bine integrat cu openEMR, există totuși două alternative fără abonament, Weno și Allscripts, care pot fi folosite în schimb');
+INSERT INTO `lang_definitions` VALUES (162214, 11517, 29, 'Acest modul este bine integrat cu DCL, există totuși două alternative fără abonament, Weno și Allscripts, care pot fi folosite în schimb');
 INSERT INTO `lang_definitions` VALUES (162215, 11518, 29, 'Acest modul promovează introducerea eficientă a datelor EOB.');
 INSERT INTO `lang_definitions` VALUES (162216, 11519, 29, 'În această lună până acum');
 INSERT INTO `lang_definitions` VALUES (162217, 11520, 29, 'Acest nume există deja sub acest părinte.');
@@ -175747,7 +175747,7 @@ INSERT INTO `lang_definitions` VALUES (162378, 11697, 29, 'Pentru a deconecta, f
 INSERT INTO `lang_definitions` VALUES (162379, 11698, 29, 'Pentru Dems');
 INSERT INTO `lang_definitions` VALUES (162380, 11699, 29, 'Pentru a dezactiva verificarea automată a mesajelor, accesați Administrare > Globale > Conectori și setați Intervalul de verificare a mesajelor phiMail la 0 (zero)');
 INSERT INTO `lang_definitions` VALUES (162381, 11700, 29, 'Pentru a dezactiva certificatele SSL pe partea clientului, comentați rândurile de mai sus în fișierul de configurare Apache și setați');
-INSERT INTO `lang_definitions` VALUES (162382, 11701, 29, 'Pentru a dezactiva certificatele SSL pe partea clientului, comentați rândurile de mai sus din fișierul de configurare Apache și dezactivați setarea globală „Activare SSL client” în OpenEMR și reporniți serverul Apache.');
+INSERT INTO `lang_definitions` VALUES (162382, 11701, 29, 'Pentru a dezactiva certificatele SSL pe partea clientului, comentați rândurile de mai sus din fișierul de configurare Apache și dezactivați setarea globală „Activare SSL client” în DCL și reporniți serverul Apache.');
 INSERT INTO `lang_definitions` VALUES (162383, 11702, 29, 'Pentru a dezactiva HTTPS, comentați rândurile de mai sus în fișierul de configurare Apache și reporniți serverul Apache.');
 INSERT INTO `lang_definitions` VALUES (162384, 11703, 29, 'Pentru a afișa suma coplata trebuie să fi fost introdusă în asigurarea pacientului sub Editare > Date demografice');
 INSERT INTO `lang_definitions` VALUES (162385, 11704, 29, 'Pentru a face acest lucru, faceți clic pe semnul negru + din capătul îndepărtat din linia de comandă a acidului uric ser pentru a afișa fereastra pop-up Introduceți detalii');
@@ -175765,8 +175765,8 @@ INSERT INTO `lang_definitions` VALUES (162396, 11716, 29, 'Pentru a filtra după
 INSERT INTO `lang_definitions` VALUES (162397, 11717, 29, 'Pentru a îndeplini cerințele de utilizare semnificativă și a ajuta la urmărirea utilizării acesteia, puteți bifa caseta de selectare Rezumatul îngrijirii trimis și caseta de selectare Rezumatul îngrijirii trimis electronic, dacă este cazul');
 INSERT INTO `lang_definitions` VALUES (162398, 11718, 29, 'Pentru a șterge complet apăsați „Salvați”');
 INSERT INTO `lang_definitions` VALUES (162399, 11719, 29, 'Pentru a începe, alegeți unul dintre cele două butoane radio. „Căutare facturi” sau „Încărcare ERA”');
-INSERT INTO `lang_definitions` VALUES (162400, 11720, 29, 'Pentru a ajuta la explorarea diferitelor componente ale paginii Raport, mai ales dacă doriți să o utilizați ca manual de instrucțiuni, vă recomandăm să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, redimensionați fereastra pop-up de ajutor făcând clic și trăgând partea de jos. colțul din dreapta al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la openEMR');
-INSERT INTO `lang_definitions` VALUES (162401, 11721, 29, 'Pentru a vă ajuta să vă familiarizați cu diferitele componente ale paginii Dashboard, vă recomandăm să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, să redimensionați fereastra pop-up de ajutor făcând clic și trăgând colțul din dreapta jos al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la openEMR');
+INSERT INTO `lang_definitions` VALUES (162400, 11720, 29, 'Pentru a ajuta la explorarea diferitelor componente ale paginii Raport, mai ales dacă doriți să o utilizați ca manual de instrucțiuni, vă recomandăm să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, redimensionați fereastra pop-up de ajutor făcând clic și trăgând partea de jos. colțul din dreapta al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la DCL');
+INSERT INTO `lang_definitions` VALUES (162401, 11721, 29, 'Pentru a vă ajuta să vă familiarizați cu diferitele componente ale paginii Dashboard, vă recomandăm să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, să redimensionați fereastra pop-up de ajutor făcând clic și trăgând colțul din dreapta jos al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la DCL');
 INSERT INTO `lang_definitions` VALUES (162402, 11722, 29, 'Pentru a simplifica implementările, șabloanele utilizate în mod obișnuit au fost armonizate din ghidurile de implementare CDA existente și consolidate într-un singur ghid de implementare – Ghidul de implementare C-CDA (IG) (07/2012)');
 INSERT INTO `lang_definitions` VALUES (162403, 11723, 29, 'Spre Istorie');
 INSERT INTO `lang_definitions` VALUES (162404, 11724, 29, 'Pentru a include documentele scanate care fac parte din dosarul pacientului, selectați înregistrările dorite bifând casetele de selectare relevante');
@@ -175795,9 +175795,9 @@ INSERT INTO `lang_definitions` VALUES (162426, 11749, 29, 'la piele');
 INSERT INTO `lang_definitions` VALUES (162427, 11750, 29, 'A rezuma');
 INSERT INTO `lang_definitions` VALUES (162428, 11751, 29, 'la această vizită?');
 INSERT INTO `lang_definitions` VALUES (162429, 11752, 29, 'Pentru a încărca documentul CCR al pacientului deja existent, utilizați Ecranul Rezumat al pacientului->Documente. Pentru documentul CCR al unui pacient nou, utilizați ecranul Diverse->Documente noi');
-INSERT INTO `lang_definitions` VALUES (162430, 11754, 29, 'Pentru a utiliza pagina de ajutor ca manual de instrucțiuni, se recomandă să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, să redimensionați fereastra pop-up de ajutor făcând clic și trăgând colțul din dreapta jos al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la openEMR');
-INSERT INTO `lang_definitions` VALUES (162431, 11755, 29, 'Pentru a utiliza acest fișier de ajutor ca manual de instrucțiuni, cel mai bine este să redimensionați browserul pentru a ocupa jumătate de ecran, deschideți o altă instanță a browserului pentru a umple cealaltă jumătate a ecranului, conectați-vă la openEMR și deschideți fișierul de ajutor în acest browser și redimensionați făcând clic și trăgând colțul din dreapta jos, astfel încât să ocupe întreaga jumătate de ecran');
-INSERT INTO `lang_definitions` VALUES (162432, 11756, 29, 'Pentru a utiliza acest fișier de ajutor ca manual de instrucțiuni, se recomandă să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, să redimensionați fereastra pop-up de ajutor făcând clic și trăgând colțul din dreapta jos al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la openEMR');
+INSERT INTO `lang_definitions` VALUES (162430, 11754, 29, 'Pentru a utiliza pagina de ajutor ca manual de instrucțiuni, se recomandă să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, să redimensionați fereastra pop-up de ajutor făcând clic și trăgând colțul din dreapta jos al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la DCL');
+INSERT INTO `lang_definitions` VALUES (162431, 11755, 29, 'Pentru a utiliza acest fișier de ajutor ca manual de instrucțiuni, cel mai bine este să redimensionați browserul pentru a ocupa jumătate de ecran, deschideți o altă instanță a browserului pentru a umple cealaltă jumătate a ecranului, conectați-vă la DCL și deschideți fișierul de ajutor în acest browser și redimensionați făcând clic și trăgând colțul din dreapta jos, astfel încât să ocupe întreaga jumătate de ecran');
+INSERT INTO `lang_definitions` VALUES (162432, 11756, 29, 'Pentru a utiliza acest fișier de ajutor ca manual de instrucțiuni, se recomandă să reduceți dimensiunea browserului pentru a acoperi jumătate din fereastra de vizualizare, să redimensionați fereastra pop-up de ajutor făcând clic și trăgând colțul din dreapta jos al ferestrei pop-up. Deschideți o altă instanță a browserului și redimensionați-o pentru a acoperi cealaltă jumătate a ferestrei de vizualizare, conectați-vă la DCL');
 INSERT INTO `lang_definitions` VALUES (162433, 11757, 29, 'La:');
 INSERT INTO `lang_definitions` VALUES (162434, 11758, 29, 'La:');
 INSERT INTO `lang_definitions` VALUES (162435, 11759, 29, 'TO_CITY');
@@ -175833,7 +175833,7 @@ INSERT INTO `lang_definitions` VALUES (162464, 11788, 29, 'Comutare navigare');
 INSERT INTO `lang_definitions` VALUES (162465, 11789, 29, 'Comutați panoul pacient');
 INSERT INTO `lang_definitions` VALUES (162466, 11790, 29, 'Comutați panoul PMSFH din partea dreaptă');
 INSERT INTO `lang_definitions` VALUES (162467, 11796, 29, 'ID-ul de simbol pentru Serviciul de schimb de laborator pentru Integrarea informațiilor medicale, LLC.');
-INSERT INTO `lang_definitions` VALUES (162468, 11797, 29, 'ID-ul de simbol pentru serviciul de schimb de laborator OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (162468, 11797, 29, 'ID-ul de simbol pentru serviciul de schimb de laborator DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (162469, 11802, 29, 'Tonga (Insulele Tonga)');
 INSERT INTO `lang_definitions` VALUES (162470, 11803, 29, 'Amigdalectomie');
 INSERT INTO `lang_definitions` VALUES (162471, 11804, 29, 'amigdalectomiei');
@@ -176186,7 +176186,7 @@ INSERT INTO `lang_definitions` VALUES (162817, 12184, 29, 'Modernizare');
 INSERT INTO `lang_definitions` VALUES (162818, 12185, 29, 'Actualizați ACL');
 INSERT INTO `lang_definitions` VALUES (162819, 12186, 29, 'Actualizați baza de date');
 INSERT INTO `lang_definitions` VALUES (162820, 12187, 29, 'Actualizați SQL');
-INSERT INTO `lang_definitions` VALUES (162821, 12188, 29, 'Actualizează baza de date OpenEMR pentru a include Proceduri, Funcții și tabele necesare pentru procesul de deidentificare');
+INSERT INTO `lang_definitions` VALUES (162821, 12188, 29, 'Actualizează baza de date DCL pentru a include Proceduri, Funcții și tabele necesare pentru procesul de deidentificare');
 INSERT INTO `lang_definitions` VALUES (162822, 12189, 29, 'Actualizarea va continua');
 INSERT INTO `lang_definitions` VALUES (162823, 12190, 29, 'SUS ÎN');
 INSERT INTO `lang_definitions` VALUES (162824, 12191, 29, 'Încărcați');
@@ -176212,7 +176212,7 @@ INSERT INTO `lang_definitions` VALUES (162843, 12210, 29, 'La o căutare cu succ
 INSERT INTO `lang_definitions` VALUES (162844, 12211, 29, 'După ce faceți clic pe un număr de factură, apare „fereastra de postare manuală”. Aici puteți modifica data scadentă și notele pentru factură, puteți selecta partea pentru care publicați și puteți selecta asigurările pentru care au fost primite toți plățitorii așteptați. Cel mai important, pentru fiecare cod de facturare pentru care a fost debitată o sumă, puteți introduce informații de plată și ajustare.');
 INSERT INTO `lang_definitions` VALUES (162845, 12212, 29, 'După ce faceți clic pe un număr de factură, apare „fereastra de înregistrare manuală”. Aici puteți modifica data scadentă și notele pentru factură, puteți selecta partea pentru care publicați și puteți selecta asigurările pentru care au fost primite toate plățile așteptate. Cel mai important, pentru fiecare cod de facturare pentru care a fost debitată o sumă, puteți introduce informații de plată și ajustare.');
 INSERT INTO `lang_definitions` VALUES (162846, 12213, 29, 'La intrarea în pagină există două butoane vizibile sub bara de navigare');
-INSERT INTO `lang_definitions` VALUES (162847, 12214, 29, 'La conectarea la openEMR, o pictogramă plic mică este vizibilă în partea dreaptă sus. Afișează numărul de mesaje în așteptare și memento-uri datate');
+INSERT INTO `lang_definitions` VALUES (162847, 12214, 29, 'La conectarea la DCL, o pictogramă plic mică este vizibilă în partea dreaptă sus. Afișează numărul de mesaje în așteptare și memento-uri datate');
 INSERT INTO `lang_definitions` VALUES (162848, 12215, 29, 'La atingerea unui punct predeterminat, fie o dată, fie o valoare, regula va declanșa unul sau mai multe evenimente');
 INSERT INTO `lang_definitions` VALUES (162849, 12216, 29, 'La căutare vi se prezintă o listă de facturi. Puteți face clic pe unul dintre numerele facturii pentru a deschide o a doua fereastră, care este pagina de introducere a datelor pentru postarea manuală. Puteți, de asemenea, să faceți clic pe numele unui pacient dacă doriți să introduceți o notă pe care personalul de la birou o va vedea când pacientul se va înregistra și puteți selecta facturile care să apară pe extrasele pacientului și să tipăriți aceste extrase.');
 INSERT INTO `lang_definitions` VALUES (162850, 12217, 29, 'La selectarea unei liste de editat, va fi afișată pagina de editare cu valorile listei');
@@ -176233,7 +176233,7 @@ INSERT INTO `lang_definitions` VALUES (162864, 12231, 29, 'Flux de urină');
 INSERT INTO `lang_definitions` VALUES (162865, 12232, 29, 'Urgență urinară');
 INSERT INTO `lang_definitions` VALUES (162866, 12233, 29, 'URL');
 INSERT INTO `lang_definitions` VALUES (162867, 12234, 29, 'URL pentru adresa site-ului NewCrop eRx.');
-INSERT INTO `lang_definitions` VALUES (162868, 12235, 29, 'URL pentru suport OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (162868, 12235, 29, 'URL pentru suport DCL.');
 INSERT INTO `lang_definitions` VALUES (162869, 12236, 29, 'URL pentru Phone Gateway.');
 INSERT INTO `lang_definitions` VALUES (162870, 12237, 29, 'URL pentru Phone Gateway. Serviciu VOIP automat oferit de Maviq. Vă rugăm să vizitați http://signup.maviq.com pentru mai multe informații.');
 INSERT INTO `lang_definitions` VALUES (162871, 12238, 29, 'URL pentru site-ul WordPress care acceptă portalul');
@@ -176366,7 +176366,7 @@ INSERT INTO `lang_definitions` VALUES (162997, 12377, 29, 'folosește formatul p
 INSERT INTO `lang_definitions` VALUES (162998, 12378, 29, 'Folosind 2FA');
 INSERT INTO `lang_definitions` VALUES (162999, 12379, 29, 'Folosirea unui pom fructifer ca o analogie mai usor de vizualizat va explica mai bine conceptul acestei ierarhii, trunchiul pomului este Grupul (Chimia serului), ramura fructificatoare este ordinea reala, Ordinea procedurii (Acid uric seric) si fructul este rezultatul, Rezultat Discret, numit și (Acid Uric Seric) care va deține valoarea rezultatului returnat. Așa cum fructele nu sunt purtate pe trunchiul principal, nu trebuie să plasați un Rezultat Discret ca descendent direct sau copil al unui Grup de Sus. În mod similar, ramura fructiferă (Ordinul de procedură) nu poate fi plasată ca descendent direct sau copil al unui fruct (Rezultat discret)');
 INSERT INTO `lang_definitions` VALUES (163000, 12380, 29, 'Utilizarea tehnologiei pentru a îmbunătăți productivitatea');
-INSERT INTO `lang_definitions` VALUES (163001, 12381, 29, 'Folosind detaliile introduse în sistem, openEMR va genera mesaje valide HL7 v2.3 în 3 formate, un fișier text care este descărcat automat în folderul de descărcări al browserului dvs., un mesaj HL7 care este scris într-un folder sau director de pe serverul care rulează openEMR sau utilizați SFTP - Secure File Transfer Protocol, care este un protocol de rețea care oferă acces la fișiere, transfer de fișiere și gestionare a fișierelor printr-o conexiune sigură și transferați acest mesaj într-un laborator');
+INSERT INTO `lang_definitions` VALUES (163001, 12381, 29, 'Folosind detaliile introduse în sistem, DCL va genera mesaje valide HL7 v2.3 în 3 formate, un fișier text care este descărcat automat în folderul de descărcări al browserului dvs., un mesaj HL7 care este scris într-un folder sau director de pe serverul care rulează DCL sau utilizați SFTP - Secure File Transfer Protocol, care este un protocol de rețea care oferă acces la fișiere, transfer de fișiere și gestionare a fișierelor printr-o conexiune sigură și transferați acest mesaj într-un laborator');
 INSERT INTO `lang_definitions` VALUES (163002, 12382, 29, 'Folosind Foaia de taxe');
 INSERT INTO `lang_definitions` VALUES (163003, 12383, 29, 'Utilizarea titlurilor principale de pe fișa de laborator va ajuta la începerea acestui proces - panouri de organe/boli, hematologie, teste individuale, microbiologie, altele');
 INSERT INTO `lang_definitions` VALUES (163004, 12384, 29, 'Folosind această analogie cu pomi fructiferi putem înțelege mai bine pașii necesari pentru a crea o comandă pentru un grup de teste');
@@ -176425,7 +176425,7 @@ INSERT INTO `lang_definitions` VALUES (163056, 12437, 29, 'Verifica');
 INSERT INTO `lang_definitions` VALUES (163057, 12441, 29, 'Versiune');
 INSERT INTO `lang_definitions` VALUES (163058, 12442, 29, 'Versiunea 1 Portalul pacientului la fața locului Adresa site-ului');
 INSERT INTO `lang_definitions` VALUES (163059, 12443, 29, 'Versiunea 2 Portalul pacientului la fața locului Adresa site-ului');
-INSERT INTO `lang_definitions` VALUES (163060, 12444, 29, 'Versiunea 2.x este utilizată pe scară largă în industria sănătății, iar openEMR utilizează HL7 versiunea 2.3');
+INSERT INTO `lang_definitions` VALUES (163060, 12444, 29, 'Versiunea 2.x este utilizată pe scară largă în industria sănătății, iar DCL utilizează HL7 versiunea 2.3');
 INSERT INTO `lang_definitions` VALUES (163061, 12445, 29, 'Versiunea numarul');
 INSERT INTO `lang_definitions` VALUES (163062, 12447, 29, 'Vert Base{{abreviere pentru Vertical Prism Base}}');
 INSERT INTO `lang_definitions` VALUES (163063, 12448, 29, 'Vert Distance{{abreviere pentru Vertex Distance}}');
@@ -176636,7 +176636,7 @@ INSERT INTO `lang_definitions` VALUES (163267, 12672, 29, 'Modificarea greutăț
 INSERT INTO `lang_definitions` VALUES (163268, 12673, 29, 'Pierdere în greutate');
 INSERT INTO `lang_definitions` VALUES (163269, 12674, 29, 'Clinica de slabit');
 INSERT INTO `lang_definitions` VALUES (163270, 12675, 29, 'Bine ati venit');
-INSERT INTO `lang_definitions` VALUES (163271, 12676, 29, 'Bun venit la OpenEMR');
+INSERT INTO `lang_definitions` VALUES (163271, 12676, 29, 'Bun venit la DCL');
 INSERT INTO `lang_definitions` VALUES (163272, 12677, 29, 'galeză');
 INSERT INTO `lang_definitions` VALUES (163273, 12678, 29, 'Lipsesc informații despre ID-ul clinicii contului Weno');
 INSERT INTO `lang_definitions` VALUES (163274, 12679, 29, 'Lipsesc informații despre ID-ul contului Weno');
@@ -176677,7 +176677,7 @@ INSERT INTO `lang_definitions` VALUES (163308, 12719, 29, 'ce zile sunt zilele t
 INSERT INTO `lang_definitions` VALUES (163309, 12720, 29, 'Ce note trebuie să fie afișate în ecranul de facturare');
 INSERT INTO `lang_definitions` VALUES (163310, 12721, 29, 'În timp ce redirecționați un memento datat, mesajul vechi este afișat, acesta poate fi suprascris');
 INSERT INTO `lang_definitions` VALUES (163311, 12722, 29, 'Deși este intuitiv să ne gândim la acest modul ca fiind locul unde testele de laborator și studiile imagistice pot fi comandate și revizuite, acest modul poate fi folosit și pentru a urmări alte proceduri efectuate la birou');
-INSERT INTO `lang_definitions` VALUES (163312, 12723, 29, 'În timp ce testele de laborator și testele radiologice pot fi efectuate în unitatea de practică, acestea sunt în general efectuate într-o unitate externă, iar detaliile furnizorului pentru acea entitate vor trebui introduse în openEMR înainte ca configurarea modulului de procedură să poată începe');
+INSERT INTO `lang_definitions` VALUES (163312, 12723, 29, 'În timp ce testele de laborator și testele radiologice pot fi efectuate în unitatea de practică, acestea sunt în general efectuate într-o unitate externă, iar detaliile furnizorului pentru acea entitate vor trebui introduse în DCL înainte ca configurarea modulului de procedură să poată începe');
 INSERT INTO `lang_definitions` VALUES (163313, 12724, 29, 'Bici');
 INSERT INTO `lang_definitions` VALUES (163314, 12725, 29, 'alb');
 INSERT INTO `lang_definitions` VALUES (163315, 12726, 29, 'Lista albă');
@@ -176697,7 +176697,7 @@ INSERT INTO `lang_definitions` VALUES (163328, 12739, 29, 'cu import');
 INSERT INTO `lang_definitions` VALUES (163329, 12740, 29, 'cu limba preferată');
 INSERT INTO `lang_definitions` VALUES (163330, 12742, 29, 'Cu selectate:');
 INSERT INTO `lang_definitions` VALUES (163331, 12743, 29, 'cu vechiul nume');
-INSERT INTO `lang_definitions` VALUES (163332, 12744, 29, 'Cu cheia U2F va trebui să o conectați la portul USB și apoi să accesați OpenEMR folosind cele mai recente versiuni ale următoarelor browsere moderne - Chrome, Firefox, Safari, Edge și Opera și apăsând butonul de pe dispozitiv');
+INSERT INTO `lang_definitions` VALUES (163332, 12744, 29, 'Cu cheia U2F va trebui să o conectați la portul USB și apoi să accesați DCL folosind cele mai recente versiuni ale următoarelor browsere moderne - Chrome, Firefox, Safari, Edge și Opera și apăsând butonul de pe dispozitiv');
 INSERT INTO `lang_definitions` VALUES (163333, 12745, 29, 'cu valoare');
 INSERT INTO `lang_definitions` VALUES (163334, 12746, 29, 'Cui putem lăsa un mesaj?');
 INSERT INTO `lang_definitions` VALUES (163335, 12747, 29, 'Reținut');
@@ -176918,7 +176918,7 @@ INSERT INTO `lang_definitions` VALUES (163549, 12974, 29, 'Fișierul dvs. nu are
 INSERT INTO `lang_definitions` VALUES (163550, 12975, 29, 'Fișierul dvs. este prea mare');
 INSERT INTO `lang_definitions` VALUES (163551, 12976, 29, 'Prima zi a săptămânii.');
 INSERT INTO `lang_definitions` VALUES (163552, 12977, 29, 'Id-ul tău lipsește. Anulați și încercați din nou.');
-INSERT INTO `lang_definitions` VALUES (163553, 12978, 29, 'Instalarea dvs. de OpenEMR a fost înregistrată');
+INSERT INTO `lang_definitions` VALUES (163553, 12978, 29, 'Instalarea dvs. de DCL a fost înregistrată');
 INSERT INTO `lang_definitions` VALUES (163554, 12980, 29, 'Rezultatele dvs. de laborator');
 INSERT INTO `lang_definitions` VALUES (163555, 12981, 29, 'Numele listei dvs. a fost modificat pentru a îndeplini cerințele de denumire.');
 INSERT INTO `lang_definitions` VALUES (163556, 12982, 29, 'Mesajul dvs. a fost trimis pentru livrare la');
@@ -177188,7 +177188,7 @@ INSERT INTO `lang_definitions` VALUES (163819, 14, 30, 'Có thể chỉ định 
 INSERT INTO `lang_definitions` VALUES (163820, 15, 30, 'Một vài từ để chỉ ra lý do lần đến khám');
 INSERT INTO `lang_definitions` VALUES (163821, 16, 30, 'Có thể lên kế hoạch cho một cuộc hẹn tiếp theo ngay tại bảng tính phí.');
 INSERT INTO `lang_definitions` VALUES (163822, 17, 30, 'Phải thêm vào lần đến khám này một biểu mẫu đến khám GCAC.');
-INSERT INTO `lang_definitions` VALUES (163823, 19, 30, 'Một ứng dụng lớn như OpenEMR được nhiều người dùng với những vai trò khác nhau và nhiều mức độ trách nhiệm. Cần thiết phải gán quyền truy nhập vào các thành phần khác nhau của chương trình cho người dùng tùy theo sự cần biết. Để làm điều đó, Danh sách Điều khiển Truy nhập (ACL) được dùng.');
+INSERT INTO `lang_definitions` VALUES (163823, 19, 30, 'Một ứng dụng lớn như DCL được nhiều người dùng với những vai trò khác nhau và nhiều mức độ trách nhiệm. Cần thiết phải gán quyền truy nhập vào các thành phần khác nhau của chương trình cho người dùng tùy theo sự cần biết. Để làm điều đó, Danh sách Điều khiển Truy nhập (ACL) được dùng.');
 INSERT INTO `lang_definitions` VALUES (163824, 20, 30, 'Phải có số lô sản xuất');
 INSERT INTO `lang_definitions` VALUES (163825, 21, 30, 'Phải có số lô sản xuất!');
 INSERT INTO `lang_definitions` VALUES (163826, 22, 30, 'Dùng chữ thường');
@@ -177452,7 +177452,7 @@ INSERT INTO `lang_definitions` VALUES (164083, 330, 30, 'Có thể tìm thấy t
 INSERT INTO `lang_definitions` VALUES (164084, 332, 30, 'Thông tin bổ sung để xử lý các yêu cầu bằng giấy');
 INSERT INTO `lang_definitions` VALUES (164085, 333, 30, 'Phòng thí nghiệm Bổ sung');
 INSERT INTO `lang_definitions` VALUES (164086, 334, 30, 'Ghi chú Bổ sung');
-INSERT INTO `lang_definitions` VALUES (164087, 335, 30, 'Trường Ghi chú Bổ sung để dùng nội bộ trong openEMR');
+INSERT INTO `lang_definitions` VALUES (164087, 335, 30, 'Trường Ghi chú Bổ sung để dùng nội bộ trong DCL');
 INSERT INTO `lang_definitions` VALUES (164088, 336, 30, 'Ghi chú bổ sung cho kết quả hay khuyến nghị này');
 INSERT INTO `lang_definitions` VALUES (164089, 337, 30, 'Ghi chú Bổ sung:');
 INSERT INTO `lang_definitions` VALUES (164090, 338, 30, 'Ghi chú Bổ sung:');
@@ -177591,7 +177591,7 @@ INSERT INTO `lang_definitions` VALUES (164222, 497, 30, 'Tất cả Nhóm Đo l�
 INSERT INTO `lang_definitions` VALUES (164223, 498, 30, 'Tất cả hoặc một phần của tên');
 INSERT INTO `lang_definitions` VALUES (164224, 499, 30, 'Tất cả hoặc một phần của họ');
 INSERT INTO `lang_definitions` VALUES (164225, 500, 30, 'Tất cả hoặc một phần của tổ chức');
-INSERT INTO `lang_definitions` VALUES (164226, 501, 30, 'Tất cả các tương tác của bệnh nhân trong OpenEMR đều được liên kết đến lần khám');
+INSERT INTO `lang_definitions` VALUES (164226, 501, 30, 'Tất cả các tương tác của bệnh nhân trong DCL đều được liên kết đến lần khám');
 INSERT INTO `lang_definitions` VALUES (164227, 502, 30, 'Tất cả Bệnh nhân');
 INSERT INTO `lang_definitions` VALUES (164228, 503, 30, 'Tất cả các thông điệp đang chờ đều được thể hiện trong bảng THÔNG ĐIỆP CỦA TÔI');
 INSERT INTO `lang_definitions` VALUES (164229, 505, 30, 'Tất cả Sản phẩm');
@@ -177731,11 +177731,11 @@ INSERT INTO `lang_definitions` VALUES (164362, 674, 30, 'Một thư điện tử
 INSERT INTO `lang_definitions` VALUES (164363, 675, 30, 'Một chỉ dẫn điện tử và kết quả trả về sẽ theo dạng một thông điệp gọi là thông điệp HL7. HL7 là Health Level (Mức Sức khỏe - Lớp Ứng dụng) 7. Mục đích chính của HL7 là đơn giản hóa việc thể hiện các giao diện giữa các ứng dụng phần mềm chăm sóc sức khỏe và các nhà cung cấp khác nhau để giảm bớt khó khăn và chi phí liên quan đến việc lập trình giao diện tùy biến');
 INSERT INTO `lang_definitions` VALUES (164364, 676, 30, 'Các sự kiện lặp lại phải có ngày kết thúc sau ngày bắt đầu!');
 INSERT INTO `lang_definitions` VALUES (164365, 677, 30, 'Lỗi xảy ra khi đang ký biểu mẫu đó');
-INSERT INTO `lang_definitions` VALUES (164366, 678, 30, 'Một lỗi xảy ra trong khi chép toàn bộ cây thư mục web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (164366, 678, 30, 'Một lỗi xảy ra trong khi chép toàn bộ cây thư mục web DCL');
 INSERT INTO `lang_definitions` VALUES (164367, 679, 30, 'Một lỗi xảy ra trong khi chép toàn bộ cây thư mục web phpGACL');
 INSERT INTO `lang_definitions` VALUES (164368, 680, 30, 'Một lỗi xảy ra trong khi chép toàn bộ cây thư mục web SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (164369, 682, 30, 'Một lỗi xảy ra: Thiếu tập tin để tải lên: Dùng nút quay lại!');
-INSERT INTO `lang_definitions` VALUES (164370, 683, 30, 'Cần nắm vững một khái niệm quan trọng là một khi ứng dụng xác thực thu nạp khóa bí mật được chuyển giao qua mã QR, sẽ không có sự truyền thông nào nữa giữa ứng dụng đó và OpenEMR, mỗi ứng dụng sẽ dùng giờ UNIX hiện tại và bản sao khóa bí mật riêng của người dùng để tạo ra cùng số 6 chữ số duy nhất ');
+INSERT INTO `lang_definitions` VALUES (164370, 683, 30, 'Cần nắm vững một khái niệm quan trọng là một khi ứng dụng xác thực thu nạp khóa bí mật được chuyển giao qua mã QR, sẽ không có sự truyền thông nào nữa giữa ứng dụng đó và DCL, mỗi ứng dụng sẽ dùng giờ UNIX hiện tại và bản sao khóa bí mật riêng của người dùng để tạo ra cùng số 6 chữ số duy nhất ');
 INSERT INTO `lang_definitions` VALUES (164371, 684, 30, 'Cần nhớ một điểm quan trọng là các xét nghiệm riêng lẽ trong mỗi bảng sẽ được liệt kê như là các Kết quả, do đó, bạn không thể trực tiếp yêu cầu các xét nghiệm riêng lẽ này');
 INSERT INTO `lang_definitions` VALUES (164372, 685, 30, 'Đã tạo ra và liên kết một vấn đề GCAC không đầy đủ. Một người nào đó sẽ phải hoàn thành nó sau này.');
 INSERT INTO `lang_definitions` VALUES (164373, 687, 30, 'Một Rắc rối lo về các vấn đề liên quan tới sức khỏe của bệnh nhân');
@@ -178582,7 +178582,7 @@ INSERT INTO `lang_definitions` VALUES (165213, 2212, 30, 'Đã lưu cấu hình 
 INSERT INTO `lang_definitions` VALUES (165214, 2213, 30, 'Cấu hình Apache và Imed EMR sử dụng giấy chứng nhận phía khách hàng SSL.');
 INSERT INTO `lang_definitions` VALUES (165215, 2214, 30, 'Cấu hình Apache để sử dụng Khách hàng bên SSL giấy chứng nhận');
 INSERT INTO `lang_definitions` VALUES (165216, 2215, 30, 'Cấu hình Apache để sử dụng HTTPS.');
-INSERT INTO `lang_definitions` VALUES (165217, 2216, 30, 'Cấu hình Openemr sử dụng Khách hàng bên SSL giấy chứng nhận');
+INSERT INTO `lang_definitions` VALUES (165217, 2216, 30, 'Cấu hình DCL sử dụng Khách hàng bên SSL giấy chứng nhận');
 INSERT INTO `lang_definitions` VALUES (165218, 2225, 30, 'Xác nhận bệnh nhân mới');
 INSERT INTO `lang_definitions` VALUES (165219, 2227, 30, 'Xác nhận mật khẩu mới');
 INSERT INTO `lang_definitions` VALUES (165220, 2229, 30, 'Xác nhận thanh toán');
@@ -179188,8 +179188,8 @@ INSERT INTO `lang_definitions` VALUES (165819, 3321, 30, 'Nợ Pt');
 INSERT INTO `lang_definitions` VALUES (165820, 3322, 30, 'Sắp Đến hạn');
 INSERT INTO `lang_definitions` VALUES (165821, 3323, 30, 'Tình trạng Nợ');
 INSERT INTO `lang_definitions` VALUES (165822, 3324, 30, 'Cập nhật Tình trạng Nợ');
-INSERT INTO `lang_definitions` VALUES (165823, 3325, 30, 'Đang chép Cơ sở dữ liệu OpenEMR');
-INSERT INTO `lang_definitions` VALUES (165824, 3326, 30, 'Đang chép cây thư mục web OpenEMR');
+INSERT INTO `lang_definitions` VALUES (165823, 3325, 30, 'Đang chép Cơ sở dữ liệu DCL');
+INSERT INTO `lang_definitions` VALUES (165824, 3326, 30, 'Đang chép cây thư mục web DCL');
 INSERT INTO `lang_definitions` VALUES (165825, 3327, 30, 'Đang chép cơ sở dữ liệu phpGACL');
 INSERT INTO `lang_definitions` VALUES (165826, 3328, 30, 'Đang chép cây thư mục web phpGACL');
 INSERT INTO `lang_definitions` VALUES (165827, 3329, 30, 'Đang chép cơ sở dữ liệu SQL-Ledger');
@@ -179336,7 +179336,7 @@ INSERT INTO `lang_definitions` VALUES (165967, 3630, 30, 'Kích hoạt tính nă
 INSERT INTO `lang_definitions` VALUES (165968, 3634, 30, 'Kích hoạt tính năng khiến cho tính toán đo lường tự động (AMC) dữ liệu yêu cầu');
 INSERT INTO `lang_definitions` VALUES (165969, 3636, 30, 'Kích hoạt tính năng báo cáo ngày theo dõi Đối với các tính toán đo lường tự động (AMC)');
 INSERT INTO `lang_definitions` VALUES (165970, 3638, 30, 'Kích hoạt tính năng hỗ trợ quét');
-INSERT INTO `lang_definitions` VALUES (165971, 3643, 30, 'Kích hoạt tính năng hỗ trợ OpenEMR LLC Lab Trao đổi dịch vụ.');
+INSERT INTO `lang_definitions` VALUES (165971, 3643, 30, 'Kích hoạt tính năng hỗ trợ DCL LLC Lab Trao đổi dịch vụ.');
 INSERT INTO `lang_definitions` VALUES (165972, 3644, 30, 'Cho phép người sử dụng Giấy chứng nhận xác thực');
 INSERT INTO `lang_definitions` VALUES (165973, 3650, 30, 'Kích hoạt tính năng ZMG, dịch vụ LLC eRx');
 INSERT INTO `lang_definitions` VALUES (165974, 3651, 30, 'kích hoạt');
@@ -179399,7 +179399,7 @@ INSERT INTO `lang_definitions` VALUES (166030, 3754, 30, 'Tiếng/Người Anh')
 INSERT INTO `lang_definitions` VALUES (166031, 3756, 30, 'Tiếng/Người Anh (Ấn Độ)');
 INSERT INTO `lang_definitions` VALUES (166032, 3757, 30, 'Tiếng/Người Anh (Tiêu chuẩn)');
 INSERT INTO `lang_definitions` VALUES (166033, 3758, 30, 'Enscript lệnh được sử dụng bởi Hylafax.');
-INSERT INTO `lang_definitions` VALUES (166034, 3759, 30, 'Đảm bảo OpenEMR có quyền ghi vào thư mục');
+INSERT INTO `lang_definitions` VALUES (166034, 3759, 30, 'Đảm bảo DCL có quyền ghi vào thư mục');
 INSERT INTO `lang_definitions` VALUES (166035, 3761, 30, 'ENT Discharge');
 INSERT INTO `lang_definitions` VALUES (166036, 3762, 30, 'ENT Pain');
 INSERT INTO `lang_definitions` VALUES (166037, 3765, 30, 'Nhập mã chẩn đoán để loại trừ tất cả các hoá đơn không chứa nó');
@@ -179438,7 +179438,7 @@ INSERT INTO `lang_definitions` VALUES (166069, 3888, 30, 'Lỗi trong gzip nén 
 INSERT INTO `lang_definitions` VALUES (166070, 3889, 30, 'Lỗi trong YES hoặc NO tùy chọn');
 INSERT INTO `lang_definitions` VALUES (166071, 3894, 30, 'Lỗi mở tải lên tập tin để đọc');
 INSERT INTO `lang_definitions` VALUES (166072, 3898, 30, 'Lỗi khi lấy kết quả từ phòng thí nghiệm Exchange Network');
-INSERT INTO `lang_definitions` VALUES (166073, 3901, 30, 'Lỗi khi cấp đặc quyền tập tin cho người sử dụng OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (166073, 3901, 30, 'Lỗi khi cấp đặc quyền tập tin cho người sử dụng DCL.');
 INSERT INTO `lang_definitions` VALUES (166074, 3904, 30, 'lỗi trong khi đăng ký hình thức!');
 INSERT INTO `lang_definitions` VALUES (166075, 3905, 30, 'Lỗi trong khi tiết kiệm đến tập tin');
 INSERT INTO `lang_definitions` VALUES (166076, 3907, 30, 'Lỗi trong khi ghi vào tập tin');
@@ -179449,7 +179449,7 @@ INSERT INTO `lang_definitions` VALUES (166080, 3920, 30, 'Lỗi, không thể t�
 INSERT INTO `lang_definitions` VALUES (166081, 3921, 30, 'Lỗi, không thể tạo ra các chứng chỉ Certificate Authority.');
 INSERT INTO `lang_definitions` VALUES (166082, 3922, 30, 'Lỗi, không thể tạo ra các giấy chứng nhận Server.');
 INSERT INTO `lang_definitions` VALUES (166083, 3924, 30, 'Lỗi, không thể mở tập tin');
-INSERT INTO `lang_definitions` VALUES (166084, 3925, 30, 'Lỗi, Giấy chứng nhận xác thực người dùng không được kích hoạt trong OpenEMR');
+INSERT INTO `lang_definitions` VALUES (166084, 3925, 30, 'Lỗi, Giấy chứng nhận xác thực người dùng không được kích hoạt trong DCL');
 INSERT INTO `lang_definitions` VALUES (166085, 3933, 30, 'Lỗi. Bạn cần phải cài đặt các mô-đun Lưu Trữ / Tar.php php.');
 INSERT INTO `lang_definitions` VALUES (166086, 3934, 30, 'LỖI: không thể mở table.sql, hình thức bị hỏng?');
 INSERT INTO `lang_definitions` VALUES (166087, 3937, 30, 'Lỗi: ID trùng lặp trên dòng');
@@ -179643,7 +179643,7 @@ INSERT INTO `lang_definitions` VALUES (166274, 4277, 30, 'Tập tin');
 INSERT INTO `lang_definitions` VALUES (166275, 4280, 30, 'trong thư mục Tài liệu để tìm hiểu làm thế nào để tự động hoá quá trình tạo bản sao lưu nhật ký');
 INSERT INTO `lang_definitions` VALUES (166276, 4281, 30, 'vị trí tập tin');
 INSERT INTO `lang_definitions` VALUES (166277, 4282, 30, 'Quản lý tập tin');
-INSERT INTO `lang_definitions` VALUES (166278, 4289, 30, 'Đã gán quyền truy cập hồ sơ cho người sử dụng OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (166278, 4289, 30, 'Đã gán quyền truy cập hồ sơ cho người sử dụng DCL.');
 INSERT INTO `lang_definitions` VALUES (166279, 4290, 30, 'Việc lấy tập tin về từ CouchDB đã thất bại');
 INSERT INTO `lang_definitions` VALUES (166280, 4291, 30, 'Phòng Hồ sơ');
 INSERT INTO `lang_definitions` VALUES (166281, 4292, 30, 'Tập tin để tải lên');
@@ -179992,7 +179992,7 @@ INSERT INTO `lang_definitions` VALUES (166623, 5024, 30, 'Truy vấn các sự k
 INSERT INTO `lang_definitions` VALUES (166624, 5036, 30, 'HPI:');
 INSERT INTO `lang_definitions` VALUES (166625, 5038, 30, 'HT');
 INSERT INTO `lang_definitions` VALUES (166626, 5039, 30, 'HTML');
-INSERT INTO `lang_definitions` VALUES (166627, 5043, 30, 'Https liên kết cho LLC OpenEMR Hỗ trợ dịch vụ Lab Exchange.');
+INSERT INTO `lang_definitions` VALUES (166627, 5043, 30, 'Https liên kết cho LLC DCL Hỗ trợ dịch vụ Lab Exchange.');
 INSERT INTO `lang_definitions` VALUES (166628, 5045, 30, 'Tiếng/Người Hungary');
 INSERT INTO `lang_definitions` VALUES (166629, 5046, 30, 'Hylafax mục');
 INSERT INTO `lang_definitions` VALUES (166630, 5047, 30, 'Hylafax Enscript lệnh');
@@ -180410,7 +180410,7 @@ INSERT INTO `lang_definitions` VALUES (167041, 6129, 30, 'Nội bộ');
 INSERT INTO `lang_definitions` VALUES (167042, 6133, 30, 'Địa phương');
 INSERT INTO `lang_definitions` VALUES (167043, 6134, 30, 'Nơi');
 INSERT INTO `lang_definitions` VALUES (167044, 6135, 30, 'Địa điểm');
-INSERT INTO `lang_definitions` VALUES (167045, 6136, 30, 'vị trí của máy openemr và có thể chứa dữ liệu nhạy cảm, vì vậy nó được khuyến khích để tự xóa các tập tin sau khi sử dụng của nó');
+INSERT INTO `lang_definitions` VALUES (167045, 6136, 30, 'vị trí của máy DCL và có thể chứa dữ liệu nhạy cảm, vì vậy nó được khuyến khích để tự xóa các tập tin sau khi sử dụng của nó');
 INSERT INTO `lang_definitions` VALUES (167046, 6137, 30, 'Vị trí của rất nhiều này');
 INSERT INTO `lang_definitions` VALUES (167047, 6138, 30, 'Vị trí không xác định');
 INSERT INTO `lang_definitions` VALUES (167048, 6139, 30, 'Vị trí nơi Hylafax cửa hàng fax.');
@@ -180995,12 +180995,12 @@ INSERT INTO `lang_definitions` VALUES (167626, 7514, 30, 'Địa chỉ Cổng th
 INSERT INTO `lang_definitions` VALUES (167627, 7518, 30, 'Ối!');
 INSERT INTO `lang_definitions` VALUES (167628, 7519, 30, 'Mở');
 INSERT INTO `lang_definitions` VALUES (167629, 7535, 30, 'Mở Đến khám Hôm nay');
-INSERT INTO `lang_definitions` VALUES (167630, 7562, 30, 'OpenEMR đã có một Certificate Authority cấu hình.');
-INSERT INTO `lang_definitions` VALUES (167631, 7567, 30, 'OpenEMR Cơ sở dữ liệu Nâng cấp');
-INSERT INTO `lang_definitions` VALUES (167632, 7568, 30, 'OpenEMR Nâng cấp cơ sở dữ liệu cho De-nhận dạng');
-INSERT INTO `lang_definitions` VALUES (167633, 7571, 30, 'OpenEMR phải được cấu hình để sử dụng giấy chứng nhận trước khi nó có thể tạo các chứng chỉ của khách hàng.');
-INSERT INTO `lang_definitions` VALUES (167634, 7575, 30, 'OpenEMR yêu cầu Javascript để thực hiện xác thực người dùng.');
-INSERT INTO `lang_definitions` VALUES (167635, 7576, 30, 'OpenEMR Người dùng');
+INSERT INTO `lang_definitions` VALUES (167630, 7562, 30, 'DCL đã có một Certificate Authority cấu hình.');
+INSERT INTO `lang_definitions` VALUES (167631, 7567, 30, 'DCL Cơ sở dữ liệu Nâng cấp');
+INSERT INTO `lang_definitions` VALUES (167632, 7568, 30, 'DCL Nâng cấp cơ sở dữ liệu cho De-nhận dạng');
+INSERT INTO `lang_definitions` VALUES (167633, 7571, 30, 'DCL phải được cấu hình để sử dụng giấy chứng nhận trước khi nó có thể tạo các chứng chỉ của khách hàng.');
+INSERT INTO `lang_definitions` VALUES (167634, 7575, 30, 'DCL yêu cầu Javascript để thực hiện xác thực người dùng.');
+INSERT INTO `lang_definitions` VALUES (167635, 7576, 30, 'DCL Người dùng');
 INSERT INTO `lang_definitions` VALUES (167636, 7577, 30, 'Hở');
 INSERT INTO `lang_definitions` VALUES (167637, 7583, 30, 'Nhãn khoa');
 INSERT INTO `lang_definitions` VALUES (167638, 7586, 30, 'Tùy chọn');
@@ -181257,7 +181257,7 @@ INSERT INTO `lang_definitions` VALUES (167888, 8150, 30, 'Đơn hàng Đang ch�
 INSERT INTO `lang_definitions` VALUES (167889, 8151, 30, 'Trong khi chờ Res');
 INSERT INTO `lang_definitions` VALUES (167890, 8152, 30, 'Đang chờ Xem xét');
 INSERT INTO `lang_definitions` VALUES (167891, 8153, 30, 'Trong khi chờ Rx Lượt');
-INSERT INTO `lang_definitions` VALUES (167892, 8156, 30, 'Pennington Công ty OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (167892, 8156, 30, 'Pennington Công ty DCL v');
 INSERT INTO `lang_definitions` VALUES (167893, 8157, 30, 'Bệnh loét dạ dày');
 INSERT INTO `lang_definitions` VALUES (167894, 8159, 30, 'mỗi phút');
 INSERT INTO `lang_definitions` VALUES (167895, 8160, 30, 'Mỗi lỗ mũi');
@@ -181380,7 +181380,7 @@ INSERT INTO `lang_definitions` VALUES (168011, 8434, 30, 'Xin vui lòng chọn X
 INSERT INTO `lang_definitions` VALUES (168012, 8435, 30, 'Xin vui lòng thiết lập');
 INSERT INTO `lang_definitions` VALUES (168013, 8436, 30, 'Xin vui lòng thiết lập lại biến de_identification_config không');
 INSERT INTO `lang_definitions` VALUES (168014, 8441, 30, 'Hãy bắt đầu quá trình nhận dạng De');
-INSERT INTO `lang_definitions` VALUES (168015, 8445, 30, 'Xin vui lòng nâng cấp OpenEMR Cơ sở dữ liệu bao gồm các thủ tục nhận dạng De, chức năng, bảng');
+INSERT INTO `lang_definitions` VALUES (168015, 8445, 30, 'Xin vui lòng nâng cấp DCL Cơ sở dữ liệu bao gồm các thủ tục nhận dạng De, chức năng, bảng');
 INSERT INTO `lang_definitions` VALUES (168016, 8447, 30, 'Xin vui lòng xem bảng De Xác định lỗi đăng nhập để biết thêm chi tiết');
 INSERT INTO `lang_definitions` VALUES (168017, 8448, 30, 'Vui lòng truy cập vào màn hình nhận dạng De sau một thời gian');
 INSERT INTO `lang_definitions` VALUES (168018, 8449, 30, 'Vui lòng truy cập vào màn hình nhận dạng Re sau một thời gian');
@@ -182150,7 +182150,7 @@ INSERT INTO `lang_definitions` VALUES (168781, 10286, 30, 'Xoang phẫu thuật'
 INSERT INTO `lang_definitions` VALUES (168782, 10287, 30, 'Xoang dịu dàng:');
 INSERT INTO `lang_definitions` VALUES (168783, 10288, 30, 'Viêm xoang');
 INSERT INTO `lang_definitions` VALUES (168784, 10294, 30, 'Site ID');
-INSERT INTO `lang_definitions` VALUES (168785, 10296, 30, 'Site ID LLC OpenEMR Hỗ trợ dịch vụ Lab Exchange.');
+INSERT INTO `lang_definitions` VALUES (168785, 10296, 30, 'Site ID LLC DCL Hỗ trợ dịch vụ Lab Exchange.');
 INSERT INTO `lang_definitions` VALUES (168786, 10300, 30, 'Kích thước');
 INSERT INTO `lang_definitions` VALUES (168787, 10303, 30, 'Kích phải là một số giữa 1 và 999');
 INSERT INTO `lang_definitions` VALUES (168788, 10305, 30, 'Kích thước / Danh sách');
@@ -182536,7 +182536,7 @@ INSERT INTO `lang_definitions` VALUES (169167, 11277, 30, 'Bản dịch của m�
 INSERT INTO `lang_definitions` VALUES (169168, 11278, 30, 'Các bảng dịch được đồng bộ.');
 INSERT INTO `lang_definitions` VALUES (169169, 11279, 30, 'Các loại thực thể này');
 INSERT INTO `lang_definitions` VALUES (169170, 11299, 30, 'Mã nhà cung cấp cụ thể xác định thủ tục này hoặc kết quả');
-INSERT INTO `lang_definitions` VALUES (169171, 11304, 30, 'Các X12 tập tin cũng như các báo cáo kết quả đầu ra HTML được lưu trữ trong \"kỷ nguyên\" thư mục con của thư mục cài đặt chính OpenEMR. Bạn sẽ muốn tham khảo những lưu trữ theo thời gian. URL là');
+INSERT INTO `lang_definitions` VALUES (169171, 11304, 30, 'Các X12 tập tin cũng như các báo cáo kết quả đầu ra HTML được lưu trữ trong \"kỷ nguyên\" thư mục con của thư mục cài đặt chính DCL. Bạn sẽ muốn tham khảo những lưu trữ theo thời gian. URL là');
 INSERT INTO `lang_definitions` VALUES (169172, 11306, 30, 'Các tập tin zip sẽ bao gồm các mục sau đây');
 INSERT INTO `lang_definitions` VALUES (169173, 11307, 30, 'Bảng màu');
 INSERT INTO `lang_definitions` VALUES (169174, 11314, 30, 'Điều trị tiêm');
@@ -182696,7 +182696,7 @@ INSERT INTO `lang_definitions` VALUES (169327, 11782, 30, 'Cân đối trong Hô
 INSERT INTO `lang_definitions` VALUES (169328, 11783, 30, 'Tiền công trong Hôm nay');
 INSERT INTO `lang_definitions` VALUES (169329, 11784, 30, 'Ngày Hôm nay');
 INSERT INTO `lang_definitions` VALUES (169330, 11785, 30, 'Sự kiện trong Hôm nay');
-INSERT INTO `lang_definitions` VALUES (169331, 11797, 30, 'Token ID for the OpenEMR Support LLC Lab Exchange Service.');
+INSERT INTO `lang_definitions` VALUES (169331, 11797, 30, 'Token ID for the DCL Support LLC Lab Exchange Service.');
 INSERT INTO `lang_definitions` VALUES (169332, 11803, 30, 'Thuật cắt hạch (Tonsillectomy)');
 INSERT INTO `lang_definitions` VALUES (169333, 11807, 30, 'Trên');
 INSERT INTO `lang_definitions` VALUES (169334, 11810, 30, 'Chủ đề');
@@ -182850,7 +182850,7 @@ INSERT INTO `lang_definitions` VALUES (169481, 12172, 30, 'Cập nhật Thông t
 INSERT INTO `lang_definitions` VALUES (169482, 12180, 30, 'Không được phép cập nhật thông tin cá nhân.');
 INSERT INTO `lang_definitions` VALUES (169483, 12184, 30, 'Nâng cấp');
 INSERT INTO `lang_definitions` VALUES (169484, 12186, 30, 'Nâng cấp Cơ sở dữ liệu');
-INSERT INTO `lang_definitions` VALUES (169485, 12188, 30, 'Việc nâng cấp cơ sở dữ liệu OpenEMR bao gồm các Thủ tục, Chức năng và các bảng cần thiết cho quá trình nhận dạng');
+INSERT INTO `lang_definitions` VALUES (169485, 12188, 30, 'Việc nâng cấp cơ sở dữ liệu DCL bao gồm các Thủ tục, Chức năng và các bảng cần thiết cho quá trình nhận dạng');
 INSERT INTO `lang_definitions` VALUES (169486, 12189, 30, 'Việc nâng cấp sẽ tiếp tục');
 INSERT INTO `lang_definitions` VALUES (169487, 12190, 30, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (169488, 12191, 30, 'Tải lên');
@@ -182873,7 +182873,7 @@ INSERT INTO `lang_definitions` VALUES (169504, 12230, 30, 'Nước tiểu Microa
 INSERT INTO `lang_definitions` VALUES (169505, 12231, 30, 'Nước tiểu suối');
 INSERT INTO `lang_definitions` VALUES (169506, 12232, 30, 'Nước tiểu Tình huống khẩn cấp');
 INSERT INTO `lang_definitions` VALUES (169507, 12233, 30, 'URL');
-INSERT INTO `lang_definitions` VALUES (169508, 12235, 30, 'URL để tìm hỗ trợ về OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (169508, 12235, 30, 'URL để tìm hỗ trợ về DCL.');
 INSERT INTO `lang_definitions` VALUES (169509, 12237, 30, 'URL cho Gateway điện thoại. Tự động dịch vụ VoIP được cung cấp bởi Maviq. Vui lòng truy cập http://signup.maviq.com để biết thêm thông tin.');
 INSERT INTO `lang_definitions` VALUES (169510, 12248, 30, 'Chỉ số sử dụng (ISA15)');
 INSERT INTO `lang_definitions` VALUES (169511, 12252, 30, 'Sử dụng 24 giờ định dạng thời gian?');
@@ -183675,7 +183675,7 @@ INSERT INTO `lang_definitions` VALUES (170306, 668, 32, 'Shuma:');
 INSERT INTO `lang_definitions` VALUES (170307, 671, 32, 'Shuma e faturuar');
 INSERT INTO `lang_definitions` VALUES (170308, 676, 32, 'Data e mbarimit duhet me e vone se data e fillimit per ngjarjet e perseritura!');
 INSERT INTO `lang_definitions` VALUES (170309, 677, 32, 'Nje gabim gjate nenshkrimit te formes');
-INSERT INTO `lang_definitions` VALUES (170310, 678, 32, 'Nje gabim ndodhi gjate marrjes se pemes se struktures se OpenEMR');
+INSERT INTO `lang_definitions` VALUES (170310, 678, 32, 'Nje gabim ndodhi gjate marrjes se pemes se struktures se DCL');
 INSERT INTO `lang_definitions` VALUES (170311, 679, 32, 'Nje gabim ndodhi gjate marrjes se pemes se struktures se phpGACL');
 INSERT INTO `lang_definitions` VALUES (170312, 680, 32, 'Nje gabim ndodhi gjate marrjes se pemes se struktures se SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (170313, 685, 32, 'Nje ceshtjee paplote GCAC eshte krijuar dhe eshte lidhur. Dikush do te duhet ta plotesoje ate me vone.');
@@ -184518,10 +184518,10 @@ INSERT INTO `lang_definitions` VALUES (171149, 2209, 32, 'Konfig');
 INSERT INTO `lang_definitions` VALUES (171150, 2210, 32, 'Konfigurime');
 INSERT INTO `lang_definitions` VALUES (171151, 2211, 32, 'Konfigurime Eksport/Import');
 INSERT INTO `lang_definitions` VALUES (171152, 2212, 32, 'Konfigurimi ruajtur me sukses');
-INSERT INTO `lang_definitions` VALUES (171153, 2213, 32, 'Informacion teknik: Configure Apache and OpenEMR to use Client side SSL certificates.');
+INSERT INTO `lang_definitions` VALUES (171153, 2213, 32, 'Informacion teknik: Configure Apache and DCL to use Client side SSL certificates.');
 INSERT INTO `lang_definitions` VALUES (171154, 2214, 32, 'Informacion teknik: Configure Apache to use Client side SSL certificates');
 INSERT INTO `lang_definitions` VALUES (171155, 2215, 32, 'Informacion teknik: Configure Apache to use HTTPS.');
-INSERT INTO `lang_definitions` VALUES (171156, 2216, 32, 'Informacion teknik: Configure Openemr to use Client side SSL certificates');
+INSERT INTO `lang_definitions` VALUES (171156, 2216, 32, 'Informacion teknik: Configure DCL to use Client side SSL certificates');
 INSERT INTO `lang_definitions` VALUES (171157, 2220, 32, 'Konfiguroni gjurmet');
 INSERT INTO `lang_definitions` VALUES (171158, 2221, 32, 'Konfiguroni Gjurmet');
 INSERT INTO `lang_definitions` VALUES (171159, 2225, 32, 'Konfirmo krijimin e pacientit te ri');
@@ -185141,7 +185141,7 @@ INSERT INTO `lang_definitions` VALUES (171772, 3315, 32, 'Deri ');
 INSERT INTO `lang_definitions` VALUES (171773, 3316, 32, 'Deri ne Daten');
 INSERT INTO `lang_definitions` VALUES (171774, 3318, 32, 'Deri ne daten mm/dd/vvvv ose vvvv-mm-dd');
 INSERT INTO `lang_definitions` VALUES (171775, 3319, 32, 'Deri ne Daten:');
-INSERT INTO `lang_definitions` VALUES (171776, 3325, 32, 'Zbrazja OpenEMR databazes');
+INSERT INTO `lang_definitions` VALUES (171776, 3325, 32, 'Zbrazja DCL databazes');
 INSERT INTO `lang_definitions` VALUES (171777, 3340, 32, 'DYFISHIM KUJDESI');
 INSERT INTO `lang_definitions` VALUES (171778, 3341, 32, 'Autorizimi i Qendrueshem');
 INSERT INTO `lang_definitions` VALUES (171779, 3342, 32, 'Kohezgjatje');
@@ -187330,7 +187330,7 @@ INSERT INTO `lang_definitions` VALUES (173961, 668, 33, 'Částka:');
 INSERT INTO `lang_definitions` VALUES (173962, 671, 33, 'Část. zaúčtována');
 INSERT INTO `lang_definitions` VALUES (173963, 676, 33, 'Pro opakující se události musí být zadáno konečné datum později než počáteční');
 INSERT INTO `lang_definitions` VALUES (173964, 677, 33, 'Chyba při podpisu formuláře');
-INSERT INTO `lang_definitions` VALUES (173965, 678, 33, 'Chyba při zálohování stromového webového adresáře OpenEMR');
+INSERT INTO `lang_definitions` VALUES (173965, 678, 33, 'Chyba při zálohování stromového webového adresáře DCL');
 INSERT INTO `lang_definitions` VALUES (173966, 679, 33, 'Chyba při zálohování stromového webového adresáře phpGACL');
 INSERT INTO `lang_definitions` VALUES (173967, 680, 33, 'Chyba při zálohování stromového webového adresáře SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (173968, 685, 33, 'Nekompletní záznam GCAC.  Je potřeba ho později doplnit');
@@ -188060,10 +188060,10 @@ INSERT INTO `lang_definitions` VALUES (174691, 2209, 33, 'Konfig');
 INSERT INTO `lang_definitions` VALUES (174692, 2210, 33, 'Konfigurace');
 INSERT INTO `lang_definitions` VALUES (174693, 2211, 33, 'Export/import konfigurace');
 INSERT INTO `lang_definitions` VALUES (174694, 2212, 33, 'Konfigurace úspěšně uložena');
-INSERT INTO `lang_definitions` VALUES (174695, 2213, 33, 'Nakonfigurujte Apache a OpenEMR pro použití klientských SSL certifikátů');
+INSERT INTO `lang_definitions` VALUES (174695, 2213, 33, 'Nakonfigurujte Apache a DCL pro použití klientských SSL certifikátů');
 INSERT INTO `lang_definitions` VALUES (174696, 2214, 33, 'Nakonfigurujte Apache pro použití klientských SSL certifikátů');
 INSERT INTO `lang_definitions` VALUES (174697, 2215, 33, 'Nakonfigurujte Apache pro použití HTTPS');
-INSERT INTO `lang_definitions` VALUES (174698, 2216, 33, 'Nakonfigurujte OpenEMR pro použití klientských SSL certifikátů');
+INSERT INTO `lang_definitions` VALUES (174698, 2216, 33, 'Nakonfigurujte DCL pro použití klientských SSL certifikátů');
 INSERT INTO `lang_definitions` VALUES (174699, 2225, 33, 'Potvrďte založení nového pacienta');
 INSERT INTO `lang_definitions` VALUES (174700, 2227, 33, 'Potvrďte nové heslo');
 INSERT INTO `lang_definitions` VALUES (174701, 2229, 33, 'Potvrďte platbu');
@@ -188760,7 +188760,7 @@ INSERT INTO `lang_definitions` VALUES (175391, 3632, 33, 'Povolit službu zpráv
 INSERT INTO `lang_definitions` VALUES (175392, 3634, 33, 'Povolit výzvy k automatizovaným měřícím výpočtům (AMC)');
 INSERT INTO `lang_definitions` VALUES (175393, 3638, 33, 'Povolit podporu skeneru');
 INSERT INTO `lang_definitions` VALUES (175394, 3642, 33, 'Povolit Medical information Integration, LLC Lab Exchange service');
-INSERT INTO `lang_definitions` VALUES (175395, 3643, 33, 'Povolit podporu OpenEMR pro LLC Lab Exchange služby');
+INSERT INTO `lang_definitions` VALUES (175395, 3643, 33, 'Povolit podporu DCL pro LLC Lab Exchange služby');
 INSERT INTO `lang_definitions` VALUES (175396, 3644, 33, 'Povolit autentizaci uživatelských certifikátů');
 INSERT INTO `lang_definitions` VALUES (175397, 3650, 33, 'Povolit ZMG, LLC eRx službu');
 INSERT INTO `lang_definitions` VALUES (175398, 3651, 33, 'Povoleno');
@@ -188821,7 +188821,7 @@ INSERT INTO `lang_definitions` VALUES (175452, 3754, 33, 'Anglický');
 INSERT INTO `lang_definitions` VALUES (175453, 3756, 33, 'Angličtina ( indická )');
 INSERT INTO `lang_definitions` VALUES (175454, 3757, 33, 'Angličtina ( standardní )');
 INSERT INTO `lang_definitions` VALUES (175455, 3758, 33, 'Enscript příkaz Hylafaxu');
-INSERT INTO `lang_definitions` VALUES (175456, 3759, 33, 'Ujistěte se , že OpenEMR má právo zápisu do složky');
+INSERT INTO `lang_definitions` VALUES (175456, 3759, 33, 'Ujistěte se , že DCL má právo zápisu do složky');
 INSERT INTO `lang_definitions` VALUES (175457, 3761, 33, 'ORL výtok');
 INSERT INTO `lang_definitions` VALUES (175458, 3762, 33, 'Bolest ORL původu');
 INSERT INTO `lang_definitions` VALUES (175459, 3767, 33, 'Zadejte opravu');
@@ -188866,7 +188866,7 @@ INSERT INTO `lang_definitions` VALUES (175497, 3897, 33, 'Chyba při mazání zp
 INSERT INTO `lang_definitions` VALUES (175498, 3898, 33, 'Chyba při obdržení výsledků z Lab Exchange Network');
 INSERT INTO `lang_definitions` VALUES (175499, 3899, 33, 'Chyba při získávání hodnot');
 INSERT INTO `lang_definitions` VALUES (175500, 3900, 33, 'Chyba při ukládání dokumentu');
-INSERT INTO `lang_definitions` VALUES (175501, 3901, 33, 'Chyba přidělování přístupových práv k souboru pro uživatele OpenEMR');
+INSERT INTO `lang_definitions` VALUES (175501, 3901, 33, 'Chyba přidělování přístupových práv k souboru pro uživatele DCL');
 INSERT INTO `lang_definitions` VALUES (175502, 3904, 33, 'Chyba při registraci formuláře');
 INSERT INTO `lang_definitions` VALUES (175503, 3905, 33, 'Chyba při ukládání do souboru');
 INSERT INTO `lang_definitions` VALUES (175504, 3907, 33, 'Chyba zápisu do souboru');
@@ -188878,7 +188878,7 @@ INSERT INTO `lang_definitions` VALUES (175509, 3920, 33, 'Chyba, nelze vytvořit
 INSERT INTO `lang_definitions` VALUES (175510, 3921, 33, 'Chyba, nelze vytvořit certifikát certifikační autority');
 INSERT INTO `lang_definitions` VALUES (175511, 3922, 33, 'Chyba, nelze vytvořit serverový certifikát');
 INSERT INTO `lang_definitions` VALUES (175512, 3924, 33, 'Chyba, nelze otevřít soubor');
-INSERT INTO `lang_definitions` VALUES (175513, 3925, 33, 'Chyba, ověření uživatelských certifikátů není v OpenEMR povoleno');
+INSERT INTO `lang_definitions` VALUES (175513, 3925, 33, 'Chyba, ověření uživatelských certifikátů není v DCL povoleno');
 INSERT INTO `lang_definitions` VALUES (175514, 3933, 33, 'Chyba, je potřeba nainstalovat modul Archive/Tar.php');
 INSERT INTO `lang_definitions` VALUES (175515, 3934, 33, 'CHYBA: nelze otevřít tabulku .sql. Poškozený formulář ?');
 INSERT INTO `lang_definitions` VALUES (175516, 3937, 33, 'Chyba: duplicitní ID v řádku');
@@ -189066,7 +189066,7 @@ INSERT INTO `lang_definitions` VALUES (175697, 4277, 33, 'Soubor');
 INSERT INTO `lang_definitions` VALUES (175698, 4280, 33, 'soubor v adresáři Dokumentace s instrukcemi jak automatizovat proces tvorby backup logů');
 INSERT INTO `lang_definitions` VALUES (175699, 4281, 33, 'umístění souboru');
 INSERT INTO `lang_definitions` VALUES (175700, 4282, 33, 'Správa souborů');
-INSERT INTO `lang_definitions` VALUES (175701, 4289, 33, 'Přístupová práva k souboru přidělena uživateli OpenEMR');
+INSERT INTO `lang_definitions` VALUES (175701, 4289, 33, 'Přístupová práva k souboru přidělena uživateli DCL');
 INSERT INTO `lang_definitions` VALUES (175702, 4290, 33, 'Získání souboru z CouchDB selhalo');
 INSERT INTO `lang_definitions` VALUES (175703, 4291, 33, 'Spisovna');
 INSERT INTO `lang_definitions` VALUES (175704, 4292, 33, 'Soubor k nahrání');
@@ -189407,7 +189407,7 @@ INSERT INTO `lang_definitions` VALUES (176038, 5036, 33, 'NO:');
 INSERT INTO `lang_definitions` VALUES (176039, 5038, 33, 'HT');
 INSERT INTO `lang_definitions` VALUES (176040, 5039, 33, 'HTML');
 INSERT INTO `lang_definitions` VALUES (176041, 5040, 33, 'HTML výstup ?');
-INSERT INTO `lang_definitions` VALUES (176042, 5043, 33, 'Https odkaz na OpenEMR Support LLC Lab Echange Service');
+INSERT INTO `lang_definitions` VALUES (176042, 5043, 33, 'Https odkaz na DCL Support LLC Lab Echange Service');
 INSERT INTO `lang_definitions` VALUES (176043, 5045, 33, 'Maďarština');
 INSERT INTO `lang_definitions` VALUES (176044, 5046, 33, 'Hylafax adresář');
 INSERT INTO `lang_definitions` VALUES (176045, 5047, 33, 'Hylafax Enscript příkaz');
@@ -189830,7 +189830,7 @@ INSERT INTO `lang_definitions` VALUES (176461, 6130, 33, 'Lokální obsah');
 INSERT INTO `lang_definitions` VALUES (176462, 6131, 33, 'Lokální souborový systém');
 INSERT INTO `lang_definitions` VALUES (176463, 6134, 33, 'Lokalita');
 INSERT INTO `lang_definitions` VALUES (176464, 6135, 33, 'Umístění');
-INSERT INTO `lang_definitions` VALUES (176465, 6136, 33, 'umístění PC s OpenEMR a může obsahovat citlivá data. Doporučujeme data ručně smazat po jejich použití.');
+INSERT INTO `lang_definitions` VALUES (176465, 6136, 33, 'umístění PC s DCL a může obsahovat citlivá data. Doporučujeme data ručně smazat po jejich použití.');
 INSERT INTO `lang_definitions` VALUES (176466, 6138, 33, 'Umístění nespecifikováno');
 INSERT INTO `lang_definitions` VALUES (176467, 6139, 33, 'Umístění pro ukládání faxů HylaFax');
 INSERT INTO `lang_definitions` VALUES (176468, 6140, 33, 'Umístění pro ukládání skenovaných dokumentů');
@@ -190422,13 +190422,13 @@ INSERT INTO `lang_definitions` VALUES (177053, 7519, 33, 'Otevřít');
 INSERT INTO `lang_definitions` VALUES (177054, 7528, 33, 'Otevřít v novém okně');
 INSERT INTO `lang_definitions` VALUES (177055, 7531, 33, 'Otevřít pacienta');
 INSERT INTO `lang_definitions` VALUES (177056, 7535, 33, 'Otevřít dnešní návštěvu');
-INSERT INTO `lang_definitions` VALUES (177057, 7562, 33, 'Certifikační autorita je již v OpenEMR  konfigurována.');
-INSERT INTO `lang_definitions` VALUES (177058, 7567, 33, 'Upgrade databáze OpenEMR');
-INSERT INTO `lang_definitions` VALUES (177059, 7568, 33, 'Upgrade databáze OpenEMR pro deidentifikaci');
-INSERT INTO `lang_definitions` VALUES (177060, 7569, 33, 'OpenEMR nepoznává příchozí soubor v adresáři contrib. To je s největší pravděpodobností proto, že je třeba konfigurovat release v tabulce supported_external_dataloads v databázi MySQL.');
-INSERT INTO `lang_definitions` VALUES (177061, 7571, 33, 'Před vytvořením klientských certifikátů  musí být OpenEMR konfigurováno pro  využití certifikátů');
-INSERT INTO `lang_definitions` VALUES (177062, 7575, 33, 'OpenEMR vyžaduje Javascript k ověření uživatele.');
-INSERT INTO `lang_definitions` VALUES (177063, 7576, 33, 'Uživatelé OpenEMR');
+INSERT INTO `lang_definitions` VALUES (177057, 7562, 33, 'Certifikační autorita je již v DCL  konfigurována.');
+INSERT INTO `lang_definitions` VALUES (177058, 7567, 33, 'Upgrade databáze DCL');
+INSERT INTO `lang_definitions` VALUES (177059, 7568, 33, 'Upgrade databáze DCL pro deidentifikaci');
+INSERT INTO `lang_definitions` VALUES (177060, 7569, 33, 'DCL nepoznává příchozí soubor v adresáři contrib. To je s největší pravděpodobností proto, že je třeba konfigurovat release v tabulce supported_external_dataloads v databázi MySQL.');
+INSERT INTO `lang_definitions` VALUES (177061, 7571, 33, 'Před vytvořením klientských certifikátů  musí být DCL konfigurováno pro  využití certifikátů');
+INSERT INTO `lang_definitions` VALUES (177062, 7575, 33, 'DCL vyžaduje Javascript k ověření uživatele.');
+INSERT INTO `lang_definitions` VALUES (177063, 7576, 33, 'Uživatelé DCL');
 INSERT INTO `lang_definitions` VALUES (177064, 7577, 33, 'Zahájení');
 INSERT INTO `lang_definitions` VALUES (177065, 7583, 33, 'Oční');
 INSERT INTO `lang_definitions` VALUES (177066, 7586, 33, 'Možnost');
@@ -190816,7 +190816,7 @@ INSERT INTO `lang_definitions` VALUES (177447, 8433, 33, 'Prosím zvolte kategor
 INSERT INTO `lang_definitions` VALUES (177448, 8435, 33, 'Prosím znastavte');
 INSERT INTO `lang_definitions` VALUES (177449, 8436, 33, 'Prosím nastavte proměnnou de-identification_config zpět na 0');
 INSERT INTO `lang_definitions` VALUES (177450, 8441, 33, 'Prosím zahajte nový proces deidentifikace');
-INSERT INTO `lang_definitions` VALUES (177451, 8445, 33, 'Prosím upgradujte OpenEMR databázi pro zahrnutí deidentifikačních procedur, funkcí a tabulek.');
+INSERT INTO `lang_definitions` VALUES (177451, 8445, 33, 'Prosím upgradujte DCL databázi pro zahrnutí deidentifikačních procedur, funkcí a tabulek.');
 INSERT INTO `lang_definitions` VALUES (177452, 8447, 33, 'Prosím koukněte do logu chyb deidentifikace pro více podrobností');
 INSERT INTO `lang_definitions` VALUES (177453, 8448, 33, 'Prosím přejděte za chvíli na na obrazovku deidentifikace');
 INSERT INTO `lang_definitions` VALUES (177454, 8449, 33, 'Prosím přejděte za chvíli na obrazovku reidentifikace');
@@ -191866,7 +191866,7 @@ INSERT INTO `lang_definitions` VALUES (178497, 12181, 33, 'Aktualizace výchozí
 INSERT INTO `lang_definitions` VALUES (178498, 12182, 33, 'Aktualizace indikátorů verze');
 INSERT INTO `lang_definitions` VALUES (178499, 12184, 33, 'Upgrade');
 INSERT INTO `lang_definitions` VALUES (178500, 12186, 33, 'Aktualizace databáze');
-INSERT INTO `lang_definitions` VALUES (178501, 12188, 33, 'Aktualizace OpenEMR zahrnující procedury, funkce a tabulky potřebné pro deidentifikaci.');
+INSERT INTO `lang_definitions` VALUES (178501, 12188, 33, 'Aktualizace DCL zahrnující procedury, funkce a tabulky potřebné pro deidentifikaci.');
 INSERT INTO `lang_definitions` VALUES (178502, 12189, 33, 'Upgrade bude pokračovat');
 INSERT INTO `lang_definitions` VALUES (178503, 12191, 33, 'Nahrát');
 INSERT INTO `lang_definitions` VALUES (178504, 12193, 33, 'Nahrát šablonu');
@@ -191890,7 +191890,7 @@ INSERT INTO `lang_definitions` VALUES (178521, 12230, 33, 'Microalbuminurie');
 INSERT INTO `lang_definitions` VALUES (178522, 12231, 33, 'Proud moči');
 INSERT INTO `lang_definitions` VALUES (178523, 12232, 33, 'Močová urgence');
 INSERT INTO `lang_definitions` VALUES (178524, 12233, 33, 'URL');
-INSERT INTO `lang_definitions` VALUES (178525, 12235, 33, 'URL podpory OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (178525, 12235, 33, 'URL podpory DCL.');
 INSERT INTO `lang_definitions` VALUES (178526, 12237, 33, 'URL pro telefonní bránu. Automatická VOIP služba poskytovaná Maviq. Please visit http://signup.maviq.com for more information.');
 INSERT INTO `lang_definitions` VALUES (178527, 12238, 33, 'URL stránky WordPressu podporující portál');
 INSERT INTO `lang_definitions` VALUES (178528, 12246, 33, 'Použití');
@@ -192322,7 +192322,7 @@ INSERT INTO `lang_definitions` VALUES (178953, 15, 34, 'Кілька слів, �
 INSERT INTO `lang_definitions` VALUES (178954, 16, 34, 'Подальша зустріч також може бути запланована прямо з гонорарного листа.');
 INSERT INTO `lang_definitions` VALUES (178955, 17, 34, 'До цього візиту слід додати форму відвідування GCAC.');
 INSERT INTO `lang_definitions` VALUES (178956, 18, 34, 'Повідомлення HL7 v2.x просто складається з декількох рядків тексту, кожен рядок називається сегментом і далі ділиться на поля за допомогою символу труби ( / ).');
-INSERT INTO `lang_definitions` VALUES (178957, 19, 34, 'Велике додаток, таке як OpenEMR, використовується багатьма користувачами з різними ролями та ступенями відповідальності. Вкрай важливо, щоб доступ до різних частин програми надавався користувачам на основі необхідності знати. Для цього використовуються списки контролю доступу (ACL).');
+INSERT INTO `lang_definitions` VALUES (178957, 19, 34, 'Велике додаток, таке як DCL, використовується багатьма користувачами з різними ролями та ступенями відповідальності. Вкрай важливо, щоб доступ до різних частин програми надавався користувачам на основі необхідності знати. Для цього використовуються списки контролю доступу (ACL).');
 INSERT INTO `lang_definitions` VALUES (178958, 20, 34, 'Потрібен НОМЕР лота');
 INSERT INTO `lang_definitions` VALUES (178959, 21, 34, 'Потрібен НОМЕР лота!');
 INSERT INTO `lang_definitions` VALUES (178960, 22, 34, 'Мала літера');
@@ -192615,7 +192615,7 @@ INSERT INTO `lang_definitions` VALUES (179246, 330, 34, 'Додаткову ін
 INSERT INTO `lang_definitions` VALUES (179247, 332, 34, 'Додаткова інформація для обробки паперових претензій');
 INSERT INTO `lang_definitions` VALUES (179248, 333, 34, 'Додаткові Лабораторії');
 INSERT INTO `lang_definitions` VALUES (179249, 334, 34, 'Додаткові Примітки');
-INSERT INTO `lang_definitions` VALUES (179250, 335, 34, 'Додаткове поле Примітки призначене для локального використання в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (179250, 335, 34, 'Додаткове поле Примітки призначене для локального використання в DCL');
 INSERT INTO `lang_definitions` VALUES (179251, 336, 34, 'Додаткові примітки до цього результату або рекомендації');
 INSERT INTO `lang_definitions` VALUES (179252, 337, 34, 'Додаткові Примітки:');
 INSERT INTO `lang_definitions` VALUES (179253, 338, 34, 'Додаткові Примітки:');
@@ -192768,7 +192768,7 @@ INSERT INTO `lang_definitions` VALUES (179399, 497, 34, 'Всі офіційні
 INSERT INTO `lang_definitions` VALUES (179400, 498, 34, 'Повне або часткове ім\'я');
 INSERT INTO `lang_definitions` VALUES (179401, 499, 34, 'Вся або частина прізвища');
 INSERT INTO `lang_definitions` VALUES (179402, 500, 34, 'Вся організація або її частина');
-INSERT INTO `lang_definitions` VALUES (179403, 501, 34, 'Всі взаємодії пацієнтів в OpenEMR пов\'язані з зустрічами');
+INSERT INTO `lang_definitions` VALUES (179403, 501, 34, 'Всі взаємодії пацієнтів в DCL пов\'язані з зустрічами');
 INSERT INTO `lang_definitions` VALUES (179404, 502, 34, 'Всі Пацієнти');
 INSERT INTO `lang_definitions` VALUES (179405, 503, 34, 'Всі очікувані повідомлення відображаються на панелі мої повідомлення');
 INSERT INTO `lang_definitions` VALUES (179406, 505, 34, 'Всі Продукти');
@@ -192935,11 +192935,11 @@ INSERT INTO `lang_definitions` VALUES (179566, 674, 34, 'Електронний 
 INSERT INTO `lang_definitions` VALUES (179567, 675, 34, 'Електронне замовлення та повернутий результат представлені у вигляді повідомлення, званого повідомленням HL7. HL7 означає рівень здоров\'я (прикладний рівень) 7. Основна мета HL7 полягає в тому, щоб спростити реалізацію інтерфейсів між медичними програмними додатками і різними постачальниками, щоб зменшити біль і витрати, пов\'язані з користувальницьким програмуванням інтерфейсів');
 INSERT INTO `lang_definitions` VALUES (179568, 676, 34, 'Для повторних подій потрібна дата закінчення пізніше дати початку!');
 INSERT INTO `lang_definitions` VALUES (179569, 677, 34, 'Сталася помилка при підписанні форми');
-INSERT INTO `lang_definitions` VALUES (179570, 678, 34, 'Сталася помилка при скиданні дерева веб-каталогів OpenEMR');
+INSERT INTO `lang_definitions` VALUES (179570, 678, 34, 'Сталася помилка при скиданні дерева веб-каталогів DCL');
 INSERT INTO `lang_definitions` VALUES (179571, 679, 34, 'Сталася помилка при скиданні дерева веб-каталогів phpGACL');
 INSERT INTO `lang_definitions` VALUES (179572, 680, 34, 'Сталася помилка при скиданні дерева веб-каталогів SQL-Ledger');
 INSERT INTO `lang_definitions` VALUES (179573, 682, 34, 'Сталася помилка: відсутній файл для завантаження: використовуйте кнопку назад!');
-INSERT INTO `lang_definitions` VALUES (179574, 683, 34, 'Важлива концепція, яку потрібно зрозуміти, полягає в тому, що як тільки секретний ключ, доставлений через QR-код, буде захоплений додатком authenticator, між додатком і OpenEMR більше не буде ніякого зв\'язку, кожен з них буде використовувати поточний час UNIX і свою копію користувацького загального секретного ключа для генерації одного і того ж унікального 6-значного номера');
+INSERT INTO `lang_definitions` VALUES (179574, 683, 34, 'Важлива концепція, яку потрібно зрозуміти, полягає в тому, що як тільки секретний ключ, доставлений через QR-код, буде захоплений додатком authenticator, між додатком і DCL більше не буде ніякого зв\'язку, кожен з них буде використовувати поточний час UNIX і свою копію користувацького загального секретного ключа для генерації одного і того ж унікального 6-значного номера');
 INSERT INTO `lang_definitions` VALUES (179575, 684, 34, 'Важливо пам\'ятати, що різні індивідуальні тести в кожній панелі перераховані як результати, плоди, ви не можете безпосередньо замовити ці індивідуальні тести');
 INSERT INTO `lang_definitions` VALUES (179576, 685, 34, 'Неповний випуск GCAC був створений і пов\'язаний. Хтось повинен буде закінчити його пізніше.');
 INSERT INTO `lang_definitions` VALUES (179577, 687, 34, 'Питання стосується питань, пов\'язаних зі здоров\'ям пацієнта');
@@ -193167,7 +193167,7 @@ INSERT INTO `lang_definitions` VALUES (179798, 927, 34, 'Припустимо, �
 INSERT INTO `lang_definitions` VALUES (179799, 928, 34, 'Астма');
 INSERT INTO `lang_definitions` VALUES (179800, 929, 34, 'біля');
 INSERT INTO `lang_definitions` VALUES (179801, 931, 34, 'Якщо ви виберете Все, то буде потрібно хоча б один параметр пошуку.');
-INSERT INTO `lang_definitions` VALUES (179802, 932, 34, 'В даний час електронне призначення ліків від OpenEMR можливо тільки в Сполучених Штатах');
+INSERT INTO `lang_definitions` VALUES (179802, 932, 34, 'В даний час електронне призначення ліків від DCL можливо тільки в Сполучених Штатах');
 INSERT INTO `lang_definitions` VALUES (179803, 933, 34, 'В даний час тільки безперервність медичної записи (CCR) безперервність медичної документації (CCD) може бути відправлена за допомогою phiMail');
 INSERT INTO `lang_definitions` VALUES (179804, 934, 34, 'У Човноподібної');
 INSERT INTO `lang_definitions` VALUES (179805, 935, 34, 'У Човноподібної:');
@@ -194370,10 +194370,10 @@ INSERT INTO `lang_definitions` VALUES (181001, 2209, 34, 'Конфіг');
 INSERT INTO `lang_definitions` VALUES (181002, 2210, 34, 'Конфігурація');
 INSERT INTO `lang_definitions` VALUES (181003, 2211, 34, 'Експорт / Імпорт конфігурації');
 INSERT INTO `lang_definitions` VALUES (181004, 2212, 34, 'Конфігурація успішно збережена');
-INSERT INTO `lang_definitions` VALUES (181005, 2213, 34, 'Налаштуйте Apache і OpenEMR для використання клієнтських SSL-сертифікатів.');
+INSERT INTO `lang_definitions` VALUES (181005, 2213, 34, 'Налаштуйте Apache і DCL для використання клієнтських SSL-сертифікатів.');
 INSERT INTO `lang_definitions` VALUES (181006, 2214, 34, 'Налаштування Apache для використання клієнтських SSL сертифікатів');
 INSERT INTO `lang_definitions` VALUES (181007, 2215, 34, 'Налаштуйте Apache на використання HTTPS.');
-INSERT INTO `lang_definitions` VALUES (181008, 2216, 34, 'Налаштування Openemr для використання клієнтських SSL сертифікатів');
+INSERT INTO `lang_definitions` VALUES (181008, 2216, 34, 'Налаштування DCL для використання клієнтських SSL сертифікатів');
 INSERT INTO `lang_definitions` VALUES (181009, 2217, 34, 'Налаштування замовлень і результатів');
 INSERT INTO `lang_definitions` VALUES (181010, 2218, 34, 'Довідка з налаштування замовлень');
 INSERT INTO `lang_definitions` VALUES (181011, 2219, 34, 'Налаштування структури лабораторного тесту');
@@ -194424,7 +194424,7 @@ INSERT INTO `lang_definitions` VALUES (181055, 2268, 34, 'Контактні Л�
 INSERT INTO `lang_definitions` VALUES (181056, 2269, 34, 'Зв\'яжіться з компанією Medical Information Integration, LLC за адресою http://mi-squared.com для служби Лабораторного обміну.');
 INSERT INTO `lang_definitions` VALUES (181057, 2270, 34, 'Зв\'яжіться з компанією Medical Information Integration, LLC за адресою http://mi-squared.com або ж. http://zhservices.com для підписки на послугу eRx');
 INSERT INTO `lang_definitions` VALUES (181058, 2271, 34, 'Зв\'яжіться з компанією Medical Information Integration, LLC за адресою http://mi-squared.com або ж. http://zhservices.com за підписку на сервіс NewCrop eRx.');
-INSERT INTO `lang_definitions` VALUES (181059, 2272, 34, 'Контакт Мі-квадрат на http://www.mi-squared.com/products-services/openemr / або ZH Healthcare at https://blueehr.com/contact-us / для підписки на сервіс NewCrop eRx.');
+INSERT INTO `lang_definitions` VALUES (181059, 2272, 34, 'Контакт Мі-квадрат на http://www.mi-squared.com/products-services/DCL / або ZH Healthcare at https://blueehr.com/contact-us / для підписки на сервіс NewCrop eRx.');
 INSERT INTO `lang_definitions` VALUES (181060, 2273, 34, 'Контактна назва');
 INSERT INTO `lang_definitions` VALUES (181061, 2274, 34, 'Зв\'яжіться з відкритою медичною практикою, www.openmedpractice.com за підписку на безкоштовний сервіс eRx Weno.');
 INSERT INTO `lang_definitions` VALUES (181062, 2275, 34, 'Зв\'яжіться або повідомте по телефону');
@@ -194679,7 +194679,7 @@ INSERT INTO `lang_definitions` VALUES (181310, 2545, 34, 'В даний час �
 INSERT INTO `lang_definitions` VALUES (181311, 2546, 34, 'В даний час зайнятий{{Служба}}');
 INSERT INTO `lang_definitions` VALUES (181312, 2547, 34, 'В даний час оффлайн');
 INSERT INTO `lang_definitions` VALUES (181313, 2548, 34, 'В даний час працює');
-INSERT INTO `lang_definitions` VALUES (181314, 2549, 34, 'В даний час в OpenEMR існує 5 типів транзакцій');
+INSERT INTO `lang_definitions` VALUES (181314, 2549, 34, 'В даний час в DCL існує 5 типів транзакцій');
 INSERT INTO `lang_definitions` VALUES (181315, 2550, 34, 'В даний час ніяких об\'єктів немає.');
 INSERT INTO `lang_definitions` VALUES (181316, 2551, 34, 'В даний час ведеться робота над складанням цього документа');
 INSERT INTO `lang_definitions` VALUES (181317, 2552, 34, 'Синдром Кушинга');
@@ -195400,8 +195400,8 @@ INSERT INTO `lang_definitions` VALUES (182031, 3321, 34, 'Належний Пт'
 INSERT INTO `lang_definitions` VALUES (182032, 3322, 34, 'Скоро Має Бути');
 INSERT INTO `lang_definitions` VALUES (182033, 3323, 34, 'Належний Статус');
 INSERT INTO `lang_definitions` VALUES (182034, 3324, 34, 'Оновлення Належного Статусу');
-INSERT INTO `lang_definitions` VALUES (182035, 3325, 34, 'Скидання бази даних OpenEMR');
-INSERT INTO `lang_definitions` VALUES (182036, 3326, 34, 'Скидання дерева веб-каталогів OpenEMR');
+INSERT INTO `lang_definitions` VALUES (182035, 3325, 34, 'Скидання бази даних DCL');
+INSERT INTO `lang_definitions` VALUES (182036, 3326, 34, 'Скидання дерева веб-каталогів DCL');
 INSERT INTO `lang_definitions` VALUES (182037, 3327, 34, 'Скидання бази даних phpGACL');
 INSERT INTO `lang_definitions` VALUES (182038, 3328, 34, 'Демпінг дерева веб-каталогів phpGACL');
 INSERT INTO `lang_definitions` VALUES (182039, 3329, 34, 'Скидання бази даних SQL-Ledger');
@@ -195559,7 +195559,7 @@ INSERT INTO `lang_definitions` VALUES (182190, 3488, 34, 'Текст елект�
 INSERT INTO `lang_definitions` VALUES (182191, 3489, 34, 'Спосіб транспортування Електронної Пошти');
 INSERT INTO `lang_definitions` VALUES (182192, 3490, 34, 'Лист було надіслано за наступною адресою');
 INSERT INTO `lang_definitions` VALUES (182193, 3491, 34, 'електронні листи не відправлені');
-INSERT INTO `lang_definitions` VALUES (182194, 3492, 34, 'Embed {login} де має бути Ім\'я Користувача OpenEMR; наприклад: uid={login}, dc=example, dc = com');
+INSERT INTO `lang_definitions` VALUES (182194, 3492, 34, 'Embed {login} де має бути Ім\'я Користувача DCL; наприклад: uid={login}, dc=example, dc = com');
 INSERT INTO `lang_definitions` VALUES (182195, 3493, 34, 'Невідкладна допомога');
 INSERT INTO `lang_definitions` VALUES (182196, 3494, 34, 'Екстрений контакт');
 INSERT INTO `lang_definitions` VALUES (182197, 3495, 34, 'Екстрений Контакт');
@@ -195675,16 +195675,16 @@ INSERT INTO `lang_definitions` VALUES (182306, 3611, 34, 'Включити По�
 INSERT INTO `lang_definitions` VALUES (182307, 3612, 34, 'Включити завантаження документів на порталі для пацієнтів на місці');
 INSERT INTO `lang_definitions` VALUES (182308, 3613, 34, 'Увімкніть локальний портал пацієнта, щоб новий пацієнт міг самостійно зареєструватися.');
 INSERT INTO `lang_definitions` VALUES (182309, 3614, 34, 'Увімкніть Портал для пацієнтів на місці.');
-INSERT INTO `lang_definitions` VALUES (182310, 3617, 34, 'Включити OpenEMR Patient Portal FHIR REST API (експериментальний)');
-INSERT INTO `lang_definitions` VALUES (182311, 3618, 34, 'Увімкніть OpenEMR Patient Portal FHIR RESTful API.');
-INSERT INTO `lang_definitions` VALUES (182312, 3619, 34, 'Включити OpenEMR Patient Portal REST API (експериментальний)');
-INSERT INTO `lang_definitions` VALUES (182313, 3620, 34, 'Увімкніть OpenEMR Patient Portal RESTful API.');
-INSERT INTO `lang_definitions` VALUES (182314, 3621, 34, 'Включити OPENEMR REST API');
-INSERT INTO `lang_definitions` VALUES (182315, 3622, 34, 'Увімкніть OpenEMR RESTful API. Потрібно SSL');
-INSERT INTO `lang_definitions` VALUES (182316, 3623, 34, 'Включити OpenEMR Standard FHIR REST API');
-INSERT INTO `lang_definitions` VALUES (182317, 3624, 34, 'Увімкніть OpenEMR Standard FHIR RESTful API.');
-INSERT INTO `lang_definitions` VALUES (182318, 3625, 34, 'Включити стандартний REST API OpenEMR');
-INSERT INTO `lang_definitions` VALUES (182319, 3626, 34, 'Увімкніть OpenEMR Standard RESTful API.');
+INSERT INTO `lang_definitions` VALUES (182310, 3617, 34, 'Включити DCL Patient Portal FHIR REST API (експериментальний)');
+INSERT INTO `lang_definitions` VALUES (182311, 3618, 34, 'Увімкніть DCL Patient Portal FHIR RESTful API.');
+INSERT INTO `lang_definitions` VALUES (182312, 3619, 34, 'Включити DCL Patient Portal REST API (експериментальний)');
+INSERT INTO `lang_definitions` VALUES (182313, 3620, 34, 'Увімкніть DCL Patient Portal RESTful API.');
+INSERT INTO `lang_definitions` VALUES (182314, 3621, 34, 'Включити DCL REST API');
+INSERT INTO `lang_definitions` VALUES (182315, 3622, 34, 'Увімкніть DCL RESTful API. Потрібно SSL');
+INSERT INTO `lang_definitions` VALUES (182316, 3623, 34, 'Включити DCL Standard FHIR REST API');
+INSERT INTO `lang_definitions` VALUES (182317, 3624, 34, 'Увімкніть DCL Standard FHIR RESTful API.');
+INSERT INTO `lang_definitions` VALUES (182318, 3625, 34, 'Включити стандартний REST API DCL');
+INSERT INTO `lang_definitions` VALUES (182319, 3626, 34, 'Увімкніть DCL Standard RESTful API.');
 INSERT INTO `lang_definitions` VALUES (182320, 3627, 34, 'Включити Портал пацієнта');
 INSERT INTO `lang_definitions` VALUES (182321, 3628, 34, 'Включити завантаження документів порталу пацієнта');
 INSERT INTO `lang_definitions` VALUES (182322, 3629, 34, 'Увімкніть портал пацієнта новий пацієнт для самостійної реєстрації.');
@@ -195700,7 +195700,7 @@ INSERT INTO `lang_definitions` VALUES (182331, 3639, 34, 'Включити Ст�
 INSERT INTO `lang_definitions` VALUES (182332, 3640, 34, 'Включити підтримку порталу WordPress з відкритим вихідним кодом від Sunset Systems');
 INSERT INTO `lang_definitions` VALUES (182333, 3641, 34, 'Включення текстових шаблонів у формах зустрічей');
 INSERT INTO `lang_definitions` VALUES (182334, 3642, 34, 'Включіть службу обміну медичною інформацією ТОВ \"Лабораторія інтеграції\".');
-INSERT INTO `lang_definitions` VALUES (182335, 3643, 34, 'Увімкніть службу обміну лабораторіями OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (182335, 3643, 34, 'Увімкніть службу обміну лабораторіями DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (182336, 3644, 34, 'Увімкнути Автентифікацію Сертифіката Користувача');
 INSERT INTO `lang_definitions` VALUES (182337, 3645, 34, 'Включити локальний Портал пацієнтів версії 1');
 INSERT INTO `lang_definitions` VALUES (182338, 3646, 34, 'Увімкніть Версію 2 Onsite Patient Portal');
@@ -195810,7 +195810,7 @@ INSERT INTO `lang_definitions` VALUES (182441, 3754, 34, 'Англійський
 INSERT INTO `lang_definitions` VALUES (182442, 3756, 34, 'Англійська (індійський)');
 INSERT INTO `lang_definitions` VALUES (182443, 3757, 34, 'Англійська (Стандартний)');
 INSERT INTO `lang_definitions` VALUES (182444, 3758, 34, 'Команда Enscript, що використовується Hylafax.');
-INSERT INTO `lang_definitions` VALUES (182445, 3759, 34, 'Переконайтеся, що OpenEMR має права на запис до каталогу');
+INSERT INTO `lang_definitions` VALUES (182445, 3759, 34, 'Переконайтеся, що DCL має права на запис до каталогу');
 INSERT INTO `lang_definitions` VALUES (182446, 3760, 34, 'Переконайтеся, що ідентифікуючі коди унікальні');
 INSERT INTO `lang_definitions` VALUES (182447, 3761, 34, 'Лор-розряд');
 INSERT INTO `lang_definitions` VALUES (182448, 3762, 34, 'Лор-біль');
@@ -195871,14 +195871,14 @@ INSERT INTO `lang_definitions` VALUES (182502, 3822, 34, 'Введіть лат�
 INSERT INTO `lang_definitions` VALUES (182503, 3823, 34, 'Введіть код ідентифікаторів логічних спостережень імена та коди (LOINC) для цієї процедури');
 INSERT INTO `lang_definitions` VALUES (182504, 3824, 34, 'Введіть код ідентифікаторів логічних спостережень Names and Codes (LOINC) для цієї процедури. LOINC-це база даних і універсальний стандарт для ідентифікації медичних лабораторних спостережень.');
 INSERT INTO `lang_definitions` VALUES (182505, 3825, 34, 'Введіть код LOINC для цієї процедури');
-INSERT INTO `lang_definitions` VALUES (182506, 3826, 34, 'Введіть пароль входу OpenEMR для користувача та натисніть кнопку НАДІСЛАТИ');
+INSERT INTO `lang_definitions` VALUES (182506, 3826, 34, 'Введіть пароль входу DCL для користувача та натисніть кнопку НАДІСЛАТИ');
 INSERT INTO `lang_definitions` VALUES (182507, 3827, 34, 'Введіть ідентифікаційний код Re');
 INSERT INTO `lang_definitions` VALUES (182508, 3828, 34, 'Увійдіть на відповідний сайт, якщо це можливо.');
 INSERT INTO `lang_definitions` VALUES (182509, 3829, 34, 'Введіть адресу сервера, Ім\'я користувача та Пароль, надані вам');
 INSERT INTO `lang_definitions` VALUES (182510, 3830, 34, 'Введіть ступінь тяжкості алергії');
 INSERT INTO `lang_definitions` VALUES (182511, 3831, 34, 'Введіть тип зразка, якщо це можливо.');
 INSERT INTO `lang_definitions` VALUES (182512, 3832, 34, 'Введіть значення 3.4 - 7.2-Чоловіки, 2.4 - 6.1-жінки');
-INSERT INTO `lang_definitions` VALUES (182513, 3833, 34, 'Введіть своє Ім\'я Користувача OpenEMR в поле Користувач повідомлення');
+INSERT INTO `lang_definitions` VALUES (182513, 3833, 34, 'Введіть своє Ім\'я Користувача DCL в поле Користувач повідомлення');
 INSERT INTO `lang_definitions` VALUES (182514, 3834, 34, 'Введіть ідентифікатор входу користувача');
 INSERT INTO `lang_definitions` VALUES (182515, 3835, 34, 'Введіть значення в цьому розділі, щоб створити нову групу, також відому як об\'єкт запиту доступу (ARO)');
 INSERT INTO `lang_definitions` VALUES (182516, 3836, 34, 'Введіть свої облікові дані');
@@ -195940,7 +195940,7 @@ INSERT INTO `lang_definitions` VALUES (182571, 3897, 34, 'Повідомленн
 INSERT INTO `lang_definitions` VALUES (182572, 3898, 34, 'Помилка отримання результатів з мережі Lab Exchange');
 INSERT INTO `lang_definitions` VALUES (182573, 3899, 34, 'Помилка вилучення значень.');
 INSERT INTO `lang_definitions` VALUES (182574, 3900, 34, 'Помилка збереження документа');
-INSERT INTO `lang_definitions` VALUES (182575, 3901, 34, 'Помилка при наданні прав доступу до файлу користувачеві OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (182575, 3901, 34, 'Помилка при наданні прав доступу до файлу користувачеві DCL.');
 INSERT INTO `lang_definitions` VALUES (182576, 3902, 34, 'Помилка при додаванні нового плану');
 INSERT INTO `lang_definitions` VALUES (182577, 3903, 34, 'Помилка при видаленні плану');
 INSERT INTO `lang_definitions` VALUES (182578, 3904, 34, 'помилка при реєстрації форми!');
@@ -195962,7 +195962,7 @@ INSERT INTO `lang_definitions` VALUES (182593, 3921, 34, 'Помилка, не �
 INSERT INTO `lang_definitions` VALUES (182594, 3922, 34, 'Помилка, не вдалося створити сертифікат сервера.');
 INSERT INTO `lang_definitions` VALUES (182595, 3923, 34, 'Помилка, не вдалося створити zip-файл з усіма сертифікатами');
 INSERT INTO `lang_definitions` VALUES (182596, 3924, 34, 'Помилка, не вдається відкрити файл');
-INSERT INTO `lang_definitions` VALUES (182597, 3925, 34, 'Помилка, аутентифікація сертифіката користувача не включена в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (182597, 3925, 34, 'Помилка, аутентифікація сертифіката користувача не включена в DCL');
 INSERT INTO `lang_definitions` VALUES (182598, 3926, 34, 'ПОМИЛКА. Не вдалося відкрити');
 INSERT INTO `lang_definitions` VALUES (182599, 3927, 34, 'Помилка. Не уповноважений');
 INSERT INTO `lang_definitions` VALUES (182600, 3932, 34, 'Помилка. Спробуйте ще раз пізніше');
@@ -196301,7 +196301,7 @@ INSERT INTO `lang_definitions` VALUES (182932, 4285, 34, 'Файл не знай
 INSERT INTO `lang_definitions` VALUES (182933, 4286, 34, 'Файл Не Знайдено');
 INSERT INTO `lang_definitions` VALUES (182934, 4287, 34, 'Файл на сервері (Дата модифікації)');
 INSERT INTO `lang_definitions` VALUES (182935, 4288, 34, 'Шлях до файлу не знайдено.');
-INSERT INTO `lang_definitions` VALUES (182936, 4289, 34, 'Файловий привілей, наданий користувачеві OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (182936, 4289, 34, 'Файловий привілей, наданий користувачеві DCL.');
 INSERT INTO `lang_definitions` VALUES (182937, 4290, 34, 'Не вдалося отримати файл з CouchDB');
 INSERT INTO `lang_definitions` VALUES (182938, 4291, 34, 'Картотека');
 INSERT INTO `lang_definitions` VALUES (182939, 4292, 34, 'Файл для завантаження');
@@ -196318,7 +196318,7 @@ INSERT INTO `lang_definitions` VALUES (182949, 4302, 34, 'Філіппінець
 INSERT INTO `lang_definitions` VALUES (182950, 4303, 34, 'заповнювати');
 INSERT INTO `lang_definitions` VALUES (182951, 4304, 34, 'Заповніть будь-яку з наведених нижче рядків.');
 INSERT INTO `lang_definitions` VALUES (182952, 4305, 34, 'Заповнюйте тут тільки при відправці повідомлення пацієнтам по електронній пошті');
-INSERT INTO `lang_definitions` VALUES (182953, 4306, 34, 'Заповніть всі відсутні деталі або відредагуйте існуючу інформацію. Це буде збережено на сторінці демографії пацієнта в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (182953, 4306, 34, 'Заповніть всі відсутні деталі або відредагуйте існуючу інформацію. Це буде збережено на сторінці демографії пацієнта в DCL');
 INSERT INTO `lang_definitions` VALUES (182954, 4307, 34, 'Заповніть коди CPT, використовуючи відображуваний формат. Загальні коди E / M вже заповнені, додавайте більше в міру необхідності');
 INSERT INTO `lang_definitions` VALUES (182955, 4308, 34, 'Заповніть необхідні дані та натисніть кнопку Зберегти');
 INSERT INTO `lang_definitions` VALUES (182956, 4309, 34, 'Заповніть дані для панелі \"Орган / захворювання\", як і раніше, і натисніть кнопку Зберегти, щоб закрити спливаюче вікно');
@@ -196489,7 +196489,7 @@ INSERT INTO `lang_definitions` VALUES (183120, 4484, 34, 'Для тих, хто 
 INSERT INTO `lang_definitions` VALUES (183121, 4485, 34, 'Для тих, хто цікавиться тим, що відбувається під капотом');
 INSERT INTO `lang_definitions` VALUES (183122, 4486, 34, 'Для цих рядків в описі будуть вказані деталі коду');
 INSERT INTO `lang_definitions` VALUES (183123, 4487, 34, 'Для тих, хто має права адміністратора, поруч з написом \"Мої повідомлення\" відображається значок');
-INSERT INTO `lang_definitions` VALUES (183124, 4488, 34, 'Для роботи TOTP унікальний секретний ключ повинен бути розділений між OpenEMR і користувачем');
+INSERT INTO `lang_definitions` VALUES (183124, 4488, 34, 'Для роботи TOTP унікальний секретний ключ повинен бути розділений між DCL і користувачем');
 INSERT INTO `lang_definitions` VALUES (183125, 4489, 34, 'Для отримання підтримки U2F в Linux натисніть кнопку');
 INSERT INTO `lang_definitions` VALUES (183126, 4490, 34, 'для змінної');
 INSERT INTO `lang_definitions` VALUES (183127, 4491, 34, 'задля:');
@@ -197002,7 +197002,7 @@ INSERT INTO `lang_definitions` VALUES (183633, 5039, 34, 'HTML');
 INSERT INTO `lang_definitions` VALUES (183634, 5040, 34, 'Висновок HTML?');
 INSERT INTO `lang_definitions` VALUES (183635, 5041, 34, 'HTN{{гіпертонія}}');
 INSERT INTO `lang_definitions` VALUES (183636, 5042, 34, 'Помилка Http');
-INSERT INTO `lang_definitions` VALUES (183637, 5043, 34, 'Https-посилання для служби обміну лабораторіями OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (183637, 5043, 34, 'Https-посилання для служби обміну лабораторіями DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (183638, 5044, 34, 'HT{{гиперфория}}');
 INSERT INTO `lang_definitions` VALUES (183639, 5045, 34, 'Угорський');
 INSERT INTO `lang_definitions` VALUES (183640, 5046, 34, 'Каталог Hylafax');
@@ -197071,7 +197071,7 @@ INSERT INTO `lang_definitions` VALUES (183702, 5110, 34, 'Якщо вона вс
 INSERT INTO `lang_definitions` VALUES (183703, 5111, 34, 'Якщо ім\'я, будь-яка частина прізвища або прізвище, ім\'я');
 INSERT INTO `lang_definitions` VALUES (183704, 5112, 34, 'Якщо включений модуль NewCrop eRx-електронний рецепт, то тут з\'являться кнопки NewCrop MedEntry і NewCrop Account Status');
 INSERT INTO `lang_definitions` VALUES (183705, 5113, 34, 'Якщо його немає в списку, ви можете додати препарат в текстове поле заголовка');
-INSERT INTO `lang_definitions` VALUES (183706, 5115, 34, 'Якщо тільки захопити QR код але не зареєструвати ключ TOTP за допомогою OpenEMR ця функція не буде включена при вході в систему');
+INSERT INTO `lang_definitions` VALUES (183706, 5115, 34, 'Якщо тільки захопити QR код але не зареєструвати ключ TOTP за допомогою DCL ця функція не буде включена при вході в систему');
 INSERT INTO `lang_definitions` VALUES (183707, 5116, 34, 'Якщо у пацієнта призначена зустріч, натисніть кнопку ОК, щоб створити зустріч, в іншому випадку скасуйте її, а потім створіть зустріч для сьогоднішнього візиту.');
 INSERT INTO `lang_definitions` VALUES (183708, 5117, 34, 'Якщо платити за');
 INSERT INTO `lang_definitions` VALUES (183709, 5118, 34, 'Якщо людина померла, то введіть дату смерті.');
@@ -197095,7 +197095,7 @@ INSERT INTO `lang_definitions` VALUES (183726, 5135, 34, 'Якщо повідо�
 INSERT INTO `lang_definitions` VALUES (183727, 5136, 34, 'Якщо включений зовнішній портал пацієнта буде або кнопка з написом створити облікові дані зовнішнього порталу за умови що пацієнт дав дозвіл на доступ до онлайн порталу пацієнта або повідомлення з написом пацієнт не авторизував портал пацієнта');
 INSERT INTO `lang_definitions` VALUES (183728, 5137, 34, 'Якщо онлайн портал пацієнта включений буде або кнопка з написом створити облікові дані онлайн порталу за умови що пацієнт дав дозвіл на доступ до онлайн порталу пацієнта або повідомлення з написом пацієнт не авторизував Портал пацієнта');
 INSERT INTO `lang_definitions` VALUES (183729, 5138, 34, 'Якщо облікові дані онлайн / Оффсайтового порталу вже встановлені, то кнопка зміниться на');
-INSERT INTO `lang_definitions` VALUES (183730, 5139, 34, 'Якщо у пацієнта є які-небудь демографічні дані, введені в OpenEMR, він автоматично заповнить відповідні поля в потрібних розділах');
+INSERT INTO `lang_definitions` VALUES (183730, 5139, 34, 'Якщо у пацієнта є які-небудь демографічні дані, введені в DCL, він автоматично заповнить відповідні поля в потрібних розділах');
 INSERT INTO `lang_definitions` VALUES (183731, 5140, 34, 'Якщо пацієнт не авторизував портал пацієнта, то тут буде показано повідомлення пацієнт не авторизував Портал пацієнта');
 INSERT INTO `lang_definitions` VALUES (183732, 5141, 34, 'Якщо пацієнт додається до списку відкликання в день візиту, він буде відображати поточну дату');
 INSERT INTO `lang_definitions` VALUES (183733, 5142, 34, 'Якщо пацієнт передзвонює, щоб додати його в список, то останній візит може бути в далекому минулому. Майте на увазі, що 1,2,3 плюс року обчислюються і відображаються в полі дати в нижній частині цього розділу');
@@ -197128,9 +197128,9 @@ INSERT INTO `lang_definitions` VALUES (183759, 5169, 34, 'Якщо ви нати
 INSERT INTO `lang_definitions` VALUES (183760, 5170, 34, 'Якщо ви продовжуєте відчувати цю помилку, будь ласка, зверніться в службу підтримки.');
 INSERT INTO `lang_definitions` VALUES (183761, 5171, 34, 'Якщо ви не знайшли потрібне значення у спадному списку, вам потрібно буде додати його через адміністрування > Списки > одиниці процедури. Зверніться до файлу довідки в розділі процедури > постачальники');
 INSERT INTO `lang_definitions` VALUES (183762, 5172, 34, 'Якщо ви не виберете збіг, то пацієнт буде створений.');
-INSERT INTO `lang_definitions` VALUES (183763, 5173, 34, 'Якщо ви не виберете хоча б один з них, OpenEMR буде працювати в режимі тільки прийому');
+INSERT INTO `lang_definitions` VALUES (183763, 5173, 34, 'Якщо ви не виберете хоча б один з них, DCL буде працювати в режимі тільки прийому');
 INSERT INTO `lang_definitions` VALUES (183764, 5174, 34, 'Якщо ви не відправляєте замовлення в електронному вигляді або не отримуєте результат в електронному вигляді, залиште його в якості значення за замовчуванням, Скачайте');
-INSERT INTO `lang_definitions` VALUES (183765, 5176, 34, 'Якщо ви не хочете цього робити, наступний метод включає додавання даних вручну за допомогою інтерфейсу OpenEMR');
+INSERT INTO `lang_definitions` VALUES (183765, 5176, 34, 'Якщо ви не хочете цього робити, наступний метод включає додавання даних вручну за допомогою інтерфейсу DCL');
 INSERT INTO `lang_definitions` VALUES (183766, 5177, 34, 'Якщо ви перейдете до рядка панелі електроліт і натиснете на знак + в стовпці Ім\'я, то побачите під ним натрій зі значенням категорії Результат зі значенням рівня 4');
 INSERT INTO `lang_definitions` VALUES (183767, 5178, 34, 'Якщо ви перейдете до рядка панелі електроліту, то побачите, що вона має категорію замовлення і виділена жовтим кольором, що вказує на те, що це пошуковий і дійсний замовлення і має значення рівня 3');
 INSERT INTO `lang_definitions` VALUES (183768, 5179, 34, 'Якщо ви вибрали кілька кодів, вони будуть розділені крапками з комою');
@@ -197240,11 +197240,11 @@ INSERT INTO `lang_definitions` VALUES (183871, 5286, 34, 'В Будинку');
 INSERT INTO `lang_definitions` VALUES (183872, 5288, 34, 'у лівому оці');
 INSERT INTO `lang_definitions` VALUES (183873, 5289, 34, 'в ніздрі');
 INSERT INTO `lang_definitions` VALUES (183874, 5290, 34, 'В Офісі');
-INSERT INTO `lang_definitions` VALUES (183875, 5291, 34, 'У OpenEMR створювані звіти про безперервність запису догляду (CCR) можна обмежити певним діапазоном дат, встановивши прапорець Використовувати діапазон дат і ввівши потрібний діапазон дат');
+INSERT INTO `lang_definitions` VALUES (183875, 5291, 34, 'У DCL створювані звіти про безперервність запису догляду (CCR) можна обмежити певним діапазоном дат, встановивши прапорець Використовувати діапазон дат і ввівши потрібний діапазон дат');
 INSERT INTO `lang_definitions` VALUES (183876, 5292, 34, 'Для того щоб виконати значущі вимоги до використання Комп\'ютеризованого введення замовлення Постачальника (CPOE) для лабораторних і радіологічних випробувань, цей модуль необхідно використовувати');
 INSERT INTO `lang_definitions` VALUES (183877, 5293, 34, 'Щоб правильно зберігати і витягувати результати тестів і розміщувати нові замовлення, тести / Замовлення повинні бути налаштовані ієрархічно');
 INSERT INTO `lang_definitions` VALUES (183878, 5294, 34, 'Щоб записати значення повернутих результатів, ви повинні створити окремий Дискретний результат (Рівень 4) для кожного з компонентів панелі, як прямих нащадків цієї гілки (Загальна панель здоров\'я) (Рівень 3). Прикладами результатів є CBC-гемоглобін, CBC-Гематокрит, CMP-натрій, CMP - калій, ТТГ і т. д.');
-INSERT INTO `lang_definitions` VALUES (183879, 5295, 34, 'Для того щоб зареєструвати свій пристрій, будь ласка, вкажіть свій логін-пароль OpenEMR');
+INSERT INTO `lang_definitions` VALUES (183879, 5295, 34, 'Для того щоб зареєструвати свій пристрій, будь ласка, вкажіть свій логін-пароль DCL');
 INSERT INTO `lang_definitions` VALUES (183880, 5296, 34, 'Для надсилання запису безперервності догляду (CCR) та / або документа безперервності догляду (CCD) додатково перевірте phiMail Allow CCD Send та/або phiMail Allow CCR Send, щоб увімкнути функцію передачі для цих типів даних');
 INSERT INTO `lang_definitions` VALUES (183881, 5297, 34, 'У нашому випадку ми виберемо локальну лабораторію, яка була налаштована раніше');
 INSERT INTO `lang_definitions` VALUES (183882, 5298, 34, 'У нашому випадку ми залишимо його як непризначений');
@@ -197404,7 +197404,7 @@ INSERT INTO `lang_definitions` VALUES (184035, 5465, 34, 'Встановіть �
 INSERT INTO `lang_definitions` VALUES (184036, 5466, 34, 'Деталі установки');
 INSERT INTO `lang_definitions` VALUES (184037, 5467, 34, 'Установкам, які обробляють велику кількість прямих повідомлень, може знадобитися більш короткий інтервал');
 INSERT INTO `lang_definitions` VALUES (184038, 5468, 34, 'Встановлений реліз');
-INSERT INTO `lang_definitions` VALUES (184039, 5469, 34, 'Встановлення кодів в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (184039, 5469, 34, 'Встановлення кодів в DCL');
 INSERT INTO `lang_definitions` VALUES (184040, 5470, 34, 'Проінструктований');
 INSERT INTO `lang_definitions` VALUES (184041, 5471, 34, 'Інструкція');
 INSERT INTO `lang_definitions` VALUES (184042, 5472, 34, 'Інструкція');
@@ -197440,7 +197440,7 @@ INSERT INTO `lang_definitions` VALUES (184071, 5502, 34, 'Застрахован
 INSERT INTO `lang_definitions` VALUES (184072, 5503, 34, 'Висновок Прийому');
 INSERT INTO `lang_definitions` VALUES (184073, 5504, 34, 'Дата прийому');
 INSERT INTO `lang_definitions` VALUES (184074, 5505, 34, 'Цілі числа 1-100');
-INSERT INTO `lang_definitions` VALUES (184075, 5506, 34, 'Інтеграція лабораторних результатів в карту пацієнта в OpenEMR може бути виконана вручну тобто як замовлення тестів так і завантаження отриманих результатів або в електронному вигляді');
+INSERT INTO `lang_definitions` VALUES (184075, 5506, 34, 'Інтеграція лабораторних результатів в карту пацієнта в DCL може бути виконана вручну тобто як замовлення тестів так і завантаження отриманих результатів або в електронному вигляді');
 INSERT INTO `lang_definitions` VALUES (184076, 5507, 34, 'Інтелектуальний Занепад');
 INSERT INTO `lang_definitions` VALUES (184077, 5508, 34, 'Міжзінична відстань');
 INSERT INTO `lang_definitions` VALUES (184078, 5509, 34, 'Взаємодія з створеними транзакціями');
@@ -197629,14 +197629,14 @@ INSERT INTO `lang_definitions` VALUES (184260, 5703, 34, 'Він не відно
 INSERT INTO `lang_definitions` VALUES (184261, 5704, 34, 'Він робить це за допомогою алгоритму об\'єднання поточного часу UNIX з секретним ключем для створення постійно мінливого унікального ключа');
 INSERT INTO `lang_definitions` VALUES (184262, 5705, 34, 'Він має чотири вкладки');
 INSERT INTO `lang_definitions` VALUES (184263, 5706, 34, 'Він має три яруси');
-INSERT INTO `lang_definitions` VALUES (184264, 5707, 34, 'Це комерційний модуль обміну повідомленнями, доступний для практик OpenEMR, що використовують версію 5.0.1 і вище');
+INSERT INTO `lang_definitions` VALUES (184264, 5707, 34, 'Це комерційний модуль обміну повідомленнями, доступний для практик DCL, що використовують версію 5.0.1 і вище');
 INSERT INTO `lang_definitions` VALUES (184265, 5708, 34, 'Це поле в заголовку повідомлення HL7, відоме як ідентифікатор обробки');
 INSERT INTO `lang_definitions` VALUES (184266, 5709, 34, 'Це частина медичної карти');
 INSERT INTO `lang_definitions` VALUES (184267, 5710, 34, 'Це також послуга на основі підписки');
 INSERT INTO `lang_definitions` VALUES (184268, 5711, 34, 'Також необхідно перерахувати код ICD10 для того, щоб проблема була вказана в Звіті про безперервність догляду (CCR) і документі про безперервність догляду (CCD)');
 INSERT INTO `lang_definitions` VALUES (184269, 5712, 34, 'Він розділений на дві частини');
 INSERT INTO `lang_definitions` VALUES (184270, 5713, 34, 'Дуже важливо, щоб Ви прочитали перші чотири розділи, щоб зрозуміти основні принципи');
-INSERT INTO `lang_definitions` VALUES (184271, 5714, 34, 'Набагато простіше і інтуїтивно зрозуміліше внести серйозні зміни і реорганізувати дані в електронній таблиці, перш ніж ви почнете вводити дані в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (184271, 5714, 34, 'Набагато простіше і інтуїтивно зрозуміліше внести серйозні зміни і реорганізувати дані в електронній таблиці, перш ніж ви почнете вводити дані в DCL');
 INSERT INTO `lang_definitions` VALUES (184272, 5715, 34, 'Важливо розуміти, що це управляє MFA для увійшов в систему користувача');
 INSERT INTO `lang_definitions` VALUES (184273, 5716, 34, 'Важливо розуміти функцію цих двох значків, так як всі наступні кроки, необхідні для правильного налаштування ієрархії, будуть залежати від правильного використання цих двох значків');
 INSERT INTO `lang_definitions` VALUES (184274, 5717, 34, 'Він призначений для включення тільки тієї інформації, яка має вирішальне значення для ефективного продовження лікування');
@@ -197648,7 +197648,7 @@ INSERT INTO `lang_definitions` VALUES (184279, 5722, 34, 'Нерідко зам�
 INSERT INTO `lang_definitions` VALUES (184280, 5723, 34, 'Розсудливо стежити за провайдером, якщо з ним не зв\'язалися.');
 INSERT INTO `lang_definitions` VALUES (184281, 5724, 34, 'Це основна паперова форма претензії, запропонована багатьма платниками для претензій, поданих окремими лікарями та практиками, медсестрами та професіоналами, включаючи терапевтів, хіропрактиків та амбулаторні клініки, а в деяких випадках і для служб швидкої допомоги');
 INSERT INTO `lang_definitions` VALUES (184282, 5725, 34, 'Він використовується для зв\'язку проблем із зустрічами, а також для того, щоб побачити, які зустрічі пов\'язані з конкретною проблемою');
-INSERT INTO `lang_definitions` VALUES (184283, 5726, 34, 'Корисно потренуватися на пробному сайті, щоб ознайомитися з процесом, перш ніж робити це в виробничому додатку OpenEMR');
+INSERT INTO `lang_definitions` VALUES (184283, 5726, 34, 'Корисно потренуватися на пробному сайті, щоб ознайомитися з процесом, перш ніж робити це в виробничому додатку DCL');
 INSERT INTO `lang_definitions` VALUES (184284, 5727, 34, 'Він дозволяє здійснювати пошук за діагностичними кодами ICD 9 і ICD 10, а також сервісним / процедурним кодам CPT4 і HCPCS');
 INSERT INTO `lang_definitions` VALUES (184285, 5728, 34, 'Він дозволяє відправляти повідомлення і датовані нагадування співробітникам, додавати пацієнта в список відкликання і відправляти SMS-повідомлення пацієнтам');
 INSERT INTO `lang_definitions` VALUES (184286, 5729, 34, 'Він служить необхідним мостом в інше середовище, часто з новими клініцистами, які нічого не знають про пацієнта, дозволяючи наступному постачальнику легко');
@@ -198030,11 +198030,11 @@ INSERT INTO `lang_definitions` VALUES (184661, 6128, 34, 'ЛОК');
 INSERT INTO `lang_definitions` VALUES (184662, 6129, 34, 'Місцевий');
 INSERT INTO `lang_definitions` VALUES (184663, 6130, 34, 'Місцеве утримання');
 INSERT INTO `lang_definitions` VALUES (184664, 6131, 34, 'Локальна файлова система');
-INSERT INTO `lang_definitions` VALUES (184665, 6132, 34, 'Локальна файлова система збереже замовлення у вигляді повідомлення HL7v2. 3 в визначеному місці на локальному сервері, на якому розміщений OpenEMR');
+INSERT INTO `lang_definitions` VALUES (184665, 6132, 34, 'Локальна файлова система збереже замовлення у вигляді повідомлення HL7v2. 3 в визначеному місці на локальному сервері, на якому розміщений DCL');
 INSERT INTO `lang_definitions` VALUES (184666, 6133, 34, 'Місце дії');
 INSERT INTO `lang_definitions` VALUES (184667, 6134, 34, 'Місцезнаходження');
 INSERT INTO `lang_definitions` VALUES (184668, 6135, 34, 'Місце розташування');
-INSERT INTO `lang_definitions` VALUES (184669, 6136, 34, 'розташування машини openemr також може містити конфіденційні дані, тому рекомендується вручну видалити файли після її використання');
+INSERT INTO `lang_definitions` VALUES (184669, 6136, 34, 'розташування машини DCL також може містити конфіденційні дані, тому рекомендується вручну видалити файли після її використання');
 INSERT INTO `lang_definitions` VALUES (184670, 6137, 34, 'Розташування цієї ділянки');
 INSERT INTO `lang_definitions` VALUES (184671, 6138, 34, 'Місцезнаходження не вказано');
 INSERT INTO `lang_definitions` VALUES (184672, 6139, 34, 'Місце, де Hylafax зберігає факси.');
@@ -198477,7 +198477,7 @@ INSERT INTO `lang_definitions` VALUES (185108, 6599, 34, 'Можливо, існ
 INSERT INTO `lang_definitions` VALUES (185109, 6600, 34, 'Більш детальну інформацію про клінічне правило прийняття рішень можна знайти тут');
 INSERT INTO `lang_definitions` VALUES (185110, 6601, 34, 'Більш детальну інформацію про проблеми можна знайти тут');
 INSERT INTO `lang_definitions` VALUES (185111, 6602, 34, 'Більш детальну інформацію про те, що таке phiMail і як його налаштувати, можна знайти тут');
-INSERT INTO `lang_definitions` VALUES (185112, 6603, 34, 'Більш детальна інформація доступна на Вікі-сторінці OpenEMR MedEx');
+INSERT INTO `lang_definitions` VALUES (185112, 6603, 34, 'Більш детальна інформація доступна на Вікі-сторінці DCL MedEx');
 INSERT INTO `lang_definitions` VALUES (185113, 6604, 34, 'Більш детальну інформацію про те, як редагувати цю форму та інші подібні форми, можна знайти тут');
 INSERT INTO `lang_definitions` VALUES (185114, 6605, 34, 'Більш детальну інформацію про використання повідомлень phiMail можна знайти тут');
 INSERT INTO `lang_definitions` VALUES (185115, 6606, 34, 'Більше варіантів');
@@ -198724,7 +198724,7 @@ INSERT INTO `lang_definitions` VALUES (185355, 6865, 34, 'Нове в ACL Ver 5'
 INSERT INTO `lang_definitions` VALUES (185356, 6866, 34, 'Нове в ACL Ver 6');
 INSERT INTO `lang_definitions` VALUES (185357, 6867, 34, 'Нове в ACL Ver 7');
 INSERT INTO `lang_definitions` VALUES (185358, 6868, 34, 'Нове в ACL Ver 8');
-INSERT INTO `lang_definitions` VALUES (185359, 6869, 34, 'Нове в OpenEMR ver 5.0.2');
+INSERT INTO `lang_definitions` VALUES (185359, 6869, 34, 'Нове в DCL ver 5.0.2');
 INSERT INTO `lang_definitions` VALUES (185360, 6870, 34, 'Новий Inj / Статус');
 INSERT INTO `lang_definitions` VALUES (185361, 6871, 34, 'Нові елементи (докладніше див. вище)');
 INSERT INTO `lang_definitions` VALUES (185362, 6872, 34, 'Нове планування');
@@ -198753,7 +198753,7 @@ INSERT INTO `lang_definitions` VALUES (185384, 6896, 34, 'Новий Відгу�
 INSERT INTO `lang_definitions` VALUES (185385, 6897, 34, 'Нові результати лабораторного обміну');
 INSERT INTO `lang_definitions` VALUES (185386, 6898, 34, 'Новий пошук');
 INSERT INTO `lang_definitions` VALUES (185387, 6899, 34, 'Нові Матеріали');
-INSERT INTO `lang_definitions` VALUES (185388, 6900, 34, 'Нове в OpenEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (185388, 6900, 34, 'Нове в DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (185389, 6901, 34, 'Новий Користувач');
 INSERT INTO `lang_definitions` VALUES (185390, 6902, 34, 'Нове значення');
 INSERT INTO `lang_definitions` VALUES (185391, 6903, 34, 'Новий Візит');
@@ -199125,7 +199125,7 @@ INSERT INTO `lang_definitions` VALUES (185756, 7295, 34, 'Повідомити �
 INSERT INTO `lang_definitions` VALUES (185757, 7296, 34, 'Повідомити через Портал пацієнта');
 INSERT INTO `lang_definitions` VALUES (185758, 7297, 34, 'Листопад');
 INSERT INTO `lang_definitions` VALUES (185759, 7298, 34, 'Листопад');
-INSERT INTO `lang_definitions` VALUES (185760, 7299, 34, 'Тепер настав час перевірити та налаштувати налаштування в OpenEMR для блоків за замовчуванням, сайтів тощо, зверніться до файлу довідки в розділі процедури > постачальники');
+INSERT INTO `lang_definitions` VALUES (185760, 7299, 34, 'Тепер настав час перевірити та налаштувати налаштування в DCL для блоків за замовчуванням, сайтів тощо, зверніться до файлу довідки в розділі процедури > постачальники');
 INSERT INTO `lang_definitions` VALUES (185761, 7300, 34, 'Тепер постинг для');
 INSERT INTO `lang_definitions` VALUES (185762, 7301, 34, 'Тепер постинг для:');
 INSERT INTO `lang_definitions` VALUES (185763, 7302, 34, 'Тепер друк');
@@ -199276,11 +199276,11 @@ INSERT INTO `lang_definitions` VALUES (185907, 7452, 34, 'Як тільки пр
 INSERT INTO `lang_definitions` VALUES (185908, 7453, 34, 'Після завершення перегляньте та збережіть цю зустріч у вигляді PDF-файлу');
 INSERT INTO `lang_definitions` VALUES (185909, 7454, 34, 'Після завершення редагування натисніть кнопку Зберегти. Форми процедур поточні діагнози процедур будуть заповнюватися точно так же, як і в цьому діалоговому вікні.');
 INSERT INTO `lang_definitions` VALUES (185910, 7455, 34, 'Після збереження сутність для користувацької обраної групи не може бути змінена. Якщо вам потрібно змінити сутність, ви повинні видалити цей запис і створити нову');
-INSERT INTO `lang_definitions` VALUES (185911, 7456, 34, 'Як тільки додаток захопить QR код воно покаже ім\'я Користувача OpenEMR в додатку');
+INSERT INTO `lang_definitions` VALUES (185911, 7456, 34, 'Як тільки додаток захопить QR код воно покаже ім\'я Користувача DCL в додатку');
 INSERT INTO `lang_definitions` VALUES (185912, 7457, 34, 'Як тільки основний бізнес-об\'єкт буде встановлений, зміна ідентифікатора об\'єкта вплине на ePrescription NewCrop.');
 INSERT INTO `lang_definitions` VALUES (185913, 7458, 34, 'Після того, як основний бізнес-об\'єкт встановлений, він не повинен бути змінений. Зміна об\'єкта вплине на роботу в NewCrop ePrescription.');
 INSERT INTO `lang_definitions` VALUES (185914, 7459, 34, 'Як тільки ця функція буде включена, вам буде потрібно вводити 6-значний ключ при кожному вході в систему');
-INSERT INTO `lang_definitions` VALUES (185915, 7460, 34, 'Як тільки це буде зроблено загальний секретний ключ унікальний для кожного користувача повинен існувати тільки в OpenEMR і в додатку аутентифікатора користувача');
+INSERT INTO `lang_definitions` VALUES (185915, 7460, 34, 'Як тільки це буде зроблено загальний секретний ключ унікальний для кожного користувача повинен існувати тільки в DCL і в додатку аутентифікатора користувача');
 INSERT INTO `lang_definitions` VALUES (185916, 7461, 34, 'Як тільки цей крок буде завершено, ви можете перейти до наступного кроку-Налаштування тестів , які можна замовити з системи');
 INSERT INTO `lang_definitions` VALUES (185917, 7462, 34, 'Як тільки ви зміните свій пароль, вам доведеться повторно увійти в систему.');
 INSERT INTO `lang_definitions` VALUES (185918, 7463, 34, 'Як тільки ви виберете код обґрунтування для першого рядка CPT, всі наступні рядки коду CPT будуть мати одне і те ж обгрунтування. При бажанні його можна змінити вручну пізніше');
@@ -199372,23 +199372,23 @@ INSERT INTO `lang_definitions` VALUES (186003, 7555, 34, 'Відкрийте / �
 INSERT INTO `lang_definitions` VALUES (186004, 7556, 34, 'Відкрийте / закрийте вікно стенографії та коди');
 INSERT INTO `lang_definitions` VALUES (186005, 7557, 34, 'Відкрийте / закрийте вікно стенографії та відобразіть стенографічні коди');
 INSERT INTO `lang_definitions` VALUES (186006, 7558, 34, 'Відкрийте / закрийте вікно стенографії та відобразіть стенографічні коди поруч із кожним полем');
-INSERT INTO `lang_definitions` VALUES (186007, 7560, 34, 'OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186008, 7561, 34, 'OpenEMR дозволяє використовувати один TOTP, але кілька методів U2F для кожного користувача');
-INSERT INTO `lang_definitions` VALUES (186009, 7562, 34, 'OpenEMR вже має налаштований центр сертифікації.');
-INSERT INTO `lang_definitions` VALUES (186010, 7563, 34, 'Реєстрація програми OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186011, 7564, 34, 'Додаток OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186012, 7565, 34, 'Категорія програми OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186013, 7566, 34, 'Авторизація OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186014, 7567, 34, 'Оновлення бази даних OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186015, 7568, 34, 'Оновлення бази даних OpenEMR для деідентифікації');
-INSERT INTO `lang_definitions` VALUES (186016, 7569, 34, 'OpenEMR не розпізнає вхідний файл у каталозі contrib. Швидше за все, це пов\'язано з тим, що вам потрібно налаштувати випуск в таблиці supported_external_dataloads в базі даних MySQL.');
-INSERT INTO `lang_definitions` VALUES (186017, 7570, 34, 'Вхід в систему OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186018, 7571, 34, 'OpenEMR повинен бути налаштований на використання сертифікатів, перш ніж він зможе створювати клієнтські сертифікати.');
-INSERT INTO `lang_definitions` VALUES (186019, 7572, 34, 'OpenEMR пропонує 2 методи 2FA');
-INSERT INTO `lang_definitions` VALUES (186020, 7573, 34, 'Портал OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186021, 7574, 34, 'Реєстрація продукту OpenEMR');
-INSERT INTO `lang_definitions` VALUES (186022, 7575, 34, 'OpenEMR вимагає Javascript для виконання аутентифікації користувача.');
-INSERT INTO `lang_definitions` VALUES (186023, 7576, 34, 'Користувачі OpenEMR');
+INSERT INTO `lang_definitions` VALUES (186007, 7560, 34, 'DCL');
+INSERT INTO `lang_definitions` VALUES (186008, 7561, 34, 'DCL дозволяє використовувати один TOTP, але кілька методів U2F для кожного користувача');
+INSERT INTO `lang_definitions` VALUES (186009, 7562, 34, 'DCL вже має налаштований центр сертифікації.');
+INSERT INTO `lang_definitions` VALUES (186010, 7563, 34, 'Реєстрація програми DCL');
+INSERT INTO `lang_definitions` VALUES (186011, 7564, 34, 'Додаток DCL');
+INSERT INTO `lang_definitions` VALUES (186012, 7565, 34, 'Категорія програми DCL');
+INSERT INTO `lang_definitions` VALUES (186013, 7566, 34, 'Авторизація DCL');
+INSERT INTO `lang_definitions` VALUES (186014, 7567, 34, 'Оновлення бази даних DCL');
+INSERT INTO `lang_definitions` VALUES (186015, 7568, 34, 'Оновлення бази даних DCL для деідентифікації');
+INSERT INTO `lang_definitions` VALUES (186016, 7569, 34, 'DCL не розпізнає вхідний файл у каталозі contrib. Швидше за все, це пов\'язано з тим, що вам потрібно налаштувати випуск в таблиці supported_external_dataloads в базі даних MySQL.');
+INSERT INTO `lang_definitions` VALUES (186017, 7570, 34, 'Вхід в систему DCL');
+INSERT INTO `lang_definitions` VALUES (186018, 7571, 34, 'DCL повинен бути налаштований на використання сертифікатів, перш ніж він зможе створювати клієнтські сертифікати.');
+INSERT INTO `lang_definitions` VALUES (186019, 7572, 34, 'DCL пропонує 2 методи 2FA');
+INSERT INTO `lang_definitions` VALUES (186020, 7573, 34, 'Портал DCL');
+INSERT INTO `lang_definitions` VALUES (186021, 7574, 34, 'Реєстрація продукту DCL');
+INSERT INTO `lang_definitions` VALUES (186022, 7575, 34, 'DCL вимагає Javascript для виконання аутентифікації користувача.');
+INSERT INTO `lang_definitions` VALUES (186023, 7576, 34, 'Користувачі DCL');
 INSERT INTO `lang_definitions` VALUES (186024, 7577, 34, 'Отвір');
 INSERT INTO `lang_definitions` VALUES (186025, 7578, 34, 'Відкривається в нижній рамці');
 INSERT INTO `lang_definitions` VALUES (186026, 7579, 34, 'Відкривається у верхній рамці');
@@ -199941,7 +199941,7 @@ INSERT INTO `lang_definitions` VALUES (186572, 8152, 34, 'Очікує Розг�
 INSERT INTO `lang_definitions` VALUES (186573, 8153, 34, 'Очікуваний Підрахунок Rx');
 INSERT INTO `lang_definitions` VALUES (186574, 8154, 34, 'В очікуванні з тих пір');
 INSERT INTO `lang_definitions` VALUES (186575, 8155, 34, 'Алергія на пеніцилін');
-INSERT INTO `lang_definitions` VALUES (186576, 8156, 34, 'Пеннінгтонська фірма OpenEMR v');
+INSERT INTO `lang_definitions` VALUES (186576, 8156, 34, 'Пеннінгтонська фірма DCL v');
 INSERT INTO `lang_definitions` VALUES (186577, 8157, 34, 'Виразкова хвороба');
 INSERT INTO `lang_definitions` VALUES (186578, 8158, 34, 'За Зустріч');
 INSERT INTO `lang_definitions` VALUES (186579, 8159, 34, 'за хвилину');
@@ -200176,7 +200176,7 @@ INSERT INTO `lang_definitions` VALUES (186807, 8395, 34, 'Будь ласка, �
 INSERT INTO `lang_definitions` VALUES (186808, 8396, 34, 'Будь ласка, поверніть цю нижню частину разом з вашою оплатою');
 INSERT INTO `lang_definitions` VALUES (186809, 8397, 34, 'Будь ласка, дивіться форум і Вікі');
 INSERT INTO `lang_definitions` VALUES (186810, 8398, 34, 'Будь ласка, дивіться форум або Вікі');
-INSERT INTO `lang_definitions` VALUES (186811, 8399, 34, 'Будь ласка, дивіться http://www.open-emr.org/wiki/index.php/LBV_Forms детальніше на цю тему');
+INSERT INTO `lang_definitions` VALUES (186811, 8399, 34, 'Будь ласка, дивіться http://www.dcl.org/wiki/index.php/LBV_Forms детальніше на цю тему');
 INSERT INTO `lang_definitions` VALUES (186812, 8400, 34, 'Будь ласка, дивіться додається PDF-файл.');
 INSERT INTO `lang_definitions` VALUES (186813, 8401, 34, 'будь ласка виберіть');
 INSERT INTO `lang_definitions` VALUES (186814, 8403, 34, 'Будь ласка, виберіть формат');
@@ -200216,7 +200216,7 @@ INSERT INTO `lang_definitions` VALUES (186847, 8438, 34, 'Будь ласка, �
 INSERT INTO `lang_definitions` VALUES (186848, 8441, 34, 'Будь ласка, почніть новий процес деідентифікації');
 INSERT INTO `lang_definitions` VALUES (186849, 8442, 34, 'Будь ласка, вкажіть заголовок');
 INSERT INTO `lang_definitions` VALUES (186850, 8444, 34, 'Будь ласка, повторіть спробу або зверніться в офіс провайдерів за додатковою допомогою.');
-INSERT INTO `lang_definitions` VALUES (186851, 8445, 34, 'Будь ласка, оновіть базу даних OpenEMR, щоб включити в неї процедури деідентифікації, функції, таблиці');
+INSERT INTO `lang_definitions` VALUES (186851, 8445, 34, 'Будь ласка, оновіть базу даних DCL, щоб включити в неї процедури деідентифікації, функції, таблиці');
 INSERT INTO `lang_definitions` VALUES (186852, 8446, 34, 'Будь ласка, використовуйте дійсний NPI');
 INSERT INTO `lang_definitions` VALUES (186853, 8447, 34, 'Будь ласка, перегляньте таблицю журналу помилок ідентифікації De для отримання більш докладної інформації');
 INSERT INTO `lang_definitions` VALUES (186854, 8448, 34, 'Будь ласка, відвідайте екран ідентифікації De через деякий час');
@@ -200385,7 +200385,7 @@ INSERT INTO `lang_definitions` VALUES (187016, 8620, 34, 'Подарунок');
 INSERT INTO `lang_definitions` VALUES (187017, 8622, 34, 'подача скарги');
 INSERT INTO `lang_definitions` VALUES (187018, 8623, 34, 'Представлення питання(ів)');
 INSERT INTO `lang_definitions` VALUES (187019, 8624, 34, 'Натисніть кнопку Продовжити, щоб продовжити');
-INSERT INTO `lang_definitions` VALUES (187020, 8625, 34, 'Натисніть миготливу кнопку на USB-ключі протягом 1 хвилини після його вставки і натисніть кнопку register, щоб зареєструвати ключ за допомогою OpenEMR');
+INSERT INTO `lang_definitions` VALUES (187020, 8625, 34, 'Натисніть миготливу кнопку на USB-ключі протягом 1 хвилини після його вставки і натисніть кнопку register, щоб зареєструвати ключ за допомогою DCL');
 INSERT INTO `lang_definitions` VALUES (187021, 8626, 34, 'Натисніть на цей значок, щоб створити своє враження / план.');
 INSERT INTO `lang_definitions` VALUES (187022, 8627, 34, 'Передбачуваний Діагноз');
 INSERT INTO `lang_definitions` VALUES (187023, 8628, 34, 'Передбачуваний діагноз фахівця');
@@ -201010,7 +201010,7 @@ INSERT INTO `lang_definitions` VALUES (187641, 9291, 34, 'Перезаванта
 INSERT INTO `lang_definitions` VALUES (187642, 9292, 34, 'перезавантажте Імена нижче');
 INSERT INTO `lang_definitions` VALUES (187643, 9293, 34, 'Релогин');
 INSERT INTO `lang_definitions` VALUES (187644, 9294, 34, 'Ремдр');
-INSERT INTO `lang_definitions` VALUES (187645, 9295, 34, 'Пам\'ятайте, що групування тестів призначена тільки для зручної організації даних в модулі порядку процедур в OpenEMR, для роботи цього процесу критично важлива настройка порядків процедур (самих тестів) і Дискретного результату (місця введення і відображення результату, що повертається).');
+INSERT INTO `lang_definitions` VALUES (187645, 9295, 34, 'Пам\'ятайте, що групування тестів призначена тільки для зручної організації даних в модулі порядку процедур в DCL, для роботи цього процесу критично важлива настройка порядків процедур (самих тестів) і Дискретного результату (місця введення і відображення результату, що повертається).');
 INSERT INTO `lang_definitions` VALUES (187646, 9296, 34, 'Пам\'ятай Мене');
 INSERT INTO `lang_definitions` VALUES (187647, 9297, 34, 'Запам\'ятати Вибраний Об\'єкт');
 INSERT INTO `lang_definitions` VALUES (187648, 9298, 34, 'Пам\'ятайте вислів про те, що ідентифікуючі коди повинні бути унікальними, ви не повинні налаштовувати користувальницьку групування панелі тестів, а також налаштовувати панелі як окремі розпізнані панелі, тобто групувати CBC і ниркову панель як користувальницький фаворит і перераховувати CBC і ниркову панель окремо як індивідуально замовлені панелі');
@@ -201942,7 +201942,7 @@ INSERT INTO `lang_definitions` VALUES (188573, 10291, 34, 'Адреса сайт
 INSERT INTO `lang_definitions` VALUES (188574, 10292, 34, 'Адреса сайту (потрібно для OAuth2 і FHIR). Приклад такої');
 INSERT INTO `lang_definitions` VALUES (188575, 10294, 34, 'Ідентифікатор сайту');
 INSERT INTO `lang_definitions` VALUES (188576, 10295, 34, 'Ідентифікатор сайту для служби обміну медичною інформацією ТОВ \"Лабораторія інтеграції\".');
-INSERT INTO `lang_definitions` VALUES (188577, 10296, 34, 'Ідентифікатор сайту для служби обміну лабораторними даними OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (188577, 10296, 34, 'Ідентифікатор сайту для служби обміну лабораторними даними DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (188578, 10297, 34, 'Робочий сайту');
 INSERT INTO `lang_definitions` VALUES (188579, 10298, 34, 'Півроку Тому');
 INSERT INTO `lang_definitions` VALUES (188580, 10299, 34, 'На Півроку Вперед');
@@ -202125,7 +202125,7 @@ INSERT INTO `lang_definitions` VALUES (188756, 10478, 34, 'Задає форма
 INSERT INTO `lang_definitions` VALUES (188757, 10479, 34, 'Задає форматування зовнішнього ідентифікатора пацієнта. # = цифра, * = будь-який символ. Порожній, якщо не використовується.');
 INSERT INTO `lang_definitions` VALUES (188758, 10480, 34, 'Задає форматування зовнішнього ідентифікатора пацієнта. # = цифра, @ = альфа, * = будь-який символ. Порожній, якщо не використовується.');
 INSERT INTO `lang_definitions` VALUES (188759, 10481, 34, 'Вкажіть інтервал автоматичної перевірки повідомлень-5 або 10 хвилин в якості відправної точки');
-INSERT INTO `lang_definitions` VALUES (188760, 10482, 34, 'Вкажіть Користувача OpenEMR, який буде отримувати повідомлення про нові вхідні прямі повідомлення');
+INSERT INTO `lang_definitions` VALUES (188760, 10482, 34, 'Вкажіть Користувача DCL, який буде отримувати повідомлення про нові вхідні прямі повідомлення');
 INSERT INTO `lang_definitions` VALUES (188761, 10483, 34, 'Зразок');
 INSERT INTO `lang_definitions` VALUES (188762, 10485, 34, 'Номер зразка / ідентифікатор');
 INSERT INTO `lang_definitions` VALUES (188763, 10486, 34, 'Тип зразка');
@@ -202319,7 +202319,7 @@ INSERT INTO `lang_definitions` VALUES (188950, 10693, 34, 'Абонент СС')
 INSERT INTO `lang_definitions` VALUES (188951, 10694, 34, 'Стан передплатника');
 INSERT INTO `lang_definitions` VALUES (188952, 10695, 34, 'Поштовий Індекс абонента');
 INSERT INTO `lang_definitions` VALUES (188953, 10696, 34, 'Підписник / Політика');
-INSERT INTO `lang_definitions` VALUES (188954, 10697, 34, 'Передплатники отримають ім\'я користувача, пароль і адресу сервера, за допомогою яких можна налаштувати OpenEMR');
+INSERT INTO `lang_definitions` VALUES (188954, 10697, 34, 'Передплатники отримають ім\'я користувача, пароль і адресу сервера, за допомогою яких можна налаштувати DCL');
 INSERT INTO `lang_definitions` VALUES (188955, 10698, 34, 'Абонентський телефон');
 INSERT INTO `lang_definitions` VALUES (188956, 10699, 34, 'Речовина');
 INSERT INTO `lang_definitions` VALUES (188957, 10700, 34, 'Причина відмови від речовини');
@@ -202473,7 +202473,7 @@ INSERT INTO `lang_definitions` VALUES (189104, 10860, 34, 'Цільовий па
 INSERT INTO `lang_definitions` VALUES (189105, 10861, 34, 'Цільовий пацієнт не знайдений');
 INSERT INTO `lang_definitions` VALUES (189106, 10862, 34, 'Цільові групи / групи дій');
 INSERT INTO `lang_definitions` VALUES (189107, 10863, 34, 'Мета');
-INSERT INTO `lang_definitions` VALUES (189108, 10864, 34, 'Taskman: документи в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (189108, 10864, 34, 'Taskman: документи в DCL');
 INSERT INTO `lang_definitions` VALUES (189109, 10865, 34, 'Татарський');
 INSERT INTO `lang_definitions` VALUES (189110, 10866, 34, 'Податковий ідентифікатор');
 INSERT INTO `lang_definitions` VALUES (189111, 10867, 34, 'Податковий ідентифікатор');
@@ -202564,7 +202564,7 @@ INSERT INTO `lang_definitions` VALUES (189195, 10964, 34, 'Фактичні те
 INSERT INTO `lang_definitions` VALUES (189196, 10965, 34, 'Значок Додати використовується для налаштування рівня, який буде прямим нащадком цього рівня');
 INSERT INTO `lang_definitions` VALUES (189197, 10966, 34, 'Перевага інтеграції результатів з діаграмою пацієнта у вигляді структурованих даних полягає в можливості маніпулювати ними, щоб побачити тенденції в одному зручному місці, побудувати графіки з даними і використовувати їх в аналізі даних');
 INSERT INTO `lang_definitions` VALUES (189198, 10967, 34, 'Перевага сканування результатів в діаграму полягає в простоті - не потрібно ніякої настройки, крім визначення каталогу / папки в карті пацієнта під документами, де буде зберігатися результат. Будучи неструктурованими даними, він не має перерахованих вище переваг і не буде відповідати значущим критеріям використання для комп\'ютеризованого введення замовлення Постачальника (CPOE)');
-INSERT INTO `lang_definitions` VALUES (189199, 10968, 34, 'Рішення Allscripts інтегрує веб-сайт Allscripts ePrescribe з OpenEMR');
+INSERT INTO `lang_definitions` VALUES (189199, 10968, 34, 'Рішення Allscripts інтегрує веб-сайт Allscripts ePrescribe з DCL');
 INSERT INTO `lang_definitions` VALUES (189200, 10969, 34, 'Американська медична асоціація визначила 9 панелей, які можна замовити. Кожна панель містить кілька тестів, згрупованих разом');
 INSERT INTO `lang_definitions` VALUES (189201, 10970, 34, 'Сума буде відображатися в стовпці Оплата або коригування в залежності від обставин');
 INSERT INTO `lang_definitions` VALUES (189202, 10971, 34, 'Сертифікат сервера Apache SSL і відкритий ключ');
@@ -202718,7 +202718,7 @@ INSERT INTO `lang_definitions` VALUES (189349, 11119, 34, 'Ідентифіка�
 INSERT INTO `lang_definitions` VALUES (189350, 11120, 34, 'Ідентифікаційний код R34392-1, довільне число, в даному випадку ідентифікаційний код, що передує R для позначення результату і наступний за 1 для позначення першого в послідовності, може бути будь-яким унікальним, який ви виберете');
 INSERT INTO `lang_definitions` VALUES (189351, 11121, 34, 'Введена тут Інформація використовується для відображення короткого звіту про зустріч. Він також використовується для виставлення рахунків');
 INSERT INTO `lang_definitions` VALUES (189352, 11122, 34, 'Інформація, введена в цю форму, буде використана для заповнення паперової претензії');
-INSERT INTO `lang_definitions` VALUES (189353, 11123, 34, 'Інформація, представлена в новій формі зустрічі і відомості зборів в OpenEMR, використовується для формування паперової претензії, а також електронних претензій');
+INSERT INTO `lang_definitions` VALUES (189353, 11123, 34, 'Інформація, представлена в новій формі зустрічі і відомості зборів в DCL, використовується для формування паперової претензії, а також електронних претензій');
 INSERT INTO `lang_definitions` VALUES (189354, 11124, 34, 'Початкові зусилля призвели до створення дублюючих та суперечливих посібників з впровадження (IGS), опублікованих різними організаціями зі стандартизації');
 INSERT INTO `lang_definitions` VALUES (189355, 11125, 34, 'Початковий екран дозволяє вибрати метод, запропонувавши вам ці два варіанти.');
 INSERT INTO `lang_definitions` VALUES (189356, 11126, 34, 'Початкове вікно-це сторінка пошуку рахунку-фактури. Вгорі ви можете ввести джерело (наприклад, номер чека), дату оплати і суму чека. Причина для джерела та дати оплати полягає в тому, що вам не потрібно вводити їх знову і знову для кожної претензії. Сума, яку Ви вводите, буде зменшена для кожного рахунку, який є частиною платежу, і, сподіваюся, закінчиться на нулі, коли ви закінчите.');
@@ -202882,7 +202882,7 @@ INSERT INTO `lang_definitions` VALUES (189513, 11288, 34, 'Стовпець Од
 INSERT INTO `lang_definitions` VALUES (189514, 11289, 34, 'Одиниці виміру будуть рівні 1, так як кожен код виставляється тільки один раз за зустріч');
 INSERT INTO `lang_definitions` VALUES (189515, 11290, 34, 'Майбутні нагадування мають зелений знак значок');
 INSERT INTO `lang_definitions` VALUES (189516, 11291, 34, 'USB-пристрої взаємодіють з хост-комп\'ютером по протоколу human interface device( HID), по суті імітуючи клавіатуру');
-INSERT INTO `lang_definitions` VALUES (189517, 11292, 34, 'USB-ключ повинен бути підключений до комп\'ютера, а потім зареєстрований в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (189517, 11292, 34, 'USB-ключ повинен бути підключений до комп\'ютера, а потім зареєстрований в DCL');
 INSERT INTO `lang_definitions` VALUES (189518, 11293, 34, 'USB ключ приймає цей nonce наданий додатком після підтвердження контрольної суми і генерує закритий ключ використовуючи процес аналогічний тому який використовується в процесі реєстрації');
 INSERT INTO `lang_definitions` VALUES (189519, 11294, 34, 'Фактичні привілеї користувача визначаються доступом до частин програми, тобто (ACO), який має кожна група (ARO).');
 INSERT INTO `lang_definitions` VALUES (189520, 11295, 34, 'Поля імені користувача не збігаються.');
@@ -202893,9 +202893,9 @@ INSERT INTO `lang_definitions` VALUES (189524, 11299, 34, 'Код конкрет
 INSERT INTO `lang_definitions` VALUES (189525, 11300, 34, 'Код конкретного постачальника, який ідентифікує цю процедуру або результат. Якщо жоден постачальник не вводить довільний унікальний номер, бажано 5-значний з нульовим заповненням, наприклад 00211');
 INSERT INTO `lang_definitions` VALUES (189526, 11301, 34, 'Найпершим кроком буде установка кодів ICD. Перейдіть до розділу адміністрування > Інше > завантаження зовнішніх даних. Виберіть Набори кодів, які ви хочете встановити, і натисніть кнопку Встановити');
 INSERT INTO `lang_definitions` VALUES (189527, 11302, 34, 'У самому останньому рядку цього звіту буде дана загальна сума витрат, платежів, Коригувань і Сальдо');
-INSERT INTO `lang_definitions` VALUES (189528, 11303, 34, 'Обмін Weno добре інтегрований з OpenEMR і не заснований на підписці');
-INSERT INTO `lang_definitions` VALUES (189529, 11304, 34, 'Файли X12, а також результуючі вихідні звіти HTML архівуються в підкаталозі\" era \" основного інсталяційного каталогу OpenEMR. Ви захочете час від часу звертатися до цих архівів. URL-адреса:');
-INSERT INTO `lang_definitions` VALUES (189530, 11305, 34, 'Файли X12, а також результуючі вихідні звіти HTML архівуються в підкаталозі era основного інсталяційного каталогу OpenEMR. Ви захочете час від часу звертатися до цих архівів.');
+INSERT INTO `lang_definitions` VALUES (189528, 11303, 34, 'Обмін Weno добре інтегрований з DCL і не заснований на підписці');
+INSERT INTO `lang_definitions` VALUES (189529, 11304, 34, 'Файли X12, а також результуючі вихідні звіти HTML архівуються в підкаталозі\" era \" основного інсталяційного каталогу DCL. Ви захочете час від часу звертатися до цих архівів. URL-адреса:');
+INSERT INTO `lang_definitions` VALUES (189530, 11305, 34, 'Файли X12, а також результуючі вихідні звіти HTML архівуються в підкаталозі era основного інсталяційного каталогу DCL. Ви захочете час від часу звертатися до цих архівів.');
 INSERT INTO `lang_definitions` VALUES (189531, 11306, 34, 'Zip-файл буде містити наступні елементи');
 INSERT INTO `lang_definitions` VALUES (189532, 11307, 34, 'Тема');
 INSERT INTO `lang_definitions` VALUES (189533, 11308, 34, 'Тема макета вкладок (потрібно вийти з системи, а потім увійти в систему, щоб побачити цю нову настройку).');
@@ -202911,7 +202911,7 @@ INSERT INTO `lang_definitions` VALUES (189542, 11317, 34, 'Терапевтич�
 INSERT INTO `lang_definitions` VALUES (189543, 11318, 34, 'Зустріч терапевтичної групи');
 INSERT INTO `lang_definitions` VALUES (189544, 11319, 34, 'Пошук терапевтичної групи');
 INSERT INTO `lang_definitions` VALUES (189545, 11320, 34, 'Існує');
-INSERT INTO `lang_definitions` VALUES (189546, 11321, 34, 'Існує 10 налаштувань, пов\'язаних з процедурами, включеними в стандартний випуск OpenEMR');
+INSERT INTO `lang_definitions` VALUES (189546, 11321, 34, 'Існує 10 налаштувань, пов\'язаних з процедурами, включеними в стандартний випуск DCL');
 INSERT INTO `lang_definitions` VALUES (189547, 11322, 34, 'В основній категорії є 3 форми-Демографія, інформація про Користувача конкретного об\'єкта і історія, а також всі 5 форм в транзакціях, які можна редагувати');
 INSERT INTO `lang_definitions` VALUES (189548, 11323, 34, 'В даний час рецептів немає');
 INSERT INTO `lang_definitions` VALUES (189549, 11324, 34, 'Є помилки з вашою подачею. Вони викладені нижче.');
@@ -202960,7 +202960,7 @@ INSERT INTO `lang_definitions` VALUES (189591, 11370, 34, 'Немає запис
 INSERT INTO `lang_definitions` VALUES (189592, 11371, 34, 'Немає пацієнта з портальним логіном');
 INSERT INTO `lang_definitions` VALUES (189593, 11373, 34, 'Виникла проблема з відправкою повідомлення.');
 INSERT INTO `lang_definitions` VALUES (189594, 11374, 34, 'При обробці Вашого запиту сталася помилка.');
-INSERT INTO `lang_definitions` VALUES (189595, 11375, 34, 'Сталася помилка екранування OpenEMR SQL наступного рядка');
+INSERT INTO `lang_definitions` VALUES (189595, 11375, 34, 'Сталася помилка екранування DCL SQL наступного рядка');
 INSERT INTO `lang_definitions` VALUES (189596, 11376, 34, 'Тому кожен користувач повинен індивідуально активувати цю функцію');
 INSERT INTO `lang_definitions` VALUES (189597, 11377, 34, 'Ці ACO згруповані в десять широких категорій, які є частиною установки за замовчуванням. Це-Адміністрація, Бухгалтерія, інформація про пацієнтів, інформація про зустрічі, загони, чутливість, Списки, заповнювач, Національні замітки і Портал пацієнтів. Кожна з цих категорій має одну або кілька підкатегорій, які забезпечують доступ до певних частин програми.');
 INSERT INTO `lang_definitions` VALUES (189598, 11378, 34, 'Вони безкоштовні і можуть бути завантажені з відповідного магазину додатків для пристроїв ios і Android');
@@ -202972,7 +202972,7 @@ INSERT INTO `lang_definitions` VALUES (189603, 11383, 34, 'Ці користув
 INSERT INTO `lang_definitions` VALUES (189604, 11384, 34, 'Ці записи будуть використовуватися для визначення постачальників в модулі процедури');
 INSERT INTO `lang_definitions` VALUES (189605, 11385, 34, 'Ці групи (AROS) можуть потім отримати набір привілеїв, призначивши різні категорії (ACOs).');
 INSERT INTO `lang_definitions` VALUES (189606, 11386, 34, 'Ці елементи можна редагувати, якщо користувач володіє достатніми правами');
-INSERT INTO `lang_definitions` VALUES (189607, 11387, 34, 'Ці списки використовуються для визначення того, хто може отримати доступ до чого в OpenEMR. Вони працюють зверху вниз, тобто спочатку всім відмовлено в доступі до тих частин програми, які контролюються ACL.');
+INSERT INTO `lang_definitions` VALUES (189607, 11387, 34, 'Ці списки використовуються для визначення того, хто може отримати доступ до чого в DCL. Вони працюють зверху вниз, тобто спочатку всім відмовлено в доступі до тих частин програми, які контролюються ACL.');
 INSERT INTO `lang_definitions` VALUES (189608, 11388, 34, 'Ці номери повинні збігатися для успішної аутентифікації користувача');
 INSERT INTO `lang_definitions` VALUES (189609, 11389, 34, 'Ці нотатки про пацієнтів надсилаються без призначеного пацієнта');
 INSERT INTO `lang_definitions` VALUES (189610, 11390, 34, 'Ці підкатегорії являють собою фактичні об\'єкти управління доступом (ACOs).');
@@ -203094,7 +203094,7 @@ INSERT INTO `lang_definitions` VALUES (189725, 11513, 34, 'Однак цей м�
 INSERT INTO `lang_definitions` VALUES (189726, 11514, 34, 'Цей модуль використовується');
 INSERT INTO `lang_definitions` VALUES (189727, 11515, 34, 'Цей модуль знаходиться в тестовому режимі. База даних не буде змінена.');
 INSERT INTO `lang_definitions` VALUES (189728, 11516, 34, 'Цей модуль заснований на підписці і повинен бути включений з меню Адміністрування > Глобали > З\'єднувачі > включити службу NewCrop eRx');
-INSERT INTO `lang_definitions` VALUES (189729, 11517, 34, 'Цей модуль добре інтегрований з OpenEMR, однак є дві альтернативи, не засновані на підписці, Weno і Allscripts, які можна використовувати замість цього');
+INSERT INTO `lang_definitions` VALUES (189729, 11517, 34, 'Цей модуль добре інтегрований з DCL, однак є дві альтернативи, не засновані на підписці, Weno і Allscripts, які можна використовувати замість цього');
 INSERT INTO `lang_definitions` VALUES (189730, 11518, 34, 'Цей модуль сприяє ефективному введенню даних EOB.');
 INSERT INTO `lang_definitions` VALUES (189731, 11519, 34, 'Цього місяця на сьогоднішній день');
 INSERT INTO `lang_definitions` VALUES (189732, 11520, 34, 'Це ім\'я вже існує під цим батьком.');
@@ -203262,7 +203262,7 @@ INSERT INTO `lang_definitions` VALUES (189893, 11697, 34, 'Щоб видалит
 INSERT INTO `lang_definitions` VALUES (189894, 11698, 34, 'Для Dems');
 INSERT INTO `lang_definitions` VALUES (189895, 11699, 34, 'Щоб відключити автоматичну перевірку повідомлень, перейдіть в розділ Адміністрування > Глобали > З\'єднувачі і встановіть інтервал перевірки повідомлень phiMail рівним 0 (нулю)');
 INSERT INTO `lang_definitions` VALUES (189896, 11700, 34, 'Щоб відключити SSL-сертифікати на стороні клієнта, прокоментуйте наведені вище рядки в конфігураційному файлі Apache і встановіть');
-INSERT INTO `lang_definitions` VALUES (189897, 11701, 34, 'Щоб відключити SSL-сертифікати на стороні клієнта, прокоментуйте наведені вище рядки в конфігураційному файлі Apache і вимкніть глобальну настройку\" включити клієнтський SSL \" в OpenEMR і перезапустіть сервер Apache.');
+INSERT INTO `lang_definitions` VALUES (189897, 11701, 34, 'Щоб відключити SSL-сертифікати на стороні клієнта, прокоментуйте наведені вище рядки в конфігураційному файлі Apache і вимкніть глобальну настройку\" включити клієнтський SSL \" в DCL і перезапустіть сервер Apache.');
 INSERT INTO `lang_definitions` VALUES (189898, 11702, 34, 'Щоб вимкнути HTTPS, прокоментуйте наведені вище рядки в конфігураційному файлі Apache і перезапустіть сервер Apache.');
 INSERT INTO `lang_definitions` VALUES (189899, 11703, 34, 'Щоб відобразити суму доплати, вона повинна бути введена в страховку пацієнта в розділі Правка > Демографія');
 INSERT INTO `lang_definitions` VALUES (189900, 11704, 34, 'Для цього натисніть на чорний знак + в дальньому кінці рядка замовлення сироватки сечової кислоти, щоб відкрити спливаюче вікно введення відомостей');
@@ -203280,8 +203280,8 @@ INSERT INTO `lang_definitions` VALUES (189911, 11716, 34, 'Фільтруват�
 INSERT INTO `lang_definitions` VALUES (189912, 11717, 34, 'Щоб виконати значущі вимоги до використання і допомогти відстежувати його використання, ви можете встановити прапорець відправлена зведення догляду і прапорець відправлена зведення догляду в електронному вигляді, якщо це необхідно');
 INSERT INTO `lang_definitions` VALUES (189913, 11718, 34, 'Щоб повністю видалити його, натисніть кнопку \"Зберегти\".');
 INSERT INTO `lang_definitions` VALUES (189914, 11719, 34, 'Щоб почати роботу, ви вибираєте один з двох перемикачів. \"Пошук рахунків-фактур\" або \" завантаження ери\"');
-INSERT INTO `lang_definitions` VALUES (189915, 11720, 34, 'Щоб допомогти вивчити різні компоненти сторінки звіту, особливо якщо ви хочете використовувати її в якості керівництва по експлуатації, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в OpenEMR');
-INSERT INTO `lang_definitions` VALUES (189916, 11721, 34, 'Щоб допомогти Вам ознайомитися з різними компонентами сторінки панелі моніторингу, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (189915, 11720, 34, 'Щоб допомогти вивчити різні компоненти сторінки звіту, особливо якщо ви хочете використовувати її в якості керівництва по експлуатації, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в DCL');
+INSERT INTO `lang_definitions` VALUES (189916, 11721, 34, 'Щоб допомогти Вам ознайомитися з різними компонентами сторінки панелі моніторингу, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в DCL');
 INSERT INTO `lang_definitions` VALUES (189917, 11722, 34, 'Щоб допомогти спростити реалізацію, широко використовувані шаблони були гармонізовані з існуючими посібниками з реалізації CDA і об\'єднані в єдине керівництво по реалізації – Керівництво по реалізації C-CDA (IG) (07/2012)');
 INSERT INTO `lang_definitions` VALUES (189918, 11723, 34, 'До історії');
 INSERT INTO `lang_definitions` VALUES (189919, 11724, 34, 'Щоб включити відскановані документи, які є частиною історії хвороби пацієнта, виберіть потрібні записи, встановивши відповідні прапорці');
@@ -203310,9 +203310,9 @@ INSERT INTO `lang_definitions` VALUES (189941, 11749, 34, 'до шкіри');
 INSERT INTO `lang_definitions` VALUES (189942, 11750, 34, 'Підбивати підсумки');
 INSERT INTO `lang_definitions` VALUES (189943, 11751, 34, 'до цього візиту?');
 INSERT INTO `lang_definitions` VALUES (189944, 11752, 34, 'Щоб завантажити документ CCR вже існуючого пацієнта, Використовуйте екран зведення пацієнта- > документи. Для отримання документа CCR нового пацієнта використовуйте Miscellanous - >New Documents screen');
-INSERT INTO `lang_definitions` VALUES (189945, 11754, 34, 'Щоб використовувати сторінку довідки в якості керівництва по експлуатації, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в OpenEMR');
-INSERT INTO `lang_definitions` VALUES (189946, 11755, 34, 'Щоб використовувати цей файл довідки в якості керівництва по експлуатації, найкраще змінити розмір вашого браузера, щоб зайняти половину екрану, відкрити інший екземпляр браузера, щоб заповнити іншу половину екрану, увійти в OpenEMR і відкрити файл довідки в цьому браузері і змінити його розмір, натиснувши і перетягнувши нижній правий кут так, щоб він займав всю половину екрану.');
-INSERT INTO `lang_definitions` VALUES (189947, 11756, 34, 'Щоб використовувати цей файл довідки в якості керівництва по експлуатації, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (189945, 11754, 34, 'Щоб використовувати сторінку довідки в якості керівництва по експлуатації, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в DCL');
+INSERT INTO `lang_definitions` VALUES (189946, 11755, 34, 'Щоб використовувати цей файл довідки в якості керівництва по експлуатації, найкраще змінити розмір вашого браузера, щоб зайняти половину екрану, відкрити інший екземпляр браузера, щоб заповнити іншу половину екрану, увійти в DCL і відкрити файл довідки в цьому браузері і змінити його розмір, натиснувши і перетягнувши нижній правий кут так, щоб він займав всю половину екрану.');
+INSERT INTO `lang_definitions` VALUES (189947, 11756, 34, 'Щоб використовувати цей файл довідки в якості керівництва по експлуатації, рекомендується зменшити розмір браузера до половини видового екрану, змінити розмір спливаючого вікна довідки, клацнувши і перетягнувши його в правий нижній кут. Відкрийте інший екземпляр браузера і змініть його розмір, щоб він закривав іншу половину вікна перегляду, увійдіть в DCL');
 INSERT INTO `lang_definitions` VALUES (189948, 11757, 34, 'До:');
 INSERT INTO `lang_definitions` VALUES (189949, 11758, 34, 'До:');
 INSERT INTO `lang_definitions` VALUES (189950, 11759, 34, 'TO_CITY');
@@ -203348,7 +203348,7 @@ INSERT INTO `lang_definitions` VALUES (189979, 11788, 34, 'Перемиканн�
 INSERT INTO `lang_definitions` VALUES (189980, 11789, 34, 'Переключіть панель пацієнта');
 INSERT INTO `lang_definitions` VALUES (189981, 11790, 34, 'Перемкніть праву панель PMSFH');
 INSERT INTO `lang_definitions` VALUES (189982, 11796, 34, 'Ідентифікатор токена для служби обміну медичною інформацією ТОВ \"Лабораторія інтеграції\".');
-INSERT INTO `lang_definitions` VALUES (189983, 11797, 34, 'Ідентифікатор токена для служби обміну лабораторіями OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (189983, 11797, 34, 'Ідентифікатор токена для служби обміну лабораторіями DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (189984, 11802, 34, 'Тонга (острови Тонга)');
 INSERT INTO `lang_definitions` VALUES (189985, 11803, 34, 'Тонзилектомія');
 INSERT INTO `lang_definitions` VALUES (189986, 11804, 34, 'тонзилектомія');
@@ -203701,7 +203701,7 @@ INSERT INTO `lang_definitions` VALUES (190332, 12184, 34, 'Оновлювати'
 INSERT INTO `lang_definitions` VALUES (190333, 12185, 34, 'Оновлення ACL');
 INSERT INTO `lang_definitions` VALUES (190334, 12186, 34, 'Оновлення бази даних');
 INSERT INTO `lang_definitions` VALUES (190335, 12187, 34, 'Оновлення SQL');
-INSERT INTO `lang_definitions` VALUES (190336, 12188, 34, 'Оновлює базу даних OpenEMR, щоб включити в неї процедури, функції і таблиці, необхідні для процесу деідентифікації');
+INSERT INTO `lang_definitions` VALUES (190336, 12188, 34, 'Оновлює базу даних DCL, щоб включити в неї процедури, функції і таблиці, необхідні для процесу деідентифікації');
 INSERT INTO `lang_definitions` VALUES (190337, 12189, 34, 'Модернізація триватиме');
 INSERT INTO `lang_definitions` VALUES (190338, 12190, 34, 'УПИН');
 INSERT INTO `lang_definitions` VALUES (190339, 12191, 34, 'Завантажувати');
@@ -203727,7 +203727,7 @@ INSERT INTO `lang_definitions` VALUES (190358, 12210, 34, 'Після успіш
 INSERT INTO `lang_definitions` VALUES (190359, 12211, 34, 'При натисканні на номер рахунку-фактури з\'являється \"вікно ручної проводки\". Тут ви можете змінити дату оплати і примітки до рахунку-фактури, вибрати сторону, для якої Ви проводите облік, і вибрати страховки, за якими були отримані всі очікувані платежі. Найголовніше, що для кожного платіжного коду, за яким була списана сума, ви можете ввести платіжну та коригувальну інформацію.');
 INSERT INTO `lang_definitions` VALUES (190360, 12212, 34, 'При натисканні на номер рахунку-фактури з\'являється \"вікно ручної проводки\". Тут ви можете змінити дату оплати і примітки до рахунку-фактури, вибрати сторону, для якої Ви проводите облік, і вибрати страховки, за якими були отримані всі очікувані платежі. Найголовніше, що для кожного платіжного коду, за яким була списана сума, можна ввести платіжну та коригувальну інформацію.');
 INSERT INTO `lang_definitions` VALUES (190361, 12213, 34, 'При вході на сторінку під панеллю навігації видно дві кнопки');
-INSERT INTO `lang_definitions` VALUES (190362, 12214, 34, 'При вході в OpenEMR в правому верхньому куті відображається невеликий значок конверта. Він показує кількість очікуваних повідомлень і датованих нагадувань');
+INSERT INTO `lang_definitions` VALUES (190362, 12214, 34, 'При вході в DCL в правому верхньому куті відображається невеликий значок конверта. Він показує кількість очікуваних повідомлень і датованих нагадувань');
 INSERT INTO `lang_definitions` VALUES (190363, 12215, 34, 'Після досягнення заздалегідь визначеної точки, будь то дата або Значення, правило викличе одну або кілька подій');
 INSERT INTO `lang_definitions` VALUES (190364, 12216, 34, 'При пошуку Вам буде представлений список рахунків-фактур. Ви можете натиснути на один з номерів рахунку-фактури, щоб відкрити друге вікно, яке є сторінкою Введення даних для ручної проводки. Ви також можете натиснути на ім\'я пацієнта, якщо хочете ввести нотатку, яку персонал приймальні побачить, коли пацієнт зареєструється, і ви можете вибрати рахунки-фактури, які будуть відображатися у виписках пацієнтів, і роздрукувати ці виписки.');
 INSERT INTO `lang_definitions` VALUES (190365, 12217, 34, 'При виборі списку для редагування буде відображена сторінка редагування зі значеннями списку');
@@ -203748,7 +203748,7 @@ INSERT INTO `lang_definitions` VALUES (190379, 12231, 34, 'Потік сечі')
 INSERT INTO `lang_definitions` VALUES (190380, 12232, 34, 'Терміновість сечі');
 INSERT INTO `lang_definitions` VALUES (190381, 12233, 34, 'URL-АДРЕСА');
 INSERT INTO `lang_definitions` VALUES (190382, 12234, 34, 'URL - адреса для адреси сайту NewCrop eRx.');
-INSERT INTO `lang_definitions` VALUES (190383, 12235, 34, 'URL-адреса для підтримки OpenEMR.');
+INSERT INTO `lang_definitions` VALUES (190383, 12235, 34, 'URL-адреса для підтримки DCL.');
 INSERT INTO `lang_definitions` VALUES (190384, 12236, 34, 'URL-адреса для телефонного шлюзу.');
 INSERT INTO `lang_definitions` VALUES (190385, 12237, 34, 'URL-адреса для телефонного шлюзу. Автоматизований VOIP-сервіс, що надається компанією Maviq. Будь ласка, відвідайте http://signup.maviq.com для отримання додаткової інформації.');
 INSERT INTO `lang_definitions` VALUES (190386, 12238, 34, 'URL - адреса сайту WordPress, що підтримує портал');
@@ -203881,7 +203881,7 @@ INSERT INTO `lang_definitions` VALUES (190512, 12377, 34, 'використов�
 INSERT INTO `lang_definitions` VALUES (190513, 12378, 34, 'Використання 2FA');
 INSERT INTO `lang_definitions` VALUES (190514, 12379, 34, 'Використання фруктового дерева як простішої для візуалізації аналогії краще пояснить концепцію цієї ієрархії: стовбур дерева-це група (хімія сироватки), плодоносна гілка-це фактичний порядок, Порядок процедур (сечова кислота сироватки), а плід-це результат, Дискретний результат, також званий (сечова кислота сироватки), який буде містити значення повернутого результату. Точно так само, як плід не народжується на головному стовбурі, ви не повинні поміщати Дискретний Результат в якості прямого нащадка або дитини верхньої групи. Точно так само плодоносна гілка (порядок процедури) не може бути поміщена як прямий нащадок або нащадок плода (Дискретний результат)');
 INSERT INTO `lang_definitions` VALUES (190515, 12380, 34, 'Використання технологій для підвищення продуктивності');
-INSERT INTO `lang_definitions` VALUES (190516, 12381, 34, 'Використовуючи дані, введені в систему OpenEMR буде генерувати дійсні повідомлення HL7 v2.3 в 3 форматах, текстовий файл, який автоматично завантажується в папку завантажень вашого браузера, повідомлення HL7, яке записується в папку або каталог на сервері, що працює під управлінням OpenEMR, або використовувати SFTP - Secure File Transfer Protocol, який є мережевим протоколом, який забезпечує доступ до файлів, передачу файлів і управління файлами по захищеному з\'єднанню і передачу цього повідомлення в лабораторію.');
+INSERT INTO `lang_definitions` VALUES (190516, 12381, 34, 'Використовуючи дані, введені в систему DCL буде генерувати дійсні повідомлення HL7 v2.3 в 3 форматах, текстовий файл, який автоматично завантажується в папку завантажень вашого браузера, повідомлення HL7, яке записується в папку або каталог на сервері, що працює під управлінням DCL, або використовувати SFTP - Secure File Transfer Protocol, який є мережевим протоколом, який забезпечує доступ до файлів, передачу файлів і управління файлами по захищеному з\'єднанню і передачу цього повідомлення в лабораторію.');
 INSERT INTO `lang_definitions` VALUES (190517, 12382, 34, 'Використання таблиці зборів');
 INSERT INTO `lang_definitions` VALUES (190518, 12383, 34, 'Використання основних рубрик на лабораторному аркуші допоможе запустити цей процес-панелі органів / захворювань, Гематологія, індивідуальні тести, Мікробіологія та інші');
 INSERT INTO `lang_definitions` VALUES (190519, 12384, 34, 'Використовуючи цю аналогію з фруктовим деревом, ми можемо краще зрозуміти кроки, необхідні для створення замовлення на панель тестів');
@@ -203940,7 +203940,7 @@ INSERT INTO `lang_definitions` VALUES (190571, 12437, 34, 'Перевірити'
 INSERT INTO `lang_definitions` VALUES (190572, 12441, 34, 'Версія');
 INSERT INTO `lang_definitions` VALUES (190573, 12442, 34, 'Версія 1 Адреса сайту порталу для пацієнтів на місці');
 INSERT INTO `lang_definitions` VALUES (190574, 12443, 34, 'Версія 2 Адреса сайту порталу для пацієнтів на місці');
-INSERT INTO `lang_definitions` VALUES (190575, 12444, 34, 'Версія 2.x широко використовується в галузі охорони здоров\'я, а OpenEMR використовує HL7 версії 2.3');
+INSERT INTO `lang_definitions` VALUES (190575, 12444, 34, 'Версія 2.x широко використовується в галузі охорони здоров\'я, а DCL використовує HL7 версії 2.3');
 INSERT INTO `lang_definitions` VALUES (190576, 12445, 34, 'Номер версії');
 INSERT INTO `lang_definitions` VALUES (190577, 12447, 34, 'Vert Base{{абревіатура для вертикального підстави призми}}');
 INSERT INTO `lang_definitions` VALUES (190578, 12448, 34, 'Vert Distance{{абревіатура для Vertex Distance}}');
@@ -204151,7 +204151,7 @@ INSERT INTO `lang_definitions` VALUES (190782, 12672, 34, 'Зміна ваги')
 INSERT INTO `lang_definitions` VALUES (190783, 12673, 34, 'Втрата Ваги');
 INSERT INTO `lang_definitions` VALUES (190784, 12674, 34, 'Клініка схуднення');
 INSERT INTO `lang_definitions` VALUES (190785, 12675, 34, 'Ласкаво просимо');
-INSERT INTO `lang_definitions` VALUES (190786, 12676, 34, 'Ласкаво просимо в OpenEMR');
+INSERT INTO `lang_definitions` VALUES (190786, 12676, 34, 'Ласкаво просимо в DCL');
 INSERT INTO `lang_definitions` VALUES (190787, 12677, 34, 'Валлійська');
 INSERT INTO `lang_definitions` VALUES (190788, 12678, 34, 'Weno Account Clinic ID Інформація відсутня');
 INSERT INTO `lang_definitions` VALUES (190789, 12679, 34, 'Відсутня ідентифікаційна інформація облікового запису Weno');
@@ -204192,7 +204192,7 @@ INSERT INTO `lang_definitions` VALUES (190823, 12719, 34, 'у які дні у �
 INSERT INTO `lang_definitions` VALUES (190824, 12720, 34, 'Які нотатки повинні відображатися на екрані виставлення рахунків');
 INSERT INTO `lang_definitions` VALUES (190825, 12721, 34, 'При пересиланні датованого нагадування відображається старе повідомлення, яке може бути перезаписано');
 INSERT INTO `lang_definitions` VALUES (190826, 12722, 34, 'Хоча інтуїтивно зрозуміло думати про цей модуль як про місце де можна замовити і переглянути лабораторні тести і дослідження зображень цей модуль також можна використовувати для відстеження інших процедур виконуваних в офісі');
-INSERT INTO `lang_definitions` VALUES (190827, 12723, 34, 'У той час як лабораторні тести і радіологічні тести можуть бути виконані в практичному центрі вони зазвичай виконуються на зовнішньому об\'єкті і дані постачальника для цього об\'єкта повинні бути введені в OpenEMR до початку налаштування модуля процедури');
+INSERT INTO `lang_definitions` VALUES (190827, 12723, 34, 'У той час як лабораторні тести і радіологічні тести можуть бути виконані в практичному центрі вони зазвичай виконуються на зовнішньому об\'єкті і дані постачальника для цього об\'єкта повинні бути введені в DCL до початку налаштування модуля процедури');
 INSERT INTO `lang_definitions` VALUES (190828, 12724, 34, 'Ремінь батога');
 INSERT INTO `lang_definitions` VALUES (190829, 12725, 34, 'Білий');
 INSERT INTO `lang_definitions` VALUES (190830, 12726, 34, 'Білий список');
@@ -204212,7 +204212,7 @@ INSERT INTO `lang_definitions` VALUES (190843, 12739, 34, 'з імпортом')
 INSERT INTO `lang_definitions` VALUES (190844, 12740, 34, 'з переважною мовою');
 INSERT INTO `lang_definitions` VALUES (190845, 12742, 34, 'З вибраним:');
 INSERT INTO `lang_definitions` VALUES (190846, 12743, 34, 'зі старим ім\'ям');
-INSERT INTO `lang_definitions` VALUES (190847, 12744, 34, 'За допомогою клавіші U2F вам потрібно буде підключити її до USB-порту, а потім отримати доступ до OpenEMR, використовуючи останні версії наступних сучасних браузерів-Chrome, Firefox, Safari, Edge і Opera і натиснувши кнопку на пристрої');
+INSERT INTO `lang_definitions` VALUES (190847, 12744, 34, 'За допомогою клавіші U2F вам потрібно буде підключити її до USB-порту, а потім отримати доступ до DCL, використовуючи останні версії наступних сучасних браузерів-Chrome, Firefox, Safari, Edge і Opera і натиснувши кнопку на пристрої');
 INSERT INTO `lang_definitions` VALUES (190848, 12745, 34, 'зі значенням');
 INSERT INTO `lang_definitions` VALUES (190849, 12746, 34, 'З ким ми можемо залишити повідомлення?');
 INSERT INTO `lang_definitions` VALUES (190850, 12747, 34, 'Утриманий');
@@ -204433,7 +204433,7 @@ INSERT INTO `lang_definitions` VALUES (191064, 12974, 34, 'Ваш файл не 
 INSERT INTO `lang_definitions` VALUES (191065, 12975, 34, 'Ваш файл занадто великий');
 INSERT INTO `lang_definitions` VALUES (191066, 12976, 34, 'Твій перший день тижня.');
 INSERT INTO `lang_definitions` VALUES (191067, 12977, 34, 'Пропало ваше посвідчення. Скасуйте і повторіть спробу.');
-INSERT INTO `lang_definitions` VALUES (191068, 12978, 34, 'Ваша установка OpenEMR була зареєстрована');
+INSERT INTO `lang_definitions` VALUES (191068, 12978, 34, 'Ваша установка DCL була зареєстрована');
 INSERT INTO `lang_definitions` VALUES (191069, 12980, 34, 'Ваші Лабораторні Результати');
 INSERT INTO `lang_definitions` VALUES (191070, 12981, 34, 'Ім\'я вашого списку було змінено відповідно до вимог до іменування.');
 INSERT INTO `lang_definitions` VALUES (191071, 12982, 34, 'Ваше повідомлення було відправлено для доставки за адресою');
@@ -205143,7 +205143,7 @@ INSERT INTO `lang_definitions` VALUES (191774, 667, 36, 'Makstud summa');
 INSERT INTO `lang_definitions` VALUES (191775, 668, 36, 'Hulk:');
 INSERT INTO `lang_definitions` VALUES (191776, 671, 36, 'Arve summa');
 INSERT INTO `lang_definitions` VALUES (191777, 676, 36, 'Korduvate ürituste jaoks peab lõpuaeg olema hiljem kui algusaeg');
-INSERT INTO `lang_definitions` VALUES (191778, 678, 36, 'OpenEMR veebikataloogi puu dumpingul tekkis mingi viga');
+INSERT INTO `lang_definitions` VALUES (191778, 678, 36, 'DCL veebikataloogi puu dumpingul tekkis mingi viga');
 INSERT INTO `lang_definitions` VALUES (191779, 679, 36, 'phpGACL veebikataloogi puu dumpingul tekkis mingi viga');
 INSERT INTO `lang_definitions` VALUES (191780, 680, 36, 'SQL-Ledger veebikataloogi puu dumpingul tekkis mingi viga');
 INSERT INTO `lang_definitions` VALUES (191781, 685, 36, 'Loodi ja lingati osaline GCAC probleem. Hiljem peab keegi selle lõpetama.');
@@ -205577,7 +205577,7 @@ INSERT INTO `lang_definitions` VALUES (192208, 15, 37, 'چند کلمه برای
 INSERT INTO `lang_definitions` VALUES (192209, 16, 37, 'قرار ملاقات بعدی از طریق برگه هزینه نیز می تواند تعیین شود.');
 INSERT INTO `lang_definitions` VALUES (192210, 17, 37, 'یک فرم ملاقات GCAC باید به این ملاقات اضافه شود.');
 INSERT INTO `lang_definitions` VALUES (192211, 18, 37, 'یک پیام HL7 نسخه 2.x به سادگی از چندین خط متن تشکیل شده است ، هر سطر را یک قطعه می نامند و با استفاده از کاراکتر خط عمودی \"|\" به بخشهای مختلف تقسیم می شود');
-INSERT INTO `lang_definitions` VALUES (192212, 19, 37, 'یک برنامه بزرگ مانند openEMR توسط بسیاری از کاربران با نقش و درجه مسئولیت های متفاوت مورد استفاده قرار می گیرد. ضروری است که دسترسی به قسمتهای مختلف برنامه بر اساس نیاز به کاربران به آنها داده شود. برای دستیابی به این هدف - از لیست های کنترل دسترسی (ACL) استفاده می شود.');
+INSERT INTO `lang_definitions` VALUES (192212, 19, 37, 'یک برنامه بزرگ مانند DCL توسط بسیاری از کاربران با نقش و درجه مسئولیت های متفاوت مورد استفاده قرار می گیرد. ضروری است که دسترسی به قسمتهای مختلف برنامه بر اساس نیاز به کاربران به آنها داده شود. برای دستیابی به این هدف - از لیست های کنترل دسترسی (ACL) استفاده می شود.');
 INSERT INTO `lang_definitions` VALUES (192213, 20, 37, 'شماره سری مورد نیاز است');
 INSERT INTO `lang_definitions` VALUES (192214, 21, 37, 'شماره سری مورد نیاز است!');
 INSERT INTO `lang_definitions` VALUES (192215, 22, 37, 'یک حرف کوچک');
@@ -205989,7 +205989,7 @@ INSERT INTO `lang_definitions` VALUES (192620, 497, 37, 'همه اندازه ه�
 INSERT INTO `lang_definitions` VALUES (192621, 498, 37, 'همه یا بخشی از نام');
 INSERT INTO `lang_definitions` VALUES (192622, 499, 37, 'همه یا بخشی از نام خانوادگی');
 INSERT INTO `lang_definitions` VALUES (192623, 500, 37, 'همه یا بخشی از سازمان');
-INSERT INTO `lang_definitions` VALUES (192624, 501, 37, 'همه فعالیت های بیماران در OpenEMR به ویزیت های آنها لینک شده است');
+INSERT INTO `lang_definitions` VALUES (192624, 501, 37, 'همه فعالیت های بیماران در DCL به ویزیت های آنها لینک شده است');
 INSERT INTO `lang_definitions` VALUES (192625, 502, 37, 'همه بیماران');
 INSERT INTO `lang_definitions` VALUES (192626, 503, 37, 'همه پیامهای معلق در  پنجره پیام های من نمایش داده میشوند');
 INSERT INTO `lang_definitions` VALUES (192627, 505, 37, 'همه محصولات');
@@ -206133,11 +206133,11 @@ INSERT INTO `lang_definitions` VALUES (192764, 674, 37, 'ایمیلی با مش�
 INSERT INTO `lang_definitions` VALUES (192765, 675, 37, 'یک دستور الکترونیکی و نتیجه برگشتی به صورت پیامی، پیام HL7 نامیده میشود. HL7 مخفف سطح سلامتی 7 است. هدف اصلی HL7 ساده سازی اجرای رابط های بین برنامه های نرم افزاری مراقبت های بهداشتی و تامین کنندگان مختلف است تا از این طریق دردسر و هزینه های برنامه نویسی رابط سفارشی کاهش یابد.');
 INSERT INTO `lang_definitions` VALUES (192766, 676, 37, 'تاریخ پایان بعد از تاریخ شروع برای رویدادهای تکرار شونده مورد نیاز است!');
 INSERT INTO `lang_definitions` VALUES (192767, 677, 37, 'در امضای فرم خطایی رخ داده است');
-INSERT INTO `lang_definitions` VALUES (192768, 678, 37, 'خطایی در ذخیره خروجی دایرکتوری درختی برنامه OpenEMR رخ داد');
+INSERT INTO `lang_definitions` VALUES (192768, 678, 37, 'خطایی در ذخیره خروجی دایرکتوری درختی برنامه DCL رخ داد');
 INSERT INTO `lang_definitions` VALUES (192769, 679, 37, 'خطایی در ذخیره خروجی دایرکتوری درختی برنامه phpGACL رخ داد');
 INSERT INTO `lang_definitions` VALUES (192770, 680, 37, 'خطایی در ذخیره خروجی دایرکتوری درختی برنامه SQL-Ledger رخ داد');
 INSERT INTO `lang_definitions` VALUES (192771, 682, 37, 'خطایی رخ داد: فایل انتخاب شده برای آپلود پیدا نشد: دکمه بازگشت را بزنید!');
-INSERT INTO `lang_definitions` VALUES (192772, 683, 37, 'یک مفهوم مهم برای درک این است که هنگامی که secret key تحویل شده از طریق کد QR توسط برنامه احراز هویت گرفته می شود ، دیگر ارتباطی بین برنامه و OpenEMR وجود ندارد ، هر یک از زمان UNIX فعلی و کپی آن از secret key مشترک کاربر برای تولید یک شماره 6 رقمی منحصر به فرد یکسان استفاده میکنند.');
+INSERT INTO `lang_definitions` VALUES (192772, 683, 37, 'یک مفهوم مهم برای درک این است که هنگامی که secret key تحویل شده از طریق کد QR توسط برنامه احراز هویت گرفته می شود ، دیگر ارتباطی بین برنامه و DCL وجود ندارد ، هر یک از زمان UNIX فعلی و کپی آن از secret key مشترک کاربر برای تولید یک شماره 6 رقمی منحصر به فرد یکسان استفاده میکنند.');
 INSERT INTO `lang_definitions` VALUES (192773, 684, 37, 'نکته مهمی که باید بخاطر بسپارید این است که آزمونهای مختلف افراد در هر پنل به عنوان نتایج لیست شده اند ، شما نمی توانید مستقیماً تک تک این تستها را سفارش دهید');
 INSERT INTO `lang_definitions` VALUES (192774, 685, 37, 'یک مورد ناقص جهانی مراقبت از سقط جنین ایجاد و پیوند داده شده است. بعداً باید شخصی آن را تکمیل کند.');
 INSERT INTO `lang_definitions` VALUES (192775, 687, 37, 'یک موضوع مربوط به موارد مرتبط با سلامتی بیمار');
@@ -206350,7 +206350,7 @@ INSERT INTO `lang_definitions` VALUES (192981, 927, 37, 'فرض کنید بیم�
 INSERT INTO `lang_definitions` VALUES (192982, 928, 37, 'آسم');
 INSERT INTO `lang_definitions` VALUES (192983, 929, 37, 'در');
 INSERT INTO `lang_definitions` VALUES (192984, 931, 37, 'در صورت انتخاب همه حداقل به یک پارامتر جستجو نیاز است.');
-INSERT INTO `lang_definitions` VALUES (192985, 932, 37, 'در حال حاضر تجویز الکترونیکی از OpenEMR فقط در ایالات متحده امکان پذیر است');
+INSERT INTO `lang_definitions` VALUES (192985, 932, 37, 'در حال حاضر تجویز الکترونیکی از DCL فقط در ایالات متحده امکان پذیر است');
 INSERT INTO `lang_definitions` VALUES (192986, 933, 37, 'در حال حاضر تنها سند تداوم مراقبت از مراقبت سند تداوم مراقبت با استفاده از phiMail قابل ارسال است');
 INSERT INTO `lang_definitions` VALUES (192987, 934, 37, 'در ناویکولار');
 INSERT INTO `lang_definitions` VALUES (192988, 935, 37, 'در ناویکولار');
@@ -206788,7 +206788,7 @@ INSERT INTO `lang_definitions` VALUES (193419, 1409, 37, 'پاسخ به تماس
 INSERT INTO `lang_definitions` VALUES (193420, 1410, 37, 'درخواست پاسخ به تماس');
 INSERT INTO `lang_definitions` VALUES (193421, 1411, 37, 'کالری');
 INSERT INTO `lang_definitions` VALUES (193422, 1412, 37, 'کامبوجی');
-INSERT INTO `lang_definitions` VALUES (193423, 1413, 37, 'سیستم های سفارش پزشکی رایانه ای (ماژول OpenEMR)');
+INSERT INTO `lang_definitions` VALUES (193423, 1413, 37, 'سیستم های سفارش پزشکی رایانه ای (ماژول DCL)');
 INSERT INTO `lang_definitions` VALUES (193424, 1414, 37, 'نمی توان سیستم عامل را تعیین کرد!');
 INSERT INTO `lang_definitions` VALUES (193425, 1416, 37, 'نمی توان این را فعال کرد مگر آنکه گزینه خلاصه درمان ارسال شده فعال شده باشد');
 INSERT INTO `lang_definitions` VALUES (193426, 1417, 37, 'فایل پیدا نشد');
@@ -207485,10 +207485,10 @@ INSERT INTO `lang_definitions` VALUES (194116, 2209, 37, 'پیکربندی');
 INSERT INTO `lang_definitions` VALUES (194117, 2210, 37, 'تنظیمات');
 INSERT INTO `lang_definitions` VALUES (194118, 2211, 37, 'صادر / وارد کردن تنظیمات');
 INSERT INTO `lang_definitions` VALUES (194119, 2212, 37, 'پیکربندی با موفقیت ذخیره شد');
-INSERT INTO `lang_definitions` VALUES (194120, 2213, 37, 'Apache و OpenEMR را برای استفاده از گواهینامه های SSL سمت مشتری پیکربندی کنید.');
+INSERT INTO `lang_definitions` VALUES (194120, 2213, 37, 'Apache و DCL را برای استفاده از گواهینامه های SSL سمت مشتری پیکربندی کنید.');
 INSERT INTO `lang_definitions` VALUES (194121, 2214, 37, 'Apache را برای استفاده از گواهینامه های SSL سمت مشتری پیکربندی کنید');
 INSERT INTO `lang_definitions` VALUES (194122, 2215, 37, 'Apache را برای استفاده از HTTPS پیکربندی کنید.');
-INSERT INTO `lang_definitions` VALUES (194123, 2216, 37, 'Openemr را برای استفاده از گواهینامه های SSL سمت مشتری پیکربندی کنید');
+INSERT INTO `lang_definitions` VALUES (194123, 2216, 37, 'DCL را برای استفاده از گواهینامه های SSL سمت مشتری پیکربندی کنید');
 INSERT INTO `lang_definitions` VALUES (194124, 2217, 37, 'سفارشات و نتایج را پیکربندی کنید');
 INSERT INTO `lang_definitions` VALUES (194125, 2218, 37, 'پیکربندی راهنمای سفارشات');
 INSERT INTO `lang_definitions` VALUES (194126, 2219, 37, 'پیکربندی ساختار آزمون آزمایشگاه');
@@ -207535,7 +207535,7 @@ INSERT INTO `lang_definitions` VALUES (194166, 2268, 37, 'لنز طبی');
 INSERT INTO `lang_definitions` VALUES (194167, 2269, 37, 'برای خدمات تبادل آزمایشگاه با یکپارچه سازی اطلاعات پزشکی ، LLC در http://mi-squared.com تماس بگیرید.');
 INSERT INTO `lang_definitions` VALUES (194168, 2270, 37, 'برای اشتراک سرویس eRx با اطلاعات پزشکی ادغام ، LLC در http://mi-squared.com یا ZH Healthcare در http://zhservices.com تماس بگیرید');
 INSERT INTO `lang_definitions` VALUES (194169, 2271, 37, 'برای مشترک شدن در سرویس NewCrop eRx با یکپارچه سازی اطلاعات پزشکی ، LLC در http://mi-squared.com یا ZH Healthcare در http://zhservices.com تماس بگیرید.');
-INSERT INTO `lang_definitions` VALUES (194170, 2272, 37, 'برای اشتراک در سرویس eCx NewCrop با mi-squared در http://www.mi-squared.com/products-services/openemr/ یا ZH Healthcare در https://blueehr.com/contact-us/ تماس بگیرید.');
+INSERT INTO `lang_definitions` VALUES (194170, 2272, 37, 'برای اشتراک در سرویس eCx NewCrop با mi-squared در http://www.mi-squared.com/products-services/DCL/ یا ZH Healthcare در https://blueehr.com/contact-us/ تماس بگیرید.');
 INSERT INTO `lang_definitions` VALUES (194171, 2273, 37, 'نام فرد آشنا');
 INSERT INTO `lang_definitions` VALUES (194172, 2274, 37, 'برای مشترک شدن در سرویس Weno Free eRx با Open Med Practice ، www.openmedpractice.com تماس بگیرید.');
 INSERT INTO `lang_definitions` VALUES (194173, 2275, 37, 'با تلفن تماس بگیرید یا به آنها اطلاع دهید');
@@ -207774,7 +207774,7 @@ INSERT INTO `lang_definitions` VALUES (194405, 2544, 37, 'در حال حاضر �
 INSERT INTO `lang_definitions` VALUES (194406, 2545, 37, 'در حال حاضر مشغول است');
 INSERT INTO `lang_definitions` VALUES (194407, 2547, 37, 'در حال حاضر آفلاین است');
 INSERT INTO `lang_definitions` VALUES (194408, 2548, 37, 'در حال اجرا');
-INSERT INTO `lang_definitions` VALUES (194409, 2549, 37, 'در حال حاضر 5 نوع تراکنش در OpenEMR وجود دارد');
+INSERT INTO `lang_definitions` VALUES (194409, 2549, 37, 'در حال حاضر 5 نوع تراکنش در DCL وجود دارد');
 INSERT INTO `lang_definitions` VALUES (194410, 2550, 37, 'در حال حاضر درمانگاهی وجود ندارد.');
 INSERT INTO `lang_definitions` VALUES (194411, 2551, 37, 'در حال حاضر روی ساخت این سند کار می شود');
 INSERT INTO `lang_definitions` VALUES (194412, 2552, 37, 'سندرم کوشینگ');
@@ -208462,8 +208462,8 @@ INSERT INTO `lang_definitions` VALUES (195093, 3320, 37, 'موعد مقرر');
 INSERT INTO `lang_definitions` VALUES (195094, 3322, 37, 'به زودی');
 INSERT INTO `lang_definitions` VALUES (195095, 3323, 37, 'وضعیت مناسب');
 INSERT INTO `lang_definitions` VALUES (195096, 3324, 37, 'به روز رسانی وضعیت');
-INSERT INTO `lang_definitions` VALUES (195097, 3325, 37, 'خروجی کلی پایگاه داده OpenEMR');
-INSERT INTO `lang_definitions` VALUES (195098, 3326, 37, 'خروجی کلی فهرست درختی وب OpenEMR');
+INSERT INTO `lang_definitions` VALUES (195097, 3325, 37, 'خروجی کلی پایگاه داده DCL');
+INSERT INTO `lang_definitions` VALUES (195098, 3326, 37, 'خروجی کلی فهرست درختی وب DCL');
 INSERT INTO `lang_definitions` VALUES (195099, 3327, 37, 'خروجی کلی پایگاه داده phpGACL');
 INSERT INTO `lang_definitions` VALUES (195100, 3328, 37, 'خروجی کلی فهرست درختی وب phpGACL');
 INSERT INTO `lang_definitions` VALUES (195101, 3329, 37, 'خروجی کلی پایگاه داده SQL-Ledger');
@@ -208717,8 +208717,8 @@ INSERT INTO `lang_definitions` VALUES (195348, 3611, 37, 'فعال کردن پو
 INSERT INTO `lang_definitions` VALUES (195349, 3612, 37, 'فعال کردن دانلود سند پورتال بیمار در محل');
 INSERT INTO `lang_definitions` VALUES (195350, 3613, 37, 'برای ثبت نام خود بیمار ، بیمار جدید در پورتال بیمار در محل را فعال کنید.');
 INSERT INTO `lang_definitions` VALUES (195351, 3614, 37, 'فعال کردن پورتال بیمار در محل');
-INSERT INTO `lang_definitions` VALUES (195352, 3621, 37, 'OpenEMR REST API را فعال کنید');
-INSERT INTO `lang_definitions` VALUES (195353, 3622, 37, 'OpenEMR RESTful API را فعال کنید. SSL مورد نیاز است');
+INSERT INTO `lang_definitions` VALUES (195352, 3621, 37, 'DCL REST API را فعال کنید');
+INSERT INTO `lang_definitions` VALUES (195353, 3622, 37, 'DCL RESTful API را فعال کنید. SSL مورد نیاز است');
 INSERT INTO `lang_definitions` VALUES (195354, 3630, 37, 'ویجت یادآوری بیمار را فعال کنید');
 INSERT INTO `lang_definitions` VALUES (195355, 3632, 37, 'سرویس پیام رسانی مستقیم phiMail را فعال کنید');
 INSERT INTO `lang_definitions` VALUES (195356, 3633, 37, 'فعال کردن ارسال');
@@ -208729,7 +208729,7 @@ INSERT INTO `lang_definitions` VALUES (195360, 3638, 37, 'فعال کردن پش
 INSERT INTO `lang_definitions` VALUES (195361, 3639, 37, 'فعال کردن گزارش جزء بجزء استاندارد');
 INSERT INTO `lang_definitions` VALUES (195362, 3640, 37, 'فعال کردن پشتیبانی از پورتال منبع آزاد وردپرس ساخته Sunset Systems');
 INSERT INTO `lang_definitions` VALUES (195363, 3642, 37, 'فعال کردن یکپارچه سازی اطلاعات پزشکی ، سرویس تبادل آزمایشگاه LLC');
-INSERT INTO `lang_definitions` VALUES (195364, 3643, 37, 'فعال کردن سرویس تبادل آزمایشگاه OpenEMR Support LLC');
+INSERT INTO `lang_definitions` VALUES (195364, 3643, 37, 'فعال کردن سرویس تبادل آزمایشگاه DCL Support LLC');
 INSERT INTO `lang_definitions` VALUES (195365, 3644, 37, 'فعال کردن احراز هویت گواهی کاربر');
 INSERT INTO `lang_definitions` VALUES (195366, 3645, 37, 'فعال کردن نسخه 1 پورتال بیمار در محل');
 INSERT INTO `lang_definitions` VALUES (195367, 3646, 37, 'فعال کردن نسخه 2 پورتال بیمار در محل');
@@ -208833,7 +208833,7 @@ INSERT INTO `lang_definitions` VALUES (195464, 3754, 37, 'انگلیسی');
 INSERT INTO `lang_definitions` VALUES (195465, 3756, 37, 'انگلیسی (هندی)');
 INSERT INTO `lang_definitions` VALUES (195466, 3757, 37, 'انگلیسی (استاندارد)');
 INSERT INTO `lang_definitions` VALUES (195467, 3758, 37, 'دستور Enscript که توسط هایلافاکس استفاده می شود.');
-INSERT INTO `lang_definitions` VALUES (195468, 3759, 37, 'اطمینان حاصل کنید که OpenEMR حق نوشتن در دایرکتوری دارد');
+INSERT INTO `lang_definitions` VALUES (195468, 3759, 37, 'اطمینان حاصل کنید که DCL حق نوشتن در دایرکتوری دارد');
 INSERT INTO `lang_definitions` VALUES (195469, 3760, 37, 'اطمینان حاصل کنید که کدهای شناسایی منحصر به فرد هستند');
 INSERT INTO `lang_definitions` VALUES (195470, 3761, 37, 'تخلیه گوش و حلق و بینی');
 INSERT INTO `lang_definitions` VALUES (195471, 3762, 37, 'درد گوش و حلق و بینی');
@@ -208893,14 +208893,14 @@ INSERT INTO `lang_definitions` VALUES (195524, 3822, 37, 'در صورت امکا
 INSERT INTO `lang_definitions` VALUES (195525, 3823, 37, 'نام ها و کد های شناسایی منطقی مشاهده (LOINC) برای این روش را وارد کنید');
 INSERT INTO `lang_definitions` VALUES (195526, 3824, 37, 'نام ها و کد های شناسایی منطقی مشاهده(LOINC) برای این روش را وارد کنید. LOINC یک پایگاه داده و استاندارد جهانی برای شناسایی مشاهدات آزمایشگاهی پزشکی است.');
 INSERT INTO `lang_definitions` VALUES (195527, 3825, 37, 'کد LOINC را برای این روش وارد کنید');
-INSERT INTO `lang_definitions` VALUES (195528, 3826, 37, 'رمز ورود OpenEMR را برای کاربر وارد کنید و روی ارسال کلیک کنید');
+INSERT INTO `lang_definitions` VALUES (195528, 3826, 37, 'رمز ورود DCL را برای کاربر وارد کنید و روی ارسال کلیک کنید');
 INSERT INTO `lang_definitions` VALUES (195529, 3827, 37, 'کد شناسایی مجدد را وارد کنید');
 INSERT INTO `lang_definitions` VALUES (195530, 3828, 37, 'سایت مربوطه در صورت وجود وارد کنید.');
 INSERT INTO `lang_definitions` VALUES (195531, 3829, 37, 'آدرس سرور ، نام کاربری و گذرواژه ارائه شده به شما را وارد کنید');
 INSERT INTO `lang_definitions` VALUES (195532, 3830, 37, 'شدت آلرژی را وارد کنید');
 INSERT INTO `lang_definitions` VALUES (195533, 3831, 37, 'در صورت وجود نوع نمونه را وارد کنید.');
 INSERT INTO `lang_definitions` VALUES (195534, 3832, 37, 'مقادیر 3.4 - 7.2 برای مردان ، 2.4–6.1 برای زنان را وارد کنید');
-INSERT INTO `lang_definitions` VALUES (195535, 3833, 37, 'نام کاربری OpenEMR آنها را در قسمت کاربر اعلان وارد کنید');
+INSERT INTO `lang_definitions` VALUES (195535, 3833, 37, 'نام کاربری DCL آنها را در قسمت کاربر اعلان وارد کنید');
 INSERT INTO `lang_definitions` VALUES (195536, 3834, 37, 'شناسه ورود کاربر را وارد کنید');
 INSERT INTO `lang_definitions` VALUES (195537, 3835, 37, 'مقادیر را در این بخش وارد کنید تا گروه جدیدی به نام شی درخواست دسترسی (ARO) نیز شناخته شود.');
 INSERT INTO `lang_definitions` VALUES (195538, 3836, 37, 'اعتبار خود را وارد کنید');
@@ -208958,7 +208958,7 @@ INSERT INTO `lang_definitions` VALUES (195589, 3897, 37, 'خطا در حذف پ�
 INSERT INTO `lang_definitions` VALUES (195590, 3898, 37, 'خطا در بازیابی نتایج از شبکه تبادل آزمایشگاه ها');
 INSERT INTO `lang_definitions` VALUES (195591, 3899, 37, 'خطا در بازیابی مقادیر.');
 INSERT INTO `lang_definitions` VALUES (195592, 3900, 37, 'خطا در ذخیره سند');
-INSERT INTO `lang_definitions` VALUES (195593, 3901, 37, 'هنگام اعطای حق دسترسی فایل به کاربر OpenEMR خطایی رخ داد.');
+INSERT INTO `lang_definitions` VALUES (195593, 3901, 37, 'هنگام اعطای حق دسترسی فایل به کاربر DCL خطایی رخ داد.');
 INSERT INTO `lang_definitions` VALUES (195594, 3902, 37, 'هنگام افزودن طرح جدید خطایی رخ داد');
 INSERT INTO `lang_definitions` VALUES (195595, 3903, 37, 'هنگام حذف طرح خطایی روی داد');
 INSERT INTO `lang_definitions` VALUES (195596, 3904, 37, 'خطا هنگام ثبت نام فرم!');
@@ -208976,7 +208976,7 @@ INSERT INTO `lang_definitions` VALUES (195607, 3920, 37, 'خطا ، ایجاد �
 INSERT INTO `lang_definitions` VALUES (195608, 3921, 37, 'خطا ، ایجاد گواهی Certificate Authority امکان پذیر نیست.');
 INSERT INTO `lang_definitions` VALUES (195609, 3922, 37, 'خطا ، ایجاد گواهی سرور امکان پذیر نیست.');
 INSERT INTO `lang_definitions` VALUES (195610, 3924, 37, 'خطا ، باز کردن فایل امکان پذیر نیست');
-INSERT INTO `lang_definitions` VALUES (195611, 3925, 37, 'خطا ، احراز هویت گواهی کاربر در OpenEMR فعال نیست');
+INSERT INTO `lang_definitions` VALUES (195611, 3925, 37, 'خطا ، احراز هویت گواهی کاربر در DCL فعال نیست');
 INSERT INTO `lang_definitions` VALUES (195612, 3932, 37, 'خطا. بعدا دوباره تلاش کنید');
 INSERT INTO `lang_definitions` VALUES (195613, 3933, 37, 'خطا شما باید ماژول آرشیو php یا Tar.php را نصب کنید.');
 INSERT INTO `lang_definitions` VALUES (195614, 3934, 37, 'خطا: نمی توان table.sql را باز کرد ، فرم خراب است؟');
@@ -209303,7 +209303,7 @@ INSERT INTO `lang_definitions` VALUES (195934, 4285, 37, 'پرونده یافت 
 INSERT INTO `lang_definitions` VALUES (195935, 4286, 37, 'پرونده یافت نشد');
 INSERT INTO `lang_definitions` VALUES (195936, 4287, 37, 'پرونده در سرور (تاریخ اصلاح)');
 INSERT INTO `lang_definitions` VALUES (195937, 4288, 37, 'مسیر پرونده یافت نشد');
-INSERT INTO `lang_definitions` VALUES (195938, 4289, 37, 'امتیاز دسترسی به قابل به کاربر OpenEMR اعطا شده است.');
+INSERT INTO `lang_definitions` VALUES (195938, 4289, 37, 'امتیاز دسترسی به قابل به کاربر DCL اعطا شده است.');
 INSERT INTO `lang_definitions` VALUES (195939, 4290, 37, 'بازیابی پرونده از CouchDB انجام نشد');
 INSERT INTO `lang_definitions` VALUES (195940, 4291, 37, 'اتاق پرونده');
 INSERT INTO `lang_definitions` VALUES (195941, 4292, 37, 'فایلی برای آپلود');
@@ -209320,7 +209320,7 @@ INSERT INTO `lang_definitions` VALUES (195951, 4302, 37, 'فیلیپینی');
 INSERT INTO `lang_definitions` VALUES (195952, 4303, 37, 'پر کردن');
 INSERT INTO `lang_definitions` VALUES (195953, 4304, 37, 'ردیف زیر را پر کنید.');
 INSERT INTO `lang_definitions` VALUES (195954, 4305, 37, 'فقط در صورت ارسال اعلان ایمیل به بیماران ، اینجا را پر کنید');
-INSERT INTO `lang_definitions` VALUES (195955, 4306, 37, 'جزئیات از دست رفته را پر کنید یا اطلاعات موجود را ویرایش کنید. این در صفحه دموگرافیک بیمار در openEMR ذخیره می شود');
+INSERT INTO `lang_definitions` VALUES (195955, 4306, 37, 'جزئیات از دست رفته را پر کنید یا اطلاعات موجود را ویرایش کنید. این در صفحه دموگرافیک بیمار در DCL ذخیره می شود');
 INSERT INTO `lang_definitions` VALUES (195956, 4307, 37, 'کدهای CPT را با استفاده از قالب نمایش داده شده پر کنید. کدهای مشترک E / M قبلاً پر شده اند ، در صورت لزوم ، موارد بیشتری را اضافه کنید');
 INSERT INTO `lang_definitions` VALUES (195957, 4308, 37, 'در صورت لزوم جزئیات را پر کنید و روی ذخیره کلیک کنید');
 INSERT INTO `lang_definitions` VALUES (195958, 4309, 37, 'جزئیات مربوط به صفحه Organ / Disease را مانند قبل پر کنید و روی Save کلیک کنید تا پنجره بازشو بسته شود');
@@ -209491,7 +209491,7 @@ INSERT INTO `lang_definitions` VALUES (196122, 4484, 37, 'برای علاقمن�
 INSERT INTO `lang_definitions` VALUES (196123, 4485, 37, 'برای علاقه مندان به آنچه زیر کاپوت رخ می دهد');
 INSERT INTO `lang_definitions` VALUES (196124, 4486, 37, 'برای آن خطوط شرح جزئیات کد را نشان می دهد');
 INSERT INTO `lang_definitions` VALUES (196125, 4487, 37, 'برای کسانی که دارای امتیازات اداری هستند ، نمادی در کنار عنوان پیام های من نمایش داده می شود');
-INSERT INTO `lang_definitions` VALUES (196126, 4488, 37, 'برای اینکه TOTP کار کند ، یک کلید مخفی منحصر به فرد باید بین OpenEMR و کاربر به اشتراک گذاشته شود');
+INSERT INTO `lang_definitions` VALUES (196126, 4488, 37, 'برای اینکه TOTP کار کند ، یک کلید مخفی منحصر به فرد باید بین DCL و کاربر به اشتراک گذاشته شود');
 INSERT INTO `lang_definitions` VALUES (196127, 4489, 37, 'برای پشتیبانی U2F در لینوکس کلیک کنید');
 INSERT INTO `lang_definitions` VALUES (196128, 4490, 37, 'برای متغیر');
 INSERT INTO `lang_definitions` VALUES (196129, 4491, 37, 'برای:');
@@ -209996,7 +209996,7 @@ INSERT INTO `lang_definitions` VALUES (196627, 5039, 37, 'html');
 INSERT INTO `lang_definitions` VALUES (196628, 5040, 37, 'خروجی HTML؟');
 INSERT INTO `lang_definitions` VALUES (196629, 5041, 37, 'htn {{فشار خون}}');
 INSERT INTO `lang_definitions` VALUES (196630, 5042, 37, 'خطای HTTP');
-INSERT INTO `lang_definitions` VALUES (196631, 5043, 37, 'لینک HTTPS برای خدمات OpenEMR پشتیبانی LLC Lab Exchange.');
+INSERT INTO `lang_definitions` VALUES (196631, 5043, 37, 'لینک HTTPS برای خدمات DCL پشتیبانی LLC Lab Exchange.');
 INSERT INTO `lang_definitions` VALUES (196632, 5044, 37, 'ht {{hyperphoria}}');
 INSERT INTO `lang_definitions` VALUES (196633, 5045, 37, 'مجارستانی');
 INSERT INTO `lang_definitions` VALUES (196634, 5046, 37, 'دایرکتوری Hylafax');
@@ -210065,7 +210065,7 @@ INSERT INTO `lang_definitions` VALUES (196696, 5110, 37, 'اگر آن را هن�
 INSERT INTO `lang_definitions` VALUES (196697, 5111, 37, 'اگر نام، هر بخش از نام خانوادگی یا آخرین نام خانوادگی، نام خانوادگی');
 INSERT INTO `lang_definitions` VALUES (196698, 5112, 37, 'اگر NewCrop ERX - ماژول نسخه الکترونیکی، دکمه های وضعیت حساب کاربری NewCrop را فعال می کند و دکمه های وضعیت حساب NewCrop در اینجا ظاهر می شود');
 INSERT INTO `lang_definitions` VALUES (196699, 5113, 37, 'اگر لیست نشده اید، می توانید دارو را به جعبه متن عنوان اضافه کنید');
-INSERT INTO `lang_definitions` VALUES (196700, 5115, 37, 'اگر فقط کد QR را ضبط کنید، اما کلید TOTP را با OpenEMR ثبت نکنید این ویژگی در ورود به سیستم فعال نخواهد شد');
+INSERT INTO `lang_definitions` VALUES (196700, 5115, 37, 'اگر فقط کد QR را ضبط کنید، اما کلید TOTP را با DCL ثبت نکنید این ویژگی در ورود به سیستم فعال نخواهد شد');
 INSERT INTO `lang_definitions` VALUES (196701, 5116, 37, 'اگر بیمار انتصاب را داشته باشد، روی OK کلیک کنید تا یک برخورد را ایجاد کنید، در غیر اینصورت، لغو این را لغو کنید و سپس یک دیدار برای بازدید امروز ایجاد کنید.');
 INSERT INTO `lang_definitions` VALUES (196702, 5117, 37, 'اگر پرداخت شود');
 INSERT INTO `lang_definitions` VALUES (196703, 5118, 37, 'اگر فرد مرحوم باشد، سپس تاریخ مرگ را وارد کنید.');
@@ -210089,7 +210089,7 @@ INSERT INTO `lang_definitions` VALUES (196720, 5135, 37, 'اگر پیام ارس
 INSERT INTO `lang_definitions` VALUES (196721, 5136, 37, 'اگر پورتال بیمار Offsite فعال شود، یک دکمه وجود دارد که می گوید ایجاد اعتبار پورتال Offsite را فراهم می کند');
 INSERT INTO `lang_definitions` VALUES (196722, 5137, 37, 'اگر پورتال بیمار آنلاین فعال باشد، یک دکمه وجود دارد که می گوید ایجاد اعتبار پورتال آنلاین را فراهم می کند');
 INSERT INTO `lang_definitions` VALUES (196723, 5138, 37, 'اگر اعتبار پورتال آنلاین / Offsite قبلا تنظیم شده است، دکمه تغییر خواهد کرد');
-INSERT INTO `lang_definitions` VALUES (196724, 5139, 37, 'اگر بیمار دارای اطلاعات جمعیتی در OpenEMR باشد، به طور خودکار زمینه های مربوطه را در بخش های مناسب قرار می دهد');
+INSERT INTO `lang_definitions` VALUES (196724, 5139, 37, 'اگر بیمار دارای اطلاعات جمعیتی در DCL باشد، به طور خودکار زمینه های مربوطه را در بخش های مناسب قرار می دهد');
 INSERT INTO `lang_definitions` VALUES (196725, 5140, 37, 'اگر بیمار پورتال بیمار را مجاز نیاورد و سپس بیمار مجاز به ارسال پیام پورتال بیمار در اینجا نشان داده نخواهد شد');
 INSERT INTO `lang_definitions` VALUES (196726, 5141, 37, 'اگر بیمار در روز بازدید به لیست یادآوری اضافه شود، تاریخ فعلی را منعکس می کند');
 INSERT INTO `lang_definitions` VALUES (196727, 5142, 37, 'اگر بیمار تماس بگیرد تا به لیست اضافه شود، آخرین بازدید ممکن است در گذشته از راه دور باشد.توجه داشته باشید که سال های 1،2،3 به علاوه محاسبه شده و در جعبه تاریخ در پایین این بخش نمایش داده می شود');
@@ -210122,9 +210122,9 @@ INSERT INTO `lang_definitions` VALUES (196753, 5169, 37, 'اگر بر روی ع�
 INSERT INTO `lang_definitions` VALUES (196754, 5170, 37, 'اگر این خطا را تجربه کنید، لطفا با پشتیبانی تماس بگیرید.');
 INSERT INTO `lang_definitions` VALUES (196755, 5171, 37, 'اگر مقدار مورد نیاز را در جعبه کشویی پیدا نکنید، باید آن را از طریق مدیریت> لیست> واحد های روش اضافه کنید.به پرونده راهنما در مراحل> ارائه دهندگان مراجعه کنید');
 INSERT INTO `lang_definitions` VALUES (196756, 5172, 37, 'اگر شما یک مسابقه را انتخاب نکنید، بیمار ایجاد خواهد شد.');
-INSERT INTO `lang_definitions` VALUES (196757, 5173, 37, 'اگر حداقل یکی از اینها را انتخاب نکنید، OpenEMR در حالت دریافتی تنها کار می کند');
+INSERT INTO `lang_definitions` VALUES (196757, 5173, 37, 'اگر حداقل یکی از اینها را انتخاب نکنید، DCL در حالت دریافتی تنها کار می کند');
 INSERT INTO `lang_definitions` VALUES (196758, 5174, 37, 'اگر سفارشات الکترونیکی را به صورت الکترونیکی ارسال نکنید یا دریافت کنید، به صورت الکترونیکی آن را به عنوان مقدار پیش فرض، دانلود کنید');
-INSERT INTO `lang_definitions` VALUES (196759, 5176, 37, 'اگر شما نمی خواهید این کار را انجام دهید، روش زیر شامل اضافه کردن داده ها به صورت دستی با استفاده از رابط OpenEMR');
+INSERT INTO `lang_definitions` VALUES (196759, 5176, 37, 'اگر شما نمی خواهید این کار را انجام دهید، روش زیر شامل اضافه کردن داده ها به صورت دستی با استفاده از رابط DCL');
 INSERT INTO `lang_definitions` VALUES (196760, 5177, 37, 'اگر شما به خط پانل الکترولیت بروید و روی علامت + علامت نام کلیک کنید');
 INSERT INTO `lang_definitions` VALUES (196761, 5178, 37, 'اگر شما به خط پانل الکترولیتی تمرین کنید، باید ببینید که آن دسته از نظم را دارد و در زرد نشان می دهد که این یک نظم جستجو و معتبر است و دارای مقدار قابل توجهی از 3 است');
 INSERT INTO `lang_definitions` VALUES (196762, 5179, 37, 'اگر کد های چندگانه را انتخاب کرده اید، آنها توسط نیمه کولون ها جدا خواهند شد');
@@ -210238,7 +210238,7 @@ INSERT INTO `lang_definitions` VALUES (196869, 5291, 37, 'در OpenEmr تداو�
 INSERT INTO `lang_definitions` VALUES (196870, 5292, 37, 'به منظور تحقق شرایط استفاده معنی دار برای ورود به سیستم ارائه دهنده کامپیوتری (CPOE) برای آزمایشات آزمایشگاهی و رادیولوژی، این ماژول باید مورد استفاده قرار گیرد');
 INSERT INTO `lang_definitions` VALUES (196871, 5293, 37, 'به منظور به درستی ذخیره و بازیابی نتایج آزمون و قرار دادن سفارشات جدید، تست ها / سفارشات باید در یک روش سلسله مراتبی راه اندازی شود');
 INSERT INTO `lang_definitions` VALUES (196872, 5294, 37, 'به منظور ثبت مقادیر نتایج، شما باید یک نتیجه گسسته جداگانه (سطح 4) را برای هر یک از اجزای پانل، میوه، به عنوان نسل مستقیم از این (پانل بهداشت عمومی) (سطح 3) ایجاد کنید.نمونه هایی از نتایج حاصل از CBC - هموگلوبین، CBC - هماتوکریت، CMP - سدیم، CMP - پتاسیم، TSH و غیره');
-INSERT INTO `lang_definitions` VALUES (196873, 5295, 37, 'برای ثبت نام دستگاه خود، لطفا رمز ورود OpenEMR خود را ارائه دهید');
+INSERT INTO `lang_definitions` VALUES (196873, 5295, 37, 'برای ثبت نام دستگاه خود، لطفا رمز ورود DCL خود را ارائه دهید');
 INSERT INTO `lang_definitions` VALUES (196874, 5296, 37, 'به منظور ارسال تداوم رکورد مراقبت (CCR) و / یا تداوم سند مراقبت (CCD) به صورت اختیاری بررسی PHIMAIL اجازه می دهد CCD ارسال و / یا PHIMAIL اجازه دهد CCR ارسال کند تا ویژگی انتقال برای این نوع داده ها را فعال کند');
 INSERT INTO `lang_definitions` VALUES (196875, 5297, 37, 'در مورد ما آزمایشگاه محلی را انتخاب کردیم که قبلا راه اندازی شد');
 INSERT INTO `lang_definitions` VALUES (196876, 5298, 37, 'در مورد ما ما آن را به عنوان یکپارچه ترک خواهیم کرد');
@@ -210396,7 +210396,7 @@ INSERT INTO `lang_definitions` VALUES (197027, 5465, 37, 'گواهینامه م�
 INSERT INTO `lang_definitions` VALUES (197028, 5466, 37, 'جزئیات نصب');
 INSERT INTO `lang_definitions` VALUES (197029, 5467, 37, 'تاسیسات پردازش تعداد زیادی از پیام های مستقیم ممکن است یک فاصله کوتاه تر را بخواهند');
 INSERT INTO `lang_definitions` VALUES (197030, 5468, 37, 'انتشار نصب شده');
-INSERT INTO `lang_definitions` VALUES (197031, 5469, 37, 'نصب کدهای در OpenEMR');
+INSERT INTO `lang_definitions` VALUES (197031, 5469, 37, 'نصب کدهای در DCL');
 INSERT INTO `lang_definitions` VALUES (197032, 5470, 37, 'دستور داده شده');
 INSERT INTO `lang_definitions` VALUES (197033, 5471, 37, 'دستور العمل');
 INSERT INTO `lang_definitions` VALUES (197034, 5472, 37, 'دستورالعمل ها');
@@ -210432,7 +210432,7 @@ INSERT INTO `lang_definitions` VALUES (197063, 5502, 37, 'بیمه شده');
 INSERT INTO `lang_definitions` VALUES (197064, 5503, 37, 'نتیجه گیری مصرف');
 INSERT INTO `lang_definitions` VALUES (197065, 5504, 37, 'تاریخ مصرف');
 INSERT INTO `lang_definitions` VALUES (197066, 5505, 37, 'عدد صحیح 1-100');
-INSERT INTO `lang_definitions` VALUES (197067, 5506, 37, 'ادغام نتایج آزمایشگاه به یک نمودار بیمار در OpenEMR می تواند به صورت دستی انجام شود. هر دو تست سفارش و آپلود نتایج دریافت شده یا به صورت الکترونیکی');
+INSERT INTO `lang_definitions` VALUES (197067, 5506, 37, 'ادغام نتایج آزمایشگاه به یک نمودار بیمار در DCL می تواند به صورت دستی انجام شود. هر دو تست سفارش و آپلود نتایج دریافت شده یا به صورت الکترونیکی');
 INSERT INTO `lang_definitions` VALUES (197068, 5507, 37, 'کاهش معنوی');
 INSERT INTO `lang_definitions` VALUES (197069, 5508, 37, 'فاصله بین توطئه');
 INSERT INTO `lang_definitions` VALUES (197070, 5509, 37, 'تعامل با معاملات ایجاد شده');
@@ -210621,14 +210621,14 @@ INSERT INTO `lang_definitions` VALUES (197252, 5703, 37, 'این به ارجاع
 INSERT INTO `lang_definitions` VALUES (197253, 5704, 37, 'این کار با استفاده از یک الگوریتم برای ترکیب زمان یونیکس فعلی با کلید مخفی برای تولید یک کلید منحصر به فرد در حال تغییر است');
 INSERT INTO `lang_definitions` VALUES (197254, 5705, 37, 'این چهار زبانه دارد');
 INSERT INTO `lang_definitions` VALUES (197255, 5706, 37, 'این سه مرحله دارد');
-INSERT INTO `lang_definitions` VALUES (197256, 5707, 37, 'این یک ماژول پیامرسانی تجاری است که برای استفاده از OpenEMR با استفاده از نسخه 5.0.1 و بالاتر است');
+INSERT INTO `lang_definitions` VALUES (197256, 5707, 37, 'این یک ماژول پیامرسانی تجاری است که برای استفاده از DCL با استفاده از نسخه 5.0.1 و بالاتر است');
 INSERT INTO `lang_definitions` VALUES (197257, 5708, 37, 'این یک فیلد در هدر پیام HL7 به نام ID پردازش است');
 INSERT INTO `lang_definitions` VALUES (197258, 5709, 37, 'این بخشی از پرونده پزشکی است');
 INSERT INTO `lang_definitions` VALUES (197259, 5710, 37, 'این نیز یک سرویس مبتنی بر اشتراک است');
 INSERT INTO `lang_definitions` VALUES (197260, 5711, 37, 'همچنین لازم است که کد ICD10 را به منظور حل مشکل در تداوم گزارش مراقبت (CCR) و تداوم سند مراقبت (CCD) ذکر شود');
 INSERT INTO `lang_definitions` VALUES (197261, 5712, 37, 'این به دو بخش تقسیم شده است');
 INSERT INTO `lang_definitions` VALUES (197262, 5713, 37, 'ضروری است که از چهار بخش اول بخوانید تا اصول اساسی را درک کنید');
-INSERT INTO `lang_definitions` VALUES (197263, 5714, 37, 'قبل از شروع ورود به داده ها در OpenEMR، این بسیار ساده تر و بصری است تا تغییرات بزرگی را تغییر دهید و اطلاعات را در صفحه گسترده تنظیم کنید');
+INSERT INTO `lang_definitions` VALUES (197263, 5714, 37, 'قبل از شروع ورود به داده ها در DCL، این بسیار ساده تر و بصری است تا تغییرات بزرگی را تغییر دهید و اطلاعات را در صفحه گسترده تنظیم کنید');
 INSERT INTO `lang_definitions` VALUES (197264, 5715, 37, 'مهم است بدانیم که این مدیریت MFA را برای کاربر وارد شده مدیریت می کند');
 INSERT INTO `lang_definitions` VALUES (197265, 5716, 37, 'مهم است که عملکرد این دو آیکون را درک کنید، زیرا تمام مراحل بعدی مورد نیاز برای تنظیم به درستی تنظیم سلسله مراتب به استفاده صحیح از این دو آیکون بستگی دارد');
 INSERT INTO `lang_definitions` VALUES (197266, 5717, 37, 'در نظر گرفته شده است که تنها اطلاعاتی را که برای مراقبت به طور موثر ادامه دارد، شامل شود');
@@ -211021,7 +211021,7 @@ INSERT INTO `lang_definitions` VALUES (197652, 6132, 37, 'سیستم فایل م
 INSERT INTO `lang_definitions` VALUES (197653, 6133, 37, 'زبان محلی');
 INSERT INTO `lang_definitions` VALUES (197654, 6134, 37, 'محل');
 INSERT INTO `lang_definitions` VALUES (197655, 6135, 37, 'محل');
-INSERT INTO `lang_definitions` VALUES (197656, 6136, 37, 'محل دستگاه OpenEMR و ممکن است حاوی اطلاعات حساس باشد، بنابراین توصیه می شود پس از استفاده از آن فایل ها را به صورت دستی حذف کنید');
+INSERT INTO `lang_definitions` VALUES (197656, 6136, 37, 'محل دستگاه DCL و ممکن است حاوی اطلاعات حساس باشد، بنابراین توصیه می شود پس از استفاده از آن فایل ها را به صورت دستی حذف کنید');
 INSERT INTO `lang_definitions` VALUES (197657, 6137, 37, 'محل این مقدار');
 INSERT INTO `lang_definitions` VALUES (197658, 6138, 37, 'محل مشخص نشده');
 INSERT INTO `lang_definitions` VALUES (197659, 6139, 37, 'محل سکونت که در آن Hylafax فکس را ذخیره می کند.');
@@ -211714,7 +211714,7 @@ INSERT INTO `lang_definitions` VALUES (198345, 6896, 37, 'فراخوان جدی�
 INSERT INTO `lang_definitions` VALUES (198346, 6897, 37, 'نتایج جدید از تبادل الکترونیکی آزمایشگاهی');
 INSERT INTO `lang_definitions` VALUES (198347, 6898, 37, 'جستجوی جدید');
 INSERT INTO `lang_definitions` VALUES (198348, 6899, 37, 'مطالب ارسالی های جدید');
-INSERT INTO `lang_definitions` VALUES (198349, 6900, 37, 'جدید به OpenEMR 5.0.2');
+INSERT INTO `lang_definitions` VALUES (198349, 6900, 37, 'جدید به DCL 5.0.2');
 INSERT INTO `lang_definitions` VALUES (198350, 6901, 37, 'کاربر جدید');
 INSERT INTO `lang_definitions` VALUES (198351, 6902, 37, 'ارزش جدید');
 INSERT INTO `lang_definitions` VALUES (198352, 6903, 37, 'ملاقات جدید پزشکی‌');
@@ -212084,7 +212084,7 @@ INSERT INTO `lang_definitions` VALUES (198715, 7295, 37, 'اطلاع رسانی 
 INSERT INTO `lang_definitions` VALUES (198716, 7296, 37, 'از طریق پورتال بیمار مطلع شوید');
 INSERT INTO `lang_definitions` VALUES (198717, 7297, 37, 'نوامبر');
 INSERT INTO `lang_definitions` VALUES (198718, 7298, 37, 'نوامبر');
-INSERT INTO `lang_definitions` VALUES (198719, 7299, 37, 'در حال حاضر زمان بررسی و تنظیم تنظیمات در OpenEMR برای واحدهای پیش فرض، سایت ها و غیره، به فایل راهنما در مراحل> ارائه دهندگان مراجعه کنید');
+INSERT INTO `lang_definitions` VALUES (198719, 7299, 37, 'در حال حاضر زمان بررسی و تنظیم تنظیمات در DCL برای واحدهای پیش فرض، سایت ها و غیره، به فایل راهنما در مراحل> ارائه دهندگان مراجعه کنید');
 INSERT INTO `lang_definitions` VALUES (198720, 7300, 37, 'در حال حاضر ارسال برای');
 INSERT INTO `lang_definitions` VALUES (198721, 7301, 37, 'در حال حاضر ارسال برای:');
 INSERT INTO `lang_definitions` VALUES (198722, 7302, 37, 'در حال چاپ');
@@ -212229,11 +212229,11 @@ INSERT INTO `lang_definitions` VALUES (198860, 7452, 37, 'هنگامی که یک
 INSERT INTO `lang_definitions` VALUES (198861, 7453, 37, 'پس از تکمیل، مشاهده و ذخیره این برخورد به عنوان یک فایل PDF');
 INSERT INTO `lang_definitions` VALUES (198862, 7454, 37, 'هنگامی که ویرایش به پایان رسید، روی ذخیره کلیک کنید.این روش تشخیص روش های فعلی تشخیص دقیقا همانطور که در این گفتگو ساخته شده است.');
 INSERT INTO `lang_definitions` VALUES (198863, 7455, 37, 'هنگامی که نهاد را برای یک گروه مورد علاقه سفارشی ذخیره کرد، نمی توان تغییر داد.اگر شما نیاز به تغییر نهاد دارید، باید این مطلب را حذف کنید و یک جدید ایجاد کنید');
-INSERT INTO `lang_definitions` VALUES (198864, 7456, 37, 'هنگامی که برنامه برنامه QR را ضبط می کند، نام کاربری OpenEMR را در برنامه نشان می دهد');
+INSERT INTO `lang_definitions` VALUES (198864, 7456, 37, 'هنگامی که برنامه برنامه QR را ضبط می کند، نام کاربری DCL را در برنامه نشان می دهد');
 INSERT INTO `lang_definitions` VALUES (198865, 7457, 37, 'هنگامی که تسهیلات کسب و کار اولیه تنظیم شده است، تغییر شناسه تسهیلات بر Eprescription NewCrop تاثیر می گذارد.');
 INSERT INTO `lang_definitions` VALUES (198866, 7458, 37, 'هنگامی که تأسیسات کسب و کار اولیه تنظیم می شود، نباید تغییر کرد.تغییر تسهیلات بر کار در Newcrop Eprescription تاثیر می گذارد.');
 INSERT INTO `lang_definitions` VALUES (198867, 7459, 37, 'هنگامی که این ویژگی فعال می شود، لازم است که در هر ورودی کلید 6 رقمی را تایپ کنید');
-INSERT INTO `lang_definitions` VALUES (198868, 7460, 37, 'هنگامی که این کار کلید مخفی مشترک است که منحصر به فرد است برای هر کاربر تنها باید در OpenEMR و در برنامه Authenticator کاربر وجود دارد');
+INSERT INTO `lang_definitions` VALUES (198868, 7460, 37, 'هنگامی که این کار کلید مخفی مشترک است که منحصر به فرد است برای هر کاربر تنها باید در DCL و در برنامه Authenticator کاربر وجود دارد');
 INSERT INTO `lang_definitions` VALUES (198869, 7461, 37, 'هنگامی که این مرحله تکمیل می شود، می توانید به مرحله بعدی بروید - برای پیکربندی تست هایی که می توانید از سیستم سفارش دهید');
 INSERT INTO `lang_definitions` VALUES (198870, 7462, 37, 'هنگامی که رمز عبور خود را تغییر می دهید، باید دوباره وارد شوید.');
 INSERT INTO `lang_definitions` VALUES (198871, 7463, 37, 'هنگامی که یک کد توجیه برای اولین خط CPT را انتخاب می کنید، تمام خطوط CPT بعدی CPT همان توجیهی مشابهی دارند.می تواند بعدا به صورت دستی تغییر کند اگر چنین باشد');
@@ -212325,22 +212325,22 @@ INSERT INTO `lang_definitions` VALUES (198956, 7555, 37, 'باز / بستن آز
 INSERT INTO `lang_definitions` VALUES (198957, 7556, 37, 'باز / بستن پنجره و کدهای کوتاه');
 INSERT INTO `lang_definitions` VALUES (198958, 7557, 37, 'پنجره را باز / بسته کنید و کدهای کوتاه را نمایش دهید');
 INSERT INTO `lang_definitions` VALUES (198959, 7558, 37, 'پنجره را باز / بسته کنید و کدهای کوتاه را در کنار هر زمینه نمایش دهید');
-INSERT INTO `lang_definitions` VALUES (198960, 7560, 37, 'openemr');
-INSERT INTO `lang_definitions` VALUES (198961, 7561, 37, 'OpenEMR اجازه می دهد تا یک روشهای U2F چندگانه در هر کاربر');
+INSERT INTO `lang_definitions` VALUES (198960, 7560, 37, 'DCL');
+INSERT INTO `lang_definitions` VALUES (198961, 7561, 37, 'DCL اجازه می دهد تا یک روشهای U2F چندگانه در هر کاربر');
 INSERT INTO `lang_definitions` VALUES (198962, 7562, 37, 'OpenEmr در حال حاضر دارای مجوز گواهی پیکربندی شده است.');
-INSERT INTO `lang_definitions` VALUES (198963, 7563, 37, 'ثبت نام برنامه OpenEMR');
-INSERT INTO `lang_definitions` VALUES (198964, 7564, 37, 'برنامه OpenEMR');
-INSERT INTO `lang_definitions` VALUES (198965, 7565, 37, 'رده درخواست OpenEMR');
-INSERT INTO `lang_definitions` VALUES (198966, 7566, 37, 'مجوز OpenEMR');
-INSERT INTO `lang_definitions` VALUES (198967, 7567, 37, 'ارتقاء پایگاه داده OpenEMR');
-INSERT INTO `lang_definitions` VALUES (198968, 7568, 37, 'ارتقاء پایگاه داده OpenEMR برای شناسایی DE');
-INSERT INTO `lang_definitions` VALUES (198969, 7569, 37, 'OpenEMR فایل ورودی را در دایرکتوری کمک نمی کند.این به احتمال زیاد به این دلیل است که شما نیاز به پیکربندی انتشار در جدول supported_external_dataloads در پایگاه داده MySQL دارید.');
-INSERT INTO `lang_definitions` VALUES (198970, 7570, 37, 'OpenEMR ورود');
-INSERT INTO `lang_definitions` VALUES (198971, 7571, 37, 'OpenEMR باید قبل از اینکه بتواند گواهینامه های مشتری را ایجاد کند، باید پیکربندی شود.');
-INSERT INTO `lang_definitions` VALUES (198972, 7572, 37, 'OpenEMR ارائه می دهد 2 روش 2FA');
+INSERT INTO `lang_definitions` VALUES (198963, 7563, 37, 'ثبت نام برنامه DCL');
+INSERT INTO `lang_definitions` VALUES (198964, 7564, 37, 'برنامه DCL');
+INSERT INTO `lang_definitions` VALUES (198965, 7565, 37, 'رده درخواست DCL');
+INSERT INTO `lang_definitions` VALUES (198966, 7566, 37, 'مجوز DCL');
+INSERT INTO `lang_definitions` VALUES (198967, 7567, 37, 'ارتقاء پایگاه داده DCL');
+INSERT INTO `lang_definitions` VALUES (198968, 7568, 37, 'ارتقاء پایگاه داده DCL برای شناسایی DE');
+INSERT INTO `lang_definitions` VALUES (198969, 7569, 37, 'DCL فایل ورودی را در دایرکتوری کمک نمی کند.این به احتمال زیاد به این دلیل است که شما نیاز به پیکربندی انتشار در جدول supported_external_dataloads در پایگاه داده MySQL دارید.');
+INSERT INTO `lang_definitions` VALUES (198970, 7570, 37, 'DCL ورود');
+INSERT INTO `lang_definitions` VALUES (198971, 7571, 37, 'DCL باید قبل از اینکه بتواند گواهینامه های مشتری را ایجاد کند، باید پیکربندی شود.');
+INSERT INTO `lang_definitions` VALUES (198972, 7572, 37, 'DCL ارائه می دهد 2 روش 2FA');
 INSERT INTO `lang_definitions` VALUES (198973, 7573, 37, 'پورتال OpenEmr');
-INSERT INTO `lang_definitions` VALUES (198974, 7574, 37, 'ثبت نام محصول OpenEMR');
-INSERT INTO `lang_definitions` VALUES (198975, 7575, 37, 'OpenEMR نیاز به جاوا اسکریپت برای انجام احراز هویت کاربر دارد.');
+INSERT INTO `lang_definitions` VALUES (198974, 7574, 37, 'ثبت نام محصول DCL');
+INSERT INTO `lang_definitions` VALUES (198975, 7575, 37, 'DCL نیاز به جاوا اسکریپت برای انجام احراز هویت کاربر دارد.');
 INSERT INTO `lang_definitions` VALUES (198976, 7576, 37, 'کاربران OpenEmr');
 INSERT INTO `lang_definitions` VALUES (198977, 7577, 37, 'باز کردن');
 INSERT INTO `lang_definitions` VALUES (198978, 7578, 37, 'در پایین فریم باز می شود');
@@ -213105,7 +213105,7 @@ INSERT INTO `lang_definitions` VALUES (199736, 8395, 37, 'لطفا قبل از �
 INSERT INTO `lang_definitions` VALUES (199737, 8396, 37, 'لطفا این قسمت پایین را با پرداخت خود بازگردانید');
 INSERT INTO `lang_definitions` VALUES (199738, 8397, 37, 'لطفا به انجمن و ویکی مراجعه کنید');
 INSERT INTO `lang_definitions` VALUES (199739, 8398, 37, 'لطفا به انجمن یا ویکی مراجعه کنید');
-INSERT INTO `lang_definitions` VALUES (199740, 8399, 37, 'لطفا به http://www.open-emr.org/wiki/index.php/lbv_forms مراجعه کنید تا بیشتر در این موضوع');
+INSERT INTO `lang_definitions` VALUES (199740, 8399, 37, 'لطفا به http://www.dcl.org/wiki/index.php/lbv_forms مراجعه کنید تا بیشتر در این موضوع');
 INSERT INTO `lang_definitions` VALUES (199741, 8400, 37, 'لطفا پی دی اف ضمیمه را ببینید');
 INSERT INTO `lang_definitions` VALUES (199742, 8401, 37, 'لطفا انتخاب کنید');
 INSERT INTO `lang_definitions` VALUES (199743, 8403, 37, 'لطفا یک فرمت را انتخاب کنید');
@@ -213145,7 +213145,7 @@ INSERT INTO `lang_definitions` VALUES (199776, 8438, 37, 'لطفا حداقل ی
 INSERT INTO `lang_definitions` VALUES (199777, 8441, 37, 'لطفا فرایند شناسایی جدید را شروع کنید');
 INSERT INTO `lang_definitions` VALUES (199778, 8442, 37, 'لطفا یک عنوان را عرضه کنید');
 INSERT INTO `lang_definitions` VALUES (199779, 8444, 37, 'لطفا دوباره امتحان کنید یا برای کمک بیشتر به دفتر ارائه دهندگان تماس بگیرید.');
-INSERT INTO `lang_definitions` VALUES (199780, 8445, 37, 'لطفا پایگاه داده OpenEMR را ارتقا دهید تا شامل مراحل شناسایی، تابع، جداول باشد');
+INSERT INTO `lang_definitions` VALUES (199780, 8445, 37, 'لطفا پایگاه داده DCL را ارتقا دهید تا شامل مراحل شناسایی، تابع، جداول باشد');
 INSERT INTO `lang_definitions` VALUES (199781, 8446, 37, 'لطفا از NPI معتبر استفاده کنید');
 INSERT INTO `lang_definitions` VALUES (199782, 8447, 37, 'لطفا اطلاعات مربوط به شناسایی خطا را مشاهده کنید');
 INSERT INTO `lang_definitions` VALUES (199783, 8448, 37, 'لطفا پس از مدتی از صفحه \"فسخ شناسایی\" دیدار کنید');
@@ -213307,7 +213307,7 @@ INSERT INTO `lang_definitions` VALUES (199938, 8620, 37, 'حاضر');
 INSERT INTO `lang_definitions` VALUES (199939, 8622, 37, 'ارائه شکایت');
 INSERT INTO `lang_definitions` VALUES (199940, 8623, 37, 'ارائه مسئله (ها)');
 INSERT INTO `lang_definitions` VALUES (199941, 8624, 37, 'برای ادامه ادامه دهید');
-INSERT INTO `lang_definitions` VALUES (199942, 8625, 37, 'دکمه فلش را در کلید USB در عرض 1 دقیقه از قرار دادن آن فشار دهید و روی ثبت نام کلیک کنید تا کلید را با OpenEMR ثبت کنید');
+INSERT INTO `lang_definitions` VALUES (199942, 8625, 37, 'دکمه فلش را در کلید USB در عرض 1 دقیقه از قرار دادن آن فشار دهید و روی ثبت نام کلیک کنید تا کلید را با DCL ثبت کنید');
 INSERT INTO `lang_definitions` VALUES (199943, 8626, 37, 'این آیکون را فشار دهید تا تصور / برنامه خود را بسازید.');
 INSERT INTO `lang_definitions` VALUES (199944, 8627, 37, 'تشخیص محتمل');
 INSERT INTO `lang_definitions` VALUES (199945, 8628, 37, 'تشخیص پیش فرض توسط متخصص');
@@ -213898,7 +213898,7 @@ INSERT INTO `lang_definitions` VALUES (200529, 9290, 37, 'معافیت مذهب�
 INSERT INTO `lang_definitions` VALUES (200530, 9291, 37, 'بارگیری مجدد');
 INSERT INTO `lang_definitions` VALUES (200531, 9292, 37, 'بارگزاری مجدد نام های زیر');
 INSERT INTO `lang_definitions` VALUES (200532, 9293, 37, 'ورود دوباره به سیستم');
-INSERT INTO `lang_definitions` VALUES (200533, 9295, 37, 'به یاد داشته باشید گروه بندی تست ها فقط برای به راحتی سازماندهی داده ها در ماژول سفارش روش در OpenEMR، برای این فرآیند برای کار، پیکربندی سفارشات روش (تست خود) و نتیجه گسسته (مکان برای وارد کردن و نمایش نتایج بازگشتی)مهم مهم است');
+INSERT INTO `lang_definitions` VALUES (200533, 9295, 37, 'به یاد داشته باشید گروه بندی تست ها فقط برای به راحتی سازماندهی داده ها در ماژول سفارش روش در DCL، برای این فرآیند برای کار، پیکربندی سفارشات روش (تست خود) و نتیجه گسسته (مکان برای وارد کردن و نمایش نتایج بازگشتی)مهم مهم است');
 INSERT INTO `lang_definitions` VALUES (200534, 9296, 37, 'مرا به خاطر بسپار');
 INSERT INTO `lang_definitions` VALUES (200535, 9297, 37, 'به یاد داشته باشید تاسیسات انتخاب شده');
 INSERT INTO `lang_definitions` VALUES (200536, 9298, 37, 'به یاد داشته باشید که شناسایی کدهای منحصر به فرد باید منحصر به فرد باشد، شما نباید یک گروه سفارشی از پانل تست ها را تنظیم کنید و همچنین تنظیمات پانل ها را به عنوان پانل شناسایی فردی تنظیم کنید، یعنی پانل CBC و کلیه به عنوان یک CBC مورد علاقه سفارشی و فهرست شده استپانل کلیه به طور جداگانه به عنوان پانل های به صورت جداگانه سفارش داده شده است');
@@ -214820,7 +214820,7 @@ INSERT INTO `lang_definitions` VALUES (201451, 10291, 37, 'آدرس سایت (ب
 INSERT INTO `lang_definitions` VALUES (201452, 10292, 37, 'آدرس سایت (برای OAuth2 و FHIR لازم است).مثال است');
 INSERT INTO `lang_definitions` VALUES (201453, 10294, 37, 'شناسه سایت');
 INSERT INTO `lang_definitions` VALUES (201454, 10295, 37, 'شناسه سایت برای یکپارچه سازی اطلاعات پزشکی ، سرویس تبادل آزمایشگاه LLC.');
-INSERT INTO `lang_definitions` VALUES (201455, 10296, 37, 'شناسه سایت برای سرویس تبادل آزمایشگاه OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (201455, 10296, 37, 'شناسه سایت برای سرویس تبادل آزمایشگاه DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (201456, 10297, 37, 'کارگر سایت');
 INSERT INTO `lang_definitions` VALUES (201457, 10298, 37, 'شش ماه پیش');
 INSERT INTO `lang_definitions` VALUES (201458, 10299, 37, 'شش ماه پیش');
@@ -215001,7 +215001,7 @@ INSERT INTO `lang_definitions` VALUES (201632, 10478, 37, 'قالب بندی ر�
 INSERT INTO `lang_definitions` VALUES (201633, 10479, 37, 'قالب بندی برای شناسه بیمار خارجی را مشخص می کند.# = رقم ، * = هر کاراکتر.اگر استفاده نشده خالی باشد');
 INSERT INTO `lang_definitions` VALUES (201634, 10480, 37, 'قالب بندی برای شناسه بیمار خارجی را مشخص می کند.# = رقم ، @ = آلفا ، * = هر کاراکتر.اگر استفاده نشده خالی باشد');
 INSERT INTO `lang_definitions` VALUES (201635, 10481, 37, 'فاصله را برای بررسی خودکار پیام ، 5 یا 10 دقیقه به عنوان نقطه شروع مشخص کنید');
-INSERT INTO `lang_definitions` VALUES (201636, 10482, 37, 'کاربر OpenEMR را که اعلان پیام های جدید ورودی جدید را دریافت می کند مشخص کنید');
+INSERT INTO `lang_definitions` VALUES (201636, 10482, 37, 'کاربر DCL را که اعلان پیام های جدید ورودی جدید را دریافت می کند مشخص کنید');
 INSERT INTO `lang_definitions` VALUES (201637, 10483, 37, 'نمونه');
 INSERT INTO `lang_definitions` VALUES (201638, 10485, 37, 'تعداد/شناسه نمونه');
 INSERT INTO `lang_definitions` VALUES (201639, 10486, 37, 'نوع نمونه');
@@ -215192,7 +215192,7 @@ INSERT INTO `lang_definitions` VALUES (201823, 10693, 37, 'مشترک SS');
 INSERT INTO `lang_definitions` VALUES (201824, 10694, 37, 'دولت مشترک');
 INSERT INTO `lang_definitions` VALUES (201825, 10695, 37, 'مشترک مشترک');
 INSERT INTO `lang_definitions` VALUES (201826, 10696, 37, 'مشترک / خط مشی');
-INSERT INTO `lang_definitions` VALUES (201827, 10697, 37, 'مشترکین نام کاربری ، رمز ورود و اطلاعات آدرس سرور را که می توانند OpenEMR را با آن پیکربندی کنند ، دریافت می کنند');
+INSERT INTO `lang_definitions` VALUES (201827, 10697, 37, 'مشترکین نام کاربری ، رمز ورود و اطلاعات آدرس سرور را که می توانند DCL را با آن پیکربندی کنند ، دریافت می کنند');
 INSERT INTO `lang_definitions` VALUES (201828, 10698, 37, 'مشترک تلفن');
 INSERT INTO `lang_definitions` VALUES (201829, 10699, 37, 'ماده');
 INSERT INTO `lang_definitions` VALUES (201830, 10700, 37, 'دلیل امتناع از مواد');
@@ -215344,7 +215344,7 @@ INSERT INTO `lang_definitions` VALUES (201975, 10860, 37, 'بیمار هدف ف�
 INSERT INTO `lang_definitions` VALUES (201976, 10861, 37, 'بیمار هدف پیدا نشد');
 INSERT INTO `lang_definitions` VALUES (201977, 10862, 37, 'گروههای هدف / اقدام');
 INSERT INTO `lang_definitions` VALUES (201978, 10863, 37, 'اهداف');
-INSERT INTO `lang_definitions` VALUES (201979, 10864, 37, 'Taskman: اسناد در openEMR');
+INSERT INTO `lang_definitions` VALUES (201979, 10864, 37, 'Taskman: اسناد در DCL');
 INSERT INTO `lang_definitions` VALUES (201980, 10865, 37, 'تاتار');
 INSERT INTO `lang_definitions` VALUES (201981, 10866, 37, 'شناسه مالیاتی');
 INSERT INTO `lang_definitions` VALUES (201982, 10867, 37, 'شناسه مالیات');
@@ -215434,7 +215434,7 @@ INSERT INTO `lang_definitions` VALUES (202065, 10964, 37, 'آزمایشات یا
 INSERT INTO `lang_definitions` VALUES (202066, 10965, 37, 'از آیکون Add برای تنظیم ردیفی استفاده می شود که از نوادگان مستقیم این ردیف باشد');
 INSERT INTO `lang_definitions` VALUES (202067, 10966, 37, 'مزیت تلفیق نتایج با نمودار بیمار به عنوان داده های ساختاری توانایی دستکاری آن برای دیدن روندها در یک مکان مناسب ، ترسیم نمودارها با داده ها و استفاده از آنها در تجزیه و تحلیل داده ها');
 INSERT INTO `lang_definitions` VALUES (202068, 10967, 37, 'مزیت اسکن نتایج در نمودار سادگی است - به غیر از تعریف دایرکتوری / پوشه در نمودار بیمار تحت اسنادی که در آن نتیجه ذخیره می شود ، هیچ تنظیم دیگری مورد نیاز نیست.از آنجا که داده بدون ساختار است ، مزایای فوق را ندارد و معیارهای استفاده معنی دار برای ثبت سفارش ارائه دهنده رایانه ای (CPOE) را برآورده نمی کند');
-INSERT INTO `lang_definitions` VALUES (202069, 10968, 37, 'راه حل Allscriptts وب سایت AllScript ePrescribe را با openEMR ادغام می کند');
+INSERT INTO `lang_definitions` VALUES (202069, 10968, 37, 'راه حل Allscriptts وب سایت AllScript ePrescribe را با DCL ادغام می کند');
 INSERT INTO `lang_definitions` VALUES (202070, 10969, 37, 'انجمن پزشکی آمریكا 9 پنل قابل سفارش برای شما تعریف كرده است.هر پانل شامل چندین تست است که با هم گروه شده اند');
 INSERT INTO `lang_definitions` VALUES (202071, 10970, 37, 'این مبلغ حسب مورد در ستون پرداخت یا تنظیم نمایش داده می شود');
 INSERT INTO `lang_definitions` VALUES (202072, 10971, 37, 'گواهی سرور و کلید عمومی Apache SSL');
@@ -215588,7 +215588,7 @@ INSERT INTO `lang_definitions` VALUES (202219, 11119, 37, 'کد شناسایی �
 INSERT INTO `lang_definitions` VALUES (202220, 11120, 37, 'کد شناسایی R34392-1 ، یک عدد دلخواه ، در این مورد کد شناسایی قبل از R برای نشان دادن نتیجه و موفق به 1 با نشان دادن اولین ترتیب ، می تواند هر چیز منحصر به فردی باشد که انتخاب کنید');
 INSERT INTO `lang_definitions` VALUES (202221, 11121, 37, 'اطلاعات وارد شده در اینجا برای نمایش خلاصه ای از برخورد استفاده می شود.این همچنین برای اهداف صورتحساب استفاده می شود');
 INSERT INTO `lang_definitions` VALUES (202222, 11122, 37, 'اطلاعات وارد شده در این فرم برای تکمیل ادعای مقاله استفاده می شود');
-INSERT INTO `lang_definitions` VALUES (202223, 11123, 37, 'اطلاعات ارائه شده در فرم برخورد جدید و برگ هزینه در openEMR برای تولید ادعای کاغذی و همچنین ادعاهای الکترونیکی استفاده می شود');
+INSERT INTO `lang_definitions` VALUES (202223, 11123, 37, 'اطلاعات ارائه شده در فرم برخورد جدید و برگ هزینه در DCL برای تولید ادعای کاغذی و همچنین ادعاهای الکترونیکی استفاده می شود');
 INSERT INTO `lang_definitions` VALUES (202224, 11124, 37, 'تلاش های اولیه منجر به ایجاد راهنماهای پیاده سازی تکراری و متناقض (IG) منتشر شده توسط سازمانهای استاندارد مختلف شد');
 INSERT INTO `lang_definitions` VALUES (202225, 11125, 37, 'صفحه اولیه به شما امکان می دهد با ارائه این دو گزینه به شما روشی را انتخاب کنید.');
 INSERT INTO `lang_definitions` VALUES (202226, 11126, 37, 'صفحه اول برای جستجوی فاکتور است. در بالای صفحه، میتوانید یک مرجع اطلاعات (مثلا شماره چک)، تاریخ پرداخت و مبلغ چک را وارد کنید. دلیل قید مرجع اطلاعات و تاریخ پرداخت آن است که مجبور نباشید آنها را مجددا برای هر مطالبه وارد کنید. مبلغ وارد شده برای هر فاکتور بر اساس هر صورت حساب پرداختی مربوطه کاهش میابد، و انشاءالله سرانجام به صفر می‌رسد.');
@@ -215752,7 +215752,7 @@ INSERT INTO `lang_definitions` VALUES (202383, 11288, 37, 'ستون Unit خال�
 INSERT INTO `lang_definitions` VALUES (202384, 11289, 37, 'واحد ها 1 خواهد بود زیرا هر کد فقط یک بار برای برخورد صورتحساب می شود');
 INSERT INTO `lang_definitions` VALUES (202385, 11290, 37, 'یادآوری های آینده دارای یک نماد تعجب سبز هستند');
 INSERT INTO `lang_definitions` VALUES (202386, 11291, 37, 'دستگاه های USB با استفاده از پروتکل دستگاه رابط انسان (HID) با رایانه میزبان ارتباط برقرار می کنند و اساساً از صفحه کلید تقلید می کنند');
-INSERT INTO `lang_definitions` VALUES (202387, 11292, 37, 'کلید USB باید به رایانه متصل شود و سپس در OpenEMR ثبت شود');
+INSERT INTO `lang_definitions` VALUES (202387, 11292, 37, 'کلید USB باید به رایانه متصل شود و سپس در DCL ثبت شود');
 INSERT INTO `lang_definitions` VALUES (202388, 11293, 37, 'کلید USB این مورد را غیرفعال شده توسط برنامه پس از تأیید صحت تأیید می کند و با استفاده از فرآیند مشابه فرآیند ثبت نام ، یک کلید خصوصی تولید می کند');
 INSERT INTO `lang_definitions` VALUES (202389, 11294, 37, 'امتیازات واقعی کاربر با دسترسی به قسمت های برنامه یعنی (ACO) که هر گروه (ARO) دارد تعیین می شود.');
 INSERT INTO `lang_definitions` VALUES (202390, 11295, 37, 'قسمتهای نام کاربری یکسان نیستند.');
@@ -215763,9 +215763,9 @@ INSERT INTO `lang_definitions` VALUES (202394, 11299, 37, 'کد اختصاصی �
 INSERT INTO `lang_definitions` VALUES (202395, 11300, 37, 'کد اختصاصی فروشنده که این روش یا نتیجه را مشخص می کند.اگر هیچ فروشنده ای عدد منحصر به فرد دلخواه را وارد نکنید ، ترجیحاً یک عدد 5 رقمی صفر پر شود.00211');
 INSERT INTO `lang_definitions` VALUES (202396, 11301, 37, 'اولین قدم نصب کدهای ICD است.به قسمت Administration> Other> External Data Loads بروید.مجموعه کد را که می خواهید نصب کنید انتخاب کنید و روی نصب کلیک کنید');
 INSERT INTO `lang_definitions` VALUES (202397, 11302, 37, 'آخرین خط این گزارش ، مجموع کل شارژها ، پرداخت ها ، تنظیمات و مانده را ارائه می دهد.');
-INSERT INTO `lang_definitions` VALUES (202398, 11303, 37, 'Exchange Weno به خوبی با openEMR ادغام شده و مبتنی بر اشتراک نیست');
-INSERT INTO `lang_definitions` VALUES (202399, 11304, 37, 'پرونده های X12 و همچنین گزارش های خروجی HTML حاصل در زیر شاخه \"era\" از پوشه اصلی نصب OpenEMR بایگانی می شوند.شما می خواهید هر از چندگاهی به این بایگانی ها مراجعه کنید.URL است');
-INSERT INTO `lang_definitions` VALUES (202400, 11305, 37, 'پرونده های X12 و همچنین گزارش های خروجی HTML حاصل در زیر شاخه \"era\" از پوشه اصلی نصب OpenEMR بایگانی می شوند.شما می خواهید هر از چندگاهی به این بایگانی ها مراجعه کنید.');
+INSERT INTO `lang_definitions` VALUES (202398, 11303, 37, 'Exchange Weno به خوبی با DCL ادغام شده و مبتنی بر اشتراک نیست');
+INSERT INTO `lang_definitions` VALUES (202399, 11304, 37, 'پرونده های X12 و همچنین گزارش های خروجی HTML حاصل در زیر شاخه \"era\" از پوشه اصلی نصب DCL بایگانی می شوند.شما می خواهید هر از چندگاهی به این بایگانی ها مراجعه کنید.URL است');
+INSERT INTO `lang_definitions` VALUES (202400, 11305, 37, 'پرونده های X12 و همچنین گزارش های خروجی HTML حاصل در زیر شاخه \"era\" از پوشه اصلی نصب DCL بایگانی می شوند.شما می خواهید هر از چندگاهی به این بایگانی ها مراجعه کنید.');
 INSERT INTO `lang_definitions` VALUES (202401, 11306, 37, 'پرونده zip شامل موارد زیر خواهد بود');
 INSERT INTO `lang_definitions` VALUES (202402, 11307, 37, 'موضوع');
 INSERT INTO `lang_definitions` VALUES (202403, 11308, 37, 'طرح زمینه زبانه ها (برای دیدن این تنظیم جدید باید از سیستم خارج شوید و سپس وارد شوید).');
@@ -215781,7 +215781,7 @@ INSERT INTO `lang_definitions` VALUES (202412, 11317, 37, 'گروه درمانی
 INSERT INTO `lang_definitions` VALUES (202413, 11318, 37, 'برخورد گروه درمانی');
 INSERT INTO `lang_definitions` VALUES (202414, 11319, 37, 'گروه یاب درمانی');
 INSERT INTO `lang_definitions` VALUES (202415, 11320, 37, 'وجود دارد');
-INSERT INTO `lang_definitions` VALUES (202416, 11321, 37, '10 تنظیم وجود دارد که مربوط به رویه های موجود در انتشار استاندارد openEMR است');
+INSERT INTO `lang_definitions` VALUES (202416, 11321, 37, '10 تنظیم وجود دارد که مربوط به رویه های موجود در انتشار استاندارد DCL است');
 INSERT INTO `lang_definitions` VALUES (202417, 11322, 37, 'در فرم Core 3 فرم وجود دارد - اطلاعات دموگرافیک ، اطلاعات خاص کاربر و سابقه تسهیلات و 5 فرم موجود در معاملات که می توانند ویرایش شوند.');
 INSERT INTO `lang_definitions` VALUES (202418, 11323, 37, 'در حال حاضر هیچ نسخه ای وجود ندارد');
 INSERT INTO `lang_definitions` VALUES (202419, 11324, 37, 'ارسال شما خطایی دارد.در زیر شرح داده شده است.');
@@ -215830,7 +215830,7 @@ INSERT INTO `lang_definitions` VALUES (202461, 11370, 37, 'برای شناسه �
 INSERT INTO `lang_definitions` VALUES (202462, 11371, 37, 'هیچ بیماری با ورود به پورتال وجود ندارد');
 INSERT INTO `lang_definitions` VALUES (202463, 11373, 37, 'هنگام ارسال پیام مشکلی پیش آمد.');
 INSERT INTO `lang_definitions` VALUES (202464, 11374, 37, 'هنگام پردازش درخواست شما خطایی روی داد.');
-INSERT INTO `lang_definitions` VALUES (202465, 11375, 37, 'یک رشته OpenEMR SQL Escaping ERROR وجود دارد');
+INSERT INTO `lang_definitions` VALUES (202465, 11375, 37, 'یک رشته DCL SQL Escaping ERROR وجود دارد');
 INSERT INTO `lang_definitions` VALUES (202466, 11376, 37, 'بنابراین هر کاربر باید به طور جداگانه این ویژگی را فعال کند');
 INSERT INTO `lang_definitions` VALUES (202467, 11377, 37, 'این ACO ها در ده دسته گسترده دسته بندی می شوند که بخشی از نصب پیش فرض هستند.آنها عبارتند از: مدیریت ، حسابداری ، اطلاعات بیمار ، اطلاعات برخورد ، جوخه ها ، حساسیت ها ، لیست ها ، محل نگهدارنده ، یادداشت های ملت و پورتال بیمار.هر یک از این دسته ها دارای یک یا چند زیر مجموعه هستند که امکان دسترسی به قسمت های خاصی از برنامه را فراهم می کنند.');
 INSERT INTO `lang_definitions` VALUES (202468, 11378, 37, 'اینها رایگان هستند و می توانند از فروشگاه برنامه مربوطه برای دستگاه های iOS و Android بارگیری شوند');
@@ -215842,7 +215842,7 @@ INSERT INTO `lang_definitions` VALUES (202473, 11383, 37, 'این گروه ها�
 INSERT INTO `lang_definitions` VALUES (202474, 11384, 37, 'از این ورودی ها برای تعریف ارائه دهندگان در ماژول Procedures استفاده خواهد شد');
 INSERT INTO `lang_definitions` VALUES (202475, 11385, 37, 'سپس با اختصاص دسته های مختلف (ACO) به این گروه ها (ARO) می توان مجموعه ای از امتیازات را داد.');
 INSERT INTO `lang_definitions` VALUES (202476, 11386, 37, 'اگر کاربر از امتیاز کافی برخوردار باشد ، می توان این موارد را ویرایش کرد');
-INSERT INTO `lang_definitions` VALUES (202477, 11387, 37, 'این لیست ها برای تعیین اینکه چه کسی می تواند در openEMR به چه چیزی دسترسی پیدا کند استفاده می شود.آنها به صورت بالا به پایین کار می کنند ، یعنی در ابتدا دسترسی به آن قسمت از برنامه که توسط ACL کنترل می شود از همه محروم است.');
+INSERT INTO `lang_definitions` VALUES (202477, 11387, 37, 'این لیست ها برای تعیین اینکه چه کسی می تواند در DCL به چه چیزی دسترسی پیدا کند استفاده می شود.آنها به صورت بالا به پایین کار می کنند ، یعنی در ابتدا دسترسی به آن قسمت از برنامه که توسط ACL کنترل می شود از همه محروم است.');
 INSERT INTO `lang_definitions` VALUES (202478, 11388, 37, 'برای احراز هویت موفقیت آمیز کاربر ، این اعداد باید مطابقت داشته باشند');
 INSERT INTO `lang_definitions` VALUES (202479, 11389, 37, 'این یادداشت های بیمار بدون بیمار تعیین شده ارسال می شود');
 INSERT INTO `lang_definitions` VALUES (202480, 11390, 37, 'این زیرمجموعه ها نمایانگر اشیا Control کنترل دسترسی واقعی (ACO) هستند.');
@@ -215964,7 +215964,7 @@ INSERT INTO `lang_definitions` VALUES (202595, 11513, 37, 'این روش منج�
 INSERT INTO `lang_definitions` VALUES (202596, 11514, 37, 'این ماژول توسط');
 INSERT INTO `lang_definitions` VALUES (202597, 11515, 37, 'این ماژول در حالت تست است.پایگاه داده تغییر نخواهد کرد.');
 INSERT INTO `lang_definitions` VALUES (202598, 11516, 37, 'این ماژول مبتنی بر اشتراک است و باید از طریق مدیریت> Globals> Connectors> Enable NewCrop eRx Service فعال شود');
-INSERT INTO `lang_definitions` VALUES (202599, 11517, 37, 'این ماژول به خوبی با openEMR ادغام شده است ، اما دو گزینه غیر مبتنی بر اشتراک ، Weno و Allscript وجود دارد که می توانند به جای آن استفاده شوند');
+INSERT INTO `lang_definitions` VALUES (202599, 11517, 37, 'این ماژول به خوبی با DCL ادغام شده است ، اما دو گزینه غیر مبتنی بر اشتراک ، Weno و Allscript وجود دارد که می توانند به جای آن استفاده شوند');
 INSERT INTO `lang_definitions` VALUES (202600, 11518, 37, 'این ماژول ورود کارآمد داده های EOB را ارتقا می دهد.');
 INSERT INTO `lang_definitions` VALUES (202601, 11519, 37, 'این ماه تا امروز');
 INSERT INTO `lang_definitions` VALUES (202602, 11520, 37, 'این نام از قبل تحت این والد وجود دارد.');
@@ -216129,7 +216129,7 @@ INSERT INTO `lang_definitions` VALUES (202760, 11697, 37, 'برای پیوند �
 INSERT INTO `lang_definitions` VALUES (202761, 11698, 37, 'به دمس');
 INSERT INTO `lang_definitions` VALUES (202762, 11699, 37, 'برای غیرفعال کردن بررسی خودکار پیام به بخش مدیریت> Globals> اتصالات بروید و فاصله بررسی پیام phiMail را روی 0 (صفر) تنظیم کنید');
 INSERT INTO `lang_definitions` VALUES (202763, 11700, 37, 'برای غیرفعال کردن گواهینامه های SSL سمت مشتری ، در مورد خطوط موجود در پرونده پیکربندی Apache نظر دهید و تنظیم کنید');
-INSERT INTO `lang_definitions` VALUES (202764, 11701, 37, 'برای غیرفعال کردن گواهینامه های SSL سمت سرویس گیرنده ، در مورد خطوط موجود در پرونده پیکربندی Apache نظر دهید و تنظیمات جهانی  \"Enable Client SSL \" را در OpenEMR خاموش کرده و سرور Apache را مجدداً راه اندازی کنید.');
+INSERT INTO `lang_definitions` VALUES (202764, 11701, 37, 'برای غیرفعال کردن گواهینامه های SSL سمت سرویس گیرنده ، در مورد خطوط موجود در پرونده پیکربندی Apache نظر دهید و تنظیمات جهانی  \"Enable Client SSL \" را در DCL خاموش کرده و سرور Apache را مجدداً راه اندازی کنید.');
 INSERT INTO `lang_definitions` VALUES (202765, 11702, 37, 'برای غیرفعال کردن HTTPS ، خطوط فوق را در پرونده پیکربندی Apache نظر دهید و سرور Apache را مجدداً راه اندازی کنید.');
 INSERT INTO `lang_definitions` VALUES (202766, 11703, 37, 'برای نمایش مبلغ حق الزحمه باید در بیمه بیمار تحت ویرایش> جمعیت شناسی وارد شده باشد');
 INSERT INTO `lang_definitions` VALUES (202767, 11704, 37, 'برای انجام این کار ، روی علامت + سیاه و سفید در انتهای خط دستور Serid Uric Acid کلیک کنید تا پنجره بازشو Enter Details ظاهر شود');
@@ -216147,8 +216147,8 @@ INSERT INTO `lang_definitions` VALUES (202778, 11716, 37, 'فیلتر کردن �
 INSERT INTO `lang_definitions` VALUES (202779, 11717, 37, 'برای تحقق الزامات استفاده معنادار و کمک به پیگیری استفاده از آن ، می توانید در صورت لزوم در کادر تأیید خلاصه مراقبت از مراقبت و در جعبه تأیید چکیده مراقبت از خدمات الکترونیکی در این زمینه علامت بزنید.');
 INSERT INTO `lang_definitions` VALUES (202780, 11718, 37, 'برای حذف کامل \"ذخیره\" ضربه بزنید');
 INSERT INTO `lang_definitions` VALUES (202781, 11719, 37, 'برای شروع یکی از دو دکمه رادیویی را انتخاب می کنید.\"جستجوی فاکتور\" یا \"بارگذاری ERA\"');
-INSERT INTO `lang_definitions` VALUES (202782, 11720, 37, 'برای کمک به کشف اجزای مختلف صفحه گزارش ، به ویژه اگر می خواهید از آن به عنوان یک کتابچه راهنمای استفاده کنید ، پیشنهاد می شود که اندازه مرورگر را کاهش دهید تا نیمی از نمای مشاهده را پوشش دهد ، با کلیک کردن و کشیدن قسمت پایین ، اندازه پنجره بازشو را تغییر دهیدگوشه سمت راست پنجره بازشونمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای openEMR وارد شوید');
-INSERT INTO `lang_definitions` VALUES (202783, 11721, 37, 'پیشنهاد می شود برای آشنایی شما با اجزای مختلف صفحه داشبورد ، اندازه مرورگر را کاهش دهید تا نیمی از نمای مشاهده را پوشش دهد ، با کلیک کردن و کشیدن گوشه پایین سمت راست پنجره بازشو ، اندازه پنجره بازشو را تغییر دهید.نمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای openEMR وارد شوید');
+INSERT INTO `lang_definitions` VALUES (202782, 11720, 37, 'برای کمک به کشف اجزای مختلف صفحه گزارش ، به ویژه اگر می خواهید از آن به عنوان یک کتابچه راهنمای استفاده کنید ، پیشنهاد می شود که اندازه مرورگر را کاهش دهید تا نیمی از نمای مشاهده را پوشش دهد ، با کلیک کردن و کشیدن قسمت پایین ، اندازه پنجره بازشو را تغییر دهیدگوشه سمت راست پنجره بازشونمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای DCL وارد شوید');
+INSERT INTO `lang_definitions` VALUES (202783, 11721, 37, 'پیشنهاد می شود برای آشنایی شما با اجزای مختلف صفحه داشبورد ، اندازه مرورگر را کاهش دهید تا نیمی از نمای مشاهده را پوشش دهد ، با کلیک کردن و کشیدن گوشه پایین سمت راست پنجره بازشو ، اندازه پنجره بازشو را تغییر دهید.نمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای DCL وارد شوید');
 INSERT INTO `lang_definitions` VALUES (202784, 11722, 37, 'برای کمک به ساده سازی پیاده سازی ها ، الگوهای معمول مورد استفاده از راهنماهای موجود اجرای CDA هماهنگ شده و در یک راهنمای پیاده سازی منسجم - راهنمای اجرای C-CDA (IG) (2012/2017)');
 INSERT INTO `lang_definitions` VALUES (202785, 11723, 37, 'به تاریخچه');
 INSERT INTO `lang_definitions` VALUES (202786, 11724, 37, 'برای درج اسناد اسکن شده که بخشی از سوابق بیمار است ، با علامت زدن در کادرهای مربوط ، سوابق مورد نظر را انتخاب کنید');
@@ -216177,9 +216177,9 @@ INSERT INTO `lang_definitions` VALUES (202808, 11749, 37, 'به پوست');
 INSERT INTO `lang_definitions` VALUES (202809, 11750, 37, 'به طور خلاصه');
 INSERT INTO `lang_definitions` VALUES (202810, 11751, 37, 'به این ملاقات؟');
 INSERT INTO `lang_definitions` VALUES (202811, 11752, 37, 'برای بارگذاری سند CCR بیمار موجود ، از صفحه خلاصه بیمار-> اسناد استفاده کنید.برای سند CCR بیمار جدید از صفحه نمایش Miscellanous-> New Documents استفاده کنید');
-INSERT INTO `lang_definitions` VALUES (202812, 11754, 37, 'برای استفاده از صفحه راهنما به عنوان یک کتابچه راهنمای ، پیشنهاد می شود که اندازه مرورگر را کاهش دهید تا نیمی از نمای نمایش را پوشش دهد ، با کلیک کردن و کشیدن گوشه سمت راست پایین پنجره بازشو ، اندازه پنجره بازشو را تغییر دهید.نمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای openEMR وارد شوید');
-INSERT INTO `lang_definitions` VALUES (202813, 11755, 37, 'برای استفاده از این فایل راهنما به عنوان یک کتابچه راهنمای ، بهتر است اندازه مرورگر خود را تغییر دهید تا نیمی از صفحه را اشغال کند ، نمونه دیگری از مرورگر را باز کنید تا نیمه دیگر صفحه را پر کنید ، برای openEMR وارد شوید و پرونده راهنما را در این مرورگر باز کنید و تغییر اندازه دهیدآن را با کلیک و کشیدن گوشه پایین سمت راست به طوری که کل نیمه صفحه را اشغال کند');
-INSERT INTO `lang_definitions` VALUES (202814, 11756, 37, 'پیشنهاد می شود برای استفاده از این پرونده راهنما به عنوان راهنمای دستورالعمل ، اندازه مرورگر را کاهش دهید تا نیمی از نمای مشاهده را پوشش دهد ، با کلیک کردن و کشیدن گوشه پایین سمت راست پنجره بازشو ، اندازه پنجره بازشو را تغییر دهید.نمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای openEMR وارد شوید');
+INSERT INTO `lang_definitions` VALUES (202812, 11754, 37, 'برای استفاده از صفحه راهنما به عنوان یک کتابچه راهنمای ، پیشنهاد می شود که اندازه مرورگر را کاهش دهید تا نیمی از نمای نمایش را پوشش دهد ، با کلیک کردن و کشیدن گوشه سمت راست پایین پنجره بازشو ، اندازه پنجره بازشو را تغییر دهید.نمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای DCL وارد شوید');
+INSERT INTO `lang_definitions` VALUES (202813, 11755, 37, 'برای استفاده از این فایل راهنما به عنوان یک کتابچه راهنمای ، بهتر است اندازه مرورگر خود را تغییر دهید تا نیمی از صفحه را اشغال کند ، نمونه دیگری از مرورگر را باز کنید تا نیمه دیگر صفحه را پر کنید ، برای DCL وارد شوید و پرونده راهنما را در این مرورگر باز کنید و تغییر اندازه دهیدآن را با کلیک و کشیدن گوشه پایین سمت راست به طوری که کل نیمه صفحه را اشغال کند');
+INSERT INTO `lang_definitions` VALUES (202814, 11756, 37, 'پیشنهاد می شود برای استفاده از این پرونده راهنما به عنوان راهنمای دستورالعمل ، اندازه مرورگر را کاهش دهید تا نیمی از نمای مشاهده را پوشش دهد ، با کلیک کردن و کشیدن گوشه پایین سمت راست پنجره بازشو ، اندازه پنجره بازشو را تغییر دهید.نمونه دیگری از مرورگر را باز کنید و اندازه آن را تغییر دهید تا نیمه دیگر قسمت نمایش را پوشش دهد ، برای DCL وارد شوید');
 INSERT INTO `lang_definitions` VALUES (202815, 11757, 37, 'به:');
 INSERT INTO `lang_definitions` VALUES (202816, 11758, 37, 'به:');
 INSERT INTO `lang_definitions` VALUES (202817, 11772, 37, 'تنباکو');
@@ -216202,7 +216202,7 @@ INSERT INTO `lang_definitions` VALUES (202833, 11788, 37, 'تغییر پیمای
 INSERT INTO `lang_definitions` VALUES (202834, 11789, 37, 'پانل بیمار را تغییر دهید');
 INSERT INTO `lang_definitions` VALUES (202835, 11790, 37, 'پنل PMSFH سمت راست را تغییر دهید');
 INSERT INTO `lang_definitions` VALUES (202836, 11796, 37, 'شناسه رمز برای یکپارچه سازی اطلاعات پزشکی ، سرویس تبادل آزمایشگاه LLC.');
-INSERT INTO `lang_definitions` VALUES (202837, 11797, 37, 'شناسه رمز برای سرویس تبادل آزمایشگاه OpenEMR Support LLC.');
+INSERT INTO `lang_definitions` VALUES (202837, 11797, 37, 'شناسه رمز برای سرویس تبادل آزمایشگاه DCL Support LLC.');
 INSERT INTO `lang_definitions` VALUES (202838, 11802, 37, 'تونگا (جزایر تونگا)');
 INSERT INTO `lang_definitions` VALUES (202839, 11803, 37, 'جراحی لوزه');
 INSERT INTO `lang_definitions` VALUES (202840, 11804, 37, 'عمل لوزه');
@@ -216547,7 +216547,7 @@ INSERT INTO `lang_definitions` VALUES (203178, 12184, 37, 'ارتقا دهید')
 INSERT INTO `lang_definitions` VALUES (203179, 12185, 37, 'ACL را ارتقا دهید');
 INSERT INTO `lang_definitions` VALUES (203180, 12186, 37, 'پایگاه داده را ارتقا دهید');
 INSERT INTO `lang_definitions` VALUES (203181, 12187, 37, 'SQL را ارتقا دهید');
-INSERT INTO `lang_definitions` VALUES (203182, 12188, 37, 'پایگاه داده OpenEMR را به روز می کند تا شامل رویه ها ، توابع و جداول مورد نیاز برای فرآیند شناسایی مجدد باشد');
+INSERT INTO `lang_definitions` VALUES (203182, 12188, 37, 'پایگاه داده DCL را به روز می کند تا شامل رویه ها ، توابع و جداول مورد نیاز برای فرآیند شناسایی مجدد باشد');
 INSERT INTO `lang_definitions` VALUES (203183, 12189, 37, 'به روزرسانی ادامه خواهد یافت');
 INSERT INTO `lang_definitions` VALUES (203184, 12190, 37, 'در');
 INSERT INTO `lang_definitions` VALUES (203185, 12191, 37, 'بارگذاری');
@@ -216573,7 +216573,7 @@ INSERT INTO `lang_definitions` VALUES (203204, 12210, 37, 'با جستجوی م�
 INSERT INTO `lang_definitions` VALUES (203205, 12211, 37, 'با کلیک بر روی شماره فاکتور ، \"پنجره ارسال دستی\" ظاهر می شود.در اینجا می توانید تاریخ سررسید و یادداشت های فاکتور را تغییر دهید ، طرفی را که برای آن ارسال می کنید انتخاب کنید و بیمه هایی را که همه بازپرداخت کنندگان انتظار برای آن دریافت کرده اند انتخاب کنید.از همه مهمتر ، برای هر کد صورتحساب که مبلغی برای آن شارژ شده است ، می توانید اطلاعات پرداخت و تنظیمات را وارد کنید.');
 INSERT INTO `lang_definitions` VALUES (203206, 12212, 37, 'با کلیک بر روی شماره فاکتور ، \"پنجره ارسال دستی\" ظاهر می شود.در اینجا می توانید تاریخ سررسید و یادداشت های فاکتور را تغییر دهید ، طرفی را که برای آن ارسال می کنید انتخاب کنید و بیمه هایی را که همه پرداخت های مورد انتظار برای آنها دریافت شده است انتخاب کنید.از همه مهمتر ، برای هر کد صورتحساب که مبلغی برای آن شارژ شده است ، می توانید اطلاعات پرداخت و تنظیمات را وارد کنید.');
 INSERT INTO `lang_definitions` VALUES (203207, 12213, 37, 'با ورود به صفحه دو دکمه در زیر نوار پیمایش قابل مشاهده است');
-INSERT INTO `lang_definitions` VALUES (203208, 12214, 37, 'با ورود به سیستم openEMR ، یک نماد پاکت کوچک در سمت راست بالا قابل مشاهده است.تعداد پیام های معلق و یادآوری های تاریخ را نشان می دهد');
+INSERT INTO `lang_definitions` VALUES (203208, 12214, 37, 'با ورود به سیستم DCL ، یک نماد پاکت کوچک در سمت راست بالا قابل مشاهده است.تعداد پیام های معلق و یادآوری های تاریخ را نشان می دهد');
 INSERT INTO `lang_definitions` VALUES (203209, 12215, 37, 'با رسیدن به یک نقطه از پیش تعیین شده ، یا یک تاریخ یا یک مقدار ، این قانون باعث ایجاد یک یا چند رویداد می شود');
 INSERT INTO `lang_definitions` VALUES (203210, 12216, 37, 'پس از جستجو لیست فاکتورها به شما ارائه میشود. شما میتوانید روی یکی از شماره فاکتورها کلیک کنید تا صفحه دومی‌ برای وارد کردن اطلاعات و ارسال دستی باز شود. همچنین برای وارد کردن یاد داشت می توانید روی نام یک بیمار کلیک کنید تا کارکنان دفتر جلو در زمان پذیرش بیمار آن را ببینند. همچنین می توانید فاکتورهایی‌ را انتخاب کنید تا در صورت حسابهای بیماران قید شده و آن صورت حسابها را چاپ کنید.');
 INSERT INTO `lang_definitions` VALUES (203211, 12217, 37, 'با انتخاب یک لیست برای ویرایش صفحه ویرایش با مقادیر لیست نمایش داده می شود');
@@ -216727,7 +216727,7 @@ INSERT INTO `lang_definitions` VALUES (203358, 12377, 37, 'از قالبphp <a h
 INSERT INTO `lang_definitions` VALUES (203359, 12378, 37, 'با استفاده از احراز هویت دو عاملی');
 INSERT INTO `lang_definitions` VALUES (203360, 12379, 37, 'استفاده از یک درخت میوه به عنوان آسان تر تجسم قیاس ، مفهوم این سلسله مراتب را بهتر توضیح می دهد ، تنه درخت گروه (شیمی سرم) است ، شاخه میوه دهنده ترتیب واقعی است ، ترتیب روش (اسید اوریک سرم) ومیوه نتیجه است ، نتیجه گسسته ، همچنین (سرم اوریک اسید) نامیده می شود که مقدار نتیجه برگشتی را در خود نگه می دارد.همانطور که میوه در تنه اصلی حمل نمی شود ، شما نباید یک نتیجه گسسته را به عنوان یک نسل مستقیم یا فرزند یک گروه برتر قرار دهید.به همین ترتیب شاخه میوه دار (Order Procedure) را نمی توان به عنوان یک نسل مستقیم یا فرزند میوه قرار داد (نتیجه گسسته)');
 INSERT INTO `lang_definitions` VALUES (203361, 12380, 37, 'استفاده از فناوری برای بهبود بهره وری');
-INSERT INTO `lang_definitions` VALUES (203362, 12381, 37, 'با استفاده از جزئیات وارد شده به سیستم ، OpenEMR پیام های معتبر HL7 v2.3 را در 3 قالب تولید می کند ، یک فایل متنی که به طور خودکار در پوشه بارگیری مرورگر شما بارگیری می شود ، یک پیام HL7 که در یک پوشه یا فهرست بر روی سرور در حال اجرا نوشته می شودopenEMR یا از SFTP - Secure File Transfer Protocol استفاده کنید ، که یک پروتکل شبکه است که دسترسی فایل ، انتقال فایل و مدیریت پرونده را از طریق اتصال ایمن فراهم می کند و این پیام را به آزمایشگاه منتقل می کند.');
+INSERT INTO `lang_definitions` VALUES (203362, 12381, 37, 'با استفاده از جزئیات وارد شده به سیستم ، DCL پیام های معتبر HL7 v2.3 را در 3 قالب تولید می کند ، یک فایل متنی که به طور خودکار در پوشه بارگیری مرورگر شما بارگیری می شود ، یک پیام HL7 که در یک پوشه یا فهرست بر روی سرور در حال اجرا نوشته می شودDCL یا از SFTP - Secure File Transfer Protocol استفاده کنید ، که یک پروتکل شبکه است که دسترسی فایل ، انتقال فایل و مدیریت پرونده را از طریق اتصال ایمن فراهم می کند و این پیام را به آزمایشگاه منتقل می کند.');
 INSERT INTO `lang_definitions` VALUES (203363, 12382, 37, 'با استفاده از کاربرگ کاربر');
 INSERT INTO `lang_definitions` VALUES (203364, 12383, 37, 'استفاده از عناوین اصلی در برگه آزمایشگاه به شروع این روند کمک می کند - پانل های ارگان / بیماری ، خون شناسی ، آزمایش های فردی ، میکروب شناسی ، سایر موارد');
 INSERT INTO `lang_definitions` VALUES (203365, 12384, 37, 'با استفاده از این تشبیه درخت میوه می توانیم درک بهتری از مراحل مورد نیاز برای ایجاد سفارش برای یک مجموعه آزمایش داشته باشیم');
@@ -216786,7 +216786,7 @@ INSERT INTO `lang_definitions` VALUES (203417, 12437, 37, 'تأیید کنید')
 INSERT INTO `lang_definitions` VALUES (203418, 12441, 37, 'نسخه');
 INSERT INTO `lang_definitions` VALUES (203419, 12442, 37, 'نسخه 1 آدرس سایت پورتال بیمار در محل');
 INSERT INTO `lang_definitions` VALUES (203420, 12443, 37, 'نسخه 2 آدرس سایت پورتال بیمار در محل');
-INSERT INTO `lang_definitions` VALUES (203421, 12444, 37, 'نسخه 2.x به طور گسترده ای در صنعت بهداشت استفاده می شود و openEMR از HL7 نسخه 2.3 استفاده می کند');
+INSERT INTO `lang_definitions` VALUES (203421, 12444, 37, 'نسخه 2.x به طور گسترده ای در صنعت بهداشت استفاده می شود و DCL از HL7 نسخه 2.3 استفاده می کند');
 INSERT INTO `lang_definitions` VALUES (203422, 12445, 37, 'شماره نسخه');
 INSERT INTO `lang_definitions` VALUES (203423, 12447, 37, 'Vert Base {{مخفف پایه منشور عمودی}}');
 INSERT INTO `lang_definitions` VALUES (203424, 12448, 37, 'فاصله Vert {{مخفف فاصله راس}}');
@@ -216993,7 +216993,7 @@ INSERT INTO `lang_definitions` VALUES (203624, 12672, 37, 'تغییر وزن');
 INSERT INTO `lang_definitions` VALUES (203625, 12673, 37, 'کاهش وزن');
 INSERT INTO `lang_definitions` VALUES (203626, 12674, 37, 'کلینیک کاهش وزن');
 INSERT INTO `lang_definitions` VALUES (203627, 12675, 37, 'خوش آمدید');
-INSERT INTO `lang_definitions` VALUES (203628, 12676, 37, 'به OpenEMR خوش آمدید');
+INSERT INTO `lang_definitions` VALUES (203628, 12676, 37, 'به DCL خوش آمدید');
 INSERT INTO `lang_definitions` VALUES (203629, 12677, 37, 'ولزی');
 INSERT INTO `lang_definitions` VALUES (203630, 12678, 37, 'اطلاعات شناسه کلینیک حساب Weno موجود نیست');
 INSERT INTO `lang_definitions` VALUES (203631, 12679, 37, 'اطلاعات شناسه حساب Weno موجود نیست');
@@ -217034,7 +217034,7 @@ INSERT INTO `lang_definitions` VALUES (203665, 12719, 37, 'روزهای آخر �
 INSERT INTO `lang_definitions` VALUES (203666, 12720, 37, 'کدام یادداشت ها باید در صفحه صورتحساب نمایش داده شوند');
 INSERT INTO `lang_definitions` VALUES (203667, 12721, 37, 'هنگام ارسال یک یادآوری تاریخ دار ، پیام قدیمی نمایش داده می شود ، می توان آن را بازنویسی کرد');
 INSERT INTO `lang_definitions` VALUES (203668, 12722, 37, 'اگرچه تصور این ماژول به عنوان مکانی که می توان آزمایشات آزمایشگاهی و مطالعات تصویربرداری را برای آن سفارش داد و بررسی کرد ، شهودی است اما این ماژول می تواند برای ردیابی سایر اقدامات انجام شده در مطب نیز استفاده شود');
-INSERT INTO `lang_definitions` VALUES (203669, 12723, 37, 'در حالی که تست های آزمایشگاهی و آزمایشات رادیولوژیکی می تواند در مرکز آزمایش انجام شود ، اما آنها معمولاً در یک مرکز خارجی انجام می شوند و قبل از شروع راه اندازی ماژول رویه ، جزئیات ارائه دهنده آن واحد باید در openEMR وارد شود.');
+INSERT INTO `lang_definitions` VALUES (203669, 12723, 37, 'در حالی که تست های آزمایشگاهی و آزمایشات رادیولوژیکی می تواند در مرکز آزمایش انجام شود ، اما آنها معمولاً در یک مرکز خارجی انجام می شوند و قبل از شروع راه اندازی ماژول رویه ، جزئیات ارائه دهنده آن واحد باید در DCL وارد شود.');
 INSERT INTO `lang_definitions` VALUES (203670, 12724, 37, 'شلاق زدن');
 INSERT INTO `lang_definitions` VALUES (203671, 12725, 37, 'سفید');
 INSERT INTO `lang_definitions` VALUES (203672, 12726, 37, 'لیست سفید');
@@ -217054,7 +217054,7 @@ INSERT INTO `lang_definitions` VALUES (203685, 12739, 37, 'با واردات');
 INSERT INTO `lang_definitions` VALUES (203686, 12740, 37, 'با زبان ترجیحی');
 INSERT INTO `lang_definitions` VALUES (203687, 12742, 37, 'با انتخاب شده:');
 INSERT INTO `lang_definitions` VALUES (203688, 12743, 37, 'با نام قدیمی');
-INSERT INTO `lang_definitions` VALUES (203689, 12744, 37, 'با استفاده از کلید U2F باید آن را به پورت USB متصل کرده و سپس با استفاده از آخرین نسخه های مرورگرهای مدرن زیر - Chrome ، Firefox ، Safari ، Edge و Opera و فشار دادن دکمه روی دستگاه به OpenEMR دسترسی پیدا کنید.');
+INSERT INTO `lang_definitions` VALUES (203689, 12744, 37, 'با استفاده از کلید U2F باید آن را به پورت USB متصل کرده و سپس با استفاده از آخرین نسخه های مرورگرهای مدرن زیر - Chrome ، Firefox ، Safari ، Edge و Opera و فشار دادن دکمه روی دستگاه به DCL دسترسی پیدا کنید.');
 INSERT INTO `lang_definitions` VALUES (203690, 12745, 37, 'با ارزش');
 INSERT INTO `lang_definitions` VALUES (203691, 12746, 37, 'با چه کسی ممکن است پیام بگذاریم؟');
 INSERT INTO `lang_definitions` VALUES (203692, 12747, 37, 'محروم شد');
@@ -217268,7 +217268,7 @@ INSERT INTO `lang_definitions` VALUES (203899, 12974, 37, 'پرونده شما �
 INSERT INTO `lang_definitions` VALUES (203900, 12975, 37, 'پرونده شما خیلی بزرگ است');
 INSERT INTO `lang_definitions` VALUES (203901, 12976, 37, 'اولین روز هفته شماست.');
 INSERT INTO `lang_definitions` VALUES (203902, 12977, 37, 'شناسه شما موجود نیست.لغو و دوباره امتحان کنید.');
-INSERT INTO `lang_definitions` VALUES (203903, 12978, 37, 'نصب OpenEMR شما ثبت شده است');
+INSERT INTO `lang_definitions` VALUES (203903, 12978, 37, 'نصب DCL شما ثبت شده است');
 INSERT INTO `lang_definitions` VALUES (203904, 12980, 37, 'نتایج آزمایشگاه شما');
 INSERT INTO `lang_definitions` VALUES (203905, 12981, 37, 'نام لیست شما برای تأمین نیازهای نامگذاری تغییر کرده است.');
 INSERT INTO `lang_definitions` VALUES (203906, 12982, 37, 'پیام شما برای تحویل به ارسال شد');
@@ -217900,7 +217900,7 @@ INSERT INTO `lang_definitions` VALUES (204531, 668, 40, '小計');
 INSERT INTO `lang_definitions` VALUES (204532, 671, 40, 'AMT請求された');
 INSERT INTO `lang_definitions` VALUES (204533, 676, 40, '開始日よりも後の終了日は、繰り返しイベントのために必要です！');
 INSERT INTO `lang_definitions` VALUES (204534, 677, 40, 'エラーがフォームに署名が発生しました');
-INSERT INTO `lang_definitions` VALUES (204535, 678, 40, 'OpenEMRウェブディレクトリツリーをダンプ中にエラーが発生しました');
+INSERT INTO `lang_definitions` VALUES (204535, 678, 40, 'DCLウェブディレクトリツリーをダンプ中にエラーが発生しました');
 INSERT INTO `lang_definitions` VALUES (204536, 679, 40, 'phpGACLウェブディレクトリツリーをダンプ中にエラーが発生しました');
 INSERT INTO `lang_definitions` VALUES (204537, 680, 40, 'SQL-元帳のWebディレクトリツリーをダンプ中にエラーが発生しました');
 INSERT INTO `lang_definitions` VALUES (204538, 685, 40, '不完全GCAC問題が作成され、リンクされている。誰かが後でそれを完了する必要があります。');
@@ -218507,10 +218507,10 @@ INSERT INTO `lang_definitions` VALUES (205138, 2209, 40, '設定');
 INSERT INTO `lang_definitions` VALUES (205139, 2210, 40, '設定');
 INSERT INTO `lang_definitions` VALUES (205140, 2211, 40, '設定 エキスポート/インポート');
 INSERT INTO `lang_definitions` VALUES (205141, 2212, 40, '設定は正しく保存されました');
-INSERT INTO `lang_definitions` VALUES (205142, 2213, 40, 'クライアント側のSSL証明書を使用するようにApacheとOpenEMRを設定します。');
+INSERT INTO `lang_definitions` VALUES (205142, 2213, 40, 'クライアント側のSSL証明書を使用するようにApacheとDCLを設定します。');
 INSERT INTO `lang_definitions` VALUES (205143, 2214, 40, 'apache を 端末側SSL認証で設定');
 INSERT INTO `lang_definitions` VALUES (205144, 2215, 40, 'apache を HTTPS 利用で設定');
-INSERT INTO `lang_definitions` VALUES (205145, 2216, 40, 'openEMR を 端末側SSL認証で設定');
+INSERT INTO `lang_definitions` VALUES (205145, 2216, 40, 'DCL を 端末側SSL認証で設定');
 INSERT INTO `lang_definitions` VALUES (205146, 2220, 40, 'トラックの設定');
 INSERT INTO `lang_definitions` VALUES (205147, 2221, 40, 'トラックの設定');
 INSERT INTO `lang_definitions` VALUES (205148, 2225, 40, '新規患者作成の完了');
@@ -219715,8 +219715,8 @@ INSERT INTO `lang_definitions` VALUES (206346, 7519, 40, '開く');
 INSERT INTO `lang_definitions` VALUES (206347, 7528, 40, '新規ウインドウで開く');
 INSERT INTO `lang_definitions` VALUES (206348, 7531, 40, '新規患者');
 INSERT INTO `lang_definitions` VALUES (206349, 7535, 40, '今日の訪問先を開く');
-INSERT INTO `lang_definitions` VALUES (206350, 7567, 40, 'OpenEMRデータベースアップグレード');
-INSERT INTO `lang_definitions` VALUES (206351, 7576, 40, 'OpenEMRユーザー');
+INSERT INTO `lang_definitions` VALUES (206350, 7567, 40, 'DCLデータベースアップグレード');
+INSERT INTO `lang_definitions` VALUES (206351, 7576, 40, 'DCLユーザー');
 INSERT INTO `lang_definitions` VALUES (206352, 7580, 40, '操作に失敗しました');
 INSERT INTO `lang_definitions` VALUES (206353, 7582, 40, 'オペレーター');
 INSERT INTO `lang_definitions` VALUES (206354, 7583, 40, '眼科');
@@ -220877,7 +220877,7 @@ INSERT INTO `lang_definitions` VALUES (207508, 668, 41, 'Summa:');
 INSERT INTO `lang_definitions` VALUES (207509, 671, 41, 'Laskutettu summa');
 INSERT INTO `lang_definitions` VALUES (207510, 676, 41, 'Toistuvaan tapahtumaan vaaditaan aloituspäivää myöhäisempi lopetuspäivämäärä!');
 INSERT INTO `lang_definitions` VALUES (207511, 677, 41, 'Lomaketta allekirjoitettaessa tapahtui virhe');
-INSERT INTO `lang_definitions` VALUES (207512, 678, 41, 'Tapahtui virhe poistettaessa OpenEMR www-tiedostopuuta.');
+INSERT INTO `lang_definitions` VALUES (207512, 678, 41, 'Tapahtui virhe poistettaessa DCL www-tiedostopuuta.');
 INSERT INTO `lang_definitions` VALUES (207513, 679, 41, 'Tapahtui virhe poistettaessa phpGACL www-tiedostopuuta.');
 INSERT INTO `lang_definitions` VALUES (207514, 680, 41, 'Tapahtui virhe poistettaessa SQL-Ledger www-tiedostopuuta.');
 INSERT INTO `lang_definitions` VALUES (207515, 685, 41, 'Epätäydellinen GCAC on luotu ja linkitetty. Joku tulee täydentämään sitä myöhemmin.');
@@ -221613,10 +221613,10 @@ INSERT INTO `lang_definitions` VALUES (208244, 2209, 41, 'Rakenne');
 INSERT INTO `lang_definitions` VALUES (208245, 2210, 41, 'Rakenne');
 INSERT INTO `lang_definitions` VALUES (208246, 2211, 41, 'Rakenne Vienti/Tuonti');
 INSERT INTO `lang_definitions` VALUES (208247, 2212, 41, 'Rakenteen tallentaminen onnistui');
-INSERT INTO `lang_definitions` VALUES (208248, 2213, 41, 'Määrittele Apache ja OpenEMR käyttämään asiakkaan SSL-sertifikaattia');
+INSERT INTO `lang_definitions` VALUES (208248, 2213, 41, 'Määrittele Apache ja DCL käyttämään asiakkaan SSL-sertifikaattia');
 INSERT INTO `lang_definitions` VALUES (208249, 2214, 41, 'Määrittele Apache käyttämään asiakkaan SSL-sertifikaattia');
 INSERT INTO `lang_definitions` VALUES (208250, 2215, 41, 'Määrittele Apache käyttämään HTTPS-protokollaa.');
-INSERT INTO `lang_definitions` VALUES (208251, 2216, 41, 'Määrittele OpenEMR käyttämään asiakkaan SSL-sertifikaattia');
+INSERT INTO `lang_definitions` VALUES (208251, 2216, 41, 'Määrittele DCL käyttämään asiakkaan SSL-sertifikaattia');
 INSERT INTO `lang_definitions` VALUES (208252, 2225, 41, 'Vahvista uusi potilas');
 INSERT INTO `lang_definitions` VALUES (208253, 2227, 41, 'Vahvista uusi salasana');
 INSERT INTO `lang_definitions` VALUES (208254, 2229, 41, 'Vahvista maksu');
@@ -222163,8 +222163,8 @@ INSERT INTO `lang_definitions` VALUES (208794, 3315, 41, 'Maksettava');
 INSERT INTO `lang_definitions` VALUES (208795, 3316, 41, 'Eräpäivä');
 INSERT INTO `lang_definitions` VALUES (208796, 3318, 41, 'Eräpäivä kk/pp/vvvv tai yyyy-kk-pp');
 INSERT INTO `lang_definitions` VALUES (208797, 3319, 41, 'Eräpäivä:');
-INSERT INTO `lang_definitions` VALUES (208798, 3325, 41, 'Pudotetaan OpenEMR tietokanta');
-INSERT INTO `lang_definitions` VALUES (208799, 3326, 41, 'Pudotetaan OpenEMR web hakemistopuu');
+INSERT INTO `lang_definitions` VALUES (208798, 3325, 41, 'Pudotetaan DCL tietokanta');
+INSERT INTO `lang_definitions` VALUES (208799, 3326, 41, 'Pudotetaan DCL web hakemistopuu');
 INSERT INTO `lang_definitions` VALUES (208800, 3327, 41, 'Pudotetaan phpGACL tietokanta');
 INSERT INTO `lang_definitions` VALUES (208801, 3328, 41, 'Pudotetaan phpGACL web hakemistopuu');
 INSERT INTO `lang_definitions` VALUES (208802, 3329, 41, 'Pudotetaan SQL-Ledger tietokanta');
@@ -222312,7 +222312,7 @@ INSERT INTO `lang_definitions` VALUES (208943, 3753, 41, 'Englanti');
 INSERT INTO `lang_definitions` VALUES (208944, 3754, 41, 'Englanti');
 INSERT INTO `lang_definitions` VALUES (208945, 3756, 41, 'Englanti (Intian)');
 INSERT INTO `lang_definitions` VALUES (208946, 3757, 41, 'Englanti (Standardi)');
-INSERT INTO `lang_definitions` VALUES (208947, 3759, 41, 'Varmista että OpenEMR:llä on oikeus kirjoittaa hakemistoon');
+INSERT INTO `lang_definitions` VALUES (208947, 3759, 41, 'Varmista että DCL:llä on oikeus kirjoittaa hakemistoon');
 INSERT INTO `lang_definitions` VALUES (208948, 3765, 41, 'Antamalla diagnoosikoodin poissuljetaan kaikki lähetteet ilman sitä');
 INSERT INTO `lang_definitions` VALUES (208949, 3767, 41, 'Syötä muutos ...');
 INSERT INTO `lang_definitions` VALUES (208950, 3770, 41, 'Kirjoita viesti tähän');
@@ -222345,7 +222345,7 @@ INSERT INTO `lang_definitions` VALUES (208976, 3896, 41, 'Virhe tiedoston lataam
 INSERT INTO `lang_definitions` VALUES (208977, 3897, 41, 'Virhe viestin poistamisessa');
 INSERT INTO `lang_definitions` VALUES (208978, 3899, 41, 'Virhe arvojen noutamisessa.');
 INSERT INTO `lang_definitions` VALUES (208979, 3900, 41, 'Virhe asiakirjan tallennuksessa');
-INSERT INTO `lang_definitions` VALUES (208980, 3901, 41, 'Virhe annettaessa OpenEMR:n käyttäjälle lupaa tiedostoon.');
+INSERT INTO `lang_definitions` VALUES (208980, 3901, 41, 'Virhe annettaessa DCL:n käyttäjälle lupaa tiedostoon.');
 INSERT INTO `lang_definitions` VALUES (208981, 3904, 41, 'virhe lomakkeen rekisteröinnissä!');
 INSERT INTO `lang_definitions` VALUES (208982, 3905, 41, 'Virhe tiedoston tallennuksen aikana');
 INSERT INTO `lang_definitions` VALUES (208983, 3907, 41, 'Virhe tiedoston kirjoittamisen aikana');
@@ -222512,7 +222512,7 @@ INSERT INTO `lang_definitions` VALUES (209143, 4276, 41, 'Fidži');
 INSERT INTO `lang_definitions` VALUES (209144, 4277, 41, 'Tiedosto');
 INSERT INTO `lang_definitions` VALUES (209145, 4281, 41, 'tiedoston sijainti');
 INSERT INTO `lang_definitions` VALUES (209146, 4282, 41, 'Tiedoston hallinta');
-INSERT INTO `lang_definitions` VALUES (209147, 4289, 41, 'Tiedoston käyttöoikeus myönnetty OpenEMR käyttäjälle.');
+INSERT INTO `lang_definitions` VALUES (209147, 4289, 41, 'Tiedoston käyttöoikeus myönnetty DCL käyttäjälle.');
 INSERT INTO `lang_definitions` VALUES (209148, 4290, 41, 'Tiedoston nouto CouchDB:ta epäonnistui');
 INSERT INTO `lang_definitions` VALUES (209149, 4291, 41, 'Arkistohuone');
 INSERT INTO `lang_definitions` VALUES (209150, 4294, 41, 'Saman niminen tiedosto on jo olemassa kohteessa:');
@@ -223053,9 +223053,9 @@ INSERT INTO `lang_definitions` VALUES (209684, 7519, 41, 'Avaa');
 INSERT INTO `lang_definitions` VALUES (209685, 7528, 41, 'Avaa uudessa ikkunassa');
 INSERT INTO `lang_definitions` VALUES (209686, 7531, 41, 'Avaa potilas');
 INSERT INTO `lang_definitions` VALUES (209687, 7535, 41, 'Avaa tämän päivän käynnit');
-INSERT INTO `lang_definitions` VALUES (209688, 7571, 41, 'OpenEMR on määritettävä käyttämään varmenteita ennen kuin se voi luoda asiakkaalle varmenteita.');
-INSERT INTO `lang_definitions` VALUES (209689, 7575, 41, 'OpenEMR vaatii Javascriptiä käyttäjän tunnistautumiseen.');
-INSERT INTO `lang_definitions` VALUES (209690, 7576, 41, 'OpenEMR käyttäjät');
+INSERT INTO `lang_definitions` VALUES (209688, 7571, 41, 'DCL on määritettävä käyttämään varmenteita ennen kuin se voi luoda asiakkaalle varmenteita.');
+INSERT INTO `lang_definitions` VALUES (209689, 7575, 41, 'DCL vaatii Javascriptiä käyttäjän tunnistautumiseen.');
+INSERT INTO `lang_definitions` VALUES (209690, 7576, 41, 'DCL käyttäjät');
 INSERT INTO `lang_definitions` VALUES (209691, 7608, 41, 'TAI');
 INSERT INTO `lang_definitions` VALUES (209692, 7609, 41, 'Tai');
 INSERT INTO `lang_definitions` VALUES (209693, 7610, 41, 'tai valitse');
@@ -223629,7 +223629,7 @@ INSERT INTO `lang_definitions` VALUES (210260, 12172, 41, 'Päivitä käyttäjä
 INSERT INTO `lang_definitions` VALUES (210261, 12181, 41, 'Päivitetään yleisiä asetuksia oletuksiin');
 INSERT INTO `lang_definitions` VALUES (210262, 12221, 41, 'Urdu');
 INSERT INTO `lang_definitions` VALUES (210263, 12233, 41, 'URL');
-INSERT INTO `lang_definitions` VALUES (210264, 12235, 41, 'OpenEMR tukisivujen URL');
+INSERT INTO `lang_definitions` VALUES (210264, 12235, 41, 'DCL tukisivujen URL');
 INSERT INTO `lang_definitions` VALUES (210265, 12238, 41, 'URL WordPress-sivustolle joka tukee portaalia');
 INSERT INTO `lang_definitions` VALUES (210266, 12252, 41, 'Käytä 24 tunnin aikamääritystä?');
 INSERT INTO `lang_definitions` VALUES (210267, 12261, 41, 'Käytä Veloitukset-paneelia');
@@ -224579,7 +224579,7 @@ INSERT INTO `lang_definitions` VALUES (211210, 668, 47, 'रक्कम:');
 INSERT INTO `lang_definitions` VALUES (211211, 671, 47, 'रक्कम बिल');
 INSERT INTO `lang_definitions` VALUES (211212, 676, 47, 'प्रारंभ तारीख पेक्षा नंतर समाप्ती तारीख पुनरावृत्ती घटना आवश्यक आहे!');
 INSERT INTO `lang_definitions` VALUES (211213, 677, 47, 'एक त्रुटी फॉर्म साइन इन आली');
-INSERT INTO `lang_definitions` VALUES (211214, 678, 47, 'OpenEMR वेब निर्देशिका झाड डम्पिंग करताना एक त्रुटी आली');
+INSERT INTO `lang_definitions` VALUES (211214, 678, 47, 'DCL वेब निर्देशिका झाड डम्पिंग करताना एक त्रुटी आली');
 INSERT INTO `lang_definitions` VALUES (211215, 679, 47, 'PhpGACL वेब निर्देशिका झाड डम्पिंग करताना एक त्रुटी आली');
 INSERT INTO `lang_definitions` VALUES (211216, 680, 47, 'एस क्यू एल-लेजर वेब निर्देशिका झाड डम्पिंग करताना एक त्रुटी आली');
 INSERT INTO `lang_definitions` VALUES (211217, 685, 47, 'अपूर्ण GCAC समस्या तयार केले आणि दुवा साधला गेला आहे. कोणीतरी नंतर पूर्ण करणे आवश्यक आहे.');
@@ -225352,10 +225352,10 @@ INSERT INTO `lang_definitions` VALUES (211983, 2209, 47, 'Config');
 INSERT INTO `lang_definitions` VALUES (211984, 2210, 47, 'संरचना');
 INSERT INTO `lang_definitions` VALUES (211985, 2211, 47, 'संरचना आयात / निर्यात');
 INSERT INTO `lang_definitions` VALUES (211986, 2212, 47, 'संरचना यशस्वीरित्या जतन केले');
-INSERT INTO `lang_definitions` VALUES (211987, 2213, 47, 'क्लायंट बाजूला SSL प्रमाणपत्र वापरू अपाचे आणि OpenEMR संरचीत करा.');
+INSERT INTO `lang_definitions` VALUES (211987, 2213, 47, 'क्लायंट बाजूला SSL प्रमाणपत्र वापरू अपाचे आणि DCL संरचीत करा.');
 INSERT INTO `lang_definitions` VALUES (211988, 2214, 47, 'क्लायंट बाजूला SSL प्रमाणपत्र वापरू अपाचे संयोजीत करा Name');
 INSERT INTO `lang_definitions` VALUES (211989, 2215, 47, 'HTTPS वापरा करण्यासाठी अपाचे कॉन्फिगर करा.');
-INSERT INTO `lang_definitions` VALUES (211990, 2216, 47, 'क्लायंट बाजूला SSL प्रमाणपत्र वापरू Openemr संयोजीत करा Name');
+INSERT INTO `lang_definitions` VALUES (211990, 2216, 47, 'क्लायंट बाजूला SSL प्रमाणपत्र वापरू DCL संयोजीत करा Name');
 INSERT INTO `lang_definitions` VALUES (211991, 2220, 47, 'ट्रॅक संयोजीत करा Name');
 INSERT INTO `lang_definitions` VALUES (211992, 2221, 47, 'ट्रॅक संयोजीत करा Name');
 INSERT INTO `lang_definitions` VALUES (211993, 2225, 47, 'नवीन रुग्णांच्या तयार करा पुष्टी करा');
@@ -225951,8 +225951,8 @@ INSERT INTO `lang_definitions` VALUES (212582, 3321, 47, 'मुळे पं');
 INSERT INTO `lang_definitions` VALUES (212583, 3322, 47, 'मुळे लवकरच');
 INSERT INTO `lang_definitions` VALUES (212584, 3323, 47, 'मुळे स्थिती');
 INSERT INTO `lang_definitions` VALUES (212585, 3324, 47, 'मुळे अद्यतनित स्थिती');
-INSERT INTO `lang_definitions` VALUES (212586, 3325, 47, 'OpenEMR डेटाबेस डम्पिंग');
-INSERT INTO `lang_definitions` VALUES (212587, 3326, 47, 'डम्पिंग OpenEMR वेब निर्देशिका झाड');
+INSERT INTO `lang_definitions` VALUES (212586, 3325, 47, 'DCL डेटाबेस डम्पिंग');
+INSERT INTO `lang_definitions` VALUES (212587, 3326, 47, 'डम्पिंग DCL वेब निर्देशिका झाड');
 INSERT INTO `lang_definitions` VALUES (212588, 3327, 47, 'PhpGACL डेटाबेस डम्पिंग');
 INSERT INTO `lang_definitions` VALUES (212589, 3328, 47, 'डम्पिंग phpGACL वेब निर्देशिका झाड');
 INSERT INTO `lang_definitions` VALUES (212590, 3329, 47, 'डम्पिंग एस क्यू एल-लेजर डेटाबेस');
@@ -226128,7 +226128,7 @@ INSERT INTO `lang_definitions` VALUES (212759, 3638, 47, 'स्कॅनर स
 INSERT INTO `lang_definitions` VALUES (212760, 3639, 47, 'मानक अहवाल Itemization सक्षम');
 INSERT INTO `lang_definitions` VALUES (212761, 3640, 47, 'सूर्यास्त प्रणाली द्वारे ओपन सोअर्स वर्डप्रेस पोर्टल समर्थन सक्षम करा');
 INSERT INTO `lang_definitions` VALUES (212762, 3642, 47, 'वैद्यकीय माहिती एकत्रीकरण, एलएलसी लॅब विनिमय सेवा सक्षम करा.');
-INSERT INTO `lang_definitions` VALUES (212763, 3643, 47, 'OpenEMR समर्थन, LLC लॅब विनिमय सेवा सक्षम करा.');
+INSERT INTO `lang_definitions` VALUES (212763, 3643, 47, 'DCL समर्थन, LLC लॅब विनिमय सेवा सक्षम करा.');
 INSERT INTO `lang_definitions` VALUES (212764, 3644, 47, 'वापरकर्ता प्रमाणपत्र प्रमाणीकरण सक्षम');
 INSERT INTO `lang_definitions` VALUES (212765, 3650, 47, 'ZMG, एलएलसी eRx सेवा सक्षम');
 INSERT INTO `lang_definitions` VALUES (212766, 3651, 47, 'सक्षम');
@@ -226195,7 +226195,7 @@ INSERT INTO `lang_definitions` VALUES (212826, 3754, 47, 'इंग्रजी'
 INSERT INTO `lang_definitions` VALUES (212827, 3756, 47, 'इंग्रजी (भारतीय)');
 INSERT INTO `lang_definitions` VALUES (212828, 3757, 47, 'इंग्रजी (वी)');
 INSERT INTO `lang_definitions` VALUES (212829, 3758, 47, 'Hylafax द्वारे वापरले Enscript आदेश.');
-INSERT INTO `lang_definitions` VALUES (212830, 3759, 47, 'याची खात्री करा OpenEMR निर्देशिका विशेषाधिकार लिहा आहे');
+INSERT INTO `lang_definitions` VALUES (212830, 3759, 47, 'याची खात्री करा DCL निर्देशिका विशेषाधिकार लिहा आहे');
 INSERT INTO `lang_definitions` VALUES (212831, 3761, 47, 'ENT डिस्चार्ज');
 INSERT INTO `lang_definitions` VALUES (212832, 3762, 47, 'ENT वेदना');
 INSERT INTO `lang_definitions` VALUES (212833, 3765, 47, 'तो असलेले सर्व पावत्या वगळण्याची निदान कोड प्रविष्ट करा');
@@ -226248,7 +226248,7 @@ INSERT INTO `lang_definitions` VALUES (212879, 3897, 47, 'त्रुटी क
 INSERT INTO `lang_definitions` VALUES (212880, 3898, 47, 'लॅब एक्सचेंज नेटवर्क त्रुटी प्राप्त परिणाम');
 INSERT INTO `lang_definitions` VALUES (212881, 3899, 47, 'मूल्ये पुनर्प्राप्त करताना त्रुटी.');
 INSERT INTO `lang_definitions` VALUES (212882, 3900, 47, 'जतन करताना त्रुटी आली दस्तऐवज');
-INSERT INTO `lang_definitions` VALUES (212883, 3901, 47, 'OpenEMR वापरकर्ता फाइल विशेषाधिकार मंजूर करताना त्रुटी.');
+INSERT INTO `lang_definitions` VALUES (212883, 3901, 47, 'DCL वापरकर्ता फाइल विशेषाधिकार मंजूर करताना त्रुटी.');
 INSERT INTO `lang_definitions` VALUES (212884, 3904, 47, 'त्रुटी फॉर्म नोंदणी करताना!');
 INSERT INTO `lang_definitions` VALUES (212885, 3905, 47, 'त्रुटी फाइल जतन करताना');
 INSERT INTO `lang_definitions` VALUES (212886, 3907, 47, 'दाखल लिहित असताना त्रुटी');
@@ -226260,7 +226260,7 @@ INSERT INTO `lang_definitions` VALUES (212891, 3920, 47, 'त्रुटी, ad
 INSERT INTO `lang_definitions` VALUES (212892, 3921, 47, 'त्रुटी, प्रमाणपत्र तयार करण्यात अक्षम.');
 INSERT INTO `lang_definitions` VALUES (212893, 3922, 47, 'त्रुटी, सर्व्हर प्रमाणपत्र तयार करण्यात अक्षम.');
 INSERT INTO `lang_definitions` VALUES (212894, 3924, 47, 'फाइल उघडू शकत नाही त्रुटी,');
-INSERT INTO `lang_definitions` VALUES (212895, 3925, 47, 'त्रुटी, वापरकर्ता प्रमाणपत्र प्रमाणीकरण OpenEMR सक्षम नाही');
+INSERT INTO `lang_definitions` VALUES (212895, 3925, 47, 'त्रुटी, वापरकर्ता प्रमाणपत्र प्रमाणीकरण DCL सक्षम नाही');
 INSERT INTO `lang_definitions` VALUES (212896, 3933, 47, 'त्रुटी. आपण संग्रहण / Tar.php PHP विभाग स्थापित करणे आवश्यक आहे.');
 INSERT INTO `lang_definitions` VALUES (212897, 3934, 47, 'त्रुटी: table.sql, तुटलेली फॉर्म उघडू शकत नाही?');
 INSERT INTO `lang_definitions` VALUES (212898, 3937, 47, 'त्रुटी: ओळीवर आयडी डुप्लीकेट');
@@ -226472,7 +226472,7 @@ INSERT INTO `lang_definitions` VALUES (213103, 4277, 47, 'फाइल');
 INSERT INTO `lang_definitions` VALUES (213104, 4280, 47, 'दस्तऐवजीकरण डिरेक्टरी मध्ये फाइल लॉग बॅकअप तयार करण्याची प्रक्रिया स्वयंचलित कसे जाणून घेण्यासाठी');
 INSERT INTO `lang_definitions` VALUES (213105, 4281, 47, 'फाइल स्थान');
 INSERT INTO `lang_definitions` VALUES (213106, 4282, 47, 'फाइल व्यवस्थापन');
-INSERT INTO `lang_definitions` VALUES (213107, 4289, 47, 'फाइल विशेषाधिकार OpenEMR वापरकर्ता मंजूर.');
+INSERT INTO `lang_definitions` VALUES (213107, 4289, 47, 'फाइल विशेषाधिकार DCL वापरकर्ता मंजूर.');
 INSERT INTO `lang_definitions` VALUES (213108, 4290, 47, 'CouchDB फाइल भरपाई अयशस्वी');
 INSERT INTO `lang_definitions` VALUES (213109, 4291, 47, 'फाइल कक्ष');
 INSERT INTO `lang_definitions` VALUES (213110, 4292, 47, 'अपलोड फाइल');
@@ -226865,7 +226865,7 @@ INSERT INTO `lang_definitions` VALUES (213496, 5036, 47, 'HPI:');
 INSERT INTO `lang_definitions` VALUES (213497, 5038, 47, 'एचटी');
 INSERT INTO `lang_definitions` VALUES (213498, 5039, 47, 'एचटीएमएल');
 INSERT INTO `lang_definitions` VALUES (213499, 5040, 47, 'HTML आउटपुटपहा?');
-INSERT INTO `lang_definitions` VALUES (213500, 5043, 47, 'Https OpenEMR समर्थन, LLC लॅब विनिमय सेवा लिंक.');
+INSERT INTO `lang_definitions` VALUES (213500, 5043, 47, 'Https DCL समर्थन, LLC लॅब विनिमय सेवा लिंक.');
 INSERT INTO `lang_definitions` VALUES (213501, 5045, 47, 'हंगेरियन');
 INSERT INTO `lang_definitions` VALUES (213502, 5046, 47, 'Hylafax निर्देशिका');
 INSERT INTO `lang_definitions` VALUES (213503, 5047, 47, 'Hylafax Enscript आदेश');
@@ -227413,7 +227413,7 @@ INSERT INTO `lang_definitions` VALUES (214044, 6131, 47, 'स्थानीय 
 INSERT INTO `lang_definitions` VALUES (214045, 6133, 47, 'लोकॅल');
 INSERT INTO `lang_definitions` VALUES (214046, 6134, 47, 'परिसर');
 INSERT INTO `lang_definitions` VALUES (214047, 6135, 47, 'स्थान');
-INSERT INTO `lang_definitions` VALUES (214048, 6136, 47, 'तो स्वतः त्याच्या वापर नंतर फाइल हटवली शिफारसीय आहे त्यामुळे openemr मशीन स्थान आणि, संवेदनशील डाटा असू शकते');
+INSERT INTO `lang_definitions` VALUES (214048, 6136, 47, 'तो स्वतः त्याच्या वापर नंतर फाइल हटवली शिफारसीय आहे त्यामुळे DCL मशीन स्थान आणि, संवेदनशील डाटा असू शकते');
 INSERT INTO `lang_definitions` VALUES (214049, 6137, 47, 'या भरपूर स्थान');
 INSERT INTO `lang_definitions` VALUES (214050, 6138, 47, 'निर्दिष्ट न स्थान');
 INSERT INTO `lang_definitions` VALUES (214051, 6139, 47, 'स्थान जेथे Hylafax स्टोअर्स फॅक्स.');
@@ -228161,14 +228161,14 @@ INSERT INTO `lang_definitions` VALUES (214792, 7519, 47, 'ओपन');
 INSERT INTO `lang_definitions` VALUES (214793, 7528, 47, 'नवीन विंडोमध्ये उघडा');
 INSERT INTO `lang_definitions` VALUES (214794, 7531, 47, 'ओपन रुग्णांच्या');
 INSERT INTO `lang_definitions` VALUES (214795, 7535, 47, 'ओपन Today`s भेट द्या');
-INSERT INTO `lang_definitions` VALUES (214796, 7562, 47, 'OpenEMR आधीच एक प्रमाणपत्र अधिकृतता कॉन्फिगर केले आहे.');
-INSERT INTO `lang_definitions` VALUES (214797, 7565, 47, 'OpenEMR अर्ज वर्ग');
-INSERT INTO `lang_definitions` VALUES (214798, 7567, 47, 'OpenEMR डेटाबेस अपग्रेड');
-INSERT INTO `lang_definitions` VALUES (214799, 7568, 47, 'डी-ओळखीसाठी OpenEMR डेटाबेस अपग्रेड');
-INSERT INTO `lang_definitions` VALUES (214800, 7569, 47, 'OpenEMR योगदान डिरेक्टरी मध्ये येणारे फाइल ओळखत नाही. तुम्ही, MySQL डेटाबेस मध्ये supported_external_dataloads टेबल मध्ये प्रकाशन संरचीत करणे आवश्यक आहे कारण हे सर्वात शक्यता आहे.');
-INSERT INTO `lang_definitions` VALUES (214801, 7571, 47, 'तो क्लायंट प्रमाणपत्र तयार करू शकता करण्यापूर्वी OpenEMR प्रमाणपत्रे वापरण्यासाठी कॉन्फिगर केले जाऊ आवश्यक आहे.');
-INSERT INTO `lang_definitions` VALUES (214802, 7575, 47, 'OpenEMR वापरकर्ता प्रमाणीकरण करण्यासाठी Javascript आवश्यक आहे.');
-INSERT INTO `lang_definitions` VALUES (214803, 7576, 47, 'OpenEMR वापरकर्ते');
+INSERT INTO `lang_definitions` VALUES (214796, 7562, 47, 'DCL आधीच एक प्रमाणपत्र अधिकृतता कॉन्फिगर केले आहे.');
+INSERT INTO `lang_definitions` VALUES (214797, 7565, 47, 'DCL अर्ज वर्ग');
+INSERT INTO `lang_definitions` VALUES (214798, 7567, 47, 'DCL डेटाबेस अपग्रेड');
+INSERT INTO `lang_definitions` VALUES (214799, 7568, 47, 'डी-ओळखीसाठी DCL डेटाबेस अपग्रेड');
+INSERT INTO `lang_definitions` VALUES (214800, 7569, 47, 'DCL योगदान डिरेक्टरी मध्ये येणारे फाइल ओळखत नाही. तुम्ही, MySQL डेटाबेस मध्ये supported_external_dataloads टेबल मध्ये प्रकाशन संरचीत करणे आवश्यक आहे कारण हे सर्वात शक्यता आहे.');
+INSERT INTO `lang_definitions` VALUES (214801, 7571, 47, 'तो क्लायंट प्रमाणपत्र तयार करू शकता करण्यापूर्वी DCL प्रमाणपत्रे वापरण्यासाठी कॉन्फिगर केले जाऊ आवश्यक आहे.');
+INSERT INTO `lang_definitions` VALUES (214802, 7575, 47, 'DCL वापरकर्ता प्रमाणीकरण करण्यासाठी Javascript आवश्यक आहे.');
+INSERT INTO `lang_definitions` VALUES (214803, 7576, 47, 'DCL वापरकर्ते');
 INSERT INTO `lang_definitions` VALUES (214804, 7577, 47, 'संबंधी');
 INSERT INTO `lang_definitions` VALUES (214805, 7583, 47, 'Opthalmic');
 INSERT INTO `lang_definitions` VALUES (214806, 7586, 47, 'पर्याय');
@@ -228483,7 +228483,7 @@ INSERT INTO `lang_definitions` VALUES (215114, 8150, 47, 'ऑर्डर प्
 INSERT INTO `lang_definitions` VALUES (215115, 8151, 47, 'प्रलंबित द्यावे');
 INSERT INTO `lang_definitions` VALUES (215116, 8152, 47, 'प्रलंबित पुनरावलोकन');
 INSERT INTO `lang_definitions` VALUES (215117, 8153, 47, 'प्रलंबित Rx संख्या');
-INSERT INTO `lang_definitions` VALUES (215118, 8156, 47, 'पेनिंग्टन फर्म OpenEMR विरुद्ध');
+INSERT INTO `lang_definitions` VALUES (215118, 8156, 47, 'पेनिंग्टन फर्म DCL विरुद्ध');
 INSERT INTO `lang_definitions` VALUES (215119, 8157, 47, 'पाचक व्रण रोग');
 INSERT INTO `lang_definitions` VALUES (215120, 8158, 47, 'चकमकीत प्रति');
 INSERT INTO `lang_definitions` VALUES (215121, 8159, 47, 'मि दर');
@@ -228649,7 +228649,7 @@ INSERT INTO `lang_definitions` VALUES (215280, 8434, 47, '270 बॅच तय�
 INSERT INTO `lang_definitions` VALUES (215281, 8435, 47, 'सेट करा');
 INSERT INTO `lang_definitions` VALUES (215282, 8436, 47, 'शून्य परत de_identification_config वेरियेबल सेट करा');
 INSERT INTO `lang_definitions` VALUES (215283, 8441, 47, 'नवीन डे ओळख प्रक्रिया सुरू करा');
-INSERT INTO `lang_definitions` VALUES (215284, 8445, 47, 'डे ओळख प्रक्रीया, कार्य, टेबल समाविष्ट करण्यासाठी OpenEMR डेटाबेस श्रेणीसुधारित करा');
+INSERT INTO `lang_definitions` VALUES (215284, 8445, 47, 'डे ओळख प्रक्रीया, कार्य, टेबल समाविष्ट करण्यासाठी DCL डेटाबेस श्रेणीसुधारित करा');
 INSERT INTO `lang_definitions` VALUES (215285, 8447, 47, 'अधिक माहिती साठी डी ओळख त्रुटी लॉग टेबल पहा');
 INSERT INTO `lang_definitions` VALUES (215286, 8448, 47, 'काही वेळानंतर डे ओळख स्क्रीन भेट द्या');
 INSERT INTO `lang_definitions` VALUES (215287, 8449, 47, 'काही वेळानंतर पुन्हा ओळख स्क्रीन भेट द्या');
@@ -229635,7 +229635,7 @@ INSERT INTO `lang_definitions` VALUES (216266, 10288, 47, 'सायनुसा
 INSERT INTO `lang_definitions` VALUES (216267, 10290, 47, 'साइट');
 INSERT INTO `lang_definitions` VALUES (216268, 10294, 47, 'साइट ID');
 INSERT INTO `lang_definitions` VALUES (216269, 10295, 47, 'वैद्यकीय माहिती एकत्रीकरण, एलएलसी लॅब एक्सचेंज सेवा साइट ID.');
-INSERT INTO `lang_definitions` VALUES (216270, 10296, 47, 'OpenEMR समर्थन, LLC लॅब विनिमय सेवा साइट आयडी.');
+INSERT INTO `lang_definitions` VALUES (216270, 10296, 47, 'DCL समर्थन, LLC लॅब विनिमय सेवा साइट आयडी.');
 INSERT INTO `lang_definitions` VALUES (216271, 10300, 47, 'आकार');
 INSERT INTO `lang_definitions` VALUES (216272, 10303, 47, 'आकार 1 आणि 999 दरम्यान एक संख्या असणे आवश्यक आहे');
 INSERT INTO `lang_definitions` VALUES (216273, 10305, 47, 'आकार / यादी');
@@ -230129,7 +230129,7 @@ INSERT INTO `lang_definitions` VALUES (216760, 11277, 47, 'चालू भा�
 INSERT INTO `lang_definitions` VALUES (216761, 11278, 47, 'अनुवाद सपाट दगडी पाट्या समक्रमित केले जातात.');
 INSERT INTO `lang_definitions` VALUES (216762, 11279, 47, 'या घटकाच्या प्रकार');
 INSERT INTO `lang_definitions` VALUES (216763, 11299, 47, 'ही प्रक्रिया किंवा परिणाम ओळख विक्रेता-निर्देशीत कोड');
-INSERT INTO `lang_definitions` VALUES (216764, 11304, 47, 'X12 फाइल तसेच परिणामी एचटीएमएल उत्पादन अहवाल मुख्य OpenEMR स्थापना निर्देशिका च्या \"युग\" उपनिर्देशिकेत संग्रहीत केले जाते. आपण वेळोवेळी या संग्रह पहा इच्छित असेल. URL आहे');
+INSERT INTO `lang_definitions` VALUES (216764, 11304, 47, 'X12 फाइल तसेच परिणामी एचटीएमएल उत्पादन अहवाल मुख्य DCL स्थापना निर्देशिका च्या \"युग\" उपनिर्देशिकेत संग्रहीत केले जाते. आपण वेळोवेळी या संग्रह पहा इच्छित असेल. URL आहे');
 INSERT INTO `lang_definitions` VALUES (216765, 11306, 47, 'Zip फाइल खालील आयटम समाविष्ट असेल');
 INSERT INTO `lang_definitions` VALUES (216766, 11307, 47, 'थीम');
 INSERT INTO `lang_definitions` VALUES (216767, 11313, 47, 'मग कच्चा डेटा फीड प्रकाशन पासून मिळू शकते');
@@ -230159,7 +230159,7 @@ INSERT INTO `lang_definitions` VALUES (216790, 11370, 47, 'सेवा आय�
 INSERT INTO `lang_definitions` VALUES (216791, 11371, 47, 'पोर्टल लॉगिन नाही रुग्ण आहे');
 INSERT INTO `lang_definitions` VALUES (216792, 11373, 47, 'संदेश पाठविताना एक समस्या आली.');
 INSERT INTO `lang_definitions` VALUES (216793, 11374, 47, 'आपल्या विनंतीवर प्रक्रिया करताना एक त्रुटी आली.');
-INSERT INTO `lang_definitions` VALUES (216794, 11375, 47, 'खालील स्ट्रिंग एक OpenEMR एस क्यू एल अंतर्मुख त्रुटी आली होती');
+INSERT INTO `lang_definitions` VALUES (216794, 11375, 47, 'खालील स्ट्रिंग एक DCL एस क्यू एल अंतर्मुख त्रुटी आली होती');
 INSERT INTO `lang_definitions` VALUES (216795, 11379, 47, 'हे 2012 दुवे आहेत');
 INSERT INTO `lang_definitions` VALUES (216796, 11400, 47, 'उजव्या thickened:');
 INSERT INTO `lang_definitions` VALUES (216797, 11401, 47, 'मांडीवर');
@@ -230342,7 +230342,7 @@ INSERT INTO `lang_definitions` VALUES (216973, 11784, 47, 'आज  \'चे द�
 INSERT INTO `lang_definitions` VALUES (216974, 11785, 47, 'आज  \'चे आगामी कार्यक्रम');
 INSERT INTO `lang_definitions` VALUES (216975, 11787, 47, 'टॉगल सर्व');
 INSERT INTO `lang_definitions` VALUES (216976, 11796, 47, 'वैद्यकीय माहिती एकत्रीकरण, एलएलसी लॅब एक्सचेंज सेवा टोकन आयडी.');
-INSERT INTO `lang_definitions` VALUES (216977, 11797, 47, 'OpenEMR समर्थन, LLC लॅब एक्सचेंज सेवा टोकन आयडी.');
+INSERT INTO `lang_definitions` VALUES (216977, 11797, 47, 'DCL समर्थन, LLC लॅब एक्सचेंज सेवा टोकन आयडी.');
 INSERT INTO `lang_definitions` VALUES (216978, 11802, 47, 'टोंगा (टोंगा बेटे)');
 INSERT INTO `lang_definitions` VALUES (216979, 11803, 47, 'एक किंवा दोन्ही गलग्रंथी काढून टाकणे');
 INSERT INTO `lang_definitions` VALUES (216980, 11804, 47, 'एक किंवा दोन्ही गलग्रंथी काढून टाकणे');
@@ -230540,7 +230540,7 @@ INSERT INTO `lang_definitions` VALUES (217171, 12182, 47, 'आवृत्ती
 INSERT INTO `lang_definitions` VALUES (217172, 12183, 47, 'श्रेणीसुधारित करा');
 INSERT INTO `lang_definitions` VALUES (217173, 12184, 47, 'अपग्रेड');
 INSERT INTO `lang_definitions` VALUES (217174, 12186, 47, 'अपग्रेड डेटाबेस');
-INSERT INTO `lang_definitions` VALUES (217175, 12188, 47, 'डी-ओळख प्रक्रिया आवश्यक प्रक्रियांची, कार्य आणि सपाट दगडी पाट्या समाविष्ट करण्यासाठी OpenEMR डेटाबेस सुधारणा');
+INSERT INTO `lang_definitions` VALUES (217175, 12188, 47, 'डी-ओळख प्रक्रिया आवश्यक प्रक्रियांची, कार्य आणि सपाट दगडी पाट्या समाविष्ट करण्यासाठी DCL डेटाबेस सुधारणा');
 INSERT INTO `lang_definitions` VALUES (217176, 12189, 47, 'सुधारणा सुरू राहील');
 INSERT INTO `lang_definitions` VALUES (217177, 12190, 47, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (217178, 12191, 47, 'अपलोड करा');
@@ -230569,7 +230569,7 @@ INSERT INTO `lang_definitions` VALUES (217200, 12230, 47, 'लघवी Microalb
 INSERT INTO `lang_definitions` VALUES (217201, 12231, 47, 'लघवी प्रवाह');
 INSERT INTO `lang_definitions` VALUES (217202, 12232, 47, 'लघवी निकडीच्या');
 INSERT INTO `lang_definitions` VALUES (217203, 12233, 47, 'URL मध्ये');
-INSERT INTO `lang_definitions` VALUES (217204, 12235, 47, 'OpenEMR समर्थन URL.');
+INSERT INTO `lang_definitions` VALUES (217204, 12235, 47, 'DCL समर्थन URL.');
 INSERT INTO `lang_definitions` VALUES (217205, 12237, 47, 'फोन गेटवे URL. Maviq द्वारे प्रदान स्वयंचलित VoIP सेवा. अधिक माहितीसाठी http://signup.maviq.com भेट द्या.');
 INSERT INTO `lang_definitions` VALUES (217206, 12238, 47, 'पोर्टल समर्थन वर्डप्रेस साइटसाठी URL');
 INSERT INTO `lang_definitions` VALUES (217207, 12246, 47, 'वापर');
@@ -231208,7 +231208,7 @@ INSERT INTO `lang_definitions` VALUES (217839, 15, 49, 'Айлчлалын ша�
 INSERT INTO `lang_definitions` VALUES (217840, 16, 49, 'Дараагийн уулзалтыг төлбөр авах хуудаснаас шууд товлох боломжтой.');
 INSERT INTO `lang_definitions` VALUES (217841, 17, 49, 'Энэхүү үзлэгт GCAC-ийн үзлэгийн маягтыг нэмж оруулах ёстой.');
 INSERT INTO `lang_definitions` VALUES (217842, 18, 49, 'HL7 v2.x мессеж нь хэд хэдэн текстээс бүрдэх бөгөөд мөр бүрийг сегмент гэж нэрлэдэг бөгөөд хоолой (|) тэмдэгтийг ашиглан талбаруудад хуваана.');
-INSERT INTO `lang_definitions` VALUES (217843, 19, 49, 'OpenEMR гэх мэт том програмыг олон үүрэг, хариуцлагын түвшин бүхий олон хэрэглэгчид ашигладаг. Хөтөлбөрийн янз бүрийн хэсгүүдэд нэвтрэх боломжийг хэрэглэгчдэд мэдэх шаардлагатай байдаг. Үүнд хүрэхийн тулд Хандалтыг хянах жагсаалт (ACL) ашиглагддаг.');
+INSERT INTO `lang_definitions` VALUES (217843, 19, 49, 'DCL гэх мэт том програмыг олон үүрэг, хариуцлагын түвшин бүхий олон хэрэглэгчид ашигладаг. Хөтөлбөрийн янз бүрийн хэсгүүдэд нэвтрэх боломжийг хэрэглэгчдэд мэдэх шаардлагатай байдаг. Үүнд хүрэхийн тулд Хандалтыг хянах жагсаалт (ACL) ашиглагддаг.');
 INSERT INTO `lang_definitions` VALUES (217844, 20, 49, 'Багцын дугаар шаардлагатай');
 INSERT INTO `lang_definitions` VALUES (217845, 21, 49, 'Багцын дугаар шаардлагатай!');
 INSERT INTO `lang_definitions` VALUES (217846, 22, 49, 'Жижиг үсэг');
@@ -231691,7 +231691,7 @@ INSERT INTO `lang_definitions` VALUES (218322, 667, 50, 'प्रदाय र�
 INSERT INTO `lang_definitions` VALUES (218323, 668, 50, 'राशि:');
 INSERT INTO `lang_definitions` VALUES (218324, 671, 50, 'राशि बिल किया');
 INSERT INTO `lang_definitions` VALUES (218325, 676, 50, 'बाद में शुरू की तारीख से एक समापन दिनांक, दोहराया घटनाओं के लिए आवश्यक है!');
-INSERT INTO `lang_definitions` VALUES (218326, 678, 50, 'OpenEMR वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
+INSERT INTO `lang_definitions` VALUES (218326, 678, 50, 'DCL वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
 INSERT INTO `lang_definitions` VALUES (218327, 679, 50, 'PhpGACL वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
 INSERT INTO `lang_definitions` VALUES (218328, 680, 50, 'SQL लेजर वेब डायरेक्टरी ट्री डंपिंग समय एक त्रुटि हुई');
 INSERT INTO `lang_definitions` VALUES (218329, 685, 50, 'एक अधूरा GCAC मुद्दा बनाया और जोड़ा गया है. किसी को बाद में इसे पूरा करने की आवश्यकता होगी.');
@@ -232363,10 +232363,10 @@ INSERT INTO `lang_definitions` VALUES (218994, 2200, 50, 'कंप्यूट�
 INSERT INTO `lang_definitions` VALUES (218995, 2202, 50, 'निष्कर्ष');
 INSERT INTO `lang_definitions` VALUES (218996, 2210, 50, 'विन्यास');
 INSERT INTO `lang_definitions` VALUES (218997, 2211, 50, 'विन्यास निर्यात / आयात');
-INSERT INTO `lang_definitions` VALUES (218998, 2213, 50, 'ग्राहक साइड का SSL प्रमाणपत्र का उपयोग करने के लिए अपाचे और OpenEMR विन्यस्त करें.');
+INSERT INTO `lang_definitions` VALUES (218998, 2213, 50, 'ग्राहक साइड का SSL प्रमाणपत्र का उपयोग करने के लिए अपाचे और DCL विन्यस्त करें.');
 INSERT INTO `lang_definitions` VALUES (218999, 2214, 50, 'ग्राहक साइड SSL प्रमाणपत्र का उपयोग करने के लिए अपाचे कॉन्फ़िगर करें.');
 INSERT INTO `lang_definitions` VALUES (219000, 2215, 50, 'HTTPS का उपयोग करने के लिए अपाचे कॉन्फ़िगर करें.');
-INSERT INTO `lang_definitions` VALUES (219001, 2216, 50, 'ग्राहक साइड SSL प्रमाणपत्र का उपयोग करने के लिए Openemr कॉन्फ़िगर करें.');
+INSERT INTO `lang_definitions` VALUES (219001, 2216, 50, 'ग्राहक साइड SSL प्रमाणपत्र का उपयोग करने के लिए DCL कॉन्फ़िगर करें.');
 INSERT INTO `lang_definitions` VALUES (219002, 2225, 50, 'नई रोगी बनाने के लिए पुष्टि');
 INSERT INTO `lang_definitions` VALUES (219003, 2227, 50, 'नए पासवर्ड की पुष्टि');
 INSERT INTO `lang_definitions` VALUES (219004, 2229, 50, 'भुगतान की पुष्टि');
@@ -232911,8 +232911,8 @@ INSERT INTO `lang_definitions` VALUES (219542, 3321, 50, 'देय रोगी
 INSERT INTO `lang_definitions` VALUES (219543, 3322, 50, 'जल्द ही देय');
 INSERT INTO `lang_definitions` VALUES (219544, 3323, 50, 'देय स्थिति');
 INSERT INTO `lang_definitions` VALUES (219545, 3324, 50, 'देय स्थिति अपडेट');
-INSERT INTO `lang_definitions` VALUES (219546, 3325, 50, 'OpenEMR डेटाबेस डम्पिंग');
-INSERT INTO `lang_definitions` VALUES (219547, 3326, 50, 'OpenEMR वेब निर्देशिका वृक्ष डम्पिंग');
+INSERT INTO `lang_definitions` VALUES (219546, 3325, 50, 'DCL डेटाबेस डम्पिंग');
+INSERT INTO `lang_definitions` VALUES (219547, 3326, 50, 'DCL वेब निर्देशिका वृक्ष डम्पिंग');
 INSERT INTO `lang_definitions` VALUES (219548, 3327, 50, 'PhpGACL डेटाबेस डम्पिंग');
 INSERT INTO `lang_definitions` VALUES (219549, 3328, 50, 'PhpGACL वेब निर्देशिका वृक्ष डम्पिंग');
 INSERT INTO `lang_definitions` VALUES (219550, 3329, 50, 'एसक्यूएल लेजर डेटाबेस डम्पिंग');
@@ -233070,7 +233070,7 @@ INSERT INTO `lang_definitions` VALUES (219701, 3634, 50, 'स्वचालि�
 INSERT INTO `lang_definitions` VALUES (219702, 3636, 50, 'स्वचालित उपाय गणना के लिए ट्रैकिंग तिथि (एएमसी) की रिपोर्टिंग सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (219703, 3638, 50, 'स्कैनर समर्थन सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (219704, 3642, 50, 'मैडिकल इन्फोर्मेशन इंटीग्रेशन, LLC लैब विनिमय सेवा को सक्रिय करें');
-INSERT INTO `lang_definitions` VALUES (219705, 3643, 50, 'OpenEMR समर्थन LLC लैब विनिमय सेवा को सक्रिय करें');
+INSERT INTO `lang_definitions` VALUES (219705, 3643, 50, 'DCL समर्थन LLC लैब विनिमय सेवा को सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (219706, 3644, 50, 'उपयोगकर्ता प्रमाणपत्र प्रमाणीकरण सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (219707, 3650, 50, 'ZMG, LLC ERX सेवा सक्रिय करें');
 INSERT INTO `lang_definitions` VALUES (219708, 3651, 50, 'सक्रिय किया');
@@ -233135,7 +233135,7 @@ INSERT INTO `lang_definitions` VALUES (219766, 3754, 50, 'अंग्रेज�
 INSERT INTO `lang_definitions` VALUES (219767, 3756, 50, 'अंग्रेजी (भारतीय)');
 INSERT INTO `lang_definitions` VALUES (219768, 3757, 50, 'अंग्रेजी (मानक)');
 INSERT INTO `lang_definitions` VALUES (219769, 3758, 50, 'Hylafax द्वारा इस्तेमाल किया Enscript आदेश.');
-INSERT INTO `lang_definitions` VALUES (219770, 3759, 50, 'OpenEMR के लिए निर्देशिका में लिखने के विशेषाधिकार सुनिश्चित करें!');
+INSERT INTO `lang_definitions` VALUES (219770, 3759, 50, 'DCL के लिए निर्देशिका में लिखने के विशेषाधिकार सुनिश्चित करें!');
 INSERT INTO `lang_definitions` VALUES (219771, 3761, 50, 'इ एन टी निर्वहन');
 INSERT INTO `lang_definitions` VALUES (219772, 3762, 50, 'इ एन टी दर्द');
 INSERT INTO `lang_definitions` VALUES (219773, 3765, 50, 'इसको समाहित नहीं करने वाले सभी चालान बाहर करने के लिए एक निदान कोड दर्ज करें!');
@@ -233183,7 +233183,7 @@ INSERT INTO `lang_definitions` VALUES (219814, 3896, 50, 'अपलोड प्
 INSERT INTO `lang_definitions` VALUES (219815, 3897, 50, 'त्रुटि संदेश हटा रहा है');
 INSERT INTO `lang_definitions` VALUES (219816, 3898, 50, 'लैब एक्सचेंज नेटवर्क से परिणाम पाने में त्रुटि');
 INSERT INTO `lang_definitions` VALUES (219817, 3899, 50, 'मूल्यों को पुन: प्राप्त करने में त्रुटि.');
-INSERT INTO `lang_definitions` VALUES (219818, 3901, 50, 'OpenEMR उपयोगकर्ता के लिए फ़ाइल विशेषाधिकार देने में त्रुटि.');
+INSERT INTO `lang_definitions` VALUES (219818, 3901, 50, 'DCL उपयोगकर्ता के लिए फ़ाइल विशेषाधिकार देने में त्रुटि.');
 INSERT INTO `lang_definitions` VALUES (219819, 3904, 50, 'फॉर्म पंजीकरण करने के दौरान त्रुटि!');
 INSERT INTO `lang_definitions` VALUES (219820, 3905, 50, 'फ़ाइल सहेजने के दौरान त्रुटि.');
 INSERT INTO `lang_definitions` VALUES (219821, 3907, 50, 'फ़ाइल लिखने के दौरान त्रुटि');
@@ -233195,7 +233195,7 @@ INSERT INTO `lang_definitions` VALUES (219826, 3920, 50, 'त्रुटि, ad
 INSERT INTO `lang_definitions` VALUES (219827, 3921, 50, 'त्रुटि, प्रमाणपत्र प्राधिकार प्रमाण पत्र नहीं बना सके.');
 INSERT INTO `lang_definitions` VALUES (219828, 3922, 50, 'त्रुटि, सर्वर प्रमाणपत्र बनाने में असमर्थ.');
 INSERT INTO `lang_definitions` VALUES (219829, 3924, 50, 'त्रुटि, को खोलने में असमर्थ फ़ाइल');
-INSERT INTO `lang_definitions` VALUES (219830, 3925, 50, 'त्रुटि, उपयोगकर्ता प्रमाणपत्र प्रमाणीकरण OpenEMR में सक्षम नहीं है');
+INSERT INTO `lang_definitions` VALUES (219830, 3925, 50, 'त्रुटि, उपयोगकर्ता प्रमाणपत्र प्रमाणीकरण DCL में सक्षम नहीं है');
 INSERT INTO `lang_definitions` VALUES (219831, 3933, 50, 'त्रुटि. आप संग्रह / Tar.php PHP मॉड्यूल स्थापित करने की जरूरत है.');
 INSERT INTO `lang_definitions` VALUES (219832, 3934, 50, 'त्रुटि: table.sql, टूटे फार्म को नहीं खोल सकता है?');
 INSERT INTO `lang_definitions` VALUES (219833, 3937, 50, 'त्रुटि: लाइन पर आईडी दोहराया');
@@ -233390,7 +233390,7 @@ INSERT INTO `lang_definitions` VALUES (220021, 4277, 50, 'फ़ाइल');
 INSERT INTO `lang_definitions` VALUES (220022, 4280, 50, 'लॉग बैकअप बनाने की प्रक्रिया को स्वचालित कैसे करें यह जानने के लिए प्रलेखन निर्देशिका में फाइल!');
 INSERT INTO `lang_definitions` VALUES (220023, 4281, 50, 'फ़ाइल स्थान');
 INSERT INTO `lang_definitions` VALUES (220024, 4282, 50, 'फ़ाइल प्रबंधन');
-INSERT INTO `lang_definitions` VALUES (220025, 4289, 50, 'फ़ाइल का विशेषाधिकार OpenEMR उपयोगकर्ता के लिए दीया गया.');
+INSERT INTO `lang_definitions` VALUES (220025, 4289, 50, 'फ़ाइल का विशेषाधिकार DCL उपयोगकर्ता के लिए दीया गया.');
 INSERT INTO `lang_definitions` VALUES (220026, 4290, 50, 'CouchDB से फ़ाइल पुनर्प्राप्ति विफल रहा');
 INSERT INTO `lang_definitions` VALUES (220027, 4291, 50, 'फ़ाइल कक्ष');
 INSERT INTO `lang_definitions` VALUES (220028, 4292, 50, 'अपलोड करने के लिए फ़ाइल');
@@ -233751,7 +233751,7 @@ INSERT INTO `lang_definitions` VALUES (220382, 5036, 50, 'HPI:');
 INSERT INTO `lang_definitions` VALUES (220383, 5038, 50, 'HT');
 INSERT INTO `lang_definitions` VALUES (220384, 5039, 50, 'HTML के');
 INSERT INTO `lang_definitions` VALUES (220385, 5040, 50, 'HTML उत्पादन?');
-INSERT INTO `lang_definitions` VALUES (220386, 5043, 50, 'OpenEMR समर्थन LLC लैब विनिमय सेवा के लिए HTTPS लिंक.');
+INSERT INTO `lang_definitions` VALUES (220386, 5043, 50, 'DCL समर्थन LLC लैब विनिमय सेवा के लिए HTTPS लिंक.');
 INSERT INTO `lang_definitions` VALUES (220387, 5045, 50, 'हंगेरी');
 INSERT INTO `lang_definitions` VALUES (220388, 5046, 50, 'Hylafax निर्देशिका');
 INSERT INTO `lang_definitions` VALUES (220389, 5047, 50, 'Hylafax Enscript कमान');
@@ -234224,7 +234224,7 @@ INSERT INTO `lang_definitions` VALUES (220855, 6129, 50, 'स्थानीय'
 INSERT INTO `lang_definitions` VALUES (220856, 6133, 50, 'स्थानीय');
 INSERT INTO `lang_definitions` VALUES (220857, 6134, 50, 'इलाका');
 INSERT INTO `lang_definitions` VALUES (220858, 6135, 50, 'स्थान');
-INSERT INTO `lang_definitions` VALUES (220859, 6136, 50, 'openemr मशीन का स्थान और संवेदनशील डेटा हो सकता है, इसलिए यह मैन्युअल रूप से इसके उपयोग के बाद फ़ाइलों को हटाने की सिफारिश की है');
+INSERT INTO `lang_definitions` VALUES (220859, 6136, 50, 'DCL मशीन का स्थान और संवेदनशील डेटा हो सकता है, इसलिए यह मैन्युअल रूप से इसके उपयोग के बाद फ़ाइलों को हटाने की सिफारिश की है');
 INSERT INTO `lang_definitions` VALUES (220860, 6137, 50, 'इस स्थल का स्थान');
 INSERT INTO `lang_definitions` VALUES (220861, 6138, 50, 'अनिर्दिष्ट स्थान');
 INSERT INTO `lang_definitions` VALUES (220862, 6139, 50, 'स्थान, जहां Hylafax फैक्स जमा हो जाते है.');
@@ -234889,14 +234889,14 @@ INSERT INTO `lang_definitions` VALUES (221520, 7518, 50, 'उफ़!');
 INSERT INTO `lang_definitions` VALUES (221521, 7519, 50, 'खुला');
 INSERT INTO `lang_definitions` VALUES (221522, 7528, 50, 'नई विंडो में खोलें');
 INSERT INTO `lang_definitions` VALUES (221523, 7535, 50, 'खोलें आज की भेंट');
-INSERT INTO `lang_definitions` VALUES (221524, 7562, 50, 'OpenEMR में पहले से ही एक प्रमाणपत्र प्राधिकार कॉन्फ़िगर है.');
-INSERT INTO `lang_definitions` VALUES (221525, 7565, 50, 'OpenEMR आवेदन श्रेणी');
-INSERT INTO `lang_definitions` VALUES (221526, 7567, 50, 'OpenEMR डेटाबेस नवीनीकरण');
-INSERT INTO `lang_definitions` VALUES (221527, 7568, 50, 'De-IDENTIFICATION के लिए OpenEMR डेटाबेस नवीनीकरण');
-INSERT INTO `lang_definitions` VALUES (221528, 7569, 50, 'OpenEMR योगदान निर्देशिका में आने वाली फ़ाइल को नहीं पहचानता है. क्योंकि संभावना यह है, आपको MySQL डाटाबेस में supported_external_dataloads तालिका के रिलीज, विन्यस्त करने की जरूरत है.');
-INSERT INTO `lang_definitions` VALUES (221529, 7571, 50, 'क्लाइंट प्रमाण पत्र बनाने से पहले OpenEMR प्रमाण पत्र का उपयोग करने के लिए कॉन्फ़िगर किया जाना चाहिए.');
-INSERT INTO `lang_definitions` VALUES (221530, 7575, 50, 'OpenEMR को उपयोगकर्ता प्रमाणीकरण करने के लिए जावास्क्रिप्ट की आवश्यकता है.');
-INSERT INTO `lang_definitions` VALUES (221531, 7576, 50, 'OpenEMR उपयोगकर्ता');
+INSERT INTO `lang_definitions` VALUES (221524, 7562, 50, 'DCL में पहले से ही एक प्रमाणपत्र प्राधिकार कॉन्फ़िगर है.');
+INSERT INTO `lang_definitions` VALUES (221525, 7565, 50, 'DCL आवेदन श्रेणी');
+INSERT INTO `lang_definitions` VALUES (221526, 7567, 50, 'DCL डेटाबेस नवीनीकरण');
+INSERT INTO `lang_definitions` VALUES (221527, 7568, 50, 'De-IDENTIFICATION के लिए DCL डेटाबेस नवीनीकरण');
+INSERT INTO `lang_definitions` VALUES (221528, 7569, 50, 'DCL योगदान निर्देशिका में आने वाली फ़ाइल को नहीं पहचानता है. क्योंकि संभावना यह है, आपको MySQL डाटाबेस में supported_external_dataloads तालिका के रिलीज, विन्यस्त करने की जरूरत है.');
+INSERT INTO `lang_definitions` VALUES (221529, 7571, 50, 'क्लाइंट प्रमाण पत्र बनाने से पहले DCL प्रमाण पत्र का उपयोग करने के लिए कॉन्फ़िगर किया जाना चाहिए.');
+INSERT INTO `lang_definitions` VALUES (221530, 7575, 50, 'DCL को उपयोगकर्ता प्रमाणीकरण करने के लिए जावास्क्रिप्ट की आवश्यकता है.');
+INSERT INTO `lang_definitions` VALUES (221531, 7576, 50, 'DCL उपयोगकर्ता');
 INSERT INTO `lang_definitions` VALUES (221532, 7577, 50, 'उद्घाटन');
 INSERT INTO `lang_definitions` VALUES (221533, 7583, 50, 'ऑप्थाल्मिक');
 INSERT INTO `lang_definitions` VALUES (221534, 7586, 50, 'विकल्प');
@@ -235193,7 +235193,7 @@ INSERT INTO `lang_definitions` VALUES (221824, 8150, 50, 'लंबित आद
 INSERT INTO `lang_definitions` VALUES (221825, 8151, 50, 'लंबित Res');
 INSERT INTO `lang_definitions` VALUES (221826, 8152, 50, 'लंबित समीक्षा');
 INSERT INTO `lang_definitions` VALUES (221827, 8153, 50, 'लंबित Rx गणना');
-INSERT INTO `lang_definitions` VALUES (221828, 8156, 50, 'Pennington फर्म OpenEMR V');
+INSERT INTO `lang_definitions` VALUES (221828, 8156, 50, 'Pennington फर्म DCL V');
 INSERT INTO `lang_definitions` VALUES (221829, 8157, 50, 'पेप्टिक अल्सर रोग');
 INSERT INTO `lang_definitions` VALUES (221830, 8158, 50, 'प्रति मुठभेड़');
 INSERT INTO `lang_definitions` VALUES (221831, 8159, 50, 'प्रति मिनट');
@@ -235344,7 +235344,7 @@ INSERT INTO `lang_definitions` VALUES (221975, 8434, 50, '270 बैच बन�
 INSERT INTO `lang_definitions` VALUES (221976, 8435, 50, 'सेट करें');
 INSERT INTO `lang_definitions` VALUES (221977, 8436, 50, 'de_identification_config चर को वापस शून्य पर सेट करें');
 INSERT INTO `lang_definitions` VALUES (221978, 8441, 50, 'नई De Identification प्रक्रिया शुरू करें');
-INSERT INTO `lang_definitions` VALUES (221979, 8445, 50, 'De Identification प्रक्रियाओं, समारोह, टेबल शामिल करने के लिए OpenEMR डाटाबेस अपग्रेड करें');
+INSERT INTO `lang_definitions` VALUES (221979, 8445, 50, 'De Identification प्रक्रियाओं, समारोह, टेबल शामिल करने के लिए DCL डाटाबेस अपग्रेड करें');
 INSERT INTO `lang_definitions` VALUES (221980, 8447, 50, 'अधिक जानकारी के लिए De Identification त्रुटि लॉग तालिका देखें');
 INSERT INTO `lang_definitions` VALUES (221981, 8448, 50, 'कुछ समय के बाद De Identification स्क्रीन पर जाएँ');
 INSERT INTO `lang_definitions` VALUES (221982, 8449, 50, 'कुछ समय बाद De Identification स्क्रीन पर जाएँ');
@@ -236231,7 +236231,7 @@ INSERT INTO `lang_definitions` VALUES (222862, 10288, 50, 'शिरानाल
 INSERT INTO `lang_definitions` VALUES (222863, 10290, 50, 'स्थल');
 INSERT INTO `lang_definitions` VALUES (222864, 10294, 50, 'स्थल ID');
 INSERT INTO `lang_definitions` VALUES (222865, 10295, 50, 'मैडिकल इन्फोर्मेशन इंटीग्रेशन, LLC लैब विनिमय सेवा के लिए साइट ID.');
-INSERT INTO `lang_definitions` VALUES (222866, 10296, 50, 'OpenEMR समर्थन LLC लैब विनिमय सेवा के लिए साइट ID.');
+INSERT INTO `lang_definitions` VALUES (222866, 10296, 50, 'DCL समर्थन LLC लैब विनिमय सेवा के लिए साइट ID.');
 INSERT INTO `lang_definitions` VALUES (222867, 10300, 50, 'आकार');
 INSERT INTO `lang_definitions` VALUES (222868, 10303, 50, 'आकार 1 और 999 के बीच में होनी चाहिए');
 INSERT INTO `lang_definitions` VALUES (222869, 10305, 50, 'आकार / सूची');
@@ -236679,7 +236679,7 @@ INSERT INTO `lang_definitions` VALUES (223310, 11277, 50, 'वर्तमान
 INSERT INTO `lang_definitions` VALUES (223311, 11278, 50, 'अनुवाद तालिकाएँ सिंक्रनाइज़ हैं.');
 INSERT INTO `lang_definitions` VALUES (223312, 11279, 50, 'इस इकाई के प्रकार');
 INSERT INTO `lang_definitions` VALUES (223313, 11299, 50, 'इस प्रक्रिया या परिणाम की पहचान करनेवाला विक्रेता विशेष कोड');
-INSERT INTO `lang_definitions` VALUES (223314, 11304, 50, 'X 12 फाइलें और परिणामस्वरूप HTML उत्पादन रिपोर्ट्स मुख्य OpenEMR स्थापना निर्देशिका के \"युग\" उपनिर्देशिका में संग्रहीत हैं. आप समय समय पर इन अभिलेखागार का उल्लेख करना चाहते होगे. यूआरएल है');
+INSERT INTO `lang_definitions` VALUES (223314, 11304, 50, 'X 12 फाइलें और परिणामस्वरूप HTML उत्पादन रिपोर्ट्स मुख्य DCL स्थापना निर्देशिका के \"युग\" उपनिर्देशिका में संग्रहीत हैं. आप समय समय पर इन अभिलेखागार का उल्लेख करना चाहते होगे. यूआरएल है');
 INSERT INTO `lang_definitions` VALUES (223315, 11306, 50, 'ज़िप फ़ाइल में निम्न आइटम्स शामिल होंगे');
 INSERT INTO `lang_definitions` VALUES (223316, 11307, 50, 'थीम');
 INSERT INTO `lang_definitions` VALUES (223317, 11313, 50, 'फिर कच्चा डेटा फीड रिलीज से प्राप्त किया जा सकता है');
@@ -236706,7 +236706,7 @@ INSERT INTO `lang_definitions` VALUES (223337, 11369, 50, 'चालान आ�
 INSERT INTO `lang_definitions` VALUES (223338, 11370, 50, 'सेवाएँ ID के लिए कोई हिस्से प्रविष्टि नहीं है');
 INSERT INTO `lang_definitions` VALUES (223339, 11373, 50, 'संदेश भेजने में कोई समस्या थी.');
 INSERT INTO `lang_definitions` VALUES (223340, 11374, 50, 'आपका अनुरोध संसाधित करते समय एक त्रुटि हुई थी.');
-INSERT INTO `lang_definitions` VALUES (223341, 11375, 50, 'निम्न स्ट्रिंग के एक OpenEMR एसक्यूएल भागने की त्रुटि थी');
+INSERT INTO `lang_definitions` VALUES (223341, 11375, 50, 'निम्न स्ट्रिंग के एक DCL एसक्यूएल भागने की त्रुटि थी');
 INSERT INTO `lang_definitions` VALUES (223342, 11379, 50, 'ये 2012 लिंक हैं');
 INSERT INTO `lang_definitions` VALUES (223343, 11400, 50, 'दाएँ गाढ़ा:');
 INSERT INTO `lang_definitions` VALUES (223344, 11401, 50, 'जांघ');
@@ -236867,7 +236867,7 @@ INSERT INTO `lang_definitions` VALUES (223498, 11783, 50, 'आज का शु�
 INSERT INTO `lang_definitions` VALUES (223499, 11784, 50, 'आज की तिथि');
 INSERT INTO `lang_definitions` VALUES (223500, 11785, 50, 'आज का घटनाक्रम');
 INSERT INTO `lang_definitions` VALUES (223501, 11796, 50, 'मैडिकल इन्फोर्मेशन एकता, LLC लैब विनिमय सेवा के लिए टोकन ID.');
-INSERT INTO `lang_definitions` VALUES (223502, 11797, 50, 'OpenEMR समर्थन LLC लैब विनिमय सेवा के लिए टोकन ID.');
+INSERT INTO `lang_definitions` VALUES (223502, 11797, 50, 'DCL समर्थन LLC लैब विनिमय सेवा के लिए टोकन ID.');
 INSERT INTO `lang_definitions` VALUES (223503, 11803, 50, 'गलतुण्डिका उच्छेदन');
 INSERT INTO `lang_definitions` VALUES (223504, 11807, 50, 'शीर्ष');
 INSERT INTO `lang_definitions` VALUES (223505, 11810, 50, 'विषय');
@@ -237046,7 +237046,7 @@ INSERT INTO `lang_definitions` VALUES (223677, 12182, 50, 'संस्करण
 INSERT INTO `lang_definitions` VALUES (223678, 12183, 50, 'उन्नयन');
 INSERT INTO `lang_definitions` VALUES (223679, 12184, 50, 'उन्नयन करें');
 INSERT INTO `lang_definitions` VALUES (223680, 12186, 50, 'डेटाबेस उन्नयन');
-INSERT INTO `lang_definitions` VALUES (223681, 12188, 50, 'प्रक्रिया, कार्य और तालिकाएँ शामिल करने के लिए OpenEMR डेटाबेस उन्नयन करें. de-identification की प्रक्रिया के लिए आवश्यक है.');
+INSERT INTO `lang_definitions` VALUES (223681, 12188, 50, 'प्रक्रिया, कार्य और तालिकाएँ शामिल करने के लिए DCL डेटाबेस उन्नयन करें. de-identification की प्रक्रिया के लिए आवश्यक है.');
 INSERT INTO `lang_definitions` VALUES (223682, 12189, 50, 'उन्नयन जारी रहेगा');
 INSERT INTO `lang_definitions` VALUES (223683, 12190, 50, 'UPIN');
 INSERT INTO `lang_definitions` VALUES (223684, 12191, 50, 'अपलोड');
@@ -237070,7 +237070,7 @@ INSERT INTO `lang_definitions` VALUES (223701, 12230, 50, 'मूत्र Micro
 INSERT INTO `lang_definitions` VALUES (223702, 12231, 50, 'मूत्र धारा');
 INSERT INTO `lang_definitions` VALUES (223703, 12232, 50, 'मूत्र तात्कालिकता');
 INSERT INTO `lang_definitions` VALUES (223704, 12233, 50, 'URL');
-INSERT INTO `lang_definitions` VALUES (223705, 12235, 50, 'OpenEMR समर्थन के लिए URL.');
+INSERT INTO `lang_definitions` VALUES (223705, 12235, 50, 'DCL समर्थन के लिए URL.');
 INSERT INTO `lang_definitions` VALUES (223706, 12237, 50, 'फोन प्रवेश द्वार के लिए URL. Maviq द्वारा प्रदान की स्वचालित VOIP सेवा. अधिक जानकारी के लिए http://signup.maviq.com जाएँ.');
 INSERT INTO `lang_definitions` VALUES (223707, 12246, 50, 'प्रयोग');
 INSERT INTO `lang_definitions` VALUES (223708, 12248, 50, 'उपयोग संकेतक (ISA15)');

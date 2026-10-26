@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource allows for the definition of various types of plans as a sharable, consumable, and executable artifact. The resource is general enough to support the description of a broad range of clinical artifacts such as clinical decision support rules, order sets and protocols.
@@ -71,43 +71,43 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Indicates a category the goal falls within.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $description = null;
 
     /**
      * Identifies the expected level of importance associated with reaching/sustaining the defined goal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $priority = null;
 
     /**
      * The event after which the goal should begin being pursued.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $start = null;
 
     /**
      * Identifies problems, conditions, issues, or concerns the goal is intended to address.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $addresses = [];
 
     /**
      * Didactic or other informational resources associated with the goal that provide further supporting information about the goal. Information resources can include inline text commentary and links to web resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $documentation = [];
 
     /**
      * Indicates what should be done and within what timeframe.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionTarget[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionTarget[]
      */
     public $target = [];
 
@@ -118,7 +118,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates a category the goal falls within.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -127,7 +127,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates a category the goal falls within.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -138,7 +138,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDescription()
     {
@@ -147,7 +147,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Human-readable and/or coded description of a specific desired objective of care, such as "control blood pressure" or "negotiate an obstacle course" or "dance with child at wedding".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $description
      * @return $this
      */
     public function setDescription($description)
@@ -158,7 +158,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies the expected level of importance associated with reaching/sustaining the defined goal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPriority()
     {
@@ -167,7 +167,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies the expected level of importance associated with reaching/sustaining the defined goal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -178,7 +178,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The event after which the goal should begin being pursued.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStart()
     {
@@ -187,7 +187,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The event after which the goal should begin being pursued.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $start
      * @return $this
      */
     public function setStart($start)
@@ -198,7 +198,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies problems, conditions, issues, or concerns the goal is intended to address.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAddresses()
     {
@@ -207,7 +207,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies problems, conditions, issues, or concerns the goal is intended to address.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $addresses
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $addresses
      * @return $this
      */
     public function addAddresses($addresses)
@@ -218,7 +218,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Didactic or other informational resources associated with the goal that provide further supporting information about the goal. Information resources can include inline text commentary and links to web resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getDocumentation()
     {
@@ -227,7 +227,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Didactic or other informational resources associated with the goal that provide further supporting information about the goal. Information resources can include inline text commentary and links to web resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $documentation
      * @return $this
      */
     public function addDocumentation($documentation)
@@ -238,7 +238,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates what should be done and within what timeframe.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionTarget[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionTarget[]
      */
     public function getTarget()
     {
@@ -247,7 +247,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Indicates what should be done and within what timeframe.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionTarget $target
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionTarget $target
      * @return $this
      */
     public function addTarget($target)

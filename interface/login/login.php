@@ -3,8 +3,8 @@
 /**
  * Login screen.
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  Rod Roark <rod@sunsetsystems.com>
  * @author  Brady Miller <brady.g.miller@gmail.com>
  * @author  Kevin Yeh <kevin.y@integralemr.com>
@@ -17,27 +17,27 @@
  * @author  Ken Chapple <ken@mi-squared.com>
  * @author  Daniel Pflieger <daniel@mi-squared.com> <daniel@growlingflea.com>
  * @author  Robert Down <robertdown@live.com>
- * @author  Michael A. Smith <michael@opencoreemr.com>
+ * @author  Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Daniel Pflieger <daniel@mi-squared.com> <daniel@growlingflea.com>
  * @copyright Copyright (c) 2021-2023 Robert Down <robertdown@live.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // prevent UI redressing
 Header("X-Frame-Options: DENY");
 Header("Content-Security-Policy: frame-ancestors 'none'");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Core\TemplatePageEvent;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\LogoService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Core\TemplatePageEvent;
+use DCL\Services\FacilityService;
+use DCL\Services\LogoService;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -96,7 +96,7 @@ if (count($emr_app)) {
     // Standard app must exist
     $std_app = 'main/main_screen.php';
     if (!in_array($std_app, $emr_app)) {
-        $emr_app['*OpenEMR'] = $std_app;
+        $emr_app['*DCL'] = $std_app;
     }
 
     if (isset($_REQUEST['app']) && $emr_app[$_REQUEST['app']]) {
@@ -229,7 +229,7 @@ if ($_GET['testing_mode'] ?? 0 == 1) {
 }
 
 $viewArgs = [
-    'title' => $openemr_name,
+    'title' => $globalsBag->getString('DCL_name'),
     'displayLanguage' => $globalsBag->get("language_menu_login") && (count($languageList) != 1),
     'defaultLangID' => $defaultLanguage['id'],
     'defaultLangName' => $defaultLanguage['language'],

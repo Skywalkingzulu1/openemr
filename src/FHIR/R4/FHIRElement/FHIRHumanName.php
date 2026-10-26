@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A human's name with the ability to identify parts and usage.
@@ -72,43 +72,43 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 {
     /**
      * Identifies the purpose for this name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRNameUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRNameUse
      */
     public $use = null;
 
     /**
      * Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $family = null;
 
     /**
      * Given name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $given = [];
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $prefix = [];
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $suffix = [];
 
     /**
      * Indicates the period of time when this name was valid for the named person.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -119,7 +119,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Identifies the purpose for this name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRNameUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRNameUse
      */
     public function getUse()
     {
@@ -128,7 +128,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Identifies the purpose for this name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRNameUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRNameUse $use
      * @return $this
      */
     public function setUse($use)
@@ -139,7 +139,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -148,7 +148,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -159,7 +159,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getFamily()
     {
@@ -168,7 +168,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $family
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $family
      * @return $this
      */
     public function setFamily($family)
@@ -179,7 +179,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Given name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getGiven()
     {
@@ -188,7 +188,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Given name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $given
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $given
      * @return $this
      */
     public function addGiven($given)
@@ -199,7 +199,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getPrefix()
     {
@@ -208,7 +208,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $prefix
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $prefix
      * @return $this
      */
     public function addPrefix($prefix)
@@ -219,7 +219,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getSuffix()
     {
@@ -228,7 +228,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $suffix
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $suffix
      * @return $this
      */
     public function addSuffix($suffix)
@@ -239,7 +239,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Indicates the period of time when this name was valid for the named person.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -248,7 +248,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Indicates the period of time when this name was valid for the named person.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

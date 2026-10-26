@@ -31,16 +31,16 @@
  * Source-file text inspection matches the pattern used elsewhere in this
  * suite (see `FhirRouteAclEnforcementIsolatedTest`).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Portal;
+namespace DCL\Tests\Isolated\Portal;
 
 use PHPUnit\Framework\TestCase;
 
@@ -79,7 +79,7 @@ final class PortalBootstrapCoreSessionRejectionIsolatedTest extends TestCase
     public function testMachineConfigImportsAclMain(): void
     {
         $this->assertStringContainsString(
-            'use OpenEMR\\Common\\Acl\\AclMain;',
+            'use DCL\\Common\\Acl\\AclMain;',
             $this->machineConfigContent,
             '_machine_config.php must import AclMain so the core-fallback ACL check can run',
         );

@@ -2,11 +2,11 @@
  * This class is the main controller for the patient insurance policy edit screen.
  * It coordinates the instantiation of the edit screen and the new policy screen.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 let { EditPolicyScreenController } = await import ("./EditPolicyScreenController.js?v=" + window.top.jsGlobals.assetVersion);
 let { NewPolicyScreenController } = await import ("./NewPolicyScreenController.js?v=" + window.top.jsGlobals.assetVersion);

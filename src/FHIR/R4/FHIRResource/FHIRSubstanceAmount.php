@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Chemical substances are a single substance type whose primary defining element is the molecular structure. Chemical substances shall be defined on the basis of their complete covalent molecular structure; the presence of a salt (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade, physical form or particle size are not taken into account in the definition of a chemical substance or in the assignment of a Substance ID.
@@ -71,35 +71,35 @@ use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
 class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $amountQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $amountRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $amountString = null;
 
     /**
      * Most elements that require a quantitative value will also have a field called amount type. Amount type should always be specified because the actual value of the amount is often dependent on it. EXAMPLE: In capturing the actual relative amounts of substances or molecular fragments it is essential to indicate whether the amount refers to a mole ratio or weight ratio. For any given element an effort should be made to use same the amount type for all related definitional elements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $amountType = null;
 
     /**
      * A textual comment on a numeric value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $amountText = null;
 
     /**
      * Reference range of possible or expected values.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
      */
     public $referenceRange = null;
 
@@ -109,7 +109,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
     private $_fhirElementName = 'SubstanceAmount';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAmountQuantity()
     {
@@ -117,7 +117,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return $this
      */
     public function setAmountQuantity($amountQuantity)
@@ -127,7 +127,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getAmountRange()
     {
@@ -135,7 +135,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $amountRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $amountRange
      * @return $this
      */
     public function setAmountRange($amountRange)
@@ -145,7 +145,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAmountString()
     {
@@ -153,7 +153,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $amountString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $amountString
      * @return $this
      */
     public function setAmountString($amountString)
@@ -164,7 +164,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Most elements that require a quantitative value will also have a field called amount type. Amount type should always be specified because the actual value of the amount is often dependent on it. EXAMPLE: In capturing the actual relative amounts of substances or molecular fragments it is essential to indicate whether the amount refers to a mole ratio or weight ratio. For any given element an effort should be made to use same the amount type for all related definitional elements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAmountType()
     {
@@ -173,7 +173,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Most elements that require a quantitative value will also have a field called amount type. Amount type should always be specified because the actual value of the amount is often dependent on it. EXAMPLE: In capturing the actual relative amounts of substances or molecular fragments it is essential to indicate whether the amount refers to a mole ratio or weight ratio. For any given element an effort should be made to use same the amount type for all related definitional elements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $amountType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $amountType
      * @return $this
      */
     public function setAmountType($amountType)
@@ -184,7 +184,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * A textual comment on a numeric value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAmountText()
     {
@@ -193,7 +193,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * A textual comment on a numeric value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $amountText
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $amountText
      * @return $this
      */
     public function setAmountText($amountText)
@@ -204,7 +204,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Reference range of possible or expected values.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
      */
     public function getReferenceRange()
     {
@@ -213,7 +213,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Reference range of possible or expected values.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange $referenceRange
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange $referenceRange
      * @return $this
      */
     public function setReferenceRange($referenceRange)

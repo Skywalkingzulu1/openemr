@@ -7,21 +7,21 @@
  * suite gate is what keeps a unit-test run from writing a stray timeline
  * file — and what keeps the E2e recording annotated when it matters.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Ci;
+namespace DCL\Tests\Isolated\Ci;
 
-use OpenEMR\PHPUnit\Timeline\TimelineEventType;
-use OpenEMR\PHPUnit\Timeline\TimelineRecorder;
-use OpenEMR\PHPUnit\Timeline\VideoTimeline;
-use OpenEMR\Tests\E2e\AaLoginTest;
+use DCL\PHPUnit\Timeline\TimelineEventType;
+use DCL\PHPUnit\Timeline\TimelineRecorder;
+use DCL\PHPUnit\Timeline\VideoTimeline;
+use DCL\Tests\E2e\AaLoginTest;
 use PHPUnit\Event\Code\TestDox;
 use PHPUnit\Event\Code\TestMethod;
 use PHPUnit\Event\TestData\TestDataCollection;
@@ -50,7 +50,7 @@ class TimelineRecorderIsolatedTest extends TestCase
     public function testAnE2eTestIsRecordedAsASpan(): void
     {
         $recorder = new TimelineRecorder($this->outputFile);
-        $test = $this->testMethod(AaLoginTest::class, 'testGoToOpenemrLoginPage');
+        $test = $this->testMethod(AaLoginTest::class, 'testGoToDCLLoginPage');
 
         $before = microtime(true);
         $recorder->record($test, TimelineEventType::Started);
@@ -59,7 +59,7 @@ class TimelineRecorderIsolatedTest extends TestCase
 
         $chapters = VideoTimeline::fromJsonLines($this->recordedLines(), $before)->chapters();
         $this->assertCount(1, $chapters);
-        $this->assertSame('AaLoginTest::testGoToOpenemrLoginPage', $chapters[0]->label);
+        $this->assertSame('AaLoginTest::testGoToDCLLoginPage', $chapters[0]->label);
         $this->assertLessThanOrEqual($after - $before, $chapters[0]->endOffset);
     }
 
@@ -82,7 +82,7 @@ class TimelineRecorderIsolatedTest extends TestCase
         $recorder = new TimelineRecorder($this->outputFile);
 
         $recorder->record(
-            $this->testMethod(AaLoginTest::class, 'testGoToOpenemrLoginPage'),
+            $this->testMethod(AaLoginTest::class, 'testGoToDCLLoginPage'),
             TimelineEventType::Started,
         );
 

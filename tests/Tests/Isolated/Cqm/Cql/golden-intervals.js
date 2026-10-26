@@ -12,7 +12,7 @@
  *
  * Usage: TZ=UTC node golden-intervals.js <node_modules> <output directory> [seed] [scale]
  *
- * The reference engine is not part of OpenEMR. Install the versions the
+ * The reference engine is not part of DCL. Install the versions the
  * fixtures were made with anywhere, e.g.
  *   npm install --prefix /tmp/cqm-reference cqm-execution@4.4.3 cqm-models@4.3.2
  * and pass /tmp/cqm-reference/node_modules as <node_modules>.
@@ -22,11 +22,11 @@
  * {"i": [low, high, lowClosed, highClosed, defaultPointType]}, and dates as
  * in golden.js.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 'use strict';

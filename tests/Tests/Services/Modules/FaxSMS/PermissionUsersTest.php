@@ -8,19 +8,19 @@
  * specialist, say) was hidden from the list and reset to no permission on
  * every save, losing the Fax menu. Both now use PermissionUsers::active().
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Modules\FaxSMS;
+namespace DCL\Tests\Services\Modules\FaxSMS;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Modules\FaxSMS\Service\PermissionUsers;
+use DCL\Common\Database\QueryUtils;
+use DCL\Modules\FaxSMS\Service\PermissionUsers;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../../../../interface/modules/custom_modules/oe-module-faxsms/src/Service/PermissionUsers.php';

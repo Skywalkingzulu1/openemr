@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\Services\Qrda;
+namespace DCL\Services\Qrda;
 
-use OpenEMR\Services\Qdm\Interfaces\QdmRequestInterface;
-use OpenEMR\Services\Qdm\MeasureService;
-use OpenEMR\Services\Qdm\QdmBuilder;
+use DCL\Services\Qdm\Interfaces\QdmRequestInterface;
+use DCL\Services\Qdm\MeasureService;
+use DCL\Services\Qdm\QdmBuilder;
 
 class ExportCat1Service
 {

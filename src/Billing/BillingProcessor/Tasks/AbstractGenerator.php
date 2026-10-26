@@ -7,22 +7,22 @@
  * and further breaks down the task depending on the action that is being
  * run by the user.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing\BillingProcessor\Tasks;
+namespace DCL\Billing\BillingProcessor\Tasks;
 
-use OpenEMR\Billing\BillingProcessor\BillingClaim;
-use OpenEMR\Billing\BillingProcessor\BillingProcessor;
-use OpenEMR\Billing\BillingProcessor\GeneratorCanValidateInterface;
-use OpenEMR\Billing\BillingProcessor\GeneratorInterface;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Billing\BillingProcessor\BillingClaim;
+use DCL\Billing\BillingProcessor\BillingProcessor;
+use DCL\Billing\BillingProcessor\GeneratorCanValidateInterface;
+use DCL\Billing\BillingProcessor\GeneratorInterface;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 abstract class AbstractGenerator extends AbstractProcessingTask implements GeneratorInterface
 {

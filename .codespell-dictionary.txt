@@ -1,4 +1,4 @@
-# OpenEMR Custom Dictionary for Codespell
+# DCL Custom Dictionary for Codespell
 # Medical and domain-specific terms that should NOT be flagged as errors
 # Format: one word per line
 

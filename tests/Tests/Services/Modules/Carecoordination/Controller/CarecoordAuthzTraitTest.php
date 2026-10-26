@@ -11,17 +11,17 @@
  * (services suite boots the full application), so the tests live under
  * tests/Tests/Services/Modules/Carecoordination/.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Modules\CareCoordination\Controller;
+namespace DCL\Tests\Services\Modules\CareCoordination\Controller;
 
 use Carecoordination\Controller\CarecoordAuthzTrait;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 

@@ -5,27 +5,27 @@
  * counts, through the same code the QRDA Category III export uses. Used to
  * check results against Cypress expected results or another installation.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Qdm\CqmCalculator;
-use OpenEMR\Services\Qdm\IndividualResult;
-use OpenEMR\Services\Qdm\Interfaces\QdmRequestInterface;
-use OpenEMR\Services\Qdm\MeasureService;
-use OpenEMR\Services\Qdm\QdmBuilder;
-use OpenEMR\Services\Qdm\QdmRequestAll;
-use OpenEMR\Services\Qdm\QdmRequestSome;
-use OpenEMR\Services\Qrda\ExportCat3Service;
+use DCL\Common\Database\QueryUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Qdm\CqmCalculator;
+use DCL\Services\Qdm\IndividualResult;
+use DCL\Services\Qdm\Interfaces\QdmRequestInterface;
+use DCL\Services\Qdm\MeasureService;
+use DCL\Services\Qdm\QdmBuilder;
+use DCL\Services\Qdm\QdmRequestAll;
+use DCL\Services\Qdm\QdmRequestSome;
+use DCL\Services\Qrda\ExportCat3Service;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -39,7 +39,7 @@ final class CqmCalculateCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('openemr:cqm-calculate')
+            ->setName('DCL:cqm-calculate')
             ->setDescription('Calculate eCQMs for patients in the database and print the population counts')
             ->addUsage('--measure=CMS122v13 --measure=CMS165v13')
             ->addUsage('--measure=CMS122v13 --pid=12 --pid=15 --by-patient')

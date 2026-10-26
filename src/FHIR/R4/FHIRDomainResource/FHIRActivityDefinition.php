@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * This resource allows for the definition of some activity to be performed, independent of a particular patient, practitioner, or other performance context.
@@ -72,309 +72,309 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this activity definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the activity definition is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this activity definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the activity definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the activity definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * An explanatory or alternate title for the activity definition giving additional information about its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $subtitle = null;
 
     /**
      * The status of this activity definition. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subjectCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subjectReference = null;
 
     /**
      * The date  (and optionally time) when the activity definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the activity definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the activity definition from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate activity definition instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the activity definition is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this activity definition is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A detailed description of how the activity definition is used from a clinical perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $usage = null;
 
     /**
      * A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
      * The period during which the activity definition content was or is planned to be in active use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = [];
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $author = [];
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $editor = [];
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $reviewer = [];
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $endorser = [];
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public $relatedArtifact = [];
 
     /**
      * A reference to a Library resource containing any formal logic used by the activity definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $library = [];
 
     /**
      * A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest. Typically, but not always, this is a Request resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestResourceType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestResourceType
      */
     public $kind = null;
 
     /**
      * A profile to which the target of the activity definition is expected to conform.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
     /**
      * Detailed description of the type of activity; e.g. What lab test, what procedure, what kind of encounter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Indicates the level of authority/intentionality associated with the activity and where the request should fit into the workflow chain.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public $intent = null;
 
     /**
      * Indicates how quickly the activity  should be addressed with respect to other requests.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
      * Set this to true if the definition is to indicate that a particular activity should NOT be performed. If true, this element should be interpreted to reinforce a negative coding. For example NPO as a code with a doNotPerform of true would still indicate to NOT perform the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $doNotPerform = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $timingAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $timingRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $timingDuration = null;
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * Indicates who should participate in performing the action described.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
      */
     public $participant = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $productReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productCodeableConcept = null;
 
     /**
      * Identifies the quantity expected to be consumed at once (per dose, per meal, etc.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * Provides detailed dosage instructions in the same way that they are described for MedicationRequest resources.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDosage[]
      */
     public $dosage = [];
 
     /**
      * Indicates the sites on the subject's body where the procedure should be performed (I.e. the target sites).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $bodySite = [];
 
     /**
      * Defines specimen requirements for the action to be performed, such as required specimens for a lab test.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $specimenRequirement = [];
 
     /**
      * Defines observation requirements for the action to be performed, such as body weight or surface area.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $observationRequirement = [];
 
     /**
      * Defines the observations that are expected to be produced by the action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $observationResultRequirement = [];
 
     /**
      * A reference to a StructureMap resource that defines a transform that can be executed to produce the intent resource using the ActivityDefinition instance as the input.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $transform = null;
 
     /**
      * Dynamic values that will be evaluated to produce values for elements of the resulting resource. For example, if the dosage of a medication must be computed based on the patient's weight, a dynamic value would be used to specify an expression that calculated the weight, and the path on the request resource that would contain the result.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[]
      */
     public $dynamicValue = [];
 
@@ -385,7 +385,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this activity definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the activity definition is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -394,7 +394,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this activity definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the activity definition is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -405,7 +405,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A formal identifier that is used to identify this activity definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -414,7 +414,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A formal identifier that is used to identify this activity definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -425,7 +425,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -434,7 +434,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -445,7 +445,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A natural language name identifying the activity definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -454,7 +454,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A natural language name identifying the activity definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -465,7 +465,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A short, descriptive, user-friendly title for the activity definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -474,7 +474,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A short, descriptive, user-friendly title for the activity definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -485,7 +485,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An explanatory or alternate title for the activity definition giving additional information about its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSubtitle()
     {
@@ -494,7 +494,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An explanatory or alternate title for the activity definition giving additional information about its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $subtitle
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $subtitle
      * @return $this
      */
     public function setSubtitle($subtitle)
@@ -505,7 +505,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of this activity definition. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -514,7 +514,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The status of this activity definition. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -525,7 +525,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A Boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -534,7 +534,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A Boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -544,7 +544,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubjectCodeableConcept()
     {
@@ -552,7 +552,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return $this
      */
     public function setSubjectCodeableConcept($subjectCodeableConcept)
@@ -562,7 +562,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubjectReference()
     {
@@ -570,7 +570,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subjectReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subjectReference
      * @return $this
      */
     public function setSubjectReference($subjectReference)
@@ -581,7 +581,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date  (and optionally time) when the activity definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -590,7 +590,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date  (and optionally time) when the activity definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -601,7 +601,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The name of the organization or individual that published the activity definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -610,7 +610,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The name of the organization or individual that published the activity definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -621,7 +621,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -630,7 +630,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -641,7 +641,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A free text natural language description of the activity definition from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -650,7 +650,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A free text natural language description of the activity definition from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -661,7 +661,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate activity definition instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -670,7 +670,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate activity definition instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -681,7 +681,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A legal or geographic region in which the activity definition is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -690,7 +690,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A legal or geographic region in which the activity definition is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -701,7 +701,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Explanation of why this activity definition is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -710,7 +710,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Explanation of why this activity definition is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -721,7 +721,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A detailed description of how the activity definition is used from a clinical perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getUsage()
     {
@@ -730,7 +730,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A detailed description of how the activity definition is used from a clinical perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $usage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $usage
      * @return $this
      */
     public function setUsage($usage)
@@ -741,7 +741,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -750,7 +750,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -761,7 +761,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
     {
@@ -770,7 +770,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $approvalDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
     public function setApprovalDate($approvalDate)
@@ -781,7 +781,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
     {
@@ -790,7 +790,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
     public function setLastReviewDate($lastReviewDate)
@@ -801,7 +801,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The period during which the activity definition content was or is planned to be in active use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -810,7 +810,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The period during which the activity definition content was or is planned to be in active use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -821,7 +821,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
     {
@@ -830,7 +830,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
     public function addTopic($topic)
@@ -841,7 +841,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getAuthor()
     {
@@ -850,7 +850,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily involved in the creation and maintenance of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $author
      * @return $this
      */
     public function addAuthor($author)
@@ -861,7 +861,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEditor()
     {
@@ -870,7 +870,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $editor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $editor
      * @return $this
      */
     public function addEditor($editor)
@@ -881,7 +881,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getReviewer()
     {
@@ -890,7 +890,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $reviewer
      * @return $this
      */
     public function addReviewer($reviewer)
@@ -901,7 +901,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getEndorser()
     {
@@ -910,7 +910,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $endorser
      * @return $this
      */
     public function addEndorser($endorser)
@@ -921,7 +921,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     public function getRelatedArtifact()
     {
@@ -930,7 +930,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Related artifacts such as additional documentation, justification, or bibliographic references.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
     public function addRelatedArtifact($relatedArtifact)
@@ -941,7 +941,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a Library resource containing any formal logic used by the activity definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getLibrary()
     {
@@ -950,7 +950,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a Library resource containing any formal logic used by the activity definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $library
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $library
      * @return $this
      */
     public function addLibrary($library)
@@ -961,7 +961,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest. Typically, but not always, this is a Request resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestResourceType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestResourceType
      */
     public function getKind()
     {
@@ -970,7 +970,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest. Typically, but not always, this is a Request resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestResourceType $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestResourceType $kind
      * @return $this
      */
     public function setKind($kind)
@@ -981,7 +981,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A profile to which the target of the activity definition is expected to conform.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -990,7 +990,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A profile to which the target of the activity definition is expected to conform.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)
@@ -1001,7 +1001,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Detailed description of the type of activity; e.g. What lab test, what procedure, what kind of encounter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -1010,7 +1010,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Detailed description of the type of activity; e.g. What lab test, what procedure, what kind of encounter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -1021,7 +1021,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates the level of authority/intentionality associated with the activity and where the request should fit into the workflow chain.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public function getIntent()
     {
@@ -1030,7 +1030,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates the level of authority/intentionality associated with the activity and where the request should fit into the workflow chain.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -1041,7 +1041,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates how quickly the activity  should be addressed with respect to other requests.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -1050,7 +1050,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates how quickly the activity  should be addressed with respect to other requests.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -1061,7 +1061,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Set this to true if the definition is to indicate that a particular activity should NOT be performed. If true, this element should be interpreted to reinforce a negative coding. For example NPO as a code with a doNotPerform of true would still indicate to NOT perform the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDoNotPerform()
     {
@@ -1070,7 +1070,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Set this to true if the definition is to indicate that a particular activity should NOT be performed. If true, this element should be interpreted to reinforce a negative coding. For example NPO as a code with a doNotPerform of true would still indicate to NOT perform the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
      * @return $this
      */
     public function setDoNotPerform($doNotPerform)
@@ -1080,7 +1080,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getTimingTiming()
     {
@@ -1088,7 +1088,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
      * @return $this
      */
     public function setTimingTiming($timingTiming)
@@ -1098,7 +1098,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
     {
@@ -1106,7 +1106,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
     public function setTimingDateTime($timingDateTime)
@@ -1116,7 +1116,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getTimingAge()
     {
@@ -1124,7 +1124,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $timingAge
      * @return $this
      */
     public function setTimingAge($timingAge)
@@ -1134,7 +1134,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
     {
@@ -1142,7 +1142,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
     public function setTimingPeriod($timingPeriod)
@@ -1152,7 +1152,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getTimingRange()
     {
@@ -1160,7 +1160,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $timingRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $timingRange
      * @return $this
      */
     public function setTimingRange($timingRange)
@@ -1170,7 +1170,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getTimingDuration()
     {
@@ -1178,7 +1178,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return $this
      */
     public function setTimingDuration($timingDuration)
@@ -1189,7 +1189,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -1198,7 +1198,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -1209,7 +1209,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates who should participate in performing the action described.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
      */
     public function getParticipant()
     {
@@ -1218,7 +1218,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates who should participate in performing the action described.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant $participant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -1228,7 +1228,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProductReference()
     {
@@ -1236,7 +1236,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $productReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $productReference
      * @return $this
      */
     public function setProductReference($productReference)
@@ -1246,7 +1246,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCodeableConcept()
     {
@@ -1254,7 +1254,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return $this
      */
     public function setProductCodeableConcept($productCodeableConcept)
@@ -1265,7 +1265,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identifies the quantity expected to be consumed at once (per dose, per meal, etc.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -1274,7 +1274,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identifies the quantity expected to be consumed at once (per dose, per meal, etc.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -1285,7 +1285,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Provides detailed dosage instructions in the same way that they are described for MedicationRequest resources.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDosage[]
      */
     public function getDosage()
     {
@@ -1294,7 +1294,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Provides detailed dosage instructions in the same way that they are described for MedicationRequest resources.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage $dosage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDosage $dosage
      * @return $this
      */
     public function addDosage($dosage)
@@ -1305,7 +1305,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates the sites on the subject's body where the procedure should be performed (I.e. the target sites).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getBodySite()
     {
@@ -1314,7 +1314,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates the sites on the subject's body where the procedure should be performed (I.e. the target sites).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function addBodySite($bodySite)
@@ -1325,7 +1325,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Defines specimen requirements for the action to be performed, such as required specimens for a lab test.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSpecimenRequirement()
     {
@@ -1334,7 +1334,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Defines specimen requirements for the action to be performed, such as required specimens for a lab test.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $specimenRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $specimenRequirement
      * @return $this
      */
     public function addSpecimenRequirement($specimenRequirement)
@@ -1345,7 +1345,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Defines observation requirements for the action to be performed, such as body weight or surface area.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getObservationRequirement()
     {
@@ -1354,7 +1354,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Defines observation requirements for the action to be performed, such as body weight or surface area.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $observationRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $observationRequirement
      * @return $this
      */
     public function addObservationRequirement($observationRequirement)
@@ -1365,7 +1365,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Defines the observations that are expected to be produced by the action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getObservationResultRequirement()
     {
@@ -1374,7 +1374,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Defines the observations that are expected to be produced by the action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $observationResultRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $observationResultRequirement
      * @return $this
      */
     public function addObservationResultRequirement($observationResultRequirement)
@@ -1385,7 +1385,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a StructureMap resource that defines a transform that can be executed to produce the intent resource using the ActivityDefinition instance as the input.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getTransform()
     {
@@ -1394,7 +1394,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A reference to a StructureMap resource that defines a transform that can be executed to produce the intent resource using the ActivityDefinition instance as the input.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $transform
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $transform
      * @return $this
      */
     public function setTransform($transform)
@@ -1405,7 +1405,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Dynamic values that will be evaluated to produce values for elements of the resulting resource. For example, if the dosage of a medication must be computed based on the patient's weight, a dynamic value would be used to specify an expression that calculated the weight, and the path on the request resource that would contain the result.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[]
      */
     public function getDynamicValue()
     {
@@ -1414,7 +1414,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Dynamic values that will be evaluated to produce values for elements of the resulting resource. For example, if the dosage of a medication must be computed based on the patient's weight, a dynamic value would be used to specify an expression that calculated the weight, and the path on the request resource that would contain the result.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue $dynamicValue
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue $dynamicValue
      * @return $this
      */
     public function addDynamicValue($dynamicValue)

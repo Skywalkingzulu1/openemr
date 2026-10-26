@@ -3,18 +3,18 @@
 /**
  * Manages test fixtures for procedure orders.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 /**
  * Manages test fixtures for procedure orders
@@ -74,7 +74,7 @@ class ProcedureOrderFixtureManager extends BaseFixtureManager
      * then creates procedure orders with associated codes and form entries.
      *
      * @return int Number of fixtures installed
-     * @throws \OpenEMR\Common\Database\SqlQueryException If a database write fails
+     * @throws \DCL\Common\Database\SqlQueryException If a database write fails
      * @throws \RuntimeException If a required dependent fixture is missing
      */
     public function installFixtures(): int
@@ -177,7 +177,7 @@ class ProcedureOrderFixtureManager extends BaseFixtureManager
      *
      * @param array<string, mixed> $fixture Order data to insert
      * @return int Inserted order ID (procedure_order_id)
-     * @throws \OpenEMR\Common\Database\SqlQueryException If the database insert fails
+     * @throws \DCL\Common\Database\SqlQueryException If the database insert fails
      */
     private function insertProcedureOrder(array $fixture): int
     {
@@ -202,7 +202,7 @@ class ProcedureOrderFixtureManager extends BaseFixtureManager
      * them with the specified order ID.
      *
      * @param int $orderId The procedure order ID
-     * @throws \OpenEMR\Common\Database\SqlQueryException If the database insert fails
+     * @throws \DCL\Common\Database\SqlQueryException If the database insert fails
      */
     private function installProcedureOrderCodes(int $orderId): void
     {
@@ -232,7 +232,7 @@ class ProcedureOrderFixtureManager extends BaseFixtureManager
      * @param int $encounterId Encounter ID
      * @param int $orderId Procedure order ID
      * @param string|null $date Order date, or null to leave forms.date unset
-     * @throws \OpenEMR\Common\Database\SqlQueryException If the database insert fails
+     * @throws \DCL\Common\Database\SqlQueryException If the database insert fails
      */
     private function createFormEntry(int $patientId, int $encounterId, int $orderId, ?string $date): void
     {
@@ -281,7 +281,7 @@ class ProcedureOrderFixtureManager extends BaseFixtureManager
      * form entries. Also cleans up dependent fixtures (practitioners,
      * labs, encounters, patients).
      *
-     * @throws \OpenEMR\Common\Database\SqlQueryException If a database deletion fails
+     * @throws \DCL\Common\Database\SqlQueryException If a database deletion fails
      */
     protected function removeInstalledFixtures(): void
     {

@@ -6,7 +6,7 @@ if ($aclSetupFlag !== true) {
     die(function_exists('xlt') ? xlt('Authentication Error') : 'Authentication Error');
 }
 
-use OpenEMR\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclExtended;
 
 return $ACL_UPGRADE = [
 

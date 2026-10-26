@@ -6,7 +6,7 @@
  * this - just read the comments and make appropriate substitutions.
  * All you really need to do is replace the [strings in brackets].
  *
- * @package OpenEMR
+ * @package DCL
  * @author Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2006 Rod Roark <rod@sunsetsystems.com>
  * @author Bill Cernansky <bill@mi-squared.com>
@@ -21,17 +21,17 @@
  * @copyright Copyright (c) 2020 Stephen Waite <stephen.waite@cmsvt.com>
  * @author Daniel Pflieger <daniel@growlingflea.com>
  * @copyright Copyright (c) 2018 Daniel Pflieger <daniel@growlingflea.com>
- * @link https://github.com/openemr/openemr/tree/master
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://github.com/DCL/DCL/tree/master
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 // The location/name of a temporary file to hold printable statements.
 // May want to alter these names to allow multi-site installs out-of-the-box
 
-$STMT_TEMP_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_statements.txt";
-$STMT_TEMP_FILE_PDF = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/openemr_statements.pdf";
+$STMT_TEMP_FILE = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/DCL_statements.txt";
+$STMT_TEMP_FILE_PDF = OEGlobalsBag::getInstance()->getString('temporary_files_dir') . "/DCL_statements.pdf";
 
 /** There are two options to print a batch of PDF statements:
  *  1.  The original statement, a text based statement, using CezPDF
@@ -40,7 +40,7 @@ $STMT_TEMP_FILE_PDF = OEGlobalsBag::getInstance()->getString('temporary_files_di
  *  2.  Branded Statement, whose core is build from 1., the original statement, using mPDF.
  *
  *      To customize 2., add your practice location/images/practice_logo.gif
- *      In the base/default install this is located at '/openemr/sites/default/images/practice_logo.gif',
+ *      In the base/default install this is located at '/DCL/sites/default/images/practice_logo.gif',
  *      Adjust directory paths per your installation.
  *      Further customize 2. manually in functions report_2() and create_HTML_statement(), below.
  *
@@ -68,7 +68,7 @@ function report_header_2($stmt, $providerID = '1')
     $titleres = getPatientData($stmt['pid'], "fname,lname,DOB");
     //Author Daniel Pflieger - daniel@growlingflea.com
     //We get the service facility from the encounter.  In cases with multiple service facilities
-    //OpenEMR sends the correct facility
+    //DCL sends the correct facility
 
     $service_query = sqlStatement("SELECT * FROM `form_encounter` fe join facility f on fe.facility_id = f.id where fe.id = ?", [$stmt['fid']]);
     $facility = sqlFetchArray($service_query);

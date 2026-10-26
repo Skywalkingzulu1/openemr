@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\Background;
+namespace DCL\Tests\Isolated\Services\Background;
 
-use OpenEMR\Services\Background\SymfonyBackgroundServiceSpawner;
+use DCL\Services\Background\SymfonyBackgroundServiceSpawner;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  * (which exercises parser/logging logic against a /bin/sh fake) by
  * covering the PHP-specific behaviors a bash fixture cannot:
  *
- *   - OPENEMR_BG_NONCE env-var propagation through Symfony Process into
+ *   - DCL_BG_NONCE env-var propagation through Symfony Process into
  *     the child's getenv() call.
  *   - Real `die()` vs `exit(N)` vs uncaught exception exit-code
  *     semantics, which surface as different branches in the spawner.
@@ -74,7 +74,7 @@ class SymfonyBackgroundServiceSpawnerPhpChildTest extends TestCase
                 break;
             }
         }
-        $nonceEnv = getenv('OPENEMR_BG_NONCE');
+        $nonceEnv = getenv('DCL_BG_NONCE');
         $nonce = is_string($nonceEnv) ? $nonceEnv : '';
 
         $emit = function (string $emitName, string $status) use ($nonce): void {

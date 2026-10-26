@@ -2,23 +2,23 @@
 
 /*
  * FhirObservationPatientServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\Observation;
+namespace DCL\Tests\Services\FHIR\Observation;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidMapping;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\Services\FHIR\Observation\FhirObservationPatientService;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\UserService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidMapping;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\Services\FHIR\Observation\FhirObservationPatientService;
+use DCL\Services\ListService;
+use DCL\Services\PatientService;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -288,11 +288,11 @@ class FhirObservationPatientServiceTest extends TestCase
     }
 
     /**
-     * Test parseOpenEMRRecord method directly
+     * Test parseDCLRecord method directly
      */
-    public function testParseOpenEMRRecordMethod(): void
+    public function testParseDCLRecordMethod(): void
     {
-        // AI GENERATED CODE - START: Test parseOpenEMRRecord method directly
+        // AI GENERATED CODE - START: Test parseDCLRecord method directly
         // Create test data record for sexual orientation
         $sexualOrientationRecord = [
             'uuid' => $this->getMappedUuidRecord('Observation', 'social-history', '76690-7'),
@@ -309,8 +309,8 @@ class FhirObservationPatientServiceTest extends TestCase
             'value_code_description' => 'Test Heterosexual'
         ];
 
-        // Test parseOpenEMRRecord method
-        $observation = $this->fhirService->parseOpenEMRRecord($sexualOrientationRecord);
+        // Test parseDCLRecord method
+        $observation = $this->fhirService->parseDCLRecord($sexualOrientationRecord);
         $this->assertInstanceOf(FHIRObservation::class, $observation, "Should return FHIRObservation instance");
 
         // Validate key elements

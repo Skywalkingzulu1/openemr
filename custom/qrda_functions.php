@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Ensoftek
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-  use OpenEMR\Services\FacilityService;
+  use DCL\Services\FacilityService;
 
     // Functions for QRDA Category I (or) III 2014 XML format.
 
@@ -177,7 +177,7 @@ function payerPatient($patient_id): string
 function allEncPat($patient_id, $from_date, $to_date): array
 {
     $encArr = [];
-    $patQry = "SELECT fe.encounter, fe.date,fe.pc_catid,opc.pc_catname FROM form_encounter fe inner join openemr_postcalendar_categories opc on opc.pc_catid = fe.pc_catid WHERE fe.pid = ? AND (DATE(fe.date) BETWEEN ? AND ?)";
+    $patQry = "SELECT fe.encounter, fe.date,fe.pc_catid,opc.pc_catname FROM form_encounter fe inner join DCL_postcalendar_categories opc on opc.pc_catid = fe.pc_catid WHERE fe.pid = ? AND (DATE(fe.date) BETWEEN ? AND ?)";
     $patRes = sqlStatement($patQry, [$patient_id, $from_date, $to_date]);
     while ($patRow = sqlFetchArray($patRes)) {
         $encArr[] = $patRow;

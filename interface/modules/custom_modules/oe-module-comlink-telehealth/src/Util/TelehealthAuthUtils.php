@@ -1,6 +1,6 @@
 <?php
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Util;
+namespace Comlink\DCL\Modules\TeleHealthModule\Util;
 
 class TelehealthAuthUtils
 {

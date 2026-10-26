@@ -3,8 +3,8 @@
 /**
  * lang_definition.php
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
+ * @package DCL
+ * @link    https://www.dcl.org
  * @author  bradymiller <bradymiller>
  * @author  sunsetsystems <sunsetsystems>
  * @author  andres_paglayan <andres_paglayan>
@@ -15,12 +15,12 @@
  * @copyright Copyright (c) 2005 andres_paglayan <andres_paglayan>
  * @copyright Copyright (c) 2016 Wakie87 <scott@npclinics.com.au>
  * @copyright Copyright (c) 2017-2023 Robert Down <robertdown@live.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 // Ensure this script is not called separately
 if (!isset($langModuleFlag) || $langModuleFlag !== true) {

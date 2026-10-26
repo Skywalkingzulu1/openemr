@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.
@@ -71,72 +71,72 @@ use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
 class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $eventCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $eventUri = null;
 
     /**
      * The destination application which the message is intended for.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderDestination[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderDestination[]
      */
     public $destination = [];
 
     /**
      * Identifies the sending system to allow the use of a trust relationship.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $sender = null;
 
     /**
      * The person or device that performed the data entry leading to this message. When there is more than one candidate, pick the most proximal to the message. Can provide other enterers in extensions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $enterer = null;
 
     /**
      * The logical author of the message - the person or device that decided the described event should happen. When there is more than one candidate, pick the most proximal to the MessageHeader. Can provide other authors in extensions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * The source application from which this message originated.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderSource
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderSource
      */
     public $source = null;
 
     /**
      * The person or organization that accepts overall responsibility for the contents of the message. The implication is that the message event happened under the policies of the responsible party.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $responsible = null;
 
     /**
      * Coded indication of the cause for the event - indicates  a reason for the occurrence of the event that is a focus of this message.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $reason = null;
 
     /**
      * Information about the message that this message is a response to.  Only present if this message is a response.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderResponse
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
     public $response = null;
 
     /**
      * The actual data of the message - a reference to the root/focus class of the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $focus = [];
 
     /**
      * Permanent link to the MessageDefinition for this message.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $definition = null;
 
@@ -146,7 +146,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'MessageHeader';
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getEventCoding()
     {
@@ -154,7 +154,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $eventCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $eventCoding
      * @return $this
      */
     public function setEventCoding($eventCoding)
@@ -164,7 +164,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getEventUri()
     {
@@ -172,7 +172,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $eventUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $eventUri
      * @return $this
      */
     public function setEventUri($eventUri)
@@ -183,7 +183,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The destination application which the message is intended for.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderDestination[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderDestination[]
      */
     public function getDestination()
     {
@@ -192,7 +192,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The destination application which the message is intended for.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderDestination $destination
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderDestination $destination
      * @return $this
      */
     public function addDestination($destination)
@@ -203,7 +203,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the sending system to allow the use of a trust relationship.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSender()
     {
@@ -212,7 +212,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the sending system to allow the use of a trust relationship.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $sender
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $sender
      * @return $this
      */
     public function setSender($sender)
@@ -223,7 +223,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person or device that performed the data entry leading to this message. When there is more than one candidate, pick the most proximal to the message. Can provide other enterers in extensions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEnterer()
     {
@@ -232,7 +232,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person or device that performed the data entry leading to this message. When there is more than one candidate, pick the most proximal to the message. Can provide other enterers in extensions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $enterer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $enterer
      * @return $this
      */
     public function setEnterer($enterer)
@@ -243,7 +243,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The logical author of the message - the person or device that decided the described event should happen. When there is more than one candidate, pick the most proximal to the MessageHeader. Can provide other authors in extensions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -252,7 +252,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The logical author of the message - the person or device that decided the described event should happen. When there is more than one candidate, pick the most proximal to the MessageHeader. Can provide other authors in extensions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -263,7 +263,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The source application from which this message originated.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderSource
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderSource
      */
     public function getSource()
     {
@@ -272,7 +272,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The source application from which this message originated.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderSource $source
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderSource $source
      * @return $this
      */
     public function setSource($source)
@@ -283,7 +283,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person or organization that accepts overall responsibility for the contents of the message. The implication is that the message event happened under the policies of the responsible party.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResponsible()
     {
@@ -292,7 +292,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The person or organization that accepts overall responsibility for the contents of the message. The implication is that the message event happened under the policies of the responsible party.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $responsible
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $responsible
      * @return $this
      */
     public function setResponsible($responsible)
@@ -303,7 +303,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Coded indication of the cause for the event - indicates  a reason for the occurrence of the event that is a focus of this message.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReason()
     {
@@ -312,7 +312,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Coded indication of the cause for the event - indicates  a reason for the occurrence of the event that is a focus of this message.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function setReason($reason)
@@ -323,7 +323,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information about the message that this message is a response to.  Only present if this message is a response.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderResponse
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
     public function getResponse()
     {
@@ -332,7 +332,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Information about the message that this message is a response to.  Only present if this message is a response.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderResponse $response
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMessageHeader\FHIRMessageHeaderResponse $response
      * @return $this
      */
     public function setResponse($response)
@@ -343,7 +343,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual data of the message - a reference to the root/focus class of the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getFocus()
     {
@@ -352,7 +352,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual data of the message - a reference to the root/focus class of the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $focus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $focus
      * @return $this
      */
     public function addFocus($focus)
@@ -363,7 +363,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Permanent link to the MessageDefinition for this message.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefinition()
     {
@@ -372,7 +372,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Permanent link to the MessageDefinition for this message.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definition
      * @return $this
      */
     public function setDefinition($definition)

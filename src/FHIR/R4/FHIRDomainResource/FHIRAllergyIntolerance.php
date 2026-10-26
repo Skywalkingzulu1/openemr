@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.
@@ -72,116 +72,116 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The clinical status of the allergy or intolerance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $clinicalStatus = null;
 
     /**
      * Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $verificationStatus = null;
 
     /**
      * Identification of the underlying physiological mechanism for the reaction risk.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceType
      */
     public $type = null;
 
     /**
      * Category of the identified substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory[]
      */
     public $category = [];
 
     /**
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the identified substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
     public $criticality = null;
 
     /**
      * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").  Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The patient who has the allergy or intolerance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The encounter when the allergy or intolerance was asserted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $onsetDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $onsetAge = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $onsetPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $onsetRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $onsetString = null;
 
     /**
      * The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $recordedDate = null;
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $recorder = null;
 
     /**
      * The source of the information about the allergy that is recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $asserter = null;
 
     /**
      * Represents the date and/or time of the last known occurrence of a reaction event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $lastOccurrence = null;
 
     /**
      * Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
      */
     public $reaction = [];
 
@@ -192,7 +192,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -201,7 +201,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -212,7 +212,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The clinical status of the allergy or intolerance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getClinicalStatus()
     {
@@ -221,7 +221,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The clinical status of the allergy or intolerance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $clinicalStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $clinicalStatus
      * @return $this
      */
     public function setClinicalStatus($clinicalStatus)
@@ -232,7 +232,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getVerificationStatus()
     {
@@ -241,7 +241,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $verificationStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $verificationStatus
      * @return $this
      */
     public function setVerificationStatus($verificationStatus)
@@ -252,7 +252,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identification of the underlying physiological mechanism for the reaction risk.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceType
      */
     public function getType()
     {
@@ -261,7 +261,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Identification of the underlying physiological mechanism for the reaction risk.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceType $type
      * @return $this
      */
     public function setType($type)
@@ -272,7 +272,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Category of the identified substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory[]
      */
     public function getCategory()
     {
@@ -281,7 +281,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Category of the identified substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCategory $category
      * @return $this
      */
     public function addCategory($category)
@@ -292,7 +292,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the identified substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
     public function getCriticality()
     {
@@ -301,7 +301,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the identified substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality $criticality
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAllergyIntoleranceCriticality $criticality
      * @return $this
      */
     public function setCriticality($criticality)
@@ -312,7 +312,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").  Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -321,7 +321,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Code for an allergy or intolerance statement (either a positive or a negated/excluded statement).  This may be a code for a substance or pharmaceutical product that is considered to be responsible for the adverse reaction risk (e.g., "Latex"), an allergy or intolerance condition (e.g., "Latex allergy"), or a negated/excluded code for a specific substance or class (e.g., "No latex allergy") or a general or categorical negated statement (e.g.,  "No known allergy", "No known drug allergies").  Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -332,7 +332,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The patient who has the allergy or intolerance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -341,7 +341,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The patient who has the allergy or intolerance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -352,7 +352,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The encounter when the allergy or intolerance was asserted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -361,7 +361,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The encounter when the allergy or intolerance was asserted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -371,7 +371,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOnsetDateTime()
     {
@@ -379,7 +379,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $onsetDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $onsetDateTime
      * @return $this
      */
     public function setOnsetDateTime($onsetDateTime)
@@ -389,7 +389,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge()
     {
@@ -397,7 +397,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return $this
      */
     public function setOnsetAge($onsetAge)
@@ -407,7 +407,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod()
     {
@@ -415,7 +415,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $onsetPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $onsetPeriod
      * @return $this
      */
     public function setOnsetPeriod($onsetPeriod)
@@ -425,7 +425,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getOnsetRange()
     {
@@ -433,7 +433,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $onsetRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $onsetRange
      * @return $this
      */
     public function setOnsetRange($onsetRange)
@@ -443,7 +443,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getOnsetString()
     {
@@ -451,7 +451,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $onsetString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $onsetString
      * @return $this
      */
     public function setOnsetString($onsetString)
@@ -462,7 +462,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getRecordedDate()
     {
@@ -471,7 +471,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $recordedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $recordedDate
      * @return $this
      */
     public function setRecordedDate($recordedDate)
@@ -482,7 +482,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRecorder()
     {
@@ -491,7 +491,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Individual who recorded the record and takes responsibility for its content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recorder
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recorder
      * @return $this
      */
     public function setRecorder($recorder)
@@ -502,7 +502,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The source of the information about the allergy that is recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAsserter()
     {
@@ -511,7 +511,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The source of the information about the allergy that is recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $asserter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $asserter
      * @return $this
      */
     public function setAsserter($asserter)
@@ -522,7 +522,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Represents the date and/or time of the last known occurrence of a reaction event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getLastOccurrence()
     {
@@ -531,7 +531,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Represents the date and/or time of the last known occurrence of a reaction event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $lastOccurrence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $lastOccurrence
      * @return $this
      */
     public function setLastOccurrence($lastOccurrence)
@@ -542,7 +542,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -551,7 +551,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -562,7 +562,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
      */
     public function getReaction()
     {
@@ -571,7 +571,7 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction $reaction
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction $reaction
      * @return $this
      */
     public function addReaction($reaction)

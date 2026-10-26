@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,25 +71,25 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 {
     /**
      * The name of the search parameter used in the interface.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $definition = null;
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType
      */
     public $type = null;
 
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $documentation = null;
 
@@ -100,7 +100,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * The name of the search parameter used in the interface.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -109,7 +109,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * The name of the search parameter used in the interface.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -120,7 +120,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefinition()
     {
@@ -129,7 +129,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definition
      * @return $this
      */
     public function setDefinition($definition)
@@ -140,7 +140,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType
      */
     public function getType()
     {
@@ -149,7 +149,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType $type
      * @return $this
      */
     public function setType($type)
@@ -160,7 +160,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDocumentation()
     {
@@ -169,7 +169,7 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement implements 
 
     /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $documentation
      * @return $this
      */
     public function setDocumentation($documentation)

@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Shachar Zilbershlag <shaharzi@matrix.co.il>
  * @author  Amiel Elboim <amielel@matrix.co.il>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 require_once __DIR__ . '/../globals.php';
@@ -49,7 +49,7 @@ switch ($method) {
 
         $controller = new TherapyGroupsController();
         if ($_GET['group_id'] == 'from_session') {
-            $controller->index(\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('therapy_group'));
+            $controller->index(\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('therapy_group'));
         } else {
             $controller->index($_GET['group_id']);
         }

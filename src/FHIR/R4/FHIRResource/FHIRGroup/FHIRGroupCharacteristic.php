@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGroup;
+namespace DCL\FHIR\R4\FHIRResource\FHIRGroup;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGroup;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively, and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
@@ -71,44 +71,44 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * A code that identifies the kind of trait being asserted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $valueReference = null;
 
     /**
      * If true, indicates the characteristic is one that is NOT held by members of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $exclude = null;
 
     /**
      * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -119,7 +119,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A code that identifies the kind of trait being asserted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -128,7 +128,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A code that identifies the kind of trait being asserted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -138,7 +138,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
     {
@@ -146,7 +146,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
     public function setValueCodeableConcept($valueCodeableConcept)
@@ -156,7 +156,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
     {
@@ -164,7 +164,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -174,7 +174,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -182,7 +182,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -192,7 +192,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getValueRange()
     {
@@ -200,7 +200,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $valueRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
     public function setValueRange($valueRange)
@@ -210,7 +210,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getValueReference()
     {
@@ -218,7 +218,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $valueReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
     public function setValueReference($valueReference)
@@ -229,7 +229,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * If true, indicates the characteristic is one that is NOT held by members of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExclude()
     {
@@ -238,7 +238,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * If true, indicates the characteristic is one that is NOT held by members of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $exclude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $exclude
      * @return $this
      */
     public function setExclude($exclude)
@@ -249,7 +249,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -258,7 +258,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

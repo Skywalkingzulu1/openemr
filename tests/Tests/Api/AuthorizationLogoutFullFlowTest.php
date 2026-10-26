@@ -8,20 +8,20 @@
  * endpoint redirects to the client's registered post_logout_redirect_uri with
  * the state parameter preserved.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DomCrawler\Crawler;
@@ -40,19 +40,19 @@ class AuthorizationLogoutFullFlowTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
         // Two-part env check: a workflow that knows its runner cannot handle
-        // the OAuth Secure-cookie flow sets OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1
+        // the OAuth Secure-cookie flow sets DCL_ALLOW_OAUTH_HTTPS_SKIP=1
         // explicitly (see .github/workflows/test-frontcontroller.yml). On any
         // other runner we probe the Server header — if it's missing there,
         // it means a runner we thought could handle the flow has silently
         // dropped its webserver identity, and we hard-fail rather than let
         // that regression turn into a green skipped test.
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
             $this->markTestSkipped(
-                'Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1 — this runner is known to be'
-                . ' unable to serve OpenEMR\'s Secure-cookie OAuth session (typically php -S over HTTP).'
+                'Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1 — this runner is known to be'
+                . ' unable to serve DCL\'s Secure-cookie OAuth session (typically php -S over HTTP).'
             );
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
@@ -63,7 +63,7 @@ class AuthorizationLogoutFullFlowTest extends TestCase
             if (getenv('CI') !== false) {
                 self::fail($message . ' In CI this is a hard failure — a real webserver runner unexpectedly'
                     . ' stopped emitting the Server header, which would silently disable this test if we only'
-                    . ' skipped. If this runner is intentionally limited, set OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1'
+                    . ' skipped. If this runner is intentionally limited, set DCL_ALLOW_OAUTH_HTTPS_SKIP=1'
                     . ' in its workflow to opt out explicitly.');
             }
             $this->markTestSkipped($message);

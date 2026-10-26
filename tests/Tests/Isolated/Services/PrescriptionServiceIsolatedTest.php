@@ -25,19 +25,19 @@
  * without a live database: the rejection path returns before any query
  * runs, and the allowlist is a class constant we can read via reflection.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services;
+namespace DCL\Tests\Isolated\Services;
 
-use OpenEMR\Services\PrescriptionService;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Services\PrescriptionService;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -51,10 +51,10 @@ class PrescriptionServiceIsolatedTest extends TestCase
     {
         // BaseService.php does `require_once(__DIR__ . '/../../custom/code_types.inc.php')`
         // at class load. That file, in turn, executes a `sqlStatement()` at top-level
-        // unless `OPENEMR_STATIC_ANALYSIS` is set. Define it before touching the
+        // unless `DCL_STATIC_ANALYSIS` is set. Define it before touching the
         // PrescriptionService class so the DB read is skipped.
-        if (!defined('OPENEMR_STATIC_ANALYSIS')) {
-            define('OPENEMR_STATIC_ANALYSIS', true);
+        if (!defined('DCL_STATIC_ANALYSIS')) {
+            define('DCL_STATIC_ANALYSIS', true);
         }
     }
 
@@ -126,7 +126,7 @@ class PrescriptionServiceIsolatedTest extends TestCase
         // supplied enumeration keyed on uuids. Without a patient binding
         // that shape must be rejected. Otherwise a caller can iterate
         // prescriptions across the tenant.
-        $uuidField = new \OpenEMR\Services\Search\TokenSearchField(
+        $uuidField = new \DCL\Services\Search\TokenSearchField(
             'uuid',
             ['first-uuid', 'second-uuid']
         );

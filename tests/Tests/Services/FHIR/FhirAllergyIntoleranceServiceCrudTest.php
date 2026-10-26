@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\Services\FHIR\FhirAllergyIntoleranceService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRAllergyIntolerance;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\Services\FHIR\FhirAllergyIntoleranceService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -19,13 +19,13 @@ use Psr\Log\LoggerInterface;
 /**
  * FHIR AllergyIntolerance Service CRUD Tests
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Chris Dickman <chrisd@opencoreemr.com>
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Chris Dickman <chrisd@DCL.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR
+ * @copyright Copyright (c) 2026 DCL
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirAllergyIntoleranceServiceCrudTest extends TestCase
 {
@@ -49,7 +49,7 @@ class FhirAllergyIntoleranceServiceCrudTest extends TestCase
             [$patientFixture['pubpid']]
         );
         $this->assertIsArray($patientRecord);
-        $this->patientUuid = \OpenEMR\Common\Uuid\UuidRegistry::uuidToString($patientRecord['uuid']);
+        $this->patientUuid = \DCL\Common\Uuid\UuidRegistry::uuidToString($patientRecord['uuid']);
 
         // Load FHIR fixture and set patient reference
         $fixture = (array) $this->fixtureManager->getSingleFhirAllergyIntoleranceFixture();

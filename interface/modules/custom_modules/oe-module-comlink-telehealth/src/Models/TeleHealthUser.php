@@ -3,16 +3,16 @@
 /**
  * Represents a TeleHealth Provisioned User on the Comlink api.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Models;
+namespace Comlink\DCL\Modules\TeleHealthModule\Models;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\DateTime;
+use Comlink\DCL\Modules\TeleHealthModule\DateTime;
 
 class TeleHealthUser
 {

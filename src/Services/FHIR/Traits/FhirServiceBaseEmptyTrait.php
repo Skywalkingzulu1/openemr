@@ -4,17 +4,17 @@
  * FhirServiceBaseEmptyTrait is used to provide default empty service methods for when a FHIR service class is implementing
  * only a single or subset of service methods.  At some point we may want to consider refactoring the FHIRServiceBase
  * class to make these methods not required.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Traits;
+namespace DCL\Services\FHIR\Traits;
 
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Services\Search\ISearchField;
+use DCL\Validators\ProcessingResult;
 
 trait FhirServiceBaseEmptyTrait
 {
@@ -23,11 +23,11 @@ trait FhirServiceBaseEmptyTrait
         return [];
     }
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $processingResult = new ProcessingResult();
         $processingResult->setInternalErrors(['Search not implemented']);
@@ -39,12 +39,12 @@ trait FhirServiceBaseEmptyTrait
         return;
     }
 
-    public function insertOpenEMRRecord($openEmrRecord)
+    public function insertDCLRecord($openEmrRecord)
     {
         return;
     }
 
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
         return;
     }
@@ -58,7 +58,7 @@ trait FhirServiceBaseEmptyTrait
      * that's incompatible with a couple of the implementations, and Rector L10
      * types require _something_ to be present.
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): mixed
+    public function parseDCLRecord($dataRecord = [], $encode = false): mixed
     {
         return null;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.
@@ -72,31 +72,31 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 {
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPointSystem
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPointSystem
      */
     public $system = null;
 
     /**
      * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
     /**
      * Identifies the purpose for the contact point.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPointUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPointUse
      */
     public $use = null;
 
     /**
      * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $rank = null;
 
     /**
      * Time period when the contact point was/is in use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -107,7 +107,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPointSystem
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPointSystem
      */
     public function getSystem()
     {
@@ -116,7 +116,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPointSystem $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPointSystem $system
      * @return $this
      */
     public function setSystem($system)
@@ -127,7 +127,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -136,7 +136,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)
@@ -147,7 +147,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Identifies the purpose for the contact point.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPointUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPointUse
      */
     public function getUse()
     {
@@ -156,7 +156,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Identifies the purpose for the contact point.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPointUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPointUse $use
      * @return $this
      */
     public function setUse($use)
@@ -167,7 +167,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getRank()
     {
@@ -176,7 +176,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $rank
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $rank
      * @return $this
      */
     public function setRank($rank)
@@ -187,7 +187,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Time period when the contact point was/is in use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -196,7 +196,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 
     /**
      * Time period when the contact point was/is in use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

@@ -1,7 +1,7 @@
 <?php
 
 use Doctrine\DBAL\Connection;
-use OpenEMR\BC\Database;
+use DCL\BC\Database;
 
 // $Id$
 // ----------------------------------------------------------------------

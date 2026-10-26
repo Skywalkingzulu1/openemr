@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Ui;
+namespace DCL\Tests\Acceptance\Ui;
 
 use Facebook\WebDriver\Exception\TimeoutException;
 use Facebook\WebDriver\JavaScriptExecutor;
 use Facebook\WebDriver\WebDriver;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
-use OpenEMR\Tests\Acceptance\Support\PantherAcceptanceTestCase;
+use DCL\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\PantherAcceptanceTestCase;
 use PHPUnit\Framework\Attributes\Group;
 
 /**
@@ -41,7 +41,7 @@ use PHPUnit\Framework\Attributes\Group;
  * dev-checkout-only about it) and asserts the .bg-color / .bg-color-w /
  * .mini_table th rules include an explicit `color` property. The
  * three-theme (light/solar/dark) contrast fix behind the assertion
- * ships to every release image built after openemr#10842's fix landed,
+ * ships to every release image built after DCL#10842's fix landed,
  * so a regression that dropped the color declaration from the shipped
  * CSS would silently produce unreadable receipts on light/solar
  * themes — exactly the kind of theme-interaction bug the acceptance
@@ -70,7 +70,7 @@ final class FrontPaymentCssContrastAcceptanceTest extends PantherAcceptanceTestC
      * `background-color`, so text stays readable on every theme (light
      * and solar map --secondary to a dark color that turns text
      * invisible when no explicit foreground color is set — see
-     * openemr/openemr#10842).
+     * DCL/DCL#10842).
      *
      * Source: FrontPaymentCssContrastTest::testReceiptCssHasExplicitTextColor.
      */
@@ -211,20 +211,20 @@ final class FrontPaymentCssContrastAcceptanceTest extends PantherAcceptanceTestC
             (bool) $decoded['bgColor'],
             '.bg-color CSS rule must include an explicit color property for text contrast — '
             . 'the shipped release image dropped this declaration, which will render receipts '
-            . 'unreadable on light and solar themes (see openemr/openemr#10842)',
+            . 'unreadable on light and solar themes (see DCL/DCL#10842)',
         );
         self::assertTrue(
             (bool) $decoded['bgColorW'],
             '.bg-color-w CSS rule must include an explicit color property for text contrast — '
             . 'the shipped release image dropped this declaration, which will render receipts '
-            . 'unreadable on light and solar themes (see openemr/openemr#10842)',
+            . 'unreadable on light and solar themes (see DCL/DCL#10842)',
         );
         self::assertTrue(
             (bool) $decoded['miniTableTh'],
             'table.mini_table th CSS rule must include an explicit color property for text '
             . 'contrast — the shipped release image dropped this declaration, which will '
             . 'render receipt table headers unreadable on light and solar themes '
-            . '(see openemr/openemr#10842)',
+            . '(see DCL/DCL#10842)',
         );
     }
 

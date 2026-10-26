@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBundle;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A container for a collection of resources.
@@ -71,31 +71,31 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $status = null;
 
     /**
      * The location header created by processing this operation, populated if the operation returns a location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $location = null;
 
     /**
      * The Etag for the resource, if the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $etag = null;
 
     /**
      * The date/time that the resource was modified on the server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $lastModified = null;
 
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.
-     * @var \OpenEMR\FHIR\R4\FHIRResourceContainer
+     * @var \DCL\FHIR\R4\FHIRResourceContainer
      */
     public $outcome = null;
 
@@ -106,7 +106,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getStatus()
     {
@@ -115,7 +115,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The status code returned by processing this entry. The status SHALL start with a 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description associated with the status code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $status
      * @return $this
      */
     public function setStatus($status)
@@ -126,7 +126,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The location header created by processing this operation, populated if the operation returns a location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getLocation()
     {
@@ -135,7 +135,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The location header created by processing this operation, populated if the operation returns a location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $location
      * @return $this
      */
     public function setLocation($location)
@@ -146,7 +146,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The Etag for the resource, if the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getEtag()
     {
@@ -155,7 +155,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The Etag for the resource, if the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $etag
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $etag
      * @return $this
      */
     public function setEtag($etag)
@@ -166,7 +166,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The date/time that the resource was modified on the server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getLastModified()
     {
@@ -175,7 +175,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The date/time that the resource was modified on the server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $lastModified
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $lastModified
      * @return $this
      */
     public function setLastModified($lastModified)
@@ -195,7 +195,7 @@ class FHIRBundleResponse extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing this entry in a batch or transaction.
-     * @param \OpenEMR\FHIR\R4\FHIRResourceContainer $outcome
+     * @param \DCL\FHIR\R4\FHIRResourceContainer $outcome
      * @return $this
      */
     public function setOutcome($outcome)

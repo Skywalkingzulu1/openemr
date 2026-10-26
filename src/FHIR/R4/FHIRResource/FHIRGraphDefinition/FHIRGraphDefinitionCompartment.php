@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRGraphDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRGraphDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.
@@ -71,31 +71,31 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 {
     /**
      * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGraphCompartmentUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGraphCompartmentUse
      */
     public $use = null;
 
     /**
      * Identifies the compartment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCompartmentType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCompartmentType
      */
     public $code = null;
 
     /**
      * identical | matching | different | no-rule | custom.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGraphCompartmentRule
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGraphCompartmentRule
      */
     public $rule = null;
 
     /**
      * Custom rule, as a FHIRPath expression.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
     /**
      * Documentation for FHIRPath expression.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
@@ -106,7 +106,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGraphCompartmentUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGraphCompartmentUse
      */
     public function getUse()
     {
@@ -115,7 +115,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGraphCompartmentUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGraphCompartmentUse $use
      * @return $this
      */
     public function setUse($use)
@@ -126,7 +126,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Identifies the compartment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCompartmentType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCompartmentType
      */
     public function getCode()
     {
@@ -135,7 +135,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Identifies the compartment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCompartmentType $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCompartmentType $code
      * @return $this
      */
     public function setCode($code)
@@ -146,7 +146,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * identical | matching | different | no-rule | custom.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGraphCompartmentRule
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGraphCompartmentRule
      */
     public function getRule()
     {
@@ -155,7 +155,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * identical | matching | different | no-rule | custom.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGraphCompartmentRule $rule
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGraphCompartmentRule $rule
      * @return $this
      */
     public function setRule($rule)
@@ -166,7 +166,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Custom rule, as a FHIRPath expression.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -175,7 +175,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Custom rule, as a FHIRPath expression.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)
@@ -186,7 +186,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Documentation for FHIRPath expression.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -195,7 +195,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
 
     /**
      * Documentation for FHIRPath expression.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)

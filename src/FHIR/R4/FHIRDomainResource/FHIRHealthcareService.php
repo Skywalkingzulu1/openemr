@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The details of a healthcare service available at a location.
@@ -72,145 +72,145 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 {
     /**
      * External identifiers for this item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $active = null;
 
     /**
      * The organization that provides this healthcare service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $providedBy = null;
 
     /**
      * Identifies the broad category of service being performed or delivered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * The specific type of service that may be delivered or performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * Collection of specialties handled by the service site. This is more of a medical term.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialty = [];
 
     /**
      * The location(s) where this healthcare service may be provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $location = [];
 
     /**
      * Further description of the service as it would be presented to a consumer while searching.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * Extra details about the service that can't be placed in the other fields.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $extraDetails = null;
 
     /**
      * If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $photo = null;
 
     /**
      * List of contacts related to this specific healthcare service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * The location(s) that this service is available to (not where the service is provided).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $coverageArea = [];
 
     /**
      * The code(s) that detail the conditions under which the healthcare service is available/offered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $serviceProvisionCode = [];
 
     /**
      * Does this service have specific eligibility requirements that need to be met in order to use the service?
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceEligibility[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceEligibility[]
      */
     public $eligibility = [];
 
     /**
      * Programs that this service is applicable to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $program = [];
 
     /**
      * Collection of characteristics (attributes).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $characteristic = [];
 
     /**
      * Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $communication = [];
 
     /**
      * Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $referralMethod = [];
 
     /**
      * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $appointmentRequired = null;
 
     /**
      * A collection of times that the Service Site is available.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
      */
     public $availableTime = [];
 
     /**
      * The HealthcareService is not available during this period of time due to the provided reason.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
      */
     public $notAvailable = [];
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $availabilityExceptions = null;
 
     /**
      * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
@@ -221,7 +221,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * External identifiers for this item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -230,7 +230,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * External identifiers for this item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -241,7 +241,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getActive()
     {
@@ -250,7 +250,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $active
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $active
      * @return $this
      */
     public function setActive($active)
@@ -261,7 +261,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The organization that provides this healthcare service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvidedBy()
     {
@@ -270,7 +270,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The organization that provides this healthcare service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $providedBy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $providedBy
      * @return $this
      */
     public function setProvidedBy($providedBy)
@@ -281,7 +281,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies the broad category of service being performed or delivered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -290,7 +290,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Identifies the broad category of service being performed or delivered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -301,7 +301,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The specific type of service that may be delivered or performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -310,7 +310,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The specific type of service that may be delivered or performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -321,7 +321,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Collection of specialties handled by the service site. This is more of a medical term.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialty()
     {
@@ -330,7 +330,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Collection of specialties handled by the service site. This is more of a medical term.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -341,7 +341,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The location(s) where this healthcare service may be provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getLocation()
     {
@@ -350,7 +350,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The location(s) where this healthcare service may be provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function addLocation($location)
@@ -361,7 +361,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Further description of the service as it would be presented to a consumer while searching.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -370,7 +370,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Further description of the service as it would be presented to a consumer while searching.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -381,7 +381,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -390,7 +390,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -401,7 +401,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Extra details about the service that can't be placed in the other fields.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getExtraDetails()
     {
@@ -410,7 +410,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Extra details about the service that can't be placed in the other fields.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $extraDetails
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $extraDetails
      * @return $this
      */
     public function setExtraDetails($extraDetails)
@@ -421,7 +421,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getPhoto()
     {
@@ -430,7 +430,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $photo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function setPhoto($photo)
@@ -441,7 +441,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * List of contacts related to this specific healthcare service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -450,7 +450,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * List of contacts related to this specific healthcare service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -461,7 +461,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The location(s) that this service is available to (not where the service is provided).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getCoverageArea()
     {
@@ -470,7 +470,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The location(s) that this service is available to (not where the service is provided).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverageArea
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverageArea
      * @return $this
      */
     public function addCoverageArea($coverageArea)
@@ -481,7 +481,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The code(s) that detail the conditions under which the healthcare service is available/offered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getServiceProvisionCode()
     {
@@ -490,7 +490,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The code(s) that detail the conditions under which the healthcare service is available/offered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceProvisionCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $serviceProvisionCode
      * @return $this
      */
     public function addServiceProvisionCode($serviceProvisionCode)
@@ -501,7 +501,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Does this service have specific eligibility requirements that need to be met in order to use the service?
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceEligibility[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceEligibility[]
      */
     public function getEligibility()
     {
@@ -510,7 +510,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Does this service have specific eligibility requirements that need to be met in order to use the service?
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceEligibility $eligibility
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceEligibility $eligibility
      * @return $this
      */
     public function addEligibility($eligibility)
@@ -521,7 +521,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Programs that this service is applicable to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getProgram()
     {
@@ -530,7 +530,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Programs that this service is applicable to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $program
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $program
      * @return $this
      */
     public function addProgram($program)
@@ -541,7 +541,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Collection of characteristics (attributes).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCharacteristic()
     {
@@ -550,7 +550,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Collection of characteristics (attributes).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $characteristic
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $characteristic
      * @return $this
      */
     public function addCharacteristic($characteristic)
@@ -561,7 +561,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCommunication()
     {
@@ -570,7 +570,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $communication
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $communication
      * @return $this
      */
     public function addCommunication($communication)
@@ -581,7 +581,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReferralMethod()
     {
@@ -590,7 +590,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $referralMethod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $referralMethod
      * @return $this
      */
     public function addReferralMethod($referralMethod)
@@ -601,7 +601,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAppointmentRequired()
     {
@@ -610,7 +610,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $appointmentRequired
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $appointmentRequired
      * @return $this
      */
     public function setAppointmentRequired($appointmentRequired)
@@ -621,7 +621,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A collection of times that the Service Site is available.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
      */
     public function getAvailableTime()
     {
@@ -630,7 +630,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A collection of times that the Service Site is available.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime $availableTime
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime $availableTime
      * @return $this
      */
     public function addAvailableTime($availableTime)
@@ -641,7 +641,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The HealthcareService is not available during this period of time due to the provided reason.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
      */
     public function getNotAvailable()
     {
@@ -650,7 +650,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The HealthcareService is not available during this period of time due to the provided reason.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable $notAvailable
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable $notAvailable
      * @return $this
      */
     public function addNotAvailable($notAvailable)
@@ -661,7 +661,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAvailabilityExceptions()
     {
@@ -670,7 +670,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $availabilityExceptions
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $availabilityExceptions
      * @return $this
      */
     public function setAvailabilityExceptions($availabilityExceptions)
@@ -681,7 +681,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -690,7 +690,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)

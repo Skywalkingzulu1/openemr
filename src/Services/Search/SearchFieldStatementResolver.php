@@ -7,16 +7,16 @@
  *
  * TODO: adunsulag maybe we can rename this to be SearchFieldQueryConverter  I wonder if that will make more sense to people
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Search;
+namespace DCL\Services\Search;
 
-use OpenEMR\Services\CodeTypesService;
+use DCL\Services\CodeTypesService;
 
 class SearchFieldStatementResolver
 {
@@ -248,7 +248,7 @@ class SearchFieldStatementResolver
 
             if ($modifier === SearchModifier::MISSING) {
                 // On MySQL 8, CAST(col AS CHAR) of a binary uuid that is not valid UTF-8 is cut at the
-                // first invalid byte (often to '') with the sql_mode OpenEMR sets, or NULL in strict
+                // first invalid byte (often to '') with the sql_mode DCL sets, or NULL in strict
                 // mode, so the uuid looked missing. A value whose bytes are not all spaces is never
                 // missing; every value the CHAR cast can read compares exactly as before.
                 if ($value->getCode() === false) {
@@ -269,9 +269,9 @@ class SearchFieldStatementResolver
                 // TODO: adunsulag when we better understand Token's we will improve this process of how we resolve the token
                 // field to its representative bound value
                 if ($codeTypesService->systemHasMultipleCodeTypes($value->getSystem())) {
-                    // for example FHIRCodeSystemConstants::SNOMED_CT maps to 'SNOMED', 'SNOMED-CT', 'SNOMED-PR' inside OpenEMR
+                    // for example FHIRCodeSystemConstants::SNOMED_CT maps to 'SNOMED', 'SNOMED-CT', 'SNOMED-PR' inside DCL
                     // TODO: adunsulag it may require more db normalization to improve performance here but for now this will work
-                    $codes = $codeTypesService->getAllOpenEMRCodesForSystemAndCode(
+                    $codes = $codeTypesService->getAllDCLCodesForSystemAndCode(
                         $value->getSystem(),
                         $value->getCode()
                     );
@@ -279,7 +279,7 @@ class SearchFieldStatementResolver
                     $clauses[] = $field . ' IN (' . $placeholders . ')';
                 } else {
                     $clauses[] = $field . ' = ?';
-                    $code = $codeTypesService->getOpenEMRCodeForSystemAndCode(
+                    $code = $codeTypesService->getDCLCodeForSystemAndCode(
                         $value->getSystem(),
                         $value->getCode()
                     );

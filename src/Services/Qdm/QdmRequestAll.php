@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm;
+namespace DCL\Services\Qdm;
 
-use OpenEMR\Events\BoundFilter;
-use OpenEMR\Services\Qdm\Interfaces\QdmRequestInterface;
+use DCL\Events\BoundFilter;
+use DCL\Services\Qdm\Interfaces\QdmRequestInterface;
 
 class QdmRequestAll implements QdmRequestInterface
 {

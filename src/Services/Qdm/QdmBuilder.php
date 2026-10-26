@@ -1,42 +1,42 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU GeneralPublic License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU GeneralPublic License 3
  */
 
-namespace OpenEMR\Services\Qdm;
+namespace DCL\Services\Qdm;
 
-use OpenEMR\Cqm\Generator;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\Qdm\Interfaces\QdmRequestInterface;
-use OpenEMR\Services\Qdm\Interfaces\QdmServiceInterface;
-use OpenEMR\Services\Qdm\Services\AllergyIntoleranceService;
-use OpenEMR\Services\Qdm\Services\AssessmentService;
-use OpenEMR\Services\Qdm\Services\DeviceAppliedService;
-use OpenEMR\Services\Qdm\Services\DeviceOrderService;
-use OpenEMR\Services\Qdm\Services\DeviceRecommendedService;
-use OpenEMR\Services\Qdm\Services\DiagnosisService;
-use OpenEMR\Services\Qdm\Services\DiagnosticStudyOrderedService;
-use OpenEMR\Services\Qdm\Services\DiagnosticStudyService;
-use OpenEMR\Services\Qdm\Services\EncounterService;
-use OpenEMR\Services\Qdm\Services\ImmunizationAdministeredService;
-use OpenEMR\Services\Qdm\Services\InterventionOrderedService;
-use OpenEMR\Services\Qdm\Services\InterventionService;
-use OpenEMR\Services\Qdm\Services\LaboratoryTestOrderedService;
-use OpenEMR\Services\Qdm\Services\LaboratoryTestService;
-use OpenEMR\Services\Qdm\Services\MedicationActiveService;
-use OpenEMR\Services\Qdm\Services\PatientService;
-use OpenEMR\Services\Qdm\Services\PhysicalExamService;
-use OpenEMR\Services\Qdm\Services\ProcedureRecommendedService;
-use OpenEMR\Services\Qdm\Services\ProcedureService;
-use OpenEMR\Services\Qdm\Services\SubstanceOrderService;
-use OpenEMR\Services\Qdm\Services\SubstanceRecommendedService;
-use OpenEMR\Services\Qdm\Services\SymptomService;
-use OpenEMR\Services\Qdm\Services\VitalSignsService;
+use DCL\Cqm\Generator;
+use DCL\Services\CodeTypesService;
+use DCL\Services\Qdm\Interfaces\QdmRequestInterface;
+use DCL\Services\Qdm\Interfaces\QdmServiceInterface;
+use DCL\Services\Qdm\Services\AllergyIntoleranceService;
+use DCL\Services\Qdm\Services\AssessmentService;
+use DCL\Services\Qdm\Services\DeviceAppliedService;
+use DCL\Services\Qdm\Services\DeviceOrderService;
+use DCL\Services\Qdm\Services\DeviceRecommendedService;
+use DCL\Services\Qdm\Services\DiagnosisService;
+use DCL\Services\Qdm\Services\DiagnosticStudyOrderedService;
+use DCL\Services\Qdm\Services\DiagnosticStudyService;
+use DCL\Services\Qdm\Services\EncounterService;
+use DCL\Services\Qdm\Services\ImmunizationAdministeredService;
+use DCL\Services\Qdm\Services\InterventionOrderedService;
+use DCL\Services\Qdm\Services\InterventionService;
+use DCL\Services\Qdm\Services\LaboratoryTestOrderedService;
+use DCL\Services\Qdm\Services\LaboratoryTestService;
+use DCL\Services\Qdm\Services\MedicationActiveService;
+use DCL\Services\Qdm\Services\PatientService;
+use DCL\Services\Qdm\Services\PhysicalExamService;
+use DCL\Services\Qdm\Services\ProcedureRecommendedService;
+use DCL\Services\Qdm\Services\ProcedureService;
+use DCL\Services\Qdm\Services\SubstanceOrderService;
+use DCL\Services\Qdm\Services\SubstanceRecommendedService;
+use DCL\Services\Qdm\Services\SymptomService;
+use DCL\Services\Qdm\Services\VitalSignsService;
 
 class QdmBuilder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * This resource provides the status of the payment for goods and services rendered, and the request and response resource references.
@@ -72,73 +72,73 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this payment notice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * Reference of resource for which payment is being made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $request = null;
 
     /**
      * Reference of response to resource for which payment is being made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $response = null;
 
     /**
      * The date when this resource was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $provider = null;
 
     /**
      * A reference to the payment which is the subject of this notice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $payment = null;
 
     /**
      * The date when the above payment action occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $paymentDate = null;
 
     /**
      * The party who will receive or has received payment that is the subject of this notification.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $payee = null;
 
     /**
      * The party who is notified of the payment status.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $recipient = null;
 
     /**
      * The amount sent to the payee.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public $amount = null;
 
     /**
      * A code indicating whether payment has been sent or cleared.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $paymentStatus = null;
 
@@ -149,7 +149,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this payment notice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -158,7 +158,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this payment notice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -169,7 +169,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -178,7 +178,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -189,7 +189,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference of resource for which payment is being made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequest()
     {
@@ -198,7 +198,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference of resource for which payment is being made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function setRequest($request)
@@ -209,7 +209,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference of response to resource for which payment is being made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResponse()
     {
@@ -218,7 +218,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference of response to resource for which payment is being made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $response
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $response
      * @return $this
      */
     public function setResponse($response)
@@ -229,7 +229,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date when this resource was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -238,7 +238,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date when this resource was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -249,7 +249,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvider()
     {
@@ -258,7 +258,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function setProvider($provider)
@@ -269,7 +269,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the payment which is the subject of this notice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPayment()
     {
@@ -278,7 +278,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the payment which is the subject of this notice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $payment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $payment
      * @return $this
      */
     public function setPayment($payment)
@@ -289,7 +289,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date when the above payment action occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getPaymentDate()
     {
@@ -298,7 +298,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date when the above payment action occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $paymentDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $paymentDate
      * @return $this
      */
     public function setPaymentDate($paymentDate)
@@ -309,7 +309,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who will receive or has received payment that is the subject of this notification.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPayee()
     {
@@ -318,7 +318,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who will receive or has received payment that is the subject of this notification.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $payee
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $payee
      * @return $this
      */
     public function setPayee($payee)
@@ -329,7 +329,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who is notified of the payment status.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRecipient()
     {
@@ -338,7 +338,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party who is notified of the payment status.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recipient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function setRecipient($recipient)
@@ -349,7 +349,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The amount sent to the payee.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMoney
      */
     public function getAmount()
     {
@@ -358,7 +358,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The amount sent to the payee.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMoney $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMoney $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -369,7 +369,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code indicating whether payment has been sent or cleared.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPaymentStatus()
     {
@@ -378,7 +378,7 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code indicating whether payment has been sent or cleared.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $paymentStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $paymentStatus
      * @return $this
      */
     public function setPaymentStatus($paymentStatus)

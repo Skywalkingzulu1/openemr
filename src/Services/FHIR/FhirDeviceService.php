@@ -2,38 +2,38 @@
 
 /**
  * FhirDeviceService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDevice;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\DeviceService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDevice;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDevice\FHIRDeviceUdiCarrier;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\DeviceService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService, IPatientCompartmentResourceService
 {
@@ -57,7 +57,7 @@ class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfile
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -74,12 +74,12 @@ class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfile
     }
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR Resource
+     * Parses an DCL data record, returning the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDevice
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDevice
     {
         $device = new FHIRDevice();
 
@@ -146,19 +146,19 @@ class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfile
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
-     * @return ProcessingResult OpenEMR records
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
+     * @return ProcessingResult DCL records
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->deviceService->search($openEMRSearchParameters);
+        return $this->deviceService->search($DCLSearchParameters);
     }
 
     /**
-     * Parses a FHIR Device resource into the OpenEMR `lists`-table shape.
+     * Parses a FHIR Device resource into the DCL `lists`-table shape.
      *
-     * FHIR Device.patient is a Patient reference resolved to pid in insertOpenEMRRecord.
+     * FHIR Device.patient is a Patient reference resolved to pid in insertDCLRecord.
      * FHIR Device.type SNOMED coding maps to lists.diagnosis with the SNOMED-CT prefix
      * convention used by the read side. UDI carrier identifier + HRF map to udi_data.di
      * and lists.udi respectively. Manufacturer / lot / serial / expiration / manufactureDate
@@ -282,10 +282,10 @@ class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfile
      *
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Device record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Device record array');
         }
 
         $resolved = $this->resolvePatientId($openEmrRecord);
@@ -297,15 +297,15 @@ class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfile
 
     /**
      * @param string $fhirResourceId
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         // Patient is not mutable on update; drop the resolved pid path so updates only touch fields the FHIR resource carries.
-        unset($updatedOpenEMRRecord['puuid']);
+        unset($updatedDCLRecord['puuid']);
         $result = $this->deviceService->update(
             $fhirResourceId,
-            FhirPayloadReader::stringKeyed($updatedOpenEMRRecord)
+            FhirPayloadReader::stringKeyed($updatedDCLRecord)
         );
         if ($result->hasErrors() || !$result->hasData()) {
             return $result;
@@ -313,12 +313,12 @@ class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfile
 
         // Read the device back through the search path rather than returning what update() built.
         // It answers with the raw `lists` columns, and FhirServiceBase::update() feeds that row
-        // straight into parseOpenEMRRecord(), which reads puuid, code and udi_di -- none of which
+        // straight into parseDCLRecord(), which reads puuid, code and udi_di -- none of which
         // the raw row carries, because those are derived by
         // DeviceService::createResultRecordFromDatabaseResult(). A successful PUT therefore came
         // back as a Device with no patient, no type and no UDI. This is the same lookup the _id
         // search parameter performs for a GET.
-        return $this->searchForOpenEMRRecords([
+        return $this->searchForDCLRecords([
             'uuid' => new TokenSearchField('uuid', [new TokenSearchValue($fhirResourceId, null, true)]),
         ]);
     }
@@ -358,7 +358,7 @@ class FhirDeviceService extends FhirServiceBase implements IResourceUSCIGProfile
     /**
      * Creates the Provenance resource  for the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return the FHIR Resource. Returned format is defined using $encode parameter.
      */

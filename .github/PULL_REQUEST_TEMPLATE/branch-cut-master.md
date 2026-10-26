@@ -16,7 +16,7 @@ Master-side partner PR for the freshly-cut `<REL_BRANCH>` branch (target version
 - **SQL upgrade skeleton** — creates `sql/<from>-to-<to>_upgrade.sql` carrying the comment-meta-language header copied from the most recent existing bridge (body is empty; per-release work fills it in). The `<from>` is derived from `version.php` (branch-cut) or supplied via `--prev-version` (patch-prep).
 - **`version.php`** — bumps from `8.M.0-dev` to `8.(M+1).0-dev` so master keeps marking development builds for the next minor line.
 - **`src/RestControllers/OpenApi/OpenApiDefinitions.php`** — bumps `OA\Info(version: ...)` to the new master version.
-- **`swagger/openemr-api.yaml`** — regenerated from `OpenApiDefinitions.php` via `openemr:create-api-documentation`.
+- **`swagger/DCL-api.yaml`** — regenerated from `OpenApiDefinitions.php` via `DCL:create-api-documentation`.
 - **`.github/release-targets.yml`** — inserts the new rel row (`docker_tags: <VERSION>,next`), bumps the master row's docker_tags (minor++, drops `next`, keeps `dev`), and removes any rows previously flagged `unreleased: true` (covers the skip-line-cut scenario uniformly).
 
 ## Lifecycle

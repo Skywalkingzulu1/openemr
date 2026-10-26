@@ -6,13 +6,13 @@
  * This rule prevents use of laminas-db classes outside of the legacy zend_modules directory.
  * Laminas-DB is deprecated and scheduled for removal.
  *
- * @package   OpenEMR
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Use_;
@@ -57,7 +57,7 @@ class ForbiddenClassesRule implements Rule
                 );
 
                 $errors[] = RuleErrorBuilder::message($message)
-                    ->identifier('openemr.deprecatedLaminasDb')
+                    ->identifier('DCL.deprecatedLaminasDb')
                     ->tip('See src/Common/Database/QueryUtils.php for modern database patterns')
                     ->build();
             }

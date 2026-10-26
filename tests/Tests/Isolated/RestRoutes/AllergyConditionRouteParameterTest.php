@@ -12,9 +12,9 @@
  * were compared against numeric PID columns or binary UUID columns
  * without proper TokenSearchField conversion.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  * AI-Generated Code Notice: This file contains code generated with
  * assistance from Claude Code (Anthropic). The code has been reviewed
@@ -23,7 +23,7 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestRoutes;
+namespace DCL\Tests\Isolated\RestRoutes;
 
 use PHPUnit\Framework\TestCase;
 

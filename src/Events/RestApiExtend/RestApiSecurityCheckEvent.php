@@ -6,16 +6,16 @@
  * This allows the consumer to implement their own security checks, either completely replacing the security system
  * or enhancing it with additional checks.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\RestApiExtend;
+namespace DCL\Events\RestApiExtend;
 
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRequest;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Contracts\EventDispatcher\Event;
 
@@ -26,7 +26,7 @@ class RestApiSecurityCheckEvent extends Event
     private $scopeType;
 
     /**
-     * @var bool Whether to skip the OpenEMR core security checks and return a valid security check response
+     * @var bool Whether to skip the DCL core security checks and return a valid security check response
      */
     private bool $skipSecurityCheck;
 

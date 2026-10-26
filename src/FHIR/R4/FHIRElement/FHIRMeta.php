@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
@@ -72,37 +72,37 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 {
     /**
      * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $versionId = null;
 
     /**
      * When the resource last changed - e.g. when the version changed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $lastUpdated = null;
 
     /**
      * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $source = null;
 
     /**
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $profile = [];
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $security = [];
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $tag = [];
 
@@ -113,7 +113,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getVersionId()
     {
@@ -122,7 +122,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $versionId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $versionId
      * @return $this
      */
     public function setVersionId($versionId)
@@ -133,7 +133,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * When the resource last changed - e.g. when the version changed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getLastUpdated()
     {
@@ -142,7 +142,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * When the resource last changed - e.g. when the version changed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $lastUpdated
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $lastUpdated
      * @return $this
      */
     public function setLastUpdated($lastUpdated)
@@ -153,7 +153,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSource()
     {
@@ -162,7 +162,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $source
      * @return $this
      */
     public function setSource($source)
@@ -173,7 +173,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getProfile()
     {
@@ -182,7 +182,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -193,7 +193,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getSecurity()
     {
@@ -202,7 +202,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $security
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $security
      * @return $this
      */
     public function addSecurity($security)
@@ -213,7 +213,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getTag()
     {
@@ -222,7 +222,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $tag
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $tag
      * @return $this
      */
     public function addTag($tag)

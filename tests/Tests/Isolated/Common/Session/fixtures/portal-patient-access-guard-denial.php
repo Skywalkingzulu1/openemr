@@ -3,16 +3,16 @@
 /**
  * Child-process fixture for PortalPatientAccessGuard denial behavior.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\BC {
+namespace DCL\BC {
     final class PortalGuardTestLogger
     {
         /** @param array<string, mixed> $context */
@@ -30,7 +30,7 @@ namespace OpenEMR\BC {
     }
 }
 
-namespace OpenEMR\Common\Logging {
+namespace DCL\Common\Logging {
     final class EventAuditLogger
     {
         public static function getInstance(): self
@@ -45,9 +45,9 @@ namespace OpenEMR\Common\Logging {
 }
 
 namespace {
-    use OpenEMR\Common\Session\PortalPatientAccessGuard;
-    use OpenEMR\Common\Session\SessionWrapperFactory;
-    use OpenEMR\Core\OEGlobalsBag;
+    use DCL\Common\Session\PortalPatientAccessGuard;
+    use DCL\Common\Session\SessionWrapperFactory;
+    use DCL\Core\OEGlobalsBag;
     use Symfony\Component\HttpFoundation\Session\Session;
     use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 

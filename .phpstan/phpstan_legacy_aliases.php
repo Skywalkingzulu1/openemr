@@ -13,13 +13,13 @@
  * file at the original path. Removing the legacy file (or changing its
  * alias target) requires updating this file in lockstep.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-class_alias(\OpenEMR\Billing\EdiHistory\X12File::class, 'edih_x12_file');
+class_alias(\DCL\Billing\EdiHistory\X12File::class, 'edih_x12_file');

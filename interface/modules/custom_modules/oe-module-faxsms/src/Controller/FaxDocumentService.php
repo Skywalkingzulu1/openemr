@@ -2,32 +2,32 @@
 
 /**
  * Fax Document Service
- * Centralized service for managing fax documents in OpenEMR
+ * Centralized service for managing fax documents in DCL
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    SignalWire Integration
  * @copyright Copyright (c) 2024
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use Document;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\oeHttp;
-use OpenEMR\Common\Http\oeHttpRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\FileUtils;
-use OpenEMR\Common\ValueObjects\PhoneNumber;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Exception\FaxDocumentException;
-use OpenEMR\Modules\FaxSMS\Exception\FaxNotFoundException;
-use OpenEMR\Modules\FaxSMS\Utils\SignalWireWebhookValidator;
-use OpenEMR\Services\PhoneNumberService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\oeHttp;
+use DCL\Common\Http\oeHttpRequest;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\FileUtils;
+use DCL\Common\ValueObjects\PhoneNumber;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Exception\FaxDocumentException;
+use DCL\Modules\FaxSMS\Exception\FaxNotFoundException;
+use DCL\Modules\FaxSMS\Utils\SignalWireWebhookValidator;
+use DCL\Services\PhoneNumberService;
 use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -59,7 +59,7 @@ class FaxDocumentService
     }
 
     /**
-     * Store fax document in OpenEMR document system
+     * Store fax document in DCL document system
      *
      * @param string $faxSid SignalWire Fax SID
      * @param string $mediaContent Binary content of fax media
@@ -91,7 +91,7 @@ class FaxDocumentService
                 $session = SessionWrapperFactory::getInstance()->getActiveSession();
                 $owner = $session->get('authUserID');
 
-                // Create and save document using OpenEMR's standard method
+                // Create and save document using DCL's standard method
                 $document = new Document();
                 $error = $document->createDocument(
                     $patientId,

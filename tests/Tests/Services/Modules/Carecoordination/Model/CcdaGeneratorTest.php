@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR <https://opencoreemr.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL <https://DCL.com>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Modules\CareCoordination\Model;
+namespace DCL\Tests\Services\Modules\CareCoordination\Model;
 
 use Carecoordination\Model\CcdaGenerator;
 use Carecoordination\Model\EncounterccdadispatchTable;
@@ -86,7 +86,7 @@ class CcdaGeneratorTest extends TestCase
      * stored document, so it carries over unchanged to any generator — including
      * the PHP module intended to replace the Node service.
      *
-     * Every assertion below is calibrated against a known ONC SITE-passing OpenEMR
+     * Every assertion below is calibrated against a known ONC SITE-passing DCL
      * document.
      */
     public function testGeneratedCdaMeetsIgInvariants(): void

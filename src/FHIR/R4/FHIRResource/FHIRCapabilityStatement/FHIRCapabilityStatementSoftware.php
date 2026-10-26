@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,19 +71,19 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement implements \Js
 {
     /**
      * Name the software is known by.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The version identifier for the software covered by this statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * Date this version of the software was released.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $releaseDate = null;
 
@@ -94,7 +94,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement implements \Js
 
     /**
      * Name the software is known by.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -103,7 +103,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement implements \Js
 
     /**
      * Name the software is known by.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -114,7 +114,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement implements \Js
 
     /**
      * The version identifier for the software covered by this statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -123,7 +123,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement implements \Js
 
     /**
      * The version identifier for the software covered by this statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -134,7 +134,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement implements \Js
 
     /**
      * Date this version of the software was released.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getReleaseDate()
     {
@@ -143,7 +143,7 @@ class FHIRCapabilityStatementSoftware extends FHIRBackboneElement implements \Js
 
     /**
      * Date this version of the software was released.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $releaseDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $releaseDate
      * @return $this
      */
     public function setReleaseDate($releaseDate)

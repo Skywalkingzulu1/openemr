@@ -18,32 +18,32 @@
  * coverage for those two routes once the dispatcher happy-path is
  * locked here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Tests\Fixtures\PortalPatientFixtureManager;
-use OpenEMR\Tests\Support\OAuth2\AuthCodeFlow;
-use OpenEMR\Tests\Support\OAuth2\DcrClient;
-use OpenEMR\Tests\Support\OAuth2\PasswordGrant;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Core\OEGlobalsBag;
+use DCL\Tests\Fixtures\PortalPatientFixtureManager;
+use DCL\Tests\Support\OAuth2\AuthCodeFlow;
+use DCL\Tests\Support\OAuth2\DcrClient;
+use DCL\Tests\Support\OAuth2\PasswordGrant;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class PortalApiSmokeTest extends TestCase
 {
-    // Portal routes use OpenEMR's legacy standard-api scope naming
+    // Portal routes use DCL's legacy standard-api scope naming
     // (lowercase resource, .read permission as the server-registered
     // form that expands to read+search bits). Dispatcher derives the
     // check key from the trailing path segment, e.g. GET /portal/patient
@@ -94,10 +94,10 @@ class PortalApiSmokeTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {
@@ -423,7 +423,7 @@ class PortalApiSmokeTest extends TestCase
                 . 'not a 5xx. Status: ' . $resp['status'] . ', Body: ' . $resp['body']
         );
         if ($resp['status'] === 200) {
-            // OpenEMR often returns 200 + empty payload for missing resources
+            // DCL often returns 200 + empty payload for missing resources
             // on legacy endpoints; locking that against future regressions
             // that would 500 on invalid UUIDs.
             $body = json_decode($resp['body'], true);
@@ -500,7 +500,7 @@ class PortalApiSmokeTest extends TestCase
             $fixture,
         );
         try {
-            // OpenEMR's auth-code flow surfaces the OIDC `nonce`
+            // DCL's auth-code flow surfaces the OIDC `nonce`
             // request parameter in the issued token's `scope` claim;
             // password grant does not. nonce is not a resource scope
             // and does not affect access control, so filter it out as

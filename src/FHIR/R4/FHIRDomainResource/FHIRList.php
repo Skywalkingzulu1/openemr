@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A list is a curated collection of resources.
@@ -72,79 +72,79 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for the List assigned for business purposes outside the context of FHIR.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Indicates the current state of this list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRListStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRListStatus
      */
     public $status = null;
 
     /**
      * How this list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRListMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRListMode
      */
     public $mode = null;
 
     /**
      * A label for the list assigned by the author.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * This code defines the purpose of the list - why it was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The common subject (or patient) of the resources that are in the list if there is one.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The encounter that is the context in which this list was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
      * The date that the list was prepared.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The entity responsible for deciding what the contents of the list were. Where the list was created by a human, this is the same as the author of the list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $source = null;
 
     /**
      * What order applies to the items in the list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $orderedBy = null;
 
     /**
      * Comments that apply to the overall list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Entries in this list.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRList\FHIRListEntry[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRList\FHIRListEntry[]
      */
     public $entry = [];
 
     /**
      * If the list is empty, why the list is empty.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $emptyReason = null;
 
@@ -155,7 +155,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the List assigned for business purposes outside the context of FHIR.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -164,7 +164,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier for the List assigned for business purposes outside the context of FHIR.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -175,7 +175,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of this list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRListStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRListStatus
      */
     public function getStatus()
     {
@@ -184,7 +184,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of this list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRListStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRListStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -195,7 +195,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * How this list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRListMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRListMode
      */
     public function getMode()
     {
@@ -204,7 +204,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * How this list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRListMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRListMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -215,7 +215,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A label for the list assigned by the author.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -224,7 +224,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A label for the list assigned by the author.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -235,7 +235,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This code defines the purpose of the list - why it was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -244,7 +244,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This code defines the purpose of the list - why it was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -255,7 +255,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The common subject (or patient) of the resources that are in the list if there is one.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -264,7 +264,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The common subject (or patient) of the resources that are in the list if there is one.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -275,7 +275,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter that is the context in which this list was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -284,7 +284,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The encounter that is the context in which this list was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -295,7 +295,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date that the list was prepared.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -304,7 +304,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date that the list was prepared.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -315,7 +315,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity responsible for deciding what the contents of the list were. Where the list was created by a human, this is the same as the author of the list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSource()
     {
@@ -324,7 +324,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The entity responsible for deciding what the contents of the list were. Where the list was created by a human, this is the same as the author of the list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function setSource($source)
@@ -335,7 +335,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * What order applies to the items in the list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOrderedBy()
     {
@@ -344,7 +344,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * What order applies to the items in the list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $orderedBy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $orderedBy
      * @return $this
      */
     public function setOrderedBy($orderedBy)
@@ -355,7 +355,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments that apply to the overall list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -364,7 +364,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments that apply to the overall list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -375,7 +375,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Entries in this list.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRList\FHIRListEntry[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRList\FHIRListEntry[]
      */
     public function getEntry()
     {
@@ -384,7 +384,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Entries in this list.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRList\FHIRListEntry $entry
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRList\FHIRListEntry $entry
      * @return $this
      */
     public function addEntry($entry)
@@ -395,7 +395,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the list is empty, why the list is empty.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getEmptyReason()
     {
@@ -404,7 +404,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If the list is empty, why the list is empty.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $emptyReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $emptyReason
      * @return $this
      */
     public function setEmptyReason($emptyReason)

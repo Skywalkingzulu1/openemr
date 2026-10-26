@@ -3,22 +3,22 @@
 /**
  * Contact Address Service
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\ORDataObject\Address;
-use OpenEMR\Common\ORDataObject\Contact;
-use OpenEMR\Common\ORDataObject\ContactAddress;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\ORDataObject\Address;
+use DCL\Common\ORDataObject\Contact;
+use DCL\Common\ORDataObject\ContactAddress;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Services\BaseService;
+use DCL\Services\Utils\DateFormatterUtils;
+use DCL\Validators\ProcessingResult;
 
 class ContactAddressService extends BaseService
 {
@@ -242,7 +242,7 @@ class ContactAddressService extends BaseService
         return $addresses;
     }
 
-    private readonly \OpenEMR\Services\ListService $listService;
+    private readonly \DCL\Services\ListService $listService;
 
     /**
      * Default constructor.

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -71,19 +71,19 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * The result of this assertion.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportActionResult
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTestReportActionResult
      */
     public $result = null;
 
     /**
      * An explanatory message associated with the result.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $message = null;
 
     /**
      * A link to further details on the result.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $detail = null;
 
@@ -94,7 +94,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The result of this assertion.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportActionResult
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTestReportActionResult
      */
     public function getResult()
     {
@@ -103,7 +103,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The result of this assertion.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTestReportActionResult $result
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTestReportActionResult $result
      * @return $this
      */
     public function setResult($result)
@@ -114,7 +114,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * An explanatory message associated with the result.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getMessage()
     {
@@ -123,7 +123,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * An explanatory message associated with the result.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $message
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $message
      * @return $this
      */
     public function setMessage($message)
@@ -134,7 +134,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A link to further details on the result.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDetail()
     {
@@ -143,7 +143,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * A link to further details on the result.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $detail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $detail
      * @return $this
      */
     public function setDetail($detail)

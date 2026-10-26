@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRElementDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRElementDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
@@ -72,31 +72,31 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * URL of Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $code = null;
 
     /**
      * Identifies a profile structure or implementation Guide that applies to the datatype this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the type SHALL conform to at least one profile defined in the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $profile = [];
 
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $targetProfile = [];
 
     /**
      * If the type is a reference to another resource, how the resource is or can be aggregated - is it a contained resource, or a reference, and if the context is a bundle, is it included in the bundle.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAggregationMode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAggregationMode[]
      */
     public $aggregation = [];
 
     /**
      * Whether this reference needs to be version specific or version independent, or whether either can be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReferenceVersionRules
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReferenceVersionRules
      */
     public $versioning = null;
 
@@ -107,7 +107,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * URL of Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getCode()
     {
@@ -116,7 +116,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * URL of Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $code
      * @return $this
      */
     public function setCode($code)
@@ -127,7 +127,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Identifies a profile structure or implementation Guide that applies to the datatype this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the type SHALL conform to at least one profile defined in the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getProfile()
     {
@@ -136,7 +136,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Identifies a profile structure or implementation Guide that applies to the datatype this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the type SHALL conform to at least one profile defined in the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -147,7 +147,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getTargetProfile()
     {
@@ -156,7 +156,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $targetProfile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $targetProfile
      * @return $this
      */
     public function addTargetProfile($targetProfile)
@@ -167,7 +167,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * If the type is a reference to another resource, how the resource is or can be aggregated - is it a contained resource, or a reference, and if the context is a bundle, is it included in the bundle.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAggregationMode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAggregationMode[]
      */
     public function getAggregation()
     {
@@ -176,7 +176,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * If the type is a reference to another resource, how the resource is or can be aggregated - is it a contained resource, or a reference, and if the context is a bundle, is it included in the bundle.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAggregationMode $aggregation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAggregationMode $aggregation
      * @return $this
      */
     public function addAggregation($aggregation)
@@ -187,7 +187,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Whether this reference needs to be version specific or version independent, or whether either can be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReferenceVersionRules
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReferenceVersionRules
      */
     public function getVersioning()
     {
@@ -196,7 +196,7 @@ class FHIRElementDefinitionType extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Whether this reference needs to be version specific or version independent, or whether either can be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReferenceVersionRules $versioning
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReferenceVersionRules $versioning
      * @return $this
      */
     public function setVersioning($versioning)

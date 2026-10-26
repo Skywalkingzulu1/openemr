@@ -3,27 +3,27 @@
 /**
  * SignalWire Fax Client
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    SignalWire Integration
  * @copyright Copyright (c) 2024
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use Document;
 use Exception;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Contracts\FaxChannelInterface;
-use OpenEMR\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
-use OpenEMR\Modules\FaxSMS\RestClient\SignalWire\Rest\Client;
-use OpenEMR\Modules\FaxSMS\RestClient\SignalWire\Rest\FaxInstance;
-use OpenEMR\Modules\FaxSMS\Service\FaxMailer;
-use OpenEMR\Modules\FaxSMS\Service\FaxUploadStaging;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Contracts\FaxChannelInterface;
+use DCL\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
+use DCL\Modules\FaxSMS\RestClient\SignalWire\Rest\Client;
+use DCL\Modules\FaxSMS\RestClient\SignalWire\Rest\FaxInstance;
+use DCL\Modules\FaxSMS\Service\FaxMailer;
+use DCL\Modules\FaxSMS\Service\FaxUploadStaging;
 
 class SignalWireClient extends AppDispatch implements FaxChannelInterface, FaxDocumentDisposalInterface
 {
@@ -547,7 +547,7 @@ class SignalWireClient extends AppDispatch implements FaxChannelInterface, FaxDo
                 return json_encode(['error' => xlt('Fax media not available from provider')]);
             }
 
-            $faxService = new \OpenEMR\Modules\FaxSMS\Controller\FaxDocumentService();
+            $faxService = new \DCL\Modules\FaxSMS\Controller\FaxDocumentService();
             $result = $faxService->downloadAndStoreFromUrl($sid, $mediaUrl, $from, $this->projectId, $this->apiToken, $patientId);
 
             if (empty($result['success'])) {

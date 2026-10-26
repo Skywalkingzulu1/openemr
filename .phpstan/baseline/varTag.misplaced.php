@@ -24,7 +24,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
     'message' => '#^PHPDoc tag @var above a method has no effect\\.$#',
     'count' => 1,
-    'path' => __DIR__ . '/../../src/FHIR/DomainModels/OpenEMRFhirQuestionnaireResponse.php',
+    'path' => __DIR__ . '/../../src/FHIR/DomainModels/DCLFhirQuestionnaireResponse.php',
 ];
 $ignoreErrors[] = [
     'message' => '#^PHPDoc tag @var above a method has no effect\\.$#',

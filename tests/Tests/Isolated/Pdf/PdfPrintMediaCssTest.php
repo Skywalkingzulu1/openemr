@@ -11,20 +11,20 @@
  * blocks in any stylesheet it is handed. These tests lock in the mPDF
  * behavior, the Config_Mpdf configuration, and the rationale.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Pdf;
+namespace DCL\Tests\Isolated\Pdf;
 
 use Mpdf\Mpdf;
-use OpenEMR\Pdf\Config_Mpdf;
+use DCL\Pdf\Config_Mpdf;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 

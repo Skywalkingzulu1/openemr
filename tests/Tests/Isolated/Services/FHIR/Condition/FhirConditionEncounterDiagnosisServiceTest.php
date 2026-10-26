@@ -2,24 +2,24 @@
 
 /*
  * FhirConditionEncounterDiagnosisServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR\Condition;
+namespace DCL\Tests\Isolated\Services\FHIR\Condition;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\UtilsService;
 use PHPUnit\Framework\TestCase;
 
 class FhirConditionEncounterDiagnosisServiceTest extends TestCase
 {
-    private function getDefaultOpenEMRRecord(): array
+    private function getDefaultDCLRecord(): array
     {
         return [
             'id' => '12345'
@@ -50,32 +50,32 @@ class FhirConditionEncounterDiagnosisServiceTest extends TestCase
             ,'occurrence' => 0
         ];
     }
-    public function testParseOpenEMRRecord(): void
+    public function testParseDCLRecord(): void
     {
-        $record = $this->getDefaultOpenEMRRecord();
+        $record = $this->getDefaultDCLRecord();
         $diagnosticService = new FhirConditionEncounterDiagnosisService();
-        $fhirResource = $diagnosticService->parseOpenEMRRecord($record);
+        $fhirResource = $diagnosticService->parseDCLRecord($record);
         $this->assertConditionHasBaseRequirements($record, $fhirResource, 'active');
     }
 
     public function testParseWithResolvedRecord(): void
     {
-        $record = $this->getDefaultOpenEMRRecord();
+        $record = $this->getDefaultDCLRecord();
         $record['resolved'] = 1;
         $diagnosticService = new FhirConditionEncounterDiagnosisService();
-        $fhirResource = $diagnosticService->parseOpenEMRRecord($record);
+        $fhirResource = $diagnosticService->parseDCLRecord($record);
         $this->assertConditionHasBaseRequirements($record, $fhirResource, 'resolved');
         // abatement[x] -> abatementDateTime
         // when the condition is resolved, abatementDateTime should be set
         $this->assertNotEmpty($fhirResource->getAbatementDateTime(), "Expected abatementDateTime to be set in FHIRCondition resource.");
-        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['enddate']), $fhirResource->getAbatementDateTime(), "Expected abatementDateTime to match OpenEMR endate.");
+        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['enddate']), $fhirResource->getAbatementDateTime(), "Expected abatementDateTime to match DCL endate.");
     }
 
     protected function assertConditionHasBaseRequirements($record, $fhirResource, string $clinicalStatus): void
     {
-        $this->assertInstanceOf(FHIRCondition::class, $fhirResource, "Expected FHIRCondition instance from parseOpenEMRRecord.");
+        $this->assertInstanceOf(FHIRCondition::class, $fhirResource, "Expected FHIRCondition instance from parseDCLRecord.");
 
-        $this->assertEquals('condition-uuid-12345', $fhirResource->getId(), "Expected FHIRCondition ID to match OpenEMR condition UUID.");
+        $this->assertEquals('condition-uuid-12345', $fhirResource->getId(), "Expected FHIRCondition ID to match DCL condition UUID.");
         $profileValues = $fhirResource->getMeta()->getProfile();
 
         // US Core 6.1 Profile required items
@@ -95,25 +95,25 @@ class FhirConditionEncounterDiagnosisServiceTest extends TestCase
         // code
         $this->assertNotEmpty($fhirResource->getCode(), "Expected code to be set in FHIRCondition resource.");
         $this->assertNotEmpty($fhirResource->getCode()->getCoding(), "Expected code.coding to be set in FHIRCondition resource.");
-        $this->assertEquals('A01.1', $fhirResource->getCode()->getCoding()[0]->getCode(), "Expected code to match OpenEMR diagnosis.");
+        $this->assertEquals('A01.1', $fhirResource->getCode()->getCoding()[0]->getCode(), "Expected code to match DCL diagnosis.");
         $this->assertEquals(FhirCodeSystemConstants::HL7_ICD10, $fhirResource->getCode()->getCoding()[0]->getSystem(), "Expected code system to be 'ICD10'.");
 
         // subject
         $this->assertNotEmpty($fhirResource->getSubject(), "Expected subject to be set in FHIRCondition resource.");
-        $this->assertEquals('Patient/patient-uuid-12345', $fhirResource->getSubject()->getReference(), "Expected subject reference to match OpenEMR patient UUID.");
+        $this->assertEquals('Patient/patient-uuid-12345', $fhirResource->getSubject()->getReference(), "Expected subject reference to match DCL patient UUID.");
 
         // encounter
         $this->assertNotEmpty($fhirResource->getEncounter(), "Expected encounter to be set in FHIRCondition resource.");
-        $this->assertEquals('Encounter/encounter-uuid-12345', $fhirResource->getEncounter()->getReference(), "Expected encounter reference to match OpenEMR encounter UUID.");
+        $this->assertEquals('Encounter/encounter-uuid-12345', $fhirResource->getEncounter()->getReference(), "Expected encounter reference to match DCL encounter UUID.");
 
         // onset[x] -> onsetDateTime
         $this->assertNotEmpty($fhirResource->getOnsetDateTime(), "Expected onsetDateTime to be set in FHIRCondition resource.");
-        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['begdate']), $fhirResource->getOnsetDateTime(), "Expected onsetDateTime to match OpenEMR begdate.");
+        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['begdate']), $fhirResource->getOnsetDateTime(), "Expected onsetDateTime to match DCL begdate.");
 
 
         //  Date record was first recorded
         $this->assertNotEmpty($fhirResource->getRecordedDate(), "Expected recordedDate to be set in FHIRCondition resource.");
-        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['date']), $fhirResource->getRecordedDate(), "Expected recordedDate to match OpenEMR date.");
+        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['date']), $fhirResource->getRecordedDate(), "Expected recordedDate to match DCL date.");
 
         // US Core 7.0 Profile required items
         $this->assertContains("http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0", $profileValues, "Expected FHIRCondition to have US Core 7.0.0 profile.");
@@ -123,7 +123,7 @@ class FhirConditionEncounterDiagnosisServiceTest extends TestCase
         $this->assertCount(1, $fhirResource->getExtension(), "Expected assertedDate extension to be present.");
         $assertedDateExtension = $fhirResource->getExtension()[0];
         $this->assertEquals('http://hl7.org/fhir/StructureDefinition/condition-assertedDate', $assertedDateExtension->getUrl(), "Expected assertedDate extension URL to match FHIR definition.");
-        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['date']), $assertedDateExtension->getValueDateTime(), "Expected assertedDate to match OpenEMR date.");
+        $this->assertEquals(UtilsService::getLocalDateAsUTC($record['date']), $assertedDateExtension->getValueDateTime(), "Expected assertedDate to match DCL date.");
 
         // US Core 8.0 Profile required items
         $this->assertContains("http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|8.0.0", $profileValues, "Expected FHIRCondition to have US Core 8.0.0 profile.");
@@ -131,6 +131,6 @@ class FhirConditionEncounterDiagnosisServiceTest extends TestCase
         // note US Core 8.0 profile took out assertedDate as a required field
         //  Who recorded the condition
         $this->assertNotEmpty($fhirResource->getRecorder(), "Expected recorder to be set in FHIRCondition resource.");
-        $this->assertEquals('Practitioner/provider-uuid-12345', $fhirResource->getRecorder()->getReference(), "Expected recorder reference to match OpenEMR provider UUID.");
+        $this->assertEquals('Practitioner/provider-uuid-12345', $fhirResource->getRecorder()->getReference(), "Expected recorder reference to match DCL provider UUID.");
     }
 }

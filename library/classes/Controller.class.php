@@ -3,24 +3,24 @@
 /**
  * Controller Class.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR contributors
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @author    Stephen Waite <stephen.waite@open-emr.org>
- * @copyright Copyright (c) OpenEMR contributors
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL contributors
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @author    Stephen Waite <stephen.waite@dcl.org>
+ * @copyright Copyright (c) DCL contributors
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@dcl.org>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Http\RequestTerminator;
-use OpenEMR\Core\ControllerInterface;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Storage\CacheDirectory;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Http\RequestTerminator;
+use DCL\Core\ControllerInterface;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Storage\CacheDirectory;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -87,7 +87,7 @@ class Controller extends Smarty implements ControllerInterface
          $this->template_mod = "general";
          $this->_current_action = "";
          $this->_state = true;
-         $this->setCompileDir((new CacheDirectory())->for('openemr-smarty'));
+         $this->setCompileDir((new CacheDirectory())->for('DCL-smarty'));
          $this->setCompileCheck(true);
          $this->setPluginsDir([__DIR__ . "/../smarty/plugins", OEGlobalsBag::getInstance()->getKernel()->getVendorDir() . "/smarty/smarty/libs/plugins"]);
          // Register {$x|text} explicitly so Smarty does not fall back to the

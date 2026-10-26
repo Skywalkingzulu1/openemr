@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCondition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCondition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCondition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.
@@ -71,19 +71,19 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 {
     /**
      * A simple summary of the stage such as "Stage 3". The determination of the stage is disease-specific.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $summary = null;
 
     /**
      * Reference to a formal record of the evidence on which the staging assessment is based.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $assessment = [];
 
     /**
      * The kind of staging, such as pathological or clinical staging.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
@@ -94,7 +94,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A simple summary of the stage such as "Stage 3". The determination of the stage is disease-specific.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSummary()
     {
@@ -103,7 +103,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * A simple summary of the stage such as "Stage 3". The determination of the stage is disease-specific.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $summary
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $summary
      * @return $this
      */
     public function setSummary($summary)
@@ -114,7 +114,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reference to a formal record of the evidence on which the staging assessment is based.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAssessment()
     {
@@ -123,7 +123,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * Reference to a formal record of the evidence on which the staging assessment is based.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $assessment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $assessment
      * @return $this
      */
     public function addAssessment($assessment)
@@ -134,7 +134,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The kind of staging, such as pathological or clinical staging.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -143,7 +143,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializabl
 
     /**
      * The kind of staging, such as pathological or clinical staging.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)

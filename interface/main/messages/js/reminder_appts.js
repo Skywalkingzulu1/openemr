@@ -4,10 +4,10 @@
  * @package MedEx
  * @link    http://www.MedExbank.com
  * @author  MedEx <support@MedExBank.com>
- * @author  Michael A. Smith <michael@opencoreemr.com>
+ * @author  Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2017 MedEx <support@MedExBank.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 var labels = [];
@@ -24,7 +24,7 @@ var translations = {
 
 /**
  * Function to find a patient in the DB
- * This pop-up is the standard openEMR file find_patient_popup.php
+ * This pop-up is the standard DCL file find_patient_popup.php
  * It returns pid, lname, fname, dob to function "setpatient" below
  * which then populates the form with the select patient data
  */
@@ -90,7 +90,7 @@ function setpatient(pid, lname = '', fname = '', dob = '') {
             var today = moment().format('YYYY-MM-DD');
             $("#DOLV").val(today);
         }
-        //there is an openemr global for age display under X years old (eg. under "2", so == 17 months old)
+        //there is an DCL global for age display under X years old (eg. under "2", so == 17 months old)
         //not sure where it is though... or if we can use it here.
         $("#new_age").html(obj.age + ' years old');
         $("#new_reason").val(obj.PLAN);

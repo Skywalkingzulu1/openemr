@@ -8,20 +8,20 @@
  * one thing: that a test's chapter lands where that test actually appears in
  * the recording.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Ci;
+namespace DCL\Tests\Isolated\Ci;
 
 use JsonException;
-use OpenEMR\PHPUnit\Timeline\TestOutcome;
-use OpenEMR\PHPUnit\Timeline\VideoTimeline;
+use DCL\PHPUnit\Timeline\TestOutcome;
+use DCL\PHPUnit\Timeline\VideoTimeline;
 use PHPUnit\Framework\TestCase;
 
 class VideoTimelineIsolatedTest extends TestCase
@@ -32,15 +32,15 @@ class VideoTimelineIsolatedTest extends TestCase
     {
         $timeline = VideoTimeline::fromJsonLines(
             [
-                $this->event(10.5, 'started', 'AaLoginTest::testGoToOpenemrLoginPage'),
-                $this->event(22.25, 'finished', 'AaLoginTest::testGoToOpenemrLoginPage'),
+                $this->event(10.5, 'started', 'AaLoginTest::testGoToDCLLoginPage'),
+                $this->event(22.25, 'finished', 'AaLoginTest::testGoToDCLLoginPage'),
             ],
             self::RECORDING_START,
         );
 
         $chapters = $timeline->chapters();
         $this->assertCount(1, $chapters);
-        $this->assertSame('AaLoginTest::testGoToOpenemrLoginPage', $chapters[0]->label);
+        $this->assertSame('AaLoginTest::testGoToDCLLoginPage', $chapters[0]->label);
         $this->assertSame(10.5, $chapters[0]->startOffset);
         $this->assertSame(22.25, $chapters[0]->endOffset);
         $this->assertSame(TestOutcome::Passed, $chapters[0]->outcome);
@@ -135,8 +135,8 @@ class VideoTimelineIsolatedTest extends TestCase
     {
         $timeline = VideoTimeline::fromJsonLines(
             [
-                $this->event(2.0, 'started', 'AaLoginTest::testGoToOpenemrLoginPage'),
-                $this->event(4.5, 'finished', 'AaLoginTest::testGoToOpenemrLoginPage'),
+                $this->event(2.0, 'started', 'AaLoginTest::testGoToDCLLoginPage'),
+                $this->event(4.5, 'finished', 'AaLoginTest::testGoToDCLLoginPage'),
             ],
             self::RECORDING_START,
         );
@@ -148,7 +148,7 @@ class VideoTimelineIsolatedTest extends TestCase
             'TIMEBASE=1/1000',
             'START=2000',
             'END=4500',
-            'title=PASS AaLoginTest::testGoToOpenemrLoginPage',
+            'title=PASS AaLoginTest::testGoToDCLLoginPage',
             '',
         ]);
         $this->assertSame($expected, $timeline->toFfMetadata());
@@ -158,14 +158,14 @@ class VideoTimelineIsolatedTest extends TestCase
     {
         $timeline = VideoTimeline::fromJsonLines(
             [
-                $this->event(65.0, 'started', 'AaLoginTest::testGoToOpenemrLoginPage'),
-                $this->event(70.0, 'finished', 'AaLoginTest::testGoToOpenemrLoginPage'),
+                $this->event(65.0, 'started', 'AaLoginTest::testGoToDCLLoginPage'),
+                $this->event(70.0, 'finished', 'AaLoginTest::testGoToDCLLoginPage'),
             ],
             self::RECORDING_START,
         );
 
         $this->assertSame(
-            '00:01:05.000  PASS AaLoginTest::testGoToOpenemrLoginPage' . PHP_EOL,
+            '00:01:05.000  PASS AaLoginTest::testGoToDCLLoginPage' . PHP_EOL,
             $timeline->toIndex(),
         );
     }
@@ -176,7 +176,7 @@ class VideoTimelineIsolatedTest extends TestCase
             [
                 '',
                 '   ',
-                $this->event(1.0, 'invented-by-a-later-phpunit', 'AaLoginTest::testGoToOpenemrLoginPage'),
+                $this->event(1.0, 'invented-by-a-later-phpunit', 'AaLoginTest::testGoToDCLLoginPage'),
             ],
             self::RECORDING_START,
         );
@@ -200,8 +200,8 @@ class VideoTimelineIsolatedTest extends TestCase
             [
                 'time' => self::RECORDING_START + $offset,
                 'event' => $event,
-                'id' => 'OpenEMR\\Tests\\E2e\\' . $test,
-                'class' => 'OpenEMR\\Tests\\E2e\\' . explode('::', $test)[0],
+                'id' => 'DCL\\Tests\\E2e\\' . $test,
+                'class' => 'DCL\\Tests\\E2e\\' . explode('::', $test)[0],
                 'method' => explode('::', $test)[1],
             ],
             JSON_THROW_ON_ERROR,

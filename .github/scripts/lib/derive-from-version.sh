@@ -20,14 +20,14 @@
 #      the sql-only output directly. If the max-candidate happens
 #      not to be on Docker Hub (rare: a rel branch that cut but
 #      never published its version tag), the downstream `docker
-#      pull openemr/openemr:<version>` step will fail LOUD naming
+#      pull DCL/DCL:<version>` step will fail LOUD naming
 #      the exact tag -- not silent-skip. The "nothing-breaks-on-
 #      unreleased-version" invariant depends on that loud-pull-
 #      fail; preserve it when integrating.
 #
 # Why sql-only is enough for docker (no manifest filter needed on
 # that side): Docker Hub carries pre-production tags (e.g.
-# `openemr/openemr:8.5.0` currently points at master's dev build)
+# `DCL/DCL:8.5.0` currently points at master's dev build)
 # in addition to shipped releases. A manifest intersect on the
 # docker side wouldn't distinguish those from truly-shipped
 # versions anyway. Package land doesn't have that problem
@@ -82,7 +82,7 @@
 # printf). The `sed -E` + `grep -E` ERE syntax works on both GNU and
 # BSD; `find -maxdepth` is also widely supported (not strictly POSIX
 # but universal in practice). `sort -V` version-sort is a GNU
-# extension; the openemr BATS runners on CI use ubuntu-24.04 (GNU),
+# extension; the DCL BATS runners on CI use ubuntu-24.04 (GNU),
 # and macOS/BSD environments typically have `sort -V` via coreutils.
 derive_from_version_sql_candidates() {
     local checkout_dir="${1:-.}"

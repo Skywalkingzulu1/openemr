@@ -3,28 +3,28 @@
 /**
  * InsuranceRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Matthew Vita <matthewvita48@gmail.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2018 Matthew Vita <matthewvita48@gmail.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\InsuranceService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\InsuranceService;
+use DCL\Services\PatientService;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 use Psr\Http\Message\ResponseInterface;
 
 #[OA\Schema(
@@ -60,7 +60,7 @@ use Psr\Http\Message\ResponseInterface;
         new OA\Property(property: 'subscriber_sex', description: 'The subscriber sex of insurance.', type: 'string'),
         new OA\Property(property: 'accept_assignment', description: 'The accept_assignment of insurance.', type: 'string'),
         new OA\Property(property: 'policy_type', description: 'The 837p list of policy types for an insurance.  See src/Billing/InsurancePolicyType.php for the list of valid values.', type: 'string'),
-        new OA\Property(property: 'type', description: "The type or category of OpenEMR insurance policy, 'primary', 'secondary', or 'tertiary'. If this field is missing it will default to 'primary'.", type: 'string'),
+        new OA\Property(property: 'type', description: "The type or category of DCL insurance policy, 'primary', 'secondary', or 'tertiary'. If this field is missing it will default to 'primary'.", type: 'string'),
     ],
     example: [
         'provider' => '33',
@@ -137,7 +137,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll(HttpRestRequest $request, array $searchParams): ResponseInterface
     {
@@ -187,7 +187,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($insuranceUuid, $puuid): array
     {
@@ -238,7 +238,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put($puuid, $insuranceUuid, $data): array
     {
@@ -291,7 +291,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post($puuid, $data): array
     {
@@ -342,7 +342,7 @@ class InsuranceRestController
             new OA\Parameter(
                 name: 'type',
                 in: 'query',
-                description: "The type or category of OpenEMR insurance policy, 'primary', 'secondary', or 'tertiary'.",
+                description: "The type or category of DCL insurance policy, 'primary', 'secondary', or 'tertiary'.",
                 required: true,
                 schema: new OA\Schema(type: 'string')
             ),
@@ -359,7 +359,7 @@ class InsuranceRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function operationSwapInsurance(string $puuid, string $type, string $insuranceUuid): array
     {

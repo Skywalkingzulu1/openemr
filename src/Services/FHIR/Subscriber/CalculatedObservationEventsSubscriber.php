@@ -5,19 +5,19 @@
  * resource that is being saved that has calculated fields (IE records that are derivative data of the primary source)
  * This
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author   Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Subscriber;
+namespace DCL\Services\FHIR\Subscriber;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Events\Services\ServiceSaveEvent;
-use OpenEMR\Services\VitalsCalculatedService;
-use OpenEMR\Services\VitalsService;
+use DCL\BC\ServiceContainer;
+use DCL\Events\Services\ServiceSaveEvent;
+use DCL\Services\VitalsCalculatedService;
+use DCL\Services\VitalsService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class CalculatedObservationEventsSubscriber implements EventSubscriberInterface
@@ -30,7 +30,7 @@ class CalculatedObservationEventsSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Receives all of the save events from the OpenEMR services (that support the event) and populates any mapping uuids
+     * Receives all of the save events from the DCL services (that support the event) and populates any mapping uuids
      * that are needed.
      * @param ServiceSaveEvent $event
      */

@@ -23,7 +23,7 @@ on:
 
 jobs:
   build:
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr' && github.ref == 'refs/heads/master'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
     # Checkout the repo so build-push-action's context is a local path. The
     # earlier `context: "{{defaultContext}}:docker/flex"` form let buildkit
     # fetch the subdir over git -- but it triggers a recurse-submodules
-    # clone, and openemr's .gitmodules points at private/missing repos
+    # clone, and DCL's .gitmodules points at private/missing repos
     # (inferno-files in particular returns 403). A local checkout dodges
     # the submodule fetch entirely.
     - uses: actions/checkout@v7
@@ -66,11 +66,11 @@ jobs:
         PHP_DEFAULT: ${{ inputs.php_default }}
         IS_DEFAULT_FLEX: ${{ inputs.is_default_flex }}
       run: |
-        TAGS="openemr/openemr:flex-${ALPINE_VERSION}-php-${PHP_VERSION}"
+        TAGS="DCL/DCL:flex-${ALPINE_VERSION}-php-${PHP_VERSION}"
         if [ "$PHP_VERSION" == "$PHP_DEFAULT" ]; then
-          TAGS="$TAGS,openemr/openemr:flex-${ALPINE_VERSION}"
+          TAGS="$TAGS,DCL/DCL:flex-${ALPINE_VERSION}"
           if [ "$IS_DEFAULT_FLEX" == "true" ]; then
-            TAGS="$TAGS,openemr/openemr:flex"
+            TAGS="$TAGS,DCL/DCL:flex"
           fi
         fi
         echo "tags=$TAGS" >> "$GITHUB_OUTPUT"

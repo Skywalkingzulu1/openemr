@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\RCVoice\VoiceFunctionsTrait;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\RCVoice\VoiceFunctionsTrait;
 
 /**
  * Server-side credential provider for the in-browser RingCentral softphone.

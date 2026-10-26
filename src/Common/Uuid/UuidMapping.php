@@ -7,20 +7,20 @@
  *     1. uuid for fhir that can not be supported via the standard mechanism (the standard mechanism is when there
  *        is a uuid representing the data within the sql row).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Uuid;
+namespace DCL\Common\Uuid;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\FHIR\Observation\FhirObservationHistorySdohService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationPatientService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationSocialHistoryService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationVitalsService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\FHIR\Observation\FhirObservationHistorySdohService;
+use DCL\Services\FHIR\Observation\FhirObservationPatientService;
+use DCL\Services\FHIR\Observation\FhirObservationSocialHistoryService;
+use DCL\Services\FHIR\Observation\FhirObservationVitalsService;
 
 class UuidMapping
 {

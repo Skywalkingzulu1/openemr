@@ -3,24 +3,24 @@
 /**
  * FHIR Questionnaire encounter assessment form.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\CoreFormToPortalUtility;
-use OpenEMR\Common\Forms\EncounterFormAccess;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\QuestionnaireResponseService;
-use OpenEMR\Services\QuestionnaireService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\CoreFormToPortalUtility;
+use DCL\Common\Forms\EncounterFormAccess;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\QuestionnaireResponseService;
+use DCL\Services\QuestionnaireService;
 
 // Need access to classes before globals.php so portal session context can be resolved.
 require_once(__DIR__ . '/../../../vendor/autoload.php');
@@ -279,7 +279,7 @@ $formAction .= '&mode=' . urlencode($mode);
 <head>
     <title id="main_title"><?php echo xlt('Questionnaire'); ?></title>
     <?php Header::setupHeader(['select2', 'bootstrap']); ?>
-    <?php require __DIR__ . '/openemr_questionnaire_components.php'; ?>
+    <?php require __DIR__ . '/DCL_questionnaire_components.php'; ?>
     <script>
         const questionnaire = <?php echo $questionnaireForJs ?: 'null'; ?>;
         const questionnaireResponse = <?php echo $responseForJs ?: 'null'; ?>;
@@ -317,7 +317,7 @@ $formAction .= '&mode=' . urlencode($mode);
             if (!questionnaire) {
                 return;
             }
-            questionnaireRuntime = OpenEMRQuestionnaire.mount({
+            questionnaireRuntime = DCLQuestionnaire.mount({
                 questionnaire,
                 questionnaireResponse,
                 container: document.getElementById('formContainer'),

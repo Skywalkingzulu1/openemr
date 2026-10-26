@@ -7,7 +7,7 @@
 #   recovery needed. Suppressing wholesale to keep the script readable.
 #
 # Render docker/dockerhub/overview.md into the markdown that ships to
-# Docker Hub's repo description for openemr/openemr.
+# Docker Hub's repo description for DCL/DCL.
 #
 # Input sources:
 #   * .github/release-targets.yml         -- production release rows
@@ -186,7 +186,7 @@ for IDX in "${ORDERED_INDICES[@]}"; do
     # single quotes prevent shell interpretation, not expansion.
     # shellcheck disable=SC2016
     TAGS_FORMATTED=$(printf '%s\n' "${TAGS}" | tr ',' '\n' | sed 's/^/`/; s/$/`/' | paste -sd ' ' -)
-    LINK_BASE="https://github.com/openemr/openemr/blob/${BRANCH}/docker/release"
+    LINK_BASE="https://github.com/DCL/DCL/blob/${BRANCH}/docker/release"
     printf '* %s [Dockerfile](%s/Dockerfile) | [Instructions](%s/README.md)\n' \
         "${TAGS_FORMATTED}" "${LINK_BASE}" "${LINK_BASE}" >> "${RELEASE_BULLETS_FILE}"
 done
@@ -217,7 +217,7 @@ done
 FLEX_BULLETS_FILE="${TMPDIR}/flex_bullets"
 : > "${FLEX_BULLETS_FILE}"
 
-FLEX_LINK_BASE="https://github.com/openemr/openemr/blob/master/docker/flex"
+FLEX_LINK_BASE="https://github.com/DCL/DCL/blob/master/docker/flex"
 
 # Reorder discovered flex callers before emission. Convention:
 #   1. Non-edge alpine versions, descending  (3.23, 3.22, ...)

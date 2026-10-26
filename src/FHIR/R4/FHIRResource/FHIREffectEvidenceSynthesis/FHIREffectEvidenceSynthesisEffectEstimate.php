@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
+namespace DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
@@ -71,37 +71,37 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 {
     /**
      * Human-readable summary of effect estimate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Examples include relative risk and mean difference.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Used to define variant exposure states such as low-risk state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $variantState = null;
 
     /**
      * The point estimate of the effect estimate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $value = null;
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unitOfMeasure = null;
 
     /**
      * A description of the precision of the estimate for the effect.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
      */
     public $precisionEstimate = [];
 
@@ -112,7 +112,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Human-readable summary of effect estimate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -121,7 +121,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Human-readable summary of effect estimate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -132,7 +132,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Examples include relative risk and mean difference.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -141,7 +141,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Examples include relative risk and mean difference.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -152,7 +152,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Used to define variant exposure states such as low-risk state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getVariantState()
     {
@@ -161,7 +161,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Used to define variant exposure states such as low-risk state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $variantState
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $variantState
      * @return $this
      */
     public function setVariantState($variantState)
@@ -172,7 +172,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * The point estimate of the effect estimate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValue()
     {
@@ -181,7 +181,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * The point estimate of the effect estimate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $value
      * @return $this
      */
     public function setValue($value)
@@ -192,7 +192,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfMeasure()
     {
@@ -201,7 +201,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
      * @return $this
      */
     public function setUnitOfMeasure($unitOfMeasure)
@@ -212,7 +212,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * A description of the precision of the estimate for the effect.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
      */
     public function getPrecisionEstimate()
     {
@@ -221,7 +221,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
 
     /**
      * A description of the precision of the estimate for the effect.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate $precisionEstimate
+     * @param \DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate $precisionEstimate
      * @return $this
      */
     public function addPrecisionEstimate($precisionEstimate)

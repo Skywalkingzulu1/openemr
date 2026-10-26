@@ -21,7 +21,7 @@
  *
  *
  *
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  * @package ediHistory
  */
 
@@ -236,9 +236,9 @@ function edih_835_csv_data($obj835): array
  * Parse csv data from 837 files
  * Note that this can return false provider values for extensive claims
  * since loops are not tracked and 837 claims can have numerous
- * providers, but probably not an issue for OpenEMR
+ * providers, but probably not an issue for DCL
  *
- * @param \OpenEMR\Billing\EdiHistory\X12File $obj837 edih_x12_ file object
+ * @param \DCL\Billing\EdiHistory\X12File $obj837 edih_x12_ file object
  * @return array  data to write csv file and csv clain table rows
  */
 function edih_837_csv_data($obj837): array
@@ -405,7 +405,7 @@ function edih_837_csv_data($obj837): array
 /**
  * extract csv table row data for x12 277 files
  *
- * @param \OpenEMR\Billing\EdiHistory\X12File $obj277 edih_x12_file object of type 276/277
+ * @param \DCL\Billing\EdiHistory\X12File $obj277 edih_x12_file object of type 276/277
  * @return array<array-key, array<'claim'|'file'|'type', mixed>>
  */
 function edih_277_csv_data($obj277): array
@@ -647,7 +647,7 @@ function edih_277_csv_data($obj277): array
                             }
 
                             if (strncmp((string) $seg, 'REF' . $de . '1K' . $de, 7) === 0) {
-                                // hopefully OpenEMR will include the claim number in 276
+                                // hopefully DCL will include the claim number in 276
                                 if ($tp == 'HR') {
                                     $sar = explode($de, (string) $seg);
                                     $ret_ar[$icn]['claim'][$cdx]['ClaimID'] = $sar[2];
@@ -921,7 +921,7 @@ function edih_278_csv_data($obj278)
 
                 //
                 // for 278 tracking
-                // this assumes OpenEMR will include a TRN segment in requests
+                // this assumes DCL will include a TRN segment in requests
                 if (strncmp((string) $seg, 'TRN' . $de, 4) === 0) {
                     $sar = explode($de, (string) $seg);
                     if ($rqst == 'Req') {

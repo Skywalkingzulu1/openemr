@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Run Semgrep on OpenEMR PHP code using Docker
+# Run Semgrep on DCL PHP code using Docker
 #
 # Usage:
 #   ./run-semgrep.sh [options]
@@ -60,7 +60,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Standard excludes for OpenEMR (matches CI workflow)
+# Standard excludes for DCL (matches CI workflow)
 declare -a EXCLUDES=(
     "--exclude=vendor"
     "--exclude=node_modules"
@@ -69,7 +69,7 @@ declare -a EXCLUDES=(
     "--exclude=*.mustache"
 )
 
-# Exclude default p/php rules that we override in semgrep.yaml with OpenEMR sanitizers
+# Exclude default p/php rules that we override in semgrep.yaml with DCL sanitizers
 declare -a EXCLUDE_RULES=(
     "--exclude-rule=php.lang.security.injection.echoed-request.echoed-request"
     "--exclude-rule=php.lang.security.injection.printed-request.printed-request"
@@ -109,7 +109,7 @@ if [[ -n "${CONFIG}" ]]; then
     done
     echo "Config: ${CONFIG}"
 else
-    # Default: registry rulesets + local OpenEMR-specific rules
+    # Default: registry rulesets + local DCL-specific rules
     CONFIG_ARGS+=(
         "--config=p/php"
         "--config=p/security-audit"
@@ -120,7 +120,7 @@ else
     echo "Config: p/php p/security-audit p/javascript p/nodejs semgrep.yaml"
 fi
 
-echo "Running Semgrep on OpenEMR code..."
+echo "Running Semgrep on DCL code..."
 if [[ -n "${SEVERITY}" ]]; then
     echo "Severity filter: ${SEVERITY}"
 fi

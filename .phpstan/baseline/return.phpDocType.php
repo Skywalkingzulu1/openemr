@@ -2,7 +2,7 @@
 
 $ignoreErrors = [];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type Comlink\\\\OpenEMR\\\\Modules\\\\TeleHealthModule\\\\DateTime\\|null is not subtype of native type DateTime\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type Comlink\\\\DCL\\\\Modules\\\\TeleHealthModule\\\\DateTime\\|null is not subtype of native type DateTime\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-comlink-telehealth/src/Models/TeleHealthUser.php',
 ];
@@ -87,37 +87,37 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../src/Services/DocumentTemplates/DocumentTemplateService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Services\\\\Search\\\\ISearchField\\|null is not subtype of native type OpenEMR\\\\Services\\\\Search\\\\FhirSearchParameterDefinition\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Services\\\\Search\\\\ISearchField\\|null is not subtype of native type DCL\\\\Services\\\\Search\\\\FhirSearchParameterDefinition\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/IFhirExportableResourceService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationAdvanceDirectiveService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationEmployerService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationHistorySdohService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationObservationFormService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationPatientService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type OpenEMR\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Services\\\\FHIR\\\\FhirProvenanceService\\|string\\|null is not subtype of native type DCL\\\\FHIR\\\\R4\\\\FHIRDomainResource\\\\FHIRProvenance\\|string\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/FHIR/Observation/FhirObservationQuestionnaireItemService.php',
 ];
@@ -142,7 +142,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../tests/Tests/Certification/HIT1/G10_Certification/BulkPatientExport311APITest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^PHPDoc tag @return with type OpenEMR\\\\Tests\\\\Services\\\\FHIR\\\\the is incompatible with native type string\\|null\\.$#',
+    'message' => '#^PHPDoc tag @return with type DCL\\\\Tests\\\\Services\\\\FHIR\\\\the is incompatible with native type string\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../tests/Tests/Services/FHIR/FhirPatientServiceMappingTest.php',
 ];

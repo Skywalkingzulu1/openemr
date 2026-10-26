@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTask;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTask;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTask;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A task to be performed.
@@ -71,19 +71,19 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * Indicates the number of times the requested action should occur.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $repetitions = null;
 
     /**
      * Over what time-period is fulfillment sought.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $recipient = [];
 
@@ -94,7 +94,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Indicates the number of times the requested action should occur.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getRepetitions()
     {
@@ -103,7 +103,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Indicates the number of times the requested action should occur.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $repetitions
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $repetitions
      * @return $this
      */
     public function setRepetitions($repetitions)
@@ -114,7 +114,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Over what time-period is fulfillment sought.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -123,7 +123,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Over what time-period is fulfillment sought.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -134,7 +134,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRecipient()
     {
@@ -143,7 +143,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $recipient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function addRecipient($recipient)

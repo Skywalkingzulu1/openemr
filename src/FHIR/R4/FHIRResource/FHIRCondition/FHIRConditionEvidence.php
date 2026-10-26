@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCondition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCondition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCondition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.
@@ -71,13 +71,13 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * A manifestation or symptom that led to the recording of this condition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = [];
 
     /**
      * Links to other relevant information, including pathology reports.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $detail = [];
 
@@ -88,7 +88,7 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A manifestation or symptom that led to the recording of this condition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A manifestation or symptom that led to the recording of this condition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -108,7 +108,7 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Links to other relevant information, including pathology reports.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDetail()
     {
@@ -117,7 +117,7 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Links to other relevant information, including pathology reports.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $detail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $detail
      * @return $this
      */
     public function addDetail($detail)

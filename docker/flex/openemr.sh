@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # ============================================================================
-# OpenEMR Flex Container Startup Script
+# DCL Flex Container Startup Script
 # ============================================================================
 # This script runs when the flex container starts and handles all setup tasks
-# needed to get OpenEMR running. Unlike versioned containers, the flex container
-# fetches OpenEMR source code at runtime from a configurable git repository,
+# needed to get DCL running. Unlike versioned containers, the flex container
+# fetches DCL source code at runtime from a configurable git repository,
 # making it suitable for testing different branches, tags, or forks.
 #
 # Key Features:
-#   - Runtime OpenEMR source fetching (configurable via FLEX_REPOSITORY env vars)
+#   - Runtime DCL source fetching (configurable via FLEX_REPOSITORY env vars)
 #   - Runtime dependency building (composer/npm can run at container startup)
 #   - Support for multiple development modes (EASY_DEV_MODE, EASY_DEV_MODE_NEW, etc.)
 #   - Automated database setup and configuration
@@ -19,14 +19,14 @@
 #
 # Environment Variables:
 #   Required for flex mode:
-#     - FLEX_REPOSITORY: Git repository URL (default: https://github.com/openemr/openemr.git)
+#     - FLEX_REPOSITORY: Git repository URL (default: https://github.com/DCL/DCL.git)
 #     - FLEX_REPOSITORY_BRANCH or FLEX_REPOSITORY_TAG: Branch or tag to use
 #   Required for auto installation:
 #     - MYSQL_HOST: Database server hostname
 #     - MYSQL_ROOT_PASS: Database root password (use 'BLANK' for empty password)
 #   Optional:
 #     - MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE: Database credentials
-#     - OE_USER, OE_PASS: OpenEMR admin credentials
+#     - OE_USER, OE_PASS: DCL admin credentials
 #     - EASY_DEV_MODE: 'yes' to skip permission changes (for volume mounts)
 #     - EASY_DEV_MODE_NEW: 'yes' to use local repo instead of downloading
 #     - INSANE_DEV_MODE: 'yes' for devtools support
@@ -46,12 +46,12 @@ set -euo pipefail
 # ============================================================================
 # OPTIONAL STARTUP PHASE TIMING
 # ============================================================================
-# When OPENEMR_FLEX_TIMING=1, emit "TIMING:" markers at each long-running
+# When DCL_FLEX_TIMING=1, emit "TIMING:" markers at each long-running
 # startup phase. Enabled in the flex test workflows so any future startup
-# slowdown can be localized to a specific phase (openemr-devops#797).
+# slowdown can be localized to a specific phase (DCL-devops#797).
 # Silent when the env var is unset or anything other than "1".
 flex_timing() {
-    [[ "${OPENEMR_FLEX_TIMING:-}" = "1" ]] || return 0
+    [[ "${DCL_FLEX_TIMING:-}" = "1" ]] || return 0
     local now
     now=$(date +%s)
     # Write to stderr: bash's stdout is fully-buffered when piped to docker,
@@ -93,7 +93,7 @@ composer_install_with_retry() {
 # HOST UID/GID PASSTHROUGH
 # ============================================================================
 # When the host bind-mounts the webroot (e.g., docker/development-easy
-# stacks where the openemr source lives on the host filesystem), allow
+# stacks where the DCL source lives on the host filesystem), allow
 # the host to specify its uid/gid via HOST_UID/HOST_GID env vars so
 # the in-container apache user adopts them. Without this, apache stays
 # at uid=1000 (Alpine default, set in the Dockerfile) and any host
@@ -145,28 +145,28 @@ fi
 # ============================================================================
 # PATH CONFIGURATION
 # ============================================================================
-# Define paths used throughout the script for OpenEMR installation and configuration
-OE_ROOT="/var/www/localhost/htdocs/openemr"
+# Define paths used throughout the script for DCL installation and configuration
+OE_ROOT="/var/www/localhost/htdocs/DCL"
 # shellcheck disable=SC2034  # AUTO_CONFIG is defined for consistency with 7.0.5, may be used in future
-AUTO_CONFIG="/var/www/localhost/htdocs/openemr/auto_configure.php"
+AUTO_CONFIG="/var/www/localhost/htdocs/DCL/auto_configure.php"
 SQLCONF_FILE="${OE_ROOT}/sites/default/sqlconf.php"
 
 # ============================================================================
 # DATABASE CONFIGURATION
 # ============================================================================
-# OpenEMR requires a MySQL/MariaDB database. These variables control the
+# DCL requires a MySQL/MariaDB database. These variables control the
 # database connection and credentials. Defaults are provided for development.
 MYSQL_HOST="${MYSQL_HOST:-mysql}"
 MYSQL_PORT="${MYSQL_PORT:-3306}"
 MYSQL_ROOT_USER="${MYSQL_ROOT_USER:-root}"
 MYSQL_ROOT_PASS="${MYSQL_ROOT_PASS:-root}"
-MYSQL_USER="${MYSQL_USER:-openemr}"
-MYSQL_PASS="${MYSQL_PASS:-openemr}"
-MYSQL_DATABASE="${MYSQL_DATABASE:-openemr}"
+MYSQL_USER="${MYSQL_USER:-DCL}"
+MYSQL_PASS="${MYSQL_PASS:-DCL}"
+MYSQL_DATABASE="${MYSQL_DATABASE:-DCL}"
 MYSQL_COLLATION="${MYSQL_COLLATION:-utf8mb4_general_ci}"
 
 # ============================================================================
-# OPENEMR ADMIN USER CONFIGURATION
+# DCL ADMIN USER CONFIGURATION
 # ============================================================================
 # Initial administrator account created during first-time setup.
 # IMPORTANT: Change these defaults in production!
@@ -211,11 +211,11 @@ case "${PCOV_ON,,}" in
 esac
 
 # Disable git's CVE-2022-24765 ownership check for the bind-mounted
-# OpenEMR working tree. When the host UID does not match the container's
+# DCL working tree. When the host UID does not match the container's
 # apache UID (common on macOS Docker Desktop, WSL2, GitHub Codespaces),
 # git refuses to operate without this. Without it, in-container git
 # tooling fails: npm postinstall hooks (husky, lint-staged), prek,
-# composer scripts that read commit metadata, and openemr-cmd commands
+# composer scripts that read commit metadata, and DCL-cmd commands
 # that shell out to git.
 #
 # Runs unconditionally on every container start, before any code path
@@ -227,19 +227,19 @@ esac
 # specific path (vs '*') keeps the ownership check intact for any other
 # repos that might exist in the container.
 if [[ "${DEVELOPER_TOOLS}" = "yes" ]]; then
-    git config --system --replace-all safe.directory /var/www/localhost/htdocs/openemr
+    git config --system --replace-all safe.directory /var/www/localhost/htdocs/DCL
 fi
 
-# Install development-only Alpine packages that openemr-cmd subcommands and
+# Install development-only Alpine packages that DCL-cmd subcommands and
 # the e2e test runner depend on:
 #   chromium / chromium-chromedriver  for Symfony Panther (e2e tests)
-#   py3-codespell                     for openemr-cmd cps / cq (codespell)
-#   pre-commit                        for openemr-cmd prek -- the in-container
-#                                     tool is Python's 'pre-commit'; openemr-cmd
+#   py3-codespell                     for DCL-cmd cps / cq (codespell)
+#   pre-commit                        for DCL-cmd prek -- the in-container
+#                                     tool is Python's 'pre-commit'; DCL-cmd
 #                                     exposes it under the label 'prek' so the
 #                                     host-side and docker-side CLIs share a name
 #   actionlint                        for the actionlint-system pre-commit hook;
-#                                     openemr-cmd prek substitutes actionlint-docker
+#                                     DCL-cmd prek substitutes actionlint-docker
 #                                     -> actionlint-system at invocation time
 #                                     because DinD is not available from inside
 #                                     this container
@@ -267,7 +267,7 @@ if [[ "${DEVELOPER_TOOLS}" = "yes" ]] && {
        ! apk info -e "php${PHP_VERSION_ABBR?}-pdo_sqlite"        >/dev/null 2>&1; }; then
     apk add --no-cache chromium chromium-chromedriver py3-codespell pre-commit actionlint \
         "php${PHP_VERSION_ABBR?}-pdo_sqlite" \
-        || echo "dev apk packages: install failed; some openemr-cmd subcommands may be unavailable" >&2
+        || echo "dev apk packages: install failed; some DCL-cmd subcommands may be unavailable" >&2
 fi
 
 auto_setup() {
@@ -279,7 +279,7 @@ auto_setup() {
     # Only set permissions if not in EASY_DEV_MODE (optimized: use -exec {} + instead of \; for better performance)
     if [[ "${EASY_DEV_MODE}" != "yes" ]]; then
         # Use {} + instead of {} \; to batch file operations and reduce process overhead
-        find /var/www/localhost/htdocs/openemr -type f -not -perm 600 -exec chmod 600 {} + 2>/dev/null || true
+        find /var/www/localhost/htdocs/DCL -type f -not -perm 600 -exec chmod 600 {} + 2>/dev/null || true
     fi
 
     # Create temporary file cache directory for auto_configure.php to use
@@ -308,7 +308,7 @@ auto_setup() {
 
     # Run auto_configure with optimized PHP settings.
     # Drop privileges to apache: auto_configure.php goes through the
-    # Installer class, which openemr#12267's RootCliGuard refuses to
+    # Installer class, which DCL#12267's RootCliGuard refuses to
     # run as root. `su-exec` exec's the program directly with no
     # intervening shell, preserving env and passing each arg
     # verbatim — see run_php_as_apache in devtoolsLibrary.source for
@@ -328,8 +328,8 @@ auto_setup() {
     rm -rf "${TMP_FILE_CACHE_LOCATION}"
     rm -f auto_configure.ini
 
-    echo "OpenEMR configured."
-    CONFIG=$(php -r "require_once('/var/www/localhost/htdocs/openemr/sites/default/sqlconf.php'); echo \$config;")
+    echo "DCL configured."
+    CONFIG=$(php -r "require_once('/var/www/localhost/htdocs/DCL/sites/default/sqlconf.php'); echo \$config;")
     if [[ "${CONFIG}" = "0" ]]; then
         echo "Error in auto-config. Configuration failed."
         exit 2
@@ -376,7 +376,7 @@ wait_for_mysql() {
     # verify the server against it. The MariaDB 11.4+ client verifies certificates by
     # default and otherwise rejects servers whose CA is not in the system trust store
     # (e.g. Amazon RDS), which breaks these readiness checks.
-    MYSQL_CA_FILE="/var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca"
+    MYSQL_CA_FILE="/var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca"
     MYSQL_SSL_OPTS=()
     if [[ -f "${MYSQL_CA_FILE}" ]]; then
         MYSQL_SSL_OPTS=(--ssl-ca="${MYSQL_CA_FILE}")
@@ -450,7 +450,7 @@ wait_for_redis() {
     return 1
 }
 
-# Checks if OpenEMR has already been configured.
+# Checks if DCL has already been configured.
 # Returns "1" if configured, "0" if not configured yet.
 is_configured() {
     php -r "if (is_file('${SQLCONF_FILE}')) { require '${SQLCONF_FILE}'; echo isset(\$config) && \$config ? 1 : 0; } else { echo 0; }" 2>/dev/null | tail -1 || echo 0
@@ -459,11 +459,11 @@ is_configured() {
 # ============================================================================
 # CONTAINER ROLE DEFINITIONS
 # ============================================================================
-# AUTHORITY: Right to change OpenEMR's configured state
+# AUTHORITY: Right to change DCL's configured state
 #   - true for singletons, swarm leaders, and Kubernetes startup jobs
 #   - false for swarm members and Kubernetes workers
 #
-# OPERATOR: Right to launch Apache and serve OpenEMR
+# OPERATOR: Right to launch Apache and serve DCL
 #   - true for singletons, swarm members (leader or otherwise), and Kubernetes workers
 #   - false for Kubernetes startup jobs and manual image runs
 
@@ -665,16 +665,16 @@ fi
 # ============================================================================
 # FLEX CONTAINER: RUNTIME SOURCE CODE FETCHING
 # ============================================================================
-# The flex container fetches OpenEMR source code from git at runtime.
+# The flex container fetches DCL source code from git at runtime.
 # This allows testing different branches, tags, or forks without rebuilding
-# the Docker image. The source is cloned to /var/www/localhost/htdocs/openemr
+# the Docker image. The source is cloned to /var/www/localhost/htdocs/DCL
 # before any dependency building or configuration occurs.
 if [[ -f /var/www/localhost/htdocs/auto_configure.php ]] && [[ "${EMPTY}" != "yes" ]] &&
    [[ "${EASY_DEV_MODE_NEW}" != "yes" ]]; then
-    echo "Configuring a new flex openemr docker"
+    echo "Configuring a new flex DCL docker"
     if [[ "${FLEX_REPOSITORY:-}" = "" ]]; then
-        echo "Missing FLEX_REPOSITORY environment setting, so using https://github.com/openemr/openemr.git"
-        FLEX_REPOSITORY="https://github.com/openemr/openemr.git"
+        echo "Missing FLEX_REPOSITORY environment setting, so using https://github.com/DCL/DCL.git"
+        FLEX_REPOSITORY="https://github.com/DCL/DCL.git"
     fi
     if [[ "${FLEX_REPOSITORY_BRANCH:-}" = "" ]] &&
        [[ "${FLEX_REPOSITORY_TAG:-}" = "" ]]; then
@@ -690,33 +690,33 @@ if [[ -f /var/www/localhost/htdocs/auto_configure.php ]] && [[ "${EMPTY}" != "ye
     else
         echo "Collecting ${FLEX_REPOSITORY_TAG} tag from ${FLEX_REPOSITORY} repository"
         git clone "${FLEX_REPOSITORY}"
-        cd openemr
+        cd DCL
         git checkout "${FLEX_REPOSITORY_TAG}"
         cd ../
     fi
     if [[ "${AUTHORITY}" = "yes" ]] &&
        [[ "${SWARM_MODE}" = "yes" ]]; then
-        touch openemr/sites/default/docker-initiated
+        touch DCL/sites/default/docker-initiated
     fi
     if [[ "${AUTHORITY}" = "no" ]] &&
        [[ "${SWARM_MODE}" = "yes" ]]; then
-        # non-leader is building so remove the openemr/sites directory to avoid breaking anything in leader's build
-        rm -fr openemr/sites
+        # non-leader is building so remove the DCL/sites directory to avoid breaking anything in leader's build
+        rm -fr DCL/sites
     fi
-    rsync --ignore-existing --recursive --links --exclude .git openemr /var/www/localhost/htdocs/
-    rm -fr openemr
+    rsync --ignore-existing --recursive --links --exclude .git DCL /var/www/localhost/htdocs/
+    rm -fr DCL
     cd /var/www/localhost/htdocs/
 fi
 
 # ============================================================================
 # EASY DEV MODE: USE LOCAL REPOSITORY
 # ============================================================================
-# When EASY_DEV_MODE_NEW is enabled, use a local repository mounted at /openemr
+# When EASY_DEV_MODE_NEW is enabled, use a local repository mounted at /DCL
 # instead of fetching from git. This is useful for development where the code
 # is already available in a volume mount.
 if [[ "${EASY_DEV_MODE_NEW}" = "yes" ]]; then
-    echo "EASY_DEV_MODE_NEW enabled: Using local repository from /openemr"
-    rsync --ignore-existing --recursive --links --exclude .git /openemr /var/www/localhost/htdocs/
+    echo "EASY_DEV_MODE_NEW enabled: Using local repository from /DCL"
+    rsync --ignore-existing --recursive --links --exclude .git /DCL /var/www/localhost/htdocs/
 fi
 
 # ============================================================================
@@ -735,19 +735,19 @@ RAN_ANY_BUILD=false
 
 if [[ -f /var/www/localhost/htdocs/auto_configure.php ]] && [[ "${FORCE_NO_BUILD_MODE}" != "yes" ]]; then
     # Check if composer/vendor build is needed
-    if [[ ! -d /var/www/localhost/htdocs/openemr/vendor ]] || { [[ -d /var/www/localhost/htdocs/openemr/vendor ]] && [[ -z "$(ls -A /var/www/localhost/htdocs/openemr/vendor || true)" ]]; }; then
+    if [[ ! -d /var/www/localhost/htdocs/DCL/vendor ]] || { [[ -d /var/www/localhost/htdocs/DCL/vendor ]] && [[ -z "$(ls -A /var/www/localhost/htdocs/DCL/vendor || true)" ]]; }; then
         NEED_COMPOSER_BUILD=true
     fi
 
     # Check if npm build is needed (node_modules missing/empty OR public missing/empty)
-    if [[ ! -d /var/www/localhost/htdocs/openemr/node_modules ]] || { [[ -d /var/www/localhost/htdocs/openemr/node_modules ]] && [[ -z "$(ls -A /var/www/localhost/htdocs/openemr/node_modules || true)" ]]; } ||
-       [[ ! -d /var/www/localhost/htdocs/openemr/public ]] || { [[ -d /var/www/localhost/htdocs/openemr/public ]] && [[ -z "$(ls -A /var/www/localhost/htdocs/openemr/public || true)" ]]; }; then
+    if [[ ! -d /var/www/localhost/htdocs/DCL/node_modules ]] || { [[ -d /var/www/localhost/htdocs/DCL/node_modules ]] && [[ -z "$(ls -A /var/www/localhost/htdocs/DCL/node_modules || true)" ]]; } ||
+       [[ ! -d /var/www/localhost/htdocs/DCL/public ]] || { [[ -d /var/www/localhost/htdocs/DCL/public ]] && [[ -z "$(ls -A /var/www/localhost/htdocs/DCL/public || true)" ]]; }; then
         NEED_NPM_BUILD=true
     fi
 fi
 
 if [[ "${NEED_COMPOSER_BUILD}" = "true" ]] || [[ "${NEED_NPM_BUILD}" = "true" ]]; then
-    cd /var/www/localhost/htdocs/openemr
+    cd /var/www/localhost/htdocs/DCL
 
     # Install PHP dependencies if needed
     if [[ "${NEED_COMPOSER_BUILD}" = "true" ]]; then
@@ -839,7 +839,7 @@ if [[ "${NEED_COMPOSER_BUILD}" = "true" ]] || [[ "${NEED_NPM_BUILD}" = "true" ]]
     fi
 
     # Install frontend dependencies and build if needed
-    if [[ "${NEED_NPM_BUILD}" = "true" ]] && [[ -f /var/www/localhost/htdocs/openemr/package.json ]]; then
+    if [[ "${NEED_NPM_BUILD}" = "true" ]] && [[ -f /var/www/localhost/htdocs/DCL/package.json ]]; then
         # In Alpine 3.14+, npm needs non-root ownership on a few paths it writes
         # into ('node_modules', 'ccdaservice/node_modules', 'public'); pre-chown
         # them to apache:1000 before running install.
@@ -862,12 +862,12 @@ if [[ "${NEED_COMPOSER_BUILD}" = "true" ]] || [[ "${NEED_NPM_BUILD}" = "true" ]]
         RAN_ANY_BUILD=true
     fi
 
-    if [[ "${NEED_NPM_BUILD}" = "true" ]] && [[ -f /var/www/localhost/htdocs/openemr/ccdaservice/package.json ]]; then
+    if [[ "${NEED_NPM_BUILD}" = "true" ]] && [[ -f /var/www/localhost/htdocs/DCL/ccdaservice/package.json ]]; then
         # install ccdaservice
         flex_timing 'npm install (ccdaservice) start'
-        cd /var/www/localhost/htdocs/openemr/ccdaservice
+        cd /var/www/localhost/htdocs/DCL/ccdaservice
         npm install --allow-git=all
-        cd /var/www/localhost/htdocs/openemr
+        cd /var/www/localhost/htdocs/DCL
         flex_timing 'npm install (ccdaservice) done'
         RAN_ANY_BUILD=true
     fi
@@ -890,9 +890,9 @@ fi
 
 # Two-pass kcov-wrapper.sh sets FLEX_BUILD_ONLY=yes on its first pass so the
 # heavy build (composer + npm + napa + webpack + phing) runs OUTSIDE kcov.
-# It then re-invokes openemr.sh under kcov with FORCE_NO_BUILD_MODE=yes so
+# It then re-invokes DCL.sh under kcov with FORCE_NO_BUILD_MODE=yes so
 # the build block above short-circuits. Avoids kcov's ptrace following
-# webpack's worker tree (openemr-devops#797).
+# webpack's worker tree (DCL-devops#797).
 if [[ "${FLEX_BUILD_ONLY:-}" = "yes" ]]; then
     # ssl.sh was forked above (line ~575) and we'd normally wait on SSL_PID
     # near the end of the script. Wait here so pass 1 doesn't leave a
@@ -915,20 +915,20 @@ if [[ "${AUTHORITY}" = "yes" ]] ||
    [[ "${SWARM_MODE}" != "yes" ]]; then
     if [[ -f /var/www/localhost/htdocs/auto_configure.php ]] &&
        [[ "${EASY_DEV_MODE}" != "yes" ]]; then
-        chmod 666 /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php
+        chmod 666 /var/www/localhost/htdocs/DCL/sites/default/sqlconf.php
     fi
 fi
 
 # Set ownership to apache user (optimized: use {} + for batch operations)
 if [[ -f /var/www/localhost/htdocs/auto_configure.php ]]; then
     # Use {} + instead of {} \; to batch chown operations for better performance
-    find /var/www/localhost/htdocs/openemr/ -name ".git" -prune -o -exec chown apache:apache {} + 2>/dev/null || true
+    find /var/www/localhost/htdocs/DCL/ -name ".git" -prune -o -exec chown apache:apache {} + 2>/dev/null || true
 fi
 
-CONFIG=$(php -r "require_once('/var/www/localhost/htdocs/openemr/sites/default/sqlconf.php'); echo \$config;")
+CONFIG=$(php -r "require_once('/var/www/localhost/htdocs/DCL/sites/default/sqlconf.php'); echo \$config;")
 if [[ "${AUTHORITY}" = "no" ]] &&
    [[ "${CONFIG}" = "0" ]]; then
-    echo "Critical failure! An OpenEMR worker is trying to run on a missing configuration."
+    echo "Critical failure! An DCL worker is trying to run on a missing configuration."
     echo " - Is this due to a Kubernetes grant hiccup?"
     echo "The worker will now terminate."
     exit 1
@@ -949,57 +949,57 @@ fi
 #    /root/certs/redis/.. (not yet supported)
 MYSQLCA=false
 if [[ -f /root/certs/mysql/server/mysql-ca ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca ]]; then
     echo "copied over mysql-ca"
-    cp /root/certs/mysql/server/mysql-ca /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
-    # for specific issue in docker and kubernetes that is required for successful openemr adodb/laminas connections
+    cp /root/certs/mysql/server/mysql-ca /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
+    # for specific issue in docker and kubernetes that is required for successful DCL adodb/laminas connections
     MYSQLCA=true
 fi
 MYSQLCERT=false
 if [[ -f /root/certs/mysql/server/mysql-cert ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-cert ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-cert ]]; then
     echo "copied over mysql-cert"
-    cp /root/certs/mysql/server/mysql-cert /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-cert
-    # for specific issue in docker and kubernetes that is required for successful openemr adodb/laminas connections
+    cp /root/certs/mysql/server/mysql-cert /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-cert
+    # for specific issue in docker and kubernetes that is required for successful DCL adodb/laminas connections
     MYSQLCERT=true
 fi
 MYSQLKEY=false
 if [[ -f /root/certs/mysql/server/mysql-key ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-key ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-key ]]; then
     echo "copied over mysql-key"
-    cp /root/certs/mysql/server/mysql-key /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-key
-    # for specific issue in docker and kubernetes that is required for successful openemr adodb/laminas connections
+    cp /root/certs/mysql/server/mysql-key /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-key
+    # for specific issue in docker and kubernetes that is required for successful DCL adodb/laminas connections
     MYSQLKEY=true
 fi
 if [[ -f /root/certs/couchdb/couchdb-ca ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca ]]; then
     echo "copied over couchdb-ca"
-    cp /root/certs/couchdb/couchdb-ca /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-ca
+    cp /root/certs/couchdb/couchdb-ca /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-ca
 fi
 if [[ -f /root/certs/couchdb/couchdb-cert ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-cert ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-cert ]]; then
     echo "copied over couchdb-cert"
-    cp /root/certs/couchdb/couchdb-cert /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-cert
+    cp /root/certs/couchdb/couchdb-cert /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-cert
 fi
 if [[ -f /root/certs/couchdb/couchdb-key ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-key ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-key ]]; then
     echo "copied over couchdb-key"
-    cp /root/certs/couchdb/couchdb-key /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/couchdb-key
+    cp /root/certs/couchdb/couchdb-key /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/couchdb-key
 fi
 if [[ -f /root/certs/ldap/ldap-ca ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca ]]; then
     echo "copied over ldap-ca"
-    cp /root/certs/ldap/ldap-ca /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-ca
+    cp /root/certs/ldap/ldap-ca /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-ca
 fi
 if [[ -f /root/certs/ldap/ldap-cert ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-cert ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-cert ]]; then
     echo "copied over ldap-cert"
-    cp /root/certs/ldap/ldap-cert /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-cert
+    cp /root/certs/ldap/ldap-cert /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-cert
 fi
 if [[ -f /root/certs/ldap/ldap-key ]] &&
-   [[ ! -f /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-key ]]; then
+   [[ ! -f /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-key ]]; then
     echo "copied over ldap-key"
-    cp /root/certs/ldap/ldap-key /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/ldap-key
+    cp /root/certs/ldap/ldap-key /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/ldap-key
 fi
 
 if [[ "${AUTHORITY}" = "yes" ]]; then
@@ -1017,7 +1017,7 @@ if [[ "${AUTHORITY}" = "yes" ]]; then
             (( setup_retries++ ))
             if [[ ${setup_retries} -eq 1 ]]; then
             echo "Couldn't set up. Any of these reasons could be what's wrong:"
-            echo " - You didn't spin up a MySQL container or connect your OpenEMR container to a mysql instance"
+            echo " - You didn't spin up a MySQL container or connect your DCL container to a mysql instance"
             echo " - MySQL is still starting up and wasn't ready for connection yet"
                 echo " - The MySQL credentials were incorrect"
             elif [[ ${setup_retries} -le 5 ]]; then
@@ -1040,10 +1040,10 @@ if [[ "${AUTHORITY}" = "yes" ]] &&
    [[ "${MANUAL_SETUP}" != "yes" ]] &&
    [[ "${EASY_DEV_MODE}" != "yes" ]] &&
    [[ "${EMPTY}" != "yes" ]]; then
-    # OpenEMR has been configured
+    # DCL has been configured
 
     if [[ -f /var/www/localhost/htdocs/auto_configure.php ]]; then
-        cd /var/www/localhost/htdocs/openemr/
+        cd /var/www/localhost/htdocs/DCL/
         # This section only runs once after above configuration since auto_configure.php gets removed after this script
         echo "Setting file/dir permissions to 400/500 (optimized batch operations)"
 
@@ -1054,11 +1054,11 @@ if [[ "${AUTHORITY}" = "yes" ]] &&
         find . -type d -not -path "./sites/default/documents/*" -not -perm 500 -exec chmod 500 {} + 2>/dev/null || true
 
         # Optimized: Set all files to 400 (batch operation using {} +)
-        # Exclude sites/default/documents and openemr.sh
-        find . -type f -not -path "./sites/default/documents/*" -not -path './openemr.sh' -not -perm 400 -exec chmod 400 {} + 2>/dev/null || true
+        # Exclude sites/default/documents and DCL.sh
+        find . -type f -not -path "./sites/default/documents/*" -not -path './DCL.sh' -not -perm 400 -exec chmod 400 {} + 2>/dev/null || true
 
         echo "Default file permissions set, allowing writing to specific directories"
-        chmod 700 /var/www/localhost/htdocs/openemr.sh 2>/dev/null || true
+        chmod 700 /var/www/localhost/htdocs/DCL.sh 2>/dev/null || true
 
         # Set documents directory permissions (batch operation)
         if [[ -d sites/default/documents ]]; then
@@ -1093,33 +1093,33 @@ if [[ -f /var/www/localhost/htdocs/auto_configure.php ]]; then
     fi
     # trickery to support devtools in insane dev environment (note the easy dev does this with a shared volume)
     if [[ "${INSANE_DEV_MODE}" = "yes" ]]; then
-        mkdir /openemr
-        rsync --recursive --links /var/www/localhost/htdocs/openemr/sites /openemr/
+        mkdir /DCL
+        rsync --recursive --links /var/www/localhost/htdocs/DCL/sites /DCL/
     fi
 fi
 
 if ${MYSQLCA} ; then
-    # for specific issue in docker and kubernetes that is required for successful openemr adodb/laminas connections
+    # for specific issue in docker and kubernetes that is required for successful DCL adodb/laminas connections
     echo "adjusted permissions for mysql-ca"
-    chmod 744 /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-ca
+    chmod 744 /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-ca
 fi
 if ${MYSQLCERT} ; then
-    # for specific issue in docker and kubernetes that is required for successful openemr adodb/laminas connections
+    # for specific issue in docker and kubernetes that is required for successful DCL adodb/laminas connections
     echo "adjusted permissions for mysql-cert"
-    chmod 744 /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-cert
+    chmod 744 /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-cert
 fi
 if ${MYSQLKEY} ; then
-    # for specific issue in docker and kubernetes that is required for successful openemr adodb/laminas connections
+    # for specific issue in docker and kubernetes that is required for successful DCL adodb/laminas connections
     echo "adjusted permissions for mysql-key"
-    chmod 744 /var/www/localhost/htdocs/openemr/sites/default/documents/certificates/mysql-key
+    chmod 744 /var/www/localhost/htdocs/DCL/sites/default/documents/certificates/mysql-key
 fi
 
 if [[ "${AUTHORITY}" = "yes" ]] &&
    [[ "${SWARM_MODE}" = "yes" ]] &&
    [[ -f /var/www/localhost/htdocs/auto_configure.php ]]; then
     # Set flag that the docker-leader configuration is complete
-    touch /var/www/localhost/htdocs/openemr/sites/docker-completed
-    rm -f /var/www/localhost/htdocs/openemr/sites/docker-leader
+    touch /var/www/localhost/htdocs/DCL/sites/docker-completed
+    rm -f /var/www/localhost/htdocs/DCL/sites/docker-leader
 fi
 
 # ensure the auto_configure.php script has been removed (unless in MANUAL_SETUP mode)
@@ -1243,8 +1243,8 @@ fi
 unset SSL_PID
 
 echo
-echo "Love OpenEMR? You can now support the project via the open collective:"
-echo " > https://opencollective.com/openemr/donate"
+echo "Love DCL? You can now support the project via the open collective:"
+echo " > https://opencollective.com/DCL/donate"
 echo
 
 if [[ "${OPERATOR}" = "yes" ]]; then
@@ -1253,11 +1253,11 @@ if [[ "${OPERATOR}" = "yes" ]]; then
     # FLEX_SKIP_APACHE_EXEC is set by kcov-wrapper.sh's pass 2 so kcov can
     # see the script exit cleanly and finalize its coverage buffer; if we
     # exec apache here, bash gets replaced and kcov never gets the exit
-    # signal (openemr-devops#797). Wrapper execs apache itself afterward.
+    # signal (DCL-devops#797). Wrapper execs apache itself afterward.
     if [[ "${FLEX_SKIP_APACHE_EXEC:-}" = "yes" ]]; then
         exit 0
     fi
     exec /usr/sbin/httpd -D FOREGROUND
 fi
 
-echo 'OpenEMR configuration tasks have concluded.'
+echo 'DCL configuration tasks have concluded.'

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
+namespace DCL\FHIR\R4\FHIRResource\FHIRImplementationGuide;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRImplementationGuide;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of rules of how a particular interoperability or standards problem is solved - typically through the use of FHIR resources. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
@@ -71,13 +71,13 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement implements \J
 {
     /**
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGuideParameterCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGuideParameterCode
      */
     public $code = null;
 
     /**
      * Value for named type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
@@ -88,7 +88,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement implements \J
 
     /**
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGuideParameterCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGuideParameterCode
      */
     public function getCode()
     {
@@ -97,7 +97,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement implements \J
 
     /**
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGuideParameterCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGuideParameterCode $code
      * @return $this
      */
     public function setCode($code)
@@ -108,7 +108,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement implements \J
 
     /**
      * Value for named type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -117,7 +117,7 @@ class FHIRImplementationGuideParameter extends FHIRBackboneElement implements \J
 
     /**
      * Value for named type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)

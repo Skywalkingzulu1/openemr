@@ -3,8 +3,8 @@
 require_once("../../../../globals.php");
 require_once("../../../../drugs/drugs.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
 
 function find_contraceptive_methods($contraceptive_code): array
 {

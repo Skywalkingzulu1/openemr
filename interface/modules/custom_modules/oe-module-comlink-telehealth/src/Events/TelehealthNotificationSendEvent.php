@@ -1,8 +1,8 @@
 <?php
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Events;
+namespace Comlink\DCL\Modules\TeleHealthModule\Events;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\NotificationSendAddress;
+use Comlink\DCL\Modules\TeleHealthModule\Models\NotificationSendAddress;
 
 class TelehealthNotificationSendEvent
 {

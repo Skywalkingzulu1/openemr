@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,27 +71,27 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
 {
     /**
      * A code specifying which characteristic of the medicine is being described (for example, colour, shape, imprint).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $valueBase64Binary = null;
 
@@ -102,7 +102,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
 
     /**
      * A code specifying which characteristic of the medicine is being described (for example, colour, shape, imprint).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -111,7 +111,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
 
     /**
      * A code specifying which characteristic of the medicine is being described (for example, colour, shape, imprint).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -121,7 +121,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
     {
@@ -129,7 +129,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
     public function setValueCodeableConcept($valueCodeableConcept)
@@ -139,7 +139,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValueString()
     {
@@ -147,7 +147,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -157,7 +157,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
     {
@@ -165,7 +165,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -175,7 +175,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getValueBase64Binary()
     {
@@ -183,7 +183,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement impl
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @return $this
      */
     public function setValueBase64Binary($valueBase64Binary)

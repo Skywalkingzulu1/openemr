@@ -3,22 +3,22 @@
 /**
  * Handles participant invitation emails sent out for inviting third party patients to a telehealth session.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Services;
+namespace Comlink\DCL\Modules\TeleHealthModule\Services;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Events\TelehealthNotificationSendEvent;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\NotificationSendAddress;
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use Comlink\DCL\Modules\TeleHealthModule\Events\TelehealthNotificationSendEvent;
+use Comlink\DCL\Modules\TeleHealthModule\Models\NotificationSendAddress;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
 use MyMailer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OneTimeAuth;
-use OpenEMR\Services\LogoService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OneTimeAuth;
+use DCL\Services\LogoService;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
 
@@ -48,7 +48,7 @@ class TeleHealthParticipantInvitationMailerService
 
     /**
      * Returns the data that for the mailer invitation that can be used to manually send the invitation outside of
-     * the OpenEMR mailer system. IE a user could take the html or link properties and send them via their own email.
+     * the DCL mailer system. IE a user could take the html or link properties and send them via their own email.
      * @param $patient
      * @param $session
      * @param $thirdPartyLaunchAction
@@ -90,15 +90,15 @@ class TeleHealthParticipantInvitationMailerService
     {
         $logoService = new LogoService();
         $logoPath = $this->config->getQualifiedSiteAddress() . $logoService->getLogo('core/login/primary');
-        $name = $this->config->getOpenEMRName();
+        $name = $this->config->getDCLName();
         $data = [
             'url' => $this->getJoinLink($patient, $session, $thirdPartyLaunchAction)
             ,'pc_eid' => $session['pc_eid']
             ,'launchAction' => $thirdPartyLaunchAction
             ,'salutation' => ($patient['fname'] ?? '') . ' ' . ($patient['lname'] ?? '')
             ,'logoPath' => $logoPath
-            ,'logoAlt' => $name ?? 'OpenEMR'
-            ,'title' => $name ?? 'OpenEMR'
+            ,'logoAlt' => $name ?? 'DCL'
+            ,'title' => $name ?? 'DCL'
         ];
         return $data;
     }

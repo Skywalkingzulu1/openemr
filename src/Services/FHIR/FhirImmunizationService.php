@@ -1,43 +1,43 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRImmunization;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDate;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\ImmunizationService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRImmunization;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDate;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRImmunizationStatusCodes;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRQuantity;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRImmunization\FHIRImmunizationPerformer;
+use DCL\Services\BaseService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\ImmunizationService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR Immunization Service
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService, IPatientCompartmentResourceService
 {
@@ -60,7 +60,7 @@ class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGP
     }
 
     /**
-     * Returns an array mapping FHIR Immunization Resource search parameters to OpenEMR Immunization search parameters
+     * Returns an array mapping FHIR Immunization Resource search parameters to DCL Immunization search parameters
      * @return array The search parameters
      */
     protected function loadSearchParameters(): array
@@ -78,13 +78,13 @@ class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGP
     }
 
     /**
-     * Parses an OpenEMR immunization record, returning the equivalent FHIR Immunization Resource
+     * Parses an DCL immunization record, returning the equivalent FHIR Immunization Resource
      *
-     * @param array $dataRecord The source OpenEMR data record
+     * @param array $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRImmunization
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $immunizationResource = new FHIRImmunization();
 
@@ -238,10 +238,10 @@ class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGP
     }
 
     /**
-     * Parses a FHIR Immunization Resource, returning the equivalent OpenEMR immunization record
+     * Parses a FHIR Immunization Resource, returning the equivalent DCL immunization record
      *
      * @param FHIRDomainResource $fhirResource The source FHIR resource
-     * @return array The OpenEMR data record
+     * @return array The DCL data record
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -290,7 +290,7 @@ class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGP
         // Status -> completion_status / added_erroneously.
         //
         // Both columns are written on every mapped status, never just the one the branch is
-        // named for. A PUT replaces the resource, and parseOpenEMRRecord() reads
+        // named for. A PUT replaces the resource, and parseDCLRecord() reads
         // added_erroneously first: leaving a stored '1' in place while setting
         // completion_status would return 200 for a status change that the next GET does not
         // reflect.
@@ -435,28 +435,28 @@ class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGP
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      *
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      * @return ProcessingResult
      */
-    protected function insertOpenEMRRecord($openEmrRecord)
+    protected function insertDCLRecord($openEmrRecord)
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Immunization record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Immunization record array');
         }
 
         return $this->immunizationService->insert($openEmrRecord);
     }
 
     /**
-     * Updates an existing OpenEMR record.
+     * Updates an existing DCL record.
      *
-     * @param string $fhirResourceId The OpenEMR record's FHIR Resource ID (uuid)
-     * @param array $updatedOpenEMRRecord The updated OpenEMR record
+     * @param string $fhirResourceId The DCL record's FHIR Resource ID (uuid)
+     * @param array $updatedDCLRecord The updated DCL record
      * @return ProcessingResult
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
         // The patient the caller asserts has to be the immunization's actual owner. Without this
         // the resolved patient_id would simply be written, moving the record to another chart.
@@ -466,7 +466,7 @@ class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGP
         // url uuid alone. Immunization.patient is 1..1 in R4, so rejecting the omission is also
         // what the spec asks for, and it matches how MedicationRequest and ServiceRequest
         // already handle their own subject on this path.
-        $patientId = $updatedOpenEMRRecord['patient_id'] ?? null;
+        $patientId = $updatedDCLRecord['patient_id'] ?? null;
         if (!is_numeric($patientId)) {
             $result = new ProcessingResult();
             $result->setValidationMessages([
@@ -475,19 +475,19 @@ class FhirImmunizationService extends FhirServiceBase implements IResourceUSCIGP
             return $result;
         }
 
-        return $this->immunizationService->update($fhirResourceId, $updatedOpenEMRRecord, (int) $patientId);
+        return $this->immunizationService->update($fhirResourceId, $updatedDCLRecord, (int) $patientId);
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        // puuid binding happens in the $openEMRSearchParameters
-        return $this->immunizationService->getAll($openEMRSearchParameters, true);
+        // puuid binding happens in the $DCLSearchParameters
+        return $this->immunizationService->getAll($DCLSearchParameters, true);
     }
 
     public function createProvenanceResource($dataRecord = [], $encode = false)

@@ -4,7 +4,7 @@
 
 /**
  * Calculated expression (SDC calculatedExpression + variable) tests for the
- * OpenEMR FHIR Questionnaire Runtime.
+ * DCL FHIR Questionnaire Runtime.
  *
  * Covers FHIRPath arithmetic, aggregate methods (sum, count, exists, first),
  * where() filtering on %resource, iif() branching, variable extensions,
@@ -12,11 +12,11 @@
  * answers leave %resource; calculated values can gate other items), and
  * resilience to expressions that fail to compile.
  *
- * Run with: npm run test:js -- tests/js/openemr-questionnaire-calculated.test.js
+ * Run with: npm run test:js -- tests/js/DCL-questionnaire-calculated.test.js
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 const fs = require('fs');
@@ -26,7 +26,7 @@ function loadRuntime() {
     const source = fs.readFileSync(
         path.resolve(
             __dirname,
-            '../../interface/forms/questionnaire_assessments/native/openemr_questionnaire.js'
+            '../../interface/forms/questionnaire_assessments/native/DCL_questionnaire.js'
         ),
         'utf8'
     );
@@ -49,7 +49,7 @@ function loadRuntime() {
 
 loadRuntime();
 
-const runtimeApi = global.window.OpenEMRQuestionnaire;
+const runtimeApi = global.window.DCLQuestionnaire;
 
 const CALCULATED_EXPRESSION = 'http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression';
 const VARIABLE = 'http://hl7.org/fhir/StructureDefinition/variable';

@@ -3,22 +3,22 @@
 /**
  * Unit Tests for the TeleconferenceRoomController class
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule;
+namespace Comlink\DCL\Modules\TeleHealthModule;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleconferenceRoomController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleHealthFrontendSettingsController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleHealthVideoRegistrationController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\ParticipantListService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthParticipantInvitationMailerService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthProvisioningService;
-use OpenEMR\Services\AppointmentService;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleconferenceRoomController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleHealthFrontendSettingsController;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleHealthVideoRegistrationController;
+use Comlink\DCL\Modules\TeleHealthModule\Services\ParticipantListService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthParticipantInvitationMailerService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthProvisioningService;
+use DCL\Services\AppointmentService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Twig\Environment;

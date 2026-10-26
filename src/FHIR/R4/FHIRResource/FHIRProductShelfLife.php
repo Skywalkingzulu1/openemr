@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource;
+namespace DCL\FHIR\R4\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The shelf-life and storage information for a medicinal product item or container can be described using this class.
@@ -72,25 +72,25 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Unique identifier for the packaged Medicinal Product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * This describes the shelf life, taking into account various scenarios such as shelf life of the packaged Medicinal Product itself, shelf life after transformation where necessary and shelf life after the first opening of a bottle, etc. The shelf life type shall be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The shelf life time period can be specified using a numerical value for the period of time and its unit of time measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $period = null;
 
     /**
      * Special precautions for storage, if any, can be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialPrecautionsForStorage = [];
 
@@ -101,7 +101,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Unique identifier for the packaged Medicinal Product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -110,7 +110,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Unique identifier for the packaged Medicinal Product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -121,7 +121,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * This describes the shelf life, taking into account various scenarios such as shelf life of the packaged Medicinal Product itself, shelf life after transformation where necessary and shelf life after the first opening of a bottle, etc. The shelf life type shall be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -130,7 +130,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * This describes the shelf life, taking into account various scenarios such as shelf life of the packaged Medicinal Product itself, shelf life after transformation where necessary and shelf life after the first opening of a bottle, etc. The shelf life type shall be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -141,7 +141,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The shelf life time period can be specified using a numerical value for the period of time and its unit of time measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getPeriod()
     {
@@ -150,7 +150,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The shelf life time period can be specified using a numerical value for the period of time and its unit of time measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $period
      * @return $this
      */
     public function setPeriod($period)
@@ -161,7 +161,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Special precautions for storage, if any, can be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialPrecautionsForStorage()
     {
@@ -170,7 +170,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Special precautions for storage, if any, can be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialPrecautionsForStorage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $specialPrecautionsForStorage
      * @return $this
      */
     public function addSpecialPrecautionsForStorage($specialPrecautionsForStorage)

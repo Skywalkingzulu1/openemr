@@ -11,16 +11,16 @@
  *
  * Usage: node qdm-schema.js <node_modules> <output file>
  *
- * The reference engine is not part of OpenEMR. Install the versions the
+ * The reference engine is not part of DCL. Install the versions the
  * fixtures were made with anywhere, e.g.
  *   npm install --prefix /tmp/cqm-reference cqm-execution@4.4.3 cqm-models@4.3.2
  * and pass /tmp/cqm-reference/node_modules as <node_modules>.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 'use strict';
@@ -91,16 +91,16 @@ fs.writeFileSync(outFile, `<?php
  * Each attribute is a type name, a list of one ("[Code]"), a nested schema
  * ("@FacilityLocation", "[@Component]"), or a string default ("=encounter").
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\\Cqm\\Cql\\Qdm;
+namespace DCL\\Cqm\\Cql\\Qdm;
 
 final class QdmSchema
 {

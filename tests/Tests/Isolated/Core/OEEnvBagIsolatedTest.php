@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Core;
+namespace DCL\Tests\Isolated\Core;
 
-use OpenEMR\Core\OEEnvBag;
+use DCL\Core\OEEnvBag;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
@@ -86,10 +86,10 @@ class OEEnvBagIsolatedTest extends TestCase
 
     public function testGetIntAndGetString(): void
     {
-        $bag = new OEEnvBag(['PORT' => '8080', 'NAME' => 'openemr']);
+        $bag = new OEEnvBag(['PORT' => '8080', 'NAME' => 'DCL']);
 
         $this->assertSame(8080, $bag->getInt('PORT'));
-        $this->assertSame('openemr', $bag->getString('NAME'));
+        $this->assertSame('DCL', $bag->getString('NAME'));
     }
 
     public function testCreateInstanceMergesEnvSources(): void

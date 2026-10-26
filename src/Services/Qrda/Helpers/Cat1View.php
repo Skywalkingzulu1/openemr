@@ -3,17 +3,17 @@
 /**
  * Cat1View is a mustache helper trait with helper methods specific to the Cat1 report.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\Qrda\Helpers;
+namespace DCL\Services\Qrda\Helpers;
 
 use Mustache_Context;
-use OpenEMR\Services\CodeTypesService;
+use DCL\Services\CodeTypesService;
 
 trait Cat1View
 {

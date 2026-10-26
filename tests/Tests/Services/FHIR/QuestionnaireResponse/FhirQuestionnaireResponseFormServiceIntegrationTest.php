@@ -3,24 +3,24 @@
 /*
  * FhirQuestionnaireResponseFormServiceIntegrationTest
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Public Domain for sections that were generated with Claude.AI on September 3rd 2025
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR\QuestionnaireResponse;
+namespace DCL\Tests\Services\FHIR\QuestionnaireResponse;
 
 use Exception;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
-use OpenEMR\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\QuestionnaireResponseService;
-use OpenEMR\Services\QuestionnaireService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaireResponse;
+use DCL\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
+use DCL\Services\PatientService;
+use DCL\Services\QuestionnaireResponseService;
+use DCL\Services\QuestionnaireService;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -187,10 +187,10 @@ class FhirQuestionnaireResponseFormServiceIntegrationTest extends TestCase
     }
 
     /**
-     * Test that parseOpenEMRRecord handles real database data correctly
+     * Test that parseDCLRecord handles real database data correctly
      * @throws Exception
      */
-    public function testParseOpenEMRRecordWithRealDatabaseData(): void
+    public function testParseDCLRecordWithRealDatabaseData(): void
     {
         // Create a real QuestionnaireResponse in database - AI Generated real data test
         $responseUuid = $this->createTestQuestionnaireResponse();
@@ -205,7 +205,7 @@ class FhirQuestionnaireResponseFormServiceIntegrationTest extends TestCase
         $rawData = $dbResult->getFirstDataResult();
 
         // Parse using the service
-        $parsedResponse = $this->service->parseOpenEMRRecord($rawData);
+        $parsedResponse = $this->service->parseDCLRecord($rawData);
         $this->assertUSCoreCompliance($parsedResponse);
 
         // Verify the parsed data matches the original
@@ -289,7 +289,7 @@ class FhirQuestionnaireResponseFormServiceIntegrationTest extends TestCase
             'questionnaire_response' => '{"invalid": json}'
         ];
 
-        $parsedResponse = $this->service->parseOpenEMRRecord($corruptedData);
+        $parsedResponse = $this->service->parseDCLRecord($corruptedData);
         $this->assertEquals($nonExistentUuid, $parsedResponse->getId()->getValue());
     }
 

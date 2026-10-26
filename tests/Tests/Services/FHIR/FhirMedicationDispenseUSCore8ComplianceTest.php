@@ -6,22 +6,22 @@
  * Tests to ensure the MedicationDispense implementation complies with
  * US Core StructureDefinition requirements and constraints
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Claude.AI Assistant
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // AI-generated content begins
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense;
-use OpenEMR\Services\FHIR\FhirMedicationDispenseService;
-use OpenEMR\Services\FHIR\MedicationDispense\FhirMedicationDispenseLocalDispensaryService;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Tests\Fixtures\MedicationDispenseFixtureManager;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense;
+use DCL\Services\FHIR\FhirMedicationDispenseService;
+use DCL\Services\FHIR\MedicationDispense\FhirMedicationDispenseLocalDispensaryService;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Tests\Fixtures\MedicationDispenseFixtureManager;
 use PHPUnit\Framework\TestCase;
 
 class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
@@ -66,7 +66,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'sale_date' => '2024-01-15 10:30:00'
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
 
         // Required mustSupport elements per US Core
         $this->assertNotNull($fhirResource->getStatus()); // status (required)
@@ -93,7 +93,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
 //            'administered_date' => '2024-01-15 14:30:00'
 //        ]);
 //
-//        $fhirResource = $this->immunizationService->parseOpenEMRRecord($testRecord);
+//        $fhirResource = $this->immunizationService->parseDCLRecord($testRecord);
 //
 //        // Required mustSupport elements per US Core
 //        $this->assertNotNull($fhirResource->getStatus());
@@ -122,7 +122,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
 
         foreach ($testCases as $testCase) {
             $testRecord = $this->fixtureManager->createDrugSaleDispense($testCase);
-            $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+            $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
 
             $status = $fhirResource->getStatus();
             $this->assertContains($status, $validStatuses);
@@ -141,7 +141,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'drug_name' => 'Amoxicillin 500mg'
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
         $medication = $fhirResource->getMedicationCodeableConcept();
 
         $codings = $medication->getCoding();
@@ -167,7 +167,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
 //            'cvx_code' => '140'
 //        ]);
 //
-//        $fhirResource = $this->immunizationService->parseOpenEMRRecord($testRecord);
+//        $fhirResource = $this->immunizationService->parseDCLRecord($testRecord);
 //        $medication = $fhirResource->getMedicationCodeableConcept();
 //
 //        $codings = $medication->getCoding();
@@ -190,7 +190,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
     public function testSubjectReferenceCompliance(): void
     {
         $testRecord = $this->fixtureManager->createDrugSaleDispense();
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
 
         $subject = $fhirResource->getSubject();
         $this->assertNotNull($subject);
@@ -208,7 +208,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'encounter' => 0 // make sure an encounter is created and linked
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
         $context = $fhirResource->getContext();
 
         if ($context) {
@@ -227,7 +227,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'prescription_id' => 0 // ensure a prescription is created and linked
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
         $authorizingPrescriptions = $fhirResource->getAuthorizingPrescription();
 
         if (!empty($authorizingPrescriptions)) {
@@ -247,7 +247,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'dispense_type' => 'FF'
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
         $type = $fhirResource->getType();
 
         $this->assertNotNull($type);
@@ -269,7 +269,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'unit' => 'tablet'
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
         $quantity = $fhirResource->getQuantity();
 
         $this->assertNotNull($quantity);
@@ -291,7 +291,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'sale_date' => '2024-01-15 10:30:00'
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
         $whenHandedOver = $fhirResource->getWhenHandedOver();
 
         $this->assertNotNull($whenHandedOver);
@@ -312,7 +312,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
 //            'route' => 'intramuscular'
 //        ]);
 //
-//        $fhirResource = $this->immunizationService->parseOpenEMRRecord($testRecord);
+//        $fhirResource = $this->immunizationService->parseDCLRecord($testRecord);
 //        $dosageInstructions = $fhirResource->getDosageInstruction();
 //
 //        if (!empty($dosageInstructions)) {
@@ -337,7 +337,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
     public function testResourceMetaProfile(): void
     {
         $testRecord = $this->fixtureManager->createDrugSaleDispense();
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
 
         $meta = $fhirResource->getMeta();
         if ($meta) {
@@ -401,7 +401,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
 //            'encounter' => 1
 //        ]);
 //
-//        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+//        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
 //        $subject = $fhirResource->getSubject();
 //
 //        $this->assertNotNull($subject);
@@ -431,7 +431,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'sale_date' => '2024-01-15 10:30:00'
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
 
         if ($fhirResource->getStatus() === 'completed') {
             $whenHandedOver = $fhirResource->getWhenHandedOver();
@@ -452,7 +452,7 @@ class FhirMedicationDispenseUSCore8ComplianceTest extends TestCase
             'rxnorm_code' => '308192'
         ]);
 
-        $fhirResource = $this->localDispensaryService->parseOpenEMRRecord($testRecord);
+        $fhirResource = $this->localDispensaryService->parseDCLRecord($testRecord);
 
         // Perform basic validation
         $this->assertInstanceOf(FHIRMedicationDispense::class, $fhirResource);

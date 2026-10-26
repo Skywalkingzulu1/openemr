@@ -3,27 +3,27 @@
 /**
  * dupecheck mergerecords.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  * @deprecated Its unlikely these files are used as the functionality has been replaced by the "Merge Patients" feature in the patient summary screen.
  */
 class DupeCheckMergeRecordsIsDeprecated
 {
     public function __construct()
     {
-        trigger_error("The dupecheck module is deprecated and will be removed in a future version of OpenEMR. Please use the 'Merge Patients' feature in the patient summary screen instead.", E_USER_DEPRECATED);
+        trigger_error("The dupecheck module is deprecated and will be removed in a future version of DCL. Please use the 'Merge Patients' feature in the patient summary screen instead.", E_USER_DEPRECATED);
     }
 }
 require_once("../../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
@@ -108,7 +108,7 @@ foreach ($parameters['otherid'] as $otherID) {
     UpdateTable("transactions", "pid", $otherPID, $masterPID);
 
     UpdateTable("chart_tracker", "ct_pid", $otherPID, $masterPID);
-    UpdateTable("openemr_postcalendar_events", "pc_pid", $otherPID, $masterPID);
+    UpdateTable("DCL_postcalendar_events", "pc_pid", $otherPID, $masterPID);
     UpdateTable("documents", "foreign_id", $otherPID, $masterPID);
 
     // update all the forms* tables
@@ -173,7 +173,7 @@ function UpdateTable($tablename, $pid_col, $oldvalue, $newvalue): void
                 $qResults = sqlStatement($sqlstmt, [$newvalue, $oldvalue]);
             }
 
-            $rowsupdated = \OpenEMR\Common\Database\QueryUtils::affectedRows();
+            $rowsupdated = \DCL\Common\Database\QueryUtils::affectedRows();
             echo "<li>";
             echo "" . text($tablename) . ": " . text($rowsupdated) . " row(s) updated<br />";
             echo "</li>";

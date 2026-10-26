@@ -1,11 +1,11 @@
 <?php
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Tests\Fixtures\BaseFixtureManager;
+use DCL\Tests\Fixtures\BaseFixtureManager;
 
 /**
- * Provides OpenEMR Fixtures/Sample Records to test cases as Objects or Database Records.
+ * Provides DCL Fixtures/Sample Records to test cases as Objects or Database Records.
  *
  * The FacilityFixtureManager generates sample records from JSON files located within the Fixture namespace.
  * To provide support for additional record types:
@@ -13,11 +13,11 @@ use OpenEMR\Tests\Fixtures\BaseFixtureManager;
  * - Add public methods to get, install, and remove fixture records.
  * - The "facility" related methods provide clear working examples.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FacilityFixtureManager extends BaseFixtureManager
 {
@@ -64,7 +64,7 @@ class FacilityFixtureManager extends BaseFixtureManager
     }
 
     /**
-     * Installs Facility Fixtures into the OpenEMR DB.
+     * Installs Facility Fixtures into the DCL DB.
      */
     public function installFacilityFixtures()
     {
@@ -72,7 +72,7 @@ class FacilityFixtureManager extends BaseFixtureManager
     }
 
     /**
-     * Removes Facility Fixtures from the OpenEMR DB.
+     * Removes Facility Fixtures from the DCL DB.
      */
     public function removeInstalledFixtures()
     {

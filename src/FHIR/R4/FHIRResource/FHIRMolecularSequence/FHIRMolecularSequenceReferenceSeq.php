@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Raw data describing a biological sequence.
@@ -71,55 +71,55 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 {
     /**
      * Structural unit composed of a nucleic acid molecule which controls its own replication through the interaction of specific proteins at one or more origins of replication ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $chromosome = null;
 
     /**
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh 37'.  Version number must be included if a versioned release of a primary build was used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $genomeBuild = null;
 
     /**
      * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIROrientationType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIROrientationType
      */
     public $orientation = null;
 
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $referenceSeqId = null;
 
     /**
      * A pointer to another MolecularSequence entity as reference sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $referenceSeqPointer = null;
 
     /**
      * A string like "ACGT".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $referenceSeqString = null;
 
     /**
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStrandType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStrandType
      */
     public $strand = null;
 
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $windowStart = null;
 
     /**
      * End position of the window on the reference sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $windowEnd = null;
 
@@ -130,7 +130,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * Structural unit composed of a nucleic acid molecule which controls its own replication through the interaction of specific proteins at one or more origins of replication ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getChromosome()
     {
@@ -139,7 +139,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * Structural unit composed of a nucleic acid molecule which controls its own replication through the interaction of specific proteins at one or more origins of replication ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $chromosome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $chromosome
      * @return $this
      */
     public function setChromosome($chromosome)
@@ -150,7 +150,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh 37'.  Version number must be included if a versioned release of a primary build was used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getGenomeBuild()
     {
@@ -159,7 +159,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh 37'.  Version number must be included if a versioned release of a primary build was used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $genomeBuild
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $genomeBuild
      * @return $this
      */
     public function setGenomeBuild($genomeBuild)
@@ -170,7 +170,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIROrientationType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIROrientationType
      */
     public function getOrientation()
     {
@@ -179,7 +179,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIROrientationType $orientation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIROrientationType $orientation
      * @return $this
      */
     public function setOrientation($orientation)
@@ -190,7 +190,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getReferenceSeqId()
     {
@@ -199,7 +199,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $referenceSeqId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $referenceSeqId
      * @return $this
      */
     public function setReferenceSeqId($referenceSeqId)
@@ -210,7 +210,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * A pointer to another MolecularSequence entity as reference sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getReferenceSeqPointer()
     {
@@ -219,7 +219,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * A pointer to another MolecularSequence entity as reference sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $referenceSeqPointer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $referenceSeqPointer
      * @return $this
      */
     public function setReferenceSeqPointer($referenceSeqPointer)
@@ -230,7 +230,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * A string like "ACGT".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getReferenceSeqString()
     {
@@ -239,7 +239,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * A string like "ACGT".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $referenceSeqString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $referenceSeqString
      * @return $this
      */
     public function setReferenceSeqString($referenceSeqString)
@@ -250,7 +250,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStrandType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStrandType
      */
     public function getStrand()
     {
@@ -259,7 +259,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStrandType $strand
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStrandType $strand
      * @return $this
      */
     public function setStrand($strand)
@@ -270,7 +270,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getWindowStart()
     {
@@ -279,7 +279,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $windowStart
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $windowStart
      * @return $this
      */
     public function setWindowStart($windowStart)
@@ -290,7 +290,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * End position of the window on the reference sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getWindowEnd()
     {
@@ -299,7 +299,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement implements \
 
     /**
      * End position of the window on the reference sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $windowEnd
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $windowEnd
      * @return $this
      */
     public function setWindowEnd($windowEnd)

@@ -3,8 +3,8 @@
 /**
  * Administration Lists Module.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Robert Down <robertdown@live.com>
@@ -13,23 +13,23 @@
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2022-2023 Robert Down <robertdown@live.com>
  * @copyright Copyright (c) 2017-2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 require_once("../../custom/code_types.inc.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\Billing\HcpcsDrugDefaults;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Billing\HcpcsDrugDefaults;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $language_choice = $session->get('language_choice');
@@ -822,7 +822,7 @@ function writeITLine($it_array): void
     ++$opt_line_no;
     $bgcolor = "#" . (($opt_line_no & 1) ? "ddddff" : "ffdddd");
     echo " <tr>\n";
-    echo ctSelector($opt_line_no, $it_array, 'category', IssueTypeRegistry::issueTypeCategories(), xl('OpenEMR Application Category'));
+    echo ctSelector($opt_line_no, $it_array, 'category', IssueTypeRegistry::issueTypeCategories(), xl('DCL Application Category'));
     echo ctGenCBox($opt_line_no, $it_array, 'active', xl('Is this active?'));
     echo ctGenCell($opt_line_no, $it_array, 'ordering', 4, 10, xl('Order{{Sequence}}'));
     echo ctGenCell($opt_line_no, $it_array, 'type', 15, 75, xl('Issue Type'));
@@ -1331,7 +1331,7 @@ function writeITLine($it_array): void
                     <th><?php echo xlt('Check Out'); ?></th>
                     <th><?php echo xlt('Code(s)'); ?></th>
                 <?php elseif ($list_id == 'issue_types') : ?>
-                    <th><?php echo xlt('OpenEMR Application Category'); ?></th>
+                    <th><?php echo xlt('DCL Application Category'); ?></th>
                     <th><?php echo xlt('Active{{Issue}}'); ?></th>
                     <th><?php echo xlt('Order{{Sequence}}'); ?></th>
                     <th><?php echo xlt('Type'); ?></th>

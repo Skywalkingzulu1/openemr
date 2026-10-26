@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMeasure;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMeasure;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The Measure resource provides the definition of a quality measure.
@@ -71,25 +71,25 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * Indicates a meaning for the supplemental data. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing supplemental data to be correlated across measures.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $usage = [];
 
     /**
      * The human readable description of this supplemental data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The criteria for the supplemental data. This is typically the name of a valid expression defined within a referenced library, but it may also be a path to a specific data element. The criteria defines the data to be returned for this element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $criteria = null;
 
@@ -100,7 +100,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Indicates a meaning for the supplemental data. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing supplemental data to be correlated across measures.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -109,7 +109,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Indicates a meaning for the supplemental data. This can be as simple as a unique identifier, or it can establish meaning in a broader context by drawing from a terminology, allowing supplemental data to be correlated across measures.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -120,7 +120,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getUsage()
     {
@@ -129,7 +129,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $usage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $usage
      * @return $this
      */
     public function addUsage($usage)
@@ -140,7 +140,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The human readable description of this supplemental data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -149,7 +149,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The human readable description of this supplemental data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -160,7 +160,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The criteria for the supplemental data. This is typically the name of a valid expression defined within a referenced library, but it may also be a path to a specific data element. The criteria defines the data to be returned for this element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getCriteria()
     {
@@ -169,7 +169,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The criteria for the supplemental data. This is typically the name of a valid expression defined within a referenced library, but it may also be a path to a specific data element. The criteria defines the data to be returned for this element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $criteria
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $criteria
      * @return $this
      */
     public function setCriteria($criteria)

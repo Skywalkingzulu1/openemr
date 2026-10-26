@@ -7,21 +7,21 @@
  * New forms are created via new.php and then this script is displayed.
  * Edit requests come here too...
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <rmagauran@gmail.com>
  * @copyright Copyright (c) 2016- Raymond Magauran <rmagauran@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 require_once(__DIR__ . "/../../globals.php");
 require_once(OEGlobalsBag::getInstance()->getSrcDir() . "/FeeSheetHtml.class.php");
@@ -258,7 +258,7 @@ if (!$LOCKED || !$LOCKEDBY) { //no one else has write privs.
 
 /**
  * Remove TIME component from $encounter_date (which is in DATETIME format) to just get the date,
- * since OpenEMR assumes input is yyyy-mm-dd.
+ * since DCL assumes input is yyyy-mm-dd.
  */
 $dated = new DateTime($encounter_data['encounter_date']);
 $dated = $dated->format('Y-m-d');
@@ -287,8 +287,8 @@ if ($refresh !== null && $refresh !== 'fullscreen') {
 <html>
   <head>
       <title> <?php echo xlt('Chart'); ?>: <?php echo text($pat_data['fname']) . " " . text($pat_data['lname']) . " " . text($visit_date); ?></title>
-      <meta name="description" content="OpenEMR: Eye Exam" />
-      <meta name="author" content="OpenEMR: Ophthalmology" />
+      <meta name="description" content="DCL: Eye Exam" />
+      <meta name="author" content="DCL: Ophthalmology" />
 
 
       <?php Header::setupHeader([ 'jquery-ui', 'jquery-ui-redmond','datetime-picker', 'dialog' ,'jscolor', 'chart' ]); ?>
@@ -4559,7 +4559,7 @@ if ($refresh !== null && $refresh !== 'fullscreen') {
         // We are building the panel bar with the patient medical info
         // Since the "lists" table has a "subtype" field now
         // each section could be customized, like SOCHx, subtype "smoking"
-        // However openEMR stores most of this SocHx data in the layout_options table with
+        // However DCL stores most of this SocHx data in the layout_options table with
         // the form_id='HIS' and group_name='4Lifestyle' fields.
         // So we need to conform and pull this information out of the current "History" fields.
         // We do this in the eye_mag_functions.php file by creating a new array $PMSFH

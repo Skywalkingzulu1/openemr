@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.
@@ -72,31 +72,31 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 {
     /**
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $value = null;
 
     /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantityComparator
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantityComparator
      */
     public $comparator = null;
 
     /**
      * A human-readable form of the unit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $unit = null;
 
     /**
      * The identification of the system that provides the coded form of the unit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $system = null;
 
     /**
      * A computer processable form of the unit in some unit representation system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
@@ -107,7 +107,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValue()
     {
@@ -116,7 +116,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $value
      * @return $this
      */
     public function setValue($value)
@@ -127,7 +127,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantityComparator
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantityComparator
      */
     public function getComparator()
     {
@@ -136,7 +136,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantityComparator $comparator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantityComparator $comparator
      * @return $this
      */
     public function setComparator($comparator)
@@ -147,7 +147,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * A human-readable form of the unit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getUnit()
     {
@@ -156,7 +156,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * A human-readable form of the unit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $unit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $unit
      * @return $this
      */
     public function setUnit($unit)
@@ -167,7 +167,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * The identification of the system that provides the coded form of the unit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSystem()
     {
@@ -176,7 +176,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * The identification of the system that provides the coded form of the unit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $system
      * @return $this
      */
     public function setSystem($system)
@@ -187,7 +187,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * A computer processable form of the unit in some unit representation system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -196,7 +196,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
 
     /**
      * A computer processable form of the unit in some unit representation system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)

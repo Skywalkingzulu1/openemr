@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent;
+namespace DCL\FHIR\R4\FHIRResource\FHIRAdverseEvent;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRAdverseEvent;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.
@@ -71,25 +71,25 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Assessment of if the entity caused the event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $assessment = null;
 
     /**
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $productRelatedness = null;
 
     /**
      * AdverseEvent.suspectEntity.causalityAuthor.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
     /**
      * ProbabilityScale | Bayesian | Checklist.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
@@ -100,7 +100,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Assessment of if the entity caused the event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAssessment()
     {
@@ -109,7 +109,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Assessment of if the entity caused the event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $assessment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $assessment
      * @return $this
      */
     public function setAssessment($assessment)
@@ -120,7 +120,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getProductRelatedness()
     {
@@ -129,7 +129,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $productRelatedness
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $productRelatedness
      * @return $this
      */
     public function setProductRelatedness($productRelatedness)
@@ -140,7 +140,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * AdverseEvent.suspectEntity.causalityAuthor.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -149,7 +149,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * AdverseEvent.suspectEntity.causalityAuthor.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)
@@ -160,7 +160,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * ProbabilityScale | Bayesian | Checklist.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -169,7 +169,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * ProbabilityScale | Bayesian | Checklist.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)

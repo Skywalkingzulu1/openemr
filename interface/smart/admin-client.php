@@ -1,30 +1,30 @@
 <?php
 
 /**
- * admin-client.php  Main entry point for the OpenEMR OAUTH2 / SMART client registration management page
+ * admin-client.php  Main entry point for the DCL OAUTH2 / SMART client registration management page
  * Provides functionality to see the list of registered client's and the ability to enable / disable
  * client registrations.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // need to make sure our autoloader is present.
 /**
- * @var \OpenEMR\Core\OEGlobalsBag $oeGlobals
+ * @var \DCL\Core\OEGlobalsBag $oeGlobals
  */
 $oeGlobals = require_once("../globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Csrf\CsrfInvalidException;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Http\HttpSessionFactory;
-use OpenEMR\FHIR\SMART\ClientAdminController;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Csrf\CsrfInvalidException;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Http\HttpSessionFactory;
+use DCL\FHIR\SMART\ClientAdminController;
 
 try {
     // TODO: @adunsulag at some point we'd like to have a CoreApplication like the ApiApplication that will dispatch controllers, refactor this once we have that

@@ -175,7 +175,7 @@
                 <foreignKey table="list_options" column="option_id" />
             </column>
             <column name="external_allergyid" comments="An identifier for an allergy from an external eRx system" />
-            <column name="erx_source" comments="O if the allergy issue originated in OpenEMR, 1 if the allergy issue originated in an external system" />
+            <column name="erx_source" comments="O if the allergy issue originated in DCL, 1 if the allergy issue originated in an external system" />
             <column name="erx_uploaded" comments="O if allergy is still waiting to be uploaded to an external system (such as eRX), 1 if the allergy issue has been successfully received by the eRX system" />
             <column name="modifydate" comments="The date the issue record was last modified" />
             <column name="severity_al" comments="Comes from the list_options.list_id='severity_ccda' and represents the severity of the allergic reaction of the patient to the allergy">
@@ -653,13 +653,13 @@
         </table>
 <!--        - Recall Appts-->
 <!--        - Patient Appointments-->
-        <table name="openemr_postcalendar_events" comments="Holds records for Patient Appointment/Calendar information">
+        <table name="DCL_postcalendar_events" comments="Holds records for Patient Appointment/Calendar information">
             <column name="pc_eid" comments="Surrogate id of the record used as the primary incrementing key"/>
             <column name="pc_pid"  comments="The internal patient identifier">
                 <foreignKey table="patient_data" column="pid" />
             </column>
             <column name="pc_catid" comments="The appointment category">
-                <foreignKey table="openemr_postcalendar_categories" column="pc_catid" />
+                <foreignKey table="DCL_postcalendar_categories" column="pc_catid" />
             </column>
             <column name="pc_aid" comments="The provider this appointment is connected to">
                 <foreignKey table="users" column="id" />
@@ -683,7 +683,7 @@
                 <foreignKey table="users" column="id" />
             </column>
             <column name="pc_prefcatid" comments="Preferred category id for a provider available slot">
-                <foreignKey table="openemr_postcalendar_categories" column="pc_catid" />
+                <foreignKey table="DCL_postcalendar_categories" column="pc_catid" />
             </column>
             <column name="pc_multiple" comments="Multiple occurrences of the event. Used if this is a recurring appointment."/>
             <column name="pc_title" comments="Title of the event"/>
@@ -714,7 +714,7 @@
             <column name="pc_sendalertemail" comments="Send email alerts for the event"/>
             <column name="uuid" comments="UUID of the record"/>
         </table>
-        <table name="openemr_postcalendar_categories" comments="Contains the types / categories a patient scheduled appointment can be">
+        <table name="DCL_postcalendar_categories" comments="Contains the types / categories a patient scheduled appointment can be">
             <column name="pc_catid" comments="Auto-incremented identifier for the appointment category"/>
             <column name="pc_constant_id" comments="Identifier for the appointment category which is referenced in the codebase for appointment specific functionality"/>
             <column name="pc_catname" comments="Name of the appointment category"/>
@@ -742,7 +742,7 @@
                 <foreignKey table="patient_data" column="pid" />
             </column>
             <column name="eid"  comments="The calendar appointment id">
-                <foreignKey table="openemr_postcalendar_events" column="pc_eid" />
+                <foreignKey table="DCL_postcalendar_events" column="pc_eid" />
             </column>
             <column name="original_user" comments="This is the user that created the original record">
                 <foreignKey table="users" column="username" />
@@ -797,7 +797,7 @@
             <column name="list_id" comments="FK to lists.id associated with the document when the document is related to an issue">
                 <foreignKey table="lists" column="id" />
             </column>
-            <column name="name" comments="Name of the document. Populated since OpenEMR versions 6.0.0+"/>
+            <column name="name" comments="Name of the document. Populated since DCL versions 6.0.0+"/>
             <column name="drive_uuid" comments="UUID of the document's drive. Empty in export" exclude="true"/>
             <column name="couch_docid" comments="CouchDB document ID"/>
             <column name="couch_revid" comments="CouchDB revision ID"/>
@@ -1355,7 +1355,7 @@
             <column name="review_status" comments="The status of the report review (e.g., pending review, received, reviewed)."/>
             <column name="report_notes" comments="Notes from the lab related to the report."/>
         </table>
-        <table name="procedure_type" comments="This table holds a compendium of possible procedures and labs that can be ordered by the procedure ordering system within OpenEMR">
+        <table name="procedure_type" comments="This table holds a compendium of possible procedures and labs that can be ordered by the procedure ordering system within DCL">
             <column name="procedure_type_id" comments="Surrogate id of the record used as the primary incrementing key"/>
             <column name="parent" comments="References procedure_type.procedure_type_id for heirarchies of procedure types"/>
             <column name="name" comments="Name for this category, procedure or result type"/>
@@ -1831,7 +1831,7 @@
             <column name="pid"  comments="The internal patient identifier.">
                 <foreignKey table="patient_data" column="pid" />
             </column>
-            <column name="template_content" comments="Digital document template that is assigned to a patient to be filled out.  Uses Domain Specific Language (DSL) template tags to inject specific functionality into the template for patients to fill out.  Patient data template tags can be found at the following URL: https://www.open-emr.org/wiki/index.php/Patient_Portal_Document_Templates" />
+            <column name="template_content" comments="Digital document template that is assigned to a patient to be filled out.  Uses Domain Specific Language (DSL) template tags to inject specific functionality into the template for patients to fill out.  Patient data template tags can be found at the following URL: https://www.dcl.org/wiki/index.php/Patient_Portal_Document_Templates" />
         </table>
 
         <table name="onsite_signatures" comments="Patient portal digital signatures used for patient documents and anywhere else a signature is required in the portal">
@@ -2156,8 +2156,8 @@
             <column name="onset_date" comments="The date when the condition or issue for the group started"/>
             <column name="sensitivity" comments="Sensitivity information related to the encounter as to who should be able to access / view this encounter"/>
             <column name="billing_note" comments="Notes related to billing for the encounter"/>
-            <column name="pc_catid" comments="The encounter service category taken from 'openemr_postcalendar_categories'">
-                <foreignKey table="openemr_postcalendar_categories" column="pc_catid" />
+            <column name="pc_catid" comments="The encounter service category taken from 'DCL_postcalendar_categories'">
+                <foreignKey table="DCL_postcalendar_categories" column="pc_catid" />
             </column>
             <column name="last_level_billed"  comments="The party for whom payment was last billed. 0=None, 1=Ins1, 2=Ins2, 3=Ins3" />
             <column name="last_level_closed"  comments="The party for whom payment was last received. 0=None, 1=Ins1, 2=Ins2, 3=Ins3" />
@@ -2179,7 +2179,7 @@
             <column name="pos_code" comments="Place of service code"/>
             <column name="counselors" comments="Information about counselors related to the encounter"/>
             <column name="appt_id"  comments="The calendar appointment id that this encounter is associated with or that this encounter was created from">
-                <foreignKey table="openemr_postcalendar_events" column="pc_eid" />
+                <foreignKey table="DCL_postcalendar_events" column="pc_eid" />
             </column>
         </table>
         <table name="form_group_attendance" comments="Group encounter form for tracking the attendance of therapy participants to a group session encounter">

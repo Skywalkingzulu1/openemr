@@ -4,7 +4,7 @@ Opened by `.github/workflows/updatecli-docker-pins.yml` from `.github/updatecli/
 
 #### Why a bot and not Dependabot
 
-Dependabot's docker ecosystem parses literal `FROM alpine:3.24` lines. Every OpenEMR Dockerfile writes `FROM alpine:${ALPINE_VERSION}`, so the entries that covered these files produced no PRs at all (see `docs/docker-migration-from-devops.md`). With nothing watching them, the two pins drifted apart on their own — binary on 3.22, release on 3.24.
+Dependabot's docker ecosystem parses literal `FROM alpine:3.24` lines. Every DCL Dockerfile writes `FROM alpine:${ALPINE_VERSION}`, so the entries that covered these files produced no PRs at all (see `docs/docker-migration-from-devops.md`). With nothing watching them, the two pins drifted apart on their own — binary on 3.22, release on 3.24.
 
 #### Scope
 

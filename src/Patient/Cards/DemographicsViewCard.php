@@ -3,19 +3,19 @@
 /**
  * DemographicsViewCard - presentation view of a patient's demographics information in a card widget.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Patient\Cards;
+namespace DCL\Patient\Cards;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Events\Patient\Summary\Card\CardModel;
-use OpenEMR\Events\Patient\Summary\Card\RenderEvent;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Events\Patient\Summary\Card\CardModel;
+use DCL\Events\Patient\Summary\Card\RenderEvent;
 
 class DemographicsViewCard extends CardModel
 {

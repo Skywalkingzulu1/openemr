@@ -1,21 +1,21 @@
 <?php
 
 /**
- * API index page for receiving requests from the OpenEMR clinician requests.
+ * API index page for receiving requests from the DCL clinician requests.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // since we are working inside the portal we have to use the portal session verification logic here...
 require_once "../../../../globals.php";
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Bootstrap;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use Comlink\DCL\Modules\TeleHealthModule\Bootstrap;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 $kernel = OEGlobalsBag::getInstance()->getKernel();
 $bootstrap = new Bootstrap($kernel->getEventDispatcher(), $kernel);

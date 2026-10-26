@@ -14,31 +14,31 @@
  * is registered during setUp and removed during tearDown so no test-only
  * state leaks into other tests or production.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\Background\BackgroundServiceDefinition;
-use OpenEMR\Services\Background\BackgroundServiceRegistry;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\Background\BackgroundServiceDefinition;
+use DCL\Services\Background\BackgroundServiceRegistry;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-use function OpenEMR\Tests\Api\Fixtures\BackgroundService\Probe\apiProbeSentinelPath;
+use function DCL\Tests\Api\Fixtures\BackgroundService\Probe\apiProbeSentinelPath;
 
 class BackgroundServiceApiTest extends TestCase
 {
     private const LIST_ENDPOINT = "/apis/default/api/background_service";
     private const PROBE_NAME = '_api_background_service_probe';
-    private const PROBE_FUNCTION = 'OpenEMR\\Tests\\Api\\Fixtures\\BackgroundService\\Probe\\markApiProbeSentinel';
+    private const PROBE_FUNCTION = 'DCL\\Tests\\Api\\Fixtures\\BackgroundService\\Probe\\markApiProbeSentinel';
     private const PROBE_REQUIRE_ONCE = 'tests/Tests/Api/Fixtures/BackgroundService/BackgroundServiceApiProbe.php';
 
     private ApiTestClient $testClient;
@@ -53,9 +53,9 @@ class BackgroundServiceApiTest extends TestCase
         // runner's `require_once` on the probe's row.
         require_once __DIR__ . '/Fixtures/BackgroundService/BackgroundServiceApiProbe.php';
 
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthTokenOrFail(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthTokenOrFail(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->registry = new BackgroundServiceRegistry();
         $this->sentinelPath = apiProbeSentinelPath();

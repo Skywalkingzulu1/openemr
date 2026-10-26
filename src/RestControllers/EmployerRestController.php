@@ -3,24 +3,24 @@
 /**
  * EmployerRestController handles the API rest requests to the employer data for a patient
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2024 Care Management Solutions, Inc. <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Services\EmployerService;
-use OpenEMR\Services\Search\DateSearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Services\EmployerService;
+use DCL\Services\Search\DateSearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 use Psr\Http\Message\ResponseInterface;
 
 class EmployerRestController
@@ -59,7 +59,7 @@ class EmployerRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => ['user/employer.read', 'patient/employer.read']]]
+        security: [['DCL_auth' => ['user/employer.read', 'patient/employer.read']]]
     )]
     public function getAll(HttpRestRequest $request, array $searchParams): ResponseInterface
     {

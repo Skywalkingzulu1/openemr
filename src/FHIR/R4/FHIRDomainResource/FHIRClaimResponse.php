@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
@@ -72,163 +72,163 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this claim response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status of the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subType = null;
 
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUse
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUse
      */
     public $use = null;
 
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $patient = null;
 
     /**
      * The date this resource was created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $created = null;
 
     /**
      * The party responsible for authorization, adjudication and reimbursement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $insurer = null;
 
     /**
      * The provider which is responsible for the claim, predetermination or preauthorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requestor = null;
 
     /**
      * Original request resource reference.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $request = null;
 
     /**
      * The outcome of the claim, predetermination, or preauthorization processing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRClaimProcessingCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRClaimProcessingCodes
      */
     public $outcome = null;
 
     /**
      * A human readable description of the status of the adjudication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $disposition = null;
 
     /**
      * Reference from the Insurer which is used in later communications which refers to this adjudication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $preAuthRef = null;
 
     /**
      * The time frame during which this authorization is effective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $preAuthPeriod = null;
 
     /**
      * Type of Party to be reimbursed: subscriber, provider, other.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $payeeType = null;
 
     /**
      * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem[]
      */
     public $item = [];
 
     /**
      * The first-tier service adjudications for payor added product or service lines.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem[]
      */
     public $addItem = [];
 
     /**
      * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public $adjudication = [];
 
     /**
      * Categorized monetary totals for the adjudication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseTotal[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseTotal[]
      */
     public $total = [];
 
     /**
      * Payment details for the adjudication of the claim.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponsePayment
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponsePayment
      */
     public $payment = null;
 
     /**
      * A code, used only on a response to a preauthorization, to indicate whether the benefits payable have been reserved and for whom.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $fundsReserve = null;
 
     /**
      * A code for the form to be used for printing the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $formCode = null;
 
     /**
      * The actual form, by reference or inclusion, for printing the content or an EOB.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $form = null;
 
     /**
      * A note that describes or explains adjudication results in a human readable form.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
      */
     public $processNote = [];
 
     /**
      * Request for additional supporting or authorizing information.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $communicationRequest = [];
 
     /**
      * Financial instruments for reimbursement for the health care products and services specified on the claim.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseInsurance[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseInsurance[]
      */
     public $insurance = [];
 
     /**
      * Errors encountered during the processing of the adjudication.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError[]
      */
     public $error = [];
 
@@ -239,7 +239,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this claim response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -248,7 +248,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this claim response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -259,7 +259,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -268,7 +268,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -279,7 +279,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -288,7 +288,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -299,7 +299,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubType()
     {
@@ -308,7 +308,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A finer grained suite of claim type codes which may convey additional information such as Inpatient vs Outpatient and/or a specialty service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
      * @return $this
      */
     public function setSubType($subType)
@@ -319,7 +319,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUse
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUse
      */
     public function getUse()
     {
@@ -328,7 +328,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future; or requesting the non-binding adjudication of the listed products and services which could be provided in the future.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUse $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUse $use
      * @return $this
      */
     public function setUse($use)
@@ -339,7 +339,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPatient()
     {
@@ -348,7 +348,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $patient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $patient
      * @return $this
      */
     public function setPatient($patient)
@@ -359,7 +359,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date this resource was created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreated()
     {
@@ -368,7 +368,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date this resource was created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $created
      * @return $this
      */
     public function setCreated($created)
@@ -379,7 +379,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party responsible for authorization, adjudication and reimbursement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInsurer()
     {
@@ -388,7 +388,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The party responsible for authorization, adjudication and reimbursement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $insurer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $insurer
      * @return $this
      */
     public function setInsurer($insurer)
@@ -399,7 +399,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider which is responsible for the claim, predetermination or preauthorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequestor()
     {
@@ -408,7 +408,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The provider which is responsible for the claim, predetermination or preauthorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requestor
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requestor
      * @return $this
      */
     public function setRequestor($requestor)
@@ -419,7 +419,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Original request resource reference.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequest()
     {
@@ -428,7 +428,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Original request resource reference.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function setRequest($request)
@@ -439,7 +439,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The outcome of the claim, predetermination, or preauthorization processing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRClaimProcessingCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRClaimProcessingCodes
      */
     public function getOutcome()
     {
@@ -448,7 +448,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The outcome of the claim, predetermination, or preauthorization processing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRClaimProcessingCodes $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRClaimProcessingCodes $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -459,7 +459,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A human readable description of the status of the adjudication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisposition()
     {
@@ -468,7 +468,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A human readable description of the status of the adjudication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $disposition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $disposition
      * @return $this
      */
     public function setDisposition($disposition)
@@ -479,7 +479,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference from the Insurer which is used in later communications which refers to this adjudication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPreAuthRef()
     {
@@ -488,7 +488,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference from the Insurer which is used in later communications which refers to this adjudication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $preAuthRef
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $preAuthRef
      * @return $this
      */
     public function setPreAuthRef($preAuthRef)
@@ -499,7 +499,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time frame during which this authorization is effective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPreAuthPeriod()
     {
@@ -508,7 +508,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The time frame during which this authorization is effective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $preAuthPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $preAuthPeriod
      * @return $this
      */
     public function setPreAuthPeriod($preAuthPeriod)
@@ -519,7 +519,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Type of Party to be reimbursed: subscriber, provider, other.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPayeeType()
     {
@@ -528,7 +528,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Type of Party to be reimbursed: subscriber, provider, other.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $payeeType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $payeeType
      * @return $this
      */
     public function setPayeeType($payeeType)
@@ -539,7 +539,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem[]
      */
     public function getItem()
     {
@@ -548,7 +548,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem $item
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem $item
      * @return $this
      */
     public function addItem($item)
@@ -559,7 +559,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The first-tier service adjudications for payor added product or service lines.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem[]
      */
     public function getAddItem()
     {
@@ -568,7 +568,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The first-tier service adjudications for payor added product or service lines.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem $addItem
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem $addItem
      * @return $this
      */
     public function addAddItem($addItem)
@@ -579,7 +579,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public function getAdjudication()
     {
@@ -588,7 +588,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
      * @return $this
      */
     public function addAdjudication($adjudication)
@@ -599,7 +599,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorized monetary totals for the adjudication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseTotal[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseTotal[]
      */
     public function getTotal()
     {
@@ -608,7 +608,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Categorized monetary totals for the adjudication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseTotal $total
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseTotal $total
      * @return $this
      */
     public function addTotal($total)
@@ -619,7 +619,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Payment details for the adjudication of the claim.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponsePayment
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponsePayment
      */
     public function getPayment()
     {
@@ -628,7 +628,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Payment details for the adjudication of the claim.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponsePayment $payment
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponsePayment $payment
      * @return $this
      */
     public function setPayment($payment)
@@ -639,7 +639,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code, used only on a response to a preauthorization, to indicate whether the benefits payable have been reserved and for whom.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFundsReserve()
     {
@@ -648,7 +648,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code, used only on a response to a preauthorization, to indicate whether the benefits payable have been reserved and for whom.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $fundsReserve
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $fundsReserve
      * @return $this
      */
     public function setFundsReserve($fundsReserve)
@@ -659,7 +659,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code for the form to be used for printing the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFormCode()
     {
@@ -668,7 +668,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code for the form to be used for printing the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $formCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $formCode
      * @return $this
      */
     public function setFormCode($formCode)
@@ -679,7 +679,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual form, by reference or inclusion, for printing the content or an EOB.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getForm()
     {
@@ -688,7 +688,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual form, by reference or inclusion, for printing the content or an EOB.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $form
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $form
      * @return $this
      */
     public function setForm($form)
@@ -699,7 +699,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A note that describes or explains adjudication results in a human readable form.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
      */
     public function getProcessNote()
     {
@@ -708,7 +708,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A note that describes or explains adjudication results in a human readable form.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote $processNote
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote $processNote
      * @return $this
      */
     public function addProcessNote($processNote)
@@ -719,7 +719,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Request for additional supporting or authorizing information.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getCommunicationRequest()
     {
@@ -728,7 +728,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Request for additional supporting or authorizing information.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $communicationRequest
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $communicationRequest
      * @return $this
      */
     public function addCommunicationRequest($communicationRequest)
@@ -739,7 +739,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Financial instruments for reimbursement for the health care products and services specified on the claim.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseInsurance[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseInsurance[]
      */
     public function getInsurance()
     {
@@ -748,7 +748,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Financial instruments for reimbursement for the health care products and services specified on the claim.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseInsurance $insurance
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseInsurance $insurance
      * @return $this
      */
     public function addInsurance($insurance)
@@ -759,7 +759,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Errors encountered during the processing of the adjudication.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError[]
      */
     public function getError()
     {
@@ -768,7 +768,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Errors encountered during the processing of the adjudication.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError $error
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError $error
      * @return $this
      */
     public function addError($error)

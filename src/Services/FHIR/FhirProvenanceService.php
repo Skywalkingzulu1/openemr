@@ -2,37 +2,37 @@
 
 /**
  * FhirProvenanceService handles all data model operations against a FHIR provenance resource.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\FHIR\Export\ExportCannotEncodeException;
-use OpenEMR\FHIR\Export\ExportException;
-use OpenEMR\FHIR\Export\ExportJob;
-use OpenEMR\FHIR\Export\ExportStreamWriter;
-use OpenEMR\FHIR\Export\ExportWillShutdownException;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\Utils\FhirServiceLocator;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\SessionAwareInterface;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\FHIR\Export\ExportCannotEncodeException;
+use DCL\FHIR\Export\ExportException;
+use DCL\FHIR\Export\ExportJob;
+use DCL\FHIR\Export\ExportStreamWriter;
+use DCL\FHIR\Export\ExportWillShutdownException;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRProvenance\FHIRProvenanceAgent;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\Utils\FhirServiceLocator;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\SessionAwareInterface;
+use DCL\Validators\ProcessingResult;
 
 class FhirProvenanceService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService
 {
@@ -44,7 +44,7 @@ class FhirProvenanceService extends FhirServiceBase implements IResourceUSCIGPro
     // Ids can be up to 64 characters long, and contain any combination of upper and lowercase ASCII letters,
     // numerals, "-" and ".".  Logical ids are opaque to the resource server and should NOT be changed once they've
     // been issued by the resource server
-    // Up to OpenEMR 6.1.0 patch 0 we used : as our separator for Provenance, and _ as our separator for resources such
+    // Up to DCL 6.1.0 patch 0 we used : as our separator for Provenance, and _ as our separator for resources such
     // as CarePlan and Goals.
     const SURROGATE_KEY_SEPARATOR_V1 = ":";
     // use the abbreviation PSK for Provenance Surrogate key and hyphens.  Since Logical ids are opaque we can do this as long as
@@ -193,7 +193,7 @@ class FhirProvenanceService extends FhirServiceBase implements IResourceUSCIGPro
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -203,13 +203,13 @@ class FhirProvenanceService extends FhirServiceBase implements IResourceUSCIGPro
     }
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR Resource
+     * Parses an DCL data record, returning the equivalent FHIR Resource
      *
-     * @param $dataRecord The source OpenEMR data record
+     * @param $dataRecord The source DCL data record
      * @param $encode Indicates if the returned resource is encoded into a string. Defaults to True.
      * @return the FHIR Resource. Returned format is defined using $encode parameter.
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         return $dataRecord; //
     }

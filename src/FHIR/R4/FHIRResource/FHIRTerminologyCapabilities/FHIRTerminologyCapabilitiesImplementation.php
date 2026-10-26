@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -71,13 +71,13 @@ class FHIRTerminologyCapabilitiesImplementation extends FHIRBackboneElement impl
 {
     /**
      * Information about the specific installation that this terminology capability statement relates to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * An absolute base URL for the implementation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $url = null;
 
@@ -88,7 +88,7 @@ class FHIRTerminologyCapabilitiesImplementation extends FHIRBackboneElement impl
 
     /**
      * Information about the specific installation that this terminology capability statement relates to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -97,7 +97,7 @@ class FHIRTerminologyCapabilitiesImplementation extends FHIRBackboneElement impl
 
     /**
      * Information about the specific installation that this terminology capability statement relates to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -108,7 +108,7 @@ class FHIRTerminologyCapabilitiesImplementation extends FHIRBackboneElement impl
 
     /**
      * An absolute base URL for the implementation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getUrl()
     {
@@ -117,7 +117,7 @@ class FHIRTerminologyCapabilitiesImplementation extends FHIRBackboneElement impl
 
     /**
      * An absolute base URL for the implementation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $url
      * @return $this
      */
     public function setUrl($url)

@@ -34,7 +34,7 @@ permissions:
 
 jobs:
   test:
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v7

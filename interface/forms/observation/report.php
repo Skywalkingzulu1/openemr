@@ -3,23 +3,23 @@
 /**
  * Functional cognitive status form.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T Paul <jacob@zhservices.com>
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2015 Z&H Consultancy Services Private Limited <sam@zhservices.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Controllers\Interface\Forms\Observation\ObservationController;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FormService;
-use OpenEMR\Services\ObservationService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Controllers\Interface\Forms\Observation\ObservationController;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FormService;
+use DCL\Services\ObservationService;
 
 function observation_report($pid, $encounter, $cols, $id): void
 {

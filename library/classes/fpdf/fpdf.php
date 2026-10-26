@@ -8,7 +8,7 @@
 * Author:  Olivier PLATHEY                                                     *
 *******************************************************************************/
 
-// Modified by OpenEMR to work with the Barcode class
+// Modified by DCL to work with the Barcode class
 // Needed to make $k, $w, and $h var.
 // Thus was unable to bring this in via composer since modified.
 

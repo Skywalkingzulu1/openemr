@@ -2,18 +2,18 @@
 
 /**
  * FormQuestionnaireAssessment represents an encounter forms_questionnaire_assessment database table record used
- * inside OpenEMR.  It sets up default properties from the session but consumers can override the options.
+ * inside DCL.  It sets up default properties from the session but consumers can override the options.
  *
- * @see \OpenEMR\Services\FormService on how this class is saved in the database.
+ * @see \DCL\Services\FormService on how this class is saved in the database.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Discover and Change, Inc. <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2023 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
 class FormQuestionnaireAssessment extends BaseForm
 {

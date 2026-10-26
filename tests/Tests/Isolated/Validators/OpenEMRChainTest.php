@@ -1,48 +1,48 @@
 <?php
 
 /**
- * Isolated OpenEMRChain Test
+ * Isolated DCLChain Test
  *
- * Tests OpenEMRChain validation functionality without database dependencies.
- * OpenEMRChain extends Particle\Validator\Chain to provide OpenEMR-specific
+ * Tests DCLChain validation functionality without database dependencies.
+ * DCLChain extends Particle\Validator\Chain to provide DCL-specific
  * validation rules, particularly the listOption rule.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators;
+namespace DCL\Tests\Isolated\Validators;
 
-use OpenEMR\Validators\OpenEMRChain;
+use DCL\Validators\DCLChain;
 use Particle\Validator\Chain;
 use PHPUnit\Framework\TestCase;
 
-class OpenEMRChainTest extends TestCase
+class DCLChainTest extends TestCase
 {
     public function testChainInheritsFromParticleChain(): void
     {
-        $chain = new OpenEMRChain('test_key', 'Test Field', false, true);
+        $chain = new DCLChain('test_key', 'Test Field', false, true);
         $this->assertInstanceOf(Chain::class, $chain);
     }
 
     public function testChainIsInstantiable(): void
     {
-        $chain = new OpenEMRChain('test_key', 'Test Field', false, true);
-        $this->assertInstanceOf(OpenEMRChain::class, $chain);
+        $chain = new DCLChain('test_key', 'Test Field', false, true);
+        $this->assertInstanceOf(DCLChain::class, $chain);
     }
 
     public function testListOptionMethodExists(): void
     {
-        $chain = new OpenEMRChain('test_key', 'Test Field', false, true);
+        $chain = new DCLChain('test_key', 'Test Field', false, true);
         $this->assertTrue(method_exists($chain, 'listOption'));
     }
 
     public function testListOptionReturnsChainForFluency(): void
     {
-        $chain = new OpenEMRChain('test_key', 'Test Field', false, true);
+        $chain = new DCLChain('test_key', 'Test Field', false, true);
         $result = $chain->listOption('test_list');
 
         $this->assertSame($chain, $result, 'listOption should return $this for method chaining');
@@ -51,21 +51,21 @@ class OpenEMRChainTest extends TestCase
     public function testChainCanBeConstructedWithDifferentParameters(): void
     {
         // Test with required field
-        $requiredChain = new OpenEMRChain('required_key', 'Required Field', true, false);
-        $this->assertInstanceOf(OpenEMRChain::class, $requiredChain);
+        $requiredChain = new DCLChain('required_key', 'Required Field', true, false);
+        $this->assertInstanceOf(DCLChain::class, $requiredChain);
 
         // Test with optional field
-        $optionalChain = new OpenEMRChain('optional_key', 'Optional Field', false, true);
-        $this->assertInstanceOf(OpenEMRChain::class, $optionalChain);
+        $optionalChain = new DCLChain('optional_key', 'Optional Field', false, true);
+        $this->assertInstanceOf(DCLChain::class, $optionalChain);
 
         // Test with different key formats
-        $snakeCaseChain = new OpenEMRChain('snake_case_key', 'Snake Case Field', false, true);
-        $this->assertInstanceOf(OpenEMRChain::class, $snakeCaseChain);
+        $snakeCaseChain = new DCLChain('snake_case_key', 'Snake Case Field', false, true);
+        $this->assertInstanceOf(DCLChain::class, $snakeCaseChain);
     }
 
     public function testChainSupportsMethodChaining(): void
     {
-        $chain = new OpenEMRChain('test_key', 'Test Field', false, true);
+        $chain = new DCLChain('test_key', 'Test Field', false, true);
 
         // Test that we can chain multiple listOption calls
         $result = $chain->listOption('first_list')
@@ -76,12 +76,12 @@ class OpenEMRChainTest extends TestCase
 
     public function testClassExists(): void
     {
-        $this->assertTrue(class_exists(OpenEMRChain::class));
+        $this->assertTrue(class_exists(DCLChain::class));
     }
 
     public function testListOptionAcceptsDifferentListIds(): void
     {
-        $chain = new OpenEMRChain('test_key', 'Test Field', false, true);
+        $chain = new DCLChain('test_key', 'Test Field', false, true);
 
         // Test with various list ID formats
         $chain->listOption('simple_list');

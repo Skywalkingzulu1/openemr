@@ -3,34 +3,34 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2018-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use Exception;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
 use MyMailer;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Common\ValueObjects\PhoneNumber;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\BootstrapService;
-use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
-use OpenEMR\Modules\FaxSMS\Service\CredentialsRepository;
-use OpenEMR\Modules\FaxSMS\Service\ServiceFactory;
-use OpenEMR\Services\PatientPortalService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Common\ValueObjects\PhoneNumber;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\BootstrapService;
+use DCL\Modules\FaxSMS\Enums\ServiceType;
+use DCL\Modules\FaxSMS\Service\CredentialsRepository;
+use DCL\Modules\FaxSMS\Service\ServiceFactory;
+use DCL\Services\PatientPortalService;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Throwable;
@@ -38,7 +38,7 @@ use Throwable;
 /**
  * Class AppDispatch
  *
- * @package OpenEMR\Modules\FaxSMS\Controller
+ * @package DCL\Modules\FaxSMS\Controller
  */
 abstract class AppDispatch
 {
@@ -775,7 +775,7 @@ abstract class AppDispatch
      *
      * A number that already carries a "+CC" prefix is self-describing and the
      * region is ignored; this only governs how a number entered without a
-     * country code is interpreted. The value is sourced from OpenEMR's Locale
+     * country code is interpreted. The value is sourced from DCL's Locale
      * global "Telephone Country Code" ($GLOBALS['phone_country_code']), which
      * historically stores a numeric dialing code (1, 44, ...). That is mapped
      * to the ISO 3166-1 alpha-2 region libphonenumber expects ("US", "GB").

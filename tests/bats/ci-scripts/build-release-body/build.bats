@@ -35,7 +35,7 @@ teardown() {
 Short body content.
 EOF
     SECTION_FILE=section.md VERSION=8.2.0 DATE=2026-07-08 \
-        CHANGELOG_URL=https://github.com/openemr/openemr/blob/rel-820/CHANGELOG.md \
+        CHANGELOG_URL=https://github.com/DCL/DCL/blob/rel-820/CHANGELOG.md \
         REL_BRANCH=rel-820 \
         run bash "${BUILD_RELEASE_BODY_SCRIPT}"
     [[ ${status} -eq 0 ]]
@@ -51,14 +51,14 @@ EOF
 @test "long body (> 124K) triggers truncation with anchor pointer" {
     make_body_of_size section.md 200000
     SECTION_FILE=section.md VERSION=8.2.0 DATE=2026-07-08 \
-        CHANGELOG_URL=https://github.com/openemr/openemr/blob/rel-820/CHANGELOG.md \
+        CHANGELOG_URL=https://github.com/DCL/DCL/blob/rel-820/CHANGELOG.md \
         REL_BRANCH=rel-820 \
         run bash "${BUILD_RELEASE_BODY_SCRIPT}"
     [[ ${status} -eq 0 ]]
     [[ "${output}" == *":warning:"* ]]
     [[ "${output}" == *"exceeds GitHub's 125,000-character Release body limit"* ]]
     [[ "${output}" == *"820---2026-07-08"* ]]
-    [[ "${output}" == *"https://github.com/openemr/openemr/blob/rel-820/CHANGELOG.md#820---2026-07-08"* ]]
+    [[ "${output}" == *"https://github.com/DCL/DCL/blob/rel-820/CHANGELOG.md#820---2026-07-08"* ]]
     [[ "${output}" == *"on the live \`rel-820\` branch"* ]]
     # Full section content is NOT in the truncated body (that's the
     # whole point — attachment carries it separately).

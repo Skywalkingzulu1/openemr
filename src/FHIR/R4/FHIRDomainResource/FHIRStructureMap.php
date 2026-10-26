@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -72,109 +72,109 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure map is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * A formal identifier that is used to identify this structure map when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the structure map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the structure map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the structure map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this structure map. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this structure map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the structure map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure map changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the structure map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the structure map from a consumer's perspective.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure map instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the structure map is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this structure map is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A copyright statement relating to the structure map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * A structure definition used by this map. The structure definition may describe instances that are converted, or the instances that are produced.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapStructure[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapStructure[]
      */
     public $structure = [];
 
     /**
      * Other maps used by this map (canonical URLs).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $import = [];
 
     /**
      * Organizes the mapping into manageable chunks for human review/ease of maintenance.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapGroup[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapGroup[]
      */
     public $group = [];
 
@@ -185,7 +185,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure map is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -194,7 +194,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure map is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -205,7 +205,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this structure map when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -214,7 +214,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A formal identifier that is used to identify this structure map when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -225,7 +225,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier that is used to identify this version of the structure map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -234,7 +234,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier that is used to identify this version of the structure map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -245,7 +245,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the structure map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -254,7 +254,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A natural language name identifying the structure map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -265,7 +265,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for the structure map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -274,7 +274,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A short, descriptive, user-friendly title for the structure map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -285,7 +285,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of this structure map. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -294,7 +294,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of this structure map. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -305,7 +305,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A Boolean value to indicate that this structure map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -314,7 +314,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A Boolean value to indicate that this structure map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -325,7 +325,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the structure map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure map changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -334,7 +334,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date  (and optionally time) when the structure map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure map changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -345,7 +345,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the structure map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -354,7 +354,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The name of the organization or individual that published the structure map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -365,7 +365,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -374,7 +374,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -385,7 +385,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the structure map from a consumer's perspective.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -394,7 +394,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A free text natural language description of the structure map from a consumer's perspective.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -405,7 +405,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure map instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -414,7 +414,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure map instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -425,7 +425,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the structure map is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -434,7 +434,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A legal or geographic region in which the structure map is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -445,7 +445,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Explanation of why this structure map is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -454,7 +454,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Explanation of why this structure map is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -465,7 +465,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A copyright statement relating to the structure map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -474,7 +474,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A copyright statement relating to the structure map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -485,7 +485,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A structure definition used by this map. The structure definition may describe instances that are converted, or the instances that are produced.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapStructure[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapStructure[]
      */
     public function getStructure()
     {
@@ -494,7 +494,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A structure definition used by this map. The structure definition may describe instances that are converted, or the instances that are produced.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapStructure $structure
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapStructure $structure
      * @return $this
      */
     public function addStructure($structure)
@@ -505,7 +505,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Other maps used by this map (canonical URLs).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getImport()
     {
@@ -514,7 +514,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Other maps used by this map (canonical URLs).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $import
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $import
      * @return $this
      */
     public function addImport($import)
@@ -525,7 +525,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Organizes the mapping into manageable chunks for human review/ease of maintenance.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapGroup[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapGroup[]
      */
     public function getGroup()
     {
@@ -534,7 +534,7 @@ class FHIRStructureMap extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Organizes the mapping into manageable chunks for human review/ease of maintenance.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapGroup $group
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapGroup $group
      * @return $this
      */
     public function addGroup($group)

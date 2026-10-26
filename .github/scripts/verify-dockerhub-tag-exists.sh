@@ -20,7 +20,7 @@
 #
 # Inputs (env)
 #   TAG    required. The tag to probe (e.g. "release-candidate-30443247578-1").
-#   REPO   optional, default "openemr/openemr". Docker Hub repo path.
+#   REPO   optional, default "DCL/DCL". Docker Hub repo path.
 #
 # Stdout / stderr
 #   Progress lines to stdout, `::error::` annotations on any failure.
@@ -36,7 +36,7 @@
 set -euo pipefail
 
 : "${TAG:?TAG must be set (Docker Hub tag to probe, e.g. release-candidate-12345-1)}"
-REPO="${REPO:-openemr/openemr}"
+REPO="${REPO:-DCL/DCL}"
 
 url="https://hub.docker.com/v2/repositories/${REPO}/tags/${TAG}/"
 echo "==> GET ${url}"

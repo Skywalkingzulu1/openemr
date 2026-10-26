@@ -6,14 +6,14 @@
  * Catching the generic Exception class misses Error subclasses. This rule
  * auto-fixes violations by replacing Exception with Throwable in catch blocks.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Rector\Rules;
+namespace DCL\Rector\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Name;
@@ -24,7 +24,7 @@ use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
 use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
 /**
- * @see \OpenEMR\Rector\Rules\CatchExceptionToThrowableRectorTest
+ * @see \DCL\Rector\Rules\CatchExceptionToThrowableRectorTest
  */
 class CatchExceptionToThrowableRector extends AbstractRector
 {

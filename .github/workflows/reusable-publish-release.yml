@@ -1,5 +1,5 @@
 # Reusable release-publish workflow — the tarball side of Phase 10c
-# (openemr/openemr#TBD). Extracts what was inline in build-release.yml's
+# (DCL/DCL#TBD). Extracts what was inline in build-release.yml's
 # `publish` job so both build-release.yml (the primary release path)
 # and acceptance-only.yml (the Phase 9 recovery path) can call the
 # same publish flow without duplicating ~100 lines of app-token +
@@ -20,7 +20,7 @@
 #                      tip in checkout, not the ref this workflow was
 #                      dispatched against
 #   artifact_name    - workflow-run artifact name to download (e.g.
-#                      openemr-release-candidate-8.2.0) — the caller
+#                      DCL-release-candidate-8.2.0) — the caller
 #                      is responsible for making sure this artifact
 #                      exists in the calling run's context (either
 #                      because the caller produced it via
@@ -78,7 +78,7 @@ on:
         required: true
         type: string
       artifact_name:
-        description: Name of the workflow-run artifact carrying the release-output bundle (e.g., openemr-release-candidate-8.2.0)
+        description: Name of the workflow-run artifact carrying the release-output bundle (e.g., DCL-release-candidate-8.2.0)
         required: true
         type: string
       milestone:
@@ -106,7 +106,7 @@ jobs:
     # (generate-app-token, setup-php-composer) resolve against a real
     # workspace AND composer.json is present for setup-php-composer's
     # cache/install steps. The earlier sparse-first pattern
-    # (openemr/openemr#13480 + #13509) hit an underlying git leak:
+    # (DCL/DCL#13480 + #13509) hit an underlying git leak:
     # files not in the initial sparse pattern (like composer.json)
     # weren't materialized by the second full checkout. Full-checkout-
     # first sidesteps the leak. `persist-credentials: false` because
@@ -115,7 +115,7 @@ jobs:
     # — see the script's inline-auth block). Leaving github.token
     # persisted here would be dead weight in .git/config during the
     # composer install / task summary steps that follow the tag push.
-    - name: Checkout openemr release branch
+    - name: Checkout DCL release branch
       uses: actions/checkout@v7
       with:
         ref: ${{ inputs.version_branch }}
@@ -155,7 +155,7 @@ jobs:
         client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
         private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
         owner: ${{ github.repository_owner }}
-        repositories: openemr
+        repositories: DCL
 
     # Reconstruct the release-output/ directory that build-package
     # produced, from the workflow-run artifact.
@@ -192,16 +192,16 @@ jobs:
         output_dir="$GITHUB_WORKSPACE/tools/release/release-output"
 
         gh release upload "$tag" \
-          --repo openemr/openemr \
+          --repo DCL/DCL \
           --clobber \
-          "${output_dir}/openemr-${RELEASE_VERSION}.tar.gz" \
-          "${output_dir}/openemr-${RELEASE_VERSION}.zip" \
+          "${output_dir}/DCL-${RELEASE_VERSION}.tar.gz" \
+          "${output_dir}/DCL-${RELEASE_VERSION}.zip" \
           "${output_dir}"/*.md5 \
           "${output_dir}"/*.sha256 \
           "${output_dir}"/*.sha512 \
           "${output_dir}/changelog.md"
 
-    # Phase 7b (openemr/openemr#TBD): re-fetch the just-uploaded
+    # Phase 7b (DCL/DCL#TBD): re-fetch the just-uploaded
     # tarball + zip from the GitHub Release page and byte-compare
     # against the local artifacts. Catches the one class of failure
     # Phase 7c-tarball's acceptance-gate can't see — corruption
@@ -240,8 +240,8 @@ jobs:
         mkdir -p "$verify_dir"
 
         assets=(
-          "openemr-${RELEASE_VERSION}.tar.gz"
-          "openemr-${RELEASE_VERSION}.zip"
+          "DCL-${RELEASE_VERSION}.tar.gz"
+          "DCL-${RELEASE_VERSION}.zip"
         )
 
         for asset in "${assets[@]}"; do
@@ -253,7 +253,7 @@ jobs:
           fi
           echo "==> Re-fetching $asset from release $tag for byte-verify"
           gh release download "$tag" \
-            --repo openemr/openemr \
+            --repo DCL/DCL \
             --pattern "$asset" \
             --dir "$verify_dir"
           local_sha="$(sha256sum "$local_path" | awk '{print $1}')"

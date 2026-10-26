@@ -22,16 +22,16 @@
  * expose "email" solely as a forward/backup action, never as a rendered tab, so
  * no fax/sms profile here lists an email tab.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\View;
+namespace DCL\Modules\FaxSMS\View;
 
-use OpenEMR\Modules\FaxSMS\Enums\ServiceType;
+use DCL\Modules\FaxSMS\Enums\ServiceType;
 
 final class MessageUiProfile
 {

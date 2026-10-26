@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
-use OpenEMR\Common\Uuid\UuidRegistry;
+use DCL\Common\Uuid\UuidRegistry;
 use Ramsey\Uuid\Uuid;
 
 /**
- * Provides OpenEMR Fixtures/Sample Records to test cases as Objects or Database Records.
+ * Provides DCL Fixtures/Sample Records to test cases as Objects or Database Records.
  *
  * The PractitionerFixtureManager generates sample records from JSON files located within the Fixture namespace.
  * To provide support for additional record types:
@@ -14,11 +14,11 @@ use Ramsey\Uuid\Uuid;
  * - Add public methods to get, install, and remove fixture records.
  * - The "practitioner" related methods provide clear working examples.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class PractitionerFixtureManager
 {
@@ -65,7 +65,7 @@ class PractitionerFixtureManager
      *
      * This will return a recorded uuid (recorded in uuid_registry)
      *
-     * @param $tableName The target OpenEMR DB table name.
+     * @param $tableName The target DCL DB table name.
      * @return string uuid
      */
     private function getUuid($tableName)
@@ -85,9 +85,9 @@ class PractitionerFixtureManager
     }
 
     /**
-     * Installs fixtures into the OpenEMR DB.
+     * Installs fixtures into the DCL DB.
      *
-     * @param $tableName The target OpenEMR DB table name.
+     * @param $tableName The target DCL DB table name.
      * @param $fixtures Array of fixture objects to install.
      * @return int the number of fixtures installed.
      */
@@ -162,7 +162,7 @@ class PractitionerFixtureManager
     }
 
     /**
-     * Installs Practitioner Fixtures into the OpenEMR DB.
+     * Installs Practitioner Fixtures into the DCL DB.
      */
     public function installPractitionerFixtures(): int
     {
@@ -170,7 +170,7 @@ class PractitionerFixtureManager
     }
 
     /**
-     * Installs a single Practitioner Fixtures into the OpenEMR DB.
+     * Installs a single Practitioner Fixtures into the DCL DB.
      * @param $practitionerFixture - The fixture to install.
      * @return int the number of records inserted.
      */
@@ -180,7 +180,7 @@ class PractitionerFixtureManager
     }
 
     /**
-     * Removes Practitioner Fixtures from the OpenEMR DB.
+     * Removes Practitioner Fixtures from the DCL DB.
      */
     public function removePractitionerFixtures()
     {

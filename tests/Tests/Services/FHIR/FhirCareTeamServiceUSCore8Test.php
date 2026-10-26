@@ -2,22 +2,22 @@
 
 /*
  * FhirCareTeamServiceTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Public Domain This file was generated through the use of Claude.AI on 2024-06-10.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCareTeam;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant;
-use OpenEMR\Services\FHIR\FhirCareTeamService;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldType;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCareTeam;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRCareTeam\FHIRCareTeamParticipant;
+use DCL\Services\FHIR\FhirCareTeamService;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldType;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -169,7 +169,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testUSCore8ProfileMetadata(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData);
 
         // Test careTeam is created
         $this->assertInstanceOf(FHIRCareTeam::class, $careTeam);
@@ -194,7 +194,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredStatus(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData);
 
         // US Core requires status (1..1 cardinality, must-support)
         $status = $careTeam->getStatus();
@@ -217,7 +217,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
         $testData = $this->compliantCareTeamData;
         $testData['care_team_status'] = $statusValue;
 
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($testData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($testData);
         $status = $careTeam->getStatus();
 
         $this->assertNotNull($status, 'CareTeam must have status');
@@ -242,7 +242,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
         $testData = $this->compliantCareTeamData;
         $testData['care_team_status'] = 'invalid-status';
 
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($testData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($testData);
         $status = $careTeam->getStatus();
 
         $this->assertNotNull($status, 'CareTeam must have status');
@@ -252,7 +252,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testRequiredSubject(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData);
 
         // US Core requires subject (1..1 cardinality, must-support)
         $subject = $careTeam->getSubject();
@@ -282,7 +282,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testResourceIdIsSet(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData);
 
         $id = $careTeam->getId();
         $this->assertNotNull($id, 'CareTeam must have id');
@@ -296,7 +296,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testOptionalNameElement(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData);
 
         // name is optional but useful
         $name = $careTeam->getName();
@@ -312,7 +312,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testParticipantWithPractitionerMember(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithProvidersData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithProvidersData);
 
         $participants = $careTeam->getParticipant();
         $this->assertNotEmpty($participants, 'CareTeam with providers must have participants');
@@ -344,7 +344,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testParticipantRoleWithSnomedCT(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithProvidersData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithProvidersData);
 
         $participants = $careTeam->getParticipant();
         $this->assertNotEmpty($participants, 'CareTeam must have participants');
@@ -380,7 +380,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testParticipantPeriod(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithProvidersData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithProvidersData);
 
         $participants = $careTeam->getParticipant();
         $this->assertNotEmpty($participants, 'CareTeam must have participants');
@@ -404,7 +404,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testParticipantOnBehalfOf(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithProvidersData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithProvidersData);
 
         $participants = $careTeam->getParticipant();
         $this->assertNotEmpty($participants, 'CareTeam must have participants');
@@ -431,7 +431,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testParticipantWithOrganizationMember(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithFacilitiesData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithFacilitiesData);
 
         $participants = $careTeam->getParticipant();
         $this->assertNotEmpty($participants, 'CareTeam with facilities must have participants');
@@ -456,7 +456,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     public function testParticipantWithRelatedPersonMember(): void
     {
         // Set up the service to use a version that supports RelatedPerson
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithContactsData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithContactsData);
 
         $participants = $careTeam->getParticipant();
 
@@ -488,7 +488,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testManagingOrganization(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithProvidersData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithProvidersData);
 
         $managingOrganizations = $careTeam->getManagingOrganization();
 
@@ -614,7 +614,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testMetaLastUpdated(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData);
 
         $meta = $careTeam->getMeta();
         $this->assertNotNull($meta, 'CareTeam must have meta element');
@@ -626,7 +626,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     #[Test]
     public function testMetaVersionId(): void
     {
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData);
 
         $meta = $careTeam->getMeta();
         $this->assertNotNull($meta, 'CareTeam must have meta element');
@@ -650,7 +650,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
             'contacts' => [],
         ];
 
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($minimalData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($minimalData);
 
         // Should still create valid CareTeam with mandatory elements
         $this->assertInstanceOf(FHIRCareTeam::class, $careTeam);
@@ -664,10 +664,10 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
     {
         // Test that different CareTeam configurations can be created for same patient
         $careTeams = [
-            $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamData),
-            $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithProvidersData),
-            $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithFacilitiesData),
-            $this->fhirCareTeamService->parseOpenEMRRecord($this->compliantCareTeamWithContactsData)
+            $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamData),
+            $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithProvidersData),
+            $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithFacilitiesData),
+            $this->fhirCareTeamService->parseDCLRecord($this->compliantCareTeamWithContactsData)
         ];
 
         $this->assertCount(4, $careTeams, 'Should create 4 distinct CareTeam resources');
@@ -709,7 +709,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
             ],
         ];
 
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($testData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($testData);
         $participants = $careTeam->getParticipant();
 
         $this->assertNotEmpty($participants, 'CareTeam should have participants');
@@ -765,7 +765,7 @@ class FhirCareTeamServiceUSCore8Test extends TestCase
             ],
         ];
 
-        $careTeam = $this->fhirCareTeamService->parseOpenEMRRecord($testData);
+        $careTeam = $this->fhirCareTeamService->parseDCLRecord($testData);
         $participants = $careTeam->getParticipant();
 
         $this->assertNotEmpty($participants, 'CareTeam should have participants');

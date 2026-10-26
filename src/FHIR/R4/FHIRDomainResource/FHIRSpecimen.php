@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A sample to be used for analysis.
@@ -72,79 +72,79 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Id for specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $accessionIdentifier = null;
 
     /**
      * The availability of the specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSpecimenStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSpecimenStatus
      */
     public $status = null;
 
     /**
      * The kind of material that forms the specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * Time when specimen was received for processing or testing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $receivedTime = null;
 
     /**
      * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $parent = [];
 
     /**
      * Details concerning a service request that required a specimen to be collected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $request = [];
 
     /**
      * Details concerning the specimen collection.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection
      */
     public $collection = null;
 
     /**
      * Details concerning processing and processing steps for the specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing[]
      */
     public $processing = [];
 
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer[]
      */
     public $container = [];
 
     /**
      * A mode or state of being that describes the nature of the specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $condition = [];
 
     /**
      * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -155,7 +155,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Id for specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -164,7 +164,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Id for specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -175,7 +175,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getAccessionIdentifier()
     {
@@ -184,7 +184,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $accessionIdentifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $accessionIdentifier
      * @return $this
      */
     public function setAccessionIdentifier($accessionIdentifier)
@@ -195,7 +195,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The availability of the specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSpecimenStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSpecimenStatus
      */
     public function getStatus()
     {
@@ -204,7 +204,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The availability of the specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSpecimenStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSpecimenStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -215,7 +215,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of material that forms the specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -224,7 +224,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The kind of material that forms the specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -235,7 +235,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -244,7 +244,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -255,7 +255,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Time when specimen was received for processing or testing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getReceivedTime()
     {
@@ -264,7 +264,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Time when specimen was received for processing or testing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $receivedTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $receivedTime
      * @return $this
      */
     public function setReceivedTime($receivedTime)
@@ -275,7 +275,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getParent()
     {
@@ -284,7 +284,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $parent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $parent
      * @return $this
      */
     public function addParent($parent)
@@ -295,7 +295,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details concerning a service request that required a specimen to be collected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRequest()
     {
@@ -304,7 +304,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details concerning a service request that required a specimen to be collected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function addRequest($request)
@@ -315,7 +315,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details concerning the specimen collection.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection
      */
     public function getCollection()
     {
@@ -324,7 +324,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details concerning the specimen collection.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection $collection
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenCollection $collection
      * @return $this
      */
     public function setCollection($collection)
@@ -335,7 +335,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details concerning processing and processing steps for the specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing[]
      */
     public function getProcessing()
     {
@@ -344,7 +344,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Details concerning processing and processing steps for the specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing $processing
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing $processing
      * @return $this
      */
     public function addProcessing($processing)
@@ -355,7 +355,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer[]
      */
     public function getContainer()
     {
@@ -364,7 +364,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer $container
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer $container
      * @return $this
      */
     public function addContainer($container)
@@ -375,7 +375,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A mode or state of being that describes the nature of the specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCondition()
     {
@@ -384,7 +384,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A mode or state of being that describes the nature of the specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $condition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -395,7 +395,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -404,7 +404,7 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

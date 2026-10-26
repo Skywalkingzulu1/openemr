@@ -2,33 +2,33 @@
 
 /*
  * FhirDocumentReferenceTrait.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\DocumentReference\Trait;
+namespace DCL\Services\FHIR\DocumentReference\Trait;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRString;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRUrl;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirOrganizationService;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRDocumentReference;
+use DCL\FHIR\R4\FHIRElement\FHIRAttachment;
+use DCL\FHIR\R4\FHIRElement\FHIRCanonical;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRIdentifier;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRElement\FHIRString;
+use DCL\FHIR\R4\FHIRElement\FHIRUrl;
+use DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContent;
+use DCL\FHIR\R4\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceContext;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirOrganizationService;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
 
 trait FhirDocumentReferenceTrait {
     use FhirServiceBaseEmptyTrait;
@@ -217,7 +217,7 @@ trait FhirDocumentReferenceTrait {
         }
     }
 
-    protected function parseOpenEMRRecordIntoFHIRDocumentReference($dataRecord = []): FHIRDocumentReference
+    protected function parseDCLRecordIntoFHIRDocumentReference($dataRecord = []): FHIRDocumentReference
     {
         $docReference = new FHIRDocumentReference();
         $this->populateMetaData($docReference, $dataRecord);
@@ -241,9 +241,9 @@ trait FhirDocumentReferenceTrait {
      * @return FHIRDocumentReference|string
      * @throws \JsonException
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
-        $resource = $this->parseOpenEMRRecordIntoFHIRDocumentReference($dataRecord);
+        $resource = $this->parseDCLRecordIntoFHIRDocumentReference($dataRecord);
         if ($encode) {
             return $this->encodeResource($resource);
         } else {

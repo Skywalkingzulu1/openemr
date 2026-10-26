@@ -2,25 +2,25 @@
 
 /*
  * FhirQuestionnaireResponseRestControllerTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\RestControllers\FHIR;
+namespace DCL\Tests\RestControllers\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\RestControllers\FHIR\FhirQuestionnaireResponseRestController;
-use OpenEMR\Services\FHIR\FhirQuestionnaireResponseService;
-use OpenEMR\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\QuestionnaireResponseService;
-use OpenEMR\Services\QuestionnaireService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\RestControllers\FHIR\FhirQuestionnaireResponseRestController;
+use DCL\Services\FHIR\FhirQuestionnaireResponseService;
+use DCL\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
+use DCL\Services\PatientService;
+use DCL\Services\QuestionnaireResponseService;
+use DCL\Services\QuestionnaireService;
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;

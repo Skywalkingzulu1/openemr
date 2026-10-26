@@ -35,30 +35,30 @@
  *     a zero-entry Bundle body. No regression gate — the behavior is a
  *     known gap, not a stable contract to lock in.
  *   - `_sort` is only wired at the SQL layer for services that override
- *     FhirServiceBase::searchForOpenEMRRecordsWithConfig (currently
+ *     FhirServiceBase::searchForDCLRecordsWithConfig (currently
  *     Patient and Task only). On resources that haven't opted in
  *     (Encounter, Observation, etc.) the `_sort` param is accepted
  *     without error but the DB query returns records in insertion
  *     order. Only Patient is covered below for that reason.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Tests\Support\OAuth2\DcrClient;
-use OpenEMR\Tests\Support\OAuth2\PasswordGrant;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Tests\Support\OAuth2\DcrClient;
+use DCL\Tests\Support\OAuth2\PasswordGrant;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -93,14 +93,14 @@ class FhirSearchModifiersApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
 
         // Built-in-webserver CI job sets this env var to opt OAuth-dependent
         // tests out of the hard-fail-in-CI branch below. php -S cannot do
         // the HTTPS/OAuth round-trip these tests depend on; the apache +
         // mariadb lanes exercise them instead.
-        if (getenv('OPENEMR_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
-            $this->markTestSkipped('Skipping per OPENEMR_ALLOW_OAUTH_HTTPS_SKIP=1');
+        if (getenv('DCL_ALLOW_OAUTH_HTTPS_SKIP') === '1') {
+            $this->markTestSkipped('Skipping per DCL_ALLOW_OAUTH_HTTPS_SKIP=1');
         }
         $probe = $this->buildClient()->get($this->baseUrl . '/');
         if ($probe->getHeaderLine('Server') === '') {

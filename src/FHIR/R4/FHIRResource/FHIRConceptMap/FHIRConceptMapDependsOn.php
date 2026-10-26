@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConceptMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -71,25 +71,25 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somewhere that is labeled to correspond with a code system property.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $property = null;
 
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $system = null;
 
     /**
      * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
@@ -100,7 +100,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somewhere that is labeled to correspond with a code system property.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getProperty()
     {
@@ -109,7 +109,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somewhere that is labeled to correspond with a code system property.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $property
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $property
      * @return $this
      */
     public function setProperty($property)
@@ -120,7 +120,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getSystem()
     {
@@ -129,7 +129,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $system
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $system
      * @return $this
      */
     public function setSystem($system)
@@ -140,7 +140,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -149,7 +149,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)
@@ -160,7 +160,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -169,7 +169,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The display for the code. The display is only provided to help editors when editing the concept map.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)

@@ -9,14 +9,14 @@
  * binds string, success flag ('0' or '1'). The remaining ApplicationTable::portalLog
  * arguments (user_notes, ccda_doc_id) are unused by the login flow.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Controllers\Portal;
+namespace DCL\Controllers\Portal;
 
 interface PortalAuditLogger
 {

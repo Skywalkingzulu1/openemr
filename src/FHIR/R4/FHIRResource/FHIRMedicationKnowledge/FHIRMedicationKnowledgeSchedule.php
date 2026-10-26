@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationKnowledge;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Information about a medication that is used to support knowledge.
@@ -71,7 +71,7 @@ class FHIRMedicationKnowledgeSchedule extends FHIRBackboneElement implements \Js
 {
     /**
      * Specifies the specific drug schedule.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $schedule = null;
 
@@ -82,7 +82,7 @@ class FHIRMedicationKnowledgeSchedule extends FHIRBackboneElement implements \Js
 
     /**
      * Specifies the specific drug schedule.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSchedule()
     {
@@ -91,7 +91,7 @@ class FHIRMedicationKnowledgeSchedule extends FHIRBackboneElement implements \Js
 
     /**
      * Specifies the specific drug schedule.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $schedule
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $schedule
      * @return $this
      */
     public function setSchedule($schedule)

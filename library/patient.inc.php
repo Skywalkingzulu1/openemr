@@ -3,33 +3,33 @@
 /**
  * patient.inc.php includes functions for manipulating patient information.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2018-2025 Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2021-2022 Rod Roark <rod@sunsetsystems.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\EmployerService;
-use OpenEMR\Services\FacilityService;
-use OpenEMR\Services\InsuranceCompanyService;
-use OpenEMR\Services\PatientService;
-use OpenEMR\Services\SocialHistoryService;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\BC\Utilities;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\EmployerService;
+use DCL\Services\FacilityService;
+use DCL\Services\InsuranceCompanyService;
+use DCL\Services\PatientService;
+use DCL\Services\SocialHistoryService;
+use DCL\Services\Utils\DateFormatterUtils;
 
 /**
  * Get a patient's demographic data.
@@ -1672,13 +1672,13 @@ function is_patient_deceased($pid, $date = '')
 /**
  * Compute and store the duplication score for a single patient.
  *
- * Prefer OpenEMR\Services\Patient\DuplicatePatientService::recalculateScore() in new code; this
+ * Prefer DCL\Services\Patient\DuplicatePatientService::recalculateScore() in new code; this
  * remains for legacy callers that cannot inject a service.
  */
 function updateDupScore(int|string $pid): int
 {
-    return (new \OpenEMR\Services\Patient\DuplicatePatientService(
-        \OpenEMR\BC\ServiceContainer::getClock()
+    return (new \DCL\Services\Patient\DuplicatePatientService(
+        \DCL\BC\ServiceContainer::getClock()
     ))->recalculateScore((int) $pid);
 }
 

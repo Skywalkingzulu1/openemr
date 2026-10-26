@@ -3,14 +3,14 @@
 /**
  * FhirURLResolver is a simple class that takes in a FHIR base server url and can be used to extract pieces of the URL
  * that are needed within the FHIR system such as a resource's relative URI
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 class FhirUrlResolver
 {

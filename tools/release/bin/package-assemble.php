@@ -2,13 +2,13 @@
 <?php
 
 /**
- * Build the full distribution tarball + zip for an official OpenEMR release.
+ * Build the full distribution tarball + zip for an official DCL release.
  *
- * Thin CLI wrapper around OpenEMR\Release\PackageAssembler; see that class for
+ * Thin CLI wrapper around DCL\Release\PackageAssembler; see that class for
  * the build steps and rationale.
  *
  * Note that `--release-version` is a naming label only: it flows into the
- * output filename (`openemr-<version>.tar.gz`) and the intermediate staging
+ * output filename (`DCL-<version>.tar.gz`) and the intermediate staging
  * dir, but does NOT get baked into the packaged codebase. The shipped
  * self-reported version comes from files in the source tree (sql/version.php
  * and friends), which the assembler ships as-is from the checked-out ref.
@@ -16,18 +16,18 @@
  * PR-built tarball `99.99.99` without any file rewriting — the assembler's
  * git-archive step preserves whatever version the codebase self-reports.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-use OpenEMR\Release\PackageAssembler;
+use DCL\Release\PackageAssembler;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -40,11 +40,11 @@ use Symfony\Component\Console\SingleCommandApplication;
     // as a global flag that prints the app name and exits 0 before the command
     // runs, so `--version=8.1.0` would silently no-op.
     ->addOption('release-version', null, InputOption::VALUE_REQUIRED, 'Release version (e.g., 8.1.0)')
-    ->addOption('openemr-dir', null, InputOption::VALUE_REQUIRED, 'Path to the checked-out openemr release branch')
+    ->addOption('DCL-dir', null, InputOption::VALUE_REQUIRED, 'Path to the checked-out DCL release branch')
     ->addOption('output-dir', null, InputOption::VALUE_REQUIRED, 'Output directory', './release-output')
     ->setCode(function (InputInterface $input, OutputInterface $output): int {
         $versionOption = $input->getOption('release-version');
-        $openemrDirOption = $input->getOption('openemr-dir');
+        $DCLDirOption = $input->getOption('DCL-dir');
         $outputDirOption = $input->getOption('output-dir');
 
         if (!is_string($versionOption) || $versionOption === '') {
@@ -53,15 +53,15 @@ use Symfony\Component\Console\SingleCommandApplication;
         }
         // Parse at the boundary: the version string flows into staging
         // paths and temp-file names inside PackageAssembler (see the
-        // `openemr-<version>` staging dir), so validate the shape here
-        // rather than downstream. OpenEMR release versions are strict
+        // `DCL-<version>` staging dir), so validate the shape here
+        // rather than downstream. DCL release versions are strict
         // N.N.N — dev/pre-release suffixes never reach this CLI.
         if (preg_match('/^\d+\.\d+\.\d+$/', $versionOption) !== 1) {
             $output->writeln("<error>--release-version must be N.N.N (got: {$versionOption})</error>");
             return 1;
         }
-        if (!is_string($openemrDirOption) || $openemrDirOption === '') {
-            $output->writeln('<error>--openemr-dir is required</error>');
+        if (!is_string($DCLDirOption) || $DCLDirOption === '') {
+            $output->writeln('<error>--DCL-dir is required</error>');
             return 1;
         }
         $outputDir = is_string($outputDirOption) && $outputDirOption !== ''
@@ -70,7 +70,7 @@ use Symfony\Component\Console\SingleCommandApplication;
 
         return (new PackageAssembler(
             $versionOption,
-            rtrim($openemrDirOption, '/'),
+            rtrim($DCLDirOption, '/'),
             $outputDir,
             $output,
         ))->assemble();

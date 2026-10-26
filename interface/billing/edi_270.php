@@ -6,8 +6,8 @@
  *
  * This program creates the batch for the x12 270 eligibility file
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Terry Hill <terry@lilysystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -17,16 +17,16 @@
  * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2020 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2020 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
 
-use OpenEMR\Billing\EDI270;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Billing\EDI270;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $srcDir = OEGlobalsBag::getInstance()->getSrcDir();
 require_once($srcDir . '/options.inc.php');
@@ -130,7 +130,7 @@ if ($exclude_policy != "") {
         c.cms_id as cms_id,
         c.eligibility_id as eligibility_id,
         c.name as payer_name
-        FROM openemr_postcalendar_events AS e
+        FROM DCL_postcalendar_events AS e
         LEFT JOIN users AS d on (e.pc_aid is not null and e.pc_aid = d.id)
         LEFT JOIN facility AS f on (f.id = e.pc_facility)
         LEFT JOIN patient_data AS p ON p.pid = e.pc_pid

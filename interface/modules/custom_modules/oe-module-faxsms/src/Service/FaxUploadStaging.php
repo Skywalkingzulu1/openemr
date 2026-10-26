@@ -9,20 +9,20 @@
  * collects that behavior in one place so the controllers can focus on
  * their per-vendor send semantics.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\Service;
+namespace DCL\Modules\FaxSMS\Service;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
@@ -84,7 +84,7 @@ final readonly class FaxUploadStaging
      * path, or an empty string on failure.
      *
      * Callers pass `$_FILES['fax']` directly; the service never reads
-     * superglobals so this stays testable and the openemr.forbiddenGlobals
+     * superglobals so this stays testable and the DCL.forbiddenGlobals
      * rule is honored at the boundary.
      *
      * @param array{name?: mixed, tmp_name?: mixed, error?: mixed} $upload

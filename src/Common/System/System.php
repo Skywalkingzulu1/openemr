@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Common\System;
+namespace DCL\Common\System;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * Handles any commands dealing with the operating system.

@@ -4,19 +4,19 @@
  * Unit tests for the pure helpers on GhPullRequestApi. The shell-touching
  * methods are exercised end-to-end through the orchestrator with a fake API.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\GhPullRequestApi;
-use OpenEMR\Release\ShipReleaseOrchestrator;
+use DCL\Release\GhPullRequestApi;
+use DCL\Release\ShipReleaseOrchestrator;
 use PHPUnit\Framework\TestCase;
 
 final class GhPullRequestApiTest extends TestCase

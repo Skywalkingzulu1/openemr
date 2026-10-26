@@ -3,27 +3,27 @@
 /**
  * Handles all of the Provider Calendar events and actions
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Controller;
+namespace Comlink\DCL\Modules\TeleHealthModule\Controller;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\CalendarEventCategoryRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthProviderRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Util\CalendarUtils;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Utils\CacheUtils;
-use OpenEMR\Events\Appointments\AppointmentJavascriptEventNames;
-use OpenEMR\Events\Appointments\AppointmentRenderEvent;
-use OpenEMR\Events\Appointments\CalendarUserGetEventsFilter;
-use OpenEMR\Events\Core\ScriptFilterEvent;
-use OpenEMR\Events\Core\StyleFilterEvent;
-use OpenEMR\Services\AppointmentService;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\CalendarEventCategoryRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthProviderRepository;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use Comlink\DCL\Modules\TeleHealthModule\Util\CalendarUtils;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Utils\CacheUtils;
+use DCL\Events\Appointments\AppointmentJavascriptEventNames;
+use DCL\Events\Appointments\AppointmentRenderEvent;
+use DCL\Events\Appointments\CalendarUserGetEventsFilter;
+use DCL\Events\Core\ScriptFilterEvent;
+use DCL\Events\Core\StyleFilterEvent;
+use DCL\Services\AppointmentService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
@@ -165,8 +165,8 @@ class TeleHealthCalendarController
 
         $pageName = $event->getPageName();
         $scriptPath = '';
-        // backwards compatible with older versions of OpenEMR
-        if (defined('OpenEMR\Events\Core\ScriptFilterEvent::CONTEXT_ARGUMENT_SCRIPT_NAME')) {
+        // backwards compatible with older versions of DCL
+        if (defined('DCL\Events\Core\ScriptFilterEvent::CONTEXT_ARGUMENT_SCRIPT_NAME')) {
             $scriptPath = $event->getContextArgument(ScriptFilterEvent::CONTEXT_ARGUMENT_SCRIPT_NAME) ?? '';
         }
         // currently security restrictions support scripts only on the filesystem.  Translations then

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestReport;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A summary of information based on the results of executing a TestScript.
@@ -71,7 +71,7 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * An operation would involve a REST request to a server.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportOperation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportOperation
      */
     public $operation = null;
 
@@ -82,7 +82,7 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An operation would involve a REST request to a server.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportOperation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportOperation
      */
     public function getOperation()
     {
@@ -91,7 +91,7 @@ class FHIRTestReportAction2 extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * An operation would involve a REST request to a server.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportOperation $operation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTestReport\FHIRTestReportOperation $operation
      * @return $this
      */
     public function setOperation($operation)

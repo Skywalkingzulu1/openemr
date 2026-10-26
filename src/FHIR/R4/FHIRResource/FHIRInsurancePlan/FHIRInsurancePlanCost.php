@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,25 +71,25 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Type of cost (copay; individual cap; family cap; coinsurance; deductible).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Whether the cost applies to in-network or out-of-network providers (in-network; out-of-network; other).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $applicability = null;
 
     /**
      * Additional information about the cost, such as information about funding sources (e.g. HSA, HRA, FSA, RRA).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $qualifiers = [];
 
     /**
      * The actual cost value. (some of the costs may be represented as percentages rather than currency, e.g. 10% coinsurance).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $value = null;
 
@@ -100,7 +100,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Type of cost (copay; individual cap; family cap; coinsurance; deductible).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -109,7 +109,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Type of cost (copay; individual cap; family cap; coinsurance; deductible).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -120,7 +120,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Whether the cost applies to in-network or out-of-network providers (in-network; out-of-network; other).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getApplicability()
     {
@@ -129,7 +129,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Whether the cost applies to in-network or out-of-network providers (in-network; out-of-network; other).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $applicability
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $applicability
      * @return $this
      */
     public function setApplicability($applicability)
@@ -140,7 +140,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Additional information about the cost, such as information about funding sources (e.g. HSA, HRA, FSA, RRA).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getQualifiers()
     {
@@ -149,7 +149,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Additional information about the cost, such as information about funding sources (e.g. HSA, HRA, FSA, RRA).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $qualifiers
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $qualifiers
      * @return $this
      */
     public function addQualifiers($qualifiers)
@@ -160,7 +160,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The actual cost value. (some of the costs may be represented as percentages rather than currency, e.g. 10% coinsurance).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getValue()
     {
@@ -169,7 +169,7 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The actual cost value. (some of the costs may be represented as percentages rather than currency, e.g. 10% coinsurance).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $value
      * @return $this
      */
     public function setValue($value)

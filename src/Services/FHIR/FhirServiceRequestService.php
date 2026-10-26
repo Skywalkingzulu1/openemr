@@ -3,44 +3,44 @@
 /**
  * FhirServiceRequestService.php
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRServiceRequest;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\ProcedureOrderRelationshipService;
-use OpenEMR\Services\ProcedureService;
-use OpenEMR\Services\Search\CompositeSearchField;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRServiceRequest;
+use DCL\FHIR\R4\FHIRElement\FHIRAnnotation;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\CodeTypesService;
+use DCL\Services\EncounterService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\ProcedureOrderRelationshipService;
+use DCL\Services\ProcedureService;
+use DCL\Services\Search\CompositeSearchField;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR ServiceRequest Service for ONC 2025 USCDI v5 / US Core 8.0
@@ -111,7 +111,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
     const REQUEST_PRIORITY_SYSTEM = "http://hl7.org/fhir/request-priority";
 
     /**
-     * OpenEMR procedure_order_type values from procedure_order table
+     * DCL procedure_order_type values from procedure_order table
      */
     const ORDER_TYPE_LABORATORY = "laboratory_test";
     const ORDER_TYPE_IMAGING = "imaging";
@@ -141,7 +141,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
     }
 
     /**
-     * Returns an array mapping FHIR ServiceRequest search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR ServiceRequest search parameters to DCL search parameters
      *
      * US Core 8.0 SHALL support:
      * - patient
@@ -171,14 +171,14 @@ class FhirServiceRequestService extends FhirServiceBase implements
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * Searches for DCL records using DCL search parameters
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        if (isset($openEMRSearchParameters['procedure_order_type']) && $openEMRSearchParameters['procedure_order_type'] instanceof TokenSearchField) {
-            $codes = $openEMRSearchParameters['procedure_order_type']->getValues();
-            $modifier = $openEMRSearchParameters['procedure_order_type']->getModifier();
+        if (isset($DCLSearchParameters['procedure_order_type']) && $DCLSearchParameters['procedure_order_type'] instanceof TokenSearchField) {
+            $codes = $DCLSearchParameters['procedure_order_type']->getValues();
+            $modifier = $DCLSearchParameters['procedure_order_type']->getModifier();
             $newCodeValues = [];
             foreach ($codes as $code) {
                 foreach (self::CATEGORY_MAP as $orderType => $category) {
@@ -194,11 +194,11 @@ class FhirServiceRequestService extends FhirServiceBase implements
                 }
             }
             if (!empty($newCodeValues)) {
-                $openEMRSearchParameters['procedure_order_type'] = new TokenSearchField(
+                $DCLSearchParameters['procedure_order_type'] = new TokenSearchField(
                     'procedure_order_type',
                     $newCodeValues
                 );
-                $openEMRSearchParameters['procedure_order_type']->setModifier($modifier);
+                $DCLSearchParameters['procedure_order_type']->setModifier($modifier);
             } else {
                 // No matching order types found for category codes, return empty result
                 $processingResult = new ProcessingResult();
@@ -209,9 +209,9 @@ class FhirServiceRequestService extends FhirServiceBase implements
 
         // until we figure out a better way to do code searches we need to handle code searches across different codetypes
         // the procedure_code value can be a LOINC code, SNOMED code, or local code depending on the test/procedure ordered.
-        if (isset($openEMRSearchParameters['procedure_code']) && $openEMRSearchParameters['procedure_code'] instanceof TokenSearchField) {
+        if (isset($DCLSearchParameters['procedure_code']) && $DCLSearchParameters['procedure_code'] instanceof TokenSearchField) {
             $compositeSearch = new CompositeSearchField('procedure_code', [], false);
-            $codeValues = $openEMRSearchParameters['procedure_code']->getValues();
+            $codeValues = $DCLSearchParameters['procedure_code']->getValues();
             $newCodeValues = [];
             $stringCodeValues = [];
             $exactStringCodeValues = [];
@@ -236,11 +236,11 @@ class FhirServiceRequestService extends FhirServiceBase implements
                 $compositeSearch->addChild(new StringSearchField('procedure_code', $exactStringCodeValues, SearchModifier::EXACT));
             }
             if (!empty($compositeSearch->getChildren())) {
-                $openEMRSearchParameters['procedure_code'] = $compositeSearch;
+                $DCLSearchParameters['procedure_code'] = $compositeSearch;
             }
         }
         // Query procedure_order with joined procedure_order_code data
-        return $this->procedureService->search($openEMRSearchParameters);
+        return $this->procedureService->search($DCLSearchParameters);
     }
 
     /**
@@ -291,13 +291,13 @@ class FhirServiceRequestService extends FhirServiceBase implements
     }
 
     /**
-     * Parses an OpenEMR procedure_order record into a FHIR ServiceRequest resource
+     * Parses an DCL procedure_order record into a FHIR ServiceRequest resource
      *
-     * @param array $dataRecord The source OpenEMR data record from procedure_order + procedure_order_code
+     * @param array $dataRecord The source DCL data record from procedure_order + procedure_order_code
      * @param bool  $encode     Indicates if the returned resource is encoded into a string
      * @return FHIRServiceRequest
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         // Validate US Core 8.0 requirements
         $validation = $this->validateUSCoreRequirements($dataRecord);
@@ -582,10 +582,10 @@ class FhirServiceRequestService extends FhirServiceBase implements
     }
 
     /**
-     * Map OpenEMR order_status and activity to FHIR ServiceRequest status
+     * Map DCL order_status and activity to FHIR ServiceRequest status
      *
-     * @param string $orderStatus OpenEMR order_status value (pending,routed,complete,canceled)
-     * @param int    $activity    OpenEMR activity flag (0=deleted, 1=active)
+     * @param string $orderStatus DCL order_status value (pending,routed,complete,canceled)
+     * @param int    $activity    DCL activity flag (0=deleted, 1=active)
      * @return string FHIR status code
      */
     private function mapOrderStatus($orderStatus, $activity = 1): string
@@ -595,7 +595,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
             return 'entered-in-error';
         }
 
-        // OpenEMR order_status: pending, routed, complete, canceled
+        // DCL order_status: pending, routed, complete, canceled
         // FHIR status: draft | active | on-hold | revoked | completed | entered-in-error | unknown
 
         $statusMap = [
@@ -613,9 +613,9 @@ class FhirServiceRequestService extends FhirServiceBase implements
     }
 
     /**
-     * Map OpenEMR order_priority to FHIR request priority
+     * Map DCL order_priority to FHIR request priority
      *
-     * @param string $orderPriority OpenEMR order_priority value
+     * @param string $orderPriority DCL order_priority value
      * @return string FHIR priority code (routine | urgent | asap | stat)
      */
     private function mapOrderPriority($orderPriority): string
@@ -634,7 +634,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
     }
 
     /**
-     * Map OpenEMR procedure_order_type to USCDI v5 order category
+     * Map DCL procedure_order_type to USCDI v5 order category
      * US Core 8.0 requires category from SNOMED CT
      *
      * @param string $procedureOrderType From procedure_order.procedure_order_type field
@@ -755,7 +755,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
 
     /**
      * Build reason codes from diagnosis string
-     * Format in OpenEMR: "ICD10:E11.9;ICD10:I10" or similar
+     * Format in DCL: "ICD10:E11.9;ICD10:I10" or similar
      * Can be from order_diagnosis (procedure_order) or diagnoses (procedure_order_code)
      * @return FHIRCodeableConcept[]
      */
@@ -804,8 +804,8 @@ class FhirServiceRequestService extends FhirServiceBase implements
      * code.coding entry).
      *
      * Subject (Patient) reference is required for new orders. The mapping inverts the
-     * mapOrderStatus and mapOrderPriority helpers used by parseOpenEMRRecord, with
-     * 'on-hold'/'draft' falling through to their literal OpenEMR values.
+     * mapOrderStatus and mapOrderPriority helpers used by parseDCLRecord, with
+     * 'on-hold'/'draft' falling through to their literal DCL values.
      *
      * @param FHIRDomainResource $fhirResource
      * @return array<string, mixed>
@@ -882,7 +882,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
             $supportedIntents = ['order', 'plan', 'directive', 'proposal', 'option'];
             if (!in_array($intent, $supportedIntents, true)) {
                 $data['__validation_error__'] = 'ServiceRequest.intent "' . $intent
-                    . '" cannot be stored; OpenEMR supports '
+                    . '" cannot be stored; DCL supports '
                     . implode(', ', $supportedIntents);
                 $data['__validation_field__'] = 'intent';
             } else {
@@ -890,7 +890,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
             }
         }
 
-        // priority passthrough (matches OpenEMR vocab for routine/urgent/asap/stat)
+        // priority passthrough (matches DCL vocab for routine/urgent/asap/stat)
         $priority = $json['priority'] ?? null;
         if (is_string($priority) && $priority !== '') {
             $header['order_priority'] = $priority;
@@ -951,7 +951,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
         // No usable coding: procedure_order_code.procedure_code is varchar(64) NOT NULL and
         // ProcedureService requires it non-empty, so code.text cannot stand in for a code --
         // a long display string would be truncated on the way to the column. Surface the
-        // gap instead; insertOpenEMRRecord/updateOpenEMRRecord turn it into a 422.
+        // gap instead; insertDCLRecord/updateDCLRecord turn it into a 422.
         if ($codes === []) {
             $data['__validation_error__'] = $codeText !== null
                 ? 'ServiceRequest.code requires a coding with a code; code.text alone cannot be stored'
@@ -968,7 +968,7 @@ class FhirServiceRequestService extends FhirServiceBase implements
             $reasonSystem = $reasonCoding['system'] ?? null;
             $system = is_string($reasonSystem) ? $reasonSystem : '';
             $codes[0]['diagnoses'] = (new CodeTypesService())
-                ->getOpenEMRCodeForSystemAndCode($system, $reasonCode);
+                ->getDCLCodeForSystemAndCode($system, $reasonCode);
         }
 
         return $data;
@@ -977,10 +977,10 @@ class FhirServiceRequestService extends FhirServiceBase implements
     /**
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR ServiceRequest record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL ServiceRequest record array');
         }
 
         $validationError = $openEmrRecord['__validation_error__'] ?? null;
@@ -1054,32 +1054,32 @@ class FhirServiceRequestService extends FhirServiceBase implements
 
     /**
      * @param string $fhirResourceId
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        $validationError = $updatedOpenEMRRecord['__validation_error__'] ?? null;
+        $validationError = $updatedDCLRecord['__validation_error__'] ?? null;
         if (is_string($validationError)) {
             $result = new ProcessingResult();
             // The marker names its own element; 'code' stays the default because it was the
             // first and only producer before intent started using it.
-            $field = $updatedOpenEMRRecord['__validation_field__'] ?? 'code';
+            $field = $updatedDCLRecord['__validation_field__'] ?? 'code';
             $result->setValidationMessages([is_string($field) ? $field : 'code' => $validationError]);
             return $result;
         }
 
-        $header = FhirPayloadReader::stringKeyed($updatedOpenEMRRecord['header'] ?? null);
+        $header = FhirPayloadReader::stringKeyed($updatedDCLRecord['header'] ?? null);
         // PUT cannot rebind patient/encounter/requester; drop those resolved ids.
         unset($header['patient_id']);
 
-        $codes = FhirPayloadReader::rows($updatedOpenEMRRecord['codes'] ?? null);
+        $codes = FhirPayloadReader::rows($updatedDCLRecord['codes'] ?? null);
 
         // Resolve the body's subject to a pid and require it to match the stored
         // procedure_order.patient_id, so a leaked order uuid cannot be used to mutate
         // another patient's order. The subject is required rather than optional: leaving
         // it out would resolve to no expected pid and skip the check entirely, which is
         // the same as not having it. ServiceRequest.subject is 1..1 in R4 regardless.
-        $puuid = $updatedOpenEMRRecord['puuid'] ?? null;
+        $puuid = $updatedDCLRecord['puuid'] ?? null;
         if (!is_string($puuid) || $puuid === '') {
             $result = new ProcessingResult();
             $result->setValidationMessages(

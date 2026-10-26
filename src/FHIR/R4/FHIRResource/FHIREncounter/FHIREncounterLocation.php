@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
+namespace DCL\FHIR\R4\FHIRResource\FHIREncounter;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREncounter;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
@@ -71,25 +71,25 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * The location where the encounter takes place.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $location = null;
 
     /**
      * The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterLocationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIREncounterLocationStatus
      */
     public $status = null;
 
     /**
      * This will be used to specify the required levels (bed/ward/room/etc.) desired to be recorded to simplify either messaging or query.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $physicalType = null;
 
     /**
      * Time period during which the patient was present at the location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
@@ -100,7 +100,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The location where the encounter takes place.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocation()
     {
@@ -109,7 +109,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The location where the encounter takes place.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $location
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function setLocation($location)
@@ -120,7 +120,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterLocationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIREncounterLocationStatus
      */
     public function getStatus()
     {
@@ -129,7 +129,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIREncounterLocationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIREncounterLocationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -140,7 +140,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * This will be used to specify the required levels (bed/ward/room/etc.) desired to be recorded to simplify either messaging or query.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPhysicalType()
     {
@@ -149,7 +149,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * This will be used to specify the required levels (bed/ward/room/etc.) desired to be recorded to simplify either messaging or query.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $physicalType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $physicalType
      * @return $this
      */
     public function setPhysicalType($physicalType)
@@ -160,7 +160,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Time period during which the patient was present at the location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -169,7 +169,7 @@ class FHIREncounterLocation extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Time period during which the patient was present at the location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)

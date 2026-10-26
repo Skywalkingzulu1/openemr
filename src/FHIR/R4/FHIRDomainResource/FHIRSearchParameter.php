@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A search parameter that defines a named search item that can be used to search/filter on a resource.
@@ -72,157 +72,157 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 {
     /**
      * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the search parameter. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. i.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $derivedFrom = null;
 
     /**
      * The status of this search parameter. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * And how it used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate search parameter instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the search parameter is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this search parameter is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * The code used in the URL or the parameter name in a parameters resource for this search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $base = [];
 
     /**
      * The type of value that a search parameter may contain, and how the content is interpreted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType
      */
     public $type = null;
 
     /**
      * A FHIRPath expression that returns a set of elements for the search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
     /**
      * An XPath expression that returns a set of elements for the search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $xpath = null;
 
     /**
      * How the search parameter relates to the set of elements returned by evaluating the xpath query.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRXPathUsageType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRXPathUsageType
      */
     public $xpathUsage = null;
 
     /**
      * Types of resource (if a resource is referenced).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $target = [];
 
     /**
      * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $multipleOr = null;
 
     /**
      * Whether multiple parameters are allowed - e.g. more than one parameter with the same name. The search matches if all the parameters match.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $multipleAnd = null;
 
     /**
      * Comparators supported for the search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchComparator[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSearchComparator[]
      */
     public $comparator = [];
 
     /**
      * A modifier supported for the search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchModifierCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSearchModifierCode[]
      */
     public $modifier = [];
 
     /**
      * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $chain = [];
 
     /**
      * Used to define the parts of a composite search parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
     public $component = [];
 
@@ -233,7 +233,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -242,7 +242,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -253,7 +253,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -262,7 +262,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -273,7 +273,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A natural language name identifying the search parameter. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -282,7 +282,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A natural language name identifying the search parameter. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -293,7 +293,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. i.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDerivedFrom()
     {
@@ -302,7 +302,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. i.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $derivedFrom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $derivedFrom
      * @return $this
      */
     public function setDerivedFrom($derivedFrom)
@@ -313,7 +313,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The status of this search parameter. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -322,7 +322,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The status of this search parameter. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -333,7 +333,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A Boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -342,7 +342,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A Boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -353,7 +353,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -362,7 +362,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -373,7 +373,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the organization or individual that published the search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -382,7 +382,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the organization or individual that published the search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -393,7 +393,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -402,7 +402,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -413,7 +413,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * And how it used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -422,7 +422,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * And how it used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -433,7 +433,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate search parameter instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -442,7 +442,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate search parameter instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -453,7 +453,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A legal or geographic region in which the search parameter is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -462,7 +462,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A legal or geographic region in which the search parameter is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -473,7 +473,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Explanation of why this search parameter is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -482,7 +482,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Explanation of why this search parameter is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -493,7 +493,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The code used in the URL or the parameter name in a parameters resource for this search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getCode()
     {
@@ -502,7 +502,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The code used in the URL or the parameter name in a parameters resource for this search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function setCode($code)
@@ -513,7 +513,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getBase()
     {
@@ -522,7 +522,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $base
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $base
      * @return $this
      */
     public function addBase($base)
@@ -533,7 +533,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The type of value that a search parameter may contain, and how the content is interpreted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType
      */
     public function getType()
     {
@@ -542,7 +542,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The type of value that a search parameter may contain, and how the content is interpreted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchParamType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSearchParamType $type
      * @return $this
      */
     public function setType($type)
@@ -553,7 +553,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A FHIRPath expression that returns a set of elements for the search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -562,7 +562,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A FHIRPath expression that returns a set of elements for the search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)
@@ -573,7 +573,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An XPath expression that returns a set of elements for the search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getXpath()
     {
@@ -582,7 +582,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An XPath expression that returns a set of elements for the search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $xpath
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $xpath
      * @return $this
      */
     public function setXpath($xpath)
@@ -593,7 +593,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * How the search parameter relates to the set of elements returned by evaluating the xpath query.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRXPathUsageType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRXPathUsageType
      */
     public function getXpathUsage()
     {
@@ -602,7 +602,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * How the search parameter relates to the set of elements returned by evaluating the xpath query.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRXPathUsageType $xpathUsage
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRXPathUsageType $xpathUsage
      * @return $this
      */
     public function setXpathUsage($xpathUsage)
@@ -613,7 +613,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Types of resource (if a resource is referenced).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getTarget()
     {
@@ -622,7 +622,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Types of resource (if a resource is referenced).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $target
      * @return $this
      */
     public function addTarget($target)
@@ -633,7 +633,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getMultipleOr()
     {
@@ -642,7 +642,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $multipleOr
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $multipleOr
      * @return $this
      */
     public function setMultipleOr($multipleOr)
@@ -653,7 +653,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Whether multiple parameters are allowed - e.g. more than one parameter with the same name. The search matches if all the parameters match.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getMultipleAnd()
     {
@@ -662,7 +662,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Whether multiple parameters are allowed - e.g. more than one parameter with the same name. The search matches if all the parameters match.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $multipleAnd
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $multipleAnd
      * @return $this
      */
     public function setMultipleAnd($multipleAnd)
@@ -673,7 +673,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Comparators supported for the search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchComparator[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSearchComparator[]
      */
     public function getComparator()
     {
@@ -682,7 +682,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Comparators supported for the search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchComparator $comparator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSearchComparator $comparator
      * @return $this
      */
     public function addComparator($comparator)
@@ -693,7 +693,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A modifier supported for the search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchModifierCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSearchModifierCode[]
      */
     public function getModifier()
     {
@@ -702,7 +702,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A modifier supported for the search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchModifierCode $modifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSearchModifierCode $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -713,7 +713,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getChain()
     {
@@ -722,7 +722,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $chain
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $chain
      * @return $this
      */
     public function addChain($chain)
@@ -733,7 +733,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Used to define the parts of a composite search parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
     public function getComponent()
     {
@@ -742,7 +742,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Used to define the parts of a composite search parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent $component
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent $component
      * @return $this
      */
     public function addComponent($component)

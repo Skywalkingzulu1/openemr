@@ -6,17 +6,17 @@
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-namespace OpenEMR\ClinicalDecisionRules\Interface;
+namespace DCL\ClinicalDecisionRules\Interface;
 
-use OpenEMR\ClinicalDecisionRules\Interface\ActionRouter;
-use OpenEMR\Common\Acl\AccessDeniedException;
-use OpenEMR\Common\Acl\AclMain;
+use DCL\ClinicalDecisionRules\Interface\ActionRouter;
+use DCL\Common\Acl\AccessDeniedException;
+use DCL\Common\Acl\AclMain;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\ControllerRouter
+ * Description of DCL\ClinicalDecisionRules\Interface\ControllerRouter
  *
  * @author aron
  */

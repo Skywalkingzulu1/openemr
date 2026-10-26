@@ -7,25 +7,25 @@
  * It is implicit that a document can have other related tables to it at least a one document to many notes
  *  which join on a documents id and categories which do the same.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Unknown -- No ownership was listed on this document prior to February 5th 2021
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @copyright OpenEMR contributors (c) 2021
+ * @copyright DCL contributors (c) 2021
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\ORDataObject\ORDataObject;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\PatientDocuments\PatientDocumentStoreOffsite;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\ORDataObject\ORDataObject;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\PatientDocuments\PatientDocumentStoreOffsite;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class Document extends ORDataObject
@@ -224,10 +224,10 @@ class Document extends ORDataObject
     */
     public $list_id;
 
-    // For name (used in OpenEMR 6.0.0+)
+    // For name (used in DCL 6.0.0+)
     public $name = null;
 
-    // For label on drive (used in OpenEMR 6.0.0+)
+    // For label on drive (used in DCL 6.0.0+)
     public $drive_uuid = null;
 
     // For tagging with the encounter
@@ -497,7 +497,7 @@ class Document extends ORDataObject
     public static function getDocumentForUuid($uuid): ?Document
     {
         $sql = "SELECT id from " . escape_table_name(self::TABLE_NAME) . " WHERE uuid = ?";
-        $id = \OpenEMR\Common\Database\QueryUtils::fetchSingleValue($sql, 'id', [UuidRegistry::uuidToBytes($uuid)]);
+        $id = \DCL\Common\Database\QueryUtils::fetchSingleValue($sql, 'id', [UuidRegistry::uuidToBytes($uuid)]);
         if (!empty($id)) {
             return new Document($id);
         } else {
@@ -700,7 +700,7 @@ class Document extends ORDataObject
     }
 
     /**
-     * OpenEMR installation media can be moved to other instances, to get the real filesystem path we use this method.
+     * DCL installation media can be moved to other instances, to get the real filesystem path we use this method.
      * If the document is a couch db document this will return null;
      */
     protected function get_filesystem_filepath()
@@ -960,7 +960,7 @@ class Document extends ORDataObject
    * @param int $owner Owner/user/service that is requesting this action
    * @param  string  $tmpfile      The tmp location of file (require for thumbnail generator)
    * @param  string  $date_expires The datetime that the document should no longer be accessible in the system
-   * @param  string  $foreign_reference_id The table id to another table record in OpenEMR
+   * @param  string  $foreign_reference_id The table id to another table record in DCL
    * @param  string  $foreign_reference_table The table name of the foreign_reference_id this document refers to.
    * @return string                Empty string if success, otherwise error message text
    */

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical origins as well as the fraction of a material that can result in or can be modified to form a substance. This set of data elements shall be used to define polymer substances isolated from biological matrices. Taxonomic and anatomical origins shall be described using a controlled vocabulary as required. This information is captured for naturally derived polymers ( . starch) and structurally diverse substances. For Organisms belonging to the Kingdom Plantae the Substance level defines the fresh material of a single species or infraspecies, the Herbal Drug and the Herbal preparation. For Herbal preparations, the fraction information will be captured at the Substance information level and additional information for herbal extracts will be captured at the Specified Substance Group 1 information level. See for further explanation the Substance Class: Structurally Diverse and the herbal annex.
@@ -71,49 +71,49 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 {
     /**
      * The family of an organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $family = null;
 
     /**
      * The genus of an organism shall be specified; refers to the Latin epithet of the genus element of the plant/animal scientific name; it is present in names for genera, species and infraspecies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $genus = null;
 
     /**
      * The species of an organism shall be specified; refers to the Latin epithet of the species of the plant/animal; it is present in names for species and infraspecies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $species = null;
 
     /**
      * The Intraspecific type of an organism shall be specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $intraspecificType = null;
 
     /**
      * The intraspecific description of an organism shall be specified based on a controlled vocabulary. For Influenza Vaccine, the intraspecific description shall contain the syntax of the antigen in line with the WHO convention.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $intraspecificDescription = null;
 
     /**
      * 4.9.13.6.1 Author type (Conditional).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor[]
      */
     public $author = [];
 
     /**
      * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
      */
     public $hybrid = null;
 
     /**
      * 4.9.13.7.1 Kingdom (Conditional).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
      */
     public $organismGeneral = null;
 
@@ -124,7 +124,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The family of an organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFamily()
     {
@@ -133,7 +133,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The family of an organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $family
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $family
      * @return $this
      */
     public function setFamily($family)
@@ -144,7 +144,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The genus of an organism shall be specified; refers to the Latin epithet of the genus element of the plant/animal scientific name; it is present in names for genera, species and infraspecies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getGenus()
     {
@@ -153,7 +153,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The genus of an organism shall be specified; refers to the Latin epithet of the genus element of the plant/animal scientific name; it is present in names for genera, species and infraspecies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $genus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $genus
      * @return $this
      */
     public function setGenus($genus)
@@ -164,7 +164,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The species of an organism shall be specified; refers to the Latin epithet of the species of the plant/animal; it is present in names for species and infraspecies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecies()
     {
@@ -173,7 +173,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The species of an organism shall be specified; refers to the Latin epithet of the species of the plant/animal; it is present in names for species and infraspecies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $species
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $species
      * @return $this
      */
     public function setSpecies($species)
@@ -184,7 +184,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The Intraspecific type of an organism shall be specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getIntraspecificType()
     {
@@ -193,7 +193,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The Intraspecific type of an organism shall be specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $intraspecificType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $intraspecificType
      * @return $this
      */
     public function setIntraspecificType($intraspecificType)
@@ -204,7 +204,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The intraspecific description of an organism shall be specified based on a controlled vocabulary. For Influenza Vaccine, the intraspecific description shall contain the syntax of the antigen in line with the WHO convention.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getIntraspecificDescription()
     {
@@ -213,7 +213,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * The intraspecific description of an organism shall be specified based on a controlled vocabulary. For Influenza Vaccine, the intraspecific description shall contain the syntax of the antigen in line with the WHO convention.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $intraspecificDescription
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $intraspecificDescription
      * @return $this
      */
     public function setIntraspecificDescription($intraspecificDescription)
@@ -224,7 +224,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * 4.9.13.6.1 Author type (Conditional).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor[]
      */
     public function getAuthor()
     {
@@ -233,7 +233,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * 4.9.13.6.1 Author type (Conditional).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor $author
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor $author
      * @return $this
      */
     public function addAuthor($author)
@@ -244,7 +244,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
      */
     public function getHybrid()
     {
@@ -253,7 +253,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid $hybrid
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid $hybrid
      * @return $this
      */
     public function setHybrid($hybrid)
@@ -264,7 +264,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * 4.9.13.7.1 Kingdom (Conditional).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
      */
     public function getOrganismGeneral()
     {
@@ -273,7 +273,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement implements
 
     /**
      * 4.9.13.7.1 Kingdom (Conditional).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $organismGeneral
      * @return $this
      */
     public function setOrganismGeneral($organismGeneral)

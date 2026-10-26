@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductIndication;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Indication for the Medicinal Product.
@@ -71,17 +71,17 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement imp
 {
     /**
      * The type of relationship between the medicinal product indication or contraindication and another therapy.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $therapyRelationshipType = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $medicationCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $medicationReference = null;
 
@@ -92,7 +92,7 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement imp
 
     /**
      * The type of relationship between the medicinal product indication or contraindication and another therapy.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTherapyRelationshipType()
     {
@@ -101,7 +101,7 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement imp
 
     /**
      * The type of relationship between the medicinal product indication or contraindication and another therapy.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $therapyRelationshipType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $therapyRelationshipType
      * @return $this
      */
     public function setTherapyRelationshipType($therapyRelationshipType)
@@ -111,7 +111,7 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement imp
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMedicationCodeableConcept()
     {
@@ -119,7 +119,7 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement imp
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return $this
      */
     public function setMedicationCodeableConcept($medicationCodeableConcept)
@@ -129,7 +129,7 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement imp
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getMedicationReference()
     {
@@ -137,7 +137,7 @@ class FHIRMedicinalProductIndicationOtherTherapy extends FHIRBackboneElement imp
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $medicationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $medicationReference
      * @return $this
      */
     public function setMedicationReference($medicationReference)

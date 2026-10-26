@@ -4,20 +4,20 @@
  * CcdaGlobalsConfiguration.php  is responsible for creating and retrieving the Carecoordination globals that are used
  * by the module.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Carecoordination\Model;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\Globals\GlobalSetting;
-use OpenEMR\Services\Globals\GlobalsService;
-use OpenEMR\Services\ListService;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\CodeTypesService;
+use DCL\Services\Globals\GlobalSetting;
+use DCL\Services\Globals\GlobalsService;
+use DCL\Services\ListService;
 
 class CcdaGlobalsConfiguration
 {
@@ -87,7 +87,7 @@ class CcdaGlobalsConfiguration
 
     /**
      * Retrieves an mapped array of sorted section oids where each key in the map is the oid of a document template in CCD-A
-     * that we support inside of OpenEMR.  This will retrieve the global settings that users have configured for their
+     * that we support inside of DCL.  This will retrieve the global settings that users have configured for their
      * carecoordination document types.
      * @return array
      */

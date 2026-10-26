@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Raw data describing a biological sequence.
@@ -71,31 +71,31 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 {
     /**
      * Information about chromosome structure variation DNA change type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $variantType = null;
 
     /**
      * Used to indicate if the outer and inner start-end values have the same meaning.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $exact = null;
 
     /**
      * Length of the variant chromosome.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $length = null;
 
     /**
      * Structural variant outer.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceOuter
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceOuter
      */
     public $outer = null;
 
     /**
      * Structural variant inner.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceInner
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceInner
      */
     public $inner = null;
 
@@ -106,7 +106,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Information about chromosome structure variation DNA change type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getVariantType()
     {
@@ -115,7 +115,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Information about chromosome structure variation DNA change type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $variantType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $variantType
      * @return $this
      */
     public function setVariantType($variantType)
@@ -126,7 +126,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Used to indicate if the outer and inner start-end values have the same meaning.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExact()
     {
@@ -135,7 +135,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Used to indicate if the outer and inner start-end values have the same meaning.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $exact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $exact
      * @return $this
      */
     public function setExact($exact)
@@ -146,7 +146,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Length of the variant chromosome.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getLength()
     {
@@ -155,7 +155,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Length of the variant chromosome.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $length
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $length
      * @return $this
      */
     public function setLength($length)
@@ -166,7 +166,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Structural variant outer.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceOuter
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceOuter
      */
     public function getOuter()
     {
@@ -175,7 +175,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Structural variant outer.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceOuter $outer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceOuter $outer
      * @return $this
      */
     public function setOuter($outer)
@@ -186,7 +186,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Structural variant inner.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceInner
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceInner
      */
     public function getInner()
     {
@@ -195,7 +195,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement implemen
 
     /**
      * Structural variant inner.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceInner $inner
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence\FHIRMolecularSequenceInner $inner
      * @return $this
      */
     public function setInner($inner)

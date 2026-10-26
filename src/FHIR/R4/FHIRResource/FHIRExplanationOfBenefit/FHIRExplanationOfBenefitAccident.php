@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -71,23 +71,23 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
 {
     /**
      * Date of an accident event  related to the products and services contained in the claim.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $date = null;
 
     /**
      * The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public $locationAddress = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $locationReference = null;
 
@@ -98,7 +98,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
 
     /**
      * Date of an accident event  related to the products and services contained in the claim.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getDate()
     {
@@ -107,7 +107,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
 
     /**
      * Date of an accident event  related to the products and services contained in the claim.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $date
      * @return $this
      */
     public function setDate($date)
@@ -118,7 +118,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
 
     /**
      * The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -127,7 +127,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
 
     /**
      * The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -137,7 +137,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public function getLocationAddress()
     {
@@ -145,7 +145,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $locationAddress
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $locationAddress
      * @return $this
      */
     public function setLocationAddress($locationAddress)
@@ -155,7 +155,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getLocationReference()
     {
@@ -163,7 +163,7 @@ class FHIRExplanationOfBenefitAccident extends FHIRBackboneElement implements \J
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $locationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $locationReference
      * @return $this
      */
     public function setLocationReference($locationReference)

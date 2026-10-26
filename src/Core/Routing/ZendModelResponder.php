@@ -12,16 +12,16 @@
  * This isolates the 55 ViewModel/JsonModel return sites behind one converter so
  * the resolver shim does not grow Laminas-view coupling.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Core\Routing;
+namespace DCL\Core\Routing;
 
 use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ModelInterface;

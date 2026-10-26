@@ -3,26 +3,26 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\Controller;
+namespace DCL\Modules\FaxSMS\Controller;
 
 use Document;
 use Exception;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Utils\FileUtils;
-use OpenEMR\Common\ValueObjects\PhoneNumber;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\FaxSMS\Contracts\FaxChannelInterface;
-use OpenEMR\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
-use OpenEMR\Modules\FaxSMS\Contracts\SmsChannelInterface;
-use OpenEMR\Modules\FaxSMS\Service\FaxMailer;
-use OpenEMR\Modules\FaxSMS\Service\FaxUploadStaging;
-use OpenEMR\Services\ImageUtilities\HandleImageService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Utils\FileUtils;
+use DCL\Common\ValueObjects\PhoneNumber;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\FaxSMS\Contracts\FaxChannelInterface;
+use DCL\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
+use DCL\Modules\FaxSMS\Contracts\SmsChannelInterface;
+use DCL\Modules\FaxSMS\Service\FaxMailer;
+use DCL\Modules\FaxSMS\Service\FaxUploadStaging;
+use DCL\Services\ImageUtilities\HandleImageService;
 use RingCentral\SDK\Http\ApiException;
 
 class RCFaxClient extends AppDispatch implements FaxChannelInterface, SmsChannelInterface, FaxDocumentDisposalInterface

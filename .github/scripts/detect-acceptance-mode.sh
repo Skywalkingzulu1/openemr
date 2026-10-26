@@ -65,7 +65,7 @@
 #                              acceptance version-display / version-api
 #                              groups (ACCEPTANCE_EXPECTED_VERSION) can
 #                              compare against something that actually
-#                              matches. See openemr/openemr#13753.
+#                              matches. See DCL/DCL#13753.
 #
 # Exit codes
 #   0   Decision emitted successfully.
@@ -175,7 +175,7 @@ read_tree_version() {
 #   - #13635 added assertions asserting the label equals the DB value
 # Which meant build_locally acceptance runs could never pass the
 # post-install/post-upgrade version-display / version-api groups.
-# See openemr/openemr#13753 for the failure trace + rationale.
+# See DCL/DCL#13753 for the failure trace + rationale.
 #
 # Must be called AFTER emit_to_version so LAST_RESOLVED_TO_VERSION
 # is populated for the else branch. Shape-validates the result for
@@ -204,9 +204,9 @@ emit_expected_version() {
     echo "==> resolved expected_version=${candidate}"
 }
 
-# SHIPPED_VERSIONS_MANIFEST_URL — canonical location of the openemr
+# SHIPPED_VERSIONS_MANIFEST_URL — canonical location of the DCL
 # release manifest. Written by three dispatch events from
-# openemr/openemr (openemr-rel-cut → DRAFT, openemr-tag → flip to
+# DCL/DCL (DCL-rel-cut → DRAFT, DCL-tag → flip to
 # FINAL). Read here as the authoritative "which versions have
 # actually shipped tarballs" signal. See
 # tools/release/src/BranchVersionResolver.php in this repo for the
@@ -214,13 +214,13 @@ emit_expected_version() {
 #
 # `:=` default so tests can override with an unreachable URL for
 # fetch-failure coverage. Not readonly for the same reason.
-: "${SHIPPED_VERSIONS_MANIFEST_URL:=https://raw.githubusercontent.com/openemr/website-openemr/master/data/releases.json}"
+: "${SHIPPED_VERSIONS_MANIFEST_URL:=https://raw.githubusercontent.com/DCL/website-DCL/master/data/releases.json}"
 
-# fetch_shipped_versions — pulls the openemr/website-openemr
+# fetch_shipped_versions — pulls the DCL/website-DCL
 # releases manifest and returns the FINAL-status version keys,
 # newline-separated. Filtered to FINAL because DRAFT entries mean
 # "release-prep dispatched but not yet shipped" — the tarball
-# isn't downloadable from GitHub Releases until the openemr-tag
+# isn't downloadable from GitHub Releases until the DCL-tag
 # dispatch flips status to FINAL.
 #
 # MOCK_SHIPPED_VERSIONS env override — when set, bypasses the real
@@ -281,7 +281,7 @@ fetch_shipped_versions() {
 # rel-820's own dropdown because you don't upgrade from your own
 # version). Deriving from the checkout's own `sql/` files
 # sidesteps that trap entirely and works on any branch without
-# config maintenance. See openemr/openemr#13573 for the full
+# config maintenance. See DCL/DCL#13573 for the full
 # symptom trace.
 derive_from_version() {
     # Sql-side enumeration is now in a shared lib so the docker side
@@ -340,8 +340,8 @@ derive_from_version() {
     # version AND appears in the checkout's sql/ candidates. Real
     # ships don't hit this because the target version isn't in the
     # shipped manifest yet when acceptance runs. But recovery-mode
-    # acceptance-only against an already-shipped version (openemr/
-    # openemr#13991 nightly smoketest is the primary example; a
+    # acceptance-only against an already-shipped version (DCL/
+    # DCL#13991 nightly smoketest is the primary example; a
     # manual re-run of the recovery workflow after a version has
     # fully shipped is a rarer secondary case) hits this and
     # degenerates. Filter here so those callers get a real upgrade
@@ -408,8 +408,8 @@ emit_from_version() {
 # as build_locally=true with the caller-supplied version. The
 # build-tarball job self-skips (see its `if:` condition below)
 # and the bootflags step downloads the caller's artifact name
-# instead of Phase 3.5's `openemr-pr-built-tarball` /
-# `openemr-pr-built-zip` defaults.
+# instead of Phase 3.5's `DCL-pr-built-tarball` /
+# `DCL-pr-built-zip` defaults.
 #
 # Detect on CALLER_TARBALL_ARTIFACT / CALLER_ZIP_ARTIFACT being
 # non-empty, NOT on $EVENT_NAME == 'workflow_call' — GitHub
@@ -452,7 +452,7 @@ if [[ -n "${CALLER_TARBALL_ARTIFACT}" || -n "${CALLER_ZIP_ARTIFACT}" ]]; then
     # verbatim — expected_version must equal to_version, not whatever
     # happens to sit in the checkout's version.php (which is often master's
     # `-dev` value when build-release runs against a tag). Passing "true"
-    # here was the openemr/openemr#13761 regression that made the 8.4.0
+    # here was the DCL/DCL#13761 regression that made the 8.4.0
     # ship's acceptance-gate fail with expected=8.5.0 vs actual=8.4.0.
     emit_expected_version "false"
     emit_from_version

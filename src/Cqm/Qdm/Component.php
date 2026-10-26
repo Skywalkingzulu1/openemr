@@ -1,18 +1,18 @@
 <?php
 
-namespace OpenEMR\Cqm\Qdm;
+namespace DCL\Cqm\Qdm;
 
 /**
- * OpenEMR\Cqm\Qdm\Component
+ * DCL\Cqm\Qdm\Component
  *
  * This is a class generated with Laminas\Code\Generator.
  *
  * @QDM Version 5.6
  * @author Ken Chapple <ken@mi-squared.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General
  * Public License 3
  */
-class Component extends \OpenEMR\Cqm\Qdm\BaseTypes\Any
+class Component extends \DCL\Cqm\Qdm\BaseTypes\Any
 {
     /**
      * @property BaseTypes\Code $code

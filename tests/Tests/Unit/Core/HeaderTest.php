@@ -1,26 +1,26 @@
 <?php
 
 /**
- * Tests for the {headerTemplate} Smarty plugin / OpenEMR\Core\Header.
+ * Tests for the {headerTemplate} Smarty plugin / DCL\Core\Header.
  *
  * Regression guard for the bug where a single {headerTemplate} tag emitted the
  * page header (jQuery, Bootstrap, etc.) twice: Header::setupHeader() defaults to
  * $echoOutput = true (echo + return), and a Smarty function plugin's return value
  * is printed at the tag, so the plugin must call setupHeader() in return-only mode.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Discover and Change AI Worker <ai-worker@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\Core;
+namespace DCL\Tests\Unit\Core;
 
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 use PHPUnit\Framework\TestCase;
 use Smarty;
 

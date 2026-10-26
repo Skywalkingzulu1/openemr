@@ -31,7 +31,7 @@ setup_test_dir() {
 
     # Standard inputs.
     export RELEASE_TAG="v8_4_0"
-    export REPO="openemr/openemr"
+    export REPO="DCL/DCL"
     export GH_TOKEN="mock-token"
 }
 

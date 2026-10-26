@@ -21,7 +21,7 @@ namespace Patientvalidation\Controller;
 
 use Application\Listener\Listener;
 use Laminas\Mvc\Controller\AbstractActionController;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 class BaseController extends AbstractActionController
 {

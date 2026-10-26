@@ -13,8 +13,8 @@ setup() {
     sites="${base}/sites"
     default="${sites}/default"
     mkdir -p "$default"
-    # Replace all references to the openemr path so script runs in temp dir
-    sed "s|/var/www/localhost/htdocs/openemr|${base}|g" "$FSUP1" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh"
+    # Replace all references to the DCL path so script runs in temp dir
+    sed "s|/var/www/localhost/htdocs/DCL|${base}|g" "$FSUP1" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh"
     sed 's/chown -R apache:root.*/true \# chown skipped for test/' "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh.tmp" && mv "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh.tmp" "${BATS_TEST_TMPDIR}/fsupgrade-1-test.sh"
     # Second loop needs sql_upgrade.php to exist (cat ... || true keeps going)
     touch "${base}/sql_upgrade.php"
@@ -33,7 +33,7 @@ setup() {
     default="${sites}/default"
     mkdir -p "$default"
     touch "${base}/sql_upgrade.php"
-    sed "s|/var/www/localhost/htdocs/openemr|${base}|g" "$FSUP1" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh"
+    sed "s|/var/www/localhost/htdocs/DCL|${base}|g" "$FSUP1" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh"
     sed 's/chown -R apache:root.*/true/' "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh" > "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh.tmp" && mv "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh.tmp" "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh"
     chmod +x "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh"
     bash "${BATS_TEST_TMPDIR}/fsupgrade-1-test2.sh" 2>/dev/null || true

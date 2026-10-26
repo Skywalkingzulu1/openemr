@@ -1,7 +1,7 @@
 name: Release Mechanism Smoke Test
 
 # CI-side smoke test for the release-mechanism auth + env plumbing.
-# Runs `openemr:release-prep --scope=rel` end-to-end -- including
+# Runs `DCL:release-prep --scope=rel` end-to-end -- including
 # ChangelogMutator's `gh api` shellout -- against a known shipped
 # rel-branch, and asserts the process completes successfully. Discards
 # the resulting diff.
@@ -15,7 +15,7 @@ name: Release Mechanism Smoke Test
 # semantics like "`gh` needs GH_TOKEN".
 #
 # The specific failure mode this guards against surfaced in
-# openemr/openemr#12999: release-amendment.yml set `persist-credentials:
+# DCL/DCL#12999: release-amendment.yml set `persist-credentials:
 # false` on its checkouts (hardening) but didn't add `GH_TOKEN` to the
 # mutator step's env block. `gh` had no ambient token to fall back on,
 # so it errored immediately when the mutator's PHP tried to walk the
@@ -65,7 +65,7 @@ concurrency:
 
 jobs:
   smoketest:
-    name: openemr:release-prep smoketest against rel-820
+    name: DCL:release-prep smoketest against rel-820
     runs-on: ubuntu-24.04
     permissions:
       contents: read
@@ -100,7 +100,7 @@ jobs:
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress --no-interaction
 
-    - name: Run openemr:release-prep against rel-820 (smoketest)
+    - name: Run DCL:release-prep against rel-820 (smoketest)
       env:
         # Explicit GH_TOKEN mirrors release-amendment.yml's env-block
         # pattern. The runner-provided github.token is fine here -- the
@@ -126,7 +126,7 @@ jobs:
         # release and want to smoke-test against the newer shipped pair.
         # Not a big deal to leave stale as long as v8_1_0 / v8_2_0 tags
         # continue to exist.
-        php bin/console openemr:release-prep \
+        php bin/console DCL:release-prep \
           --skip-globals \
           --target-version=8.2.0 \
           --rel-branch=rel-820 \

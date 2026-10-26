@@ -4,8 +4,8 @@
  * This is a report to create a patient ledger of charges with payments
  * applied.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    WMT
  * @author    Terry Hill <terry@lillysystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -13,22 +13,22 @@
  * @copyright Copyright (c) 2015 Rich Genandt <rgenandt@gmail.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once('../globals.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/options.inc.php');
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/appointments.inc.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/options.inc.php');
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . '/appointments.inc.php');
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Menu\PatientMenuRole;
-use OpenEMR\OeUI\OemrUI;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Menu\PatientMenuRole;
+use DCL\OeUI\OemrUI;
+use DCL\Services\FacilityService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_POST)) {
@@ -409,7 +409,7 @@ if ($_REQUEST['form_csvexport']) {
         });
     </script>
     <script>
-    <?php require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/erx_patient_portal_js.php"); // jQuery for popups for eRx and patient portal?>
+    <?php require_once(\DCL\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/erx_patient_portal_js.php"); // jQuery for popups for eRx and patient portal?>
     </script>
     <?php
     if ($type_form == '0') {
@@ -446,7 +446,7 @@ if ($_REQUEST['form_csvexport']) {
             <div class="col-sm-12">
                 <?php
                 if ($type_form != '0') {
-                    require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/summary/dashboard_header.php");
+                    require_once(\DCL\Core\OEGlobalsBag::getInstance()->getIncludeRoot() . "/patient_file/summary/dashboard_header.php");
                 } else {
                     echo  $oemr_ui->pageHeading() . "\r\n";
                 } ?>
@@ -730,7 +730,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
     $prev_row = [];
     $effectiveInsurances = [];
     while ($erow = sqlFetchArray($res)) {
-        $effectiveInsurances = getEffectiveInsurances(\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid'), $erow['date']);
+        $effectiveInsurances = getEffectiveInsurances(\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid'), $erow['date']);
         $print = '';
         $csv = '';
         if ($erow['encounter'] != $prev_encounter_id) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Todo.
@@ -72,31 +72,31 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene[]
      */
     public $gene = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[]
      */
     public $geneElement = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification[]
      */
     public $classification = [];
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget[]
      */
     public $target = [];
 
@@ -107,7 +107,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -116,7 +116,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -127,7 +127,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene[]
      */
     public function getGene()
     {
@@ -136,7 +136,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene $gene
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene $gene
      * @return $this
      */
     public function addGene($gene)
@@ -147,7 +147,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[]
      */
     public function getGeneElement()
     {
@@ -156,7 +156,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement $geneElement
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement $geneElement
      * @return $this
      */
     public function addGeneElement($geneElement)
@@ -167,7 +167,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification[]
      */
     public function getClassification()
     {
@@ -176,7 +176,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification $classification
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationClassification $classification
      * @return $this
      */
     public function addClassification($classification)
@@ -187,7 +187,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget[]
      */
     public function getTarget()
     {
@@ -196,7 +196,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements \J
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget $target
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget $target
      * @return $this
      */
     public function addTarget($target)

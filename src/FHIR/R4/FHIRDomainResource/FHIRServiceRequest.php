@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
@@ -72,221 +72,221 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers assigned to this order instance by the orderer and/or the receiver and/or order fulfiller.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiatesCanonical = [];
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiatesUri = [];
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $replaces = [];
 
     /**
      * A shared identifier common to all service requests that were authorized more or less simultaneously by a single author, representing the composite or group identifier.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $requisition = null;
 
     /**
      * The status of the order.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public $status = null;
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public $intent = null;
 
     /**
      * A code that classifies the service for searching, sorting and display purposes (e.g. "Surgical Procedure").
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Indicates how quickly the ServiceRequest should be addressed with respect to other requests.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
 
     /**
      * Set this to true if the record is saying that the service/procedure should NOT be performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $doNotPerform = null;
 
     /**
      * A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $orderDetail = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantityQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public $quantityRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $quantityRange = null;
 
     /**
      * On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * An encounter that provides additional information about the healthcare context in which this request is made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $occurrenceTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $asNeededBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $asNeededCodeableConcept = null;
 
     /**
      * When the request transitioned to being actionable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $authoredOn = null;
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $requester = null;
 
     /**
      * Desired type of performer for doing the requested service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $performerType = null;
 
     /**
      * The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $performer = [];
 
     /**
      * The preferred location(s) where the procedure should actually happen in coded or free text form. E.g. at home or nursing day care center.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $locationCode = [];
 
     /**
      * A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $locationReference = [];
 
     /**
      * An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates another resource that provides a justification for why this service is being requested.   May relate to the resources referred to in `supportingInfo`.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be needed for delivering the requested service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $insurance = [];
 
     /**
      * Additional clinical information about the patient or specimen that may influence the services or their interpretations.     This information includes diagnosis, clinical findings and other observations.  In laboratory ordering these are typically referred to as "ask at order entry questions (AOEs)".  This includes observations explicitly requested by the producer (filler) to provide context or supporting information needed to complete the order. For example,  reporting the amount of inspired oxygen for blood gas measurements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInfo = [];
 
     /**
      * One or more specimens that the laboratory procedure will use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $specimen = [];
 
     /**
      * Anatomic location where the procedure should be performed. This is the target site.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $bodySite = [];
 
     /**
      * Any other notes and comments made about the service request. For example, internal billing notes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Instructions in terms that are understood by the patient or consumer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $patientInstruction = null;
 
     /**
      * Key events in the history of the request.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $relevantHistory = [];
 
@@ -297,7 +297,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this order instance by the orderer and/or the receiver and/or order fulfiller.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -306,7 +306,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifiers assigned to this order instance by the orderer and/or the receiver and/or order fulfiller.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -317,7 +317,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiatesCanonical()
     {
@@ -326,7 +326,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiatesCanonical
      * @return $this
      */
     public function addInstantiatesCanonical($instantiatesCanonical)
@@ -337,7 +337,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiatesUri()
     {
@@ -346,7 +346,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this ServiceRequest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiatesUri
      * @return $this
      */
     public function addInstantiatesUri($instantiatesUri)
@@ -357,7 +357,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -366,7 +366,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Plan/proposal/order fulfilled by this request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -377,7 +377,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReplaces()
     {
@@ -386,7 +386,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $replaces
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $replaces
      * @return $this
      */
     public function addReplaces($replaces)
@@ -397,7 +397,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A shared identifier common to all service requests that were authorized more or less simultaneously by a single author, representing the composite or group identifier.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getRequisition()
     {
@@ -406,7 +406,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A shared identifier common to all service requests that were authorized more or less simultaneously by a single author, representing the composite or group identifier.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $requisition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $requisition
      * @return $this
      */
     public function setRequisition($requisition)
@@ -417,7 +417,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the order.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus
      */
     public function getStatus()
     {
@@ -426,7 +426,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the order.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -437,7 +437,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent
      */
     public function getIntent()
     {
@@ -446,7 +446,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestIntent $intent
      * @return $this
      */
     public function setIntent($intent)
@@ -457,7 +457,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the service for searching, sorting and display purposes (e.g. "Surgical Procedure").
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -466,7 +466,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the service for searching, sorting and display purposes (e.g. "Surgical Procedure").
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -477,7 +477,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the ServiceRequest should be addressed with respect to other requests.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -486,7 +486,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates how quickly the ServiceRequest should be addressed with respect to other requests.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -497,7 +497,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Set this to true if the record is saying that the service/procedure should NOT be performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDoNotPerform()
     {
@@ -506,7 +506,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Set this to true if the record is saying that the service/procedure should NOT be performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $doNotPerform
      * @return $this
      */
     public function setDoNotPerform($doNotPerform)
@@ -517,7 +517,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -526,7 +526,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -537,7 +537,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getOrderDetail()
     {
@@ -546,7 +546,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $orderDetail
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $orderDetail
      * @return $this
      */
     public function addOrderDetail($orderDetail)
@@ -556,7 +556,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantityQuantity()
     {
@@ -564,7 +564,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantityQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantityQuantity
      * @return $this
      */
     public function setQuantityQuantity($quantityQuantity)
@@ -574,7 +574,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio
      */
     public function getQuantityRatio()
     {
@@ -582,7 +582,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio $quantityRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio $quantityRatio
      * @return $this
      */
     public function setQuantityRatio($quantityRatio)
@@ -592,7 +592,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getQuantityRange()
     {
@@ -600,7 +600,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $quantityRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $quantityRange
      * @return $this
      */
     public function setQuantityRange($quantityRange)
@@ -611,7 +611,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -620,7 +620,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -631,7 +631,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An encounter that provides additional information about the healthcare context in which this request is made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -640,7 +640,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An encounter that provides additional information about the healthcare context in which this request is made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -650,7 +650,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
     {
@@ -658,7 +658,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
     public function setOccurrenceDateTime($occurrenceDateTime)
@@ -668,7 +668,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
     {
@@ -676,7 +676,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
     public function setOccurrencePeriod($occurrencePeriod)
@@ -686,7 +686,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getOccurrenceTiming()
     {
@@ -694,7 +694,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $occurrenceTiming
      * @return $this
      */
     public function setOccurrenceTiming($occurrenceTiming)
@@ -704,7 +704,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean()
     {
@@ -712,7 +712,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $asNeededBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return $this
      */
     public function setAsNeededBoolean($asNeededBoolean)
@@ -722,7 +722,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept()
     {
@@ -730,7 +730,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return $this
      */
     public function setAsNeededCodeableConcept($asNeededCodeableConcept)
@@ -741,7 +741,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the request transitioned to being actionable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAuthoredOn()
     {
@@ -750,7 +750,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * When the request transitioned to being actionable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
     public function setAuthoredOn($authoredOn)
@@ -761,7 +761,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequester()
     {
@@ -770,7 +770,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $requester
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $requester
      * @return $this
      */
     public function setRequester($requester)
@@ -781,7 +781,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Desired type of performer for doing the requested service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPerformerType()
     {
@@ -790,7 +790,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Desired type of performer for doing the requested service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $performerType
      * @return $this
      */
     public function setPerformerType($performerType)
@@ -801,7 +801,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPerformer()
     {
@@ -810,7 +810,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -821,7 +821,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The preferred location(s) where the procedure should actually happen in coded or free text form. E.g. at home or nursing day care center.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getLocationCode()
     {
@@ -830,7 +830,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The preferred location(s) where the procedure should actually happen in coded or free text form. E.g. at home or nursing day care center.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $locationCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $locationCode
      * @return $this
      */
     public function addLocationCode($locationCode)
@@ -841,7 +841,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getLocationReference()
     {
@@ -850,7 +850,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $locationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $locationReference
      * @return $this
      */
     public function addLocationReference($locationReference)
@@ -861,7 +861,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -870,7 +870,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -881,7 +881,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource that provides a justification for why this service is being requested.   May relate to the resources referred to in `supportingInfo`.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -890,7 +890,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates another resource that provides a justification for why this service is being requested.   May relate to the resources referred to in `supportingInfo`.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -901,7 +901,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be needed for delivering the requested service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getInsurance()
     {
@@ -910,7 +910,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be needed for delivering the requested service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $insurance
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $insurance
      * @return $this
      */
     public function addInsurance($insurance)
@@ -921,7 +921,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional clinical information about the patient or specimen that may influence the services or their interpretations.     This information includes diagnosis, clinical findings and other observations.  In laboratory ordering these are typically referred to as "ask at order entry questions (AOEs)".  This includes observations explicitly requested by the producer (filler) to provide context or supporting information needed to complete the order. For example,  reporting the amount of inspired oxygen for blood gas measurements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInfo()
     {
@@ -930,7 +930,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional clinical information about the patient or specimen that may influence the services or their interpretations.     This information includes diagnosis, clinical findings and other observations.  In laboratory ordering these are typically referred to as "ask at order entry questions (AOEs)".  This includes observations explicitly requested by the producer (filler) to provide context or supporting information needed to complete the order. For example,  reporting the amount of inspired oxygen for blood gas measurements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
     public function addSupportingInfo($supportingInfo)
@@ -941,7 +941,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * One or more specimens that the laboratory procedure will use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSpecimen()
     {
@@ -950,7 +950,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * One or more specimens that the laboratory procedure will use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $specimen
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $specimen
      * @return $this
      */
     public function addSpecimen($specimen)
@@ -961,7 +961,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Anatomic location where the procedure should be performed. This is the target site.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getBodySite()
     {
@@ -970,7 +970,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Anatomic location where the procedure should be performed. This is the target site.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function addBodySite($bodySite)
@@ -981,7 +981,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any other notes and comments made about the service request. For example, internal billing notes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -990,7 +990,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Any other notes and comments made about the service request. For example, internal billing notes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -1001,7 +1001,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Instructions in terms that are understood by the patient or consumer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPatientInstruction()
     {
@@ -1010,7 +1010,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Instructions in terms that are understood by the patient or consumer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $patientInstruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $patientInstruction
      * @return $this
      */
     public function setPatientInstruction($patientInstruction)
@@ -1021,7 +1021,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Key events in the history of the request.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getRelevantHistory()
     {
@@ -1030,7 +1030,7 @@ class FHIRServiceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Key events in the history of the request.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $relevantHistory
      * @return $this
      */
     public function addRelevantHistory($relevantHistory)

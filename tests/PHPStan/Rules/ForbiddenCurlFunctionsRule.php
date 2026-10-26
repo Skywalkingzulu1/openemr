@@ -6,13 +6,13 @@
  * This rule prevents use of raw curl_* functions as the project is migrating
  * to use Guzzle HTTP client for better testability, error handling, and PSR-7 compliance.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @copyright Copyright (c) 2025 OpenEMR Foundation
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @copyright Copyright (c) 2025 DCL Foundation
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\FuncCall;
@@ -56,11 +56,11 @@ class ForbiddenCurlFunctionsRule implements Rule
         return [
             RuleErrorBuilder::message(
                 sprintf(
-                    'Raw curl_* function %s() is forbidden. Use GuzzleHttp\Client or OpenEMR\Common\Http\oeHttp instead.',
+                    'Raw curl_* function %s() is forbidden. Use GuzzleHttp\Client or DCL\Common\Http\oeHttp instead.',
                     $functionName
                 )
             )
-                ->identifier('openemr.forbiddenCurlFunction')
+                ->identifier('DCL.forbiddenCurlFunction')
                 ->tip('Migrate to GuzzleHttp for better testability and PSR-7 compliance')
                 ->build()
         ];

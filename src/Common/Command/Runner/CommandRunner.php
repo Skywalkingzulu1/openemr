@@ -1,29 +1,29 @@
 <?php
 
 /**
- * CommandRunner finds and executes OpenEMR cli commands that are in the OpenEMR Command namespace.  It will search
- * inside directory of the COMMAND_NAMESPACE for any classes that implement the IOpenEMRCommand interface.  This provides
- * OpenEMR developers and administrators the ability to run cli commands to execute commands and administer their OpenEMR
+ * CommandRunner finds and executes DCL cli commands that are in the DCL Command namespace.  It will search
+ * inside directory of the COMMAND_NAMESPACE for any classes that implement the IDCLCommand interface.  This provides
+ * DCL developers and administrators the ability to run cli commands to execute commands and administer their DCL
  * installation.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command\Runner;
+namespace DCL\Common\Command\Runner;
 
-use OpenEMR\Common\Command\IOpenEMRCommand;
+use DCL\Common\Command\IDCLCommand;
 
 class CommandRunner
 {
-    const COMMAND_NAMESPACE = 'OpenEMR\\Common\\Command\\';
+    const COMMAND_NAMESPACE = 'DCL\\Common\\Command\\';
     const COMMAND_SUFFIX = "Command";
 
     /**
-     * @param string $rootPath The OpenEMR root installation folder
+     * @param string $rootPath The DCL root installation folder
      * @param string $scriptName The name of the script that is calling the command runner
      */
     public function __construct(
@@ -64,8 +64,8 @@ class CommandRunner
         }
 
         $command = new $classPath();
-        if (!$command instanceof IOpenEMRCommand) {
-            echo 'Command does not implement the IOpenEMRCommand interface';
+        if (!$command instanceof IDCLCommand) {
+            echo 'Command does not implement the IDCLCommand interface';
             die();
         }
         if (isset($options['h'])) {
@@ -92,7 +92,7 @@ class CommandRunner
     }
 
     /**
-     * @return IOpenEMRCommand[]
+     * @return IDCLCommand[]
      * @throws \ReflectionException
      */
     private function findCommands(): array
@@ -100,7 +100,7 @@ class CommandRunner
         $availableCommands = [];
 
         try {
-            $interface = new \ReflectionClass(IOpenEMRCommand::class);
+            $interface = new \ReflectionClass(IDCLCommand::class);
             $commandPath = dirname($path = $interface->getFileName());
             $files = scandir($commandPath);
             foreach ($files as $file) {
@@ -113,7 +113,7 @@ class CommandRunner
                 $fqn = self::COMMAND_NAMESPACE . $fileName;
                 if (class_exists($fqn)) {
                     $command = new $fqn();
-                    if ($command instanceof IOpenEMRCommand) {
+                    if ($command instanceof IDCLCommand) {
                         $suffixPos = strrpos($fileName, self::COMMAND_SUFFIX);
 
                         if ($suffixPos !== false) {

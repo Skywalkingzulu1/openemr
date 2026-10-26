@@ -4,7 +4,7 @@
  * FhirServiceBaseFailClosedIsolatedTest.php
  *
  * Tests for patient-compartment enforcement in
- * {@see \OpenEMR\Services\FHIR\FhirServiceBase}. Previously,
+ * {@see \DCL\Services\FHIR\FhirServiceBase}. Previously,
  * {@see FhirServiceBase::getOne()} gated the patient-context search-field
  * bind on
  *   isset($puuidBind) && $this instanceof IPatientCompartmentResourceService
@@ -12,25 +12,25 @@
  * dropped the puuid bind and returned data unfiltered. Now, the absence of
  * the marker denies the request.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Services\FHIR;
+namespace DCL\Tests\Isolated\Services\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\INonPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\INonPatientCompartmentResourceService;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\TestCase;
 
 class FhirServiceBaseFailClosedIsolatedTest extends TestCase
@@ -53,7 +53,7 @@ class FhirServiceBaseFailClosedIsolatedTest extends TestCase
         );
         $this->assertFalse(
             $service->searchWasReached,
-            'When the compartment check denies, searchForOpenEMRRecords() must never be reached.'
+            'When the compartment check denies, searchForDCLRecords() must never be reached.'
         );
     }
 
@@ -96,7 +96,7 @@ class FhirServiceBaseFailClosedIsolatedTest extends TestCase
         );
     }
 
-    public function testCreateOpenEMRSearchParametersThrowsOnNonCompartmentService(): void
+    public function testCreateDCLSearchParametersThrowsOnNonCompartmentService(): void
     {
         $service = new FailClosedTestNonCompartmentService();
         $result = $service->getAll(['_id' => self::FAKE_RESOURCE_UUID], self::FAKE_PATIENT_UUID);
@@ -107,13 +107,13 @@ class FhirServiceBaseFailClosedIsolatedTest extends TestCase
         );
         $this->assertFalse(
             $service->searchWasReached,
-            'When createOpenEMRSearchParameters() throws, searchForOpenEMRRecords() must not be reached.'
+            'When createDCLSearchParameters() throws, searchForDCLRecords() must not be reached.'
         );
     }
 
     /**
      * Regression gate for the generic trait's compartment binding
-     * behavior at ResourceServiceSearchTrait::createOpenEMRSearchParameters:96-110.
+     * behavior at ResourceServiceSearchTrait::createDCLSearchParameters:96-110.
      * When a caller supplies `patient=<X>` AND the token carries a bind,
      * the trait emits the bound-patient value under its FHIR field name
      * ('patient') while the caller's value remains under the mapped
@@ -150,11 +150,11 @@ class FhirServiceBaseFailClosedIsolatedTest extends TestCase
             . "and let the caller-supplied value flow through alone."
         );
         $boundField = $service->lastSearchParams['patient'];
-        $this->assertInstanceOf(\OpenEMR\Services\Search\ISearchField::class, $boundField);
+        $this->assertInstanceOf(\DCL\Services\Search\ISearchField::class, $boundField);
         $values = $boundField->getValues();
         $this->assertCount(1, $values);
         $value = $values[0];
-        $this->assertInstanceOf(\OpenEMR\Services\Search\ReferenceSearchValue::class, $value);
+        $this->assertInstanceOf(\DCL\Services\Search\ReferenceSearchValue::class, $value);
         $this->assertSame(
             self::FAKE_PATIENT_UUID,
             (string) $value,
@@ -202,7 +202,7 @@ abstract class FailClosedTestServiceBase extends FhirServiceBase
     /**
      * @phpstan-ignore missingType.iterableValue
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRDomainResource
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRDomainResource
     {
         // Never invoked in these tests — return an empty resource to satisfy
         // the parent's non-nullable return type.
@@ -212,7 +212,7 @@ abstract class FailClosedTestServiceBase extends FhirServiceBase
     /**
      * @phpstan-ignore missingType.parameter
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         return new ProcessingResult();
     }
@@ -220,7 +220,7 @@ abstract class FailClosedTestServiceBase extends FhirServiceBase
     /**
      * @phpstan-ignore missingType.iterableValue
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         return new ProcessingResult();
     }
@@ -228,11 +228,11 @@ abstract class FailClosedTestServiceBase extends FhirServiceBase
     /**
      * @phpstan-ignore missingType.iterableValue
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         $this->searchWasReached = true;
         // @phpstan-ignore assign.propertyType
-        $this->lastSearchParams = $openEMRSearchParameters;
+        $this->lastSearchParams = $DCLSearchParameters;
         return new ProcessingResult();
     }
 

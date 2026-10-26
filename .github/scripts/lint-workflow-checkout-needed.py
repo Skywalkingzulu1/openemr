@@ -2,7 +2,7 @@
 """Lint: workflow jobs that call `.github/scripts/*` must have actions/checkout.
 
 The fetch-source-artifact jobs in acceptance-only.yml and docker-acceptance-
-only.yml (openemr/openemr#13972) shipped without an `actions/checkout` step
+only.yml (DCL/DCL#13972) shipped without an `actions/checkout` step
 even though they called scripts under `.github/scripts/`. The workflows'
 Actions runners started with an empty workspace, so the script invocations
 died with `No such file or directory` at runtime -- a bug type that

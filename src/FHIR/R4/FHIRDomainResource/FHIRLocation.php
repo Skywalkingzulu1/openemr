@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
@@ -72,103 +72,103 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique code or number identifying the location to its users.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRLocationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRLocationStatus
      */
     public $status = null;
 
     /**
      * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $operationalStatus = null;
 
     /**
      * Name of the location as used by humans. Does not need to be unique.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A list of alternate names that the location is known as, or was known as, in the past.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $alias = [];
 
     /**
      * Description of the Location, which helps in finding or referencing the place.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Indicates whether a resource instance represents a specific location or a class of locations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRLocationMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRLocationMode
      */
     public $mode = null;
 
     /**
      * Indicates the type of function performed at the location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = [];
 
     /**
      * Physical location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public $address = null;
 
     /**
      * Physical form of the location, e.g. building, room, vehicle, road.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $physicalType = null;
 
     /**
      * The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same coordinate system used in KML).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationPosition
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationPosition
      */
     public $position = null;
 
     /**
      * The organization responsible for the provisioning and upkeep of the location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $managingOrganization = null;
 
     /**
      * Another Location of which this Location is physically a part of.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $partOf = null;
 
     /**
      * What days/times during a week is this location usually open.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationHoursOfOperation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationHoursOfOperation[]
      */
     public $hoursOfOperation = [];
 
     /**
      * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $availabilityExceptions = null;
 
     /**
      * Technical endpoints providing access to services operated for the location.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $endpoint = [];
 
@@ -179,7 +179,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique code or number identifying the location to its users.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -188,7 +188,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Unique code or number identifying the location to its users.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -199,7 +199,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRLocationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRLocationStatus
      */
     public function getStatus()
     {
@@ -208,7 +208,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRLocationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRLocationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -219,7 +219,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getOperationalStatus()
     {
@@ -228,7 +228,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $operationalStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $operationalStatus
      * @return $this
      */
     public function setOperationalStatus($operationalStatus)
@@ -239,7 +239,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name of the location as used by humans. Does not need to be unique.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -248,7 +248,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Name of the location as used by humans. Does not need to be unique.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -259,7 +259,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of alternate names that the location is known as, or was known as, in the past.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getAlias()
     {
@@ -268,7 +268,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A list of alternate names that the location is known as, or was known as, in the past.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $alias
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $alias
      * @return $this
      */
     public function addAlias($alias)
@@ -279,7 +279,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Description of the Location, which helps in finding or referencing the place.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -288,7 +288,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Description of the Location, which helps in finding or referencing the place.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -299,7 +299,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether a resource instance represents a specific location or a class of locations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRLocationMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRLocationMode
      */
     public function getMode()
     {
@@ -308,7 +308,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates whether a resource instance represents a specific location or a class of locations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRLocationMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRLocationMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -319,7 +319,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the type of function performed at the location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -328,7 +328,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the type of function performed at the location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -339,7 +339,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactPoint[]
      */
     public function getTelecom()
     {
@@ -348,7 +348,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -359,7 +359,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Physical location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAddress
      */
     public function getAddress()
     {
@@ -368,7 +368,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Physical location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAddress $address
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function setAddress($address)
@@ -379,7 +379,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Physical form of the location, e.g. building, room, vehicle, road.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPhysicalType()
     {
@@ -388,7 +388,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Physical form of the location, e.g. building, room, vehicle, road.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $physicalType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $physicalType
      * @return $this
      */
     public function setPhysicalType($physicalType)
@@ -399,7 +399,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same coordinate system used in KML).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationPosition
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationPosition
      */
     public function getPosition()
     {
@@ -408,7 +408,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same coordinate system used in KML).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationPosition $position
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationPosition $position
      * @return $this
      */
     public function setPosition($position)
@@ -419,7 +419,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization responsible for the provisioning and upkeep of the location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getManagingOrganization()
     {
@@ -428,7 +428,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The organization responsible for the provisioning and upkeep of the location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $managingOrganization
      * @return $this
      */
     public function setManagingOrganization($managingOrganization)
@@ -439,7 +439,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Another Location of which this Location is physically a part of.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getPartOf()
     {
@@ -448,7 +448,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Another Location of which this Location is physically a part of.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function setPartOf($partOf)
@@ -459,7 +459,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * What days/times during a week is this location usually open.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationHoursOfOperation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationHoursOfOperation[]
      */
     public function getHoursOfOperation()
     {
@@ -468,7 +468,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * What days/times during a week is this location usually open.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationHoursOfOperation $hoursOfOperation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRLocation\FHIRLocationHoursOfOperation $hoursOfOperation
      * @return $this
      */
     public function addHoursOfOperation($hoursOfOperation)
@@ -479,7 +479,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAvailabilityExceptions()
     {
@@ -488,7 +488,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $availabilityExceptions
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $availabilityExceptions
      * @return $this
      */
     public function setAvailabilityExceptions($availabilityExceptions)
@@ -499,7 +499,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Technical endpoints providing access to services operated for the location.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEndpoint()
     {
@@ -508,7 +508,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Technical endpoints providing access to services operated for the location.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $endpoint
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)

@@ -3,30 +3,30 @@
 /**
  * DrugService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
-use OpenEMR\Validators\BaseValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
+use DCL\Validators\BaseValidator;
+use DCL\Validators\ProcessingResult;
 
 class DrugService extends BaseService
 {
@@ -180,7 +180,7 @@ class DrugService extends BaseService
 
         // Read the row back through the search path rather than re-selecting the raw
         // columns. FhirServiceBase::update() feeds this result straight into
-        // parseOpenEMRRecord(), which expects the read-side shape -- in particular
+        // parseDCLRecord(), which expects the read-side shape -- in particular
         // drug_code as the coding array createResultRecordFromDatabaseResult() builds,
         // not the raw column string.
         return $this->getOne($uuid);
@@ -276,7 +276,7 @@ class DrugService extends BaseService
 
         if ($record['rxnorm_drugcode'] != "") {
             // removed the RXCUI concatenation out of the db query and into the code here
-            // some parts of OpenEMR adds the RXCUI designation in the drug_code such as the inventory/dispensary module
+            // some parts of DCL adds the RXCUI designation in the drug_code such as the inventory/dispensary module
             // and this causes the FHIR medication resource to not get the actual RXCUI code.
             if ($row['drug_code'] == $record['rxnorm_drugcode'] && !str_contains((string) $row['drug_code'], ':')) {
                 $codes = $this->addCoding("RXCUI:" . $row['drug_code']);

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis;
+namespace DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.
@@ -71,43 +71,43 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 {
     /**
      * Human-readable summary of risk estimate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Examples include proportion and mean.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The point estimate of the risk estimate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $value = null;
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unitOfMeasure = null;
 
     /**
      * The sample size for the group that was measured for this risk estimate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $denominatorCount = null;
 
     /**
      * The number of group members with the outcome of interest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $numeratorCount = null;
 
     /**
      * A description of the precision of the estimate for the effect.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate[]
      */
     public $precisionEstimate = [];
 
@@ -118,7 +118,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * Human-readable summary of risk estimate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -127,7 +127,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * Human-readable summary of risk estimate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -138,7 +138,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * Examples include proportion and mean.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -147,7 +147,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * Examples include proportion and mean.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -158,7 +158,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * The point estimate of the risk estimate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getValue()
     {
@@ -167,7 +167,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * The point estimate of the risk estimate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $value
      * @return $this
      */
     public function setValue($value)
@@ -178,7 +178,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfMeasure()
     {
@@ -187,7 +187,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * Specifies the UCUM unit for the outcome.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
      * @return $this
      */
     public function setUnitOfMeasure($unitOfMeasure)
@@ -198,7 +198,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * The sample size for the group that was measured for this risk estimate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getDenominatorCount()
     {
@@ -207,7 +207,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * The sample size for the group that was measured for this risk estimate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $denominatorCount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $denominatorCount
      * @return $this
      */
     public function setDenominatorCount($denominatorCount)
@@ -218,7 +218,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * The number of group members with the outcome of interest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getNumeratorCount()
     {
@@ -227,7 +227,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * The number of group members with the outcome of interest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $numeratorCount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $numeratorCount
      * @return $this
      */
     public function setNumeratorCount($numeratorCount)
@@ -238,7 +238,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * A description of the precision of the estimate for the effect.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate[]
      */
     public function getPrecisionEstimate()
     {
@@ -247,7 +247,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement implemen
 
     /**
      * A description of the precision of the estimate for the effect.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate $precisionEstimate
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate $precisionEstimate
      * @return $this
      */
     public function addPrecisionEstimate($precisionEstimate)

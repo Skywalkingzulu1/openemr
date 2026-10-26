@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,31 +71,31 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 {
     /**
      * The specific code.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Status of the code assignment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * The date at which the code status is changed as part of the terminology maintenance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $statusDate = null;
 
     /**
      * Any comment can be provided in this field, if necessary.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $comment = null;
 
     /**
      * Supporting literature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
@@ -106,7 +106,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * The specific code.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -115,7 +115,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * The specific code.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -126,7 +126,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * Status of the code assignment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -135,7 +135,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * Status of the code assignment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -146,7 +146,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * The date at which the code status is changed as part of the terminology maintenance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getStatusDate()
     {
@@ -155,7 +155,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * The date at which the code status is changed as part of the terminology maintenance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $statusDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $statusDate
      * @return $this
      */
     public function setStatusDate($statusDate)
@@ -166,7 +166,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * Any comment can be provided in this field, if necessary.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getComment()
     {
@@ -175,7 +175,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * Any comment can be provided in this field, if necessary.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $comment
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $comment
      * @return $this
      */
     public function setComment($comment)
@@ -186,7 +186,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * Supporting literature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -195,7 +195,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement implements \Jso
 
     /**
      * Supporting literature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)

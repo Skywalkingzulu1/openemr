@@ -5,19 +5,19 @@
  *
  * Tests the validate() method on FormVitals against VitalsFieldRanges.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Davit Mnatsakanyan
- * @copyright Copyright (c) 2026 OpenEMR Foundation
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Foundation
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Common\Forms;
+namespace DCL\Tests\Isolated\Common\Forms;
 
-use OpenEMR\Common\Forms\FormVitals;
-use OpenEMR\Common\Forms\VitalsFieldRanges;
+use DCL\Common\Forms\FormVitals;
+use DCL\Common\Forms\VitalsFieldRanges;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

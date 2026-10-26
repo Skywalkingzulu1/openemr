@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretations, and formatted representation of diagnostic reports.
@@ -72,113 +72,113 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 {
     /**
      * Identifiers assigned to this report by the performer or other systems.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Details concerning a service requested.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * The status of the diagnostic report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDiagnosticReportStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDiagnosticReportStatus
      */
     public $status = null;
 
     /**
      * A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * A code or name that describes this diagnostic report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $issued = null;
 
     /**
      * The diagnostic service that is responsible for issuing the report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $performer = [];
 
     /**
      * The practitioner or organization that is responsible for the report's conclusions and interpretations.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $resultsInterpreter = [];
 
     /**
      * Details about the specimens on which this diagnostic report is based.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $specimen = [];
 
     /**
      * [Observations](observation.html)  that are part of this diagnostic report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $result = [];
 
     /**
      * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $imagingStudy = [];
 
     /**
      * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia[]
      */
     public $media = [];
 
     /**
      * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $conclusion = null;
 
     /**
      * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $conclusionCode = [];
 
     /**
      * Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public $presentedForm = [];
 
@@ -189,7 +189,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Identifiers assigned to this report by the performer or other systems.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -198,7 +198,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Identifiers assigned to this report by the performer or other systems.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -209,7 +209,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Details concerning a service requested.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -218,7 +218,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Details concerning a service requested.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -229,7 +229,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of the diagnostic report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDiagnosticReportStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDiagnosticReportStatus
      */
     public function getStatus()
     {
@@ -238,7 +238,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The status of the diagnostic report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDiagnosticReportStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDiagnosticReportStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -249,7 +249,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -258,7 +258,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -269,7 +269,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A code or name that describes this diagnostic report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -278,7 +278,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A code or name that describes this diagnostic report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -289,7 +289,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -298,7 +298,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -309,7 +309,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -318,7 +318,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -328,7 +328,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
     {
@@ -336,7 +336,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
     public function setEffectiveDateTime($effectiveDateTime)
@@ -346,7 +346,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -354,7 +354,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -365,7 +365,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getIssued()
     {
@@ -374,7 +374,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $issued
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $issued
      * @return $this
      */
     public function setIssued($issued)
@@ -385,7 +385,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The diagnostic service that is responsible for issuing the report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPerformer()
     {
@@ -394,7 +394,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The diagnostic service that is responsible for issuing the report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -405,7 +405,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The practitioner or organization that is responsible for the report's conclusions and interpretations.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getResultsInterpreter()
     {
@@ -414,7 +414,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * The practitioner or organization that is responsible for the report's conclusions and interpretations.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $resultsInterpreter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $resultsInterpreter
      * @return $this
      */
     public function addResultsInterpreter($resultsInterpreter)
@@ -425,7 +425,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Details about the specimens on which this diagnostic report is based.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSpecimen()
     {
@@ -434,7 +434,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Details about the specimens on which this diagnostic report is based.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $specimen
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $specimen
      * @return $this
      */
     public function addSpecimen($specimen)
@@ -445,7 +445,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * [Observations](observation.html)  that are part of this diagnostic report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getResult()
     {
@@ -454,7 +454,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * [Observations](observation.html)  that are part of this diagnostic report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $result
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $result
      * @return $this
      */
     public function addResult($result)
@@ -465,7 +465,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getImagingStudy()
     {
@@ -474,7 +474,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $imagingStudy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $imagingStudy
      * @return $this
      */
     public function addImagingStudy($imagingStudy)
@@ -485,7 +485,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia[]
      */
     public function getMedia()
     {
@@ -494,7 +494,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia $media
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportMedia $media
      * @return $this
      */
     public function addMedia($media)
@@ -505,7 +505,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getConclusion()
     {
@@ -514,7 +514,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $conclusion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $conclusion
      * @return $this
      */
     public function setConclusion($conclusion)
@@ -525,7 +525,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getConclusionCode()
     {
@@ -534,7 +534,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $conclusionCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $conclusionCode
      * @return $this
      */
     public function addConclusionCode($conclusionCode)
@@ -545,7 +545,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment[]
      */
     public function getPresentedForm()
     {
@@ -554,7 +554,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
 
     /**
      * Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $presentedForm
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $presentedForm
      * @return $this
      */
     public function addPresentedForm($presentedForm)

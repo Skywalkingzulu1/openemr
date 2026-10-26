@@ -8,19 +8,19 @@
  * SmartLaunchController via reflection; no session, ACL, or database
  * access occurs.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Unit\FHIR\SMART;
+namespace DCL\Tests\Unit\FHIR\SMART;
 
-use OpenEMR\FHIR\SMART\SmartLaunchController;
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
+use DCL\FHIR\SMART\SmartLaunchController;
+use DCL\FHIR\SMART\SMARTLaunchToken;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

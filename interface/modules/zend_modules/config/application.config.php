@@ -9,12 +9,12 @@
 
 // The required application modules we need to load all the time are listed here.
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 $core_modules = [
     'Laminas\Router', // this was separated from the MVC module into it's own module.  Handles the routing layers.
     'Laminas\Validator',  // Handles validations....
-    'Laminas\Mvc\I18n', // TODO: since translations seem to be using the OPENEMR translations we may not need this anymore though we load it as a factory
+    'Laminas\Mvc\I18n', // TODO: since translations seem to be using the DCL translations we may not need this anymore though we load it as a factory
     'Laminas\Form', // needed for the formHelper view plugin.
     'Application', // Main application module starting point.
     'Installer', // Handles the dynamic adding / removing of modules in the system.
@@ -24,7 +24,7 @@ $core_modules = [
 // $zendConfigurationPath is loaded using ModulesApplication.php from globals.php
 /** @var ?string $webRootPath */
 /** @var ?string $zendConfigurationPath */
-$plugin_modules = \OpenEMR\Core\ModulesApplication::oemr_zend_load_modules_from_db(
+$plugin_modules = \DCL\Core\ModulesApplication::oemr_zend_load_modules_from_db(
     $webRootPath ?? '',
     $zendConfigurationPath ?? ''
 );

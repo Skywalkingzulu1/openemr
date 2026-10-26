@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\TagCreationRequest;
-use OpenEMR\Release\TagCreator;
+use DCL\Release\TagCreationRequest;
+use DCL\Release\TagCreator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
@@ -47,10 +47,10 @@ final class TagCreatorTest extends TestCase
 
         $creator = new TagCreator($http, 'https://api.example.test');
         $result = $creator->create(new TagCreationRequest(
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             version: '8.1.0',
             commitSha: str_repeat('c', 40),
-            conductorPrUrl: 'https://github.com/openemr/openemr/pull/11896',
+            conductorPrUrl: 'https://github.com/DCL/DCL/pull/11896',
             appToken: 'test-token',
             date: '2026-04-29',
         ));
@@ -59,16 +59,16 @@ final class TagCreatorTest extends TestCase
         self::assertCount(2, $captured);
 
         self::assertSame('POST', $captured[0]['method']);
-        self::assertStringContainsString('/repos/openemr/openemr/git/tags', $captured[0]['url']);
+        self::assertStringContainsString('/repos/DCL/DCL/git/tags', $captured[0]['url']);
         $tagBody = json_decode($captured[0]['body'], true, 512, JSON_THROW_ON_ERROR);
         self::assertIsArray($tagBody);
         self::assertSame('v8_1_0', $tagBody['tag']);
         self::assertIsString($tagBody['message']);
-        self::assertStringContainsString('OpenEMR 8.1.0 released 2026-04-29', $tagBody['message']);
-        self::assertStringContainsString('Created by openemr-release-bot', $tagBody['message']);
+        self::assertStringContainsString('DCL 8.1.0 released 2026-04-29', $tagBody['message']);
+        self::assertStringContainsString('Created by DCL-release-bot', $tagBody['message']);
 
         self::assertSame('POST', $captured[1]['method']);
-        self::assertStringContainsString('/repos/openemr/openemr/git/refs', $captured[1]['url']);
+        self::assertStringContainsString('/repos/DCL/DCL/git/refs', $captured[1]['url']);
         $refBody = json_decode($captured[1]['body'], true, 512, JSON_THROW_ON_ERROR);
         self::assertIsArray($refBody);
         self::assertSame('refs/tags/v8_1_0', $refBody['ref']);
@@ -85,7 +85,7 @@ final class TagCreatorTest extends TestCase
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessageMatches('/HTTP 422/');
         $creator->create(new TagCreationRequest(
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             version: '8.1.0',
             commitSha: str_repeat('c', 40),
             conductorPrUrl: 'https://example.test',
@@ -97,7 +97,7 @@ final class TagCreatorTest extends TestCase
     public function testTestModeTagAppendsShortShaSuffix(): void
     {
         $request = new TagCreationRequest(
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             version: '8.1.0',
             commitSha: 'abcdef0' . str_repeat('1', 33),
             conductorPrUrl: 'https://example.test',
@@ -114,7 +114,7 @@ final class TagCreatorTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         new TagCreationRequest(
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             version: '8.1',
             commitSha: str_repeat('c', 40),
             conductorPrUrl: 'https://example.test',
@@ -127,7 +127,7 @@ final class TagCreatorTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         new TagCreationRequest(
-            repo: 'openemr/openemr',
+            repo: 'DCL/DCL',
             version: '8.1.0',
             commitSha: 'not-a-sha',
             conductorPrUrl: 'https://example.test',

@@ -1,12 +1,12 @@
 #!/bin/bash
-# Upgrade number 3 for OpenEMR docker
+# Upgrade number 3 for DCL docker
 #  From prior version 6.0.0 (needed for the sql upgrade script).
-priorOpenemrVersion="6.0.0"
+priorDCLVersion="6.0.0"
 
 echo "Start: Upgrade to docker-version 3"
 
 # Perform codebase upgrade on each directory in sites/
-for dir in /var/www/localhost/htdocs/openemr/sites/*/; do
+for dir in /var/www/localhost/htdocs/DCL/sites/*/; do
     sitename="${dir%/}"
     sitename="${sitename##*/}"
 
@@ -24,32 +24,32 @@ done
 
 # Fix permissions
 echo "Start: Fix permissions"
-chown -R apache:root /var/www/localhost/htdocs/openemr/sites/
+chown -R apache:root /var/www/localhost/htdocs/DCL/sites/
 echo "Completed: Fix permissions"
 
 # Perform database upgrade on each directory in sites/
-for dirdata in /var/www/localhost/htdocs/openemr/sites/*/; do
+for dirdata in /var/www/localhost/htdocs/DCL/sites/*/; do
     sitename="${dirdata%/}"
     sitename="${sitename##*/}"
 
     # Upgrade database
-    echo "Start: Upgrade database for ${sitename} from ${priorOpenemrVersion}"
+    echo "Start: Upgrade database for ${sitename} from ${priorDCLVersion}"
     if ! {
         echo "<?php \$_GET['site'] = '${sitename}'; ?>"
-        cat /var/www/localhost/htdocs/openemr/sql_upgrade.php
-    } > /var/www/localhost/htdocs/openemr/TEMPsql_upgrade.php; then
+        cat /var/www/localhost/htdocs/DCL/sql_upgrade.php
+    } > /var/www/localhost/htdocs/DCL/TEMPsql_upgrade.php; then
         echo "ERROR: could not stage sql_upgrade.php for ${sitename} (file missing?)" >&2
-        rm -f /var/www/localhost/htdocs/openemr/TEMPsql_upgrade.php
+        rm -f /var/www/localhost/htdocs/DCL/TEMPsql_upgrade.php
         exit 1
     fi
-    # Drop privileges to apache: RootCliGuard (openemr#12267) refuses root for OpenEMR CLI scripts.
-    if ! su-exec apache php -f /var/www/localhost/htdocs/openemr/TEMPsql_upgrade.php -- --from="${priorOpenemrVersion}"; then
-        echo "ERROR: Database upgrade failed for ${sitename} from ${priorOpenemrVersion}" >&2
-        rm -f /var/www/localhost/htdocs/openemr/TEMPsql_upgrade.php
+    # Drop privileges to apache: RootCliGuard (DCL#12267) refuses root for DCL CLI scripts.
+    if ! su-exec apache php -f /var/www/localhost/htdocs/DCL/TEMPsql_upgrade.php -- --from="${priorDCLVersion}"; then
+        echo "ERROR: Database upgrade failed for ${sitename} from ${priorDCLVersion}" >&2
+        rm -f /var/www/localhost/htdocs/DCL/TEMPsql_upgrade.php
         exit 1
     fi
-    rm -f /var/www/localhost/htdocs/openemr/TEMPsql_upgrade.php
-    echo "Completed: Upgrade database for ${sitename} from ${priorOpenemrVersion}"
+    rm -f /var/www/localhost/htdocs/DCL/TEMPsql_upgrade.php
+    echo "Completed: Upgrade database for ${sitename} from ${priorDCLVersion}"
 done
 
 echo "Completed: Upgrade to docker-version 3"

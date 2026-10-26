@@ -26,7 +26,7 @@
 # Flow:
 #
 #   1. fetch-source-artifact — cross-run download-artifact via run-id
-#      to grab openemr-release-candidate-<version> from the failed
+#      to grab DCL-release-candidate-<version> from the failed
 #      build-release run, then re-upload it to THIS run under the
 #      same name so acceptance-package.yml's workflow_call surface
 #      can consume it via caller_tarball_artifact / caller_zip_artifact.
@@ -41,7 +41,7 @@
 #   2. acceptance-gate — mirrors build-release.yml's acceptance-gate
 #      job: workflow_call into acceptance-package.yml with
 #      caller_tarball_artifact + caller_zip_artifact both set to
-#      openemr-release-candidate-<version> (same bundle contains both
+#      DCL-release-candidate-<version> (same bundle contains both
 #      files; per-format download picks the right file out).
 #
 #   3. publish — mirrors build-release.yml's publish job. workflow_call
@@ -79,7 +79,7 @@ on:
         required: true
         type: string
       version:
-        description: 'Human-readable version label (e.g. 8.2.0). Must match the source run''s openemr-release-candidate-<version> artifact name.'
+        description: 'Human-readable version label (e.g. 8.2.0). Must match the source run''s DCL-release-candidate-<version> artifact name.'
         required: true
         type: string
       release_tag:
@@ -155,12 +155,12 @@ jobs:
     # artifact, so a dispatch from a rel branch would defeat that.
     # Enforce here rather than relying on operator discipline.
     if: >-
-      github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+      github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
       && github.ref == 'refs/heads/master'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     outputs:
-      artifact_name: openemr-release-candidate-${{ inputs.version }}
+      artifact_name: DCL-release-candidate-${{ inputs.version }}
     steps:
     # Checkout master so the later steps can call scripts under
     # .github/scripts/ (validate-source-run.sh). Without this the
@@ -264,7 +264,7 @@ jobs:
     # EXPECTED_WORKFLOW_PATH accepts both `build-release.yml` (manual
     # workflow_dispatch flow) and `build-release-on-tag.yml` (auto-fires
     # from ship-release.yml tag creation) — both produce the same
-    # `openemr-release-candidate-<version>` artifact shape, so either is
+    # `DCL-release-candidate-<version>` artifact shape, so either is
     # a valid recoverable source. Comma-separated list per the script's
     # env-var contract.
     - name: Validate source run eligibility
@@ -305,7 +305,7 @@ jobs:
     - name: Download release-candidate artifact from source run
       uses: actions/download-artifact@v8
       with:
-        name: openemr-release-candidate-${{ inputs.version }}
+        name: DCL-release-candidate-${{ inputs.version }}
         run-id: ${{ inputs.source_run_id }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path: ${{ runner.temp }}/source-artifact
@@ -328,8 +328,8 @@ jobs:
         ls -la "$ARTIFACT_DIR"
 
         for expected in \
-          "openemr-${VERSION}.tar.gz" \
-          "openemr-${VERSION}.zip" \
+          "DCL-${VERSION}.tar.gz" \
+          "DCL-${VERSION}.zip" \
           "changelog.md"
         do
           if [ ! -f "${ARTIFACT_DIR}/${expected}" ]; then
@@ -352,7 +352,7 @@ jobs:
     - name: Re-upload artifact for this run
       uses: actions/upload-artifact@v7
       with:
-        name: openemr-release-candidate-${{ inputs.version }}
+        name: DCL-release-candidate-${{ inputs.version }}
         path: ${{ runner.temp }}/source-artifact/
         retention-days: 7
 
@@ -433,7 +433,7 @@ jobs:
     if: >-
       always() && !cancelled()
       && inputs.no_publish != true
-      && github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+      && github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
       && github.ref == 'refs/heads/master'
       && needs.fetch-source-artifact.result == 'success'
       && needs.acceptance-gate.result != 'failure'

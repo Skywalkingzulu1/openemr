@@ -9,13 +9,13 @@
 //
 // Modified 7-2009 by BM in order to migrate using the form,
 // unit, route, and interval lists with the
-// functions in openemr/library/options.inc.php .
+// functions in DCL/library/options.inc.php .
 // These lists are based on the constants found in the
-// openemr/library/classes/Prescription.class.php file.
+// DCL/library/classes/Prescription.class.php file.
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\DrugSalesService;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\DrugSalesService;
 
 // Decision was made in June 2013 that a sale line item in the Fee Sheet may
 // come only from the specified warehouse. Set this to false if the decision

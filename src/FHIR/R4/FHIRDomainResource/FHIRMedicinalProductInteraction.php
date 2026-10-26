@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The interactions of the medicinal product with other medicinal products, or other forms of interactions.
@@ -72,43 +72,43 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 {
     /**
      * The medication for which this is a described interaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $subject = [];
 
     /**
      * The interaction described.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The specific medication, food or laboratory test that interacts.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant[]
      */
     public $interactant = [];
 
     /**
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction, drug-lab test interaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The effect of the interaction, for example "reduced gastric absorption of primary medication".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $effect = null;
 
     /**
      * The incidence of the interaction, e.g. theoretical, observed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $incidence = null;
 
     /**
      * Actions for managing the interaction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $management = null;
 
@@ -119,7 +119,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The medication for which this is a described interaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSubject()
     {
@@ -128,7 +128,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The medication for which this is a described interaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function addSubject($subject)
@@ -139,7 +139,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The interaction described.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -148,7 +148,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The interaction described.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -159,7 +159,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The specific medication, food or laboratory test that interacts.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant[]
      */
     public function getInteractant()
     {
@@ -168,7 +168,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The specific medication, food or laboratory test that interacts.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant $interactant
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant $interactant
      * @return $this
      */
     public function addInteractant($interactant)
@@ -179,7 +179,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction, drug-lab test interaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -188,7 +188,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction, drug-lab test interaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -199,7 +199,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The effect of the interaction, for example "reduced gastric absorption of primary medication".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getEffect()
     {
@@ -208,7 +208,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The effect of the interaction, for example "reduced gastric absorption of primary medication".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $effect
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $effect
      * @return $this
      */
     public function setEffect($effect)
@@ -219,7 +219,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The incidence of the interaction, e.g. theoretical, observed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getIncidence()
     {
@@ -228,7 +228,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * The incidence of the interaction, e.g. theoretical, observed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $incidence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $incidence
      * @return $this
      */
     public function setIncidence($incidence)
@@ -239,7 +239,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * Actions for managing the interaction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getManagement()
     {
@@ -248,7 +248,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements \Jso
 
     /**
      * Actions for managing the interaction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $management
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $management
      * @return $this
      */
     public function setManagement($management)

@@ -14,11 +14,11 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://opensource.org/licenses/gpl-license.php>.
 *
-* @package   OpenEMR
-* @link      https://www.open-emr.org
+* @package   DCL
+* @link      https://www.dcl.org
 */
 
-use OpenEMR\Billing\BillingUtilities;
+use DCL\Billing\BillingUtilities;
 
 // These variables are used to compute the service with highest CYP.
 //

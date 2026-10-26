@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The characteristics, operational status and capabilities of a medical-related component of a medical device.
@@ -71,13 +71,13 @@ class FHIRDeviceDefinitionCapability extends FHIRBackboneElement implements \Jso
 {
     /**
      * Type of capability.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Description of capability.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $description = [];
 
@@ -88,7 +88,7 @@ class FHIRDeviceDefinitionCapability extends FHIRBackboneElement implements \Jso
 
     /**
      * Type of capability.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -97,7 +97,7 @@ class FHIRDeviceDefinitionCapability extends FHIRBackboneElement implements \Jso
 
     /**
      * Type of capability.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -108,7 +108,7 @@ class FHIRDeviceDefinitionCapability extends FHIRBackboneElement implements \Jso
 
     /**
      * Description of capability.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getDescription()
     {
@@ -117,7 +117,7 @@ class FHIRDeviceDefinitionCapability extends FHIRBackboneElement implements \Jso
 
     /**
      * Description of capability.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $description
      * @return $this
      */
     public function addDescription($description)

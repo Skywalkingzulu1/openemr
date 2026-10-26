@@ -1,13 +1,13 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\RestControllers\FHIR\FhirPatientRestController;
-use OpenEMR\RestControllers\FHIR\Operations\FhirOperationExportRestController;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\RestControllers\FHIR\FhirPatientRestController;
+use DCL\RestControllers\FHIR\Operations\FhirOperationExportRestController;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -23,7 +23,7 @@ class GroupExportFhirApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new BulkAPITestClient($baseUrl, false);
 
         // Align site_addr_oath with $baseUrl so the JWT client-assertion's
@@ -64,7 +64,7 @@ class GroupExportFhirApiTest extends TestCase
 
     public function testGroupExportWithNonExistingGroupId(): void
     {
-        $this->testClient->setAuthToken(BulkAPITestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(BulkAPITestClient::DCL_AUTH_ENDPOINT);
         // the audience and internal oauth server url need to match, if the internal oauth server is not the same as the external
         // phpunit endpoint location we are going to have issues with the test client not being able to get an access token.
 //        $this->markTestIncomplete("Incomplete until we figure out how to deal with localhost differences in test environments and inferno environments.");

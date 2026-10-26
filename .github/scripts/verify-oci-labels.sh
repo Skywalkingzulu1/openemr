@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Verify OCI labels on a pushed OpenEMR docker image.
+# Verify OCI labels on a pushed DCL docker image.
 #
 # Pulls REF_TAG from Docker Hub, then asserts that the image's
 # org.opencontainers.image.{revision,version,created} labels match the
@@ -22,10 +22,10 @@
 #
 # Inputs (env, all required)
 #   REF_TAG               full image ref to pull + inspect
-#                         (e.g. "openemr/openemr:8.1.0" or
-#                          "openemr/openemr:release-candidate-12345-1")
+#                         (e.g. "DCL/DCL:8.1.0" or
+#                          "DCL/DCL:release-candidate-12345-1")
 #   EXPECTED_REVISION     value the org.opencontainers.image.revision
-#                         label must equal (the OPENEMR_VERSION build
+#                         label must equal (the DCL_VERSION build
 #                         arg -- git ref baked into the image)
 #   EXPECTED_VERSION      value the org.opencontainers.image.version
 #                         label must equal (the IMAGE_VERSION build arg
@@ -71,13 +71,13 @@ FAIL=0
 ACTUAL_REVISION=$(inspect_label revision)
 if [[ "${ACTUAL_REVISION}" != "${EXPECTED_REVISION}" ]]; then
     echo "::error::revision label '${ACTUAL_REVISION}' doesn't match expected '${EXPECTED_REVISION}'"
-    echo "  This means docker/release/Dockerfile either dropped the OPENEMR_VERSION ARG or hardcoded the LABEL value."
+    echo "  This means docker/release/Dockerfile either dropped the DCL_VERSION ARG or hardcoded the LABEL value."
     FAIL=1
 fi
 
 ACTUAL_VERSION=$(inspect_label version)
 if [[ "${ACTUAL_VERSION}" != "${EXPECTED_VERSION}" ]]; then
-    echo "::error::version label '${ACTUAL_VERSION}' doesn't match expected '${EXPECTED_VERSION}' (parsed from openemr@${EXPECTED_REVISION}/version.php)"
+    echo "::error::version label '${ACTUAL_VERSION}' doesn't match expected '${EXPECTED_VERSION}' (parsed from DCL@${EXPECTED_REVISION}/version.php)"
     echo "  This means docker/release/Dockerfile either dropped the IMAGE_VERSION ARG or hardcoded the LABEL value."
     FAIL=1
 fi

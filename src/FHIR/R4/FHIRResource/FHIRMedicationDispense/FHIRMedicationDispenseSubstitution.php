@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationDispense;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicationDispense;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationDispense;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Indicates that a medication product is to be or has been dispensed for a named person/patient.  This includes a description of the medication product (supply) provided and the instructions for administering the medication.  The medication dispense is the result of a pharmacy system responding to a medication order.
@@ -71,25 +71,25 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 {
     /**
      * True if the dispenser dispensed a different drug or product from what was prescribed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $wasSubstituted = null;
 
     /**
      * A code signifying whether a different drug was dispensed from what was prescribed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Indicates the reason for the substitution (or lack of substitution) from what was prescribed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reason = [];
 
     /**
      * The person or organization that has primary responsibility for the substitution.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $responsibleParty = [];
 
@@ -100,7 +100,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * True if the dispenser dispensed a different drug or product from what was prescribed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getWasSubstituted()
     {
@@ -109,7 +109,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * True if the dispenser dispensed a different drug or product from what was prescribed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $wasSubstituted
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $wasSubstituted
      * @return $this
      */
     public function setWasSubstituted($wasSubstituted)
@@ -120,7 +120,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * A code signifying whether a different drug was dispensed from what was prescribed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -129,7 +129,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * A code signifying whether a different drug was dispensed from what was prescribed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -140,7 +140,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * Indicates the reason for the substitution (or lack of substitution) from what was prescribed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReason()
     {
@@ -149,7 +149,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * Indicates the reason for the substitution (or lack of substitution) from what was prescribed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -160,7 +160,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * The person or organization that has primary responsibility for the substitution.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getResponsibleParty()
     {
@@ -169,7 +169,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * The person or organization that has primary responsibility for the substitution.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $responsibleParty
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $responsibleParty
      * @return $this
      */
     public function addResponsibleParty($responsibleParty)

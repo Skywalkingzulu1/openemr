@@ -69,7 +69,7 @@ setup_test_dir() {
     # seed_sql_upgrade_fixtures below to populate the sql/ dir.
     export DISPATCH_FROM_VERSION="8.2.0"
     # MOCK_SHIPPED_VERSIONS bypasses fetch_shipped_versions' real curl
-    # against the website-openemr manifest — see the script for the
+    # against the website-DCL manifest — see the script for the
     # env-var contract. Default is a realistic-ish shipped-versions
     # list covering the versions the derivation tests exercise. Tests
     # that don't hit derive_from_version at all still benefit (the mock
@@ -115,7 +115,7 @@ seed_sql_upgrade_fixtures() {
 }
 
 # Write a minimal version.php to the working dir with the given
-# major/minor/patch. Matches the shape the real openemr version.php
+# major/minor/patch. Matches the shape the real DCL version.php
 # uses (bash-quoting of PHP-single-quoted strings) so
 # read_tree_version's awk pattern parses it correctly.
 seed_version_php() {

@@ -2,21 +2,21 @@
 
 /**
  * This class is used to locate the form files for the encounter forms.
- * @package openemr
+ * @package DCL
  * @license   There are segments of code in this file that have been generated via Claude.ai and are licensed as Public Domain.  They have been marked with a header and footer.
- * @link      https://www.open-emr.org
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // AI GENERATED CODE: HEADER START
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Core\ModulesApplication;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Encounter\LoadEncounterFormFilterEvent;
+use DCL\BC\ServiceContainer;
+use DCL\Core\ModulesApplication;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Encounter\LoadEncounterFormFilterEvent;
 use Psr\Log\LoggerInterface;
 
 class FormLocator

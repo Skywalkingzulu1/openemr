@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A record of a device being used by a patient where the record is the result of a report from the patient or another clinician.
@@ -72,88 +72,88 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 {
     /**
      * An external identifier for this statement such as an IRI.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this DeviceUseStatement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * A code representing the patient or other source's judgment about the state of the device used that this statement is about.  Generally this will be active or completed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceUseStatementStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDeviceUseStatementStatus
      */
     public $status = null;
 
     /**
      * The patient who used the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * Allows linking the DeviceUseStatement to the underlying Request, or to other information that supports or is used to derive the DeviceUseStatement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $derivedFrom = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
 
     /**
      * The time at which the statement was made/recorded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $recordedOn = null;
 
     /**
      * Who reported the device was being used by the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $source = null;
 
     /**
      * The details of the device used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $device = null;
 
     /**
      * Reason or justification for the use of the device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Indicates another resource whose existence justifies this DeviceUseStatement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Indicates the anotomic location on the subject's body where the device was used ( i.e. the target).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $bodySite = null;
 
     /**
      * Details about the device statement that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
@@ -164,7 +164,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An external identifier for this statement such as an IRI.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -173,7 +173,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * An external identifier for this statement such as an IRI.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -184,7 +184,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this DeviceUseStatement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -193,7 +193,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this DeviceUseStatement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -204,7 +204,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A code representing the patient or other source's judgment about the state of the device used that this statement is about.  Generally this will be active or completed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceUseStatementStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDeviceUseStatementStatus
      */
     public function getStatus()
     {
@@ -213,7 +213,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * A code representing the patient or other source's judgment about the state of the device used that this statement is about.  Generally this will be active or completed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceUseStatementStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDeviceUseStatementStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -224,7 +224,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The patient who used the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -233,7 +233,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The patient who used the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -244,7 +244,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Allows linking the DeviceUseStatement to the underlying Request, or to other information that supports or is used to derive the DeviceUseStatement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDerivedFrom()
     {
@@ -253,7 +253,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Allows linking the DeviceUseStatement to the underlying Request, or to other information that supports or is used to derive the DeviceUseStatement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $derivedFrom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $derivedFrom
      * @return $this
      */
     public function addDerivedFrom($derivedFrom)
@@ -263,7 +263,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getTimingTiming()
     {
@@ -271,7 +271,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $timingTiming
      * @return $this
      */
     public function setTimingTiming($timingTiming)
@@ -281,7 +281,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
     {
@@ -289,7 +289,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
     public function setTimingPeriod($timingPeriod)
@@ -299,7 +299,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
     {
@@ -307,7 +307,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
     public function setTimingDateTime($timingDateTime)
@@ -318,7 +318,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The time at which the statement was made/recorded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getRecordedOn()
     {
@@ -327,7 +327,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The time at which the statement was made/recorded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $recordedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $recordedOn
      * @return $this
      */
     public function setRecordedOn($recordedOn)
@@ -338,7 +338,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Who reported the device was being used by the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSource()
     {
@@ -347,7 +347,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Who reported the device was being used by the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function setSource($source)
@@ -358,7 +358,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The details of the device used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDevice()
     {
@@ -367,7 +367,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The details of the device used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $device
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function setDevice($device)
@@ -378,7 +378,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Reason or justification for the use of the device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -387,7 +387,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Reason or justification for the use of the device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -398,7 +398,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates another resource whose existence justifies this DeviceUseStatement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -407,7 +407,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates another resource whose existence justifies this DeviceUseStatement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -418,7 +418,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates the anotomic location on the subject's body where the device was used ( i.e. the target).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite()
     {
@@ -427,7 +427,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Indicates the anotomic location on the subject's body where the device was used ( i.e. the target).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function setBodySite($bodySite)
@@ -438,7 +438,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Details about the device statement that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -447,7 +447,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Details about the device statement that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)

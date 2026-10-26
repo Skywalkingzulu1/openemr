@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\BC;
+namespace DCL\BC;
 
 use DateTimeInterface;
 

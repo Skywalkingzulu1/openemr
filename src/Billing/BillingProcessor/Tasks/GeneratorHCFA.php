@@ -8,23 +8,23 @@
  * The *other* HCFA generators will print PDFs of the data either over an image of
  * the paper form fields or not if enabled in globals.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Billing\BillingProcessor\Tasks;
+namespace DCL\Billing\BillingProcessor\Tasks;
 
-use OpenEMR\Billing\BillingProcessor\BillingClaim;
-use OpenEMR\Billing\BillingProcessor\BillingClaimBatch;
-use OpenEMR\Billing\BillingProcessor\GeneratorCanValidateInterface;
-use OpenEMR\Billing\BillingProcessor\GeneratorInterface;
-use OpenEMR\Billing\BillingProcessor\LoggerInterface;
-use OpenEMR\Billing\BillingProcessor\Traits\WritesToBillingLog;
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Billing\Hcfa1500;
+use DCL\Billing\BillingProcessor\BillingClaim;
+use DCL\Billing\BillingProcessor\BillingClaimBatch;
+use DCL\Billing\BillingProcessor\GeneratorCanValidateInterface;
+use DCL\Billing\BillingProcessor\GeneratorInterface;
+use DCL\Billing\BillingProcessor\LoggerInterface;
+use DCL\Billing\BillingProcessor\Traits\WritesToBillingLog;
+use DCL\Billing\BillingUtilities;
+use DCL\Billing\Hcfa1500;
 
 class GeneratorHCFA extends AbstractGenerator implements GeneratorInterface, GeneratorCanValidateInterface, LoggerInterface
 {

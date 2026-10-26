@@ -10,20 +10,20 @@
  * Tests use known keys seeded into the database and filesystem, with
  * pre-computed ciphertext, to verify decryption produces expected plaintext.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Common\Crypto;
+namespace DCL\Tests\Common\Crypto;
 
-use OpenEMR\Common\Crypto\CryptoGen;
-use OpenEMR\Common\Crypto\KeySource;
-use OpenEMR\Tests\Fixtures\CryptoFixtureManager;
+use DCL\Common\Crypto\CryptoGen;
+use DCL\Common\Crypto\KeySource;
+use DCL\Tests\Fixtures\CryptoFixtureManager;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

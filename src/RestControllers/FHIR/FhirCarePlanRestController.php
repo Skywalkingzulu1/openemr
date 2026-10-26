@@ -2,23 +2,23 @@
 
 /**
  * FhirCarePlanRestController.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirCarePlanService;
-use OpenEMR\Services\FHIR\FhirResourcesService;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirCarePlanService;
+use DCL\Services\FHIR\FhirResourcesService;
 
 class FhirCarePlanRestController
 {
@@ -104,7 +104,7 @@ class FhirCarePlanRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($fhirId, $puuidBind = null)
     {
@@ -185,7 +185,7 @@ class FhirCarePlanRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {
@@ -213,7 +213,7 @@ class FhirCarePlanRestController
     // @codeCoverageIgnoreStart
     #[OA\Post(
         path: '/fhir/CarePlan',
-        description: 'Creates a new CarePlan resource. The CarePlan must reference an existing encounter; one CarePlan corresponds to one care_plan form on that encounter, with each FHIR activity.detail becoming a form_care_plan row. Note: FHIR R4 marks `intent` as required (1..1) but OpenEMR\'s form_care_plan schema has no column for it; the read side hardcodes intent=\'plan\', so any other intent value is rejected rather than stored and silently downgraded. `activity.reference` is likewise rejected: form_care_plan rows are built from `activity.detail`.',
+        description: 'Creates a new CarePlan resource. The CarePlan must reference an existing encounter; one CarePlan corresponds to one care_plan form on that encounter, with each FHIR activity.detail becoming a form_care_plan row. Note: FHIR R4 marks `intent` as required (1..1) but DCL\'s form_care_plan schema has no column for it; the read side hardcodes intent=\'plan\', so any other intent value is rejected rather than stored and silently downgraded. `activity.reference` is likewise rejected: form_care_plan rows are built from `activity.detail`.',
         tags: ['fhir'],
         requestBody: new OA\RequestBody(
             required: true,
@@ -228,7 +228,7 @@ class FhirCarePlanRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '403', ref: '#/components/responses/forbidden'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post(array $fhirJson): void
     {
@@ -268,7 +268,7 @@ class FhirCarePlanRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '403', ref: '#/components/responses/forbidden'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put(string $fhirId, array $fhirJson): void
     {

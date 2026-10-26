@@ -3,23 +3,23 @@
 /**
  * Handles the TeleHealthVideoRegistrationController Unit Tests
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule;
+namespace Comlink\DCL\Modules\TeleHealthModule;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Controller\TeleHealthVideoRegistrationController;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthUser;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\UserVideoRegistrationRequest;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthProviderRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TelehealthRegistrationCodeService;
-use Comlink\OpenEMR\Modules\TeleHealthModule\Services\TeleHealthRemoteRegistrationService;
-use OpenEMR\Common\Uuid\UuidRegistry;
+use Comlink\DCL\Modules\TeleHealthModule\Controller\TeleHealthVideoRegistrationController;
+use Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthUser;
+use Comlink\DCL\Modules\TeleHealthModule\Models\UserVideoRegistrationRequest;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthProviderRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Repository\TeleHealthUserRepository;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TelehealthRegistrationCodeService;
+use Comlink\DCL\Modules\TeleHealthModule\Services\TeleHealthRemoteRegistrationService;
+use DCL\Common\Uuid\UuidRegistry;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Twig\Environment;

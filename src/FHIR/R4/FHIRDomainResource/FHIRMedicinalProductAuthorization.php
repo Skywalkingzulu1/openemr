@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * The regulatory authorization of a medicinal product.
@@ -72,97 +72,97 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 {
     /**
      * Business identifier for the marketing authorization, as assigned by a regulator.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The medicinal product that is being authorized.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The country in which the marketing authorization has been granted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $country = [];
 
     /**
      * Jurisdiction within a country.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * The status of the marketing authorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * The date at which the given status has become applicable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $statusDate = null;
 
     /**
      * The date when a suspended the marketing or the marketing authorization of the product is anticipated to be restored.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $restoreDate = null;
 
     /**
      * The beginning of the time period in which the marketing authorization is in the specific status shall be specified A complete date consisting of day, month and year shall be specified using the ISO 8601 date format.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $validityPeriod = null;
 
     /**
      * A period of time after authorization before generic product applications can be submitted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $dataExclusivityPeriod = null;
 
     /**
      * The date when the first authorization was granted by a Medicines Regulatory Agency.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $dateOfFirstAuthorization = null;
 
     /**
      * Date of first marketing authorization for a company's new medicinal product in any country in the World.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $internationalBirthDate = null;
 
     /**
      * The legal framework against which this authorization is granted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $legalBasis = null;
 
     /**
      * Authorization in areas within a country.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization[]
      */
     public $jurisdictionalAuthorization = [];
 
     /**
      * Marketing Authorization Holder.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $holder = null;
 
     /**
      * Medicines Regulatory Agency.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $regulator = null;
 
     /**
      * The regulatory procedure for granting or amending a marketing authorization.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
      */
     public $procedure = null;
 
@@ -173,7 +173,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Business identifier for the marketing authorization, as assigned by a regulator.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -182,7 +182,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Business identifier for the marketing authorization, as assigned by a regulator.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -193,7 +193,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The medicinal product that is being authorized.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -202,7 +202,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The medicinal product that is being authorized.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -213,7 +213,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The country in which the marketing authorization has been granted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCountry()
     {
@@ -222,7 +222,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The country in which the marketing authorization has been granted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $country
      * @return $this
      */
     public function addCountry($country)
@@ -233,7 +233,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Jurisdiction within a country.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -242,7 +242,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Jurisdiction within a country.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -253,7 +253,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The status of the marketing authorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -262,7 +262,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The status of the marketing authorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -273,7 +273,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The date at which the given status has become applicable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getStatusDate()
     {
@@ -282,7 +282,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The date at which the given status has become applicable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $statusDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $statusDate
      * @return $this
      */
     public function setStatusDate($statusDate)
@@ -293,7 +293,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The date when a suspended the marketing or the marketing authorization of the product is anticipated to be restored.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getRestoreDate()
     {
@@ -302,7 +302,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The date when a suspended the marketing or the marketing authorization of the product is anticipated to be restored.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $restoreDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $restoreDate
      * @return $this
      */
     public function setRestoreDate($restoreDate)
@@ -313,7 +313,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The beginning of the time period in which the marketing authorization is in the specific status shall be specified A complete date consisting of day, month and year shall be specified using the ISO 8601 date format.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getValidityPeriod()
     {
@@ -322,7 +322,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The beginning of the time period in which the marketing authorization is in the specific status shall be specified A complete date consisting of day, month and year shall be specified using the ISO 8601 date format.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $validityPeriod
      * @return $this
      */
     public function setValidityPeriod($validityPeriod)
@@ -333,7 +333,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * A period of time after authorization before generic product applications can be submitted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getDataExclusivityPeriod()
     {
@@ -342,7 +342,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * A period of time after authorization before generic product applications can be submitted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $dataExclusivityPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $dataExclusivityPeriod
      * @return $this
      */
     public function setDataExclusivityPeriod($dataExclusivityPeriod)
@@ -353,7 +353,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The date when the first authorization was granted by a Medicines Regulatory Agency.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDateOfFirstAuthorization()
     {
@@ -362,7 +362,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The date when the first authorization was granted by a Medicines Regulatory Agency.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $dateOfFirstAuthorization
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $dateOfFirstAuthorization
      * @return $this
      */
     public function setDateOfFirstAuthorization($dateOfFirstAuthorization)
@@ -373,7 +373,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Date of first marketing authorization for a company's new medicinal product in any country in the World.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getInternationalBirthDate()
     {
@@ -382,7 +382,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Date of first marketing authorization for a company's new medicinal product in any country in the World.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $internationalBirthDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $internationalBirthDate
      * @return $this
      */
     public function setInternationalBirthDate($internationalBirthDate)
@@ -393,7 +393,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The legal framework against which this authorization is granted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getLegalBasis()
     {
@@ -402,7 +402,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The legal framework against which this authorization is granted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalBasis
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $legalBasis
      * @return $this
      */
     public function setLegalBasis($legalBasis)
@@ -413,7 +413,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Authorization in areas within a country.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization[]
      */
     public function getJurisdictionalAuthorization()
     {
@@ -422,7 +422,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Authorization in areas within a country.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization $jurisdictionalAuthorization
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationJurisdictionalAuthorization $jurisdictionalAuthorization
      * @return $this
      */
     public function addJurisdictionalAuthorization($jurisdictionalAuthorization)
@@ -433,7 +433,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Marketing Authorization Holder.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getHolder()
     {
@@ -442,7 +442,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Marketing Authorization Holder.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $holder
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $holder
      * @return $this
      */
     public function setHolder($holder)
@@ -453,7 +453,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Medicines Regulatory Agency.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRegulator()
     {
@@ -462,7 +462,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * Medicines Regulatory Agency.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $regulator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $regulator
      * @return $this
      */
     public function setRegulator($regulator)
@@ -473,7 +473,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The regulatory procedure for granting or amending a marketing authorization.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
      */
     public function getProcedure()
     {
@@ -482,7 +482,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements \J
 
     /**
      * The regulatory procedure for granting or amending a marketing authorization.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $procedure
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $procedure
      * @return $this
      */
     public function setProcedure($procedure)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from sources such as the patient's memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains.
@@ -74,111 +74,111 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * Identifiers associated with this Medication Statement that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * A code representing the patient or other source's judgment about the state of the medication used that this statement is about.  Generally, this will be active or completed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
      */
     public $status = null;
 
     /**
      * Captures the reason for the current state of the MedicationStatement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $statusReason = [];
 
     /**
      * Indicates where the medication is expected to be consumed or administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $medicationCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $medicationReference = null;
 
     /**
      * The person, animal or group who is/was taking the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The encounter or episode of care that establishes the context for this MedicationStatement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $context = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * The date when the medication statement was asserted by the information source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $dateAsserted = null;
 
     /**
      * The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g. Claim or MedicationRequest.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $informationSource = null;
 
     /**
      * Allows linking the MedicationStatement to the underlying MedicationRequest, or to other information that supports or is used to derive the MedicationStatement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $derivedFrom = [];
 
     /**
      * A reason for why the medication is being/was taken.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Condition or observation that supports why the medication is being/was taken.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * Provides extra information about the medication statement that is not conveyed by the other attributes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Indicates how the medication is/was or should be taken by the patient.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDosage[]
      */
     public $dosage = [];
 
@@ -189,7 +189,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifiers associated with this Medication Statement that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -198,7 +198,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifiers associated with this Medication Statement that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -209,7 +209,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -218,7 +218,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -229,7 +229,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -238,7 +238,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -249,7 +249,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code representing the patient or other source's judgment about the state of the medication used that this statement is about.  Generally, this will be active or completed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes
      */
     public function getStatus()
     {
@@ -258,7 +258,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A code representing the patient or other source's judgment about the state of the medication used that this statement is about.  Generally, this will be active or completed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMedicationStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -269,7 +269,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Captures the reason for the current state of the MedicationStatement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getStatusReason()
     {
@@ -278,7 +278,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Captures the reason for the current state of the MedicationStatement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function addStatusReason($statusReason)
@@ -289,7 +289,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates where the medication is expected to be consumed or administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -298,7 +298,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates where the medication is expected to be consumed or administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -308,7 +308,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMedicationCodeableConcept()
     {
@@ -316,7 +316,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return $this
      */
     public function setMedicationCodeableConcept($medicationCodeableConcept)
@@ -326,7 +326,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getMedicationReference()
     {
@@ -334,7 +334,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $medicationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $medicationReference
      * @return $this
      */
     public function setMedicationReference($medicationReference)
@@ -345,7 +345,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The person, animal or group who is/was taking the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -354,7 +354,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The person, animal or group who is/was taking the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -365,7 +365,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The encounter or episode of care that establishes the context for this MedicationStatement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getContext()
     {
@@ -374,7 +374,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The encounter or episode of care that establishes the context for this MedicationStatement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $context
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $context
      * @return $this
      */
     public function setContext($context)
@@ -384,7 +384,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
     {
@@ -392,7 +392,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
     public function setEffectiveDateTime($effectiveDateTime)
@@ -402,7 +402,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -410,7 +410,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -421,7 +421,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date when the medication statement was asserted by the information source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDateAsserted()
     {
@@ -430,7 +430,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date when the medication statement was asserted by the information source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $dateAsserted
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $dateAsserted
      * @return $this
      */
     public function setDateAsserted($dateAsserted)
@@ -441,7 +441,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g. Claim or MedicationRequest.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getInformationSource()
     {
@@ -450,7 +450,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g. Claim or MedicationRequest.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $informationSource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $informationSource
      * @return $this
      */
     public function setInformationSource($informationSource)
@@ -461,7 +461,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Allows linking the MedicationStatement to the underlying MedicationRequest, or to other information that supports or is used to derive the MedicationStatement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDerivedFrom()
     {
@@ -470,7 +470,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Allows linking the MedicationStatement to the underlying MedicationRequest, or to other information that supports or is used to derive the MedicationStatement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $derivedFrom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $derivedFrom
      * @return $this
      */
     public function addDerivedFrom($derivedFrom)
@@ -481,7 +481,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A reason for why the medication is being/was taken.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -490,7 +490,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A reason for why the medication is being/was taken.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -501,7 +501,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Condition or observation that supports why the medication is being/was taken.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -510,7 +510,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Condition or observation that supports why the medication is being/was taken.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -521,7 +521,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Provides extra information about the medication statement that is not conveyed by the other attributes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -530,7 +530,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Provides extra information about the medication statement that is not conveyed by the other attributes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -541,7 +541,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates how the medication is/was or should be taken by the patient.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDosage[]
      */
     public function getDosage()
     {
@@ -550,7 +550,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Indicates how the medication is/was or should be taken by the patient.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDosage $dosage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDosage $dosage
      * @return $this
      */
     public function addDosage($dosage)

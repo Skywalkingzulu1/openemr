@@ -5,20 +5,20 @@
  * SMART on FHIR Core Capabilities 1.0.0
  * @see http://hl7.org/fhir/smart-app-launch/conformance/index.html
  *
- * @package OpenEMR\RestControllers\SMART
- * @link      https://www.open-emr.org
+ * @package DCL\RestControllers\SMART
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\SMART;
+namespace DCL\RestControllers\SMART;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
-use OpenEMR\FHIR\SMART\Capability;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ScopeRepository;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
+use DCL\FHIR\SMART\Capability;
 
 class SMARTConfigurationController
 {

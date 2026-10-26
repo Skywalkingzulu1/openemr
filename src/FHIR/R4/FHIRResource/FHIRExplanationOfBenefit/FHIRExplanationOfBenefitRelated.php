@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -71,19 +71,19 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
 {
     /**
      * Reference to a related claim.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $claim = null;
 
     /**
      * A code to convey how the claims are related.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $relationship = null;
 
     /**
      * An alternate organizational reference to the case or file to which this particular claim pertains.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $reference = null;
 
@@ -94,7 +94,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
 
     /**
      * Reference to a related claim.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getClaim()
     {
@@ -103,7 +103,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
 
     /**
      * Reference to a related claim.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $claim
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $claim
      * @return $this
      */
     public function setClaim($claim)
@@ -114,7 +114,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
 
     /**
      * A code to convey how the claims are related.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getRelationship()
     {
@@ -123,7 +123,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
 
     /**
      * A code to convey how the claims are related.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
     public function setRelationship($relationship)
@@ -134,7 +134,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
 
     /**
      * An alternate organizational reference to the case or file to which this particular claim pertains.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getReference()
     {
@@ -143,7 +143,7 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
 
     /**
      * An alternate organizational reference to the case or file to which this particular claim pertains.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $reference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $reference
      * @return $this
      */
     public function setReference($reference)

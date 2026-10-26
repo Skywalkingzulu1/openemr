@@ -3,19 +3,19 @@
 /**
  * Database-backed tests for finding the inventory drug related to a HCPCS code.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Billing;
+namespace DCL\Tests\Services\Billing;
 
-use OpenEMR\Billing\HcpcsDrugDefaults;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Billing\HcpcsDrugDefaults;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\TestCase;
 
 class HcpcsDrugDefaultsServiceTest extends TestCase

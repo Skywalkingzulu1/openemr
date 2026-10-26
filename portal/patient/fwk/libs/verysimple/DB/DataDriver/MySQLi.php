@@ -2,10 +2,10 @@
 
 /** @package verysimple::DB::DataDriver */
 
-use OpenEMR\BC\DatabaseConnectionFactory;
-use OpenEMR\BC\DatabaseConnectionOptions;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\DatabaseConnectionFactory;
+use DCL\BC\DatabaseConnectionOptions;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * An implementation of IDataDriver that communicates with

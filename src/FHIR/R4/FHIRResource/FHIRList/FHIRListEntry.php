@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRList;
+namespace DCL\FHIR\R4\FHIRResource\FHIRList;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRList;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A list is a curated collection of resources.
@@ -71,25 +71,25 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The flag allows the system constructing the list to indicate the role and significance of the item in the list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $flag = null;
 
     /**
      * True if this item is marked as deleted in the list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $deleted = null;
 
     /**
      * When this item was added to the list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * A reference to the actual resource from which data was derived.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $item = null;
 
@@ -100,7 +100,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The flag allows the system constructing the list to indicate the role and significance of the item in the list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFlag()
     {
@@ -109,7 +109,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The flag allows the system constructing the list to indicate the role and significance of the item in the list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $flag
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $flag
      * @return $this
      */
     public function setFlag($flag)
@@ -120,7 +120,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * True if this item is marked as deleted in the list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getDeleted()
     {
@@ -129,7 +129,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * True if this item is marked as deleted in the list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $deleted
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $deleted
      * @return $this
      */
     public function setDeleted($deleted)
@@ -140,7 +140,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When this item was added to the list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -149,7 +149,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When this item was added to the list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -160,7 +160,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A reference to the actual resource from which data was derived.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getItem()
     {
@@ -169,7 +169,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A reference to the actual resource from which data was derived.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $item
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $item
      * @return $this
      */
     public function setItem($item)

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIREncounter;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\Services\FHIR\FhirEncounterService;
-use OpenEMR\Services\FHIR\FhirObservationService;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIREncounter;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\Services\FHIR\FhirEncounterService;
+use DCL\Services\FHIR\FhirObservationService;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -27,11 +27,11 @@ use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
  * collapsing onto one row, a partial update leaving its siblings alone, and the
  * categories that have no writable store being rejected rather than dropped.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirObservationVitalsServiceCrudTest extends TestCase
 {
@@ -664,14 +664,14 @@ class FhirObservationVitalsServiceCrudTest extends TestCase
     {
         // With the category taken into account, a category no service accepts leaves no
         // candidate at all. Before this, the laboratory service caught every code, so the
-        // "not a code OpenEMR stores" answer could never be returned.
+        // "not a code DCL stores" answer could never be returned.
         $payload = $this->observationPayload('8867-4');
         $payload['category'] = self::categoryConcept('not-a-real-category');
 
         $result = $this->fhirObservationService->insert(new FHIRObservation($payload));
         $this->assertFalse($result->isValid());
         $this->assertStringContainsString(
-            'is not a code OpenEMR stores',
+            'is not a code DCL stores',
             $this->stringValue($this->arrayValue($result->getValidationMessages())['code'] ?? null)
         );
         $this->assertSame(0, $this->countVitalsRows());

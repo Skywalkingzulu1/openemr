@@ -3,32 +3,32 @@
 /**
  * Testing script for the local/internal use of the api
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Enable this script via environment variable
-if (!getenv('OPENEMR_ENABLE_INTERNAL_API_TEST')) {
-    die('Set OPENEMR_ENABLE_INTERNAL_API_TEST=1 environment variable to enable this script');
+if (!getenv('DCL_ENABLE_INTERNAL_API_TEST')) {
+    die('Set DCL_ENABLE_INTERNAL_API_TEST=1 environment variable to enable this script');
 }
 
 require_once(__DIR__ . "/../../interface/globals.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\HttpRestRouteHandler;
-use OpenEMR\Common\Http\HttpSessionFactory;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\RestControllers\FacilityRestController;
-use OpenEMR\RestControllers\Finder\StandardRouteFinder;
-use OpenEMR\Services\FacilityService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRouteHandler;
+use DCL\Common\Http\HttpSessionFactory;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Core\OEHttpKernel;
+use DCL\RestControllers\FacilityRestController;
+use DCL\RestControllers\Finder\StandardRouteFinder;
+use DCL\Services\FacilityService;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();

@@ -4,7 +4,7 @@
 /**
  * Emit the `version=` / `version_branch=` / `release_tag=` lines the
  * build-release workflow appends to $GITHUB_OUTPUT, regardless of
- * whether the trigger was an `openemr-tag` repository_dispatch
+ * whether the trigger was an `DCL-tag` repository_dispatch
  * (--payload-file) or a manual workflow_dispatch (--release-version /
  * --release-tag / --release-branch).
  *
@@ -12,18 +12,18 @@
  * dispatch.schema.json patterns); a missing or malformed field aborts
  * the step instead of producing artifacts that reference "null".
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-use OpenEMR\Release\TagDispatchPayload;
+use DCL\Release\TagDispatchPayload;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
@@ -37,7 +37,7 @@ use Symfony\Component\Console\SingleCommandApplication;
         'payload-file',
         null,
         InputOption::VALUE_REQUIRED,
-        "Path to openemr-tag JSON envelope (use '-' for stdin). Mutually exclusive with --release-* flags.",
+        "Path to DCL-tag JSON envelope (use '-' for stdin). Mutually exclusive with --release-* flags.",
     )
     ->addOption('release-version', null, InputOption::VALUE_REQUIRED, 'Release version (e.g. 8.1.0)')
     ->addOption('release-tag', null, InputOption::VALUE_REQUIRED, 'Annotated release tag (e.g. v8_1_0)')

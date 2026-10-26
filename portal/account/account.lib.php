@@ -3,30 +3,30 @@
 /**
  * Ajax Library for Register
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2017-2019 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /* Library functions for register*/
 
 use GuzzleHttp\Client;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\AuthHash;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Config\ServerConfig;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\AuthHash;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Config\ServerConfig;
 
 function notifyAdmin($pid, $provider): void
 {
@@ -424,7 +424,7 @@ function doCredentials($pid, $resetPass = false, $resetPassEmail = ''): bool
         if (sqlNumRows($res)) {
             // this should never happen in current use case where these credentials are created after a new patient registers, so will return error
             EventAuditLogger::getInstance()->newEvent('patient-registration', '', '', 0, "Patient credential creation registration failure secondary to credentials already existing for email " . $newpd['email'] . " and pid: " . $pid);
-            ServiceContainer::getLogger()->error("OpenEMR Error : doCredentials for registration - already credentials exists, so unable to create new credentials.");
+            ServiceContainer::getLogger()->error("DCL Error : doCredentials for registration - already credentials exists, so unable to create new credentials.");
             return false;
         } else {
             sqlStatementNoLog("INSERT INTO patient_access_onsite SET portal_username=?,portal_onetime=?,portal_pwd=?,portal_pwd_status=0,pid=?", $query_parameters);

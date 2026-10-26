@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Related artifacts such as additional documentation, justification, or bibliographic references.
@@ -72,43 +72,43 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 {
     /**
      * The type of relationship to the related artifact.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifactType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifactType
      */
     public $type = null;
 
     /**
      * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $label = null;
 
     /**
      * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
      * A bibliographic citation for the related artifact. This text SHOULD be formatted according to an accepted citation format.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $citation = null;
 
     /**
      * A url for the artifact that can be followed to access the actual content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $url = null;
 
     /**
      * The document being referenced, represented as an attachment. This is exclusive with the resource element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public $document = null;
 
     /**
      * The related resource, such as a library, value set, profile, or other knowledge resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $resource = null;
 
@@ -119,7 +119,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of relationship to the related artifact.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifactType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifactType
      */
     public function getType()
     {
@@ -128,7 +128,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of relationship to the related artifact.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRelatedArtifactType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRelatedArtifactType $type
      * @return $this
      */
     public function setType($type)
@@ -139,7 +139,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLabel()
     {
@@ -148,7 +148,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $label
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $label
      * @return $this
      */
     public function setLabel($label)
@@ -159,7 +159,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDisplay()
     {
@@ -168,7 +168,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $display
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $display
      * @return $this
      */
     public function setDisplay($display)
@@ -179,7 +179,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A bibliographic citation for the related artifact. This text SHOULD be formatted according to an accepted citation format.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCitation()
     {
@@ -188,7 +188,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A bibliographic citation for the related artifact. This text SHOULD be formatted according to an accepted citation format.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $citation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $citation
      * @return $this
      */
     public function setCitation($citation)
@@ -199,7 +199,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A url for the artifact that can be followed to access the actual content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getUrl()
     {
@@ -208,7 +208,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * A url for the artifact that can be followed to access the actual content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $url
      * @return $this
      */
     public function setUrl($url)
@@ -219,7 +219,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * The document being referenced, represented as an attachment. This is exclusive with the resource element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAttachment
      */
     public function getDocument()
     {
@@ -228,7 +228,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * The document being referenced, represented as an attachment. This is exclusive with the resource element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAttachment $document
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAttachment $document
      * @return $this
      */
     public function setDocument($document)
@@ -239,7 +239,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * The related resource, such as a library, value set, profile, or other knowledge resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getResource()
     {
@@ -248,7 +248,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
 
     /**
      * The related resource, such as a library, value set, profile, or other knowledge resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $resource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $resource
      * @return $this
      */
     public function setResource($resource)

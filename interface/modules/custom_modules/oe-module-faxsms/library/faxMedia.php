@@ -7,16 +7,16 @@
  * document is PHI, so instead of dropping a world-readable file in the web root
  * we stage it OUTSIDE the web root (see SignalWireClient::uploadFileForFax())
  * and serve it here, gated SOLELY by a short-lived, encrypted, tamper-proof
- * token - there is no OpenEMR session on a provider-side request.
+ * token - there is no DCL session on a provider-side request.
  *
  * The response body MUST be nothing but the raw PDF bytes: any stray notice,
  * warning, whitespace, or gzip wrapping makes the provider report "not a PDF
  * file", so we suppress error output, disable compression, and flush buffered
  * bootstrap output before streaming.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // Login-less: access is gated entirely by the encrypted token. Locate globals.php
@@ -40,7 +40,7 @@ if (!is_string($token) || $token === '') {
 }
 
 try {
-    $crypto = new \OpenEMR\Common\Crypto\CryptoGen();
+    $crypto = new \DCL\Common\Crypto\CryptoGen();
     // @phpstan-ignore method.deprecated (needs OTP conversion)
     $plain = $crypto->decryptStandard($token);
     if (!is_string($plain) || $plain === '') {
@@ -72,7 +72,7 @@ try {
     // is therefore filesystem-sourced (from glob()), not request-derived - which,
     // together with the authenticated-encrypted token and the strict name shape,
     // leaves no path-injection / SSRF surface.
-    $dir = \OpenEMR\Core\OEGlobalsBag::getInstance()->get('OE_SITE_DIR')
+    $dir = \DCL\Core\OEGlobalsBag::getInstance()->get('OE_SITE_DIR')
         . '/documents/logs_and_misc/fax_outbound';
     $path = null;
     foreach ((glob($dir . '/fax_out_*.pdf') ?: []) as $candidate) {
@@ -93,7 +93,7 @@ try {
         fclose($fh);
     }
     if (!str_starts_with($head, '%PDF-')) {
-        \OpenEMR\BC\ServiceContainer::getLogger()->error('faxMedia.php: staged file is not a PDF', ['name' => $name]);
+        \DCL\BC\ServiceContainer::getLogger()->error('faxMedia.php: staged file is not a PDF', ['name' => $name]);
         http_response_code(415);
         exit;
     }
@@ -120,7 +120,7 @@ try {
     // while the PHI window stays bounded by the short token TTL.
     exit;
 } catch (\Throwable $e) {
-    \OpenEMR\BC\ServiceContainer::getLogger()->error('faxMedia.php request failed', ['exception' => $e]);
+    \DCL\BC\ServiceContainer::getLogger()->error('faxMedia.php request failed', ['exception' => $e]);
     http_response_code(500);
     exit;
 }

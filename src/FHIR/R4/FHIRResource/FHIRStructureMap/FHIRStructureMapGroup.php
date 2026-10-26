@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -71,37 +71,37 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * A unique name for the group for the convenience of human readers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $name = null;
 
     /**
      * Another group that this group adds rules to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $extends = null;
 
     /**
      * If this is the default rule set to apply for the source type or this combination of types.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapGroupTypeMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureMapGroupTypeMode
      */
     public $typeMode = null;
 
     /**
      * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentation = null;
 
     /**
      * A name assigned to an instance of data. The instance must be provided when the mapping is invoked.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapInput[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapInput[]
      */
     public $input = [];
 
     /**
      * Transform Rule from source to target.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapRule[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapRule[]
      */
     public $rule = [];
 
@@ -112,7 +112,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A unique name for the group for the convenience of human readers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getName()
     {
@@ -121,7 +121,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A unique name for the group for the convenience of human readers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $name
      * @return $this
      */
     public function setName($name)
@@ -132,7 +132,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Another group that this group adds rules to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getExtends()
     {
@@ -141,7 +141,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Another group that this group adds rules to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $extends
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $extends
      * @return $this
      */
     public function setExtends($extends)
@@ -152,7 +152,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * If this is the default rule set to apply for the source type or this combination of types.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapGroupTypeMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureMapGroupTypeMode
      */
     public function getTypeMode()
     {
@@ -161,7 +161,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * If this is the default rule set to apply for the source type or this combination of types.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
      * @return $this
      */
     public function setTypeMode($typeMode)
@@ -172,7 +172,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
@@ -181,7 +181,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentation
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -192,7 +192,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A name assigned to an instance of data. The instance must be provided when the mapping is invoked.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapInput[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapInput[]
      */
     public function getInput()
     {
@@ -201,7 +201,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A name assigned to an instance of data. The instance must be provided when the mapping is invoked.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapInput $input
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapInput $input
      * @return $this
      */
     public function addInput($input)
@@ -212,7 +212,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Transform Rule from source to target.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapRule[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapRule[]
      */
     public function getRule()
     {
@@ -221,7 +221,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Transform Rule from source to target.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapRule $rule
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapRule $rule
      * @return $this
      */
     public function addRule($rule)

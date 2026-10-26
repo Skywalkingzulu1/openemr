@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProduct;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).
@@ -71,47 +71,47 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 {
     /**
      * Identifier for the designation, or procedure number.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The type of special designation, e.g. orphan drug, minor use.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The intended use of the product, e.g. prevention, treatment.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $intendedUse = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $indicationCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $indicationReference = null;
 
     /**
      * For example granted, pending, expired or withdrawn.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $status = null;
 
     /**
      * Date when the designation was granted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * Animal species for which this applies.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $species = null;
 
@@ -122,7 +122,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * Identifier for the designation, or procedure number.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -131,7 +131,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * Identifier for the designation, or procedure number.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -142,7 +142,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * The type of special designation, e.g. orphan drug, minor use.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -151,7 +151,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * The type of special designation, e.g. orphan drug, minor use.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -162,7 +162,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * The intended use of the product, e.g. prevention, treatment.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getIntendedUse()
     {
@@ -171,7 +171,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * The intended use of the product, e.g. prevention, treatment.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $intendedUse
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $intendedUse
      * @return $this
      */
     public function setIntendedUse($intendedUse)
@@ -181,7 +181,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getIndicationCodeableConcept()
     {
@@ -189,7 +189,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
      * @return $this
      */
     public function setIndicationCodeableConcept($indicationCodeableConcept)
@@ -199,7 +199,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getIndicationReference()
     {
@@ -207,7 +207,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $indicationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $indicationReference
      * @return $this
      */
     public function setIndicationReference($indicationReference)
@@ -218,7 +218,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * For example granted, pending, expired or withdrawn.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStatus()
     {
@@ -227,7 +227,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * For example granted, pending, expired or withdrawn.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $status
      * @return $this
      */
     public function setStatus($status)
@@ -238,7 +238,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * Date when the designation was granted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -247,7 +247,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * Date when the designation was granted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -258,7 +258,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * Animal species for which this applies.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecies()
     {
@@ -267,7 +267,7 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement impleme
 
     /**
      * Animal species for which this applies.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $species
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $species
      * @return $this
      */
     public function setSpecies($species)

@@ -16,7 +16,7 @@
 #   RELEASE_TAG   Git tag in vMAJOR_MINOR_PATCH shape (e.g. v8_4_0).
 #                 Required. Shape is not re-validated here; callers
 #                 that need shape enforcement should validate first.
-#   REPO          Fully-qualified repo (e.g. openemr/openemr). Used
+#   REPO          Fully-qualified repo (e.g. DCL/DCL). Used
 #                 for `gh release view --repo`. Required.
 #   GH_TOKEN      gh auth token. Required for the Release-existence
 #                 check (git ls-remote works without auth on public

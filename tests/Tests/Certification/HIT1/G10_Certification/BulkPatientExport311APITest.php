@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEMR\Tests\Certification\HIT1\G10_Certification;
+namespace DCL\Tests\Certification\HIT1\G10_Certification;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
-use OpenEMR\Tests\Api\ApiTestClient;
-use OpenEMR\Tests\Api\BulkAPITestClient;
-use OpenEMR\Tests\Certification\HIT1\G10_Certification\Trait\G10ApiTestTrait;
+use DCL\Tests\Api\ApiTestClient;
+use DCL\Tests\Api\BulkAPITestClient;
+use DCL\Tests\Certification\HIT1\G10_Certification\Trait\G10ApiTestTrait;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
@@ -50,7 +50,7 @@ class BulkPatientExport311APITest extends TestCase
     private function getInfernoJWKS(): \stdClass
     {
         self::$testClient ??= new BulkAPITestClient(self::$baseUrl);
-            self::$testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+            self::$testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
             $jwksResponse = self::$infernoClient->get('/custom/g10_certification/.well-known/jwks.json');
         if ($jwksResponse->getStatusCode() !== 200) {
             throw new RuntimeException("Failed to retrieve JWKS from Inferno. Status code: " . $jwksResponse->getStatusCode());
@@ -60,7 +60,7 @@ class BulkPatientExport311APITest extends TestCase
 //    #[Test]
 //    public function testPatientIds() {
 //        self::$testClient = new BulkAPITestClient(self::$baseUrl);
-//        self::$testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+//        self::$testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 //        $response = self::$testClient->get("/apis/default/fhir/Group/" . self::DEFAULT_FHIR_GROUP_ID);
 //        $result = $response->getBody()->getContents();
 //        $this->assertNotEmpty($result);
@@ -84,7 +84,7 @@ class BulkPatientExport311APITest extends TestCase
         // for now this uses the admin user to authenticate
         // TODO: @adunsulag need to implement this using a test practitioner user so we can test the inferno single patient API from a regular provider
         self::$testClient = new BulkAPITestClient(self::$baseUrl);
-        $client = self::$testClient->registerClient(ApiTestClient::OPENEMR_AUTH_ENDPOINT, $this->getInfernoJWKS());
+        $client = self::$testClient->registerClient(ApiTestClient::DCL_AUTH_ENDPOINT, $this->getInfernoJWKS());
         $inputs = $this->getTestInputs($client->getIdentifier(), 'bulk_smart_auth_info');
         // we will use the filesystem to write out the test run settings so that we can see them in the code coverage report
         $response = $this->getTestGroupResponse($this->getTestSuitePrefix() . 'multi_patient_api', $inputs);

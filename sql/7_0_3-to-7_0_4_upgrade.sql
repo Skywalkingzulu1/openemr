@@ -1784,7 +1784,7 @@ CREATE TABLE IF NOT EXISTS `form_history_sdoh_health_concerns` (
 #EndIf
 -- ------------------------------------------------------------------- 11-01-2025 sjp -----------------------------------------------------------------------------
 -- Patient Preferences Database Schema
--- Uses OpenEMR's list_options table for LOINC codes
+-- Uses DCL's list_options table for LOINC codes
 -- Table for storing patient treatment intervention preferences
 #IfNotTable patient_treatment_intervention_preferences
 CREATE TABLE `patient_treatment_intervention_preferences` (

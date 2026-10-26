@@ -1,22 +1,22 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers\FHIR;
+namespace DCL\Tests\RestControllers\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROrganization;
-use OpenEMR\RestControllers\FHIR\FhirOrganizationRestController;
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\FhirResponseAssertionTrait;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROrganization;
+use DCL\RestControllers\FHIR\FhirOrganizationRestController;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
+use DCL\Tests\RestControllers\FHIR\Trait\FhirResponseAssertionTrait;
+use DCL\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirOrganizationRestControllerTest extends TestCase
 {

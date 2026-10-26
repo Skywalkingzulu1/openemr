@@ -21,12 +21,12 @@
  *
  *
  *
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  * @package ediHistory
  */
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 /**
  * Display csv table data in an HTML table for newly processed files

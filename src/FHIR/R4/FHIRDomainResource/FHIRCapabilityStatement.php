@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -72,157 +72,157 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 {
     /**
      * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this capability statement is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * The identifier that is used to identify this version of the capability statement when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the capability statement author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the capability statement. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the capability statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this capability statement. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the capability statement was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the capability statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the capability statement from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate capability statement instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the capability statement is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this capability statement is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
      */
     public $kind = null;
 
     /**
      * Reference to a canonical URL of another CapabilityStatement that this software implements. This capability statement is a published API description that corresponds to a business service. The server may actually implement a subset of the capability statement it claims to implement, so the capability statement must specify the full capability details.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $instantiates = [];
 
     /**
      * Reference to a canonical URL of another CapabilityStatement that this software adds to. The capability statement automatically includes everything in the other statement, and it is not duplicated, though the server may repeat the same resources, interactions and operations to add additional details to them.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $imports = [];
 
     /**
      * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      */
     public $software = null;
 
     /**
      * Identifies a specific implementation instance that is described by the capability statement - i.e. a particular installation, rather than the capabilities of a software program.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
      */
     public $implementation = null;
 
     /**
      * The version of the FHIR specification that this CapabilityStatement describes (which SHALL be the same as the FHIR version of the CapabilityStatement itself). There is no default value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion
      */
     public $fhirVersion = null;
 
     /**
      * A list of the formats supported by this implementation using their content types.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $format = [];
 
     /**
      * A list of the patch formats supported by this implementation using their content types.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public $patchFormat = [];
 
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $implementationGuide = [];
 
     /**
      * A definition of the restful capabilities of the solution, if any.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
      */
     public $rest = [];
 
     /**
      * A description of the messaging capabilities of the solution.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
      */
     public $messaging = [];
 
     /**
      * A document definition.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
      */
     public $document = [];
 
@@ -233,7 +233,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this capability statement is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -242,7 +242,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this capability statement is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -253,7 +253,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the capability statement when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the capability statement author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -262,7 +262,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The identifier that is used to identify this version of the capability statement when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the capability statement author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -273,7 +273,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the capability statement. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -282,7 +282,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A natural language name identifying the capability statement. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -293,7 +293,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the capability statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -302,7 +302,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A short, descriptive, user-friendly title for the capability statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -313,7 +313,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this capability statement. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -322,7 +322,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The status of this capability statement. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -333,7 +333,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -342,7 +342,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A Boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -353,7 +353,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the capability statement was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -362,7 +362,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The date  (and optionally time) when the capability statement was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -373,7 +373,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the capability statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -382,7 +382,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The name of the organization or individual that published the capability statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -393,7 +393,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -402,7 +402,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -413,7 +413,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the capability statement from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -422,7 +422,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A free text natural language description of the capability statement from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -433,7 +433,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate capability statement instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -442,7 +442,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate capability statement instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -453,7 +453,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the capability statement is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -462,7 +462,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A legal or geographic region in which the capability statement is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -473,7 +473,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Explanation of why this capability statement is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -482,7 +482,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Explanation of why this capability statement is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -493,7 +493,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -502,7 +502,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -513,7 +513,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
      */
     public function getKind()
     {
@@ -522,7 +522,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind $kind
      * @return $this
      */
     public function setKind($kind)
@@ -533,7 +533,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Reference to a canonical URL of another CapabilityStatement that this software implements. This capability statement is a published API description that corresponds to a business service. The server may actually implement a subset of the capability statement it claims to implement, so the capability statement must specify the full capability details.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getInstantiates()
     {
@@ -542,7 +542,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Reference to a canonical URL of another CapabilityStatement that this software implements. This capability statement is a published API description that corresponds to a business service. The server may actually implement a subset of the capability statement it claims to implement, so the capability statement must specify the full capability details.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $instantiates
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $instantiates
      * @return $this
      */
     public function addInstantiates($instantiates)
@@ -553,7 +553,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Reference to a canonical URL of another CapabilityStatement that this software adds to. The capability statement automatically includes everything in the other statement, and it is not duplicated, though the server may repeat the same resources, interactions and operations to add additional details to them.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getImports()
     {
@@ -562,7 +562,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Reference to a canonical URL of another CapabilityStatement that this software adds to. The capability statement automatically includes everything in the other statement, and it is not duplicated, though the server may repeat the same resources, interactions and operations to add additional details to them.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $imports
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $imports
      * @return $this
      */
     public function addImports($imports)
@@ -573,7 +573,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      */
     public function getSoftware()
     {
@@ -582,7 +582,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $software
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $software
      * @return $this
      */
     public function setSoftware($software)
@@ -593,7 +593,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifies a specific implementation instance that is described by the capability statement - i.e. a particular installation, rather than the capabilities of a software program.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
      */
     public function getImplementation()
     {
@@ -602,7 +602,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * Identifies a specific implementation instance that is described by the capability statement - i.e. a particular installation, rather than the capabilities of a software program.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation $implementation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation $implementation
      * @return $this
      */
     public function setImplementation($implementation)
@@ -613,7 +613,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The version of the FHIR specification that this CapabilityStatement describes (which SHALL be the same as the FHIR version of the CapabilityStatement itself). There is no default value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion
      */
     public function getFhirVersion()
     {
@@ -622,7 +622,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * The version of the FHIR specification that this CapabilityStatement describes (which SHALL be the same as the FHIR version of the CapabilityStatement itself). There is no default value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
      * @return $this
      */
     public function setFhirVersion($fhirVersion)
@@ -633,7 +633,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A list of the formats supported by this implementation using their content types.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getFormat()
     {
@@ -642,7 +642,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A list of the formats supported by this implementation using their content types.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $format
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $format
      * @return $this
      */
     public function addFormat($format)
@@ -653,7 +653,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A list of the patch formats supported by this implementation using their content types.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode[]
      */
     public function getPatchFormat()
     {
@@ -662,7 +662,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A list of the patch formats supported by this implementation using their content types.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $patchFormat
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $patchFormat
      * @return $this
      */
     public function addPatchFormat($patchFormat)
@@ -673,7 +673,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getImplementationGuide()
     {
@@ -682,7 +682,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $implementationGuide
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $implementationGuide
      * @return $this
      */
     public function addImplementationGuide($implementationGuide)
@@ -693,7 +693,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A definition of the restful capabilities of the solution, if any.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
      */
     public function getRest()
     {
@@ -702,7 +702,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A definition of the restful capabilities of the solution, if any.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest $rest
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementRest $rest
      * @return $this
      */
     public function addRest($rest)
@@ -713,7 +713,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A description of the messaging capabilities of the solution.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
      */
     public function getMessaging()
     {
@@ -722,7 +722,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A description of the messaging capabilities of the solution.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $messaging
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $messaging
      * @return $this
      */
     public function addMessaging($messaging)
@@ -733,7 +733,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A document definition.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
      */
     public function getDocument()
     {
@@ -742,7 +742,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements \JsonSeriali
 
     /**
      * A document definition.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $document
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $document
      * @return $this
      */
     public function addDocument($document)

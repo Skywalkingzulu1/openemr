@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSpecimen;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimen;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A sample to be used for analysis.
@@ -71,51 +71,51 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Person who collected the specimen.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $collector = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $collectedDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $collectedPeriod = null;
 
     /**
      * The span of time over which the collection of a specimen occurred.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $duration = null;
 
     /**
      * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * A coded value specifying the technique that is used to perform the procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $bodySite = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $fastingStatusCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $fastingStatusDuration = null;
 
@@ -126,7 +126,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Person who collected the specimen.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getCollector()
     {
@@ -135,7 +135,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Person who collected the specimen.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $collector
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $collector
      * @return $this
      */
     public function setCollector($collector)
@@ -145,7 +145,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCollectedDateTime()
     {
@@ -153,7 +153,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $collectedDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $collectedDateTime
      * @return $this
      */
     public function setCollectedDateTime($collectedDateTime)
@@ -163,7 +163,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getCollectedPeriod()
     {
@@ -171,7 +171,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $collectedPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $collectedPeriod
      * @return $this
      */
     public function setCollectedPeriod($collectedPeriod)
@@ -182,7 +182,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The span of time over which the collection of a specimen occurred.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDuration()
     {
@@ -191,7 +191,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The span of time over which the collection of a specimen occurred.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $duration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $duration
      * @return $this
      */
     public function setDuration($duration)
@@ -202,7 +202,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -211,7 +211,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -222,7 +222,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A coded value specifying the technique that is used to perform the procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -231,7 +231,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A coded value specifying the technique that is used to perform the procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -242,7 +242,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite()
     {
@@ -251,7 +251,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function setBodySite($bodySite)
@@ -261,7 +261,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFastingStatusCodeableConcept()
     {
@@ -269,7 +269,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $fastingStatusCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $fastingStatusCodeableConcept
      * @return $this
      */
     public function setFastingStatusCodeableConcept($fastingStatusCodeableConcept)
@@ -279,7 +279,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getFastingStatusDuration()
     {
@@ -287,7 +287,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $fastingStatusDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $fastingStatusDuration
      * @return $this
      */
     public function setFastingStatusDuration($fastingStatusDuration)

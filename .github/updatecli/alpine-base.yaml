@@ -2,9 +2,9 @@
 # pin that actually ships.
 #
 # Dependabot cannot see these. Its docker ecosystem parses literal
-# `FROM alpine:3.24` lines; all three OpenEMR Dockerfiles write
+# `FROM alpine:3.24` lines; all three DCL Dockerfiles write
 # `FROM alpine:${ALPINE_VERSION}`, so the entries that used to exist for
-# them in openemr-devops produced no PRs at all (see
+# them in DCL-devops produced no PRs at all (see
 # docs/docker-migration-from-devops.md). That inertness is why these pins
 # drift: docker/binary sat on 3.22 while docker/release was on 3.24.
 #

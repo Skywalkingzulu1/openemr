@@ -3,18 +3,18 @@
 /**
  * FHIR Condition API tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Vasilii Tereshchenko <vasilii.tereshchenko@gmail.com>
  * @copyright Copyright (c) 2026 Vasilii Tereshchenko <vasilii.tereshchenko@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Tests\Fixtures\FixtureManager;
+use DCL\Tests\Fixtures\FixtureManager;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,12 +30,12 @@ use Symfony\Component\HttpFoundation\Response;
  * patient + a medical-problem row directly through FixtureManager in setUp,
  * and remove it in tearDown via ConditionFixtureManager::removeFixtures().
  *
- * OpenEMR vs FHIR conventions (tests pin current server behavior, not the spec):
+ * DCL vs FHIR conventions (tests pin current server behavior, not the spec):
  * - Search bundles use type "collection" (FhirResourcesService), not FHIR's "searchset".
  * - getOne errors return validationErrors (400) or an empty JSON array (404), not OperationOutcome.
  *   A follow-up issue could align these with FHIR if desired.
  * - Problem-list Conditions expose code.text from the list title when diagnosis is not parsed
- *   into structured coding (see FhirConditionProblemListItemService::searchForOpenEMRRecords).
+ *   into structured coding (see FhirConditionProblemListItemService::searchForDCLRecords).
  *   ICD-10 coding (code.coding) requires a separate product fix; do not assert it here.
  */
 class ConditionFhirApiTest extends TestCase
@@ -51,9 +51,9 @@ class ConditionFhirApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new FixtureManager();
         $seeded = $this->fixtureManager->installConditionFixtures();
@@ -75,7 +75,7 @@ class ConditionFhirApiTest extends TestCase
     /**
      * Searching by patient should return a FHIR Bundle containing the seeded condition.
      *
-     * OpenEMR returns bundle type "collection", not FHIR's conventional "searchset".
+     * DCL returns bundle type "collection", not FHIR's conventional "searchset".
      */
     public function testSearchReturnsCollectionBundle(): void
     {
@@ -256,7 +256,7 @@ class ConditionFhirApiTest extends TestCase
     public function testSearchUnauthorizedReturns401(): void
     {
         $unauthClient = new ApiTestClient(
-            getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost",
+            getenv("DCL_BASE_URL_API", true) ?: "https://localhost",
             false
         );
         // Deliberately do NOT call setAuthToken().
@@ -270,7 +270,7 @@ class ConditionFhirApiTest extends TestCase
     public function testGetOneUnauthorizedReturns401(): void
     {
         $unauthClient = new ApiTestClient(
-            getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost",
+            getenv("DCL_BASE_URL_API", true) ?: "https://localhost",
             false
         );
         $result = $unauthClient->get("/apis/default/fhir/Condition/" . $this->conditionUuid);

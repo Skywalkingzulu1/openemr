@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * The parameters to the module. This collection specifies both the input and output parameters. Input parameters are provided by the caller as part of the $evaluate operation. Output parameters are included in the GuidanceResponse.
@@ -72,43 +72,43 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 {
     /**
      * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $name = null;
 
     /**
      * Whether the parameter is input or output for the module.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $use = null;
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $min = null;
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $max = null;
 
     /**
      * A brief discussion of what the parameter is for and how it is used by the module.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $documentation = null;
 
     /**
      * The type of the parameter.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $type = null;
 
     /**
      * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $profile = null;
 
@@ -119,7 +119,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getName()
     {
@@ -128,7 +128,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $name
      * @return $this
      */
     public function setName($name)
@@ -139,7 +139,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * Whether the parameter is input or output for the module.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getUse()
     {
@@ -148,7 +148,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * Whether the parameter is input or output for the module.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $use
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $use
      * @return $this
      */
     public function setUse($use)
@@ -159,7 +159,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getMin()
     {
@@ -168,7 +168,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $min
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $min
      * @return $this
      */
     public function setMin($min)
@@ -179,7 +179,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMax()
     {
@@ -188,7 +188,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The maximum number of times this element is permitted to appear in the request or response.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $max
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $max
      * @return $this
      */
     public function setMax($max)
@@ -199,7 +199,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * A brief discussion of what the parameter is for and how it is used by the module.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDocumentation()
     {
@@ -208,7 +208,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * A brief discussion of what the parameter is for and how it is used by the module.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $documentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $documentation
      * @return $this
      */
     public function setDocumentation($documentation)
@@ -219,7 +219,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of the parameter.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getType()
     {
@@ -228,7 +228,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The type of the parameter.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $type
      * @return $this
      */
     public function setType($type)
@@ -239,7 +239,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getProfile()
     {
@@ -248,7 +248,7 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function setProfile($profile)

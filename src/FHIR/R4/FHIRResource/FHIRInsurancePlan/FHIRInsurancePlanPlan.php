@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details of a Health Insurance product/plan provided by an organization.
@@ -71,37 +71,37 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Business identifiers assigned to this health insurance plan which remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Type of plan. For example, "Platinum" or "High Deductible".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * The geographic region in which a health insurance plan's benefits apply.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $coverageArea = [];
 
     /**
      * Reference to the network that providing the type of coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $network = [];
 
     /**
      * Overall costs associated with the plan.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost[]
      */
     public $generalCost = [];
 
     /**
      * Costs associated with the coverage provided by the product.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost[]
      */
     public $specificCost = [];
 
@@ -112,7 +112,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Business identifiers assigned to this health insurance plan which remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -121,7 +121,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Business identifiers assigned to this health insurance plan which remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -132,7 +132,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Type of plan. For example, "Platinum" or "High Deductible".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -141,7 +141,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Type of plan. For example, "Platinum" or "High Deductible".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -152,7 +152,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The geographic region in which a health insurance plan's benefits apply.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getCoverageArea()
     {
@@ -161,7 +161,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The geographic region in which a health insurance plan's benefits apply.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $coverageArea
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $coverageArea
      * @return $this
      */
     public function addCoverageArea($coverageArea)
@@ -172,7 +172,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Reference to the network that providing the type of coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getNetwork()
     {
@@ -181,7 +181,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Reference to the network that providing the type of coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $network
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $network
      * @return $this
      */
     public function addNetwork($network)
@@ -192,7 +192,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Overall costs associated with the plan.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost[]
      */
     public function getGeneralCost()
     {
@@ -201,7 +201,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Overall costs associated with the plan.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost $generalCost
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost $generalCost
      * @return $this
      */
     public function addGeneralCost($generalCost)
@@ -212,7 +212,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Costs associated with the coverage provided by the product.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost[]
      */
     public function getSpecificCost()
     {
@@ -221,7 +221,7 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Costs associated with the coverage provided by the product.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost $specificCost
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost $specificCost
      * @return $this
      */
     public function addSpecificCost($specificCost)

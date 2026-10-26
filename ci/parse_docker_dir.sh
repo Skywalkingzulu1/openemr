@@ -2,9 +2,9 @@
 
 set -xeuo pipefail
 
-readonly -A WEBSERVER_OPENEMR_DIRS=(
-  ['apache']=/var/www/localhost/htdocs/openemr
-  ['nginx']=/usr/share/nginx/html/openemr
+readonly -A WEBSERVER_DCL_DIRS=(
+  ['apache']=/var/www/localhost/htdocs/DCL
+  ['nginx']=/usr/share/nginx/html/DCL
 )
 
 ##
@@ -49,9 +49,9 @@ parse() {
   # Check if docker_dir ends with "_no-e2e"
   [[ ${docker_dir} = *_no-e2e ]] && e2e_enabled=false || e2e_enabled=true
 
-  # Determine OpenEMR directory based on webserver
-  openemr_dir="${WEBSERVER_OPENEMR_DIRS[${webserver}]}"
-  if [[ -z ${openemr_dir} ]]; then
+  # Determine DCL directory based on webserver
+  DCL_dir="${WEBSERVER_DCL_DIRS[${webserver}]}"
+  if [[ -z ${DCL_dir} ]]; then
     echo "Unknown webserver: ${webserver}" >&2
     return 1
   fi
@@ -92,7 +92,7 @@ parse() {
   jq -cn \
     --arg compose_file "${compose_file}" \
     --arg docker_dir "${docker_dir}" \
-    --arg openemr_dir "${openemr_dir}" \
+    --arg DCL_dir "${DCL_dir}" \
     --arg database "${database}" \
     --arg database_template "${database_template}" \
     --arg db "${db}" \
@@ -111,7 +111,7 @@ parse() {
       env: {
         COMPOSE_FILE: $compose_file,
         DOCKER_DIR: $docker_dir,
-        OPENEMR_DIR: $openemr_dir
+        DCL_DIR: $DCL_dir
       },
       output: {
         database: $database,
@@ -121,7 +121,7 @@ parse() {
         e2e_enabled: $e2e_enabled,
         mailpit_template: $mailpit_template,
         node_version: $node_version,
-        openemr_dir: $openemr_dir,
+        DCL_dir: $DCL_dir,
         php: $php,
         redis_sentinel_enabled: $redis_sentinel_enabled,
         redis_sentinel_template: $redis_sentinel_template,

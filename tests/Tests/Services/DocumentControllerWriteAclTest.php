@@ -5,19 +5,19 @@
  * the same anti-IDOR checks as its read path: a caller may only mutate a
  * document they can already access in its current patient/category context.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR Security
- * @copyright Copyright (c) 2026 OpenEMR Foundation
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL Security
+ * @copyright Copyright (c) 2026 DCL Foundation
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Services;
+namespace DCL\Tests\Services;
 
 use C_Document;
 use Document;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Services\UserService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;

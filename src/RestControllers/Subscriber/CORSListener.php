@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\RestControllers\Subscriber;
+namespace DCL\RestControllers\Subscriber;
 
-use OpenEMR\Common\Auth\OpenIDConnect\CORSAllowedOriginRegistry;
+use DCL\Common\Auth\OpenIDConnect\CORSAllowedOriginRegistry;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

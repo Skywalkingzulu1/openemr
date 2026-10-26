@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
+namespace DCL\FHIR\R4\FHIRResource\FHIRMolecularSequence;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRMolecularSequence;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Raw data describing a biological sequence.
@@ -71,13 +71,13 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement implements \JsonSer
 {
     /**
      * Structural variant inner start. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $start = null;
 
     /**
      * Structural variant inner end. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $end = null;
 
@@ -88,7 +88,7 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Structural variant inner start. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getStart()
     {
@@ -97,7 +97,7 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Structural variant inner start. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $start
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $start
      * @return $this
      */
     public function setStart($start)
@@ -108,7 +108,7 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Structural variant inner end. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getEnd()
     {
@@ -117,7 +117,7 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement implements \JsonSer
 
     /**
      * Structural variant inner end. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $end
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $end
      * @return $this
      */
     public function setEnd($end)

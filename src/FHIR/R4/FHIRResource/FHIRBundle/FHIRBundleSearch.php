@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
+namespace DCL\FHIR\R4\FHIRResource\FHIRBundle;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRBundle;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A container for a collection of resources.
@@ -71,13 +71,13 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Why this entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchEntryMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSearchEntryMode
      */
     public $mode = null;
 
     /**
      * When searching, the server's search ranking score for the entry.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $score = null;
 
@@ -88,7 +88,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Why this entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchEntryMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSearchEntryMode
      */
     public function getMode()
     {
@@ -97,7 +97,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Why this entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSearchEntryMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSearchEntryMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -108,7 +108,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When searching, the server's search ranking score for the entry.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getScore()
     {
@@ -117,7 +117,7 @@ class FHIRBundleSearch extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When searching, the server's search ranking score for the entry.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $score
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $score
      * @return $this
      */
     public function setScore($score)

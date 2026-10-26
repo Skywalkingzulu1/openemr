@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Support\OAuth2;
+namespace DCL\Tests\Acceptance\Support\OAuth2;
 
 use Lcobucci\JWT\Signer\Key;
 use Lcobucci\JWT\Signer\Key\InMemory;
-use OpenEMR\Tests\Acceptance\Support\ArtifactBrowser;
-use OpenEMR\Tests\Acceptance\Support\LoginFlow;
-use OpenEMR\Tests\Acceptance\Support\ResponseHeaders;
-use OpenEMR\Tools\OAuth2\ClientCredentialsAssertionGenerator;
+use DCL\Tests\Acceptance\Support\ArtifactBrowser;
+use DCL\Tests\Acceptance\Support\LoginFlow;
+use DCL\Tests\Acceptance\Support\ResponseHeaders;
+use DCL\Tools\OAuth2\ClientCredentialsAssertionGenerator;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\BrowserKit\HttpBrowser;
 
@@ -27,7 +27,7 @@ use Symfony\Component\BrowserKit\HttpBrowser;
  * needed — every form on the path renders + submits without JS).
  *
  * Ports the HTTP shape from `tests/Tests/Api/AuthorizationLogoutFullFlowTest`
- * (openemr/openemr#13175), which is the source-side test that proved
+ * (DCL/DCL#13175), which is the source-side test that proved
  * the OAuth flow works end-to-end via Guzzle. This acceptance-side
  * version uses BrowserKit for consistency with the rest of Support/
  * (ArtifactBrowser, LoginFlow) and adds an admin-panel client-enable
@@ -36,7 +36,7 @@ use Symfony\Component\BrowserKit\HttpBrowser;
  * and has no DB access).
  *
  * The admin-approval step is required whenever the requested scope
- * list includes any `user/` or `system/` scope — OpenEMR's
+ * list includes any `user/` or `system/` scope — DCL's
  * ScopeRepository::hasScopesThatRequireManualApproval flags those as
  * needing admin sign-off, and the client is inserted disabled. Without
  * the approval, /token returns invalid_client. See
@@ -86,7 +86,7 @@ final class AuthCodeFlow
         $baseUrl = ArtifactBrowser::baseUrl();
 
         // Step 1: DCR — register a fresh client.
-        // application_type='private' is openemr's non-spec extension
+        // application_type='private' is DCL's non-spec extension
         // that returns a client_secret (see the client_role logic in
         // AuthorizationController::registerClient); OIDC-spec 'web'
         // and 'native' yield public clients with no secret, which
@@ -97,7 +97,7 @@ final class AuthCodeFlow
         // Step 2: admin-approve the DCR client. Required whenever the
         // requested scope contains any user/ or system/ scope. Cheap
         // to always run (no-op if already enabled) so we don't
-        // conditionally skip — cleaner than replicating openemr's
+        // conditionally skip — cleaner than replicating DCL's
         // internal manual-approval rules on the harness side and
         // risking drift.
         self::enableClient($baseUrl, $clientId, $clientName);
@@ -239,7 +239,7 @@ final class AuthCodeFlow
             'redirect_uris' => [self::REDIRECT_URI],
             'client_name' => $clientName,
             'token_endpoint_auth_method' => 'client_secret_post',
-            'contacts' => ['acceptance-harness@openemr.example'],
+            'contacts' => ['acceptance-harness@DCL.example'],
             'scope' => $scope,
         ], JSON_THROW_ON_ERROR);
         $browser->request(
@@ -282,8 +282,8 @@ final class AuthCodeFlow
     {
         $keyLocation = __DIR__ . '/../../../Tests/data/Unit/Common/Auth/Grant/';
         $jwks = json_decode((string) file_get_contents($keyLocation . 'jwk-public-valid.json'));
-        $privateKey = InMemory::file($keyLocation . 'openemr-rsa384-private.key');
-        $publicKey = InMemory::file($keyLocation . 'openemr-rsa384-public.pem');
+        $privateKey = InMemory::file($keyLocation . 'DCL-rsa384-private.key');
+        $publicKey = InMemory::file($keyLocation . 'DCL-rsa384-public.pem');
 
         $browser = ArtifactBrowser::create();
         $browser->followRedirects(false);
@@ -292,7 +292,7 @@ final class AuthCodeFlow
             'redirect_uris' => [self::REDIRECT_URI],
             'client_name' => $clientName,
             'token_endpoint_auth_method' => 'private_key_jwt',
-            'contacts' => ['acceptance-harness@openemr.example'],
+            'contacts' => ['acceptance-harness@DCL.example'],
             'scope' => $scope,
             'jwks' => $jwks,
         ], JSON_THROW_ON_ERROR);
@@ -443,7 +443,7 @@ final class AuthCodeFlow
 
         // Step 4: POST login credentials. Login form has csrf_token_form
         // as a hidden input; scrape it from the crawler. `user_role=api`
-        // is the "users" openemr user role, which is what the standard
+        // is the "users" DCL user role, which is what the standard
         // REST API + FHIR expect (as opposed to portal-api, which is
         // patient-portal-scoped).
         $loginCsrf = self::extractCsrfToken($browser, 'login page');
@@ -472,7 +472,7 @@ final class AuthCodeFlow
         // array. The server intersects these against the client's
         // registered scopes AND the /authorize-requested scopes, so
         // submitting extras is a no-op — cheaper to over-submit than
-        // to try to mirror openemr's structuredScopes / otherScopes /
+        // to try to mirror DCL's structuredScopes / otherScopes /
         // hiddenScopes categorization on the harness side.
         $consentCsrf = self::extractCsrfToken($browser, 'consent page');
         $consentAction = self::extractFormAction($browser, 'consent page');

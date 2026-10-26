@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Basic is used for handling concepts not yet defined in FHIR, narrative-only resources that don't map to an existing resource, and custom resources not appropriate for inclusion in the FHIR specification.
@@ -72,31 +72,31 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier assigned to the resource for business purposes, outside the context of FHIR.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * Identifies the 'type' of resource - equivalent to the resource name for other resources.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Identifies the patient, practitioner, device or any other resource that is the "focus" of this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * Identifies when the resource was first created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $created = null;
 
     /**
      * Indicates who was responsible for creating the resource instance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $author = null;
 
@@ -107,7 +107,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier assigned to the resource for business purposes, outside the context of FHIR.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -116,7 +116,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifier assigned to the resource for business purposes, outside the context of FHIR.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -127,7 +127,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the 'type' of resource - equivalent to the resource name for other resources.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -136,7 +136,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the 'type' of resource - equivalent to the resource name for other resources.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -147,7 +147,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient, practitioner, device or any other resource that is the "focus" of this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -156,7 +156,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies the patient, practitioner, device or any other resource that is the "focus" of this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -167,7 +167,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies when the resource was first created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getCreated()
     {
@@ -176,7 +176,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Identifies when the resource was first created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $created
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $created
      * @return $this
      */
     public function setCreated($created)
@@ -187,7 +187,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who was responsible for creating the resource instance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAuthor()
     {
@@ -196,7 +196,7 @@ class FHIRBasic extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates who was responsible for creating the resource instance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function setAuthor($author)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
@@ -72,208 +72,208 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this observation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.  For example, a MedicationRequest may require a patient to have laboratory test performed before  it is dispensed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $basedOn = [];
 
     /**
      * A larger event of which this particular Observation is a component or step.  For example,  an observation as part of a procedure.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * The status of the result value.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus
      */
     public $status = null;
 
     /**
      * A code that classifies the general type of observation being made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = [];
 
     /**
      * Describes what was observed. Sometimes this is called the observation "name".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * The patient, or group of patients, location, or device this observation is about and into whose record the observation is placed. If the actual focus of the observation is different from the subject (or a sample of, part, or region of the subject), the `focus` element or the `code` itself specifies the actual focus of the observation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The actual focus of an observation when it is not the patient of record representing something or someone associated with the patient such as a spouse, parent, fetus, or donor. For example, fetus observations in a mother's record.  The focus of an observation could also be an existing condition,  an intervention, the subject's diet,  another observation of the subject,  or a body structure such as tumor or implanted device.   An example use case would be using the Observation resource to capture whether the mother is trained to change her child's tracheostomy tube. In this example, the child is the patient of record and the mother is the focus.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $focus = [];
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $encounter = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $effectiveTiming = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $effectiveInstant = null;
 
     /**
      * The date and time this version of the observation was made available to providers, typically after the results have been reviewed and verified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $issued = null;
 
     /**
      * Who was responsible for asserting the observed value as "true".
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $performer = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity|null
      */
     public $valueQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public $valueCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString|null
      */
     public $valueString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean|null
      */
     public $valueBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger|null
      */
     public $valueInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange|null
      */
     public $valueRange = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRatio|null
      */
     public $valueRatio = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRSampledData|null
      */
     public $valueSampledData = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime|null
      */
     public $valueTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime|null
      */
     public $valueDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod|null
      */
     public $valuePeriod = null;
 
     /**
      * Provides a reason why the expected value in the element Observation.value[x] is missing.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public $dataAbsentReason = null;
 
     /**
      * A categorical assessment of an observation value.  For example, high, low, normal.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $interpretation = [];
 
     /**
      * Comments about the observation or the results.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Indicates the site on the subject's body where the observation was made (i.e. the target site).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $bodySite = null;
 
     /**
      * Indicates the mechanism used to perform the observation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $method = null;
 
     /**
      * The specimen that was used when this observation was made.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $specimen = null;
 
     /**
      * The device used to generate the observation data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $device = null;
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an "OR".   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
      */
     public $referenceRange = [];
 
     /**
      * This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $hasMember = [];
 
     /**
      * The target resource that represents a measurement from which this observation value is derived. For example, a calculated anion gap or a fetal measurement based on an ultrasound image.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $derivedFrom = [];
 
     /**
      * Some observations have multiple component observations.  These component observations are expressed as separate code value pairs that share the same attributes.  Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent[]
      */
     public $component = [];
 
@@ -284,7 +284,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this observation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -293,7 +293,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A unique identifier assigned to this observation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -304,7 +304,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.  For example, a MedicationRequest may require a patient to have laboratory test performed before  it is dispensed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
     {
@@ -313,7 +313,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.  For example, a MedicationRequest may require a patient to have laboratory test performed before  it is dispensed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $basedOn
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
     public function addBasedOn($basedOn)
@@ -324,7 +324,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular Observation is a component or step.  For example,  an observation as part of a procedure.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -333,7 +333,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A larger event of which this particular Observation is a component or step.  For example,  an observation as part of a procedure.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -344,7 +344,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the result value.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus
      */
     public function getStatus()
     {
@@ -353,7 +353,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the result value.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRObservationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRObservationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -364,7 +364,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the general type of observation being made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCategory()
     {
@@ -373,7 +373,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code that classifies the general type of observation being made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -384,7 +384,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes what was observed. Sometimes this is called the observation "name".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -393,7 +393,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Describes what was observed. Sometimes this is called the observation "name".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -404,7 +404,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient, or group of patients, location, or device this observation is about and into whose record the observation is placed. If the actual focus of the observation is different from the subject (or a sample of, part, or region of the subject), the `focus` element or the `code` itself specifies the actual focus of the observation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -413,7 +413,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The patient, or group of patients, location, or device this observation is about and into whose record the observation is placed. If the actual focus of the observation is different from the subject (or a sample of, part, or region of the subject), the `focus` element or the `code` itself specifies the actual focus of the observation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -424,7 +424,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual focus of an observation when it is not the patient of record representing something or someone associated with the patient such as a spouse, parent, fetus, or donor. For example, fetus observations in a mother's record.  The focus of an observation could also be an existing condition,  an intervention, the subject's diet,  another observation of the subject,  or a body structure such as tumor or implanted device.   An example use case would be using the Observation resource to capture whether the mother is trained to change her child's tracheostomy tube. In this example, the child is the patient of record and the mother is the focus.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getFocus()
     {
@@ -433,7 +433,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The actual focus of an observation when it is not the patient of record representing something or someone associated with the patient such as a spouse, parent, fetus, or donor. For example, fetus observations in a mother's record.  The focus of an observation could also be an existing condition,  an intervention, the subject's diet,  another observation of the subject,  or a body structure such as tumor or implanted device.   An example use case would be using the Observation resource to capture whether the mother is trained to change her child's tracheostomy tube. In this example, the child is the patient of record and the mother is the focus.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $focus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $focus
      * @return $this
      */
     public function addFocus($focus)
@@ -444,7 +444,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getEncounter()
     {
@@ -453,7 +453,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $encounter
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $encounter
      * @return $this
      */
     public function setEncounter($encounter)
@@ -463,7 +463,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
     {
@@ -471,7 +471,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
     public function setEffectiveDateTime($effectiveDateTime)
@@ -481,7 +481,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -489,7 +489,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -499,7 +499,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getEffectiveTiming()
     {
@@ -507,7 +507,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $effectiveTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $effectiveTiming
      * @return $this
      */
     public function setEffectiveTiming($effectiveTiming)
@@ -517,7 +517,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getEffectiveInstant()
     {
@@ -525,7 +525,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $effectiveInstant
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $effectiveInstant
      * @return $this
      */
     public function setEffectiveInstant($effectiveInstant)
@@ -536,7 +536,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time this version of the observation was made available to providers, typically after the results have been reviewed and verified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getIssued()
     {
@@ -545,7 +545,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The date and time this version of the observation was made available to providers, typically after the results have been reviewed and verified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $issued
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $issued
      * @return $this
      */
     public function setIssued($issued)
@@ -556,7 +556,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who was responsible for asserting the observed value as "true".
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPerformer()
     {
@@ -565,7 +565,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Who was responsible for asserting the observed value as "true".
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $performer
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -575,7 +575,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity|null
      */
     public function getValueQuantity()
     {
@@ -583,7 +583,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity|null $valueQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity|null $valueQuantity
      * @return $this
      */
     public function setValueQuantity($valueQuantity)
@@ -593,7 +593,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public function getValueCodeableConcept()
     {
@@ -601,7 +601,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $valueCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $valueCodeableConcept
      * @return $this
      */
     public function setValueCodeableConcept($valueCodeableConcept)
@@ -611,7 +611,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString|null
      */
     public function getValueString()
     {
@@ -619,7 +619,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString|null $valueString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString|null $valueString
      * @return $this
      */
     public function setValueString($valueString)
@@ -629,7 +629,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean|null
      */
     public function getValueBoolean()
     {
@@ -637,7 +637,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean|null $valueBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean|null $valueBoolean
      * @return $this
      */
     public function setValueBoolean($valueBoolean)
@@ -647,7 +647,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger|null
      */
     public function getValueInteger()
     {
@@ -655,7 +655,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger|null $valueInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger|null $valueInteger
      * @return $this
      */
     public function setValueInteger($valueInteger)
@@ -665,7 +665,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange|null
      */
     public function getValueRange()
     {
@@ -673,7 +673,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange|null $valueRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange|null $valueRange
      * @return $this
      */
     public function setValueRange($valueRange)
@@ -683,7 +683,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRatio|null
      */
     public function getValueRatio()
     {
@@ -691,7 +691,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRatio|null $valueRatio
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRatio|null $valueRatio
      * @return $this
      */
     public function setValueRatio($valueRatio)
@@ -701,7 +701,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRSampledData|null
      */
     public function getValueSampledData()
     {
@@ -709,7 +709,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRSampledData|null $valueSampledData
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRSampledData|null $valueSampledData
      * @return $this
      */
     public function setValueSampledData($valueSampledData)
@@ -719,7 +719,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime|null
      */
     public function getValueTime()
     {
@@ -727,7 +727,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime|null $valueTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime|null $valueTime
      * @return $this
      */
     public function setValueTime($valueTime)
@@ -737,7 +737,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime|null
      */
     public function getValueDateTime()
     {
@@ -745,7 +745,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime|null $valueDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime|null $valueDateTime
      * @return $this
      */
     public function setValueDateTime($valueDateTime)
@@ -755,7 +755,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod|null
      */
     public function getValuePeriod()
     {
@@ -763,7 +763,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod|null $valuePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod|null $valuePeriod
      * @return $this
      */
     public function setValuePeriod($valuePeriod)
@@ -774,7 +774,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a reason why the expected value in the element Observation.value[x] is missing.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null
      */
     public function getDataAbsentReason()
     {
@@ -783,7 +783,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Provides a reason why the expected value in the element Observation.value[x] is missing.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $dataAbsentReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept|null $dataAbsentReason
      * @return $this
      */
     public function setDataAbsentReason($dataAbsentReason)
@@ -794,7 +794,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A categorical assessment of an observation value.  For example, high, low, normal.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getInterpretation()
     {
@@ -803,7 +803,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A categorical assessment of an observation value.  For example, high, low, normal.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $interpretation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $interpretation
      * @return $this
      */
     public function addInterpretation($interpretation)
@@ -814,7 +814,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments about the observation or the results.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -823,7 +823,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Comments about the observation or the results.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -834,7 +834,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the site on the subject's body where the observation was made (i.e. the target site).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite()
     {
@@ -843,7 +843,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the site on the subject's body where the observation was made (i.e. the target site).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function setBodySite($bodySite)
@@ -854,7 +854,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the mechanism used to perform the observation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMethod()
     {
@@ -863,7 +863,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the mechanism used to perform the observation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
     public function setMethod($method)
@@ -874,7 +874,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specimen that was used when this observation was made.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSpecimen()
     {
@@ -883,7 +883,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The specimen that was used when this observation was made.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $specimen
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $specimen
      * @return $this
      */
     public function setSpecimen($specimen)
@@ -894,7 +894,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device used to generate the observation data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDevice()
     {
@@ -903,7 +903,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The device used to generate the observation data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $device
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function setDevice($device)
@@ -914,7 +914,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an "OR".   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
      */
     public function getReferenceRange()
     {
@@ -923,7 +923,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an "OR".   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange $referenceRange
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationReferenceRange $referenceRange
      * @return $this
      */
     public function addReferenceRange($referenceRange)
@@ -934,7 +934,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getHasMember()
     {
@@ -943,7 +943,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $hasMember
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $hasMember
      * @return $this
      */
     public function addHasMember($hasMember)
@@ -954,7 +954,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The target resource that represents a measurement from which this observation value is derived. For example, a calculated anion gap or a fetal measurement based on an ultrasound image.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDerivedFrom()
     {
@@ -963,7 +963,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The target resource that represents a measurement from which this observation value is derived. For example, a calculated anion gap or a fetal measurement based on an ultrasound image.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $derivedFrom
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $derivedFrom
      * @return $this
      */
     public function addDerivedFrom($derivedFrom)
@@ -974,7 +974,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Some observations have multiple component observations.  These component observations are expressed as separate code value pairs that share the same attributes.  Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent[]
      */
     public function getComponent()
     {
@@ -983,7 +983,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Some observations have multiple component observations.  These component observations are expressed as separate code value pairs that share the same attributes.  Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent $component
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRObservation\FHIRObservationComponent $component
      * @return $this
      */
     public function addComponent($component)

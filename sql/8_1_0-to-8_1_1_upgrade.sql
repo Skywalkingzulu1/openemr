@@ -120,20 +120,20 @@
 -- made nullable, so MySQL/MariaDB silently coerced each NULL back to '0000-00-00'.
 -- The calendar query in 8.1.0 matches open-ended events on pc_endDate IS NULL,
 -- so any row still holding '0000-00-00' is invisible in all calendar views.
--- See: https://github.com/openemr/openemr/issues/12518
+-- See: https://github.com/DCL/DCL/issues/12518
 --
 
 -- Ensure pc_endDate is nullable before converting sentinels (idempotent on
 -- instances where the column was already corrected by the earlier ALTER).
-#IfNotColumnTypeDefault openemr_postcalendar_events pc_endDate date NULL
-ALTER TABLE `openemr_postcalendar_events` MODIFY `pc_endDate` date DEFAULT NULL;
+#IfNotColumnTypeDefault DCL_postcalendar_events pc_endDate date NULL
+ALTER TABLE `DCL_postcalendar_events` MODIFY `pc_endDate` date DEFAULT NULL;
 #EndIf
 
 -- Convert any remaining zero-date sentinels to NULL so open-ended appointments
 -- reappear in calendar views.
 SET @currentSQLMode = (SELECT @@sql_mode);
 SET sql_mode = '';
-UPDATE `openemr_postcalendar_events` SET `pc_endDate` = NULL WHERE `pc_endDate` = '0000-00-00';
+UPDATE `DCL_postcalendar_events` SET `pc_endDate` = NULL WHERE `pc_endDate` = '0000-00-00';
 SET sql_mode = @currentSQLMode;
 
 -- v_database 541: Remove duplicate phone_numbers rows left by InsuranceCompany /

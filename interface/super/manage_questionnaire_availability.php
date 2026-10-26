@@ -6,24 +6,24 @@
  * Entry point only: the URL the Availability tab under Questionnaires loads. The page itself
  * is QuestionnaireAvailabilityController and templates/super/questionnaire_availability.html.twig.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require_once('../globals.php');
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Controllers\Interface\Super\QuestionnaireAvailabilityController;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityLookups;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Controllers\Interface\Super\QuestionnaireAvailabilityController;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityLookups;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
 
 $controller = new QuestionnaireAvailabilityController(
     new QuestionnaireAvailabilityService(),

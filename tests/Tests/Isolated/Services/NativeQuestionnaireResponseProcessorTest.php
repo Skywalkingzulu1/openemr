@@ -8,17 +8,17 @@
  * the one endpoint that persists untrusted FHIR QuestionnaireResponse payloads, so a
  * regression to any of them should fail here.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services {
+namespace DCL\Services {
 
     // Stub the unqualified xlt() the processor uses for its messages, in the same namespace as
     // the code under test so PHP resolves to this before the global fallback. Guarded so the
     // isolated suite can share a process without collision.
-    if (!function_exists('OpenEMR\\Services\\xlt')) {
+    if (!function_exists('DCL\\Services\\xlt')) {
         function xlt(string $s): string
         {
             return $s;
@@ -26,10 +26,10 @@ namespace OpenEMR\Services {
     }
 }
 
-namespace OpenEMR\Tests\Isolated\Services {
+namespace DCL\Tests\Isolated\Services {
 
-    use OpenEMR\Services\InvalidQuestionnaireResponseException;
-    use OpenEMR\Services\NativeQuestionnaireResponseProcessor;
+    use DCL\Services\InvalidQuestionnaireResponseException;
+    use DCL\Services\NativeQuestionnaireResponseProcessor;
     use PHPUnit\Framework\Attributes\DataProvider;
     use PHPUnit\Framework\TestCase;
 

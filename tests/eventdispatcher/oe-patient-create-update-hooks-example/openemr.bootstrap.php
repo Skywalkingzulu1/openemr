@@ -7,16 +7,16 @@
  * to listen for patient-update and patient-create events and perform additional
  * actions.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ken Chapple <ken@mi-squared.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Patient\PatientCreatedEvent;
-use OpenEMR\Events\Patient\PatientUpdatedEvent;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Patient\PatientCreatedEvent;
+use DCL\Events\Patient\PatientUpdatedEvent;
 
 /**
  * Get new or updated patient data and do something with it

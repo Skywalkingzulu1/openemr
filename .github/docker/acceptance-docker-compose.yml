@@ -1,5 +1,5 @@
 # Compose override for artifact acceptance testing against a Docker Hub
-# openemr image (or a locally-built image, for PR validation — Phase 2.5).
+# DCL image (or a locally-built image, for PR validation — Phase 2.5).
 #
 # Layers on top of docker/production/docker-compose.yml — same production
 # stack shape end users deploy, with three overrides:
@@ -15,16 +15,16 @@
 #      overall startup budget.
 #
 # Usage:
-#   OPENEMR_TAG=latest docker compose \
+#   DCL_TAG=latest docker compose \
 #     -f docker/production/docker-compose.yml \
 #     -f .github/docker/acceptance-docker-compose.yml \
-#     -p openemr-acceptance \
+#     -p DCL-acceptance \
 #     up --detach --wait --wait-timeout 900
 #
 # ACCEPTANCE_ARTIFACT_URL for the test suite: http://localhost:8580
 services:
-  openemr:
-    image: openemr/openemr:${OPENEMR_TAG:-latest}
+  DCL:
+    image: DCL/DCL:${DCL_TAG:-latest}
     ports:
     - '8580:80'
     - '8543:443'
@@ -35,7 +35,7 @@ services:
     # setup.php). Acceptance tests should fire only after the installer has
     # actually finished; require the login-page redirect target as proof.
     #
-    # Uses BusyBox-compatible short-option grep (`-iq`) since the openemr
+    # Uses BusyBox-compatible short-option grep (`-iq`) since the DCL
     # image is Alpine-based and its grep doesn't support GNU long options.
     healthcheck:
       test:

@@ -3,30 +3,30 @@
 /**
  * dupecheck index.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  * @deprecated Its unlikely these files are used as the functionality has been replaced by the "Merge Patients" feature in the patient summary screen.
  */
 class DupeCheckIndexIsDeprecated
 {
     public function __construct()
     {
-        trigger_error("The dupecheck module is deprecated and will be removed in a future version of OpenEMR. Please use the 'Merge Patients' feature in the patient summary screen instead.", E_USER_DEPRECATED);
+        trigger_error("The dupecheck module is deprecated and will be removed in a future version of DCL. Please use the 'Merge Patients' feature in the patient summary screen instead.", E_USER_DEPRECATED);
     }
 }
 
 require_once("../../../interface/globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 if (!empty($_POST)) {
@@ -130,7 +130,7 @@ if ($parameters['go'] == "Go") {
     // counter that gathers duplicates into groups
     $dupecount = 0;
 
-    // for EACH patient in OpenEMR find potential matches
+    // for EACH patient in DCL find potential matches
     $sqlstmt = "select id, pid, fname, lname, dob, sex, ss from patient_data";
     $orderby = match ($parameters['sortby']) {
         'dob' => " ORDER BY dob",
@@ -251,7 +251,7 @@ $(function () {
         return true;
     });
 
-    // pop up an OpenEMR window directly to the patient info
+    // pop up an DCL window directly to the patient info
     var moreinfoWin = null;
     $(".moreinfo").on("click", function(evt) {
         if (moreinfoWin) { moreinfoWin.close(); }

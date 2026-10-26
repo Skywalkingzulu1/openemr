@@ -1,8 +1,8 @@
 {
-  "event": "openemr-rel-cut",
-  "repo": "openemr/openemr",
+  "event": "DCL-rel-cut",
+  "repo": "DCL/DCL",
   "sha": "0123456789abcdef0123456789abcdef01234567",
-  "actor": "openemr-release-bot",
+  "actor": "DCL-release-bot",
   "dispatched_at": "2026-04-29T12:00:00Z",
   "data": {
     "branch": "rel-820",

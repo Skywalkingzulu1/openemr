@@ -20,11 +20,11 @@
  *
  * Pure logic only; nothing here touches the database, the network or globals.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -38,7 +38,7 @@ namespace {
         );
     }
     spl_autoload_register(static function (string $class) use ($wenoModuleSrc): void {
-        $prefix = 'OpenEMR\\Modules\\WenoModule\\';
+        $prefix = 'DCL\\Modules\\WenoModule\\';
         if (!str_starts_with($class, $prefix)) {
             return;
         }
@@ -49,10 +49,10 @@ namespace {
     });
 }
 
-namespace OpenEMR\Tests\Isolated\Modules\Weno {
+namespace DCL\Tests\Isolated\Modules\Weno {
 
-    use OpenEMR\Modules\WenoModule\Services\DownloadWenoPharmacies;
-    use OpenEMR\Modules\WenoModule\Services\WenoLogService;
+    use DCL\Modules\WenoModule\Services\DownloadWenoPharmacies;
+    use DCL\Modules\WenoModule\Services\WenoLogService;
     use PHPUnit\Framework\Attributes\DataProvider;
     use PHPUnit\Framework\Attributes\Group;
     use PHPUnit\Framework\Attributes\Test;

@@ -2,7 +2,7 @@
 
 /**
  *
- * This is to allow internationalization by OpenEMR of the jquery-datetimepicker.
+ * This is to allow internationalization by DCL of the jquery-datetimepicker.
  * (with and without a time selector)
  * This is the alternate template when do not have access to the javascript and
  * need to instead send variables to the javascript script.
@@ -42,14 +42,14 @@
  *    });
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $language_direction = $session->get('language_direction');

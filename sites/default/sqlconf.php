@@ -1,15 +1,14 @@
 <?php
-
-//  OpenEMR
+//  DCL
 //  MySQL Config
 
-$host   = 'localhost';
-$port   = '3306';
-$login  = 'openemr';
-$pass   = 'openemr';
-$dbase  = 'openemr';
+$host	= '127.0.0.1';
+$port	= '8320';
+$login	= 'DCL';
+$pass	= 'DCL';
+$dbase	= 'DCL';
 
-$sqlconf = [];
+$sqlconf = array();
 global $sqlconf;
 $sqlconf["host"]= $host;
 $sqlconf["port"] = $port;
@@ -21,7 +20,8 @@ $sqlconf["dbase"] = $dbase;
 //////////////////////////
 //////////////////////////
 //////DO NOT TOUCH THIS///
-$config = 0; /////////////
+$config = 1; /////////////
 //////////////////////////
 //////////////////////////
 //////////////////////////
+?>

@@ -1,19 +1,19 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Tests\Api\ApiTestClient;
+use DCL\Tests\Api\ApiTestClient;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Capability FHIR Endpoint Test Cases.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class IntrospectionTest extends TestCase
 {
@@ -24,7 +24,7 @@ class IntrospectionTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->client = new ApiTestClient($baseUrl, false);
     }
 
@@ -38,10 +38,10 @@ class IntrospectionTest extends TestCase
     {
         if ($type == 'private') {
             // set up private client
-            $actualValue = $this->client->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+            $actualValue = $this->client->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
         } else {
             // set up public client
-            $actualValue = $this->client->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT, [], "public");
+            $actualValue = $this->client->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT, [], "public");
         }
         $this->assertEquals(200, $actualValue->getStatusCode(), "Client authorization returned the wrong status code");
         $this->assertGreaterThan(10, strlen((string) $this->client->getIdToken()), "ID token was not sent via client authorization");

@@ -6,14 +6,14 @@
 // modify it under the terms of the GNU General Public License
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\CodeManager;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDiagnosis
+ * Description of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaDiagnosis
  *
  * @author aron
  */

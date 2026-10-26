@@ -1,5 +1,5 @@
 /**
- * Integration tests for jsPDF in OpenEMR
+ * Integration tests for jsPDF in DCL
  *
  * These tests use the REAL jsPDF library to verify compatibility.
  * Run with: npm run test:js -- --testPathPattern="jspdf-integration"
@@ -31,7 +31,7 @@ describe('jsPDF Real Library Integration', () => {
         });
     });
 
-    describe('Page Dimensions (used by OpenEMR)', () => {
+    describe('Page Dimensions (used by DCL)', () => {
         test('internal.pageSize.height returns a number', () => {
             const height = doc.internal.pageSize.height;
             expect(typeof height).toBe('number');
@@ -63,7 +63,7 @@ describe('jsPDF Real Library Integration', () => {
         });
     });
 
-    describe('Page Management (used by OpenEMR)', () => {
+    describe('Page Management (used by DCL)', () => {
         test('addPage() method exists', () => {
             expect(typeof doc.addPage).toBe('function');
         });
@@ -80,7 +80,7 @@ describe('jsPDF Real Library Integration', () => {
         });
     });
 
-    describe('Image Handling (used by OpenEMR)', () => {
+    describe('Image Handling (used by DCL)', () => {
         test('addImage() method exists', () => {
             expect(typeof doc.addImage).toBe('function');
         });
@@ -98,7 +98,7 @@ describe('jsPDF Real Library Integration', () => {
         test('addImage with JPEG format parameter', () => {
             const tinyPixel = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg==';
 
-            // OpenEMR uses 'JPEG' format string
+            // DCL uses 'JPEG' format string
             expect(() => {
                 doc.addImage(tinyPixel, 'JPEG', 0, 0, 210, 297);
             }).not.toThrow();
@@ -109,14 +109,14 @@ describe('jsPDF Real Library Integration', () => {
             const pageWidth = doc.internal.pageSize.width;
             const pageHeight = doc.internal.pageSize.height;
 
-            // This is exactly how OpenEMR uses addImage
+            // This is exactly how DCL uses addImage
             expect(() => {
                 doc.addImage(tinyPixel, 'JPEG', 0, 0, pageWidth, pageHeight);
             }).not.toThrow();
         });
     });
 
-    describe('Output Generation (used by OpenEMR)', () => {
+    describe('Output Generation (used by DCL)', () => {
         test('output() method exists', () => {
             expect(typeof doc.output).toBe('function');
         });
@@ -152,13 +152,13 @@ describe('jsPDF Real Library Integration', () => {
         });
     });
 
-    describe('Security Settings (used by OpenEMR)', () => {
+    describe('Security Settings (used by DCL)', () => {
         test('internal.write object exists', () => {
             expect(doc.internal.write).toBeDefined();
         });
 
         test('isEvalSupported property can be set to false', () => {
-            // OpenEMR sets this for security
+            // DCL sets this for security
             expect(() => {
                 doc.internal.write.isEvalSupported = false;
             }).not.toThrow();
@@ -171,7 +171,7 @@ describe('jsPDF Real Library Integration', () => {
         });
     });
 
-    describe('Full OpenEMR Workflow Simulation', () => {
+    describe('Full DCL Workflow Simulation', () => {
         test('complete TIFF-to-PDF conversion workflow', () => {
             // Simulate what convertImagesToPdf does in messageUI.php
             // Using the same valid 1x1 red pixel PNG for both pages

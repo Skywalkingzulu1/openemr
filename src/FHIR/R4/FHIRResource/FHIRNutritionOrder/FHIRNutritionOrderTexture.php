@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
+namespace DCL\FHIR\R4\FHIRResource\FHIRNutritionOrder;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRNutritionOrder;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
@@ -71,13 +71,13 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Any texture modifications (for solid foods) that should be made, e.g. easy to chew, chopped, ground, and pureed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $modifier = null;
 
     /**
      * The food type(s) (e.g. meats, all foods)  that the texture modification applies to.  This could be all foods types.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $foodType = null;
 
@@ -88,7 +88,7 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Any texture modifications (for solid foods) that should be made, e.g. easy to chew, chopped, ground, and pureed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getModifier()
     {
@@ -97,7 +97,7 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Any texture modifications (for solid foods) that should be made, e.g. easy to chew, chopped, ground, and pureed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
     public function setModifier($modifier)
@@ -108,7 +108,7 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The food type(s) (e.g. meats, all foods)  that the texture modification applies to.  This could be all foods types.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getFoodType()
     {
@@ -117,7 +117,7 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The food type(s) (e.g. meats, all foods)  that the texture modification applies to.  This could be all foods types.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $foodType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $foodType
      * @return $this
      */
     public function setFoodType($foodType)

@@ -3,20 +3,20 @@
 /**
  * CCR Script.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Garden State Health Systems <http://www.gshsys.com/>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2010 Garden State Health Systems <http://www.gshsys.com/>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 use PHPMailer\PHPMailer\PHPMailer;
 
 // check if using the patient portal
@@ -25,7 +25,7 @@ $notPatientPortal = false;
 if (isset($_GET['portal_auth'])) {
     $landingpage = "../portal/index.php";
 
-    // Will start the (patient) portal OpenEMR session/cookie.
+    // Will start the (patient) portal DCL session/cookie.
     //  Need access to classes, so run autoloader now instead of in globals.php.
     require_once(__DIR__ . "/../vendor/autoload.php");
     $session = SessionWrapperFactory::getInstance()->getActiveSession();

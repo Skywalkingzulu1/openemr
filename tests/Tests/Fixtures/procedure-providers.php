@@ -3,9 +3,9 @@
 /**
  * Test fixture data.
  *
- * @package OpenEMR
- * @link    https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package DCL
+ * @link    https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -16,7 +16,7 @@ return [
         'ppid' => null,
         'name' => 'test-fixture-Generic Lab',
         'npi' => '1234567890',
-        'send_app_id' => 'OpenEMR',
+        'send_app_id' => 'DCL',
         'send_fac_id' => 'FAC001',
         'recv_app_id' => 'LabSystem',
         'recv_fac_id' => 'LAB001',
@@ -34,7 +34,7 @@ return [
         'ppid' => null,
         'name' => 'test-fixture-Ammon Lab',
         'npi' => '1234567891',
-        'send_app_id' => 'OpenEMR',
+        'send_app_id' => 'DCL',
         'send_fac_id' => 'FAC002',
         'recv_app_id' => 'AmmonLab',
         'recv_fac_id' => 'AMMON',
@@ -52,7 +52,7 @@ return [
         'ppid' => null,
         'name' => 'test-fixture-LabCorp Laboratory',
         'npi' => '1234567892',
-        'send_app_id' => 'OpenEMR',
+        'send_app_id' => 'DCL',
         'send_fac_id' => 'FAC003',
         'recv_app_id' => 'LabCorp',
         'recv_fac_id' => 'LABCORP',
@@ -70,7 +70,7 @@ return [
         'ppid' => null,
         'name' => 'test-fixture-Quest Diagnostics',
         'npi' => '1234567893',
-        'send_app_id' => 'OpenEMR',
+        'send_app_id' => 'DCL',
         'send_fac_id' => 'FAC004',
         'recv_app_id' => 'QuestDx',
         'recv_fac_id' => 'QUEST',

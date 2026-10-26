@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The detailed description of a substance, typically at a level beyond what is used for prescribing.
@@ -71,49 +71,49 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 {
     /**
      * Stereochemistry type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $stereochemistry = null;
 
     /**
      * Optical activity type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $opticalActivity = null;
 
     /**
      * Molecular formula.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $molecularFormula = null;
 
     /**
      * Specified per moiety according to the Hill system, i.e. first C, then H, then alphabetical, each moiety separated by a dot.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $molecularFormulaByMoiety = null;
 
     /**
      * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope[]
      */
     public $isotope = [];
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      */
     public $molecularWeight = null;
 
     /**
      * Supporting literature.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $source = [];
 
     /**
      * Molecular structural representation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation[]
      */
     public $representation = [];
 
@@ -124,7 +124,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Stereochemistry type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getStereochemistry()
     {
@@ -133,7 +133,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Stereochemistry type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $stereochemistry
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $stereochemistry
      * @return $this
      */
     public function setStereochemistry($stereochemistry)
@@ -144,7 +144,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Optical activity type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOpticalActivity()
     {
@@ -153,7 +153,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Optical activity type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $opticalActivity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $opticalActivity
      * @return $this
      */
     public function setOpticalActivity($opticalActivity)
@@ -164,7 +164,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Molecular formula.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMolecularFormula()
     {
@@ -173,7 +173,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Molecular formula.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $molecularFormula
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $molecularFormula
      * @return $this
      */
     public function setMolecularFormula($molecularFormula)
@@ -184,7 +184,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Specified per moiety according to the Hill system, i.e. first C, then H, then alphabetical, each moiety separated by a dot.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMolecularFormulaByMoiety()
     {
@@ -193,7 +193,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Specified per moiety according to the Hill system, i.e. first C, then H, then alphabetical, each moiety separated by a dot.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $molecularFormulaByMoiety
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $molecularFormulaByMoiety
      * @return $this
      */
     public function setMolecularFormulaByMoiety($molecularFormulaByMoiety)
@@ -204,7 +204,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope[]
      */
     public function getIsotope()
     {
@@ -213,7 +213,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope $isotope
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope $isotope
      * @return $this
      */
     public function addIsotope($isotope)
@@ -224,7 +224,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      */
     public function getMolecularWeight()
     {
@@ -233,7 +233,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
      * @return $this
      */
     public function setMolecularWeight($molecularWeight)
@@ -244,7 +244,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Supporting literature.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSource()
     {
@@ -253,7 +253,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Supporting literature.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $source
      * @return $this
      */
     public function addSource($source)
@@ -264,7 +264,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Molecular structural representation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation[]
      */
     public function getRepresentation()
     {
@@ -273,7 +273,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement implements
 
     /**
      * Molecular structural representation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation $representation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation $representation
      * @return $this
      */
     public function addRepresentation($representation)

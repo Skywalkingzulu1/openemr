@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Common\Database {
+namespace DCL\Common\Database {
     class QueryUtils
     {
         /**
@@ -16,7 +16,7 @@ namespace OpenEMR\Common\Database {
 
 namespace {
 
-    use OpenEMR\Common\Database\QueryUtils;
+    use DCL\Common\Database\QueryUtils;
 
     // Static-method sink. Must flag the reserved identifier.
     QueryUtils::fetchRecords('SELECT * FROM contact_telecom ORDER BY rank ASC');

@@ -19,29 +19,29 @@
  *      legacy SQL/log calls so we can assert that the dry-run path
  *      doesn't insert log rows and the happy path does.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS\Notification;
+namespace DCL\Tests\Isolated\Modules\FaxSMS\Notification;
 
 // Spy lives in the global namespace (declared in runner_test_stubs.php
 // via bracketed namespace) so the in-namespace function stubs can write
 // to it. Alias it locally for terse references in the test class.
 use AppointmentNotificationRunnerTestSpy as RunnerTestSpy;
-use OpenEMR\Modules\FaxSMS\Controller\AppDispatch;
-use OpenEMR\Modules\FaxSMS\Controller\EmailClient;
-use OpenEMR\Modules\FaxSMS\Enums\NotificationChannel;
-use OpenEMR\Modules\FaxSMS\Exception\EmailSendFailedException;
-use OpenEMR\Modules\FaxSMS\Exception\InvalidEmailAddressException;
-use OpenEMR\Modules\FaxSMS\Exception\SmtpNotConfiguredException;
-use OpenEMR\Modules\FaxSMS\Notification\AppointmentNotificationRunner;
+use DCL\Modules\FaxSMS\Controller\AppDispatch;
+use DCL\Modules\FaxSMS\Controller\EmailClient;
+use DCL\Modules\FaxSMS\Enums\NotificationChannel;
+use DCL\Modules\FaxSMS\Exception\EmailSendFailedException;
+use DCL\Modules\FaxSMS\Exception\InvalidEmailAddressException;
+use DCL\Modules\FaxSMS\Exception\SmtpNotConfiguredException;
+use DCL\Modules\FaxSMS\Notification\AppointmentNotificationRunner;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Clock\ClockInterface;
@@ -55,7 +55,7 @@ use Psr\Clock\ClockInterface;
 // does via registerNamespaceIfNotExists(), so every Contracts/Enums/Controller/
 // Exception/Notification class the runner touches resolves on demand.
 spl_autoload_register(static function (string $class): void {
-    $prefix = 'OpenEMR\\Modules\\FaxSMS\\';
+    $prefix = 'DCL\\Modules\\FaxSMS\\';
     if (!str_starts_with($class, $prefix)) {
         return;
     }
@@ -70,7 +70,7 @@ spl_autoload_register(static function (string $class): void {
 
 // `text()` and the two procedural helpers (`cron_InsertNotificationLogEntryFaxsms`,
 // `rc_sms_notification_cron_update_entry`) are looked up unqualified by the
-// runner, which lands in OpenEMR\Modules\FaxSMS\Notification first. The
+// runner, which lands in DCL\Modules\FaxSMS\Notification first. The
 // stubs and shared spy state live in `runner_test_stubs.php` because that
 // file uses bracketed namespace syntax to declare symbols in both the
 // runner's namespace and global at once — not possible from this file's

@@ -28,14 +28,14 @@
  * chose. Converting a superglobal to filter_input() silences this rule while
  * moving the problem to a surface with no rule covering it.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PHPStan\Rules;
+namespace DCL\PHPStan\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\Variable;
@@ -65,9 +65,9 @@ class ForbiddenRequestGlobalsRule implements Rule
      * @var list<class-string>
      */
     private const ABSTRACTION_CLASSES = [
-        \OpenEMR\Common\Http\HttpRestRequest::class,
-        \OpenEMR\Common\Http\RawPostParser::class,
-        \OpenEMR\Core\OEEnvBag::class,
+        \DCL\Common\Http\HttpRestRequest::class,
+        \DCL\Common\Http\RawPostParser::class,
+        \DCL\Core\OEEnvBag::class,
     ];
 
     public function getNodeType(): string
@@ -111,8 +111,8 @@ class ForbiddenRequestGlobalsRule implements Rule
                     $superglobal,
                 ),
             )
-                ->identifier('openemr.forbiddenRequestGlobals')
-                ->tip('Get the request with OpenEMR\Common\Http\CurrentRequest::get(), or take one as a constructor parameter. Then read the bag matching the superglobal: $_GET -> $request->query->getString(), $_POST -> $request->request->getInt(), arrays -> $request->request->all(), $_FILES -> $request->files->get(), $_COOKIE -> $request->cookies->getString(), $_SERVER -> $request->server->getString() or a named accessor such as $request->getMethod(), HTTP headers -> $request->headers->get(). $_REQUEST has no equivalent bag: decide whether the value comes from the query string or the body and read that bag directly. Do not convert to filter_input() — it is not a valid target for this rule.')
+                ->identifier('DCL.forbiddenRequestGlobals')
+                ->tip('Get the request with DCL\Common\Http\CurrentRequest::get(), or take one as a constructor parameter. Then read the bag matching the superglobal: $_GET -> $request->query->getString(), $_POST -> $request->request->getInt(), arrays -> $request->request->all(), $_FILES -> $request->files->get(), $_COOKIE -> $request->cookies->getString(), $_SERVER -> $request->server->getString() or a named accessor such as $request->getMethod(), HTTP headers -> $request->headers->get(). $_REQUEST has no equivalent bag: decide whether the value comes from the query string or the body and read that bag directly. Do not convert to filter_input() — it is not a valid target for this rule.')
                 ->build(),
         ];
     }

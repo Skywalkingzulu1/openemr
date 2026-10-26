@@ -33,22 +33,22 @@
  *   are always available with git. No network calls (unlike
  *   ChangelogMutator's gh api dependency).
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release\Mutator;
+namespace DCL\Release\Mutator;
 
-use OpenEMR\Common\Command\ReleasePrep\MutatorContext;
-use OpenEMR\Common\Command\ReleasePrep\MutatorInterface;
-use OpenEMR\Common\Command\ReleasePrep\MutatorResult;
-use OpenEMR\Release\CompatibilityDeriver;
-use OpenEMR\Release\CompatibilityNotesRenderer;
+use DCL\Common\Command\ReleasePrep\MutatorContext;
+use DCL\Common\Command\ReleasePrep\MutatorInterface;
+use DCL\Common\Command\ReleasePrep\MutatorResult;
+use DCL\Release\CompatibilityDeriver;
+use DCL\Release\CompatibilityNotesRenderer;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 
@@ -56,7 +56,7 @@ final readonly class CompatibilityMutator implements MutatorInterface
 {
     private const RELATIVE_PATH = 'CHANGELOG.md';
     private const CI_RELATIVE_PATH = 'ci';
-    private const REPO = 'openemr/openemr';
+    private const REPO = 'DCL/DCL';
 
     public function __construct(
         private ?CompatibilityDeriver $deriver = null,
@@ -144,7 +144,7 @@ final readonly class CompatibilityMutator implements MutatorInterface
      */
     private function materializeCiDir(MutatorContext $context): array
     {
-        $tempDir = sys_get_temp_dir() . '/openemr-compat-mut-' . bin2hex(random_bytes(6));
+        $tempDir = sys_get_temp_dir() . '/DCL-compat-mut-' . bin2hex(random_bytes(6));
         if (!mkdir($tempDir . '/' . self::CI_RELATIVE_PATH, 0700, true)) {
             throw new \RuntimeException("Cannot create temp dir: {$tempDir}");
         }

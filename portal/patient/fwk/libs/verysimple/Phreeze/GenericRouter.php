@@ -2,7 +2,7 @@
 
 /** @package    verysimple::Phreeze */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 /**
  * Generic Router is an implementation of IRouter that uses patterns to connect

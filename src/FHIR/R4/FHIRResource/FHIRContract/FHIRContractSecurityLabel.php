@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,25 +71,25 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * Number used to link this term or term element to the applicable Security Label.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public $number = [];
 
     /**
      * Security label privacy tag that species the level of confidentiality protection required for this term and/or term elements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $classification = null;
 
     /**
      * Security label privacy tag that species the applicable privacy and security policies governing this term and/or term elements.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $category = [];
 
     /**
      * Security label privacy tag that species the manner in which term and/or term elements are to be protected.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public $control = [];
 
@@ -100,7 +100,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Number used to link this term or term element to the applicable Security Label.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt[]
      */
     public function getNumber()
     {
@@ -109,7 +109,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Number used to link this term or term element to the applicable Security Label.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $number
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $number
      * @return $this
      */
     public function addNumber($number)
@@ -120,7 +120,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Security label privacy tag that species the level of confidentiality protection required for this term and/or term elements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getClassification()
     {
@@ -129,7 +129,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Security label privacy tag that species the level of confidentiality protection required for this term and/or term elements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $classification
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $classification
      * @return $this
      */
     public function setClassification($classification)
@@ -140,7 +140,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Security label privacy tag that species the applicable privacy and security policies governing this term and/or term elements.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getCategory()
     {
@@ -149,7 +149,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Security label privacy tag that species the applicable privacy and security policies governing this term and/or term elements.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $category
      * @return $this
      */
     public function addCategory($category)
@@ -160,7 +160,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Security label privacy tag that species the manner in which term and/or term elements are to be protected.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding[]
      */
     public function getControl()
     {
@@ -169,7 +169,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * Security label privacy tag that species the manner in which term and/or term elements are to be protected.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $control
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $control
      * @return $this
      */
     public function addControl($control)

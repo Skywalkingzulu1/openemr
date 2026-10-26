@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @package   openemr
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\VendoredDriftIssue;
-use OpenEMR\Release\VendoredFileChecker;
+use DCL\Release\VendoredDriftIssue;
+use DCL\Release\VendoredFileChecker;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -52,8 +52,8 @@ final class VendoredFileCheckerTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->canonicalRoot = sys_get_temp_dir() . '/openemr-vendored-canon-' . bin2hex(random_bytes(8));
-        $this->consumerDir = sys_get_temp_dir() . '/openemr-vendored-consumer-' . bin2hex(random_bytes(8));
+        $this->canonicalRoot = sys_get_temp_dir() . '/DCL-vendored-canon-' . bin2hex(random_bytes(8));
+        $this->consumerDir = sys_get_temp_dir() . '/DCL-vendored-consumer-' . bin2hex(random_bytes(8));
         if (!mkdir($this->canonicalRoot, 0700, true) || !mkdir($this->consumerDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dirs');
         }
@@ -140,7 +140,7 @@ final class VendoredFileCheckerTest extends TestCase
         $this->writeCanonicalFixtures($this->consumerDir);
         file_put_contents(
             $this->consumerDir . '/src/TagVerifier.php',
-            sprintf(self::CANONICAL_PHP_TEMPLATE, 'OpenEMR\\ReleaseDocs\\Release'),
+            sprintf(self::CANONICAL_PHP_TEMPLATE, 'DCL\\ReleaseDocs\\Release'),
         );
 
         $issues = (new VendoredFileChecker($this->canonicalRoot, $this->consumerDir))->check();
@@ -154,7 +154,7 @@ final class VendoredFileCheckerTest extends TestCase
         $modified = str_replace(
             "return \$tag !== '';",
             "return true;",
-            sprintf(self::CANONICAL_PHP_TEMPLATE, 'OpenEMR\\Release'),
+            sprintf(self::CANONICAL_PHP_TEMPLATE, 'DCL\\Release'),
         );
         file_put_contents($this->consumerDir . '/src/TagVerifier.php', $modified);
 
@@ -245,7 +245,7 @@ final class VendoredFileCheckerTest extends TestCase
         $this->writeFile(
             $this->consumerDir,
             'src/Release/TagVerifier.php',
-            sprintf(self::CANONICAL_PHP_TEMPLATE, 'OpenEMR\\Release') . "\n// extra\n",
+            sprintf(self::CANONICAL_PHP_TEMPLATE, 'DCL\\Release') . "\n// extra\n",
         );
 
         $issues = (new VendoredFileChecker(
@@ -334,7 +334,7 @@ final class VendoredFileCheckerTest extends TestCase
         $extension = pathinfo($relativePath, PATHINFO_EXTENSION);
         return match ($extension) {
             'json' => self::CANONICAL_JSON,
-            'php' => sprintf(self::CANONICAL_PHP_TEMPLATE, 'OpenEMR\\Release'),
+            'php' => sprintf(self::CANONICAL_PHP_TEMPLATE, 'DCL\\Release'),
             default => "canonical:{$relativePath}\n",
         };
     }

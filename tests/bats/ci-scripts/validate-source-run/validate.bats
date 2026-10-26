@@ -116,11 +116,11 @@ teardown() {
     [[ "${output}" == *"::error::"*"docker-build-release.yml"* ]]
 }
 
-# --- multi-path EXPECTED_WORKFLOW_PATH (openemr/openemr#13973) ---
+# --- multi-path EXPECTED_WORKFLOW_PATH (DCL/DCL#13973) ---
 # Recovery workflows can accept semantically-equivalent producers via a
 # comma-separated EXPECTED_WORKFLOW_PATH. build-release.yml (manual
 # dispatch) and build-release-on-tag.yml (auto-fires on tag creation)
-# both produce the same openemr-release-candidate-<version> artifact
+# both produce the same DCL-release-candidate-<version> artifact
 # shape; the multi-path form lets acceptance-only.yml recover from
 # either. Single-path callers (docker sibling) still work unchanged
 # (list-of-1 case).
@@ -137,7 +137,7 @@ teardown() {
     [[ "${output}" != *"::error::"* ]]
 }
 
-@test "multi-path: accepts second path in the list (openemr/openemr#13973 regression guard for 8.4.0 ship)" {
+@test "multi-path: accepts second path in the list (DCL/DCL#13973 regression guard for 8.4.0 ship)" {
     # Simulates the exact 8.4.0 ship bypass source run:
     # source run produced by build-release-on-tag.yml (auto-fires on tag),
     # recovery workflow accepts both dispatch + on-tag variants. Before

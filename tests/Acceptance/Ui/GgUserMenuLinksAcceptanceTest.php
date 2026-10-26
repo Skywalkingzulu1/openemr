@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Acceptance\Ui;
+namespace DCL\Tests\Acceptance\Ui;
 
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-use OpenEMR\Tests\Acceptance\Support\BrowserSession;
-use OpenEMR\Tests\Acceptance\Support\PantherAcceptanceTestCase;
+use DCL\Tests\Acceptance\Support\BrowserSession;
+use DCL\Tests\Acceptance\Support\PantherAcceptanceTestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\Attributes\Group;
  *
  * Full port of the source-side menuLinkProvider — all five user-menu
  * links exercise post-login UI surface (not admin.php / not any surface
- * removed by docker/release/openemr.sh's post-configure cleanup), so
+ * removed by docker/release/DCL.sh's post-configure cleanup), so
  * every scenario carries meaningful signal against a booted release
  * artifact and none duplicate the coverage in E2eCriticalPathTest
  * (login + menu render only) or AaLoginAcceptanceTest (wrong-password
@@ -44,8 +44,8 @@ use PHPUnit\Framework\Attributes\Group;
  *   - Settings       → 'User Settings' tab      (PORTED)
  *   - Change Password → 'Change Password' tab    (PORTED)
  *   - MFA Management → 'Manage Multi Factor Authentication' tab (PORTED)
- *   - About OpenEMR  → 'About OpenEMR' tab      (PORTED)
- *   - Logout         → returns to OpenEMR Login (PORTED)
+ *   - About DCL  → 'About DCL' tab      (PORTED)
+ *   - Logout         → returns to DCL Login (PORTED)
  *
  * The source-side GgUserMenuLinksTest continues to run against the dev
  * stack unchanged — this class is purely additive against the release
@@ -106,8 +106,8 @@ final class GgUserMenuLinksAcceptanceTest extends PantherAcceptanceTestCase
             'Settings user menu link' => ['fa-cog', 'User Settings'],
             'Change Password user menu link' => ['fa-lock', 'Change Password'],
             'MFA Management user menu link' => ['fa-key', 'Manage Multi Factor Authentication'],
-            'About OpenEMR user menu link' => ['fa-info', 'About OpenEMR'],
-            'Logout user menu link' => ['fa-sign-out-alt', 'OpenEMR Login'],
+            'About DCL user menu link' => ['fa-info', 'About DCL'],
+            'Logout user menu link' => ['fa-sign-out-alt', 'DCL Login'],
         ];
     }
 

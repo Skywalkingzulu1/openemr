@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIROperationDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIROperationDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
@@ -71,13 +71,13 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement implemen
 {
     /**
      * The name of the parameter or dot-separated path of parameter names pointing to the resource parameter that is expected to contain a reference to this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $source = null;
 
     /**
      * The id of the element in the referencing resource that is expected to resolve to this resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $sourceId = null;
 
@@ -88,7 +88,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement implemen
 
     /**
      * The name of the parameter or dot-separated path of parameter names pointing to the resource parameter that is expected to contain a reference to this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSource()
     {
@@ -97,7 +97,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement implemen
 
     /**
      * The name of the parameter or dot-separated path of parameter names pointing to the resource parameter that is expected to contain a reference to this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $source
      * @return $this
      */
     public function setSource($source)
@@ -108,7 +108,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement implemen
 
     /**
      * The id of the element in the referencing resource that is expected to resolve to this resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSourceId()
     {
@@ -117,7 +117,7 @@ class FHIROperationDefinitionReferencedFrom extends FHIRBackboneElement implemen
 
     /**
      * The id of the element in the referencing resource that is expected to resolve to this resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $sourceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $sourceId
      * @return $this
      */
     public function setSourceId($sourceId)

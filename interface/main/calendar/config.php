@@ -35,7 +35,7 @@ $pnconfig['dbuname'] = $login;
 $pnconfig['dbpass'] = $pass;
 $pnconfig['dbname'] = $dbase;
 $pnconfig['system'] = '0';
-$pnconfig['prefix'] = 'openemr';
+$pnconfig['prefix'] = 'DCL';
 
 // ----------------------------------------------------------------------
 // Make config file backwards compatible (deprecated)

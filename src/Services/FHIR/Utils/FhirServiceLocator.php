@@ -4,17 +4,17 @@
  * FhirServiceLocator.php  This class locates fhir service classes for the fhir resources.  Note that because it leverages
  * the Capability statement this can take 500-900ms to execute and should be used with caution.
  * TODO: @adunsulag Look at changing up this class to not use the capability statement or optimize that class to be more performant.
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Utils;
+namespace DCL\Services\FHIR\Utils;
 
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\IFhirExportableResourceService;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\IFhirExportableResourceService;
 
 // TODO: @adunsulag this class relies on restConfig but we need to refactor this to use the FHIRRouteFinder
 class FhirServiceLocator

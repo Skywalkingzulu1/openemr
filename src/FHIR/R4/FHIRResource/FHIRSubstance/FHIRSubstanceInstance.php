@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstance;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstance;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A homogeneous material with a definite composition.
@@ -71,19 +71,19 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Identifier associated with the package/container (usually a label affixed directly).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * When the substance is no longer valid to use. For some substances, a single arbitrary date is used for expiry.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $expiry = null;
 
     /**
      * The amount of the substance.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
@@ -94,7 +94,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Identifier associated with the package/container (usually a label affixed directly).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -103,7 +103,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Identifier associated with the package/container (usually a label affixed directly).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -114,7 +114,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * When the substance is no longer valid to use. For some substances, a single arbitrary date is used for expiry.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getExpiry()
     {
@@ -123,7 +123,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * When the substance is no longer valid to use. For some substances, a single arbitrary date is used for expiry.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $expiry
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $expiry
      * @return $this
      */
     public function setExpiry($expiry)
@@ -134,7 +134,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The amount of the substance.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * The amount of the substance.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $quantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)

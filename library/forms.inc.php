@@ -1,8 +1,8 @@
 <?php
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\FormService;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\FormService;
 
 /**
  * @deprecated Use FormService::getFormByEncounter() instead

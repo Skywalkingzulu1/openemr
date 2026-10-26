@@ -33,16 +33,16 @@
  * CHANGES_REQUESTED reviews still block preflight if present (that's a
  * separate signal from the missing-APPROVED case).
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Release;
+namespace DCL\Release;
 
 final readonly class ShipReleaseOrchestrator
 {
@@ -475,7 +475,7 @@ final readonly class ShipReleaseOrchestrator
     }
 
     /**
-     * Between Conductor and Docs, wait for the openemr GitHub Release object
+     * Between Conductor and Docs, wait for the DCL GitHub Release object
      * to exist. Only fires when Conductor was merged in *this* run — if the
      * Conductor was merged in a prior run, the release was either already
      * created or the operator is on manual recovery and we don't burn the
@@ -494,12 +494,12 @@ final readonly class ShipReleaseOrchestrator
         $tag = 'v' . str_replace('.', '_', $this->version);
         $deadline = $this->clock->now()->getTimestamp() + $this->downstreamTimeoutSeconds;
         while ($this->clock->now()->getTimestamp() < $deadline) {
-            if ($this->api->releaseExists('openemr/openemr', $tag)) {
+            if ($this->api->releaseExists('DCL/DCL', $tag)) {
                 return null;
             }
             $this->clock->sleep(self::POLL_INTERVAL_SECONDS);
         }
-        if ($this->api->releaseExists('openemr/openemr', $tag)) {
+        if ($this->api->releaseExists('DCL/DCL', $tag)) {
             return null;
         }
         return sprintf(
@@ -626,7 +626,7 @@ final readonly class ShipReleaseOrchestrator
      * Conductor is a human-review artifact -- must be non-draft at preflight
      * time (undrafted by the maintainer as the ready-to-ship signal). Docs
      * and Finalize are AUTO-drafted by their generator workflows and only
-     * auto-flipped by post-tag workflows (docs on `openemr-tag`, finalize
+     * auto-flipped by post-tag workflows (docs on `DCL-tag`, finalize
      * by the finalize job), which fire AFTER conductor merges. Preflight
      * can't require non-draft on downstream targets without deadlocking
      * the ship. Full-auto re-checks readiness after auto-flip via

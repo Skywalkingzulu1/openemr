@@ -1,15 +1,15 @@
 <?php
 
-namespace OpenEMR\Tests\Fixtures;
+namespace DCL\Tests\Fixtures;
 
 /**
  * Provides GACL Fixtures for testing breakglass user functionality
  *
- * @package   OpenEMR
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2025 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2025 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
  */
 class GaclFixtureManager extends BaseFixtureManager
 {

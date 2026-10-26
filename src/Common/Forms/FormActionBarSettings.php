@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\Common\Forms;
+namespace DCL\Common\Forms;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class FormActionBarSettings
 {

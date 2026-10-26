@@ -17,19 +17,19 @@
  * in for the oeHttp transport, which is exercised by the live smoke test
  * rather than here.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    SignalWire Integration
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS\Controller;
+namespace DCL\Tests\Isolated\Modules\FaxSMS\Controller;
 
 use Composer\Autoload\ClassLoader;
-use OpenEMR\Modules\FaxSMS\Controller\FaxDocumentService;
-use OpenEMR\Modules\FaxSMS\Exception\FaxDocumentException;
+use DCL\Modules\FaxSMS\Controller\FaxDocumentService;
+use DCL\Modules\FaxSMS\Exception\FaxDocumentException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -54,7 +54,7 @@ final class FaxDocumentServiceDownloadTest extends TestCase
             self::fail('Composer ClassLoader not available to register module autoload prefix.');
         }
         $loader->addPsr4(
-            'OpenEMR\\Modules\\FaxSMS\\',
+            'DCL\\Modules\\FaxSMS\\',
             dirname(__DIR__, 6) . '/interface/modules/custom_modules/oe-module-faxsms/src/'
         );
     }

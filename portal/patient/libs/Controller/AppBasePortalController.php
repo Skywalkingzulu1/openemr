@@ -2,7 +2,7 @@
 
 /** @package    Patient Portal::Controller */
 
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 
 /**
  * AppBaseController is a base class Controller class from which
@@ -95,7 +95,7 @@ class AppBasePortalController extends PortalController
      */
     protected function ApplyRequestEqualsFilters(Criteria $criteria): void
     {
-        $request = \OpenEMR\Common\Http\CurrentRequest::get();
+        $request = \DCL\Common\Http\CurrentRequest::get();
         $keys = array_unique(array_merge($request->query->keys(), $request->request->keys()));
 
         foreach ($keys as $prop) {

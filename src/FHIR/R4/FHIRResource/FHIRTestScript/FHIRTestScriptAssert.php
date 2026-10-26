@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,133 +71,133 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * The label would be used for tracking/logging purposes by test engines.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $label = null;
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * The direction to use for the assertion.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionDirectionType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAssertionDirectionType
      */
     public $direction = null;
 
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $compareToSourceId = null;
 
     /**
      * The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $compareToSourceExpression = null;
 
     /**
      * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $compareToSourcePath = null;
 
     /**
      * The mime-type contents to compare against the request or response message 'Content-Type' header.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $contentType = null;
 
     /**
      * The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $expression = null;
 
     /**
      * The HTTP header field name e.g. 'Location'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $headerField = null;
 
     /**
      * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $minimumId = null;
 
     /**
      * Whether or not the test execution performs validation on the bundle navigation links.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $navigationLinks = null;
 
     /**
      * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionOperatorType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAssertionOperatorType
      */
     public $operator = null;
 
     /**
      * The XPath or JSONPath expression to be evaluated against the fixture representing the response received from server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $path = null;
 
     /**
      * The request method or HTTP operation code to compare against that used by the client system under test.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
      */
     public $requestMethod = null;
 
     /**
      * The value to use in a comparison against the request URL path string.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $requestURL = null;
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $resource = null;
 
     /**
      * okay | created | noContent | notModified | bad | forbidden | notFound | methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionResponseTypes
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAssertionResponseTypes
      */
     public $response = null;
 
     /**
      * The value of the HTTP response code to be tested.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $responseCode = null;
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $sourceId = null;
 
     /**
      * The ID of the Profile to validate against.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $validateProfileId = null;
 
     /**
      * The value to compare to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
     /**
      * Whether or not the test execution will produce a warning only on error for this assert.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $warningOnly = null;
 
@@ -208,7 +208,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The label would be used for tracking/logging purposes by test engines.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getLabel()
     {
@@ -217,7 +217,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The label would be used for tracking/logging purposes by test engines.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $label
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $label
      * @return $this
      */
     public function setLabel($label)
@@ -228,7 +228,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -237,7 +237,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The description would be used by test engines for tracking and reporting purposes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -248,7 +248,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The direction to use for the assertion.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionDirectionType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAssertionDirectionType
      */
     public function getDirection()
     {
@@ -257,7 +257,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The direction to use for the assertion.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionDirectionType $direction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAssertionDirectionType $direction
      * @return $this
      */
     public function setDirection($direction)
@@ -268,7 +268,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCompareToSourceId()
     {
@@ -277,7 +277,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $compareToSourceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $compareToSourceId
      * @return $this
      */
     public function setCompareToSourceId($compareToSourceId)
@@ -288,7 +288,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCompareToSourceExpression()
     {
@@ -297,7 +297,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $compareToSourceExpression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $compareToSourceExpression
      * @return $this
      */
     public function setCompareToSourceExpression($compareToSourceExpression)
@@ -308,7 +308,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getCompareToSourcePath()
     {
@@ -317,7 +317,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $compareToSourcePath
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $compareToSourcePath
      * @return $this
      */
     public function setCompareToSourcePath($compareToSourcePath)
@@ -328,7 +328,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The mime-type contents to compare against the request or response message 'Content-Type' header.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getContentType()
     {
@@ -337,7 +337,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The mime-type contents to compare against the request or response message 'Content-Type' header.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $contentType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $contentType
      * @return $this
      */
     public function setContentType($contentType)
@@ -348,7 +348,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getExpression()
     {
@@ -357,7 +357,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $expression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $expression
      * @return $this
      */
     public function setExpression($expression)
@@ -368,7 +368,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The HTTP header field name e.g. 'Location'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getHeaderField()
     {
@@ -377,7 +377,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The HTTP header field name e.g. 'Location'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $headerField
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $headerField
      * @return $this
      */
     public function setHeaderField($headerField)
@@ -388,7 +388,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getMinimumId()
     {
@@ -397,7 +397,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $minimumId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $minimumId
      * @return $this
      */
     public function setMinimumId($minimumId)
@@ -408,7 +408,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Whether or not the test execution performs validation on the bundle navigation links.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getNavigationLinks()
     {
@@ -417,7 +417,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Whether or not the test execution performs validation on the bundle navigation links.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $navigationLinks
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $navigationLinks
      * @return $this
      */
     public function setNavigationLinks($navigationLinks)
@@ -428,7 +428,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionOperatorType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAssertionOperatorType
      */
     public function getOperator()
     {
@@ -437,7 +437,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionOperatorType $operator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAssertionOperatorType $operator
      * @return $this
      */
     public function setOperator($operator)
@@ -448,7 +448,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The XPath or JSONPath expression to be evaluated against the fixture representing the response received from server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPath()
     {
@@ -457,7 +457,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The XPath or JSONPath expression to be evaluated against the fixture representing the response received from server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $path
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $path
      * @return $this
      */
     public function setPath($path)
@@ -468,7 +468,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The request method or HTTP operation code to compare against that used by the client system under test.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode
      */
     public function getRequestMethod()
     {
@@ -477,7 +477,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The request method or HTTP operation code to compare against that used by the client system under test.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode $requestMethod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTestScriptRequestMethodCode $requestMethod
      * @return $this
      */
     public function setRequestMethod($requestMethod)
@@ -488,7 +488,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The value to use in a comparison against the request URL path string.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRequestURL()
     {
@@ -497,7 +497,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The value to use in a comparison against the request URL path string.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $requestURL
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $requestURL
      * @return $this
      */
     public function setRequestURL($requestURL)
@@ -508,7 +508,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getResource()
     {
@@ -517,7 +517,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $resource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $resource
      * @return $this
      */
     public function setResource($resource)
@@ -528,7 +528,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * okay | created | noContent | notModified | bad | forbidden | notFound | methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionResponseTypes
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAssertionResponseTypes
      */
     public function getResponse()
     {
@@ -537,7 +537,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * okay | created | noContent | notModified | bad | forbidden | notFound | methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAssertionResponseTypes $response
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAssertionResponseTypes $response
      * @return $this
      */
     public function setResponse($response)
@@ -548,7 +548,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The value of the HTTP response code to be tested.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getResponseCode()
     {
@@ -557,7 +557,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The value of the HTTP response code to be tested.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $responseCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $responseCode
      * @return $this
      */
     public function setResponseCode($responseCode)
@@ -568,7 +568,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getSourceId()
     {
@@ -577,7 +577,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $sourceId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $sourceId
      * @return $this
      */
     public function setSourceId($sourceId)
@@ -588,7 +588,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The ID of the Profile to validate against.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getValidateProfileId()
     {
@@ -597,7 +597,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The ID of the Profile to validate against.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $validateProfileId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $validateProfileId
      * @return $this
      */
     public function setValidateProfileId($validateProfileId)
@@ -608,7 +608,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The value to compare to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -617,7 +617,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The value to compare to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)
@@ -628,7 +628,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Whether or not the test execution will produce a warning only on error for this assert.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getWarningOnly()
     {
@@ -637,7 +637,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Whether or not the test execution will produce a warning only on error for this assert.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $warningOnly
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $warningOnly
      * @return $this
      */
     public function setWarningOnly($warningOnly)

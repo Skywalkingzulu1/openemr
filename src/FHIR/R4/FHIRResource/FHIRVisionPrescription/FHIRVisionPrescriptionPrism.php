@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription;
+namespace DCL\FHIR\R4\FHIRResource\FHIRVisionPrescription;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVisionPrescription;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An authorization for the provision of glasses and/or contact lenses to a patient.
@@ -71,13 +71,13 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * Amount of prism to compensate for eye alignment in fractional units.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $amount = null;
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRVisionBase
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRVisionBase
      */
     public $base = null;
 
@@ -88,7 +88,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Amount of prism to compensate for eye alignment in fractional units.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getAmount()
     {
@@ -97,7 +97,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Amount of prism to compensate for eye alignment in fractional units.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $amount
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -108,7 +108,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRVisionBase
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRVisionBase
      */
     public function getBase()
     {
@@ -117,7 +117,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRVisionBase $base
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRVisionBase $base
      * @return $this
      */
     public function setBase($base)

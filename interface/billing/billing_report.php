@@ -3,8 +3,8 @@
 /**
  * Billing Report Program
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Terry Hill <terry@lilysystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -15,21 +15,21 @@
  * @copyright Copyright (c) 2018-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019-2020 Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2021-2025 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once "../globals.php";
 require_once "../../custom/code_types.inc.php";
 
-use OpenEMR\Billing\BillingReport;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\OeUI\OemrUI;
+use DCL\Billing\BillingReport;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\OeUI\OemrUI;
 
 require_once OEGlobalsBag::getInstance()->getSrcDir() . '/options.inc.php';
 
@@ -74,7 +74,7 @@ if (isset($_POST['mode'])) {
             header("Pragma: public");
             header("Expires: 0");
             header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-            header("Content-Disposition: attachment; filename=openemr_ofx.ofx");
+            header("Content-Disposition: attachment; filename=DCL_ofx.ofx");
             header("Content-Type: text/xml");
             echo $ofx->get_OFX();
             exit();
@@ -728,7 +728,7 @@ $partners = $x->_utility_array($x->x12_partner_factory());
                         // The below section is needed if there is any 'include' type in the $TPSCriteriaDataTypeMaster
                         // Function name is added here.Corresponding include files need to be included in the respective pages as done in this page.
                         // It is labeled(Included for Insurance ajax criteria)(Line:-279-299).
-                        $TPSCriteriaIncludeMaster[1] = "OpenEMR\Billing\BillingReport::insuranceCompanyDisplay";
+                        $TPSCriteriaIncludeMaster[1] = "DCL\Billing\BillingReport::insuranceCompanyDisplay";
                         if (!isset($_REQUEST['mode'])) {// default case
                             $_REQUEST['final_this_page_criteria'][0] = "form_encounter.date|between|" . date("Y-m-d 00:00:00") . "|" . date("Y-m-d 23:59:59");
                             $_REQUEST['final_this_page_criteria_text'][0] = xl("Date of Service = Today");
@@ -1060,8 +1060,8 @@ $partners = $x->_utility_array($x->x12_partner_factory());
 
                                 // Encounter details are stored to javascript as array.
                                 $result4 = sqlStatement(
-                                    "SELECT fe.encounter,fe.date,fe.billing_note,openemr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
-                                    " LEFT JOIN openemr_postcalendar_categories ON fe.pc_catid=openemr_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC",
+                                    "SELECT fe.encounter,fe.date,fe.billing_note,DCL_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
+                                    " LEFT JOIN DCL_postcalendar_categories ON fe.pc_catid=DCL_postcalendar_categories.pc_catid  WHERE fe.pid = ? ORDER BY fe.date DESC",
                                     [
                                     $iter['enc_pid']
                                     ]

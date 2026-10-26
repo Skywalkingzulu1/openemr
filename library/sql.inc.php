@@ -1,32 +1,32 @@
 <?php
 
 /**
- * Sql functions/classes for OpenEMR.
+ * Sql functions/classes for DCL.
  *
- * Includes classes and functions that OpenEMR uses
+ * Includes classes and functions that DCL uses
  * to interact with SQL.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @link      https://www.open-emr.org/wiki/index.php/OEMR_wiki_page OEMR
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @link      https://www.dcl.org/wiki/index.php/OEMR_wiki_page OEMR
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2013 OEMR
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/sqlconf.php");
 
-use OpenEMR\BC\{
+use DCL\BC\{
     DatabaseConnectionFactory,
     DatabaseConnectionOptions,
     ServiceContainer,
 };
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Session\SessionWrapperFactory;
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 
 /**
@@ -55,8 +55,8 @@ if (!defined('ADODB_FETCH_ASSOC')) {
 $ADODB_LASTDB = 'mysqli_log';
 
 // Skip database connection during static analysis
-// The OPENEMR_STATIC_ANALYSIS constant can be defined in static analysis tool bootstrap files
-if (!defined('OPENEMR_STATIC_ANALYSIS') || !OPENEMR_STATIC_ANALYSIS) {
+// The DCL_STATIC_ANALYSIS constant can be defined in static analysis tool bootstrap files
+if (!defined('DCL_STATIC_ANALYSIS') || !DCL_STATIC_ANALYSIS) {
     // Note: too early to use OEGlobalsBag reliably here.
     // Do not name this $config: sqlconf.php owns that global as the int install
     // flag, and consumers (index.php, setup.php, admin.php, Installer.class.php,
@@ -80,11 +80,11 @@ if (!defined('OPENEMR_STATIC_ANALYSIS') || !OPENEMR_STATIC_ANALYSIS) {
 // set up associations in adodb calls (not sure why above define
 //  command does not work)
     $GLOBALS['adodb']['db']->SetFetchMode(ADODB_FETCH_ASSOC);
-} // End of OPENEMR_STATIC_ANALYSIS guard
+} // End of DCL_STATIC_ANALYSIS guard
 
 
 /**
-* Standard sql query in OpenEMR.
+* Standard sql query in DCL.
 *
 * Function that will allow use of the adodb binding
 * feature to prevent sql-injection. Will continue to
@@ -109,7 +109,7 @@ function sqlStatement($statement, $binds = false)
 }
 
 /**
- * Standard sql query in OpenEMR.
+ * Standard sql query in DCL.
  *
  * Function that will allow use of the adodb binding
  * feature to prevent sql-injection. Will continue to
@@ -139,7 +139,7 @@ function sqlGetLastInsertId()
 }
 
 /**
-* Specialized sql query in OpenEMR that skips auditing.
+* Specialized sql query in DCL that skips auditing.
 *
 * Function that will allow use of the adodb binding
 * feature to prevent sql-injection. Will continue to
@@ -171,7 +171,7 @@ function sqlStatementNoLog($statement, $binds = false, $throw_exception_on_error
 }
 
 /**
-* sqlStatement() function wrapper for CDR engine in OpenEMR.
+* sqlStatement() function wrapper for CDR engine in DCL.
 * Allows option to turn on/off auditing specifically for the
 * CDR engine.
 *
@@ -228,7 +228,7 @@ function sqlGetAssoc($sql, $bindvars = false, $forceArray = false, $first2Cols =
 }
 
 /**
-* Standard sql insert query in OpenEMR.
+* Standard sql insert query in DCL.
 *  Only use this function if you need to have the
 *  id returned. If doing an insert query and do
 *  not need the id returned, then use the
@@ -254,7 +254,7 @@ function sqlInsert($statement, $binds = false)
 }
 
 /**
-* Specialized sql query in OpenEMR that only returns
+* Specialized sql query in DCL that only returns
 * the first row of query results as an associative array.
 *
 * Function that will allow use of the adodb binding
@@ -275,7 +275,7 @@ function sqlQuery($statement, $binds = false)
 }
 
 /**
-* Specialized sql query in OpenEMR that bypasses the auditing engine
+* Specialized sql query in DCL that bypasses the auditing engine
 * and only returns the first row of query results as an associative array.
 *
 * Function that will allow use of the adodb binding
@@ -307,7 +307,7 @@ function sqlQueryNoLog($statement, $binds = false, $throw_exception_on_error = f
 
 
 /**
-* sqlQuery() function wrapper for CDR engine in OpenEMR.
+* sqlQuery() function wrapper for CDR engine in DCL.
 * Allows option to turn on/off auditing specifically for the
 * CDR engine.
 *
@@ -330,7 +330,7 @@ function sqlQueryCdrEngine($statement, $binds = false)
 }
 
 /**
-* Specialized sql query in OpenEMR that skips auditing.
+* Specialized sql query in DCL that skips auditing.
 *
 * This function should only be used in very special situations.
 *
@@ -371,7 +371,7 @@ function sqlNumRows($r)
 }
 
 /**
-* Error function for OpenEMR sql functions
+* Error function for DCL sql functions
 *
 * @param string $statement
 * @param string $sqlerr
@@ -418,7 +418,7 @@ function generate_id(): int
 }
 
 /**
-* Deprecated function. Standard sql query in OpenEMR.
+* Deprecated function. Standard sql query in DCL.
 *
 * Function that will allow use of the adodb binding
 * feature to prevent sql-injection. Will continue to

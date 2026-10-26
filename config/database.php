@@ -3,11 +3,11 @@
 /**
  * Database and Doctrine configuration
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Eric Stern <erics@opencoreemr.com>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Eric Stern <erics@DCL.com>
  * @copyright Copyright (c) 2026 Eric Stern
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -22,7 +22,7 @@ use Firehed\DbalLogger\{
     ChainLogger,
     Middleware as LoggingMiddleware,
 };
-use OpenEMR\Common\Database\Middleware\QueryAuditor;
+use DCL\Common\Database\Middleware\QueryAuditor;
 use Doctrine\Migrations\Configuration\{
     Connection\ConnectionLoader,
     Connection\ExistingConnection,
@@ -42,9 +42,9 @@ use Doctrine\ORM\{
     ORMSetup,
 };
 use Firehed\Container\TypedContainerInterface as TC;
-use OpenEMR\BC\DatabaseConnectionOptions;
-use OpenEMR\Common\Database\ConnectionManager;
-use OpenEMR\Common\Database\ConnectionType;
+use DCL\BC\DatabaseConnectionOptions;
+use DCL\Common\Database\ConnectionManager;
+use DCL\Common\Database\ConnectionType;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 
@@ -81,7 +81,7 @@ return [
 
     // DB connection config
     DatabaseConnectionOptions::class => function (TC $c) {
-        $site = $c->getString('OPENEMR_SITE');
+        $site = $c->getString('DCL_SITE');
         return DatabaseConnectionOptions::forSite("sites/$site");
     },
 
@@ -91,7 +91,7 @@ return [
         'migrations_paths' => [
             // A future version of this will integrate w/ the modules system and
             // pull in any vended migrations from installed/active modules.
-            'OpenEMR\\Core\\Migrations' => 'db/Migrations',
+            'DCL\\Core\\Migrations' => 'db/Migrations',
         ],
         'table_storage' => [
             'table_name' => 'migrations',

@@ -4,22 +4,22 @@
  * Handles saving address list data from LBF form submissions
  * Updated to use ContactService and ContactAddressService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    David Eschelbacher <psoas@tampabay.rr.com>
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 David Eschelbacher <psoas@tampabay.rr.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\ORDataObject\Address;
-use OpenEMR\Common\ORDataObject\Contact;
-use OpenEMR\Common\ORDataObject\ContactAddress;
-use OpenEMR\Services\ContactAddressService;
-use OpenEMR\Services\ContactService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\ORDataObject\Address;
+use DCL\Common\ORDataObject\Contact;
+use DCL\Common\ORDataObject\ContactAddress;
+use DCL\Services\ContactAddressService;
+use DCL\Services\ContactService;
 
 /**
  * Save addresses for a patient from form data

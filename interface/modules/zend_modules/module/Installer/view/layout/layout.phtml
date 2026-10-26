@@ -2,13 +2,13 @@
 /**
  * interface/modules/zend_modules/module/Installer/view/layout/layout.phtml
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T.Paul <jacob@zhservices.com>
  * @author    Vipin Kumar <vipink@zhservices.com>
  * @author    Remesh Babu S <remesh@zhservices.com>
  * @copyright Copyright (c) 2013 Z&H Consultancy Services Private Limited <sam@zhservices.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 ?>
@@ -40,7 +40,7 @@
         ->prependFile($this->basePath() . '/js/lib/jquery-1.8.0.min.js')
 		?>
         <script>
-            window.csrfTokenForm = <?php echo json_encode(\OpenEMR\Common\Csrf\CsrfUtils::collectCsrfToken(\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession())); ?>;
+            window.csrfTokenForm = <?php echo json_encode(\DCL\Common\Csrf\CsrfUtils::collectCsrfToken(\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession())); ?>;
         </script>
     </head>
     <body class="body-top bg-light text-dark">

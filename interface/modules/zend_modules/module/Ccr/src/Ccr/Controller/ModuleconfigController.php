@@ -2,11 +2,11 @@
 
 /**
  * ModuleconfigController.php
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2019 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 namespace Ccr\Controller;
@@ -14,7 +14,7 @@ namespace Ccr\Controller;
 use Laminas\Mvc\Controller\AbstractActionController;
 
 /**
- * Handles the OpenEMR Module configuration for the Ccr module.
+ * Handles the DCL Module configuration for the Ccr module.
  */
 class ModuleconfigController extends AbstractActionController
 {

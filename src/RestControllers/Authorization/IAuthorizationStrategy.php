@@ -1,8 +1,8 @@
 <?php
 
-namespace OpenEMR\RestControllers\Authorization;
+namespace DCL\RestControllers\Authorization;
 
-use OpenEMR\Common\Http\HttpRestRequest;
+use DCL\Common\Http\HttpRestRequest;
 
 // TODO: @adunsulag look at renaming this to be IAuthenticationStrategy or similar, as this is more about authentication than authorization.
 interface IAuthorizationStrategy

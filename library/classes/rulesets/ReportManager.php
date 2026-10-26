@@ -7,7 +7,7 @@
 // of the License, or (at your option) any later version.
 //
 require_once("ReportTypes.php");
-use OpenEMR\BC\ServiceContainer;
+use DCL\BC\ServiceContainer;
 
 class ReportManager
 {

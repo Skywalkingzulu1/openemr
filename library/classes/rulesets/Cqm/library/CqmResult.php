@@ -8,7 +8,7 @@
 // of the License, or (at your option) any later version.
 //
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class CqmResult implements RsResultIF
 {

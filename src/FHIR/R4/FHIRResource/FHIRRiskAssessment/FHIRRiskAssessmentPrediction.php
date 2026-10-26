@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRiskAssessment;
+namespace DCL\FHIR\R4\FHIRResource\FHIRRiskAssessment;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRiskAssessment;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * An assessment of the likely outcome(s) for a patient or other subject as well as the likelihood of each outcome.
@@ -71,45 +71,45 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 {
     /**
      * One of the potential outcomes for the patient (e.g. remission, death,  a particular condition).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $outcome = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $probabilityDecimal = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $probabilityRange = null;
 
     /**
      * Indicates how likely the outcome is (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, or high).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $qualitativeRisk = null;
 
     /**
      * Indicates the risk for this particular subject (with their specific characteristics) divided by the risk of the population in general.  (Numbers greater than 1 = higher risk than the population, numbers less than 1 = lower risk.).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $relativeRisk = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $whenPeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $whenRange = null;
 
     /**
      * Additional information explaining the basis for the prediction.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $rationale = null;
 
@@ -120,7 +120,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * One of the potential outcomes for the patient (e.g. remission, death,  a particular condition).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome()
     {
@@ -129,7 +129,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * One of the potential outcomes for the patient (e.g. remission, death,  a particular condition).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -139,7 +139,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getProbabilityDecimal()
     {
@@ -147,7 +147,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $probabilityDecimal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $probabilityDecimal
      * @return $this
      */
     public function setProbabilityDecimal($probabilityDecimal)
@@ -157,7 +157,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getProbabilityRange()
     {
@@ -165,7 +165,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $probabilityRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $probabilityRange
      * @return $this
      */
     public function setProbabilityRange($probabilityRange)
@@ -176,7 +176,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates how likely the outcome is (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, or high).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getQualitativeRisk()
     {
@@ -185,7 +185,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates how likely the outcome is (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, or high).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $qualitativeRisk
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $qualitativeRisk
      * @return $this
      */
     public function setQualitativeRisk($qualitativeRisk)
@@ -196,7 +196,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates the risk for this particular subject (with their specific characteristics) divided by the risk of the population in general.  (Numbers greater than 1 = higher risk than the population, numbers less than 1 = lower risk.).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getRelativeRisk()
     {
@@ -205,7 +205,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * Indicates the risk for this particular subject (with their specific characteristics) divided by the risk of the population in general.  (Numbers greater than 1 = higher risk than the population, numbers less than 1 = lower risk.).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $relativeRisk
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $relativeRisk
      * @return $this
      */
     public function setRelativeRisk($relativeRisk)
@@ -215,7 +215,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getWhenPeriod()
     {
@@ -223,7 +223,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $whenPeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $whenPeriod
      * @return $this
      */
     public function setWhenPeriod($whenPeriod)
@@ -233,7 +233,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getWhenRange()
     {
@@ -241,7 +241,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $whenRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $whenRange
      * @return $this
      */
     public function setWhenRange($whenRange)
@@ -252,7 +252,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * Additional information explaining the basis for the prediction.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getRationale()
     {
@@ -261,7 +261,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
 
     /**
      * Additional information explaining the basis for the prediction.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $rationale
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $rationale
      * @return $this
      */
     public function setRationale($rationale)

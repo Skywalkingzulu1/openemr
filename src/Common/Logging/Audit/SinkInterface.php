@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Common\Logging\Audit;
+namespace DCL\Common\Logging\Audit;
 
 interface SinkInterface
 {

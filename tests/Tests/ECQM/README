@@ -6,7 +6,7 @@ XML QRDA input files come from Cypress https://cypressdemo.healthit.gov
 
 Import the test files using the care coordination module, or from the command line (as a user other than root):
 
-    php bin/console openemr:ccda-newpatient-import --document=/path/to/patient.xml
+    php bin/console DCL:ccda-newpatient-import --document=/path/to/patient.xml
 
 then you can run the tests:
 
@@ -17,6 +17,6 @@ one population set, with the expected population counts from Cypress. The measur
 eCQM Performance Period global (Admin > Config > CDR). The measurement period runs one year from effectiveDate, as in
 reporting; effectiveEndDate is not used. Set skip to 1 to leave a row out.
 
-To see what OpenEMR calculates for patients already in the database:
+To see what DCL calculates for patients already in the database:
 
-    php bin/console openemr:cqm-calculate --measure=CMS122v13 --by-patient
+    php bin/console DCL:cqm-calculate --measure=CMS122v13 --by-patient

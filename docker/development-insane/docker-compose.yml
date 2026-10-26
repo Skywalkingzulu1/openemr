@@ -1,5 +1,5 @@
 #
-# This is for building a local OpenEMR development and testing environment.
+# This is for building a local DCL development and testing environment.
 # (Recommend not running it from your git repo and instead mirroring your
 #  git repo to a testing directory (such as your web directory).)
 #
@@ -64,22 +64,22 @@
 #    Can see databases via http://localhost:8200
 #
 services:
-  openemr-8-2:
+  DCL-8-2:
     restart: always
-    image: openemr/openemr:flex-3.22-php-8.2@sha256:ae4d1b9373b3588011f8f955116529f5ef551509e028612af7a777cd081548f5
+    image: DCL/DCL:flex-3.22-php-8.2@sha256:ae4d1b9373b3588011f8f955116529f5ef551509e028612af7a777cd081548f5
     ports:
     - 8084:80
     - 9084:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       EMPTY: yes
     healthcheck:
@@ -97,22 +97,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-8-3:
+  DCL-8-3:
     restart: always
-    image: openemr/openemr:flex-3.24-php-8.3@sha256:93c26c73bee29a9b51f2f034b2c67f6bc2dc68cc5a85866fc312bdd87274f1c0
+    image: DCL/DCL:flex-3.24-php-8.3@sha256:93c26c73bee29a9b51f2f034b2c67f6bc2dc68cc5a85866fc312bdd87274f1c0
     ports:
     - 8085:80
     - 9085:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       EMPTY: yes
     healthcheck:
@@ -130,22 +130,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-8-4:
+  DCL-8-4:
     restart: always
-    image: openemr/openemr:flex-3.24-php-8.4@sha256:d3f0248fd0ca73d76a051914a7fe87a1685d4cec9cd604fbd8cf399cc99fd6dd
+    image: DCL/DCL:flex-3.24-php-8.4@sha256:d3f0248fd0ca73d76a051914a7fe87a1685d4cec9cd604fbd8cf399cc99fd6dd
     ports:
     - 8086:80
     - 9086:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       EMPTY: yes
     healthcheck:
@@ -163,14 +163,14 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-8-5:
+  DCL-8-5:
     restart: always
-    image: openemr/openemr:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
+    image: DCL/DCL:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
     ports:
     - 8087:80
     - 9087:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     - couchdbvolume:/couchdb/data
     environment:
       HOST_UID: "${HOST_UID:-1000}"
@@ -178,8 +178,8 @@ services:
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       EMPTY: yes
       MYSQL_HOST: mariadb
       MYSQL_ROOT_PASS: root
@@ -195,32 +195,32 @@ services:
       SELENIUM_USE_GRID: 'true'
       SELENIUM_HOST: selenium
       SELENIUM_FORCE_HEADLESS: 'false'
-      SELENIUM_BASE_URL: http://openemr-8-5    # NOTE THIS NEEDS TO BE MODIFIED WHEN SERVICE NAME CHANGES!
-      OPENEMR_SETTING_site_addr_oath: https://localhost:9087 # NOTE THIS NEEDS TO BE MODIFIED WHEN ABOVE SERVICE PORT CHANGES!
-      OPENEMR_SETTING_oauth_password_grant: 3
-      OPENEMR_SETTING_rest_system_scopes_api: 1
-      OPENEMR_SETTING_rest_api: 1
-      OPENEMR_SETTING_rest_fhir_api: 1
-      OPENEMR_SETTING_rest_portal_api: 1
-      OPENEMR_SETTING_portal_onsite_two_enable: 1
-      OPENEMR_SETTING_ccda_alt_service_enable: 3
-      OPENEMR_SETTING_couchdb_host: couchdb
-      OPENEMR_SETTING_couchdb_port: 6984
-      OPENEMR_SETTING_couchdb_user: admin
-      OPENEMR_SETTING_couchdb_pass: password
-      OPENEMR_SETTING_couchdb_dbase: example
-      OPENEMR_SETTING_couchdb_ssl_allow_selfsigned: 1
-      OPENEMR_SETTING_gbl_ldap_host: ldap://openldap:389
-      OPENEMR_SETTING_gbl_ldap_dn: cn={login},dc=example,dc=org
-      OPENEMR_SETTING_EMAIL_METHOD: SMTP
-      OPENEMR_SETTING_SMTP_HOST: mailpit
-      OPENEMR_SETTING_SMTP_PORT: 1025
-      OPENEMR_SETTING_SMTP_USER: openemr
-      OPENEMR_SETTING_SMTP_PASS: openemr
-      OPENEMR_SETTING_SMTP_SECURE: ''
-      OPENEMR_SETTING_SMTP_Auth: 'TRUE'
-      OPENEMR_SETTING_practice_return_email_path: noreply@openemr.local
-      OPENEMR_SETTING_Patient_Reminder_Sender_Name: OpenEMR Reminders
+      SELENIUM_BASE_URL: http://DCL-8-5    # NOTE THIS NEEDS TO BE MODIFIED WHEN SERVICE NAME CHANGES!
+      DCL_SETTING_site_addr_oath: https://localhost:9087 # NOTE THIS NEEDS TO BE MODIFIED WHEN ABOVE SERVICE PORT CHANGES!
+      DCL_SETTING_oauth_password_grant: 3
+      DCL_SETTING_rest_system_scopes_api: 1
+      DCL_SETTING_rest_api: 1
+      DCL_SETTING_rest_fhir_api: 1
+      DCL_SETTING_rest_portal_api: 1
+      DCL_SETTING_portal_onsite_two_enable: 1
+      DCL_SETTING_ccda_alt_service_enable: 3
+      DCL_SETTING_couchdb_host: couchdb
+      DCL_SETTING_couchdb_port: 6984
+      DCL_SETTING_couchdb_user: admin
+      DCL_SETTING_couchdb_pass: password
+      DCL_SETTING_couchdb_dbase: example
+      DCL_SETTING_couchdb_ssl_allow_selfsigned: 1
+      DCL_SETTING_gbl_ldap_host: ldap://openldap:389
+      DCL_SETTING_gbl_ldap_dn: cn={login},dc=example,dc=org
+      DCL_SETTING_EMAIL_METHOD: SMTP
+      DCL_SETTING_SMTP_HOST: mailpit
+      DCL_SETTING_SMTP_PORT: 1025
+      DCL_SETTING_SMTP_USER: DCL
+      DCL_SETTING_SMTP_PASS: DCL
+      DCL_SETTING_SMTP_SECURE: ''
+      DCL_SETTING_SMTP_Auth: 'TRUE'
+      DCL_SETTING_practice_return_email_path: noreply@DCL.local
+      DCL_SETTING_Patient_Reminder_Sender_Name: DCL Reminders
     healthcheck:
       test:
       - CMD
@@ -236,22 +236,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-edge:
+  DCL-edge:
     restart: always
-    image: openemr/openemr:flex-edge@sha256:9e60ca1a6dff145baccec0f876ab3320628c4dd623ffdb28f2f51690681620ac
+    image: DCL/DCL:flex-edge@sha256:9e60ca1a6dff145baccec0f876ab3320628c4dd623ffdb28f2f51690681620ac
     ports:
     - 8088:80
     - 9088:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       EMPTY: yes
     healthcheck:
@@ -269,22 +269,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-8-2-redis:
+  DCL-8-2-redis:
     restart: always
-    image: openemr/openemr:flex-3.22-php-8.2@sha256:ae4d1b9373b3588011f8f955116529f5ef551509e028612af7a777cd081548f5
+    image: DCL/DCL:flex-3.22-php-8.2@sha256:ae4d1b9373b3588011f8f955116529f5ef551509e028612af7a777cd081548f5
     ports:
     - 8094:80
     - 9094:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       REDIS_SERVER: redis
       EMPTY: yes
@@ -303,22 +303,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-8-3-redis:
+  DCL-8-3-redis:
     restart: always
-    image: openemr/openemr:flex-3.24-php-8.3@sha256:93c26c73bee29a9b51f2f034b2c67f6bc2dc68cc5a85866fc312bdd87274f1c0
+    image: DCL/DCL:flex-3.24-php-8.3@sha256:93c26c73bee29a9b51f2f034b2c67f6bc2dc68cc5a85866fc312bdd87274f1c0
     ports:
     - 8095:80
     - 9095:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       REDIS_SERVER: redis
       EMPTY: yes
@@ -337,22 +337,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-8-4-redis:
+  DCL-8-4-redis:
     restart: always
-    image: openemr/openemr:flex-3.24-php-8.4@sha256:d3f0248fd0ca73d76a051914a7fe87a1685d4cec9cd604fbd8cf399cc99fd6dd
+    image: DCL/DCL:flex-3.24-php-8.4@sha256:d3f0248fd0ca73d76a051914a7fe87a1685d4cec9cd604fbd8cf399cc99fd6dd
     ports:
     - 8096:80
     - 9096:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       REDIS_SERVER: redis
       EMPTY: yes
@@ -371,22 +371,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-8-5-redis:
+  DCL-8-5-redis:
     restart: always
-    image: openemr/openemr:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
+    image: DCL/DCL:flex-3.24-php-8.5@sha256:71f93832be5cf1d0c0d27a66bba6c6c92b9d732a64c31a908372f3845c8746bb
     ports:
     - 8097:80
     - 9097:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       REDIS_SERVER: redis
       EMPTY: yes
@@ -405,22 +405,22 @@ services:
       start_interval: 10s
       start_period: 3m
       timeout: 5s
-  openemr-edge-redis:
+  DCL-edge-redis:
     restart: always
-    image: openemr/openemr:flex-edge@sha256:9e60ca1a6dff145baccec0f876ab3320628c4dd623ffdb28f2f51690681620ac
+    image: DCL/DCL:flex-edge@sha256:9e60ca1a6dff145baccec0f876ab3320628c4dd623ffdb28f2f51690681620ac
     ports:
     - 8098:80
     - 9098:443
     volumes:
-    - ../..:/var/www/localhost/htdocs/openemr
+    - ../..:/var/www/localhost/htdocs/DCL
     environment:
       HOST_UID: "${HOST_UID:-1000}"
       HOST_GID: "${HOST_GID:-1000}"
       DEBUG_COLORS: 'true'
       TERM: xterm-256color
       COLORTERM: truecolor
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
       FORCE_NO_BUILD_MODE: yes
       REDIS_SERVER: redis
       EMPTY: yes
@@ -597,7 +597,7 @@ services:
     - 8042:8042
   nginx:
     restart: always
-    image: openemr/dev-nginx:latest@sha256:cd70ec94ddce2956b6acbc5f873c6bbfffda5129cc5fbf6f3f76979ae7afdb80
+    image: DCL/dev-nginx:latest@sha256:cd70ec94ddce2956b6acbc5f873c6bbfffda5129cc5fbf6f3f76979ae7afdb80
     ports:
     - 8104:84
     - 9104:444
@@ -624,7 +624,7 @@ services:
     - 8159:99
     - 9159:459
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     - ../library/dockers/dev-nginx/dummy-cert:/etc/nginx/dummy-cert:ro
     - ../library/dockers/dev-nginx/dummy-key:/etc/nginx/dummy-key:ro
@@ -643,118 +643,118 @@ services:
     - dev-php-fpm-8-7-redis
   dev-php-fpm-8-2:
     restart: always
-    image: openemr/dev-php-fpm:8.2@sha256:ae120bdd0722016cb55adf05994ad806b021bb23af2feb5f4eeda0780a177066
+    image: DCL/dev-php-fpm:8.2@sha256:ae120bdd0722016cb55adf05994ad806b021bb23af2feb5f4eeda0780a177066
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-2/php-ini/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-3:
     restart: always
-    image: openemr/dev-php-fpm:8.3@sha256:e0be7447e49eb9126965ee83f6ec44c2cec0a4605eff2e4a8539f882e8fb5e3e
+    image: DCL/dev-php-fpm:8.3@sha256:e0be7447e49eb9126965ee83f6ec44c2cec0a4605eff2e4a8539f882e8fb5e3e
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-3/php-ini/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-4:
     restart: always
-    image: openemr/dev-php-fpm:8.4@sha256:8073306d0919aae6e37599559ae8e889adcee74017b75dc2a3bcb48c9e8f73f2
+    image: DCL/dev-php-fpm:8.4@sha256:8073306d0919aae6e37599559ae8e889adcee74017b75dc2a3bcb48c9e8f73f2
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-4/php-ini/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-5:
     restart: always
-    image: openemr/dev-php-fpm:8.5@sha256:388825aba3c3740fc63470d38d55dede9e0ca1d4d677fc0930c84312e97229ec
+    image: DCL/dev-php-fpm:8.5@sha256:388825aba3c3740fc63470d38d55dede9e0ca1d4d677fc0930c84312e97229ec
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-5/php-ini/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-6:
     restart: always
-    image: openemr/dev-php-fpm:8.6@sha256:ca95bd88157833d8b8a3f0b01cc71be8162140c28991dbc2cc83d6641a5536fe
+    image: DCL/dev-php-fpm:8.6@sha256:ca95bd88157833d8b8a3f0b01cc71be8162140c28991dbc2cc83d6641a5536fe
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-6/php-ini/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-7:
     restart: always
-    image: openemr/dev-php-fpm:8.7@sha256:82f377dbf553d6ee64c7f02306d61c8c43e1f23423bcb5c8a911a5f177e1d99f
+    image: DCL/dev-php-fpm:8.7@sha256:82f377dbf553d6ee64c7f02306d61c8c43e1f23423bcb5c8a911a5f177e1d99f
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-7/php-ini/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-2-redis:
     restart: always
-    image: openemr/dev-php-fpm:8.2@sha256:ae120bdd0722016cb55adf05994ad806b021bb23af2feb5f4eeda0780a177066
+    image: DCL/dev-php-fpm:8.2@sha256:ae120bdd0722016cb55adf05994ad806b021bb23af2feb5f4eeda0780a177066
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-2/php-ini/redis/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-3-redis:
     restart: always
-    image: openemr/dev-php-fpm:8.3@sha256:e0be7447e49eb9126965ee83f6ec44c2cec0a4605eff2e4a8539f882e8fb5e3e
+    image: DCL/dev-php-fpm:8.3@sha256:e0be7447e49eb9126965ee83f6ec44c2cec0a4605eff2e4a8539f882e8fb5e3e
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-3/php-ini/redis/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-4-redis:
     restart: always
-    image: openemr/dev-php-fpm:8.4@sha256:8073306d0919aae6e37599559ae8e889adcee74017b75dc2a3bcb48c9e8f73f2
+    image: DCL/dev-php-fpm:8.4@sha256:8073306d0919aae6e37599559ae8e889adcee74017b75dc2a3bcb48c9e8f73f2
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-4/php-ini/redis/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-5-redis:
     restart: always
-    image: openemr/dev-php-fpm:8.5@sha256:388825aba3c3740fc63470d38d55dede9e0ca1d4d677fc0930c84312e97229ec
+    image: DCL/dev-php-fpm:8.5@sha256:388825aba3c3740fc63470d38d55dede9e0ca1d4d677fc0930c84312e97229ec
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-5/php-ini/redis/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-6-redis:
     restart: always
-    image: openemr/dev-php-fpm:8.6@sha256:ca95bd88157833d8b8a3f0b01cc71be8162140c28991dbc2cc83d6641a5536fe
+    image: DCL/dev-php-fpm:8.6@sha256:ca95bd88157833d8b8a3f0b01cc71be8162140c28991dbc2cc83d6641a5536fe
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-6/php-ini/redis/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   dev-php-fpm-8-7-redis:
     restart: always
-    image: openemr/dev-php-fpm:8.7@sha256:82f377dbf553d6ee64c7f02306d61c8c43e1f23423bcb5c8a911a5f177e1d99f
+    image: DCL/dev-php-fpm:8.7@sha256:82f377dbf553d6ee64c7f02306d61c8c43e1f23423bcb5c8a911a5f177e1d99f
     volumes:
-    - ../..:/usr/share/nginx/html/openemr
+    - ../..:/usr/share/nginx/html/DCL
     - ../library/dockers/dev-php-fpm-8-7/php-ini/redis/php.ini:/usr/local/etc/php/php.ini:ro
     environment:
-      OPENEMR_DOCKER_ENV_TAG: insane-dev-docker
-      OPENEMR__ENVIRONMENT: "dev"
+      DCL_DOCKER_ENV_TAG: insane-dev-docker
+      DCL__ENVIRONMENT: "dev"
   redis:
     restart: always
     image: redis:8.10.2@sha256:97ec88159e6d7cfb5ddef9015386087d58a912de80112f06ebdfa78fa5989901
   openldap:
     restart: always
-    image: openemr/dev-ldap:insane@sha256:24b023a969e3a2e43bfab56e22474a036553c3d69687f8e0f9d8da968ed744a7
+    image: DCL/dev-ldap:insane@sha256:24b023a969e3a2e43bfab56e22474a036553c3d69687f8e0f9d8da968ed744a7
     environment:
       LDAP_TLS_VERIFY_CLIENT: try
       LDAP_TLS_CA_CRT_FILENAME: ca.pem
@@ -770,9 +770,9 @@ services:
     image: selenium/standalone-chromium:155.0.8059.39@sha256:c7c17cd79c62819a8329df00e610dbc4073c279da034a6f37135d454eb0d8870
     ports:
     - 4444:4444    # Selenium WebDriver interface
-    - 7900:7900    # VNC port for viewing browser during tests (to work, will require SELENIUM_FORCE_HEADLESS to be "false" in openemr service)
+    - 7900:7900    # VNC port for viewing browser during tests (to work, will require SELENIUM_FORCE_HEADLESS to be "false" in DCL service)
     environment:
-      SE_VNC_PASSWORD: openemr123
+      SE_VNC_PASSWORD: DCL123
       SE_SCREEN_WIDTH: 1920
       SE_SCREEN_HEIGHT: 1080
       SE_SCREEN_DEPTH: 24

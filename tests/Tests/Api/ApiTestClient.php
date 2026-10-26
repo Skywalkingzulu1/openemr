@@ -2,34 +2,34 @@
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Repositories\ClientRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\NullLogger;
 
 /**
  * A simple and lightweight test client based off of GuzzleHttp, used in Rest Controller/API test cases.
  * The HTTP client supports:
- * - generating an OAuth2 access token for use with OpenEMR APIs
+ * - generating an OAuth2 access token for use with DCL APIs
  * - submitting requests via relative URLs
  * - standard HTTP methods/verbs: POST, PUT, GET
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Dixon Whitmire <dixonwh@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2020 Dixon Whitmire <dixonwh@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  *
  */
 class ApiTestClient
 {
     const AUTHORIZATION_HEADER = "Authorization";
-    const OPENEMR_AUTH_ENDPOINT = "/oauth2/default";
+    const DCL_AUTH_ENDPOINT = "/oauth2/default";
     const OAUTH_LOGOUT_ENDPOINT = "/oauth2/default/logout";
     const OAUTH_TOKEN_ENDPOINT = "/oauth2/default/token";
     const OAUTH_INTROSPECTION_ENDPOINT = "/oauth2/default/introspect";
@@ -239,7 +239,7 @@ class ApiTestClient
     }
 
     /**
-     * Requests an auth token from an OpenEMR Auth Endpoint.
+     * Requests an auth token from an DCL Auth Endpoint.
      * If the request succeeds the token is set in the HTTP Authorization header.
      *
      * Credentials are optionally provided using the $credentials array. Supported

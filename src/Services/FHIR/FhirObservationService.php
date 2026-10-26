@@ -1,45 +1,45 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Uuid\UuidMapping;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRObservation;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationAdvanceDirectiveService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationCareExperiencePreferenceService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationEmployerService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationHistorySdohService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationLaboratoryService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationObservationFormService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationPatientService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationQuestionnaireItemService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationSocialHistoryService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationTreatmentInterventionPreferenceService;
-use OpenEMR\Services\FHIR\Observation\FhirObservationVitalsService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceCodeTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\ObservationLabService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Uuid\UuidMapping;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRObservation;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\BaseService;
+use DCL\Services\FHIR\Observation\FhirObservationAdvanceDirectiveService;
+use DCL\Services\FHIR\Observation\FhirObservationCareExperiencePreferenceService;
+use DCL\Services\FHIR\Observation\FhirObservationEmployerService;
+use DCL\Services\FHIR\Observation\FhirObservationHistorySdohService;
+use DCL\Services\FHIR\Observation\FhirObservationLaboratoryService;
+use DCL\Services\FHIR\Observation\FhirObservationObservationFormService;
+use DCL\Services\FHIR\Observation\FhirObservationPatientService;
+use DCL\Services\FHIR\Observation\FhirObservationQuestionnaireItemService;
+use DCL\Services\FHIR\Observation\FhirObservationSocialHistoryService;
+use DCL\Services\FHIR\Observation\FhirObservationTreatmentInterventionPreferenceService;
+use DCL\Services\FHIR\Observation\FhirObservationVitalsService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\MappedServiceCodeTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\ObservationLabService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR Observation Service
  *
- * @package            OpenEMR
- * @link               https://www.open-emr.org
+ * @package            DCL
+ * @link               https://www.dcl.org
  * @author             Yash Bothra <yashrajbothra786gmail.com>
  * @copyright          Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirObservationService extends FhirServiceBase implements IResourceSearchableService, IResourceUSCIGProfileService, IPatientCompartmentResourceService, IFhirExportableResourceService
 {
@@ -77,7 +77,7 @@ class FhirObservationService extends FhirServiceBase implements IResourceSearcha
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -97,7 +97,7 @@ class FhirObservationService extends FhirServiceBase implements IResourceSearcha
     }
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying DCL data elements.
      */
     public function getAll($fhirSearchParameters, $puuidBind = null): ProcessingResult
     {
@@ -412,7 +412,7 @@ class FhirObservationService extends FhirServiceBase implements IResourceSearcha
         if ($matched === null) {
             $result = new ProcessingResult();
             $result->setValidationMessages([
-                'code' => 'Observation.code "' . $code . '" is not a code OpenEMR stores under category "'
+                'code' => 'Observation.code "' . $code . '" is not a code DCL stores under category "'
                     . implode('", "', $categories) . '"',
             ]);
             return $result;

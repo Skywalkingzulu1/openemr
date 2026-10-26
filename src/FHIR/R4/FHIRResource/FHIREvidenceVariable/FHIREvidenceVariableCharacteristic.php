@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREvidenceVariable;
+namespace DCL\FHIR\R4\FHIRResource\FHIREvidenceVariable;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREvidenceVariable;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The EvidenceVariable resource describes a "PICO" element that knowledge (evidence, assertion, recommendation) is about.
@@ -71,81 +71,81 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 {
     /**
      * A short, natural language description of the characteristic that could be used to communicate the criteria to an end-user.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $definitionReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public $definitionCanonical = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $definitionCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public $definitionExpression = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public $definitionDataRequirement = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition
      */
     public $definitionTriggerDefinition = null;
 
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $usageContext = [];
 
     /**
      * When true, members with this characteristic are excluded from the element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $exclude = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $participantEffectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $participantEffectivePeriod = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $participantEffectiveDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public $participantEffectiveTiming = null;
 
     /**
      * Indicates duration from the participant's study entry.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $timeFromStart = null;
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure
      */
     public $groupMeasure = null;
 
@@ -156,7 +156,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * A short, natural language description of the characteristic that could be used to communicate the criteria to an end-user.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -165,7 +165,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * A short, natural language description of the characteristic that could be used to communicate the criteria to an end-user.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -175,7 +175,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDefinitionReference()
     {
@@ -183,7 +183,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $definitionReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $definitionReference
      * @return $this
      */
     public function setDefinitionReference($definitionReference)
@@ -193,7 +193,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical
      */
     public function getDefinitionCanonical()
     {
@@ -201,7 +201,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $definitionCanonical
      * @return $this
      */
     public function setDefinitionCanonical($definitionCanonical)
@@ -211,7 +211,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDefinitionCodeableConcept()
     {
@@ -219,7 +219,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
      * @return $this
      */
     public function setDefinitionCodeableConcept($definitionCodeableConcept)
@@ -229,7 +229,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExpression
      */
     public function getDefinitionExpression()
     {
@@ -237,7 +237,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExpression $definitionExpression
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExpression $definitionExpression
      * @return $this
      */
     public function setDefinitionExpression($definitionExpression)
@@ -247,7 +247,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement
      */
     public function getDefinitionDataRequirement()
     {
@@ -255,7 +255,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDataRequirement $definitionDataRequirement
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDataRequirement $definitionDataRequirement
      * @return $this
      */
     public function setDefinitionDataRequirement($definitionDataRequirement)
@@ -265,7 +265,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition
      */
     public function getDefinitionTriggerDefinition()
     {
@@ -273,7 +273,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTriggerDefinition $definitionTriggerDefinition
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTriggerDefinition $definitionTriggerDefinition
      * @return $this
      */
     public function setDefinitionTriggerDefinition($definitionTriggerDefinition)
@@ -284,7 +284,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUsageContext()
     {
@@ -293,7 +293,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $usageContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $usageContext
      * @return $this
      */
     public function addUsageContext($usageContext)
@@ -304,7 +304,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * When true, members with this characteristic are excluded from the element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExclude()
     {
@@ -313,7 +313,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * When true, members with this characteristic are excluded from the element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $exclude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $exclude
      * @return $this
      */
     public function setExclude($exclude)
@@ -323,7 +323,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getParticipantEffectiveDateTime()
     {
@@ -331,7 +331,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $participantEffectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $participantEffectiveDateTime
      * @return $this
      */
     public function setParticipantEffectiveDateTime($participantEffectiveDateTime)
@@ -341,7 +341,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getParticipantEffectivePeriod()
     {
@@ -349,7 +349,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $participantEffectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $participantEffectivePeriod
      * @return $this
      */
     public function setParticipantEffectivePeriod($participantEffectivePeriod)
@@ -359,7 +359,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getParticipantEffectiveDuration()
     {
@@ -367,7 +367,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
      * @return $this
      */
     public function setParticipantEffectiveDuration($participantEffectiveDuration)
@@ -377,7 +377,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTiming
      */
     public function getParticipantEffectiveTiming()
     {
@@ -385,7 +385,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTiming $participantEffectiveTiming
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTiming $participantEffectiveTiming
      * @return $this
      */
     public function setParticipantEffectiveTiming($participantEffectiveTiming)
@@ -396,7 +396,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * Indicates duration from the participant's study entry.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getTimeFromStart()
     {
@@ -405,7 +405,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * Indicates duration from the participant's study entry.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
      * @return $this
      */
     public function setTimeFromStart($timeFromStart)
@@ -416,7 +416,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure
      */
     public function getGroupMeasure()
     {
@@ -425,7 +425,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement implements 
 
     /**
      * Indicates how elements are aggregated within the study effective period.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRGroupMeasure $groupMeasure
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRGroupMeasure $groupMeasure
      * @return $this
      */
     public function setGroupMeasure($groupMeasure)

@@ -3,18 +3,18 @@
 /**
  * Unit tests for Plaintext wrapper.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Claude <noreply@anthropic.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Encryption;
+namespace DCL\Tests\Isolated\Encryption;
 
-use OpenEMR\Encryption\Plaintext;
+use DCL\Encryption\Plaintext;
 use PHPUnit\Framework\TestCase;
 
 final class PlaintextTest extends TestCase

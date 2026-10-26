@@ -7,16 +7,16 @@
 // as published by the Free Software Foundation; either version 2
 // of the License, or (at your option) any later version.
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary;
+namespace DCL\ClinicalDecisionRules\Interface\RuleLibrary;
 
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaAge;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaBuilder;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
-use OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\TimeUnit;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteria;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaAge;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaBuilder;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaType;
+use DCL\ClinicalDecisionRules\Interface\RuleLibrary\TimeUnit;
 
 /**
- * Description of OpenEMR\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaAgeBuilder
+ * Description of DCL\ClinicalDecisionRules\Interface\RuleLibrary\RuleCriteriaAgeBuilder
  *
  * @author aron
  */

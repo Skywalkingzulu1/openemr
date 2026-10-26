@@ -1,19 +1,19 @@
 <?php
 
 /**
- * CodeTypeInstalledEvent class is fired when a code type has been installed in the OpenEMR system. Currently it is fired
+ * CodeTypeInstalledEvent class is fired when a code type has been installed in the DCL system. Currently it is fired
  * during the External Data Load process for code types found in standard_tables_capture.inc.php  Consumers can hook into
  * the pre install event and post install event.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\Codes;
+namespace DCL\Events\Codes;
 
 use Symfony\Contracts\EventDispatcher\Event;
 

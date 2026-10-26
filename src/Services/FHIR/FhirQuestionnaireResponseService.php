@@ -4,30 +4,30 @@
  * FHIR Resource Service class example for implementing the methods that are typically used with FHIR resources via the
  * api.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <stephen@nielson.org>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2022 Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
 use InvalidArgumentException;
-use OpenEMR\FHIR\DomainModels\OpenEMRFhirQuestionnaireResponse;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\DomainModels\DCLFhirQuestionnaireResponse;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\FHIR\QuestionnaireResponse\FhirQuestionnaireResponseFormService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\MappedServiceTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
@@ -83,17 +83,17 @@ class FhirQuestionnaireResponseService extends FhirServiceBase implements
     /**
      * @param mixed $openEmrRecord
      */
-    public function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    public function insertDCLRecord($openEmrRecord): ProcessingResult
     {
-        return $this->getWriteService()->insertOpenEMRRecord($openEmrRecord);
+        return $this->getWriteService()->insertDCLRecord($openEmrRecord);
     }
 
     /**
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        return $this->getWriteService()->updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord);
+        return $this->getWriteService()->updateDCLRecord($fhirResourceId, $updatedDCLRecord);
     }
 
     /**
@@ -104,9 +104,9 @@ class FhirQuestionnaireResponseService extends FhirServiceBase implements
      * @param array<array-key, mixed> $dataRecord
      * @param bool $encode
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): OpenEMRFhirQuestionnaireResponse
+    public function parseDCLRecord($dataRecord = [], $encode = false): DCLFhirQuestionnaireResponse
     {
-        return $this->getWriteService()->parseOpenEMRRecord($dataRecord, $encode);
+        return $this->getWriteService()->parseDCLRecord($dataRecord, $encode);
     }
 
     public function setEventDispatcher(EventDispatcherInterface $dispatcher)
@@ -175,8 +175,8 @@ class FhirQuestionnaireResponseService extends FhirServiceBase implements
         return ['', '7.0.0', '8.0.0'];
     }
     /**
-     * This method returns the FHIR search definition objects that are used to map FHIR search fields to OpenEMR fields.
-     * Since the mapping can be one FHIR search object to many OpenEMR fields, we use the search definition objects.
+     * This method returns the FHIR search definition objects that are used to map FHIR search fields to DCL fields.
+     * Since the mapping can be one FHIR search object to many DCL fields, we use the search definition objects.
      * Search fields can be combined as Composite fields and represent a host of search options.
      * @see https://www.hl7.org/fhir/search.html to see the types of search operations, and search types that are available
      * for use.

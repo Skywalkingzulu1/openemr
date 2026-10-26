@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRComposition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRComposition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRComposition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical package that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
@@ -71,61 +71,61 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * The label for this particular section.  This will be part of the rendered content for the document, and is often used to build a table of contents.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A code identifying the kind of content contained within the section. This must be consistent with the section title.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $code = null;
 
     /**
      * Identifies who is responsible for the information in this section, not necessarily who typed it in.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $author = [];
 
     /**
      * The actual focus of the section when it is not the subject of the composition, but instead represents something or someone associated with the subject such as (for a patient subject) a spouse, parent, fetus, or donor. If not focus is specified, the focus is assumed to be focus of the parent section, or, for a section in the Composition itself, the subject of the composition. Sections with a focus SHALL only include resources where the logical subject (patient, subject, focus, etc.) matches the section focus, or the resources have no logical subject (few resources).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $focus = null;
 
     /**
      * A human-readable narrative that contains the attested content of the section, used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRNarrative
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRNarrative
      */
     public $text = null;
 
     /**
      * How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRListMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRListMode
      */
     public $mode = null;
 
     /**
      * Specifies the order applied to the items in the section entries.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $orderedBy = null;
 
     /**
      * A reference to the actual resource from which the narrative in the section is derived.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $entry = [];
 
     /**
      * If the section is empty, why the list is empty. An empty section typically has some text explaining the empty reason.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $emptyReason = null;
 
     /**
      * A nested sub-section within this section.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
     public $section = [];
 
@@ -136,7 +136,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The label for this particular section.  This will be part of the rendered content for the document, and is often used to build a table of contents.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -145,7 +145,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The label for this particular section.  This will be part of the rendered content for the document, and is often used to build a table of contents.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -156,7 +156,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A code identifying the kind of content contained within the section. This must be consistent with the section title.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCode()
     {
@@ -165,7 +165,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A code identifying the kind of content contained within the section. This must be consistent with the section title.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function setCode($code)
@@ -176,7 +176,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies who is responsible for the information in this section, not necessarily who typed it in.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getAuthor()
     {
@@ -185,7 +185,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Identifies who is responsible for the information in this section, not necessarily who typed it in.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $author
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function addAuthor($author)
@@ -196,7 +196,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The actual focus of the section when it is not the subject of the composition, but instead represents something or someone associated with the subject such as (for a patient subject) a spouse, parent, fetus, or donor. If not focus is specified, the focus is assumed to be focus of the parent section, or, for a section in the Composition itself, the subject of the composition. Sections with a focus SHALL only include resources where the logical subject (patient, subject, focus, etc.) matches the section focus, or the resources have no logical subject (few resources).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getFocus()
     {
@@ -205,7 +205,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * The actual focus of the section when it is not the subject of the composition, but instead represents something or someone associated with the subject such as (for a patient subject) a spouse, parent, fetus, or donor. If not focus is specified, the focus is assumed to be focus of the parent section, or, for a section in the Composition itself, the subject of the composition. Sections with a focus SHALL only include resources where the logical subject (patient, subject, focus, etc.) matches the section focus, or the resources have no logical subject (few resources).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $focus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $focus
      * @return $this
      */
     public function setFocus($focus)
@@ -216,7 +216,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A human-readable narrative that contains the attested content of the section, used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRNarrative
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRNarrative
      */
     public function getText()
     {
@@ -225,7 +225,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A human-readable narrative that contains the attested content of the section, used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRNarrative $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRNarrative $text
      * @return $this
      */
     public function setText($text)
@@ -236,7 +236,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRListMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRListMode
      */
     public function getMode()
     {
@@ -245,7 +245,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRListMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRListMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -256,7 +256,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specifies the order applied to the items in the section entries.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOrderedBy()
     {
@@ -265,7 +265,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Specifies the order applied to the items in the section entries.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $orderedBy
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $orderedBy
      * @return $this
      */
     public function setOrderedBy($orderedBy)
@@ -276,7 +276,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A reference to the actual resource from which the narrative in the section is derived.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEntry()
     {
@@ -285,7 +285,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A reference to the actual resource from which the narrative in the section is derived.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $entry
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $entry
      * @return $this
      */
     public function addEntry($entry)
@@ -296,7 +296,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * If the section is empty, why the list is empty. An empty section typically has some text explaining the empty reason.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getEmptyReason()
     {
@@ -305,7 +305,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * If the section is empty, why the list is empty. An empty section typically has some text explaining the empty reason.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $emptyReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $emptyReason
      * @return $this
      */
     public function setEmptyReason($emptyReason)
@@ -316,7 +316,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A nested sub-section within this section.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
     public function getSection()
     {
@@ -325,7 +325,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * A nested sub-section within this section.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection $section
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRComposition\FHIRCompositionSection $section
      * @return $this
      */
     public function addSection($section)

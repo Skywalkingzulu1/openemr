@@ -3,19 +3,19 @@
 /**
 * forms.php
 *
-* @package   OpenEMR
-* @link      https://www.open-emr.org
+* @package   DCL
+* @link      https://www.dcl.org
 * @author    Brady Miller <brady.g.miller@gmail.com>
 * @author    Jerry Padgett <sjpadgett@gmail.com>
-* @author    Michael A. Smith <michael@opencoreemr.com>
+* @author    Michael A. Smith <michael@DCL.com>
 * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
 * @copyright Copyright (c) 2018-2021 Jerry Padgett <sjpadgett@gmail.com>
-* @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
-* @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+* @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+* @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
 require_once(__DIR__ . "/../../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 
 /**
  * @var string $srcdir
@@ -32,22 +32,22 @@ require_once($srcdir . '/ESign/Api.php');
 require_once($srcdir . "/../controllers/C_Document.class.php");
 
 use ESign\Api;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Forms\FormLocator;
-use OpenEMR\Common\Forms\FormReportRenderer;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Encounter\EncounterFormsListRenderEvent;
-use OpenEMR\Events\Encounter\EncounterMenuEvent;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\Questionnaire\AvailabilityContext;
-use OpenEMR\Services\Questionnaire\QuestionnaireAvailabilityService;
-use OpenEMR\Services\Questionnaire\QuestionnaireSurface;
-use OpenEMR\Services\UserService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Forms\FormLocator;
+use DCL\Common\Forms\FormReportRenderer;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Encounter\EncounterFormsListRenderEvent;
+use DCL\Events\Encounter\EncounterMenuEvent;
+use DCL\Services\EncounterService;
+use DCL\Services\Questionnaire\AvailabilityContext;
+use DCL\Services\Questionnaire\QuestionnaireAvailabilityService;
+use DCL\Services\Questionnaire\QuestionnaireSurface;
+use DCL\Services\UserService;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $pid = $session->get('pid', 0);

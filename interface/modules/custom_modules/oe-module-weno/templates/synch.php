@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @package    OpenEMR
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @author     omegasystemsgroup.com
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2023 omega systems group international <info@omegasystemsgroup.com>
  * @copyright  Copyright (c) 2024 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(dirname(__DIR__, 4) . "/globals.php");
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Modules\WenoModule\Services\LogProperties;
-use OpenEMR\Modules\WenoModule\Services\TransmitProperties;
-use OpenEMR\Modules\WenoModule\Services\WenoLogService;
+use DCL\Common\Acl\AclMain;
+use DCL\Core\OEGlobalsBag;
+use DCL\Modules\WenoModule\Services\LogProperties;
+use DCL\Modules\WenoModule\Services\TransmitProperties;
+use DCL\Modules\WenoModule\Services\WenoLogService;
 
 $wenoLog = new WenoLogService();
 /*

@@ -6,16 +6,16 @@
  * column as a string regardless of the underlying type; these tests lock in the boundary
  * conversion to the typed shapes the controller expects.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Portal;
+namespace DCL\Tests\Unit\Portal;
 
-use OpenEMR\Controllers\Portal\PortalLoginRowNormalizer;
+use DCL\Controllers\Portal\PortalLoginRowNormalizer;
 use PHPUnit\Framework\TestCase;
 
 class PortalLoginRowNormalizerTest extends TestCase

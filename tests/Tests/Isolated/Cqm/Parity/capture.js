@@ -4,7 +4,7 @@
  *
  * For every measure of a reporting year this generates a deterministic set of
  * QDM 5.6 patients from the measure's own data criteria and value sets, runs
- * them through cqm-execution with the options OpenEMR sends, and writes the
+ * them through cqm-execution with the options DCL sends, and writes the
  * patients and results to one JSON fixture per measure.
  *
  * Measures whose populations random patients rarely reach also get seed
@@ -19,16 +19,16 @@
  * Usage:
  *   node capture.js <node_modules> <json_measures dir> <year> <out dir> [patients per measure] [measure...]
  *
- * The reference engine is not part of OpenEMR. Install the versions the
+ * The reference engine is not part of DCL. Install the versions the
  * fixtures were made with anywhere, e.g.
  *   npm install --prefix /tmp/cqm-reference cqm-execution@4.4.3 cqm-models@4.3.2
  * and pass /tmp/cqm-reference/node_modules as <node_modules>.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 'use strict';
@@ -254,7 +254,7 @@ function patientFactory(measure, valueSets) {
             }];
         }
         if ('negationRationale' in criterion && reasonSets.length > 0 && chance(0.2)) {
-            // OpenEMR records a negated act against the value set itself.
+            // DCL records a negated act against the value set itself.
             el.negationRationale = codeFrom(pick(reasonSets));
             el.dataElementCodes = [{ code: criterion.codeListId, system: OID_SYSTEM }];
             for (const key of PERIOD_KEYS) {
@@ -507,7 +507,7 @@ function applyOpenEmrPreprocessing(patients, valueSets) {
 
 const POPULATION_KEYS = ['STRAT', 'IPP', 'DENOM', 'NUMER', 'NUMEX', 'DENEX', 'DENEXCEP', 'MSRPOPL', 'MSRPOPLEX', 'OBSERV'];
 
-/** The parts of a result OpenEMR consumes, plus statement finals to localize differences. */
+/** The parts of a result DCL consumes, plus statement finals to localize differences. */
 function summarize(result) {
     const out = {};
     for (const key of POPULATION_KEYS) {
@@ -613,7 +613,7 @@ async function engine(measure, valueSets, patients) {
 }
 
 /**
- * Runs patients through the engine as OpenEMR would and summarizes each
+ * Runs patients through the engine as DCL would and summarizes each
  * patient's results. The engine fails a whole batch when one patient raises
  * an error, so a failed batch is retried patient by patient and the patients
  * that fail are left out.

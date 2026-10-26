@@ -5,16 +5,16 @@
  *
  * Tests ProcessingResult data container functionality without dependencies.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators;
+namespace DCL\Tests\Isolated\Validators;
 
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Validators\ProcessingResult;
 use PHPUnit\Framework\TestCase;
 
 class ProcessingResultTest extends TestCase
@@ -202,10 +202,10 @@ class ProcessingResultTest extends TestCase
 
         // Test initial pagination
         $pagination = $result->getPagination();
-        $this->assertInstanceOf(\OpenEMR\Common\Database\QueryPagination::class, $pagination);
+        $this->assertInstanceOf(\DCL\Common\Database\QueryPagination::class, $pagination);
 
         // Test setting pagination
-        $customPagination = new \OpenEMR\Common\Database\QueryPagination();
+        $customPagination = new \DCL\Common\Database\QueryPagination();
         $customPagination->setLimit(5);
         $result->setPagination($customPagination);
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace OpenEMR\Tests\RestControllers\FHIR;
+namespace DCL\Tests\RestControllers\FHIR;
 
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRPatient;
-use OpenEMR\RestControllers\FHIR\FhirPatientRestController;
-use OpenEMR\Tests\Fixtures\FixtureManager;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\FhirResponseAssertionTrait;
-use OpenEMR\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRPatient;
+use DCL\RestControllers\FHIR\FhirPatientRestController;
+use DCL\Tests\Fixtures\FixtureManager;
+use DCL\Tests\RestControllers\FHIR\Trait\FhirResponseAssertionTrait;
+use DCL\Tests\RestControllers\FHIR\Trait\JsonResponseHandlerTrait;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;

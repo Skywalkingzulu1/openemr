@@ -3,27 +3,27 @@
 /**
  * Common script for the encounter form (new and view) scripts for therapy groups.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Amiel Elboim <amielel@matrix.co.il>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2016 Shachar Zilbershlag <shaharzi@matrix.co.il>
  * @copyright Copyright (c) 2016 Amiel Elboim <amielel@matrix.co.il>
  * @copyright Copyright (c) 2017-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("$srcdir/options.inc.php");
 require_once("$srcdir/group.inc.php");
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 $facilityService = new FacilityService();
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
@@ -178,7 +178,7 @@ $help_icon = '';
                                     <option value='_blank'>-- <?php echo xlt('Select One'); ?> --</option>
                                     <?php
                                     $cres = sqlStatement("SELECT pc_catid, pc_catname, pc_cattype " .
-                                        "FROM openemr_postcalendar_categories where pc_active = 1 ORDER BY pc_seq ");
+                                        "FROM DCL_postcalendar_categories where pc_active = 1 ORDER BY pc_seq ");
                                     while ($crow = sqlFetchArray($cres)) {
                                         $catid = $crow['pc_catid'];
                                         if ($crow['pc_cattype'] != 3) {

@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @package    OpenEMR
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @author     Sherwin Gaddis <sherwingaddis@gmail.com>
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2021 Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright  Copyright (c) 2024-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Modules\WenoModule\Services\LogProperties;
-use OpenEMR\Modules\WenoModule\Services\WenoLogService;
-use OpenEMR\Modules\WenoModule\Services\WenoPharmaciesJson;
-use OpenEMR\Modules\WenoModule\Services\WenoValidate;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Modules\WenoModule\Services\LogProperties;
+use DCL\Modules\WenoModule\Services\WenoLogService;
+use DCL\Modules\WenoModule\Services\WenoPharmaciesJson;
+use DCL\Modules\WenoModule\Services\WenoValidate;
 
 function getModuleState($modId): bool
 {

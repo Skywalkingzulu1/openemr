@@ -17,23 +17,23 @@
  * (authorizeDocumentAccess) and the streaming seam (sendFile) are stubbed, and
  * the request/baseDir/crypto collaborators are injected by reflection. An
  * identity xlt() stub declared in the controller namespace (matching
- * ServiceTypeTest's in-namespace style) keeps the suite free of OpenEMR's
+ * ServiceTypeTest's in-namespace style) keeps the suite free of DCL's
  * gettext/DB bootstrap.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Discover and Change, Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Modules\FaxSMS\Controller {
+namespace DCL\Modules\FaxSMS\Controller {
     // The disposal guard's rejection paths call xlt(); an identity stub declared
     // IN the controller namespace resolves the unqualified call here instead of
-    // OpenEMR's DB-backed translation layer, which is absent in the isolated suite.
-    if (!function_exists('OpenEMR\Modules\FaxSMS\Controller\xlt')) {
+    // DCL's DB-backed translation layer, which is absent in the isolated suite.
+    if (!function_exists('DCL\Modules\FaxSMS\Controller\xlt')) {
         function xlt(string $s): string
         {
             return $s;
@@ -43,7 +43,7 @@ namespace OpenEMR\Modules\FaxSMS\Controller {
 
 namespace {
     spl_autoload_register(static function (string $class): void {
-        $prefix = 'OpenEMR\\Modules\\FaxSMS\\';
+        $prefix = 'DCL\\Modules\\FaxSMS\\';
         if (!str_starts_with($class, $prefix)) {
             return;
         }
@@ -57,13 +57,13 @@ namespace {
     });
 }
 
-namespace OpenEMR\Tests\Isolated\Modules\FaxSMS\Controller {
+namespace DCL\Tests\Isolated\Modules\FaxSMS\Controller {
 
-    use OpenEMR\Common\Crypto\CryptoInterface;
-    use OpenEMR\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
-    use OpenEMR\Modules\FaxSMS\Controller\EtherFaxActions;
-    use OpenEMR\Modules\FaxSMS\Controller\RCFaxClient;
-    use OpenEMR\Modules\FaxSMS\Controller\SignalWireClient;
+    use DCL\Common\Crypto\CryptoInterface;
+    use DCL\Modules\FaxSMS\Contracts\FaxDocumentDisposalInterface;
+    use DCL\Modules\FaxSMS\Controller\EtherFaxActions;
+    use DCL\Modules\FaxSMS\Controller\RCFaxClient;
+    use DCL\Modules\FaxSMS\Controller\SignalWireClient;
     use PHPUnit\Framework\Attributes\DataProvider;
     use PHPUnit\Framework\MockObject\MockObject;
     use PHPUnit\Framework\TestCase;

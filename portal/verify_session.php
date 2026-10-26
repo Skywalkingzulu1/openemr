@@ -11,8 +11,8 @@
  * in the redirect showing the user that there was an error since you may actually be requiring the user login and there
  * is no error in doing that.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Cassian LUP <cassi.lup@gmail.com>
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
@@ -21,15 +21,15 @@
  * @copyright Copyright (c) 2013 Kevin Yeh <kevin.y@integralemr.com>
  * @copyright Copyright (c) 2016-2023 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // All of the common initialization steps for the get_* patient portal functions are now in this single include.
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Session\SessionWrapperFactory;
 
 //continue session
-// Will start the (patient) portal OpenEMR session/cookie.
+// Will start the (patient) portal DCL session/cookie.
 // Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../vendor/autoload.php");
 $session = SessionWrapperFactory::getInstance()->getPortalSession();
@@ -52,5 +52,5 @@ if (!empty($session->get('pid')) && !empty($session->get('patient_portal_onsite_
     exit;
 }
 
-$ignoreAuth_onsite_portal = true; // ignore the standard authentication for a regular OpenEMR user
+$ignoreAuth_onsite_portal = true; // ignore the standard authentication for a regular DCL user
 require_once(__DIR__ . '/../interface/globals.php');

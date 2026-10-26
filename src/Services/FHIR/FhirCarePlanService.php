@@ -3,41 +3,41 @@
 /**
  * FhirCarePlanService.php
  *
- * @package    openemr
- * @link       https://www.open-emr.org
+ * @package    DCL
+ * @link       https://www.dcl.org
  * @author     Stephen Nielson <stephen@nielson.org>
  * @author     Jerry Padgett <sjpadgett@gmail.com>
  * @copyright  Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
  * @copyright  Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCarePlan;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRNarrative;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\CarePlanService;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\EncounterService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCarePlan;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRNarrative;
+use DCL\FHIR\R4\FHIRElement\FHIRPeriod;
+use DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity;
+use DCL\FHIR\R4\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\CarePlanService;
+use DCL\Services\CodeTypesService;
+use DCL\Services\EncounterService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfileService, IPatientCompartmentResourceService, IFhirExportableResourceService
 {
@@ -60,7 +60,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Returns an array mapping FHIR CarePlan Resource search parameters to OpenEMR CarePlan search parameters
+     * Returns an array mapping FHIR CarePlan Resource search parameters to DCL CarePlan search parameters
      *
      * @return array The search parameters
      */
@@ -99,13 +99,13 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Parses an OpenEMR record, returning the equivalent FHIR Resource
+     * Parses an DCL record, returning the equivalent FHIR Resource
      *
-     * @param array   $dataRecord The source OpenEMR data record
+     * @param array   $dataRecord The source DCL data record
      * @param bool $encode Indicates if the returned resource is encoded into a string. Defaults to false.
      * @return FHIRCarePlan
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
         $carePlanResource = new FHIRCarePlan();
 
@@ -564,7 +564,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Map OpenEMR care plan status to FHIR status
+     * Map DCL care plan status to FHIR status
      */
     private function mapCarePlanStatus(?string $formStatus): string
     {
@@ -590,7 +590,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Map OpenEMR activity status to FHIR activity status
+     * Map DCL activity status to FHIR activity status
      */
     private function mapActivityStatus(?string $moodCode): string
     {
@@ -598,7 +598,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
             return 'not-started'; // Better default than 'unknown'
         }
 
-        // OpenEMR moodCode values from list_options where list_id='Plan_of_Care_Type'
+        // DCL moodCode values from list_options where list_id='Plan_of_Care_Type'
         $statusMap = [
             'int' => 'in-progress',      // Intent
             'rqo' => 'scheduled',         // Request
@@ -630,7 +630,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
             return null;
         }
 
-        // OpenEMR codes often come in format "CODETYPE:CODE"
+        // DCL codes often come in format "CODETYPE:CODE"
         $parts = explode(':', $code, 2);
         if (count($parts) < 2) {
             // If no prefix, assume SNOMED-CT as default for care plans
@@ -659,7 +659,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Extract the actual code value from an OpenEMR code string
+     * Extract the actual code value from an DCL code string
      */
     private function extractCodeValue(?string $code): string
     {
@@ -673,22 +673,22 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      *
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        // Translate FHIR category codes to OpenEMR care_plan_type values
-        if (isset($openEMRSearchParameters['care_plan_type'])) {
-            $categoryField = $openEMRSearchParameters['care_plan_type'];
-            if ($categoryField instanceof \OpenEMR\Services\Search\TokenSearchField) {
+        // Translate FHIR category codes to DCL care_plan_type values
+        if (isset($DCLSearchParameters['care_plan_type'])) {
+            $categoryField = $DCLSearchParameters['care_plan_type'];
+            if ($categoryField instanceof \DCL\Services\Search\TokenSearchField) {
                 $translatedValues = [];
                 foreach ($categoryField->getValues() as $value) {
-                    if ($value instanceof \OpenEMR\Services\Search\TokenSearchValue) {
+                    if ($value instanceof \DCL\Services\Search\TokenSearchValue) {
                         $fhirCode = $value->getCode();
-                        // Map FHIR category to OpenEMR care_plan_type
+                        // Map FHIR category to DCL care_plan_type
                         $openEmrType = match ($fhirCode) {
                             'assess-plan' => 'plan_of_care',
                             'goal' => 'goal',
@@ -696,7 +696,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
                         };
                         // Create new TokenSearchValue with translated code
                         // Constructor: TokenSearchValue($code, $system, $exact)
-                        $translatedValues[] = new \OpenEMR\Services\Search\TokenSearchValue(
+                        $translatedValues[] = new \DCL\Services\Search\TokenSearchValue(
                             $openEmrType,
                             $value->getSystem(),
                             false  // exact match flag
@@ -709,16 +709,16 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
             }
         }
 
-        return $this->service->search($openEMRSearchParameters, true);
+        return $this->service->search($DCLSearchParameters, true);
     }
 
     /**
-     * Parses a FHIR CarePlan resource into an OpenEMR-shaped payload.
+     * Parses a FHIR CarePlan resource into an DCL-shaped payload.
      *
      * One FHIR CarePlan maps to one form_care_plan form, with each FHIR `activity.detail` entry
      * becoming one form_care_plan row. The patient (subject) and encounter references are kept
      * as opaque uuid strings here; they are resolved to numeric ids inside
-     * insertOpenEMRRecord/updateOpenEMRRecord.
+     * insertDCLRecord/updateDCLRecord.
      *
      * @param FHIRDomainResource $fhirResource
      * @return array<string, mixed> {
@@ -745,10 +745,10 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
             $data['uuid'] = $resourceId;
         }
 
-        // intent is 1..1 in R4, but form_care_plan has no column for it and parseOpenEMRRecord()
+        // intent is 1..1 in R4, but form_care_plan has no column for it and parseDCLRecord()
         // hardcodes 'plan' on the way out. Anything else is therefore rejected rather than
         // accepted and quietly downgraded -- storing an 'order' and reading back a 'plan' changes
-        // what the resource means. insertOpenEMRRecord/updateOpenEMRRecord turn this into a 422.
+        // what the resource means. insertDCLRecord/updateDCLRecord turn this into a 422.
         $intent = $json['intent'] ?? null;
         if (is_string($intent) && $intent !== '' && $intent !== 'plan') {
             $data['__validation_error__'] = [
@@ -834,11 +834,11 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
                     );
                     if ($storedCode === null) {
                         // Marker plus continue, matching the activity.reference rejection above:
-                        // the marker is what insertOpenEMRRecord()/updateOpenEMRRecord() turn
+                        // the marker is what insertDCLRecord()/updateDCLRecord() turn
                         // into the validation response, so the whole write is refused either way.
                         $data['__validation_error__'] = [
                             'activity' => 'CarePlan.activity.detail.code.coding carries no system '
-                                . 'OpenEMR recognises, so the code cannot be stored without '
+                                . 'DCL recognises, so the code cannot be stored without '
                                 . 'misattributing it',
                         ];
                         continue;
@@ -927,10 +927,10 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      * @return ProcessingResult
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR CarePlan record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL CarePlan record array');
         }
 
         $validationError = $this->parseTimeValidationError($openEmrRecord);
@@ -958,12 +958,12 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
      * Replaces an existing care_plan form's items from a parsed FHIR CarePlan.
      *
      * @param string $fhirResourceId The surrogate key (encounter-uuid + "-SK-" + form_id).
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      * @return ProcessingResult
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
-        $validationError = $this->parseTimeValidationError($updatedOpenEMRRecord);
+        $validationError = $this->parseTimeValidationError($updatedDCLRecord);
         if ($validationError !== null) {
             return $validationError;
         }
@@ -991,7 +991,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
         // The URL's surrogate id chooses the form to rewrite; the body's subject says whose care
         // plan the caller believes they are editing. If those disagree the write is rejected
         // rather than silently rewriting whichever patient the id happened to point at.
-        $expectedPid = $this->resolvePatientId($updatedOpenEMRRecord);
+        $expectedPid = $this->resolvePatientId($updatedDCLRecord);
         if ($expectedPid instanceof ProcessingResult) {
             return $expectedPid;
         }
@@ -999,7 +999,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
         return $this->service->replace(
             (int) $encounterId,
             $formId,
-            FhirPayloadReader::rows($updatedOpenEMRRecord['items'] ?? null),
+            FhirPayloadReader::rows($updatedDCLRecord['items'] ?? null),
             [],
             $expectedPid
         );
@@ -1057,12 +1057,12 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * OpenEMR's form_care_plan.code column stores codes prefixed by code-type
+     * DCL's form_care_plan.code column stores codes prefixed by code-type
      * (e.g. "SNOMED-CT:182840001"). The read side splits this via CodeTypesService, so the write
      * side resolves the system URL through the same service to stay in sync.
      *
-     * Returns null when the system is absent or unknown to OpenEMR:
-     * getOpenEMRCodeForSystemAndCode() answers the bare code in that case, which the reader
+     * Returns null when the system is absent or unknown to DCL:
+     * getDCLCodeForSystemAndCode() answers the bare code in that case, which the reader
      * cannot tell from a code whose type was never recorded, so it would come back under a
      * system the caller never sent. Callers reject rather than store that.
      */
@@ -1071,7 +1071,7 @@ class FhirCarePlanService extends FhirServiceBase implements IResourceUSCIGProfi
         if ($system === '') {
             return null;
         }
-        $stored = (new CodeTypesService())->getOpenEMRCodeForSystemAndCode($system, $code);
+        $stored = (new CodeTypesService())->getDCLCodeForSystemAndCode($system, $code);
 
         return str_contains($stored, ':') ? $stored : null;
     }

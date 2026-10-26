@@ -2,20 +2,20 @@
 
 /**
  * UserEditRenderEvent class is fired from the interface/usergroup/user_admin.php and interface/usergroup/usergroup_admin_add.php
- * pages inside OpenEMR and allows event listeners to render content before or after the form fields for the user.  Content
+ * pages inside DCL and allows event listeners to render content before or after the form fields for the user.  Content
  * will be contained inside a div.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change, Inc. <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Events\User;
+namespace DCL\Events\User;
 
-use OpenEMR\Events\Core\TemplatePageEvent;
+use DCL\Events\Core\TemplatePageEvent;
 
 class UserEditRenderEvent extends TemplatePageEvent
 {

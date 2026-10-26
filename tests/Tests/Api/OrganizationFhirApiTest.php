@@ -3,18 +3,18 @@
 /**
  * FHIR Organization API tests.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Marcello Costagliola <marcello.costagliola1@gmail.com>
  * @copyright Copyright (c) 2026 Marcello Costagliola <marcello.costagliola1@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\Tests\Fixtures\FacilityFixtureManager;
+use DCL\Tests\Fixtures\FacilityFixtureManager;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,9 +30,9 @@ use Symfony\Component\HttpFoundation\Response;
  * removes it in tearDown: every fixture name starts with "test-fixture-", and the
  * cleanup matches on that prefix, so the updated name in the PUT test keeps it too.
  *
- * OpenEMR vs FHIR conventions (tests pin current server behavior, not the spec):
+ * DCL vs FHIR conventions (tests pin current server behavior, not the spec):
  * - Search bundles use type "collection" (FhirResourcesService), not FHIR's "searchset".
- * - POST and PUT answer with the stored OpenEMR row (which carries "uuid"), not with
+ * - POST and PUT answer with the stored DCL row (which carries "uuid"), not with
  *   the FHIR resource.
  * - Read-one errors return validationErrors (400) for a malformed uuid or an empty JSON
  *   array (404) for an unknown one, not OperationOutcome.
@@ -65,7 +65,7 @@ class OrganizationFhirApiTest extends TestCase
     protected function setUp(): void
     {
         $this->testClient = new ApiTestClient(self::baseUrl(), false);
-        $this->testClient->setAuthToken(ApiTestClient::OPENEMR_AUTH_ENDPOINT);
+        $this->testClient->setAuthToken(ApiTestClient::DCL_AUTH_ENDPOINT);
 
         $this->fixtureManager = new FacilityFixtureManager();
         $fixtures = $this->fixtureManager->getFhirFacilityFixtures();
@@ -292,11 +292,11 @@ class OrganizationFhirApiTest extends TestCase
     // ---------------------------------------------------------------------
 
     /**
-     * Base URL of the app under test, from OPENEMR_BASE_URL_API like the other API tests.
+     * Base URL of the app under test, from DCL_BASE_URL_API like the other API tests.
      */
     private static function baseUrl(): string
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true);
+        $baseUrl = getenv("DCL_BASE_URL_API", true);
         return is_string($baseUrl) && $baseUrl !== '' ? $baseUrl : "https://localhost";
     }
 

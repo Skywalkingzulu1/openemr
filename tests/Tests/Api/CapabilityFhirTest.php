@@ -1,19 +1,19 @@
 <?php
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
-use OpenEMR\FHIR\SMART\Capability;
-use OpenEMR\Tests\Api\ApiTestClient;
+use DCL\FHIR\SMART\Capability;
+use DCL\Tests\Api\ApiTestClient;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Capability FHIR Endpoint Test Cases.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018-2019 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class CapabilityFhirTest extends TestCase
 {
@@ -39,7 +39,7 @@ class CapabilityFhirTest extends TestCase
 
     protected function setUp(): void
     {
-        $baseUrl = getenv("OPENEMR_BASE_URL_API", true) ?: "https://localhost";
+        $baseUrl = getenv("DCL_BASE_URL_API", true) ?: "https://localhost";
         $this->testClient = new ApiTestClient($baseUrl, false);
         $this->baseUrl = $baseUrl;
         $this->oauthBaseUrl = $baseUrl . self::CAPABILITY_OAUTH_PREFIX;

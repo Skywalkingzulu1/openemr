@@ -1,40 +1,40 @@
 <?php
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRCondition;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\Services\BaseService;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\ConditionService;
-use OpenEMR\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
-use OpenEMR\Services\FHIR\Condition\FhirConditionHealthConcernService;
-use OpenEMR\Services\FHIR\Condition\FhirConditionProblemListItemService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\MappedServiceCodeTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRCondition;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\Services\BaseService;
+use DCL\Services\CodeTypesService;
+use DCL\Services\ConditionService;
+use DCL\Services\FHIR\Condition\FhirConditionEncounterDiagnosisService;
+use DCL\Services\FHIR\Condition\FhirConditionHealthConcernService;
+use DCL\Services\FHIR\Condition\FhirConditionProblemListItemService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\MappedServiceCodeTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 use Psr\Log\LoggerInterface;
 
 /**
  * FHIR Condition Service
  *
- * @package            OpenEMR
- * @link               https://www.open-emr.org
+ * @package            DCL
+ * @link               https://www.dcl.org
  * @author             Yash Bothra <yashrajbothra786gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright          Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license            https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license            https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService, IPatientCompartmentResourceService
 {
@@ -72,9 +72,9 @@ class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProf
      * @param array<array-key, mixed> $dataRecord
      * @param bool $encode
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false)
+    public function parseDCLRecord($dataRecord = [], $encode = false)
     {
-        return $this->problemListItemService->parseOpenEMRRecord($dataRecord, $encode);
+        return $this->problemListItemService->parseDCLRecord($dataRecord, $encode);
     }
 
     public function setSystemLogger(LoggerInterface $systemLogger): void
@@ -86,7 +86,7 @@ class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProf
     }
 
     /**
-     * Returns an array mapping FHIR Condition Resource search parameters to OpenEMR Condition search parameters
+     * Returns an array mapping FHIR Condition Resource search parameters to DCL Condition search parameters
      *
      * @return array The search parameters
      */
@@ -145,10 +145,10 @@ class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProf
     }
 
     /**
-     * Parses a FHIR Condition resource, returning the equivalent OpenEMR record.
+     * Parses a FHIR Condition resource, returning the equivalent DCL record.
      *
      * @param FHIRDomainResource $fhirResource The source FHIR resource
-     * @return array a mapped OpenEMR data record
+     * @return array a mapped DCL data record
      */
     public function parseFhirResource(FHIRDomainResource $fhirResource): array
     {
@@ -181,7 +181,7 @@ class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProf
             $subjectUuid = UtilsService::parseReferenceString($subjectRef, 'Patient')['uuid'] ?? null;
             if (
                 is_string($subjectUuid) && $subjectUuid !== ''
-                && \OpenEMR\Common\Uuid\UuidRegistry::isValidStringUUID($subjectUuid)
+                && \DCL\Common\Uuid\UuidRegistry::isValidStringUUID($subjectUuid)
             ) {
                 $data['puuid'] = $subjectUuid;
             }
@@ -198,7 +198,7 @@ class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProf
                 $system = is_string($systemValue) ? $systemValue : '';
                 $codeValue = $coding['code'] ?? null;
                 if (is_scalar($codeValue) && $codeValue !== '' && $codeValue !== false) {
-                    $diagnosisParts[] = $codeTypesService->getOpenEMRCodeForSystemAndCode($system, $codeValue);
+                    $diagnosisParts[] = $codeTypesService->getDCLCodeForSystemAndCode($system, $codeValue);
                 }
                 $display = $coding['display'] ?? null;
                 if (is_string($display) && $display !== '' && !isset($data['title'])) {
@@ -266,35 +266,35 @@ class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProf
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      *
      * @param mixed $openEmrRecord The parsed record from parseFhirResource()
      * @return ProcessingResult
      */
-    protected function insertOpenEMRRecord($openEmrRecord)
+    protected function insertDCLRecord($openEmrRecord)
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Condition record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Condition record array');
         }
 
         return $this->conditionService->insert($openEmrRecord);
     }
 
     /**
-     * Updates an existing OpenEMR record.
+     * Updates an existing DCL record.
      *
-     * @param string $fhirResourceId The OpenEMR record's FHIR Resource ID (uuid)
-     * @param array $updatedOpenEMRRecord The updated OpenEMR record
+     * @param string $fhirResourceId The DCL record's FHIR Resource ID (uuid)
+     * @param array $updatedDCLRecord The updated DCL record
      * @return ProcessingResult
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord)
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord)
     {
         // The patient the caller asserts has to be the condition's actual owner. parseFhirResource()
         // sets puuid only when Condition.subject resolves, and without it update() has nothing to
         // compare the stored row against. Condition.subject is 1..1 in R4, so rejecting the
         // omission is also what the spec asks for, and it matches AllergyIntolerance,
         // MedicationRequest and ServiceRequest on this path.
-        $puuid = $updatedOpenEMRRecord['puuid'] ?? null;
+        $puuid = $updatedDCLRecord['puuid'] ?? null;
         if (!is_string($puuid) || $puuid === '') {
             $result = new ProcessingResult();
             $result->setValidationMessages([
@@ -312,7 +312,7 @@ class FhirConditionService extends FhirServiceBase implements IResourceUSCIGProf
             return $result;
         }
 
-        return $this->conditionService->update($fhirResourceId, $updatedOpenEMRRecord, (int) $pid);
+        return $this->conditionService->update($fhirResourceId, $updatedDCLRecord, (int) $pid);
     }
 
     /**

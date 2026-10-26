@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
+namespace DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides eligibility and plan details from the processing of an CoverageEligibilityRequest resource.
@@ -71,85 +71,85 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 {
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
      * This contains the product, service, drug or other billing code for the item.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $productOrService = null;
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $modifier = [];
 
     /**
      * The practitioner who is eligible for the provision of the product or service.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $provider = null;
 
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicates the product or service is included in the coverage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $excluded = null;
 
     /**
      * A short name or tag for the benefit.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A richer description of the benefit or services covered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $network = null;
 
     /**
      * Indicates if the benefits apply to an individual or to the family.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unit = null;
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual visits'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $term = null;
 
     /**
      * Benefits used to date.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit[]
      */
     public $benefit = [];
 
     /**
      * A boolean flag indicating whether a preauthorization is required prior to actual service delivery.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $authorizationRequired = null;
 
     /**
      * Codes or comments regarding information or actions associated with the preauthorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $authorizationSupporting = [];
 
     /**
      * A web location for obtaining requirements or descriptive information regarding the preauthorization.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $authorizationUrl = null;
 
@@ -160,7 +160,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -169,7 +169,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Code to identify the general type of benefits under which products and services are provided.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -180,7 +180,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * This contains the product, service, drug or other billing code for the item.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getProductOrService()
     {
@@ -189,7 +189,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * This contains the product, service, drug or other billing code for the item.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $productOrService
      * @return $this
      */
     public function setProductOrService($productOrService)
@@ -200,7 +200,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getModifier()
     {
@@ -209,7 +209,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Item typification or modifiers codes to convey additional context for the product or service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -220,7 +220,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * The practitioner who is eligible for the provision of the product or service.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getProvider()
     {
@@ -229,7 +229,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * The practitioner who is eligible for the provision of the product or service.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $provider
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $provider
      * @return $this
      */
     public function setProvider($provider)
@@ -240,7 +240,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicates the product or service is included in the coverage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExcluded()
     {
@@ -249,7 +249,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * True if the indicated class of service is excluded from the plan, missing or False indicates the product or service is included in the coverage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $excluded
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $excluded
      * @return $this
      */
     public function setExcluded($excluded)
@@ -260,7 +260,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A short name or tag for the benefit.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -269,7 +269,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A short name or tag for the benefit.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -280,7 +280,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A richer description of the benefit or services covered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -289,7 +289,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A richer description of the benefit or services covered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -300,7 +300,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getNetwork()
     {
@@ -309,7 +309,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $network
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $network
      * @return $this
      */
     public function setNetwork($network)
@@ -320,7 +320,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Indicates if the benefits apply to an individual or to the family.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnit()
     {
@@ -329,7 +329,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Indicates if the benefits apply to an individual or to the family.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unit
      * @return $this
      */
     public function setUnit($unit)
@@ -340,7 +340,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual visits'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTerm()
     {
@@ -349,7 +349,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum annual visits'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $term
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $term
      * @return $this
      */
     public function setTerm($term)
@@ -360,7 +360,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Benefits used to date.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit[]
      */
     public function getBenefit()
     {
@@ -369,7 +369,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Benefits used to date.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit $benefit
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit $benefit
      * @return $this
      */
     public function addBenefit($benefit)
@@ -380,7 +380,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A boolean flag indicating whether a preauthorization is required prior to actual service delivery.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAuthorizationRequired()
     {
@@ -389,7 +389,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A boolean flag indicating whether a preauthorization is required prior to actual service delivery.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $authorizationRequired
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $authorizationRequired
      * @return $this
      */
     public function setAuthorizationRequired($authorizationRequired)
@@ -400,7 +400,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Codes or comments regarding information or actions associated with the preauthorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getAuthorizationSupporting()
     {
@@ -409,7 +409,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * Codes or comments regarding information or actions associated with the preauthorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $authorizationSupporting
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $authorizationSupporting
      * @return $this
      */
     public function addAuthorizationSupporting($authorizationSupporting)
@@ -420,7 +420,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A web location for obtaining requirements or descriptive information regarding the preauthorization.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getAuthorizationUrl()
     {
@@ -429,7 +429,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement implements
 
     /**
      * A web location for obtaining requirements or descriptive information regarding the preauthorization.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $authorizationUrl
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $authorizationUrl
      * @return $this
      */
     public function setAuthorizationUrl($authorizationUrl)

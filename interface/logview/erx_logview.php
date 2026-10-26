@@ -3,26 +3,26 @@
 /**
  * interface/logview/erx_logview.php Display Ensora eRx errors.
  *
- * @package    OpenEMR
+ * @package    DCL
  * @subpackage Ensora
- * @link       https://www.open-emr.org
+ * @link       https://www.dcl.org
  * @author     Eldho Chacko <eldho@zhservices.com>
  * @author     Vinish K <vinish@zhservices.com>
  * @author     Sam Likins <sam.likins@wsi-services.com>
  * @author     Brady Miller <brady.g.miller@gmail.com>
  * @copyright  Copyright (c) 2011 ZMG LLC <sam@zhservices.com>
  * @copyright  Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license    https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license    https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . '/../globals.php');
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 if (!AclMain::aclCheckCore('admin', 'users')) {
     AccessDeniedHelper::denyWithTemplate('eRx log viewer access denied', xl("eRx Logs"));

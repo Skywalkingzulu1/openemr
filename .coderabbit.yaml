@@ -6,6 +6,6 @@ reviews:
     # PR warrants a look (e.g., a suspicious dependency bump).
     ignore_usernames:
     - dependabot[bot]
-    - openemr-release-bot[bot]
-    - openemr-reserved-word-bot[bot]
+    - DCL-release-bot[bot]
+    - DCL-reserved-word-bot[bot]
     - github-actions[bot]

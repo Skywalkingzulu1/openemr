@@ -2,7 +2,7 @@
 
 /**
  *
- * @package     OpenEMR Weno Module
+ * @package     DCL Weno Module
  *
  * @author      Jerry Padgett <sjpadgett@gmail.com>
  * @author      Kofi Appiah <kkappiah@medsov.com>
@@ -11,16 +11,16 @@
  *
  */
 
-namespace OpenEMR\Modules\WenoModule;
+namespace DCL\Modules\WenoModule;
 
 /**
- * @var \OpenEMR\Core\ModulesClassLoader $classLoader
+ * @var \DCL\Core\ModulesClassLoader $classLoader
  */
 
-$classLoader->registerNamespaceIfNotExists('OpenEMR\\Modules\\WenoModule\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
+$classLoader->registerNamespaceIfNotExists('DCL\\Modules\\WenoModule\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
 
 /**
- * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the OpenEMR module loader;
+ * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher Injected by the DCL module loader;
  */
 
 $bootstrap = new Bootstrap($eventDispatcher);

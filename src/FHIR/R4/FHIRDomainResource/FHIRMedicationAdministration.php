@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.  Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
@@ -72,123 +72,123 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 {
     /**
      * Identifiers associated with this Medication Administration that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public $instantiates = [];
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $partOf = [];
 
     /**
      * Will generally be set to show that the administration has been completed.  For some long running administrations such as infusions, it is possible for an administration to be started but not completed or it may be paused while some other process is under way.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $status = null;
 
     /**
      * A code indicating why the administration was not performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $statusReason = [];
 
     /**
      * Indicates where the medication is expected to be consumed or administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $category = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $medicationCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $medicationReference = null;
 
     /**
      * The person or animal or group receiving the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
      * The visit, admission, or other contact between patient and health care provider during which the medication administration was performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $context = null;
 
     /**
      * Additional information (for example, patient height and weight) that supports the administration of the medication.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $supportingInformation = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
      * Indicates who or what performed the medication administration and how they were involved.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer[]
      */
     public $performer = [];
 
     /**
      * A code indicating why the medication was given.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = [];
 
     /**
      * Condition or observation that supports why the medication was administered.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $reasonReference = [];
 
     /**
      * The original request, instruction or authority to perform the administration.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $request = null;
 
     /**
      * The device used in administering the medication to the patient.  For example, a particular infusion pump.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $device = [];
 
     /**
      * Extra information about the medication administration that is not conveyed by the other attributes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public $note = [];
 
     /**
      * Describes the medication dosage information details e.g. dose, rate, site, route, etc.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
      */
     public $dosage = null;
 
     /**
      * A summary of the events of interest that have occurred, such as when the administration was verified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $eventHistory = [];
 
@@ -199,7 +199,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Identifiers associated with this Medication Administration that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -208,7 +208,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Identifiers associated with this Medication Administration that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -219,7 +219,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri[]
      */
     public function getInstantiates()
     {
@@ -228,7 +228,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $instantiates
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $instantiates
      * @return $this
      */
     public function addInstantiates($instantiates)
@@ -239,7 +239,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getPartOf()
     {
@@ -248,7 +248,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A larger event of which this particular event is a component or step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $partOf
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $partOf
      * @return $this
      */
     public function addPartOf($partOf)
@@ -259,7 +259,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Will generally be set to show that the administration has been completed.  For some long running administrations such as infusions, it is possible for an administration to be started but not completed or it may be paused while some other process is under way.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getStatus()
     {
@@ -268,7 +268,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Will generally be set to show that the administration has been completed.  For some long running administrations such as infusions, it is possible for an administration to be started but not completed or it may be paused while some other process is under way.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $status
      * @return $this
      */
     public function setStatus($status)
@@ -279,7 +279,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A code indicating why the administration was not performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getStatusReason()
     {
@@ -288,7 +288,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A code indicating why the administration was not performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
     public function addStatusReason($statusReason)
@@ -299,7 +299,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Indicates where the medication is expected to be consumed or administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCategory()
     {
@@ -308,7 +308,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Indicates where the medication is expected to be consumed or administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function setCategory($category)
@@ -318,7 +318,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMedicationCodeableConcept()
     {
@@ -326,7 +326,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return $this
      */
     public function setMedicationCodeableConcept($medicationCodeableConcept)
@@ -336,7 +336,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getMedicationReference()
     {
@@ -344,7 +344,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $medicationReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $medicationReference
      * @return $this
      */
     public function setMedicationReference($medicationReference)
@@ -355,7 +355,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The person or animal or group receiving the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubject()
     {
@@ -364,7 +364,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The person or animal or group receiving the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subject
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -375,7 +375,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The visit, admission, or other contact between patient and health care provider during which the medication administration was performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getContext()
     {
@@ -384,7 +384,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The visit, admission, or other contact between patient and health care provider during which the medication administration was performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $context
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $context
      * @return $this
      */
     public function setContext($context)
@@ -395,7 +395,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Additional information (for example, patient height and weight) that supports the administration of the medication.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getSupportingInformation()
     {
@@ -404,7 +404,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Additional information (for example, patient height and weight) that supports the administration of the medication.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $supportingInformation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $supportingInformation
      * @return $this
      */
     public function addSupportingInformation($supportingInformation)
@@ -414,7 +414,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
     {
@@ -422,7 +422,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
     public function setEffectiveDateTime($effectiveDateTime)
@@ -432,7 +432,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
     {
@@ -440,7 +440,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
     public function setEffectivePeriod($effectivePeriod)
@@ -451,7 +451,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Indicates who or what performed the medication administration and how they were involved.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer[]
      */
     public function getPerformer()
     {
@@ -460,7 +460,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Indicates who or what performed the medication administration and how they were involved.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer $performer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationPerformer $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -471,7 +471,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A code indicating why the medication was given.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReasonCode()
     {
@@ -480,7 +480,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A code indicating why the medication was given.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
     public function addReasonCode($reasonCode)
@@ -491,7 +491,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Condition or observation that supports why the medication was administered.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getReasonReference()
     {
@@ -500,7 +500,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Condition or observation that supports why the medication was administered.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $reasonReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
     public function addReasonReference($reasonReference)
@@ -511,7 +511,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The original request, instruction or authority to perform the administration.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRequest()
     {
@@ -520,7 +520,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The original request, instruction or authority to perform the administration.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $request
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $request
      * @return $this
      */
     public function setRequest($request)
@@ -531,7 +531,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The device used in administering the medication to the patient.  For example, a particular infusion pump.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDevice()
     {
@@ -540,7 +540,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * The device used in administering the medication to the patient.  For example, a particular infusion pump.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $device
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function addDevice($device)
@@ -551,7 +551,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Extra information about the medication administration that is not conveyed by the other attributes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -560,7 +560,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Extra information about the medication administration that is not conveyed by the other attributes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation $note
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -571,7 +571,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Describes the medication dosage information details e.g. dose, rate, site, route, etc.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
      */
     public function getDosage()
     {
@@ -580,7 +580,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * Describes the medication dosage information details e.g. dose, rate, site, route, etc.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $dosage
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $dosage
      * @return $this
      */
     public function setDosage($dosage)
@@ -591,7 +591,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A summary of the events of interest that have occurred, such as when the administration was verified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getEventHistory()
     {
@@ -600,7 +600,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
 
     /**
      * A summary of the events of interest that have occurred, such as when the administration was verified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $eventHistory
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $eventHistory
      * @return $this
      */
     public function addEventHistory($eventHistory)

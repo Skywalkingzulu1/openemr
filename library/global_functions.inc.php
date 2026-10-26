@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Global functions shared across multiple files in OpenEMR.
+ * Global functions shared across multiple files in DCL.
  *
  * This file contains functions that were previously duplicated across multiple
  * files in the codebase. They have been consolidated here to reduce code
@@ -12,16 +12,16 @@
  *
  * PLEASE KEEP THE FUNCTION DEFINITIONS IN THIS FILE SORTED ALPHABETICALLY
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Lists\IssueTypeRegistry;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\FacilityService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Lists\IssueTypeRegistry;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\FacilityService;
 
 /**
  * Compute taxes from a tax rate string and a possibly taxable amount.
@@ -169,7 +169,7 @@ function cron_getPhoneAlertpatientData($type, $trigger_hours): array
             ope.pc_hometext,ope.pc_eventDate,ope.pc_endDate,
             ope.pc_duration,ope.pc_alldayevent,ope.pc_startTime,ope.pc_endTime,ope.pc_facility
         from
-            openemr_postcalendar_events as ope ,patient_data as pd
+            DCL_postcalendar_events as ope ,patient_data as pd
         where
             ope.pc_pid=pd.pid $ssql
         order by
@@ -195,7 +195,7 @@ function cron_getPhoneAlertpatientData($type, $trigger_hours): array
  */
 function cron_updateentry(string $type, $pid, $pc_eid): void
 {
-    $query = "UPDATE openemr_postcalendar_events SET ";
+    $query = "UPDATE DCL_postcalendar_events SET ";
 
     if ($type === 'SMS' || $type === 'Phone') {
         $query .= "pc_sendalertsms = 'YES'";

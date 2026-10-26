@@ -20,17 +20,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Jan Jajalla <jajalla23@gmail.com>
  * @author  Roberto Vasquez <roberto.gagliotta@gmail.com>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-namespace OpenEMR\ClinicalDecisionRules\Interface\Controller;
+namespace DCL\ClinicalDecisionRules\Interface\Controller;
 
-use OpenEMR\ClinicalDecisionRules\Interface\BaseController;
-use OpenEMR\ClinicalDecisionRules\Interface\Common;
-use OpenEMR\ClinicalDecisionRules\Interface\RulesPlanMappingEventHandlers;
+use DCL\ClinicalDecisionRules\Interface\BaseController;
+use DCL\ClinicalDecisionRules\Interface\Common;
+use DCL\ClinicalDecisionRules\Interface\RulesPlanMappingEventHandlers;
 
 class ControllerAjax extends BaseController
 {

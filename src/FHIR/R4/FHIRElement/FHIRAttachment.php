@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * For referring to data content defined in other formats.
@@ -72,49 +72,49 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 {
     /**
      * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $contentType = null;
 
     /**
      * The human language of the content. The value can be any valid value according to BCP 47.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $language = null;
 
     /**
      * The actual data of the attachment - a sequence of bytes, base64 encoded.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $data = null;
 
     /**
      * A location where the data can be accessed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public $url = null;
 
     /**
      * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public $size = null;
 
     /**
      * The calculated hash of the data using SHA-1. Represented using base64.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public $hash = null;
 
     /**
      * A label or set of text to display in place of the data.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The date that the attachment was first created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $creation = null;
 
@@ -125,7 +125,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getContentType()
     {
@@ -134,7 +134,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $contentType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $contentType
      * @return $this
      */
     public function setContentType($contentType)
@@ -145,7 +145,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The human language of the content. The value can be any valid value according to BCP 47.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getLanguage()
     {
@@ -154,7 +154,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The human language of the content. The value can be any valid value according to BCP 47.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $language
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $language
      * @return $this
      */
     public function setLanguage($language)
@@ -165,7 +165,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The actual data of the attachment - a sequence of bytes, base64 encoded.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getData()
     {
@@ -174,7 +174,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The actual data of the attachment - a sequence of bytes, base64 encoded.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $data
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $data
      * @return $this
      */
     public function setData($data)
@@ -185,7 +185,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * A location where the data can be accessed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUrl
      */
     public function getUrl()
     {
@@ -194,7 +194,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * A location where the data can be accessed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUrl $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUrl $url
      * @return $this
      */
     public function setUrl($url)
@@ -205,7 +205,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt
      */
     public function getSize()
     {
@@ -214,7 +214,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUnsignedInt $size
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUnsignedInt $size
      * @return $this
      */
     public function setSize($size)
@@ -225,7 +225,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The calculated hash of the data using SHA-1. Represented using base64.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary
      */
     public function getHash()
     {
@@ -234,7 +234,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The calculated hash of the data using SHA-1. Represented using base64.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBase64Binary $hash
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBase64Binary $hash
      * @return $this
      */
     public function setHash($hash)
@@ -245,7 +245,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * A label or set of text to display in place of the data.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -254,7 +254,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * A label or set of text to display in place of the data.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -265,7 +265,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The date that the attachment was first created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getCreation()
     {
@@ -274,7 +274,7 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
 
     /**
      * The date that the attachment was first created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $creation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $creation
      * @return $this
      */
     public function setCreation($creation)

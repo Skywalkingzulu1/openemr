@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__ . "/../globals.php");
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 $total = $_GET['total'] ?? null;
 ?>

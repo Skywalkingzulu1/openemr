@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A pharmaceutical product described in terms of its composition and dose form.
@@ -72,43 +72,43 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 {
     /**
      * An identifier for the pharmaceutical medicinal product.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The administrable dose form, after necessary reconstitution.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $administrableDoseForm = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $unitOfPresentation = null;
 
     /**
      * Ingredient.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $ingredient = [];
 
     /**
      * Accompanying device.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public $device = [];
 
     /**
      * Characteristics e.g. a products onset of action.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics[]
      */
     public $characteristics = [];
 
     /**
      * The path by which the pharmaceutical product is taken into or makes contact with the body.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration[]
      */
     public $routeOfAdministration = [];
 
@@ -119,7 +119,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * An identifier for the pharmaceutical medicinal product.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -128,7 +128,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * An identifier for the pharmaceutical medicinal product.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -139,7 +139,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * The administrable dose form, after necessary reconstitution.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getAdministrableDoseForm()
     {
@@ -148,7 +148,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * The administrable dose form, after necessary reconstitution.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $administrableDoseForm
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $administrableDoseForm
      * @return $this
      */
     public function setAdministrableDoseForm($administrableDoseForm)
@@ -159,7 +159,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getUnitOfPresentation()
     {
@@ -168,7 +168,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfPresentation
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $unitOfPresentation
      * @return $this
      */
     public function setUnitOfPresentation($unitOfPresentation)
@@ -179,7 +179,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Ingredient.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getIngredient()
     {
@@ -188,7 +188,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Ingredient.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $ingredient
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)
@@ -199,7 +199,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Accompanying device.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference[]
      */
     public function getDevice()
     {
@@ -208,7 +208,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Accompanying device.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $device
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function addDevice($device)
@@ -219,7 +219,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Characteristics e.g. a products onset of action.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics[]
      */
     public function getCharacteristics()
     {
@@ -228,7 +228,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * Characteristics e.g. a products onset of action.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics $characteristics
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics $characteristics
      * @return $this
      */
     public function addCharacteristics($characteristics)
@@ -239,7 +239,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * The path by which the pharmaceutical product is taken into or makes contact with the body.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration[]
      */
     public function getRouteOfAdministration()
     {
@@ -248,7 +248,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements \
 
     /**
      * The path by which the pharmaceutical product is taken into or makes contact with the body.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration $routeOfAdministration
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration $routeOfAdministration
      * @return $this
      */
     public function addRouteOfAdministration($routeOfAdministration)

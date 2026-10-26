@@ -14,19 +14,19 @@
  * expression is split on its operators, so this holds per-parse state; use
  * a new instance for each parse.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Cqm\Cql\Ucum;
+namespace DCL\Cqm\Cql\Ucum;
 
-use OpenEMR\Cqm\Cql\Util\Fdlibm;
-use OpenEMR\Cqm\Cql\Util\JavaScript;
+use DCL\Cqm\Cql\Util\Fdlibm;
+use DCL\Cqm\Cql\Util\JavaScript;
 
 final class UnitStringParser
 {

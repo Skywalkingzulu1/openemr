@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExplanationOfBenefit;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * This resource provides: the claim details; adjudication details from the processing of a Claim; and optionally account balance information, for informing the subscriber of the benefits provided.
@@ -71,35 +71,35 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 {
     /**
      * A number to uniquely identify diagnosis entries.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $diagnosisCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $diagnosisReference = null;
 
     /**
      * When the condition was observed or the relative ranking.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * Indication of whether the diagnosis was present on admission to a facility.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $onAdmission = null;
 
     /**
      * A package billing code or bundle code used to group products and services to a particular health condition (such as heart attack) which is based on a predetermined grouping code system.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $packageCode = null;
 
@@ -110,7 +110,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * A number to uniquely identify diagnosis entries.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -119,7 +119,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * A number to uniquely identify diagnosis entries.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -129,7 +129,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getDiagnosisCodeableConcept()
     {
@@ -137,7 +137,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
      * @return $this
      */
     public function setDiagnosisCodeableConcept($diagnosisCodeableConcept)
@@ -147,7 +147,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getDiagnosisReference()
     {
@@ -155,7 +155,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $diagnosisReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $diagnosisReference
      * @return $this
      */
     public function setDiagnosisReference($diagnosisReference)
@@ -166,7 +166,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * When the condition was observed or the relative ranking.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -175,7 +175,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * When the condition was observed or the relative ranking.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -186,7 +186,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * Indication of whether the diagnosis was present on admission to a facility.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getOnAdmission()
     {
@@ -195,7 +195,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * Indication of whether the diagnosis was present on admission to a facility.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $onAdmission
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $onAdmission
      * @return $this
      */
     public function setOnAdmission($onAdmission)
@@ -206,7 +206,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * A package billing code or bundle code used to group products and services to a particular health condition (such as heart attack) which is based on a predetermined grouping code system.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getPackageCode()
     {
@@ -215,7 +215,7 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
 
     /**
      * A package billing code or bundle code used to group products and services to a particular health condition (such as heart attack) which is based on a predetermined grouping code system.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $packageCode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $packageCode
      * @return $this
      */
     public function setPackageCode($packageCode)

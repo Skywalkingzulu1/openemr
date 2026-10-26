@@ -13,25 +13,25 @@
  *
  * These tests are registered under the 'redis-sentinel' PHPUnit testsuite and invoked by
  * build_test_redis_failover() in ci/ciLibrary.source before the failover steps, so they only
- * run inside the OpenEMR container when the full sentinel cluster is available.  They are
+ * run inside the DCL container when the full sentinel cluster is available.  They are
  * excluded from the 'common' testsuite to prevent double-execution in sentinel CI configs.
  *
  * Redis client construction delegates to SentinelUtil::configureClient() so that TLS and mTLS
  * modes are automatically supported based on the REDIS_TLS / REDIS_X509 environment variables.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2025 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Common\Session\Predis;
+namespace DCL\Tests\Common\Session\Predis;
 
-use OpenEMR\Common\Session\Predis\LockingRedisSessionHandler;
-use OpenEMR\Common\Session\Predis\SentinelUtil;
+use DCL\Common\Session\Predis\LockingRedisSessionHandler;
+use DCL\Common\Session\Predis\SentinelUtil;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;

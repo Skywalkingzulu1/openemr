@@ -3,29 +3,29 @@
 /**
  * Authorization Server Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth\OpenIDConnect\Repositories;
+namespace DCL\Common\Auth\OpenIDConnect\Repositories;
 
 use InvalidArgumentException;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\ScopeEntityInterface;
 use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
-use OpenEMR\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ClientEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
-use OpenEMR\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
-use OpenEMR\Common\Logging\SystemLoggerAwareTrait;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\RestApiExtend\RestApiScopeEvent;
-use OpenEMR\FHIR\Config\ServerConfig;
+use DCL\Common\Auth\OpenIDConnect\ClientGrantTypePolicy;
+use DCL\Common\Auth\OpenIDConnect\Entities\ClientEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ResourceScopeEntityList;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ServerScopeListEntity;
+use DCL\Common\Auth\OpenIDConnect\Validators\ScopeValidatorFactory;
+use DCL\Common\Logging\SystemLoggerAwareTrait;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\RestApiExtend\RestApiScopeEvent;
+use DCL\FHIR\Config\ServerConfig;
 use OpenIDConnectServer\Repositories\ClaimSetRepositoryInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -252,9 +252,9 @@ class ScopeRepository implements ScopeRepositoryInterface
             "offline_access" => xl("Request ability to access data even when the current logged-in user has logged out"),
             "launch" => xl("Permission to obtain information from the EHR for the current session context when app is launched from an EHR."),
             "launch/patient" => xl("When launching outside the EHR, ask for a patient to be selected at launch time."),
-            "api:oemr" => xl("Permission to use the OpenEMR standard api."),
-            "api:fhir" => xl("Permission to use the OpenEMR FHIR api"),
-            "api:port" => xl("Permission to use the OpenEMR apis from inside the patient portal"),
+            "api:oemr" => xl("Permission to use the DCL standard api."),
+            "api:fhir" => xl("Permission to use the DCL FHIR api"),
+            "api:port" => xl("Permission to use the DCL apis from inside the patient portal"),
             'system/Patient.$export' => xl("Permission to export Patient Compartment resources"),
             'system/Group.$export' => xl("Permission to export Patient Compartment resources connected to a Patient Group"),
             'system/*.$bulkdata-status' => xl("Permission to check the job status of a bulkdata export"),

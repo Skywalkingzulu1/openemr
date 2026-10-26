@@ -26,7 +26,7 @@
 #                         `release-candidate-30443247578-1`). Just the
 #                         tag portion — the repository is separate.
 #   REPO                  Optional. Repository the tag lives under.
-#                         Defaults to `openemr/openemr`.
+#                         Defaults to `DCL/DCL`.
 #
 # Exit codes
 #   0   Tag deleted (HTTP 204), OR tag already gone (HTTP 404 —
@@ -46,7 +46,7 @@ set -euo pipefail
 : "${DOCKERHUB_USERNAME:?DOCKERHUB_USERNAME env var is required}"
 : "${DOCKERHUB_TOKEN:?DOCKERHUB_TOKEN env var is required}"
 : "${TAG:?TAG env var is required}"
-REPO="${REPO:-openemr/openemr}"
+REPO="${REPO:-DCL/DCL}"
 
 # Mint a JWT. Bounded curl: --connect-timeout 10 (TCP/TLS setup) +
 # --max-time 30 (total wall time). Without those, a hung Docker Hub

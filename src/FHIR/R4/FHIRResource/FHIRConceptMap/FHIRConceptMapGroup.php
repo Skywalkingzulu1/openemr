@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRConceptMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.
@@ -71,37 +71,37 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * An absolute URI that identifies the source system where the concepts to be mapped are defined.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $source = null;
 
     /**
      * The specific version of the code system, as determined by the code system authority.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $sourceVersion = null;
 
     /**
      * An absolute URI that identifies the target system that the concepts will be mapped to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $target = null;
 
     /**
      * The specific version of the code system, as determined by the code system authority.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $targetVersion = null;
 
     /**
      * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
      */
     public $element = [];
 
     /**
      * What to do when there is no mapping for the source concept. "Unmapped" does not include codes that are unmatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped
      */
     public $unmapped = null;
 
@@ -112,7 +112,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * An absolute URI that identifies the source system where the concepts to be mapped are defined.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getSource()
     {
@@ -121,7 +121,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * An absolute URI that identifies the source system where the concepts to be mapped are defined.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $source
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $source
      * @return $this
      */
     public function setSource($source)
@@ -132,7 +132,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The specific version of the code system, as determined by the code system authority.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getSourceVersion()
     {
@@ -141,7 +141,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The specific version of the code system, as determined by the code system authority.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $sourceVersion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $sourceVersion
      * @return $this
      */
     public function setSourceVersion($sourceVersion)
@@ -152,7 +152,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * An absolute URI that identifies the target system that the concepts will be mapped to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getTarget()
     {
@@ -161,7 +161,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * An absolute URI that identifies the target system that the concepts will be mapped to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $target
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $target
      * @return $this
      */
     public function setTarget($target)
@@ -172,7 +172,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The specific version of the code system, as determined by the code system authority.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTargetVersion()
     {
@@ -181,7 +181,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The specific version of the code system, as determined by the code system authority.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $targetVersion
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $targetVersion
      * @return $this
      */
     public function setTargetVersion($targetVersion)
@@ -192,7 +192,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
      */
     public function getElement()
     {
@@ -201,7 +201,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapElement $element
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapElement $element
      * @return $this
      */
     public function addElement($element)
@@ -212,7 +212,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * What to do when there is no mapping for the source concept. "Unmapped" does not include codes that are unmatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped
      */
     public function getUnmapped()
     {
@@ -221,7 +221,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * What to do when there is no mapping for the source concept. "Unmapped" does not include codes that are unmatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped $unmapped
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped $unmapped
      * @return $this
      */
     public function setUnmapped($unmapped)

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Tests\Rector\Fixture;
+namespace DCL\Tests\Rector\Fixture;
 
 try {
     doSomething();
@@ -12,7 +12,7 @@ try {
 -----
 <?php
 
-namespace OpenEMR\Tests\Rector\Fixture;
+namespace DCL\Tests\Rector\Fixture;
 
 try {
     doSomething();

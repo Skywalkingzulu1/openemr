@@ -15,19 +15,19 @@
  * consistent accept-or-reject shape, so future refactors preserve the
  * boundary even if they tune the specific policy.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Api;
+namespace DCL\Tests\Api;
 
 use GuzzleHttp\Client;
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -41,7 +41,7 @@ class DcrEdgeCaseApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = getenv('OPENEMR_BASE_URL_API', true) ?: 'https://localhost';
+        $this->baseUrl = getenv('DCL_BASE_URL_API', true) ?: 'https://localhost';
         $this->http = new Client([
             'base_uri' => $this->baseUrl,
             'verify' => false,
@@ -70,7 +70,7 @@ class DcrEdgeCaseApiTest extends TestCase
      * RFC 7591 Section 3.2.1: a successful DCR response must include at
      * minimum `client_id`, plus every requested metadata value that the
      * server stored. For a confidential client the server MUST also
-     * include `client_secret` and `client_secret_expires_at`. OpenEMR
+     * include `client_secret` and `client_secret_expires_at`. DCL
      * additionally issues a `registration_access_token` and
      * `registration_client_uri` so the client can later read its own
      * metadata (RFC 7592).
@@ -117,7 +117,7 @@ class DcrEdgeCaseApiTest extends TestCase
         $this->assertArrayHasKey('scope', $body);
         $this->assertSame('openid', $body['scope']);
 
-        // OpenEMR DCR-management extensions (RFC 7592)
+        // DCL DCR-management extensions (RFC 7592)
         $this->assertArrayHasKey('registration_access_token', $body);
         $this->assertIsString($body['registration_access_token']);
         $this->assertNotSame('', $body['registration_access_token']);
@@ -133,7 +133,7 @@ class DcrEdgeCaseApiTest extends TestCase
      * into treating it as a credential.
      *
      * token_endpoint_auth_method is omitted on this call because the
-     * OpenEMR DCR validator currently only lists the three confidential
+     * DCL DCR validator currently only lists the three confidential
      * auth methods (client_secret_basic, client_secret_post,
      * private_key_jwt) in its enum, so sending "none" is rejected; the
      * net result for a public client is the same (PKCE-only).

@@ -5,16 +5,16 @@
  *
  * Tests that Controller::dispatch() routing is order-independent.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\RestControllers;
+namespace DCL\Tests\RestControllers;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -30,7 +30,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * This addresses the root cause of issue #11151 where URLSearchParams produced
  * parameters in a different order than act() expected.
  *
- * @see https://github.com/openemr/openemr/issues/11162
+ * @see https://github.com/DCL/DCL/issues/11162
  */
 class ControllerRoutingTest extends TestCase
 {

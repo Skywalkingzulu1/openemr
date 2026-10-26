@@ -11,22 +11,22 @@
  * view.php's IDOR guard compared the stored encounter against the
  * now-null session encounter.
  *
- * Since new.php is procedural PHP that requires the full OpenEMR
+ * Since new.php is procedural PHP that requires the full DCL
  * bootstrap and database, this test reads the source file and verifies
  * that every formJump() call targeting view_form.php includes the
  * encounter parameter. This catches regressions where the parameter
  * is accidentally removed.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR Contributors
- * @copyright Copyright (c) 2026 OpenEMR Contributors
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL Contributors
+ * @copyright Copyright (c) 2026 DCL Contributors
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Forms\EyeMag;
+namespace DCL\Tests\Isolated\Forms\EyeMag;
 
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;

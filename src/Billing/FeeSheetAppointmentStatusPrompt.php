@@ -3,18 +3,18 @@
 /**
  * Decides whether saving the fee sheet asks to set the visit's appointment status.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Billing;
+namespace DCL\Billing;
 
-use OpenEMR\Common\Database\QueryUtils;
+use DCL\Common\Database\QueryUtils;
 
 /**
  * With the global fee_sheet_save_appt_status set to an appointment status code (for
@@ -53,7 +53,7 @@ final readonly class FeeSheetAppointmentStatusPrompt
 
         $appointment = QueryUtils::querySingleRow(
             'SELECT e.pc_eid, e.pc_eventDate, e.pc_startTime, e.pc_apptstatus, u.fname, u.lname'
-            . ' FROM openemr_postcalendar_events AS e LEFT JOIN users AS u ON u.id = e.pc_aid'
+            . ' FROM DCL_postcalendar_events AS e LEFT JOIN users AS u ON u.id = e.pc_aid'
             . ' WHERE e.pc_pid = ? AND e.pc_recurrtype = 0 AND e.pc_eventDate = ?'
             . ' ORDER BY e.pc_startTime DESC, e.pc_eid DESC LIMIT 1',
             [$pid, $visitDate]

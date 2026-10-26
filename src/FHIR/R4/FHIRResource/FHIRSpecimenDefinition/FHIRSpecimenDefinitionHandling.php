@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSpecimenDefinition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A kind of specimen with associated set of requirements.
@@ -71,25 +71,25 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 {
     /**
      * It qualifies the interval of temperature, which characterizes an occurrence of handling. Conditions that are not related to temperature may be handled in the instruction element.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $temperatureQualifier = null;
 
     /**
      * The temperature interval for this set of handling instructions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $temperatureRange = null;
 
     /**
      * The maximum time interval of preservation of the specimen with these conditions.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $maxDuration = null;
 
     /**
      * Additional textual instructions for the preservation or transport of the specimen. For instance, 'Protect from light exposure'.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $instruction = null;
 
@@ -100,7 +100,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * It qualifies the interval of temperature, which characterizes an occurrence of handling. Conditions that are not related to temperature may be handled in the instruction element.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTemperatureQualifier()
     {
@@ -109,7 +109,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * It qualifies the interval of temperature, which characterizes an occurrence of handling. Conditions that are not related to temperature may be handled in the instruction element.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $temperatureQualifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $temperatureQualifier
      * @return $this
      */
     public function setTemperatureQualifier($temperatureQualifier)
@@ -120,7 +120,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * The temperature interval for this set of handling instructions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getTemperatureRange()
     {
@@ -129,7 +129,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * The temperature interval for this set of handling instructions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $temperatureRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $temperatureRange
      * @return $this
      */
     public function setTemperatureRange($temperatureRange)
@@ -140,7 +140,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * The maximum time interval of preservation of the specimen with these conditions.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getMaxDuration()
     {
@@ -149,7 +149,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * The maximum time interval of preservation of the specimen with these conditions.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $maxDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $maxDuration
      * @return $this
      */
     public function setMaxDuration($maxDuration)
@@ -160,7 +160,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * Additional textual instructions for the preservation or transport of the specimen. For instance, 'Protect from light exposure'.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getInstruction()
     {
@@ -169,7 +169,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement implements \Jso
 
     /**
      * Additional textual instructions for the preservation or transport of the specimen. For instance, 'Protect from light exposure'.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $instruction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $instruction
      * @return $this
      */
     public function setInstruction($instruction)

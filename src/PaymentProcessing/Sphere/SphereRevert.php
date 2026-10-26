@@ -4,24 +4,24 @@
  * SphereRevert class.
  *  Will handle void and credits
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\PaymentProcessing\Sphere;
+namespace DCL\PaymentProcessing\Sphere;
 
 use Exception;
 use GuzzleHttp\Client;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\AuthGlobal;
-use OpenEMR\Common\Crypto\CryptoGenException;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\AuthGlobal;
+use DCL\Common\Crypto\CryptoGenException;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 use Psr\Log\LoggerInterface;
 
 class SphereRevert
@@ -91,7 +91,7 @@ class SphereRevert
 
         $this->client = new Client(['base_uri' => Sphere::TRUSTEE_API_URL]);
 
-        // Calculate the OpenEMR server returnUrl
+        // Calculate the DCL server returnUrl
         $this->returnUrl = OEGlobalsBag::getInstance()->get('site_addr_oath') . OEGlobalsBag::getInstance()->getKernel()->getWebRoot() . '/sphere/initial_response.php';
     }
 
@@ -106,8 +106,8 @@ class SphereRevert
             exit;
         }
 
-        // Note added the sphere_credit_void_confirm_pin in OpenEMR so can not initiate a credit
-        //  or void in OpenEMR without knowing this value (ie. the user will enter it in when
+        // Note added the sphere_credit_void_confirm_pin in DCL so can not initiate a credit
+        //  or void in DCL without knowing this value (ie. the user will enter it in when
         //  request the credit/void, which is then compared to the value (an encrypted hash) set
         //  in globals).
         if (!$this->authGlobalPin->globalVerify($confirmPinInput)) {

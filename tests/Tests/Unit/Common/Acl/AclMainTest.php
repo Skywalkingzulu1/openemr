@@ -2,27 +2,27 @@
 
 /**
  * AclMainTest.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 /**
  * Handles unit tests of the AclMain class
  *
- * @package OpenEMR\RestControllers\SMART
- * @link      https://www.open-emr.org
+ * @package DCL\RestControllers\SMART
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2020 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Acl;
+namespace DCL\Tests\Unit\Common\Acl;
 
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Services\UserService;
+use DCL\Common\Acl\AclMain;
+use DCL\Services\UserService;
 use PHPUnit\Framework\TestCase;
 
 class AclMainTest extends TestCase

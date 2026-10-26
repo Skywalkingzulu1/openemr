@@ -3,8 +3,8 @@
 /**
  * import_template.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Cassian LUP <cassi.lup@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -13,7 +13,7 @@
  * @copyright Copyright (c) 2016-2025 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 // prevent UI redressing
@@ -22,21 +22,21 @@ Header("Content-Security-Policy: frame-ancestors 'none'");
 
 //setting the session & other config options
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Auth\Exception\OneTimeAuthException;
-use OpenEMR\Common\Auth\Exception\OneTimeAuthExpiredException;
-use OpenEMR\Common\Auth\OneTimeAuth;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionUtil;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\LogoService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Auth\Exception\OneTimeAuthException;
+use DCL\Common\Auth\Exception\OneTimeAuthExpiredException;
+use DCL\Common\Auth\OneTimeAuth;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionUtil;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\LogoService;
 
-// Will start the (patient) portal OpenEMR session/cookie.
+// Will start the (patient) portal DCL session/cookie.
 //  Need access to classes, so run autoloader now instead of in globals.php.
 require_once(__DIR__ . "/../vendor/autoload.php");
 $globalsBag = OEGlobalsBag::getInstance();
@@ -48,7 +48,7 @@ $sessionAllowWrite = true;
 SessionWrapperFactory::getInstance()->setSessionReadOnly(false);
 $session = SessionWrapperFactory::getInstance()->getPortalSession();
 
-//don't require standard openemr authorization in globals.php
+//don't require standard DCL authorization in globals.php
 $ignoreAuth_onsite_portal = true;
 
 //includes
@@ -144,7 +144,7 @@ if (!empty($_REQUEST['service_auth'] ?? null)) {
             'action' => $globalsBag->getString('web_root') . '/portal/index.php',
             'service_auth' => text($_GET['service_auth']),
             'csrf_token' => CsrfUtils::collectCsrfToken($session, 'autologin'),
-            'pagetitle' => xl("OpenEMR Patient Portal"),
+            'pagetitle' => xl("DCL Patient Portal"),
             'images_static_relative' => $globalsBag->get('images_static_relative') ?? '',
             'pin_required' => $pin_required,
         ]);
@@ -649,7 +649,7 @@ if (!($session->has('password_update') || ($globalsBag->getBoolean('portal_two_p
                     <?php } ?>
                 <?php } ?>
             <?php } ?>
-            <legend class="text-center bg-light text-dark pt-2 py-1"><h2><?php echo $globalsBag->getString('openemr_name') . ' ' . xlt('Portal Login'); ?></h2></legend>
+            <legend class="text-center bg-light text-dark pt-2 py-1"><h2><?php echo $globalsBag->getString('DCL_name') . ' ' . xlt('Portal Login'); ?></h2></legend>
             <form class="mx-1" action="get_patient_info.php" method="POST" onsubmit="return process()">
                 <?php if (isset($redirectUrl)) { ?>
                     <input id="redirect" type="hidden" name="redirect" value="<?php echo attr($redirectUrl); ?>" />

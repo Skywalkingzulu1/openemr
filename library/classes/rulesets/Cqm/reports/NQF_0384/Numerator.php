@@ -17,9 +17,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://opensource.org/licenses/gpl-license.php>;.
  *
- * @package OpenEMR
+ * @package DCL
  * @author  Ensoftek
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
 class NQF_0384_Numerator implements CqmFilterIF
@@ -33,7 +33,7 @@ class NQF_0384_Numerator implements CqmFilterIF
     {
         //Patient visits in which pain intensity is quantified
         $riskCatAssessQry = "SELECT count(*) as cnt FROM form_encounter fe " .
-                            "INNER JOIN openemr_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
+                            "INNER JOIN DCL_postcalendar_categories opc ON fe.pc_catid = opc.pc_catid " .
                             "INNER JOIN procedure_order pr ON  fe.encounter = pr.encounter_id " .
                             "INNER JOIN procedure_order_code prc ON pr.procedure_order_id = prc.procedure_order_id " .
                             "WHERE opc.pc_catname = 'Office Visit' " .

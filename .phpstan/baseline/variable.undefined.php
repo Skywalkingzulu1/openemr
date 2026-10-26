@@ -822,7 +822,7 @@ $ignoreErrors[] = [
     'path' => __DIR__ . '/../../interface/language/lang_definition.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Variable \\$openemr_name might not be defined\\.$#',
+    'message' => '#^Variable \\$DCL_name might not be defined\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/login/login.php',
 ];

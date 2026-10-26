@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\PackageAssembler;
+use DCL\Release\PackageAssembler;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Process\Process;
@@ -23,7 +23,7 @@ final class PackageAssemblerTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->tmpDir = sys_get_temp_dir() . '/openemr-package-assembler-' . bin2hex(random_bytes(8));
+        $this->tmpDir = sys_get_temp_dir() . '/DCL-package-assembler-' . bin2hex(random_bytes(8));
         if (!mkdir($this->tmpDir, 0700, true)) {
             throw new \RuntimeException('Failed to create tmp dir: ' . $this->tmpDir);
         }
@@ -36,13 +36,13 @@ final class PackageAssemblerTest extends TestCase
         }
     }
 
-    public function testMissingOpenemrDirReturnsError(): void
+    public function testMissingDCLDirReturnsError(): void
     {
         $output = new BufferedOutput();
         $assembler = new PackageAssembler('8.1.0', $this->tmpDir . '/does-not-exist', $this->tmpDir, $output);
 
         self::assertSame(1, $assembler->assemble());
-        self::assertStringContainsString('OpenEMR directory not found', $output->fetch());
+        self::assertStringContainsString('DCL directory not found', $output->fetch());
     }
 
     public function testMissingBuildXmlReturnsError(): void
@@ -56,7 +56,7 @@ final class PackageAssemblerTest extends TestCase
 
     public function testDirtyCheckoutReturnsError(): void
     {
-        $repo = $this->tmpDir . '/openemr';
+        $repo = $this->tmpDir . '/DCL';
         mkdir($repo, 0700, true);
         $this->git($repo, ['init', '-q']);
         $this->git($repo, ['config', 'user.email', 'test@example.com']);

@@ -20,7 +20,7 @@
 # That invariant is structural -- if it drifts, the orchestrator can
 # dispatch the same logical build against two branches and silently get
 # two different behaviors, which defeats the whole "byte-identical build
-# pipeline" property the planning doc (openemr-devops#790) established.
+# pipeline" property the planning doc (DCL-devops#790) established.
 #
 # Three trigger sources:
 #
@@ -44,7 +44,7 @@ on:
   workflow_dispatch:
   pull_request:
     # Fire on PRs to master AND to any rel branch. The if: gate on the job
-    # restricts execution to the upstream openemr/openemr repository.
+    # restricts execution to the upstream DCL/DCL repository.
     branches:
     - master
     - 'rel-*'
@@ -54,7 +54,7 @@ permissions:
 
 jobs:
   diff-against-rel-branches:
-    if: github.repository_owner == 'openemr' && github.repository == 'openemr/openemr'
+    if: github.repository_owner == 'DCL' && github.repository == 'DCL/DCL'
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v7

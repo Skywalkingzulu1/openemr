@@ -2,8 +2,8 @@
 
 /*
  *
- * @package      OpenEMR
- * @link               https://www.open-emr.org
+ * @package      DCL
+ * @link               https://www.dcl.org
  *
  * @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * @copyright Copyright (c) 2021 Sherwin Gaddis <sherwingaddis@gmail.com>
@@ -12,17 +12,17 @@
  *
  */
 
-use OpenEMR\Core\ModulesClassLoader;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Menu\MenuEvent;
-use OpenEMR\Menu\PatientMenuEvent;
+use DCL\Core\ModulesClassLoader;
+use DCL\Core\OEGlobalsBag;
+use DCL\Menu\MenuEvent;
+use DCL\Menu\PatientMenuEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 // AI Generated: registering namespace
 /**
  * @var ModulesClassLoader $classLoader
  */
-$classLoader->registerNamespaceIfNotExists('Juggernaut\\OpenEMR\\Modules\\PriorAuthModule\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
+$classLoader->registerNamespaceIfNotExists('Juggernaut\\DCL\\Modules\\PriorAuthModule\\', __DIR__ . DIRECTORY_SEPARATOR . 'src');
 // End of AI Generated
 
 function oe_module_priorauth_add_menu_item(MenuEvent $event)

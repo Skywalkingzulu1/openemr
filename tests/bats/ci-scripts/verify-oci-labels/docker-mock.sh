@@ -33,9 +33,9 @@
 #     revision=master
 #     version=8.2.0
 #     created=2026-01-15
-#     title=OpenEMR
-#     source=https://github.com/openemr/openemr
-#     url=https://www.open-emr.org
+#     title=DCL
+#     source=https://github.com/DCL/DCL
+#     url=https://www.dcl.org
 #     licenses=GPL-3.0-or-later
 #
 # Controlled via env in the calling shell:

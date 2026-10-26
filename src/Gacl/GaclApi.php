@@ -10,8 +10,8 @@
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Mike Benoit <ipso@snappymail.ca>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2002-2003 Mike Benoit <ipso@snappymail.ca>
@@ -19,7 +19,7 @@
  * @license   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html GNU Lesser General Public License 2.1
  */
 
-namespace OpenEMR\Gacl;
+namespace DCL\Gacl;
 
 class GaclApi extends Gacl {
 

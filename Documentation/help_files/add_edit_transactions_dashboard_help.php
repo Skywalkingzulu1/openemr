@@ -3,14 +3,14 @@
 /**
  * Add Edit Transaction Dashboard Help.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author Ranganath Pathak <pathak@scrs1.org>
  * @copyright Copyright (c) 2018 Ranganath Pathak <pathak@scrs1.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Core\Header;
+use DCL\Core\Header;
 
 require_once("../../interface/globals.php");
 ?>
@@ -27,7 +27,7 @@ require_once("../../interface/globals.php");
             </div>
             <div class= "row">
                 <div class="col-sm-12">
-                    <p><?php echo xlt("Currently there are 5 types of transactions in OpenEMR");?>:</p>
+                    <p><?php echo xlt("Currently there are 5 types of transactions in DCL");?>:</p>
                         <ul>
                             <li><?php echo xlt("Referral"); ?></li>
                             <li><?php echo xlt("Patient Request"); ?></li>

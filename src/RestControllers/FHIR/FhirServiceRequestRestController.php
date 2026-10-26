@@ -3,21 +3,21 @@
 /**
  * FhirServiceRequestRestController
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025-2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR;
+namespace DCL\RestControllers\FHIR;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\RestControllers\RestControllerHelper;
-use OpenEMR\Services\FHIR\FhirResourcesService;
-use OpenEMR\Services\FHIR\FhirServiceRequestService;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\RestControllers\RestControllerHelper;
+use DCL\Services\FHIR\FhirResourcesService;
+use DCL\Services\FHIR\FhirServiceRequestService;
 
 class FhirServiceRequestRestController
 {
@@ -106,7 +106,7 @@ class FhirServiceRequestRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '404', ref: '#/components/responses/uuidnotfound'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne($fhirId, $puuidBind = null)
     {
@@ -215,7 +215,7 @@ class FhirServiceRequestRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {
@@ -243,7 +243,7 @@ class FhirServiceRequestRestController
     // @codeCoverageIgnoreStart
     #[OA\Post(
         path: '/fhir/ServiceRequest',
-        description: 'Creates a new ServiceRequest (procedure / lab / imaging order). Each FHIR code.coding entry becomes one procedure_order_code row. The FHIR R4 1..1 `intent` field is persisted to procedure_order.order_intent; OpenEMR supports the values order/plan/directive/proposal/option; the other R4 intents (original-order, reflex-order, filler-order, instance-order) are rejected with a 400 (a validationErrors body) because no column preserves their meaning. The status is 400 rather than 422 because RestControllerHelper::handleFhirProcessingResult() answers every FHIR validation failure with HTTP_BAD_REQUEST.',
+        description: 'Creates a new ServiceRequest (procedure / lab / imaging order). Each FHIR code.coding entry becomes one procedure_order_code row. The FHIR R4 1..1 `intent` field is persisted to procedure_order.order_intent; DCL supports the values order/plan/directive/proposal/option; the other R4 intents (original-order, reflex-order, filler-order, instance-order) are rejected with a 400 (a validationErrors body) because no column preserves their meaning. The status is 400 rather than 422 because RestControllerHelper::handleFhirProcessingResult() answers every FHIR validation failure with HTTP_BAD_REQUEST.',
         tags: ['fhir'],
         requestBody: new OA\RequestBody(
             required: true,
@@ -258,7 +258,7 @@ class FhirServiceRequestRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '403', ref: '#/components/responses/forbidden'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function post(array $fhirJson): void
     {
@@ -298,7 +298,7 @@ class FhirServiceRequestRestController
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
             new OA\Response(response: '403', ref: '#/components/responses/forbidden'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function put(string $fhirId, array $fhirJson): void
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice;
+namespace DCL\FHIR\R4\FHIRResource\FHIRInvoice;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Invoice containing collected ChargeItems from an Account with calculated individual and total price for Billing purpose.
@@ -71,23 +71,23 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
 {
     /**
      * Sequence in which the items appear on the invoice.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $chargeItemReference = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $chargeItemCodeableConcept = null;
 
     /**
      * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
      */
     public $priceComponent = [];
 
@@ -98,7 +98,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Sequence in which the items appear on the invoice.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
     {
@@ -107,7 +107,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * Sequence in which the items appear on the invoice.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
     public function setSequence($sequence)
@@ -117,7 +117,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getChargeItemReference()
     {
@@ -125,7 +125,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $chargeItemReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $chargeItemReference
      * @return $this
      */
     public function setChargeItemReference($chargeItemReference)
@@ -135,7 +135,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getChargeItemCodeableConcept()
     {
@@ -143,7 +143,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $chargeItemCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $chargeItemCodeableConcept
      * @return $this
      */
     public function setChargeItemCodeableConcept($chargeItemCodeableConcept)
@@ -154,7 +154,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent[]
      */
     public function getPriceComponent()
     {
@@ -163,7 +163,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement implements \JsonSerializab
 
     /**
      * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent $priceComponent
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRInvoice\FHIRInvoicePriceComponent $priceComponent
      * @return $this
      */
     public function addPriceComponent($priceComponent)

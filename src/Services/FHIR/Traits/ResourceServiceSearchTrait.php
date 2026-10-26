@@ -1,24 +1,24 @@
 <?php
 
 /**
- * ResourceServiceSearchTrait handles the creating of openemr search parameters for a resource.
+ * ResourceServiceSearchTrait handles the creating of DCL search parameters for a resource.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Traits;
+namespace DCL\Services\FHIR\Traits;
 
 use InvalidArgumentException;
-use OpenEMR\Services\FHIR\INonPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\Search\FHIRSearchFieldFactory;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldOrder;
+use DCL\Services\FHIR\INonPatientCompartmentResourceService;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\Search\FHIRSearchFieldFactory;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldOrder;
 
 trait ResourceServiceSearchTrait
 {
@@ -39,7 +39,7 @@ trait ResourceServiceSearchTrait
 
     /**
      * Given the hashmap of search parameters to values it generates a map of search keys to ISearchField objects that
-     * are used to search in the OpenEMR system.  Service classes that extend the base class can override this method
+     * are used to search in the DCL system.  Service classes that extend the base class can override this method
      *
      * to either add search fields or change the functionality of the created ISearchFields.
      *
@@ -47,7 +47,7 @@ trait ResourceServiceSearchTrait
      * @param string|null $puuidBind The patient unique id if searching in a patient context
      * @return ISearchField[] where the keys are the search fields.
      */
-    protected function createOpenEMRSearchParameters(array $fhirSearchParameters, ?string $puuidBind = null): array
+    protected function createDCLSearchParameters(array $fhirSearchParameters, ?string $puuidBind = null): array
     {
         $oeSearchParameters = [];
 

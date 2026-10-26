@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDevice;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDevice;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDevice;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.
@@ -71,19 +71,19 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The type of the device version.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A single component of the device version.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $component = null;
 
     /**
      * The version text.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $value = null;
 
@@ -94,7 +94,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The type of the device version.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The type of the device version.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A single component of the device version.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getComponent()
     {
@@ -123,7 +123,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A single component of the device version.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $component
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $component
      * @return $this
      */
     public function setComponent($component)
@@ -134,7 +134,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The version text.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getValue()
     {
@@ -143,7 +143,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The version text.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $value
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $value
      * @return $this
      */
     public function setValue($value)

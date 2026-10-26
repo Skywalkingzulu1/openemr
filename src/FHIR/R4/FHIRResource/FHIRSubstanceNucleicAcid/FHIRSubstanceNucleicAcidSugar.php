@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceNucleicAcid;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Nucleic acids are defined by three distinct elements: the base, sugar and linkage. Individual substance/moiety IDs will be created for each of these elements. The nucleotide sequence will be always entered in the 5’-3’ direction.
@@ -71,19 +71,19 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement implements \Json
 {
     /**
      * The Substance ID of the sugar or sugar-like component that make up the nucleotide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * The name of the sugar or sugar-like component that make up the nucleotide.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * The residues that contain a given sugar will be captured. The order of given residues will be captured in the 5‘-3‘direction consistent with the base sequences listed above.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $residueSite = null;
 
@@ -94,7 +94,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement implements \Json
 
     /**
      * The Substance ID of the sugar or sugar-like component that make up the nucleotide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -103,7 +103,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement implements \Json
 
     /**
      * The Substance ID of the sugar or sugar-like component that make up the nucleotide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -114,7 +114,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement implements \Json
 
     /**
      * The name of the sugar or sugar-like component that make up the nucleotide.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -123,7 +123,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement implements \Json
 
     /**
      * The name of the sugar or sugar-like component that make up the nucleotide.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -134,7 +134,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement implements \Json
 
     /**
      * The residues that contain a given sugar will be captured. The order of given residues will be captured in the 5‘-3‘direction consistent with the base sequences listed above.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getResidueSite()
     {
@@ -143,7 +143,7 @@ class FHIRSubstanceNucleicAcidSugar extends FHIRBackboneElement implements \Json
 
     /**
      * The residues that contain a given sugar will be captured. The order of given residues will be captured in the 5‘-3‘direction consistent with the base sequences listed above.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $residueSite
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $residueSite
      * @return $this
      */
     public function setResidueSite($residueSite)

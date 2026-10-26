@@ -80,7 +80,7 @@ ALTER TABLE `oe_faxsms_queue` ADD KEY `patient_id` (`patient_id`);
 #EndIf
 
 #IfMissingColumn oe_faxsms_queue document_id
-ALTER TABLE `oe_faxsms_queue` ADD `document_id` int(11) DEFAULT NULL COMMENT 'OpenEMR document ID if stored';
+ALTER TABLE `oe_faxsms_queue` ADD `document_id` int(11) DEFAULT NULL COMMENT 'DCL document ID if stored';
 #EndIf
 
 #IfMissingColumn oe_faxsms_queue media_path

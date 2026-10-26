@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceMetric;
+namespace DCL\FHIR\R4\FHIRResource\FHIRDeviceMetric;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRDeviceMetric;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes a measurement, calculation or setting capability of a medical device.
@@ -71,19 +71,19 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * Describes the type of the calibration method.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationType
      */
     public $type = null;
 
     /**
      * Describes the state of the calibration.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationState
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationState
      */
     public $state = null;
 
     /**
      * Describes the time last calibration has been performed.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public $time = null;
 
@@ -94,7 +94,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the type of the calibration method.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationType
      */
     public function getType()
     {
@@ -103,7 +103,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the type of the calibration method.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationType $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationType $type
      * @return $this
      */
     public function setType($type)
@@ -114,7 +114,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the state of the calibration.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationState
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationState
      */
     public function getState()
     {
@@ -123,7 +123,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the state of the calibration.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationState $state
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDeviceMetricCalibrationState $state
      * @return $this
      */
     public function setState($state)
@@ -134,7 +134,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the time last calibration has been performed.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInstant
      */
     public function getTime()
     {
@@ -143,7 +143,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Describes the time last calibration has been performed.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInstant $time
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInstant $time
      * @return $this
      */
     public function setTime($time)

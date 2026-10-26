@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors) of a FHIR Terminology Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
@@ -72,145 +72,145 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 {
     /**
      * An absolute URI that is used to identify this terminology capabilities when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this terminology capabilities is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the terminology capabilities is stored on different servers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
      * The identifier that is used to identify this version of the terminology capabilities when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the terminology capabilities author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
      * A natural language name identifying the terminology capabilities. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
      * A short, descriptive, user-friendly title for the terminology capabilities.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * The status of this terminology capabilities. Enables tracking the life-cycle of the content.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
      * A Boolean value to indicate that this terminology capabilities is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
      * The date  (and optionally time) when the terminology capabilities was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the terminology capabilities changes.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
      * The name of the organization or individual that published the terminology capabilities.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public $contact = [];
 
     /**
      * A free text natural language description of the terminology capabilities from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate terminology capabilities instances.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = [];
 
     /**
      * A legal or geographic region in which the terminology capabilities is intended to be used.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = [];
 
     /**
      * Explanation of why this terminology capabilities is needed and why it has been designed as it has.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
      * A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the terminology capabilities.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
      */
     public $kind = null;
 
     /**
      * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware
      */
     public $software = null;
 
     /**
      * Identifies a specific implementation instance that is described by the terminology capability statement - i.e. a particular installation, rather than the capabilities of a software program.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation
      */
     public $implementation = null;
 
     /**
      * Whether the server supports lockedDate.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $lockedDate = null;
 
     /**
      * Identifies a code system that is supported by the server. If there is a no code system URL, then this declares the general assumptions a client can make about support for any CodeSystem resource.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem[]
      */
     public $codeSystem = [];
 
     /**
      * Information about the [ValueSet/$expand](valueset-operation-expand.html) operation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      */
     public $expansion = null;
 
     /**
      * The degree to which the server supports the code search parameter on ValueSet, if it is supported.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSearchSupport
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeSearchSupport
      */
     public $codeSearch = null;
 
     /**
      * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
      */
     public $validateCode = null;
 
     /**
      * Information about the [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation
      */
     public $translation = null;
 
     /**
      * Whether the $closure operation is supported.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure
      */
     public $closure = null;
 
@@ -221,7 +221,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * An absolute URI that is used to identify this terminology capabilities when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this terminology capabilities is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the terminology capabilities is stored on different servers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUri
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUri
      */
     public function getUrl()
     {
@@ -230,7 +230,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * An absolute URI that is used to identify this terminology capabilities when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this terminology capabilities is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the terminology capabilities is stored on different servers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUri $url
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUri $url
      * @return $this
      */
     public function setUrl($url)
@@ -241,7 +241,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The identifier that is used to identify this version of the terminology capabilities when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the terminology capabilities author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getVersion()
     {
@@ -250,7 +250,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The identifier that is used to identify this version of the terminology capabilities when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the terminology capabilities author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $version
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $version
      * @return $this
      */
     public function setVersion($version)
@@ -261,7 +261,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A natural language name identifying the terminology capabilities. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getName()
     {
@@ -270,7 +270,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A natural language name identifying the terminology capabilities. This name should be usable as an identifier for the module by machine processing applications such as code generation.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $name
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $name
      * @return $this
      */
     public function setName($name)
@@ -281,7 +281,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A short, descriptive, user-friendly title for the terminology capabilities.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -290,7 +290,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A short, descriptive, user-friendly title for the terminology capabilities.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -301,7 +301,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The status of this terminology capabilities. Enables tracking the life-cycle of the content.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -310,7 +310,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The status of this terminology capabilities. Enables tracking the life-cycle of the content.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -321,7 +321,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A Boolean value to indicate that this terminology capabilities is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
     {
@@ -330,7 +330,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A Boolean value to indicate that this terminology capabilities is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
@@ -341,7 +341,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The date  (and optionally time) when the terminology capabilities was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the terminology capabilities changes.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getDate()
     {
@@ -350,7 +350,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The date  (and optionally time) when the terminology capabilities was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the terminology capabilities changes.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $date
      * @return $this
      */
     public function setDate($date)
@@ -361,7 +361,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The name of the organization or individual that published the terminology capabilities.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getPublisher()
     {
@@ -370,7 +370,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The name of the organization or individual that published the terminology capabilities.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $publisher
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $publisher
      * @return $this
      */
     public function setPublisher($publisher)
@@ -381,7 +381,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -390,7 +390,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRContactDetail $contact
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -401,7 +401,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A free text natural language description of the terminology capabilities from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -410,7 +410,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A free text natural language description of the terminology capabilities from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -421,7 +421,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate terminology capabilities instances.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -430,7 +430,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate terminology capabilities instances.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -441,7 +441,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A legal or geographic region in which the terminology capabilities is intended to be used.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
     {
@@ -450,7 +450,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A legal or geographic region in which the terminology capabilities is intended to be used.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
     public function addJurisdiction($jurisdiction)
@@ -461,7 +461,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Explanation of why this terminology capabilities is needed and why it has been designed as it has.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
     {
@@ -470,7 +470,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Explanation of why this terminology capabilities is needed and why it has been designed as it has.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
     public function setPurpose($purpose)
@@ -481,7 +481,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the terminology capabilities.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -490,7 +490,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the terminology capabilities.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -501,7 +501,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind
      */
     public function getKind()
     {
@@ -510,7 +510,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind $kind
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCapabilityStatementKind $kind
      * @return $this
      */
     public function setKind($kind)
@@ -521,7 +521,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware
      */
     public function getSoftware()
     {
@@ -530,7 +530,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware $software
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware $software
      * @return $this
      */
     public function setSoftware($software)
@@ -541,7 +541,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Identifies a specific implementation instance that is described by the terminology capability statement - i.e. a particular installation, rather than the capabilities of a software program.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation
      */
     public function getImplementation()
     {
@@ -550,7 +550,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Identifies a specific implementation instance that is described by the terminology capability statement - i.e. a particular installation, rather than the capabilities of a software program.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation $implementation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation $implementation
      * @return $this
      */
     public function setImplementation($implementation)
@@ -561,7 +561,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Whether the server supports lockedDate.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getLockedDate()
     {
@@ -570,7 +570,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Whether the server supports lockedDate.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $lockedDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $lockedDate
      * @return $this
      */
     public function setLockedDate($lockedDate)
@@ -581,7 +581,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Identifies a code system that is supported by the server. If there is a no code system URL, then this declares the general assumptions a client can make about support for any CodeSystem resource.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem[]
      */
     public function getCodeSystem()
     {
@@ -590,7 +590,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Identifies a code system that is supported by the server. If there is a no code system URL, then this declares the general assumptions a client can make about support for any CodeSystem resource.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem $codeSystem
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem $codeSystem
      * @return $this
      */
     public function addCodeSystem($codeSystem)
@@ -601,7 +601,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Information about the [ValueSet/$expand](valueset-operation-expand.html) operation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      */
     public function getExpansion()
     {
@@ -610,7 +610,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Information about the [ValueSet/$expand](valueset-operation-expand.html) operation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion $expansion
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion $expansion
      * @return $this
      */
     public function setExpansion($expansion)
@@ -621,7 +621,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The degree to which the server supports the code search parameter on ValueSet, if it is supported.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSearchSupport
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeSearchSupport
      */
     public function getCodeSearch()
     {
@@ -630,7 +630,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * The degree to which the server supports the code search parameter on ValueSet, if it is supported.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeSearchSupport $codeSearch
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeSearchSupport $codeSearch
      * @return $this
      */
     public function setCodeSearch($codeSearch)
@@ -641,7 +641,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
      */
     public function getValidateCode()
     {
@@ -650,7 +650,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode $validateCode
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode $validateCode
      * @return $this
      */
     public function setValidateCode($validateCode)
@@ -661,7 +661,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Information about the [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation
      */
     public function getTranslation()
     {
@@ -670,7 +670,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Information about the [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation $translation
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation $translation
      * @return $this
      */
     public function setTranslation($translation)
@@ -681,7 +681,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Whether the $closure operation is supported.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure
      */
     public function getClosure()
     {
@@ -690,7 +690,7 @@ class FHIRTerminologyCapabilities extends FHIRDomainResource implements \JsonSer
 
     /**
      * Whether the $closure operation is supported.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure $closure
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure $closure
      * @return $this
      */
     public function setClosure($closure)

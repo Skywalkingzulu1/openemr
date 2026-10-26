@@ -2,31 +2,31 @@
 
 /**
  * FhirDeviceService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Robert Jones (Analog Informatics Corporation) <robert@analoginfo.com>, <robert@justjones.org>
  * @copyright Copyright (c) 2023 Analog Informatics Corporation <https://analoginfo.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR;
+namespace DCL\Services\FHIR;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRValueSet;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCode;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetCompose;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude;
-use OpenEMR\Services\AppointmentService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRValueSet;
+use DCL\FHIR\R4\FHIRElement\FHIRCode;
+use DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetCompose;
+use DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetConcept;
+use DCL\FHIR\R4\FHIRResource\FHIRValueSet\FHIRValueSetInclude;
+use DCL\Services\AppointmentService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\ListService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfileService, IFhirExportableResourceService, INonPatientCompartmentResourceService
 {
@@ -46,13 +46,13 @@ class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfi
 
     /**
      * NB: started w Device as a base, but DocumentReference is what I needed... no underlying service either
-     *  pc_catid => openemr_postcalendar_categories
+     *  pc_catid => DCL_postcalendar_categories
      *  doc category => categories
      *   facility POS code
      *  customlists ??
      *  option_lists by list_id
      *
-     *  MariaDB [openemr]> select list_id    , option_id         , title                 , seq , is_default , option_value , mapping , notes, codes from list_options limit 40;
+     *  MariaDB [DCL]> select list_id    , option_id         , title                 , seq , is_default , option_value , mapping , notes, codes from list_options limit 40;
      *  +---------------------------------+-------------------+-----------------------+-----+------------+--------------+---------+-------+-------+
      *  | list_id                         | option_id         | title                 | seq | is_default | option_value | mapping | notes | codes |
      *  +---------------------------------+-------------------+-----------------------+-----+------------+--------------+---------+-------+-------+
@@ -97,7 +97,7 @@ class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -118,7 +118,7 @@ class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfi
     }
 
     /**
-     * Retrieves all of the fhir observation resources mapped to the underlying openemr data elements.
+     * Retrieves all of the fhir observation resources mapped to the underlying DCL data elements.
      */
     public function getAll($fhirSearchParameters, $puuidBind = null): ProcessingResult
     {
@@ -157,7 +157,7 @@ class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfi
     private function addAppointmentCategoriesValueSetForSearch(ProcessingResult $fhirSearchResult, array $fhirSearchParameters, ?string $puuidBind = null)
     {
         $this->getSearchFieldFactory()->setSearchFieldDefinition('_lastUpdated', $this->getLastModifiedSearchFieldForAppointmentCategories());
-        $oeSearchParameters = $this->createOpenEMRSearchParameters($fhirSearchParameters, $puuidBind);
+        $oeSearchParameters = $this->createDCLSearchParameters($fhirSearchParameters, $puuidBind);
         if (
             !isset($oeSearchParameters['option_id'])
             // _id parameter can be array (AND) or comma-delimited (OR). Since a resource can only
@@ -199,7 +199,7 @@ class FhirValueSetService extends FhirServiceBase implements IResourceUSCIGProfi
     private function addListOptionsValueSetsForSearch(ProcessingResult $fhirSearchResult, array $fhirSearchParameters, ?string $puuidBind = null)
     {
         $this->getSearchFieldFactory()->setSearchFieldDefinition('_lastUpdated', $this->getLastModifiedSearchField());
-        $oeSearchParameters = $this->createOpenEMRSearchParameters($fhirSearchParameters, $puuidBind);
+        $oeSearchParameters = $this->createDCLSearchParameters($fhirSearchParameters, $puuidBind);
 
         // Now the same for list_options selected in $listNames
         $listsResult = $this->listOptionService->searchLists($oeSearchParameters);

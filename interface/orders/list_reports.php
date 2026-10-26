@@ -3,37 +3,37 @@
 /**
  * List procedure orders and reports, and fetch new reports and their results.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Tyler Wrenn <tyler@tylerwrenn.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2013-2016 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2020 Tyler Wrenn <tyler@tylerwrenn.com>
- * @copyright Copyright (c) 2025-2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2025-2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $orphanLog = '';
 
 require_once("../globals.php");
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
-$includeRoot = \OpenEMR\Core\OEGlobalsBag::getInstance()->getIncludeRoot();
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+$includeRoot = \DCL\Core\OEGlobalsBag::getInstance()->getIncludeRoot();
 if (file_exists("$includeRoot/procedure_tools/quest/QuestResultClient.php")) {
     require_once("$includeRoot/procedure_tools/quest/QuestResultClient.php");
 }
 require_once("./receive_hl7_results.inc.php");
 require_once("./gen_hl7_order.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Orders\Hl7OrderGenerationException;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Orders\Hl7OrderGenerationException;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
 
 // Check authorization.
 $thisauth = AclMain::aclCheckCore('patients', 'med');
@@ -168,7 +168,7 @@ function doWait(e){
         <h2><?php echo xlt('Procedure Orders and Reports'); ?></h2>
     </div>
 <form class="form-inline" method='post' action='list_reports.php' enctype='multipart/form-data'>
-    <input type="hidden" name="csrf_token_form" value="<?php echo attr(CsrfUtils::collectCsrfToken(\OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession())); ?>" />
+    <input type="hidden" name="csrf_token_form" value="<?php echo attr(CsrfUtils::collectCsrfToken(\DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession())); ?>" />
     <div class="container">
     <!-- This might be set by the results window: -->
     <input class="d-none row" type='text' name='form_external_refresh' value='' />
@@ -477,7 +477,7 @@ function doWait(e){
 
             if ($form_patient) {
                 $where .= " AND po.patient_id = ?";
-                $sqlBindArray[] = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid');
+                $sqlBindArray[] = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession()->get('pid');
             }
 
             if ($form_provider) {

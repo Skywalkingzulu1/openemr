@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
+namespace DCL\FHIR\R4\FHIRResource\FHIRContract;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRContract;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a policy or agreement.
@@ -71,77 +71,77 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Unique identifier for this particular Contract Provision.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
      * When this Contract Provision was issued.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $issued = null;
 
     /**
      * Relevant time or time-period when this Contract Provision is applicable.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $applies = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $topicCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $topicReference = null;
 
     /**
      * A legal clause or condition contained within a contract that requires one or both parties to perform a particular requirement by some specified time or prevents one or both parties from performing a particular requirement by some specified time.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * A specialized legal clause or condition based on overarching contract type.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subType = null;
 
     /**
      * Statement of a provision in a policy or a contract.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
      * Security labels that protect the handling of information about the term and its elements, which may be specifically identified..
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSecurityLabel[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSecurityLabel[]
      */
     public $securityLabel = [];
 
     /**
      * The matter of concern in the context of this provision of the agreement.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractOffer
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractOffer
      */
     public $offer = null;
 
     /**
      * Contract Term Asset List.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAsset[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAsset[]
      */
     public $asset = [];
 
     /**
      * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAction[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAction[]
      */
     public $action = [];
 
     /**
      * Nested group of Contract Provisions.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
      */
     public $group = [];
 
@@ -152,7 +152,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Unique identifier for this particular Contract Provision.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
     {
@@ -161,7 +161,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Unique identifier for this particular Contract Provision.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function setIdentifier($identifier)
@@ -172,7 +172,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When this Contract Provision was issued.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getIssued()
     {
@@ -181,7 +181,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * When this Contract Provision was issued.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $issued
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $issued
      * @return $this
      */
     public function setIssued($issued)
@@ -192,7 +192,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Relevant time or time-period when this Contract Provision is applicable.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getApplies()
     {
@@ -201,7 +201,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Relevant time or time-period when this Contract Provision is applicable.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $applies
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $applies
      * @return $this
      */
     public function setApplies($applies)
@@ -211,7 +211,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getTopicCodeableConcept()
     {
@@ -219,7 +219,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $topicCodeableConcept
      * @return $this
      */
     public function setTopicCodeableConcept($topicCodeableConcept)
@@ -229,7 +229,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getTopicReference()
     {
@@ -237,7 +237,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $topicReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $topicReference
      * @return $this
      */
     public function setTopicReference($topicReference)
@@ -248,7 +248,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A legal clause or condition contained within a contract that requires one or both parties to perform a particular requirement by some specified time or prevents one or both parties from performing a particular requirement by some specified time.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -257,7 +257,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A legal clause or condition contained within a contract that requires one or both parties to perform a particular requirement by some specified time or prevents one or both parties from performing a particular requirement by some specified time.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -268,7 +268,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A specialized legal clause or condition based on overarching contract type.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubType()
     {
@@ -277,7 +277,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * A specialized legal clause or condition based on overarching contract type.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subType
      * @return $this
      */
     public function setSubType($subType)
@@ -288,7 +288,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Statement of a provision in a policy or a contract.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getText()
     {
@@ -297,7 +297,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Statement of a provision in a policy or a contract.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $text
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $text
      * @return $this
      */
     public function setText($text)
@@ -308,7 +308,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Security labels that protect the handling of information about the term and its elements, which may be specifically identified..
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSecurityLabel[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSecurityLabel[]
      */
     public function getSecurityLabel()
     {
@@ -317,7 +317,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Security labels that protect the handling of information about the term and its elements, which may be specifically identified..
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSecurityLabel $securityLabel
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractSecurityLabel $securityLabel
      * @return $this
      */
     public function addSecurityLabel($securityLabel)
@@ -328,7 +328,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The matter of concern in the context of this provision of the agreement.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractOffer
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractOffer
      */
     public function getOffer()
     {
@@ -337,7 +337,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The matter of concern in the context of this provision of the agreement.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractOffer $offer
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractOffer $offer
      * @return $this
      */
     public function setOffer($offer)
@@ -348,7 +348,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Contract Term Asset List.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAsset[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAsset[]
      */
     public function getAsset()
     {
@@ -357,7 +357,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Contract Term Asset List.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAsset $asset
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAsset $asset
      * @return $this
      */
     public function addAsset($asset)
@@ -368,7 +368,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAction[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAction[]
      */
     public function getAction()
     {
@@ -377,7 +377,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAction $action
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractAction $action
      * @return $this
      */
     public function addAction($action)
@@ -388,7 +388,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Nested group of Contract Provisions.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm[]
      */
     public function getGroup()
     {
@@ -397,7 +397,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Nested group of Contract Provisions.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm $group
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRContract\FHIRContractTerm $group
      * @return $this
      */
     public function addGroup($group)

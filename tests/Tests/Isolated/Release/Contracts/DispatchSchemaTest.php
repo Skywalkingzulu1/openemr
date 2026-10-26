@@ -3,19 +3,19 @@
 /**
  * Validate the vendored dispatch.schema.json against good and bad fixtures
  * for each cross-repo repository_dispatch event. The schema is
- * authored canonically in openemr/openemr-devops; this test asserts the
+ * authored canonically in DCL/DCL-devops; this test asserts the
  * vendored copy in this repo behaves identically.
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      http://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release\Contracts;
+namespace DCL\Tests\Isolated\Release\Contracts;
 
 use JsonSchema\Validator;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -33,11 +33,11 @@ final class DispatchSchemaTest extends TestCase
      */
     public static function goodFixtures(): iterable
     {
-        yield 'openemr-rel-cut'          => ['good-rel-cut.json'];
-        yield 'openemr-rel-update'       => ['good-rel-update.json'];
-        yield 'openemr-tag'              => ['good-tag.json'];
-        yield 'openemr-tag (test)'       => ['good-tag-test.json'];
-        yield 'openemr-docs-binaries'    => ['good-docs-binaries.json'];
+        yield 'DCL-rel-cut'          => ['good-rel-cut.json'];
+        yield 'DCL-rel-update'       => ['good-rel-update.json'];
+        yield 'DCL-tag'              => ['good-tag.json'];
+        yield 'DCL-tag (test)'       => ['good-tag-test.json'];
+        yield 'DCL-docs-binaries'    => ['good-docs-binaries.json'];
         yield 'release-targets-changed'  => ['good-release-targets-changed.json'];
     }
 
@@ -48,10 +48,10 @@ final class DispatchSchemaTest extends TestCase
      */
     public static function badFixtures(): iterable
     {
-        yield 'openemr-rel-cut missing prev_release'        => ['bad-rel-cut.json', 'prev_release'];
-        yield 'openemr-rel-update non-hex sha'              => ['bad-rel-update.json', 'sha'];
-        yield 'openemr-tag with dotted version'             => ['bad-tag.json', 'tag'];
-        yield 'openemr-docs-binaries empty files array'     => ['bad-docs-binaries.json', 'files'];
+        yield 'DCL-rel-cut missing prev_release'        => ['bad-rel-cut.json', 'prev_release'];
+        yield 'DCL-rel-update non-hex sha'              => ['bad-rel-update.json', 'sha'];
+        yield 'DCL-tag with dotted version'             => ['bad-tag.json', 'tag'];
+        yield 'DCL-docs-binaries empty files array'     => ['bad-docs-binaries.json', 'files'];
         yield 'release-targets-changed with stray data key' => ['bad-release-targets-changed.json', 'stray_field'];
     }
 

@@ -7,18 +7,18 @@
  * final outcome of every statement, for every population set and
  * stratification.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Cqm\Parity;
+namespace DCL\Tests\Isolated\Cqm\Parity;
 
-use OpenEMR\Cqm\PhpCqmCalculation;
+use DCL\Cqm\PhpCqmCalculation;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -117,6 +117,6 @@ class PhpEngineParityTest extends TestCase
 
     private static function measuresDir(string $year): string
     {
-        return dirname(__DIR__, 5) . "/vendor/openemr/oe-cqm-parsers/{$year}_reporting_period/json_measures";
+        return dirname(__DIR__, 5) . "/vendor/DCL/oe-cqm-parsers/{$year}_reporting_period/json_measures";
     }
 }

@@ -3,21 +3,21 @@
 /**
  * FHIR Questionnaire Service CRUD Tests
  *
- * @package   OpenEMR
- * @link      http://www.open-emr.org
+ * @package   DCL
+ * @link      http://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\FHIR;
+namespace DCL\Tests\Services\FHIR;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
-use OpenEMR\Services\FHIR\FhirQuestionnaireService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
+use DCL\Services\FHIR\FhirQuestionnaireService;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -128,7 +128,7 @@ class FhirQuestionnaireServiceCrudTest extends TestCase
     }
 
     /**
-     * FhirServiceBase::update() re-shapes the stored row through parseOpenEMRRecord(); an
+     * FhirServiceBase::update() re-shapes the stored row through parseDCLRecord(); an
      * aggregator that leaves that on the empty trait answers a successful PUT with a null body.
      */
     #[Test]

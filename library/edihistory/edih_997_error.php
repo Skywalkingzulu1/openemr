@@ -21,13 +21,13 @@
  *
  *
  * @author     Kevin McCormick
- * @link       https://www.open-emr.org
- * @package    OpenEMR
+ * @link       https://www.dcl.org
+ * @package    DCL
  * @subpackage ediHistory
  */
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Session\SessionWrapperFactory;
 
 // codes used in 997/999 files;
 //require_once './codes/edih_997_codes.php';

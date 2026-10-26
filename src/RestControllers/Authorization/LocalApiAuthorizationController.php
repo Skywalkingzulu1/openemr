@@ -1,14 +1,14 @@
 <?php
 
-namespace OpenEMR\RestControllers\Authorization;
+namespace DCL\RestControllers\Authorization;
 
-use OpenEMR\Common\Auth\UuidUserAccount;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\UserService;
+use DCL\Common\Auth\UuidUserAccount;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\UserService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -49,23 +49,23 @@ class LocalApiAuthorizationController implements IAuthorizationStrategy
         $csrfToken = $request->headers->get("APICSRFTOKEN");
 
         if (empty($csrfToken)) {
-            $this->logger->error("OpenEMR Error: internal api failed because csrf token not received");
+            $this->logger->error("DCL Error: internal api failed because csrf token not received");
             $csrfFail = true;
         }
 
         if ((!$csrfFail) && (!CsrfUtils::verifyCsrfToken($csrfToken, $session, 'api'))) {
-            $this->logger->error("OpenEMR Error: internal api failed because csrf token did not match");
+            $this->logger->error("DCL Error: internal api failed because csrf token did not match");
             $csrfFail = true;
         }
 
         if ($csrfFail) {
             $this->logger->error(self::class . " CSRF failed", ["resource" => $request->getPathInfo()]);
-            throw new UnauthorizedHttpException("APICSRFTOKEN", "OpenEMR Error: internal api failed because csrf token did not match");
+            throw new UnauthorizedHttpException("APICSRFTOKEN", "DCL Error: internal api failed because csrf token did not match");
         }
         $userId = $session->get('authUserID');
         if ((!is_int($userId) && !is_string($userId)) || empty($userId)) {
             // unable to identify the user
-            $this->logger->error("OpenEMR Error - api user account could not be identified, so forced exit", ['userId' => $userId]);
+            $this->logger->error("DCL Error - api user account could not be identified, so forced exit", ['userId' => $userId]);
             throw new HttpException(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
         // currently local api only supports users, so we will set the user role to users
@@ -75,7 +75,7 @@ class LocalApiAuthorizationController implements IAuthorizationStrategy
 
         if (empty($user)) {
             // unable to identify the users user role
-            $this->logger->error("OpenEMR Error - local user account could not be identified, so forced exit", [
+            $this->logger->error("DCL Error - local user account could not be identified, so forced exit", [
                 'userId' => $userId,
                 'userRole' => $userRole]);
             throw new HttpException(Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -91,7 +91,7 @@ class LocalApiAuthorizationController implements IAuthorizationStrategy
             $user = $userService->getUser($userId);
             if ($user === false) {
                 $this->logger->error(
-                    "OpenEMR Error - local api user not found after UUID bootstrap; forced exit",
+                    "DCL Error - local api user not found after UUID bootstrap; forced exit",
                     ['userId' => $userId]
                 );
                 throw new HttpException(Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -99,7 +99,7 @@ class LocalApiAuthorizationController implements IAuthorizationStrategy
             $userUuid = $user['uuid'] ?? null;
             if ($userUuid === null || $userUuid === '') {
                 $this->logger->error(
-                    "OpenEMR Error - local api user has no UUID even after bootstrap; forced exit",
+                    "DCL Error - local api user has no UUID even after bootstrap; forced exit",
                     ['userId' => $userId]
                 );
                 throw new HttpException(Response::HTTP_INTERNAL_SERVER_ERROR);

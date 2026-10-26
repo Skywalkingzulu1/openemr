@@ -3,18 +3,18 @@
 /**
  * Standard Route Finder - locates and returns standard API routes.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Discover and Change, Inc <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\Finder;
+namespace DCL\RestControllers\Finder;
 
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Core\OEHttpKernel;
-use OpenEMR\Events\RestApiExtend\RestApiCreateEvent;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Core\OEHttpKernel;
+use DCL\Events\RestApiExtend\RestApiCreateEvent;
 
 class StandardRouteFinder implements IRouteFinder
 {

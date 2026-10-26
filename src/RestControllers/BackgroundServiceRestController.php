@@ -3,21 +3,21 @@
 /**
  * REST controller for background service listing and execution.
  *
- * @package   OpenEMR
+ * @package   DCL
  *
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\RestControllers;
+namespace DCL\RestControllers;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\Services\Background\BackgroundServiceRegistry;
-use OpenEMR\Services\Background\BackgroundServiceRunner;
+use DCL\Services\Background\BackgroundServiceRegistry;
+use DCL\Services\Background\BackgroundServiceRunner;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -59,7 +59,7 @@ class BackgroundServiceRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function listAll(): Response
     {
@@ -120,7 +120,7 @@ class BackgroundServiceRestController
                 )
             ),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getOne(string $name): Response
     {
@@ -176,7 +176,7 @@ class BackgroundServiceRestController
             ),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]],
+        security: [['DCL_auth' => []]],
     )]
     public function runAllDue(): Response
     {
@@ -281,7 +281,7 @@ class BackgroundServiceRestController
                 )
             ),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function runService(string $name, array $data = []): Response
     {

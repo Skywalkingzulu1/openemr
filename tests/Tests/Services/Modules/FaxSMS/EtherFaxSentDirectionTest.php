@@ -7,21 +7,21 @@
  * 'inbound' was stored for every sent fax, and fetchQueueCount() (the
  * Services badge fallback) counted sent faxes as faxes waiting to be read.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\Modules\FaxSMS;
+namespace DCL\Tests\Services\Modules\FaxSMS;
 
 use Composer\Autoload\ClassLoader;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Modules\FaxSMS\Controller\EtherFaxActions;
-use OpenEMR\Services\Utils\SQLUpgradeService;
+use DCL\Common\Database\QueryUtils;
+use DCL\Modules\FaxSMS\Controller\EtherFaxActions;
+use DCL\Services\Utils\SQLUpgradeService;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionProperty;
@@ -41,7 +41,7 @@ class EtherFaxSentDirectionTest extends TestCase
         if (!$loader instanceof ClassLoader) {
             self::fail('Composer ClassLoader not available to register module autoload prefix.');
         }
-        $loader->addPsr4('OpenEMR\\Modules\\FaxSMS\\', self::root() . self::MODULE_DIR . '/src/');
+        $loader->addPsr4('DCL\\Modules\\FaxSMS\\', self::root() . self::MODULE_DIR . '/src/');
 
         // The module's tables exist only where it is installed; table.sql is
         // what installing runs, and every statement in it is guarded.

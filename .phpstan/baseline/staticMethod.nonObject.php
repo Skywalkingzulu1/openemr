@@ -2,12 +2,12 @@
 
 $ignoreErrors = [];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call static method getServiceType\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call static method getServiceType\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/contact.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Cannot call static method getServiceType\\(\\) on OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|OpenEMR\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
+    'message' => '#^Cannot call static method getServiceType\\(\\) on DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\ClickatellSMSClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EmailClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\EtherFaxActions\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\RCFaxClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\SignalWireClient\\|DCL\\\\Modules\\\\FaxSMS\\\\Controller\\\\TwilioSMSClient\\|null\\.$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-faxsms/messageUI.php',
 ];

@@ -3,17 +3,17 @@
 /**
  * Fax SMS Module Member
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2023 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General public License 3
  */
 
-namespace OpenEMR\Modules\FaxSMS\EtherFax;
+namespace DCL\Modules\FaxSMS\EtherFax;
 
 /**
- * OpenEMR\Modules\FaxSMS\EtherFax\FaxStatus class.
+ * DCL\Modules\FaxSMS\EtherFax\FaxStatus class.
  */
 class FaxStatus
 {

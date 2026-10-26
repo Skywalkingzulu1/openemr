@@ -3,43 +3,43 @@
 /**
  * Front payment gui.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
- * @author    Stephen Waite <stephen.waite@open-emr.org>
+ * @author    Stephen Waite <stephen.waite@dcl.org>
  * @author    Meghana Chowdary Ainampudi <33152427+ameghana@users.noreply.github.com>
- * @author    Michael A. Smith <michael@opencoreemr.com>
+ * @author    Michael A. Smith <michael@DCL.com>
  * @copyright Copyright (c) 2006-2020 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2024 Stephen Waite <stephen.waite@open-emr.org>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2024 Stephen Waite <stephen.waite@dcl.org>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once("../globals.php");
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
 $encounter = $session->get('encounter', 0);
 $pid = $session->get('pid', 0);
 require_once("../../custom/code_types.inc.php");
 require_once($srcdir . "/options.inc.php");
 require_once($srcdir . "/encounter_events.inc.php");
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Billing\BillingUtilities;
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Crypto\CryptoGen;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Utils\FormatMoney;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Events\Billing\Payments\PostFrontPayment;
-use OpenEMR\OeUI\OemrUI;
-use OpenEMR\PaymentProcessing\Recorder;
-use OpenEMR\PaymentProcessing\Sphere\SpherePayment;
-use OpenEMR\Services\FacilityService;
+use DCL\BC\ServiceContainer;
+use DCL\Billing\BillingUtilities;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Crypto\CryptoGen;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Utils\FormatMoney;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Events\Billing\Payments\PostFrontPayment;
+use DCL\OeUI\OemrUI;
+use DCL\PaymentProcessing\Recorder;
+use DCL\PaymentProcessing\Sphere\SpherePayment;
+use DCL\Services\FacilityService;
 
 
 $globalsBag = OEGlobalsBag::getInstance();

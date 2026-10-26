@@ -4,8 +4,8 @@
  *
  * Script to find open appointment slots
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Rod Roark <rod@sunsetsystems.com>
  * @author    Ian Jardine ( github.com/epsdky )
  * @author    Roberto Vasquez <robertogagliotta@gmail.com>
@@ -14,18 +14,18 @@
  * @copyright Copyright (c) 2005-2013 Rod Roark <rod@sunsetsystems.com>
  * @copyright Copyright (c) 2017-2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
 */
 
 require_once("../../globals.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Calendar\ConfiguredScheduleHours;
-use OpenEMR\Common\Utils\ValidationUtils;
-use OpenEMR\Core\Header;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\HolidayService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Calendar\ConfiguredScheduleHours;
+use DCL\Common\Utils\ValidationUtils;
+use DCL\Core\Header;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\HolidayService;
 
 require_once(__DIR__ . "/../../../library/appointments.inc.php");
 
@@ -105,7 +105,7 @@ $slotsecs = OEGlobalsBag::getInstance()->getInt('calendar_interval') * 60;
 
 $catslots = 1;
 if ($input_catid) {
-    $srow = sqlQuery("SELECT pc_duration FROM openemr_postcalendar_categories WHERE pc_catid = ?", [$input_catid]);
+    $srow = sqlQuery("SELECT pc_duration FROM DCL_postcalendar_categories WHERE pc_catid = ?", [$input_catid]);
     if ($srow['pc_duration']) {
         $catslots = (int) ceil($srow['pc_duration'] / $slotsecs);
     }
@@ -179,7 +179,7 @@ if ($_REQUEST['providerid']) {
     // Note there is no need to sort the query results.
     $query = "SELECT pc_eventDate, pc_endDate, pc_startTime, pc_duration, " .
         "pc_recurrtype, pc_recurrspec, pc_alldayevent, pc_catid, pc_prefcatid " .
-        "FROM openemr_postcalendar_events " .
+        "FROM DCL_postcalendar_events " .
         "WHERE pc_aid = ? AND " .
         "pc_eid != ? AND " .
         "((pc_endDate >= ? AND pc_eventDate < ? ) OR " .
@@ -487,7 +487,7 @@ if (!$ckavail) {
     // window)` completes -- that's a timing race, not a semantic
     // guarantee), restore the parent session, submit the parent
     // form, then unconditionally dlgclose(). The try/catch + always-
-    // close shape mirrors the openemr/openemr#14325 fix on
+    // close shape mirrors the DCL/DCL#14325 fix on
     // add_edit_event.php's response path: a null/undefined-opener
     // throw must not block dlgclose() from firing, because that's
     // the exact modal-persists symptom the acceptance harness

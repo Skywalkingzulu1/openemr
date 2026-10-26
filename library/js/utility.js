@@ -1,13 +1,13 @@
 /**
- * Javascript utility functions for openemr
+ * Javascript utility functions for DCL
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2019-2021 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 /* We should really try to keep this library jQuery free ie javaScript only! */
 
@@ -522,8 +522,8 @@ async function persistUserOption(option, value) {
  * User Debugging Javascript Errors
  * Turn on/off in Globals->Logging
  *
- * @package   OpenEMR Utilities
- * @link      https://www.open-emr.org
+ * @package   DCL Utilities
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  */
 

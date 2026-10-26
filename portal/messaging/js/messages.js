@@ -6,9 +6,9 @@
  * inbox payload, CSRF token, etc.) are passed in via window.OE_MESSAGES_CONFIG,
  * which messages.php emits before this file loads.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 /* global DOMPurify */
 
@@ -90,7 +90,7 @@
 
     function htmlToText(html) {
         const hold = document.createElement('DIV');
-        // nosemgrep: openemr-js-innerhtml-dynamic -- DOMPurify-sanitized; we then read textContent only.
+        // nosemgrep: DCL-js-innerhtml-dynamic -- DOMPurify-sanitized; we then read textContent only.
         hold.innerHTML = DOMPurify.sanitize(html, {
             USE_PROFILES: { html: true },
             FORBID_TAGS: ['a', 'img']
@@ -462,7 +462,7 @@
                 </td>
             </tr>`;
         });
-        // nosemgrep: openemr-js-innerhtml-dynamic -- every ${} interpolation above goes through escapeHtml() or is a static class/style literal.
+        // nosemgrep: DCL-js-innerhtml-dynamic -- every ${} interpolation above goes through escapeHtml() or is a static class/style literal.
         tbody.innerHTML = html;
 
         // Bind click handlers
@@ -493,7 +493,7 @@
         const sel = state.selected;
         const headerEl = document.getElementById('detailHeader');
         if (headerEl) {
-            // nosemgrep: openemr-js-innerhtml-dynamic -- every ${} interpolation goes through escapeHtml().
+            // nosemgrep: DCL-js-innerhtml-dynamic -- every ${} interpolation goes through escapeHtml().
             headerEl.innerHTML = `<h5 class="pt-2">
                 <a href="javascript:;" id="btnCloseDetail">${escapeHtml(config.strings.conversationFrom)}</a>
                 <strong>${escapeHtml(sel.sender_name)}</strong> ${escapeHtml(config.strings.regarding)} <strong>${escapeHtml(sel.title)}</strong> ${escapeHtml(config.strings.onPrep)} &lt;${escapeHtml(sel.date)}&gt;
@@ -541,7 +541,7 @@
             }
             html += `</td></tr>`;
         });
-        // nosemgrep: openemr-js-innerhtml-dynamic -- ${} interpolations use escapeHtml(); the only HTML body comes from renderMessageBody() which is DOMPurify-sanitized.
+        // nosemgrep: DCL-js-innerhtml-dynamic -- ${} interpolations use escapeHtml(); the only HTML body comes from renderMessageBody() which is DOMPurify-sanitized.
         chainTbody.innerHTML = html;
 
         // Bind reply/forward buttons to open modal
@@ -568,7 +568,7 @@
 
         const infoEl = document.getElementById('pagingInfo');
         if (infoEl) {
-            // nosemgrep: openemr-js-innerhtml-dynamic -- startNum/endNum are integers from itemsPerPage * currentPage; state.items.length is a Number.
+            // nosemgrep: DCL-js-innerhtml-dynamic -- startNum/endNum are integers from itemsPerPage * currentPage; state.items.length is a Number.
             infoEl.innerHTML = `<strong>${startNum}</strong>~<strong>${endNum}</strong> of <strong>${state.items.length}</strong>`;
         }
 
@@ -598,7 +598,7 @@
         const showRefer = (mode === 'forward' || mode === 'reply') && state.selected && state.selected.mail_chain;
         if (referMsgEl) {
             if (showRefer) {
-                // nosemgrep: openemr-js-innerhtml-dynamic -- renderMessageBody() runs DOMPurify.sanitize() with the html profile and FORBID_TAGS=['a','img'].
+                // nosemgrep: DCL-js-innerhtml-dynamic -- renderMessageBody() runs DOMPurify.sanitize() with the html profile and FORBID_TAGS=['a','img'].
                 referMsgEl.innerHTML = renderMessageBody(state.selected.body);
                 referMsgEl.style.display = '';
             } else {

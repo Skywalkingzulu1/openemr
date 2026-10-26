@@ -19,7 +19,7 @@
  *
  * Type:     function<br />
  * Name:     amcCollect<br />
- * Purpose:  amcCollect in OpenEMR - Smarty templates<br />
+ * Purpose:  amcCollect in DCL - Smarty templates<br />
  *
  * @param array<string, mixed> $params
  * @param Smarty $smarty

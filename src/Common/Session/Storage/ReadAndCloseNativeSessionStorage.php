@@ -14,17 +14,17 @@
  *  3. reopenForWriting() re-acquires the session lock so callers can write, then
  *     close again via save().
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Milan Zivkovic <zivkovic.milan@gmail.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Session\Storage;
+namespace DCL\Common\Session\Storage;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\SessionConfiguration;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\SessionConfiguration;
 use Symfony\Component\HttpFoundation\Session\Storage\MetadataBag;
 use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;

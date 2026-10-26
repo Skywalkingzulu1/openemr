@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
+namespace DCL\FHIR\R4\FHIRResource\FHIRExampleScenario;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Example of workflow instance.
@@ -71,19 +71,19 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement implements \Jso
 {
     /**
      * The label to display for the alternative that gives a sense of the circumstance in which the alternative should be invoked.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
      * A human-readable description of the alternative explaining when the alternative should occur rather than the base step.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
      * What happens in each alternative option.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
      */
     public $step = [];
 
@@ -94,7 +94,7 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement implements \Jso
 
     /**
      * The label to display for the alternative that gives a sense of the circumstance in which the alternative should be invoked.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getTitle()
     {
@@ -103,7 +103,7 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement implements \Jso
 
     /**
      * The label to display for the alternative that gives a sense of the circumstance in which the alternative should be invoked.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $title
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $title
      * @return $this
      */
     public function setTitle($title)
@@ -114,7 +114,7 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement implements \Jso
 
     /**
      * A human-readable description of the alternative explaining when the alternative should occur rather than the base step.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -123,7 +123,7 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement implements \Jso
 
     /**
      * A human-readable description of the alternative explaining when the alternative should occur rather than the base step.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -134,7 +134,7 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement implements \Jso
 
     /**
      * What happens in each alternative option.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep[]
      */
     public function getStep()
     {
@@ -143,7 +143,7 @@ class FHIRExampleScenarioAlternative extends FHIRBackboneElement implements \Jso
 
     /**
      * What happens in each alternative option.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep $step
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRExampleScenario\FHIRExampleScenarioStep $step
      * @return $this
      */
     public function addStep($step)

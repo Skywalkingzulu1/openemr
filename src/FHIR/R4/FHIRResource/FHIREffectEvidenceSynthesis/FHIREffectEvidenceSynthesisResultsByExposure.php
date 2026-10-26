@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
+namespace DCL\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIREffectEvidenceSynthesis;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
@@ -71,25 +71,25 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 {
     /**
      * Human-readable summary of results by exposure state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $description = null;
 
     /**
      * Whether these results are for the exposure state or alternative exposure state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRExposureState
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRExposureState
      */
     public $exposureState = null;
 
     /**
      * Used to define variant exposure states such as low-risk state.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $variantState = null;
 
     /**
      * Reference to a RiskEvidenceSynthesis resource.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $riskEvidenceSynthesis = null;
 
@@ -100,7 +100,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Human-readable summary of results by exposure state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getDescription()
     {
@@ -109,7 +109,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Human-readable summary of results by exposure state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $description
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $description
      * @return $this
      */
     public function setDescription($description)
@@ -120,7 +120,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Whether these results are for the exposure state or alternative exposure state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRExposureState
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRExposureState
      */
     public function getExposureState()
     {
@@ -129,7 +129,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Whether these results are for the exposure state or alternative exposure state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRExposureState $exposureState
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRExposureState $exposureState
      * @return $this
      */
     public function setExposureState($exposureState)
@@ -140,7 +140,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Used to define variant exposure states such as low-risk state.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getVariantState()
     {
@@ -149,7 +149,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Used to define variant exposure states such as low-risk state.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $variantState
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $variantState
      * @return $this
      */
     public function setVariantState($variantState)
@@ -160,7 +160,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Reference to a RiskEvidenceSynthesis resource.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getRiskEvidenceSynthesis()
     {
@@ -169,7 +169,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement i
 
     /**
      * Reference to a RiskEvidenceSynthesis resource.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $riskEvidenceSynthesis
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $riskEvidenceSynthesis
      * @return $this
      */
     public function setRiskEvidenceSynthesis($riskEvidenceSynthesis)

@@ -17,7 +17,7 @@
 //
 //
 // A copy of the GNU General Public License is included along with this program:
-// openemr/interface/login/GnuGPL.html
+// DCL/interface/login/GnuGPL.html
 // For more information write to the Free Software
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
@@ -29,8 +29,8 @@
 
 require_once("../../interface/globals.php");
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
 
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
 $authUserID = $session->get('authUserID');

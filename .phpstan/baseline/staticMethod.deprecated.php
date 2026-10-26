@@ -10,32 +10,32 @@ Returns a new instance from a file path\\.$#',
     'path' => __DIR__ . '/../../contrib/util/billing/load_fee_schedule.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method formatPhone\\(\\) of class OpenEMR\\\\Services\\\\PhoneNumberService\\:
+    'message' => '#^Call to deprecated method formatPhone\\(\\) of class DCL\\\\Services\\\\PhoneNumberService\\:
 Use PhoneNumber\\:\\:tryParse\\(\\)\\-\\>formatLocal\\(\\) instead$#',
     'count' => 3,
     'path' => __DIR__ . '/../../custom/BillingExport.csv.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method arPostAdjustment\\(\\) of class OpenEMR\\\\Billing\\\\SLEOB\\:
-Use \\\\OpenEMR\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
+    'message' => '#^Call to deprecated method arPostAdjustment\\(\\) of class DCL\\\\Billing\\\\SLEOB\\:
+Use \\\\DCL\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/billing/sl_eob_invoice.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method arPostPayment\\(\\) of class OpenEMR\\\\Billing\\\\SLEOB\\:
-Use \\\\OpenEMR\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
+    'message' => '#^Call to deprecated method arPostPayment\\(\\) of class DCL\\\\Billing\\\\SLEOB\\:
+Use \\\\DCL\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/billing/sl_eob_invoice.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method arPostAdjustment\\(\\) of class OpenEMR\\\\Billing\\\\SLEOB\\:
-Use \\\\OpenEMR\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
+    'message' => '#^Call to deprecated method arPostAdjustment\\(\\) of class DCL\\\\Billing\\\\SLEOB\\:
+Use \\\\DCL\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/billing/sl_eob_process.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method arPostPayment\\(\\) of class OpenEMR\\\\Billing\\\\SLEOB\\:
-Use \\\\OpenEMR\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
+    'message' => '#^Call to deprecated method arPostPayment\\(\\) of class DCL\\\\Billing\\\\SLEOB\\:
+Use \\\\DCL\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/billing/sl_eob_process.php',
 ];
@@ -48,37 +48,37 @@ Returns a new instance from a file path\\.$#',
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-weno/src/Services/DownloadWenoPharmacies.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method toNationalDigits\\(\\) of class OpenEMR\\\\Services\\\\PhoneNumberService\\:
+    'message' => '#^Call to deprecated method toNationalDigits\\(\\) of class DCL\\\\Services\\\\PhoneNumberService\\:
 Use PhoneNumber\\:\\:tryParse\\(\\)\\-\\>getNationalDigits\\(\\) instead$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/modules/custom_modules/oe-module-weno/src/Services/TransmitProperties.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method toHL7Phone\\(\\) of class OpenEMR\\\\Services\\\\PhoneNumberService\\:
+    'message' => '#^Call to deprecated method toHL7Phone\\(\\) of class DCL\\\\Services\\\\PhoneNumberService\\:
 Use PhoneNumber\\:\\:tryParse\\(\\)\\-\\>toHL7\\(\\) instead$#',
     'count' => 4,
     'path' => __DIR__ . '/../../interface/modules/zend_modules/module/Immunization/src/Immunization/Controller/ImmunizationController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method arPostPayment\\(\\) of class OpenEMR\\\\Billing\\\\SLEOB\\:
-Use \\\\OpenEMR\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
+    'message' => '#^Call to deprecated method arPostPayment\\(\\) of class DCL\\\\Billing\\\\SLEOB\\:
+Use \\\\DCL\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/patient_file/pos_checkout_ippf.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method arPostAdjustment\\(\\) of class OpenEMR\\\\Billing\\\\SLEOB\\:
-Use \\\\OpenEMR\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
+    'message' => '#^Call to deprecated method arPostAdjustment\\(\\) of class DCL\\\\Billing\\\\SLEOB\\:
+Use \\\\DCL\\\\PaymentProcessing\\\\Recorder\\:\\:recordActivity directly$#',
     'count' => 1,
     'path' => __DIR__ . '/../../interface/reports/collections_report.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method toHL7Phone\\(\\) of class OpenEMR\\\\Services\\\\PhoneNumberService\\:
+    'message' => '#^Call to deprecated method toHL7Phone\\(\\) of class DCL\\\\Services\\\\PhoneNumberService\\:
 Use PhoneNumber\\:\\:tryParse\\(\\)\\-\\>toHL7\\(\\) instead$#',
     'count' => 2,
     'path' => __DIR__ . '/../../interface/reports/immunization_report.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method toNationalDigits\\(\\) of class OpenEMR\\\\Services\\\\PhoneNumberService\\:
+    'message' => '#^Call to deprecated method toNationalDigits\\(\\) of class DCL\\\\Services\\\\PhoneNumberService\\:
 Use PhoneNumber\\:\\:tryParse\\(\\)\\-\\>getNationalDigits\\(\\) instead$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Billing/Claim.php',
@@ -112,61 +112,61 @@ this API is deprecated, and will be removed in the next major release\\. Please
     'path' => __DIR__ . '/../../src/Cqm/Generator.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 6,
     'path' => __DIR__ . '/../../src/RestControllers/AllergyIntoleranceRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 6,
     'path' => __DIR__ . '/../../src/RestControllers/ConditionRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/RestControllers/DrugRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 6,
     'path' => __DIR__ . '/../../src/RestControllers/EncounterRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/RestControllers/ImmunizationRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 13,
     'path' => __DIR__ . '/../../src/RestControllers/InsuranceRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/RestControllers/ProcedureRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/RestControllers/TransactionRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 3,
     'path' => __DIR__ . '/../../src/RestControllers/UserRestController.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method toNationalDigits\\(\\) of class OpenEMR\\\\Services\\\\PhoneNumberService\\:
+    'message' => '#^Call to deprecated method toNationalDigits\\(\\) of class DCL\\\\Services\\\\PhoneNumberService\\:
 Use PhoneNumber\\:\\:tryParse\\(\\)\\-\\>getNationalDigits\\(\\) instead$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/Cda/CdaComponentParseHelpers.php',
@@ -178,7 +178,7 @@ Deprecated since v4\\.3$#',
     'path' => __DIR__ . '/../../src/Services/JWTClientAuthenticationService.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method formatPhone\\(\\) of class OpenEMR\\\\Services\\\\PhoneNumberService\\:
+    'message' => '#^Call to deprecated method formatPhone\\(\\) of class DCL\\\\Services\\\\PhoneNumberService\\:
 Use PhoneNumber\\:\\:tryParse\\(\\)\\-\\>formatLocal\\(\\) instead$#',
     'count' => 1,
     'path' => __DIR__ . '/../../src/Services/PhoneNumberService.php',
@@ -190,13 +190,13 @@ https\\://github\\.com/sebastianbergmann/phpunit/issues/6052$#',
     'path' => __DIR__ . '/../../tests/Tests/Common/Auth/OpenIDConnect/SMARTSessionTokenContextIntegrationTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method produceRandomBytes\\(\\) of class OpenEMR\\\\Common\\\\Utils\\\\RandomGenUtils\\:
+    'message' => '#^Call to deprecated method produceRandomBytes\\(\\) of class DCL\\\\Common\\\\Utils\\\\RandomGenUtils\\:
 Use random_bytes\\(\\) directly$#',
     'count' => 3,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/Common/Utils/RandomGenUtilsTest.php',
 ];
 $ignoreErrors[] = [
-    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class OpenEMR\\\\RestControllers\\\\RestControllerHelper\\:
+    'message' => '#^Call to deprecated method handleProcessingResult\\(\\) of class DCL\\\\RestControllers\\\\RestControllerHelper\\:
 use createProcessingResultResponse\\(\\) instead\\.$#',
     'count' => 5,
     'path' => __DIR__ . '/../../tests/Tests/Isolated/RestControllers/HandleProcessingResultTest.php',

@@ -3,17 +3,17 @@
 /**
  * This class returns a generic mPDF config array
  *
- * @package OpenEMR
+ * @package DCL
  * @author Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2023 Stephen Waite <stephen.waite@cmsvt.com>
- * @link https://www.open-emr.org
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @link https://www.dcl.org
+ * @license https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Pdf;
+namespace DCL\Pdf;
 
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\Storage\CacheDirectory;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\Storage\CacheDirectory;
 
 class Config_Mpdf
 {
@@ -23,7 +23,7 @@ class Config_Mpdf
     public static function getConfigMpdf(): array
     {
         return [
-            'tempDir' => (new CacheDirectory())->for('openemr-mpdf'),
+            'tempDir' => (new CacheDirectory())->for('DCL-mpdf'),
             'mode' => OEGlobalsBag::getInstance()->get('pdf_language'),
             'format' => OEGlobalsBag::getInstance()->get('pdf_size'),
             'default_font_size' => OEGlobalsBag::getInstance()->getInt('pdf_font_size'),

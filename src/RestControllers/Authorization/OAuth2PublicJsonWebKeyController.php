@@ -1,10 +1,10 @@
 <?php
 
-namespace OpenEMR\RestControllers\Authorization;
+namespace DCL\RestControllers\Authorization;
 
 use League\OAuth2\Server\Exception\OAuthServerException;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Utils\HttpUtils;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Utils\HttpUtils;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 

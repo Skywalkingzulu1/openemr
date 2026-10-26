@@ -4,18 +4,18 @@
  * Isolated tests for the eye exam's base drawing lookup: a site's own
  * drawing when it has one, the form's stock drawing otherwise.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Forms\EyeMag;
+namespace DCL\Tests\Isolated\Forms\EyeMag;
 
-use OpenEMR\Forms\EyeMag\BaseDrawing;
+use DCL\Forms\EyeMag\BaseDrawing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -40,14 +40,14 @@ final class BaseDrawingTest extends TestCase
 
     private function drawing(): BaseDrawing
     {
-        return new BaseDrawing($this->siteDir, '/openemr/sites/eyes', '/openemr');
+        return new BaseDrawing($this->siteDir, '/DCL/sites/eyes', '/DCL');
     }
 
     #[Test]
     public function aSiteDrawingIsUsedWhenTheSiteHasOne(): void
     {
         $this->assertSame(
-            '/openemr/sites/eyes/images/eye_mag/OU_RETINA_BASE.jpg',
+            '/DCL/sites/eyes/images/eye_mag/OU_RETINA_BASE.jpg',
             $this->drawing()->url('OU', 'RETINA')
         );
     }
@@ -56,7 +56,7 @@ final class BaseDrawingTest extends TestCase
     public function otherZonesKeepTheStockDrawing(): void
     {
         $this->assertSame(
-            '/openemr/interface/forms/eye_mag/images/OU_NEURO_BASE.jpg',
+            '/DCL/interface/forms/eye_mag/images/OU_NEURO_BASE.jpg',
             $this->drawing()->url('OU', 'NEURO')
         );
     }
@@ -64,9 +64,9 @@ final class BaseDrawingTest extends TestCase
     #[Test]
     public function aSiteWithoutDrawingsKeepsTheStockOnes(): void
     {
-        $drawing = new BaseDrawing('', '/openemr/sites/default', '/openemr');
+        $drawing = new BaseDrawing('', '/DCL/sites/default', '/DCL');
         $this->assertSame(
-            '/openemr/interface/forms/eye_mag/images/OU_RETINA_BASE.jpg',
+            '/DCL/interface/forms/eye_mag/images/OU_RETINA_BASE.jpg',
             $drawing->url('OU', 'RETINA')
         );
     }
@@ -75,7 +75,7 @@ final class BaseDrawingTest extends TestCase
     public function onlyPlainZoneNamesAreLookedUpOnDisk(): void
     {
         $this->assertSame(
-            '/openemr/interface/forms/eye_mag/images/OU_../RETINA_BASE.jpg',
+            '/DCL/interface/forms/eye_mag/images/OU_../RETINA_BASE.jpg',
             $this->drawing()->url('OU', '../RETINA')
         );
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRDomainResource;
+namespace DCL\FHIR\R4\FHIRDomainResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRDomainResource;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
 
 /**
  * A physical entity which is the primary unit of operational and/or administrative interest in a study.
@@ -72,49 +72,49 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 {
     /**
      * Identifiers assigned to this research subject for a study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = [];
 
     /**
      * The current state of the subject.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRResearchSubjectStatus
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRResearchSubjectStatus
      */
     public $status = null;
 
     /**
      * The dates the subject began and ended their participation in the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Reference to the study the subject is participating in.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $study = null;
 
     /**
      * The record of the person or animal who is involved in the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $individual = null;
 
     /**
      * The name of the arm in the study the subject is expected to follow as part of this study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $assignedArm = null;
 
     /**
      * The name of the arm in the study the subject actually followed as part of this study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $actualArm = null;
 
     /**
      * A record of the patient's informed agreement to participate in the study.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $consent = null;
 
@@ -125,7 +125,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Identifiers assigned to this research subject for a study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -134,7 +134,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Identifiers assigned to this research subject for a study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -145,7 +145,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The current state of the subject.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRResearchSubjectStatus
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRResearchSubjectStatus
      */
     public function getStatus()
     {
@@ -154,7 +154,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The current state of the subject.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRResearchSubjectStatus $status
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRResearchSubjectStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -165,7 +165,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The dates the subject began and ended their participation in the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
     {
@@ -174,7 +174,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The dates the subject began and ended their participation in the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPeriod $period
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPeriod $period
      * @return $this
      */
     public function setPeriod($period)
@@ -185,7 +185,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Reference to the study the subject is participating in.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getStudy()
     {
@@ -194,7 +194,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Reference to the study the subject is participating in.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $study
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $study
      * @return $this
      */
     public function setStudy($study)
@@ -205,7 +205,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The record of the person or animal who is involved in the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getIndividual()
     {
@@ -214,7 +214,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The record of the person or animal who is involved in the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $individual
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $individual
      * @return $this
      */
     public function setIndividual($individual)
@@ -225,7 +225,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the arm in the study the subject is expected to follow as part of this study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAssignedArm()
     {
@@ -234,7 +234,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the arm in the study the subject is expected to follow as part of this study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $assignedArm
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $assignedArm
      * @return $this
      */
     public function setAssignedArm($assignedArm)
@@ -245,7 +245,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the arm in the study the subject actually followed as part of this study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getActualArm()
     {
@@ -254,7 +254,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The name of the arm in the study the subject actually followed as part of this study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $actualArm
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $actualArm
      * @return $this
      */
     public function setActualArm($actualArm)
@@ -265,7 +265,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A record of the patient's informed agreement to participate in the study.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getConsent()
     {
@@ -274,7 +274,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * A record of the patient's informed agreement to participate in the study.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $consent
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $consent
      * @return $this
      */
     public function setConsent($consent)

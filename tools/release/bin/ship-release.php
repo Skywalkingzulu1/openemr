@@ -7,25 +7,25 @@
  * Authenticates via the ambient GH_TOKEN env var. The workflow mints a release
  * App token with PR-write on both repos and exports it before invoking.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
 require dirname(__DIR__, 3) . '/vendor/autoload.php';
 
-use OpenEMR\Release\GhPullRequestApi;
-use OpenEMR\Release\Mode;
-use OpenEMR\Release\PullRequestTarget;
-use OpenEMR\Release\ShipReleaseOptions;
-use OpenEMR\Release\ShipReleaseOrchestrator;
-use OpenEMR\Release\ShipReleaseRenderer;
-use OpenEMR\Release\ShipReleaseSummaryRenderer;
-use OpenEMR\Release\SystemClock;
+use DCL\Release\GhPullRequestApi;
+use DCL\Release\Mode;
+use DCL\Release\PullRequestTarget;
+use DCL\Release\ShipReleaseOptions;
+use DCL\Release\ShipReleaseOrchestrator;
+use DCL\Release\ShipReleaseRenderer;
+use DCL\Release\ShipReleaseSummaryRenderer;
+use DCL\Release\SystemClock;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -45,7 +45,7 @@ use Symfony\Component\Filesystem\Filesystem;
         'mode',
         null,
         InputOption::VALUE_REQUIRED,
-        'Execution mode: dry-run | semi-auto | full-auto (see OpenEMR\\Release\\Mode)',
+        'Execution mode: dry-run | semi-auto | full-auto (see DCL\\Release\\Mode)',
         Mode::SemiAuto->value,
     )
     ->addOption(

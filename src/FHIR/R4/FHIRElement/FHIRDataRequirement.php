@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRElement;
+namespace DCL\FHIR\R4\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRElement;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement;
+use DCL\FHIR\R4\FHIRElement;
 
 /**
  * Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.
@@ -72,23 +72,23 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
 {
     /**
      * The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public $type = null;
 
     /**
      * The profile of the required data, specified as the uri of the profile definition.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public $profile = [];
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $subjectCodeableConcept = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $subjectReference = null;
 
@@ -96,31 +96,31 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
      * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available.
 
 The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public $mustSupport = [];
 
     /**
      * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
     public $codeFilter = [];
 
     /**
      * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
     public $dateFilter = [];
 
     /**
      * Specifies a maximum number of results that are required (uses the _count search parameter).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public $limit = null;
 
     /**
      * Specifies the order of the results to be returned.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementSort[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementSort[]
      */
     public $sort = [];
 
@@ -131,7 +131,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCode
      */
     public function getType()
     {
@@ -140,7 +140,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * The type of the required data, specified as the type name of a resource. For profiles, this value is set to the type of the base resource of the profile.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCode $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCode $type
      * @return $this
      */
     public function setType($type)
@@ -151,7 +151,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * The profile of the required data, specified as the uri of the profile definition.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCanonical[]
      */
     public function getProfile()
     {
@@ -160,7 +160,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * The profile of the required data, specified as the uri of the profile definition.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCanonical $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -170,7 +170,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getSubjectCodeableConcept()
     {
@@ -178,7 +178,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $subjectCodeableConcept
      * @return $this
      */
     public function setSubjectCodeableConcept($subjectCodeableConcept)
@@ -188,7 +188,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getSubjectReference()
     {
@@ -196,7 +196,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $subjectReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $subjectReference
      * @return $this
      */
     public function setSubjectReference($subjectReference)
@@ -209,7 +209,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
      * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available.
 
 The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString[]
      */
     public function getMustSupport()
     {
@@ -220,7 +220,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
      * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available.
 
 The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $mustSupport
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $mustSupport
      * @return $this
      */
     public function addMustSupport($mustSupport)
@@ -231,7 +231,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
     public function getCodeFilter()
     {
@@ -240,7 +240,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter $codeFilter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementCodeFilter $codeFilter
      * @return $this
      */
     public function addCodeFilter($codeFilter)
@@ -251,7 +251,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
     public function getDateFilter()
     {
@@ -260,7 +260,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter $dateFilter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementDateFilter $dateFilter
      * @return $this
      */
     public function addDateFilter($dateFilter)
@@ -271,7 +271,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Specifies a maximum number of results that are required (uses the _count search parameter).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt
      */
     public function getLimit()
     {
@@ -280,7 +280,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Specifies a maximum number of results that are required (uses the _count search parameter).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRPositiveInt $limit
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRPositiveInt $limit
      * @return $this
      */
     public function setLimit($limit)
@@ -291,7 +291,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Specifies the order of the results to be returned.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementSort[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementSort[]
      */
     public function getSort()
     {
@@ -300,7 +300,7 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
 
     /**
      * Specifies the order of the results to be returned.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementSort $sort
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRDataRequirement\FHIRDataRequirementSort $sort
      * @return $this
      */
     public function addSort($sort)

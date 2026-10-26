@@ -10,24 +10,24 @@
  * fix: deserializing a launch token and transferring its patient UUID into the
  * API session data that ultimately reaches saveTrustedUser().
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc <https://opencoreemr.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc <https://DCL.com/>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\RestControllers\Authorization;
+namespace DCL\Tests\Isolated\RestControllers\Authorization;
 
-use OpenEMR\BC\{
+use DCL\BC\{
     Crypto\ContextualEncryptionTrait,
     ServiceContainer,
 };
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Crypto\KeySource;
-use OpenEMR\FHIR\SMART\SMARTLaunchToken;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Crypto\KeySource;
+use DCL\FHIR\SMART\SMARTLaunchToken;
 use PHPUnit\Framework\TestCase;
 
 class EhrLaunchPatientContextTest extends TestCase

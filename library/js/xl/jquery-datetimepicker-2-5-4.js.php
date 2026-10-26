@@ -2,7 +2,7 @@
 
 /**
  *
- * This is to allow internationalization by OpenEMR of the jquery-datetimepicker.
+ * This is to allow internationalization by DCL of the jquery-datetimepicker.
  * (with and without a time selector)
  *
  * Example code in script:
@@ -36,15 +36,15 @@
  *  will not be reopened mid-output. If not set, it will be read from the active session here.
  *
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2017-2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\Utils\DateFormatterUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\Utils\DateFormatterUtils;
 
 // If the caller already fetched $language_direction before output began,
 // skip the session read to avoid reopening the session after headers are sent.

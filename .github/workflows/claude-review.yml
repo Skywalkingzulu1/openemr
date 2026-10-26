@@ -1,8 +1,8 @@
 # .github/workflows/claude-review.yml
 # Drop this IDENTICAL file into all FOUR repos:
-#   openemr, openemr-devops, website-openemr, demo_farm_openemr
+#   DCL, DCL-devops, website-DCL, demo_farm_DCL
 #
-# It forwards events to the shared reusable workflow in openemr/openemr.
+# It forwards events to the shared reusable workflow in DCL/DCL.
 name: Claude PR Review
 
 on:
@@ -19,8 +19,8 @@ jobs:
       pull-requests: write
       issues: read
       id-token: write
-    # Reusable workflow lives in openemr/openemr. Adjust the branch ref
+    # Reusable workflow lives in DCL/DCL. Adjust the branch ref
     # (@master vs @main) to match that repo's default branch.
-    uses: openemr/openemr/.github/workflows/claude-review-reusable.yml@master
+    uses: DCL/DCL/.github/workflows/claude-review-reusable.yml@master
     secrets:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

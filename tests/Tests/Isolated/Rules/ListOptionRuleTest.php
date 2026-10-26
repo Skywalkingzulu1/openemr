@@ -7,16 +7,16 @@
  * ListOptionRule validates that a list option exists in the list_options table.
  * This test uses a stub to avoid database calls.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Validators\Rules;
+namespace DCL\Tests\Isolated\Validators\Rules;
 
-use OpenEMR\Validators\Rules\ListOptionRule;
+use DCL\Validators\Rules\ListOptionRule;
 use Particle\Validator\Rule;
 use PHPUnit\Framework\TestCase;
 
@@ -94,7 +94,7 @@ class ListOptionRuleTest extends TestCase
 
     public function testRuleHasCorrectErrorConstant(): void
     {
-        $this->assertTrue(defined('OpenEMR\Validators\Rules\ListOptionRule::INVALID_LIST_OPTION'));
+        $this->assertTrue(defined('DCL\Validators\Rules\ListOptionRule::INVALID_LIST_OPTION'));
         $this->assertEquals('ListOptionRule::INVALID_LIST_OPTION', ListOptionRule::INVALID_LIST_OPTION);
     }
 
@@ -220,7 +220,7 @@ class ListOptionRuleTest extends TestCase
 
         // Use reflection to verify the listId property is set correctly
         // Check parent class since stub might not have the property
-        $reflection = new \ReflectionClass(\OpenEMR\Validators\Rules\ListOptionRule::class);
+        $reflection = new \ReflectionClass(\DCL\Validators\Rules\ListOptionRule::class);
         $property = $reflection->getProperty('listId');
         $storedListId = $property->getValue($rule);
 

@@ -8,16 +8,16 @@
  * any scope requesting v1Read or v1Write without checking whether the
  * containing scope actually granted those permissions.
  *
- * @package   openemr
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Waite <stephen.waite@cmsvt.com>
  * @copyright Copyright (c) 2026 Stephen Waite <stephen.waite@cmsvt.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Tests\Unit\Common\Auth\OpenIDConnect\Entities;
+namespace DCL\Tests\Unit\Common\Auth\OpenIDConnect\Entities;
 
-use OpenEMR\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
+use DCL\Common\Auth\OpenIDConnect\Entities\ScopeEntity;
 use PHPUnit\Framework\TestCase;
 
 class ScopeEntityTest extends TestCase

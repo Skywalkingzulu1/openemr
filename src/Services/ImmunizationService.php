@@ -3,27 +3,27 @@
 /**
  * ImmunizationService
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Yash Bothra <yashrajbothra786gmail.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2020 Yash Bothra <yashrajbothra786gmail.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services;
+namespace DCL\Services;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Database\SqlQueryException;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Services\Search\FhirSearchWhereClauseBuilder;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchModifier;
-use OpenEMR\Services\Search\StringSearchField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ImmunizationValidator;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Database\SqlQueryException;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Services\Search\FhirSearchWhereClauseBuilder;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchModifier;
+use DCL\Services\Search\StringSearchField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ImmunizationValidator;
+use DCL\Validators\ProcessingResult;
 
 class ImmunizationService extends BaseService
 {
@@ -47,7 +47,7 @@ class ImmunizationService extends BaseService
 
         $record['primarySource'] = $record['primarySource'] === '1';
         $record['amount_administered'] = intval($record['amount_administered']);
-        // TODO: @adunsulag check with @brady.miller and @sjpadgeet on if the OpenEMR and mysql instances always in UTC time?
+        // TODO: @adunsulag check with @brady.miller and @sjpadgeet on if the DCL and mysql instances always in UTC time?
         $dates = ['create_date', 'administered_date', 'expiration_date', 'education_date'];
 
         foreach ($dates as $date) {

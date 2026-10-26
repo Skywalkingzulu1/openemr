@@ -1,29 +1,29 @@
 <?php
 
 /**
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Michael A. Smith <michael@opencoreemr.com>
- * @copyright Copyright (c) 2026 OpenCoreEMR Inc.
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Michael A. Smith <michael@DCL.com>
+ * @copyright Copyright (c) 2026 DCL Inc.
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Release;
+namespace DCL\Tests\Isolated\Release;
 
-use OpenEMR\Release\Mode;
-use OpenEMR\Release\PullRequestReadiness;
-use OpenEMR\Release\PullRequestSnapshot;
-use OpenEMR\Release\PullRequestState;
-use OpenEMR\Release\PullRequestTarget;
-use OpenEMR\Release\RoleLabel;
-use OpenEMR\Release\ShipReleaseOrchestrator;
-use OpenEMR\Release\ShipReleaseStepResult;
-use OpenEMR\Release\ShipReleaseStepStatus;
-use OpenEMR\Tests\Isolated\Release\Fakes\FailingMergeApi;
-use OpenEMR\Tests\Isolated\Release\Fakes\FakeClock;
-use OpenEMR\Tests\Isolated\Release\Fakes\FakePullRequestApi;
+use DCL\Release\Mode;
+use DCL\Release\PullRequestReadiness;
+use DCL\Release\PullRequestSnapshot;
+use DCL\Release\PullRequestState;
+use DCL\Release\PullRequestTarget;
+use DCL\Release\RoleLabel;
+use DCL\Release\ShipReleaseOrchestrator;
+use DCL\Release\ShipReleaseStepResult;
+use DCL\Release\ShipReleaseStepStatus;
+use DCL\Tests\Isolated\Release\Fakes\FailingMergeApi;
+use DCL\Tests\Isolated\Release\Fakes\FakeClock;
+use DCL\Tests\Isolated\Release\Fakes\FakePullRequestApi;
 use PHPUnit\Framework\TestCase;
 
 final class ShipReleaseOrchestratorTest extends TestCase
@@ -31,13 +31,13 @@ final class ShipReleaseOrchestratorTest extends TestCase
     private const VERSION = '8.1.0';
     private const REL_BRANCH = 'rel-810';
     private const RELEASE_TAG = 'v8_1_0';
-    private const OPENEMR_REPO = 'openemr/openemr';
-    private const CONDUCTOR_REPO = self::OPENEMR_REPO;
+    private const DCL_REPO = 'DCL/DCL';
+    private const CONDUCTOR_REPO = self::DCL_REPO;
     private const CONDUCTOR_BRANCH = 'release-prep/rel-810';
     private const CONDUCTOR_BASE = 'rel-810';
-    private const DOCS_REPO = 'openemr/website-openemr';
+    private const DOCS_REPO = 'DCL/website-DCL';
     private const DOCS_BRANCH = 'release-docs/8.1.0';
-    private const FINALIZE_REPO = self::OPENEMR_REPO;
+    private const FINALIZE_REPO = self::DCL_REPO;
     private const FINALIZE_BRANCH = 'release-finalize/rel-810';
 
     /**
@@ -98,7 +98,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
         FakeClock $clock,
         int $timeoutSeconds = 600,
     ): ShipReleaseOrchestrator {
-        $api->setReleaseExists(self::OPENEMR_REPO, self::RELEASE_TAG, true);
+        $api->setReleaseExists(self::DCL_REPO, self::RELEASE_TAG, true);
         return new ShipReleaseOrchestrator(
             $api,
             $clock,
@@ -195,7 +195,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
             $api->merges,
         );
         // No wait for the release object in semi-auto — conductor merges then stops.
-        self::assertSame(0, $api->getReleaseExistsCallCount(self::OPENEMR_REPO, self::RELEASE_TAG));
+        self::assertSame(0, $api->getReleaseExistsCallCount(self::DCL_REPO, self::RELEASE_TAG));
         self::assertStringContainsString('semi-auto', $result->steps[1]->reasons[0]);
         self::assertStringContainsString('semi-auto', $result->steps[2]->reasons[0]);
     }
@@ -222,7 +222,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
         $api->setReadiness(self::DOCS_REPO, 303, $this->ready('sha-docs-new'));
         $api->setReadiness(self::FINALIZE_REPO, 404, $this->ready('sha-finalize-new'));
         // Release object appears after 3 polls (build-release-on-tag finishing).
-        $api->setReleaseExistsAfterCalls(self::OPENEMR_REPO, self::RELEASE_TAG, 3);
+        $api->setReleaseExistsAfterCalls(self::DCL_REPO, self::RELEASE_TAG, 3);
 
         $clock = new FakeClock();
         $orchestrator = new ShipReleaseOrchestrator(
@@ -241,7 +241,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
         // Polled >= 3 times before proceeding past Finalize's wait.
         self::assertGreaterThanOrEqual(
             3,
-            $api->getReleaseExistsCallCount(self::OPENEMR_REPO, self::RELEASE_TAG),
+            $api->getReleaseExistsCallCount(self::DCL_REPO, self::RELEASE_TAG),
         );
         self::assertGreaterThan(0, $clock->totalSlept);
     }
@@ -262,7 +262,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
         $api->setReadiness(self::DOCS_REPO, 303, $this->ready('sha-docs'));
         $api->setReadiness(self::FINALIZE_REPO, 404, $this->ready('sha-finalize'));
         // Release never appears — the release-existence flag stays false.
-        $api->setReleaseExists(self::OPENEMR_REPO, self::RELEASE_TAG, false);
+        $api->setReleaseExists(self::DCL_REPO, self::RELEASE_TAG, false);
 
         $clock = new FakeClock();
         $orchestrator = new ShipReleaseOrchestrator(
@@ -399,7 +399,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
         $api->setReadiness(self::CONDUCTOR_REPO, 202, $this->ready('sha-conductor'));
         $api->setReadiness(self::DOCS_REPO, 303, $this->ready('sha-docs-new'));
         $api->setReadiness(self::FINALIZE_REPO, 404, $this->ready('sha-finalize-new'));
-        $api->setReleaseExists(self::OPENEMR_REPO, self::RELEASE_TAG, true);
+        $api->setReleaseExists(self::DCL_REPO, self::RELEASE_TAG, true);
 
         $ignore = ['PHP 8.6 - Isolated Tests', 'ci/upstream-flake'];
         $orchestrator = new ShipReleaseOrchestrator(
@@ -661,7 +661,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
         // Simulate gh failing on the conductor merge (e.g. --match-head-commit
         // mismatch from a race). Conductor reports BLOCKED with the gh error,
         // docs + finalize are NOT_REACHED.
-        $api = new FailingMergeApi('openemr/openemr', 202, 'gh: --match-head-commit does not match');
+        $api = new FailingMergeApi('DCL/DCL', 202, 'gh: --match-head-commit does not match');
         $api->setSnapshot(self::CONDUCTOR_REPO, self::CONDUCTOR_BRANCH, $this->openConductor());
         $api->setSnapshot(self::DOCS_REPO, self::DOCS_BRANCH, $this->open(303, 'sha-docs'));
         $api->setReadiness(self::CONDUCTOR_REPO, 202, $this->ready('sha-conductor'));
@@ -772,7 +772,7 @@ final class ShipReleaseOrchestratorTest extends TestCase
         // Verify the success status is followed by a failure status on the
         // same head SHA so a stale release/ship-approved=success doesn't
         // remain on the PR for branch protection to honor.
-        $api = new FailingMergeApi('openemr/openemr', 202, 'gh: api error');
+        $api = new FailingMergeApi('DCL/DCL', 202, 'gh: api error');
         $api->setSnapshot(self::CONDUCTOR_REPO, self::CONDUCTOR_BRANCH, $this->openConductor());
         $api->setSnapshot(self::DOCS_REPO, self::DOCS_BRANCH, $this->open(303, 'sha-docs'));
         $api->setReadiness(self::CONDUCTOR_REPO, 202, $this->ready('sha-conductor'));

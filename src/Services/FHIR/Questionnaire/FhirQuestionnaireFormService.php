@@ -2,44 +2,44 @@
 
 /*
  * QuestionnaireFormFHIRResourceService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2026 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Questionnaire;
+namespace DCL\Services\FHIR\Questionnaire;
 
 use BadMethodCallException;
 use JsonException;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRProvenance;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRInstant;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDomainResource;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem;
-use OpenEMR\Services\FHIR\FhirPayloadReader;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\INonPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceCreatableService;
-use OpenEMR\Services\FHIR\IResourceReadableService;
-use OpenEMR\Services\FHIR\IResourceSearchableService;
-use OpenEMR\Services\FHIR\IResourceUpdateableService;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\QuestionnaireService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\ISearchField;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRProvenance;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRQuestionnaire;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRInstant;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRResource\FHIRDomainResource;
+use DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem;
+use DCL\Services\FHIR\FhirPayloadReader;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\INonPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceCreatableService;
+use DCL\Services\FHIR\IResourceReadableService;
+use DCL\Services\FHIR\IResourceSearchableService;
+use DCL\Services\FHIR\IResourceUpdateableService;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\QuestionnaireService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\ISearchField;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Validators\ProcessingResult;
 
 class FhirQuestionnaireFormService extends FhirServiceBase implements
     IResourceReadableService,
@@ -134,7 +134,7 @@ class FhirQuestionnaireFormService extends FhirServiceBase implements
      * @param bool $encode
      * @return FHIRQuestionnaire
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRQuestionnaire
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRQuestionnaire
     {
         try {
             $innerData = json_decode((string) $dataRecord['questionnaire'], true, 512, JSON_THROW_ON_ERROR);
@@ -234,10 +234,10 @@ class FhirQuestionnaireFormService extends FhirServiceBase implements
     /**
      * @param mixed $openEmrRecord
      */
-    public function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    public function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         if (!is_array($openEmrRecord)) {
-            throw new \InvalidArgumentException('Expected a parsed OpenEMR Questionnaire record array');
+            throw new \InvalidArgumentException('Expected a parsed DCL Questionnaire record array');
         }
         $result = new ProcessingResult();
         $name = $this->parsedTitle($openEmrRecord);
@@ -270,9 +270,9 @@ class FhirQuestionnaireFormService extends FhirServiceBase implements
     }
 
     /**
-     * @param array<array-key, mixed> $updatedOpenEMRRecord
+     * @param array<array-key, mixed> $updatedDCLRecord
      */
-    public function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    public function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         $result = new ProcessingResult();
         if (!UuidRegistry::isValidStringUUID($fhirResourceId)) {
@@ -290,14 +290,14 @@ class FhirQuestionnaireFormService extends FhirServiceBase implements
 
         // The repository owns the resource id and the canonical url of a stored questionnaire;
         // neither is rebindable by an update, so both are pinned to the stored values.
-        $questionnaire = $this->parsedQuestionnaire($updatedOpenEMRRecord);
+        $questionnaire = $this->parsedQuestionnaire($updatedDCLRecord);
         $questionnaire['id'] = $existing['questionnaire_id'] ?? null;
         $questionnaire['url'] = $existing['source_url'] ?? null;
 
         // A PUT may rename its own questionnaire but not take a title another row already holds.
         // saveQuestionnaireResource() resolves by title, so without this the save would land on
         // that other row -- overwriting it and leaving two rows answering to one lookup key.
-        $title = $this->parsedTitle($updatedOpenEMRRecord);
+        $title = $this->parsedTitle($updatedDCLRecord);
         $titleOwner = $service->getQuestionnaireIdAndVersion($title);
         $titleOwnerId = $titleOwner['id'] ?? null;
         if (is_numeric($titleOwnerId) && (int) $titleOwnerId !== (int) $recordId) {
@@ -409,12 +409,12 @@ class FhirQuestionnaireFormService extends FhirServiceBase implements
     }
 
     /**
-     * @param array<string, ISearchField> $openEMRSearchParameters OpenEMR search fields
+     * @param array<string, ISearchField> $DCLSearchParameters DCL search fields
      * @return ProcessingResult
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
-        return $this->service->search($openEMRSearchParameters);
+        return $this->service->search($DCLSearchParameters);
     }
 
     /**

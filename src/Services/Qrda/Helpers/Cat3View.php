@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Services\Qrda\Helpers;
+namespace DCL\Services\Qrda\Helpers;
 
 trait Cat3View
 {

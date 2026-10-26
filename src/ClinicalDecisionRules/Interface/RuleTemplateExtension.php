@@ -2,9 +2,9 @@
 
 // TODO: @adunsulag at some point this could become a twig extension
 
-namespace OpenEMR\ClinicalDecisionRules\Interface;
+namespace DCL\ClinicalDecisionRules\Interface;
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 class RuleTemplateExtension
 {

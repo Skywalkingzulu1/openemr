@@ -4,26 +4,26 @@
  * SDOH (USCDI v3) – new/edit form
  * Production-ready version with proper data handling, escaping, and translation
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2025 Jerry Padgett <sjpadgett@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 $srcdir = dirname(__FILE__, 4) . "/library";
 require_once("../../globals.php");
-$session = \OpenEMR\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+$session = \DCL\Common\Session\SessionWrapperFactory::getInstance()->getActiveSession();
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\Common\Acl\AccessDeniedHelper;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Http\CurrentRequest;
-use OpenEMR\Common\Session\PatientSessionUtil;
-use OpenEMR\Core\Header;
-use OpenEMR\Services\ListService;
-use OpenEMR\Services\SDOH\HistorySdohService;
+use DCL\Common\Acl\AccessDeniedHelper;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Http\CurrentRequest;
+use DCL\Common\Session\PatientSessionUtil;
+use DCL\Core\Header;
+use DCL\Services\ListService;
+use DCL\Services\SDOH\HistorySdohService;
 
 
 $query = CurrentRequest::get()->query;

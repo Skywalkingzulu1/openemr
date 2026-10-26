@@ -1,4 +1,4 @@
-# Dashboard Context Manager Module for OpenEMR
+# Dashboard Context Manager Module for DCL
 
 A comprehensive module for managing patient dashboard widget visibility based on care contexts such as Primary Care, Outpatient, Emergency, Specialty, and more.
 
@@ -18,10 +18,10 @@ A comprehensive module for managing patient dashboard widget visibility based on
 
 1. Download or clone this module to:
    ```
-   [openemr]/interface/modules/custom_modules/oe-module-dashboard-context/
+   [DCL]/interface/modules/custom_modules/oe-module-dashboard-context/
    ```
 
-2. Navigate to **Admin > System > Modules** in OpenEMR
+2. Navigate to **Admin > System > Modules** in DCL
 
 3. Find "Dashboard Context Manager" and click **Install**
 
@@ -113,7 +113,7 @@ The module provides AJAX endpoints for integration:
 
 ## Requirements
 
-- OpenEMR 7.0.0 or higher
+- DCL 7.0.0 or higher
 - PHP 8.1 or higher
 
 ## License
@@ -126,4 +126,4 @@ Jerry Padgett <sjpadgett@gmail.com>
 
 ## Support
 
-For issues and feature requests, please use the OpenEMR GitHub repository.
+For issues and feature requests, please use the DCL GitHub repository.

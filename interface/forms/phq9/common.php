@@ -3,18 +3,18 @@
 /**
  * phq-9 form using forms api     new.php    create a new form
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ruth Moulton <moulton ruth@muswell.me.uk>
  * @copyright Copyright (c) 2021 ruth moulton <ruth@muswell.me.uk>
  *
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 require_once(__DIR__ . "/../../globals.php");
 
 // Hoist legacy `globals.php` locals so PHPStan can see them (#11792 Phase 5).
-$srcdir = \OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir();
+$srcdir = \DCL\Core\OEGlobalsBag::getInstance()->getSrcDir();
 
 require_once("phq9.inc.php"); //common strings
 
@@ -37,10 +37,10 @@ require_once("phq9.inc.php"); //common strings
  * @var string $str_q10_2
  */
 
-use OpenEMR\Common\Csrf\CsrfUtils;
-use OpenEMR\Common\Forms\FormActionBarSettings;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\Header;
+use DCL\Common\Csrf\CsrfUtils;
+use DCL\Common\Forms\FormActionBarSettings;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\Header;
 
 $obj = $viewmode == 'update' ? formFetch("form_phq9", $_GET["id"]) : null;
 $session = SessionWrapperFactory::getInstance()->getActiveSession();
@@ -58,7 +58,7 @@ $session = SessionWrapperFactory::getInstance()->getActiveSession();
     </script>
     <?php $qno = 0; ?>
 
-    <script src="<?php echo $rootdir; ?>/forms/phq9/phq9_javasrc.js?v=<?php echo attr_url(\OpenEMR\Core\OEGlobalsBag::getInstance()->getString('v_js_includes')); ?>"></script>
+    <script src="<?php echo $rootdir; ?>/forms/phq9/phq9_javasrc.js?v=<?php echo attr_url(\DCL\Core\OEGlobalsBag::getInstance()->getString('v_js_includes')); ?>"></script>
 
     <script>
         // stuff that uses embedded php must go here, not in the include javascript file -

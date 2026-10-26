@@ -1,4 +1,4 @@
-# Common helpers for BATS tests of OpenEMR Docker bash scripts.
+# Common helpers for BATS tests of DCL Docker bash scripts.
 # Source this in test files: load 'helpers'
 
 # Repo root (directory containing docker/, utilities/, tests/)

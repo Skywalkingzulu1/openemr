@@ -1,4 +1,4 @@
-# Hadolint configuration for OpenEMR
+# Hadolint configuration for DCL
 # This configuration allows existing Dockerfiles to pass linting
 # while still catching critical issues
 

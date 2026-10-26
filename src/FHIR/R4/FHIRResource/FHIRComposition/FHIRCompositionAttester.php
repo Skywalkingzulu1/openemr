@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRComposition;
+namespace DCL\FHIR\R4\FHIRResource\FHIRComposition;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRComposition;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical package that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
@@ -71,19 +71,19 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
 {
     /**
      * The type of attestation the authenticator offers.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionAttestationMode
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCompositionAttestationMode
      */
     public $mode = null;
 
     /**
      * When the composition was attested by the party.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $time = null;
 
     /**
      * Who attested the composition in the specified way.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $party = null;
 
@@ -94,7 +94,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The type of attestation the authenticator offers.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionAttestationMode
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCompositionAttestationMode
      */
     public function getMode()
     {
@@ -103,7 +103,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * The type of attestation the authenticator offers.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCompositionAttestationMode $mode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCompositionAttestationMode $mode
      * @return $this
      */
     public function setMode($mode)
@@ -114,7 +114,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * When the composition was attested by the party.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getTime()
     {
@@ -123,7 +123,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * When the composition was attested by the party.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $time
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $time
      * @return $this
      */
     public function setTime($time)
@@ -134,7 +134,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Who attested the composition in the specified way.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getParty()
     {
@@ -143,7 +143,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
 
     /**
      * Who attested the composition in the specified way.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $party
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $party
      * @return $this
      */
     public function setParty($party)

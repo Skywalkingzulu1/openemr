@@ -3,11 +3,11 @@
  *
  * JS Functions for eye_mag form(s) Shorthand Entry System
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Ray Magauran <magauran@MedFetch.com>
  * @copyright Copyright (c) 2016 Raymond Magauran <magauran@MedFetch.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 function expand_vocab(text)
@@ -119,7 +119,7 @@ function process_kb_1(field,text,appendix)
         //
         //0=PMH,1=Allergy,2=Meds,3=surgery,4=Dental,5=POH,6=FH,7=SH,8=ROS
         // First list fields that exist but need special processing...
-        // this method should work for PMH,ALLERGY,MEDS,SURGERY,POH,POS (<--openEMR Eye terms).
+        // this method should work for PMH,ALLERGY,MEDS,SURGERY,POH,POS (<--DCL Eye terms).
             //Maybe Dental but we are not using that so leave it to others.
             //Not FH,SH or ROS though...
             //some aliases:

@@ -3,8 +3,8 @@
 /**
  * Clinical Notes form report.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Jacob T Paul <jacob@zhservices.com>
  * @author    Vinish K <vinish@zhservices.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
@@ -14,12 +14,12 @@
  * @copyright Copyright (c) 2019 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Jerry Padgett <sjpadgett@gmail.com>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-use OpenEMR\Common\Twig\TwigContainer;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\ClinicalNotesService;
+use DCL\Common\Twig\TwigContainer;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\ClinicalNotesService;
 
 require_once(__DIR__ . "/../../globals.php");
 function clinical_notes_report($pid, $encounter, $cols, $id): void

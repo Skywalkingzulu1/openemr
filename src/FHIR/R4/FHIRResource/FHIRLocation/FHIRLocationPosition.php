@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRLocation;
+namespace DCL\FHIR\R4\FHIRResource\FHIRLocation;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRLocation;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
@@ -71,19 +71,19 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
 {
     /**
      * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $longitude = null;
 
     /**
      * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $latitude = null;
 
     /**
      * Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $altitude = null;
 
@@ -94,7 +94,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getLongitude()
     {
@@ -103,7 +103,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $longitude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $longitude
      * @return $this
      */
     public function setLongitude($longitude)
@@ -114,7 +114,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getLatitude()
     {
@@ -123,7 +123,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $latitude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $latitude
      * @return $this
      */
     public function setLatitude($latitude)
@@ -134,7 +134,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getAltitude()
     {
@@ -143,7 +143,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $altitude
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $altitude
      * @return $this
      */
     public function setAltitude($altitude)

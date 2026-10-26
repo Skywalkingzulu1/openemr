@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
+namespace DCL\FHIR\R4\FHIRResource\FHIRStructureMap;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -71,49 +71,49 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 {
     /**
      * Type or variable this rule applies to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $context = null;
 
     /**
      * How to interpret the context.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapContextType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureMapContextType
      */
     public $contextType = null;
 
     /**
      * Field to create in the context.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $element = null;
 
     /**
      * Named context for field, if desired, and a field is specified.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $variable = null;
 
     /**
      * If field is a list, how to manage the list.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapTargetListMode[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureMapTargetListMode[]
      */
     public $listMode = [];
 
     /**
      * Internal rule reference for shared list items.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $listRuleId = null;
 
     /**
      * How the data is copied / created.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapTransform
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRStructureMapTransform
      */
     public $transform = null;
 
     /**
      * Parameters to the transform.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapParameter[]
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapParameter[]
      */
     public $parameter = [];
 
@@ -124,7 +124,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Type or variable this rule applies to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getContext()
     {
@@ -133,7 +133,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Type or variable this rule applies to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $context
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $context
      * @return $this
      */
     public function setContext($context)
@@ -144,7 +144,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How to interpret the context.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapContextType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureMapContextType
      */
     public function getContextType()
     {
@@ -153,7 +153,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How to interpret the context.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapContextType $contextType
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureMapContextType $contextType
      * @return $this
      */
     public function setContextType($contextType)
@@ -164,7 +164,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Field to create in the context.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getElement()
     {
@@ -173,7 +173,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Field to create in the context.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $element
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $element
      * @return $this
      */
     public function setElement($element)
@@ -184,7 +184,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Named context for field, if desired, and a field is specified.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getVariable()
     {
@@ -193,7 +193,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Named context for field, if desired, and a field is specified.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $variable
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $variable
      * @return $this
      */
     public function setVariable($variable)
@@ -204,7 +204,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * If field is a list, how to manage the list.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapTargetListMode[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureMapTargetListMode[]
      */
     public function getListMode()
     {
@@ -213,7 +213,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * If field is a list, how to manage the list.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapTargetListMode $listMode
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureMapTargetListMode $listMode
      * @return $this
      */
     public function addListMode($listMode)
@@ -224,7 +224,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Internal rule reference for shared list items.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getListRuleId()
     {
@@ -233,7 +233,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Internal rule reference for shared list items.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $listRuleId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $listRuleId
      * @return $this
      */
     public function setListRuleId($listRuleId)
@@ -244,7 +244,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How the data is copied / created.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapTransform
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRStructureMapTransform
      */
     public function getTransform()
     {
@@ -253,7 +253,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How the data is copied / created.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRStructureMapTransform $transform
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRStructureMapTransform $transform
      * @return $this
      */
     public function setTransform($transform)
@@ -264,7 +264,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Parameters to the transform.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapParameter[]
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapParameter[]
      */
     public function getParameter()
     {
@@ -273,7 +273,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Parameters to the transform.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapParameter $parameter
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRStructureMap\FHIRStructureMapParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)

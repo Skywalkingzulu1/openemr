@@ -2,48 +2,48 @@
 
 /*
  * FhirMedicationDispenseLocalDispensaryService.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\MedicationDispense;
+namespace DCL\Services\FHIR\MedicationDispense;
 
-use OpenEMR\FHIR\DomainModels\OpenEMRFHIRDosage;
-use OpenEMR\FHIR\DomainModels\OpenEMRFHIRTiming;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRAnnotation;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCoding;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRId;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRMeta;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRReference;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDosage;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispensePerformer;
-use OpenEMR\Services\CodeTypesService;
-use OpenEMR\Services\DrugSalesService;
-use OpenEMR\Services\FHIR\FhirCodeSystemConstants;
-use OpenEMR\Services\FHIR\FhirOrganizationService;
-use OpenEMR\Services\FHIR\FhirProvenanceService;
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\FHIR\IFhirExportableResourceService;
-use OpenEMR\Services\FHIR\IPatientCompartmentResourceService;
-use OpenEMR\Services\FHIR\IResourceUSCIGProfileService;
-use OpenEMR\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
-use OpenEMR\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
-use OpenEMR\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
-use OpenEMR\Services\FHIR\Traits\PatientSearchTrait;
-use OpenEMR\Services\FHIR\Traits\VersionedProfileTrait;
-use OpenEMR\Services\FHIR\UtilsService;
-use OpenEMR\Services\Search\FhirSearchParameterDefinition;
-use OpenEMR\Services\Search\SearchFieldType;
-use OpenEMR\Services\Search\ServiceField;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Validators\ProcessingResult;
+use DCL\FHIR\DomainModels\DCLFHIRDosage;
+use DCL\FHIR\DomainModels\DCLFHIRTiming;
+use DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense;
+use DCL\FHIR\R4\FHIRElement\FHIRAnnotation;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRCoding;
+use DCL\FHIR\R4\FHIRElement\FHIRDateTime;
+use DCL\FHIR\R4\FHIRElement\FHIRId;
+use DCL\FHIR\R4\FHIRElement\FHIRMeta;
+use DCL\FHIR\R4\FHIRElement\FHIRReference;
+use DCL\FHIR\R4\FHIRResource\FHIRDosage;
+use DCL\FHIR\R4\FHIRResource\FHIRDosage\FHIRDosageDoseAndRate;
+use DCL\FHIR\R4\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispensePerformer;
+use DCL\Services\CodeTypesService;
+use DCL\Services\DrugSalesService;
+use DCL\Services\FHIR\FhirCodeSystemConstants;
+use DCL\Services\FHIR\FhirOrganizationService;
+use DCL\Services\FHIR\FhirProvenanceService;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\FHIR\IFhirExportableResourceService;
+use DCL\Services\FHIR\IPatientCompartmentResourceService;
+use DCL\Services\FHIR\IResourceUSCIGProfileService;
+use DCL\Services\FHIR\Traits\BulkExportSupportAllOperationsTrait;
+use DCL\Services\FHIR\Traits\FhirBulkExportDomainResourceTrait;
+use DCL\Services\FHIR\Traits\FhirServiceBaseEmptyTrait;
+use DCL\Services\FHIR\Traits\PatientSearchTrait;
+use DCL\Services\FHIR\Traits\VersionedProfileTrait;
+use DCL\Services\FHIR\UtilsService;
+use DCL\Services\Search\FhirSearchParameterDefinition;
+use DCL\Services\Search\SearchFieldType;
+use DCL\Services\Search\ServiceField;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Validators\ProcessingResult;
 
 /**
  * FHIR MedicationDispense Local Dispensary Service
@@ -134,7 +134,7 @@ class FhirMedicationDispenseLocalDispensaryService extends FhirServiceBase imple
              */
             foreach ($meds->getData() as $fhirResource) {
                 /**
-                 * @var \OpenEMR\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense $fhirResource
+                 * @var \DCL\FHIR\R4\FHIRDomainResource\FHIRMedicationDispense $fhirResource
                  */
                 // dosageInstructions may be text or coded, so we will try to get text first
                 // and if not present, look for coded dosage instruction
@@ -197,7 +197,7 @@ class FhirMedicationDispenseLocalDispensaryService extends FhirServiceBase imple
     }
 
     /**
-     * Returns an array mapping FHIR Resource search parameters to OpenEMR search parameters
+     * Returns an array mapping FHIR Resource search parameters to DCL search parameters
      */
     protected function loadSearchParameters(): array
     {
@@ -223,19 +223,19 @@ class FhirMedicationDispenseLocalDispensaryService extends FhirServiceBase imple
     }
 
     /**
-     * Searches for OpenEMR records using OpenEMR search parameters
+     * Searches for DCL records using DCL search parameters
      */
-    protected function searchForOpenEMRRecords($openEMRSearchParameters): ProcessingResult
+    protected function searchForDCLRecords($DCLSearchParameters): ProcessingResult
     {
         // we only want sales transactions (which in this case is a dispense event)
-        $openEMRSearchParameters['trans_type'] = new TokenSearchField("trans_type", ["1"]);
-        return $this->getDrugSalesService()->search($openEMRSearchParameters);
+        $DCLSearchParameters['trans_type'] = new TokenSearchField("trans_type", ["1"]);
+        return $this->getDrugSalesService()->search($DCLSearchParameters);
     }
 
     /**
-     * Parses an OpenEMR data record, returning the equivalent FHIR MedicationDispense Resource
+     * Parses an DCL data record, returning the equivalent FHIR MedicationDispense Resource
      */
-    public function parseOpenEMRRecord($dataRecord = [], $encode = false): FHIRMedicationDispense|string
+    public function parseDCLRecord($dataRecord = [], $encode = false): FHIRMedicationDispense|string
     {
         $medicationDispenseResource = new FHIRMedicationDispense();
 
@@ -438,7 +438,7 @@ class FhirMedicationDispenseLocalDispensaryService extends FhirServiceBase imple
             return null;
         }
 
-        $dosage = new OpenEMRFHIRDosage();
+        $dosage = new DCLFHIRDosage();
         // need to support text 0..1, timing 0..1, route 0..1, doseAndRate 0..*
 
         // Text instruction (prescription will set dosage to be a single numeric value even though its a textfield)
@@ -457,14 +457,14 @@ class FhirMedicationDispenseLocalDispensaryService extends FhirServiceBase imple
                 ]
             ]);
             $intervalConcept->setText($dataRecord['interval_notes'] ?? $dataRecord['interval_title']);
-            $fhirTiming = new OpenEMRFHIRTiming();
+            $fhirTiming = new DCLFHIRTiming();
             $fhirTiming->setCode($intervalConcept);
             $dosage->setTiming($fhirTiming);
         } elseif (!empty($dataRecord['interval_notes'])) {
             // if we have notes but no corresponding code, just set the text
             $intervalConcept = new FHIRCodeableConcept();
             $intervalConcept->setText($dataRecord['interval_notes']);
-            $fhirTiming = new OpenEMRFHIRTiming();
+            $fhirTiming = new DCLFHIRTiming();
             $fhirTiming->setCode($intervalConcept);
             $dosage->setTiming($fhirTiming);
         }
@@ -522,10 +522,10 @@ class FhirMedicationDispenseLocalDispensaryService extends FhirServiceBase imple
     }
 
     /**
-     * Inserts an OpenEMR record into the system.
+     * Inserts an DCL record into the system.
      * Not supported for MedicationDispense as they represent historical events.
      */
-    protected function insertOpenEMRRecord($openEmrRecord): ProcessingResult
+    protected function insertDCLRecord($openEmrRecord): ProcessingResult
     {
         $processingResult = new ProcessingResult();
         $processingResult->setValidationMessages(["MedicationDispense" => "Insert operation not supported for dispense records"]);
@@ -533,10 +533,10 @@ class FhirMedicationDispenseLocalDispensaryService extends FhirServiceBase imple
     }
 
     /**
-     * Updates an OpenEMR record in the system.
+     * Updates an DCL record in the system.
      * Not supported for MedicationDispense as they represent historical events.
      */
-    protected function updateOpenEMRRecord($fhirResourceId, $updatedOpenEMRRecord): ProcessingResult
+    protected function updateDCLRecord($fhirResourceId, $updatedDCLRecord): ProcessingResult
     {
         $processingResult = new ProcessingResult();
         $processingResult->setValidationMessages(["MedicationDispense" => "Update operation not supported for dispense records"]);

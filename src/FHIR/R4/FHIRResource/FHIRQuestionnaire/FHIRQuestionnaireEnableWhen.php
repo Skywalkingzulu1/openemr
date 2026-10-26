@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
+namespace DCL\FHIR\R4\FHIRResource\FHIRQuestionnaire;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRQuestionnaire;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
@@ -71,63 +71,63 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
 {
     /**
      * The linkId for the question whose answer (or lack of answer) governs whether this item is enabled.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $question = null;
 
     /**
      * Specifies the criteria by which the question is enabled.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireItemOperator
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireItemOperator
      */
     public $operator = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $answerBoolean = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public $answerDecimal = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public $answerInteger = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public $answerDate = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $answerDateTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public $answerTime = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public $answerString = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public $answerCoding = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public $answerQuantity = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $answerReference = null;
 
@@ -138,7 +138,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The linkId for the question whose answer (or lack of answer) governs whether this item is enabled.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getQuestion()
     {
@@ -147,7 +147,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
 
     /**
      * The linkId for the question whose answer (or lack of answer) governs whether this item is enabled.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $question
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $question
      * @return $this
      */
     public function setQuestion($question)
@@ -158,7 +158,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Specifies the criteria by which the question is enabled.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireItemOperator
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireItemOperator
      */
     public function getOperator()
     {
@@ -167,7 +167,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
 
     /**
      * Specifies the criteria by which the question is enabled.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuestionnaireItemOperator $operator
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuestionnaireItemOperator $operator
      * @return $this
      */
     public function setOperator($operator)
@@ -177,7 +177,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAnswerBoolean()
     {
@@ -185,7 +185,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $answerBoolean
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $answerBoolean
      * @return $this
      */
     public function setAnswerBoolean($answerBoolean)
@@ -195,7 +195,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDecimal
      */
     public function getAnswerDecimal()
     {
@@ -203,7 +203,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDecimal $answerDecimal
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDecimal $answerDecimal
      * @return $this
      */
     public function setAnswerDecimal($answerDecimal)
@@ -213,7 +213,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRInteger
      */
     public function getAnswerInteger()
     {
@@ -221,7 +221,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRInteger $answerInteger
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRInteger $answerInteger
      * @return $this
      */
     public function setAnswerInteger($answerInteger)
@@ -231,7 +231,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDate
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDate
      */
     public function getAnswerDate()
     {
@@ -239,7 +239,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDate $answerDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDate $answerDate
      * @return $this
      */
     public function setAnswerDate($answerDate)
@@ -249,7 +249,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getAnswerDateTime()
     {
@@ -257,7 +257,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $answerDateTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $answerDateTime
      * @return $this
      */
     public function setAnswerDateTime($answerDateTime)
@@ -267,7 +267,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRTime
      */
     public function getAnswerTime()
     {
@@ -275,7 +275,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRTime $answerTime
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRTime $answerTime
      * @return $this
      */
     public function setAnswerTime($answerTime)
@@ -285,7 +285,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRString
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRString
      */
     public function getAnswerString()
     {
@@ -293,7 +293,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRString $answerString
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRString $answerString
      * @return $this
      */
     public function setAnswerString($answerString)
@@ -303,7 +303,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCoding
      */
     public function getAnswerCoding()
     {
@@ -311,7 +311,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCoding $answerCoding
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCoding $answerCoding
      * @return $this
      */
     public function setAnswerCoding($answerCoding)
@@ -321,7 +321,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity
      */
     public function getAnswerQuantity()
     {
@@ -329,7 +329,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity $answerQuantity
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity $answerQuantity
      * @return $this
      */
     public function setAnswerQuantity($answerQuantity)
@@ -339,7 +339,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getAnswerReference()
     {
@@ -347,7 +347,7 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $answerReference
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $answerReference
      * @return $this
      */
     public function setAnswerReference($answerReference)

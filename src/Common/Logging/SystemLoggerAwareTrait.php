@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\Common\Logging;
+namespace DCL\Common\Logging;
 
 use Monolog\Level;
 use Psr\Log\{

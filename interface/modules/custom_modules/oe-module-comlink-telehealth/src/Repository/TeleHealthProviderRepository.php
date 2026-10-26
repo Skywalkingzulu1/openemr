@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Handles the mapping and retrieving of telehealth providers in the OpenEMR system.
+ * Handles the mapping and retrieving of telehealth providers in the DCL system.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Comlink Inc <https://comlinkinc.com/>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace Comlink\OpenEMR\Modules\TeleHealthModule\Repository;
+namespace Comlink\DCL\Modules\TeleHealthModule\Repository;
 
-use Comlink\OpenEMR\Modules\TeleHealthModule\Models\TeleHealthPersonSettings;
-use Comlink\OpenEMR\Modules\TeleHealthModule\TelehealthGlobalConfig;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Services\UserService;
+use Comlink\DCL\Modules\TeleHealthModule\Models\TeleHealthPersonSettings;
+use Comlink\DCL\Modules\TeleHealthModule\TelehealthGlobalConfig;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Services\UserService;
 use Psr\Log\LoggerInterface;
 
 class TeleHealthProviderRepository

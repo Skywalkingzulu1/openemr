@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
+namespace DCL\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRSubstancePolymer;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Todo.
@@ -71,25 +71,25 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 {
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $material = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $isDefining = null;
 
     /**
      * Todo.
-     * @var \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount
+     * @var \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount
      */
     public $amount = null;
 
@@ -100,7 +100,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getMaterial()
     {
@@ -109,7 +109,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $material
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $material
      * @return $this
      */
     public function setMaterial($material)
@@ -120,7 +120,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -129,7 +129,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -140,7 +140,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getIsDefining()
     {
@@ -149,7 +149,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $isDefining
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $isDefining
      * @return $this
      */
     public function setIsDefining($isDefining)
@@ -160,7 +160,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @return \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount
+     * @return \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount
      */
     public function getAmount()
     {
@@ -169,7 +169,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement implement
 
     /**
      * Todo.
-     * @param \OpenEMR\FHIR\R4\FHIRResource\FHIRSubstanceAmount $amount
+     * @param \DCL\FHIR\R4\FHIRResource\FHIRSubstanceAmount $amount
      * @return $this
      */
     public function setAmount($amount)

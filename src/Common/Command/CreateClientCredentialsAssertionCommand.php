@@ -4,21 +4,21 @@
  * CreateClientCredentialsAssertion Is a helper utility to create a Client Credentials Grant assertion statement as
  * well as print out the Public JSON Web Key Set that can be used for a test System App.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <stephen@nielson.org>
  * @copyright Copyright (c) 2021 Stephen Nielson <stephen@nielson.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Command;
+namespace DCL\Common\Command;
 
 use Lcobucci\JWT\Signer\Key\LocalFileReference;
-use OpenEMR\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
-use OpenEMR\Common\Command\Runner\CommandContext;
-use OpenEMR\Tools\OAuth2\ClientCredentialsAssertionGenerator;
+use DCL\Common\Auth\OpenIDConnect\Grant\CustomClientCredentialsGrant;
+use DCL\Common\Command\Runner\CommandContext;
+use DCL\Tools\OAuth2\ClientCredentialsAssertionGenerator;
 
-class CreateClientCredentialsAssertionCommand implements IOpenEMRCommand
+class CreateClientCredentialsAssertionCommand implements IDCLCommand
 {
     /**
      * Returns the summary description of this command.
@@ -37,11 +37,11 @@ class CreateClientCredentialsAssertionCommand implements IOpenEMRCommand
     public function printUsage(CommandContext $context)
     {
         echo "Command Usage: " . $context->getScriptName() . " -c CreateClientCredentialsAssertion -i <JWT_Issuer> "
-            . " -a <OpenEMR_OAUTH2_Token_URL>\n";
-        echo "-i <CLIENT_ID> The Client ID received from the OpenEMR registration. Used as the issuer and subject for the JWT\n";
-        echo "-a <OpenEMR_OAUTH2_Token_URL> is the audience of the JWT which should be the OpenEMR Oauth2 Token URL Endpoint\n";
+            . " -a <DCL_OAUTH2_Token_URL>\n";
+        echo "-i <CLIENT_ID> The Client ID received from the DCL registration. Used as the issuer and subject for the JWT\n";
+        echo "-a <DCL_OAUTH2_Token_URL> is the audience of the JWT which should be the DCL Oauth2 Token URL Endpoint\n";
         echo "-h Prints out this help message\n";
-        echo "-k Prints out the JSON Web Key Set public key that can be registered with OpenEMR for the client application\n\n";
+        echo "-k Prints out the JSON Web Key Set public key that can be registered with DCL for the client application\n\n";
     }
 
     /**
@@ -76,8 +76,8 @@ class CreateClientCredentialsAssertionCommand implements IOpenEMRCommand
         $oauthTokenUrl = $opts['a'];
         $clientId = $opts['i'];
         $assertion = ClientCredentialsAssertionGenerator::generateAssertion(
-            LocalFileReference::file($keyLocation . "openemr-rsa384-private.key"),
-            LocalFileReference::file($keyLocation . "openemr-rsa384-public.pem"),
+            LocalFileReference::file($keyLocation . "DCL-rsa384-private.key"),
+            LocalFileReference::file($keyLocation . "DCL-rsa384-public.pem"),
             $oauthTokenUrl,
             $clientId
         );

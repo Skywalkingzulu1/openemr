@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult;
+namespace DCL\FHIR\R4\FHIRResource\FHIRVerificationResult;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRVerificationResult;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * Describes validation requirements, source(s), status and dates for one or more elements.
@@ -71,43 +71,43 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 {
     /**
      * Reference to the primary source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $who = null;
 
     /**
      * Type of primary source (License Board; Primary Education; Continuing Education; Postal Service; Relationship owner; Registration Authority; legal source; issuing source; authoritative source).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = [];
 
     /**
      * Method for communicating with the primary source (manual; API; Push).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $communicationMethod = [];
 
     /**
      * Status of the validation of the target against the primary source (successful; failed; unknown).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $validationStatus = null;
 
     /**
      * When the target was validated against the primary source.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public $validationDate = null;
 
     /**
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public $canPushUpdates = null;
 
     /**
      * Type of alerts/updates the primary source can send (specific requested changes; any changes; as defined by source).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public $pushTypeAvailable = [];
 
@@ -118,7 +118,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Reference to the primary source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getWho()
     {
@@ -127,7 +127,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Reference to the primary source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $who
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $who
      * @return $this
      */
     public function setWho($who)
@@ -138,7 +138,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Type of primary source (License Board; Primary Education; Continuing Education; Postal Service; Relationship owner; Registration Authority; legal source; issuing source; authoritative source).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -147,7 +147,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Type of primary source (License Board; Primary Education; Continuing Education; Postal Service; Relationship owner; Registration Authority; legal source; issuing source; authoritative source).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -158,7 +158,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Method for communicating with the primary source (manual; API; Push).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCommunicationMethod()
     {
@@ -167,7 +167,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Method for communicating with the primary source (manual; API; Push).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $communicationMethod
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $communicationMethod
      * @return $this
      */
     public function addCommunicationMethod($communicationMethod)
@@ -178,7 +178,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Status of the validation of the target against the primary source (successful; failed; unknown).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getValidationStatus()
     {
@@ -187,7 +187,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Status of the validation of the target against the primary source (successful; failed; unknown).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $validationStatus
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $validationStatus
      * @return $this
      */
     public function setValidationStatus($validationStatus)
@@ -198,7 +198,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * When the target was validated against the primary source.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRDateTime
      */
     public function getValidationDate()
     {
@@ -207,7 +207,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * When the target was validated against the primary source.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRDateTime $validationDate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRDateTime $validationDate
      * @return $this
      */
     public function setValidationDate($validationDate)
@@ -218,7 +218,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept
      */
     public function getCanPushUpdates()
     {
@@ -227,7 +227,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $canPushUpdates
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $canPushUpdates
      * @return $this
      */
     public function setCanPushUpdates($canPushUpdates)
@@ -238,7 +238,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Type of alerts/updates the primary source can send (specific requested changes; any changes; as defined by source).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept[]
      */
     public function getPushTypeAvailable()
     {
@@ -247,7 +247,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement implements
 
     /**
      * Type of alerts/updates the primary source can send (specific requested changes; any changes; as defined by source).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept $pushTypeAvailable
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept $pushTypeAvailable
      * @return $this
      */
     public function addPushTypeAvailable($pushTypeAvailable)

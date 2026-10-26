@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup;
+namespace DCL\FHIR\R4\FHIRResource\FHIRRequestGroup;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRRequestGroup;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A group of related requests that can be used to capture intended activities that have inter-dependencies such as "give this medication after that one".
@@ -71,23 +71,23 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
 {
     /**
      * The element id of the action this is related to.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public $actionId = null;
 
     /**
      * The relationship of this action to the related action.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRelationshipType
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRActionRelationshipType
      */
     public $relationship = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $offsetDuration = null;
 
     /**
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public $offsetRange = null;
 
@@ -98,7 +98,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
 
     /**
      * The element id of the action this is related to.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRId
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRId
      */
     public function getActionId()
     {
@@ -107,7 +107,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
 
     /**
      * The element id of the action this is related to.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRId $actionId
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRId $actionId
      * @return $this
      */
     public function setActionId($actionId)
@@ -118,7 +118,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
 
     /**
      * The relationship of this action to the related action.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRelationshipType
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRActionRelationshipType
      */
     public function getRelationship()
     {
@@ -127,7 +127,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
 
     /**
      * The relationship of this action to the related action.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRActionRelationshipType $relationship
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRActionRelationshipType $relationship
      * @return $this
      */
     public function setRelationship($relationship)
@@ -137,7 +137,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getOffsetDuration()
     {
@@ -145,7 +145,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
      * @return $this
      */
     public function setOffsetDuration($offsetDuration)
@@ -155,7 +155,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRRange
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRRange
      */
     public function getOffsetRange()
     {
@@ -163,7 +163,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRRange $offsetRange
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRRange $offsetRange
      * @return $this
      */
     public function setOffsetRange($offsetRange)

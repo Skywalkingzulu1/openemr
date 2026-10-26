@@ -3,20 +3,20 @@
 /**
  * report.inc.php
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2018 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-require_once(\OpenEMR\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
+require_once(\DCL\Core\OEGlobalsBag::getInstance()->getSrcDir() . "/options.inc.php");
 
-use OpenEMR\BC\Utilities;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Filesystem\SafeIncludeResolver;
-use OpenEMR\Common\Utils\FormatMoney;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\Utilities;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Filesystem\SafeIncludeResolver;
+use DCL\Common\Utils\FormatMoney;
+use DCL\Core\OEGlobalsBag;
 
 $patient_data_array = [
 'title' => xl('Title') . ": ",

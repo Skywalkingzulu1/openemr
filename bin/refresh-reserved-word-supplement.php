@@ -23,11 +23,11 @@
  *   MARIADB_HOST   (default: 127.0.0.1)
  *   MARIADB_PORT   (default: 3307)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2026 Brady Miller <brady.g.miller@gmail.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
@@ -43,7 +43,7 @@ if (PHP_SAPI !== 'cli') {
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use OpenEMR\Common\Command\RootCliGuard;
+use DCL\Common\Command\RootCliGuard;
 use PhpMyAdmin\SqlParser\Context;
 use PhpMyAdmin\SqlParser\Token;
 

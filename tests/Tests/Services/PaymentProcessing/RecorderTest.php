@@ -10,20 +10,20 @@
  * suite: tests/Tests/Unit/PaymentProcessing is routed to phpunit-isolated.xml,
  * which runs without database initialization.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    Stephen Waite <stephen.waite@open-emr.org>
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    Stephen Waite <stephen.waite@dcl.org>
  * @author    AI Generated - Claude (Anthropic)
  * @copyright Copyright (c) 2026 - Public Domain for AI generated content
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Services\PaymentProcessing;
+namespace DCL\Tests\Services\PaymentProcessing;
 
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\PaymentProcessing\Recorder;
+use DCL\Common\Database\QueryUtils;
+use DCL\PaymentProcessing\Recorder;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -157,7 +157,7 @@ class RecorderTest extends TestCase
      * array shape documented on the method.
      *
      * The code values are deliberately synthetic. No real CPT appears here since
-     * that set is AMA-licensed and is not distributed with OpenEMR, and no real
+     * that set is AMA-licensed and is not distributed with DCL, and no real
      * CARC in reason_code either. ar_activity.code_type and code are plain
      * varchars with no foreign key to code_types, so nothing validates them and
      * these tests only need the values to differ from one another.

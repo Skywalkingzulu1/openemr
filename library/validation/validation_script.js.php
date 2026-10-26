@@ -17,14 +17,14 @@
  * along with this program. If not, see
  * http://www.gnu.org/licenses/licenses.html#GPL .
  *
- * @package OpenEMR
+ * @package DCL
  * @license http://www.gnu.org/licenses/licenses.html#GPL GNU GPL V3+
  * @author  Sharon Cohen <sharonco@matrix.co.il>
  * @author  Amiel Elboim <amielel@matrix.co.il>
- * @link    https://www.open-emr.org
+ * @link    https://www.dcl.org
  */
 
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\Core\OEGlobalsBag;
 
 require_once(OEGlobalsBag::getInstance()->getSrcDir() . "/validation/LBF_Validation.php");
 
@@ -88,7 +88,7 @@ function submitme(new_validate,e,form_id, constraints) {
             }
             var valid = true ;
 
-            //We use a common error for all the errors because of the multilanguage capability of openemr
+            //We use a common error for all the errors because of the multilanguage capability of DCL
             var form = document.querySelector("form#"+form_id);
             //gets all the "elements" in the form and sends them to the validate library
             //for more information @see https://validatejs.org/

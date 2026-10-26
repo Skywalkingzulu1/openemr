@@ -2,19 +2,19 @@
 
 /*
  * MappedServiceCategoryTrait.php
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2025 Stephen Nielson <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Services\FHIR\Traits;
+namespace DCL\Services\FHIR\Traits;
 
-use OpenEMR\Services\FHIR\FhirServiceBase;
-use OpenEMR\Services\Search\SearchFieldException;
-use OpenEMR\Services\Search\TokenSearchField;
-use OpenEMR\Services\Search\TokenSearchValue;
+use DCL\Services\FHIR\FhirServiceBase;
+use DCL\Services\Search\SearchFieldException;
+use DCL\Services\Search\TokenSearchField;
+use DCL\Services\Search\TokenSearchValue;
 
 trait MappedServiceCategoryTrait
 {

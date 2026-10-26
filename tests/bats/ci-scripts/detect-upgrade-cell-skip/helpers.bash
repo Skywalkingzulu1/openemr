@@ -63,7 +63,7 @@ write_release_targets_master_missing_docker_tags() {
     {
         echo "# BATS fixture -- master row present but missing docker_tags"
         echo "- branch: master"
-        echo "  openemr_version_ref: refs/heads/master"
+        echo "  DCL_version_ref: refs/heads/master"
         echo "- branch: rel-840"
         echo "  docker_tags: ${rel840_tags}"
     } > "${path}"

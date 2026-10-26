@@ -3,30 +3,30 @@
 /**
  * FhirOperationDocRefRestController handles the creation / retrieve of Clinical Summary of Care (CCD) documents for a patient.
  *
- * @package openemr
- * @link      https://www.open-emr.org
+ * @package DCL
+ * @link      https://www.dcl.org
  * @author    Stephen Nielson <snielson@discoverandchange.com>
  * @copyright Copyright (c) 2022 Discover and Change <snielson@discoverandchange.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\RestControllers\FHIR\Operations;
+namespace DCL\RestControllers\FHIR\Operations;
 
 use OpenApi\Attributes as OA;
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Http\HttpRestRequest;
-use OpenEMR\Common\Http\Psr17Factory;
-use OpenEMR\Common\Http\StatusCode;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRCodeableConcept;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIssueSeverity;
-use OpenEMR\FHIR\R4\FHIRElement\FHIRIssueType;
-use OpenEMR\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
-use OpenEMR\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue;
-use OpenEMR\Services\FHIR\FhirDocRefService;
-use OpenEMR\Services\FHIR\FhirResourcesService;
-use OpenEMR\Services\Search\SearchFieldException;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Http\HttpRestRequest;
+use DCL\Common\Http\Psr17Factory;
+use DCL\Common\Http\StatusCode;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\R4\FHIRDomainResource\FHIROperationOutcome;
+use DCL\FHIR\R4\FHIRElement\FHIRCodeableConcept;
+use DCL\FHIR\R4\FHIRElement\FHIRIssueSeverity;
+use DCL\FHIR\R4\FHIRElement\FHIRIssueType;
+use DCL\FHIR\R4\FHIRResource\FHIRBundle\FHIRBundleEntry;
+use DCL\FHIR\R4\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue;
+use DCL\Services\FHIR\FhirDocRefService;
+use DCL\Services\FHIR\FhirResourcesService;
+use DCL\Services\Search\SearchFieldException;
 use Ramsey\Uuid\Uuid;
 
 class FhirOperationDocRefRestController
@@ -54,7 +54,7 @@ class FhirOperationDocRefRestController
         tags: ['fhir'],
         externalDocs: new OA\ExternalDocumentation(
             description: 'Detailed documentation on this operation',
-            url: 'https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#API'
+            url: 'https://www.dcl.org/wiki/index.php/DCL_Wiki_Home_Page#API'
         ),
         parameters: [
             new OA\Parameter(
@@ -91,7 +91,7 @@ class FhirOperationDocRefRestController
             new OA\Response(response: '400', ref: '#/components/responses/badrequest'),
             new OA\Response(response: '401', ref: '#/components/responses/unauthorized'),
         ],
-        security: [['openemr_auth' => []]]
+        security: [['DCL_auth' => []]]
     )]
     public function getAll($searchParams, $puuidBind = null)
     {

@@ -31,8 +31,8 @@ setup() {
     assert_file_exists "${SCRIPT_DIR}/configs/php8.5/php.ini"
 }
 
-@test "flex openemr.conf: exists" {
-    assert_file_exists "${SCRIPT_DIR}/openemr.conf"
+@test "flex DCL.conf: exists" {
+    assert_file_exists "${SCRIPT_DIR}/DCL.conf"
 }
 
 @test "flex auto_configure.php: exists" {

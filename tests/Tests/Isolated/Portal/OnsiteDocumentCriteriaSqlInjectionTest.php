@@ -14,16 +14,16 @@
  * as integer literals, so attacker input can never change the query structure,
  * while legitimate integer bitmasks and quoted equality filters are unaffected.
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @author    OpenEMR Security Team <security@open-emr.org>
- * @copyright Copyright (c) 2026 OpenEMR <info@open-emr.org>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @author    DCL Security Team <security@dcl.org>
+ * @copyright Copyright (c) 2026 DCL <info@dcl.org>
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
 declare(strict_types=1);
 
-namespace OpenEMR\Tests\Isolated\Portal;
+namespace DCL\Tests\Isolated\Portal;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;

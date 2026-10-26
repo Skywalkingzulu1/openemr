@@ -8,7 +8,7 @@
  *       -login:      Authentication of users during standard login.
  *       -api:        Authentication of users when requesting api token.
  *       -portal-api: Authentication of patients when requesting api token.
- *       -other:      Default setting. Other Authentication when already logged into OpenEMR such as when
+ *       -other:      Default setting. Other Authentication when already logged into DCL such as when
  *                     doing Esign or changing mfa setting.
  *     2. LDAP (Active Directory) is also supported. In these cases, the login counter and
  *         expired password mechanisms are ignored.
@@ -24,9 +24,9 @@
  *         this issue.)
  *        (note this mechanism is not used in the Google sign)
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
- * @link      https://www.open-emr.org/wiki/index.php/OEMR_wiki_page OEMR
+ * @package   DCL
+ * @link      https://www.dcl.org
+ * @link      https://www.dcl.org/wiki/index.php/OEMR_wiki_page OEMR
  * @author    Kevin Yeh <kevin.y@integralemr.com>
  * @author    Brady Miller <brady.g.miller@gmail.com>
  * @author    Rod Roark <rod@sunsetsystems.com>
@@ -35,23 +35,23 @@
  * @copyright Copyright (c) 2013 OEMR
  * @copyright Copyright (c) 2018-2021 Brady Miller <brady.g.miller@gmail.com>
  * @copyright Copyright (c) 2021 Ken Chapple <ken@mi-squared.com>
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Common\Auth;
+namespace DCL\Common\Auth;
 
 use Google_Client;
 use MyMailer;
-use OpenEMR\Common\Acl\AclExtended;
-use OpenEMR\Common\Acl\AclMain;
-use OpenEMR\Common\Auth\AuthHash;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Logging\EventAuditLogger;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\RandomGenUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\Services\UserService;
+use DCL\Common\Acl\AclExtended;
+use DCL\Common\Acl\AclMain;
+use DCL\Common\Auth\AuthHash;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Logging\EventAuditLogger;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\RandomGenUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\Services\UserService;
 use SodiumException;
 
 class AuthUtils
@@ -317,7 +317,7 @@ class AuthUtils
         // check IP login counter if this option is set
         if ($this->loginAuth || $this->apiAuth) {
             $this->setupIpLoginFailedCounter($ip['ip_string']);
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within DCL such as esign)
             $returnArray = $this->checkIpLoginFailedCounter($ip['ip_string']);
             if (!$returnArray['pass']) {
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
@@ -340,7 +340,7 @@ class AuthUtils
         // Check to ensure username and password are not empty
         if (empty($username) || empty($password)) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within DCL such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". empty username or password");
@@ -354,7 +354,7 @@ class AuthUtils
         $userInfo = privQuery($getUserSQL, [$username]);
         if (empty($userInfo) || empty($userInfo['id'])) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within DCL such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". user not found");
@@ -363,7 +363,7 @@ class AuthUtils
             return false;
         } elseif ($userInfo['active'] != 1) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within DCL such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". user not active");
@@ -377,7 +377,7 @@ class AuthUtils
         $authGroup = $userService->getAuthGroupForUser($username);
         if (empty($authGroup)) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within DCL such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, '', 0, $beginLog . ": " . $ip['ip_string'] . ". user not found in a group");
@@ -389,7 +389,7 @@ class AuthUtils
         // Check to ensure user is in a acl group
         if (AclExtended::aclGetGroupTitles($username) == 0) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within DCL such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user not in any phpGACL groups");
@@ -405,7 +405,7 @@ class AuthUtils
         $userSecure = privQuery($getUserSecureSQL, [$username]);
         if (empty($userSecure) || empty($userSecure['id']) || empty($userSecure['password'])) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within DCL such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user credentials not found");
@@ -416,7 +416,7 @@ class AuthUtils
 
         // check login counter if this option is set
         if ($this->loginAuth || $this->apiAuth) {
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within DCL such as esign)
             $checkArray = $this->checkLoginFailedCounter($username);
             if (!$checkArray['pass']) {
                 $this->incrementLoginFailedCounter($username);
@@ -436,7 +436,7 @@ class AuthUtils
             // ldap authentication
             if (!$this->activeDirectoryValidation($username, $password)) {
                 if ($this->loginAuth || $this->apiAuth) {
-                    // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                    // Utilize this during logins (and not during standard password checks within DCL such as esign)
                     $this->incrementLoginFailedCounter($username);
                     $this->incrementIpLoginFailedCounter($ip['ip_string']);
                 }
@@ -449,7 +449,7 @@ class AuthUtils
             // First, ensure the user hash is a valid hash
             if (!AuthHash::hashValid($userSecure['password'])) {
                 if ($this->loginAuth || $this->apiAuth) {
-                    // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                    // Utilize this during logins (and not during standard password checks within DCL such as esign)
                     $this->incrementIpLoginFailedCounter($ip['ip_string']);
                 }
                 EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user stored password hash is invalid");
@@ -460,7 +460,7 @@ class AuthUtils
             // Second, authentication
             if (!AuthHash::passwordVerify($password, $userSecure['password'])) {
                 if ($this->loginAuth || $this->apiAuth) {
-                    // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                    // Utilize this during logins (and not during standard password checks within DCL such as esign)
                     $this->incrementLoginFailedCounter($username);
                     $this->incrementIpLoginFailedCounter($ip['ip_string']);
                 }
@@ -472,7 +472,7 @@ class AuthUtils
 
         // check for rehash
         if ($this->loginAuth || $this->apiAuth) {
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within DCL such as esign)
             if ($this->authHashAuth->passwordNeedsRehash($userSecure['password'])) {
                 // Hash needs updating, so create a new hash, and replace the old one
                 $newHash = $this->rehashPassword($username, $password);
@@ -484,7 +484,7 @@ class AuthUtils
         // Check to ensure password not expired if this option is set (note ldap skips this)
         if (!$this->checkPasswordNotExpired($username)) {
             if ($this->loginAuth || $this->apiAuth) {
-                // Utilize this during logins (and not during standard password checks within openemr such as esign)
+                // Utilize this during logins (and not during standard password checks within DCL such as esign)
                 $this->incrementIpLoginFailedCounter($ip['ip_string']);
             }
             EventAuditLogger::getInstance()->newEvent($event, $username, $authGroup, 0, $beginLog . ": " . $ip['ip_string'] . ". user password is expired");
@@ -496,7 +496,7 @@ class AuthUtils
         // PASSED
         $this->clearFromMemory($password);
         if ($this->loginAuth || $this->apiAuth) {
-            // Utilize this during logins (and not during standard password checks within openemr such as esign)
+            // Utilize this during logins (and not during standard password checks within DCL such as esign)
             self::resetLoginFailedCounter($username);
             // Shared per-IP counter clears only when the global opt-in
             // is set. Default off so a valid login on account A cannot
@@ -512,8 +512,8 @@ class AuthUtils
 
             // If $hash is empty, then something is very wrong
             if (empty($hash)) {
-                error_log('OpenEMR Error : OpenEMR is not working because broken function.');
-                die("OpenEMR Error : OpenEMR is not working because broken function.");
+                error_log('DCL Error : DCL is not working because broken function.');
+                die("DCL Error : DCL is not working because broken function.");
             }
             self::setUserSessionVariables($username, $hash, $userInfo, $authGroup);
             EventAuditLogger::getInstance()->newEvent('login', $username, $authGroup, 1, "success: " . $ip['ip_string']);
@@ -657,7 +657,7 @@ class AuthUtils
         $this->clearFromMemory($currentPwd);
 
         // Use case here is for when an administrator is adding a new user that will be using LDAP for authentication
-        // (note that in this case, a random password is prepared for the new user below that is stored in OpenEMR
+        // (note that in this case, a random password is prepared for the new user below that is stored in DCL
         //  and used only for session confirmations; the primary authentication for the new user will be done via
         //  LDAP)
         $ldapDummyPassword = false;
@@ -723,9 +723,9 @@ class AuthUtils
                 $hash = $this->authHashAuth->passwordHash($newPwd);
                 if (empty($hash)) {
                     // Something is seriously wrong
-                    error_log('OpenEMR Error : OpenEMR is not working because unable to create a hash.');
-                    EventAuditLogger::getInstance()->newEvent($event, $session->get('authUser'), $session->get('authProvider'), 0, $beginLogFail . " OpenEMR Error : OpenEMR is not working because unable to create a hash.");
-                    die("OpenEMR Error : OpenEMR is not working because unable to create a hash.");
+                    error_log('DCL Error : DCL is not working because unable to create a hash.');
+                    EventAuditLogger::getInstance()->newEvent($event, $session->get('authUser'), $session->get('authProvider'), 0, $beginLogFail . " DCL Error : DCL is not working because unable to create a hash.");
+                    die("DCL Error : DCL is not working because unable to create a hash.");
                 }
                 // Store the new user credentials
                 $passwordSQL = "INSERT INTO `users_secure`" .
@@ -784,9 +784,9 @@ class AuthUtils
             if (empty($newHash)) {
                 // Something is seriously wrong
                 $this->clearFromMemory($newPwd);
-                error_log('OpenEMR Error : OpenEMR is not working because unable to create a hash.');
-                EventAuditLogger::getInstance()->newEvent($event, $session->get('authUser'), $session->get('authProvider'), 0, $beginLogFail . " OpenEMR Error : OpenEMR is not working because unable to create a hash.");
-                die("OpenEMR Error : OpenEMR is not working because unable to create a hash.");
+                error_log('DCL Error : DCL is not working because unable to create a hash.');
+                EventAuditLogger::getInstance()->newEvent($event, $session->get('authUser'), $session->get('authProvider'), 0, $beginLogFail . " DCL Error : DCL is not working because unable to create a hash.");
+                die("DCL Error : DCL is not working because unable to create a hash.");
             }
 
             $updateParams = [];
@@ -896,7 +896,7 @@ class AuthUtils
                 // global handler per project guidance. Internal detail
                 // is logged for admin diagnosis; the user sees a
                 // generic message.
-                error_log('OpenEMR Error: updatePassword transaction failed: ' . $e->getMessage());
+                error_log('DCL Error: updatePassword transaction failed: ' . $e->getMessage());
                 $this->errorMessage = xl('Password update error!');
                 $this->clearFromMemory($newPwd);
                 EventAuditLogger::getInstance()->newEvent($event, $session->get('authUser'), $session->get('authProvider'), 0, $beginLogFail . ' Transaction failed');
@@ -952,7 +952,7 @@ class AuthUtils
 
     /**
      * Ensure user hash remains valid (for example, if user is deactivated or password is changed, then
-     * this will not allow the same user in another session continue to use OpenEMR)
+     * this will not allow the same user in another session continue to use DCL)
      *
      * This function is static since requires no class specific defines
      *
@@ -1124,8 +1124,8 @@ class AuthUtils
         if (empty($phash)) {
             // Something is seriously wrong
             $this->clearFromMemory($password);
-            error_log('OpenEMR Error : OpenEMR is not working because unable to create a hash.');
-            die("OpenEMR Error : OpenEMR is not working because unable to create a hash.");
+            error_log('DCL Error : DCL is not working because unable to create a hash.');
+            die("DCL Error : DCL is not working because unable to create a hash.");
         }
 
         // return the rehash
@@ -1218,11 +1218,11 @@ class AuthUtils
             $current_date = date("Y-m-d");
             $expiredPlusGraceTime = date("Y-m-d", strtotime($query['last_update_password'] . "+" . (OEGlobalsBag::getInstance()->getInt('password_expiration_days') + OEGlobalsBag::getInstance()->getInt('password_grace_time')) . " days"));
             if (strtotime($current_date) > strtotime($expiredPlusGraceTime)) {
-                error_log("OpenEMR Notice: Password is expired and outside of grace period. User: " . $user);
+                error_log("DCL Notice: Password is expired and outside of grace period. User: " . $user);
                 return false;
             }
         } else {
-            error_log("OpenEMR ERROR: there is a problem when trying to check if user's password is expired");
+            error_log("DCL ERROR: there is a problem when trying to check if user's password is expired");
         }
         return true;
     }
@@ -1911,9 +1911,9 @@ class AuthUtils
             } else {
                 $message = "IP address '" . text($ip_string) . "' has been temporarily blocked.";
             }
-            return MyMailer::emailServiceQueue(OEGlobalsBag::getInstance()->getString('patient_reminder_sender_email'), OEGlobalsBag::getInstance()->getString('practice_return_email_path'), xl('IP Address Block Notification For OpenEMR Admin'), $message);
+            return MyMailer::emailServiceQueue(OEGlobalsBag::getInstance()->getString('patient_reminder_sender_email'), OEGlobalsBag::getInstance()->getString('practice_return_email_path'), xl('IP Address Block Notification For DCL Admin'), $message);
         } else {
-            error_log("Unable to send OpenEMR admin email notification since either patient_reminder_sender_email or practice_return_email_path global was not set");
+            error_log("Unable to send DCL admin email notification since either patient_reminder_sender_email or practice_return_email_path global was not set");
             return false;
         }
     }
@@ -1932,9 +1932,9 @@ class AuthUtils
             } else {
                 $message = "Username '" . text($username) . "' has been temporarily blocked.";
             }
-            return MyMailer::emailServiceQueue(OEGlobalsBag::getInstance()->getString('patient_reminder_sender_email'), OEGlobalsBag::getInstance()->getString('practice_return_email_path'), xl('Username Block Notification For OpenEMR Admin'), $message);
+            return MyMailer::emailServiceQueue(OEGlobalsBag::getInstance()->getString('patient_reminder_sender_email'), OEGlobalsBag::getInstance()->getString('practice_return_email_path'), xl('Username Block Notification For DCL Admin'), $message);
         } else {
-            error_log("Unable to send OpenEMR admin email notification since either patient_reminder_sender_email or practice_return_email_path global was not set");
+            error_log("Unable to send DCL admin email notification since either patient_reminder_sender_email or practice_return_email_path global was not set");
             return false;
         }
     }

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Parse the OpenEMR artifact's self-reported version into a validated
+# Parse the DCL artifact's self-reported version into a validated
 # X.Y.Z string for ACCEPTANCE_EXPECTED_VERSION. Two-tier resolution:
 # OCI label first, fallback to a caller-supplied version.php read.
 # Extracted from acceptance-docker.yml's inline logic so BATS tests

@@ -1,13 +1,13 @@
-# OpenEMR Docker Documentation
+# DCL Docker Documentation
 
 ## Overview
-The OpenEMR community loves Docker. We eat and breathe Docker. The OpenEMR dockers and detailed documentation
-can be found on [dockerhub](https://hub.docker.com/r/openemr/openemr/). There are two main categories of
-dockers for OpenEMR, Production Dockers and Development Dockers. Production dockers are meant for production
+The DCL community loves Docker. We eat and breathe Docker. The DCL dockers and detailed documentation
+can be found on [dockerhub](https://hub.docker.com/r/DCL/DCL/). There are two main categories of
+dockers for DCL, Production Dockers and Development Dockers. Production dockers are meant for production
 use with tags such as `8.0.0.3` or `7.0.4`, whereby the `latest` tag identifies the most recent **stable
 production release** (not the absolute newest build — `next` and `dev` carry in-development versions).
 Development dockers are mainly meant for development and/or testing and include the `flex`
-series which are highly flexible development dockers that are used to create the standard OpenEMR development
+series which are highly flexible development dockers that are used to create the standard DCL development
 environments. There is also a less-flexible development docker rebuilt daily, tagged `dev` (head of master)
 and `next` (head of the upcoming-release rel branch).
 
@@ -15,7 +15,7 @@ and `next` (head of the upcoming-release rel branch).
 Production dockers are meant for production use with tags such as `8.0.0.3` or `7.0.4`, whereby the `latest`
 tag identifies the most recent **stable production release** (not the absolute newest build — `next` and
 `dev` carry in-development versions). All production tags are published to
-[dockerhub](https://hub.docker.com/r/openemr/openemr/). Several example docker-compose.yml scripts are
+[dockerhub](https://hub.docker.com/r/DCL/DCL/). Several example docker-compose.yml scripts are
 discussed below.
 
 ### Production example
@@ -29,13 +29,13 @@ The production example above ([docker/production/docker-compose.yml](docker/prod
 
 ## Development Dockers
 Development dockers are meant for development and testing and can be found on
-[dockerhub](https://hub.docker.com/r/openemr/openemr/).
+[dockerhub](https://hub.docker.com/r/DCL/DCL/).
 
 ### `Flex` Series Development Dockers and Development Environments
 The `flex` series development dockers are highly flexible development dockers that are used to create the
-standard OpenEMR development environments, and can be found on
-[dockerhub](https://hub.docker.com/r/openemr/openemr/). It is strongly recommended to not use these dockers
-for production purposes unless you know what you are doing. There are 2 OpenEMR development environments,
+standard DCL development environments, and can be found on
+[dockerhub](https://hub.docker.com/r/DCL/DCL/). It is strongly recommended to not use these dockers
+for production purposes unless you know what you are doing. There are 2 DCL development environments,
 which are based on these development dockers. The main development environment is the Easy Development Docker
 environment, which is documented at [CONTRIBUTING.md](CONTRIBUTING.md#code-contributions-local-development);
 note this environment can also be run on Raspberry Pi (arm64). The other development environment, which is much more
@@ -45,7 +45,7 @@ complex, is the Insane Development Docker environment, which is documented at
 ### Nightly build Development Docker
 There is also a less-flexible development docker rebuilt daily, tagged `dev` (head of master) and `next`
 (head of the upcoming-release rel branch), mainly used for testing. Available on
-[dockerhub](https://hub.docker.com/r/openemr/openemr/).
+[dockerhub](https://hub.docker.com/r/DCL/DCL/).
 
 ## Post-deployment automation
 
@@ -56,7 +56,7 @@ launch. See the [vendor hooks documentation](docker/HOOKS.md) for the location a
 ## Source repository and pipeline
 
 This repository owns the production Docker image pipeline end-to-end as of June 2026. Previously it lived in
-[openemr/openemr-devops](https://github.com/openemr/openemr-devops); see
+[DCL/DCL-devops](https://github.com/DCL/DCL-devops); see
 [docs/docker-migration-from-devops.md](docs/docker-migration-from-devops.md) for the migration history and
 architectural rationale.
 
@@ -64,7 +64,7 @@ For maintainers and contributors, the per-directory orientation guide is [docker
 At a glance:
 
 - **Source of truth for what gets published**: [`.github/release-targets.yml`](.github/release-targets.yml).
-  One row per `rel-*` branch; each row declares which Docker tags it publishes and which OpenEMR ref to
+  One row per `rel-*` branch; each row declares which Docker tags it publishes and which DCL ref to
   bake in. Adding a row publishes a new rel branch's tags; editing a row's `docker_tags` reshuffles the
   floating `latest`/`next`/`dev` aliases.
 - **Dockerfiles**: `docker/release/Dockerfile` (production, per-branch), `docker/flex/Dockerfile` (flex

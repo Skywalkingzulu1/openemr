@@ -3,43 +3,43 @@
 /**
  * Main class for EhiExporter for exporting data from the db
  *
- * @package   OpenEMR
- * @link      https://www.open-emr.org
+ * @package   DCL
+ * @link      https://www.dcl.org
  *
  * @author    Stephen Nielson <snielson@discoverandchange.com
- * @copyright Copyright (c) 2023 OpenEMR Foundation, Inc
- * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ * @copyright Copyright (c) 2023 DCL Foundation, Inc
+ * @license   https://github.com/DCL/DCL/blob/master/LICENSE GNU General Public License 3
  */
 
-namespace OpenEMR\Modules\EhiExporter\Services;
+namespace DCL\Modules\EhiExporter\Services;
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Crypto\CryptoInterface;
-use OpenEMR\Common\Database\QueryUtils;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Common\Utils\FileUtils;
-use OpenEMR\Common\Utils\XmlUtils;
-use OpenEMR\Common\Uuid\UuidRegistry;
-use OpenEMR\Core\OEGlobalsBag;
-use OpenEMR\FHIR\Export\ExportException;
-use OpenEMR\Modules\EhiExporter\Bootstrap;
-use OpenEMR\Modules\EhiExporter\Models;
-use OpenEMR\Modules\EhiExporter\Models\EhiExportJob;
-use OpenEMR\Modules\EhiExporter\Models\EhiExportJobTask;
-use OpenEMR\Modules\EhiExporter\Models\ExportKeyDefinition;
-use OpenEMR\Modules\EhiExporter\Models\ExportResult;
-use OpenEMR\Modules\EhiExporter\Models\ExportState;
-use OpenEMR\Modules\EhiExporter\Services\EhiExportJobService;
-use OpenEMR\Modules\EhiExporter\Services\EhiExportJobTaskService;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportClinicalNotesFormTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportContactTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportEsignatureTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportFormsGroupsEncounterTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportOnsiteMailTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportOnsiteMessagesTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportPersonTableDefinition;
-use OpenEMR\Modules\EhiExporter\TableDefinitions\ExportTrackAnythingFormTableDefinition;
-use OpenEMR\Services\DocumentService;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Crypto\CryptoInterface;
+use DCL\Common\Database\QueryUtils;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Common\Utils\FileUtils;
+use DCL\Common\Utils\XmlUtils;
+use DCL\Common\Uuid\UuidRegistry;
+use DCL\Core\OEGlobalsBag;
+use DCL\FHIR\Export\ExportException;
+use DCL\Modules\EhiExporter\Bootstrap;
+use DCL\Modules\EhiExporter\Models;
+use DCL\Modules\EhiExporter\Models\EhiExportJob;
+use DCL\Modules\EhiExporter\Models\EhiExportJobTask;
+use DCL\Modules\EhiExporter\Models\ExportKeyDefinition;
+use DCL\Modules\EhiExporter\Models\ExportResult;
+use DCL\Modules\EhiExporter\Models\ExportState;
+use DCL\Modules\EhiExporter\Services\EhiExportJobService;
+use DCL\Modules\EhiExporter\Services\EhiExportJobTaskService;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportClinicalNotesFormTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportContactTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportEsignatureTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportFormsGroupsEncounterTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportOnsiteMailTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportOnsiteMessagesTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportPersonTableDefinition;
+use DCL\Modules\EhiExporter\TableDefinitions\ExportTrackAnythingFormTableDefinition;
+use DCL\Services\DocumentService;
 use Psr\Log\LoggerInterface;
 use Ramsey\Uuid\Rfc4122\UuidV4;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -354,9 +354,9 @@ class EhiExporter
     private function exportBreadthAlgorithm(EhiExportJobTask $jobTask): EhiExportJobTask
     {
         $patientPids = $jobTask->getPatientIds();
-        $xmlTableStructure = $this->getXmlNode($this->xmlConfigPath . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'openemr.openemr.xml');
+        $xmlTableStructure = $this->getXmlNode($this->xmlConfigPath . DIRECTORY_SEPARATOR . 'docs' . DIRECTORY_SEPARATOR . 'DCL.DCL.xml');
         $xmlMetaStructure = $this->getXmlNode($this->xmlConfigPath . DIRECTORY_SEPARATOR . 'schemaspy'
-            . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'openemr.meta.xml');
+            . DIRECTORY_SEPARATOR . 'schemas' . DIRECTORY_SEPARATOR . 'DCL.meta.xml');
         $exportState = new Models\ExportState($this->logger, $xmlTableStructure, $xmlMetaStructure, $jobTask);
 
         $pidKey = new Models\ExportKeyDefinition();

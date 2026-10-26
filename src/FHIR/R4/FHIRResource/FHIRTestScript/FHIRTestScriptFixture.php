@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
+namespace DCL\FHIR\R4\FHIRResource\FHIRTestScript;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
@@ -62,7 +62,7 @@ namespace OpenEMR\FHIR\R4\FHIRResource\FHIRTestScript;
  *
  */
 
-use OpenEMR\FHIR\R4\FHIRElement\FHIRBackboneElement;
+use DCL\FHIR\R4\FHIRElement\FHIRBackboneElement;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -71,19 +71,19 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
 {
     /**
      * Whether or not to implicitly create the fixture during setup. If true, the fixture is automatically created on each server being tested during setup, therefore no create operation is required for this fixture in the TestScript.setup section.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $autocreate = null;
 
     /**
      * Whether or not to implicitly delete the fixture during teardown. If true, the fixture is automatically deleted on each server being tested during teardown, therefore no delete operation is required for this fixture in the TestScript.teardown section.
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public $autodelete = null;
 
     /**
      * Reference to the resource (containing the contents of the resource needed for operations).
-     * @var \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @var \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public $resource = null;
 
@@ -94,7 +94,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Whether or not to implicitly create the fixture during setup. If true, the fixture is automatically created on each server being tested during setup, therefore no create operation is required for this fixture in the TestScript.setup section.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAutocreate()
     {
@@ -103,7 +103,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Whether or not to implicitly create the fixture during setup. If true, the fixture is automatically created on each server being tested during setup, therefore no create operation is required for this fixture in the TestScript.setup section.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $autocreate
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $autocreate
      * @return $this
      */
     public function setAutocreate($autocreate)
@@ -114,7 +114,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Whether or not to implicitly delete the fixture during teardown. If true, the fixture is automatically deleted on each server being tested during teardown, therefore no delete operation is required for this fixture in the TestScript.teardown section.
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRBoolean
      */
     public function getAutodelete()
     {
@@ -123,7 +123,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Whether or not to implicitly delete the fixture during teardown. If true, the fixture is automatically deleted on each server being tested during teardown, therefore no delete operation is required for this fixture in the TestScript.teardown section.
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRBoolean $autodelete
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRBoolean $autodelete
      * @return $this
      */
     public function setAutodelete($autodelete)
@@ -134,7 +134,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Reference to the resource (containing the contents of the resource needed for operations).
-     * @return \OpenEMR\FHIR\R4\FHIRElement\FHIRReference
+     * @return \DCL\FHIR\R4\FHIRElement\FHIRReference
      */
     public function getResource()
     {
@@ -143,7 +143,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * Reference to the resource (containing the contents of the resource needed for operations).
-     * @param \OpenEMR\FHIR\R4\FHIRElement\FHIRReference $resource
+     * @param \DCL\FHIR\R4\FHIRElement\FHIRReference $resource
      * @return $this
      */
     public function setResource($resource)

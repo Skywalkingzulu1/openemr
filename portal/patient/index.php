@@ -8,10 +8,10 @@
  *
  */
 
-use OpenEMR\BC\ServiceContainer;
-use OpenEMR\Common\Session\PortalSessionPidGuard;
-use OpenEMR\Common\Session\SessionWrapperFactory;
-use OpenEMR\Core\OEGlobalsBag;
+use DCL\BC\ServiceContainer;
+use DCL\Common\Session\PortalSessionPidGuard;
+use DCL\Common\Session\SessionWrapperFactory;
+use DCL\Core\OEGlobalsBag;
 
 require_once(__DIR__ . "/../../vendor/autoload.php");
 
